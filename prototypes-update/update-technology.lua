@@ -207,8 +207,6 @@ table.insert(data_technology["angels-ore-crushing"].effects, {type = unlock_reci
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})
 
-table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = borax_recipe})
-
 table.insert(data_technology[tech_ore_electro_whinning_cell].effects, {type = unlock_recipe, recipe = chrome_ore_recipe})
 
 -- ANGELS METALLURGY SMELTING
