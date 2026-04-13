@@ -1,0 +1,177 @@
+local technology = "technology"
+data:extend
+({
+    -- ANGELS METALLURGY CASTING
+    --{type = unlock_recipe, recipe = sintering_oven_3},
+    --{type = unlock_recipe, recipe = sintering_oven_4},
+    -- ANGELS RESOURCE REFINING
+    {
+        type = technology,
+        name = tech_advanced_ore_refining_5,
+        icon = "__angelsrefininggraphics__/graphics/technology/ore-sorting.png",
+        icon_size = 256,
+        prerequisites =
+        {
+            "angels-advanced-ore-refining-4",
+            space_science_pack
+        },
+        effects =
+        {
+            {type = unlock_recipe, recipe = ore_crusher_4},
+            {type = unlock_recipe, recipe = ore_floatation_cell_4},
+            {type = unlock_recipe, recipe = ore_leaching_plant_4},
+            {type = unlock_recipe, recipe = ore_refinery_3},
+            {type = unlock_recipe, recipe = powderizer_4},
+            --{type = unlock_recipe, recipe = electro_whinning_cell_3}
+            {type = unlock_recipe, recipe = filtration_unit_4},
+            {type = unlock_recipe, recipe = crystallizer_4},
+        },
+        unit =
+        {
+            count = 150,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        type = technology,
+        name = tech_advanced_ore_refining_6,
+        icon = "__angelsrefininggraphics__/graphics/technology/ore-sorting.png",
+        icon_size = 256,
+        prerequisites =
+        {
+            tech_advanced_ore_refining_5,
+            electromagnetic_science_pack,
+            agricultural_science_pack,
+            metallurgic_science_pack
+        },
+        effects =
+        {
+            {type = unlock_recipe, recipe = ore_refinery_4},
+            --{type = unlock_recipe, recipe = electro_whinning_cell_4}
+        },
+        unit =
+        {
+            count = 300,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {electromagnetic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {metallurgic_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    -- ANGELS WATER TREATMENT
+    {
+        type = technology,
+        name = tech_water_treatment_5,
+        icon = "__angelsrefininggraphics__/graphics/technology/water-treatment.png",
+        icon_size = 256,
+        prerequisites =
+        {
+            electric_boiler_3,
+            tech_water_treatment_4,
+            space_science_pack
+        },
+        effects =
+        {
+            {type = unlock_recipe, recipe = washing_plant_4},
+            {type = unlock_recipe, recipe = salination_plant_3},
+            {type = unlock_recipe, recipe = electric_boiler_4}
+        },
+        unit =
+        {
+            count = 150,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1}
+            },
+            time = 15
+        }
+    },
+    {
+        type = technology,
+        name = tech_water_treatment_6,
+        icon = "__angelsrefininggraphics__/graphics/technology/water-treatment.png",
+        icon_size = 256,
+        prerequisites =
+        {
+            tech_water_treatment_5,
+            electromagnetic_science_pack,
+            agricultural_science_pack,
+            metallurgic_science_pack
+        },
+        effects =
+        {
+            {type = unlock_recipe, recipe = salination_plant_4},
+        },
+        unit =
+        {
+            count = 300,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {electromagnetic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {metallurgic_science_pack, 1}
+            },
+            time = 30
+        }
+    },
+    -- ANGELS PETROCHEM REFINING
+    {
+        type = technology,
+        name = tech_advanced_chemistry_6,
+        icon = "__angelspetrochemgraphics__/graphics/technology/advanced-chemical-plant-tech.png",
+        icon_size = 256,
+        prerequisites =
+        {
+            tech_advanced_chemistry_5,
+            space_science_pack
+        },
+        effects =
+        {
+            {type = unlock_recipe, recipe = advanced_chemical_plant_4},
+            {type = unlock_recipe, recipe = "angels-gas-refinery-4"},
+        },
+        unit =
+        {
+            count = 150,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1}
+            },
+            time = 15
+        }
+    }
+})

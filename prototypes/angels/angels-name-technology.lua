@@ -1,0 +1,67 @@
+-- ANGELS RESOURCE REFINING
+tech_ore_floatation = "angels-ore-floatation"
+tech_ore_powderizer = "angels-ore-powderizer"
+tech_ore_advanced_crushing = "angels-ore-advanced-crushing"
+tech_ore_advanced_floatation = "angels-ore-advanced-floatation"
+tech_advanced_ore_refining_1 = "angels-advanced-ore-refining-1"
+tech_advanced_ore_refining_2 = "angels-advanced-ore-refining-2"
+tech_advanced_ore_refining_3 = "angels-advanced-ore-refining-3"
+tech_advanced_ore_refining_4 = "angels-advanced-ore-refining-4"
+tech_advanced_ore_refining_5 = "advanced-ore-refining-5"
+tech_advanced_ore_refining_6 = "advanced-ore-refining-6"
+tech_ore_electro_whinning_cell = "angels-ore-electro-whinning-cell"
+
+-- ANGELS 
+tech_metallurgy_1 = "angels-metallurgy-1"
+tech_metallurgy_2 = "angels-metallurgy-2"
+tech_metallurgy_3 = "angels-metallurgy-3"
+tech_metallurgy_4 = "angels-metallurgy-4"
+tech_metallurgy_5 = "angels-metallurgy-5"
+tech_ore_processing_1 = "angels-ore-processing-1"
+tech_ore_processing_2 = "angels-ore-processing-2"
+tech_ore_processing_3 = "angels-ore-processing-3"
+tech_ore_processing_4 = "angels-ore-processing-4"
+tech_ore_processing_5 = "angels-ore-processing-5"
+
+tech_powder_metallurgy_2 = "angels-powder-metallurgy-2"
+tech_powder_metallurgy_3 = "angels-powder-metallurgy-3"
+tech_powder_metallurgy_4 = "angels-powder-metallurgy-4"
+tech_powder_metallurgy_5 = "angels-powder-metallurgy-5"
+
+tech_strand_casting_1 = "angels-strand-casting-1"
+tech_strand_casting_2 = "angels-strand-casting-2"
+tech_strand_casting_3 = "angels-strand-casting-3"
+tech_strand_casting_4 = "angels-strand-casting-4"
+
+-- ANGELS WATER TREATMENT
+tech_water_treatment_3 = "angels-water-treatment-3"
+tech_water_treatment_4 = "angels-water-treatment-4"
+tech_water_treatment_5 = "water-treatment-5"
+tech_water_treatment_6 = "water-treatment-6"
+
+-- ANGELS PETROCHEM REFINING
+tech_coal_processing_1 = "angels-coal-processing"
+tech_coal_processing_2 = "angels-coal-processing-2"
+tech_coal_processing_3 = "angels-coal-processing-3"
+tech_coal_processing_4 = "coal-processing-4"
+tech_nitrogen_processing_1 = "angels-nitrogen-processing-1"
+tech_nitrogen_processing_2 = "angels-nitrogen-processing-2"
+tech_nitrogen_processing_3 = "angels-nitrogen-processing-3"
+tech_nitrogen_processing_4 = "angels-nitrogen-processing-4"
+tech_sodium_processing_1 = "angels-sodium-processing-1"
+tech_sodium_processing_2 = "angels-sodium-processing-2"
+tech_sulfur_processing_1 = "angels-sulfur-processing-1"
+tech_chlorine_processing_1 = "angels-chlorine-processing-1"
+tech_chlorine_processing_2 = "angels-chlorine-processing-2"
+tech_chlorine_processing_3 = "angels-chlorine-processing-3"
+tech_chlorine_processing_4 = "angels-chlorine-processing-4"
+
+tech_advanced_chemistry_2 = "angels-advanced-chemistry-2"
+tech_advanced_chemistry_3 = "angels-advanced-chemistry-3"
+tech_advanced_chemistry_4 = "angels-advanced-chemistry-4"
+tech_advanced_chemistry_5 = "angels-advanced-chemistry-5"
+tech_advanced_chemistry_6 = "advanced-chemistry-6"
+
+-- ANGELS BIOPROCESSING
+tech_bio_processing_brown = "angels-bio-processing-brown"
+tech_bio_processing_green = "angels-bio-processing-green"

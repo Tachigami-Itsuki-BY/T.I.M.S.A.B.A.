@@ -1,0 +1,1 @@
+data_recipe["extract-ground-ammoniacal-solution"].localised_name = {"recipe-name.extract-ground-ammonia-solution"}

@@ -1,0 +1,1 @@
+data_recipe[steel_plate] = nil
