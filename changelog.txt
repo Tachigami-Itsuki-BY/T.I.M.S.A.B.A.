@@ -105,8 +105,53 @@ Date: ??.??.2026
 
     - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
-Version: 0.0.23
+Version: 0.0.24
 Date: 13.04.2026
+  Balancing:
+    - Рецепт Буры перевнесён из технологии Улучшеная Переработка Руды 2 в технологию Переработка Буры.
+    - В предмете Яйцо Кусаки увеличена ценность топлива: (6000 кВт) → (7200 кВт)
+    - В предмете Яйцо Кусаки изменена топливная категория.
+    - В Танках и Паукатронах изменена топливная категория.
+    - В Твердотопливном Сборочном Автомате изменена топливная категория.
+    - В предмете Твердотопливного Сборочного Автомата уменьшен размер стака: (64) → (32)
+    - В рецепте Твердотопливного Сборочного Автомата скорректированы ингредиенты, время крафта и максимальное потребление:
+        1. Железная шестерня (5 ед.) → (4 ед.)
+        2. Железная Пластина (9 ед.) → (8 ед.)
+        3. (0.5 сек.) → (1 сек.)
+        4. (60 кВт) → (225 кВт)
+    - В рецепт Сборочного Автомата Т1 добавлен ингредиент: Твердотопливный Сборочный Автомат.
+        При условии что включен Твердотопливный Сборочный Автомат.
+    - В Танке Т3 увеличено максимальное потребление: (900 кВт) → (1350 кВт)
+    - В рецептах Пушки Паукатрона и Механической Рамы уменьшено время крафта:
+        1. (10 сек.) → (8 сек.)
+        2. (5 сек.) → (4 сек.)
+    - В Антроне увелчинео максимальное потребление: (150 кВт) → (225 кВт)
+    - В Танкотроне уменьшено максимальное потребление: (250 кВт) → (225 кВт)
+    - В Логитроне увелчинео максимальное потребление: (200 кВт) → (225 кВт)
+
+    - Moved Borax recipe from Advacned Ore Refining 2 to Bor Processing technologies.
+    - Increased fuel value in the Biter Egg item: (6000 kW) → (7200 kW)
+    - Changed fuel category in the Biter Egg item.
+    - Changed fuel categories in the Tanks and a Spidertrons.
+    - Changed fuel category in the Burner Assembling Machine.
+    - Decreased stack size in the Burner Assembling Machine: (64) → (32)
+    - Adjusted ingredients, crafting time, and maximun consumption in the Burner Assembling Machine:
+        1. Iron Gear Wheel (5 units) → (4 units)
+        2. Iron Plate (9 units) → (8 units)
+        3. (0.5 sec.) → (1 sec.)
+        4. (60 kW) → (225 kW)
+    - Added an ingredient for the T1 Assembling Machine: Burner Assembling Machine.
+        If enabled Burner Assembling Machine.
+    - Increased maximun consumption in the T3 Tank: (900 kW) → (1350 kW)
+    - Decreased crafting time in the Cannon Spidertron and Mech Frame recipes:
+        1. (10 sec.) → (8 sec.)
+        2. (5 sec.) → (4 sec.)
+    - Increased maximun consumption in the Antron: (150 kW) → (225 kW)
+    - Decreased maximun consumption in the Tankotron: (250 kW) → (225 kW)
+    - Increased maximun consumption in the Logitron: (200 kW) → (225 kW)
+---------------------------------------------------------------------------------------------------
+Version: 0.0.23
+Date: 12.04.2026
   Features:
     - Добавлена технология: Переработка Калия.
 
@@ -118,7 +163,7 @@ Date: 13.04.2026
         2. Раствор Хлорида Калия.
         3. Раствор Гидроксида Калия.
         4. Раствор Гипохлорита Калия.
-    - В технологии Улучшенная Выплавка Хрома 3 произведена замена предварительного требования: Очистка Воды 5 → Очистка Воды 4.
+    - В технологии Улучшенная Выплавка Хрома 3 произведена замена предварительного требования: Очистка Воды 5 → Переработка Калия.
     - В рецепте Раствора Хлорида Лития из Гидроксида Лития заменено производственное здание: Химическая печь → Химический завод.
     - В рецепте Оксида Лития-Кобальта заменено производственное здание: Химическая печь → Химический завод.
     - В рецепте Гидрида Лития заменено производственное здание: Доменная печь → Химический завод.
@@ -126,7 +171,6 @@ Date: 13.04.2026
     - В рецепте Борной Кислоты из Соляной Кислоты заменено производственное здание: Химическая печь → Улучшеный химический завод.
         В результаты добавлена Очищенная Вода (120 ед.)
     - В рецепте Борной Кислоты из Газообразного Диборана заменено производственное здание: Химическая печь → Химический завод.
-    - Рецепт Буры перевнесён из технологии Улучшеная Переработка Руды 2 в технологию Переработка Бора.
     - В следующие рецепты добавлены ингредиент (Электрод) и результат (Использованный Электрод):
         1. Разделение Хлористого Водорода (по 1 ед.)
         2. Магниевый Газ из Газообразного Хлорида Магния (по 1 ед.)
@@ -137,12 +181,12 @@ Date: 13.04.2026
         2. (120 ед.) → (240 ед.)
         3. (60 ед.) → (120 ед.)
 
-    - Moved the following recipes from Water Purification 5 to Potassium Processing technologies: 
+    - Moved the following recipes from Water Treatment 5 to Potassium Processing technologies: 
         1. Carnallite.
         2. Potassium Chloride Solution.
         3. Potassium Hydroxide Solution.
         4. Potassium Hypochloride Solution.
-    - Changed the prerequisite for Advanced Chrome Smelting 3 technology: Water Purification 5 → Water Purification 4.
+    - Changed the prerequisite for Advanced Chrome Smelting 3 technology: Water Treatment 5 → Potassium Processing.
     - Changed production machine for Lithium Chloride Solution from Lithium Hydroxide recipe: Chemical Furnace → Chemical Plant.
     - Changed production machine for Lithium Cobalt Oxide recipe: Chemical Furnace → Chemical Plant.
     - Changed production machine for Lithium Hydride recipe: Blast Furnace → Chemical Plant.
@@ -150,7 +194,6 @@ Date: 13.04.2026
     - Changed production machine for Boric Acid from Hydrochloric Acid recipe: Chemical Furnace → Advanced Chemical Plant.
         Added Purified Water to results (120 units)
     - Changed production machine for Boric Acid from Diborane Gas recipe: Chemical Furnace → Chemical Plant.
-    - Moved Borax recipe from Advacned Ore Refining 2 to Bor Processing technologies.
     - Added an ingredient (Electrode) and a result (Used Electrode) to the following recipes:
         1. Separation of Hydrogen Chloride (1 unit each)
         2. Magnesium Gas from Magnesium Chloride Gas (1 unit each)
