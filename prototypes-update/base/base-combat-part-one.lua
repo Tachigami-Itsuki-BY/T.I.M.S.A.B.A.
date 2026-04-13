@@ -190,7 +190,6 @@ for _, AMMO in pairs(laser_batterys) do
     end
 end
 
-local rocket_launcher = "rocket-launcher"
 data_gun[rocket_launcher].subgroup = is_rocket
 data_gun[rocket_launcher].order = a
 data_gun[rocket_launcher].stack_size = 1

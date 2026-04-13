@@ -499,7 +499,6 @@ data_recipe[capture_robot_rocket].ingredients[2].name = cobalt_steel_plate_bob
 data_recipe[capture_robot_rocket].ingredients[3].amount = 16
 data_recipe[capture_robot_rocket].ingredients[4].name = advanced_processing_unit
 
-local rocket_turret = "rocket-turret"
 data_item[rocket_turret].subgroup = is_gleba_war
 data_item[rocket_turret].order = b
 data_recipe[rocket_turret].subgroup = is_gleba_war
