@@ -723,6 +723,23 @@ assembling_recipe(assembling_machine_4, titanium_gear_wheel, processing_unit, ti
 assembling_recipe(assembling_machine_5, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe, assembling_machine_4, copper_tungsten_plate_bob, copper_tungsten_bearing)
 assembling_recipe(assembling_machine_6, nitinol_gear_wheel, advanced_processing_unit, nitinol_pipe, assembling_machine_5, nitinol_plate_bob, nitinol_bearing)
 
+local burner_assembling_machine = "bob-burner-assembling-machine"
+if data_item[burner_assembling_machine] then
+    data_item[burner_assembling_machine].stack_size = 32
+    data_item[burner_assembling_machine].weight = 31250
+    data_recipe[burner_assembling_machine].energy_required = 1
+    data_recipe[burner_assembling_machine].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = iron_plate, amount = 8}
+    }
+    data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
+    data_assembling[burner_assembling_machine].energy_source.fuel_categories = {base_fuel}
+    bobmods.lib.recipe.update_recycling_recipe({burner_assembling_machine})
+
+    table.insert(data_recipe[assembling_machine_1].ingredients, {type = item, name = burner_assembling_machine, amount = 1})
+end
+
 data_item[lab].subgroup = is_lab
 data_item[lab].order = a
 data_item[lab].stack_size = 32
