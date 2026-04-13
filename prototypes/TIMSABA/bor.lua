@@ -64,7 +64,7 @@ data:extend
 
 -- RECIPE
 local recipe = "recipe"
-borax_recipe = "ore-chunk-mix7-processing"
+local borax_recipe = "ore-chunk-mix7-processing"
 local boric_acid_from_diborane_gas = "boric-acid-from-diborane-gas"
 local boric_acid_from_hydrochloric_acid = "boric-acid-from-hydrochloric-acid"
 data:extend
@@ -181,6 +181,7 @@ data:extend
         prerequisites = {tech_advanced_ore_refining_2},
         effects =
         {
+            {type = unlock_recipe, recipe = borax_recipe},
             {type = unlock_recipe, recipe = boric_acid},
             {type = unlock_recipe, recipe = boric_acid_from_diborane_gas},
             {type = unlock_recipe, recipe = boric_acid_from_hydrochloric_acid}

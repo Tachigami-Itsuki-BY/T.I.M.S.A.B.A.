@@ -350,6 +350,8 @@ data_recipe[carbon_fiber].ingredients[1].amount = 8
 data_item[biter_egg].subgroup = is_gleba_recipe
 data_item[biter_egg].order = a
 data_item[biter_egg].stack_size = 200
+data_item[biter_egg].fuel_category = base_fuel
+data_item[biter_egg].fuel_value = 7200 .. kJ
 data_recipe[biter_egg].subgroup = is_gleba_recipe
 data_recipe[biter_egg].order = a
 data_recipe[biter_egg].energy_required = 8
@@ -497,7 +499,6 @@ data_recipe[capture_robot_rocket].ingredients[2].name = cobalt_steel_plate_bob
 data_recipe[capture_robot_rocket].ingredients[3].amount = 16
 data_recipe[capture_robot_rocket].ingredients[4].name = advanced_processing_unit
 
-local rocket_turret = "rocket-turret"
 data_item[rocket_turret].subgroup = is_gleba_war
 data_item[rocket_turret].order = b
 data_recipe[rocket_turret].subgroup = is_gleba_war

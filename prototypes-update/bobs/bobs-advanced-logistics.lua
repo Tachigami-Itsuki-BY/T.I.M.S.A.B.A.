@@ -283,9 +283,9 @@ local tank_2 = "bob-tank-2"
 local tank_3 = "bob-tank-3"
 local tanks =
 {
-    {name = tank_1, order = a, consumption = 450, effectivity = 1.00, equipment_grid = small_equipment_grid},
-    {name = tank_2, order = b, consumption = 900, effectivity = 1.00, equipment_grid = medium_equipment_grid},
-    {name = tank_3, order = c, consumption = 900, effectivity = 1.00, equipment_grid = large_equipment_grid}
+    {name = tank_1, order = a, consumption = 450,  effectivity = 1.00, equipment_grid = small_equipment_grid},
+    {name = tank_2, order = b, consumption = 900,  effectivity = 1.00, equipment_grid = medium_equipment_grid},
+    {name = tank_3, order = c, consumption = 1350, effectivity = 1.00, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(tanks) do
     data_item_entity[TRANSPORT.name].subgroup = is_transport_tanks
@@ -298,6 +298,7 @@ for _, TRANSPORT in pairs(tanks) do
     data_car[TRANSPORT.name].subgroup = is_transport_tanks
     data_car[TRANSPORT.name].order = TRANSPORT.order
     data_car[TRANSPORT.name].consumption = TRANSPORT.consumption .. kW
+    data_car[TRANSPORT.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
     data_car[TRANSPORT.name].energy_source.effectivity = TRANSPORT.effectivity
     data_car[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
 end
@@ -725,23 +726,68 @@ if mods [maraxsis_mods] then
     data_recipe[spiderling].subgroup = is_spidertron
 end
 
+local antron = "bob-antron"
+local tankotron = "bob-tankotron"
+local logitron = "bob-logistic-spidertron"
+local spidertron = "spidertron"
+local heavy_spidertron = "bob-heavy-spidertron"
 local spidertrons =
 {
-    "bob-antron",
-    "bob-tankotron",
-    "spidertron",
-    "bob-logistic-spidertron",
-    "bob-heavy-spidertron",
+    {name = antron, order = a},
+    {name = tankotron, order = b},
+    {name = logitron, order = c},
+    {name = spidertron, order = d},
+    {name = heavy_spidertron, order = e}
 }
-for _, name in pairs(spidertrons) do
-    data_item_entity[name].subgroup = is_spidertron
-    data_item_entity[name].weight = 1000000
-
-    data_recipe[name].subgroup = is_spidertron
-    data_recipe[name].energy_required = 5
+for _, ENTITES in pairs(spidertrons) do
+    data_item_entity[ENTITES.name].subgroup = is_spidertron
+    data_item_entity[ENTITES.name].order = ENTITES.order
+    data_item_entity[ENTITES.name].weight = 1000000
+    data_recipe[ENTITES.name].subgroup = is_spidertron
+    data_recipe[ENTITES.name].order = ENTITES.order
+    data_recipe[ENTITES.name].energy_required = 4
+    data_spider_vechicle[ENTITES.name].subgroup = is_spidertron
+    data_spider_vechicle[ENTITES.name].order = ENTITES.order
 end
+data_spider_vechicle[antron].movement_energy_consumption  = 225 .. kW
+data_spider_vechicle[antron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+data_recipe[tankotron].ingredients =
+{
+    {type = item, name = spidertron_cannon, amount = 2},
+    {type = item, name = mech_armor_plate, amount = 4},
+    {type = item, name = mech_frame, amount = 1},
+    {type = item, name = mech_leg, amount = 6}
+}
+data_spider_vechicle[tankotron].movement_energy_consumption  = 225 .. kW
+data_spider_vechicle[tankotron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+data_recipe[logitron].ingredients =
+{
+    {type = item, name = steel_chest, amount = 1},
+    {type = item, name = gun_turret_1, amount = 2},
+    {type = item, name = mech_armor_plate, amount = 4},
+    {type = item, name = mech_frame, amount = 1},
+    {type = item, name = mech_leg, amount = 8}
+}
+data_spider_vechicle[logitron].movement_energy_consumption  = 225 .. kW
+data_spider_vechicle[logitron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+data_recipe[spidertron].ingredients =
+{
+    {type = item, name = rtg, amount = 2},
+    {type = item, name = rocket_turret, amount = 1},
+    {type = item, name = mech_armor_plate, amount = 8},
+    {type = item, name = mech_frame, amount = 1},
+    {type = item, name = mech_leg, amount = 8}
+}
+data_recipe[heavy_spidertron].ingredients =
+{
+    {type = item, name = rtg, amount = 4},
+    {type = item, name = rocket_launcher, amount = 8},
+    {type = item, name = mech_armor_plate, amount = 16},
+    {type = item, name = mech_frame, amount = 1},
+    {type = item, name = mech_leg, amount = 8}
+}
 
-local spidertron_cannon = "bob-spidertron-cannon"
+data_recipe[spidertron_cannon].energy_required = 8
 data_recipe[spidertron_cannon].ingredients =
 {
     {type = item, name = iron_gear_wheel, amount = 4},
@@ -754,7 +800,6 @@ data_recipe[mech_armor_plate].ingredients =
     {type = item, name = tungsten_carbide_bob, amount = 2}
 }
 
-local mech_brain = "bob-mech-brain"
 data_recipe[mech_brain].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 16},
@@ -762,14 +807,13 @@ data_recipe[mech_brain].ingredients =
     {type = item, name = module_case, amount = 1}
 }
 
-local mech_frame = "bob-mech-frame"
+data_recipe[mech_frame].energy_required = 4
 data_recipe[mech_frame].ingredients =
 {
     {type = item, name = low_density_structure, amount = 64},
     {type = item, name = mech_brain, amount = 1}
 }
 
-local mech_hip = "bob-mech-hip"
 data_recipe[mech_hip].ingredients =
 {
     {type = item, name = titanium_gear_wheel, amount = 4},
@@ -778,7 +822,6 @@ data_recipe[mech_hip].ingredients =
     {type = item, name = low_density_structure, amount = 2}
 }
 
-local mech_knee = "bob-mech-knee"
 data_recipe[mech_knee].ingredients =
 {
     {type = item, name = titanium_gear_wheel, amount = 8},
@@ -787,7 +830,6 @@ data_recipe[mech_knee].ingredients =
     {type = item, name = low_density_structure, amount = 2}
 }
 
-local mech_leg_segment = "bob-mech-leg-segment"
 data_recipe[mech_leg_segment].ingredients =
 {
     {type = item, name = nitinol_pipe, amount = 2},
@@ -800,8 +842,8 @@ local materials =
     mech_armor_plate,
     mech_brain,
     mech_frame,
-    "bob-mech-leg",
-    "bob-mech-foot",
+    mech_leg,
+    mech_foot,
     mech_hip,
     mech_knee,
     mech_leg_segment
@@ -878,6 +920,10 @@ bobmods.lib.recipe.update_recycling_recipe
     robot_tool_l_2,
     robot_tool_l_3,
     robot_tool_l_4,
+    tankotron,
+    logitron,
+    spidertron,
+    heavy_spidertron,
     spidertron_cannon,
     mech_armor_plate,
     mech_brain,
