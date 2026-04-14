@@ -1025,6 +1025,7 @@ for _, BUILD in pairs(electric_boilers) do
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 10)) .. kW
 end
+data_assembling[electric_boiler_3].max_health = 600
 local function electric_boiler_recipe(name, circuit, pipe, plate, brick, electric_boiler)
     local ingredients =
     {

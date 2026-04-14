@@ -8,8 +8,8 @@ Date: ??.??.2026
         2. Солнечные Панели Т4.
         3. Аккумулятор Высокой Ёмкости Т4.
         4. Электрический Бур Т6.
-        5. Электропечи Т6(Т4).
-        6. Реактор Т4 и Топливная ячейка Т4.
+        5. Реактор Т4 и Топливная ячейка Т4.
+        6. Электропечи Т6(Т4).
         7. Установка сортировки руды Т6.
         8. Электролизные Ванны Т3 и Т4.
         9. Печи для Спекания Т3 и Т4.
@@ -43,8 +43,8 @@ Date: ??.??.2026
         2. T4 Solar Panels.
         3. T4 High Capacity Accumulator.
         4. T6 Electric Mining Drill.
-        5. T6(T4) Electric Furnaces.
-        6. T4 Reactor and T4 Fuel Cell.
+        5. T4 Reactor and T4 Fuel Cell.
+        6. T6(T4) Electric Furnaces.
         7. T6 Ore Sorting Facility.
         8. T3 and T4 Electrowinning Cells.
         9. T3 and T4 Sintering Ovens.
@@ -95,6 +95,11 @@ Date: ??.??.2026
         2. Module slots (5) → (8)
         3. Maximum Consumption (240 kW) → (2400 kW)
 
+  Graphics:
+    - Обновлены иконки для технологий Батарейка 2 и Батарейка 3.
+
+    - Updated icon for Battery 2 and Battery 3 technologies.
+
   Locale:
     - Добавлено описание для технологий Батарейка 2 и Батарейка 3.
 
@@ -104,6 +109,68 @@ Date: ??.??.2026
     - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
 
     - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.25
+Date: 14.04.2026
+  Bugfixes:
+    - Исправлена ошибка, из-за которой нельзя было наполнить канистру или утилизировать следующие жидкости:
+        1. Раствор Нитрата Меди.
+        2. Трихлорсилан.
+        3. Раствор Гексахлорплатината Натрия.
+        4. Раствор Гексагидроксоплатината Натрия.
+        5. Охлаждающая Жидкость.
+        6. Использованная Охлаждающая Жидкость. (Только утилизация)
+        7. Тяжёлая Вода. (Только утилизация)
+
+    - Fixed a bug that prevented filling canisters or disposing of the following fluids:
+        1. Copper Nitrate Solution.
+        2. Trichlorosilane.
+        3. Sodium Hexachloroplatinate Solution.
+        4. Sodium Hexahydroxoplatinate Solution.
+        5. Coolant.
+        6. Used Coolant. (Disposal only)
+        7. Heavy Water. (Disposal only)
+
+  Balancing:
+    - В Термоядерном Реакторе увеличен максимальный выход: (100 МВт) → (172.8 МВт)
+    - В Термоядерном Генераторе увеличен максимальный выход: (50 МВт) → (86.4 МВт)
+    - В предмете Термоядерной Энергетической Ячейки увеличена ценность топлива: (50 ГДж) → (86.4 ГДж)
+    - В Рельсовой турели увеличено максимальное потребление: (25 МВт) → (43.2 МВт)
+    - В рецепте Обогащение Воды 2 (с 7.5% до 12.5%) увеличен результат: Полутяжёлая Вода 12.5% (30 ед.) → (60 ед.)
+    - В рецепте Обогащение Воды 3 (с 12.5% до 15%) увеличен результат: Полутяжёлая Вода 15% (30 ед.) → (60 ед.)
+    - В Электрокотлах Т3 и Т4 увеличено кол-во ОЗ:
+        1. (500 ед.) → (600 ед.)
+        2. (200 ед.) → (800 ед.)
+
+    - Increased maximum output of the Fusion Reactor: (100 MW) → (172.8 MW)
+    - Increased maximum output of the Fusion Generator: (50 MW) → (86.4 MW)
+    - Increased fuel value of the Fusion Power Cell item: (50 GJ) → (86.4 GJ)
+    - Increased maximum consumption of the Railgun Turret: (25 MW) → (43.2 MW)
+    - Increased a result in the Water Enrichment 2 (from 7.5% to 12.5%) recipe: Semiheavy Water 12.5% (30 units) → (60 units)
+    - Increased a result in the Water Enrichment 3 (from 12.5% to 15%) recipe: Semiheavy Water 15% (30 units) → (60 units)
+    - Increased HP for T3 and T4 Electric Boilers:
+        1. (500 units) → (600 units)
+        2. (200 units) → (800 units)
+
+  Graphics:
+    - Обновлены цвета для некоторых жидкостей.
+
+    - Updated colors for certain fluids.
+
+  Locale:
+    - Из названий рецептов Оксид Магния 2 и Хлорид Алюминия 2 убрана цифра 2.
+    - Рецепт Гидроксид Натрия и Нитратные Газы из Раствора Нитрата Натрия переименован в Нитратные Газы из Раствора Нитрата Натрия.
+    - Рецепт Хлорид Натрия (на самом деле это был Сульфат Натрия) переименован в Сульфат Натрия.
+    - Рецепт Факторианская Рыба переименован в Факторианское Рыбоводство.
+    - В название технологии Энергетические Системы на Основе Термоядерного Синтеза Дейтерия 1 убрана цифра 1.
+    - Обновлены химические формулы для некоторых жидкостей.
+
+    - Removed 2 from Magnesium Oxide 2 and Aluminium Chloride 2 recipe names.
+    - Renamed the Sodium Hydroxide and Nitric Gasses from Sodium Nitrate Solution to Nitric Gasses from Sodium Nitrate Solution recipe.
+    - Renamed the Sodium Chloride (which was actually Sodium Sulfate) to Sodium Sulfate recipe.
+    - Renamed the Factorian Fish to Factorian Fish Breeding recipe.
+    - Removed 1 from Deuterium Fusion-Based Power Systems 1 technology name.
+    - Updated chemical formulas for several fluids.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.24
 Date: 13.04.2026
@@ -224,9 +291,9 @@ Date: 12.04.2026
     - Обновлена иконка для Сжиженого Трифторида Азота.
     - Изменена иконка для рецепта Разделение Хлористого Водорода.
 
-    - Changed the icon for the Boric Acid from Hydrochloric Acid recipe.
-    - Updated the icon for Nitrogen Trifluoride Liquefied.
-    - Changed the icon for the Separation of Hydrogen Chloride recipe.
+    - Changed icon for Boric Acid from Hydrochloric Acid recipe.
+    - Updated icon for Nitrogen Trifluoride Liquefied.
+    - Changed icon for Separation of Hydrogen Chloride recipe.
 
   Locale:
     - Добавлено описание для Дробилки Руды Т4.
@@ -320,7 +387,7 @@ Date: 11.04.2026
     - В рецепте Оксида Сурьмы исправлено отображение иконки.
 
     - Updated all Recycling recipe icons.
-    - Fixed the icon display in the Antimony Oxide recipe.
+    - Fixed icon display in the Antimony Oxide recipe.
 
   Locale:
     - Рецепт Смешанный Оксид Урана и Плутония переименован в Смешанная Уран-Плутониевая Топливная Ячейка.
@@ -529,7 +596,7 @@ Date: 05.04.2026
     - Fixed an issue where Reactor changes from version 0.0.9 were not applied.
 
   Balancing:
-    - У Насосной Установки Т1 уменьшено кол-во очков здоровья: (200 ед.) → (100 ед.)
+    - У Насосной Установки Т1 уменьшено кол-во ОЗ: (200 ед.) → (100 ед.)
 
     - Reduced HP for T1 Pumpjacks: (200 units) → (100 units)
 
@@ -617,8 +684,8 @@ Date: 04.04.2026
     - Изменена иконка рецепта получения Магниевого Газа из Газообразного Хлорида Магния.
     - Изменена иконка рецепта Пероксидисерной Кислоты.
 
-    - Changed the icon for the Magnesium Gas from Magnesium Chloride Gas recipe.
-    - Changed the icon for the Peroxydisulfuric Acid recipe.
+    - Changed icon for Magnesium Gas from Magnesium Chloride Gas recipe.
+    - Changed icon for Peroxydisulfuric Acid recipe.
 
   Locale:
     - Исправлена опечатка в слове «Тетрафторид» в рецепте Диоксида Кремния.
@@ -818,7 +885,7 @@ Date: 02.04.2026
     - Fixed Ore Crusher 4 icon to match the Reskin Angels style.
 
   Locale:
-    - Исправлено описание для 4-х рецептов из ветки «Медный».
+    - Исправлено описание для 4 рецептов из ветки «Медный».
 
     - Fixed descriptions for 4 recipes in the "Cupric" branch.
 

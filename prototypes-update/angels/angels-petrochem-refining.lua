@@ -397,7 +397,6 @@ data_recipe[nitrogen_dioxide_angels].results[1].amount = 60
 data_fluid[urea_solution_angels].localised_name = {"fluid-name.urea-solution"}
 data_fluid[urea_solution_angels].localised_description = show_formula and {chemical_formula, "(NH[font=default-tiny-bold]2[/font])[font=default-tiny-bold]2[/font]CO[font=default-tiny-bold](aq)[/font]"} or nil
 data_fluid[urea_solution_angels].order = e
-data_recipe[urea_solution_angels].localised_name = {"recipe-name.urea-solution"}
 data_recipe[urea_solution_angels].icons = THREE_I(ammonia_angels, carbon_dioxide_angels, urea_solution_angels)
 data_recipe[urea_solution_angels].order = e
 -- 2NH₃ + CO₂ --> N₂H₄CO(aq)
@@ -433,7 +432,6 @@ data_recipe[sodium_nitrate_acid_processing].results =
 data_fluid[melamine_solution_angels].localised_name = {"fluid-name.melamine-solution"}
 data_fluid[melamine_solution_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]6[/font]N[font=default-tiny-bold]6(aq)[/font]"} or nil
 data_fluid[melamine_solution_angels].order = g
-data_recipe[melamine_solution_angels].localised_name = {"recipe-name.melamine-solution"}
 data_recipe[melamine_solution_angels].category = angels_advanced_chemistry
 data_recipe[melamine_solution_angels].icons = FOUR_R_I(urea_solution_angels, ammonia_solution, melamine_solution_angels, carbon_dioxide_angels)
 data_recipe[melamine_solution_angels].order = g
@@ -474,7 +472,6 @@ data_recipe[monochloramine_angels].main_product = monochloramine_angels
 data_fluid[hydrazine_angels].localised_name = {"fluid-name.hydrazine-liquid"}
 data_fluid[hydrazine_angels].order = j
 data_fluid[hydrazine_angels].fuel_value = 150 .. kJ
-data_recipe[hydrazine_angels].localised_name = {"recipe-name.hydrazine-liquid"}
 data_recipe[hydrazine_angels].icons = TWO_D_I(monochloramine_angels, ammonia_angels, hydrazine_angels, hydrogen_chloride_angels)
 data_recipe[hydrazine_angels].order = j
 -- NH₂Cl + NH₃ --> N₂H₄ + HCl
@@ -511,7 +508,6 @@ data_recipe[dimethylamine_angels].results[2].amount = 30 -- 60
 
 data_fluid[dimethylhydrazine_angels].localised_name = {"fluid-name.dimethylhydrazine-liquid"}
 data_fluid[dimethylhydrazine_angels].order = n
-data_recipe[dimethylhydrazine_angels].localised_name = {"recipe-name.dimethylhydrazine-liquid"}
 data_recipe[dimethylhydrazine_angels].icons = TWO_D_I(dimethylamine_angels, monochloramine_angels, dimethylhydrazine_angels, hydrogen_chloride_angels)
 data_recipe[dimethylhydrazine_angels].order = n
 -- C₂H₇N + NH₂Cl --> C₂H₈N₂ + HCl
@@ -524,7 +520,6 @@ data_recipe[dimethylhydrazine_angels].results[2].amount = 30 -- 60
 data_fluid[ammonium_chloride_solution_angels].localised_name = {"fluid-name.ammonium-chloride-solution"}
 data_fluid[ammonium_chloride_solution_angels].localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]Cl[font=default-tiny-bold](aq)[/font]"} or nil
 data_fluid[ammonium_chloride_solution_angels].order = o
-data_recipe[ammonium_chloride_solution_angels].localised_name = {"recipe-name.ammonium-chloride-solution"}
 data_recipe[ammonium_chloride_solution_angels].icons = THREE_I(ammonia_angels, hydrochloric_acid_angels, ammonium_chloride_solution_angels)
 data_recipe[ammonium_chloride_solution_angels].order = o
 -- NH₃ + HCl(aq) --> NH₄Cl(aq)
@@ -584,7 +579,7 @@ data_recipe[hydrogen_fluoride_dissolving].main_product = hydrogen_fluoride_angel
 -- SODIUM
 data_item_subgroup[is_sodium].order = e
 
-data_item[sodium_angels].localised_name = show_formula and {chemical_formula, "Na"} or nil
+data_item[sodium_angels].localised_description = show_formula and {chemical_formula, "Na"} or nil
 data_item[sodium_angels].order = a
 data_recipe[sodium_angels].icons = FOUR_R_I(sodium_hydroxide_solution_angels, hydrogen_angels, sodium_angels, oxygen_angels)
 data_recipe[sodium_angels].order = a
@@ -678,7 +673,7 @@ data_recipe[sodium_hydroxide_solution_reverse].results[1].amount = 4
 data_recipe[sodium_hydroxide_solution_reverse].results[2].name = steam
 data_recipe[sodium_hydroxide_solution_reverse].results[2].amount = 60
 
-data_recipe[sodium_nitrate_processing].localised_name = {"recipe-name.sodium-hydroxide-and-nitric-gasses-from-sodium-nitrate-solution"}
+data_recipe[sodium_nitrate_processing].localised_name = {"recipe-name.nitric-gasses-from-sodium-nitrate-solution"}
 data_recipe[sodium_nitrate_processing].category = angels_advanced_chemistry
 data_recipe[sodium_nitrate_processing].subgroup = is_sodium
 data_recipe[sodium_nitrate_processing].icons = FOUR_R_I(sodium_nitrate_solution, nitrogen_monoxide_angels, sodium_hydroxide_angels, nitrogen_dioxide_angels)
@@ -870,7 +865,7 @@ data_recipe[acid_gas_catalyst].results =
 
 data_fluid[hydrogen_sulfide_angels].order = b
 
-data_fluid[enriched_hydrogen_sulfide_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]S"} or nil
+data_fluid[enriched_hydrogen_sulfide_angels].localised_description = show_formula and {chemical_formula, "Enriched H[font=default-tiny-bold]2[/font]S"} or nil
 data_fluid[enriched_hydrogen_sulfide_angels].order = c
 data_recipe[enriched_hydrogen_sulfide_angels].icons = TWO_D_I(hydrogen_sulfide_angels, steam, enriched_hydrogen_sulfide_angels, water_purified_angels)
 data_recipe[enriched_hydrogen_sulfide_angels].order = c
@@ -953,7 +948,6 @@ data_recipe[hydrochloric_acid_from_sodium_chloride].main_product = hydrochloric_
 data_fluid[allyl_chloride_angels].localised_name = {"fluid-name.allyl-chlorid-liquid"}
 data_fluid[allyl_chloride_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]5[/font]Cl"} or nil
 data_fluid[allyl_chloride_angels].order = c
-data_recipe[allyl_chloride_angels].localised_name = {"recipe-name.allyl-chlorid-liquid"}
 data_recipe[allyl_chloride_angels].icons = TWO_D_I(propene_angels, chlorine_angels, allyl_chloride_angels, hydrogen_chloride_angels)
 data_recipe[allyl_chloride_angels].order = c
 -- C₃H₆ + Cl₂ --> C₃H₅Cl + HCl
@@ -965,7 +959,6 @@ data_recipe[allyl_chloride_angels].results[2].amount = 60
 data_fluid[epichlorohydrin_angels].localised_name = {"fluid-name.epichlorohydrin-liquid"}
 data_fluid[epichlorohydrin_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]5[/font]ClO"} or nil
 data_fluid[epichlorohydrin_angels].order = d
-data_recipe[epichlorohydrin_angels].localised_name = {"recipe-name.epichlorohydrin-liquid"}
 data_recipe[epichlorohydrin_angels].category = angels_advanced_chemistry
 data_recipe[epichlorohydrin_angels].icons = THREE_D_I(allyl_chloride_angels, sodium_hydroxide_solution_angels, chlorine_angels, epichlorohydrin_angels, sodium_chlorate_solution, water_purified_angels)
 data_recipe[epichlorohydrin_angels].order = d
@@ -1546,7 +1539,6 @@ data_fluid[methanol_angels].localised_name = {"fluid-name.methanol-liquid"}
 data_fluid[methanol_angels].localised_description = show_formula and {chemical_formula, "CH[font=default-tiny-bold]3[/font]OH"} or nil
 data_fluid[methanol_angels].subgroup = is_methane
 data_fluid[methanol_angels].order = b
-data_recipe[methanol_angels].localised_name = {"recipe-name.methanol-liquid"}
 data_recipe[methanol_angels].subgroup = is_methane
 data_recipe[methanol_angels].icons = THREE_I(carbon_dioxide_angels, hydrogen_angels, methanol_angels)
 data_recipe[methanol_angels].order = b
@@ -1643,7 +1635,6 @@ data_fluid[butane_angels].order = a
 data_fluid[benzene_angels].localised_name = {"fluid-name.benzene-liquid"}
 data_fluid[benzene_angels].subgroup = is_butane
 data_fluid[benzene_angels].order = c
-data_recipe[benzene_angels].localised_name = {"recipe-name.benzene-liquid"}
 data_recipe[benzene_angels].subgroup = is_butane
 data_recipe[benzene_angels].icons = THREE_R_I(methane_angels, benzene_angels, ethane_angels)
 data_recipe[benzene_angels].order = c

@@ -120,13 +120,13 @@ data_fluid[seedling_crystal].flow_color = {r = 117 / 255, g = 154 / 255, b = 027
 -- ANGELS METALLURGY SMELTING
 data_fluid[hexafluorosilicic_acid].icons = nil
 data_fluid[hexafluorosilicic_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-hexafluorosilicic-acid.png"
-data_fluid[hexafluorosilicic_acid].base_color = TIMSABA.functions.fluid_color("H2SiF6")
-data_fluid[hexafluorosilicic_acid].flow_color = TIMSABA.functions.flow_color("H2SiF6")
+data_fluid[hexafluorosilicic_acid].base_color = TIMSABA.functions.fluid_color("H2SiF6Wp")
+data_fluid[hexafluorosilicic_acid].flow_color = TIMSABA.functions.flow_color("H2SiF6Wp")
 
 data_fluid[trichlorosilane].icons = nil
 data_fluid[trichlorosilane].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-trichlorosilane.png"
-data_fluid[trichlorosilane].base_color = TIMSABA.functions.fluid_color("SiCl3H")
-data_fluid[trichlorosilane].flow_color = TIMSABA.functions.flow_color("SiCl3H")
+data_fluid[trichlorosilane].base_color = TIMSABA.functions.fluid_color("HSiCl3")
+data_fluid[trichlorosilane].flow_color = TIMSABA.functions.flow_color("HSiCl3")
 
 data_fluid[silane_gas].icons = nil
 data_fluid[silane_gas].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-gas-silane.png"
