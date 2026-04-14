@@ -220,17 +220,17 @@ data_recipe[fusion_generator].ingredients =
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
 data_generator_fusion[fusion_generator].max_fluid_usage = 15/60
-data_generator_fusion[fusion_generator].energy_source.output_flow_limit = 50000 .. kW
+data_generator_fusion[fusion_generator].energy_source.output_flow_limit = 86400 .. kW
 
 local fusion_plasma = "fusion-plasma"
 data_fluid[fusion_plasma].subgroup = is_aquilo_power
 data_fluid[fusion_plasma].order = c
-data_fluid[fusion_plasma].heat_capacity = (25 / 7500) .. kJ
+data_fluid[fusion_plasma].heat_capacity = ((25 / 7500) * 1.728) .. kJ
 
 local fusion_power_cell = "fusion-power-cell"
 data_item[fusion_power_cell].subgroup = is_aquilo_power
 data_item[fusion_power_cell].order = d
-data_item[fusion_power_cell].fuel_value = 50000000 .. kJ
+data_item[fusion_power_cell].fuel_value = 86400000 .. kJ
 data_recipe[fusion_power_cell].subgroup = is_aquilo_power
 data_recipe[fusion_power_cell].order = d
 data_recipe[fusion_power_cell].energy_required = 8
@@ -277,9 +277,9 @@ data_ammo_turret[railgun_turret].order = b
 data_ammo_turret[railgun_turret].attack_parameters.min_range = 8
 data_ammo_turret[railgun_turret].attack_parameters.range = 64
 data_ammo_turret[railgun_turret].attack_parameters.cooldown = 240
-data_ammo_turret[railgun_turret].energy_source.buffer_capacity = 25000 .. kJ
-data_ammo_turret[railgun_turret].energy_source.input_flow_limit = 25000 .. kW
-data_ammo_turret[railgun_turret].energy_per_shot = 25000 .. kJ
+data_ammo_turret[railgun_turret].energy_source.buffer_capacity = 43200 .. kJ
+data_ammo_turret[railgun_turret].energy_source.input_flow_limit = 43200 .. kW
+data_ammo_turret[railgun_turret].energy_per_shot = 43200 .. kJ
 
 local railgun_ammo = "railgun-ammo"
 data_ammo[railgun_ammo].subgroup = is_aquilo_war

@@ -239,8 +239,8 @@ data:extend
         order = a,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color("SnCl4Wp"),
-        flow_color = TIMSABA.functions.flow_color("SnCl4Wp"),
+        base_color = TIMSABA.functions.fluid_color("SnCl4"),
+        flow_color = TIMSABA.functions.flow_color("SnCl4"),
         max_temperature = 0,
         auto_barrel = false
     },

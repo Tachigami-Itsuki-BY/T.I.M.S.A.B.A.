@@ -23,6 +23,7 @@ data:extend
     },
     -- ANGELS BIOPROCESSING ANIMALIS
     {
+        localised_name = {"recipe-name.raw-fish"},
         type = recipe,
         name = factorian_fish,
         category = "angels-bio-refugium-fish",

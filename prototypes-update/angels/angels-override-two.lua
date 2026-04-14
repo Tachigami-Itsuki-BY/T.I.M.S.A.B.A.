@@ -236,7 +236,6 @@ data_item[canister].localised_name = {"item-name.canister"}
 data_item[canister].subgroup = is_barreling
 data_item[canister].order = c
 data_item[canister].stack_size = 200
-data_recipe[canister].localised_name = {"recipe-name.canister"}
 data_recipe[canister].subgroup = is_barreling
 data_recipe[canister].order = c
 data_recipe[canister].ingredients =
@@ -250,7 +249,6 @@ data_item[gas_bottle].localised_name = {"item-name.gas-bottle"}
 data_item[gas_bottle].subgroup = is_barreling
 data_item[gas_bottle].order = d
 data_item[gas_bottle].stack_size = 200
-data_recipe[gas_bottle].localised_name = {"recipe-name.gas-bottle"}
 data_recipe[gas_bottle].subgroup = is_barreling
 data_recipe[gas_bottle].order = d
 data_recipe[gas_bottle].ingredients = {{type = item, name = steel_plate, amount = 2}}

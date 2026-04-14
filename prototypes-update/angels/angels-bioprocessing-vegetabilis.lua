@@ -647,7 +647,6 @@ data_recipe[acetic_anhydride].main_product = acetic_anhydride
 data_fluid[ethanol_angels].localised_name = {"fluid-name.ethanol-liquid"}
 data_fluid[ethanol_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]5[/font]OH"} or nil
 data_fluid[ethanol_angels].order = d
-data_recipe[ethanol_angels].localised_name = {"recipe-name.ethanol-liquid"}
 data_recipe[ethanol_angels].icons = TWO_D_I(fermentation_fluid, nil, ethanol_angels, compost_angels)
 data_recipe[ethanol_angels].order = d
 data_recipe[ethanol_angels].ingredients[1].amount = 120

@@ -678,7 +678,6 @@ data_item[nickel_sulfate].localised_name = {"item-name.nickel-sulfate"}
 data_item[nickel_sulfate].localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4[/font]"} or nil
 data_item[nickel_sulfate].subgroup = is_nickel_chemistry
 data_item[nickel_sulfate].order = a
-data_recipe[nickel_sulfate].localised_name = {"recipe-name.nickel-sulfate"}
 data_recipe[nickel_sulfate].category = angels_chemical_smelting_2
 data_recipe[nickel_sulfate].subgroup = is_nickel_chemistry
 data_recipe[nickel_sulfate].icons = TWO_D_I(nickel_processed, sulfuric_acid_angels, nickel_sulfate, hydrogen_angels)
@@ -1540,7 +1539,6 @@ data_item[chrome_oxide].localised_name = {"item-name.chrome-oxide-III"}
 data_item[chrome_oxide].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
 data_item[chrome_oxide].subgroup = is_chrome_chemistry
 data_item[chrome_oxide].order = e
-data_recipe[chrome_oxide].localised_name = {"recipe-name.chrome-oxide-III"}
 data_recipe[chrome_oxide].category = angels_blast_smelting_4
 data_recipe[chrome_oxide].subgroup = is_chrome_chemistry
 data_recipe[chrome_oxide].icons = THREE_I(chrome_pellet, oxygen_angels, chrome_oxide)
@@ -1558,7 +1556,6 @@ data_item[chrome_sulfate_III].localised_name = {"item-name.chrome-sulfate-III"}
 data_item[chrome_sulfate_III].localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil
 data_item[chrome_sulfate_III].subgroup = is_chrome_chemistry
 data_item[chrome_sulfate_III].order = h
-data_recipe[chrome_sulfate_III].localised_name = {"recipe-name.chrome-sulfate-III"}
 data_recipe[chrome_sulfate_III].category = angels_advanced_chemistry
 data_recipe[chrome_sulfate_III].subgroup = is_chrome_chemistry
 data_recipe[chrome_sulfate_III].icons = FOUR_THREE_R_I(potassium_dichromate_solution, ethanol_angels, sulfuric_acid_angels, chrome_sulfate_III, acetaldehyde, water_purified_angels, potassium_sulfate_solution)
@@ -1583,7 +1580,6 @@ data_item[chrome_hydroxide].localised_name = {"item-name.chrome-hydroxide"}
 data_item[chrome_hydroxide].localised_description = show_formula and {chemical_formula, "Cr(OH)[font=default-tiny-bold]3[/font]"} or nil
 data_item[chrome_hydroxide].subgroup = is_chrome_chemistry
 data_item[chrome_hydroxide].order = i
-data_recipe[chrome_hydroxide].localised_name = {"recipe-name.chrome-hydroxide"}
 data_recipe[chrome_hydroxide].category = angels_chemical_smelting_4
 data_recipe[chrome_hydroxide].subgroup = is_chrome_chemistry
 data_recipe[chrome_hydroxide].icons = THREE_D_I(chrome_sulfate_III, nil, potassium_hydroxide_solution, chrome_hydroxide, potassium_sulfate_solution, water_purified_angels)
@@ -1748,7 +1744,6 @@ data_fluid[ammonium_tungstate_solution].localised_name = {"fluid-name.ammonium-t
 data_fluid[ammonium_tungstate_solution].localised_description = show_formula and {chemical_formula, "(NH[font=default-tiny-bold]4[/font])[font=default-tiny-bold]2[/font]WO[font=default-tiny-bold]4(aq)[/font]"} or nil
 data_fluid[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_fluid[ammonium_tungstate_solution].order = f
-data_recipe[ammonium_tungstate_solution].localised_name = {"recipe-name.ammonium-tungstate-solution"}
 data_recipe[ammonium_tungstate_solution].category =  angels_chemical_smelting_4
 data_recipe[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_tungstate_solution].icons = THREE_D_I(tungstic_acid, ammonia_angels, water_purified_angels, ammonium_tungstate_solution)
@@ -1779,7 +1774,7 @@ data_item[platinum_ingot].localised_description = show_formula and {chemical_for
 data_item[platinum_ingot].order = d
 
 -- PLATINUM CHEMISTRY
-data_fluid[hexachloroplatinic_acid].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6[/font]"} or nil
+data_fluid[hexachloroplatinic_acid].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6(aq)[/font]"} or nil
 data_fluid[hexachloroplatinic_acid].subgroup = is_platinum_chemistry
 data_fluid[hexachloroplatinic_acid].order = c
 

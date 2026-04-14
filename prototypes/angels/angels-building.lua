@@ -820,7 +820,8 @@ data:extend
                 emissions_per_minute = {pollution = 0},
                 drain = 60 .. kW
             },
-            energy_usage = 4740 .. kW
+            energy_usage = 4740 .. kW,
+            max_health = 800
         }
     })
 })

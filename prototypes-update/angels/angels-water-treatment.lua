@@ -330,7 +330,7 @@ data_recipe[water_semiheavy_2].energy_required = 4 -- HDO + HDS --> 12.5%HDO + H
 data_recipe[water_semiheavy_2].ingredients[2].amount = 60
 data_recipe[water_semiheavy_2].ingredients[3].amount = 120
 data_recipe[water_semiheavy_2].results[1].amount = 60 -- 120
-data_recipe[water_semiheavy_2].results[2].amount = 30
+data_recipe[water_semiheavy_2].results[2].amount = 60
 data_recipe[water_semiheavy_2].results[3].amount = 30 -- 60
 
 local water_enriched_cooling_2 = "angels-water-enriched-cooling-2"
@@ -349,7 +349,7 @@ data_recipe[water_semiheavy_3].energy_required = 4 -- HDO + HDS --> 15%HDO + Hâ‚
 data_recipe[water_semiheavy_3].ingredients[2].amount = 60
 data_recipe[water_semiheavy_3].ingredients[3].amount = 120
 data_recipe[water_semiheavy_3].results[1].amount = 60 -- 120
-data_recipe[water_semiheavy_3].results[2].amount = 30
+data_recipe[water_semiheavy_3].results[2].amount = 60
 data_recipe[water_semiheavy_3].results[3].amount = 30 -- 60
 
 local water_enriched_cooling_3 = "angels-water-enriched-cooling-3"
