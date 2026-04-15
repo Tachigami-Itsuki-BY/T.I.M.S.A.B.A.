@@ -1,7 +1,33 @@
 local kJ = "kJ"
 -- ANGELS PETROCHEM REFINING
+-- BASIC PETROCHEN FLUIDS
+tritium_gas = "tritium-gas"
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, "T[font=default-tiny-bold]2[/font]"} or nil,
+        type = fluid,
+        name = tritium_gas,
+        subgroup = "angels-petrochem-basic-fluids",
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/tritium-gas.png",
+        order = d,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("TTT"),
+        flow_color = TIMSABA.functions.flow_color("TTT"),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 -- COAL
 coke_processed = "coke-processed"
+coal_tar_liquid = "coal-tar-liquid"
+pitch = "pitch"
+raw_graphite_block = "raw-graphite-block"
+graphite = "graphite"
+graphene_oxide = "graphene-oxide"
+graphene = "graphene"
 data:extend
 ({
     {
@@ -15,7 +41,72 @@ data:extend
         weight = 5000,
         fuel_category = base_fuel,
         fuel_value = 7200 .. kJ
-    }
+    },
+    --[[{
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = pitch,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/pitch.png",
+        order = g,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = raw_graphite_block,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/raw-graphite-block.png",
+        order = h,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = graphite,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphite.png",
+        order = i,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]a[/font]H[font=default-tiny-bold]b[/font]O[font=default-tiny-bold]c[/font]"} or nil,
+        type = item,
+        name = graphene_oxide,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphene-oxide.png",
+        order = j,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = graphene,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphene.png",
+        order = k,
+        stack_size = 200,
+        weight = 5000
+    },
+    -- FLUID
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]10[/font]H[font=default-tiny-bold]8[/font]"} or nil,
+        type = fluid,
+        name = coal_tar_liquid,
+        subgroup = is_carbon_fluids_1,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/coal-tar-liquid.png",
+        order = d,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("CCC"),
+        flow_color = TIMSABA.functions.flow_color("CCC"),
+        max_temperature = 0,
+        auto_barrel = false
+    }]]
 })
 
 -- CARBON FLUIDS 1
@@ -169,16 +260,31 @@ data:extend
 })
 
 -- FLUORINE
+hydrogen_fluoride_liquefied = "hydrogen-fluoride-liquefied"
 oxygen_fluoride_gas = "oxygen-fluoride-gas"
 data:extend
 ({
+    --[[{
+        localised_description = show_formula and {chemical_formula, "HF"} or nil,
+        type = fluid,
+        name = hydrogen_fluoride_liquefied,
+        subgroup = is_fluorine_fluids,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/hydrogen-fluoride-liquefied.png",
+        order = c,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("HF"),
+        flow_color = TIMSABA.functions.flow_color("HF"),
+        max_temperature = 0,
+        auto_barrel = false
+    },]]
     {
         localised_description = show_formula and {chemical_formula, "OF[font=default-tiny-bold]2[/font]"} or nil,
         type = fluid,
         name = oxygen_fluoride_gas,
         subgroup = is_fluorine_fluids,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/oxygen-fluoride-gas.png",
-        order = c,
+        order = d,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("OF2"),

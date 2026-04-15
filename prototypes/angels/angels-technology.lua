@@ -21,8 +21,9 @@ data:extend
             {type = unlock_recipe, recipe = ore_floatation_cell_4},
             {type = unlock_recipe, recipe = ore_leaching_plant_4},
             {type = unlock_recipe, recipe = ore_refinery_3},
+            --{type = unlock_recipe, recipe = ore_sorting_facility_6},
             {type = unlock_recipe, recipe = powderizer_4},
-            --{type = unlock_recipe, recipe = electro_whinning_cell_3}
+            --{type = unlock_recipe, recipe = electro_whinning_cell_3},
             {type = unlock_recipe, recipe = filtration_unit_4},
             {type = unlock_recipe, recipe = crystallizer_4},
         },
@@ -173,5 +174,38 @@ data:extend
             },
             time = 15
         }
-    }
+    },
+    --[[{
+        type = technology,
+        name = tech_coal_processing_4,
+        icons = TIMSABA.functions.create_gas_tech_icon("CcCcCc"),
+        prerequisites =
+        {
+            potassium_processing,
+            tech_coal_processing_3,
+            tech_nitrogen_processing_4
+        },
+        effects =
+        {
+            {type = unlock_recipe, recipe = coal_tar_liquid},
+            {type = unlock_recipe, recipe = pitch},
+            {type = unlock_recipe, recipe = raw_graphite},
+            {type = unlock_recipe, recipe = graphite},
+            {type = unlock_recipe, recipe = graphene_oxide},
+            {type = unlock_recipe, recipe = graphene}
+        },
+        unit =
+        {
+            count = 100,
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1}
+            },
+            time = 15
+        }
+    }]]
 })

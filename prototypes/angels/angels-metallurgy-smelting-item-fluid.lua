@@ -846,6 +846,9 @@ lithium_perchlorate_solution = "lithium-perchlorate-solution"
 lithium_hydride = "lithium-hydride"
 lithium_hydroxide = "lithium-hydroxide"
 lithium_oxide = "lithium-oxide"
+lithium_fluoride = "lithium-fluoride"
+lithium_hexafluorophosphate = "lithium-hexafluorophosphate"
+lithium_hexafluorophosphate_solution_carbonate = "lithium-hexafluorophosphate-solution-carbonate"
 data:extend
 ({
     {
@@ -881,6 +884,26 @@ data:extend
         stack_size = 200,
         weight = 5000
     },
+    --[[{
+        localised_description = show_formula and {chemical_formula, "LiF"} or nil,
+        type = item,
+        name = lithium_fluoride,
+        subgroup = is_alloys,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lithium/lithium-fluoride.png",
+        order = j,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6[/font]"} or nil,
+        type = item,
+        name = lithium_hexafluorophosphate,
+        subgroup = is_alloys,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lithium/lithium-hexafluorophosphate.png",
+        order = k,
+        stack_size = 200,
+        weight = 5000
+    },]]
     -- FLUID
     {
         localised_description = show_formula and {chemical_formula, "LiCl[font=default-tiny-bold](aq)[/font]"} or nil,
@@ -921,6 +944,20 @@ data:extend
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("LiOHWp"),
         flow_color = TIMSABA.functions.flow_color("LiOHWp"),
+        max_temperature = 0,
+        auto_barrel = false
+    },]]
+    --[[{
+        localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6(carbonate)[/font]"} or nil,
+        type = fluid,
+        name = lithium_hexafluorophosphate_solution_carbonate,
+        subgroup = is_alloys,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lithium/lithium-hexafluorophosphate-solution-carbonate.png",
+        order = l,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("LiPF6Ec"),
+        flow_color = TIMSABA.functions.flow_color("LiPF6Ec"),
         max_temperature = 0,
         auto_barrel = false
     }]]

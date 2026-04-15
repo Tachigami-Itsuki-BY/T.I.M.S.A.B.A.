@@ -21,7 +21,7 @@ Date: ??.??.2026
         5. Перманганат Калия.
         6. Фторид Лития.
         7. Гексафторфосфат Лития.
-        8. Сырой Графит.
+        8. Сырой Графитовый Блок.
         9. Графит.
         10. Оксид Графена.
         11. Графен.
@@ -56,7 +56,7 @@ Date: ??.??.2026
         5. Potassium Permanganate.
         6. Lithium Fluoride.
         7. Lithium Hexafluorophosphate.
-        8. Raw Graphite.
+        8. Raw Graphite Block.
         9. Graphite.
         10. Graphene Oxide.
         11. Graphene.
@@ -109,6 +109,37 @@ Date: ??.??.2026
     - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
 
     - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.26
+Date: 15.04.2026
+  Features:
+    - Добавлен Гидроксид Калия.
+    - Добавлен рецепт Раствор Гидроксида Калия.
+
+    - Added Potassium Hydroxide.
+    - Added Potassium Hydroxide Solution recipe.
+
+  Balancing:
+    - В рецепте Гидроксида Калия скорректированы ингредиент и результаты:
+        1. Удалена Очищенная Вода.
+        2. Раствор Гидроксида Калия (240 ед.) → Гидроксид Калия (16 ед.)
+        3. Добавлен Водород (60 ед.)
+
+    - Adjusted an ingredient and the results in the Potassium Hydroxide recipe:
+        1. Removed Purified Water.
+        2. Potassium Hydroxide Solution (240 units) → Potassium Hydroxide (16 units)
+        3. Added Hydrogen Gas (60 units)
+
+  Graphics:
+    - Обновлена иконка в рецепте Гидроксида Калия.
+
+    - Updated icon for Potassium Hydroxide recipe.
+
+  Locale:
+    - Рецепт Раствор Гидроксида Калия переименован в Гидроксид Калия.
+
+    - Renamed the Potassium Hydroxide Solution to Potassium Hydroxide.
+
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.25
 Date: 14.04.2026
@@ -354,11 +385,11 @@ Date: 12.04.2026
     - Moved the ingredient quantities from the Basic Circuit Board recipe to the Tree Seed Generator recipes.
 
   Locale:
-    - Предмет Пустая Канистра переименована в Канистра.
-    - Предмет Пустой Газовый Баллон переименован в Газовый Баллон.
+    - Пустая Канистра переименована в Канистра.
+    - Пустой Газовый Баллон переименован в Газовый Баллон.
 
-    - Renamed the Empty Canister to Canister item.
-    - Renamed the Empty Gas Bottle to Gas Bottle item.
+    - Renamed the Empty Canister to Canister.
+    - Renamed the Empty Gas Bottle to Gas Bottle.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.21
 Date: 11.04.2026

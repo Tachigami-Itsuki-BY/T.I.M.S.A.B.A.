@@ -19,7 +19,144 @@ data:extend
         ingredients = {{type = item, name = coke_angels, amount = 1}},
         results = {{type = item, name = coke_processed, amount = 1}},
         main_product = coke_processed
-    }
+    },
+    --[[{
+        type = recipe,
+        name = coal_tar_liquid,
+        category = chemistry,
+        subgroup = is_carbon_fluids_1,
+        icons = THREE_R_I(coal_crushed_angels, coal_tar_liquid, coke_angels),
+        order = d,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- coal crushed --> coal tar liquid + coke
+        ingredients = {{type = item, name = coal_crushed_angels, amount = 4}},
+        results =
+        {
+            {type = fluid, name = coal_tar_liquid, amount = 30},
+            {type = item, name = coke_angels, amount = 2}
+        },
+        main_product = coal_tar_liquid
+    },
+    {
+        type = recipe,
+        name = pitch,
+        category = chemistry,
+        subgroup = is_coal,
+        icons = TWO_D_I(coal_tar_liquid, steam, pitch, naphtha_angels),
+        order = g,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- coal tar liquid + steam --> pitch + naphtha
+        ingredients =
+        {
+            {type = fluid, name = coal_tar_liquid, amount = 120},
+            {type = fluid, name = steam, amount = 60}
+        },
+        results =
+        {
+            {type = item, name = pitch, amount = 8},
+            {type = fluid, name = naphtha_angels, amount = 60}
+        },
+        main_product = pitch
+    },
+    {
+        type = recipe,
+        name = raw_graphite,
+        category = angels_advanced_chemistry,
+        subgroup = is_coal,
+        icons = THREE_I(coke_pellet_angels, pitch, raw_graphite),
+        order = h,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- coke pellet + pitch --> raw graphite block
+        ingredients =
+        {
+            {type = item, name = coke_pellet_angels, amount = 8},
+            {type = item, name = pitch, amount = 8}
+        },
+        results = {{type = item, name = raw_graphite_block, amount = 1}},
+        main_product = raw_graphite_block
+    },
+    {
+        type = recipe,
+        name = graphite,
+        category = smelting,
+        subgroup = is_coal,
+        icons = TWO_I(raw_graphite, graphite),
+        order = i,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- raw graphite block --> graphite
+        ingredients = {{type = item, name = raw_graphite_block, amount = 1}},
+        results = {{type = item, name = graphite, amount = 4}},
+        main_product = graphite
+    },
+    {
+        type = recipe,
+        name = graphene_oxide,
+        category = angels_advanced_chemistry,
+        subgroup = is_coal,
+        icons = THREE_D_I(graphite, potassium_permanganate, sulfuric_acid, graphene_oxide, manganese_sulfate, potassium_sulfate_solution),
+        order = j,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- graphite + 2KMnO₄ + 3H₂SO₄ --> graphene oxide + 2MnSO₄ + K₂SO₄(aq)
+        ingredients =
+        {
+            {type = item, name = graphite, amount = 8},
+            {type = item, name = potassium_permanganate, amount = 8},
+            {type = fluid, name = sulfuric_acid, amount = 180}
+        },
+        results =
+        {
+            {type = item, name = graphene_oxide, amount = 8},
+            {type = item, name = manganese_sulfate, amount = 4}, -- 8
+            {type = fluid, name = potassium_sulfate_solution, amount = 30} -- 60
+        },
+        main_product = graphene_oxide
+    },
+    {
+        type = recipe,
+        name = graphene,
+        category = angels_advanced_chemistry,
+        subgroup = is_coal,
+        icons = THREE_D_I(graphene_oxide, nil, dinitrogen_tetroxide_angels, graphene, steam, nitrogen_angels),
+        order = k,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- graphene oxide + N₂H₄ --> graphene + H₂O(g) + N₂
+        ingredients =
+        {
+            {type = item, name = graphene_oxide, amount = 8},
+            {type = fluid, name = dinitrogen_tetroxide_angels, amount = 120}
+        },
+        results =
+        {
+            {type = item, name = graphene, amount = 8},
+            {type = fluid, name = steam, amount = 60}, -- 120
+            {type = fluid, name = nitrogen_angels, amount = 60} -- 120
+        },
+        main_product = graphene
+    }]]
 })
 
 -- CARBON FLUIDS 1
@@ -335,6 +472,36 @@ data:extend
         main_product = acetone_cyanohydrin
     }
 })
+
+-- FLUORINE
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = hydrogen_fluoride_liquefied,
+        category = angels_cooling,
+        subgroup = is_fluorine_fluids,
+        icons = TWO_I(hydrogen_fluoride_angels, hydrogen_fluoride_liquefied),
+        order = c,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- HF(g) -Coolant-> HF(liquefied)
+        ingredients =
+        {
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 120},
+            {type = fluid, name = coolant, amount = 120}
+        },
+        results =
+        {
+            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 120},
+            {type = fluid, name = coolant_used, amount = 60} -- 120
+        },
+        main_product = hydrogen_fluoride_liquefied
+    }
+})]]
 
 -- SODIUM
 sodium_chloride = "sodium-chloride"
