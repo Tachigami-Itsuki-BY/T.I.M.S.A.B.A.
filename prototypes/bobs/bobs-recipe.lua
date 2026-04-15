@@ -2,6 +2,9 @@ local B_F_L = require("lib.generator-icons").bearing_fluid_icon
 local recipe = "recipe"
 local is_gears = "bob-gears"
 local is_bearing_ball = "bob-bearings"
+advacned_deuterium_fuel_cell_reprocessing = "advacned-deuterium-fuel_cell-reprocessing"
+tritium_fuel_cell_reprocessing = "tritium-fuel_cell-reprocessing"
+advacned_tritium_fuel_cell_reprocessing = "advacned-tritium-fuel_cell-reprocessing"
 data:extend
 ({
     {
@@ -114,7 +117,122 @@ data:extend
         },
         results = {{type = item, name = copper_tungsten_bearing, amount = 2}},
         main_product = copper_tungsten_bearing
-    }
+    },
+    --[[{
+        type = recipe,
+        name = battery_graphene,
+        category = chemistry_or_cryogenics,
+        subgroup = "intermediate-product",
+        icon = data_item[battery_graphene].icon,
+        order = d,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = graphite, amount = 2},
+            {type = item, name = graphene, amount = 2},
+            {type = item, name = manganese_oxide, amount = 2},
+            {type = item, name = aluminium_plate_bob, amount = 2},
+            {type = item, name = plastic, amount = 4},
+            {type = fluid, name = lithium_hexafluorophosphate_solution_carbonate, amount = 60}
+        },
+        results = {{type = item, name = battery_graphene, amount = 1}},
+        main_product = battery_graphene
+    },
+    {
+        type = recipe,
+        name = advacned_deuterium_fuel_cell_reprocessing,
+        category = centrifuging_4,
+        subgroup = is_nuclear_cell,
+        icons = TWO_D_I(depleted_deuterium_fuel_cell, nil, tritium_gas, muon_fusion_catalyst),
+        order = i_b,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 64,
+        ingredients = {{type = item, name = depleted_deuterium_fuel_cell, amount = 8}},
+        results =
+        {
+            {type = fluid, name = tritium_gas, amount = 480},
+            {type = item, name = muon_fusion_catalyst, amount = 8, probability = 0.5}
+        },
+        main_product = tritium_gas
+    },
+    {
+        type = recipe,
+        name = tritium_fuel_cell,
+        category = centrifuging_4,
+        subgroup = is_nuclear_cell,
+        icon = data_item[tritium_fuel_cell].icon,
+        order = j,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 64,
+        ingredients =
+        {
+            {type = item, name = muon_fusion_catalyst, amount = 1},
+            {type = item, name = lead_plate_bob, amount = 32},
+            {type = fluid, name = tritium_gas, amount = 480}
+        },
+        results = {{type = item, name = tritium_fuel_cell, amount = 1}},
+        main_product = tritium_fuel_cell
+    },
+    {
+        type = recipe,
+        name = tritium_fuel_cell_reprocessing,
+        category = centrifuging_4,
+        subgroup = is_nuclear_cell,
+        icons = TWO_D_I(depleted_tritium_fuel_cell, nil, muon_fusion_catalyst, tritium_gas),
+        order = j_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 64,
+        ingredients = {{type = item, name = depleted_tritium_fuel_cell, amount = 4}},
+        results =
+        {
+            {type = item, name = muon_fusion_catalyst, amount = 4},
+            {type = fluid, name = tritium_gas, amount = 960}
+        },
+        main_product = tritium_gas
+    },
+    {
+        type = recipe,
+        name = advacned_tritium_fuel_cell_reprocessing,
+        category = centrifuging_4,
+        subgroup = is_nuclear_cell,
+        icons = TWO_D_I(depleted_tritium_fuel_cell, hydrofluoric_acid_angels, muon_fusion_catalyst, water_greenyellow_waste),
+        order = j_b,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 64,
+        ingredients =
+        {
+            {type = item, name = depleted_tritium_fuel_cell, amount = 8},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 60},
+        },
+        results =
+        {
+            {type = item, name = muon_fusion_catalyst, amount = 8},
+            {type = item, name = muon_fusion_catalyst, amount = 8, probability = 0.25},
+            {type = fluid, name = water_greenyellow_waste, amount = 60}
+        },
+        main_product = muon_fusion_catalyst
+    }]]
 })
 
 --[[

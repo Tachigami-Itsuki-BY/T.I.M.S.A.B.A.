@@ -119,42 +119,42 @@ data_fluid[seedling_crystal].flow_color = {r = 117 / 255, g = 154 / 255, b = 027
 
 -- ANGELS METALLURGY SMELTING
 data_fluid[hexafluorosilicic_acid].icons = nil
-data_fluid[hexafluorosilicic_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-hexafluorosilicic-acid.png"
+data_fluid[hexafluorosilicic_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/hexafluorosilicic-acid-liquid.png"
 data_fluid[hexafluorosilicic_acid].base_color = TIMSABA.functions.fluid_color("H2SiF6Wp")
 data_fluid[hexafluorosilicic_acid].flow_color = TIMSABA.functions.flow_color("H2SiF6Wp")
 
 data_fluid[trichlorosilane].icons = nil
-data_fluid[trichlorosilane].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-trichlorosilane.png"
+data_fluid[trichlorosilane].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/trichlorosilane-liquid.png"
 data_fluid[trichlorosilane].base_color = TIMSABA.functions.fluid_color("HSiCl3")
 data_fluid[trichlorosilane].flow_color = TIMSABA.functions.flow_color("HSiCl3")
 
 data_fluid[silane_gas].icons = nil
-data_fluid[silane_gas].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-gas-silane.png"
+data_fluid[silane_gas].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silane-gas.png"
 data_fluid[silane_gas].base_color = TIMSABA.functions.fluid_color("SiH4")
 data_fluid[silane_gas].flow_color = TIMSABA.functions.flow_color("SiH4")
 
 data_fluid[chlorauric_acid].icons = nil
-data_fluid[chlorauric_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-chlorauric-acid.png"
+data_fluid[chlorauric_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/gold/chlorauric-acid-liquid.png"
 data_fluid[chlorauric_acid].base_color = TIMSABA.functions.fluid_color("HAuCl4Wp")
 data_fluid[chlorauric_acid].flow_color = TIMSABA.functions.flow_color("HAuCl4Wp")
 
 data_fluid[titanium_tetrachloride].icons = nil
-data_fluid[titanium_tetrachloride].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-titanium-tetrachloride.png"
+data_fluid[titanium_tetrachloride].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/titanium-tetrachloride-liquid.png"
 data_fluid[titanium_tetrachloride].base_color = TIMSABA.functions.fluid_color("TiCl4")
 data_fluid[titanium_tetrachloride].flow_color = TIMSABA.functions.flow_color("TiCl4")
 
 data_fluid[ammonium_tungstate_solution].icons = nil
-data_fluid[ammonium_tungstate_solution].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-ammonium-tungstate-solution.png"
+data_fluid[ammonium_tungstate_solution].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/ammonium-tungstate-solution.png"
 data_fluid[ammonium_tungstate_solution].base_color = TIMSABA.functions.fluid_color("N2H8WO4Wp")
 data_fluid[ammonium_tungstate_solution].flow_color = TIMSABA.functions.flow_color("N2H8WO4Wp")
 
 data_fluid[tungsten_hexafluoride_gas].icons = nil
-data_fluid[tungsten_hexafluoride_gas].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-gas-tungsten-hexafluoride.png"
+data_fluid[tungsten_hexafluoride_gas].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/tungsten-hexafluoride-gas.png"
 data_fluid[tungsten_hexafluoride_gas].base_color = TIMSABA.functions.fluid_color("WF6")
 data_fluid[tungsten_hexafluoride_gas].flow_color = TIMSABA.functions.flow_color("WF6")
 
 data_fluid[hexachloroplatinic_acid].icons = nil
-data_fluid[hexachloroplatinic_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/angels-liquid-hexachloroplatinic-acid.png"
+data_fluid[hexachloroplatinic_acid].icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/hexachloroplatinic-acid-liquid.png"
 data_fluid[hexachloroplatinic_acid].base_color = TIMSABA.functions.fluid_color("H2PtCl6Wp")
 data_fluid[hexachloroplatinic_acid].flow_color = TIMSABA.functions.flow_color("H2PtCl6Wp")
 

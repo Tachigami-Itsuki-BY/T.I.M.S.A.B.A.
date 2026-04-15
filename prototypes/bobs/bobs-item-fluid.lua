@@ -1,11 +1,15 @@
 local is_gears = "bob-gears"
 local is_bearing_ball = "bob-bearings"
+local kJ = "kJ"
 ceramic_gear_wheel = "ceramic-gear-wheel"
 copper_tungsten_gear_wheel = "copper-tungsten-gear-wheel"
 brass_bearing_ball = "brass-bearing-ball"
 copper_tungsten_bearing_ball = "copper-tungsten-bearing-ball"
 brass_bearing = "brass-bearing"
 copper_tungsten_bearing = "copper-tungsten-bearing"
+battery_graphene = "graphene-battery"
+tritium_fuel_cell = "tritium-fuel-cell"
+depleted_tritium_fuel_cell = "used-up-tritium-fuel-cell"
 data:extend
 ({
     {
@@ -67,7 +71,36 @@ data:extend
         order = h,
         stack_size = 200,
         weight = 5000
-    }
+    },
+    --[[{
+        type = item,
+        name = battery_graphene,
+        subgroup = "intermediate-product",
+        icon = "__TIMSABA__/graphics/icons/bobs/graphene-battery.png",
+        order = d,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        type = item,
+        name = tritium_fuel_cell,
+        subgroup = is_nuclear_cell,
+        icon = "__TIMSABA__/graphics/icons/bobs/tritium-fuel-cell.png",
+        order = j,
+        stack_size = 200,
+        weight = 5000,
+        fuel_category = nuclear_fuel_T4,
+        fuel_value = (11059200 * 4 * 2) .. kJ
+    },
+    {
+        type = item,
+        name = depleted_tritium_fuel_cell,
+        subgroup = is_nuclear_cell,
+        icon = "__TIMSABA__/graphics/icons/bobs/used-up-tritium-fuel-cell.png",
+        order = k,
+        stack_size = 200,
+        weight = 5000
+    }]]
 })
 
 --[[

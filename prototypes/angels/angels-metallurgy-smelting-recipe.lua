@@ -1926,7 +1926,106 @@ data:extend
         },
         results = {{type = item, name = lithium_hydride, amount = 16}},
         main_product = lithium_hydride
-    }
+    },
+    --[[{
+        type = recipe,
+        name = lithium_hydroxide,
+        category = angels_petrochem_electrolyser,
+        subgroup = is_alloys,
+        icons = FOUR_R_I(lithium_chloride_solution, lithium_hydroxide, hydrogen_angels, chlorine_angels),
+        order = h,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 8, -- 2(LiCl + H₂O) -electrode/electrolys-> 2LiOH + H₂ + Cl₂
+        ingredients =
+        {
+            {type = fluid, name = lithium_chloride_solution, amount = 240},
+            {type = item, name = electrode, amount = 1}
+        },
+        results =
+        {
+            {type = item, name = lithium_hydroxide, amount = 16},
+            {type = fluid, name = hydrogen_angels, amount = 60}, -- 120
+            {type = fluid, name = chlorine_angels, amount = 60}, -- 120
+            {type = item, name = electrode_used, amount = 1}
+        },
+        main_product = lithium_hydroxide
+    },
+    {
+        type = recipe,
+        name = lithium_fluoride,
+        category = chemistry,
+        subgroup = is_alloys,
+        icons = TWO_D_I(lithium_hydroxide, hydrofluoric_acid_angels, lithium_fluoride, water_purified_angels),
+        order = j,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- LiOH + HF(aq) --> LiF + 2H₂O
+        ingredients =
+        {
+            {type = item, name = lithium_hydroxide, amount = 4},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
+        },
+        results =
+        {
+            {type = item, name = lithium_fluoride, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
+        },
+        main_product = lithium_fluoride
+    },
+    {
+        type = recipe,
+        name = lithium_hexafluorophosphate,
+        category = chemistry,
+        subgroup = is_alloys,
+        icons = THREE_I(lithium_fluoride, phosphorus_pentafluoride_gas, lithium_hexafluorophosphate),
+        order = k,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- LiF + PF₅ -HF(liquefied)-> LiPF₆
+        ingredients =
+        {
+            {type = item, name = lithium_fluoride, amount = 4},
+            {type = fluid, name = phosphorus_pentafluoride_gas, amount = 60},
+            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 60}
+        },
+        results =
+        {
+            {type = item, name = lithium_hexafluorophosphate, amount = 4},
+            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 30}
+        },
+        main_product = lithium_hexafluorophosphate
+    },
+    {
+        type = recipe,
+        name = lithium_hexafluorophosphate_solution_carbonate,
+        category = angels_liquifying,
+        subgroup = is_alloys,
+        icons = THREE_I(lithium_hexafluorophosphate, ethylene_carbonate, lithium_hexafluorophosphate_solution_carbonate),
+        order = l,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- LiPF₆ + C₃H₄O₃ --> LiPF₆(carbonate)
+        ingredients =
+        {
+            {type = item, name = lithium_hexafluorophosphate, amount = 4},
+            {type = fluid, name = ethylene_carbonate, amount = 60}
+        },
+        results = {{type = fluid, name = lithium_hexafluorophosphate_solution_carbonate, amount = 60}},
+        main_product = lithium_hexafluorophosphate_solution_carbonate
+    }]]
 })
 
 --[[
