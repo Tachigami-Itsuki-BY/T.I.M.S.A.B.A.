@@ -552,7 +552,6 @@ data_recipe[aluminium_roll_2].results[2].amount = 60
 data_item[aluminium_plate_bob].localised_description = show_formula and {chemical_formula, "Al"} or nil
 data_item[aluminium_plate_bob].order = c
 
-local aluminium_plate_angels = "angels-plate-aluminium"
 data_recipe[aluminium_plate_angels].icons = TWO_I(aluminium_molten_angels, aluminium_plate_bob)
 data_recipe[aluminium_plate_angels].order = c_a
 data_recipe[aluminium_plate_angels].ingredients[1].amount = 60
@@ -599,7 +598,6 @@ data_recipe[zinc_roll_2].results[2].amount = 60
 data_item[zinc_plate_bob].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_plate_bob].order = c
 
-local zinc_plate_angels = "angels-plate-zinc"
 data_recipe[zinc_plate_angels].icons = TWO_I(zinc_molten_angels, zinc_plate_bob)
 data_recipe[zinc_plate_angels].order = c_a
 data_recipe[zinc_plate_angels].ingredients[1].amount = 60
@@ -1289,7 +1287,7 @@ local brass_molten_2= "angels-liquid-molten-brass-2"
 data_recipe[brass_molten_2].subgroup = is_alloys_casting_2
 data_recipe[brass_molten_2].icons = THREE_D_I(copper_ingot, zinc_ingot, tin_ingot, brass_molten_angels, nil, nil, number_2)
 data_recipe[brass_molten_2].energy_required = 8
-data_recipe[brass_molten_2].ingredients[1].amount = 12
+data_recipe[brass_molten_2].ingredients[1].amount = 16
 data_recipe[brass_molten_2].ingredients[2].amount = 8
 data_recipe[brass_molten_2].ingredients[3].amount = 8
 data_recipe[brass_molten_2].results[1].amount = 480
@@ -1317,15 +1315,17 @@ data_recipe[brass_plate_angels].icons = TWO_I(brass_molten_angels, brass_plate_b
 data_recipe[brass_plate_angels].ingredients[1].amount = 60
 
 -- GUNMETAL
+data_fluid[gunmetal_molten_angels].localised_description = show_formula and {chemical_formula, "CuSnZn"} or nil
 data_fluid[gunmetal_molten_angels].subgroup = is_alloys_casting_3
 data_recipe[gunmetal_molten_angels].subgroup = is_alloys_casting_3
 data_recipe[gunmetal_molten_angels].icons = THREE_D_I(copper_ingot, tin_ingot, zinc_ingot, gunmetal_molten_angels)
 data_recipe[gunmetal_molten_angels].energy_required = 8
-data_recipe[gunmetal_molten_angels].ingredients[1].amount = 4 -- Sn
-data_recipe[gunmetal_molten_angels].ingredients[2].amount = 4 -- Zn
-data_recipe[gunmetal_molten_angels].ingredients[3].amount = 16 -- Cu
-data_recipe[gunmetal_molten_angels].results[1].amount = 240
+data_recipe[gunmetal_molten_angels].ingredients[1].amount = 16 -- Sn
+data_recipe[gunmetal_molten_angels].ingredients[2].amount = 8 -- Zn
+data_recipe[gunmetal_molten_angels].ingredients[3].amount = 8 -- Cu
+data_recipe[gunmetal_molten_angels].results[1].amount = 480
 
+data_item[gunmetal_plate_bob].localised_description = show_formula and {chemical_formula, "SnZnCu"} or nil
 data_item[gunmetal_plate_bob].subgroup = is_alloys_casting_3
 
 local gunmetal_plate_angels = "angels-plate-gunmetal"

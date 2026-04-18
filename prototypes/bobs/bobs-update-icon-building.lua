@@ -28,6 +28,7 @@ end
 if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
 	return
 end
+
 -- BOILER
 --[[do
 	local inputs =
@@ -263,6 +264,7 @@ end
 		::continue::
 	end
 end
+
 -- STEAM ENGINE
 do
 	local inputs =
@@ -418,6 +420,7 @@ do
 		::continue::
 	end
 end]]
+
 -- STEAM TURBINE
 do
 	local inputs =
@@ -571,6 +574,7 @@ do
 		::continue::
 	end
 end
+
 -- SOLAR PANELS
 --[[do
 	local inputs =
@@ -861,6 +865,7 @@ end
 		::continue::
 	end
 end
+
 -- ACCUMULATOR
 do
 	local inputs =
@@ -1013,6 +1018,7 @@ do
 		::continue::
 	end
 end
+
 -- ELECTRIC MINING DRILL
 do
 	local inputs =
@@ -1024,7 +1030,7 @@ do
 		group = "mining",
 		particles = {["medium-long"] = 3},
 	}
-	local tier_map = {[electric_mining_drill_6] = {tier = 6, prog_tier = 7}}
+	local tier_map = {[electric_mining_drill_6] = {tier = 6, prog_tier = 6}}
 	local function vertical_drill_animation(speed, inputs)
 		return
 		{
@@ -2312,6 +2318,7 @@ do
 		::continue::
 	end
 end]]
+
 -- PUMPJACK
 --[[do
 	local inputs =
@@ -2326,7 +2333,7 @@ end]]
 	local tier_map =
 	{
 		[pumpjack_5] = {tier = 5, prog_tier = 6},
-		[pumpjack_6] = {tier = 6, prog_tier = 7}
+		[pumpjack_6] = {tier = 6, prog_tier = 6}
 	}
 	local max_playback = 2
 	local min_playback = 0.5
@@ -2496,6 +2503,7 @@ end]]
 		::continue::
 	end
 end]]
+
 -- REACTOR
 do
 	local inputs =
@@ -2664,6 +2672,7 @@ do
 		::continue::
 	end
 end
+
 -- FURNACES
 --[[do
 	local electric_furnace_map =
@@ -2987,6 +2996,7 @@ end
 		::continue::
 	end
 end]]
+
 -- CENTRIFUGE
 do
 	local inputs =

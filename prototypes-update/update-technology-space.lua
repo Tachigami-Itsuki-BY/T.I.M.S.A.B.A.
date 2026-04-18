@@ -113,6 +113,15 @@ local planet_discovery_vulcanus = "planet-discovery-vulcanus"
 table.insert(data_technology[planet_discovery_vulcanus].effects, {type = unlock_recipe, recipe = vulcanus_air})
 table.insert(data_technology[planet_discovery_vulcanus].effects, {type = unlock_recipe, recipe = vulcanus_air_separation})
 
+
+
+data_technology[tungsten_carbide].effects =
+{
+    {type = unlock_recipe, recipe = wolframite_ore_sorting},
+    {type = unlock_recipe, recipe = carbon},
+    {type = unlock_recipe, recipe = tungsten_carbide}
+}
+
 saphirite_from_lava = "molten-iron-from-lava"
 stiratite_from_lava = "molten-copper-from-lava"
 molten_iron = "molten-iron"

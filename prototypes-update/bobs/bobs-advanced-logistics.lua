@@ -279,8 +279,6 @@ data_car[car].consumption = 225 .. kW
 data_car[car].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
 data_car[car].equipment_grid = small_equipment_grid
 
-local tank_2 = "bob-tank-2"
-local tank_3 = "bob-tank-3"
 local tanks =
 {
     {name = tank_1, order = a, consumption = 450,  effectivity = 1.00, equipment_grid = small_equipment_grid},
@@ -360,10 +358,6 @@ for _, DRONE in pairs(construction_robots) do
     data_construction_robot[DRONE.name].energy_per_tick = DRONE.EPT .. J
 end
 
-local roboport_1 = "roboport"
-local roboport_2 = "bob-roboport-2"
-local roboport_3 = "bob-roboport-3"
-local roboport_4 = "bob-roboport-4"
 local roboports =
 {
     {name = roboport_1, input_flow_limit = 3600,  charging_energy = 900,  charging_station_count = 4, tier = 1},
@@ -403,10 +397,6 @@ roboport_recipe(roboport_2, roboport_antenna_2, roboport_door_2, roboport_charge
 roboport_recipe(roboport_3, roboport_antenna_3, roboport_door_3, roboport_chargepad_3, titanium_plate_bob, roboport_2)
 roboport_recipe(roboport_4, roboport_antenna_4, roboport_door_4, roboport_chargepad_4, nitinol_plate_bob, roboport_3)
 
-local logistic_zone_expander_1 = "bob-logistic-zone-expander"
-local logistic_zone_expander_2 = "bob-logistic-zone-expander-2"
-local logistic_zone_expander_3 = "bob-logistic-zone-expander-3"
-local logistic_zone_expander_4 = "bob-logistic-zone-expander-4"
 local logistic_zone =
 {
     {name = logistic_zone_expander_1, input_flow_limit = 600,  charging_energy = 1200, charging_station_count = 1},
@@ -468,10 +458,6 @@ data_recipe[robochest_1].ingredients =
     {type = item, name = steel_plate, amount = 8}
 }
 
-local robo_charge_port_1 = "bob-robo-charge-port"
-local robo_charge_port_2 = "bob-robo-charge-port-2"
-local robo_charge_port_3 = "bob-robo-charge-port-3"
-local robo_charge_port_4 = "bob-robo-charge-port-4"
 local robo_port =
 {
     {name = robo_charge_port_1, energy = 900},
@@ -505,10 +491,6 @@ robo_charge_port_recipe(robo_charge_port_2, roboport_chargepad_2, aluminium_plat
 robo_charge_port_recipe(robo_charge_port_3, roboport_chargepad_3, titanium_plate_bob, robo_charge_port_2)
 robo_charge_port_recipe(robo_charge_port_4, roboport_chargepad_4, nitinol_plate_bob, robo_charge_port_3)
 
-local robo_charge_port_large_1 = "bob-robo-charge-port-large"
-local robo_charge_port_large_2 = "bob-robo-charge-port-large-2"
-local robo_charge_port_large_3 = "bob-robo-charge-port-large-3"
-local robo_charge_port_large_4 = "bob-robo-charge-port-large-4"
 local robo_port_large =
 {
     {name = robo_charge_port_large_1, order = a, energy = 900},
@@ -612,10 +594,6 @@ for _, name in pairs(flying_robot_frames) do
     data_recipe[name].energy_required = 16
 end
 
-local robot_brain_1 = "bob-robot-brain"
-local robot_brain_2 = "bob-robot-brain-2"
-local robot_brain_3 = "bob-robot-brain-3"
-local robot_brain_4 = "bob-robot-brain-4"
 local function robot_brain_recipe(name, circuit_1, circuit_2)
     data_item[name].subgroup = is_robot_brain
     data_recipe[name].subgroup = is_robot_brain

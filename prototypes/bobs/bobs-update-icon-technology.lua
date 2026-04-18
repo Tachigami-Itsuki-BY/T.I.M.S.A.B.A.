@@ -12,6 +12,7 @@ end
 if not (reskins.bobs and reskins.bobs.triggers.assembly.technologies) then
 	return
 end
+
 do
 	---@type CreateIconsFromListInputs
 	local inputs =
@@ -76,6 +77,7 @@ do
 	end]]
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end
+
 --[[do
 	local inputs =
 	{
@@ -121,6 +123,7 @@ end
 	}
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end
+
 -- FURNACES
 do
 	---@type CreateIconsFromListInputs
@@ -169,6 +172,7 @@ do
 	}
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end]]
+
 -- CENTRIFUGE
 do
 	---@type CreateIconsFromListInputs
@@ -193,7 +197,8 @@ end
 if not (reskins.bobs and reskins.bobs.triggers.plates.items) then
 	return
 end
---[[do
+
+do
 	local inputs =
 	{
 		mod = bobs_mod,
@@ -207,9 +212,9 @@ end
 	local batteries =
 	{
 		[battery_lead_acid] = {tier = 1, prog_tier = 2, technology = battery_lead_acid, tint = "ff781f"},
-		[battery_lithium_ion] = {tier = 2, prog_tier = 3, technology = "bob-battery-2", tint = "41ffdd"},
-		[battery_silver_zinc] = {tier = 3, prog_tier = 4, technology = "bob-battery-3", tint = "3dff40"},
-		[battery_graphene] = {tier = 4, prog_tier = 5, technology = battery_4, tint = "333333"}
+		[battery_lithium_ion] = {tier = 2, prog_tier = 3, technology = battery_2, tint = "41ffdd"},
+		[battery_silver_zinc] = {tier = 3, prog_tier = 4, technology = battery_3, tint = "3dff40"},
+		--[battery_graphene] = {tier = 4, prog_tier = 5, technology = battery_4, tint = "333333"}
 	}
 	for name, map in pairs(batteries) do
 		local item = data.raw.item[name]
@@ -229,4 +234,4 @@ end
 		end
 		::continue::
 	end
-end]]
+end

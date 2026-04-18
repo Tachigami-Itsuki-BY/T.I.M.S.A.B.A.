@@ -1,5 +1,4 @@
 local technology = "technology"
-battery_4 = "battery-4"
 data:extend
 ({
     {
@@ -11,7 +10,7 @@ data:extend
         icon_size = 256,
         prerequisites =
         {
-            "bob-battery-3",
+            battery_3,
             utility_science_pack,
             potassium_processing,
             tech_coal_processing_4
@@ -27,7 +26,7 @@ data:extend
         },
         unit =
         {
-            count = 50,
+            count = 100,
             ingredients =
             {
                 {automation_science_pack, 1},
@@ -41,9 +40,9 @@ data:extend
     }
 })
 
-data_technology["electric-energy-accumulators-4"].prerequisites =
+data_technology[electric_energy_accumulators_4].prerequisites =
 {
-    "bob-electric-energy-accumulators-3",
+    electric_energy_accumulators_3,
     utility_science_pack,
     battery_4
 }

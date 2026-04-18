@@ -710,3 +710,23 @@ data:extend
     }
 })
 ]]
+
+--[[
+data:extend
+({
+    {
+        type = ,
+        name = ,
+        icon = ,
+        icon_size = 256,
+        prerequisites = {},
+        effects = {{type = unlock_recipe, recipe = }},
+        unit =
+        {
+            count = ,
+            ingredients = {{, }},
+            time = 
+        }
+    }
+})
+]]

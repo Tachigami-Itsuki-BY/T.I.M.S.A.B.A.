@@ -1,6 +1,5 @@
-local tech_titanium_processing = "bob-titanium-processing"
 -- LOGISTICS
-data_technology["bob-zinc-processing"].effects =
+data_technology[tech_zinc_processing].effects =
 {
     {type = unlock_recipe, recipe = brass_gear_wheel},
     {type = unlock_recipe, recipe = brass_pipe},
@@ -17,47 +16,41 @@ data_technology[tech_titanium_processing].effects =
 }
 
 -- ADVANCED LOGISTICS
-data_technology["robotics"].effects =
+data_technology[tech_robotics].effects =
 {
     {type = unlock_recipe, recipe = flying_robot_frame_1},
     {type = unlock_recipe, recipe = module_case},
-    {type = unlock_recipe, recipe = "bob-robot-brain"},
+    {type = unlock_recipe, recipe = robot_brain_1},
 }
 
-data_technology["bob-robo-modular-1"].effects =
+data_technology[tech_robo_modular_1].effects =
 {
-    {type = unlock_recipe, recipe = "roboport"},
+    {type = unlock_recipe, recipe = roboport_1},
     {type = unlock_recipe, recipe = robochest_1},
-    {type = unlock_recipe, recipe = "bob-logistic-zone-expander"},
-    {type = unlock_recipe, recipe = "bob-robo-charge-port"},
-    {type = unlock_recipe, recipe = "bob-robo-charge-port-large"},
+    {type = unlock_recipe, recipe = logistic_zone_expander_1},
+    {type = unlock_recipe, recipe = robo_charge_port_1},
+    {type = unlock_recipe, recipe = robo_charge_port_large_1},
     {type = unlock_recipe, recipe = roboport_antenna_1},
     {type = unlock_recipe, recipe = roboport_chargepad_1},
     {type = unlock_recipe, recipe = roboport_door_1}
 }
 
 -- PRODUCTION
-local ceramics = "bob-ceramics"
-local invar_smelting_1 = "angels-invar-smelting-1"
-local brass_processign = "bob-zinc-processing"
-local aluminium_smelting_1 = "angels-aluminium-smelting-1"
-local tungsten_processing = "bob-tungsten-processing"
-local tungsten_alloy_processing = "bob-tungsten-alloy-processing"
-data_technology[boiler_3].prerequisites = {boiler_2, chemical_science_pack, ceramics, invar_smelting_1}
+data_technology[boiler_3].prerequisites = {boiler_2, chemical_science_pack, tech_ceramics, tech_invar_smelting_1}
 
-data_technology[steam_engine_3].prerequisites = {steam_engine_2, brass_processign}
+data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_processign}
 
-data_technology["bob-steam-turbine-1"].prerequisites = {steam_engine_3, ceramics, aluminium_smelting_1}
+data_technology[tech_steam_turbine_1].prerequisites = {steam_engine_3, tech_ceramics, tech_aluminium_smelting_1}
 
-data_technology[fluid_generator_2].prerequisites = {"bob-fluid-generator-1", ceramics, aluminium_smelting_1, invar_smelting_1}
+data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_ceramics, tech_aluminium_smelting_1, tech_invar_smelting_1}
 
-data_technology[fluid_generator_3].prerequisites = {tungsten_processing, fluid_generator_2}
+data_technology[fluid_generator_3].prerequisites = {tech_tungsten_processing, fluid_generator_2}
 
-data_technology["electric-energy-accumulators"].effects = {{type = unlock_recipe, recipe = accumulator_1}}
-data_technology["bob-electric-energy-accumulators-2"].effects = {{type = unlock_recipe, recipe = accumulator_2}}
-data_technology["bob-electric-energy-accumulators-3"].effects = {{type = unlock_recipe, recipe = accumulator_3}}
+data_technology[electric_energy_accumulators_1].effects = {{type = unlock_recipe, recipe = accumulator_1}}
+data_technology[electric_energy_accumulators_2].effects = {{type = unlock_recipe, recipe = accumulator_2}}
+data_technology[electric_energy_accumulators_3].effects = {{type = unlock_recipe, recipe = accumulator_3}}
 
-table.insert(data_technology[heat_exchanger_2].prerequisites, brass_processign)
+table.insert(data_technology[heat_exchanger_2].prerequisites, tech_brass_processign)
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]
@@ -84,14 +77,14 @@ local function replace_prerequisites(tech_name, old_prereq, new_prereq)
         end
     end
 end
-replace_prerequisites("automation-5", tungsten_processing, tungsten_alloy_processing)
-replace_prerequisites(tech_advanced_ore_refining_4, tungsten_processing, tungsten_alloy_processing)
-replace_prerequisites(tech_ore_processing_4, tungsten_processing, tungsten_alloy_processing)
-replace_prerequisites(tech_powder_metallurgy_5, tungsten_processing, tungsten_alloy_processing)
-replace_prerequisites(tech_strand_casting_4, tungsten_processing, tungsten_alloy_processing)
-replace_prerequisites(tech_advanced_chemistry_5, tungsten_processing, tungsten_alloy_processing)
+replace_prerequisites(automation_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
+replace_prerequisites(tech_advanced_ore_refining_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
+replace_prerequisites(tech_ore_processing_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
+replace_prerequisites(tech_powder_metallurgy_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
+replace_prerequisites(tech_strand_casting_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
+replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
 
-data_technology["bob-solar-energy-3"].prerequisites = {processing_unit, "bob-solar-energy-2", production_science_pack}
+data_technology[solar_energy_3].prerequisites = {processing_unit, solar_energy_2, production_science_pack}
 
 -- INTERMEDIATE PRODUCTS
 data_technology[battery_lead_acid].effects =
@@ -101,7 +94,7 @@ data_technology[battery_lead_acid].effects =
     {type = unlock_recipe, recipe = battery_lead_acid}
 }
 
-local battery_2 = "bob-battery-2"
+data_technology[battery_2].localised_description = {"technology-description.battery"}
 data_technology[battery_2].effects =
 {
     {type = unlock_recipe, recipe = phosgene_gas},
@@ -112,7 +105,9 @@ data_technology[battery_2].effects =
     {type = unlock_recipe, recipe = battery_lithium_ion}
 }
 
-data_technology[brass_processign].effects =
+data_technology[battery_3].localised_description = {"technology-description.battery"}
+
+data_technology[tech_brass_processign].effects =
 {
     {type = unlock_recipe, recipe = brass_gear_wheel},
     {type = unlock_recipe, recipe = brass_bearing_ball},
@@ -121,7 +116,7 @@ data_technology[brass_processign].effects =
     {type = unlock_recipe, recipe = brass_pipe_to_ground}
 }
 
-data_technology[ceramics].effects =
+data_technology[tech_ceramics].effects =
 {
     {type = unlock_recipe, recipe = silicon_nitride_bob},
     {type = unlock_recipe, recipe = ceramic_gear_wheel},
@@ -131,14 +126,14 @@ data_technology[ceramics].effects =
     {type = unlock_recipe, recipe = ceramic_pipe_to_ground}
 }
 
-data_technology[tungsten_processing].effects =
+data_technology[tech_tungsten_processing].effects =
 {
     {type = unlock_recipe, recipe = tungsten_pipe},
     {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
 }
 
 tungsten_carbide_2 = "bob-tungsten-carbide-2"
-data_technology[tungsten_alloy_processing].effects =
+data_technology[tech_tungsten_alloy_processing].effects =
 {
     {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
     {type = unlock_recipe, recipe = tungsten_carbide_2},
@@ -149,15 +144,14 @@ data_technology[tungsten_alloy_processing].effects =
     {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
 }
 
-local nuclear_power = "nuclear-power"
-data_technology[nuclear_power].prerequisites =
+data_technology[tech_nuclear_power].prerequisites =
 {
     heat_pipe_2,
-    "uranium-processing",
-    "bob-heat-exchanger-1",
-    "bob-steam-turbine-1"
+    tech_uranium_processing,
+    tech_heat_exchanger_1,
+    tech_steam_turbine_1
 }
-data_technology[nuclear_power].effects =
+data_technology[tech_nuclear_power].effects =
 {
     {type = unlock_recipe, recipe = uranium_reactor},
     {type = unlock_recipe, recipe = uranium_235_fuel_cell},
@@ -180,7 +174,7 @@ data_technology["angels-thorium-power"].effects =
 
 advanced_thorium_fuel_cell_reprocessing = "angels-advanced-thorium-fuel-cell-reprocessing"
 deuterium_fuel_cell_reprocessing = "angels-deuterium-fuel-cell-reprocessing"
-data_technology["angels-fusion-power-1"].effects =
+data_technology[tech_fusion_power_1].effects =
 {
     {type = unlock_recipe, recipe = deuterium_reactor},
     {type = unlock_recipe, recipe = advanced_thorium_fuel_cell_reprocessing},
@@ -189,9 +183,8 @@ data_technology["angels-fusion-power-1"].effects =
 }
 
 -- COMBAT
-local uranium_ammo = "uranium-ammo"
-data_technology[uranium_ammo].prerequisites = {tank_1, "military-4", "uranium-processing"}
-data_technology[uranium_ammo].effects =
+data_technology[tech_uranium_ammo].prerequisites = {tank_1, tech_military_4, tech_uranium_processing}
+data_technology[tech_uranium_ammo].effects =
 {
     {type = unlock_recipe, recipe = uranium_rounds_magazine},
     {type = unlock_recipe, recipe = uranium_shotgun_shell},
@@ -199,10 +192,10 @@ data_technology[uranium_ammo].effects =
     {type = unlock_recipe, recipe = uranium_explosive_cannon_shell}
 }
 
-table.insert(data_technology[fission_reactor_4].prerequisites, "angels-fusion-power-1")
+table.insert(data_technology[fission_reactor_4].prerequisites, tech_fusion_power_1)
 
 -- ANGELS RESOURCE REFINING
-table.insert(data_technology["angels-ore-crushing"].effects, {type = unlock_recipe, recipe = slag_sorting})
+table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = slag_sorting})
 
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})
@@ -211,22 +204,20 @@ table.insert(data_technology[tech_ore_electro_whinning_cell].effects, {type = un
 
 -- ANGELS METALLURGY SMELTING
 -- IRON and STEEL
-local iron_smelting_1 = "angels-iron-smelting-1"
-data_technology[iron_smelting_1].prerequisites =
+data_technology[tech_iron_smelting_1].prerequisites =
 {
     tech_metallurgy_1,
     tech_coal_processing_1
 }
 
-local iron_smelting_2 = "angels-iron-smelting-2"
 iron_ingot_2 = "angels-ingot-iron-2"
-data_technology[iron_smelting_2].prerequisites =
+data_technology[tech_iron_smelting_2].prerequisites =
 {
     tech_ore_processing_1,
-    iron_smelting_1,
+    tech_iron_smelting_1,
     tech_powder_metallurgy_2
 }
-data_technology[iron_smelting_2].effects =
+data_technology[tech_iron_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = iron_processed},
     {type = unlock_recipe, recipe = iron_hydroxide_II},
@@ -236,16 +227,15 @@ data_technology[iron_smelting_2].effects =
     {type = unlock_recipe, recipe = iron_oxide}
 }
 
-local iron_smelting_3 = "angels-iron-smelting-3"
-data_technology[iron_smelting_3].prerequisites =
+data_technology[tech_iron_smelting_3].prerequisites =
 {
     tech_ore_processing_2,
-    iron_smelting_2,
+    tech_iron_smelting_2,
     tech_nitrogen_processing_2,
     tech_sulfur_processing_1
 }
 iron_ingot_3 = "angels-ingot-iron-3"
-data_technology[iron_smelting_3].effects =
+data_technology[tech_iron_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = iron_pellet},
     {type = unlock_recipe, recipe = iron_sulfate},
@@ -257,22 +247,20 @@ data_technology[iron_smelting_3].effects =
 }
 
 -- COPPER
-local copper_smelting_1 = "angels-copper-smelting-1"
-data_technology[copper_smelting_1].prerequisites =
+data_technology[tech_copper_smelting_1].prerequisites =
 {
     tech_metallurgy_1,
     tech_coal_processing_1
 }
 
-local copper_smelting_2 = "angels-copper-smelting-2"
-data_technology[copper_smelting_2].prerequisites =
+data_technology[tech_copper_smelting_2].prerequisites =
 {
     tech_ore_processing_1,
-    copper_smelting_1,
+    tech_copper_smelting_1,
     tech_powder_metallurgy_2
 }
 copper_ingot_2 = "angels-ingot-copper-2"
-data_technology[copper_smelting_2].effects =
+data_technology[tech_copper_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = copper_processed},
     {type = unlock_recipe, recipe = copper_hydroxide},
@@ -280,15 +268,14 @@ data_technology[copper_smelting_2].effects =
     {type = unlock_recipe, recipe = copper_powder},
 }
 
-local copper_smelting_3 = "angels-copper-smelting-3"
-data_technology[copper_smelting_3].prerequisites =
+data_technology[tech_copper_smelting_3].prerequisites =
 {
     tech_ore_processing_2,
-    copper_smelting_2,
+    tech_copper_smelting_2,
     tech_sulfur_processing_1
 }
 copper_ingot_3 = "angels-ingot-copper-3"
-data_technology[copper_smelting_3].effects =
+data_technology[tech_copper_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = copper_pellet},
     {type = unlock_recipe, recipe = copper_sulfate},
@@ -298,22 +285,20 @@ data_technology[copper_smelting_3].effects =
 }
 
 -- LEAD
-local lead_smelting_1 = "angels-lead-smelting-1"
-data_technology[lead_smelting_1].prerequisites =
+data_technology[tech_lead_smelting_1].prerequisites =
 {
     tech_metallurgy_1,
     tech_coal_processing_1
 }
 
-local lead_smelting_2 = "angels-lead-smelting-2"
-data_technology[lead_smelting_2].prerequisites =
+data_technology[tech_lead_smelting_2].prerequisites =
 {
     tech_ore_processing_1,
-    lead_smelting_1,
+    tech_lead_smelting_1,
     tech_powder_metallurgy_2
 }
 lead_ingot_2 = "angels-ingot-lead-2"
-data_technology[lead_smelting_2].effects =
+data_technology[tech_lead_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = lead_processed},
     {type = unlock_recipe, recipe = lead_oxide},
@@ -321,15 +306,14 @@ data_technology[lead_smelting_2].effects =
     {type = unlock_recipe, recipe = lead_powder}
 }
 
-local lead_smelting_3 = "angels-lead-smelting-3"
-data_technology[lead_smelting_3].prerequisites =
+data_technology[tech_lead_smelting_3].prerequisites =
 {
     tech_ore_processing_2,
-    lead_smelting_2,
+    tech_lead_smelting_2,
     tech_sulfur_processing_1
 }
 lead_ingot_3 = "angels-ingot-lead-3"
-data_technology[lead_smelting_3].effects =
+data_technology[tech_lead_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = lead_pellet},
     {type = unlock_recipe, recipe = hexafluorosilicic_acid},
@@ -340,23 +324,21 @@ data_technology[lead_smelting_3].effects =
 }
 
 -- TIN
-local tin_smelting_1 = "angels-tin-smelting-1"
-data_technology[tin_smelting_1].prerequisites =
+data_technology[tech_tin_smelting_1].prerequisites =
 {
     tech_metallurgy_1,
     tech_coal_processing_1
 }
 
-local tin_smelting_2 = "angels-tin-smelting-2"
-data_technology[tin_smelting_2].prerequisites =
+data_technology[tech_tin_smelting_2].prerequisites =
 {
     tech_ore_processing_1,
-    tin_smelting_1,
+    tech_tin_smelting_1,
     tech_powder_metallurgy_2,
     tech_chlorine_processing_1
 }
 tin_ingot_2 = "angels-ingot-tin-2"
-data_technology[tin_smelting_2].effects =
+data_technology[tech_tin_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = tin_processed},
     {type = unlock_recipe, recipe = tin_tetrachloride},
@@ -364,15 +346,14 @@ data_technology[tin_smelting_2].effects =
     {type = unlock_recipe, recipe = tin_powder}
 }
 
-local tin_smelting_3 = "angels-tin-smelting-3"
-data_technology[tin_smelting_3].prerequisites =
+data_technology[tech_tin_smelting_3].prerequisites =
 {
     tech_ore_processing_2,
-    tin_smelting_2,
+    tech_tin_smelting_2,
     tech_sulfur_processing_1
 }
 tin_ingot_3 = "angels-ingot-tin-3"
-data_technology[tin_smelting_3].effects =
+data_technology[tech_tin_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = tin_pellet},
     {type = unlock_recipe, recipe = hexafluorosilicic_acid},
@@ -383,23 +364,21 @@ data_technology[tin_smelting_3].effects =
 }
 
 -- MANGANESE
-local manganese_smelting_1 = "angels-manganese-smelting-1"
-data_technology[manganese_smelting_1].prerequisites =
+data_technology[tech_manganese_smelting_1].prerequisites =
 {
     tech_metallurgy_1,
-    "angels-ore-advanced-crushing",
+    tech_ore_advanced_crushing,
     tech_coal_processing_1
 }
-data_technology[manganese_smelting_1].effects =
+data_technology[tech_manganese_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = manganese_dioxide},
     {type = unlock_recipe, recipe = manganese_ingot},
     {type = unlock_recipe, recipe = manganese_molten_angels}
 }
 
-local manganese_smelting_2 = "angels-manganese-smelting-2"
 manganese_ingot_2 = "angels-ingot-manganese-2"
-data_technology[manganese_smelting_2].effects =
+data_technology[tech_manganese_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = manganese_processed},
     {type = unlock_recipe, recipe = manganese_oxide},
@@ -410,15 +389,14 @@ data_technology[manganese_smelting_2].effects =
     {type = unlock_recipe, recipe = manganese_powder}
 }
 
-local manganese_smelting_3 = "angels-manganese-smelting-3"
-data_technology[manganese_smelting_3].prerequisites =
+data_technology[tech_manganese_smelting_3].prerequisites =
 {
     tech_ore_processing_2,
-    manganese_smelting_2,
+    tech_manganese_smelting_2,
     tech_nitrogen_processing_2,
     tech_sulfur_processing_1
 }
-data_technology[manganese_smelting_3].effects =
+data_technology[tech_manganese_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = manganese_pellet},
     {type = unlock_recipe, recipe = manganese_oxide_2},
@@ -429,14 +407,13 @@ data_technology[manganese_smelting_3].effects =
 }
 
 -- SILICON
-local silicon_smelting_1 = "angels-silicon-smelting-1"
-data_technology[silicon_smelting_1].prerequisites =
+data_technology[tech_silicon_smelting_1].prerequisites =
 {
     tech_powder_metallurgy_2,
     tech_nitrogen_processing_1,
     tech_ore_floatation
 }
-data_technology[silicon_smelting_1].effects =
+data_technology[tech_silicon_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = silicon_dioxide},
     {type = unlock_recipe, recipe = silicon_ingot},
@@ -446,15 +423,14 @@ data_technology[silicon_smelting_1].effects =
     {type = unlock_recipe, recipe = silicon_powder}
 }
 
-local silicon_smelting_2 = "angels-silicon-smelting-2"
-data_technology[silicon_smelting_2].prerequisites =
+data_technology[tech_silicon_smelting_2].prerequisites =
 {
     tech_ore_processing_2,
-    silicon_smelting_1,
+    tech_silicon_smelting_1,
     tech_chlorine_processing_1
 }
 silicon_ingot_2 = "angels-ingot-silicon-2"
-data_technology[silicon_smelting_2].effects =
+data_technology[tech_silicon_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = silicon_processed},
     {type = unlock_recipe, recipe = trichlorosilane},
@@ -462,15 +438,14 @@ data_technology[silicon_smelting_2].effects =
     {type = unlock_recipe, recipe = silicon_dioxide_from_silicon_tetrachloride_gas}
 }
 
-local silicon_smelting_3 = "angels-silicon-smelting-3"
-data_technology[silicon_smelting_3].prerequisites =
+data_technology[tech_silicon_smelting_3].prerequisites =
 {
     tech_ore_processing_3,
-    silicon_smelting_2,
-    "angels-bio-fermentation"
+    tech_silicon_smelting_2,
+    tech_bio_fermentation
 }
 silicon_ingot_3 = "angels-ingot-silicon-3"
-data_technology[silicon_smelting_3].effects =
+data_technology[tech_silicon_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = silicon_pellet},
     {type = unlock_recipe, recipe = diethyl_ether},
@@ -482,23 +457,18 @@ data_technology[silicon_smelting_3].effects =
 }
 
 -- NICKEL
-local nickel_smelting_1 = "angels-nickel-smelting-1"
-data_technology[nickel_smelting_1].prerequisites =
-{
-    tech_metallurgy_2
-}
+data_technology[tech_nickel_smelting_1].prerequisites = {tech_metallurgy_2}
 
-local nickel_smelting_2 = "angels-nickel-smelting-2"
-data_technology[nickel_smelting_2].prerequisites =
+data_technology[tech_nickel_smelting_2].prerequisites =
 {
     tech_powder_metallurgy_3,
     tech_ore_processing_2,
-    nickel_smelting_1,
+    tech_nickel_smelting_1,
     bor_processing,
     tech_sulfur_processing_1
 }
 nickel_ingot_2 = "angels-ingot-nickel-2"
-data_technology[nickel_smelting_2].effects =
+data_technology[tech_nickel_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = nickel_processed},
     {type = unlock_recipe, recipe = nickel_sulfate},
@@ -508,41 +478,39 @@ data_technology[nickel_smelting_2].effects =
     {type = unlock_recipe, recipe = nickel_powder}
 }
 
-local nickel_smelting_3 = "angels-nickel-smelting-3"
-data_technology[nickel_smelting_3].prerequisites =
+data_technology[tech_nickel_smelting_3].prerequisites =
 {
     tech_ore_processing_3,
-    nickel_smelting_2
+    tech_nickel_smelting_2
 }
 
 -- ALUMINIUM
-local aluminium_smelting_1 = "angels-aluminium-smelting-1"
-data_technology[aluminium_smelting_1].prerequisites =
+data_technology[tech_aluminium_smelting_1].prerequisites =
 {
     tech_ore_floatation,
     tech_chlorine_processing_1
 }
 
-data_technology[aluminium_smelting_1].effects =
+aluminium_plate_angels = "angels-plate-aluminium"
+data_technology[tech_aluminium_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = aluminium_chloride},
     {type = unlock_recipe, recipe = aluminium_hydroxide},
     {type = unlock_recipe, recipe = aluminium_oxide},
     {type = unlock_recipe, recipe = aluminium_ingot},
     {type = unlock_recipe, recipe = aluminium_molten_angels},
-    {type = unlock_recipe, recipe = aluminium_plate_bob}
+    {type = unlock_recipe, recipe = aluminium_plate_angels}
 }
 
-local aluminium_smelting_2 = "angels-aluminium-smelting-2"
-data_technology[aluminium_smelting_2].prerequisites =
+data_technology[tech_aluminium_smelting_2].prerequisites =
 {
     tech_ore_processing_2,
-    aluminium_smelting_1,
+    tech_aluminium_smelting_1,
     tech_powder_metallurgy_3,
     tech_nitrogen_processing_2
 }
 aluminium_hydroxide_2 = "angels-solid-aluminium-hydroxide-2"
-data_technology[aluminium_smelting_2].effects =
+data_technology[tech_aluminium_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = aluminium_processed},
     {type = unlock_recipe, recipe = aluminium_chloride_solution},
@@ -553,35 +521,32 @@ data_technology[aluminium_smelting_2].effects =
     {type = unlock_recipe, recipe = ammonia_gas_alt}
 }
 
-local aluminium_smelting_3 = "angels-aluminium-smelting-3"
-
 -- ZINC
-local zinc_smelting_1 = "angels-zinc-smelting-1"
-data_technology[zinc_smelting_1].prerequisites =
+data_technology[tech_zinc_smelting_1].prerequisites =
 {
     tech_ore_floatation,
     tech_metallurgy_2,
     tech_chlorine_processing_1
 }
-data_technology[zinc_smelting_1].effects =
+zinc_plate_angels = "angels-plate-zinc"
+data_technology[tech_zinc_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = zinc_chloride},
     {type = unlock_recipe, recipe = zinc_chloride_solution},
     {type = unlock_recipe, recipe = zinc_ingot},
     {type = unlock_recipe, recipe = zinc_molten_angels},
-    {type = unlock_recipe, recipe = zinc_plate_bob}
+    {type = unlock_recipe, recipe = zinc_plate_angels}
 }
 
-local zinc_smelting_2 = "angels-zinc-smelting-2"
-data_technology[zinc_smelting_2].prerequisites =
+data_technology[tech_zinc_smelting_2].prerequisites =
 {
     tech_ore_processing_2,
-    zinc_smelting_1,
+    tech_zinc_smelting_1,
     tech_powder_metallurgy_3,
     tech_chlorine_processing_1
 }
 zinc_ingot_2 = "angels-ingot-zinc-2"
-data_technology[zinc_smelting_2].effects =
+data_technology[tech_zinc_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = zinc_processed},
     {type = unlock_recipe, recipe = zinc_oxide},
@@ -591,16 +556,15 @@ data_technology[zinc_smelting_2].effects =
     {type = unlock_recipe, recipe = magnesium_chloride_from_magnesium_chloride_solution}
 }
 
-local zinc_smelting_3 = "angels-zinc-smelting-3"
-data_technology[zinc_smelting_3].prerequisites =
+data_technology[tech_zinc_smelting_3].prerequisites =
 {
     tech_ore_processing_3,
-    zinc_smelting_2,
+    tech_zinc_smelting_2,
     tech_sulfur_processing_1
 }
 zinc_oxide_2 = "angels-solid-zinc-oxide-2"
 zinc_ingot_3 = "angels-ingot-zinc-3"
-data_technology[zinc_smelting_3].effects =
+data_technology[tech_zinc_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = zinc_pellet},
     {type = unlock_recipe, recipe = zinc_oxide_2},
@@ -610,31 +574,28 @@ data_technology[zinc_smelting_3].effects =
 }
 
 -- SILVER
-local silver_smelting_1 = "angels-silver-smelting-1"
-data_technology[silver_smelting_1].prerequisites =
+data_technology[tech_silver_smelting_1].prerequisites =
 {
     tech_ore_floatation,
     tech_metallurgy_2
 }
 
-local silver_smelting_2 = "angels-silver-smelting-2"
-data_technology[silver_smelting_2].prerequisites =
+data_technology[tech_silver_smelting_2].prerequisites =
 {
     tech_ore_processing_2,
-    silver_smelting_1,
+    tech_silver_smelting_1,
     tech_powder_metallurgy_3,
     tech_nitrogen_processing_2
 }
 
-local silver_smelting_3 = "angels-silver-smelting-3"
-data_technology[silver_smelting_3].prerequisites =
+data_technology[tech_silver_smelting_3].prerequisites =
 {
     tech_ore_processing_3,
-    silver_smelting_2,
+    tech_silver_smelting_2,
     tech_sodium_processing_2
 }
 silver_ingot_3 = "angels-ingot-silver-3"
-data_technology[silver_smelting_3].effects =
+data_technology[tech_silver_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = silver_pellet},
     {type = unlock_recipe, recipe = sodium_silver_cyanide},
@@ -646,17 +607,14 @@ data_technology[silver_smelting_3].effects =
 }
 
 -- TITANIUM
-local titanium_smelting_1 = "angels-titanium-smelting-1"
-local titanium_smelting_2 = "angels-titanium-smelting-2"
-local titanium_smelting_3 = "angels-titanium-smelting-3"
 titanium_ingot_2 = "angels-ingot-titanium-2"
-data_technology[titanium_smelting_3].prerequisites =
+data_technology[tech_titanium_smelting_3].prerequisites =
 {
     tech_ore_processing_4,
-    titanium_smelting_2,
+    tech_titanium_smelting_2,
     tech_bio_processing_green
 }
-data_technology[titanium_smelting_3].effects =
+data_technology[tech_titanium_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = titanium_pellet},
     {type = unlock_recipe, recipe = titanium_tetraiodide_gas},
@@ -665,17 +623,14 @@ data_technology[titanium_smelting_3].effects =
 }
 
 -- GOLD
-local gold_smelting_1 = "angels-gold-smelting-1"
-local gold_smelting_2 = "angels-gold-smelting-2"
-local gold_smelting_3 = "angels-gold-smelting-3"
-data_technology[gold_smelting_3].prerequisites =
+data_technology[tech_gold_smelting_3].prerequisites =
 {
     tech_ore_processing_4,
-    gold_smelting_2,
+    tech_gold_smelting_2,
     tech_sodium_processing_2
 }
 gold_cathode_2 = "angels-cathode-gold-2"
-data_technology[gold_smelting_3].effects =
+data_technology[tech_gold_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = gold_pellet},
     {type = unlock_recipe, recipe = sodium_gold_cyanide},
@@ -686,24 +641,21 @@ data_technology[gold_smelting_3].effects =
 }
 
 -- COBALT
-local cobalt_smelting_1 = "angels-cobalt-smelting-1"
-data_technology[cobalt_smelting_1].effects =
+data_technology[tech_cobalt_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = cobalt_ingot},
     {type = unlock_recipe, recipe = cobalt_oxide},
     {type = unlock_recipe, recipe = cobalt_molten_angels}
 }
 
-local cobalt_smelting_2 = "angels-cobalt-smelting-2"
-local cobalt_smelting_3 = "angels-cobalt-smelting-3"
-data_technology[cobalt_smelting_3].prerequisites =
+data_technology[tech_cobalt_smelting_3].prerequisites =
 {
     tech_ore_processing_4,
-    cobalt_smelting_2,
+    tech_cobalt_smelting_2,
     tech_chlorine_processing_1
 }
 cobalt_oxide_3 = "angels-solid-cobalt-oxide-3"
-data_technology[cobalt_smelting_3].effects =
+data_technology[tech_cobalt_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = cobalt_pellet},
     {type = unlock_recipe, recipe = cobalt_chloride_solution},
@@ -712,8 +664,7 @@ data_technology[cobalt_smelting_3].effects =
 }
 
 -- CHROME
-local chrome_smelting_1 = "angels-chrome-smelting-1"
-data_technology[chrome_smelting_1].effects =
+data_technology[tech_chrome_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = chrome_oxide_VI},
     {type = unlock_recipe, recipe = chromic_acid},
@@ -722,31 +673,29 @@ data_technology[chrome_smelting_1].effects =
     {type = unlock_recipe, recipe = chrome_molten_angels}
 }
 
-local chrome_smelting_2 = "angels-chrome-smelting-2"
-data_technology[chrome_smelting_2].prerequisites =
+data_technology[tech_chrome_smelting_2].prerequisites =
 {
     tech_ore_processing_4,
-    chrome_smelting_1,
-    zinc_smelting_3
+    tech_chrome_smelting_1,
+    tech_zinc_smelting_3
 }
 chrome_ingot_2 = "angels-ingot-chrome-2"
-data_technology[chrome_smelting_2].effects =
+data_technology[tech_chrome_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = chrome_processed},
     {type = unlock_recipe, recipe = chrome_sulfate_II_solution},
     {type = unlock_recipe, recipe = chrome_ingot_2}
 }
 
-local chrome_smelting_3 = "angels-chrome-smelting-3"
-data_technology[chrome_smelting_3].prerequisites =
+data_technology[tech_chrome_smelting_3].prerequisites =
 {
     tech_ore_processing_5,
-    chrome_smelting_2,
-    aluminium_smelting_3,
+    tech_chrome_smelting_2,
+    tech_aluminium_smelting_3,
     potassium_processing
 }
 chrome_ingot_3 = "angels-ingot-chrome-3"
-data_technology[chrome_smelting_3].effects =
+data_technology[tech_chrome_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = chrome_pellet},
     {type = unlock_recipe, recipe = chrome_oxide},
@@ -763,9 +712,8 @@ data_technology[chrome_smelting_3].effects =
 }
 
 -- TUNGSTEN
-local tungsten_smelting_1 = "angels-tungsten-smelting-1"
 tungsten_plate_angels = "angels-plate-tungsten"
-data_technology[tungsten_smelting_1].effects =
+data_technology[tech_tungsten_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = tungsten_oxide},
     {type = unlock_recipe, recipe = tungsten_hexafluoride_gas},
@@ -776,10 +724,9 @@ data_technology[tungsten_smelting_1].effects =
     {type = unlock_recipe, recipe = magnesium_silicide_ingot},
     {type = unlock_recipe, recipe = silane_gas_from_magnesium_silicide_ingot}
 }
-local tungsten_smelting_2 = "angels-tungsten-smelting-2"
-local tungsten_smelting_3 = "angels-tungsten-smelting-3"
+
 ammonium_paratungstate_2 = "angels-solid-ammonium-paratungstate-2"
-data_technology[tungsten_smelting_3].effects =
+data_technology[tech_tungsten_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = tungsten_pellet},
     {type = unlock_recipe, recipe = peroxo_tungstic_acid},
@@ -789,8 +736,7 @@ data_technology[tungsten_smelting_3].effects =
 }
 
 -- PLATINUM
-local platinum_smelting_1 = "angels-platinum-smelting-1"
-data_technology[platinum_smelting_1].effects =
+data_technology[tech_platinum_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = platinum_chloride},
     {type = unlock_recipe, recipe = platinum_fluoride},
@@ -800,8 +746,7 @@ data_technology[platinum_smelting_1].effects =
     {type = unlock_recipe, recipe = platinum_cable}
 }
 
-local platinum_smelting_2 = "angels-platinum-smelting-2"
-data_technology[platinum_smelting_2].effects =
+data_technology[tech_platinum_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = platinum_processed},
     {type = unlock_recipe, recipe = hexachloroplatinic_acid},
@@ -812,8 +757,7 @@ data_technology[platinum_smelting_2].effects =
     {type = unlock_recipe, recipe = copper_hydroxide_from_copper_nitrate_solution}
 }
 
-local platinum_smelting_3 = "angels-platinum-smelting-3"
-data_technology[platinum_smelting_3].effects =
+data_technology[tech_platinum_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = platinum_pellet},
     {type = unlock_recipe, recipe = sodium_hexachloroplatinate_solution},
@@ -823,9 +767,8 @@ data_technology[platinum_smelting_3].effects =
 }
 
 -- LITHIUM
-local lithium_processing = "bob-lithium-processing"
 algae_brown_lithium_chloride = "angels-algae-brown-burning"
-data_technology[lithium_processing].effects =
+data_technology[tech_lithium_processing].effects =
 {
     {type = unlock_recipe, recipe = lithium_chloride_angels},
     {type = unlock_recipe, recipe = algae_brown_lithium_chloride},
@@ -840,7 +783,7 @@ data_technology[lithium_processing].effects =
 local iron_casting_2 = "angels-iron-casting-2"
 data_technology[iron_casting_2].prerequisites =
 {
-    manganese_smelting_1,
+    tech_manganese_smelting_1,
     magnesium_smelting_1,
     tech_strand_casting_1
 }
@@ -865,25 +808,23 @@ data_technology[iron_casting_3].effects =
     {type = unlock_recipe, recipe = iron_roll_2}
 }
 
-local steel_smelting_1 = "angels-steel-smelting-1"
-data_technology[steel_smelting_1].prerequisites =
+data_technology[tech_steel_smelting_1].prerequisites =
 {
     tech_metallurgy_1,
     tech_coal_processing_1
 }
 
-local steel_smelting_2 = "angels-steel-smelting-2"
-data_technology[steel_smelting_2].prerequisites =
+data_technology[tech_steel_smelting_2].prerequisites =
 {
     tech_strand_casting_1,
-    iron_smelting_2,
-    manganese_smelting_1,
+    tech_iron_smelting_2,
+    tech_manganese_smelting_1,
     magnesium_smelting_1,
-    steel_smelting_1
+    tech_steel_smelting_1
 }
 steel_molten_2 = "angels-liquid-molten-steel-2"
 steel_plate_2 = "angels-plate-steel-2"
-data_technology[steel_smelting_2].effects =
+data_technology[tech_steel_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = steel_ingot_2},
     {type = unlock_recipe, recipe = steel_molten_2},
@@ -891,15 +832,14 @@ data_technology[steel_smelting_2].effects =
     {type = unlock_recipe, recipe = steel_plate_2}
 }
 
-local steel_smelting_3 = "angels-steel-smelting-3"
-data_technology[steel_smelting_3].prerequisites =
+data_technology[tech_steel_smelting_3].prerequisites =
 {
     tech_strand_casting_2,
-    steel_smelting_2,
-    iron_smelting_2
+    tech_steel_smelting_2,
+    tech_iron_smelting_2
 }
 steel_roll_2 = "angels-roll-steel-2"
-data_technology[steel_smelting_3].effects =
+data_technology[tech_steel_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = steel_ingot_3},
     {type = unlock_recipe, recipe = steel_roll_2}
@@ -922,8 +862,8 @@ local aluminium_casting_2 = "angels-aluminium-casting-2"
 data_technology[aluminium_casting_2].prerequisites =
 {
     tech_strand_casting_2,
-    aluminium_smelting_1,
-    manganese_smelting_2,
+    tech_aluminium_smelting_1,
+    tech_manganese_smelting_2,
     magnesium_smelting_2
 }
 aluminium_molten_2 = "angels-liquid-molten-aluminium-2"
@@ -940,7 +880,7 @@ data_technology[aluminium_casting_3].prerequisites =
 {
     tech_strand_casting_3,
     aluminium_casting_2,
-    chrome_smelting_1
+    tech_chrome_smelting_1
 }
 aluminium_molten_3 = "angels-liquid-molten-aluminium-3"
 aluminium_roll_2 = "angels-roll-aluminium-2"
@@ -960,8 +900,8 @@ local titanium_casting_2 = "angels-titanium-casting-2"
 data_technology[titanium_casting_2].prerequisites =
 {
     tech_strand_casting_3,
-    titanium_smelting_1,
-    manganese_smelting_3,
+    tech_titanium_smelting_1,
+    tech_manganese_smelting_3,
     magnesium_smelting_3
 }
 titanium_molten_2 = "angels-liquid-molten-titanium-2"
@@ -978,7 +918,7 @@ data_technology[titanium_casting_3].prerequisites =
 {
     tech_strand_casting_4,
     titanium_casting_2,
-    chrome_smelting_1
+    tech_chrome_smelting_1
 }
 titanium_molten_3 = "angels-liquid-molten-titanium-3"
 titanium_roll_2 = "angels-roll-titanium-2"
@@ -1024,8 +964,16 @@ data_technology[concrete].effects =
     {type = unlock_recipe, recipe = refined_hazard_concrete_processing}
 }
 
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_technology[tech_stone_smelting_1].prerequisites =
+    {
+        tech_water_washing_1,
+        logistic_science_pack
+    }
+end
+
 concrete_2 = "angels-concrete"
-data_technology["angels-stone-smelting-2"].effects =
+data_technology[tech_stone_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = cement},
     {type = unlock_recipe, recipe = concrete_liquid},
@@ -1034,16 +982,15 @@ data_technology["angels-stone-smelting-2"].effects =
     {type = unlock_recipe, recipe = refined_concrete_2}
 }
 
-local stone_smelting_3 = "angels-stone-smelting-3"
-data_technology[stone_smelting_3].prerequisites =
+data_technology[tech_stone_smelting_3].prerequisites =
 {
     tech_powder_metallurgy_3,
-    iron_smelting_2,
-    titanium_smelting_1,
+    tech_iron_smelting_2,
+    tech_titanium_smelting_1,
     production_science_pack
 }
 cement_2 = "angels-solid-cement-2"
-data_technology[stone_smelting_3].effects =
+data_technology[tech_stone_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = titanium_dioxide},
     {type = unlock_recipe, recipe = cement_2},
@@ -1052,40 +999,37 @@ data_technology[stone_smelting_3].effects =
 }
 
 -- SOLDER
-local solder_smelting_1 = "angels-solder-smelting-1"
 solder_angels = "angels-solder"
-data_technology[solder_smelting_1].effects =
+data_technology[tech_solder_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = solder_molten_angels},
     {type = unlock_recipe, recipe = solder_angels}
 }
 
-local solder_smelting_2 = "angels-solder-smelting-2"
-data_technology[solder_smelting_2].prerequisites =
+data_technology[tech_solder_smelting_2].prerequisites =
 {
     tech_strand_casting_1,
-    zinc_smelting_1,
-    solder_smelting_1
+    tech_zinc_smelting_1,
+    tech_solder_smelting_1
 }
 solder_molten_2 = "angels-liquid-molten-solder-2"
 solder_2 = "angels-solder-2"
-data_technology[solder_smelting_2].effects =
+data_technology[tech_solder_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = solder_molten_2},
     {type = unlock_recipe, recipe = solder_roll},
     {type = unlock_recipe, recipe = solder_2}
 }
 
-local solder_smelting_3 = "angels-solder-smelting-3"
-data_technology[solder_smelting_3].prerequisites =
+data_technology[tech_solder_smelting_3].prerequisites =
 {
     tech_strand_casting_2,
-    silver_smelting_2,
-    solder_smelting_2
+    tech_silver_smelting_2,
+    tech_solder_smelting_2
 }
 solder_molten_3 = "angels-liquid-molten-solder-3"
 solder_roll_2 = "angels-roll-solder-2"
-data_technology[solder_smelting_3].effects =
+data_technology[tech_solder_smelting_3].effects =
 {
     {type = unlock_recipe, recipe = solder_molten_3},
     {type = unlock_recipe, recipe = solder_roll_2}
@@ -1093,76 +1037,80 @@ data_technology[solder_smelting_3].effects =
 
 -- ALLOYS
 -- BRONZE
-local bronze_smelting_1 = "angels-bronze-smelting-1"
-local bronze_smelting_2 = "angels-bronze-smelting-2"
-data_technology[bronze_smelting_2].prerequisites =
+data_technology[tech_bronze_smelting_2].prerequisites =
 {
-    bronze_smelting_1,
-    lead_smelting_2
+    tech_bronze_smelting_1,
+    tech_lead_smelting_2
 }
 
-local bronze_smelting_3 = "angels-bronze-smelting-3"
-data_technology[bronze_smelting_3].prerequisites =
+data_technology[tech_bronze_smelting_3].prerequisites =
 {
-    bronze_smelting_2,
+    tech_bronze_smelting_2,
     tech_metallurgy_3,
-    zinc_smelting_1
+    tech_zinc_smelting_1
 }
 
 -- BRASS
-local brass_smelting_1 = "angels-brass-smelting-1"
-local brass_smelting_2 = "angels-brass-smelting-2"
-data_technology[brass_smelting_2].prerequisites =
+data_technology[tech_brass_smelting_2].prerequisites =
 {
-    tin_smelting_3,
+    tech_tin_smelting_3,
     tech_metallurgy_3
 }
 
-local brass_smelting_3 = "angels-brass-smelting-3"
-data_technology[brass_smelting_3].prerequisites =
+data_technology[tech_brass_smelting_3].prerequisites =
 {
-    brass_smelting_2,
+    tech_brass_smelting_2,
     tech_metallurgy_4,
-    lead_smelting_3
+    tech_lead_smelting_3
 }
 
 -- GUNMETAL
-local gunmetal_smelting_1 = "angels-gunmetal-smelting-1"
-data_technology[gunmetal_smelting_1].prerequisites =
+data_technology[tech_gunmetal_smelting_1].prerequisites =
 {
-    copper_smelting_2,
-    tin_smelting_2,
-    zinc_smelting_1
+    tech_copper_smelting_2,
+    tech_tin_smelting_2,
+    tech_zinc_smelting_1
 }
 
 -- INVAR
-data_technology[invar_smelting_1].prerequisites =
+data_technology[tech_invar_smelting_1].prerequisites =
 {
-    iron_smelting_2,
-    nickel_smelting_1
+    tech_iron_smelting_2,
+    tech_nickel_smelting_1
 }
 
 -- COBALT-STEEL
-local cobalt_steel_smelting_1 = "angels-cobalt-steel-smelting-1"
-data_technology[cobalt_steel_smelting_1].prerequisites =
+data_technology[tech_cobalt_steel_smelting_1].prerequisites =
 {
-    steel_smelting_2,
-    cobalt_smelting_1
+    tech_steel_smelting_2,
+    tech_cobalt_smelting_1
 }
 
 -- NITINOL
-local nitinol_smelting_1 = "angels-nitinol-smelting-1"
-data_technology[nitinol_smelting_1].prerequisites =
+data_technology[tech_nitinol_smelting_1].prerequisites =
 {
-    titanium_smelting_1,
-    nickel_smelting_2,
+    tech_titanium_smelting_1,
+    tech_nickel_smelting_2,
     tech_metallurgy_4
 }
 
--- BUILDING
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_technology[tech_powder_metallurgy_1].prerequisites =
+    {
+        tech_stone_smelting_1,
+        logistic_science_pack,
+        tech_steel_processing
+    }
+    data_technology[tech_powder_metallurgy_1].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1}
+    }
+end
+
 data_technology[tech_ore_processing_1].effects =
 {
-    {type = unlock_recipe, recipe = "angels-ore-processing-machine"},
+    {type = unlock_recipe, recipe = ore_processing_machine_1},
     {type = unlock_recipe, recipe = coke_processed}
 }
 
@@ -1173,20 +1121,20 @@ data_technology[tech_ore_processing_2].prerequisites =
 }
 data_technology[tech_ore_processing_2].effects =
 {
-    {type = unlock_recipe, recipe = "angels-ore-processing-machine-2"},
-    {type = unlock_recipe, recipe = "angels-pellet-press"},
+    {type = unlock_recipe, recipe = ore_processing_machine_2},
+    {type = unlock_recipe, recipe = pellet_press_1},
     {type = unlock_recipe, recipe = coke_pellet_angels}
 }
 
 data_technology[tech_metallurgy_5].prerequisites =
 {
     advanced_processing_unit,
-    tungsten_processing,
+    tech_tungsten_processing,
     utility_science_pack,
-    iron_smelting_3,
-    copper_smelting_3,
-    aluminium_smelting_3,
-    silver_smelting_3
+    tech_iron_smelting_3,
+    tech_copper_smelting_3,
+    tech_aluminium_smelting_3,
+    tech_silver_smelting_3
 }
 data_technology[tech_metallurgy_5].effects =
 {
@@ -1218,7 +1166,7 @@ data_technology[tech_water_treatment_3].effects =
 
 data_technology[tech_water_treatment_4].prerequisites =
 {
-    stone_smelting_3,
+    tech_stone_smelting_3,
     tech_titanium_processing,
     tech_water_treatment_3,
     processing_unit
@@ -1276,7 +1224,7 @@ data_technology[tech_nitrogen_processing_3].effects =
 data_technology[tech_nitrogen_processing_4].prerequisites =
 {
     tech_nitrogen_processing_3,
-    "bob-tungsten-alloy-processing",
+    tech_tungsten_alloy_processing,
     tech_advanced_chemistry_5,
     tech_metallurgy_5
 }
@@ -1362,9 +1310,9 @@ data_technology[tech_chlorine_processing_4].effects =
 steam_cracking_methane = "angels-steam-cracking-methane"
 catalyst_steam_cracking_naphtha = "angels-catalyst-steam-cracking-naphtha"
 steam_cracking_butane = "angels-steam-cracking-butane"
-data_technology["angels-steam-cracking-1"].effects =
+data_technology[tech_steam_cracking_1].effects =
 {
-    {type = unlock_recipe, recipe = "angels-steam-cracker"},
+    {type = unlock_recipe, recipe = steam_cracker_1},
     {type = unlock_recipe, recipe = steam_cracking_methane},
     {type = unlock_recipe, recipe = ethylene_angels},
     {type = unlock_recipe, recipe = butene_gas},
@@ -1386,10 +1334,10 @@ table.insert(data_technology[tech_advanced_chemistry_3].effects, {type = unlock_
 data_technology[tech_advanced_chemistry_4].prerequisites =
 {
     tech_titanium_processing,
-    stone_smelting_3,
+    tech_stone_smelting_3,
     processing_unit,
-    copper_smelting_3,
-    manganese_smelting_2
+    tech_copper_smelting_3,
+    tech_manganese_smelting_2
 }
 table.insert(data_technology[tech_advanced_chemistry_4].effects, {type = unlock_recipe, recipe = sulfur_trioxide_separation})
 table.insert(data_technology[tech_advanced_chemistry_4].effects, {type = unlock_recipe, recipe = sulfuric_acid_from_hydrogen_peroxide})
@@ -1398,11 +1346,11 @@ cumene_process = "angels-cumene-process"
 data_technology[tech_advanced_chemistry_5].effects =
 {
     {type = unlock_recipe, recipe = advanced_chemical_plant_3},
-    {type = unlock_recipe, recipe = "angels-gas-refinery-small-4"},
-    {type = unlock_recipe, recipe = "angels-gas-refinery-3"},
-    {type = unlock_recipe, recipe = "angels-oil-refinery-4"},
-    {type = unlock_recipe, recipe = "angels-separator-4"},
-    {type = unlock_recipe, recipe = "angels-steam-cracker-4"},
+    {type = unlock_recipe, recipe = gas_refinery_4},
+    {type = unlock_recipe, recipe = advanced_gas_refinery_3},
+    {type = unlock_recipe, recipe = oil_refinery_4},
+    {type = unlock_recipe, recipe = separator_4},
+    {type = unlock_recipe, recipe = steam_cracker_4},
     {type = unlock_recipe, recipe = phenol},
     {type = unlock_recipe, recipe = acetone_angels},
     {type = unlock_recipe, recipe = cumene_process},
@@ -1458,8 +1406,8 @@ data_technology[tech_bio_processing_brown].effects =
 data_technology[tech_bio_processing_green].prerequisites =
 {
     tech_bio_processing_brown,
-    "angels-basic-chemistry-2",
-    "bob-electronics"
+    tech_basic_chemistry_2,
+    tech_electronics
 }
 algae_green_simple = "angels-algae-green-simple"
 methanol_from_wood = "angels-gas-methanol-from-wood"
@@ -1474,7 +1422,7 @@ data_technology[tech_bio_processing_green].effects =
     {type = unlock_recipe, recipe = water_mineralized_angels}
 }
 
-data_technology["angels-bio-refugium-fish-2"].effects =
+data_technology[tech_bio_refugium_fish_2].effects =
 {
     {type = unlock_recipe, recipe = factorian_fish},
     {type = unlock_recipe, recipe = levac_fish},
@@ -1486,7 +1434,7 @@ raw_meat_from_factorian_fish = "angels-fish-butchery-0"
 raw_meat_from_levac_fish = "angels-fish-butchery-1"
 raw_meat_from_dorflurp_jelly_fish = "angels-fish-butchery-2"
 raw_meat_from_santa_ray_fish = "angels-fish-butchery-3"
-data_technology["angels-bio-refugium-butchery-1"].effects =
+data_technology[tech_bio_refugium_butchery_1].effects =
 {
     {type = unlock_recipe, recipe = "angels-bio-butchery"},
     {type = unlock_recipe, recipe = raw_meat_from_factorian_fish},
@@ -1498,7 +1446,7 @@ data_technology["angels-bio-refugium-butchery-1"].effects =
 
 
 crystal_splinter_1 = "angels-crystal-splinter-crystalization-1"
-data_technology["angels-bio-processing-crystal-splinter-1"].effects =
+data_technology[tech_bio_processing_crystal_splinter_1].effects =
 {
     {type = unlock_recipe, recipe = crystal_splinter_1},
     {type = unlock_recipe, recipe = crystal_splinter_blue_cut},
@@ -1511,7 +1459,7 @@ data_technology["angels-bio-processing-crystal-splinter-1"].effects =
 }
 
 crystal_shard_1 = "angels-crystal-shard-crystalization-1"
-data_technology["angels-bio-processing-crystal-shard-1"].effects =
+data_technology[tech_bio_processing_crystal_shard_1].effects =
 {
     {type = unlock_recipe, recipe = puffer_egg_shell_powder},
     {type = unlock_recipe, recipe = egg_shell_seed},
@@ -1527,7 +1475,7 @@ data_technology["angels-bio-processing-crystal-shard-1"].effects =
 crystal_full_blue_powder = "angels-crystal-powder-full-blue"
 crystal_full_green_powder = "angels-crystal-powder-full-green"
 crystal_full_red_powder = "angels-crystal-powder-full-red"
-data_technology["angels-bio-processing-crystal-full"].effects =
+data_technology[tech_bio_processing_crystal_full].effects =
 {
     {type = unlock_recipe, recipe = crystal_full_blue_cut},
     {type = unlock_recipe, recipe = crystal_full_green_cut},

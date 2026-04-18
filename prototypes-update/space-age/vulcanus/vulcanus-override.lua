@@ -197,14 +197,20 @@ data_recipe[carbon].results =
 data_recipe[carbon].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
 -- TUNGSTEN
-local tungsten_ore = "tungsten-ore"
-data_resource[tungsten_ore].subgroup = is_tungsten
-data_resource[tungsten_ore].order = a
+data_resource[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
+data_resource[wolframite_ore].subgroup = is_tungsten
+data_resource[wolframite_ore].order = a
+data_resource[wolframite_ore].minable.mining_time = 4
+data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
+data_item[wolframite_ore].localised_description = show_formula and {chemical_formula, "(Fe,Mn)WO[font=default-tiny-bold]4[/font]"} or nil
+data_item[wolframite_ore].subgroup = is_tungsten
+data_item[wolframite_ore].order = a
+data_item[wolframite_ore].stack_size = 200
 
 data_recipe[tungsten_carbide].category = angels_sintering_4
 data_recipe[tungsten_carbide].subgroup = is_tungsten
 data_recipe[tungsten_carbide].icons = THREE_I(tungsten_ore_bob, carbon_angels, tungsten_carbide_bob)
-data_recipe[tungsten_carbide].order = b
+data_recipe[tungsten_carbide].order = c
 data_recipe[tungsten_carbide].energy_required = 4
 data_recipe[tungsten_carbide].ingredients =
 {
@@ -216,15 +222,15 @@ data_recipe[tungsten_carbide].surface_conditions = {{property = "pressure", min 
 data_recipe[tungsten_plate].category = angels_sintering_4
 data_recipe[tungsten_plate].subgroup = is_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_ore_bob, tungsten_plate_bob)
-data_recipe[tungsten_plate].order = c
+data_recipe[tungsten_plate].order = d
 data_recipe[tungsten_plate].energy_required = 8
 data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_ore_bob, amount = 4}}
 data_recipe[tungsten_plate].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
 data_tool[metallurgic_science_pack].subgroup = is_tungsten
-data_tool[metallurgic_science_pack].order = d
+data_tool[metallurgic_science_pack].order = e
 data_recipe[metallurgic_science_pack].subgroup = is_tungsten
-data_recipe[metallurgic_science_pack].order = d
+data_recipe[metallurgic_science_pack].order = e
 data_recipe[metallurgic_science_pack].energy_required = 8
 data_recipe[metallurgic_science_pack].ingredients =
 {
@@ -235,10 +241,10 @@ data_recipe[metallurgic_science_pack].ingredients =
 
 local foundation = "foundation"
 data_item[foundation].subgroup = is_tungsten
-data_item[foundation].order = e
+data_item[foundation].order = f
 data_item[foundation].stack_size = 200
 data_recipe[foundation].subgroup = is_tungsten
-data_recipe[foundation].order = e
+data_recipe[foundation].order = f
 data_recipe[foundation].energy_required = 32
 data_recipe[foundation].ingredients =
 {
