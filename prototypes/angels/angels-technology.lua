@@ -1,9 +1,6 @@
 local technology = "technology"
 data:extend
 ({
-    -- ANGELS METALLURGY CASTING
-    --{type = unlock_recipe, recipe = sintering_oven_3},
-    --{type = unlock_recipe, recipe = sintering_oven_4},
     -- ANGELS RESOURCE REFINING
     {
         type = technology,
@@ -76,7 +73,105 @@ data:extend
             },
             time = 30
         }
-    },
+    }
+})
+
+-- ANGELS METALLURGY CASTING
+--[[if settings.startup[setting_early_sintering_oven].value == true then
+    data:extend
+    ({
+        {
+            type = technology,
+            name = tech_powder_metallurgy_6,
+            icon = "__angelssmeltinggraphics__/graphics/technology/sintering-oven-tech.png",
+            icon_size = 256,
+            prerequisites =
+            {
+                tech_powder_metallurgy_5,
+                space_science_pack
+            },
+            effects = {{type = unlock_recipe, recipe = sintering_oven_6}},
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+else
+    data:extend
+    ({
+        {
+            type = technology,
+            name = tech_powder_metallurgy_6,
+            icon = "__angelssmeltinggraphics__/graphics/technology/sintering-oven-tech.png",
+            icon_size = 256,
+            prerequisites =
+            {
+                tech_powder_metallurgy_5,
+                space_science_pack
+            },
+            effects = {{type = unlock_recipe, recipe = sintering_oven_6}},
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        {
+            type = technology,
+            name = tech_powder_metallurgy_7,
+            icon = "__angelssmeltinggraphics__/graphics/technology/sintering-oven-tech.png",
+            icon_size = 256,
+            prerequisites =
+            {
+                tech_powder_metallurgy_6,
+                electromagnetic_science_pack,
+                agricultural_science_pack,
+                metallurgic_science_pack
+            },
+            effects = {{type = unlock_recipe, recipe = sintering_oven_7}},
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {metallurgic_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+end]]
+
+data:extend
+({
     -- ANGELS WATER TREATMENT
     {
         type = technology,
@@ -209,3 +304,23 @@ data:extend
         }
     }]]
 })
+
+--[[
+data:extend
+({
+    {
+        type = ,
+        name = ,
+        icon = ,
+        icon_size = 256,
+        prerequisites = {},
+        effects = {{type = unlock_recipe, recipe = }},
+        unit =
+        {
+            count = ,
+            ingredients = {{, }},
+            time = 
+        }
+    }
+})
+]]

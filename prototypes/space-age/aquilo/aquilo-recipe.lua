@@ -356,6 +356,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
+        always_show_products = true,
         energy_required = 8,
         ingredients = {},
         results = {{type = fluid, name = aquilo_air, amount = 240}},

@@ -185,64 +185,6 @@ data:extend
             energy_usage = 420 .. kW
         }
     }),
-    -- POWDERIZER
-    {
-        type = item,
-        name = powderizer_4,
-        subgroup = is_powderizer_angels,
-        icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/powderizer-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
-        order = d,
-        place_result = powderizer_4,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = powderizer_4,
-        category = crafting,
-        subgroup = is_powderizer_angels,
-        icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/powderizer-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
-        order = d,
-        enabled = false,
-        auto_recycle = true,
-        allow_show = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 4,
-        ingredients =
-        {
-            {type = item, name = nitinol_gear_wheel, amount = 4},
-            {type = item, name = reinforced_concrete_brick, amount = 8},
-            {type = item, name = nitinol_plate_bob, amount = 4},
-            {type = item, name = powderizer_3, amount = 1}
-        },
-        results = {{type = item, name = powderizer_4, amount = 1}},
-        main_product = powderizer_4
-    },
-    util.merge
-    ({
-        data_assembling[powderizer_3],
-        {
-            localised_description = {"entity-description.angels-powderizer"},
-            name = powderizer_4,
-            subgroup = is_powderizer_angels,
-            icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/powderizer-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
-            order = d,
-            minable = {result = powderizer_4},
-            module_slots = 4,
-            crafting_speed = 4,
-            energy_source =
-            {
-                type = electric,
-                usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 0},
-                drain = 60 .. kW
-            },
-            energy_usage = 420 .. kW,
-            crafting_categories = {angels_powderizing_1, angels_powderizing_2, angels_powderizing_3, powderizing_4}
-        }
-    }),
     -- ORE REFINERY
     {
         type = item,
@@ -356,6 +298,66 @@ data:extend
             energy_usage = 420 .. kW
         },
     }),
+    -- ORE SORTING FACILITY
+    -- POWDERIZER
+    {
+        type = item,
+        name = powderizer_4,
+        subgroup = is_powderizer_angels,
+        icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/powderizer-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
+        order = d,
+        place_result = powderizer_4,
+        stack_size = 32,
+        weight = 31250
+    },
+    {
+        type = recipe,
+        name = powderizer_4,
+        category = crafting,
+        subgroup = is_powderizer_angels,
+        icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/powderizer-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
+        order = d,
+        enabled = false,
+        auto_recycle = true,
+        allow_show = true,
+        allow_productivity = false,
+        allow_quality = true,
+        allow_decomposition = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = nitinol_gear_wheel, amount = 4},
+            {type = item, name = reinforced_concrete_brick, amount = 8},
+            {type = item, name = nitinol_plate_bob, amount = 4},
+            {type = item, name = powderizer_3, amount = 1}
+        },
+        results = {{type = item, name = powderizer_4, amount = 1}},
+        main_product = powderizer_4
+    },
+    util.merge
+    ({
+        data_assembling[powderizer_3],
+        {
+            localised_description = {"entity-description.angels-powderizer"},
+            name = powderizer_4,
+            subgroup = is_powderizer_angels,
+            icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/powderizer-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
+            order = d,
+            minable = {result = powderizer_4},
+            module_slots = 4,
+            crafting_speed = 4,
+            energy_source =
+            {
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 0},
+                drain = 60 .. kW
+            },
+            energy_usage = 420 .. kW,
+            crafting_categories = {angels_powderizing_1, angels_powderizing_2, angels_powderizing_3, powderizing_4}
+        }
+    }),
+    -- ELECTROWINNING CELL
     -- FILTRATION UNIT
     {
         type = item,
@@ -1013,12 +1015,25 @@ data_assembling[ore_leaching_plant_4].next_upgrade = nil
 data_assembling[ore_refinery_2].next_upgrade = ore_refinery_3
 data_assembling[ore_refinery_3].next_upgrade = ore_refinery_4
 data_assembling[ore_refinery_4].next_upgrade = nil
+--data_assembling[ore_sorting_facility_5].next_upgrade = ore_sorting_facility_6
+--data_assembling[ore_sorting_facility_6].next_upgrade = nil
 data_assembling[powderizer_3].next_upgrade = powderizer_4
 data_assembling[powderizer_4].next_upgrade = nil
+--data_assembling[electro_whinning_cell_2].next_upgrade = electro_whinning_cell_3
+--data_assembling[electro_whinning_cell_3].next_upgrade = electro_whinning_cell_4
+--data_assembling[electro_whinning_cell_4].next_upgrade = nil
 data_assembling[filtration_unit_3].next_upgrade = filtration_unit_4
 data_assembling[filtration_unit_4].next_upgrade = nil
 data_assembling[crystallizer_3].next_upgrade = crystallizer_4
 data_assembling[crystallizer_4].next_upgrade = nil
+--[[if settings.startup[setting_early_sintering_oven].value == true then
+    data_assembling[sintering_oven_5].next_upgrade = sintering_oven_6
+    data_assembling[sintering_oven_6].next_upgrade = nil
+else
+    data_assembling[sintering_oven_5].next_upgrade = sintering_oven_6
+    data_assembling[sintering_oven_6].next_upgrade = sintering_oven_7
+    data_assembling[sintering_oven_7].next_upgrade = nil
+end]]
 data_assembling[hydro_plant_3].next_upgrade = hydro_plant_4
 data_assembling[hydro_plant_4].next_upgrade = nil
 data_assembling[washing_plant_2].next_upgrade = washing_plant_3

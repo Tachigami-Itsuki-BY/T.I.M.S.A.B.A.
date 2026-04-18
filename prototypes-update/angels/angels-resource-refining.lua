@@ -24,7 +24,7 @@ local solid_mud_landfill = "angels-solid-mud-landfill"
 data_recipe[solid_mud_landfill].subgroup = is_processing_crafting
 data_recipe[solid_mud_landfill].icons = TWO_I(mud_angels, landfill)
 data_recipe[solid_mud_landfill].order = e_a
-data_recipe[solid_mud_landfill].energy_required = 4
+data_recipe[solid_mud_landfill].energy_required = 1
 data_recipe[solid_mud_landfill].ingredients[1].amount = 32
 
 data_resource["angels-ore2"].minable.mining_time = 1
@@ -873,7 +873,7 @@ data_recipe[slag_processing_filtering_1].ingredients =
 data_recipe[slag_processing_filtering_1].results =
 {
     {type = fluid, name = sludge_mineral, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
     {type = item, name = filter_frame, amount = 1}
 }
 
@@ -890,7 +890,7 @@ data_recipe[slag_processing_filtering_2].ingredients =
 data_recipe[slag_processing_filtering_2].results =
 {
     {type = fluid, name = sludge_mineral, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 30},
+    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
     {type = item, name = filter_ceramic_used, amount = 1}
 }
 
@@ -908,7 +908,7 @@ data_recipe[crystal_slurry_filtering_conversion_1].ingredients =
 data_recipe[crystal_slurry_filtering_conversion_1].results =
 {
     {type = fluid, name = sludge_mineral, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
     {type = item, name = filter_frame, amount = 1}
 }
 
@@ -926,7 +926,7 @@ data_recipe[crystal_slurry_filtering_conversion_2].ingredients =
 data_recipe[crystal_slurry_filtering_conversion_2].results =
 {
     {type = fluid, name = sludge_mineral, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 30},
+    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
     {type = item, name = filter_ceramic_used, amount = 1}
 }
 
@@ -966,7 +966,7 @@ data_recipe[crystal_slurry_filtering_1].ingredients =
 data_recipe[crystal_slurry_filtering_1].results =
 {
     {type = fluid, name = seedling_crystal, amount = 60},
-    {type = fluid, name = water_yellow_waste, amount = 60},
+    {type = fluid, name = water_yellow_waste, amount = 30}, -- 60
     {type = item, name = filter_frame, amount = 1}
 }
 
@@ -984,7 +984,7 @@ data_recipe[crystal_slurry_filtering_2].ingredients =
 data_recipe[crystal_slurry_filtering_2].results =
 {
     {type = fluid, name = seedling_crystal, amount = 30},
-    {type = fluid, name = water_yellow_waste, amount = 30},
+    {type = fluid, name = water_yellow_waste, amount = 15}, -- 30
     {type = item, name = filter_ceramic_used, amount = 1}
 }
 

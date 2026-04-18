@@ -76,7 +76,7 @@ Date: ??.??.2026
     - Переработка рецептов: стоимость крафта и характеристики строений Muluna синхронизированы с экономикой сборки.
     - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
     - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
-        Если включены Большие Электрические Буры из мода «Bob's Mining» тогда: Электрический Бур Т5 → Большой Электрический бур Т4.
+        Если включены Буры Большой Площади из мода «Bob's Mining» тогда: Электрический Бур Т5 → Электрический Бур Большой Площади Т4.
     - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно Цинковая Батарейка → Графеновая Батарейка.
     - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритиевый Газ (240 ед.)
     - У Большого Бура скорректированы характеристики:
@@ -87,7 +87,7 @@ Date: ??.??.2026
     - Recipe Overhaul: Muluna crafting costs and building stats are now synchronized with the modpack's economy.
     - Replaced an ingredient in the Electromagnetic Science Pack recipe: T3 High Capacity Accumulator → T4 High Capacity Accumulator.
     - Replaced an ingredient in the Big Mining Drill: T5 Electric Mining Drill → T6 Electric Mining Drill.
-        If Area Mining Drills from "Bob's Mining" are enabled then: T5 Electric Mining Drill → T4 Area Electric Mining Drill.
+        If Large Area Mining Drills from "Bob's Mining" are enabled then: T5 Electric Mining Drill → T4 Electric Large Area Mining Drill.
     - Replaced an ingredient in the Supercapacitor recip: Silver Zinc Battery → Graphene Battery.
     - Added an ingredient to the Fusion Power Cell recipe: Tritium Gas (240 units)
     - Adjusted stats for Big Mining Drill:
@@ -95,20 +95,104 @@ Date: ??.??.2026
         2. Module slots (5) → (8)
         3. Maximum Consumption (240 kW) → (2400 kW)
 
+  Modding:
+    - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
+
+    - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.27
+Date: 18.04.2026
+  Features:
+    - Добавлен рецепт Сортировка Вольфрамитовой Руды.
+    - Добавлена возможность включить «Раннюю печь для спекания» в настройках модов. (Новых рецептов нет)
+
+    - Added Wolframite Ore Sorting recipe.
+    - Added the ability to enable "Early Sintering Oven" in the mod settings. (No new recipes)
+
+  Changes:
+    - Скорректированы конфигурационные файлы (конфиги) модулей Скорости Продуктивности и Качества для удобной настройки баланса.
+    - Добавлена возможность через «Планер Обновлений» обновлять все виды Электростолбов.
+
+    - Adjusted configuration files (configs) for Speed, Productivity, and Quality modules for easier balance tuning.
+    - Added the ability to upgrade all types of Electric Poles via the "Upgrade Planner".
+
+  Bugfixes:
+    - Исправлена ошибка, из-за которой отсутствовал рецепт Алюминиевой Пластины в технологии Улучшеная Выплавка и Литьё Алюминия.
+    - Исправлена ошибка, из-за которой отсутствовал рецепт Цинковой Пластины в технологии Улучшеная Выплавка и Литьё Цинка.
+
+    - Fixed a bug where the Aluminum Plate recipe was missing from Advanced Aluminum Smelting and Casting technology.
+    - Fixed a bug where the Zinc Plate recipe was missing from Advanced Zinc Smelting and Casting technology.
+
+  Balancing:
+    - В предметах Маяков увеличен размер пачки: (20) → (32)
+    - В рецептах Маяков скорректировано время крафта:
+        1. Т1 (8 сек.) → (16 сек.)
+        2. Т3 (32 сек.) → (16 сек.)
+    - В рецептах Контролеров Модулей и Плат Модулей скорректировано время крафта:
+        1. Платы Модулей Т1 (4 сек.) → (8 сек.)
+        2. Контролер Модуля Т3 (16 сек.) → (8 сек.)
+    - В рецептах Модулей уменьшено время крафта:
+        1. Модули Т2 (16 сек.) → (8 сек.)
+        2. Модули Т3 (32 сек.) → (16 сек.)
+        3. Модули Т4 (64 сек.) → (32 сек.)
+    - В рецептах Плат Модулей Т3 произведена замена ингредиента: Контролер Модуля Т2 → Контролер Модуля Т3.
+    - В Модулях Скорости удалён отрицательный эффект: Качество.
+    - Уменьшено время добычи Вольфрамитовой Руды: (500%) → (400%)
+    - В рецепте Расплавленной Латуни 2 увеличено кол-во ингредиента: Медный Слиток (12 ед.) → (16 ед.)
+    - В рецепте Расплавленной Пушечной Бронзы скорректированы ингердиенты и результат:
+        1. Медный Слиток (16 ед.) → (8 ед.)
+        2. Оловянный Слиток (4 ед.) → (16 ед.)
+        3. Цинковый Слиток (4 ед.) → (8 ед.)
+        4. (240 ед.) → (480 ед.)
+    - В рецепте Отсыпка Территории (из Грязи) уменьшено время крафта: (4 сек.) → (1 сек.)
+    - В рецепте Угольной Фильтрации Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
+    - В рецепте Керамической Фильтрации Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
+    - В рецепте Фильтрации Кристаллической Суспензии в Минеральный Шлам с Использованием Угольных Фильтров уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
+    - В рецепте Фильтрации Кристаллической Суспензии в Минеральный Шлам с Использованием Керамических Фильтров уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
+    - В рецепте Угольной Фильтрации Кристаллической Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
+    - В рецепте Керамической Фильтрации Кристаллической Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
+
+    - Increased stack size for the Beacons: (20) → (32)
+    - Adjusted crafting time for the Beacon recipes:
+        1. T1 (8 sec.) → (16 sec.)
+        2. T3 (32 sec.) → (16 sec.)
+    - Adjusted crafting time for the Module Controller and Module Board recipes:
+        1. T1 Module Board (4 sec.) → (8 sec.)
+        2. T3 Module Controller (16 sec.) → (8 sec.)
+    - Decreased crafting time for the Module recipes:
+        1. T2 Modules (16 sec.) → (8 sec.)
+        2. T3 Modules (32 sec.) → (16 sec.)
+        3. T4 Modules (64 sec.) → (32 sec.)
+    - Replaced an ingredient in the Module Board recipes: T2 Module Controller → T3 Module Controller.
+    - Removed negative effect from the Speed Modules: Quality.
+    - Decreased mining time for Wolframite Ore: (500%) → (400%)
+    - Increased an ingredient in the Molten Brass 2 recipe: Copper Ingot (12 units) → (16 units)
+    - Adjusted ingredients and a result in the Molten Gunmetal recipe:
+        1. Copper Ingot (16 units) → (8 units)
+        2. Tin Ingot (4 units) → (16 units)
+        3. Zinc Ingot (4 units) → (8 units)
+        4. (240 units) → (480 units)
+    - Decreased crafting time for the Landfill (from Mud) recipe: (4 sec.) → (1 sec.)
+    - Decreased a result in the Slurry Coal Filtering recipe: Sulfuric Waste Water (60 units) → (30 units)
+    - Decreased a result in the Slurry Ceramic Filtering recipe: Sulfuric Waste Water (30 units) → (15 units)
+    - Decreased a result in the Crystal Slurry to Mineral Sludge Coal Filtering recipe: Sulfuric Waste Water (60 units) → (30 units)
+    - Decreased a result in the Crystal Slurry to Mineral Sludge Ceramic Filtering recipe: Sulfuric Waste Water (30 units) → (15 units)
+    - Decreased a result in the Crystal Slurry Coal Filtering recipe: Sulfuric Waste Water (60 units) → (30 units)
+    - Decreased a result in the Crystal Slurry Ceramic Filtering recipe: Sulfuric Waste Water (30 units) → (15 units)
+
   Graphics:
     - Обновлены иконки для технологий Батарейка 2 и Батарейка 3.
 
     - Updated icon for Battery 2 and Battery 3 technologies.
 
   Locale:
+    - Вольфрамовая Руда (Вулканус) переименована в Вольфрамитовую Руду.
+    - Добавлена химическая формула для Пушечной Бронзы.
     - Добавлено описание для технологий Батарейка 2 и Батарейка 3.
 
+    - Renamed the Tungsten Ore (Vulcanus) to Wolframite Ore.
+    - Added a chemical formula for Gunmetal.
     - Added a description for Battery 2 and Battery 3 technologies.
-
-  Modding:
-    - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
-
-    - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.26
 Date: 15.04.2026
@@ -211,7 +295,7 @@ Date: 13.04.2026
     - В предмете Яйцо Кусаки изменена топливная категория.
     - В Танках и Паукатронах изменена топливная категория.
     - В Твердотопливном Сборочном Автомате изменена топливная категория.
-    - В предмете Твердотопливного Сборочного Автомата уменьшен размер стака: (64) → (32)
+    - В предмете Твердотопливного Сборочного Автомата уменьшен размер пачки: (64) → (32)
     - В рецепте Твердотопливного Сборочного Автомата скорректированы ингредиенты, время крафта и максимальное потребление:
         1. Железная шестерня (5 ед.) → (4 ед.)
         2. Железная Пластина (9 ед.) → (8 ед.)
@@ -237,7 +321,7 @@ Date: 13.04.2026
     - Changed fuel category of the Biter Egg item.
     - Changed fuel categories for the Tanks and Spidertrons.
     - Changed fuel category of the Burner Assembling Machine.
-    - Decreased stack size of the Burner Assembling Machine: (64) → (32)
+    - Decreased stack size for the Burner Assembling Machine: (64) → (32)
     - Adjusted ingredients, crafting time, and maximum consumption of the Burner Assembling Machine:
         1. Iron Gear Wheel (5 units) → (4 units)
         2. Iron Plate (9 units) → (8 units)
@@ -432,9 +516,9 @@ Date: 11.04.2026
 Version: 0.0.20
 Date: 10.04.2026
   Changes:
-    - Добавлена возможность через «Планер Обновлений» обновить Радары.
+    - Добавлена возможность через «Планер Обновлений» обновлять Радары.
 
-    - Added the ability to upgrade a Radars via the "Upgrade Planner".
+    - Added the ability to upgrade Radars via the "Upgrade Planner".
 
   Bugfixes:
     - Исправлена ошибка, из-за которой нельзя было крафтить вручную Погрузчики из мода «Loaders Modernized: Bob's Logistics».
@@ -523,7 +607,7 @@ Date: 09.04.2026
     - У Элеткропечей Т3 увеличено потребление энергии: (120 кВт) → (180 кВт)
     - У Электропечей Т5 уменьшено потребление энергии: (360 кВт) → (300 кВт)
 
-    - Increased crafting time for Algae recipes: (16 sec.) → (32 sec.)
+    - Increased crafting time for the Algae recipes: (16 sec.) → (32 sec.)
     - Increased energy consumption for T3 Electric Furnaces: (120 kW) → (180 kW)
     - Decreased energy consumption for T5 Electric Furnaces: (360 kW) → (300 kW)
 ---------------------------------------------------------------------------------------------------
@@ -676,7 +760,7 @@ Date: 04.04.2026
     - В рецепте Перекиси Водорода заменено производственное здание: Электролизер → Химический Завод.
 
     - T2 Heat Exchanger recipe: reverted to original ingredients.
-    - Reduced crafting time for Small Solar Panel recipes: (2 sec.) → (1 sec.)
+    - Reduced crafting time for the Small Solar Panel recipes: (2 sec.) → (1 sec.)
     - Changed stack sizes for the following items:
         Aquilo:
           1. Ice Platform (100 units) → (256 units)
@@ -811,7 +895,7 @@ Date: 03.04.2026
         1. Doubled Copper Plate.
         2. Halved Steel Plate.
     - Replaced an ingredient in the T2 Solar Panel recipes: Tinned Cable → Silver Cable.
-    - Increased crafting time for Solar Panel recipes:
+    - Increased crafting time for the Solar Panel recipes:
         1. Small (1 sec.) → (2 sec.)
         2. Medium (1 sec.) → (2 sec.)
         3. Large (1 sec.) → (4 sec.)
@@ -853,14 +937,14 @@ Date: 03.04.2026
 Version: 0.0.6
 Date: 03.04.2026
   Balancing:
-    - Скорректирована скорость добычи руд:
+    - Скорректировано время добычи руд:
         1. Дживолит (200%) → (100%)
         2. Стиратит (150%) → (100%)
         3. Кротинниум (250%) → (100%)
         4. Рубит (200%) → (100%)
         5. Бобмониум (250%) → (100%)
 
-    - Adjusted mining speed for ores:
+    - Adjusted mining time for ores:
         1. Jivolite (200%) → (100%)
         2. Stiratite (150%) → (100%)
         3. Crotinnium (250%) → (100%)
@@ -877,10 +961,10 @@ Date: 02.04.2026
     - Adjusted animation speed for all types of Electric Mining Drills.
 
   Bugfixes:
-    - Исправлена ошибка запуска, возникавшая при включении Больших Электрических Буров в моде «Bob's Mining».
+    - Исправлена ошибка запуска, возникавшая при включении Электрических Буров Большой Площади в моде «Bob's Mining».
     - Исправлена ошибка совместимости, приводившая к сбою запуска при наличии мода «Graille Tools: Bob Hardened Bile Remover».
 
-    - Fixed crash when using Area Mining Drills with "Bob's Mining" mod.
+    - Fixed crash when using Electric Large Area Mining Drills with "Bob's Mining" mod.
     - Fixed compatibility crash with "Graille Tools: Bob Hardened Bile Remover" mod.
 
   Balancing:
@@ -888,11 +972,11 @@ Date: 02.04.2026
     - В рецепте Парового Двигателя Т1 убрана Каменная Печь.
     - В рецепте Компостера заменен ингредиент: Глиняный Кирпич (8 ед.) → Каменный Кирпич (8 ед.)
     - В рецептах Погрузчиков увеличено кол-во ингредиента: Манипулятор (6 ед.) → (8 ед.)
-    - В рецептах Больших Электрических Буров изменены ингредиенты:
+    - В рецептах Электрических Буров Большой Площади изменены ингредиенты:
         1. Cхема (5 ед.) → (4 ед.)
         2. Пластина (10 ед.) → (16 ед.)
         3. Шестерёнка (5 ед.) → (16 ед.)
-    - Изменены характеристики Больших Электрических Буров (относительно обычных):
+    - Изменены характеристики Электрических Буров Большой Площади (относительно обычных):
         1. Энергопотребление увеличено в 2 раза.
         2. Площадь добычи увеличена в 1.8 раза.
         3. Загрязнение увеличено в 2 раза.
@@ -901,11 +985,11 @@ Date: 02.04.2026
     - Removed Stone Furnace from the T1 Steam Engine recipe.
     - Replaced ingredient in the Composter recipe: Clay Brick (8 units) → Stone Brick (8 units).
     - Increased an ingredient in the Loader recipes: Inserters (6 units) → (8 units).
-    - Changed ingredients in Area Mining Drill recipes:
+    - Changed ingredients in Electric Large Area Mining Drill recipes:
         1. Circuit (5 units) → (4 units)
         2. Plate (10 units) → (16 units)
         3. Gear Wheel (5 units) → (16 units)
-    - Changed Area Mining Drill stats (relative to standard electric drills):
+    - Changed Electric Large Area Mining Drill stats (relative to standard electric drills):
         1. Energy consumption doubled.
         2. Mining Area increased by 1.8 times.
         3. Pollution doubled.

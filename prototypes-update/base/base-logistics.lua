@@ -720,3 +720,17 @@ data_transport_belt[T5_transport_belt].next_upgrade = vulcanus_transport_belt
 data_underground_belt[T5_underground_belt].next_upgrade = vulcanus_underground_belt
 data_splitter[T5_splitter].next_upgrade = vulcanus_splitter
 data_inserter[T5_bulk_inserter].next_upgrade = stack_inserter
+
+data_electric_pole[small_electric_pole].next_upgrade = medium_electric_pole_1
+data_electric_pole[medium_electric_pole_1].next_upgrade = medium_electric_pole_2
+data_electric_pole[medium_electric_pole_2].next_upgrade = medium_electric_pole_3
+data_electric_pole[medium_electric_pole_3].next_upgrade = medium_electric_pole_4
+data_electric_pole[medium_electric_pole_4].next_upgrade = nil
+data_electric_pole[big_electric_pole_1].next_upgrade = big_electric_pole_2
+data_electric_pole[big_electric_pole_2].next_upgrade = big_electric_pole_3
+data_electric_pole[big_electric_pole_3].next_upgrade = big_electric_pole_4
+data_electric_pole[big_electric_pole_4].next_upgrade = nil
+data_electric_pole[substation_1].next_upgrade = substation_2
+data_electric_pole[substation_2].next_upgrade = substation_3
+data_electric_pole[substation_3].next_upgrade = substation_4
+data_electric_pole[substation_4].next_upgrade = nil

@@ -89,12 +89,12 @@ data:extend
     --[[{
         localised_description = {"technology-description.solar-energy"},
         type = technology,
-        name = "solar-energy-4",
+        name = solar_energy_4,
         icon = "__base__/graphics/technology/solar-energy.png",
         icon_size = 256,
         prerequisites =
         {
-            "bob-solar-energy-3",
+            solar_energy_3,
             utility_science_pack,
             advanced_processing_unit
         },
@@ -122,12 +122,12 @@ data:extend
     {
         localised_description = {"technology-description.electric-energy-accumulators"},
         type = technology,
-        name = "electric-energy-accumulators-4",
+        name = electric_energy_accumulators_4,
         icon = "__base__/graphics/technology/electric-energy-acumulators.png",
         icon_size = 256,
         prerequisites =
         {
-            "bob-electric-energy-accumulators-3",
+            electric_energy_accumulators_3,
             utility_science_pack
         },
         effects = {{type = unlock_recipe, recipe = accumulator_4}},
@@ -148,12 +148,12 @@ data:extend
     -- ELECTRIC MINING DRILL
     {
         type = technology,
-        name = "drills-6",
+        name = drills_6,
         icon = "__base__/graphics/technology/mining-productivity.png",
         icon_size = 256,
         prerequisites =
         {
-            "bob-drills-5",
+            drills_5,
             space_science_pack
         },
         effects = {{type = unlock_recipe, recipe = electric_mining_drill_6}},
@@ -175,10 +175,14 @@ data:extend
     -- PUMPJACK
     --[[{
         type = technology,
-        name = "pumpjacks-5",
+        name = tech_pumpjacks_5,
         icon = "__base__/graphics/technology/oil-gathering.png",
         icon_size = 256,
-        prerequisites = {"bob-pumpjacks-3", space_science_pack},
+        prerequisites =
+        {
+            tech_pumpjacks_3,
+            space_science_pack
+        },
         effects = {{type = unlock_recipe, recipe = pumpjack_5}},
         unit =
         {
@@ -195,10 +199,16 @@ data:extend
             time = 30
         },
         type = technology,
-        name = "pumpjacks-6",
+        name = tech_pumpjacks_6,
         icon = "__base__/graphics/technology/oil-gathering.png",
         icon_size = 256,
-        prerequisites = {"pumpjacks-5", electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
+        prerequisites =
+        {
+            tech_pumpjacks_5,
+            electromagnetic_science_pack,
+            agricultural_science_pack,
+            metallurgic_science_pack
+        },
         effects = {{type = unlock_recipe, recipe = pumpjack_6}},
         unit =
         {
@@ -222,10 +232,14 @@ data:extend
     --[[{
         localised_name = {"technology-name.fusion-power-2"},
         type = technology,
-        name = "fusion-power-2",
+        name = tech_fusion_power_2,
         icon = "__base__/graphics/technology/nuclear-power.png",
         icon_size = 256,
-        prerequisites = {space_science_pack, "angels-fusion-power-1"},
+        prerequisites =
+        {
+            tech_fusion_power_1,
+            space_science_pack
+        },
         effects =
         {
             {type = unlock_recipe, recipe = tritium_reactor},
@@ -251,10 +265,14 @@ data:extend
     -- FURNACES
     {
         type = technology,
-        name = "advanced-material-processing-5",
+        name = advanced_material_processing_5,
         icon = "__base__/graphics/technology/advanced-material-processing-2.png",
         icon_size = 256,
-        prerequisites = {"advanced-material-processing-4", space_science_pack},
+        prerequisites =
+        {
+            advanced_material_processing_4,
+            space_science_pack
+        },
         effects = {{type = unlock_recipe, recipe = electric_furnace_4}},
         unit =
         {
@@ -273,7 +291,7 @@ data:extend
     },
     {
         type = technology,
-        name = "multi-porpose-furnace-3",
+        name = multi_porpose_furnace_3,
         icons =
         {
             {
@@ -295,7 +313,11 @@ data:extend
             },
         },
         icon_size = 256,
-        prerequisites = {"bob-multi-porpose-furnace-2", space_science_pack},
+        prerequisites =
+        {
+            multi_porpose_furnace_2,
+            space_science_pack
+        },
         effects = {{type = unlock_recipe, recipe = electric_mixing_furnace_4}},
         unit =
         {
@@ -336,3 +358,23 @@ data:extend
         }
     }
 })
+
+--[[
+data:extend
+({
+    {
+        type = ,
+        name = ,
+        icon = ,
+        icon_size = 256,
+        prerequisites = {},
+        effects = {{type = unlock_recipe, recipe = }},
+        unit =
+        {
+            count = ,
+            ingredients = {{, }},
+            time = 
+        }
+    }
+})
+]]

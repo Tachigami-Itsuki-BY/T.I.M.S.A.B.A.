@@ -217,6 +217,35 @@ data_recipe["angels-plate-glass-3"] = nil
 
 data_recipe["angels-liquid-molten-solder-4"] = nil
 
+if settings.startup[setting_early_sintering_oven].value == false then
+	data_item[sintering_oven_1] = nil
+	data_item[sintering_oven_2] = nil
+	data_item[sintering_oven_3] = nil
+	data_recipe[sintering_oven_1] = nil
+	data_recipe[sintering_oven_2] = nil
+	data_recipe[sintering_oven_3] = nil
+	data_assembling[sintering_oven_1] = nil
+	data_assembling[sintering_oven_2] = nil
+	data_assembling[sintering_oven_3] = nil
+
+    data_technology[tech_powder_metallurgy_1] = nil
+    data_technology[tech_powder_metallurgy_2].prerequisites = {tech_metallurgy_2}
+    data_technology[tech_powder_metallurgy_2].effects =
+    {
+        {type = unlock_recipe, recipe = powder_mixer_1},
+        {type = unlock_recipe, recipe = powderizer_1}
+    }
+    data_technology[tech_powder_metallurgy_3].effects =
+    {
+        {type = unlock_recipe, recipe = powder_mixer_2},
+        {type = unlock_recipe, recipe = powderizer_2}
+    }
+
+	data_recipe["angels-sintering-oven-recycling"] = nil
+	data_recipe["angels-sintering-oven-2-recycling"] = nil
+	data_recipe["angels-sintering-oven-3-recycling"] = nil
+end
+
 -- ANGELS WATER TREATMENT
 data_recipe["angels-solid-salt-dissolving"] = nil
 

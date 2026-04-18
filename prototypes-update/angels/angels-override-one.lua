@@ -1,7 +1,6 @@
 -- ANGELS RESOURCE REFINING
 local drain = 15
 local kW = "kW"
-local burner_ore_crusher = "angels-burner-ore-crusher"
 data_item[burner_ore_crusher].subgroup = is_ore_crusher
 data_item[burner_ore_crusher].order = a
 data_item[burner_ore_crusher].stack_size = 32
@@ -20,9 +19,6 @@ data_assembling[burner_ore_crusher].energy_source.fuel_categories = {base_fuel}
 
 data_item_subgroup["angels-ore-crusher"].order = z_a
 
-local ore_crusher_1 = "angels-ore-crusher"
-local ore_crusher_2 = "angels-ore-crusher-2"
-local ore_crusher_3 = "angels-ore-crusher-3"
 local ore_crushers =
 {
     {name = ore_crusher_1, crafting_speed = 1, energy_usage = 120, order = b},
@@ -56,9 +52,7 @@ ore_crusher_recipe(ore_crusher_2, steel_gear_wheel, clay_brick, steel_plate, ore
 ore_crusher_recipe(ore_crusher_3, brass_gear_wheel, concrete_brick, aluminium_plate_bob, ore_crusher_2)
 
 data_item_subgroup["angels-ore-floatation"].order = z_b
-local ore_floatation_cell_1 = "angels-ore-floatation-cell"
-local ore_floatation_cell_2 = "angels-ore-floatation-cell-2"
-local ore_floatation_cell_3 = "angels-ore-floatation-cell-3"
+
 local ore_floatation_cells =
 {
     {name = ore_floatation_cell_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -96,9 +90,7 @@ ore_floatation_cell_recipe(ore_floatation_cell_2, brass_pipe, advanced_circuit, 
 ore_floatation_cell_recipe(ore_floatation_cell_3, titanium_pipe, processing_unit, reinforced_concrete_brick, titanium_plate_bob, ore_floatation_cell_2)
 
 data_item_subgroup["angels-ore-leaching"].order = z_c
-local ore_leaching_plant_1 = "angels-ore-leaching-plant"
-local ore_leaching_plant_2 = "angels-ore-leaching-plant-2"
-local ore_leaching_plant_3 = "angels-ore-leaching-plant-3"
+
 local ore_leaching_plants =
 {
     {name = ore_leaching_plant_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -136,8 +128,7 @@ ore_leaching_plant_recipe(ore_leaching_plant_2, titanium_pipe, processing_unit, 
 ore_leaching_plant_recipe(ore_leaching_plant_3, tungsten_pipe, advanced_processing_unit, reinforced_concrete_brick, tungsten_plate_bob, ore_leaching_plant_2)
 
 data_item_subgroup["angels-ore-refining"].order = z_d
-local ore_refinery_1 = "angels-ore-refinery"
-local ore_refinery_2 = "angels-ore-refinery-2"
+
 local ore_refinerys =
 {
     {name = ore_refinery_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -172,11 +163,7 @@ ore_refinery_recipe(ore_refinery_1, processing_unit, reinforced_concrete_brick, 
 ore_refinery_recipe(ore_refinery_2, advanced_processing_unit, reinforced_concrete_brick, tungsten_plate_bob, ore_refinery_1)
 
 data_item_subgroup["angels-ore-sorter"].order = z_e
-local ore_sorting_facility_1 = "angels-ore-sorting-facility"
-local ore_sorting_facility_2 = "angels-ore-sorting-facility-2"
-local ore_sorting_facility_3 = "angels-ore-sorting-facility-3"
-local ore_sorting_facility_4 = "angels-ore-sorting-facility-4"
-local ore_sorting_facility_5 = "angels-ore-sorting-facility-5"
+
 local ore_sorting_facilitys =
 {
     {name = ore_sorting_facility_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -219,9 +206,7 @@ ore_sorting_facility_recipe(ore_sorting_facility_4, titanium_gear_wheel, process
 ore_sorting_facility_recipe(ore_sorting_facility_5, copper_tungsten_gear_wheel, advanced_processing_unit, reinforced_concrete_brick, copper_tungsten_plate_bob, ore_sorting_facility_4)
 
 data_item_subgroup["angels-powderizer"].order = z_f
-local powderizer_1 = "angels-powderizer"
-local powderizer_2 = "angels-powderizer-2"
-local powderizer_3 = "angels-powderizer-3"
+
 local powderizers =
 {
     {name = powderizer_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -258,8 +243,7 @@ powderizer_recipe(powderizer_2, brass_gear_wheel, aluminium_plate_bob, concrete_
 powderizer_recipe(powderizer_3, titanium_gear_wheel, titanium_plate_bob, reinforced_concrete_brick, powderizer_2)
 
 data_item_subgroup["angels-ore-whinning"].order = z_g
-local electro_whinning_cell_1 = "angels-electro-whinning-cell"
-local electro_whinning_cell_2 = "angels-electro-whinning-cell-2"
+
 local electro_whinning_cells =
 {
     {name = electro_whinning_cell_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -295,8 +279,7 @@ electro_whinning_cell_recipe(electro_whinning_cell_1, titanium_pipe, processing_
 electro_whinning_cell_recipe(electro_whinning_cell_2, tungsten_pipe, advanced_processing_unit, reinforced_concrete_brick, tungsten_plate_bob, electro_whinning_cell_1)
 
 data_item_subgroup["angels-refining-buildings"].order = z_h
-local thermal_extractor_1 = "angels-thermal-bore"
-local thermal_extractor_2 = "angels-thermal-extractor"
+
 local thermal_extractors =
 {
     {name = thermal_extractor_1, mining_speed = 1, energy_usage = 120},
@@ -329,9 +312,6 @@ end
 thermal_extractor_recipe(thermal_extractor_1, steel_gear_wheel, bronze_pipe, electronic_circuit, clay_brick, bronze_plate_bob)
 thermal_extractor_recipe(thermal_extractor_2, brass_gear_wheel, brass_pipe, advanced_circuit, concrete_brick, aluminium_plate_bob, thermal_extractor_1)
 
-local filtration_unit_1 = "angels-filtration-unit"
-local filtration_unit_2 = "angels-filtration-unit-2"
-local filtration_unit_3 = "angels-filtration-unit-3"
 local filtration_units =
 {
     {name = filtration_unit_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -371,9 +351,6 @@ filtration_unit_recipe(filtration_unit_1, steel_pipe, electronic_circuit, clay_b
 filtration_unit_recipe(filtration_unit_2, brass_pipe, advanced_circuit, concrete_brick, aluminium_plate_bob, filtration_unit_1)
 filtration_unit_recipe(filtration_unit_3, titanium_pipe, processing_unit, reinforced_concrete_brick, titanium_plate_bob, filtration_unit_2)
 
-local crystallizer_1 = "angels-crystallizer"
-local crystallizer_2 = "angels-crystallizer-2"
-local crystallizer_3 = "angels-crystallizer-3"
 local crystallizers =
 {
     {name = crystallizer_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -414,10 +391,6 @@ crystallizer_recipe(crystallizer_2, brass_pipe, advanced_circuit, concrete_brick
 crystallizer_recipe(crystallizer_3, titanium_pipe, processing_unit, reinforced_concrete_brick, titanium_plate_bob, crystallizer_2)
 
 -- ANGELS METTALURGY SMELTING
-local ore_processing_machine_1 = "angels-ore-processing-machine"
-local ore_processing_machine_2 = "angels-ore-processing-machine-2"
-local ore_processing_machine_3 = "angels-ore-processing-machine-3"
-local ore_processing_machine_4 = "angels-ore-processing-machine-4"
 local ore_processing_machines =
 {
     {name = ore_processing_machine_1, crafting_speed = 1, energy_usage = 120},
@@ -452,10 +425,6 @@ ore_processing_machine_recipe(ore_processing_machine_2, brass_gear_wheel, concre
 ore_processing_machine_recipe(ore_processing_machine_3, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, ore_processing_machine_2)
 ore_processing_machine_recipe(ore_processing_machine_4, copper_tungsten_gear_wheel, reinforced_concrete_brick, copper_tungsten_plate_bob, ore_processing_machine_3)
 
-local pellet_press_1 = "angels-pellet-press"
-local pellet_press_2 = "angels-pellet-press-2"
-local pellet_press_3 = "angels-pellet-press-3"
-local pellet_press_4 = "angels-pellet-press-4"
 local pellet_pressed =
 {
     {name = pellet_press_1, crafting_speed = 1, energy_usage = 120},
@@ -490,10 +459,6 @@ pellet_press_recipe(pellet_press_2, titanium_gear_wheel, reinforced_concrete_bri
 pellet_press_recipe(pellet_press_3, copper_tungsten_gear_wheel, reinforced_concrete_brick, copper_tungsten_plate_bob, pellet_press_2)
 pellet_press_recipe(pellet_press_4, nitinol_gear_wheel, reinforced_concrete_brick, nitinol_plate_bob, pellet_press_3)
 
-local powder_mixer_1 = "angels-powder-mixer"
-local powder_mixer_2 = "angels-powder-mixer-2"
-local powder_mixer_3 = "angels-powder-mixer-3"
-local powder_mixer_4 = "angels-powder-mixer-4"
 local powder_mixers =
 {
     {name = powder_mixer_1, crafting_speed = 1, energy_usage = 120},
@@ -528,10 +493,6 @@ powder_mixer_recipe(powder_mixer_2, brass_gear_wheel, concrete_brick, aluminium_
 powder_mixer_recipe(powder_mixer_3, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, powder_mixer_2)
 powder_mixer_recipe(powder_mixer_4, copper_tungsten_gear_wheel, reinforced_concrete_brick, copper_tungsten_plate_bob, powder_mixer_3)
 
-local blast_furnace_1 = "angels-blast-furnace"
-local blast_furnace_2 = "angels-blast-furnace-2"
-local blast_furnace_3 = "angels-blast-furnace-3"
-local blast_furnace_4 = "angels-blast-furnace-4"
 local blast_furnaces =
 {
     {name = blast_furnace_1, crafting_speed = 1, energy_usage = 450},
@@ -567,10 +528,6 @@ blast_furnace_recipe(blast_furnace_2, electronic_circuit, steel_pipe, clay_brick
 blast_furnace_recipe(blast_furnace_3, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, blast_furnace_2)
 blast_furnace_recipe(blast_furnace_4, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, blast_furnace_3)
 
-local chemical_furnace_1 = "angels-chemical-furnace"
-local chemical_furnace_2 = "angels-chemical-furnace-2"
-local chemical_furnace_3 = "angels-chemical-furnace-3"
-local chemical_furnace_4 = "angels-chemical-furnace-4"
 local chemical_furnaces =
 {
     {name = chemical_furnace_1, crafting_speed = 1, energy_usage = 120},
@@ -607,10 +564,6 @@ chemical_furnace_recipe(chemical_furnace_3, processing_unit, titanium_pipe, rein
 chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, tungsten_pipe, reinforced_concrete_brick, tungsten_plate_bob, chemical_furnace_3)
 
 -- ANGELS METTALURGY CASTING
-local induction_furnace_1 = "angels-induction-furnace"
-local induction_furnace_2 = "angels-induction-furnace-2"
-local induction_furnace_3 = "angels-induction-furnace-3"
-local induction_furnace_4 = "angels-induction-furnace-4"
 local induction_furnaces =
 {
     {name = induction_furnace_1, crafting_speed = 1, energy_usage = 120},
@@ -647,10 +600,6 @@ induction_furnace_recipe(induction_furnace_2, steel_gear_wheel, electronic_circu
 induction_furnace_recipe(induction_furnace_3, brass_gear_wheel, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, induction_furnace_2)
 induction_furnace_recipe(induction_furnace_4, titanium_gear_wheel, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, induction_furnace_3)
 
-local casting_machine_1 = "angels-casting-machine"
-local casting_machine_2 = "angels-casting-machine-2"
-local casting_machine_3 = "angels-casting-machine-3"
-local casting_machine_4 = "angels-casting-machine-4"
 local casting_machines =
 {
     {name = casting_machine_1, crafting_speed = 1, energy_usage = 120},
@@ -687,10 +636,6 @@ casting_machine_recipe(casting_machine_2, steel_gear_wheel, electronic_circuit, 
 casting_machine_recipe(casting_machine_3, brass_gear_wheel, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, casting_machine_2)
 casting_machine_recipe(casting_machine_4, titanium_gear_wheel, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, casting_machine_3)
 
-local strand_casting_machine_1 = "angels-strand-casting-machine"
-local strand_casting_machine_2 = "angels-strand-casting-machine-2"
-local strand_casting_machine_3 = "angels-strand-casting-machine-3"
-local strand_casting_machine_4 = "angels-strand-casting-machine-4"
 local strand_casting_machines =
 {
     {name = strand_casting_machine_1, crafting_speed = 1, energy_usage = 120},
@@ -727,37 +672,75 @@ strand_casting_machine_recipe(strand_casting_machine_2, brass_gear_wheel, advanc
 strand_casting_machine_recipe(strand_casting_machine_3, titanium_gear_wheel, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, strand_casting_machine_2)
 strand_casting_machine_recipe(strand_casting_machine_4, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe, reinforced_concrete_brick, copper_tungsten_plate_bob, strand_casting_machine_3)
 
-local sintering_oven_1 = "angels-sintering-oven-4"
-local sintering_oven_2 = "angels-sintering-oven-5"
-local sintering_ovens =
-{
-    {name = sintering_oven_1, crafting_speed = 1, energy_usage = 240},
-    {name = sintering_oven_2, crafting_speed = 2, energy_usage = 480}
-}
-for _, BUILD in pairs(sintering_ovens) do
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].energy_required = 4
-    data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
-    data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 2))) .. kW
-    data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 2)) .. kW
-end
-local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
-    local ingredients =
+if settings.startup[setting_early_sintering_oven].value == true then
+    local sintering_ovens =
     {
-        {type = item, name = circuit, amount = 4},
-        {type = item, name = brick, amount = 64},
-        {type = item, name = plate, amount = 32}
+        {name = sintering_oven_1, crafting_speed = 1, energy_usage = 120},
+        {name = sintering_oven_2, crafting_speed = 2, energy_usage = 240},
+        {name = sintering_oven_3, crafting_speed = 3, energy_usage = 360},
+        {name = sintering_oven_4, crafting_speed = 4, energy_usage = 480},
+        {name = sintering_oven_5, crafting_speed = 5, energy_usage = 600}
     }
-    if sintering_oven then
-        table.insert(ingredients, {type = item, name = sintering_oven, amount = 1})
+    for _, BUILD in pairs(sintering_ovens) do
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].energy_required = 4
+        data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
+        data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
+        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+        data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
+        data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     end
-    data_recipe[name].ingredients = ingredients
+    local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
+        local ingredients =
+        {
+            {type = item, name = circuit, amount = 4},
+            {type = item, name = brick, amount = 64},
+            {type = item, name = plate, amount = 32}
+        }
+        if sintering_oven then
+            table.insert(ingredients, {type = item, name = sintering_oven, amount = 1})
+        end
+        data_recipe[name].ingredients = ingredients
+    end
+    sintering_oven_recipe(sintering_oven_1, electronic_circuit, clay_brick, steel_plate)
+    sintering_oven_recipe(sintering_oven_2, electronic_circuit, clay_brick, bronze_plate_bob, sintering_oven_1)
+    sintering_oven_recipe(sintering_oven_3, advanced_circuit, concrete_brick, aluminium_plate_bob, sintering_oven_2)
+    sintering_oven_recipe(sintering_oven_4, processing_unit, titanium_plate_bob, reinforced_concrete_brick, sintering_oven_3)
+    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, tungsten_plate_bob, reinforced_concrete_brick, sintering_oven_4)
+    bobmods.lib.recipe.update_recycling_recipe({sintering_oven_1, sintering_oven_2, sintering_oven_3, sintering_oven_4, sintering_oven_5})
+else
+    local sintering_ovens =
+    {
+        {name = sintering_oven_4, crafting_speed = 1, energy_usage = 240},
+        {name = sintering_oven_5, crafting_speed = 2, energy_usage = 480}
+    }
+    for _, BUILD in pairs(sintering_ovens) do
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].energy_required = 4
+        data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
+        data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
+        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 2))) .. kW
+        data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
+        data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 2)) .. kW
+    end
+    local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
+        local ingredients =
+        {
+            {type = item, name = circuit, amount = 4},
+            {type = item, name = brick, amount = 64},
+            {type = item, name = plate, amount = 32}
+        }
+        if sintering_oven then
+            table.insert(ingredients, {type = item, name = sintering_oven, amount = 1})
+        end
+        data_recipe[name].ingredients = ingredients
+    end
+    sintering_oven_recipe(sintering_oven_4, processing_unit, titanium_plate_bob, reinforced_concrete_brick)
+    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, tungsten_plate_bob, reinforced_concrete_brick, sintering_oven_4)
+    bobmods.lib.recipe.update_recycling_recipe({sintering_oven_4, sintering_oven_5})
 end
-sintering_oven_recipe(sintering_oven_1, processing_unit, titanium_plate_bob, reinforced_concrete_brick)
-sintering_oven_recipe(sintering_oven_2, advanced_processing_unit, tungsten_plate_bob, reinforced_concrete_brick, sintering_oven_1)
 
 -- ANGELS WATER TREATMENT
 local seafloor_pump = "angels-seafloor-pump"
@@ -883,9 +866,6 @@ if data_resource[sea_pump_resource] then
     data_resource[sea_pump_resource].hidden = true
 end
 
-local hydro_plant_1 = "angels-hydro-plant"
-local hydro_plant_2 = "angels-hydro-plant-2"
-local hydro_plant_3 = "angels-hydro-plant-3"
 local hydro_plants =
 {
     {name = hydro_plant_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -925,8 +905,6 @@ hydro_plant_recipe(hydro_plant_1, basic_circuit_board, iron_pipe, iron_plate, st
 hydro_plant_recipe(hydro_plant_2, electronic_circuit, steel_pipe, steel_plate, clay_brick, hydro_plant_1)
 hydro_plant_recipe(hydro_plant_3, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, hydro_plant_2)
 
-local washing_plant_1 = "angels-washing-plant"
-local washing_plant_2 = "angels-washing-plant-2"
 local washing_plants =
 {
     {name = washing_plant_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -961,8 +939,6 @@ end
 washing_plant_recipe(washing_plant_1, basic_circuit_board, iron_pipe, iron_plate, stone_brick)
 washing_plant_recipe(washing_plant_2, electronic_circuit, bronze_pipe, bronze_plate_bob, clay_brick, washing_plant_1)
 
-local salination_plant_1 = "angels-salination-plant"
-local salination_plant_2 = "angels-salination-plant-2"
 local salination_plants =
 {
     {name = salination_plant_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1000,9 +976,6 @@ end
 salination_plant_recipe(salination_plant_1, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick)
 salination_plant_recipe(salination_plant_2, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, salination_plant_1)
 
-local electric_boiler_1 = "angels-electric-boiler"
-local electric_boiler_2 = "angels-electric-boiler-2"
-local electric_boiler_3 = "angels-electric-boiler-3"
 local electric_boilers =
 {
     {name = electric_boiler_1, crafting_speed = 1, energy_usage = 1200, order = a},
@@ -1092,10 +1065,6 @@ data_furnace[clarifier].energy_source.drain = 7.5 .. kW
 -- ANGELS PETROCHEM REFINING
 data_item_subgroup[is_buildings_electrolyser].order = z
 
-local electrolyser_1 = "angels-electrolyser"
-local electrolyser_2 = "angels-electrolyser-2"
-local electrolyser_3 = "angels-electrolyser-3"
-local electrolyser_4 = "angels-electrolyser-4"
 local electrolysers =
 {
     {name = electrolyser_1, crafting_speed = 1, energy_usage = 1200, order = a},
@@ -1137,9 +1106,6 @@ electrolyser_recipe(electrolyser_2, electronic_circuit, bronze_pipe, bronze_plat
 electrolyser_recipe(electrolyser_3, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, electrolyser_2)
 electrolyser_recipe(electrolyser_4, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, electrolyser_3)
 
-local air_filter_1 = "angels-air-filter"
-local air_filter_2 = "angels-air-filter-2"
-local air_filter_3 = "angels-air-filter-3"
 local air_filters =
 {
     {name = air_filter_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1179,10 +1145,6 @@ air_filter_recipe(air_filter_1, basic_circuit_board, iron_pipe, iron_plate, ston
 air_filter_recipe(air_filter_2, electronic_circuit, bronze_pipe, bronze_plate_bob, clay_brick, air_filter_1)
 air_filter_recipe(air_filter_3, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, air_filter_2)
 
-local liquifier_1 = "angels-liquifier"
-local liquifier_2 = "angels-liquifier-2"
-local liquifier_3 = "angels-liquifier-3"
-local liquifier_4 = "angels-liquifier-4"
 local liquifiers =
 {
     {name = liquifier_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1226,10 +1188,6 @@ liquifier_recipe(liquifier_4, processing_unit, titanium_pipe, titanium_plate_bob
 
 data_item_subgroup[is_buildings_chemical_plant].order = z_c
 
-local chemical_plant_1 = "chemical-plant"
-local chemical_plant_2 = "angels-chemical-plant-2"
-local chemical_plant_3 = "angels-chemical-plant-3"
-local chemical_plant_4 = "angels-chemical-plant-4"
 local chemical_plants =
 {
     {name = chemical_plant_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1272,8 +1230,6 @@ chemical_plant_recipe(chemical_plant_2, electronic_circuit, bronze_pipe, bronze_
 chemical_plant_recipe(chemical_plant_3, advanced_circuit, brass_pipe, aluminium_plate_bob, brass_gear_wheel, chemical_plant_2)
 chemical_plant_recipe(chemical_plant_4, processing_unit, titanium_pipe, titanium_plate_bob, titanium_gear_wheel, chemical_plant_3)
 
-local advanced_chemical_plant_1 = "angels-advanced-chemical-plant"
-local advanced_chemical_plant_2 = "angels-advanced-chemical-plant-2"
 local advanced_chemical_plants =
 {
     {name = advanced_chemical_plant_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1313,10 +1269,6 @@ advanced_chemical_plant_recipe(advanced_chemical_plant_2, processing_unit, titan
 
 data_item_subgroup[is_buildings_gas_refinery].order = z_e
 
-local gas_refinery_1 = "angels-gas-refinery-small"
-local gas_refinery_2 = "angels-gas-refinery-small-2"
-local gas_refinery_3 = "angels-gas-refinery-small-3"
-local gas_refinery_4 = "angels-gas-refinery-small-4"
 local gas_refinerys =
 {
     {name = gas_refinery_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1358,10 +1310,6 @@ gas_refinery_recipe(gas_refinery_2, advanced_circuit, brass_pipe, aluminium_plat
 gas_refinery_recipe(gas_refinery_3, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, gas_refinery_2)
 gas_refinery_recipe(gas_refinery_4, advanced_processing_unit, tungsten_pipe, tungsten_plate_bob, reinforced_concrete_brick, gas_refinery_3)
 
-local advanced_gas_refinery_1 = "angels-gas-refinery"
-local advanced_gas_refinery_2 = "angels-gas-refinery-2"
-local advanced_gas_refinery_3 = "angels-gas-refinery-3"
-local advanced_gas_refinery_4 = "angels-gas-refinery-4"
 local advanced_gas_refinerys =
 {
     {name = advanced_gas_refinery_1, crafting_speed = 1, energy_usage = 240, order = a},
@@ -1405,10 +1353,6 @@ advanced_gas_refinery_recipe(advanced_gas_refinery_4, advanced_processing_unit, 
 
 data_item_subgroup[is_buildings_oil_refinery].order = z_g
 
-local oil_refinery_1 = "oil-refinery"
-local oil_refinery_2 = "angels-oil-refinery-2"
-local oil_refinery_3 = "angels-oil-refinery-3"
-local oil_refinery_4 = "angels-oil-refinery-4"
 local oil_refinerys =
 {
     {name = oil_refinery_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1450,10 +1394,6 @@ oil_refinery_recipe(oil_refinery_2, advanced_circuit, brass_pipe, aluminium_plat
 oil_refinery_recipe(oil_refinery_3, processing_unit, titanium_pipe, titanium_plate_bob, titanium_gear_wheel, oil_refinery_2)
 oil_refinery_recipe(oil_refinery_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, copper_tungsten_gear_wheel, oil_refinery_3)
 
-local separator_1 = "angels-separator"
-local separator_2 = "angels-separator-2"
-local separator_3 = "angels-separator-3"
-local separator_4 = "angels-separator-4"
 local separators =
 {
     {name = separator_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1497,10 +1437,6 @@ separator_recipe(separator_4, advanced_processing_unit, tungsten_pipe, tungsten_
 
 data_item_subgroup[is_buildings_steam].order = z_i
 
-local steam_cracker_1 = "angels-steam-cracker"
-local steam_cracker_2 = "angels-steam-cracker-2"
-local steam_cracker_3 = "angels-steam-cracker-3"
-local steam_cracker_4 = "angels-steam-cracker-4"
 local steam_crackers =
 {
     {name = steam_cracker_1, crafting_speed = 1, energy_usage = 120, order = a},
@@ -1624,8 +1560,6 @@ bobmods.lib.recipe.update_recycling_recipe
     strand_casting_machine_2,
     strand_casting_machine_3,
     strand_casting_machine_4,
-    sintering_oven_1,
-    sintering_oven_2,
     seafloor_pump,
     offshore_pump,
     ground_water_pump,
