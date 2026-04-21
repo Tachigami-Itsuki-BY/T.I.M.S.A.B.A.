@@ -88,7 +88,7 @@ local gases =
     fluorine, difluorochloromethane_gas, tetrafluoroethylene_gas, hexafluoropropylene_gas, hexafluoropropylene_oxide_gas,
     aquilo_air, tetrafluorohydrazine_gas, nitrogen_trifluoride_gas, nitrogen_trifluoride_liquefied,
 }
-function table.contains(tbl, val)
+local function table_contains(tbl, val)
     for _, v in pairs(tbl) do
         if v == val then
             return true
@@ -97,31 +97,31 @@ function table.contains(tbl, val)
     return false
 end
 local function get_container(fluid_name)
-    if table.contains(simple_fluids, fluid_name) then
+    if table_contains(simple_fluids, fluid_name) then
         return is_barrel, barrel_name
-    elseif table.contains(dangerous_fluids, fluid_name) then
+    elseif table_contains(dangerous_fluids, fluid_name) then
         return is_canister, canister_name
-    elseif table.contains(gases, fluid_name) then
+    elseif table_contains(gases, fluid_name) then
         return is_bottle, bottle_name
     end
     return nil, nil
 end
 local function get_container_recipe(fluid_name)
-    if table.contains(simple_fluids, fluid_name) then
+    if table_contains(simple_fluids, fluid_name) then
         return barrel, is_barrel, barrel_name
-    elseif table.contains(dangerous_fluids, fluid_name) then
+    elseif table_contains(dangerous_fluids, fluid_name) then
         return canister, is_canister, canister_name
-    elseif table.contains(gases, fluid_name) then
+    elseif table_contains(gases, fluid_name) then
         return gas_bottle, is_bottle, bottle_name
     end
     return nil, nil, nil
 end
 local function get_container_tech(fluid_name)
-    if table.contains(simple_fluids, fluid_name) then
+    if table_contains(simple_fluids, fluid_name) then
         return barrel_name
-    elseif table.contains(dangerous_fluids, fluid_name) then
+    elseif table_contains(dangerous_fluids, fluid_name) then
         return canister_name
-    elseif table.contains(gases, fluid_name) then
+    elseif table_contains(gases, fluid_name) then
         return bottle_name
     end
     return nil, nil, nil
@@ -204,6 +204,7 @@ local function generate_fill_recipe_icons(fluids, icon)
         local iconsize = fluids.icon_size or 64
         table.insert(icon, { icon = fluids.icon, icon_size = iconsize, scale = 16.0 / iconsize, shift = {8,-8}})
     elseif fluids.icons and util.combine_icons then
+        ---@diagnostic disable-next-line: missing-parameter
         icon = util.combine_icons(icon, fluids.icons, {scale = 0.5, shift = {8,-8}})
     end
     return icon
@@ -281,6 +282,7 @@ local function generate_empty_recipe_icons(fluids, icon)
         local iconsize = fluids.icon_size or 64
         table.insert(icon, { icon = fluids.icon, icon_size = iconsize, scale = 16.0 / iconsize, shift = {8,8}})
     elseif fluids.icons and util.combine_icons then
+        ---@diagnostic disable-next-line: missing-parameter
         icon = util.combine_icons(icon, fluids.icons, {scale = 0.5, shift = {8,8}})
     end
     return icon
@@ -313,7 +315,7 @@ local function create_container_empty_recipes(fluids)
             type = recipe,
             name = "empty-" .. fluids.name .. "-" .. container_name,
             category = angels_barreling_pump,
-            subgroup = subgroup,
+            subgroup = subgroup .. "-empty",
             icons = icons,
             order = "empty-" .. fluids.name .. "-" .. container_name,
             enabled = false,

@@ -69,6 +69,7 @@ copper_tungsten_pipe = "bob-copper-tungsten-pipe"
 copper_tungsten_pipe_to_ground = "bob-copper-tungsten-pipe-to-ground"
 
 -- ADVANCED LOGISTICS
+small_lamp = "small-lamp"
 rail = "rail"
 tank_1 = "tank"
 tank_2 = "bob-tank-2"
@@ -776,6 +777,7 @@ agricultural_science_pack = "agricultural-science-pack"
 carbon_fiber = "carbon-fiber"
 stack_inserter = "stack-inserter"
 biochamber = "biochamber"
+biolab = "biolab"
 rocket_turret = "rocket-turret"
 
 -- FULGORA

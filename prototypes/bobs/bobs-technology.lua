@@ -8,11 +8,7 @@ data:extend
         name = boiler_6,
         icon = "__bobpower__/graphics/icons/technology/boiler.png",
         icon_size = 256,
-        prerequisites =
-        {
-            boiler_5,
-            space_science_pack
-        },
+        prerequisites = {boiler_5, space_science_pack},
         effects = {{type = unlock_recipe, recipe = boiler_6}},
         unit =
         {
@@ -36,11 +32,7 @@ data:extend
         name = steam_engine_6,
         icon = "__bobpower__/graphics/icons/technology/steam-engine.png",
         icon_size = 256,
-        prerequisites =
-        {
-            steam_engine_5,
-            space_science_pack
-        },
+        prerequisites = {steam_engine_5, space_science_pack},
         effects = {{type = unlock_recipe, recipe = steam_engine_6}},
         unit =
         {
@@ -64,11 +56,7 @@ data:extend
         name = steam_turbine_4,
         icon = "__bobpower__/graphics/icons/technology/steam-turbine.png",
         icon_size = 256,
-        prerequisites =
-        {
-            steam_turbine_3,
-            space_science_pack
-        },
+        prerequisites = {steam_turbine_3, space_science_pack},
         effects = {{type = unlock_recipe, recipe = steam_turbine_4}},
         unit =
         {
@@ -92,12 +80,7 @@ data:extend
         name = solar_energy_4,
         icon = "__base__/graphics/technology/solar-energy.png",
         icon_size = 256,
-        prerequisites =
-        {
-            solar_energy_3,
-            utility_science_pack,
-            advanced_processing_unit
-        },
+        prerequisites = {solar_energy_3, utility_science_pack, advanced_processing_unit},
         effects =
         {
             {type = unlock_recipe, recipe = solar_panel_small_4},
@@ -125,11 +108,7 @@ data:extend
         name = electric_energy_accumulators_4,
         icon = "__base__/graphics/technology/electric-energy-acumulators.png",
         icon_size = 256,
-        prerequisites =
-        {
-            electric_energy_accumulators_3,
-            utility_science_pack
-        },
+        prerequisites = {electric_energy_accumulators_3, utility_science_pack},
         effects = {{type = unlock_recipe, recipe = accumulator_4}},
         unit =
         {
@@ -151,11 +130,7 @@ data:extend
         name = drills_6,
         icon = "__base__/graphics/technology/mining-productivity.png",
         icon_size = 256,
-        prerequisites =
-        {
-            drills_5,
-            space_science_pack
-        },
+        prerequisites = {drills_5, space_science_pack},
         effects = {{type = unlock_recipe, recipe = electric_mining_drill_6}},
         unit =
         {
@@ -178,11 +153,7 @@ data:extend
         name = tech_pumpjacks_5,
         icon = "__base__/graphics/technology/oil-gathering.png",
         icon_size = 256,
-        prerequisites =
-        {
-            tech_pumpjacks_3,
-            space_science_pack
-        },
+        prerequisites = {tech_pumpjacks_3, space_science_pack},
         effects = {{type = unlock_recipe, recipe = pumpjack_5}},
         unit =
         {
@@ -202,13 +173,7 @@ data:extend
         name = tech_pumpjacks_6,
         icon = "__base__/graphics/technology/oil-gathering.png",
         icon_size = 256,
-        prerequisites =
-        {
-            tech_pumpjacks_5,
-            electromagnetic_science_pack,
-            agricultural_science_pack,
-            metallurgic_science_pack
-        },
+        prerequisites = {tech_pumpjacks_5, electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
         effects = {{type = unlock_recipe, recipe = pumpjack_6}},
         unit =
         {
@@ -235,11 +200,7 @@ data:extend
         name = tech_fusion_power_2,
         icon = "__base__/graphics/technology/nuclear-power.png",
         icon_size = 256,
-        prerequisites =
-        {
-            tech_fusion_power_1,
-            space_science_pack
-        },
+        prerequisites = {tech_fusion_power_1, space_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = tritium_reactor},
@@ -268,11 +229,7 @@ data:extend
         name = advanced_material_processing_5,
         icon = "__base__/graphics/technology/advanced-material-processing-2.png",
         icon_size = 256,
-        prerequisites =
-        {
-            advanced_material_processing_4,
-            space_science_pack
-        },
+        prerequisites = {advanced_material_processing_4, space_science_pack},
         effects = {{type = unlock_recipe, recipe = electric_furnace_4}},
         unit =
         {
@@ -313,11 +270,7 @@ data:extend
             },
         },
         icon_size = 256,
-        prerequisites =
-        {
-            multi_porpose_furnace_2,
-            space_science_pack
-        },
+        prerequisites = {multi_porpose_furnace_2, space_science_pack},
         effects = {{type = unlock_recipe, recipe = electric_mixing_furnace_4}},
         unit =
         {

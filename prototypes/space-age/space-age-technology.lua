@@ -13,13 +13,7 @@ data:extend
         name = full_asteroid_processing,
         icon = data_technology[tech_advanced_asteroid_processing].icon,
         icon_size = 256,
-        prerequisites =
-        {
-            electromagnetic_science_pack,
-            agricultural_science_pack,
-            metallurgic_science_pack,
-            cryogenic_science_pack
-        },
+        prerequisites = {electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack, cryogenic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = full_metallic_asteroid_crushing_1},

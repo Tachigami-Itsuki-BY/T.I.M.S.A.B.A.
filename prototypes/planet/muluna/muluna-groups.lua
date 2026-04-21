@@ -1,21 +1,20 @@
 if mods [muluna_mods] then
     local muluna = "muluna"
-    is_muluna_ore ="muluna-ore"
-    is_muluna_new_recipe = "muluna-new-recipe"
-    is_muluna_logistics = "muluna-logistics"
-    is_muluna_boiler = "muluna-boiler"
-    is_muluna_heating = "muluna-heating"
-    is_muluna_turbine = "muluna-turbine"
-    is_muluna_building = "muluna-building"
-    is_muluna_building_tree = "muluna-building-tree"
-    is_muluna_building_crushing = "muluna-building-crushing"
-    is_muluna_recipe_anorthite = "muluna-recipe-anorthite"
-    is_muluna_recipe_silicon = "muluna-recipe-silicon"
-    is_muluna_recipe_cellulose = "muluna-recipe-cellulose"
-    is_muluna_recipe = "muluna-recipe"
-    is_muluna_recipe_foundry = "muluna-recipe-foundry"
-    is_muluna_recipe_astronomical = "muluna-recipe-astronomical"
-    is_muluna_astronomical = "muluna-astronomical"
+    is_muluna_crushing = "is-muluna-crushing"
+    is_muluna_recipe_anorthite = "is-muluna-recipe-anorthite"
+    is_muluna_recipe_silicon = "is-muluna-recipe-silicon"
+    is_muluna_SPS_silicon = "is-muluna-SPS-silicon"
+    is_muluna_SPM_silicon = "is-muluna-SPM-silicon"
+    is_muluna_SPL_silicon = "is-muluna-SPL-silicon"
+    is_muluna_recipe_tree = "is-muluna-recipe-tree"
+    is_muluna_recipe_cellulose = "is-muluna-recipe-cellulose"
+    is_muluna_recipe = "is-muluna-recipe"
+    is_muluna_boiler = "is-muluna-boiler"
+    is_muluna_heating = "is-muluna-heating"
+    is_muluna_turbine = "is-muluna-turbine"
+    is_muluna_building = "is-muluna-building"
+    is_muluna_astronomical = "is-muluna-astronomical"
+    is_muluna_recipe_astronomical = "is-muluna-recipe-astronomical"
     data:extend
     ({
         {
@@ -27,99 +26,93 @@ if mods [muluna_mods] then
         },
         {
             type = item_subgroup,
-            name = is_muluna_ore,
+            name = is_muluna_crushing,
             group = muluna,
             order = a
         },
         {
             type = item_subgroup,
-            name = is_muluna_new_recipe,
+            name = is_muluna_recipe_anorthite,
             group = muluna,
             order = b
         },
         {
             type = item_subgroup,
-            name = is_muluna_logistics,
+            name = is_muluna_recipe_silicon,
             group = muluna,
             order = c
         },
         {
             type = item_subgroup,
-            name = is_muluna_boiler,
+            name = is_muluna_SPS_silicon,
             group = muluna,
             order = c_a
         },
         {
             type = item_subgroup,
-            name = is_muluna_heating,
+            name = is_muluna_SPM_silicon,
             group = muluna,
             order = c_b
         },
         {
             type = item_subgroup,
-            name = is_muluna_turbine,
+            name = is_muluna_SPL_silicon,
             group = muluna,
             order = c_c
         },
         {
             type = item_subgroup,
-            name = is_muluna_building,
-            group = muluna,
-            order = c_d
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_building_tree,
-            group = muluna,
-            order = c_e
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_building_crushing,
-            group = muluna,
-            order = c_f
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_anorthite,
+            name = is_muluna_recipe_tree,
             group = muluna,
             order = d
         },
         {
             type = item_subgroup,
-            name = is_muluna_recipe_silicon,
-            group = muluna,
-            order = d_a
-        },
-        {
-            type = item_subgroup,
             name = is_muluna_recipe_cellulose,
-            group = muluna,
-            order = d_b
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe,
-            group = muluna,
-            order = d_c
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_foundry,
-            group = muluna,
-            order = d_d
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_astronomical,
             group = muluna,
             order = e
         },
         {
             type = item_subgroup,
+            name = is_muluna_recipe,
+            group = muluna,
+            order = f
+        },
+        {
+            type = item_subgroup,
+            name = is_muluna_boiler,
+            group = muluna,
+            order = g
+        },
+        {
+            type = item_subgroup,
+            name = is_muluna_heating,
+            group = muluna,
+            order = h
+        },
+        {
+            type = item_subgroup,
+            name = is_muluna_turbine,
+            group = muluna,
+            order = i
+        },
+        {
+            type = item_subgroup,
+            name = is_muluna_building,
+            group = muluna,
+            order = j
+        },
+        {
+            type = item_subgroup,
             name = is_muluna_astronomical,
             group = muluna,
-            order = e_a
+            order = y
+        },
+        {
+            type = item_subgroup,
+            name = is_muluna_recipe_astronomical,
+            group = muluna,
+            order = z
         }
     })
 end

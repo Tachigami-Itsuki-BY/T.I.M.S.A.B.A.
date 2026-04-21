@@ -4,15 +4,10 @@ data_item_subgroup[is_water_treatment_fluid].order = a
 data_fluid[water].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
 
 local ice_melting = "ice-melting"
+data_recipe[ice_melting].subgroup = is_water_treatment_fluid
 data_recipe[ice_melting].icons = TWO_I(ice, water)
+data_recipe[ice_melting].order = a_a
 data_recipe[ice_melting].results[1].amount = 30
-if mods [muluna_mods] then
-    data_recipe[ice_melting].subgroup = is_muluna_recipe
-    data_recipe[ice_melting].order = a_b
-else
-    data_recipe[ice_melting].subgroup = is_water_treatment_fluid
-    data_recipe[ice_melting].order = a_a
-end
 
 data_fluid[water_purified_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
 data_recipe[water_purified_angels].icons = FOUR_R_I(water, water_saline_angels, nil, water_purified_angels)

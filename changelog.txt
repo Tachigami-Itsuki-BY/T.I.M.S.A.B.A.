@@ -10,9 +10,10 @@ Date: ??.??.2026
         4. Электрический Бур Т6.
         5. Реактор Т4 и Топливная ячейка Т4.
         6. Электропечи Т6(Т4).
-        7. Установка сортировки руды Т6.
+        7. Установка Сортировки Руды Т6.
         8. Электролизные Ванны Т3 и Т4.
         9. Печи для Спекания Т3 и Т4.
+          Если «Ранние Печи для Спекания» включены, тогда: Печь для Спекания Т6.
     - Добавлены новые предметы:
         1. Пек.
         2. Фосфоритная Руда.
@@ -48,6 +49,7 @@ Date: ??.??.2026
         7. T6 Ore Sorting Facility.
         8. T3 and T4 Electrowinning Cells.
         9. T3 and T4 Sintering Ovens.
+          If "Early Sintering Oven" is enabled, then: T6 Sintering Ovens.
     - Added new items:
         1. Pitch.
         2. Phosphate Ore.
@@ -76,7 +78,7 @@ Date: ??.??.2026
     - Переработка рецептов: стоимость крафта и характеристики строений Muluna синхронизированы с экономикой сборки.
     - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
     - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
-        Если включены Буры Большой Площади из мода «Bob's Mining» тогда: Электрический Бур Т5 → Электрический Бур Большой Площади Т4.
+        Если Буры Большой Площади из мода «Bob's Mining» включены, тогда: Электрический Бур Т5 → Электрический Бур Большой Площади Т4.
     - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно Цинковая Батарейка → Графеновая Батарейка.
     - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритиевый Газ (240 ед.)
     - У Большого Бура скорректированы характеристики:
@@ -87,7 +89,7 @@ Date: ??.??.2026
     - Recipe Overhaul: Muluna crafting costs and building stats are now synchronized with the modpack's economy.
     - Replaced an ingredient in the Electromagnetic Science Pack recipe: T3 High Capacity Accumulator → T4 High Capacity Accumulator.
     - Replaced an ingredient in the Big Mining Drill: T5 Electric Mining Drill → T6 Electric Mining Drill.
-        If Large Area Mining Drills from "Bob's Mining" are enabled then: T5 Electric Mining Drill → T4 Electric Large Area Mining Drill.
+        If Large Area Mining Drills from "Bob's Mining" are enabled, then: T5 Electric Mining Drill → T4 Electric Large Area Mining Drill.
     - Replaced an ingredient in the Supercapacitor recip: Silver Zinc Battery → Graphene Battery.
     - Added an ingredient to the Fusion Power Cell recipe: Tritium Gas (240 units)
     - Adjusted stats for Big Mining Drill:
@@ -100,11 +102,96 @@ Date: ??.??.2026
 
     - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.28
+Date: 21.04.2026
+  Features:
+    - Добавлен Медно-Вольфрамовый Порошок.
+
+    - Added Copper-Tungsten Powder.
+
+  Changes:
+    - Отопительная Башня теперь находится во вкладке Глеба вместо Аквило.
+
+    - Heating Tower is now located in the Gleb tab instead of Aquilo.
+
+  Bugfixes:
+    - Исправлена ошибка, из-за которой в Обогатительной Установке Т4 отсутствовало загрязнение.
+    - Исправлена ошибка, из-за которой в Измельчителе Т4 отсутствовало загрязнение.
+    - Исправлена ошибка, из-за которой в Фильтровальная Установке Т4 отсутствовало загрязнение.
+    - Исправлена ошибка, из-за которой у Газового Баллона отсутствовало название.
+
+    - Fixed a bug where the T4 Ore Refinery was missing pollution.
+    - Fixed a bug where the T4 Powderizer was missing pollution.
+    - Fixed a bug where the T4 Filtration Unit was missing pollution.
+    - Fixed a bug where the Gas Bottle was missing name.
+
+  Balancing:
+    - В Обогатительной Установке Т3 увеличено загрязнение: (2.4) → (3)
+    - В Промывочной Установке Т4 увеличено кол-во слотов для модулей и скорость крафта: (3) → (4)
+    - В рецепте Угля из Карбонового Астероида произведена замена ингредиента: Карбон → Уголь.
+    - В рецептах Солнечный Панелей произведена замена ингредиента: Монокремний → Кремниевая Пластина.
+    - Для мода «Серные Бактерии»: В предмете Серных Бактерий произведена замена реузультата порчи: Древесина → Гниль.
+    - Если «Ранние Печи для Спекания» включены, тогда:
+        1. В рецепте Карбид Кремния заменено производственное здание: Доменная Печь → Химическая Печь.
+        2. В рецепте Керамической Трубы заменено производственное здание: Сборочный Автомат → Печь для Спекания.
+        3. В рецепте Подземной Керамической Трубы заменено производственное здание: Сборочный Автомат → Печь для Спекания.
+        4. В рецепте Керамической Шестерни заменено производственное здание: Сборочный Автомат → Печь для Спекания.
+        5. В рецепте Керамического Шарика Подшипника заменено производственное здание: Сборочный Автомат → Печь для Спекания.
+        6. В рецепте Керамического Подшипника удалён ингредиент и заменено производственное здание: Смазочная Жидкость и Сборочный Автомат → Печь для Спекания.
+    - В рецепт Латунного Подшипника добавлен ингредиент: Смазочная Жидкость (15 ед.)
+    - В технологии Обработка Латуни добавлено новое предварительное условие.
+    - В рецепте Керамического Подшипника удалён ингредиент: Смазочная Жидкость.
+    - В рецептах Пластиковой Трубы и Подземной Пластиковой Трубы произведена замена ингредиента:
+        1. Пластик (1 ед.) → Жидкий Пластик (15 ед.)
+        2. Пластик (4 ед.) → Жидкий Пластик (60 ед.)
+    - В следующих рецептах произведена замена ингредиентов и заменено производственное здание: Медно-Вольфрамовая Пластина → Медно-Вольфрамовый Порошок; Сборочный Автомат → Печь для Спекания.
+        1. Медно-Вольфрамовая Шестерня.
+        2. Медно-Вольфрамовый Шарик Подшипника.
+        3. Медно-Вольфрамовый Подшипник. (Удалена Смазочная Жидкость)
+        4. Медно-Вольфрамовая Труба.
+        5. Подземная Медно-Вольфрамовая Труба.
+        6. Медно-Вольфрамовая Пластина: Медный Порошок и Вольфрамовая Порошковая Смесь → Медно-Вольфрамовый Порошок.
+    - В рецептах Вольфрамовой Трубы и Подземной Вольфрамовой Трубы произведена замена ингредиента и заменено производственное здание: Вольфрамовая Пластина → Вольфрамовая Порошковая Смесь; Сборочный Автомат → Печь для Спекания.
+    - В Биолабе уменьшено максимальное потребление: (300 кВт) → (240 кВт)
+
+    - Increased pollution of the T3 Ore Refinery: (2.4) → (3)
+    - Increased module slots and crafting speed of the T4 Washing Plant: (3) → (4)
+    - Replaced an ingredient in the Coal from Carbonic Asteroid recipe: Carbon → Coal.
+    - Replaced an ingredient in the Solar Panels recipes: Mono Silicon → Silicon Wafer.
+    - For the "Sulfuric Bacteria" mods: Replaced a spoil result in the Sulfuric Bacteria item: Wood → Spoilage.
+    - If "Early Sintering Oven" is enabled, then:
+        1. Changed production machine for Silicon Carbide recipe: Blast Furnace → Chemical Furnace.
+        2. Changed production machine for Ceramic Pipe recipe: Assembling Machine → Sintering Oven.
+        3. Changed production machine for Ceramic Pipe-to-Ground recipe: Assembling Machine → Sintering Oven.
+        4. Changed production machine for Ceramic Gear Wheel recipe: Assembling Machine → Sintering Oven.
+        5. Changed production machine for Ceramic Bearing Ball recipe: Assembling Machine → Sintering Oven.
+        6. Changed production machine for Ceramic Bearing recipe: Assembling Machine → Sintering Oven.
+    - Added an ingredient in the Brass Bearing recipe: Lubricant (15 units)
+    - Added a new prerequisite for the Brass Processing technology.
+    - Removed an ingredient in the Ceramic Bearing recipe: Lubricant.
+    - Replaced an ingredient in the Plastic Pipe and Plastic Pipe to Ground recipes:
+        1. Plastic (1 unit) → Liquid Plastic (15 units)
+        2. Plastic (4 units) → Liquid Plastic (60 units)
+    - Replaced ingredients and production machines for the following recipes: Copper Tungsten Plate → Copper Tungsten Powder; Assembling Machine → Sintering Oven.
+        1. Copper Tungsten Gear Wheel.
+        2. Copper Tungsten Bearing Ball.
+        3. Copper Tungsten Bearing. (Removed Lubricant)
+        4. Copper Tungsten Pipe.
+        5. Copper Tungsten Pipe to Ground.
+        6. Copper Tungsten Plate: Copper Powder and Tungsten Powder Mixture → Copper Tungsten Powder.
+    - Replaced an ingredient in the Tungsten Pipe and Tungsten Pipe to Ground recipes: Tungsten Plate → Tungsten Powder Mixture; Assembling Machine → Sintering Oven.
+    - Decreased maximum consumption of the Biolab: (300 kW) → (240 kW)
+
+  Graphics:
+    - Обновлены иконки для рецептов Космический Научный Пакет и Прометиевый Научный Пакет.
+
+    - Updated icons for the Space Science Pack and Promethium Science Pack recipes.
+---------------------------------------------------------------------------------------------------
 Version: 0.0.27
 Date: 18.04.2026
   Features:
     - Добавлен рецепт Сортировка Вольфрамитовой Руды.
-    - Добавлена возможность включить «Раннюю печь для спекания» в настройках модов. (Новых рецептов нет)
+    - Добавлена возможность включить «Раннюю Печь для Спекания» в настройках модов. (Новых рецептов нет)
 
     - Added Wolframite Ore Sorting recipe.
     - Added the ability to enable "Early Sintering Oven" in the mod settings. (No new recipes)
@@ -144,7 +231,7 @@ Date: 18.04.2026
         2. Оловянный Слиток (4 ед.) → (16 ед.)
         3. Цинковый Слиток (4 ед.) → (8 ед.)
         4. (240 ед.) → (480 ед.)
-    - В рецепте Отсыпка Территории (из Грязи) уменьшено время крафта: (4 сек.) → (1 сек.)
+    - В рецепте Отсыпки Территории (из Грязи) уменьшено время крафта: (4 сек.) → (1 сек.)
     - В рецепте Угольной Фильтрации Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
     - В рецепте Керамической Фильтрации Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
     - В рецепте Фильтрации Кристаллической Суспензии в Минеральный Шлам с Использованием Угольных Фильтров уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
@@ -297,7 +384,7 @@ Date: 13.04.2026
     - В Твердотопливном Сборочном Автомате изменена топливная категория.
     - В предмете Твердотопливного Сборочного Автомата уменьшен размер пачки: (64) → (32)
     - В рецепте Твердотопливного Сборочного Автомата скорректированы ингредиенты, время крафта и максимальное потребление:
-        1. Железная шестерня (5 ед.) → (4 ед.)
+        1. Железная Шестерня (5 ед.) → (4 ед.)
         2. Железная Пластина (9 ед.) → (8 ед.)
         3. (0.5 сек.) → (1 сек.)
         4. (60 кВт) → (225 кВт)
@@ -537,7 +624,7 @@ Date: 09.04.2026
   Balancing:
     - В рецептах Фильтрующих Электропечей увеличено кол-во ингредиента: Схема (4 ед.) → (8 ед.)
     - У Берегового насоса уменьшена скорость откачки воды: (1200 ед.) → (600 ед.)
-    - В рецепте Берегового Насоса добавлен ингредиент: Железная Пластина (2 ед.)
+    - В рецепт Берегового Насоса добавлен ингредиент: Железная Пластина (2 ед.)
     - У Тяжёлого Берегового Насоса уменьшена скорость откачки воды: (3600 ед.) → (2400 ед.)
     - В рецепте Тяжёлого Берегового Насоса уменьшено кол-во ингредиентов: Береговой Насос (2 ед.) → (1 ед.)
     - В рецептах Переработки скорость крафта приведена к общему значению: (0.25 сек)

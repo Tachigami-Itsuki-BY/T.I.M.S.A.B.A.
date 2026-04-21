@@ -49,12 +49,7 @@ data_technology[tech_advanced_asteroid_processing].effects =
     {type = unlock_recipe, recipe = lime_space},
     {type = unlock_recipe, recipe = sodium_hydroxide_space},
 }
-data_technology[tech_advanced_asteroid_processing].prerequisites =
-{
-    electromagnetic_science_pack,
-    agricultural_science_pack,
-    metallurgic_science_pack
-}
+data_technology[tech_advanced_asteroid_processing].prerequisites = {electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack}
 data_technology[tech_advanced_asteroid_processing].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -112,8 +107,6 @@ data_technology[asteroid_productivity].max_level = 30
 local planet_discovery_vulcanus = "planet-discovery-vulcanus"
 table.insert(data_technology[planet_discovery_vulcanus].effects, {type = unlock_recipe, recipe = vulcanus_air})
 table.insert(data_technology[planet_discovery_vulcanus].effects, {type = unlock_recipe, recipe = vulcanus_air_separation})
-
-
 
 data_technology[tungsten_carbide].effects =
 {
@@ -224,6 +217,13 @@ data_technology[foundry].effects =
     {type = unlock_recipe, recipe = casting_titanium_pipe_to_ground},
     {type = unlock_recipe, recipe = casting_nitinol_pipe_to_ground},
 }
+
+if mods [muluna_mods] then
+    casting_aluminium_cable = "casting-aluminum-cable"
+    casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
+    table.insert(data_technology[foundry].effects, {type = unlock_recipe, recipe = casting_aluminium_cable})
+    table.insert(data_technology[foundry].effects, {type = unlock_recipe, recipe = casting_low_density_structure_muluna})
+end
 
 data_technology[big_mining_drill].prerequisites = {foundry, "bob-drills-5"}
 

@@ -194,11 +194,11 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = silicon_mono, amount = 4},
             {type = item, name = nitinol_plate_bob, amount = 4},
-            {type = item, name = platinum_plate, amount = 8},
             {type = item, name = platinum_cable, amount = 4},
-            {type = item, name = solar_panel_small_3, amount = 1}
+            {type = item, name = solar_panel_small_3, amount = 1},
+            {type = item, name = silicon_wafer, amount = 4},
+            {type = item, name = platinum_plate, amount = 8}
         },
         results = {{type = item, name = solar_panel_small_4, amount = 1}},
         main_product = solar_panel_small_4
@@ -246,11 +246,11 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 16},
-            {type = item, name = silicon_mono, amount = 8},
             {type = item, name = nitinol_plate_bob, amount = 8},
-            {type = item, name = platinum_plate, amount = 16},
             {type = item, name = platinum_cable, amount = 8},
-            {type = item, name = solar_panel_3, amount = 1}
+            {type = item, name = solar_panel_small_3, amount = 1},
+            {type = item, name = silicon_wafer, amount = 8},
+            {type = item, name = platinum_plate, amount = 16}
         },
         results = {{type = item, name = solar_panel_4, amount = 1}},
         main_product = solar_panel_4
@@ -298,11 +298,11 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 32},
-            {type = item, name = silicon_mono, amount = 16},
             {type = item, name = nitinol_plate_bob, amount = 16},
-            {type = item, name = platinum_plate, amount = 32},
             {type = item, name = platinum_cable, amount = 16},
-            {type = item, name = solar_panel_large_3, amount = 1}
+            {type = item, name = solar_panel_small_3, amount = 1},
+            {type = item, name = silicon_wafer, amount = 16},
+            {type = item, name = platinum_plate, amount = 32}
         },
         results = {{type = item, name = solar_panel_large_4, amount = 1}},
         main_product = solar_panel_large_4
@@ -337,6 +337,7 @@ data:extend
         type = recipe,
         name = accumulator_4,
         category = crafting,
+        additional_categories = electromagnetics,
         subgroup = is_accumulator,
         icon = "__base__/graphics/icons/accumulator.png",
         order = d,

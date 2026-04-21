@@ -736,11 +736,22 @@ data:extend
 })
 
 -- TUNGSTEN
+copper_tungsten_powder = "copper-tungsten-powder"
 peroxo_tungstic_acid = "peroxo-tungstic-acid-solution"
 tungstic_acid = "tungstic-acid"
 --ammonium_tungstate_solution = "ammonium-tungstate-solution"
 data:extend
 ({
+    {
+        localised_description = show_formula and {chemical_formula, "WCu"} or nil,
+        type = item,
+        name = copper_tungsten_powder,
+        subgroup = is_tungsten,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/copper-tungsten-powder.png",
+        order = f,
+        stack_size = 200,
+        weight = 5000
+    },
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]WO[font=default-tiny-bold]4[/font]"} or nil,
         type = item,

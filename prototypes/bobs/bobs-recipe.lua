@@ -27,9 +27,9 @@ data:extend
     {
         type = recipe,
         name = copper_tungsten_gear_wheel,
-        category = crafting,
+        category = angels_sintering_4,
         subgroup = is_gears,
-        icons = TWO_I(copper_tungsten_plate_bob, copper_tungsten_gear_wheel),
+        icons = TWO_I(copper_tungsten_powder, copper_tungsten_gear_wheel),
         order = h,
         enabled = false,
         auto_recycle = true,
@@ -37,7 +37,7 @@ data:extend
         allow_quality = true,
         allow_decomposition = false,
         energy_required = 1,
-        ingredients = {{type = item, name = copper_tungsten_plate_bob, amount = 1}},
+        ingredients = {{type = item, name = copper_tungsten_powder, amount = 1}},
         results = {{type = item, name = copper_tungsten_gear_wheel, amount = 1}},
         main_product = copper_tungsten_gear_wheel
     },
@@ -61,9 +61,9 @@ data:extend
     {
         type = recipe,
         name = copper_tungsten_bearing_ball,
-        category = crafting,
+        category = angels_sintering_4,
         subgroup = is_bearing_ball,
-        icons = TWO_I(copper_tungsten_plate_bob, copper_tungsten_bearing_ball),
+        icons = TWO_I(copper_tungsten_powder, copper_tungsten_bearing_ball),
         order = h,
         enabled = false,
         auto_recycle = true,
@@ -71,16 +71,16 @@ data:extend
         allow_quality = true,
         allow_decomposition = false,
         energy_required = 1,
-        ingredients = {{type = item, name = copper_tungsten_plate_bob, amount = 1}},
+        ingredients = {{type = item, name = copper_tungsten_powder, amount = 1}},
         results = {{type = item, name = copper_tungsten_bearing_ball, amount = 8}},
         main_product = copper_tungsten_bearing_ball
     },
     {
         type = recipe,
         name = brass_bearing,
-        category = crafting,
+        category = crafting_fluid,
         subgroup = is_bearing,
-        icons = B_F_L(nil, brass_bearing_ball, brass_plate_bob, brass_bearing),
+        icons = B_F_L(lubricant, brass_bearing_ball, brass_plate_bob, brass_bearing),
         order = c,
         enabled = false,
         auto_recycle = true,
@@ -91,7 +91,8 @@ data:extend
         ingredients =
         {
             {type = item, name = brass_bearing_ball, amount = 16},
-            {type = item, name = brass_plate_bob, amount = 2}
+            {type = item, name = brass_plate_bob, amount = 2},
+            {type = fluid, name = lubricant, amount = 15}
         },
         results = {{type = item, name = brass_bearing, amount = 2}},
         main_product = brass_bearing
@@ -99,9 +100,9 @@ data:extend
     {
         type = recipe,
         name = copper_tungsten_bearing,
-        category = crafting_fluid,
+        category = angels_sintering_4,
         subgroup = is_bearing,
-        icons = B_F_L(lubricant, copper_tungsten_bearing_ball, copper_tungsten_plate_bob, copper_tungsten_bearing),
+        icons = B_F_L(nil, copper_tungsten_bearing_ball, copper_tungsten_powder, copper_tungsten_bearing),
         order = h,
         enabled = false,
         auto_recycle = true,
@@ -112,8 +113,7 @@ data:extend
         ingredients =
         {
             {type = item, name = copper_tungsten_bearing_ball, amount = 16},
-            {type = item, name = copper_tungsten_plate_bob, amount = 2},
-            {type = fluid, name = lubricant, amount = 15}
+            {type = item, name = copper_tungsten_powder, amount = 2}
         },
         results = {{type = item, name = copper_tungsten_bearing, amount = 2}},
         main_product = copper_tungsten_bearing
@@ -234,6 +234,10 @@ data:extend
         main_product = muon_fusion_catalyst
     }]]
 })
+
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_recipe[ceramic_gear_wheel].category = angels_sintering_2
+end
 
 --[[
 data:extend

@@ -7,7 +7,7 @@ is_pipe = "is-pipe"
 is_pipe_to_ground = "is-pipe-to-ground"
 is_vulcanus_air = "is-vulcanus-air"
 is_calcite = "is-calcite"
-is_tungsten = "is-tungsten"
+is_vulcanus_tungsten = "is-vulcanus-tungsten"
 is_vulcanus_logistics = "is-vulcanus-logistics"
 is_vulcanus_building = "vulcanus-building"
 data:extend
@@ -69,7 +69,7 @@ data:extend
     },
     {
         type = item_subgroup,
-        name = is_tungsten,
+        name = is_vulcanus_tungsten,
         group = vulcanus,
         order = i
     },
