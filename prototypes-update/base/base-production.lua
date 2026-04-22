@@ -165,7 +165,7 @@ for _, BUILD in pairs(solar_panels_small) do
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].subgroup = is_solar_panel_small
     data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 2
+    data_recipe[BUILD.name].energy_required = 1
     data_solar_panel[BUILD.name].subgroup = is_solar_panel_small
     data_solar_panel[BUILD.name].order = BUILD.order
     data_solar_panel[BUILD.name].production = BUILD.production .. kW
@@ -187,9 +187,9 @@ local function solar_panel_s_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_s_recipe(solar_panel_small_1, electronic_circuit, steel_plate, copper_cable, glass_bob, nil, silicon_mono, copper_plate)
-solar_panel_s_recipe(solar_panel_small_2, advanced_circuit, aluminium_plate_bob, silver_cable, nil, solar_panel_small_1, silicon_mono, silver_plate_bob)
-solar_panel_s_recipe(solar_panel_small_3, processing_unit, titanium_plate_bob, gold_cable, nil, solar_panel_small_2, silicon_mono, gold_plate_bob)
+solar_panel_s_recipe(solar_panel_small_1, electronic_circuit, steel_plate, copper_cable, glass_bob, nil, silicon_wafer, copper_plate)
+solar_panel_s_recipe(solar_panel_small_2, advanced_circuit, aluminium_plate_bob, silver_cable, nil, solar_panel_small_1, silicon_wafer, silver_plate_bob)
+solar_panel_s_recipe(solar_panel_small_3, processing_unit, titanium_plate_bob, gold_cable, nil, solar_panel_small_2, silicon_wafer, gold_plate_bob)
 
 local solar_panels =
 {
@@ -223,9 +223,9 @@ local function solar_panel_m_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_m_recipe(solar_panel_1, electronic_circuit, steel_plate, copper_cable, glass_bob, nil, silicon_mono, copper_plate)
-solar_panel_m_recipe(solar_panel_2, advanced_circuit, aluminium_plate_bob, silver_cable, nil, solar_panel_1, silicon_mono, silver_plate_bob)
-solar_panel_m_recipe(solar_panel_3, processing_unit, titanium_plate_bob, gold_cable, nil, solar_panel_2, silicon_mono, gold_plate_bob)
+solar_panel_m_recipe(solar_panel_1, electronic_circuit, steel_plate, copper_cable, glass_bob, nil, silicon_wafer, copper_plate)
+solar_panel_m_recipe(solar_panel_2, advanced_circuit, aluminium_plate_bob, silver_cable, nil, solar_panel_1, silicon_wafer, silver_plate_bob)
+solar_panel_m_recipe(solar_panel_3, processing_unit, titanium_plate_bob, gold_cable, nil, solar_panel_2, silicon_wafer, gold_plate_bob)
 
 local solar_panels_large =
 {
@@ -262,9 +262,9 @@ local function solar_panel_l_recipe(name, circuit, plate_1, cable, glass, panel,
     end
     data_recipe[name].ingredients = ingredients
 end
-solar_panel_l_recipe(solar_panel_large_1, electronic_circuit, steel_plate, copper_cable, glass_bob, nil, silicon_mono, copper_plate)
-solar_panel_l_recipe(solar_panel_large_2, advanced_circuit, aluminium_plate_bob, silver_cable, nil, solar_panel_large_1, silicon_mono, silver_plate_bob)
-solar_panel_l_recipe(solar_panel_large_3, processing_unit, titanium_plate_bob, gold_cable, nil, solar_panel_large_2, silicon_mono, gold_plate_bob)
+solar_panel_l_recipe(solar_panel_large_1, electronic_circuit, steel_plate, copper_cable, glass_bob, nil, silicon_wafer, copper_plate)
+solar_panel_l_recipe(solar_panel_large_2, advanced_circuit, aluminium_plate_bob, silver_cable, nil, solar_panel_large_1, silicon_wafer, silver_plate_bob)
+solar_panel_l_recipe(solar_panel_large_3, processing_unit, titanium_plate_bob, gold_cable, nil, solar_panel_large_2, silicon_wafer, gold_plate_bob)
 
 local accumulators =
 {
@@ -371,17 +371,13 @@ pumpjack_recipe(pumpjack_2, brass_gear_wheel, advanced_circuit, brass_pipe, pump
 pumpjack_recipe(pumpjack_3, titanium_gear_wheel, processing_unit, titanium_pipe, pumpjack_2, titanium_plate_bob)
 pumpjack_recipe(pumpjack_4, nitinol_gear_wheel, advanced_processing_unit, nitinol_pipe, pumpjack_3, nitinol_plate_bob)
 
-local area_mining_drill_1 = "bob-area-mining-drill-1"
-local area_mining_drill_2 = "bob-area-mining-drill-2"
-local area_mining_drill_3 = "bob-area-mining-drill-3"
-local area_mining_drill_4 = "bob-area-mining-drill-4"
 if data_item[area_mining_drill_1] then
     local area_mining_drills =
     {
-        {name = area_mining_drill_1, subgroup = is_extraction_machine_mining, order = f, mining_speed = 1, energy_usage = 240},
-        {name = area_mining_drill_2, subgroup = is_extraction_machine_mining, order = g, mining_speed = 2, energy_usage = 480},
-        {name = area_mining_drill_3, subgroup = is_extraction_machine_mining, order = h, mining_speed = 3, energy_usage = 720},
-        {name = area_mining_drill_4, subgroup = is_extraction_machine_mining, order = i, mining_speed = 4, energy_usage = 960}
+        {name = area_mining_drill_1, subgroup = is_extraction_machine_mining, order = g, mining_speed = 1, energy_usage = 240},
+        {name = area_mining_drill_2, subgroup = is_extraction_machine_mining, order = h, mining_speed = 2, energy_usage = 480},
+        {name = area_mining_drill_3, subgroup = is_extraction_machine_mining, order = i, mining_speed = 3, energy_usage = 720},
+        {name = area_mining_drill_4, subgroup = is_extraction_machine_mining, order = j, mining_speed = 4, energy_usage = 960}
     }
     for _, BUILD in pairs(area_mining_drills) do
         data_item[BUILD.name].subgroup = BUILD.subgroup
@@ -397,7 +393,7 @@ if data_item[area_mining_drill_1] then
         data_mining_drill[BUILD.name].module_slots = (BUILD.mining_speed * 2)
         data_mining_drill[BUILD.name].mining_speed = BUILD.mining_speed
         data_mining_drill[BUILD.name].energy_source.emissions_per_minute = {pollution = (BUILD.mining_speed * 2)}
-        data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = (BUILD.mining_speed * 0.8)
+        data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
         data_mining_drill[BUILD.name].resource_searching_radius = 4.49
     end
     local function area_mining_drill_recipe(name, gear_wheel, circuit, mining_drill, plate)

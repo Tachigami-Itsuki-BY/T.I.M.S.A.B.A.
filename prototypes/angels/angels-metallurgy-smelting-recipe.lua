@@ -1499,6 +1499,27 @@ data:extend
 ({
     {
         type = recipe,
+        name = copper_tungsten_powder,
+        category = angels_powder_mixing_3,
+        subgroup = is_tungsten,
+        icons = THREE_I(tungsten_casting_powder, copper_powder, copper_tungsten_powder),
+        order = f,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- W + Cu --> WCu
+        ingredients =
+        {
+            {type = item, name = tungsten_casting_powder, amount = 16},
+            {type = item, name = copper_powder, amount = 16}
+        },
+        results = {{type = item, name = copper_tungsten_powder, amount = 16}},
+        main_product = copper_tungsten_powder
+    },
+    {
+        type = recipe,
         name = peroxo_tungstic_acid,
         category = angels_chemical_smelting_4,
         subgroup = is_tungsten_chemistry,

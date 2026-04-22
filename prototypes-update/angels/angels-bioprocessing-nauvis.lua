@@ -190,7 +190,11 @@ data_recipe[wood_3].icons = TWO_I(tree_angels, wood, number_3)
 data_recipe[wood_3].results = {{type = item, name = wood, amount = 32}}
 
 local cellulose_fiber_raw_wood = "angels-cellulose-fiber-raw-wood"
-data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels)
+if mods [muluna_mods] then
+    data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels, number_1)
+else
+    data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels)
+end
 data_recipe[cellulose_fiber_raw_wood].order = b_a
 data_recipe[cellulose_fiber_raw_wood].energy_required = 4
 data_recipe[cellulose_fiber_raw_wood].ingredients[1].amount = 4

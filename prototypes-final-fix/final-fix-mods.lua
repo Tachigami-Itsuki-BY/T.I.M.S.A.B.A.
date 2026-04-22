@@ -84,27 +84,67 @@ end
 -- SPACE AGE
 
 -- MODS
+local drain = 15
+local kW = "kW"
+local kJ = "kJ"
 if mods [muluna_mods] then
     local muluna_mining_machine =
     {
-        {name = "electric-mining-drill-ground-digger", order = a},
-        {name = "bob-mining-drill-1-ground-digger",    order = b},
-        {name = "bob-mining-drill-2-ground-digger",    order = c},
-        {name = "bob-mining-drill-3-ground-digger",    order = d},
-        {name = "bob-mining-drill-4-ground-digger",    order = e}
+        {name = "electric-mining-drill-ground-digger",   order = a, tier = 1, energy_usage = 120},
+        {name = "bob-mining-drill-1-ground-digger",      order = b, tier = 2, energy_usage = 240},
+        {name = "bob-mining-drill-2-ground-digger",      order = c, tier = 3, energy_usage = 360},
+        {name = "bob-mining-drill-3-ground-digger",      order = d, tier = 4, energy_usage = 480},
+        {name = "bob-mining-drill-4-ground-digger",      order = e, tier = 5, energy_usage = 600},
+        --{name = "electric-mining-drill-6-ground-digger", order = f, tier = 6, energy_usage = 720}
     }
-    for _, MMM in pairs(muluna_mining_machine) do
-        data_assembling[MMM.name].subgroup = is_extraction_machine_muluna
-        data_assembling[MMM.name].order = MMM.order
+    for _, BUILD in pairs(muluna_mining_machine) do
+        data_assembling[BUILD.name].subgroup = is_extraction_machine_muluna
+        data_assembling[BUILD.name].order = BUILD.order
+        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name].energy_source.drain = (BUILD.tier * drain) .. kW
+        data_assembling[BUILD.name].fixed_recipe = lunar_regolith
+    end
+    local big_mining_drill_gd = "big-mining-drill-ground-digger"
+    data_assembling[big_mining_drill_gd].energy_usage = (2400 - 480) .. kW
+    data_assembling[big_mining_drill_gd].energy_source.drain = 480 .. kW
+    data_assembling[big_mining_drill_gd].fixed_recipe = lunar_regolith
+    if data_item[area_mining_drill_1] then
+        local muluna_large_area_mining_machine =
+        {
+            {name = "bob-area-mining-drill-1-ground-digger", order = g, tier = 1, energy_usage = 240},
+            {name = "bob-area-mining-drill-2-ground-digger", order = h, tier = 2, energy_usage = 480},
+            {name = "bob-area-mining-drill-3-ground-digger", order = i, tier = 3, energy_usage = 720},
+            {name = "bob-area-mining-drill-4-ground-digger", order = j, tier = 4, energy_usage = 960}
+        }
+        for _, BUILD in pairs(muluna_large_area_mining_machine) do
+            data_assembling[BUILD.name].subgroup = is_extraction_machine_muluna
+            data_assembling[BUILD.name].order = BUILD.order
+            data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
+            data_assembling[BUILD.name].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
+            data_assembling[BUILD.name].fixed_recipe = lunar_regolith
+        end
     end
 
-    -- is_extraction_machine_maraxsis
-
-    local vacuum_heating_tower = "muluna-vacuum-heating-tower"
     data_assembling[vacuum_heating_tower].subgroup = is_muluna_heating
     data_assembling[vacuum_heating_tower].icons = nil
     data_assembling[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower.png"
-    data_assembling[vacuum_heating_tower].order = a
+    data_assembling[vacuum_heating_tower].order = z
+    data_assembling[vacuum_heating_tower].crafting_speed = 64
+    data_assembling[vacuum_heating_tower].energy_usage = 14400 .. kW
+    data_assembling[vacuum_heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
+    data_assembling[vacuum_heating_tower].energy_source.effectivity = 4
+    data_assembling[vacuum_heating_tower].fixed_recipe = heat
+
+    local vacuum_heating_tower_reactor = "heat-assembling-machine-muluna-vacuum-heating-tower-reactor"
+    data_reactor[vacuum_heating_tower_reactor].subgroup = is_muluna_heating
+    data_reactor[vacuum_heating_tower_reactor].icons = nil
+    data_reactor[vacuum_heating_tower_reactor].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower.png"
+    data_reactor[vacuum_heating_tower_reactor].order = z
+    data_reactor[vacuum_heating_tower_reactor].consumption = 86400 .. kW
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_temperature = 2000
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.specific_heat = 10800 .. kJ
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_transfer = 10800000 .. kW
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
 end
 
 if mods [shchierbin_mods] and mods [maraxsis_mods] then

@@ -6,6 +6,7 @@
 __macos/
 desktop.ini
 Thumbs.db
+.luarc.json
 
 # --- Файлы Git ---
 .git/

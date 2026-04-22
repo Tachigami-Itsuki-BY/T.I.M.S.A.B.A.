@@ -42,25 +42,25 @@ data_recipe[utility_science_pack].ingredients =
 }
 data_recipe[utility_science_pack].results[1].amount = 4
 
-if not mods [hyarion_mods] then
-    data_recipe[space_science_pack].energy_required = 16
-    data_recipe[space_science_pack].ingredients =
-    {
-        {type = item, name = nitinol_plate_bob, amount = 2},
-        {type = item, name = carbon_angels, amount = 4},
-        {type = item, name = ice, amount = 4}
-    }
-    data_recipe[space_science_pack].results[1].amount = 4
+data_recipe[space_science_pack].icons = R_P_I(space_science_pack, space_platform)
+data_recipe[space_science_pack].energy_required = 16
+data_recipe[space_science_pack].ingredients =
+{
+    {type = item, name = nitinol_plate_bob, amount = 2},
+    {type = item, name = carbon_angels, amount = 4},
+    {type = item, name = ice, amount = 4}
+}
+data_recipe[space_science_pack].results[1].amount = 4
 
-    data_recipe[promethium_science_pack].energy_required = 16
-    data_recipe[promethium_science_pack].ingredients =
-    {
-        {type = item, name = promethium_asteroid_chunk, amount = 32},
-        {type = item, name = quantum_processor, amount = 1},
-        {type = item, name = biter_egg, amount = 8}
-    }
-    data_recipe[promethium_science_pack].results[1].amount = 8
-end
+data_recipe[promethium_science_pack].icons = R_P_I(promethium_science_pack, space_platform)
+data_recipe[promethium_science_pack].energy_required = 16
+data_recipe[promethium_science_pack].ingredients =
+{
+    {type = item, name = promethium_asteroid_chunk, amount = 32},
+    {type = item, name = quantum_processor, amount = 1},
+    {type = item, name = biter_egg, amount = 8}
+}
+data_recipe[promethium_science_pack].results[1].amount = 8
 
 local gear_wheels =
 {
@@ -119,6 +119,9 @@ data_item[steel_bearing_ball].localised_description = show_formula and {chemical
 data_recipe[steel_bearing_ball].icons = TWO_I(steel_plate, steel_bearing_ball)
 
 data_item[ceramic_bearing_ball].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_recipe[ceramic_bearing_ball].category = angels_sintering_2
+end
 data_recipe[ceramic_bearing_ball].icons = TWO_I(silicon_nitride_bob, ceramic_bearing_ball)
 
 data_item[cobalt_steel_bearing_ball].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
@@ -153,7 +156,16 @@ data_recipe[steel_bearing].icons = B_F_L(nil, steel_bearing_ball, steel_plate, s
 data_recipe[steel_bearing].ingredients[1].amount = 2
 
 data_item[ceramic_bearing].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-data_recipe[ceramic_bearing].icons = B_F_L(lubricant, ceramic_bearing_ball, silicon_nitride_bob, ceramic_bearing)
+data_recipe[ceramic_bearing].category = crafting
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_recipe[ceramic_bearing].category = angels_sintering_2
+end
+data_recipe[ceramic_bearing].icons = B_F_L(nil, ceramic_bearing_ball, silicon_nitride_bob, ceramic_bearing)
+data_recipe[ceramic_bearing].ingredients =
+{
+    {type = item, name = ceramic_bearing_ball, amount = 16},
+    {type = item, name = silicon_nitride_bob, amount = 2}
+}
 
 data_item[cobalt_steel_bearing].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
 data_recipe[cobalt_steel_bearing].icons = B_F_L(lubricant, cobalt_steel_bearing_ball, cobalt_steel_plate_bob, cobalt_steel_bearing)
@@ -175,7 +187,6 @@ local function bearing_recipe(name, bearing_ball, plate)
 end
 bearing_recipe(cobalt_steel_bearing, cobalt_steel_bearing_ball, cobalt_steel_plate_bob)
 bearing_recipe(titanium_bearing, titanium_bearing_ball, titanium_plate_bob)
-bearing_recipe(ceramic_bearing, ceramic_bearing_ball, silicon_nitride_bob)
 bearing_recipe(nitinol_bearing, nitinol_bearing_ball, nitinol_plate_bob)
 
 data_technology[battery_lead_acid].prerequisites = {"angels-lead-smelting-2", "plastics"}

@@ -675,16 +675,19 @@ strand_casting_machine_recipe(strand_casting_machine_4, copper_tungsten_gear_whe
 if settings.startup[setting_early_sintering_oven].value == true then
     local sintering_ovens =
     {
-        {name = sintering_oven_1, crafting_speed = 1, energy_usage = 120},
-        {name = sintering_oven_2, crafting_speed = 2, energy_usage = 240},
-        {name = sintering_oven_3, crafting_speed = 3, energy_usage = 360},
-        {name = sintering_oven_4, crafting_speed = 4, energy_usage = 480},
-        {name = sintering_oven_5, crafting_speed = 5, energy_usage = 600}
+        {name = sintering_oven_1, crafting_speed = 1, energy_usage = 120, order = a},
+        {name = sintering_oven_2, crafting_speed = 2, energy_usage = 240, order = b},
+        {name = sintering_oven_3, crafting_speed = 3, energy_usage = 360, order = c},
+        {name = sintering_oven_4, crafting_speed = 4, energy_usage = 480, order = d},
+        {name = sintering_oven_5, crafting_speed = 5, energy_usage = 600, order = e}
     }
     for _, BUILD in pairs(sintering_ovens) do
+        data_item[BUILD.name].order = BUILD.order
         data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
         data_recipe[BUILD.name].energy_required = 4
+        data_assembling[BUILD.name].order = BUILD.order
         data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
         data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
         data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
@@ -712,13 +715,16 @@ if settings.startup[setting_early_sintering_oven].value == true then
 else
     local sintering_ovens =
     {
-        {name = sintering_oven_4, crafting_speed = 1, energy_usage = 240},
-        {name = sintering_oven_5, crafting_speed = 2, energy_usage = 480}
+        {name = sintering_oven_4, crafting_speed = 1, energy_usage = 240, order = a},
+        {name = sintering_oven_5, crafting_speed = 2, energy_usage = 480, order = b}
     }
     for _, BUILD in pairs(sintering_ovens) do
+        data_item[BUILD.name].order = BUILD.order
         data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
         data_recipe[BUILD.name].energy_required = 4
+        data_assembling[BUILD.name].order = BUILD.order
         data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
         data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
         data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 2))) .. kW

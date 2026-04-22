@@ -134,36 +134,12 @@ data_recipe[quantum_processor].results[2].ignored_by_stats = 15
 data_recipe[quantum_processor].results[2].ignored_by_productivity = 15
 
 -- BUILDING
-data_item[heating_tower].subgroup = is_aquilo_building
-data_item[heating_tower].order = a
-data_item[heating_tower].stack_size = 32
-data_item[heating_tower].weight = 31250
-data_recipe[heating_tower].subgroup = is_aquilo_building
-data_recipe[heating_tower].order = a
-data_recipe[heating_tower].energy_required = 8
-data_recipe[heating_tower].ingredients =
-{
-    {type = item, name = boiler_4, amount = 2},
-    {type = item, name = heat_pipe_2, amount = 4},
-    {type = item, name = refined_concrete, amount = 16}
-}
-data_reactor[heating_tower].subgroup = is_aquilo_building
-data_reactor[heating_tower].order = a
-data_reactor[heating_tower].consumption = 14400 .. kW
-data_reactor[heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
-data_reactor[heating_tower].energy_source.effectivity = 2
-data_reactor[heating_tower].energy_source.emissions_per_minute.pollution = 128
-data_reactor[heating_tower].heat_buffer.max_temperature = 1250
-data_reactor[heating_tower].heat_buffer.specific_heat = 1440 .. kJ
-data_reactor[heating_tower].heat_buffer.max_transfer = 7200000 .. kW
-data_reactor[heating_tower].heat_buffer.minimum_glow_temperature = 250
-
 data_item[cryogenic_plant].subgroup = is_aquilo_building
-data_item[cryogenic_plant].order = b
+data_item[cryogenic_plant].order = a
 data_item[cryogenic_plant].stack_size = 32
 data_item[cryogenic_plant].weight = 31250
 data_recipe[cryogenic_plant].subgroup = is_aquilo_building
-data_recipe[cryogenic_plant].order = b
+data_recipe[cryogenic_plant].order = a
 data_recipe[cryogenic_plant].energy_required = 8
 data_recipe[cryogenic_plant].ingredients =
 {
@@ -174,7 +150,7 @@ data_recipe[cryogenic_plant].ingredients =
     {type = item, name = superconductor, amount = 16}
 }
 data_assembling[cryogenic_plant].subgroup = is_aquilo_building
-data_assembling[cryogenic_plant].order = b
+data_assembling[cryogenic_plant].order = a
 data_assembling[cryogenic_plant].energy_usage = 1140 .. kW
 data_assembling[cryogenic_plant].energy_source.emissions_per_minute.pollution = 8
 data_assembling[cryogenic_plant].energy_source.drain = 60 .. kW

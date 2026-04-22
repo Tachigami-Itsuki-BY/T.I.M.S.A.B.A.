@@ -569,7 +569,6 @@ data_item[silicon_carbide_bob].localised_description = show_formula and {chemica
 data_item[silicon_carbide_bob].subgroup = is_silicon_chemistry
 data_item[silicon_carbide_bob].order = e
 data_item[silicon_carbide_bob].stack_size = 200
-data_recipe[silicon_carbide_bob].category = angels_blast_smelting_2
 data_recipe[silicon_carbide_bob].subgroup = is_silicon_chemistry
 data_recipe[silicon_carbide_bob].icons = THREE_I(silicon_powder, carbon_angels, silicon_carbide_bob)
 data_recipe[silicon_carbide_bob].order = e
@@ -1599,7 +1598,6 @@ data_recipe[chrome_hydroxide].results =
 data_recipe[chrome_hydroxide].main_product = chrome_hydroxide
 
 -- TUNGSTEN
-local is_tungsten = "angels-tungsten"
 data_item_subgroup[is_tungsten].order = p
 
 data_item[tungsten_ore_bob].localised_description = show_formula and {chemical_formula, "W"} or nil

@@ -1,3 +1,8 @@
+if mods [muluna_mods] or mods [shchierbin_mods] and not mods [maraxsis_mods] then
+    data_fluid[atmosphere_maraxsis] = nil
+    data_recipe[atmosphere_maraxsis] = nil
+end
+
 if mods [castra_mods] or mods [corrundum_mods] or mods[shchierbin_mods] then
     data_fluid[hydrogen_sulfide_mods] = nil
 end

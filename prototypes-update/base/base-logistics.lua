@@ -602,7 +602,16 @@ for _, pipe in pairs(pipes) do
     data_recipe[pipe.name].order = pipe.order
     data_pipe[pipe.name].order = pipe.order
 end
-
+data_recipe[plastic_pipe].category = crafting_fluid
+data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
+data_recipe[plastic_pipe].auto_recycle = false
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_recipe[ceramic_pipe].category = angels_sintering_2
+end
+data_recipe[tungsten_pipe].category = angels_sintering_4
+data_recipe[tungsten_pipe].ingredients[1].name = tungsten_casting_powder
+data_recipe[copper_tungsten_pipe].category = angels_sintering_4
+data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
 local pipes_to_ground =
 {
     {name = iron_pipe_to_ground,            order = a},
@@ -626,7 +635,6 @@ for _, pipe in pairs(pipes_to_ground) do
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order
 end
-
 local function pipe_to_ground_recipe(name, pipe, plate, count)
     data_recipe[name].ingredients =
     {
@@ -634,18 +642,27 @@ local function pipe_to_ground_recipe(name, pipe, plate, count)
         {type = item, name = plate, amount = 4}
     }
 end
-pipe_to_ground_recipe(iron_pipe_to_ground,                       iron_pipe,                iron_plate, 8)
-pipe_to_ground_recipe(copper_pipe_to_ground,                   copper_pipe,              copper_plate, 8)
-pipe_to_ground_recipe(stone_pipe_to_ground,                     stone_pipe,               stone_brick, 8)
-pipe_to_ground_recipe(bronze_pipe_to_ground,                   bronze_pipe,          bronze_plate_bob, 16)
-pipe_to_ground_recipe(steel_pipe_to_ground,                     steel_pipe,               steel_plate, 16)
-pipe_to_ground_recipe(plastic_pipe_to_ground,                 plastic_pipe,                   plastic, 24)
-pipe_to_ground_recipe(brass_pipe_to_ground,                     brass_pipe,           brass_plate_bob, 24)
-pipe_to_ground_recipe(titanium_pipe_to_ground,               titanium_pipe,        titanium_plate_bob, 32)
-pipe_to_ground_recipe(ceramic_pipe_to_ground,                 ceramic_pipe,       silicon_nitride_bob, 32)
-pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe,        tungsten_plate_bob, 32)
-pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,         nitinol_plate_bob, 40)
-pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_plate_bob, 40)
+pipe_to_ground_recipe(iron_pipe_to_ground,                       iron_pipe,              iron_plate, 8)
+pipe_to_ground_recipe(copper_pipe_to_ground,                   copper_pipe,            copper_plate, 8)
+pipe_to_ground_recipe(stone_pipe_to_ground,                     stone_pipe,             stone_brick, 8)
+pipe_to_ground_recipe(bronze_pipe_to_ground,                   bronze_pipe,        bronze_plate_bob, 16)
+pipe_to_ground_recipe(steel_pipe_to_ground,                     steel_pipe,             steel_plate, 16)
+pipe_to_ground_recipe(plastic_pipe_to_ground,                 plastic_pipe,                 plastic, 24)
+pipe_to_ground_recipe(brass_pipe_to_ground,                     brass_pipe,         brass_plate_bob, 24)
+pipe_to_ground_recipe(titanium_pipe_to_ground,               titanium_pipe,      titanium_plate_bob, 32)
+pipe_to_ground_recipe(ceramic_pipe_to_ground,                 ceramic_pipe,     silicon_nitride_bob, 32)
+pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe, tungsten_casting_powder, 32)
+pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,       nitinol_plate_bob, 40)
+pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe,  copper_tungsten_powder, 40)
+data_recipe[plastic_pipe_to_ground].category = crafting_fluid
+data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
+data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
+data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
+if settings.startup[setting_early_sintering_oven].value == true then
+    data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
+end
+data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4
+data_recipe[copper_tungsten_pipe_to_ground].category = angels_sintering_4
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

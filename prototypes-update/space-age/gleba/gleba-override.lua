@@ -373,15 +373,10 @@ data_recipe[coal_synthesis].ingredients[3].amount = 15
 
 local wood_processing = "wood-processing"
 data_recipe[wood_processing].icons = TWO_I(wood, tree_seed)
-if mods [muluna_mods] then
-    data_recipe[wood_processing].subgroup = is_muluna_building_tree
-    data_recipe[wood_processing].order = b_h
-    data_recipe[wood_processing].surface_conditions = nil
-else
-    data_recipe[wood_processing].subgroup = is_gleba_recipe
-    data_recipe[wood_processing].order = c_a
-    data_recipe[wood_processing].surface_conditions = nil
-end
+data_recipe[wood_processing].category = "angels-seed-extractor"
+data_recipe[wood_processing].subgroup = is_gleba_recipe
+data_recipe[wood_processing].order = c_a
+data_recipe[wood_processing].surface_conditions = nil
 
 data_recipe[factorian_fish_breeding].category = "angels-bio-refugium-fish"
 data_recipe[factorian_fish_breeding].localised_name = {"recipe-name.breeding-factorian-fish"}
@@ -444,12 +439,36 @@ data_agricultural_tower[agricultural_tower].subgroup = is_gleba_building
 data_agricultural_tower[agricultural_tower].order = a
 data_agricultural_tower[agricultural_tower].energy_usage = 120 .. kW
 
+data_item[heating_tower].subgroup = is_gleba_building
+data_item[heating_tower].order = b
+data_item[heating_tower].stack_size = 32
+data_item[heating_tower].weight = 31250
+data_recipe[heating_tower].subgroup = is_gleba_building
+data_recipe[heating_tower].order = b
+data_recipe[heating_tower].energy_required = 8
+data_recipe[heating_tower].ingredients =
+{
+    {type = item, name = boiler_4, amount = 2},
+    {type = item, name = heat_pipe_2, amount = 4},
+    {type = item, name = refined_concrete, amount = 16}
+}
+data_reactor[heating_tower].subgroup = is_gleba_building
+data_reactor[heating_tower].order = b
+data_reactor[heating_tower].consumption = 14400 .. kW
+data_reactor[heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
+data_reactor[heating_tower].energy_source.effectivity = 2
+data_reactor[heating_tower].energy_source.emissions_per_minute.pollution = 128
+data_reactor[heating_tower].heat_buffer.max_temperature = 1250
+data_reactor[heating_tower].heat_buffer.specific_heat = 1440 .. kJ
+data_reactor[heating_tower].heat_buffer.max_transfer = 7200000 .. kW
+data_reactor[heating_tower].heat_buffer.minimum_glow_temperature = 250
+
 data_item[biochamber].subgroup = is_gleba_building
-data_item[biochamber].order = b
+data_item[biochamber].order = c
 data_item[biochamber].stack_size = 32
 data_item[biochamber].weight = 31250
 data_recipe[biochamber].subgroup = is_gleba_building
-data_recipe[biochamber].order = b
+data_recipe[biochamber].order = c
 data_recipe[biochamber].energy_required = 16
 data_recipe[biochamber].ingredients[1].amount = 4
 data_recipe[biochamber].ingredients[3].name = cobalt_steel_plate_bob
@@ -457,33 +476,33 @@ data_recipe[biochamber].ingredients[3].amount = 16
 data_recipe[biochamber].ingredients[4].name = advanced_processing_unit
 data_recipe[biochamber].ingredients[4].amount = 4
 data_assembling[biochamber].subgroup = is_gleba_building
-data_assembling[biochamber].order = b
+data_assembling[biochamber].order = c
 
-local biolab = "biolab"
 data_item[biolab].subgroup = is_gleba_building
-data_item[biolab].order = c
+data_item[biolab].order = d
 data_item[biolab].stack_size = 16
 data_item[biolab].weight = 62500
 data_recipe[biolab].subgroup = is_gleba_building
-data_recipe[biolab].order = c
+data_recipe[biolab].order = d
 data_recipe[biolab].energy_required = 8
 data_recipe[biolab].ingredients[2].amount = 8
 data_recipe[biolab].ingredients[3].amount = 32
 data_recipe[biolab].ingredients[5].amount = 4
 data_lab[biolab].subgroup = is_gleba_building
-data_lab[biolab].order = c
+data_lab[biolab].order = d
+data_lab[biolab].energy_usage = 240 .. kW
 
 local captive_biter_spawner = "captive-biter-spawner"
 data_item[captive_biter_spawner].subgroup = is_gleba_building
-data_item[captive_biter_spawner].order = d
+data_item[captive_biter_spawner].order = e
 data_recipe[captive_biter_spawner].subgroup = is_gleba_building
-data_recipe[captive_biter_spawner].order = d
+data_recipe[captive_biter_spawner].order = e
 data_recipe[captive_biter_spawner].energy_required = 8
 data_recipe[captive_biter_spawner].ingredients[1].amount = 8
 data_recipe[captive_biter_spawner].ingredients[3].amount = 16
 data_recipe[captive_biter_spawner].ingredients[4].amount = 120
 data_assembling[captive_biter_spawner].subgroup = is_gleba_building
-data_assembling[captive_biter_spawner].order = d
+data_assembling[captive_biter_spawner].order = e
 
 -- WAR
 local capture_robot_rocket = "capture-robot-rocket"

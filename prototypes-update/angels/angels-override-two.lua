@@ -245,7 +245,7 @@ data_recipe[canister].ingredients =
 }
 data_recipe[canister].results[1].amount = 1
 
-data_item[gas_bottle].localised_name = {"item-name.gas-bottle"}
+data_item[gas_bottle].localised_name = {"item-name.bottle"}
 data_item[gas_bottle].subgroup = is_barreling
 data_item[gas_bottle].order = d
 data_item[gas_bottle].stack_size = 200

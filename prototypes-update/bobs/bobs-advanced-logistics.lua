@@ -1,7 +1,6 @@
 local kW = "kW"
 local kJ = "kJ"
 local J = "J"
-local small_lamp = "small-lamp"
 local combinator_arithmetic = "arithmetic-combinator"
 local combinator_decider = "decider-combinator"
 local combinator_selector = "selector-combinator"

@@ -7,11 +7,7 @@ data:extend
         name = tech_advanced_ore_refining_5,
         icon = "__angelsrefininggraphics__/graphics/technology/ore-sorting.png",
         icon_size = 256,
-        prerequisites =
-        {
-            "angels-advanced-ore-refining-4",
-            space_science_pack
-        },
+        prerequisites = {"angels-advanced-ore-refining-4", space_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = ore_crusher_4},
@@ -44,13 +40,7 @@ data:extend
         name = tech_advanced_ore_refining_6,
         icon = "__angelsrefininggraphics__/graphics/technology/ore-sorting.png",
         icon_size = 256,
-        prerequisites =
-        {
-            tech_advanced_ore_refining_5,
-            electromagnetic_science_pack,
-            agricultural_science_pack,
-            metallurgic_science_pack
-        },
+        prerequisites = {tech_advanced_ore_refining_5, electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = ore_refinery_4},
@@ -85,11 +75,7 @@ data:extend
             name = tech_powder_metallurgy_6,
             icon = "__angelssmeltinggraphics__/graphics/technology/sintering-oven-tech.png",
             icon_size = 256,
-            prerequisites =
-            {
-                tech_powder_metallurgy_5,
-                space_science_pack
-            },
+            prerequisites = {tech_powder_metallurgy_5, space_science_pack},
             effects = {{type = unlock_recipe, recipe = sintering_oven_6}},
             unit =
             {
@@ -115,11 +101,7 @@ else
             name = tech_powder_metallurgy_6,
             icon = "__angelssmeltinggraphics__/graphics/technology/sintering-oven-tech.png",
             icon_size = 256,
-            prerequisites =
-            {
-                tech_powder_metallurgy_5,
-                space_science_pack
-            },
+            prerequisites = {tech_powder_metallurgy_5, space_science_pack},
             effects = {{type = unlock_recipe, recipe = sintering_oven_6}},
             unit =
             {
@@ -141,13 +123,7 @@ else
             name = tech_powder_metallurgy_7,
             icon = "__angelssmeltinggraphics__/graphics/technology/sintering-oven-tech.png",
             icon_size = 256,
-            prerequisites =
-            {
-                tech_powder_metallurgy_6,
-                electromagnetic_science_pack,
-                agricultural_science_pack,
-                metallurgic_science_pack
-            },
+            prerequisites = {tech_powder_metallurgy_6, electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
             effects = {{type = unlock_recipe, recipe = sintering_oven_7}},
             unit =
             {
@@ -178,12 +154,7 @@ data:extend
         name = tech_water_treatment_5,
         icon = "__angelsrefininggraphics__/graphics/technology/water-treatment.png",
         icon_size = 256,
-        prerequisites =
-        {
-            electric_boiler_3,
-            tech_water_treatment_4,
-            space_science_pack
-        },
+        prerequisites = {electric_boiler_3, tech_water_treatment_4, space_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = washing_plant_4},
@@ -210,13 +181,7 @@ data:extend
         name = tech_water_treatment_6,
         icon = "__angelsrefininggraphics__/graphics/technology/water-treatment.png",
         icon_size = 256,
-        prerequisites =
-        {
-            tech_water_treatment_5,
-            electromagnetic_science_pack,
-            agricultural_science_pack,
-            metallurgic_science_pack
-        },
+        prerequisites = {tech_water_treatment_5, electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = salination_plant_4},
@@ -245,11 +210,7 @@ data:extend
         name = tech_advanced_chemistry_6,
         icon = "__angelspetrochemgraphics__/graphics/technology/advanced-chemical-plant-tech.png",
         icon_size = 256,
-        prerequisites =
-        {
-            tech_advanced_chemistry_5,
-            space_science_pack
-        },
+        prerequisites = {tech_advanced_chemistry_5, space_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = advanced_chemical_plant_4},
@@ -274,12 +235,7 @@ data:extend
         type = technology,
         name = tech_coal_processing_4,
         icons = TIMSABA.functions.create_gas_tech_icon("CcCcCc"),
-        prerequisites =
-        {
-            potassium_processing,
-            tech_coal_processing_3,
-            tech_nitrogen_processing_4
-        },
+        prerequisites = {potassium_processing, tech_coal_processing_3, tech_nitrogen_processing_4},
         effects =
         {
             {type = unlock_recipe, recipe = coal_tar_liquid},

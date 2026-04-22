@@ -1,3 +1,26 @@
+-- MULUNA
+muluna_mods = "planet-muluna"
+planet_muluna = "muluna"
+lunar_regolith = "muluna-lunar-regolith"
+stone_crushed_mods = "stone-crushed"
+alumina_mods = "alumina"
+alumina_crushed = "alumina-crushed"
+aluminium_plate_mods = "aluminum-plate"
+molten_aluminium_mods = "molten-aluminum"
+aluminium_plate_crushed = "aluminum-crushed"
+aluminium_cable = "aluminum-cable"
+cellulose_mods = "cellulose"
+tar_mods = "tar"
+diffused_plastic_muluna = "muluna-diffused-plastic"
+heat = "muluna-heat"
+vacuum_heating_tower = "muluna-vacuum-heating-tower"
+cooled_steam_mods = "cooled-steam"
+steam_crusher = "muluna-steam-crusher"
+astronomical_data_muluna = "muluna-astronomical-data"
+telescope = "muluna-telescope"
+oxygen_mods = "oxygen"
+carbon_dioxide_mods = "carbon-dioxide"
+
 -- ARIG
 arig_mods = "planetaris-arig"
 planet_arig = "arig"
@@ -104,24 +127,6 @@ silicon_boule_mods = "silicon"
 silicon_cell_mods = "silicon-cell"
 silicon_carbide_mods = "silicon-carbide"
 glass_mods = "glass"
-
--- MULUNA
-muluna_mods = "planet-muluna"
-planet_muluna = "muluna"
-anorthite_chunk = "anorthite-chunk"
-alumina_mods = "alumina"
-aluminum_plate_mods = "aluminum-plate"
-stone_crushed_mods = "stone-crushed"
-cellulose_mods = "cellulose"
-sapling_muluna = "muluna-sapling"
-molten_aluminum_mods = "molten-aluminum"
-tar_mods = "tar"
-oxygen_mods = "oxygen"
-carbon_dioxide_mods = "carbon-dioxide"
-cooled_steam_mods = "cooled-steam"
-diffused_plastic_muluna = "muluna-diffused-plastic"
-astronomical_data_muluna = "muluna-astronomical-data"
-telescope = "muluna-telescope"
 
 -- NEXUS
 nexus_mods = "Nexus"
@@ -265,9 +270,6 @@ plasma_fuel = "plasmafuel"
 -- VUCLANUS SULFURIC BACTERIA
 vulcanus_sulfuric_bacteria_mods = "vulcanus-sulfuric-bacteria"
 sulfuric_bacteria = "sulfuric-bacteria"
-
--- NO TIME SPOILAGE
-NoTimedSpoilage = "NoTimedSpoilage"
 
 -- CLOWNS NUCLEAR
 clowns_nuclear = "Clowns-Nuclear"

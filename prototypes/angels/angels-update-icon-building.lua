@@ -505,6 +505,70 @@ do
 end
 
 -- ELECTROWINNING CELL
+--[[do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "electrowinning-cell",
+        base_entity_name = assembling_machine_1,
+        mod = angels_mod,
+        particles = {[big] = 1, [medium] = 2},
+        group = refining,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [electro_whinning_cell_3] = {tier = 3, prog_tier = 6},
+        [electro_whinning_cell_4] = {tier = 4, prog_tier = 6}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsrefininggraphics__/graphics/entity/electro-whinning-cell/electro-whinning-cell.png",
+                    priority = "extra-high",
+                    width = 224,
+                    height = 224,
+                    frame_count = 36,
+                    line_length = 6,
+                    shift = { 0, 0 },
+                    animation_speed = 0.5
+                },
+                {
+                    filename = "__reskins-angels__/graphics/entity/refining/electrowinning-cell/electrowinning-cell-mask.png",
+                    priority = "extra-high",
+                    width = 224,
+                    height = 224,
+                    repeat_count = 36,
+                    shift = { 0, 0 },
+                    animation_speed = 0.5,
+                    tint = inputs.tint
+                },
+                {
+                    filename = "__reskins-angels__/graphics/entity/refining/electrowinning-cell/electrowinning-cell-highlights.png",
+                    priority = "extra-high",
+                    width = 224,
+                    height = 224,
+                    repeat_count = 36,
+                    shift = { 0, 0 },
+                    animation_speed = 0.5,
+                    blend_mode = reskins.lib.settings.blend_mode
+                }
+            }
+        }
+        ::continue::
+    end
+end]]
 
 -- FILTRATION UNIT
 do

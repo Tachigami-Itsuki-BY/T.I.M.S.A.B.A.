@@ -12,6 +12,12 @@ for _, prototype in pairs(data.raw.module) do
     end
 end
 
+for item_name, item_data in pairs(data.raw.item) do
+    if item_name:find("asteroid") then
+        item_data.stack_size = 64
+    end
+end
+
 local name_types_stack_size_and_weight = {"item", "tool", "repair-tool", "capsule", "item-with-entity-data", "rail-planner", "ammo"}
 for _, type_name in pairs(name_types_stack_size_and_weight) do
     if data.raw[type_name] then

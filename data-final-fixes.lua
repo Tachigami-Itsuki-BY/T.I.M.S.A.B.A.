@@ -34,11 +34,12 @@ require("prototypes-final-fix.duplicate-items-and-fluids.vesta")
 require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")
 
+require("prototypes-final-fix.final-fix-mods")
+
 require("prototypes-final-fix.recipe-barreling-mods")
 
 require("prototypes-final-fix.final-fix-weights")
 require("prototypes-final-fix.final-fix-entities-yelds")
-require("prototypes-final-fix.final-fix-mods")
 require("prototypes-final-fix.final-fix-recycling")
 require("prototypes-final-fix.final-fix-technology")
 require("prototypes-final-fix.final-fix-module")

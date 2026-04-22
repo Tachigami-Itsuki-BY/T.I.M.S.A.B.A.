@@ -1450,7 +1450,7 @@ data:extend
         type = recipe,
         name = wolframite_ore_sorting,
         category = angels_ore_sorting_5,
-        subgroup = is_tungsten,
+        subgroup = is_vulcanus_tungsten,
         icons = RECYCLING_I(recycling_png, wolframite_ore),
         order = b,
         enabled = false,

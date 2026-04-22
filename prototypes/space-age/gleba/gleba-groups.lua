@@ -86,16 +86,3 @@ data:extend
         order = k
     }
 })
-
-if mods [NoTimedSpoilage] then
-    is_bacteria_fermentation = "is-bacteria-fermentation"
-    data:extend
-    ({
-        {
-            type = item_subgroup,
-            name = is_bacteria_fermentation,
-            group = gleba,
-            order = b_a
-        }
-    })
-end

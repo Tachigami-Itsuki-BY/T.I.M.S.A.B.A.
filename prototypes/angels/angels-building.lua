@@ -236,7 +236,7 @@ data:extend
             {
                 type = electric,
                 usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 0.04 * 60},
+                emissions_per_minute = {pollution = 3},
                 drain = 45 .. kW
             },
             energy_usage = 315 .. kW
@@ -292,13 +292,71 @@ data:extend
             {
                 type = electric,
                 usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 0},
+                emissions_per_minute = {pollution = 4},
                 drain = 60 .. kW
             },
             energy_usage = 420 .. kW
         },
     }),
     -- ORE SORTING FACILITY
+    --[[{
+        type = item,
+        name = ore_sorting_facility_6,
+        subgroup = is_ore_sorter,
+        icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/ore-sorting-facility.png", icon_size = 64}}, 6, angelsmods.refining.number_tint),
+        order = f,
+        place_result = ore_sorting_facility_6,
+        stack_size = 32,
+        weight = 31250
+    },
+    {
+        type = recipe,
+        name = ore_sorting_facility_6,
+        category = crafting,
+        subgroup = is_ore_sorter,
+        icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/ore-sorting-facility.png", icon_size = 64}}, 6, angelsmods.refining.number_tint),
+        order = f,
+        enabled = false,
+        auto_recycle = true,
+        allow_show = true,
+        allow_productivity = false,
+        allow_quality = true,
+        allow_decomposition = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = nitinol_gear_wheel, amount = 32},
+            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = reinforced_concrete_brick, amount = 64},
+            {type = item, name = nitinol_plate_bob, amount = 32},
+            {type = item, name = ore_sorting_facility_5, amount = 1}
+        },
+        results = {{type = item, name = ore_sorting_facility_6, amount = 1}},
+        main_product = ore_sorting_facility_6
+    },
+    util.merge
+    ({
+        data_assembling[ore_sorting_facility_5],
+        {
+            localised_description = {"entity-description.angels-ore-sorting-facility"},
+            name = ore_sorting_facility_6,
+            subgroup = is_ore_sorter,
+            icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/ore-sorting-facility.png", icon_size = 64}}, 6, angelsmods.refining.number_tint),
+            order = f,
+            minable = {result = ore_sorting_facility_6},
+            module_slots = 6,
+            crafting_speed = 6,
+            energy_source =
+            {
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 6},
+                drain = 90 .. kW
+            },
+            energy_usage = 630 .. kW,
+            crafting_categories = {angels_ore_sorting_1, angels_ore_sorting_2, angels_ore_sorting_3, angels_ore_sorting_4, angels_ore_sorting_5, angels_ore_sorting_6}
+        }
+    }),]]
     -- POWDERIZER
     {
         type = item,
@@ -350,7 +408,7 @@ data:extend
             {
                 type = electric,
                 usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 0},
+                emissions_per_minute = {pollution = 4},
                 drain = 60 .. kW
             },
             energy_usage = 420 .. kW,
@@ -358,6 +416,120 @@ data:extend
         }
     }),
     -- ELECTROWINNING CELL
+    --[[{
+        type = item,
+        name = electro_whinning_cell_3,
+        subgroup = is_ore_whinning,
+        icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 3, angelsmods.refining.number_tint),
+        order = c,
+        place_result = electro_whinning_cell_3,
+        stack_size = 32,
+        weight = 31250
+    },
+    {
+        type = recipe,
+        name = electro_whinning_cell_3,
+        category = crafting,
+        subgroup = is_ore_whinning,
+        icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 3, angelsmods.refining.number_tint),
+        order = c,
+        enabled = false,
+        auto_recycle = true,
+        allow_show = true,
+        allow_productivity = false,
+        allow_quality = true,
+        allow_decomposition = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = nitinol_pipe, amount = 16},
+            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = reinforced_concrete_brick, amount = 16},
+            {type = item, name = nitinol_plate_bob, amount = 16},
+            {type = item, name = electro_whinning_cell_2, amount = 1}
+        },
+        results = {{type = item, name = electro_whinning_cell_3, amount = 1}},
+        main_product = electro_whinning_cell_3
+    },
+    util.merge
+    ({
+        data_assembling[electro_whinning_cell_2],
+        {
+            localised_description = {"entity-description.angels-electro-whinning-cell"},
+            name = electro_whinning_cell_3,
+            subgroup = is_ore_whinning,
+            icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 3, angelsmods.refining.number_tint),
+            order = с,
+            minable = {result = electro_whinning_cell_3},
+            module_slots = 3,
+            crafting_speed = 3,
+            energy_source =
+            {
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 3},
+                drain = 45 .. kW
+            },
+            energy_usage = 315 .. kW
+        }
+    }),
+    {
+        type = item,
+        name = electro_whinning_cell_4,
+        subgroup = is_ore_whinning,
+        icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 4, angelsmods.refining.number_tint),
+        order = d,
+        place_result = electro_whinning_cell_4,
+        stack_size = 32,
+        weight = 31250
+    },
+    {
+        type = recipe,
+        name = electro_whinning_cell_4,
+        category = crafting,
+        subgroup = is_ore_whinning,
+        icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 4, angelsmods.refining.number_tint),
+        order = d,
+        enabled = false,
+        auto_recycle = true,
+        allow_show = true,
+        allow_productivity = false,
+        allow_quality = true,
+        allow_decomposition = true,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = reinforced_concrete_brick, amount = 16},
+            {type = item, name = copper_tungsten_plate_bob, amount = 16},
+            {type = item, name = electro_whinning_cell_3, amount = 1}
+        },
+        results = {{type = item, name = electro_whinning_cell_4, amount = 1}},
+        main_product = electro_whinning_cell_4
+    },
+    util.merge
+    ({
+        data_assembling[electro_whinning_cell_2],
+        {
+            localised_description = {"entity-description.angels-electro-whinning-cell"},
+            name = electro_whinning_cell_4,
+            subgroup = is_ore_whinning,
+            icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 4, angelsmods.refining.number_tint),
+            order = d,
+            minable = {result = electro_whinning_cell_4},
+            module_slots = 4,
+            crafting_speed = 4,
+            energy_source =
+            {
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 4},
+                drain = 60 .. kW
+            },
+            energy_usage = 420 .. kW
+        }
+    }),]]
     -- FILTRATION UNIT
     {
         type = item,
@@ -410,7 +582,7 @@ data:extend
             {
                 type = electric,
                 usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 0},
+                emissions_per_minute = {pollution = 4},
                 drain = 60 .. kW
             },
             energy_usage = 420 .. kW
@@ -475,6 +647,194 @@ data:extend
         }
     })
 })
+
+-- ANGELS METALLURGY CASTING
+--[[if settings.startup[setting_early_sintering_oven].value == true then
+    data:extend
+    ({
+        {
+            localised_name = {"entity-name.sintering-oven-6"},
+            type = item,
+            name = sintering_oven_6,
+            subgroup = is_sintering_oven,
+            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 6, angelsmods.smelting.number_tint),
+            order = f,
+            place_result = sintering_oven_6,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            localised_name = {"entity-name.sintering-oven-6"},
+            type = recipe,
+            name = sintering_oven_6,
+            category = crafting,
+            subgroup = is_sintering_oven,
+            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 6, angelsmods.smelting.number_tint),
+            order = f,
+            enabled = false,
+            auto_recycle = true,
+            allow_show = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 4,
+            ingredients =
+            {
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = copper_tungsten_plate_bob, amount = 64},
+                {type = item, name = reinforced_concrete_brick, amount = 32},
+                {type = item, name = sintering_oven_5, amount = 1}
+            },
+            results = {{type = item, name = sintering_oven_6, amount = 1}},
+            main_product = sintering_oven_6
+        },
+        util.merge
+        ({
+            data_assembling[sintering_oven_5],
+            {
+                localised_name = {"entity-name.sintering-oven-6"},
+                localised_description = {"entity-description.angels-sintering-oven"},
+                name = sintering_oven_6,
+                subgroup = is_sintering_oven,
+                icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 6, angelsmods.smelting.number_tint),
+                order = f,
+                minable = {result = sintering_oven_6},
+                module_slots = 6,
+                crafting_speed = 6,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = 6},
+                    drain = 90 .. kW
+                },
+                energy_usage = 630 .. kW
+            }
+        })
+    })
+else
+    data:extend
+    ({
+        {
+            localised_name = {"entity-name.sintering-oven-6-3"},
+            type = item,
+            name = sintering_oven_6,
+            subgroup = is_sintering_oven,
+            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 3, angelsmods.smelting.number_tint),
+            order = c,
+            place_result = sintering_oven_6,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            localised_name = {"entity-name.sintering-oven-6-3"},
+            type = recipe,
+            name = sintering_oven_6,
+            category = crafting,
+            subgroup = is_sintering_oven,
+            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 3, angelsmods.smelting.number_tint),
+            order = c,
+            enabled = false,
+            auto_recycle = true,
+            allow_show = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 4,
+            ingredients =
+            {
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = nitinol_plate_bob, amount = 64},
+                {type = item, name = reinforced_concrete_brick, amount = 32},
+                {type = item, name = sintering_oven_5, amount = 1}
+            },
+            results = {{type = item, name = sintering_oven_6, amount = 1}},
+            main_product = sintering_oven_6
+        },
+        util.merge
+        ({
+            data_assembling[sintering_oven_5],
+            {
+                localised_name = {"entity-name.sintering-oven-6-3"},
+                localised_description = {"entity-description.angels-sintering-oven"},
+                name = sintering_oven_6,
+                subgroup = is_sintering_oven,
+                icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 3, angelsmods.smelting.number_tint),
+                order = c,
+                minable = {result = sintering_oven_6},
+                module_slots = 3,
+                crafting_speed = 3,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = 3},
+                    drain = 90 .. kW
+                },
+                energy_usage = 630 .. kW
+            }
+        })
+        {
+            localised_name = {"entity-name.sintering-oven-7-4"},
+            type = item,
+            name = sintering_oven_7,
+            subgroup = is_sintering_oven,
+            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 4, angelsmods.smelting.number_tint),
+            order = d,
+            place_result = sintering_oven_7,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            localised_name = {"entity-name.sintering-oven-7-4"},
+            type = recipe,
+            name = sintering_oven_7,
+            category = crafting,
+            subgroup = is_sintering_oven,
+            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 4, angelsmods.smelting.number_tint),
+            order = d,
+            enabled = false,
+            auto_recycle = true,
+            allow_show = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 4,
+            ingredients =
+            {
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = holmium_plate, amount = 64},
+                {type = item, name = reinforced_concrete_brick, amount = 32},
+                {type = item, name = sintering_oven_6, amount = 1}
+            },
+            results = {{type = item, name = sintering_oven_7, amount = 1}},
+            main_product = sintering_oven_7
+        },
+        util.merge
+        ({
+            data_assembling[sintering_oven_5],
+            {
+                localised_name = {"entity-name.sintering-oven-7-4"},
+                localised_description = {"entity-description.angels-sintering-oven"},
+                name = sintering_oven_7,
+                subgroup = is_sintering_oven,
+                icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 4, angelsmods.smelting.number_tint),
+                order = d,
+                minable = {result = sintering_oven_7},
+                module_slots = 4,
+                crafting_speed = 4,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = 4},
+                    drain = 120 .. kW
+                },
+                energy_usage = 840 .. kW
+            }
+        })
+    })
+end]]
 
 -- ANGELS WATER TREATMENT
 data:extend
@@ -640,8 +1000,8 @@ data:extend
             icons = TIMSABA.numeral_tier({icon = "__angelsrefininggraphics__/graphics/icons/washing-plant-ico.png", icon_size = 32}, 4, angelsmods.refining.number_tint),
             order = d,
             minable = {result = washing_plant_4},
-            module_slots = 3,
-            crafting_speed = 3,
+            module_slots = 4,
+            crafting_speed = 4,
             energy_source =
             {
                 type = electric,

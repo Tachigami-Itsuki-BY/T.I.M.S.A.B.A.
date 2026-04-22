@@ -110,6 +110,7 @@ data_item[crusher].order = e
 data_item[crusher].stack_size = 32
 data_item[crusher].weight = 31250
 data_recipe[crusher].order = e
+data_recipe[crusher].energy_required = 8
 data_recipe[crusher].ingredients =
 {
     {type = item, name = electric_engine_unit, amount = 8},
@@ -299,10 +300,10 @@ local metallic_asteroids =
     {type = data_recipe,   name = advanced_metallic_asteroid_crushing_1, order = f_a},
     {type = data_recipe,   name = metallic_asteroid_reprocessing,        order = h_a}
 }
-for _, MA in pairs(metallic_asteroids) do
-    if MA.type[MA.name] then
-        MA.type[MA.name].subgroup = is_space_environment_1
-        MA.type[MA.name].order = MA.order
+for _, ASTEROID in pairs(metallic_asteroids) do
+    if ASTEROID.type[ASTEROID.name] then
+        ASTEROID.type[ASTEROID.name].subgroup = is_space_environment_1
+        ASTEROID.type[ASTEROID.name].order = ASTEROID.order
     end
 end
 
@@ -335,17 +336,17 @@ local carbonic_asteroids =
     {type = data_recipe,   name = advanced_carbonic_asteroid_crushing_1, order = f_a},
     {type = data_recipe,   name = carbonic_asteroid_reprocessing,        order = h_a}
 }
-for _, CA in pairs(carbonic_asteroids) do
-    if CA.type[CA.name] then
-        CA.type[CA.name].subgroup = is_space_environment_2
-        CA.type[CA.name].order = CA.order
+for _, ASTEROID in pairs(carbonic_asteroids) do
+    if ASTEROID.type[ASTEROID.name] then
+        ASTEROID.type[ASTEROID.name].subgroup = is_space_environment_2
+        ASTEROID.type[ASTEROID.name].order = ASTEROID.order
     end
 end
 
 data_recipe[carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing-1"}
-data_recipe[carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, carbon_angels)
+data_recipe[carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, coal)
 data_recipe[carbonic_asteroid_crushing_1].energy_required = 4
-data_recipe[carbonic_asteroid_crushing_1].results = {{type = item, name = carbon_angels, amount = 8}}
+data_recipe[carbonic_asteroid_crushing_1].results = {{type = item, name = coal, amount = 8}}
 
 data_recipe[advanced_carbonic_asteroid_crushing_1].localised_name = {"recipe-name.advanced-carbonic-asteroid-crushing-1"}
 data_recipe[advanced_carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, sulfur)
@@ -371,10 +372,10 @@ local oxide_asteroids =
     {type = data_recipe,   name = advanced_oxide_asteroid_crushing_1, order = f_a},
     {type = data_recipe,   name = oxide_asteroid_reprocessing,        order = h_a}
 }
-for _, OA in pairs(oxide_asteroids) do
-    if OA.type[OA.name] then
-        OA.type[OA.name].subgroup = is_space_environment_3
-        OA.type[OA.name].order = OA.order
+for _, ASTEROID in pairs(oxide_asteroids) do
+    if ASTEROID.type[ASTEROID.name] then
+        ASTEROID.type[ASTEROID.name].subgroup = is_space_environment_3
+        ASTEROID.type[ASTEROID.name].order = ASTEROID.order
     end
 end
 
@@ -403,16 +404,17 @@ local promethium_asteroids =
     {type = data_asteroid, name = "huge-promethium-asteroid",   order = d},
     {type = data_item,     name = promethium_asteroid_chunk,    order = e}
 }
-for _, PA in pairs(promethium_asteroids) do
-    if PA.type[PA.name] then
-        PA.type[PA.name].subgroup = is_space_environment_4
-        PA.type[PA.name].order = PA.order
+for _, ASTEROID in pairs(promethium_asteroids) do
+    if ASTEROID.type[ASTEROID.name] then
+        ASTEROID.type[ASTEROID.name].subgroup = is_space_environment_4
+        ASTEROID.type[ASTEROID.name].order = ASTEROID.order
     end
 end
 
 if mods [muluna_mods] then
+    local anorthite_chunk = "anorthite-chunk"
     local anorthite_crushing = "anorthite-crushing"
-    local advanced_anorthite_crushing = "advanced-anorthite-crushing"
+    advanced_anorthite_crushing = "advanced-anorthite-crushing"
     local anorthite_asteroids =
     {
         {type = data_asteroid, name = "small-anorthite-asteroid",     order = a},
@@ -423,19 +425,18 @@ if mods [muluna_mods] then
         {type = data_recipe,   name = anorthite_crushing,             order = e_a},
         {type = data_recipe,   name = advanced_anorthite_crushing,    order = e_b}
     }
-    for _, AA in pairs(anorthite_asteroids) do
-        if AA.type[AA.name] then
-            AA.type[AA.name].subgroup = is_space_environment_5
-            AA.type[AA.name].order = AA.order
+    for _, ASTEROID in pairs(anorthite_asteroids) do
+        if ASTEROID.type[ASTEROID.name] then
+            ASTEROID.type[ASTEROID.name].subgroup = is_space_environment_5
+            ASTEROID.type[ASTEROID.name].order = ASTEROID.order
         end
     end
 
     data_item[anorthite_chunk].stack_size = 200
-    data_item[anorthite_chunk].weight = 5000
 
     data_recipe[anorthite_crushing].icons = TWO_I(anorthite_chunk, aluminium_oxide)
     data_recipe[anorthite_crushing].energy_required = 4
-    data_recipe[anorthite_crushing].results = {{type = item, name = aluminium_oxide, amount = 16}}
+    data_recipe[anorthite_crushing].results = {{type = item, name = aluminium_oxide, amount = 8}}
 
     data_recipe[advanced_anorthite_crushing].icons = TWO_I(anorthite_chunk, silicon_boule_mods)
     data_recipe[advanced_anorthite_crushing].energy_required = 4

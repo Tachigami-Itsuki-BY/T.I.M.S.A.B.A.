@@ -931,14 +931,10 @@ data_recipe[tungsten_carbide_2].results[1].amount = 16
 
 data_item[copper_tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "WCu"} or nil
 data_item[copper_tungsten_plate_bob].order = c
-data_recipe[copper_tungsten_plate_bob].icons = THREE_I(tungsten_casting_powder, copper_powder, copper_tungsten_plate_bob)
+data_recipe[copper_tungsten_plate_bob].icons = TWO_I(copper_tungsten_powder, copper_tungsten_plate_bob)
 data_recipe[copper_tungsten_plate_bob].order = c
-data_recipe[copper_tungsten_plate_bob].energy_required = 8 -- W + Cu --> WCu
-data_recipe[copper_tungsten_plate_bob].ingredients =
-{
-    {type = item, name = tungsten_casting_powder, amount = 16},
-    {type = item, name = copper_powder, amount = 16}
-}
+data_recipe[copper_tungsten_plate_bob].energy_required = 8 -- WCu --> WCu
+data_recipe[copper_tungsten_plate_bob].ingredients = {{type = item, name = copper_tungsten_powder, amount = 16}}
 data_recipe[copper_tungsten_plate_bob].results[1].amount = 16
 
 -- PLATINUM

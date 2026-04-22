@@ -11,7 +11,9 @@ is_ore_crusher_angels = "angels-ore-crusher"
 is_ore_floatation_angels = "angels-ore-floatation"
 is_ore_leaching_angels = "angels-ore-leaching"
 is_ore_refining = "angels-ore-refining"
+is_ore_sorter = "angels-ore-sorter"
 is_powderizer_angels = "angels-powderizer"
+is_ore_whinning = "angels-ore-whinning"
 is_filtration_unit = "is-filtration-unit"
 is_crystallizer = "is-crystallizer"
 data:extend
@@ -84,6 +86,7 @@ is_titanium_chemistry = "is-titanium-chemistry"
 is_gold_chemistry = "is-gold-chemistry"
 is_cobalt_chemistry = "is-cobalt-chemistry"
 is_chrome_chemistry = "is-chrome-chemistry"
+is_tungsten = "angels-tungsten"
 is_tungsten_chemistry = "is-tungsten-chemistry"
 is_platinum_chemistry = "is-platinum-chemistry"
 is_alloys = "angels-alloys"
@@ -209,6 +212,7 @@ is_alloys_casting_3 = "is-alloys-casting-3"
 is_alloys_casting_4 = "is-alloys-casting-4"
 is_alloys_casting_5 = "is-alloys-casting-5"
 is_alloys_casting_6 = "is-alloys-casting-6"
+is_sintering_oven = "angels-sintering-oven"
 data:extend
 ({
     {
@@ -458,8 +462,11 @@ is_storage_tanks_2x = "is-storage-tanks-2x"
 is_storage_tanks_4x = "is-storage-tanks-4x"
 is_barreling = "is-barreling"
 is_barrel = "is-barrel"
+is_barrel_empty = "is-barrel-empty"
 is_canister = "is-canister"
+is_canister_empty = "is-canister-empty"
 is_bottle = "is-bottle"
+is_bottle_empty = "is-bottle-empty"
 data:extend
 ({
     {
@@ -490,19 +497,37 @@ data:extend
         type = item_subgroup,
         name = is_barrel,
         group = fluid_control,
-        order = z
+        order = x
+    },
+    {
+        type = item_subgroup,
+        name = is_barrel_empty,
+        group = fluid_control,
+        order = x_a
     },
     {
         type = item_subgroup,
         name = is_canister,
         group = fluid_control,
-        order = z_a
+        order = y
+    },
+    {
+        type = item_subgroup,
+        name = is_canister_empty,
+        group = fluid_control,
+        order = y_a
     },
     {
         type = item_subgroup,
         name = is_bottle,
         group = fluid_control,
-        order = z_b
+        order = z
+    },
+    {
+        type = item_subgroup,
+        name = is_bottle_empty,
+        group = fluid_control,
+        order = z_a
     }
 })
 
