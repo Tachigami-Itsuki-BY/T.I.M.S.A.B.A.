@@ -279,7 +279,7 @@ data:extend
         allow_quality = false,
         allow_decomposition = false,
         energy_required = 8, -- 4Ho(NO₃)₃(aq) --> 2Ho₂O₃ + 12NO₂ + 3O₂ + 4H₂O(g)
-        ingredients = {{type = fluid, name = holmium_nitrate_solution, amount = 16}},
+        ingredients = {{type = fluid, name = holmium_nitrate_solution, amount = 240}},
         results =
         {
             {type = item, name = holmium_oxide, amount = 8},

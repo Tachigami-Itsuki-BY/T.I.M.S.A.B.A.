@@ -67,7 +67,7 @@ data:extend
 })
 
 -- ANGELS METALLURGY CASTING
---[[if settings.startup[setting_early_sintering_oven].value == true then
+--[[if settings.startup[setting_early_sintering_oven].value then
     data:extend
     ({
         {

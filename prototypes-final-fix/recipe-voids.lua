@@ -157,7 +157,8 @@ for _, organic_name in pairs(organics) do
                 hide_from_player_crafting = true,
                 energy_required = 1,
                 ingredients = {{type = item, name = organic_name, amount = 1}},
-                results = {{type = item, name = compost_angels, amount = 1}}
+                results = {{type = item, name = compost_angels, amount = 1}},
+                main_product = compost_angels
             }
         })
     end

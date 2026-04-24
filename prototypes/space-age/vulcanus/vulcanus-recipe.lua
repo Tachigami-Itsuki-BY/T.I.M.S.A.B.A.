@@ -48,7 +48,7 @@ data:extend
         name = jivolite_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, jivolite, stone),
+        icons = TWO_D_I(lava, calcite, jivolite_ore, stone),
         order = a_b,
         enabled = false,
         auto_recycle = false,
@@ -63,10 +63,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = jivolite, amount = 16},
+            {type = item, name = jivolite_ore, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = jivolite,
+        main_product = jivolite_ore,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     },
     {
@@ -74,7 +74,7 @@ data:extend
         name = crotinnium_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, crotinnium, stone),
+        icons = TWO_D_I(lava, calcite, crotinnium_ore, stone),
         order = a_d,
         enabled = false,
         auto_recycle = false,
@@ -89,10 +89,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = crotinnium, amount = 16},
+            {type = item, name = crotinnium_ore, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = crotinnium,
+        main_product = crotinnium_ore,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     },
     {
@@ -100,7 +100,7 @@ data:extend
         name = rubyte_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, rubyte, stone),
+        icons = TWO_D_I(lava, calcite, rubyte_ore, stone),
         order = a_e,
         enabled = false,
         auto_recycle = false,
@@ -115,10 +115,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = rubyte, amount = 16},
+            {type = item, name = rubyte_ore, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = rubyte,
+        main_product = rubyte_ore,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     },
     {
@@ -126,7 +126,7 @@ data:extend
         name = bobmonium_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, bobmonium, stone),
+        icons = TWO_D_I(lava, calcite, bobmonium_ore, stone),
         order = a_f,
         enabled = false,
         auto_recycle = false,
@@ -141,10 +141,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = bobmonium, amount = 16},
+            {type = item, name = bobmonium_ore, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = bobmonium,
+        main_product = bobmonium_ore,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     }
 })
@@ -670,6 +670,7 @@ data:extend
 casting_lead = "casting-lead"
 casting_tin = "casting-tin"
 casting_silicon = "casting-silicon"
+casting_silicon_from_crucible = "casting-silicon-from-crucible"
 casting_nickel = "casting-nickel"
 casting_aluminium = "casting-aluminium"
 casting_zinc = "casting-zinc"
@@ -727,6 +728,27 @@ data:extend
         subgroup = is_plate,
         icons = THREE_I(silicon_mono_seed, silicon_molten_angels, silicon_mono),
         order = h,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 4,
+        ingredients =
+        {
+            {type = item, name = silicon_mono_seed, amount = 4},
+            {type = fluid, name = silicon_molten_angels, amount = 60}
+        },
+        results = {{type = item, name = silicon_mono, amount = 4}},
+        main_product = silicon_mono
+    },
+    {
+        type = recipe,
+        name = casting_silicon_from_crucible,
+        category = metallurgy,
+        subgroup = is_plate,
+        icons = THREE_I(silicon_mono_seed, silicon_molten_angels, silicon_mono),
+        order = h_a,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1439,34 +1461,6 @@ data:extend
             {type = fluid, name = hydrogen_sulfide_angels, amount = 30}
         },
         main_product = nitrogen_angels
-    }
-})
-
--- TUNGSTEN
-wolframite_ore_sorting = "wolframite-ore-sorting"
-data:extend
-({
-    {
-        type = recipe,
-        name = wolframite_ore_sorting,
-        category = angels_ore_sorting_5,
-        subgroup = is_vulcanus_tungsten,
-        icons = RECYCLING_I(recycling_png, wolframite_ore),
-        order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 2,
-        ingredients = {{type = item, name = wolframite_ore, amount = 8}},
-        results =
-        {
-            {type = item, name = tungsten_ore_bob, amount = 4},
-            {type = item, name = iron_ore, amount = 1},
-            {type = item, name = manganese_ore_angels, amount = 1}
-        },
-        main_product = tungsten_ore_bob
     }
 })
 

@@ -1,9 +1,9 @@
 local is_processing_crafting = "angels-processing-crafting"
 data_item_subgroup[is_processing_crafting].order = a
 
-data_recipe["angels-ore1-crushed-hand"].icons = THREE_R_I(saphirite, crushed_saphirite, stone_crushed_angels)
+data_recipe["angels-ore1-crushed-hand"].icons = THREE_R_I(saphirite_ore, crushed_saphirite, stone_crushed_angels)
 
-data_recipe["angels-ore3-crushed-hand"].icons = THREE_R_I(stiratite, crushed_stiratite, stone_crushed_angels)
+data_recipe["angels-ore3-crushed-hand"].icons = THREE_R_I(stiratite_ore, crushed_stiratite, stone_crushed_angels)
 
 local stone_from_crushed_stone = "angels-stone-from-crushed-stone"
 data_recipe[stone_from_crushed_stone].icons = TWO_I(stone_crushed_angels, stone)
@@ -27,32 +27,198 @@ data_recipe[solid_mud_landfill].order = e_a
 data_recipe[solid_mud_landfill].energy_required = 1
 data_recipe[solid_mud_landfill].ingredients[1].amount = 32
 
-data_resource["angels-ore2"].minable.mining_time = 1
-data_resource["angels-ore3"].minable.mining_time = 1
-data_resource["angels-ore4"].minable.mining_time = 1
-data_resource["angels-ore5"].minable.mining_time = 1
-data_resource["angels-ore6"].minable.mining_time = 1
+data_item[saphirite_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
+data_item[saphirite_ore].order = a
+data_resource[saphirite_ore].order = a
+
+data_item[jivolite_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
+data_item[jivolite_ore].order = b
+data_resource[jivolite_ore].minable.mining_time = 1
+data_resource[jivolite_ore].order = b
+
+data_item[stiratite_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=uranium-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
+data_item[stiratite_ore].order = c
+data_resource[stiratite_ore].minable.mining_time = 1
+data_resource[stiratite_ore].order = c
+
+data_item[crotinnium_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
+data_item[crotinnium_ore].order = d
+data_resource[crotinnium_ore].minable.mining_time = 1
+data_resource[crotinnium_ore].order = d
+
+data_item[rubyte_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=uranium-ore]"
+}
+data_item[rubyte_ore].order = e
+data_resource[rubyte_ore].minable.mining_time = 1
+data_resource[rubyte_ore].order = e
+
+data_item[bobmonium_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
+data_item[bobmonium_ore].order = f
+data_resource[bobmonium_ore].minable.mining_time = 1
+data_resource[bobmonium_ore].order = f
 
 data_item_subgroup["angels-ores"].order = b
 
-data_recipe[crushed_saphirite].icons = THREE_R_I(saphirite, crushed_saphirite, stone_crushed_angels)
+data_item[crushed_saphirite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
+data_recipe[crushed_saphirite].icons = THREE_R_I(saphirite_ore, crushed_saphirite, stone_crushed_angels)
 data_recipe[crushed_saphirite].energy_required = 2
 
-data_recipe[crushed_jivolite].icons = THREE_R_I(jivolite, crushed_jivolite, stone_crushed_angels)
+data_item[crushed_jivolite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
+data_recipe[crushed_jivolite].icons = THREE_R_I(jivolite_ore, crushed_jivolite, stone_crushed_angels)
 data_recipe[crushed_jivolite].energy_required = 2
 
-data_recipe[crushed_stiratite].icons = THREE_R_I(stiratite, crushed_stiratite, stone_crushed_angels)
+data_item[crushed_stiratite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=uranium-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
+data_recipe[crushed_stiratite].icons = THREE_R_I(stiratite_ore, crushed_stiratite, stone_crushed_angels)
 data_recipe[crushed_stiratite].energy_required = 2
 
-data_recipe[crushed_crotinnium].icons = THREE_R_I(crotinnium, crushed_crotinnium, stone_crushed_angels)
+data_item[crushed_crotinnium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
+data_recipe[crushed_crotinnium].icons = THREE_R_I(crotinnium_ore, crushed_crotinnium, stone_crushed_angels)
 data_recipe[crushed_crotinnium].energy_required = 2
 
-data_recipe[crushed_rubyte].icons = THREE_R_I(rubyte, crushed_rubyte, stone_crushed_angels)
+data_item[crushed_rubyte].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=uranium-ore]"
+}
+data_recipe[crushed_rubyte].icons = THREE_R_I(rubyte_ore, crushed_rubyte, stone_crushed_angels)
 data_recipe[crushed_rubyte].energy_required = 2
 
-data_recipe[crushed_bobmonium].icons = THREE_R_I(bobmonium, crushed_bobmonium, stone_crushed_angels)
+data_item[crushed_bobmonium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=bob-quartz]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
+data_recipe[crushed_bobmonium].icons = THREE_R_I(bobmonium_ore, crushed_bobmonium, stone_crushed_angels)
 data_recipe[crushed_bobmonium].energy_required = 2
 
+data_item[crushed_ferrous].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=angels-manganese-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=angels-chrome-ore]"
+}
 data_recipe[crushed_ferrous].icons = THREE_I(crushed_saphirite, crushed_jivolite, crushed_ferrous)
 data_recipe[crushed_ferrous].energy_required = 2
 data_recipe[crushed_ferrous].ingredients =
@@ -66,12 +232,12 @@ data_item[crushed_cupric].localised_description =
 {
     "",
     "Can be sorted for pure ores:\n",
-    "  [item=copper-ore] Copper ore\n",
-    "  [item=magnesium-ore] Magnesium ore\n",
+    "  [item=copper-ore]\n",
+    "  [item=magnesium-ore]\n",
     "Can be refined further prior to sorting for:\n",
-    "  [item=bob-silver-ore] Silver ore\n",
-    "  [item=bob-gold-ore] Gold ore\n",
-    "  [item=angels-platinum-ore] Platinum ore"
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=angels-platinum-ore]"
 }
 data_recipe[crushed_cupric].icons = THREE_I(crushed_stiratite, crushed_crotinnium, crushed_cupric)
 data_recipe[crushed_cupric].energy_required = 2
@@ -82,31 +248,114 @@ data_recipe[crushed_cupric].ingredients =
 }
 data_recipe[crushed_cupric].results[1].amount = 4
 
+data_item[chunk_saphirite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-nickel-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[chunk_saphirite].icons = THREE_D_I(crushed_saphirite, nil, water_purified_angels, chunk_saphirite, geode_blue, water_yellow_waste)
 data_recipe[chunk_saphirite].ingredients[2].amount = 60
 data_recipe[chunk_saphirite].results[2].amount = 60
 
+data_item[chunk_jivolite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[chunk_jivolite].icons = THREE_D_I(crushed_jivolite, nil, water_purified_angels, chunk_jivolite, geode_purple, water_greenyellow_waste)
 data_recipe[chunk_jivolite].ingredients[2].amount = 60
 data_recipe[chunk_jivolite].results[3].amount = 60
 
+data_item[chunk_stiratite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-tin-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=uranium-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[chunk_stiratite].icons = THREE_D_I(crushed_stiratite, nil, water_purified_angels, chunk_stiratite, geode_yellow, water_yellow_waste)
 data_recipe[chunk_stiratite].ingredients[2].amount = 60
 data_recipe[chunk_stiratite].results[2].amount = 60
 
+data_item[chunk_crotinnium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
 data_recipe[chunk_crotinnium].icons = THREE_D_I(crushed_crotinnium, nil, water_purified_angels, chunk_crotinnium, geode_lightgreen, water_green_waste)
 data_recipe[chunk_crotinnium].ingredients[2].amount = 60
 data_recipe[chunk_crotinnium].results[3].amount = 60
 
+data_item[chunk_rubyte].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-quartz]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=uranium-ore]"
+}
 data_recipe[chunk_rubyte].icons = THREE_D_I(crushed_rubyte, nil, water_purified_angels, chunk_rubyte, geode_cyan, water_red_waste)
 data_recipe[chunk_rubyte].ingredients[2].amount = 60
 data_recipe[chunk_rubyte].results[3].amount = 60
 
+data_item[chunk_bobmonium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
 data_recipe[chunk_bobmonium].icons = THREE_D_I(crushed_bobmonium, nil, water_purified_angels, chunk_bobmonium, geode_red, water_yellow_waste)
 data_recipe[chunk_bobmonium].ingredients[2].amount = 60
 data_recipe[chunk_bobmonium].results[2].amount = 60
 
 local is_ore_processing_b = "angels-ore-processing-b"
+data_item[powder_ferrous].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=angels-manganese-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=angels-chrome-ore]"
+}
 data_item[powder_ferrous].subgroup = is_ore_processing_b
 data_item[powder_ferrous].order = g
 data_recipe[powder_ferrous].subgroup = is_ore_processing_b
@@ -119,12 +368,12 @@ data_item[powder_cupric].localised_description =
 {
     "",
     "Can be sorted for pure ores:\n",
-    "  [item=copper-ore] Copper ore\n",
-    "  [item=magnesium-ore] Magnesium ore\n",
-    "  [item=bob-silver-ore] Silver ore\n",
+    "  [item=copper-ore]\n",
+    "  [item=magnesium-ore]\n",
+    "  [item=bob-silver-ore]\n",
     "Can be refined further prior to sorting for:\n",
-    "  [item=bob-gold-ore] Gold ore\n",
-    "  [item=angels-platinum-ore] Platinum ore"
+    "  [item=bob-gold-ore]\n",
+    "  [item=angels-platinum-ore]"
 }
 data_item[powder_cupric].subgroup = is_ore_processing_b
 data_item[powder_cupric].order = h
@@ -134,25 +383,108 @@ data_recipe[powder_cupric].icons = TWO_I(crushed_cupric, powder_cupric)
 data_recipe[powder_cupric].ingredients[1].amount = 4
 data_recipe[powder_cupric].results[1].amount = 4
 
+data_item[crystal_saphirite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[crystal_saphirite].icons = THREE_I(chunk_saphirite, sulfuric_acid_angels, crystal_saphirite)
 data_recipe[crystal_saphirite].ingredients[2].amount = 15
 
+data_item[crystal_jivolite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[crystal_jivolite].icons = THREE_I(chunk_jivolite, hydrofluoric_acid_angels, crystal_jivolite)
 data_recipe[crystal_jivolite].ingredients[2].amount = 15
 
+data_item[crystal_stiratite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=uranium-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[crystal_stiratite].icons = THREE_I(chunk_stiratite, sulfuric_acid_angels, crystal_stiratite)
 data_recipe[crystal_stiratite].ingredients[2].amount = 15
 
+data_item[crystal_crotinnium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-cobalt-ore]"
+}
 data_recipe[crystal_crotinnium].icons = THREE_I(chunk_crotinnium, hydrochloric_acid_angels, crystal_crotinnium)
 data_recipe[crystal_crotinnium].ingredients[2].amount = 15
 
+data_item[crystal_rubyte].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-gold-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=uranium-ore]"
+}
 data_recipe[crystal_rubyte].icons = THREE_I(chunk_rubyte, nitric_acid_angels, crystal_rubyte)
 data_recipe[crystal_rubyte].ingredients[2].amount = 15
 
+data_item[crystal_bobmonium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-gold-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=bob-cobalt-ore]"
+}
 data_recipe[crystal_bobmonium].icons = THREE_I(chunk_bobmonium, sulfuric_acid_angels, crystal_bobmonium)
 data_recipe[crystal_bobmonium].ingredients[2].amount = 15
 
 local is_ore_processing_c = "angels-ore-processing-c"
+data_item[dust_ferrous].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=angels-manganese-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "Can be refined further prior to sorting for:\n",
+    "  [item=angels-chrome-ore]"
+}
 data_item[dust_ferrous].subgroup = is_ore_processing_c
 data_item[dust_ferrous].order = g
 data_recipe[dust_ferrous].subgroup = is_ore_processing_c
@@ -174,12 +506,12 @@ data_item[dust_cupric].localised_description =
 {
     "",
     "Can be sorted for pure ores:\n",
-    "  [item=copper-ore] Copper ore\n",
-    "  [item=magnesium-ore] Magnesium ore\n",
-    "  [item=bob-silver-ore] Silver ore\n",
-    "  [item=bob-gold-ore] Gold ore\n",
+    "  [item=copper-ore]\n",
+    "  [item=magnesium-ore]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-gold-ore]\n",
     "Can be refined further prior to sorting for:\n",
-    "  [item=angels-platinum-ore] Platinum ore"
+    "  [item=angels-platinum-ore]"
 }
 data_item[dust_cupric].subgroup = is_ore_processing_c
 data_item[dust_cupric].order = h
@@ -198,19 +530,95 @@ data_recipe[dust_cupric].results =
     {type = fluid, name = water_yellow_waste, amount = 30},
 }
 
+data_item[pure_saphirite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[pure_saphirite].icons = TWO_I(crystal_saphirite, pure_saphirite)
 
+data_item[pure_jivolite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=copper-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[pure_jivolite].icons = TWO_I(crystal_jivolite, pure_jivolite)
 
+data_item[pure_stiratite].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=uranium-ore]\n",
+    "  [item=bob-tungsten-ore]"
+}
 data_recipe[pure_stiratite].icons = TWO_I(crystal_stiratite, pure_stiratite)
 
+data_item[pure_crotinnium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=copper-ore]\n",
+    "  [item=iron-ore]\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-rutile-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
 data_recipe[pure_crotinnium].icons = TWO_I(crystal_crotinnium, pure_crotinnium)
 
+data_item[pure_rubyte].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-lead-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-bauxite-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=uranium-ore]"
+}
 data_recipe[pure_rubyte].icons = TWO_I(crystal_rubyte, pure_rubyte)
 
+data_item[pure_bobmonium].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=bob-tin-ore]\n",
+    "  [item=bob-quartz]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-zinc-ore]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=bob-cobalt-ore]"
+}
 data_recipe[pure_bobmonium].icons = TWO_I(crystal_bobmonium, pure_bobmonium)
 
 local is_ore_processing_d = "angels-ore-processing-d"
+data_item[crystal_ferrous].localised_description =
+{
+    "",
+    "Can be sorted for pure ores:\n",
+    "  [item=iron-ore]\n",
+    "  [item=angels-manganese-ore]\n",
+    "  [item=bob-nickel-ore]\n",
+    "  [item=bob-cobalt-ore]\n",
+    "  [item=angels-chrome-ore]"
+}
 data_item[crystal_ferrous].subgroup = is_ore_processing_d
 data_item[crystal_ferrous].order = g
 data_recipe[crystal_ferrous].subgroup = is_ore_processing_d
@@ -222,11 +630,11 @@ data_item[crystal_cupric].localised_description =
 {
     "",
     "Can be sorted for pure ores:\n",
-    "  [item=copper-ore] Copper ore\n",
-    "  [item=magnesium-ore] Magnesium ore\n",
-    "  [item=bob-silver-ore] Silver ore\n",
-    "  [item=bob-gold-ore] Gold ore\n",
-    "  [item=angels-platinum-ore] Platinum ore"
+    "  [item=copper-ore]\n",
+    "  [item=magnesium-ore]\n",
+    "  [item=bob-silver-ore]\n",
+    "  [item=bob-gold-ore]\n",
+    "  [item=angels-platinum-ore]"
 }
 data_item[crystal_cupric].subgroup = is_ore_processing_d
 data_item[crystal_cupric].order = h
@@ -931,21 +1339,21 @@ data_recipe[crystal_slurry_filtering_conversion_2].results =
 }
 
 local slag_processing_1 = "angels-slag-processing-1"
-data_recipe[slag_processing_1].icons = THREE_R_I(sludge_mineral, saphirite, bobmonium)
+data_recipe[slag_processing_1].icons = THREE_R_I(sludge_mineral, saphirite_ore, bobmonium_ore)
 data_recipe[slag_processing_1].order = e
 data_recipe[slag_processing_1].ingredients[1].amount = 120
 data_recipe[slag_processing_1].results[1].probability = 0.5
 data_recipe[slag_processing_1].results[2].probability = 0.5
 
 local slag_processing_2 = "angels-slag-processing-2"
-data_recipe[slag_processing_2].icons = THREE_R_I(sludge_mineral, jivolite, crotinnium)
+data_recipe[slag_processing_2].icons = THREE_R_I(sludge_mineral, jivolite_ore, crotinnium_ore)
 data_recipe[slag_processing_2].order = f
 data_recipe[slag_processing_2].ingredients[1].amount = 120
 data_recipe[slag_processing_2].results[1].probability = 0.5
 data_recipe[slag_processing_2].results[2].probability = 0.5
 
 local slag_processing_3 = "angels-slag-processing-3"
-data_recipe[slag_processing_3].icons = THREE_R_I(sludge_mineral, stiratite, rubyte)
+data_recipe[slag_processing_3].icons = THREE_R_I(sludge_mineral, stiratite_ore, rubyte_ore)
 data_recipe[slag_processing_3].order = g
 data_recipe[slag_processing_3].ingredients[1].amount = 120
 data_recipe[slag_processing_3].results[1].probability = 0.5

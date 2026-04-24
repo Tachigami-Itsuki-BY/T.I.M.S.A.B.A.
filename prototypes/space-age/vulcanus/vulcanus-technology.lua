@@ -11,6 +11,7 @@ data:extend
         {
             {type = unlock_recipe, recipe = advanced_molten_iron},
             {type = unlock_recipe, recipe = advanced_molten_steel},
+            {type = unlock_recipe, recipe = casting_silicon_from_crucible},
             {type = unlock_recipe, recipe = advanced_molten_aluminium},
             {type = unlock_recipe, recipe = advanced_molten_titanium}
         },

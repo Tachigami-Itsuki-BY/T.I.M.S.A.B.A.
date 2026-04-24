@@ -60,23 +60,23 @@ data_entity["huge-rock"].minable.results[2].amount_max = 64
 data_entity["big-volcanic-rock"].minable.results =
 {
     {type = item, name = stone, amount_min = 2, amount_max = 16},
-    {type = item, name = saphirite, amount_min = 4, amount_max = 8},
-    {type = item, name = jivolite, amount_min = 4, amount_max = 8},
-    {type = item, name = stiratite, amount_min = 4, amount_max = 8},
-    {type = item, name = crotinnium, amount_min = 4, amount_max = 8},
-    {type = item, name = rubyte, amount_min = 4, amount_max = 8},
-    {type = item, name = bobmonium, amount_min = 4, amount_max = 8},
+    {type = item, name = saphirite_ore, amount_min = 4, amount_max = 8},
+    {type = item, name = jivolite_ore, amount_min = 4, amount_max = 8},
+    {type = item, name = stiratite_ore, amount_min = 4, amount_max = 8},
+    {type = item, name = crotinnium_ore, amount_min = 4, amount_max = 8},
+    {type = item, name = rubyte_ore, amount_min = 4, amount_max = 8},
+    {type = item, name = bobmonium_ore, amount_min = 4, amount_max = 8},
     {type = item, name = tungsten_ore_bob, amount_min = 2, amount_max = 8}
 }
 data_entity["huge-volcanic-rock"].minable.results =
 {
     {type = item, name = stone, amount_min = 8, amount_max = 16},
-    {type = item, name = saphirite, amount_min = 8, amount_max = 32},
-    {type = item, name = jivolite, amount_min = 8, amount_max = 32},
-    {type = item, name = stiratite, amount_min = 8, amount_max = 32},
-    {type = item, name = crotinnium, amount_min = 8, amount_max = 32},
-    {type = item, name = rubyte, amount_min = 8, amount_max = 32},
-    {type = item, name = bobmonium, amount_min = 8, amount_max = 32},
+    {type = item, name = saphirite_ore, amount_min = 8, amount_max = 32},
+    {type = item, name = jivolite_ore, amount_min = 8, amount_max = 32},
+    {type = item, name = stiratite_ore, amount_min = 8, amount_max = 32},
+    {type = item, name = crotinnium_ore, amount_min = 8, amount_max = 32},
+    {type = item, name = rubyte_ore, amount_min = 8, amount_max = 32},
+    {type = item, name = bobmonium_ore, amount_min = 8, amount_max = 32},
     {type = item, name = tungsten_ore_bob, amount_min = 4, amount_max = 16}
 }
 data_entity["vulcanus-chimney-short"].minable.results[1].amount_min = 8
@@ -129,16 +129,16 @@ end
 data_entity["copper-stromatolite"].minable.results =
 {
     {type = item, name = stone, amount_min = 4, amount_max = 8},
-    {type = item, name = stiratite, amount_min = 8, amount_max = 16},
-    {type = item, name = crotinnium, amount_min = 8, amount_max = 16},
+    {type = item, name = stiratite_ore, amount_min = 8, amount_max = 16},
+    {type = item, name = crotinnium_ore, amount_min = 8, amount_max = 16},
     {type = item, name = stiratite_bacteria, amount_min = 16, amount_max = 32},
     {type = item, name = crotinnium_bacteria, amount_min = 16, amount_max = 32}
 }
 data_entity["iron-stromatolite"].minable.results =
 {
     {type = item, name = stone, amount_min = 4, amount_max = 8},
-    {type = item, name = saphirite, amount_min = 8, amount_max = 16},
-    {type = item, name = jivolite, amount_min = 8, amount_max = 16},
+    {type = item, name = saphirite_ore, amount_min = 8, amount_max = 16},
+    {type = item, name = jivolite_ore, amount_min = 8, amount_max = 16},
     {type = item, name = saphirite_bacteria, amount_min = 16, amount_max = 32},
     {type = item, name = jivolite_bacteria, amount_min = 16, amount_max = 32}
 }

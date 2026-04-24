@@ -406,11 +406,16 @@ data_recipe[silicon_molten_angels].results[1].amount = 240
 
 data_item[silicon_mono_seed].localised_description = show_formula and {chemical_formula, "Si"} or nil
 data_item[silicon_mono_seed].order = b
-data_recipe[silicon_mono_seed].icons = THREE_I(silicon_molten_angels, nitrogen_angels, silicon_mono_seed)
+data_recipe[silicon_mono_seed].icons = TWO_I(silicon_molten_angels, silicon_mono_seed)
 data_recipe[silicon_mono_seed].order = b
 data_recipe[silicon_mono_seed].ingredients[1].amount = 60
 data_recipe[silicon_mono_seed].ingredients[2].amount = 30
-data_recipe[silicon_mono_seed].results[1].amount = 4
+data_recipe[silicon_mono_seed].results =
+{
+    {type = item, name = silicon_mono_seed, amount = 4},
+    {type = fluid, name = nitrogen_angels, amount = 15}
+}
+data_recipe[silicon_mono_seed].main_product = silicon_mono_seed
 
 data_item[silicon_crucible].localised_description = show_formula and {chemical_formula, "Si"} or nil
 data_item[silicon_crucible].order = c

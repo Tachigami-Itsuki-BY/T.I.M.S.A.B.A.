@@ -605,7 +605,7 @@ end
 data_recipe[plastic_pipe].category = crafting_fluid
 data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
 data_recipe[plastic_pipe].auto_recycle = false
-if settings.startup[setting_early_sintering_oven].value == true then
+if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_pipe].category = angels_sintering_2
 end
 data_recipe[tungsten_pipe].category = angels_sintering_4
@@ -658,7 +658,7 @@ data_recipe[plastic_pipe_to_ground].category = crafting_fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
 data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
-if settings.startup[setting_early_sintering_oven].value == true then
+if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
 end
 data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4

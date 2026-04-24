@@ -649,7 +649,7 @@ data:extend
 })
 
 -- ANGELS METALLURGY CASTING
---[[if settings.startup[setting_early_sintering_oven].value == true then
+--[[if settings.startup[setting_early_sintering_oven].value then
     data:extend
     ({
         {
@@ -1386,7 +1386,7 @@ data_assembling[filtration_unit_3].next_upgrade = filtration_unit_4
 data_assembling[filtration_unit_4].next_upgrade = nil
 data_assembling[crystallizer_3].next_upgrade = crystallizer_4
 data_assembling[crystallizer_4].next_upgrade = nil
---[[if settings.startup[setting_early_sintering_oven].value == true then
+--[[if settings.startup[setting_early_sintering_oven].value then
     data_assembling[sintering_oven_5].next_upgrade = sintering_oven_6
     data_assembling[sintering_oven_6].next_upgrade = nil
 else

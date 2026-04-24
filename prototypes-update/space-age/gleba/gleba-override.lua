@@ -5,7 +5,7 @@ data_item[saphirite_bacteria].localised_name = {"item-name.saphirite-bacteria"}
 data_item[saphirite_bacteria].subgroup = is_bacteria_ore
 data_item[saphirite_bacteria].order = a
 data_item[saphirite_bacteria].stack_size = 200
-data_item[saphirite_bacteria].spoil_result = saphirite
+data_item[saphirite_bacteria].spoil_result = saphirite_ore
 data_recipe[saphirite_bacteria].localised_name = {"recipe-name.saphirite-bacteria"}
 data_recipe[saphirite_bacteria].subgroup = is_bacteria_ore
 data_recipe[saphirite_bacteria].icons = TWO_D_I(jelly, nil, saphirite_bacteria, spoilage)
@@ -21,7 +21,7 @@ data_item[stiratite_bacteria].localised_name = {"item-name.stiratite-bacteria"}
 data_item[stiratite_bacteria].subgroup = is_bacteria_ore
 data_item[stiratite_bacteria].order = c
 data_item[stiratite_bacteria].stack_size = 200
-data_item[stiratite_bacteria].spoil_result = stiratite
+data_item[stiratite_bacteria].spoil_result = stiratite_ore
 data_recipe[stiratite_bacteria].localised_name = {"recipe-name.stiratite-bacteria"}
 data_recipe[stiratite_bacteria].subgroup = is_bacteria_ore
 data_recipe[stiratite_bacteria].icons = TWO_D_I(yumako, nil, stiratite_bacteria, spoilage)
@@ -53,69 +53,11 @@ data_recipe[stiratite_bacteria_cultivation].ingredients =
     {type = item, name = bioflux, amount = 1}
 }
 
-if mods [NoTimedSpoilage] then
-    local saphirite_bacteria_fermentation = "iron-bacteria-fermentation"
-    data_recipe[saphirite_bacteria_fermentation].localised_name = {"recipe-name.stiratite-bacteria-fermentation"}
-    data_recipe[saphirite_bacteria_fermentation].subgroup = is_bacteria_fermentation
-    data_recipe[saphirite_bacteria_fermentation].icons = TWO_I(saphirite_bacteria, saphirite)
-    data_recipe[saphirite_bacteria_fermentation].order = a
-    data_recipe[saphirite_bacteria_fermentation].results[1].name = saphirite
-
-    local stiratite_bacteria_fermentation = "copper-bacteria-fermentation"
-    data_recipe[stiratite_bacteria_fermentation].localised_name = {"recipe-name.stiratite-bacteria-fermentation"}
-    data_recipe[stiratite_bacteria_fermentation].subgroup = is_bacteria_fermentation
-    data_recipe[stiratite_bacteria_fermentation].icons = TWO_I(stiratite_bacteria, stiratite)
-    data_recipe[stiratite_bacteria_fermentation].order = c
-    data_recipe[saphirite_bacteria_fermentation].results[1].name = stiratite
-end
-
 -- SPOILAGE
 data_item[spoilage].subgroup = is_spoilage
 data_item[spoilage].order = a
 data_item[spoilage].fuel_category = base_fuel
 data_item[spoilage].fuel_value = 225 .. kJ
-
-if mods [NoTimedSpoilage] then
-    local nutrients_fermentation = "nutrients-fermentation"
-    data_recipe[nutrients_fermentation].subgroup = is_spoilage
-    data_recipe[nutrients_fermentation].icons = TWO_I(nutrients, spoilage)
-    data_recipe[nutrients_fermentation].order = a_a
-
-    local jellynut_fermentation = "jellynut-fermentation"
-    data_recipe[jellynut_fermentation].subgroup = is_spoilage
-    data_recipe[jellynut_fermentation].icons = TWO_I(jellynut, spoilage)
-    data_recipe[jellynut_fermentation].order = a_b
-
-    local jelly_fermentation = "jelly-fermentation"
-    data_recipe[jelly_fermentation].subgroup = is_spoilage
-    data_recipe[jelly_fermentation].icons = TWO_I(jelly, spoilage)
-    data_recipe[jelly_fermentation].order = a_c
-
-    local yumako_fermentation = "yumako-fermentation"
-    data_recipe[yumako_fermentation].subgroup = is_spoilage
-    data_recipe[yumako_fermentation].icons = TWO_I(yumako, spoilage)
-    data_recipe[yumako_fermentation].order = a_d
-
-    local yumako_mash_fermentation = "yumako-mash-fermentation"
-    data_recipe[yumako_mash_fermentation].subgroup = is_spoilage
-    data_recipe[yumako_mash_fermentation].icons = TWO_I(yumako_mash, spoilage)
-    data_recipe[yumako_mash_fermentation].order = a_e
-
-    local bioflux_fermentation = "bioflux-fermentation"
-    data_recipe[bioflux_fermentation].subgroup = is_spoilage
-    data_recipe[bioflux_fermentation].icons = TWO_I(bioflux, spoilage)
-    data_recipe[bioflux_fermentation].order = a_e
-
-    local agricultural_science_pack_fermentation = "agricultural-science-pack-fermentation"
-    data_recipe[agricultural_science_pack_fermentation].subgroup = is_spoilage
-    data_recipe[agricultural_science_pack_fermentation].icons = TWO_I(agricultural_science_pack, spoilage)
-    data_recipe[agricultural_science_pack_fermentation].order = a_f
-
-    local raw_fish_fermentation = "raw-fish-fermentation"
-    data_recipe[raw_fish_fermentation].subgroup = is_spoilage
-    data_recipe[raw_fish_fermentation].icons = TWO_I(factorian_fish, spoilage)
-    data_recipe[raw_fish_fermentation].order = a_g
-end
 
 data_recipe[burnt_spoilage].subgroup = is_spoilage
 data_recipe[burnt_spoilage].icons = TWO_I(spoilage, carbon_angels)

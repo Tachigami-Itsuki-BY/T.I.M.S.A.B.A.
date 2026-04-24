@@ -235,7 +235,7 @@ data:extend
     }]]
 })
 
-if settings.startup[setting_early_sintering_oven].value == true then
+if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_gear_wheel].category = angels_sintering_2
 end
 

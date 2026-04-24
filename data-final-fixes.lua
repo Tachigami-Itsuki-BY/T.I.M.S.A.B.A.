@@ -43,3 +43,9 @@ require("prototypes-final-fix.final-fix-entities-yelds")
 require("prototypes-final-fix.final-fix-recycling")
 require("prototypes-final-fix.final-fix-technology")
 require("prototypes-final-fix.final-fix-module")
+require("prototypes-final-fix.final-fix-settings")
+
+local map_settings = data.raw["map-settings"]["map-settings"]
+map_settings.pollution.enabled = true
+map_settings.enemy_evolution.enabled = true
+map_settings.enemy_expansion.enabled = true
