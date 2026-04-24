@@ -119,7 +119,7 @@ data_item[steel_bearing_ball].localised_description = show_formula and {chemical
 data_recipe[steel_bearing_ball].icons = TWO_I(steel_plate, steel_bearing_ball)
 
 data_item[ceramic_bearing_ball].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-if settings.startup[setting_early_sintering_oven].value == true then
+if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_bearing_ball].category = angels_sintering_2
 end
 data_recipe[ceramic_bearing_ball].icons = TWO_I(silicon_nitride_bob, ceramic_bearing_ball)
@@ -157,7 +157,7 @@ data_recipe[steel_bearing].ingredients[1].amount = 2
 
 data_item[ceramic_bearing].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
 data_recipe[ceramic_bearing].category = crafting
-if settings.startup[setting_early_sintering_oven].value == true then
+if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_bearing].category = angels_sintering_2
 end
 data_recipe[ceramic_bearing].icons = B_F_L(nil, ceramic_bearing_ball, silicon_nitride_bob, ceramic_bearing)

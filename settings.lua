@@ -8,5 +8,12 @@ data:extend
         setting_type = startup,
         default_value = false,
         order = a
+    },
+    {
+        type = bool_setting,
+        name = "setting-no-spoilage",
+        setting_type = startup,
+        default_value = false,
+        order = b
     }
 })

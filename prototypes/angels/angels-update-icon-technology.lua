@@ -43,7 +43,7 @@ do
 	}
 	---@type CreateIconsFromListTable
 	local technologies = {}
-	if settings.startup[setting_early_sintering_oven].value == true then
+	if settings.startup[setting_early_sintering_oven].value then
 		technologies[tech_powder_metallurgy_1] = {tier = 1, prog_tier = 1, icon_name = powder_metallurgy}
 		technologies[tech_powder_metallurgy_2] = {tier = 2, prog_tier = 2, icon_name = powder_metallurgy}
 		technologies[tech_powder_metallurgy_3] = {tier = 3, prog_tier = 3, icon_name = powder_metallurgy}

@@ -25,7 +25,7 @@ data:extend
         drop_sound = space_age_item_sounds.agriculture_inventory_move,
         default_import_location = planet_gleba,
         spoil_ticks = 1 * minute,
-        spoil_result = jivolite
+        spoil_result = jivolite_ore
     },
     {
         type = item,
@@ -47,7 +47,7 @@ data:extend
         drop_sound = space_age_item_sounds.agriculture_inventory_move,
         default_import_location = planet_gleba,
         spoil_ticks = 1 * minute,
-        spoil_result = crotinnium
+        spoil_result = crotinnium_ore
     },
     {
         type = item,
@@ -69,7 +69,7 @@ data:extend
         drop_sound = space_age_item_sounds.agriculture_inventory_move,
         default_import_location = planet_gleba,
         spoil_ticks = 1 * minute,
-        spoil_result = rubyte
+        spoil_result = rubyte_ore
     },
     {
         type = item,
@@ -91,7 +91,7 @@ data:extend
         drop_sound = space_age_item_sounds.agriculture_inventory_move,
         default_import_location = planet_gleba,
         spoil_ticks = 1 * minute,
-        spoil_result = bobmonium
+        spoil_result = bobmonium_ore
     }
 })
 

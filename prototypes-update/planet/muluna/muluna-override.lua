@@ -15,12 +15,12 @@ if mods [muluna_mods] then
     data_recipe[regolith_sorting].results =
     {
         {type = item, name = stone, amount = 2},
-        {type = item, name = saphirite, amount = 1},
-        {type = item, name = jivolite, amount = 1},
-        {type = item, name = stiratite, amount = 1},
-        {type = item, name = crotinnium, amount = 1},
-        {type = item, name = rubyte, amount = 1},
-        {type = item, name = bobmonium, amount = 1}
+        {type = item, name = saphirite_ore, amount = 1},
+        {type = item, name = jivolite_ore, amount = 1},
+        {type = item, name = stiratite_ore, amount = 1},
+        {type = item, name = crotinnium_ore, amount = 1},
+        {type = item, name = rubyte_ore, amount = 1},
+        {type = item, name = bobmonium_ore, amount = 1}
     }
     data_recipe[regolith_sorting].main_product = stone
 

@@ -705,7 +705,7 @@ do
         make_remnants = false
     }
     local tier_map
-    if settings.startup[setting_early_sintering_oven].value == true then
+    if settings.startup[setting_early_sintering_oven].value then
         tier_map =
         {
             [sintering_oven_1] = {tier = 1, prog_tier = 1},

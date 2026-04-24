@@ -672,7 +672,7 @@ strand_casting_machine_recipe(strand_casting_machine_2, brass_gear_wheel, advanc
 strand_casting_machine_recipe(strand_casting_machine_3, titanium_gear_wheel, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, strand_casting_machine_2)
 strand_casting_machine_recipe(strand_casting_machine_4, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe, reinforced_concrete_brick, copper_tungsten_plate_bob, strand_casting_machine_3)
 
-if settings.startup[setting_early_sintering_oven].value == true then
+if settings.startup[setting_early_sintering_oven].value then
     local sintering_ovens =
     {
         {name = sintering_oven_1, crafting_speed = 1, energy_usage = 120, order = a},

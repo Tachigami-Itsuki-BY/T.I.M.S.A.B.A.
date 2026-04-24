@@ -102,6 +102,38 @@ Date: ??.??.2026
 
     - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.29
+Date: 23.04.2026
+  Features:
+    - Добавлена ​​возможность отключения порчи.
+
+    - Added the ability to disable spoilage.
+
+  Changes:
+    - Настройки "Экспансия врагов", "Эволюция" и "Загрязнение" теперь включены по умолчанию при создании нового мира.
+
+    - "Enemy Expansion", "Evolution", and "Pollution" settings are now enabled by default when creating a new world.
+
+  Balancing:
+    - В рецепте Оксид Гольмия увеличено кол-во ингредиента: Растор Нитрата Гольмия (16 ед.) → (240 ед.)
+    - В рецепте Затравки Монокристаллического Кремния добавлен результат: Азот (15 ед.)
+    - Рецепт Литье Монокремния (Вулканус) был разделён на два рецепта, как на Наувисе.
+
+    - Increased an ingredient in the Holmium Oxide recipe: Holmium Nitrate Solution (16 units) → (240 units)
+    - Added a result in the Mono Silicon Seed recipe: Nitrogen Gas (15 units)
+    - Split the Casting Mono Silicon recipe (Vulcanus) into two recipes to match Nauvis.
+
+  Graphics:
+    - Обновлена иконка в рецепте Затравки Монокристаллического Кремния.
+
+    - Updated icon for Mono Silicon Seed recipe.
+
+  Locale:
+    - Рецепт Литье Кремния (Вулканус) переименован в Литье Монокремния (Вулканус).
+
+    - Renamed the Casting Silicon (Vulcanus) to Casting Mono Silicon recipe.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.28
 Date: 21.04.2026
   Features:
