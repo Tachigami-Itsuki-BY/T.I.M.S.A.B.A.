@@ -11,7 +11,7 @@ if mods [shchierbin_mods] then
         [ethylene_mods] = ethylene_angels,
         [sea_water_mods] = water_saline_angels,
         [sodium_hydroxide_mods] = sodium_hydroxide_solution_angels,
-        [ferric_chloride_mods] = ferric_chloride_solution_angels,
+        [ferric_chloride_mods] = iron_chloride_III_solution_angels,
         [chlorine_mods] = chlorine_angels,
         [nitrogen_mods] = nitrogen_angels,
         [hydrogen_mods] = hydrogen_angels,

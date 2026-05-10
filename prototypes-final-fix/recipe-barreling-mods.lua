@@ -1,5 +1,5 @@
-local recipe = "recipe"
 local item_sounds = require("__base__.prototypes.item_sounds")
+local util = require("util")
 local barrel_fill_icon = "__base__/graphics/icons/fluid/barreling/barrel-fill.png"
 local barrel_fill_side_mask = "__base__/graphics/icons/fluid/barreling/barrel-fill-side-mask.png"
 local barrel_fill_top_mask = "__base__/graphics/icons/fluid/barreling/barrel-fill-top-mask.png"
@@ -8,58 +8,58 @@ local barrel_empty_side_mask = "__base__/graphics/icons/fluid/barreling/barrel-e
 local barrel_empty_top_mask = "__base__/graphics/icons/fluid/barreling/barrel-empty-top-mask.png"
 local side_alpha = 0.75
 local top_hoop_alpha = 0.75
-local angels_barreling_pump = "angels-barreling-pump"
+local is_barreling_pump = "angels-barreling-pump"
 local barrel_name = "barrel"
 local canister_name = "canister"
 local bottle_name = "bottle"
 local simple_fluids =
 {
+    -- MULUNA
     tar_mods,
 }
 local dangerous_fluids = {}
 local gases =
 {
+    -- MARAXSIS
     atmosphere_maraxsis,
 }
-local function table_contains(tbl, val)
-    for _, v in pairs(tbl) do
-        if v == val then
-            return true
+local fluid_map = {}
+local function fill_fluid_map(list, item_name, subgroup_name, suffix, tech_name)
+    for _, f in pairs(list) do
+        if f then
+            fluid_map[f] =
+            {
+                item = item_name,
+                sub = subgroup_name,
+                name = suffix,
+                tech = tech_name
+            }
         end
     end
-    return false
 end
-local function get_container(fluid_name)
-    if table_contains(simple_fluids, fluid_name) then
-        return is_barrel, barrel_name
-    elseif table_contains(dangerous_fluids, fluid_name) then
-        return is_canister, canister_name
-    elseif table_contains(gases, fluid_name) then
-        return is_bottle, bottle_name
+fill_fluid_map(simple_fluids, barrel, is_barrel, "barrel", "bob-fluid-barrel-processing")
+fill_fluid_map(dangerous_fluids, canister, is_canister, "canister", "bob-fluid-canister-processing")
+fill_fluid_map(gases, gas_bottle, is_bottle, "bottle", "bob-gas-canisters")
+local function generate_fill_recipe_icons(fluids, base_icons)
+    local icons = util.table.deepcopy(base_icons)
+    if fluids.icon then
+        local iconsize = fluids.icon_size or 64
+        table.insert(icons, {icon = fluids.icon, icon_size = iconsize, scale = 16.0 / iconsize, shift = {8,-8}})
+    elseif fluids.icons then
+        icons = util.combine_icons(icons, fluids.icons, {scale = 0.5, shift = {8,-8}}, fluids.icon_size or 64)
     end
-    return nil, nil
+    return icons
 end
-local function get_container_recipe(fluid_name)
-    if table_contains(simple_fluids, fluid_name) then
-        return barrel, is_barrel, barrel_name
-    elseif table_contains(dangerous_fluids, fluid_name) then
-        return canister, is_canister, canister_name
-    elseif table_contains(gases, fluid_name) then
-        return gas_bottle, is_bottle, bottle_name
+local function generate_empty_recipe_icons(fluids, base_icons)
+    local icons = util.table.deepcopy(base_icons)
+    if fluids.icon then
+        local iconsize = fluids.icon_size or 64
+        table.insert(icons, {icon = fluids.icon, icon_size = iconsize, scale = 16.0 / iconsize, shift = {8,8}})
+    elseif fluids.icons then
+        icons = util.combine_icons(icons, fluids.icons, {scale = 0.5, shift = {8,8}}, fluids.icon_size or 64)
     end
-    return nil, nil, nil
+    return icons
 end
-local function get_container_tech(fluid_name)
-    if table_contains(simple_fluids, fluid_name) then
-        return barrel_name
-    elseif table_contains(dangerous_fluids, fluid_name) then
-        return canister_name
-    elseif table_contains(gases, fluid_name) then
-        return bottle_name
-    end
-    return nil, nil, nil
-end
--- ITEM
 local function generate_gas_bottle_item_icons(fluids)
     return
     {
@@ -71,7 +71,7 @@ end
 local function generate_fluid_canister_item_icons(fluids)
     return
     {
-        {icon = "__boblibrary__/graphics/icons/cylinder/empty-canister.png",  icon_size = 32 },
+        {icon = "__boblibrary__/graphics/icons/cylinder/empty-canister.png",  icon_size = 32},
         {icon = "__boblibrary__/graphics/icons/cylinder/canister-top.png",    icon_size = 32, tint = fluids.flow_color},
         {icon = "__boblibrary__/graphics/icons/cylinder/canister-bottom.png", icon_size = 32, tint = fluids.base_color},
     }
@@ -99,10 +99,8 @@ local function get_icons(fluids, container_name)
         )
     end
 end
-local function create_container_item(fluids)
-    local subgroup, container_name = get_container(fluids.name)
-    if not subgroup then return end
-    local icons = get_icons(fluids, container_name) or {}
+local function create_container_item(fluids, info)
+    local icons = get_icons(fluids, info.name)
     table.insert(icons,
     {
         icon = fluids.icon or (fluids.icons and fluids.icons[1].icon) or "__base__/graphics/icons/fluid/barreling/barrel-fill.png",
@@ -113,34 +111,19 @@ local function create_container_item(fluids)
     data:extend
     ({
         {
-            localised_name = {"item-name.fill-" .. container_name, fluids.localised_name or {"fluid-name." .. fluids.name}},
+            localised_name = {"item-name.fill-" .. info.name, fluids.localised_name or {"fluid-name." .. fluids.name}},
             type = item,
-            name = fluids.name .. "-" .. container_name,
-            subgroup = subgroup,
+            name = fluids.name .. "-" .. info.name,
+            subgroup = info.sub,
             icons = icons,
-            order = fluids.name .. "-" .. container_name,
-            hidden = true,
+            order = fluids.name .. "-" .. info.name,
             stack_size = 200,
-            weight = 5000,
+            hide_from_player_crafting = true,
             inventory_move_sound = item_sounds.metal_barrel_inventory_move,
             pick_sound = item_sounds.metal_barrel_inventory_pickup,
             drop_sound = item_sounds.metal_barrel_inventory_move
         }
     })
-end
-for _, fluids in pairs(data.raw.fluid) do
-    create_container_item(fluids)
-end
--- FILL
-local function generate_fill_recipe_icons(fluids, icon)
-    if fluids.icon then
-        local iconsize = fluids.icon_size or 64
-        table.insert(icon, { icon = fluids.icon, icon_size = iconsize, scale = 16.0 / iconsize, shift = {8,-8}})
-    elseif fluids.icons and util.combine_icons then
-        ---@diagnostic disable-next-line: missing-parameter
-        icon = util.combine_icons(icon, fluids.icons, {scale = 0.5, shift = {8,-8}})
-    end
-    return icon
 end
 local function generate_gas_bottle_recipe_icons(fluids)
     local icon = generate_gas_bottle_item_icons(fluids)
@@ -161,10 +144,10 @@ local function generate_fluid_barrel_recipe_icons(fluids, base_icon, side_mask, 
             shift = fluid_icon_shift
         }
     )
-elseif fluids.icons then
-    icons = util.combine_icons(icons, fluids.icons, {scale = 0.5, shift = fluid_icon_shift}, fluids.icon_size)
-end
-return icons
+    elseif fluids.icons then
+        icons = util.combine_icons(icons, fluids.icons, {scale = 0.5, shift = fluid_icon_shift}, fluids.icon_size)
+    end
+    return icons
 end
 local function get_recipe_fill_icons(fluids, container_name)
     if container_name == "bottle" then
@@ -174,51 +157,6 @@ local function get_recipe_fill_icons(fluids, container_name)
     else
         return generate_fluid_barrel_recipe_icons(fluids, barrel_fill_icon, barrel_fill_side_mask, barrel_fill_top_mask, {8,-8})
     end
-end
-local function create_container_fill_recipes(fluids)
-    local container, subgroup, container_name = get_container_recipe(fluids.name)
-    if not container then return end
-    local icons = get_recipe_fill_icons(fluids, container_name)
-    data:extend
-    ({
-        {
-            localised_name = {"recipe-name.fill-" .. container_name, fluids.localised_name or {"fluid-name." .. fluids.name}},
-            type = recipe,
-            name = fluids.name .. "-" .. container_name,
-            category = angels_barreling_pump,
-            subgroup = subgroup,
-            icons = icons,
-            order = fluids.name .. "-" .. container_name,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            hide_from_player_crafting = true,
-            energy_required = 0.25,
-            ingredients =
-            {
-                {type = item, name = container, amount = 1},
-                {type = fluid, name = fluids.name, amount = 60}
-            },
-            results = {{type = item, name = fluids.name .. "-" .. container_name, amount = 1}},
-            main_product = fluids.name .. "-" .. container_name
-        }
-    })
-end
-for _, fluids in pairs(data.raw.fluid) do
-    create_container_fill_recipes(fluids)
-end
--- EMPTY
-local function generate_empty_recipe_icons(fluids, icon)
-    if fluids.icon then
-        local iconsize = fluids.icon_size or 64
-        table.insert(icon, { icon = fluids.icon, icon_size = iconsize, scale = 16.0 / iconsize, shift = {8,8}})
-    elseif fluids.icons and util.combine_icons then
-        ---@diagnostic disable-next-line: missing-parameter
-        icon = util.combine_icons(icon, fluids.icons, {scale = 0.5, shift = {8,8}})
-    end
-    return icon
 end
 local function generate_gas_bottle_empty_recipe_icons(fluids)
     local icon = generate_gas_bottle_item_icons(fluids)
@@ -237,59 +175,54 @@ local function get_recipe_empty_icons(fluids, container_name)
         return generate_fluid_barrel_recipe_icons(fluids, barrel_empty_icon, barrel_empty_side_mask, barrel_empty_top_mask, {8,8})
     end
 end
-local function create_container_empty_recipes(fluids)
-    local container, subgroup, container_name = get_container_recipe(fluids.name)
-    if not container then return end
-    local icons = get_recipe_empty_icons(fluids, container_name)
+local function create_container_recipes(fluids, info)
+    local fill_icons = get_recipe_fill_icons(fluids, info.name)
+    local empty_icons = get_recipe_empty_icons(fluids, info.name)
     data:extend
     ({
+        -- FILL
         {
-            localised_name = {"recipe-name.empty-" .. container_name, fluids.localised_name or {"fluid-name." .. fluids.name}},
+            localised_name = {"recipe-name.fill-" .. info.name, fluids.localised_name or {"fluid-name." .. fluids.name}},
             type = recipe,
-            name = "empty-" .. fluids.name .. "-" .. container_name,
-            category = angels_barreling_pump,
-            subgroup = subgroup .. "-empty",
-            icons = icons,
-            order = "empty-" .. fluids.name .. "-" .. container_name,
+            name = fluids.name .. "-" .. info.name,
+            category = is_barreling_pump,
+            subgroup = info.sub,
+            icons = fill_icons,
             enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            hide_from_player_crafting = true,
-            energy_required = 0.25,
-            ingredients = {{type = item, name = fluids.name .. "-" .. container_name, amount = 1}},
+            ingredients = {
+                {type = item, name = info.item, amount = 1},
+                {type = fluid, name = fluids.name, amount = 60}
+            },
+            results = {{type = item, name = fluids.name .. "-" .. info.name, amount = 1}}
+        },
+        -- EMPTY
+        {
+            localised_name = {"recipe-name.empty-" .. info.name, fluids.localised_name or {"fluid-name." .. fluids.name}},
+            type = recipe,
+            name = "empty-" .. fluids.name .. "-" .. info.name,
+            category = is_barreling_pump,
+            subgroup = info.sub .. "-empty",
+            icons = empty_icons,
+            enabled = false,
+            ingredients = {{type = item, name = fluids.name .. "-" .. info.name, amount = 1}},
             results =
             {
-                {type = item, name = container, amount = 1},
+                {type = item, name = info.item, amount = 1},
                 {type = fluid, name = fluids.name, amount = 60}
             }
         }
     })
 end
 for _, fluids in pairs(data.raw.fluid) do
-    create_container_empty_recipes(fluids)
-end
-local function add_recipe_to_tech(recipe_name, tech_name)
-    if data.raw.technology[tech_name] then
-        table.insert(data.raw.technology[tech_name].effects,
-        {
-            type = "unlock-recipe",
-            recipe = recipe_name
-        })
-    end
-end
-for _, fluids in pairs(data.raw.fluid) do
-    create_container_item(fluids)
-    create_container_fill_recipes(fluids)
-    create_container_empty_recipes(fluids)
-    local container_name = get_container_tech(fluids.name)
-    if container_name then
-        local tech =
-            container_name == "barrel" and "bob-fluid-barrel-processing"
-            or container_name == "canister" and "bob-fluid-canister-processing"
-            or container_name == "bottle" and "bob-gas-canisters"
-        add_recipe_to_tech(fluids.name .. "-" .. container_name, tech)
-        add_recipe_to_tech("empty-" .. fluids.name .. "-" .. container_name, tech)
+    local info = fluid_map[fluids.name]
+    if info then
+        create_container_item(fluids, info)
+        create_container_recipes(fluids, info)
+        local tech = data.raw.technology[info.tech]
+        if tech then
+            tech.effects = tech.effects or {}
+            table.insert(tech.effects, {type = unlock_recipe, recipe = fluids.name .. "-" .. info.name})
+            table.insert(tech.effects, {type = unlock_recipe, recipe = "empty-" .. fluids.name .. "-" .. info.name})
+        end
     end
 end

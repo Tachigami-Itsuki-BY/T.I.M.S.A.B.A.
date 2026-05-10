@@ -1,8 +1,8 @@
 -- ANGELS BIOPROCESSING NAUVIS
+-- FLUID
 iodine_gas = "iodine-gas"
 data:extend
 ({
-    -- FLUID
     {
         localised_description = show_formula and {chemical_formula, "I[font=default-tiny-bold]2[/font]"} or nil,
         type = fluid,
@@ -20,6 +20,7 @@ data:extend
 })
 
 -- ANGELS BIOPROCESSING VEGETABLES
+-- ITEM
 cellulose_triacetate = "cellulose-triacetate"
 cellulose_diacetate = "cellulose-diacetate"
 data:extend
@@ -56,17 +57,20 @@ data:extend
         type = item,
         name = ,
         subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/.png",
         order = ,
         stack_size = 200,
         weight = 5000
-    },
+    }
+})
+data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
         type = fluid,
         name = ,
         subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/.png",
         order = ,
         default_temperature = 0,
         heat_capacity = "0.1kJ",

@@ -1,12 +1,10 @@
 local fulgora = "fulgora"
-is_scrap = "is-scrap"
-is_holmium = "is-holmium"
-is_holmium_chemistry = "is-holmium-chemistry"
-is_holmium_casting = "is-holmium-casting"
 is_fulgora_air = "is-fulgora-air"
-is_fulgora_recipe = "fulgora-recipe"
-is_fulgora_building = "fulgora-building"
-is_fulgora_war = "fulgora-war"
+is_scrap = "is-scrap"
+is_brannerite = "is-brannerite"
+is_fulgora_recipe = "is-fulgora-recipe"
+is_fulgora_building = "is-fulgora-building"
+is_fulgora_war = "is-fulgora-war"
 data:extend
 ({
     {
@@ -18,31 +16,19 @@ data:extend
     },
     {
         type = item_subgroup,
-        name = is_scrap,
+        name = is_fulgora_air,
         group = fulgora,
         order = a
     },
     {
         type = item_subgroup,
-        name = is_holmium,
+        name = is_scrap,
         group = fulgora,
         order = b
     },
     {
         type = item_subgroup,
-        name = is_holmium_chemistry,
-        group = fulgora,
-        order = b_a
-    },
-    {
-        type = item_subgroup,
-        name = is_holmium_casting,
-        group = fulgora,
-        order = b_b
-    },
-    {
-        type = item_subgroup,
-        name = is_fulgora_air,
+        name = is_brannerite,
         group = fulgora,
         order = c
     },
@@ -50,18 +36,18 @@ data:extend
         type = item_subgroup,
         name = is_fulgora_recipe,
         group = fulgora,
-        order = d
+        order = e
     },
     {
         type = item_subgroup,
         name = is_fulgora_building,
         group = fulgora,
-        order = e
+        order = f
     },
     {
         type = item_subgroup,
         name = is_fulgora_war,
         group = fulgora,
-        order = f
+        order = g
     }
 })

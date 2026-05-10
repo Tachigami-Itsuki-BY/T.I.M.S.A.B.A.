@@ -47,7 +47,7 @@ data_recipe[advanced_module_board].ingredients =
     {type = item, name = copper_plate, amount = 4},
     {type = item, name = silver_plate_bob, amount = 4},
     {type = item, name = module_contact, amount = 16},
-    {type = fluid, name = ferric_chloride_solution_angels, amount = 60}
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 60}
 }
 
 local advanced_speed_circuit_board = "bob-speed-processor-2"

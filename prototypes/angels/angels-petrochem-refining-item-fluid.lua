@@ -1,4 +1,3 @@
-local kJ = "kJ"
 -- ANGELS PETROCHEM REFINING
 -- BASIC PETROCHEN FLUIDS
 tritium_gas = "tritium-gas"
@@ -613,7 +612,7 @@ data:extend
         name = calcium_chloride_solution,
         subgroup = is_calcium_fluids,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/calcium-chloride-solution.png",
-        order = a,
+        order = b,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("CaCl2Wp"),
@@ -627,7 +626,7 @@ data:extend
         name = calcium_hydroxide_solution,
         subgroup = is_calcium_fluids,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/calcium-hydroxide-solution.png",
-        order = b,
+        order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("CaOH2Wp"),

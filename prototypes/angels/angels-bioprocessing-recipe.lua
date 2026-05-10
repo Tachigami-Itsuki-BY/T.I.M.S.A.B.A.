@@ -1,4 +1,3 @@
-local recipe = "recipe"
 -- ANGELS BIOPROCESSING NAUVIS
 data:extend
 ({

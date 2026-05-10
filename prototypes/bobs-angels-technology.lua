@@ -2,7 +2,7 @@ local technology = "technology"
 data:extend
 ({
     {
-        localised_name = {"", { "technology-name.battery" }, " 4"},
+        localised_name = {"technology-name.battery-4"},
         localised_description = {"technology-description.battery"},
         type = technology,
         name = battery_4,
@@ -12,7 +12,7 @@ data:extend
         {
             battery_3,
             utility_science_pack,
-            potassium_processing,
+            tech_potassium_processing,
             tech_coal_processing_4
         },
         effects =

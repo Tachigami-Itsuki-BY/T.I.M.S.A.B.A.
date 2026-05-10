@@ -1,6 +1,3 @@
-local kW = "kW"
-local kJ = "kJ"
-local pressure = "pressure"
 -- FLUORINE
 data_fluid[fluorine].localised_name = {"fluid-name.fluorine-gas"}
 data_fluid[fluorine].localised_description = show_formula and {chemical_formula, "F[font=default-tiny-bold]2[/font]"} or nil
@@ -46,7 +43,7 @@ data_recipe[solid_fuel_from_ammonia].results[1].amount = 2
 
 local ammonia_rocket_fuel = "ammonia-rocket-fuel"
 data_recipe[ammonia_rocket_fuel].subgroup = is_aquilo_recipe
-data_recipe[ammonia_rocket_fuel].icons = THREE_D_I(solid_fuel, water_purified_angels, ammonia_angels, rocket_fuel)
+data_recipe[ammonia_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_aquilo)
 data_recipe[ammonia_rocket_fuel].order = b_c
 data_recipe[ammonia_rocket_fuel].energy_required = 8
 data_recipe[ammonia_rocket_fuel].ingredients[1].amount = 16
@@ -81,7 +78,7 @@ data_recipe[lithium].results =
 {
     {type = item, name = lithium_chloride_angels, amount = 4},
     {type = item, name = ice, amount = 4},
-    {type = fluid, name = holmium_nitrate_solution, amount = 15}, -- 30
+    {type = fluid, name = holmium_nitrate_III_solution, amount = 15}, -- 30
     {type = fluid, name = hydrogen_fluoride_angels, amount = 240}, -- 480
     {type = fluid, name = hydrogen_angels, amount = 15} -- 75
 }
@@ -103,8 +100,9 @@ data_recipe[cryogenic_science_pack].ingredients =
 {
     {type = item, name = lithium_bob, amount = 4},
     {type = item, name = ice, amount = 16},
+    {type = item, name = antimony_plate, amount = 8},
+    {type = item, name = germanium_plate, amount = 8},
     {type = fluid, name = ammonia_solution, amount = 240},
-    {type = fluid, name = antimony_chloride_V_liquid, amount = 240},
     {type = fluid, name = fluoroketone_cold, amount = 60, ignored_by_stats = 30}
 }
 data_recipe[cryogenic_science_pack].results[2].amount = 30
@@ -112,26 +110,26 @@ data_recipe[cryogenic_science_pack].results[2].ignored_by_stats = 30
 data_recipe[cryogenic_science_pack].results[2].ignored_by_productivity = 30
 
 data_item[quantum_processor].subgroup = is_aquilo_recipe
-data_item[quantum_processor].order = g
+data_item[quantum_processor].order = o
 data_item[quantum_processor].stack_size = 200
 data_recipe[quantum_processor].subgroup = is_aquilo_recipe
-data_recipe[quantum_processor].order = g
-data_recipe[quantum_processor].energy_required = 32
+data_recipe[quantum_processor].order = o
+data_recipe[quantum_processor].energy_required = 32 -- Alumina + Platinum plate + Holmium plate + Semiconductor + Superconductor + Carbon Fiber + Liquid nitrogen --> Quantum processor + Nitrogen gas
 data_recipe[quantum_processor].ingredients =
 {
-    {type = item, name = advanced_processing_unit, amount = 1},
-    {type = item, name = lithium_bob, amount = 2},
-    {type = item, name = platinum_plate, amount = 2},
-    {type = item, name = platinum_cable, amount = 2},
-    {type = item, name = superconductor, amount = 1},
-    {type = item, name = tungsten_carbide_bob, amount = 1},
-    {type = item, name = carbon_fiber, amount = 1},
-    {type = fluid, name = fluoroketone_cold, amount = 30, ignored_by_stats = 15}
+    {type = item, name = aluminium_oxide, amount = 4},
+    {type = item, name = platinum_plate, amount = 4},
+    {type = item, name = holmium_plate, amount = 4},
+    {type = item, name = semiconductor, amount = 8},
+    {type = item, name = superconductor, amount = 8},
+    {type = item, name = carbon_fiber, amount = 4},
+    {type = fluid, name = nitrogen_liquid, amount = 60}
 }
-data_recipe[quantum_processor].results[2].amount = 15
-data_recipe[quantum_processor].results[2].temperature = 180
-data_recipe[quantum_processor].results[2].ignored_by_stats = 15
-data_recipe[quantum_processor].results[2].ignored_by_productivity = 15
+data_recipe[quantum_processor].results =
+{
+    {type = item, name = quantum_processor, amount = 1},
+    {type = fluid, name = nitrogen_angels, amount = 30, ignored_by_productivity = 30}
+}
 
 -- BUILDING
 data_item[cryogenic_plant].subgroup = is_aquilo_building
@@ -144,10 +142,12 @@ data_recipe[cryogenic_plant].energy_required = 8
 data_recipe[cryogenic_plant].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 16},
-    {type = item, name = lithium_bob, amount = 16},
-    {type = item, name = platinum_plate, amount = 16},
+    {type = item, name = niobium_titanium_plate, amount = 16},
+    {type = item, name = niobium_iron_plate, amount = 16},
+    {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
     {type = item, name = refined_concrete, amount = 32},
-    {type = item, name = superconductor, amount = 16}
+    {type = item, name = superconductor, amount = 16},
+    {type = item, name = semiconductor, amount = 16}
 }
 data_assembling[cryogenic_plant].subgroup = is_aquilo_building
 data_assembling[cryogenic_plant].order = a
@@ -165,11 +165,13 @@ data_recipe[fusion_reactor].order = a
 data_recipe[fusion_reactor].energy_required = 64
 data_recipe[fusion_reactor].ingredients =
 {
-    {type = item, name = tungsten_plate_bob, amount = 256},
+    {type = item, name = niobium_titanium_plate, amount = 256},
+    {type = item, name = niobium_iron_bearing, amount = 256},
+    {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 256},
+    {type = item, name = niobium_titanium_cable, amount = 256},
     {type = item, name = quantum_processor, amount = 256},
     {type = item, name = superconductor, amount = 256},
-    {type = item, name = platinum_plate, amount = 256},
-    {type = item, name = cobalt_steel_plate_bob, amount = 256}
+    {type = item, name = semiconductor, amount = 256}
 }
 data_reactor_fusion[fusion_reactor].subgroup = is_aquilo_power
 data_reactor_fusion[fusion_reactor].order = a
@@ -187,11 +189,13 @@ data_recipe[fusion_generator].order = b
 data_recipe[fusion_generator].energy_required = 32
 data_recipe[fusion_generator].ingredients =
 {
-    {type = item, name = tungsten_plate_bob, amount = 128},
+    {type = item, name = niobium_titanium_plate, amount = 128},
+    {type = item, name = niobium_iron_bearing, amount = 128},
+    {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 128},
+    {type = item, name = niobium_titanium_cable, amount = 128},
     {type = item, name = quantum_processor, amount = 64},
     {type = item, name = superconductor, amount = 128},
-    {type = item, name = platinum_plate, amount = 128},
-    {type = item, name = cobalt_steel_plate_bob, amount = 128}
+    {type = item, name = semiconductor, amount = 128}
 }
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
@@ -214,9 +218,11 @@ data_recipe[fusion_power_cell].ingredients =
 {
     {type = item, name = muon_fusion_catalyst, amount = 1},
     {type = item, name = lithium_bob, amount = 8},
-    {type = item, name = holmium_plate, amount = 8},
+    {type = item, name = tungsten_plate_bob, amount = 8},
     {type = item, name = lead_plate_bob, amount = 32},
-    {type = fluid, name = deuterium_angels, amount = 240}
+    {type = item, name = holmium_plate, amount = 8},
+    {type = fluid, name = deuterium_angels, amount = 240},
+    --{type = fluid, name = tritium_gas, amount = 240}
 }
 data_recipe[fusion_power_cell].results[1].amount = 1
 
@@ -230,10 +236,14 @@ data_gun[railgun].attack_parameters.range = 64
 data_recipe[railgun].subgroup = is_aquilo_war
 data_recipe[railgun].order = a
 data_recipe[railgun].energy_required = 8
-data_recipe[railgun].ingredients[1].amount = 8
-data_recipe[railgun].ingredients[2].amount = 8
-data_recipe[railgun].ingredients[3].amount = 16
-data_recipe[railgun].ingredients[4].amount = 15
+data_recipe[railgun].ingredients =
+{
+    {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
+    {type = item, name = superconductor, amount = 8},
+    {type = item, name = niobium_titanium_cable, amount = 4},
+    {type = item, name = quantum_processor, amount = 4},
+    {type = fluid, name = fluoroketone_cold, amount = 15}
+}
 
 local railgun_turret = "railgun-turret"
 data_item[railgun_turret].subgroup = is_aquilo_war
@@ -243,11 +253,16 @@ data_item[railgun_turret].weight = 62500
 data_recipe[railgun_turret].subgroup = is_aquilo_war
 data_recipe[railgun_turret].order = b
 data_recipe[railgun_turret].energy_required = 16
-data_recipe[railgun_turret].ingredients[1].amount = 128
-data_recipe[railgun_turret].ingredients[2].amount = 32
-data_recipe[railgun_turret].ingredients[3].amount = 64
-data_recipe[railgun_turret].ingredients[4].amount = 16
-data_recipe[railgun_turret].ingredients[5].amount = 120
+data_recipe[railgun_turret].ingredients =
+{
+    {type = item, name = niobium_tungsten_molybdenum_plate, amount = 32},
+    {type = item, name = niobium_iron_bearing, amount = 16},
+    {type = item, name = niobium_titanium_cable, amount = 32},
+    {type = item, name = superconductor, amount = 64},
+    {type = item, name = quantum_processor, amount = 16},
+    {type = item, name = carbon_fiber, amount = 32},
+    {type = fluid, name = fluoroketone_cold, amount = 120}
+}
 data_ammo_turret[railgun_turret].subgroup = is_aquilo_war
 data_ammo_turret[railgun_turret].order = b
 data_ammo_turret[railgun_turret].attack_parameters.min_range = 8
@@ -267,9 +282,9 @@ data_recipe[railgun_ammo].order = c
 data_recipe[railgun_ammo].energy_required = 16
 data_recipe[railgun_ammo].ingredients =
 {
-    {type = item, name = cobalt_steel_plate_bob, amount = 4},
-    {type = item, name = platinum_cable, amount = 8},
-    {type = item, name = explosives, amount = 4}
+    {type = item, name = tungsten_plate_bob, amount = 2},
+    {type = item, name = cobalt_steel_plate_bob, amount = 2},
+    {type = item, name = platinum_cable, amount = 4}
 }
 
 data_item[fusion_reactor_eq].subgroup = is_aquilo_war
@@ -282,11 +297,14 @@ data_recipe[fusion_reactor_eq].energy_required = 32
 data_recipe[fusion_reactor_eq].ingredients =
 {
     {type = item, name = fission_reactor_4, amount = 1},
-    {type = item, name = tungsten_plate_bob, amount = 256},
-    {type = item, name = quantum_processor, amount = 256},
+    {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
+    {type = item, name = niobium_titanium_cable, amount = 128},
+    {type = item, name = quantum_processor, amount = 64},
+    {type = item, name = superconductor, amount = 32},
+    {type = item, name = semiconductor, amount = 32},
     {type = item, name = fusion_power_cell, amount = 8},
-    {type = item, name = supercapacitor, amount = 32},
-    {type = item, name = carbon_fiber, amount = 128}
+    {type = item, name = supercapacitor, amount = 16},
+    {type = item, name = carbon_fiber, amount = 64}
 }
 data_generator_equipment[fusion_reactor_eq].power = 3000 .. kW
 

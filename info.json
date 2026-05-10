@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "0.0.29",
+    "version": "0.1.0",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.(ALPHA)",
     "author": "Tachugami_Istuki",
@@ -39,6 +39,7 @@
         "! Clowns-AngelBob-Nuclear",
         "! Clowns-Extended-Minerals",
         "! Clowns-Processing",
+        "? AsteroidBelt",
         "! planet-muluna",
         "! Moshine",
         "! panglia_planet",

@@ -41,9 +41,13 @@ require("prototypes-final-fix.recipe-barreling-mods")
 require("prototypes-final-fix.final-fix-weights")
 require("prototypes-final-fix.final-fix-entities-yelds")
 require("prototypes-final-fix.final-fix-recycling")
+require("prototypes-final-fix.final-fix-recipe")
 require("prototypes-final-fix.final-fix-technology")
 require("prototypes-final-fix.final-fix-module")
 require("prototypes-final-fix.final-fix-settings")
+require("prototypes-final-fix.final-fix-autoplace-controls")
+require("prototypes-final-fix.final-fix-simulation")
+require("prototypes-final-fix.final-fix-pipe")
 
 local map_settings = data.raw["map-settings"]["map-settings"]
 map_settings.pollution.enabled = true

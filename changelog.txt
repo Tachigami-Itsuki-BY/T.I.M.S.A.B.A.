@@ -1,106 +1,709 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.0
-Date: ??.??.2026
+Version: 0.1.0
+Date: 10.05.2026
   Features:
-    - Добавлена поддержка Muluna, Moon of Nauvis: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - Добавлены новые здания:
-        1. Бойлер и Паровой Двигатель Т6.
-        2. Солнечные Панели Т4.
-        3. Аккумулятор Высокой Ёмкости Т4.
-        4. Электрический Бур Т6.
-        5. Реактор Т4 и Топливная ячейка Т4.
-        6. Электропечи Т6(Т4).
-        7. Установка Сортировки Руды Т6.
-        8. Электролизные Ванны Т3 и Т4.
-        9. Печи для Спекания Т3 и Т4.
-          Если «Ранние Печи для Спекания» включены, тогда: Печь для Спекания Т6.
-    - Добавлены новые предметы:
-        1. Пек.
-        2. Фосфоритная Руда.
-        3. Белый Фосфор.
-        4. Пентахлорид Фосфора.
-        5. Перманганат Калия.
-        6. Фторид Лития.
-        7. Гексафторфосфат Лития.
-        8. Сырой Графитовый Блок.
-        9. Графит.
-        10. Оксид Графена.
-        11. Графен.
-        12. Графеновая Батарейка.
-    - Добавлены новые жидкости и газы:
-        1. Угольный Дёготь.
-        2. Газобразный Белый Фосфор.
-        3. Трихлорид Фосфора.
-        4. Пентафторид Фосфора.
-        5. Раствор Гексафторфосфата Лития (карбонатный).
-        6. Тритиевый Газ.
-        7. Сжиженный Фторид Водорода.
+    - Добавлены новые добываемые руды на Наувисе:
+        1. Молибденитовая.
+        2. Повеллитовая.
+    - Добавлена новая руда на Фульгоре: Браннеритовая.
+    - Добавлены астероиды на орбите Аквило:
+        1. Антимонитовые.
+        2. Германитовые.
+    - Добавлены новые предметы и жидкости:
+        Ветка Молибденита:
+          1. Дроблённый Молибденит.
+          2. Куски Молибденита.
+          3. Кристалы Молибденита.
+          4. Очищенный Молибденит.
+        Ветка Повеллита:
+          1. Дроблённый Повеллит.
+          2. Куски Повеллита.
+          3. Кристалы Повеллита.
+          4. Очищенный Повеллит.
+        Ветка Антимонита:
+          1. Антимонитовый Кусок Астероида.
+          2. Дроблённый Антимонит.
+          3. Куски Антимонита.
+          4. Кристалы Антимонита.
+          5. Очищенный Антимонит.
+        Ветка Германита:
+          1. Германитовый Кусок Астероида.
+          2. Дроблённый Германит.
+          3. Куски Германита.
+          4. Кристалы Германита.
+          5. Очищенный Германит.
+        Ветка Молибдена:
+          1. Молибденовая Руда.
+          2. Обработанный Молибден.
+          3. Молибденовые Гранулы.
+          4. Молибденовый Порошок.
+          5. Молибденовая Пластина.
+          6. Оксид Молибдена(VI).
+          7. Молибдат Калия.
+          8. Раствор Хлорида Молибдена(III).
+          9. Молибденовая Кислота.
+          10. Фторид Молибдена(IV).
+          11. Молибденовая Шестерня.
+        Ветка Рения:
+          1. Рениевая Руда.
+          2. Обработанный Рений.
+          3. Рениевые Гранулы.
+          4. Рениевый Порошок.
+          5. Рениевая Пластина.
+          6. Оксид Рения(VI).
+          7. Хлорид Рения(V).
+          8. Оксид Рения(IV).
+          9. Раствор Перрената Калия.
+          10. Перренат Калия.
+          11. Рениевая Кислота.
+          12. Перренат Аммония.
+          13. Рениевый Шарик для Подщиника. 
+          14. Рениевый Подщиник.
+        Ветка Ниобия:
+          1. Ниобиевая Руда.
+          2. Обработанный Ниобий.
+          3. Ниобиевые Гранулы.
+          4. Ниобиевый Порошок.
+          5. Оксид Ниобия(V).
+          6. Ниобат Калия.
+          7. Гептафторниобиевая Кислота.
+          8. Гидроксид Ниобия(V).
+        Ветка Германия:
+          1. Германиевая Руда.
+          2. Обработанный Германий.
+          3. Германиевые Гранулы.
+          4. Германиевый Слиток.
+          5. Германиевый Порошок.
+          6. Раствор Метагерманата Калия.
+          7. Оксид Германия(IV).
+          8. Хлорид Германия(IV).
+          9. Раствор Метагерманата Натрия.
+          10. Гексахлоргерманат(IV) Натрия.
+          11. Расплавленный Германий.
+          12. Германиевая Пластина.
+        Ветка Галия: 
+          1. Галиевая Руда (Холодный). 
+          2. Обработанный Галий (Холодный). 
+          3. Галиевые Гранулы (Холодный). 
+          4. ГалиевыЙ Слиток (Холодный). 
+          5. Галиевый Порошок (Холодный). 
+          6. Гидроксид Галлия(III). 
+          7. Оксид Галия(III). 
+          8. Раствор Тетрагидроксогаллата(III) Натрия. 
+          9. Жидкий Галий. 
+          10. Хлорид Галлия(III). 
+          11. Раствор Хлорида Галлия(III) (Эфир). 
+          12. Раствор Гидрида Лития Галлия (Эфир). 
+          13. Арсенид Галлия. 
+          14. Нитрид Галлия.
+        Остальные:
+          1. Селен.
+          2. Хлорид Калия.
+          3. Хлорат Калия.
+          4. Раствор Хлората Калия.
+          5. Молибден-Рениевая Порошковая Смесь.
+          6. Молибден-Рениевая Пластина.
+          7. Молибден-Рениевая Труба.
+          8. Молибден-Рениевая Подземная Труба.
+          9. Строительный Лом.
+          10. Машинный Лом.
+          11. Стальной Стержень.
+          12. Расплавленный Ниобий-Титан.
+          13. Ниобий-Титановая Пластина.
+          14. Ниобий-Титановая Проволока.
+          15. Расплавленный Феррониобий.
+          16. Феррониобивая Пластина.
+          17. Феррониобивый Шарик для Подщиника.
+          18. Феррониобивый Подшипник.
+          19. Ниобий-Вольфрам-Молибденовая Порошковая Смесь.
+          20. Ниобий-Вольфрам-Молибденовая Пластина.
+          21. Ниобий-Вольфрам-Молибденовая Шестерня.
+          22. Сурьмяная Пластина.
+          23. Нитробензол.
+          24. Анилин.
+          25. Нитрит Натрия.
+          26. Раствор Бензолдиазония Хлорид.
+          27. Молочная Кислота.
+          28. Этил Лактат.
+          29. Фоторезист.
+          30. Полупроводник.
+          31. Мышьяк.
+    - Добавлены новые предметы и рецепты для Вольфрамита:
+        1. Дроблённый Вольфрамит и рецепт сортировки.
+        2. Куски Вольфрамита и рецепт сортировки.
+        3. Кристалы Вольфрамита и рецепт сортировки.
+        4. Очищенный Вольфрамит и рецепт сортировки.
     - Добавлены новые рецепты.
     - Добавлены новые технологии.
+    - Добавлена возможность включить «Раннюю Взрывчатку для Скал» в настройках модов.
 
-    - Added support for Muluna, Moon of Nauvis: seamlessly integrated the new planet into the gameplay flow.
-    - Added new buildings:
-        1. T6 Boiler and Steam Engine.
-        2. T4 Solar Panels.
-        3. T4 High Capacity Accumulator.
-        4. T6 Electric Mining Drill.
-        5. T4 Reactor and T4 Fuel Cell.
-        6. T6(T4) Electric Furnaces.
-        7. T6 Ore Sorting Facility.
-        8. T3 and T4 Electrowinning Cells.
-        9. T3 and T4 Sintering Ovens.
-          If "Early Sintering Oven" is enabled, then: T6 Sintering Ovens.
-    - Added new items:
-        1. Pitch.
-        2. Phosphate Ore.
-        3. White Phosphorus.
-        4. Phosphorus Pentachloride.
-        5. Potassium Permanganate.
-        6. Lithium Fluoride.
-        7. Lithium Hexafluorophosphate.
-        8. Raw Graphite Block.
-        9. Graphite.
-        10. Graphene Oxide.
-        11. Graphene.
-        12. Graphene Battery.
-    - Added new fluids and Gases:
-        1. Coal Tar.
-        2. White Phosphorus Gas.
-        3. Phosphorus Trichloride.
-        4. Phosphorus Pentafluoride Gas.
-        5. Lithium Hexafluorophosphate Solution (carbonate).
-        6. Tritium Gas.
-        7. Hydrogen Fluoride Liquefied.
+    - Added new mineable ores to Nauvis:
+        1. Molybdenite.
+        2. Powellite.
+    - Added new ore to Fulgora: Brannerite.
+    - Added asteroids in Aquilo's orbit:
+        1. Antimonite.
+        2. Germanite.
+    - Added new items and fluids:
+        Molybdenite Branch:
+          1. Crushed Molybdenite.
+          2. Molybdenite Chunks.
+          3. Molybdenite Crystals.
+          4. Purified Molybdenite.
+        Powellite Branch:
+          1. Crushed Powellite.
+          2. Powellite Chunks.
+          3. Powellite Crystals.
+          4. Purified Powellite.
+        Antimonite Branch:
+          1. Antimonite Asteroids.
+          2. Crushed Antimonite.
+          3. Antimonite Chunks.
+          4. Antimonite Crystals.
+          5. Purified Antimonite.
+        Germanite Branch:
+          1. Germanite Asteroids.
+          2. Crushed Germanite.
+          3. Germanite Chunks.
+          4. Germanite Crystals.
+          5. Purified Germanite.
+        Molybdenum Branch:
+          1. Molybdenum Ore.
+          2. Processed Molybdenum.
+          3. Molybdenum Pellet.
+          4. Molybdenum Powder.
+          5. Molybdenum Plate.
+          6. Molybdenum(VI) Oxide.
+          7. Potassium Molybdate.
+          8. Molybdenum(III) Chloride Solution.
+          9. Molybdic Acid.
+          10. Molybdenum(IV) Fluoride.
+          11. Molybdenum Gear Wheel.
+        Rhenium Branch:
+          1. Rhenium Ore.
+          2. Processed Rhenium.
+          3. Rhenium Pellet.
+          4. Rhenium Powder.
+          5. Rhenium Plate.
+          6. Rhenium(VI) Oxide.
+          7. Rhenium(V) Chloride.
+          8. Rhenium(IV) Oxide.
+          9. Potassium Perrhenate Solution.
+          10. Potassium Perrhenate.
+          11. Rhenium Acid.
+          12. Ammonium Perrhenate.
+          13. Rhenium Bearing Ball.
+          14. Rhenium Bearing.
+        Niobium Branch:
+          1. Niobium Ore.
+          2. Processed Niobium.
+          3. Niobium Pellet.
+          4. Niobium Powder.
+          5. Niobium(V) Oxide.
+          6. Potassium Niobate.
+          7. Heptafluoroniobic Acid.
+          8. Niobium(V) Hydroxide.
+        Geramnium Branch:
+          1. Geramnium Ore.
+          2. Processed Geramnium.
+          3. Geramnium Pellet.
+          4. Geramnium Ingot.
+          5. Germanium Powder.
+          6. Potassium Metagermanate Solution.
+          7. Germanium(IV) Oxide.
+          8. Germanium(IV) Chloride.
+          9. Sodium Metagermanate Solution.
+          10. Sodium Hexachlorogermanate(IV).
+          11. Molten Germanium.
+          12. Germanium Plate.
+        Galium Branch:
+          1. Galium Ore (Cold).
+          2. Processed Galium (Cold).
+          3. Galium Pellet (Cold).
+          4. Galium Ingot (Cold).
+          5. Galium Powder (Cold).
+          6. Gallium(III) Hydroxide.
+          7. Galium(III) Oxide.
+          8. Sodium Tetrahydroxogallate(III) Solution.
+          9. Liquid Galium.
+          10. Gallium(III) Chloride.
+          11. Gallium(III) Chloride Solution (Ether)
+          12. Lithium Gallium Hydride Solution (ether)
+          13. Gallium Arsenide.
+          14. Gallium Nitride.
+        Others:
+          1. Selenium.
+          2. Potassium Chloride.
+          3. Potassium Chlorate.
+          4. Potassium Chlorate Solution.
+          5. Molybdenum-Rhenium Powder Mixture.
+          6. Molybdenum-Rhenium Plate.
+          7. Molybdenum-Rhenium Pipe.
+          8. Molybdenum-Rhenium Pipe to Ground.
+          9. Structural Scrap.
+          10. Machine Scrap.
+          11. Steel Rod.
+          12. Niobium-Titanium Molten.
+          13. Niobium-Titanium Plate.
+          14. Niobium-Titanium Wire.
+          15. Ferroniobium Molten.
+          16. Ferroniobium Plate.
+          17. Ferroniobium Bearing Ball.
+          18. Ferroniobium Bearing.
+          19. Niobium-Tungsten-Molybdenum Powder Mixture.
+          20. Niobium-Tungsten-Molybdenum Plate.
+          21. Niobium-Tungsten-Molybdenum Gear Wheel
+          22. Antimony Plate.
+          23. Nitrobenzene.
+          24. Aniline.
+          25. Sodium Nitrite.
+          26. Benzenediazonium Chloride Solution.
+          27. Lactic Acid.
+          28. Ethyl Lactate.
+          29. Photoresist.
+          30. Semiconductor.
+          31. Vanadium Ore.
+          32. Arsenic.
+    - Added new items and recipes from Wolframite.
+        1. Crushed Wolframite and a sorting recipe.
+        2. Wolframite Chunks and a sorting recipe.
+        3. Wolframite Crystals and a sorting recipe.
+        4. Refined Wolframite and a sorting recipe.
     - Added new recipes.
     - Added new technologies.
+    - Added the ability to enable "Early Cliff Explosives" in the mod settings.
+
+  Bugfixes:
+    - Исправлена ошибка, из-за которой у некоторых рецептов отсутствовало название.
+    - Исправлена ​​ошибка, вызывавшая несовместимость с модом "Loaders Modernized: Bob's Logistics" версии 2.0.0.
+    - Исправлена ошибка, из-за которой в рецепте Дицианоаргентат Натрия(I) требовался Серебряные Гранулы вместо Золотых Гранул.
+    - Исправлена ошибка, из-за которой у Улучшеного Химического Завода 3 была скорость и кол-во слотов для модулей 4 вместо 3.
+    - Исправлена ошибка, из-за которой в рецепте Оксид Азота из Оксидного Астероида производил Монокосид Азота вместо Оксид Азота.
+
+    - Fixed a bug where some recipes were missing names.
+    - Fixed a bug causing incompatibility with "Loaders Modernized: Bob's Logistics" mod v2.0.0.
+    - Fixed a bug where the Sodium Dicyanoargentate(I) recipe required Silver Pellet instead of Gold Pellet.
+    - Fixed a bug where Advanced Chemical Plant 3 had a speed of 4 and 4 module slots instead of 3.
+    - Fixed a bug where the Nitrogen Oxide from Oxide Asteroid recipe producted Nitrogen Monoxide instead of Nitrogen Oxide.
 
   Balancing:
-    - Переработка рецептов: стоимость крафта и характеристики строений Muluna синхронизированы с экономикой сборки.
-    - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
-    - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
-        Если Буры Большой Площади из мода «Bob's Mining» включены, тогда: Электрический Бур Т5 → Электрический Бур Большой Площади Т4.
-    - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно Цинковая Батарейка → Графеновая Батарейка.
-    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритиевый Газ (240 ед.)
+    - Удалён рецепт Сортировка Вольфрамитовой Руды.
+    - Удалён рецепт Сортировка Шлака.
+    - В рецепте Оксида Хрома(VI) заменено производственное здание: Химическая Печь → Доменная Печь.
+    - В рецепте Оксида Вольфрама(VI) 2 скорректированы результаты и время крафта:
+        1. Оксида Вольфрама(VI) (12 ед.) → (16 ед.)
+        2. Аммиак (45 ед.) → (120 ед.)
+        3. Пар (45 ед.) → (60 ед.)
+        4. (6 сек.) → (8 сек.)
+    - В рецепте Паравольфрамата Аммония скорректированы ингредиенты и время крафта:
+        1. Обработанный Вольфрам (12 ед.) → (16 ед.)
+        2. Кислород (270 ед.) → (360 ед.)
+        3. Аммиак (150 ед.) → (240 ед.)
+        4. Очищенная Вода (90 ед.) → (120 ед.)
+        5. (6 сек.) → (8 сек.)
+    - В рецепте Паравольфрамата Аммония 2 скорректированы результаты и время крафта:
+        1. Аммиак (180 ед.) → (120 ед.)
+        2. Очищенная Вода (180 ед.) → (120 ед.)
+        3. (6 сек.) → (8 сек.)
+    - В рецептах Сортировки Порошков, Пыли и Кристаллов Железа/Меди добавлен результат: Ториевая Руда.
+    - В рецептах Смешивание Порошков скорректировано время крафта, ингредиенты и результат:
+        1. (4 сек.) → (8 сек.)
+        2. (16 ед.) → (8 ед.)
+        3. (16 ед.) → (8 ед.)
+    - Удалён рецепт Лавы (из Каменных Блоков).
+    - В рецепте Ракетного Двигателя скорректированны ингредиенты:
+        1. Электродвигатель (4 ед.) → Молибденовая Шестерня (16 ед.)
+        2. Нитиноловая Пластина → Рениевый Подшипник.
+        3. Добавлена Молибден-Рениевая Труба (8 ед.)
+    - Удалён предмет и рецепт Вольфрамовой Порошковой Смеси. Вольфрамовая Порошковая Смесь → Вольфрамовый Порошок.
+    - Добавлена возможность устанавливать модули качества в Печи для Спекания.
+    - В рецептах Паровой Турбине Т4, Центрифуги Т4, Переработчика, Конвеера Вулканус, Подземного Конвеера Вулканус и Разделителя Вулканус произведена замена ингредиентов:
+        1. Медно-Вольфрамовая Шестерня → Молибденовая Шестерня.
+        2. Медно-Вольфрамовый Подшипник → Рениевый Подшипник.
+        3. Медно-Вольфрамовая Труба → Молибден-Рениевая Труба. (для Паровой Турбине Т4)
+        4. Вольфрамовая Пластина → Молибденовая Пластина. (для Центрифуги Т4)
+        5. Медно-Вольфрамовая Пластина → Молибден-Рениевая Пластина.
+        6. Платиновая Пластина → Молибденовая Пластина. (для Переработчика)
+        7. Бетон → Железобетон. (для Переработчика)
+        8. Удалена Смазочная Жидкость и удвоено кол-во Шестерней (для Конвеера Вулканус, Подземного Конвеера Вулканус и Разделителя Вулканус)
+    - В технологиях Паровой Турбине Т4 и Центрифуга Т4 добавлены новые предварительные условия.
+    - Переработан рецепт Переработки Металлолома:
+        1. Теперь из лома получаются Строительный Металлолом и Машинный Металлолом, которые перерабатываются в ресурсы, ранее получаемые из обычного лома.
+        2. Скорректированы вероятности получения всех предметов.
+    - В рецепте Сверхпроводника произведена замена ингредиентов:
+        1. Платиновая Пластина → Платиновая Проволока.
+        2. Мазут → Электролит.
+    - В рецепт Сверхпроводника добалвен новый ингредиент: Золотая Проволока (4 ед.)
+    - В рецепте Электромагнитного Завода произведена замена ингредиента: Платиновая Пластина → Молибден-Рениевая Пластина.
+    - В рецепт Громоотвода добавлены новые ингредиенты:
+        1. Улучшенный Процессор (1 ед.)
+        2. Стальной Cтержень (8 ед.)
+    - В Переработчике увеличено кол-во слотов для результатов: (60 слотов) → (80 слотов)
+    - В рецепте Гольмиевой Руды (из Очищенных) произведена замена ингредиентов:
+        1. Очищенный Стиратит → Очищенный Браннерит.
+        2. Очищенный Кротинниум → Очищенный Повеллит.
+    - Перенесены некоторые рецепты в более поздние Технологии.
+    - Обновлены результаты у некоторых рецептов Переработки.
+    - В рецепте Металлургического Исследовательского Пакета произведена замена ингредиента: Расплавленный Хром → Лава.
+    - В рецепте Фундамента произведена замена ингредиента: Вольфрамовая Пластина → Молибден-Рениевая Пластина.
+        1. Литий → Ниобий-Вольфрам-Молибденовая Пластина.
+        2. Вольфрамовая Пластина → Молибден-Рениевая Пластина.
+    - В рецепте Литейного Завода скорректированы ингредиенты: 
+        1. Нитиноловая Пластина → Молибден-Рениевая Пластина.
+        2. Удалена Смазочная Жидкость
+    - В рецепте Большого Бура произведена замена ингредиента: Расплавленный Хром (240 ед.) → Молибден-Рениевая Пластина (16 ед.)
     - У Большого Бура скорректированы характеристики:
         1. Скорость добычи (5/сек.) → (8/сек.)
         2. Кол-во слотов для модулей (5) → (8)
         3. Максимальное потребление (240 кВт) → (2400 кВт)
+    - В рецептах Сельскохозяйственной Башни, Биокамеры, Ракеты с Дронами-Захватчиками, и Ракетной Турели произведена замена ингредиентов:
+        1. Кобальт-Стальная Пластина → Молибден-Рениевая Пластина.
+        2. Кобальт-Стальная Шестерня → Молибденовая Шестерня (для Ракетной Турели)
+    - В рецептах Улучшенных Химических Заводов, Установок Выщелачивания, Опреснительных Установок и Улучшенных Газоперерабатывающих Заводах произведена замена ингредиентов:
+        1. Вольфрам → Медно-Вольфрам (для Т3)
+        2. Медно-Вольфрам → Молибден-Рений (для Т4)
+        3. Карбид Вольфрам → Молибден-Рений (для Улучшенного Газоперерабатывающего Завода Т4)
+    - В рецептах Установок Очистки Руды произведена замена ингредиентов:
+        1. Вольфрамовая Пластина → Медно-Вольфрамовая Пластина (для Т2)
+        2. Медно-Вольфрамовая Пластина → Молибден-Рениевая Пластина (для Т3)
+        3. Гольмиевая Пластина → Ниобий-Вольфрам-Молибденовая Пластина (для Т4)
+    - В рецептах Флотационной Установки, Измельчителя, Фильтровальной Установки и Кристаллизаторе Т4 произведена замена ингредиентов: Нитинол → Медно-Вольфрам.
+    - В рецептах Газоперерабатывающего Завода, Сепаратора Нефти и Газа и Установки для Паравого Крекинга Т4 произведена замена ингредиентов: Вольфрам → Медно-Вольфрам.
+    - В рецепте Часть Ракеты произведена замена ингредиента: Вольфрам → Молибден-Рений.
+    - В рецепте Раектной Шахты произведена замена ингредиентов:
+        1. Нитинол → Молибден-Рений.
+        2. Бетон → Железобетон.
+    - В рецепт Раектной Шахты добалвены новые ингредиенты:
+        1. Молибденовая Пластина (256 ед.)
+        2. Рениевая Пластина (128 ед.)
+    - В рецепте Фундамента Космической Платформы произведена замена ингредиента: Платиновая Проволока (16 ед.) → Молибденовая Пластина (16 ед.) и Рениевая Пластина (8 ед.)
+    - В рецепте Электролизной Ванне Т2 произведена замена ингредиентов: Вольфрам → Медно-Вольфрам.
+    - В рецепте Сборочного Автомата Т6 произведена замена ингредиентов: 
+        1. Нитиноловая Шестерня → Молибденовая Шестерня.
+        2. Нитиноловые Подшиник → Рениевый Подшиник.
+        3. Нитинол → Молибден-Рений.
+    - В технологии Энергетические Системы на Основе Плутония скорректированы стоимость исследования и предварительные условия.
+    - В рецепт Тесла-Турели добавлен новый ингредиент: Молибден-Рениевая Пластина.
+    - В рецептах Расплавленных (Вулканус), Улучшенных Расплавленных (Вулканус) и Расплавленных (Сплавов, Вулканус) скорректировано время крафта, кол-во ингредиентов и результатов:
+        1. (32 сек.) → (8 сек.)
+        2. Ингредиенты (32 ед.) → (16 ед.) (для Расплавленных (Вулканус) и Улучшенных Расплавленных (Вулканус))
+        3. Результаты (480 ед.) → (240 ед.) (для Расплавленных (Вулканус))
+        4. Ингредиенты (240 ед.) → (120 ед.) (для Улучшенных Расплавленных (Вулканус))
+        5. Результаты (960 ед.) → (480 ед.) (для Улучшенных Расплавленных (Вулканус))
+        6. Ингредиенты (480 ед.) → (240 ед.) (для Расплавленных (Сплавов, Вулканус))
+        7. Результаты (960 ед.) → (240 ед.) (для Расплавленных (Сплавов, Вулканус))
+    - В рецептах Расплавленных (Сплавов 1) скорректировано кол-во ингредиентов и результатов:
+        1. Ингредиенты (8 ед.) → (16 ед.)
+        2. Результаты (480 ед.) → (240 ед.)
+    - В рецептах Расплавленных (Сплавов 2) увеличено кол-во ингредиентов: (8 ед.) → (16 ед.)
+    - В рецепте Расплавленного Припоя 3 уменьшено кол-во ингредиента и результата:
+        1. Оловянный Слиток (32 ед.) → (16 ед.)
+        2. Расплавленный Припой (960 ед.) → (480 ед.)
+    - В рецептах Расплавленной Бронзы 3 и Расплавленной Латуни 3 увеличено кол-во ингредиентов:
+        1. Оловянный Слиток (8 ед.) → (16 ед.) (для Расплавленной Бронзы 3)
+        2. Цинковый Слиток (4 ед.) → (8 ед.) (для Расплавленной Бронзы 3)
+        3. Цинковый Слиток (8 ед.) → (16 ед.) (для Расплавленной Латуни 3)
+        4. Оловянный Слиток (4 ед.) → (8 ед.) (для Расплавленной Латуни 3)
+        5. Свинцовый Слиток (4 ед.) → (8 ед.)
+    - Модули Скорости, Эффективности, Продуктивности и Качества Т2-Т5 теперь можно исследовать на Наувисе.
+    - В рецепте Квантового Процессора скорректированы ингредиенты:
+        1. Улучшеный Процессор (1 ед.) → Оксид Алюминия (4 ед.)
+        2. Литий (2 ед.) → Гольмиевая Пластина (4 ед.)
+        3. Платиновая Проволока (2 ед.) → Полупроводник (8 ед.)
+        4. Сверхпроводник (1 ед.) → (8 ед.)
+        5. Углеродное Волокно (1 ед.) → (4 ед.)
+        6. Удален Пластина из Карбида Вольфрама.
+        7. Фторкетон (Холодный) (30 ед.) → Жидкий Азот (60 ед.)
+        8. Фторкетон (Горячий) → Азот.
+    - В рецепте Криогенного Завода скорректированы ингредиенты:
+        1. Литий → Ниобий-Титановая Пластина.
+        2. Платиновая Пластина → Феррониобивая Пластина.
+        3. Добавлена Ниобий-Вольфрам-Молибденовая Пластина (16 ед.)
+        4. Добавлен Полупроводник (16 ед.)
+    - В рецептах Термоядерного Реактора и Термоядерного Генератора скорректированы ингредиенты:
+        1. Вольфрамовая Пластина → Ниобий-Титановая Пластина.
+        2. Платиновая Пластина → Феррониобивый Подшипник.
+        3. Кобальт-Стальная Пластина → Ниобий-Вольфрам-Молибденовая Шестерня.
+        4. Добавлена Ниобий-Титановая Проволока (256 ед. и 128 ед.)
+        5. Добавлен Полупроводник (256 ед. и 128 ед.)
+    - В рецепт Термоядерная Энергетическая Ячейка добавлен ингредиент: Вольфрамовая Пластина (8 ед.)
+    - В рецепте Рельсовой Пушки скорректированы ингредиенты:
+        1. Вольфрамовая Пластина (8 ед.) → Ниобий-Вольфрам-Молибденовая Пластина (4 ед.)
+        2. Добавлена Ниобий-Титановая Проволока (4 ед.)
+        3. Квантовый Процессор (16 ед.) → (4 ед.)
+    - В рецепте Рельсовой Турели скорректированы ингредиенты:
+        1. Вольфрамовая Пластина → Ниобий-Вольфрам-Молибденовая Пластина.
+        2. Добавлен Феррониобивый Подшиник (16 ед.)
+        3. Добавлена Ниобий-Титановая Проволока (32 ед.)
+        4. Квантовый Процессор (128 ед.) → (16 ед.)
+        5. Углеродное Волокно (16 ед.) → (32 ед.)
+    - В рецепте Боеприпасов для Рельсовой Пушки скорректированы ингредиенты:
+        1. Взрывчатка (4 ед.) → Вольфрамовая Пластина (2 ед.)
+        2. Кобальт-Стальная Пластина (4 ед.) → (2 ед.)
+        3. Платиновая Проволока (8 ед.) → (4 ед.)
+    - В рецепте Портативного Термоядерного Реактора скорректированы ингредиенты:
+        1. Вольфрамовая Пластина (256 ед.) → Ниобий-Вольфрам-Молибденовая Пластина (64 ед.)
+        2. Добавлена Ниобий-Титановая Проволока (128 ед.)
+        3. Квантовый Процессор (256 ед.) → (64 ед.)
+        4. Добавлен Сверхпроводник (32 ед.)
+        5. Добавлен Полупроводник (32 ед.)
+        6. Термоядерная Энергетическая Ячейка (8 ед.) → (4 ед.)
+        7. Суперконденсатор (32 ед.) → (16 ед.)
+        8. Углеродное Волокно (128 ед.) → (64 ед.)
+    - В рецепте Криогенного Научного Пакета произведена замена ингердиента: Хлорид Сурьмы(V) (240 ед.) → Сурьмяная Пластина (8 ед.) и Германиевая Пластина (8 ед.)
+    - Удалены все рецепты кремния для космической эры.
+    - В некоторых технологиях изменены предварительные условия и стоимость исследования.
+    - В рецептах Энергетические Щиты МК2 произведена замена ингредиента: Гольмиевая Пластина → Алюминиевая Пластина.
+    - В рецептах Артиллерийских Турелей и Артиллерийских Вагонов произведена замена ингредиентов:
+        1. Сталь → Медно-Вольфрам. (для Артиллерийского Вагона МК1)
+        2. Удалён Инвар. (для Артиллерийского Вагона МК1)
+        3. Титан → Молибден, Рений и Молибден-Рений. (для МК2)
+        4. Удалён Алюминий. (для Артиллерийского Вагона МК2)
+        5. Нитинол → Ниобий-Титан, Феррониобий и Ниобий-Вольфрам-Молибден. (для Артелерийского Вагона МК3)
+        6. Удалён Карбид Вольфрама. (для МК3)
+        7. Улучшенная Схема → Улучшенный Процессор.
+        8. Удалена Труба.
+        9. Нитрид Кремния → Молибден-Рениевую Пластину. (для Артелерийской Турели МК2)
+        10. Карбид Вольфрама → Ниобий-Титан. (для Артелерийской Турели МК3)
+    - Удалена категория Артиллерийских боеприпасов для Танков.
 
-    - Recipe Overhaul: Muluna crafting costs and building stats are now synchronized with the modpack's economy.
-    - Replaced an ingredient in the Electromagnetic Science Pack recipe: T3 High Capacity Accumulator → T4 High Capacity Accumulator.
-    - Replaced an ingredient in the Big Mining Drill: T5 Electric Mining Drill → T6 Electric Mining Drill.
-        If Large Area Mining Drills from "Bob's Mining" are enabled, then: T5 Electric Mining Drill → T4 Electric Large Area Mining Drill.
-    - Replaced an ingredient in the Supercapacitor recip: Silver Zinc Battery → Graphene Battery.
-    - Added an ingredient to the Fusion Power Cell recipe: Tritium Gas (240 units)
+    - Removed Wolframite Ore Sorting recipe.
+    - Removed Slag Sorting recipe.
+    - Changed production machine for Chromium(VI) Oxide recipe: Chemical Furnace → Blast Furnace.
+    - Adjusted results and crafting time of the Tungsten(VI) Oxide 2 recipe:
+        1. Tungsten(VI) Oxide (12 units) → (16 units)
+        2. Ammonia Gas (45 units) → (120 units)
+        3. Steam (45 units) → (60 units)
+        4. (6 sec.) → (8 sec.)
+    - Adjusted ingredients and crafting time of the Ammonium Paratungstate recipe:
+        1. Processed Tungsten (12 units) → (16 units)
+        2. Oxygen Gas (270 units) → (360 units)
+        3. Ammonia Gas (150 units) → (240 units)
+        4. Purified Water (90 units) → (120 units)
+        5. (6 sec.) → (8 sec.)
+    - Adjusted ingredients and crafting time of the Ammonium Paratungstate 2 recipe:
+        1. Ammonia Gas (180 units) → (120 units)
+        2. Purified Water (180 units) → (120 units)
+        3. (6 sec.) → (8 sec.)
+    - Added a result to the Powder, Dust, and Crystals Ferrous/Cupric Sorting recipes: Thorium Ore.
+    - Adjusted crafting time, an ingredient, and a result of the Mixing Powders recipes:
+        1. (4 sec.) → (8 sec.)
+        2. (16 units) → (8 units)
+        3. (16 units) → (8 units)
+    - Removed Lava (from Stone Bricks) recipe.
+    - Adjusted ingredients in the Thruster recipe:
+        1. Electric Engine Unit (4 units) → Molybdenum Gear (16 units)
+        2. Nitinol Plate → Rhenium Bearing.
+        3. Added Molybdenum-Rhenium Pipe (8 units)
+    - Removed item and recipe Tungsten Powder Mixture. Tungsten Powder Mixture → Tungsten Powder.
+    - Added the ability to use quality modules in Sintering Ovens.
+    - Replaced ingredients in the T4 Steam Turbine, T4 Centrifuge, Recycler, Vulcanus Transport Belt, Vulcanus Underground Belt and, Vulcanus Splitter recipes:
+        1. Copper-Tungsten Gear Wheel → Molybdenum Gear Wheel.
+        2. Copper-Tungsten Bearing → Rhenium Bearing.
+        3. Copper-Tungsten Pipe → Molybdenum-Rhenium Pipe. (for T4 Steam Turbine)
+        4. Tungsten Plate → Molybdenum Plate. (for T4 Centrifuge)
+        5. Copper-Tungsten Plate → Molybdenum-Rhenium Plate.
+        6. Platinum Plate → Molybdenum Plate (for Recycler)
+        7. Concrete → Reinforced Concrete Brick (for Recycler)
+        8. Removed Lubricant and doubled the number of Gear Wheels. (for the Vulcanus Conveyor, Vulcanus Underground Conveyor, and Vulcanus Separator)
+    - Added new prerequisites for the T4 Steam Turbine and T4 Centrifuge technologies.
+    - Reworked Scrap Recycling recipe:
+        1. Scrap now results Construction Scrap and Machinery Scrap, which are processed into the resources previously obtained from basic Scrap.
+        2. Adjusted the result probabilities for all items.
+    - Replaced ingredients in the Superconductor recipe:
+        1. Platinum Plate → Platinum Wire.
+        2. Fuel oil → Electrolyte.
+    - Added new an ingredient in the Superconductor recipe: Gold Wire (4 units)
+    - Replaced an ingredient in the Electromagnetic Plant recipe: Platinum Plate → Molybdenum-Rhenium Plate.
+    - Added new ingredients to the Lightning Rod recipe:
+        1. Advanced Processing Unit (1 unit)
+        2. Steel Rod (8 units)
+    - Increased slots for the Recycler: (60 slots) → (80 slots)
+    - Replaced ingredients in the Holmium Ore (from Purified) recipe:
+        1. Purified Stiratite → Purified Brannerite.
+        2. Purified Crotinnium → Purified Powellite.
+    - Moved some recipes to later Technologies.
+    - Updated results for some Recycling recipes.
+    - Replaced an ingredient in the Metallurgic Science Pack recipe: Molten Chromium → Lava.
+    - Replaced an ingredient in the Fundation recipe: 
+        1. Lithium → Molybdenum-Rhenium Plate.
+        2. Tungsten Plate → Niobium-Tungsten-Molybdenum Plate.
+    - Adjusted ingredints in the Foundry recipe:
+        1. Nitinol Plate → Molybdenum-Rhenium Plate.
+        2. Removed Lubricant.
+    - Replaced an ingredient in the Big Mining Drill recipe: Molten Chromium (240 units) → Molybdenum-Rhenium Plate (16 units)
     - Adjusted stats for Big Mining Drill:
         1. Mining Speed (5/sec.) → (8/sec.)
         2. Module slots (5) → (8)
         3. Maximum Consumption (240 kW) → (2400 kW)
+    - Replaced ingredients in the Agricultural Tower, Biochamber, Capture Bot Rocket, and Rocket Turret recipes:
+        1. Cobalt-Steel Plate → Molybdenum-Rhenium Plate.
+        2. Cobalt-Steel Gear → Molybdenum Gear (for Rocket Turret)
+    - Replaced ingredients in the Advanced Chemical Plant, Leaching Plant, Salination Plant, and Advanced Gas Refinery recipes:
+        1. Tungsten → Copper-Tungsten (for T3)
+        2. Copper-Tungsten → Molybdenum-Rhenium (for T4)
+        3. Tungsten Carbide → Molybdenum-Rhenium (for Advanced Gas Refinery T4)
+    - Replaced ingredients in the Ore Refinery recipes: 
+        1. Tungsten Plate → Copper-Tungsten Plate (for T2)
+        2. Copper-Tungsten Plate → Molybdenum-Rhenium Plate (for T3)
+        3. Holmium Plate → Niobium-Tungsten-Molybdenum Plate (for T4)
+    - Replaced ingredients in the T4 Flotation Cell, Powderizer, Filtering Unit, and Crystallizer recipes: Nitinol → Copper-Tungsten.
+    - Replaced ingredients in the T4 Gas Refinery, Oil-Gas Separator, and Steam Cracker recipes: Tungsten → Copper-Tungsten.
+    - Replaced an ingredient in the Rocket Part recipe: Tungsten → Molybdenum-Rhenium.
+    - Replaced ingredients in the Rocket Silo recipe:
+        1. Nitinol → Molybdenum-Rhenium.
+        2. Concrete → Reinforced Concrete.
+    - Added new ingredients in the Rocket Silo recipe:
+        1. Molybdenum Plate (256 units)
+        2. Rhenium Plate (128 units)
+    - Replaced an ingredient in the Space Platform Fundation recipe: Platinum Wire (16 units) → Molybdenum Plat (16 units) and Rhenium Plate (8 units)
+    - Replaced ingredients in the T2 Electrowinning Cell recipe: Tungsten → Copper-Tungsten.
+    - Replaced ingredients in the T6 Assembling Machine recipe: 
+        1. Nitinol Gear Wheel → Molybdenum Gear Wheel.
+        2. Nitinol Bearing → Rhenium Bearing.
+        3. Nitinol → Molybdenum-Rhenium.
+    - Adjusted research cost and prerequisites for Plutonium-Based Power Systems technology.
+    - Added new an ingredient in the Tesla Turret recipe: Molybdenum-Rhenium Plate.
+    - Adjusted crafting time, ingredients and results in the Molten (Vulcanus), Advanced Molten (Vulcanus), and Molten (Alloys, Vulcanus) recipes:
+        1. (32 sec.) → (8 sec.)
+        2. Ingredients (32 units) → (16 units) (for Molten (Vulcanus) and Advanced Molten (Vulcanus))
+        3. Results (480 units) → (240 units) (for Molten (Vulcanus))
+        4. Ingredients (240 units) → (120 units) (for Advanced Molten (Vulcanus))
+        5. Results (960 units) → (480 units) (for Advanced Molten (Vulcanus))
+        6. Ingredients (480 units) → (240 units) (for Molten (Alloys, Vulcanus))
+        7. Results (960 units) → (240 units) (for Molten (Alloys, Vulcanus))
+    - Adjusted ingredients and results in the Molten (Alloys 1) recipes:
+        1. Ingredients (8 units) → (16 units)
+        2. Results (480 units) → (240 units)
+    - Increased ingredients in the Molten (Alloys 2) recipes: (8 units) → (16 units)
+    - Decreased an ingredient and a result in the Molten Solder 3 recipe:
+        1. Tin Ingot (32 units) → (16 units)
+        2. Molten Solder (960 units) → (480 units)
+    - Increased ingredients in the Molten Bronze 3 and Molten Brass 3 recipes:
+        1. Tin Ingot (8 units) → (16 units) (for Molten Bronze 3)
+        2. Zinc Ingot (4 units) → (8 units) (for Molten Bronze 3)
+        3. Zinc Ingot (8 units) → (16 units) (for Molten Brass 3)
+        4. Tin Ingot (4 units) → (8 units) (for Molten Brass 3)
+        5. Lead Ingot (4 units) → (8 units)
+    - Speed, Efficiency, Productivity and Quality Modules T2-T5 can now be researched on Nauvis.
+    - Adjusted ingredients in the Quantum Processor recipe:
+        1. Advanced Processing Unit (1 unit) → Alumina (4 units)
+        2. Lithium (2 units) → Holmium Plate (4 units)
+        3. Platinum Wire (2 units) → Semiconductor (8 units)
+        4. Superconductor (1 units) → (8 units)
+        5. Carbon Fiber (1 units) → (4 units)
+        6. Removed Tungsten Carbide Plate.
+        7. Fluoroketone (Cold) (30 units) → Liquid Nitrogen (60 units)
+        8. Fluoroketone (Hot) → Nitrogen Gas.
+    - Adjusted ingredients in the Cryogenic Plant recipe:
+        1. Lithium → Niobium-Titanium Plate.
+        2. Platinum Plate → Ferroniobium Plate.
+        3. Added Niobium-Tungsten-Molybdenum Plate (16 units)
+        4. Added Semiconductor (16 units)
+    - Adjusted ingredients in the Fusion Reactor and Fusion Generator recipes:
+        1. Tungsten Plate → Niobium-Titanium Plate.
+        2. Platinum Plate → Ferroniobium Bearing.
+        3. Cobalt-Steel Plate → Niobium-Tungsten-Molybdenum Gear Wheel.
+        4. Added Niobium-Titanium Wire (256 units и 128 units)
+        5. Added Semiconductor (256 units и 128 units)
+    - Added an ingredient in the Fusion Power Cell recipe: Tungsten Plate (8 units)
+    - Adjusted ingredients in the Railgun recipe:
+        1. Tungsten Plate (8 units) → Niobium-Tungsten-Molybdenum Plate (4 units)
+        2. Added Niobium-Titanium Wire (4 units)
+        3. Quantum Processor (16 units) → (4 units)
+    - Adjusted ingredients in the Railgun Turret recipe:
+        1. Tungsten Plate → Niobium-Tungsten-Molybdenum Plate.
+        2. Added Ferroniobium Bearing (16 units)
+        3. Added Niobium-Titanium Wire (32 units)
+        4. Quantum Processor (128 units) → (16 units)
+        5. Carbon Fiber (16 units) → (32 units)
+    - Adjusted ingredients in the Railgun Ammo recipe:
+        1. Explosives (4 units) → Tungsten Plate (2 units)
+        2. Cobalt-Steel Plate (4 units) → (2 units)
+        3. Platinum Wire (8 units) → (4 units)
+    - Adjusted ingredients in the Portable Fusion Reactor recipe:
+        1. Tungsten Plate (256 units) → Niobium-Tungsten-Molybdenum Plate (64 units)
+        2. Added Niobium-Titanium Wire (128 units)
+        3. Quantum Processor (256 units) → (64 units)
+        4. Added Superconductor (32 units)
+        5. Added Semiconductor (32 units)
+        6. Fusion Power Cell (8 units) → (4 units)
+        7. Supercapacitor (32 units) → (16 units)
+        8. Carbon Fiber (128 units) → (64 units)
+    - Replaced an ingredient in the Cryogenic Science Pack recipe: Antimony(V) Chloride (240 units) → Antimony Plate (8 units) and Germanium Plate (8 units)
+    - Removed all Silicon recipes for Space Age.
+    - Changed prerequisites and research costs for some technologies.
+    - Replaced an ingredient in the Energy Shields MK2 recipes: Holmium Plate → Aluminium Plate.
+    - Replaced ingredients in the Artillery Turrets and Artillery Wagons recipes:
+        1. Steel → Copper-Tungsten (for Artillery Wagon MK1)
+        2. Removed Invar. (for Artillery Wagon MK1)
+        3. Titanium → Molybdenum, Rhenium, and Molybdenum-Rhenium (for MK2)
+        4. Removed Aluminium. (for Artillery Wagon MK2)
+        5. Nitinol → Niobium-Titanium, Ferroniobium, and Niobium-Tungsten-Molybdenum. (for Artillery Wagon MK3)
+        6. Removed Tungsten Carbide. (for MK3)
+        7. Advanced Circuit → Advanced Processing Unit.
+        8. Removed Pipe.
+        9. Silicon Nitride → Molybdenum-Rhenium Plate. (for Artillery Turret MK2)
+        10. Tungsten Carbide → Niobium-Titanium. (for Artillery Turret MK3)
+    - Removed Artillery ammo category for Tanks.
 
-  Modding:
-    - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
+  Graphics:
+    - Обновлены иконки некоторым рецептам.
 
-    - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
+    - Updated icons for some recipes.
+
+  Locale:
+    - Изменены названия большинства химических соединений металлов + неметаллов.
+    - Исправлены название некоторых предметов, жидкостей и технологий.
+
+    - Adjusted names for most metal + nonmetal chemical compounds.
+    - Corrected names of some items, fluids, and technologies.
+
+  Optimizations:
+    - Проведена глобальная оптимизация кода (O(N) заменен на O(1)).
+    - Скорость обработки рецептов увеличена в десятки раз.
+    - Снижено потребление оперативной памяти при загрузке.
+
+    - Global code optimization performed (O(N) search replaced with O(1) lookup).
+    - Recipe processing speed increased tenfold.
+    - Reduced RAM consumption during mod loading.
+
+  Scripting:
+    - Добавлена однократная регенерация ресурсов для совместимости со старыми сохранениями. Новая руда появится в уже открытых чанках автоматически.
+
+    - Added one-time resource regeneration for backward compatibility with existing saves. New ores will automatically appear in already explored chunks.
+
+  Other:
+    - Модпак переведён из Альфа-версии в Бета-версию.
+    - Информация об обновлении 1.0.0 временно удалена. Не волнуйтесь, всё готово!
+
+    - Moved modpack from Alpha version to Beta version.
+    - Temporarily removed information about update 1.0.0. Don't worry, everything is ready!
+---------------------------------------------------------------------------------------------------
+Version: 0.0.31
+Date: 25.04.2026
+  Balancing:
+    - В рецепте Газобразного Гексафторида Вольфрама понижен уровень производственного здания: T4 → T3.
+
+    - Decreased the required building tier for the Tungsten Hexafluoride Gas recipe: T2 → T1.
+---------------------------------------------------------------------------------------------------
+Version: 0.0.30
+Date: 25.04.2026
+  Bugfixes:
+    - Исправлена ошибка, из-за которой в технологии Улучшенная Выплавка Никеля 3 рецепт Сульфат Никеля заменял собой рецепт Тетракарбонила Никеля.
+
+    - Fixed a bug where the Nickel Sulfate recipe replaced the Nickel Tetracarbonyl recipe in the improved Nickel Smelting 3 technology.\
+
+  Balancing:
+    - В рецепте Катушки Припоя увеличено кол-во результата: Катушки Припоя (4 ед.) → (8 ед.)
+    - В рецепте Катушки Припоя 2 увеличено кол-во результата: Катушки Припоя (8 ед.) → (16 ед.)
+    - В рецепте Литья Припоя (Вулканус) увеличено кол-во результата: Припой (4 ед.) → (16 ед.)
+    - В рецептах Литья Кабелей (Вулканус) увеличено кол-во результата: Проволока (8 ед.) → (16 ед.)
+
+    - Increased a result in the Solder Coil recipe: Solder Coil (4 units) → (8 units)
+    - Increased a result in the Solder Coil 2 recipe: Solder Coil (8 units) → (16 units)
+    - Increased a result in the Solder Coil (Vulcanus) recipe: Solder (4 units) → (16 units)
+    - Increased a result in the Casting Wires (Vulcanus) recipes: Wire (8 units) → (16 units)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.29
 Date: 23.04.2026
@@ -110,7 +713,7 @@ Date: 23.04.2026
     - Added the ability to disable spoilage.
 
   Changes:
-    - Настройки "Экспансия врагов", "Эволюция" и "Загрязнение" теперь включены по умолчанию при создании нового мира.
+    - Настройки «Экспансия врагов», «Эволюция» и «Загрязнение» теперь включены по умолчанию при создании нового мира.
 
     - "Enemy Expansion", "Evolution", and "Pollution" settings are now enabled by default when creating a new world.
 
@@ -236,8 +839,8 @@ Date: 18.04.2026
     - Added the ability to upgrade all types of Electric Poles via the "Upgrade Planner".
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой отсутствовал рецепт Алюминиевой Пластины в технологии Улучшеная Выплавка и Литьё Алюминия.
-    - Исправлена ошибка, из-за которой отсутствовал рецепт Цинковой Пластины в технологии Улучшеная Выплавка и Литьё Цинка.
+    - Исправлена ошибка, из-за которой отсутствовал рецепт Алюминиевой Пластины в технологии Улучшенная Выплавка и Литьё Алюминия.
+    - Исправлена ошибка, из-за которой отсутствовал рецепт Цинковой Пластины в технологии Улучшенная Выплавка и Литьё Цинка.
 
     - Fixed a bug where the Aluminum Plate recipe was missing from Advanced Aluminum Smelting and Casting technology.
     - Fixed a bug where the Zinc Plate recipe was missing from Advanced Zinc Smelting and Casting technology.
@@ -409,7 +1012,7 @@ Date: 14.04.2026
 Version: 0.0.24
 Date: 13.04.2026
   Balancing:
-    - Рецепт Буры перевнесён из технологии Улучшеная Переработка Руды 2 в технологию Переработка Буры.
+    - Рецепт Буры перевнесён из технологии Улучшенная Переработка Руды 2 в технологию Переработка Буры.
     - В предмете Яйцо Кусаки увеличена ценность топлива: (6000 кВт) → (7200 кВт)
     - В предмете Яйцо Кусаки изменена топливная категория.
     - В Танках и Паукатронах изменена топливная категория.
@@ -510,7 +1113,7 @@ Date: 12.04.2026
         2. Magnesium Gas from Magnesium Chloride Gas (1 unit each)
         3. Potassium Hydroxide Solution (1 unit each)
         4. Potassium Hydroxide Solution from Potassium Sulfate Solution (1 unit each)
-    - Increased crafting time, ingredient, and results in the Separation of Hydrogen Chloride recipe:
+    - Increased crafting time, ingredient, and results of the Separation of Hydrogen Chloride recipe:
         1. (2 sec.) → (8 sec.)
         2. (120 units) → (240 units)
         3. (60 units) → (120 units) 
@@ -573,7 +1176,7 @@ Date: 12.04.2026
     - Исправлена ошибка, из-за которой ингредиенты из рецептов Генераторов Древесных Семян ушли в рецепт Базовой Схемы.
     - Исправлена ошибка, из-за которой исчезли предварительные условия у некоторых Технологий.
 
-    - Fixed a bug where ingredients from the Tree Seed Generator recipes were transferred to the Basic Circui Board recipe.
+    - Fixed a bug where ingredients from the Tree Seed Generator recipes were transferred to the Basic Circuit Board recipe.
     - Fixed a bug that caused prerequisites to disappear for some technologies.
 
   Balancing:
@@ -906,7 +1509,7 @@ Date: 04.04.2026
     - Changed production machine for Titanium Sponge recipe: Electrolyzer → Chemical Furnace.
     - Changed production machine for Potassium Hypochlorite Solution recipe: Electrolyzer → Advanced Chemical Plant.
         Added Purified Water to results (60 units)
-    - Adjusted ingredients and results for Peroxydisulfuric Acid recipe:
+    - Adjusted ingredients and results in the Peroxydisulfuric Acid recipe:
         1. Purified Water (120 units) → (240 units)
         2. Added Electrode (1 unit)
         3. Hydrogen Gas (60 units) → (120 units)
@@ -966,16 +1569,16 @@ Date: 03.04.2026
     - В рецепте Логистического Научного Пакета скорректированы ингредиенты:
         1. Конвейер (2 ед.) → (1 ед.)
         2. Удалён Разделитель.
-    - В рецептах Кабелей уменьшено кол-во ингредиентов и результатов: Кабель (4 ед.) → (2 ед.)
+    - В рецептах Кабелей уменьшено кол-во ингредиентов и результатов: Проволока (4 ед.) → (2 ед.)
     - В рецептах Центрифуг уменьшено кол-во ингредиента: Подшипник (64 ед.) → (32 ед.)
     - В рецепте Центрифуги Т4 изменено кол-во ингредиентов:
         1. Медно-Вольфрамовая Пластина (128 ед.) → (64 ед.)
         2. Вольфрамовая Пластина (64 ед.) → (128 ед.)
-    - В рецептах Солнечных Панелей уменьшено кол-во ингредиента в 2 раза: Кабель.
+    - В рецептах Солнечных Панелей уменьшено кол-во ингредиента в 2 раза: Проволока.
     - В рецептах Солнечных Панелей Т1 скорректировано кол-во ингредиентов:
         1. Медная Пластина в 2 раза больше.
         2. Стальная Пластина в 2 раза меньше.
-    - В рецептах Солнечных Панелей Т2 заменен ингредиент: Лужёный кабель → Посеребрённый кабель.
+    - В рецептах Солнечных Панелей Т2 заменен ингредиент: Лужёная Проволока → Посеребрённая Проволока.
     - В рецептах Солнечных Панелей увеличено время крафта:
         1. Маленькие (1 сек.) → (2 сек.)
         2. Средние (1 сек.) → (2 сек.)
@@ -1004,21 +1607,21 @@ Date: 03.04.2026
     - Adjusted ingredients in the Logistic Science Pack recipe:
         1. Transport Belt (2 units) → (1 unit)
         2. Removed Splitter.
-    - Reduced ingredients and results in the Cable recipes: Cable (4 units) → (2 units)
+    - Reduced ingredients and results in the Wire recipes: Wire (4 units) → (2 units)
     - Reduced an ingredient in the Centrifuge recipes: Bearing (64 units) → (32 units)
     - Changed ingredients in the T4 Centrifuge recipe:
         1. Copper-Tungsten Plate (128 units) → (64 units)
         2. Tungsten Plate (64 units) → (128 units)
-    - Reduced an ingredient in the Solar Panel recipes by 2х: Cable.
+    - Reduced an ingredient in the Solar Panel recipes by 2х: Wire.
     - Adjusted ingredients in the T1 Solar Panel recipes:
         1. Doubled Copper Plate.
         2. Halved Steel Plate.
-    - Replaced an ingredient in the T2 Solar Panel recipes: Tinned Cable → Silver Cable.
+    - Replaced an ingredient in the T2 Solar Panel recipes: Tinned Wire → Silver Wire.
     - Increased crafting time for the Solar Panel recipes:
         1. Small (1 sec.) → (2 sec.)
         2. Medium (1 sec.) → (2 sec.)
         3. Large (1 sec.) → (4 sec.)
-    - Adjusted ingredients and crafting time in the Reactor recipes:
+    - Adjusted ingredients and crafting time of the Reactor recipes:
         1. (480 units) → (512 units)
         2. (240 units) → (256 units)
         3. (60 sec.) → (64 sec.)
@@ -1135,7 +1738,7 @@ Date: 02.04.2026
     - Возвращена возможность ручного крафта медных кабелей.
 
     - Hidden the Voids tab from the crafting menu.
-    - Restored hand-crafting for Copper Cables.
+    - Restored hand-crafting for Copper Wires.
 
   Balancing:
     - В рецептах Пластин Т0 были изменены результаты:
@@ -1181,4 +1784,4 @@ Date: 01.04.2026
 Version: 0.0.1
 Date: 31.03.2026
   Other:
-    - Первоначальный выпуск: Альфа версия.
+    - Первоначальный выпуск: Альфа-версия.

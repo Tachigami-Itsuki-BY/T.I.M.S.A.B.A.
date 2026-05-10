@@ -35,6 +35,7 @@ require("prototypes-update.angels.angels-bioprocessing-animalis")
 
 require("prototypes-update.space-age.space-age-override")
 require("prototypes-update.space-age.aquilo.aquilo-override")
+require("prototypes-update.space-age.aquilo.aquilo-asteroid-spawn")
 require("prototypes-update.space-age.fulgora.fulgora-override")
 require("prototypes-update.space-age.gleba.gleba-override")
 require("prototypes-update.space-age.vulcanus.vulcanus-override")

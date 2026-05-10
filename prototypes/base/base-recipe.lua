@@ -1,4 +1,3 @@
-local recipe = "recipe"
 data:extend
 ({
     -- BASE

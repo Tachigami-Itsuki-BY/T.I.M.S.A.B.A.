@@ -1,5 +1,4 @@
 local bobs_mod = "bobs"
-local technology = "technology"
 if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
 	return
 end

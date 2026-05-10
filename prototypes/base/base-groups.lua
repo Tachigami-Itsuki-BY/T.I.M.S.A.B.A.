@@ -3,6 +3,8 @@ local logistics = "logistics"
 is_medium_electric_pole = "is-medium-electric-pole"
 is_big_electric_pole = "is-big-electric-pole"
 is_substation = "is-substation"
+is_pipe = "bob-pipe"
+is_pipe_to_ground = "bob-pipe-to-ground"
 data:extend
 ({
     {
@@ -106,6 +108,8 @@ end
 
 -- INTERMEDIATE PRODUCTS
 local intermediate_products = "intermediate-products"
+is_gears = "bob-gears"
+is_bearing_ball = "bob-bearings"
 is_bearing = "is-bearing"
 is_nuclear_item = "is-nuclear-item"
 is_nuclear_recipe = "is-nuclear-recipe"

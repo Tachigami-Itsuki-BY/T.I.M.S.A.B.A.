@@ -14,13 +14,13 @@ local replacements =
 	[tungsten_gear_wheel] = copper_tungsten_gear_wheel,
 	[fibreglass_board] = glass_fiber_board,
     [sour_gas_bob] = hydrogen_sulfide_angels,
-	[lead_oxide_bob] = lead_oxide,
+	[lead_oxide_bob] = lead_oxide_II,
 	[silicon_powder_bob] = silicon_powder,
 	[alumina_bob] = aluminium_oxide,
-	[silver_nitrate_bob] = silver_nitrate,
-	[cobalt_oxide_bob] = cobalt_oxide,
+	[silver_nitrate_bob] = silver_nitrate_I,
+	[cobalt_oxide_bob] = cobalt_oxide_II_III,
 	[tungsten_powdered_bob] = tungsten_powder,
-	[tungsten_oxide_bob] = tungsten_oxide,
+	[tungsten_oxide_bob] = tungsten_oxide_VI,
 	[tin_cable_bob] = tin_cable,
 	[gold_cable_bob] = gold_cable
 }
@@ -449,7 +449,11 @@ data_item[gold_cable_bob] = nil
 data_recipe[gold_cable_bob] = nil
 data_recipe["bob-gilded-copper-cable-recycling"] = nil
 
+data_recipe[tungsten_carbide_bob] = nil
+
 -- LOGISTICS
+data_recipe["bob-plastic-pipe-recycling"] = nil
+
 data_item["bob-valve"] = nil
 data_recipe["bob-valve-recycling"] = nil
 data_item["bob-overflow"] = nil

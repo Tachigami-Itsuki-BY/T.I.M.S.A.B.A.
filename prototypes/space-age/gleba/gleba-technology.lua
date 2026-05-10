@@ -1,4 +1,4 @@
-local technology = "technology"
+planet_discovery_gleba = "planet-discovery-gleba"
 data:extend
 ({
     {

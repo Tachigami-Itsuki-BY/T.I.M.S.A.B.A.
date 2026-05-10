@@ -165,95 +165,113 @@ data_entity["big-fulgora-rock"].minable.results[1].amount_max = 32
 data_entity["fulgurite-small"].minable.results =
 {
     {type = item, name = stone, amount_min = 8, amount_max = 16},
-    {type = item, name = holmium_ore, amount_min = 4, amount_max = 8}
+    {type = item, name = brannerite_ore, amount_min = 4, amount_max = 8}
 }
 data_entity["fulgurite"].minable.results =
 {
     {type = item, name = stone, amount_min = 4, amount_max = 8},
-    {type = item, name = holmium_ore, amount_min = 8, amount_max = 16}
+    {type = item, name = brannerite_ore, amount_min = 8, amount_max = 16}
 }
 data_lightning_attractor["fulgoran-ruin-attractor"].minable.results =
 {
     {type = item, name = scrap, amount = 8},
-    {type = item, name = copper_cable, amount = 8},
-    {type = item, name = steel_plate, amount = 4},
-    {type = item, name = stone_brick, amount = 2}
+    {type = item, name = construction_scrap, amount = 4},
+    {type = item, name = machinery_scrap, amount = 4},
+    --{type = item, name = copper_cable, amount = 8},
+    --{type = item, name = steel_plate, amount = 4},
+    --{type = item, name = stone_brick, amount = 2}
 }
 data_entity["fulgoran-ruin-small"].minable.results =
 {
     {type = item, name = scrap, amount_min = 4, amount_max = 8},
-    {type = item, name = copper_cable, amount = 4},
-    {type = item, name = steel_plate, amount = 4},
-    {type = item, name = stone, amount = 4},
-    {type = item, name = iron_rod, amount = 2},
-    {type = item, name = iron_gear_wheel, amount = 4}
+    {type = item, name = construction_scrap, amount_min = 2, amount_max = 4},
+    {type = item, name = machinery_scrap, amount_min = 2, amount_max = 4},
+    --{type = item, name = copper_cable, amount = 4},
+    --{type = item, name = steel_plate, amount = 4},
+    --{type = item, name = stone, amount = 4},
+    --{type = item, name = iron_rod, amount = 2},
+    --{type = item, name = iron_gear_wheel, amount = 4}
 }
 data_entity["fulgoran-ruin-medium"].minable.results =
 {
     {type = item, name = scrap, amount_min = 4, amount_max = 16},
-    {type = item, name = copper_cable, amount = 4},
-    {type = item, name = steel_plate, amount = 4},
-    {type = item, name = stone, amount = 4},
-    {type = item, name = iron_rod, amount = 4},
-    {type = item, name = iron_gear_wheel, amount = 4}
+    {type = item, name = construction_scrap, amount_min = 2, amount_max = 8},
+    {type = item, name = machinery_scrap, amount_min = 2, amount_max = 8},
+    --{type = item, name = copper_cable, amount = 4},
+    --{type = item, name = steel_plate, amount = 4},
+    --{type = item, name = stone, amount = 4},
+    --{type = item, name = iron_rod, amount = 4},
+    --{type = item, name = iron_gear_wheel, amount = 4}
 }
 data_entity["fulgoran-ruin-stonehenge"].minable.results =
 {
     {type = item, name = scrap, amount_min = 8, amount_max = 32},
-    {type = item, name = copper_cable, amount = 8},
-    {type = item, name = steel_plate, amount = 8},
-    {type = item, name = stone, amount = 8},
-    {type = item, name = iron_rod, amount = 4},
-    {type = item, name = iron_gear_wheel, amount = 8}
+    {type = item, name = construction_scrap, amount_min = 4, amount_max = 16},
+    {type = item, name = machinery_scrap, amount_min = 4, amount_max = 16},
+    --{type = item, name = copper_cable, amount = 8},
+    --{type = item, name = steel_plate, amount = 8},
+    --{type = item, name = stone, amount = 8},
+    --{type = item, name = iron_rod, amount = 4},
+    --{type = item, name = iron_gear_wheel, amount = 8}
 }
 data_entity["fulgoran-ruin-big"].minable.results =
 {
     {type = item, name = scrap, amount_min = 8, amount_max = 32},
-    {type = item, name = copper_cable, amount = 8},
-    {type = item, name = steel_plate, amount = 8},
-    {type = item, name = stone, amount = 8},
-    {type = item, name = iron_rod, amount = 4},
-    {type = item, name = iron_gear_wheel, amount = 8}
+    {type = item, name = construction_scrap, amount_min = 4, amount_max = 16},
+    {type = item, name = machinery_scrap, amount_min = 4, amount_max = 16},
+    --{type = item, name = copper_cable, amount = 8},
+    --{type = item, name = steel_plate, amount = 8},
+    --{type = item, name = stone, amount = 8},
+    --{type = item, name = iron_rod, amount = 4},
+    --{type = item, name = iron_gear_wheel, amount = 8}
 }
 data_entity["fulgoran-ruin-colossal"].minable.results =
 {
     {type = item, name = scrap, amount_min = 32, amount_max = 128},
-    {type = item, name = copper_cable, amount = 32},
-    {type = item, name = steel_plate, amount = 32},
-    {type = item, name = stone, amount = 32},
-    {type = item, name = iron_rod, amount = 16},
-    {type = item, name = iron_gear_wheel, amount = 32}
+    {type = item, name = construction_scrap, amount_min = 16, amount_max = 64},
+    {type = item, name = machinery_scrap, amount_min = 16, amount_max = 64},
+    --{type = item, name = copper_cable, amount = 32},
+    --{type = item, name = steel_plate, amount = 32},
+    --{type = item, name = stone, amount = 32},
+    --{type = item, name = iron_rod, amount = 16},
+    --{type = item, name = iron_gear_wheel, amount = 32}
 }
 data_entity["fulgoran-ruin-huge"].minable.results =
 {
     {type = item, name = scrap, amount_min = 16, amount_max = 64},
-    {type = item, name = copper_cable, amount = 16},
-    {type = item, name = steel_plate, amount = 16},
-    {type = item, name = stone, amount = 16},
-    {type = item, name = iron_rod, amount = 16},
-    {type = item, name = iron_gear_wheel, amount = 16}
+    {type = item, name = construction_scrap, amount_min = 8, amount_max = 32},
+    {type = item, name = machinery_scrap, amount_min = 8, amount_max = 32},
+    --{type = item, name = copper_cable, amount = 16},
+    --{type = item, name = steel_plate, amount = 16},
+    --{type = item, name = stone, amount = 16},
+    --{type = item, name = iron_rod, amount = 16},
+    --{type = item, name = iron_gear_wheel, amount = 16}
 }
 data_entity["fulgoran-ruin-vault"].minable.results =
 {
     {type = item, name = scrap, amount_min = 128, amount_max = 512},
-    {type = item, name = copper_cable, amount = 128},
-    {type = item, name = steel_plate, amount = 128},
-    {type = item, name = stone, amount = 64},
-    {type = item, name = iron_rod, amount = 128},
-    {type = item, name = iron_gear_wheel, amount = 128}
+    {type = item, name = construction_scrap, amount_min = 64, amount_max = 256},
+    {type = item, name = machinery_scrap, amount_min = 64, amount_max = 256},
+    --{type = item, name = copper_cable, amount = 128},
+    --{type = item, name = steel_plate, amount = 128},
+    --{type = item, name = stone, amount = 64},
+    --{type = item, name = iron_rod, amount = 128},
+    --{type = item, name = iron_gear_wheel, amount = 128}
 }
 data_entity["lithium-iceberg-big"].minable.results =
 {
     {type = item, name = ice_platform, amount = 1},
     {type = item, name = ice, amount_min = 4, amount_max = 8},
-    {type = item, name = antimony_ore, amount_min = 8, amount_max = 16},
+    {type = item, name = antimonite_ore, amount_min = 8, amount_max = 16},
+    {type = item, name = germanite_ore, amount_min = 8, amount_max = 16},
     {type = item, name = lithium_chloride_angels, amount_min = 1, amount_max = 2}
 }
 data_entity["lithium-iceberg-huge"].minable.results =
 {
     {type = item, name = ice_platform, amount_min = 2, amount_max = 4},
     {type = item, name = ice, amount_min = 8, amount_max = 16},
-    {type = item, name = antimony_ore, amount_min = 16, amount_max = 32},
+    {type = item, name = antimonite_ore, amount_min = 16, amount_max = 32},
+    {type = item, name = germanite_ore, amount_min = 16, amount_max = 32},
     {type = item, name = lithium_chloride_angels, amount_min = 2, amount_max = 4}
 }
 

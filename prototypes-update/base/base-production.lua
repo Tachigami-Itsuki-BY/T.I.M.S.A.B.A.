@@ -717,7 +717,7 @@ assembling_recipe(assembling_machine_2, steel_gear_wheel, electronic_circuit, st
 assembling_recipe(assembling_machine_3, brass_gear_wheel, advanced_circuit, brass_pipe, assembling_machine_2, brass_plate_bob, brass_bearing)
 assembling_recipe(assembling_machine_4, titanium_gear_wheel, processing_unit, titanium_pipe, assembling_machine_3, titanium_plate_bob, titanium_bearing)
 assembling_recipe(assembling_machine_5, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe, assembling_machine_4, copper_tungsten_plate_bob, copper_tungsten_bearing)
-assembling_recipe(assembling_machine_6, nitinol_gear_wheel, advanced_processing_unit, nitinol_pipe, assembling_machine_5, nitinol_plate_bob, nitinol_bearing)
+assembling_recipe(assembling_machine_6, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate, rhenium_bearing)
 
 local burner_assembling_machine = "bob-burner-assembling-machine"
 if data_item[burner_assembling_machine] then

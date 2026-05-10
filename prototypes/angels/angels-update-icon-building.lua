@@ -1,8 +1,8 @@
 local assembling_machine = "assembling-machine"
 local angels_mod = "angels"
 local big = "big"
-local big_tint = "big-tint"
 local medium = "medium"
+local big_tint = "big-tint"
 local refining = "refining"
 local petrochem = "petrochem"
 if not (reskins.angels and reskins.angels.triggers.refining.entities) then

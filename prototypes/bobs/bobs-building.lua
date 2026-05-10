@@ -1,6 +1,3 @@
-local recipe = "recipe"
-local kW = "kW"
-local kJ = "kJ"
 local is_production_machine = "production-machine"
 local is_boiler = "bob-energy-boiler"
 local is_steam_engine = "bob-energy-steam-engine"
@@ -38,8 +35,8 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = nitinol_pipe, amount = 4},
-            {type = item, name = nitinol_plate_bob, amount = 4},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 4},
+            {type = item, name = molybdenum_rhenium_plate, amount = 4},
             {type = item, name = boiler_5, amount = 1}
         },
         results = {{type = item, name = boiler_6, amount = 1}},
@@ -89,10 +86,10 @@ data:extend
         energy_required = 16,
         ingredients =
         {
-            {type = item, name = copper_tungsten_gear_wheel, amount = 8},
-            {type = item, name = copper_tungsten_bearing, amount = 8},
-            {type = item, name = copper_tungsten_pipe, amount = 4},
-            {type = item, name = copper_tungsten_plate_bob, amount = 4},
+            {type = item, name = molybdenum_gear_wheel, amount = 8},
+            {type = item, name = rhenium_bearing, amount = 8},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 4},
+            {type = item, name = molybdenum_rhenium_plate, amount = 4},
             {type = item, name = steam_engine_5, amount = 1}
         },
         results = {{type = item, name = steam_engine_6, amount = 1}},
@@ -140,11 +137,11 @@ data:extend
         energy_required = 16,
         ingredients =
         {
-            {type = item, name = copper_tungsten_gear_wheel, amount = 8},
-            {type = item, name = copper_tungsten_bearing, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_pipe, amount = 8},
-            {type = item, name = copper_tungsten_plate_bob, amount = 32},
+            {type = item, name = molybdenum_gear_wheel, amount = 8},
+            {type = item, name = rhenium_bearing, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = molybdenum_rhenium_pipe, amount = 8},
+            {type = item, name = molybdenum_rhenium_plate, amount = 32},
             {type = item, name = steam_turbine_3, amount = 1}
         },
         results = {{type = item, name = steam_turbine_4, amount = 1}},
@@ -406,9 +403,9 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = copper_tungsten_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_plate_bob, amount = 8},
+            {type = item, name = rhenium_gear_wheel, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = rhenium_plate, amount = 8},
             {type = item, name = electric_mining_drill_5, amount = 1}
         },
         results = {{type = item, name = electric_mining_drill_6, amount = 1}},
@@ -463,10 +460,10 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = copper_tungsten_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_pipe, amount = 4},
-            {type = item, name = copper_tungsten_plate_bob, amount = 4},
+            {type = item, name = molybdenum_gear_wheel, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = molybdenum_rhenium_pipe, amount = 4},
+            {type = item, name = molybdenum_rhenium_plate, amount = 4},
             {type = item, name = pumpjack_4, amount = 1}
         },
         results = {{type = item, name = pumpjack_5, amount = 1}},
@@ -485,7 +482,7 @@ data:extend
             max_health = 300,
             energy_usage = 600 .. kW,
             module_slots = 10,
-            mining_speed = 4,
+            mining_speed = 5,
             energy_source =
             {
                 type = "electric",
@@ -494,8 +491,65 @@ data:extend
             }
         }
     }),
-    -- REACTOR
     {
+        type = item,
+        name = pumpjack_6,
+        subgroup = is_extraction_machine_pumpjack,
+        icon = "__base__/graphics/icons/pumpjack.png",
+        order = g,
+        place_result = pumpjack_6,
+        stack_size = 32,
+        weight = 31250
+    },
+    {
+        type = recipe,
+        name = pumpjack_6,
+        category = crafting,
+        subgroup = is_extraction_machine_pumpjack,
+        icon = "__base__/graphics/icons/pumpjack.png",
+        order = g,
+        enabled = false,
+        auto_recycle = true,
+        allow_show = true,
+        allow_productivity = false,
+        allow_quality = true,
+        allow_decomposition = true,
+        energy_required = 1,
+        ingredients =
+        {
+            {type = item, name = , amount = 8},
+            {type = item, name = , amount = 4},
+            {type = item, name = , amount = 4},
+            {type = item, name = , amount = 4},
+            {type = item, name = pumpjack_5, amount = 1}
+        },
+        results = {{type = item, name = pumpjack_6, amount = 1}},
+        main_product = pumpjack_6
+    },
+    util.merge
+    ({
+        data_mining_drill[pumpjack_1],
+        {
+            name = pumpjack_6,
+            subgroup = is_extraction_machine_pumpjack,
+            icon = "__base__/graphics/icons/pumpjack.png",
+            icon_size = 64,
+            order = f,
+            minable = {mining_time = 1, result = pumpjack_6},
+            max_health = 350,
+            energy_usage = 720 .. kW,
+            module_slots = 12,
+            mining_speed = 6,
+            energy_source =
+            {
+                type = "electric",
+                emissions_per_minute = {pollution = 6},
+                usage_priority = "secondary-input"
+            }
+        }
+    }),]]
+    -- REACTOR
+    --[[{
         type = item,
         name = tritium_reactor,
         subgroup = is_reactor,
@@ -521,10 +575,10 @@ data:extend
         energy_required = 64,
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 512},
+            {type = item, name = advanced_processing_unit, amount = 512}, -- ЗАМЕНИТЬ!
             {type = item, name = heat_pipe_4, amount = 32},
             {type = item, name = lead_plate_bob, amount = 256},
-            {type = item, name = nitinol_plate_bob, amount = 256},
+            {type = item, name = molybdenum_rhenium_plate, amount = 256},
             {type = item, name = deuterium_reactor, amount = 1}
         },
         results = {{type = item, name = tritium_reactor, amount = 1}},
@@ -580,9 +634,9 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = carbide_plate_bob, amount = 8}, -- Molybdenum-rhenium plate
-            {type = item, name = nitinol_plate_bob, amount = 4},
+            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = molybdenum_rhenium_plate, amount = 8},
+            {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_furnace_3, amount = 1}
         },
         results = {{type = item, name = electric_furnace_4, amount = 1}},
@@ -637,9 +691,9 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = carbide_plate_bob, amount = 8}, -- Molybdenum-rhenium plate
-            {type = item, name = nitinol_plate_bob, amount = 4},
+            {type = item, name = advanced_processing_unit, amount = 8}, -- ЗАМЕНИТЬ!
+            {type = item, name = molybdenum_rhenium_plate, amount = 8},
+            {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_mixing_furnace_3, amount = 1}
         },
         results = {{type = item, name = electric_mixing_furnace_4, amount = 1}},
@@ -695,11 +749,11 @@ data:extend
         energy_required = 16,
         ingredients =
         {
-            {type = item, name = copper_tungsten_gear_wheel, amount = 128},
-            {type = item, name = copper_tungsten_bearing, amount = 32},
+            {type = item, name = molybdenum_gear_wheel, amount = 128},
+            {type = item, name = rhenium_bearing, amount = 32},
             {type = item, name = advanced_processing_unit, amount = 128},
-            {type = item, name = copper_tungsten_plate_bob, amount = 64},
-            {type = item, name = tungsten_plate_bob, amount = 128},
+            {type = item, name = molybdenum_plate, amount = 64},
+            {type = item, name = molybdenum_rhenium_plate, amount = 128},
             {type = item, name = centrifuge_3, amount = 1}
         },
         results = {{type = item, name = centrifuge_4, amount = 1}},

@@ -277,3 +277,6 @@ plutonium_239_mods = "plutonium-239"
 
 -- BOBREVAMP
 bobrevamp = "bobrevamp"
+
+-- LOADERS MODERNIZED
+loaders_modernized = "loaders-modernized"

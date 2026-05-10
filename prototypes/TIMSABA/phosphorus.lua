@@ -7,7 +7,7 @@ data:extend
         type = item_subgroup,
         name = is_phosphorus,
         group = smelting,
-        order = t
+        order = w
     }
 })
 
@@ -26,7 +26,7 @@ data:extend
         order = a,
         stack_size = 200,
         weight = 5000,
-        --[[pictures =
+        pictures =
         {
             {
                 filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphate-ore-1.png",
@@ -46,7 +46,7 @@ data:extend
                 height = 64,
                 scale = 0.5
             }
-        }]]
+        }
     },
     {
         localised_description = show_formula and {chemical_formula, "P[font=default-tiny-bold]4[/font]"} or nil,
@@ -70,6 +70,20 @@ data:extend
         weight = 5000
     }
 })
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
 
 -- FLUID
 white_phosphorus_gas = "white-phosphorus-gas"
@@ -121,12 +135,28 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = angelsmods.functions.fluid_color(""),
+        flow_color = angelsmods.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 -- RECIPE
-local recipe = "recipe"
 phosphate_ore_recipe = "ore-crystal-mix8-processing"
 data:extend
 ({
-    -- ANGELS RESOURCE REFINING
     {
         type = recipe,
         name = phosphate_ore,
@@ -149,13 +179,13 @@ data:extend
         results = {{type = item, name = phosphate_ore, amount = 4}},
         main_product = phosphate_ore
     },
-    -- ANGELS METALLURGY SMELTING
+    -- SMELTING
     {
         type = recipe,
         name = white_phosphorus_gas,
         category = chemistry,
         subgroup = is_phosphorus,
-        icons = FOUR_THREE_R_I(phosphate_ore, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, fluorite_ore_angels, carbon_dioxide_angels),
+        icons = FOUR_THREE_R_I(phosphate_ore, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
         order = b,
         enabled = false,
         auto_recycle = false,
@@ -173,7 +203,7 @@ data:extend
         {
             {type = fluid, name = white_phosphorus_gas, amount = 12},
             {type = item, name = slag_angels, amount = 32}, -- 72
-            {type = item, name = fluorite_ore_angels, amount = 4}, -- 8
+            {type = item, name = calcium_silicate, amount = 4}, -- 8
             {type = fluid, name = carbon_dioxide_angels, amount = 960} -- 1800
         },
         main_product = white_phosphorus_gas
@@ -272,73 +302,7 @@ data:extend
     }
 })
 
--- TECHNOLOGY
-local technology = "technology"
-phosphorus_processing = "phosphorus-processing"
-data:extend
-({
-    {
-        type = technology,
-        name = phosphorus_processing,
-        icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
-        prerequisites = {tech_advanced_ore_refining_3},
-        effects =
-        {
-            {type = unlock_recipe, recipe = white_phosphorus_gas},
-            {type = unlock_recipe, recipe = white_phosphorus},
-            {type = unlock_recipe, recipe = phosphorus_trichloride_liquid},
-            {type = unlock_recipe, recipe = phosphorus_pentachloride},
-            {type = unlock_recipe, recipe = phosphorus_pentafluoride_gas}
-        },
-        unit =
-        {
-            count = 100,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1}
-            },
-            time = 30
-        }
-    }
-})
-
---[[
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = ,
-        weight = 
-    }
-})
-
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})
-
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -357,25 +321,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
-
---[[
-data:extend
-({
-    {
-        type = ,
-        name = ,
-        icon = ,
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})
-]]
+})]]

@@ -533,12 +533,12 @@ data_fluid[hydrogen_fluoride_angels].subgroup = is_fluorine_fluids
 data_fluid[hydrogen_fluoride_angels].order = a
 data_recipe[hydrogen_fluoride_angels].category = angels_liquifying
 data_recipe[hydrogen_fluoride_angels].subgroup = is_fluorine_fluids
-data_recipe[hydrogen_fluoride_angels].icons = TWO_D_I(fluorite_ore_angels, sulfuric_acid_angels, hydrogen_fluoride_angels, calcium_sulfate_angels)
+data_recipe[hydrogen_fluoride_angels].icons = TWO_D_I(fluorite_angels, sulfuric_acid_angels, hydrogen_fluoride_angels, calcium_sulfate_angels)
 data_recipe[hydrogen_fluoride_angels].order = a
 -- CaF₂ + H₂SO₄ --> CaSO₄ + 2HF 
 data_recipe[hydrogen_fluoride_angels].ingredients =
 {
-    {type = item, name = fluorite_ore_angels, amount = 4},
+    {type = item, name = fluorite_angels, amount = 4},
     {type = fluid, name = sulfuric_acid_angels, amount = 60}
 }
 data_recipe[hydrogen_fluoride_angels].results =
@@ -780,12 +780,12 @@ data_recipe[sodium_perchlorate_angels].main_product = sodium_perchlorate_angels
 data_item[sodium_cobaltate_bob].localised_description = show_formula and {chemical_formula, "NaCoCO[font=default-tiny-bold]2[/font]"} or nil
 data_item[sodium_cobaltate_bob].order = k
 data_item[sodium_cobaltate_bob].stack_size = 200
-data_recipe[sodium_cobaltate_bob].icons = THREE_I(cobalt_oxide, sodium_carbonate_angels, sodium_cobaltate_bob)
+data_recipe[sodium_cobaltate_bob].icons = THREE_I(cobalt_oxide_II_III, sodium_carbonate_angels, sodium_cobaltate_bob)
 data_recipe[sodium_cobaltate_bob].order = k
 data_recipe[sodium_cobaltate_bob].energy_required = 8 -- 4Co₃O₄ + 6Na₂CO₃ + O₂ --> 12NaCoCO₂ + 6CO₂
 data_recipe[sodium_cobaltate_bob].ingredients =
 {
-    {type = item, name = cobalt_oxide, amount = 4},
+    {type = item, name = cobalt_oxide_II_III, amount = 4},
     {type = item, name = sodium_carbonate_angels, amount = 6},
     {type = fluid, name = oxygen_angels, amount = 15}
 }
@@ -1005,9 +1005,10 @@ data_recipe[perchloric_acid_angels].results =
 data_recipe[perchloric_acid_angels].main_product = perchloric_acid_angels
 
 -- CALCIUM
-data_item[fluorite_ore_angels].localised_description = show_formula and {chemical_formula, "CaF[font=default-tiny-bold]2[/font]"} or nil
-data_item[fluorite_ore_angels].subgroup = is_calcium
-data_item[fluorite_ore_angels].order = b
+data_item[fluorite_angels].localised_name = {"item-name.fluorite"}
+data_item[fluorite_angels].localised_description = show_formula and {chemical_formula, "CaF[font=default-tiny-bold]2[/font]"} or nil
+data_item[fluorite_angels].subgroup = is_calcium
+data_item[fluorite_angels].order = b
 
 data_item[calcium_sulfate_angels].localised_description = show_formula and {chemical_formula, "CaSO[font=default-tiny-bold]4[/font]"} or nil
 data_item[calcium_sulfate_angels].subgroup = is_calcium

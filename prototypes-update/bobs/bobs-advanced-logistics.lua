@@ -247,7 +247,7 @@ for _, TRANSPORT in pairs(artillery_wagons) do
     data_wagon_artillery[TRANSPORT.name].manual_range_modifier = 2
     data_wagon_artillery[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
 end
-local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, pipe, artillery_wagons, plate_1, plate_2)
+local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artillery_wagon, plate)
     data_item_entity[name].subgroup = is_artillery_wagon
     data_recipe[name].subgroup = is_artillery_wagon
     data_recipe[name].ingredients =
@@ -255,15 +255,13 @@ local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, pipe, 
         {type = item, name = gear_wheel, amount = 16},
         {type = item, name = bearing, amount = 8},
         {type = item, name = circuit, amount = 32},
-        {type = item, name = pipe, amount = 16},
-        {type = item, name = artillery_wagons, amount = 1},
-        {type = item, name = plate_1, amount = 32},
-        {type = item, name = plate_2, amount = 32}
+        {type = item, name = artillery_wagon, amount = 1},
+        {type = item, name = plate, amount = 32}
     }
 end
-artillery_wagon_recipe(artillery_wagon_1, steel_gear_wheel, steel_bearing, advanced_circuit, steel_pipe, artillery_turret_1, steel_plate, invar_plate_bob)
-artillery_wagon_recipe(artillery_wagon_2, titanium_gear_wheel, titanium_bearing, advanced_circuit, titanium_pipe, artillery_wagon_1, titanium_plate_bob, aluminium_plate_bob)
-artillery_wagon_recipe(artillery_wagon_3, nitinol_gear_wheel, nitinol_bearing, advanced_circuit, nitinol_pipe, artillery_wagon_2, nitinol_plate_bob, tungsten_carbide_bob)
+artillery_wagon_recipe(artillery_wagon_1, copper_tungsten_gear_wheel, copper_tungsten_bearing, advanced_processing_unit, artillery_turret_1, copper_tungsten_plate_bob)
+artillery_wagon_recipe(artillery_wagon_2, molybdenum_gear_wheel, rhenium_bearing, advanced_processing_unit, artillery_wagon_1, molybdenum_rhenium_plate)
+artillery_wagon_recipe(artillery_wagon_3, niobium_tungsten_molybdenum_gear_wheel, niobium_iron_bearing, advanced_processing_unit, artillery_wagon_2, niobium_titanium_plate)
 
 local car = "car"
 data_item_entity[car].weight = 1000000
@@ -299,6 +297,8 @@ for _, TRANSPORT in pairs(tanks) do
     data_car[TRANSPORT.name].energy_source.effectivity = TRANSPORT.effectivity
     data_car[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
 end
+data_car[tank_2].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower"}
+data_car[tank_3].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower", "bob-tank-laser"}
 local function tank_recipe(name, gear_wheel, bearing, circuit, vehicle, plate)
     data_recipe[name].ingredients =
     {

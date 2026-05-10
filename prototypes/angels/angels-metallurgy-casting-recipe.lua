@@ -1,4 +1,3 @@
-local recipe = "recipe"
 -- ANGELS METALLURGY CASTING
 -- STONE
 hazard_concrete_processing = "hazard-concrete-processing"

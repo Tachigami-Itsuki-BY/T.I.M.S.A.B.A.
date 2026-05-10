@@ -1,5 +1,3 @@
-local kW = "kW"
-local kJ = "kJ"
 -- SCRAP
 data_item[scrap].subgroup = is_scrap
 data_item[scrap].order = a
@@ -8,88 +6,25 @@ data_item[scrap].stack_size = 200
 local scrap_recycling = "scrap-recycling"
 data_recipe[scrap_recycling].subgroup = is_scrap
 data_recipe[scrap_recycling].icons = RECYCLING_I(recycling_png, scrap)
-data_recipe[scrap_recycling].order = a_b
-data_recipe[scrap_recycling].energy_required = 0.5
+data_recipe[scrap_recycling].order = a_a
+data_recipe[scrap_recycling].energy_required = 0.25 -- Scrap --> Construction scrap + Machinery scrap
 data_recipe[scrap_recycling].results =
 {
-    -- 0
-    {type = item, name = iron_gear_wheel,            amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false},
-    {type = item, name = steel_gear_wheel,           amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false},
-    {type = item, name = brass_gear_wheel,           amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false},
-    {type = item, name = ceramic_gear_wheel,         amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false},
-    {type = item, name = cobalt_steel_gear_wheel,    amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false},
-    {type = item, name = titanium_gear_wheel,        amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = nitinol_gear_wheel,         amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    --{type = item, name = copper_tungsten_gear_wheel, amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = steel_bearing,              amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = brass_bearing,              amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    -- 10
-    {type = item, name = ceramic_bearing,            amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false},
-    {type = item, name = cobalt_steel_bearing,       amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false},
-    {type = item, name = titanium_bearing,           amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = nitinol_bearing,            amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = copper_tungsten_bearing,    amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = battery_lead_acid,          amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
-    {type = item, name = battery_lithium_ion,        amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-    {type = item, name = battery_silver_zinc,        amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-    {type = item, name = low_density_structure,      amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-    {type = item, name = heat_shielding_tile,        amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-    -- 20
-    {type = item, name = basic_circuit_board,        amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = electronic_circuit,         amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
-    {type = item, name = advanced_circuit,           amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
-    {type = item, name = processing_unit,            amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-    {type = item, name = advanced_processing_unit,   amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-    {type = item, name = copper_cable,               amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
-    {type = item, name = tin_cable,                  amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
-    {type = item, name = silver_cable,               amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-    {type = item, name = gold_cable,                 amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-    --{type = item, name = platinum_cable,             amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false}, -- can be turned off
-    -- 30
-    {type = item, name = tungsten_plate_bob,         amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = glass_bob,                  amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false},
-    {type = item, name = concrete,                   amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = refined_concrete,           amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = clay_brick,                 amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = concrete_brick,             amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = reinforced_concrete_brick,  amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = bronze_plate_bob,           amount = 1, probability = 0.15, show_details_in_recipe_tooltip = false},
-    {type = item, name = invar_plate_bob,            amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false},
-    {type = item, name = wood,                       amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-    -- 40
-    {type = item, name = ice,                        amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = stone,                      amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
-    {type = item, name = holmium_ore,                amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-    --{type = item, name = iron_plate,                 amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = steel_plate,                amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = copper_plate,               amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = lead_plate_bob,             amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = tin_plate_bob,              amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = silicon_mono,               amount = 1, probability = 0.15, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = nickel_plate_bob,           amount = 1, probability = 0.15, show_details_in_recipe_tooltip = false}, -- can be turned off
-    -- 50
-    --{type = item, name = aluminium_plate_bob,        amount = 1, probability = 0.15, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = zinc_plate_bob,             amount = 1, probability = 0.15, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = silver_plate_bob,           amount = 1, probability = 0.15, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = titanium_plate_bob,         amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = gold_plate_bob,             amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = tungsten_carbide_bob,       amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false}, -- can be turned off
-    {type = item, name = copper_tungsten_plate_bob,  amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    {type = item, name = platinum_plate,             amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-    --{type = item, name = brass_plate_bob,            amount = 1, probability = 0.10, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = cobalt_steel_plate_bob,     amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false}, -- can be turned off
-    -- 60
-    --{type = item, name = nitinol_plate_bob,          amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false}, -- can be turned off
-    --{type = item, name = stone_brick,          amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false}, -- can be turned off
+    {type = item, name = construction_scrap, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
+    {type = item, name = machinery_scrap, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false}
 }
 
 -- HOLMIUM SMELTING
+local is_holmium = "is-holmium"
+
 data_item[holmium_ore].localised_description = show_formula and {chemical_formula, "Ho"} or nil
 data_item[holmium_ore].subgroup = is_holmium
 data_item[holmium_ore].order = a
 data_item[holmium_ore].stack_size = 200
 
 -- HOLMIUM CASTING
+local is_holmium_casting = "is-holmium-casting"
+
 data_item[holmium_plate].localised_description = show_formula and {chemical_formula, "Ho"} or nil
 data_item[holmium_plate].subgroup = is_holmium_casting
 data_item[holmium_plate].order = c
@@ -107,22 +42,45 @@ data_recipe[holmium_plate].allow_quality = false
 data_item[superconductor].subgroup = is_fulgora_recipe
 data_item[superconductor].order = a
 data_recipe[superconductor].subgroup = is_fulgora_recipe
+data_recipe[superconductor].icons = R_P_I(superconductor, nil, nil, number_1)
 data_recipe[superconductor].order = a
 data_recipe[superconductor].energy_required = 4
 data_recipe[superconductor].ingredients =
 {
-    {type = item, name = platinum_plate, amount = 4},
+    {type = item, name = platinum_cable, amount = 4},
+    {type = item, name = gold_cable, amount = 4},
     {type = item, name = plastic, amount = 4},
     {type = item, name = holmium_plate, amount = 4},
-    {type = fluid, name = fuel_oil_angels, amount = 60}
+    {type = fluid, name = electrolyte, amount = 60}
+}
+data_recipe[superconductor].results =
+{
+    {type = item, name = superconductor, amount = 2},
+    {type = fluid, name = electrolyte, amount = 30, ignored_by_productivity = 30}
+}
+data_recipe[superconductor].main_product = superconductor
+
+data_item[supercapacitor].subgroup = is_fulgora_recipe
+data_item[supercapacitor].order = b
+data_item[supercapacitor].stack_size = 200
+data_recipe[supercapacitor].subgroup = is_fulgora_recipe
+data_recipe[supercapacitor].order = b
+data_recipe[supercapacitor].energy_required = 8
+data_recipe[supercapacitor].ingredients =
+{
+    {type = item, name = battery_silver_zinc, amount = 4}, -- battery_graphene
+    {type = item, name = advanced_processing_unit, amount = 16},
+    {type = item, name = holmium_plate, amount = 8},
+    {type = item, name = superconductor, amount = 8},
+    {type = fluid, name = electrolyte, amount = 60}
 }
 
 data_fluid[electrolyte].subgroup = is_fulgora_recipe
-data_fluid[electrolyte].order = b
+data_fluid[electrolyte].order = c
 data_recipe[electrolyte].category = angels_advanced_chemistry
 data_recipe[electrolyte].subgroup = is_fulgora_recipe
 data_recipe[electrolyte].icons = FOUR_I(nitric_acid_angels, sulfuric_acid_angels, hydrochloric_acid_angels, electrolyte)
-data_recipe[electrolyte].order = b
+data_recipe[electrolyte].order = c
 data_recipe[electrolyte].energy_required = 4
 data_recipe[electrolyte].ingredients =
 {
@@ -133,21 +91,6 @@ data_recipe[electrolyte].ingredients =
 data_recipe[electrolyte].results[1].amount = 60
 data_recipe[electrolyte].allow_quality = false
 
-data_item[supercapacitor].subgroup = is_fulgora_recipe
-data_item[supercapacitor].order = c
-data_item[supercapacitor].stack_size = 200
-data_recipe[supercapacitor].subgroup = is_fulgora_recipe
-data_recipe[supercapacitor].order = c
-data_recipe[supercapacitor].energy_required = 8
-data_recipe[supercapacitor].ingredients =
-{
-    {type = item, name = battery_silver_zinc, amount = 4},
-    {type = item, name = advanced_processing_unit, amount = 16},
-    {type = item, name = holmium_plate, amount = 8},
-    {type = item, name = superconductor, amount = 8},
-    {type = fluid, name = electrolyte, amount = 60}
-}
-
 data_tool[electromagnetic_science_pack].subgroup = is_fulgora_recipe
 data_tool[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].subgroup = is_fulgora_recipe
@@ -155,10 +98,10 @@ data_recipe[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].energy_required = 8
 data_recipe[electromagnetic_science_pack].ingredients =
 {
-    {type = item, name = accumulator_3, amount = 1},
+    {type = item, name = accumulator_3, amount = 1}, -- accumulator_4
     {type = item, name = supercapacitor, amount = 1},
     {type = fluid, name = electrolyte, amount = 30},
-    {type = fluid, name = holmium_chloride_solution, amount = 30}
+    {type = fluid, name = holmium_chloride_III_solution, amount = 30}
 }
 
 -- BUILDING
@@ -172,20 +115,19 @@ data_recipe[recycler].order = a
 data_recipe[recycler].energy_required = 4
 data_recipe[recycler].ingredients =
 {
-    {type = item, name = copper_tungsten_gear_wheel, amount = 32},
+    {type = item, name = molybdenum_gear_wheel, amount = 32},
     {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = platinum_plate, amount = 16},
-    {type = item, name = copper_tungsten_plate_bob, amount = 16},
-    {type = item, name = concrete, amount = 16}
+    {type = item, name = molybdenum_plate, amount = 16},
+    {type = item, name = molybdenum_rhenium_plate, amount = 16},
+    {type = item, name = refined_concrete, amount = 16}
 }
 data_furnace[recycler].subgroup = is_fulgora_building
 data_furnace[recycler].order = a
 data_furnace[recycler].energy_usage = 225 .. kW
 data_furnace[recycler].energy_source.drain = 15 .. kW
 data_furnace[recycler].energy_source.emissions_per_minute.pollution = 4
-data_furnace[recycler].result_inventory_size = 60
+data_furnace[recycler].result_inventory_size = 80
 
-local electromagnetic_plant = "electromagnetic-plant"
 data_item[electromagnetic_plant].subgroup = is_fulgora_building
 data_item[electromagnetic_plant].order = b
 data_item[electromagnetic_plant].stack_size = 32
@@ -196,7 +138,7 @@ data_recipe[electromagnetic_plant].energy_required = 8
 data_recipe[electromagnetic_plant].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 64},
-    {type = item, name = platinum_plate, amount = 64},
+    {type = item, name = molybdenum_rhenium_plate, amount = 64},
     {type = item, name = refined_concrete, amount = 64},
     {type = item, name = holmium_plate, amount = 128}
 }
@@ -220,6 +162,8 @@ data_recipe[lightning_rod].ingredients =
 {
     {type = item, name = platinum_plate, amount = 8},
     {type = item, name = platinum_cable, amount = 16},
+    {type = item, name = steel_rod, amount = 8},
+    {type = item, name = advanced_processing_unit, amount = 1},
     {type = item, name = refined_concrete, amount = 4}
 }
 data_lightning_attractor[lightning_rod].subgroup = is_fulgora_building
@@ -235,7 +179,7 @@ data_recipe[lightning_collector].order = d
 data_recipe[lightning_collector].energy_required = 4
 data_recipe[lightning_collector].ingredients =
 {
-    {type = item, name = accumulator_3, amount = 1},
+    {type = item, name = accumulator_3, amount = 1}, -- accumulator_4
     {type = item, name = lightning_rod, amount = 1},
     {type = item, name = supercapacitor, amount = 8},
     {type = fluid, name = electrolyte, amount = 60}
@@ -288,6 +232,7 @@ data_recipe[tesla_turret].ingredients =
     {type = item, name = teslagun, amount = 1},
     {type = item, name = superconductor, amount = 64},
     {type = item, name = supercapacitor, amount = 8},
+    {type = item, name = molybdenum_rhenium_plate, amount = 64},
     {type = fluid, name = electrolyte, amount = 480}
 }
 data_electric_turret[tesla_turret].subgroup = is_fulgora_war

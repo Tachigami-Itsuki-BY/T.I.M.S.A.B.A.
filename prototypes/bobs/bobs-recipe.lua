@@ -1,5 +1,3 @@
-local B_F_L = require("lib.generator-icons").bearing_fluid_icon
-local recipe = "recipe"
 local is_gears = "bob-gears"
 local is_bearing_ball = "bob-bearings"
 advacned_deuterium_fuel_cell_reprocessing = "advacned-deuterium-fuel_cell-reprocessing"

@@ -1,4 +1,3 @@
-local recipe = "recipe"
 local is_ores = "angels-ores"
 if settings.startup[setting_no_spoilage].value then
     local types_to_clean = {"item", "ammo", "gun", "capsule", "tool", "repair-tool", "item-with-entity-data", "selection-tool"}

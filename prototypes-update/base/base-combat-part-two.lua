@@ -507,7 +507,7 @@ local function vehicle_energy_shield_eq_recipe(name, circuit, plate, energy_shie
     data_recipe[name].ingredients = ingredients
 end
 vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_1, electronic_circuit, steel_plate)
-vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_2, advanced_circuit, holmium_plate, vehicle_energy_shield_eq_1, productivity_module_1)
+vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_2, advanced_circuit, aluminium_plate_bob, vehicle_energy_shield_eq_1, productivity_module_1)
 if data_item[alien_artifact] then
     vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_3, processing_unit, alien_artifact, vehicle_energy_shield_eq_2, productivity_module_2)
     vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_4, advanced_processing_unit, nil, vehicle_energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)
@@ -995,8 +995,8 @@ local function artillery_turret_recipe(name, gear_wheel, circuit, plate_1, plate
     data_recipe[name].ingredients = ingredients
 end
 artillery_turret_recipe(artillery_turret_1, copper_tungsten_gear_wheel, advanced_processing_unit, refined_concrete, copper_tungsten_plate_bob)
-artillery_turret_recipe(artillery_turret_2, titanium_gear_wheel, advanced_processing_unit, silicon_nitride_bob, titanium_plate_bob, artillery_turret_1)
-artillery_turret_recipe(artillery_turret_3, nitinol_gear_wheel, advanced_processing_unit, tungsten_carbide_bob, nitinol_plate_bob, artillery_turret_2)
+artillery_turret_recipe(artillery_turret_2, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_plate, molybdenum_plate, artillery_turret_1)
+artillery_turret_recipe(artillery_turret_3, niobium_tungsten_molybdenum_gear_wheel, advanced_processing_unit, niobium_titanium_plate, niobium_tungsten_molybdenum_plate, artillery_turret_2)
 
 local plasma_turret_1 = "bob-plasma-turret-1"
 local plasma_turret_2 = "bob-plasma-turret-2"

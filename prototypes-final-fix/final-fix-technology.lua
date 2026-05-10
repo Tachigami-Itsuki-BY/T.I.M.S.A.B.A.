@@ -26,6 +26,8 @@ for _, tech in pairs(data.raw.technology) do
     end
 end
 
+data_technology[tech_holmium_smelting_1].research_trigger.count = 4096
+
 data_technology["steam-power"].research_trigger.count = 64
 data_technology["electronics"].research_trigger.count = 8
 data_technology["logistics-0"].research_trigger.count = 32

@@ -7,6 +7,8 @@ __macos/
 desktop.ini
 Thumbs.db
 .luarc.json
+.factorio-api
+Needed_for_TIMSABA/
 
 # --- Файлы Git ---
 .git/

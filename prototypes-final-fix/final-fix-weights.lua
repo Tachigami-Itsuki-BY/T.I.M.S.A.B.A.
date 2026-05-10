@@ -15,6 +15,7 @@ end
 for item_name, item_data in pairs(data.raw.item) do
     if item_name:find("asteroid") then
         item_data.stack_size = 64
+        item_data.weight = 15625
     end
 end
 

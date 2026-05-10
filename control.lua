@@ -1,9 +1,9 @@
 local surface_to_recipe =
 {
-    ["nauvis"]   = "extract-ground-water",
-    ["gleba"]    = "extract-ground-water",
+    ["nauvis"] = "extract-ground-water",
+    ["gleba"] = "extract-ground-water",
     ["vulcanus"] = "extract-ground-lava",
-    ["fulgora"]  = "extract-ground-angels-liquid-multi-phase-oil",
+    ["fulgora"] = "extract-ground-angels-liquid-multi-phase-oil",
     ["aquilo"] = "extract-ground-ammoniacal-solution",
     -- new planet
 }
@@ -16,8 +16,8 @@ script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_e
         entity.destroy()
         if player_index and game.players[player_index] then
             local player = game.players[player_index]
-            player.create_local_flying_text{text="You can't drill in space!", position=position}
-            player.insert{name="angels-ground-water-pump", count=1}
+            player.create_local_flying_text{text = {"mod-messages.cant-drill-in-space"}, position = position}
+            player.insert{name = "angels-ground-water-pump", count = 1}
         end
         return
     end
@@ -31,4 +31,34 @@ script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_e
         entity.recipe_locked = true
     end
     entity.active = true
+end)
+
+script.on_configuration_changed(function(data)
+    local changes = data.mod_changes["TIMSABA"]
+    if changes then
+        local old = changes.old_version
+        if not old or old < "0.1.0" then
+            local nauvis = game.surfaces["nauvis"]
+            if nauvis then
+                local mgs = nauvis.map_gen_settings
+                mgs.autoplace_controls["molybdenite-ore"] = {}
+                mgs.autoplace_controls["powellite-ore"] = {}
+                if not mgs.autoplace_settings.entity then
+                    mgs.autoplace_settings.entity = {settings = {}}
+                end
+                mgs.autoplace_settings.entity.settings["molybdenite-ore"] = {}
+                mgs.autoplace_settings.entity.settings["powellite-ore"] = {}
+                nauvis.map_gen_settings = mgs
+                nauvis.regenerate_entity("molybdenite-ore")
+                nauvis.regenerate_entity("powellite-ore")
+            end
+
+            local aquilo = game.surfaces["aquilo"]
+            if aquilo then
+                -- Добавьте логику для Аквило сюда по аналогии
+            end
+
+            game.print({"mod-messages.ores-regenerated"})
+        end
+    end
 end)

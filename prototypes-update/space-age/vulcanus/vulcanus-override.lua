@@ -1,4 +1,3 @@
-local kW = "kW"
 -- LAVA
 data_fluid[lava].subgroup = is_lava
 data_fluid[lava].order = a
@@ -39,30 +38,32 @@ data_recipe[stiratite_from_lava].surface_conditions = {{property = "pressure", m
 
 -- MOLTEN
 data_recipe[molten_iron].localised_name = {"recipe-name.molten-iron"}
-data_recipe[molten_iron].subgroup = is_molten
+data_recipe[molten_iron].subgroup = is_vulcanus_molten
 data_recipe[molten_iron].icons = TWO_I(iron_ingot, iron_molten_angels)
 data_recipe[molten_iron].order = a
-data_recipe[molten_iron].ingredients = {{type = item, name = iron_ingot, amount = 32}}
-data_recipe[molten_iron].results[1].amount = 480
+data_recipe[molten_iron].energy_required = 8
+data_recipe[molten_iron].ingredients = {{type = item, name = iron_ingot, amount = 16}}
+data_recipe[molten_iron].results[1].amount = 240
 data_recipe[molten_iron].allow_quality = false
 
 data_recipe[molten_copper].localised_name = {"recipe-name.molten-copper"}
-data_recipe[molten_copper].subgroup = is_molten
+data_recipe[molten_copper].subgroup = is_vulcanus_molten
 data_recipe[molten_copper].icons = TWO_I(copper_ingot, copper_molten_angels)
 data_recipe[molten_copper].order = c
-data_recipe[molten_copper].ingredients = {{type = item, name = copper_ingot, amount = 32}}
-data_recipe[molten_copper].results[1].amount = 480
+data_recipe[molten_copper].energy_required = 8
+data_recipe[molten_copper].ingredients = {{type = item, name = copper_ingot, amount = 16}}
+data_recipe[molten_copper].results[1].amount = 240
 data_recipe[molten_copper].allow_quality = false
 
 -- PLATE
-data_recipe[casting_iron].subgroup = is_plate
+data_recipe[casting_iron].subgroup = is_vulcanus_plate
 data_recipe[casting_iron].icons = TWO_I(iron_molten_angels, iron_plate)
 data_recipe[casting_iron].order = a
 data_recipe[casting_iron].energy_required = 4
 data_recipe[casting_iron].ingredients[1].amount = 60
 data_recipe[casting_iron].results[1].amount = 4
 
-data_recipe[casting_steel].subgroup = is_plate
+data_recipe[casting_steel].subgroup = is_vulcanus_plate
 data_recipe[casting_steel].icons = TWO_I(steel_molten_angels, steel_plate)
 data_recipe[casting_steel].order = b
 data_recipe[casting_steel].energy_required = 4
@@ -70,7 +71,7 @@ data_recipe[casting_steel].ingredients[1].name = steel_molten_angels
 data_recipe[casting_steel].ingredients[1].amount = 60
 data_recipe[casting_steel].results[1].amount = 4
 
-data_recipe[casting_copper].subgroup = is_plate
+data_recipe[casting_copper].subgroup = is_vulcanus_plate
 data_recipe[casting_copper].icons = TWO_I(copper_molten_angels, copper_plate)
 data_recipe[casting_copper].order = c
 data_recipe[casting_copper].energy_required = 4
@@ -78,19 +79,19 @@ data_recipe[casting_copper].ingredients[1].amount = 60
 data_recipe[casting_copper].results[1].amount = 4
 
 -- INTERMEDIATES
-data_recipe[casting_iron_rod].subgroup = is_intermediates
+data_recipe[casting_iron_rod].subgroup = is_vulcanus_rod
 data_recipe[casting_iron_rod].icons = TWO_I(iron_molten_angels, iron_rod)
 data_recipe[casting_iron_rod].order = a
 data_recipe[casting_iron_rod].ingredients[1].amount = 30
 
-data_recipe[casting_iron_gear_wheel].subgroup = is_intermediates
+data_recipe[casting_iron_gear_wheel].subgroup = is_vulcanus_gear_wheel
 data_recipe[casting_iron_gear_wheel].icons = TWO_I(iron_molten_angels, iron_gear_wheel)
-data_recipe[casting_iron_gear_wheel].order = b
+data_recipe[casting_iron_gear_wheel].order = a
 data_recipe[casting_iron_gear_wheel].ingredients[1].amount = 15
 
-data_recipe[casting_low_density_structure].subgroup = is_intermediates
+data_recipe[casting_low_density_structure].subgroup = "intermediate-product"
 data_recipe[casting_low_density_structure].icons = R_P_I(low_density_structure, nil, nil, number_2)
-data_recipe[casting_low_density_structure].order = h
+data_recipe[casting_low_density_structure].order = g_a
 data_recipe[casting_low_density_structure].energy_required = 16
 data_recipe[casting_low_density_structure].ingredients =
 {
@@ -99,23 +100,23 @@ data_recipe[casting_low_density_structure].ingredients =
     {type = fluid, name = titanium_molten_angels, amount = 30}
 }
 
-data_recipe[casting_copper_cable].subgroup = is_intermediates
+data_recipe[casting_copper_cable].subgroup = is_vulcanus_cable
 data_recipe[casting_copper_cable].icons = TWO_I(copper_molten_angels, copper_cable)
-data_recipe[casting_copper_cable].order = i
+data_recipe[casting_copper_cable].order = a
 data_recipe[casting_copper_cable].energy_required = 4
 data_recipe[casting_copper_cable].ingredients[1].amount = 60
-data_recipe[casting_copper_cable].results[1].amount = 8
+data_recipe[casting_copper_cable].results[1].amount = 16
 
 -- PIPE
 data_recipe[casting_iron_pipe].localised_name = {"recipe-name.casting-iron-pipe"}
-data_recipe[casting_iron_pipe].subgroup = is_pipe
+data_recipe[casting_iron_pipe].subgroup = is_vulcanus_pipe
 data_recipe[casting_iron_pipe].icons = TWO_I(iron_molten_angels, iron_pipe)
 data_recipe[casting_iron_pipe].order = a
 data_recipe[casting_iron_pipe].ingredients[1].amount = 15
 
 -- PIPE TO GROUND
 data_recipe[casting_iron_pipe_to_ground].localised_name = {"recipe-name.casting-iron-pipe-to-ground"}
-data_recipe[casting_iron_pipe_to_ground].subgroup = is_pipe_to_ground
+data_recipe[casting_iron_pipe_to_ground].subgroup = is_vulcanus_pipe_to_ground
 data_recipe[casting_iron_pipe_to_ground].icons = TWO_I(iron_molten_angels, iron_pipe_to_ground)
 data_recipe[casting_iron_pipe_to_ground].order = a
 data_recipe[casting_iron_pipe_to_ground].ingredients = {{type = fluid, name = iron_molten_angels, amount = 120}}
@@ -196,21 +197,43 @@ data_recipe[carbon].results =
 }
 data_recipe[carbon].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
--- TUNGSTEN
-data_resource[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
-data_resource[wolframite_ore].subgroup = is_vulcanus_tungsten
-data_resource[wolframite_ore].order = a
-data_resource[wolframite_ore].minable.mining_time = 4
+-- WOLFRAMITE
 data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
-data_item[wolframite_ore].localised_description = show_formula and {chemical_formula, "(Fe,Mn)WO[font=default-tiny-bold]4[/font]"} or nil
-data_item[wolframite_ore].subgroup = is_vulcanus_tungsten
+data_item[wolframite_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "   [item=bob-tungsten-ore] W\n",
+    "   [item=iron-ore] Fe\n",
+    "   [item=angels-manganese-ore] Mn\n",
+    "   [item=magnesium-ore] Mg\n",
+    "   [item=niobium-ore] Nb\n",
+    "   [item=rhenium-ore] Re"
+}
+data_item[wolframite_ore].subgroup = is_vulcanus_wolframite
 data_item[wolframite_ore].order = a
 data_item[wolframite_ore].stack_size = 200
+data_resource[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
+data_resource[wolframite_ore].localised_description =
+{
+    "",
+    "Can be refined and sorted for pure ores:\n",
+    "      [img=item/bob-tungsten-ore] Tungsten ore\n",
+    "      [img=item/iron-ore] Iron ore\n",
+    "      [img=item/angels-manganese-ore] Manganese ore\n",
+    "      [img=item/magnesium-ore] Magnesium ore\n",
+    "      [img=item/niobium-ore] Niobium ore\n",
+    "      [img=item/rhenium-ore] Rhenium ore"
+}
+data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
+data_resource[wolframite_ore].order = a
+data_resource[wolframite_ore].minable.mining_time = 4
 
+-- TUNGSTEN
 data_recipe[tungsten_carbide].category = angels_sintering_4
 data_recipe[tungsten_carbide].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_carbide].icons = THREE_I(tungsten_ore_bob, carbon_angels, tungsten_carbide_bob)
-data_recipe[tungsten_carbide].order = c
+data_recipe[tungsten_carbide].order = a
 data_recipe[tungsten_carbide].energy_required = 4
 data_recipe[tungsten_carbide].ingredients =
 {
@@ -222,40 +245,40 @@ data_recipe[tungsten_carbide].surface_conditions = {{property = "pressure", min 
 data_recipe[tungsten_plate].category = angels_sintering_4
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_ore_bob, tungsten_plate_bob)
-data_recipe[tungsten_plate].order = d
+data_recipe[tungsten_plate].order = b
 data_recipe[tungsten_plate].energy_required = 8
 data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_ore_bob, amount = 4}}
 data_recipe[tungsten_plate].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
 data_tool[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
-data_tool[metallurgic_science_pack].order = e
+data_tool[metallurgic_science_pack].order = c
 data_recipe[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
-data_recipe[metallurgic_science_pack].order = e
+data_recipe[metallurgic_science_pack].order = c
 data_recipe[metallurgic_science_pack].energy_required = 8
 data_recipe[metallurgic_science_pack].ingredients =
 {
     {type = item, name = tungsten_plate_bob, amount = 2},
     {type = item, name = tungsten_carbide_bob, amount = 4},
-    {type = fluid, name = chrome_molten_angels, amount = 240}
+    {type = fluid, name = lava, amount = 240}
 }
 
 local foundation = "foundation"
 data_item[foundation].subgroup = is_vulcanus_tungsten
-data_item[foundation].order = f
+data_item[foundation].order = d
 data_item[foundation].stack_size = 200
 data_recipe[foundation].subgroup = is_vulcanus_tungsten
-data_recipe[foundation].order = f
+data_recipe[foundation].order = d
 data_recipe[foundation].energy_required = 32
 data_recipe[foundation].ingredients =
 {
     {type = item, name = stone, amount = 16},
-    {type = item, name = lithium_bob, amount = 4},
-    {type = item, name = tungsten_plate_bob, amount = 4},
+    {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
+    {type = item, name = molybdenum_rhenium_plate, amount = 4},
     {type = item, name = carbon_fiber, amount = 4},
     {type = fluid, name = fluoroketone_cold, amount = 30}
 }
 data_tile[foundation].subgroup = is_vulcanus_tungsten
-data_tile[foundation].order = e
+data_tile[foundation].order = d
 
 -- LOGISTICS
 data_item[vulcanus_transport_belt].localised_name = {"item-name.vulcanus-transport-belt"}
@@ -265,11 +288,10 @@ data_recipe[vulcanus_transport_belt].localised_name = {"recipe-name.vulcanus-tra
 data_recipe[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_transport_belt].ingredients =
 {
-    {type = item, name = copper_tungsten_gear_wheel, amount = 2},
-    {type = item, name = copper_tungsten_bearing, amount = 4},
+    {type = item, name = molybdenum_gear_wheel, amount = 2},
+    {type = item, name = rhenium_bearing, amount = 4},
     {type = item, name = T5_transport_belt, amount = 2},
-    {type = item, name = copper_tungsten_plate_bob, amount = 2},
-    {type = fluid, name = lubricant, amount = 60}
+    {type = item, name = molybdenum_rhenium_plate, amount = 2}
 }
 data_recipe[vulcanus_transport_belt].results[1].amount = 2
 data_transport_belt[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
@@ -284,11 +306,10 @@ data_recipe[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_underground_belt].energy_required = 1
 data_recipe[vulcanus_underground_belt].ingredients =
 {
-    {type = item, name = copper_tungsten_gear_wheel, amount = 8},
-    {type = item, name = copper_tungsten_bearing, amount = 16},
+    {type = item, name = molybdenum_gear_wheel, amount = 8},
+    {type = item, name = rhenium_bearing, amount = 16},
     {type = item, name = T5_underground_belt, amount = 2},
-    {type = item, name = copper_tungsten_plate_bob, amount = 8},
-    {type = fluid, name = lubricant, amount = 240}
+    {type = item, name = molybdenum_rhenium_plate, amount = 8}
 }
 data_underground_belt[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
@@ -303,12 +324,11 @@ data_recipe[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_splitter].energy_required = 1
 data_recipe[vulcanus_splitter].ingredients =
 {
-    {type = item, name = copper_tungsten_gear_wheel, amount = 4},
-    {type = item, name = copper_tungsten_bearing, amount = 8},
+    {type = item, name = molybdenum_gear_wheel, amount = 4},
+    {type = item, name = rhenium_bearing, amount = 8},
     {type = item, name = advanced_processing_unit, amount = 2},
     {type = item, name = T5_splitter, amount = 1},
-    {type = item, name = copper_tungsten_plate_bob, amount = 4},
-    {type = fluid, name = lubricant, amount = 120}
+    {type = item, name = molybdenum_rhenium_plate, amount = 4}
 }
 data_splitter[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistics
@@ -325,10 +345,9 @@ data_recipe[foundry].energy_required = 8
 data_recipe[foundry].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 32},
-    {type = item, name = nitinol_plate_bob, amount = 64},
+    {type = item, name = molybdenum_rhenium_plate, amount = 64},
     {type = item, name = tungsten_carbide_bob, amount = 64},
-    {type = item, name = refined_concrete, amount = 16},
-    {type = fluid, name = lubricant, amount = 30}
+    {type = item, name = refined_concrete, amount = 16}
 }
 data_assembling[foundry].subgroup = is_vulcanus_building
 data_assembling[foundry].order = a
@@ -349,13 +368,13 @@ data_recipe[big_mining_drill].ingredients =
     {type = item, name = advanced_processing_unit, amount = 8},
     {type = item, name = electric_mining_drill_5, amount = 1},
     {type = item, name = tungsten_carbide_bob, amount = 16},
-    {type = fluid, name = chrome_molten_angels, amount = 240}
+    {type = item, name = molybdenum_rhenium_plate, amount = 16}
 }
 data_mining_drill[big_mining_drill].subgroup = is_vulcanus_building
 data_mining_drill[big_mining_drill].order = b
-data_mining_drill[big_mining_drill].mining_speed = 5
-data_mining_drill[big_mining_drill].module_slots = 5
-data_mining_drill[big_mining_drill].energy_usage = 240 .. kW
+data_mining_drill[big_mining_drill].mining_speed = 8
+data_mining_drill[big_mining_drill].module_slots = 8
+data_mining_drill[big_mining_drill].energy_usage = 2400 .. kW
 data_mining_drill[big_mining_drill].energy_source.emissions_per_minute.pollution = 32
 
 bobmods.lib.recipe.update_recycling_recipe
