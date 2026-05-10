@@ -1,4 +1,3 @@
-local kW = "kW"
 TIMSABA = TIMSABA or {}
 TIMSABA.triggers = TIMSABA.triggers or {}
 function TIMSABA.numeral_tier(icon_data, tier, tint)
@@ -7,9 +6,6 @@ function TIMSABA.numeral_tier(icon_data, tier, tint)
 end
 
 -- ANGELS RESOURCE REFINING
-local recipe = "recipe"
-local electric = "electric"
-local secondary_input = "secondary-input"
 data:extend
 ({
     -- ORE CRUSHER
@@ -96,10 +92,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = nitinol_pipe, amount = 16},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 8},
             {type = item, name = reinforced_concrete_brick, amount = 32},
-            {type = item, name = nitinol_plate_bob, amount = 16},
+            {type = item, name = copper_tungsten_plate_bob, amount = 16},
             {type = item, name = ore_floatation_cell_3, amount = 1}
         },
         results = {{type = item, name = ore_floatation_cell_4, amount = 1}},
@@ -154,10 +150,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 8},
             {type = item, name = reinforced_concrete_brick, amount = 32},
-            {type = item, name = copper_tungsten_plate_bob, amount = 16},
+            {type = item, name = molybdenum_rhenium_plate, amount = 16},
             {type = item, name = ore_leaching_plant_3, amount = 1}
         },
         results = {{type = item, name = ore_leaching_plant_4, amount = 1}},
@@ -214,7 +210,7 @@ data:extend
         {
             {type = item, name = advanced_processing_unit, amount = 16},
             {type = item, name = reinforced_concrete_brick, amount = 128},
-            {type = item, name = copper_tungsten_plate_bob, amount = 32},
+            {type = item, name = molybdenum_rhenium_plate, amount = 32},
             {type = item, name = ore_refinery_2, amount = 1}
         },
         results = {{type = item, name = ore_refinery_3, amount = 1}},
@@ -270,7 +266,7 @@ data:extend
         {
             {type = item, name = advanced_processing_unit, amount = 16},
             {type = item, name = reinforced_concrete_brick, amount = 128},
-            {type = item, name = holmium_plate, amount = 32},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 32},
             {type = item, name = ore_refinery_3, amount = 1}
         },
         results = {{type = item, name = ore_refinery_4, amount = 1}},
@@ -384,9 +380,9 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = nitinol_gear_wheel, amount = 4},
+            {type = item, name = copper_tungsten_gear_wheel, amount = 4},
             {type = item, name = reinforced_concrete_brick, amount = 8},
-            {type = item, name = nitinol_plate_bob, amount = 4},
+            {type = item, name = copper_tungsten_plate_bob, amount = 4},
             {type = item, name = powderizer_3, amount = 1}
         },
         results = {{type = item, name = powderizer_4, amount = 1}},
@@ -557,10 +553,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = nitinol_pipe, amount = 16},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = reinforced_concrete_brick, amount = 16},
-            {type = item, name = nitinol_plate_bob, amount = 8},
+            {type = item, name = copper_tungsten_plate_bob, amount = 8},
             {type = item, name = filtration_unit_3, amount = 1}
         },
         results = {{type = item, name = filtration_unit_4, amount = 1}},
@@ -615,10 +611,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = nitinol_pipe, amount = 16},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = reinforced_concrete_brick, amount = 64},
-            {type = item, name = nitinol_plate_bob, amount = 32},
+            {type = item, name = copper_tungsten_plate_bob, amount = 32},
             {type = item, name = crystallizer_3, amount = 1}
         },
         results = {{type = item, name = crystallizer_4, amount = 1}},
@@ -1040,8 +1036,8 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = tungsten_pipe, amount = 16},
-            {type = item, name = tungsten_plate_bob, amount = 64},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = copper_tungsten_plate_bob, amount = 64},
             {type = item, name = reinforced_concrete_brick, amount = 64},
             {type = item, name = salination_plant_2, amount = 1}
         },
@@ -1097,8 +1093,8 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = copper_tungsten_pipe, amount = 16},
-            {type = item, name = copper_tungsten_plate_bob, amount = 64},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
+            {type = item, name = molybdenum_rhenium_plate, amount = 64},
             {type = item, name = reinforced_concrete_brick, amount = 64},
             {type = item, name = salination_plant_3, amount = 1}
         },
@@ -1277,8 +1273,8 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = tungsten_pipe, amount = 16},
-            {type = item, name = tungsten_plate_bob, amount = 16},
+            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = copper_tungsten_plate_bob, amount = 16},
             {type = item, name = reinforced_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_2, amount = 1}
         },
@@ -1295,8 +1291,8 @@ data:extend
             icons = TIMSABA.numeral_tier({icon = "__angelspetrochemgraphics__/graphics/icons/advanced-chemical-plant.png", icon_size = 32}, 3, angelsmods.petrochem.number_tint),
             order = c,
             minable = {result = advanced_chemical_plant_3},
-            module_slots = 4,
-            crafting_speed = 4,
+            module_slots = 3,
+            crafting_speed = 3,
             energy_source =
             {
                 type = electric,
@@ -1334,8 +1330,8 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_pipe, amount = 16},
-            {type = item, name = copper_tungsten_plate_bob, amount = 16},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
+            {type = item, name = molybdenum_rhenium_plate, amount = 16},
             {type = item, name = reinforced_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_3, amount = 1}
         },

@@ -44,22 +44,22 @@ for recipe_name, _ in pairs(data_recipe) do
     end
 end
 
-data_item[lead_oxide].hidden = false
-data_item[lead_oxide].hidden_in_factoriopedia = false
+data_item[lead_oxide_II].hidden = false
+data_item[lead_oxide_II].hidden_in_factoriopedia = false
 data_item[silicon_powder].hidden = false
 data_item[silicon_powder].hidden_in_factoriopedia = false
 data_recipe[silicon_powder].hidden = false
 data_recipe[silicon_powder].hidden_in_factoriopedia = false
 data_item[aluminium_oxide].hidden = false
 data_item[aluminium_oxide].hidden_in_factoriopedia = false
-data_item[silver_nitrate].hidden = false
-data_item[silver_nitrate].hidden_in_factoriopedia = false
-data_item[cobalt_oxide].hidden = false
-data_item[cobalt_oxide].hidden_in_factoriopedia = false
+data_item[silver_nitrate_I].hidden = false
+data_item[silver_nitrate_I].hidden_in_factoriopedia = false
+data_item[cobalt_oxide_II_III].hidden = false
+data_item[cobalt_oxide_II_III].hidden_in_factoriopedia = false
 data_item[tungsten_powder].hidden = false
 data_item[tungsten_powder].hidden_in_factoriopedia = false
-data_item[tungsten_oxide].hidden = false
-data_item[tungsten_oxide].hidden_in_factoriopedia = false
+data_item[tungsten_oxide_VI].hidden = false
+data_item[tungsten_oxide_VI].hidden_in_factoriopedia = false
 
 -- BOBS FIX
 data_fluid[nitroglycerin_bob].subgroup = is_explosives

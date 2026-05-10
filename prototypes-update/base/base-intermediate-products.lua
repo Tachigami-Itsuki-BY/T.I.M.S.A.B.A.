@@ -1,6 +1,3 @@
-local B_F_L = require("lib.generator-icons").bearing_fluid_icon
-local kJ = "kJ"
-
 data_recipe[automation_science_pack].energy_required = 4
 
 data_recipe[logistic_science_pack].energy_required = 4
@@ -197,7 +194,7 @@ data_recipe[battery_lead_acid].order = a
 data_recipe[battery_lead_acid].ingredients =
 {
     {type = item, name = lead_plate_bob, amount = 2},
-    {type = item, name = lead_dioxide, amount = 1},
+    {type = item, name = lead_oxide_IV, amount = 1},
     {type = item, name = lead_sponge, amount = 1},
     {type = item, name = plastic, amount = 2},
     {type = fluid, name = sulfuric_acid_angels, amount = 30},
@@ -210,7 +207,7 @@ data_recipe[battery_lithium_ion].energy_required = 4
 data_recipe[battery_lithium_ion].ingredients =
 {
     {type = item, name = lithium_perchlorate_bob, amount = 2},
-    {type = item, name = lithium_cobalt_oxide_bob, amount = 1},
+    {type = item, name = lithium_cobalt_oxide_III_bob, amount = 1},
     {type = item, name = carbon_angels, amount = 1},
     {type = item, name = plastic, amount = 2},
     {type = fluid, name = ethylene_carbonate, amount = 30},
@@ -222,7 +219,7 @@ data_recipe[battery_silver_zinc].order = c
 data_recipe[battery_silver_zinc].energy_required = 4
 data_recipe[battery_silver_zinc].ingredients =
 {
-    {type = item, name = silver_oxide_bob, amount = 1},
+    {type = item, name = silver_oxide_I_bob, amount = 1},
     {type = item, name = zinc_plate_bob, amount = 1},
     {type = item, name = plastic, amount = 4},
     {type = fluid, name = sodium_hydroxide_solution_angels, amount = 60}
@@ -329,7 +326,7 @@ data_recipe[circuit_board].ingredients =
     {type = item, name = phenolic_board, amount = 1},
     {type = item, name = copper_plate, amount = 2},
     {type = item, name = tin_plate_bob, amount = 2},
-    {type = fluid, name = ferric_chloride_solution_angels, amount = 15}
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 15}
 }
 
 data_recipe[superior_circuit_board].energy_required = 4
@@ -338,7 +335,7 @@ data_recipe[superior_circuit_board].ingredients =
     {type = item, name = glass_fiber_board, amount = 1},
     {type = item, name = copper_plate, amount = 2},
     {type = item, name = silver_plate_bob, amount = 2},
-    {type = fluid, name = ferric_chloride_solution_angels, amount = 15}
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 15}
 }
 
 data_recipe[multi_layer_circuit_board].energy_required = 8
@@ -347,7 +344,7 @@ data_recipe[multi_layer_circuit_board].ingredients =
     {type = item, name = glass_fiber_board, amount = 1},
     {type = item, name = copper_plate, amount = 4},
     {type = item, name = gold_plate_bob, amount = 4},
-    {type = fluid, name = ferric_chloride_solution_angels, amount = 30}
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 30}
 }
 
 data_recipe[basic_circuit_board].ingredients =

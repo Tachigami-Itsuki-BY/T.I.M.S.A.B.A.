@@ -1,9 +1,8 @@
 local aquilo = "aquilo"
-is_antimony = "is-antimony"
-is_antimony_chemistry = "is-antimony-chemistry"
-is_antimony_casting = "is-antimony-casting"
-is_aquilo_fluorine = "is-aquilo-fluorine"
 is_aquilo_air = "is-aquilo-air"
+is_aquilo_fluorine = "is-aquilo-fluorine"
+is_antimonite = "is-antimonite"
+is_germanite = "is-germanite"
 is_aquilo_recipe = "is-aquilo-recipe"
 is_aquilo_building = "is-aquilo-building"
 is_aquilo_power = "is-aquilo-power"
@@ -19,21 +18,9 @@ data:extend
     },
     {
         type = item_subgroup,
-        name = is_antimony,
+        name = is_aquilo_air,
         group = aquilo,
         order = a
-    },
-    {
-        type = item_subgroup,
-        name = is_antimony_chemistry,
-        group = aquilo,
-        order = a_a
-    },
-    {
-        type = item_subgroup,
-        name = is_antimony_casting,
-        group = aquilo,
-        order = a_b
     },
     {
         type = item_subgroup,
@@ -43,32 +30,38 @@ data:extend
     },
     {
         type = item_subgroup,
-        name = is_aquilo_air,
+        name = is_antimonite,
         group = aquilo,
         order = c
     },
     {
         type = item_subgroup,
-        name = is_aquilo_recipe,
-        group = aquilo,
-        order = d
-    },
-    {
-        type = item_subgroup,
-        name = is_aquilo_building,
+        name = is_germanite,
         group = aquilo,
         order = e
     },
     {
         type = item_subgroup,
+        name = is_aquilo_recipe,
+        group = aquilo,
+        order = j
+    },
+    {
+        type = item_subgroup,
+        name = is_aquilo_building,
+        group = aquilo,
+        order = k
+    },
+    {
+        type = item_subgroup,
         name = is_aquilo_power,
         group = aquilo,
-        order = f
+        order = l
     },
     {
         type = item_subgroup,
         name = is_aquilo_war,
         group = aquilo,
-        order = g
+        order = m
     }
 })

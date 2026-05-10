@@ -62,8 +62,26 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 -- FLUORINE
-chloroform_luiqd = "chloroform-luiqd"
+chloroform_liquid = "chloroform-liquid"
 difluorochloromethane_gas = "difluorochloromethane-gas"
 tetrafluoroethylene_gas = "tetrafluoroethylene-gas"
 hexafluoropropylene_gas = "hexafluoropropylene-gas"
@@ -73,7 +91,7 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "CHCl[font=default-tiny-bold]3[/font]"} or nil,
         type = fluid,
-        name = chloroform_luiqd,
+        name = chloroform_liquid,
         subgroup = is_aquilo_fluorine,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/chloroform-luiqd.png",
         order = c,
@@ -142,19 +160,8 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    },
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
         type = fluid,
@@ -169,5 +176,156 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     }
+})]]
+
+-- SEMICONDUCTOR ITEM
+sodium_nitrite = "sodium-nitrite"
+semiconductor = "semiconductor"
+data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, "NaNO[font=default-tiny-bold]2[/font]"} or nil,
+        type = item,
+        name = sodium_nitrite,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/sodium-nitrite.png",
+        order = i,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        type = item,
+        name = semiconductor,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/semiconductor.png",
+        order = n,
+        stack_size = 200,
+        weight = 5000
+    }
 })
-]]
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
+-- SEMICONDUCTOR FLUID
+nitrobenzene_liquid = "nitrobenzene-liquid"
+aniline_liquid = "aniline-liquid"
+benzenediazonium_chloride_solution = "benzenediazonium-chloride-solution"
+lactic_acid = "lactic-acid"
+ethyl_lactate_liquid = "ethyl-lactate-liquid"
+photoresist_liquid = "photoresist-liquid"
+data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]5[/font]NO[font=default-tiny-bold]2[/font]"} or nil,
+        type = fluid,
+        name = nitrobenzene_liquid,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/nitrobenzene-liquid.png",
+        order = g,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C6H5NO2"),
+        flow_color = TIMSABA.functions.flow_color("C6H5NO2"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]7[/font]N"} or nil,
+        type = fluid,
+        name = aniline_liquid,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/aniline-liquid.png",
+        order = h,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C6H7N"),
+        flow_color = TIMSABA.functions.flow_color("C6H7N"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]5[/font]N[font=default-tiny-bold]2[/font]Cl[font=default-tiny-bold](aq)[/font]"} or nil,
+        type = fluid,
+        name = benzenediazonium_chloride_solution,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/benzenediazonium-chloride-solution.png",
+        order = j,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C6H5N2ClWp"),
+        flow_color = TIMSABA.functions.flow_color("C6H5N2ClWp"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]3[/font]"} or nil,
+        type = fluid,
+        name = lactic_acid,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/lactic-acid.png",
+        order = k,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C3H6O3"),
+        flow_color = TIMSABA.functions.flow_color("C3H6O3"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]5[/font]H[font=default-tiny-bold]10[/font]O[font=default-tiny-bold]3[/font]"} or nil,
+        type = fluid,
+        name = ethyl_lactate_liquid,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/ethyl-lactate-liquid.png",
+        order = l,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C5H10O3"),
+        flow_color = TIMSABA.functions.flow_color("C5H10O3"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        type = fluid,
+        name = photoresist_liquid,
+        subgroup = is_aquilo_recipe,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/photoresist-liquid.png",
+        order = m,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = {r = 0.95, g = 0.90, b = 0.50},
+        flow_color = {r = 1.0, g = 0.95, b = 0.70},
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]

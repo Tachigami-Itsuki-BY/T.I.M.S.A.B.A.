@@ -345,9 +345,9 @@ local atomic_artillery_shell = "bob-atomic-artillery-shell"
 data_ammo[atomic_artillery_shell].stack_size = 32
 data_ammo[atomic_artillery_shell].weight = 31250
 if mods [shattered_mods] then
-    data_recipe[atomic_artillery_shell].icons = R_P_I(artillery_shell, nil, plutonium_239_shattered)
+    data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_shattered)
 else
-    data_recipe[atomic_artillery_shell].icons = R_P_I(artillery_shell, nil, plutonium_239_bob)
+    data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_bob)
 end
 data_recipe[atomic_artillery_shell].energy_required = 64
 data_recipe[atomic_artillery_shell].ingredients =
@@ -1396,7 +1396,7 @@ local function energy_shield_eq_recipe(name, circuit, plate, energy_shield_eq, m
     data_recipe[name].ingredients = ingredients
 end
 energy_shield_eq_recipe(energy_shield_eq_1, electronic_circuit, steel_plate)
-energy_shield_eq_recipe(energy_shield_eq_2, advanced_circuit, holmium_plate, energy_shield_eq_1, productivity_module_1)
+energy_shield_eq_recipe(energy_shield_eq_2, advanced_circuit, aluminium_plate_bob, energy_shield_eq_1, productivity_module_1)
 if data_item[alien_artifact] then
     energy_shield_eq_recipe(energy_shield_eq_3, processing_unit, alien_artifact, energy_shield_eq_2, productivity_module_2)
     energy_shield_eq_recipe(energy_shield_eq_4, advanced_processing_unit, nil, energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)

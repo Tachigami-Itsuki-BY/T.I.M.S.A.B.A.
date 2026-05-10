@@ -1,4 +1,3 @@
-local recipe = "recipe"
 -- ANGELS PETROCHEM REFINING
 -- COAL
 data:extend
@@ -436,12 +435,12 @@ data:extend
         {
             {type = fluid, name = acetylene_gas, amount = 120},
             {type = fluid, name = hydrocyanic_acid, amount = 120},
-            {type = fluid, name = ammonium_dichlorocuprate_solution, amount = 60}
+            {type = fluid, name = ammonium_dichlorocuprate_I_solution, amount = 60}
         },
         results =
         {
             {type = fluid, name = acrylonitrile, amount = 120},
-            {type = fluid, name = ammonium_dichlorocuprate_solution, amount = 30}
+            {type = fluid, name = ammonium_dichlorocuprate_I_solution, amount = 30}
         },
         main_product = acrylonitrile
     },
@@ -1361,7 +1360,7 @@ data:extend
         category = chemistry,
         subgroup = is_calcium_fluids,
         icons = TWO_D_I(calcium_hydroxide, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
-        order = a,
+        order = b,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
@@ -1377,7 +1376,8 @@ data:extend
         {
             {type = fluid, name = calcium_chloride_solution, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
-        }
+        },
+        main_product = calcium_chloride_solution
     },
     {
         type = recipe,
@@ -1385,7 +1385,7 @@ data:extend
         category = chemistry,
         subgroup = is_calcium_fluids,
         icons = THREE_I(calcium_hydroxide, water_purified_angels, calcium_hydroxide_solution),
-        order = b,
+        order = c,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
@@ -1649,7 +1649,7 @@ data:extend
         name = formic_acid,
         category = chemistry,
         subgroup = is_carbon_fluids_2,
-        icons = THREE_D_I(formaldehyde_angels, nil, copper_hydroxide, formic_acid, copper_oxide, water_purified_angels),
+        icons = THREE_D_I(formaldehyde_angels, nil, copper_hydroxide_II, formic_acid, copper_oxide_I, water_purified_angels),
         order = e,
         enabled = false,
         auto_recycle = false,
@@ -1660,12 +1660,12 @@ data:extend
         ingredients =
         {
             {type = fluid, name = formaldehyde_angels, amount = 60},
-            {type = item, name = copper_hydroxide, amount = 4}
+            {type = item, name = copper_hydroxide_II, amount = 4}
         },
         results =
         {
             {type = fluid, name = formic_acid, amount = 60},
-            {type = item, name = copper_oxide, amount = 2},
+            {type = item, name = copper_oxide_I, amount = 2},
             {type = fluid, name = water_purified_angels, amount = 30} -- 60
         },
         main_product = formic_acid

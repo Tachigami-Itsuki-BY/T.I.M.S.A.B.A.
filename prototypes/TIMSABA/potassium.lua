@@ -1,19 +1,28 @@
 -- GROUPS
 local smelting = "angels-smelting"
 local is_potassium = "is-potassium"
+local is_potassium_fluid = "is-potassium-fluid"
 data:extend
 ({
     {
         type = item_subgroup,
         name = is_potassium,
         group = smelting,
-        order = s
+        order = v
+    },
+    {
+        type = item_subgroup,
+        name = is_potassium_fluid,
+        group = smelting,
+        order = v_a
     }
 })
+
 -- ITEM
 carnallite = "carnallite"
+potassium_chloride = "potassium-chloride"
 potassium_hydroxide = "potassium-hydroxide"
-potassium_permanganate = "potassium-permanganate"
+potassium_chlorate = "potassium-chlorate"
 data:extend
 ({
     {
@@ -48,6 +57,16 @@ data:extend
         }
     },
     {
+        localised_description = show_formula and {chemical_formula, "KCl"} or nil,
+        type = item,
+        name = potassium_chloride,
+        subgroup = is_potassium,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chloride.png",
+        order = b,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
         localised_description = show_formula and {chemical_formula, "KOH"} or nil,
         type = item,
         name = potassium_hydroxide,
@@ -57,22 +76,40 @@ data:extend
         stack_size = 200,
         weight = 5000
     },
-    --[[{
-        localised_description = show_formula and {chemical_formula, "KMnO[font=default-tiny-bold]4[/font]"} or nil,
+    -- d potassium_hypochlorite
+    {
+        localised_description = show_formula and {chemical_formula, "KClO[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
-        name = potassium_permanganate,
+        name = potassium_chlorate,
         subgroup = is_potassium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-permanganate.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chlorate.png",
         order = e,
         stack_size = 200,
         weight = 5000
-    }]]
+    }
+    -- f potassium_perchlorate
+    -- g potassium_sulfate
 })
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
 
 -- FLUID
 potassium_chloride_solution = "potassium-chloride-solution"
 potassium_hydroxide_solution = "potassium-hydroxide-solution"
 potassium_hypochlorite_solution = "potassium-hypochlorite-solution"
+potassium_chlorate_solution = "potassium-chlorate-solution"
 potassium_sulfate_solution = "potassium-sulfate-solution"
 data:extend
 ({
@@ -80,7 +117,7 @@ data:extend
         localised_description = show_formula and {chemical_formula, "KCl[font=default-tiny-bold](aq)[/font]"} or nil,
         type = fluid,
         name = potassium_chloride_solution,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chloride-solution.png",
         order = b,
         default_temperature = 0,
@@ -94,9 +131,9 @@ data:extend
         localised_description = show_formula and {chemical_formula, "KOH[font=default-tiny-bold](aq)[/font]"} or nil,
         type = fluid,
         name = potassium_hydroxide_solution,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-hydroxide-solution.png",
-        order = d,
+        order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("KOHWp"),
@@ -108,9 +145,9 @@ data:extend
         localised_description = show_formula and {chemical_formula, "KClO[font=default-tiny-bold](aq)[/font]"} or nil,
         type = fluid,
         name = potassium_hypochlorite_solution,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-hypochlorite-solution.png",
-        order = f,
+        order = d,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("KClOWp"),
@@ -119,10 +156,25 @@ data:extend
         auto_barrel = false
     },
     {
+        localised_description = show_formula and {chemical_formula, "KClO[font=default-tiny-bold]3(aq)[/font]"} or nil,
+        type = fluid,
+        name = potassium_chlorate_solution,
+        subgroup = is_potassium_fluid,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chlorate-solution.png",
+        order = e,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = angelsmods.functions.fluid_color("KClO3Wp"),
+        flow_color = angelsmods.functions.flow_color("KClO3Wp"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    -- f potassium_perchlorate_solution
+    {
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]SO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
         name = potassium_sulfate_solution,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-sulfate-solution.png",
         order = g,
         default_temperature = 0,
@@ -134,8 +186,26 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = angelsmods.functions.fluid_color(""),
+        flow_color = angelsmods.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 -- RECIPE
-local recipe = "recipe"
+carnallite_reprocessing = "carnallite-reprocessing"
 potassium_hydroxide_solution_from_potassium_sulfate_solution = "potassium-hydroxide-solution-from-potassium-sulfate-solution"
 data:extend
 ({
@@ -154,32 +224,6 @@ data:extend
         energy_required = 4,
         ingredients = {{type = fluid, name = water_saline_angels, amount = 960}},
         results = {{type = item, name = carnallite, amount = 16}},
-    },
-    {
-        type = recipe,
-        name = potassium_chloride_solution,
-        category = angels_advanced_chemistry,
-        subgroup = is_potassium,
-        icons = THREE_D_I(carnallite, nil, water_purified_angels, potassium_chloride_solution, magnesium_chloride_solution, water),
-        order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- KCl * MgCl₂ * 6H₂O + 2H₂O --> KCl(aq) + MgCl₂(aq) + 6H₂O
-        ingredients =
-        {
-            {type = item, name = carnallite, amount = 8},
-            {type = fluid, name = water_purified_angels, amount = 240}
-        },
-        results =
-        {
-            {type = fluid, name = potassium_chloride_solution, amount = 120},
-            {type = fluid, name = magnesium_chloride_solution, amount = 120},
-            {type = fluid, name = water, amount = 720}
-        },
-        main_product = potassium_chloride_solution
     },
     {
         type = recipe,
@@ -210,11 +254,80 @@ data:extend
     },
     {
         type = recipe,
+        name = potassium_chlorate,
+        category = chemistry,
+        subgroup = is_potassium,
+        icons = THREE_R_I(potassium_chlorate_solution, potassium_chlorate, steam),
+        order = e,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- KClO₃(aq) --> KClO₃ + H₂O(g)
+        ingredients = {{type = fluid, name = potassium_chlorate_solution, amount = 4}},
+        results =
+        {
+            {type = item, name = potassium_chlorate, amount = 4},
+            {type = fluid, name = steam, amount = 30} -- 60
+        },
+        main_product = potassium_chlorate
+    },
+    -- FLUID
+    {
+        type = recipe,
+        name = carnallite_reprocessing,
+        category = angels_advanced_chemistry,
+        subgroup = is_potassium_fluid,
+        icons = THREE_D_I(carnallite, nil, water_purified_angels, potassium_chloride_solution, magnesium_chloride_solution, water),
+        order = a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- KCl * MgCl₂ * 6H₂O + 2H₂O --> KCl(aq) + MgCl₂(aq) + 6H₂O
+        ingredients =
+        {
+            {type = item, name = carnallite, amount = 8},
+            {type = fluid, name = water_purified_angels, amount = 240}
+        },
+        results =
+        {
+            {type = fluid, name = potassium_chloride_solution, amount = 120},
+            {type = fluid, name = magnesium_chloride_solution, amount = 120},
+            {type = fluid, name = water, amount = 720}
+        },
+        main_product = potassium_chloride_solution
+    },
+    {
+        type = recipe,
+        name = potassium_chloride_solution,
+        category = angels_liquifying,
+        subgroup = is_potassium_fluid,
+        icons = THREE_I(potassium_chloride, water_purified_angels, potassium_chloride_solution),
+        order = b,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- KCl(s) + H₂O(l) --> KCl(aq)
+        ingredients =
+        {
+            {type = item, name = potassium_chloride, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 60}
+        },
+        results = {{type = fluid, name = potassium_chloride_solution, amount = 60}},
+        main_product = potassium_chloride_solution
+    },
+    {
+        type = recipe,
         name = potassium_hydroxide_solution,
         category = angels_liquifying,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icons = THREE_I(potassium_hydroxide, water_purified_angels, potassium_hydroxide_solution),
-        order = d,
+        order = c,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
@@ -233,9 +346,9 @@ data:extend
         type = recipe,
         name = potassium_hydroxide_solution_from_potassium_sulfate_solution,
         category = angels_petrochem_electrolyser,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icons = TWO_D_I(potassium_sulfate_solution, water_purified_angels, potassium_hydroxide_solution, sulfuric_acid_angels),
-        order = d_a,
+        order = c_a,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
@@ -256,41 +369,13 @@ data:extend
         },
         main_product = potassium_hydroxide_solution
     },
-    --[[{
-        type = recipe,
-        name = potassium_permanganate,
-        category = angels_advanced_chemistry,
-        subgroup = is_potassium,
-        icons = FOUR_THREE_I(manganese_oxide, potassium_hydroxide_solution, oxygen_angels, chlorine_angels, potassium_permanganate, potassium_chloride_solution, water_purified_angels),
-        order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8, -- 2MnO₂ + 4KOH(aq) + O₂ + Cl₂ --> 2KMnO₄(s) + 2KCl(aq) + 4H₂O
-        ingredients =
-        {
-            {type = item, name = manganese_oxide, amount = 16},
-            {type = fluid, name = potassium_hydroxide_solution, amount = 480},
-            {type = fluid, name = oxygen_angels, amount = 120},
-            {type = fluid, name = chlorine_angels, amount = 120}
-        },
-        results =
-        {
-            {type = item, name = potassium_permanganate, amount = 16},
-            {type = fluid, name = potassium_chloride_solution, amount = 120}, -- 240
-            {type = fluid, name = water_purified_angels, amount = 240} -- 480
-        },
-        main_product = potassium_permanganate
-    },]]
     {
         type = recipe,
         name = potassium_hypochlorite_solution,
         category = angels_advanced_chemistry,
-        subgroup = is_potassium,
+        subgroup = is_potassium_fluid,
         icons = TWO_D_I(potassium_hydroxide_solution, chlorine_angels, potassium_hypochlorite_solution, potassium_chloride_solution),
-        order = f,
+        order = d,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
@@ -309,77 +394,31 @@ data:extend
             {type = fluid, name = water_purified_angels, amount = 60} -- 120
         },
         main_product = potassium_hypochlorite_solution
-    }
-})
-
--- TECHNOLOGY
-local technology = "technology"
-potassium_processing = "potassium-processing"
-data:extend
-({
+    },
     {
-        type = technology,
-        name = potassium_processing,
-        icons = TIMSABA.functions.create_gas_tech_icon("KKK"),
-        prerequisites = {tech_water_treatment_4},
-        effects =
+        type = recipe,
+        name = potassium_chlorate_solution,
+        category = chemistry,
+        subgroup = is_potassium_fluid,
+        icons = THREE_R_I(potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_chloride_solution),
+        order = e,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- 3KClO(aq) --> KClO₃(aq) + 2KCl(aq)
+        ingredients = {{type = fluid, name = potassium_hypochlorite_solution, amount = 90}},
+        results =
         {
-            {type = unlock_recipe, recipe = carnallite},
-            {type = unlock_recipe, recipe = potassium_chloride_solution},
-            {type = unlock_recipe, recipe = potassium_hydroxide},
-            {type = unlock_recipe, recipe = potassium_hydroxide_solution},
-            --{type = unlock_recipe, recipe = potassium_permanganate},
-            {type = unlock_recipe, recipe = potassium_hypochlorite_solution}
+            {type = fluid, name = potassium_chlorate_solution, amount = 30},
+            {type = fluid, name = potassium_chloride_solution, amount = 30} -- 60
         },
-        unit =
-        {
-            count = 100,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1}
-            },
-            time = 30
-        }
+        main_product = potassium_chlorate_solution
     }
 })
 
---[[
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = ,
-        weight = 
-    }
-})
-
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})
-
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -393,30 +432,9 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = , -- 
+        energy_required = ,
         ingredients = {{type = , name = , amount = }},
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
-
---[[
-data:extend
-({
-    {
-        type = ,
-        name = ,
-        icon = ,
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})
-]]
+})]]

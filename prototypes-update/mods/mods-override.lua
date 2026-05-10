@@ -6,7 +6,7 @@ if mods [vulcanus_sulfuric_bacteria_mods] then
             type = item_subgroup,
             name = is_vulcanus_sulfuric,
             group = "vulcanus",
-            order = i_a
+            order = e_a
         }
     })
 

@@ -1,5 +1,4 @@
 local angels_mod = "angels"
-local technology = "technology"
 local powder_metallurgy = "powder-metallurgy"
 local powder_metallurgy_special_vanilla = "powder-metallurgy-special-vanilla"
 if not (reskins.angels and reskins.angels.triggers.refining.technologies) then

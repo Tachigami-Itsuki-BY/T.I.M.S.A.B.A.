@@ -1,9 +1,17 @@
 -- ANGELS RESOURCE REFINING
 local resource_refining = "angels-resource-refining"
+is_ores = "angels-ores"
+is_ore_processing_a = "angels-ore-processing-a"
+is_ore_processing_b = "angels-ore-processing-b"
+is_ore_processing_c = "angels-ore-processing-c"
+is_ore_processing_d = "angels-ore-processing-d"
+is_ore_sorting_T1 = "angels-ore-sorting-t1"
+is_ore_sorting_T2 = "angels-ore-sorting-t2"
+is_ore_sorting_T3 = "angels-ore-sorting-t3"
+is_ore_sorting_T4 = "angels-ore-sorting-t4"
 is_ore_sorting_advanced_1 = "angels-ore-sorting-advanced"
 is_ore_sorting_advanced_2 = "is-ore-sorting-advanced-2"
 is_ore_sorting_advanced_3 = "is-ore-sorting-advanced-3"
-is_ore_sorting_advanced_4 = "is-ore-sorting-advanced-4"
 is_iron_fluid = "is-iron-fluid"
 is_copper_fluid = "is-copper-fluid"
 is_ore_crusher = "is-ore-crusher"
@@ -29,12 +37,6 @@ data:extend
         name = is_ore_sorting_advanced_3,
         group = resource_refining,
         order = c_g
-    },
-    {
-        type = item_subgroup,
-        name = is_ore_sorting_advanced_4,
-        group = resource_refining,
-        order = c_h
     },
     {
         type = item_subgroup,
@@ -85,7 +87,7 @@ is_silver_chemistry = "is-silver-chemistry"
 is_titanium_chemistry = "is-titanium-chemistry"
 is_gold_chemistry = "is-gold-chemistry"
 is_cobalt_chemistry = "is-cobalt-chemistry"
-is_chrome_chemistry = "is-chrome-chemistry"
+is_chromium_chemistry = "is-chromium-chemistry"
 is_tungsten = "angels-tungsten"
 is_tungsten_chemistry = "is-tungsten-chemistry"
 is_platinum_chemistry = "is-platinum-chemistry"
@@ -185,7 +187,7 @@ data:extend
     },
     {
         type = item_subgroup,
-        name = is_chrome_chemistry,
+        name = is_chromium_chemistry,
         group = smelting,
         order = o_a
     },
@@ -219,37 +221,37 @@ data:extend
         type = item_subgroup,
         name = is_bricks_casting,
         group = casting,
-        order = s_a
+        order = w_a
     },
     {
         type = item_subgroup,
         name = is_alloys_casting_2,
         group = casting,
-        order = u_a
+        order = y_a
     },
     {
         type = item_subgroup,
         name = is_alloys_casting_3,
         group = casting,
-        order = u_b
+        order = y_b
     },
     {
         type = item_subgroup,
         name = is_alloys_casting_4,
         group = casting,
-        order = u_c
+        order = y_c
     },
     {
         type = item_subgroup,
         name = is_alloys_casting_5,
         group = casting,
-        order = u_d
+        order = y_d
     },
     {
         type = item_subgroup,
         name = is_alloys_casting_6,
         group = casting,
-        order = u_e
+        order = y_e
     }
 })
 

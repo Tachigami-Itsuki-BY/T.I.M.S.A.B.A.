@@ -1,5 +1,3 @@
-local recipe = "recipe"
-local pressure = "pressure"
 -- RESOURCE
 jivolite_bacteria_cultivation = "jivolite-bacteria-cultivation"
 crotinnium_bacteria_cultivation = "crotinnium-bacteria-cultivation"

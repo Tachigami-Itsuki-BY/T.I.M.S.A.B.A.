@@ -1,8 +1,8 @@
-local technology = "technology"
 data:extend
 ({
     -- BOILER
     --[[{
+        localised_name = {"technology-name.boiler-6"},
         localised_description = {"technology-description.bob-boiler"},
         type = technology,
         name = boiler_6,
@@ -27,6 +27,7 @@ data:extend
     },
     -- STEAM ENGINE
     {
+        localised_name = {"technology-name.steam-engine-6"},
         localised_description = {"technology-description.bob-steam-engine"},
         type = technology,
         name = steam_engine_6,
@@ -51,6 +52,7 @@ data:extend
     },]]
     -- STEAM TURBINE
     {
+        localised_name = {"technology-name.steam-turbine-6"},
         localised_description = {"technology-description.bob-steam-turbine"},
         type = technology,
         name = steam_turbine_4,
@@ -75,6 +77,7 @@ data:extend
     },
     -- SOLAR PANELS
     --[[{
+        localised_name = {"technology-name.solar-energy-4"},
         localised_description = {"technology-description.solar-energy"},
         type = technology,
         name = solar_energy_4,
@@ -103,6 +106,7 @@ data:extend
     },
     -- ACCUMULATOR
     {
+        localised_name = {"technology-name.electric-energy-accumulators-4"},
         localised_description = {"technology-description.electric-energy-accumulators"},
         type = technology,
         name = electric_energy_accumulators_4,
@@ -126,6 +130,7 @@ data:extend
     },
     -- ELECTRIC MINING DRILL
     {
+        localised_name = {"technology-name.drills-6"},
         type = technology,
         name = drills_6,
         icon = "__base__/graphics/technology/mining-productivity.png",
@@ -149,6 +154,7 @@ data:extend
     },]]
     -- PUMPJACK
     --[[{
+        localised_name = {"technology-name.pumpjacks-5"},
         type = technology,
         name = tech_pumpjacks_5,
         icon = "__base__/graphics/technology/oil-gathering.png",
@@ -169,6 +175,9 @@ data:extend
             },
             time = 30
         },
+    },
+    {
+        localised_name = {"technology-name.pumpjacks-6"},
         type = technology,
         name = tech_pumpjacks_6,
         icon = "__base__/graphics/technology/oil-gathering.png",
@@ -225,6 +234,7 @@ data:extend
     },
     -- FURNACES
     {
+        localised_name = {"technology-name.advanced-material-processing-5"},
         type = technology,
         name = advanced_material_processing_5,
         icon = "__base__/graphics/technology/advanced-material-processing-2.png",
@@ -247,6 +257,7 @@ data:extend
         }
     },
     {
+        localised_name = {"technology-name.multi-porpose-furnace-3"},
         type = technology,
         name = multi_porpose_furnace_3,
         icons =
@@ -289,6 +300,7 @@ data:extend
     },]]
     -- CENTRIFUGE
     {
+        localised_name = {"technology-name.centrifuge-4"},
         type = technology,
         name = centrifuge_4,
         icon = "__bobassembly__/graphics/icons/technology/centrifuge.png",

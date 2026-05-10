@@ -9,7 +9,7 @@ data_recipe[iron_molten_angels].energy_required = 8
 data_recipe[iron_molten_angels].ingredients[1].amount = 16
 data_recipe[iron_molten_angels].results[1].amount = 240
 
-data_recipe[iron_molten_2].icons = THREE_D_I(iron_ingot, manganese_ingot, magnesium_ingot, iron_molten_angels, nil, nil, number_2)
+data_recipe[iron_molten_2].icons = TWO_I(iron_ingot, iron_molten_angels, number_2)
 data_recipe[iron_molten_2].order = a_a
 data_recipe[iron_molten_2].energy_required = 8
 data_recipe[iron_molten_2].ingredients =
@@ -76,7 +76,7 @@ data_recipe[steel_molten_angels].energy_required = 8
 data_recipe[steel_molten_angels].ingredients[1].amount = 16
 data_recipe[steel_molten_angels].results[1].amount = 240
 
-data_recipe[steel_molten_2].icons = THREE_D_I(steel_ingot, manganese_ingot, magnesium_ingot, steel_molten_angels, nil, nil, number_2)
+data_recipe[steel_molten_2].icons = TWO_I(steel_ingot, steel_molten_angels, number_2)
 data_recipe[steel_molten_2].order = a_a
 data_recipe[steel_molten_2].energy_required = 8
 data_recipe[steel_molten_2].ingredients =
@@ -121,6 +121,21 @@ data_recipe[steel_plate_1].ingredients[1].amount = 60
 data_recipe[steel_plate_2].icons = TWO_I(steel_roll, steel_plate)
 data_recipe[steel_plate_2].order = c_b
 data_recipe[steel_plate_2].energy_required = 4
+
+data_item[steel_rod].hidden = false
+data_item[steel_rod].hidden_in_factoriopedia = false
+data_item[steel_rod].localised_name = {"item-name.steel-rod"}
+data_item[steel_rod].localised_description = show_formula and {chemical_formula, "FeC"} or nil
+data_item[steel_rod].order = d
+data_recipe[steel_rod].hidden = false
+data_recipe[steel_rod].hidden_in_factoriopedia = false
+data_recipe[steel_rod].localised_name = {"item-name.steel-rod"}
+data_recipe[steel_rod].icons = TWO_I(steel_plate, steel_rod)
+data_recipe[steel_rod].order = d
+data_recipe[steel_rod].energy_required = 1
+data_recipe[steel_rod].ingredients[1].amount = 1
+data_recipe[steel_rod].results[1].amount = 2
+data_recipe[steel_rod].enabled = false
 
 -- COPPER
 data_item_subgroup["angels-copper-casting"].order = b
@@ -387,6 +402,7 @@ data_fluid[manganese_molten_angels].localised_description = show_formula and {ch
 data_fluid[manganese_molten_angels].order = a
 data_recipe[manganese_molten_angels].hidden = false
 data_recipe[manganese_molten_angels].hidden_in_factoriopedia = false
+data_recipe[manganese_molten_angels].localised_name = data_fluid[manganese_molten_angels].localised_name
 data_recipe[manganese_molten_angels].icons = TWO_I(manganese_ingot, manganese_molten_angels)
 data_recipe[manganese_molten_angels].order = a
 data_recipe[manganese_molten_angels].energy_required = 8
@@ -508,7 +524,7 @@ data_recipe[aluminium_molten_angels].energy_required = 8
 data_recipe[aluminium_molten_angels].ingredients[1].amount = 16
 data_recipe[aluminium_molten_angels].results[1].amount = 240
 
-data_recipe[aluminium_molten_2].icons = THREE_D_I(aluminium_ingot, manganese_ingot, magnesium_ingot, aluminium_molten_angels, nil, nil, number_2)
+data_recipe[aluminium_molten_2].icons = TWO_I(aluminium_ingot, aluminium_molten_angels, number_2)
 data_recipe[aluminium_molten_2].order = a_a
 data_recipe[aluminium_molten_2].energy_required = 8
 data_recipe[aluminium_molten_2].ingredients =
@@ -519,13 +535,13 @@ data_recipe[aluminium_molten_2].ingredients =
 }
 data_recipe[aluminium_molten_2].results[1].amount = 480
 
-data_recipe[aluminium_molten_3].icons = FOUR_D_I(aluminium_ingot, chrome_ingot, manganese_ingot, magnesium_ingot, aluminium_molten_angels, nil, nil, nil, number_3)
+data_recipe[aluminium_molten_3].icons = TWO_I(aluminium_ingot, aluminium_molten_angels, number_3)
 data_recipe[aluminium_molten_3].order = a_b
 data_recipe[aluminium_molten_3].energy_required = 8
 data_recipe[aluminium_molten_3].ingredients =
 {
     {type = item, name = aluminium_ingot, amount = 16},
-    {type = item, name = chrome_ingot, amount = 8},
+    {type = item, name = chromium_ingot, amount = 8},
     {type = item, name = manganese_ingot, amount = 4},
     {type = item, name = magnesium_ingot, amount = 4}
 }
@@ -712,7 +728,7 @@ data_recipe[titanium_molten_angels].energy_required = 8
 data_recipe[titanium_molten_angels].ingredients[1].amount = 16
 data_recipe[titanium_molten_angels].results[1].amount = 240
 
-data_recipe[titanium_molten_2].icons = THREE_D_I(titanium_ingot, manganese_ingot, magnesium_ingot, titanium_molten_angels, nil, nil, number_2)
+data_recipe[titanium_molten_2].icons = TWO_I(titanium_ingot, titanium_molten_angels, number_2)
 data_recipe[titanium_molten_2].order = a_a
 data_recipe[titanium_molten_2].energy_required = 8
 data_recipe[titanium_molten_2].ingredients =
@@ -723,13 +739,13 @@ data_recipe[titanium_molten_2].ingredients =
 }
 data_recipe[titanium_molten_2].results[1].amount = 480
 
-data_recipe[titanium_molten_3].icons = FOUR_D_I(titanium_ingot, chrome_ingot, manganese_ingot, magnesium_ingot, titanium_molten_angels, nil, nil, nil, number_3)
+data_recipe[titanium_molten_3].icons = TWO_I(titanium_ingot, titanium_molten_angels, number_3)
 data_recipe[titanium_molten_3].order = a_b
 data_recipe[titanium_molten_3].energy_required = 8
 data_recipe[titanium_molten_3].ingredients =
 {
     {type = item, name = titanium_ingot, amount = 16},
-    {type = item, name = chrome_ingot, amount = 8},
+    {type = item, name = chromium_ingot, amount = 8},
     {type = item, name = manganese_ingot, amount = 4},
     {type = item, name = magnesium_ingot, amount = 4}
 }
@@ -873,26 +889,29 @@ data_fluid[cobalt_molten_angels].localised_description = show_formula and {chemi
 data_fluid[cobalt_molten_angels].order = a
 data_recipe[cobalt_molten_angels].hidden = false
 data_recipe[cobalt_molten_angels].hidden_in_factoriopedia = false
+data_recipe[cobalt_molten_angels].localised_name = data_fluid[cobalt_molten_angels].localised_name
 data_recipe[cobalt_molten_angels].icons = TWO_I(cobalt_ingot, cobalt_molten_angels)
 data_recipe[cobalt_molten_angels].order = a
 data_recipe[cobalt_molten_angels].energy_required = 8
 data_recipe[cobalt_molten_angels].ingredients[1].amount = 16
 data_recipe[cobalt_molten_angels].results[1].amount = 240
 
--- CHROME
+-- CHROMIUM
 data_item_subgroup["angels-chrome-casting"].order = o
 
-data_fluid[chrome_molten_angels].hidden = false
-data_fluid[chrome_molten_angels].hidden_in_factoriopedia = false
-data_fluid[chrome_molten_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
-data_fluid[chrome_molten_angels].order = a
-data_recipe[chrome_molten_angels].hidden = false
-data_recipe[chrome_molten_angels].hidden_in_factoriopedia = false
-data_recipe[chrome_molten_angels].icons = TWO_I(chrome_ingot, chrome_molten_angels)
-data_recipe[chrome_molten_angels].order = a
-data_recipe[chrome_molten_angels].energy_required = 8
-data_recipe[chrome_molten_angels].ingredients[1].amount = 16
-data_recipe[chrome_molten_angels].results[1].amount = 240
+data_fluid[chromium_molten_angels].hidden = false
+data_fluid[chromium_molten_angels].hidden_in_factoriopedia = false
+data_fluid[chromium_molten_angels].localised_name = {"fluid-name.chromium-molten"}
+data_fluid[chromium_molten_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
+data_fluid[chromium_molten_angels].order = a
+data_recipe[chromium_molten_angels].hidden = false
+data_recipe[chromium_molten_angels].hidden_in_factoriopedia = false
+data_recipe[chromium_molten_angels].localised_name = data_fluid[chromium_molten_angels].localised_name
+data_recipe[chromium_molten_angels].icons = TWO_I(chromium_ingot, chromium_molten_angels)
+data_recipe[chromium_molten_angels].order = a
+data_recipe[chromium_molten_angels].energy_required = 8
+data_recipe[chromium_molten_angels].ingredients[1].amount = 16
+data_recipe[chromium_molten_angels].results[1].amount = 240
 
 -- TUNGSTEN
 data_item_subgroup["angels-tungsten-casting"].order = p
@@ -900,38 +919,24 @@ data_item_subgroup["angels-tungsten-casting"].order = p
 data_item[tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_plate_bob].order = a
 
-data_recipe[tungsten_plate_angels].icons = TWO_I(tungsten_casting_powder, tungsten_plate_bob)
+data_recipe[tungsten_plate_angels].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate_angels].order = a_a
 data_recipe[tungsten_plate_angels].energy_required = 8 -- W --> W
+data_recipe[tungsten_plate_angels].ingredients[1].name = tungsten_powder
 data_recipe[tungsten_plate_angels].ingredients[1].amount = 16
 data_recipe[tungsten_plate_angels].results[1].amount = 16
 
 data_item[tungsten_carbide_bob].localised_description = show_formula and {chemical_formula, "WC"} or nil
 data_item[tungsten_carbide_bob].order = b
-data_recipe[tungsten_carbide_bob].hidden = true
-data_recipe[tungsten_carbide_bob].hidden_in_factoriopedia = true
-data_recipe[tungsten_carbide_bob].icons = THREE_D_I(tungsten_oxide, carbon_angels, lime_angels, tungsten_carbide_bob, nil, limestone_angels)
-data_recipe[tungsten_carbide_bob].order = b
-data_recipe[tungsten_carbide_bob].energy_required = 8 -- 2WO₃ + 5C + 3CaO --> 2WC + 3CaCO₃
-data_recipe[tungsten_carbide_bob].ingredients =
-{
-    {type = item, name = tungsten_oxide, amount = 16},
-    {type = item, name = carbon_angels, amount = 40},
-    {type = item, name = lime_angels, amount = 24}
-}
-data_recipe[tungsten_carbide_bob].results =
-{
-    {type = item, name = tungsten_carbide_bob, amount = 16},
-    {type = item, name = limestone_angels, amount = 16}
-}
-data_recipe[tungsten_carbide_bob].main_product = tungsten_carbide_bob
 
-data_recipe[tungsten_carbide_2].icons = THREE_I(tungsten_casting_powder, carbon_angels, tungsten_carbide_bob)
+data_recipe[tungsten_carbide_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_bob)
 data_recipe[tungsten_carbide_2].order = b_a
 data_recipe[tungsten_carbide_2].energy_required = 8 -- W + C --> WC
-data_recipe[tungsten_carbide_2].ingredients[1].amount = 16
-data_recipe[tungsten_carbide_2].ingredients[2].name = tungsten_casting_powder
-data_recipe[tungsten_carbide_2].ingredients[2].amount = 16
+data_recipe[tungsten_carbide_2].ingredients =
+{
+    {type = item, name = tungsten_powder, amount = 16},
+    {type = item, name = carbon_angels, amount = 16}
+}
 data_recipe[tungsten_carbide_2].results[1].amount = 16
 
 data_item[copper_tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "WCu"} or nil
@@ -1029,7 +1034,7 @@ data_recipe[platinum_cable_2].order = e_a
 data_recipe[platinum_cable_2].energy_required = 8
 
 -- GLASS
-data_item_subgroup["angels-glass-casting"].order = r
+data_item_subgroup["angels-glass-casting"].order = v
 
 data_recipe[glass_molten_angels].icons = TWO_I(glass_mixture, glass_molten_angels)
 data_recipe[glass_molten_angels].energy_required = 8
@@ -1063,7 +1068,7 @@ data_recipe[glass_angels].ingredients[1].amount = 60
 data_recipe[glass_angels].results[1].amount = 4
 
 -- STONE
-data_item_subgroup[is_stone_casting].order = s
+data_item_subgroup[is_stone_casting].order = w
 
 data_item[concrete].order = a
 data_recipe[concrete].icons = THREE_D_I(lime_angels, sand_angels, water, concrete)
@@ -1158,7 +1163,7 @@ data_recipe[reinforced_concrete_brick].ingredients[1].amount = 60
 data_recipe[reinforced_concrete_brick].ingredients[3].name = iron_rod
 
 -- SOLDER
-data_item_subgroup["angels-solder-casting"].order = t
+data_item_subgroup["angels-solder-casting"].order = x
 
 data_fluid[solder_molten_angels].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_fluid[solder_molten_angels].order = a
@@ -1166,41 +1171,41 @@ data_recipe[solder_molten_angels].hidden = false
 data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 data_recipe[solder_molten_angels].localised_name = {"fluid-name.molten-solder"}
 data_recipe[solder_molten_angels].category = angels_induction_smelting_1
-data_recipe[solder_molten_angels].icons = TWO_D_I(lead_ingot, tin_ingot, solder_molten_angels, nil, number_1)
+data_recipe[solder_molten_angels].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_1)
 data_recipe[solder_molten_angels].order = a
 data_recipe[solder_molten_angels].energy_required = 8
 data_recipe[solder_molten_angels].ingredients =
 {
-    {type = item, name = lead_ingot, amount = 8},
-    {type = item, name = tin_ingot, amount = 8}
+    {type = item, name = lead_ingot, amount = 16},
+    {type = item, name = tin_ingot, amount = 16}
 }
 data_recipe[solder_molten_angels].results = {{type = fluid, name = solder_molten_angels, amount = 240}}
 data_recipe[solder_molten_angels].main_product = solder_molten_angels
 
 data_recipe[solder_molten_2].category = angels_induction_smelting_2
-data_recipe[solder_molten_2].icons = THREE_D_I(lead_ingot, tin_ingot, zinc_ingot, solder_molten_angels, nil, nil, number_2)
+data_recipe[solder_molten_2].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_2)
 data_recipe[solder_molten_2].order = a_a
 data_recipe[solder_molten_2].energy_required = 8
 data_recipe[solder_molten_2].ingredients =
 {
-    {type = item, name = lead_ingot, amount = 8},
-    {type = item, name = tin_ingot, amount = 8},
+    {type = item, name = lead_ingot, amount = 16},
+    {type = item, name = tin_ingot, amount = 16},
     {type = item, name = zinc_ingot, amount = 16}
 }
 data_recipe[solder_molten_2].results[1].amount = 480
 
 data_recipe[solder_molten_3].category = angels_induction_smelting_3
-data_recipe[solder_molten_3].icons = FOUR_D_I(lead_ingot, tin_ingot, zinc_ingot, silver_ingot, solder_molten_angels, nil, nil, nil, number_3)
+data_recipe[solder_molten_3].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_3)
 data_recipe[solder_molten_3].order = a_b
 data_recipe[solder_molten_3].energy_required = 8
 data_recipe[solder_molten_3].ingredients =
 {
     {type = item, name = lead_ingot, amount = 16},
-    {type = item, name = tin_ingot, amount = 32},
+    {type = item, name = tin_ingot, amount = 16},
     {type = item, name = zinc_ingot, amount = 8},
     {type = item, name = silver_ingot, amount = 8}
 }
-data_recipe[solder_molten_3].results[1].amount = 960
+data_recipe[solder_molten_3].results[1].amount = 480
 
 data_item[solder_roll].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_item[solder_roll].order = b
@@ -1212,7 +1217,7 @@ data_recipe[solder_roll].ingredients[2].name = water_purified_angels
 data_recipe[solder_roll].ingredients[2].amount = 120
 data_recipe[solder_roll].results =
 {
-    {type = item, name = solder_roll, amount = 4},
+    {type = item, name = solder_roll, amount = 8},
     {type = fluid, name = steam, amount = 60}
 }
 data_recipe[solder_roll].main_product = solder_roll
@@ -1222,7 +1227,7 @@ data_recipe[solder_roll_2].order = b_a
 data_recipe[solder_roll_2].energy_required = 4
 data_recipe[solder_roll_2].ingredients[1].amount = 240
 data_recipe[solder_roll_2].ingredients[2].amount = 120
-data_recipe[solder_roll_2].results[1].amount = 8
+data_recipe[solder_roll_2].results[1].amount = 16
 data_recipe[solder_roll_2].results[2].amount = 60
 
 data_item[solder].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
@@ -1240,32 +1245,32 @@ data_recipe[solder_2].results[1].amount = 16
 
 -- ALLOYS
 -- BRONZE
-data_item_subgroup["angels-alloys-casting"].order = u
+data_item_subgroup["angels-alloys-casting"].order = y
 
 data_fluid[bronze_molten_angels].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
-data_recipe[bronze_molten_angels].icons = TWO_D_I(copper_ingot, tin_ingot, bronze_molten_angels, nil, number_1)
+data_recipe[bronze_molten_angels].icons = THREE_I(copper_ingot, tin_ingot, bronze_molten_angels, number_1)
 data_recipe[bronze_molten_angels].energy_required = 8
-data_recipe[bronze_molten_angels].ingredients[1].amount = 8
-data_recipe[bronze_molten_angels].ingredients[2].amount = 8
+data_recipe[bronze_molten_angels].ingredients[1].amount = 16
+data_recipe[bronze_molten_angels].ingredients[2].amount = 16
 
 local bronze_molten_2= "angels-liquid-molten-bronze-2"
-data_recipe[bronze_molten_2].icons = THREE_D_I(copper_ingot, tin_ingot, lead_ingot, bronze_molten_angels, nil, nil, number_2)
+data_recipe[bronze_molten_2].icons = THREE_I(copper_ingot, tin_ingot, bronze_molten_angels, number_2)
 data_recipe[bronze_molten_2].energy_required = 8
 data_recipe[bronze_molten_2].ingredients[1].amount = 16
-data_recipe[bronze_molten_2].ingredients[2].amount = 8
+data_recipe[bronze_molten_2].ingredients[2].amount = 16
 data_recipe[bronze_molten_2].ingredients[3].name = lead_ingot
-data_recipe[bronze_molten_2].ingredients[3].amount = 8
+data_recipe[bronze_molten_2].ingredients[3].amount = 16
 data_recipe[bronze_molten_2].results[1].amount = 480
 
 local bronze_molten_3= "angels-liquid-molten-bronze-3"
-data_recipe[bronze_molten_3].icons = FOUR_D_I(copper_ingot, tin_ingot, lead_ingot, zinc_ingot, bronze_molten_angels, nil, nil, nil, number_3)
+data_recipe[bronze_molten_3].icons = THREE_I(copper_ingot, tin_ingot, bronze_molten_angels, number_3)
 data_recipe[bronze_molten_3].energy_required = 8
 data_recipe[bronze_molten_3].ingredients =
 {
     {type = item, name = copper_ingot, amount = 16},
-    {type = item, name = tin_ingot, amount = 8},
-    {type = item, name = lead_ingot, amount = 4},
-    {type = item, name = zinc_ingot, amount = 4}
+    {type = item, name = tin_ingot, amount = 16},
+    {type = item, name = lead_ingot, amount = 8},
+    {type = item, name = zinc_ingot, amount = 8}
 }
 data_recipe[bronze_molten_3].results[1].amount = 480
 
@@ -1279,30 +1284,30 @@ data_recipe[bronze_plate_angels].ingredients[1].amount = 60
 data_fluid[brass_molten_angels].localised_description = show_formula and {chemical_formula, "CuZn"} or nil
 data_fluid[brass_molten_angels].subgroup = is_alloys_casting_2
 data_recipe[brass_molten_angels].subgroup = is_alloys_casting_2
-data_recipe[brass_molten_angels].icons = TWO_D_I(copper_ingot, zinc_ingot, brass_molten_angels, nil, number_1)
+data_recipe[brass_molten_angels].icons = THREE_I(copper_ingot, zinc_ingot, brass_molten_angels, number_1)
 data_recipe[brass_molten_angels].energy_required = 8
-data_recipe[brass_molten_angels].ingredients[1].amount = 8
-data_recipe[brass_molten_angels].ingredients[2].amount = 8
+data_recipe[brass_molten_angels].ingredients[1].amount = 16
+data_recipe[brass_molten_angels].ingredients[2].amount = 16
 
 local brass_molten_2= "angels-liquid-molten-brass-2"
 data_recipe[brass_molten_2].subgroup = is_alloys_casting_2
-data_recipe[brass_molten_2].icons = THREE_D_I(copper_ingot, zinc_ingot, tin_ingot, brass_molten_angels, nil, nil, number_2)
+data_recipe[brass_molten_2].icons = THREE_I(copper_ingot, zinc_ingot, brass_molten_angels, number_2)
 data_recipe[brass_molten_2].energy_required = 8
 data_recipe[brass_molten_2].ingredients[1].amount = 16
-data_recipe[brass_molten_2].ingredients[2].amount = 8
-data_recipe[brass_molten_2].ingredients[3].amount = 8
+data_recipe[brass_molten_2].ingredients[2].amount = 16
+data_recipe[brass_molten_2].ingredients[3].amount = 16
 data_recipe[brass_molten_2].results[1].amount = 480
 
 local brass_molten_3= "angels-liquid-molten-brass-3"
 data_recipe[brass_molten_3].subgroup = is_alloys_casting_2
-data_recipe[brass_molten_3].icons = FOUR_D_I(copper_ingot, zinc_ingot, tin_ingot, lead_ingot, brass_molten_angels, nil, nil, nil, number_3)
+data_recipe[brass_molten_3].icons = THREE_I(copper_ingot, zinc_ingot, brass_molten_angels, number_3)
 data_recipe[brass_molten_3].energy_required = 8
 data_recipe[brass_molten_3].ingredients =
 {
     {type = item, name = copper_ingot, amount = 16},
-    {type = item, name = zinc_ingot, amount = 8},
-    {type = item, name = tin_ingot, amount = 4},
-    {type = item, name = lead_ingot, amount = 4}
+    {type = item, name = zinc_ingot, amount = 16},
+    {type = item, name = tin_ingot, amount = 8},
+    {type = item, name = lead_ingot, amount = 8}
 }
 data_recipe[brass_molten_3].results[1].amount = 480
 
@@ -1319,12 +1324,12 @@ data_recipe[brass_plate_angels].ingredients[1].amount = 60
 data_fluid[gunmetal_molten_angels].localised_description = show_formula and {chemical_formula, "CuSnZn"} or nil
 data_fluid[gunmetal_molten_angels].subgroup = is_alloys_casting_3
 data_recipe[gunmetal_molten_angels].subgroup = is_alloys_casting_3
-data_recipe[gunmetal_molten_angels].icons = THREE_D_I(copper_ingot, tin_ingot, zinc_ingot, gunmetal_molten_angels)
+data_recipe[gunmetal_molten_angels].icons = B_F_L(copper_ingot, tin_ingot, zinc_ingot, gunmetal_molten_angels)
 data_recipe[gunmetal_molten_angels].energy_required = 8
 data_recipe[gunmetal_molten_angels].ingredients[1].amount = 16 -- Sn
-data_recipe[gunmetal_molten_angels].ingredients[2].amount = 8 -- Zn
-data_recipe[gunmetal_molten_angels].ingredients[3].amount = 8 -- Cu
-data_recipe[gunmetal_molten_angels].results[1].amount = 480
+data_recipe[gunmetal_molten_angels].ingredients[2].amount = 16 -- Zn
+data_recipe[gunmetal_molten_angels].ingredients[3].amount = 16 -- Cu
+data_recipe[gunmetal_molten_angels].results[1].amount = 240
 
 data_item[gunmetal_plate_bob].localised_description = show_formula and {chemical_formula, "SnZnCu"} or nil
 data_item[gunmetal_plate_bob].subgroup = is_alloys_casting_3
@@ -1344,7 +1349,7 @@ data_recipe[invar_molten_angels].ingredients[1].name = iron_ingot
 data_recipe[invar_molten_angels].ingredients[1].amount = 16
 data_recipe[invar_molten_angels].ingredients[2].name = nickel_ingot
 data_recipe[invar_molten_angels].ingredients[2].amount = 16
-data_recipe[invar_molten_angels].results[1].amount = 480
+data_recipe[invar_molten_angels].results[1].amount = 240
 
 data_item[invar_plate_bob].localised_description = show_formula and {chemical_formula, "FeNi"} or nil
 data_item[invar_plate_bob].subgroup = is_alloys_casting_4
@@ -1362,7 +1367,7 @@ data_recipe[cobalt_steel_molten_angels].icons = THREE_I(steel_ingot, cobalt_ingo
 data_recipe[cobalt_steel_molten_angels].energy_required = 8
 data_recipe[cobalt_steel_molten_angels].ingredients[1].amount = 16
 data_recipe[cobalt_steel_molten_angels].ingredients[2].amount = 16
-data_recipe[cobalt_steel_molten_angels].results[1].amount = 480
+data_recipe[cobalt_steel_molten_angels].results[1].amount = 240
 
 data_item[cobalt_steel_plate_bob].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
 data_item[cobalt_steel_plate_bob].subgroup = is_alloys_casting_5
@@ -1380,7 +1385,7 @@ data_recipe[nitinol_molten_angels].icons = THREE_I(titanium_ingot, nickel_ingot,
 data_recipe[nitinol_molten_angels].energy_required = 8
 data_recipe[nitinol_molten_angels].ingredients[1].amount = 16
 data_recipe[nitinol_molten_angels].ingredients[2].amount = 16
-data_recipe[nitinol_molten_angels].results[1].amount = 480
+data_recipe[nitinol_molten_angels].results[1].amount = 240
 
 data_item[nitinol_plate_bob].localised_description = show_formula and {chemical_formula, "NiTi"} or nil
 data_item[nitinol_plate_bob].subgroup = is_alloys_casting_6

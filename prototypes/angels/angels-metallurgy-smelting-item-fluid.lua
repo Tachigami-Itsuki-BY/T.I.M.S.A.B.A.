@@ -1,18 +1,18 @@
 -- ANGELS METALLURGY SMELTING
 -- IRON and STEEL
-iron_sulfate = "iron-sulfate"
+iron_sulfate_II = "iron-sulfate-II"
 iron_cathode = "iron-cathode"
 iron_hydroxide_III = "iron-hydroxide-III"
-iron_oxide = "iron-oxide"
-iron_sulfate_solution = "iron-sulfate-solution"
+iron_oxide_III = "iron-oxide-III"
+iron_sulfate_II_solution = "iron-sulfate-II-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "FeSO[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
-        name = iron_sulfate,
+        name = iron_sulfate_II,
         subgroup = is_iron_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/iron-sulfate.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/iron-sulfate-II.png",
         icon_size = 64,
         order = b,
         stack_size = 200,
@@ -43,9 +43,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Fe[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
-        name = iron_oxide,
+        name = iron_oxide_III,
         subgroup = is_iron_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/iron-oxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/iron-oxide-III.png",
         icon_size = 64,
         order = f,
         stack_size = 200,
@@ -55,9 +55,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "FeSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
-        name = iron_sulfate_solution,
+        name = iron_sulfate_II_solution,
         subgroup = is_iron_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/iron-sulfate-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/iron/iron-sulfate-II-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -69,21 +69,21 @@ data:extend
 })
 
 -- COPPER
-copper_hydroxide = "copper-hydroxide"
-copper_sulfate = "copper-sulfate"
-copper_sulfate_solution = "copper-sulfate-solution"
+copper_hydroxide_II = "copper-hydroxide-II"
+copper_sulfate_II = "copper-sulfate-II"
+copper_sulfate_II_solution = "copper-sulfate-II-solution"
 copper_chloride_I = "copper-chloride-I"
-copper_oxide = "copper-oxide"
-ammonium_dichlorocuprate_solution = "ammonium-dichlorocuprate-solution"
-copper_nitrate_solution = "copper-nitrate-solution"
+copper_oxide_I = "copper-oxide-I"
+ammonium_dichlorocuprate_I_solution = "ammonium-dichlorocuprate-I-solution"
+copper_nitrate_II_solution = "copper-nitrate-II-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "Cu(OH)[font=default-tiny-bold]2[/font]"} or nil,
         type = item,
-        name = copper_hydroxide,
+        name = copper_hydroxide_II,
         subgroup = is_copper_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-hydroxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-hydroxide-II.png",
         icon_size = 64,
         order = a,
         stack_size = 200,
@@ -92,9 +92,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "CuSO[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
-        name = copper_sulfate,
+        name = copper_sulfate_II,
         subgroup = is_copper_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-sulfate.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-sulfate-II.png",
         icon_size = 64,
         order = b,
         stack_size = 200,
@@ -114,9 +114,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Cu[font=default-tiny-bold]2[/font]O"} or nil,
         type = item,
-        name = copper_oxide,
+        name = copper_oxide_I,
         subgroup = is_copper_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-oxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-oxide-II.png",
         icon_size = 64,
         order = g,
         stack_size = 200,
@@ -126,9 +126,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "CuSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
-        name = copper_sulfate_solution,
+        name = copper_sulfate_II_solution,
         subgroup = is_copper_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-sulfate-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-sulfate-II-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -140,9 +140,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]CuCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
         type = fluid,
-        name = ammonium_dichlorocuprate_solution,
+        name = ammonium_dichlorocuprate_I_solution,
         subgroup = is_copper_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/ammonium-dichlorocuprate-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/ammonium-dichlorocuprate-I-solution.png",
         order = f,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -154,9 +154,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Cu(NO[font=default-tiny-bold]3[/font])[font=default-tiny-bold]2(aq)[/font]"} or nil,
         type = fluid,
-        name = copper_nitrate_solution,
+        name = copper_nitrate_II_solution,
         subgroup = is_copper_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-nitrate-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/copper/copper-nitrate-II-solution.png",
         order = h,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -168,17 +168,17 @@ data:extend
 })
 
 -- LEAD
-lead_dioxide = "lead-dioxide"
+lead_oxide_IV = "lead-oxide-IV"
 lead_sponge = "lead-sponge"
-hexafluorosilicate_lead_solution = "hexafluorosilicate-lead-solution"
+hexafluorosilicate_lead_II_solution = "hexafluorosilicate-lead-II-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "PbO[font=default-tiny-bold]2[/font]"} or nil,
         type = item,
-        name = lead_dioxide,
+        name = lead_oxide_IV,
         subgroup = is_lead_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lead/lead-dioxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lead/lead-oxide-IV.png",
         icon_size = 64,
         order = e,
         stack_size = 200,
@@ -199,9 +199,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "PbSiF[font=default-tiny-bold]6(aq)[/font]"} or nil,
         type = fluid,
-        name = hexafluorosilicate_lead_solution,
+        name = hexafluorosilicate_lead_II_solution,
         subgroup = is_lead_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lead/hexafluorosilicate-lead-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lead/hexafluorosilicate-lead-II-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -214,8 +214,8 @@ data:extend
 
 -- TIN
 tin_cathode = "tin-cathode"
-tin_tetrachloride = "tin-tetrachloride-liquid"
-hexafluorosilicate_tin_solution = "hexafluorosilicate-tin-solution"
+tin_chloride_IV = "tin-chloride-IV-liquid"
+hexafluorosilicate_tin_II_solution = "hexafluorosilicate-tin-II-solution"
 data:extend
 ({
     {
@@ -233,9 +233,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "SnCl[font=default-tiny-bold]4[/font]"} or nil,
         type = fluid,
-        name = tin_tetrachloride,
+        name = tin_chloride_IV,
         subgroup = is_tin_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tin/tin-chloride-liquid.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tin/tin-chloride-IV-liquid.png",
         order = a,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -247,9 +247,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "SnSiF[font=default-tiny-bold]6(aq)[/font]"} or nil,
         type = fluid,
-        name = hexafluorosilicate_tin_solution,
+        name = hexafluorosilicate_tin_II_solution,
         subgroup = is_tin_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tin/hexachlorosilicate-tin-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/tin/hexafluorosilicate-tin-II-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -261,17 +261,18 @@ data:extend
 })
 
 -- MANGANESE
-manganese_sulfate = "manganese-sulfate"
-manganese_dioxide = "manganese-dioxide"
-manganese_sulfate_solution = "manganese-sulfate-solution"
+manganese_oxide_IV = "manganese-oxide-IV"
+manganese_sulfate_II = "manganese-sulfate-II"
+manganese_sulfate_II_solution = "manganese-sulfate-II-solution"
+potassium_permanganate = "potassium-permanganate"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "MnO[font=default-tiny-bold]2[/font]"} or nil,
         type = item,
-        name = manganese_dioxide,
+        name = manganese_oxide_IV,
         subgroup = is_manganese_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/manganese-dioxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/manganese-oxide-IV.png",
         icon_size = 64,
         order = a,
         stack_size = 200,
@@ -280,9 +281,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "MnSO[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
-        name = manganese_sulfate,
+        name = manganese_sulfate_II,
         subgroup = is_manganese_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/manganese-sulfate.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/manganese-sulfate-II.png",
         icon_size = 64,
         order = b,
         stack_size = 200,
@@ -292,9 +293,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "MnSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
-        name = manganese_sulfate_solution,
+        name = manganese_sulfate_II_solution,
         subgroup = is_manganese_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/manganese-sulfate-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/manganese-sulfate-II-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -302,21 +303,31 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("MnSO4Wp"),
         max_temperature = 0,
         auto_barrel = false
-    }
+    },
+    --[[{
+        localised_description = show_formula and {chemical_formula, "KMnO[font=default-tiny-bold]4[/font]"} or nil,
+        type = item,
+        name = potassium_permanganate,
+        subgroup = is_manganese_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/manganese/potassium-permanganate.png",
+        order = f,
+        stack_size = 200,
+        weight = 5000
+    }]]
 })
 
 -- SILICON
-silicon_dioxide = "silicon-dioxide"
-silicon_tetrachloride_gas = "silicon-tetrachloride-gas"
-silicon_tetrafluoride_gas = "silicon-tetrafluoride-gas"
+silicon_oxide_IV = "silicon-oxide-IV"
+silicon_chloride_IV_gas = "silicon-chloride-IV-gas"
+silicon_fluoride_IV_gas = "silicon-fluoride-IV-gas"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil,
         type = item,
-        name = silicon_dioxide,
+        name = silicon_oxide_IV,
         subgroup = is_silicon_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silicon-dioxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silicon-oxide-IV.png",
         icon_size = 64,
         order = a,
         stack_size = 200,
@@ -326,9 +337,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "SiCl[font=default-tiny-bold]4[/font]"} or nil,
         type = fluid,
-        name = silicon_tetrachloride_gas,
+        name = silicon_chloride_IV_gas,
         subgroup = is_silicon_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silicon-tetrachloride-gas.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silicon-chloride-IV-gas.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -340,9 +351,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "SiF[font=default-tiny-bold]4[/font]"} or nil,
         type = fluid,
-        name = silicon_tetrafluoride_gas,
+        name = silicon_fluoride_IV_gas,
         subgroup = is_silicon_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silicon-tetrafluoride-gas.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/silicon-fluoride-IV-gas.png",
         order = g,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -354,17 +365,17 @@ data:extend
 })
 
 -- NICKEL
---nickel_sulfate = "nickel-sulfate"
-nickel_sulfate_solution = "nickel-sulfate-solution"
+--nickel_sulfate_II = "nickel-sulfate-II"
+nickel_sulfate_II_solution = "nickel-sulfate-II-solution"
 tetracarbonyl_nickel = "tetracarbonyl-nickel"
 data:extend
 ({
     --[[{
-        localised_description = show_formula and {chemical_formula, "NiSO4"} or nil,
+        localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
-        name = nickel_sulfate,
+        name = nickel_sulfate_II,
         subgroup = is_nickel_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/nickel/nickel-sulfate.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/nickel/nickel-sulfate-II.png",
         order = a,
         stack_size = 200,
         weight = 5000
@@ -372,9 +383,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "NiSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
-        name = nickel_sulfate_solution,
+        name = nickel_sulfate_II_solution,
         subgroup = is_nickel_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/nickel/nickel-sulfate-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/nickel/nickel-sulfate-II-solution.png",
         order = b,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -542,16 +553,15 @@ data:extend
 })
 
 -- SILVER
-silver_nitrate_solution = "silver-nitrate-solution"
-sodium_silver_cyanide_solution = "sodium-silver-cyanide-solution"
+sodium_dicyanoargentate_I_solution = "sodium-dicyanoargentate-I-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "NaAg(CN)[font=default-tiny-bold]2(aq)[/font]"} or nil,
         type = fluid,
-        name = sodium_silver_cyanide_solution,
+        name = sodium_dicyanoargentate_I_solution,
         subgroup = is_silver_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silver/sodium-silver-cyanide-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silver/sodium-dicyanoargentate-I-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -563,16 +573,16 @@ data:extend
 })
 
 -- TITANIUM
-titanium_tetraiodide_gas = "titanium-tetraiodide-gas"
-titanium_dioxide = "titanium-dioxide"
+titanium_oxide_IV = "titanium-oxide-IV"
+titanium_iodide_IV_gas = "titanium-iodide-IV-gas"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "TiO[font=default-tiny-bold]2[/font]"} or nil,
         type = item,
-        name = titanium_dioxide,
+        name = titanium_oxide_IV,
         subgroup = is_titanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/titanium-dioxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/titanium-oxide-IV.png",
         order = d,
         stack_size = 200,
         weight = 5000
@@ -581,9 +591,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "TiI[font=default-tiny-bold]4[/font]"} or nil,
         type = fluid,
-        name = titanium_tetraiodide_gas,
+        name = titanium_iodide_IV_gas,
         subgroup = is_titanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/titanium-tetraiodide-gas.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/titanium/titanium-iodide-IV-gas.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -595,15 +605,15 @@ data:extend
 })
 
 -- GOLD
-sodium_gold_cyanide_solution = "sodium-gold-cyanide-solution"
+sodium_dicyanoaurate_I_solution = "sodium-dicyanoaurate-I-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "NaAu(CN)[font=default-tiny-bold]2(aq)[/font]"} or nil,
         type = fluid,
-        name = sodium_gold_cyanide_solution,
+        name = sodium_dicyanoaurate_I_solution,
         subgroup = is_gold_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/gold/sodium-gold-cyanide-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/gold/sodium-dicyanoaurate-I-solution.png",
         order = c,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -615,15 +625,15 @@ data:extend
 })
 
 -- COBALT
-cobalt_chloride_solution = "cobalt-chloride-solution"
+cobalt_chloride_II_solution = "cobalt-chloride-II-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "CoCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
         type = fluid,
-        name = cobalt_chloride_solution,
+        name = cobalt_chloride_II_solution,
         subgroup = is_cobalt_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/cobalt/cobalt-chloride-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/cobalt/cobalt-chloride-II-solution.png",
         order = b,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -634,12 +644,12 @@ data:extend
     }
 })
 
--- CHROME
-chrome_oxide_VI = "chrome-oxide-VI"
+-- CHROMIUM
+chromium_oxide_VI = "chromium-oxide-VI"
 chromic_acid = "chromic-acid-solution"
-chrome_cathode = "chrome-cathode"
-chrome_sulfate_II_solution = "chrome-sulfate-II-solution"
---chrome_sulfate_III = "chrome-sulfate-III"
+chromium_cathode = "chromium-cathode"
+chromium_sulfate_II_solution = "chromium-sulfate-II-solution"
+--chromium_sulfate_III = "chromium-sulfate-III"
 potassium_chromate_solution = "potassium-chromate-solution"
 potassium_dichromate_solution = "potassium-dichromate-solution"
 data:extend
@@ -647,9 +657,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "CrO[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
-        name = chrome_oxide_VI,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/chrome-oxide-VI.png",
+        name = chromium_oxide_VI,
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/chromium-oxide-VI.png",
         icon_size = 64,
         order = a,
         stack_size = 200,
@@ -658,9 +668,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Cr"} or nil,
         type = item,
-        name = chrome_cathode,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/chrome-cathode.png",
+        name = chromium_cathode,
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/chromium-cathode.png",
         icon_size = 32, -- 64!!!
         order = c,
         stack_size = 200,
@@ -669,9 +679,9 @@ data:extend
     --[[{
         localised_description = show_formula and {chemical_formula, "Cr[font=default-tiny-bold]2[/font](SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
-        name = chrome_sulfate_III,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/chrome-sulfate-III.png",
+        name = chromium_sulfate_III,
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/chromium-sulfate-III.png",
         order = f,
         stack_size = 200,
         weight = 5000
@@ -681,8 +691,8 @@ data:extend
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]CrO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
         name = chromic_acid,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/chromic-acid-solution.png",
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/chromic-acid-solution.png",
         order = b,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -694,9 +704,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "CrSO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
-        name = chrome_sulfate_II_solution,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/chrome-sulfate-II-solution.png",
+        name = chromium_sulfate_II_solution,
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/chromium-sulfate-II-solution.png",
         order = d,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -709,8 +719,8 @@ data:extend
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]CrO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
         name = potassium_chromate_solution,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/potassium-chromate-solution.png",
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/potassium-chromate-solution.png",
         order = f,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -723,8 +733,8 @@ data:extend
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]Cr[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]7(aq)[/font]"} or nil,
         type = fluid,
         name = potassium_dichromate_solution,
-        subgroup = is_chrome_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chrome/potassium-dichromate-solution.png",
+        subgroup = is_chromium_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/chromium/potassium-dichromate-solution.png",
         order = g,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -780,17 +790,17 @@ data:extend
 })
 
 -- PLATINUM
-platinum_chloride = "platinum-chloride"
-platinum_fluoride = "platinum-fluoride"
-sodium_hexachloroplatinate_solution = "sodium-hexachloroplatinate-solution"
-platinum_hydroxide = "platinum-hydroxide"
-sodium_hexahydroxoplatinate_solution = "sodium-hexahydroxoplatinate-solution"
+platinum_chloride_II = "platinum-chloride-II"
+platinum_fluoride_IV = "platinum-fluoride-IV"
+platinum_hydroxide_IV = "platinum-hydroxide-IV"
+sodium_hexachloroplatinate_IV_solution = "sodium-hexachloroplatinate-IV-solution"
+sodium_hexahydroxoplatinate_IV_solution = "sodium-hexahydroxoplatinate-IV-solution"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "PtCl[font=default-tiny-bold]2[/font]"} or nil,
         type = item,
-        name = platinum_chloride,
+        name = platinum_chloride_II,
         subgroup = is_platinum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/platinum-chloride.png",
         icon_size = 64,
@@ -801,7 +811,7 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "PtF[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
-        name = platinum_fluoride,
+        name = platinum_fluoride_IV,
         subgroup = is_platinum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/platinum-fluoride.png",
         icon_size = 64,
@@ -812,7 +822,7 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Pt(OH)[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
-        name = platinum_hydroxide,
+        name = platinum_hydroxide_IV,
         subgroup = is_platinum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/platinum-hydroxide.png",
         icon_size = 64,
@@ -824,7 +834,7 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6(aq)[/font]"} or nil,
         type = fluid,
-        name = sodium_hexachloroplatinate_solution,
+        name = sodium_hexachloroplatinate_IV_solution,
         subgroup = is_platinum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/sodium-hexachloroplatinate-solution.png",
         order = e,
@@ -838,7 +848,7 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]Pt(OH)[font=default-tiny-bold]6(aq)[/font]"} or nil,
         type = fluid,
-        name = sodium_hexahydroxoplatinate_solution,
+        name = sodium_hexahydroxoplatinate_IV_solution,
         subgroup = is_platinum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/platinum/sodium-hexahydroxoplatinate-solution.png",
         order = g,

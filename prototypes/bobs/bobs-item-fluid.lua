@@ -1,6 +1,3 @@
-local is_gears = "bob-gears"
-local is_bearing_ball = "bob-bearings"
-local kJ = "kJ"
 ceramic_gear_wheel = "ceramic-gear-wheel"
 copper_tungsten_gear_wheel = "copper-tungsten-gear-wheel"
 brass_bearing_ball = "brass-bearing-ball"

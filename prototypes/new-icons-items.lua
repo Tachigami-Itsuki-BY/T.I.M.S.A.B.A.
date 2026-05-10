@@ -90,6 +90,24 @@ data_item[titanium_gear_wheel].icon = "__reskins-angels__/graphics/icons/smeltin
 data_item[nitinol_gear_wheel].icons = nil
 data_item[nitinol_gear_wheel].icon = "__reskins-angels__/graphics/icons/smelting/gears/bob-nitinol-gear-wheel.png"
 
+data_item[cobalt_steel_bearing_ball].icons = nil
+data_item[cobalt_steel_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-cobalt-steel-bearing-ball.png"
+
+data_item[titanium_bearing_ball].icons = nil
+data_item[titanium_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-titanium-bearing-ball.png"
+
+data_item[nitinol_bearing_ball].icons = nil
+data_item[nitinol_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-nitinol-bearing-ball.png"
+
+data_item[cobalt_steel_bearing].icons = nil
+data_item[cobalt_steel_bearing].icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-cobalt-steel-bearing.png"
+
+data_item[titanium_bearing].icons = nil
+data_item[titanium_bearing].icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-titanium-bearing.png"
+
+data_item[nitinol_bearing].icons = nil
+data_item[nitinol_bearing].icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-nitinol-bearing.png"
+
 data_item[limestone_angels].icon = "__reskins-angels__/graphics/icons/refining/intermediates/solid-limestone.png"
 data_item[limestone_angels].icon_size = 64
 

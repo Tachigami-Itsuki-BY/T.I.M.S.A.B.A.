@@ -15,5 +15,23 @@ data:extend
         setting_type = startup,
         default_value = false,
         order = b
-    }
+    },
+    {
+        type = bool_setting,
+        name = "setting-early-cliff-explosives",
+        setting_type = startup,
+        default_value = false,
+        order = c
+    },
 })
+
+--[[data:extend
+({
+    {
+        type = bool_setting,
+        name = ,
+        setting_type = startup,
+        default_value = false,
+        order = 
+    }
+})]]

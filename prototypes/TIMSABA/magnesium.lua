@@ -1,7 +1,6 @@
 -- GROUPS
 local smelting = "angels-smelting"
 local casting = "angels-casting"
-local is_silicon = "angels-silicon"
 local is_magnesium = "is-magnesium"
 local is_magnesium_chemistry = "is-magnesium-chemistry"
 local is_magnesium_casting = "is-magnesium-casting"
@@ -29,13 +28,13 @@ data:extend
 
 -- ITEM
 magnesium_ore = "magnesium-ore"
-local magnesium_processed = "magnesium-processed"
-local magnesium_pellet = "magnesium-pellet"
+magnesium_processed = "magnesium-processed"
+magnesium_pellet = "magnesium-pellet"
 magnesium_ingot = "magnesium-ingot"
 magnesium_powder = "magnesium-powder"
 magnesium_silicide_ingot = "magnesium-silicide-ingot"
 magnesium_oxide = "magnesium-oxide"
-local magnesium_chloride = "magnesium-chloride"
+magnesium_chloride = "magnesium-chloride"
 data:extend
 ({
     {
@@ -43,26 +42,26 @@ data:extend
         type = item,
         name = magnesium_ore,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ore.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore.png",
         order = a,
         stack_size = 200,
         weight = 5000,
         pictures =
         {
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ore-1.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore-1.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ore-2.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore-2.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ore-3.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore-3.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
@@ -74,7 +73,7 @@ data:extend
         type = item,
         name = magnesium_processed,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-processed.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-processed.png",
         order = b,
         stack_size = 200,
         weight = 5000
@@ -84,7 +83,7 @@ data:extend
         type = item,
         name = magnesium_pellet,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-pellet.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-pellet.png",
         order = c,
         stack_size = 200,
         weight = 5000
@@ -94,56 +93,56 @@ data:extend
         type = item,
         name = magnesium_ingot,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot.png",
         order = d,
         stack_size = 200,
         weight = 5000,
         pictures =
         {
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-1.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-1.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-2.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-2.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-3.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-3.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-4.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-4.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-5.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-5.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-6.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-6.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-7.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-7.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-ingot-8.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-8.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
@@ -155,7 +154,7 @@ data:extend
         type = item,
         name = magnesium_powder,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-powder.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-powder.png",
         order = e,
         stack_size = 200,
         weight = 5000
@@ -165,7 +164,7 @@ data:extend
         type = item,
         name = magnesium_silicide_ingot,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-silicide-ingot.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-silicide-ingot.png",
         order = f,
         stack_size = 200,
         weight = 5000
@@ -176,7 +175,7 @@ data:extend
         type = item,
         name = magnesium_oxide,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-oxide.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-oxide.png",
         icon_size = 64,
         order = a,
         stack_size = 200,
@@ -187,7 +186,7 @@ data:extend
         type = item,
         name = magnesium_chloride,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/item/magnesium-chloride.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-chloride.png",
         icon_size = 64,
         order = c,
         stack_size = 200,
@@ -195,8 +194,22 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
 -- FLUID
-local magnesium_gas = "magnesium-gas"
+magnesium_gas = "magnesium-gas"
 magnesium_chloride_gas = "magnesium-chloride-gas"
 magnesium_chloride_solution = "magnesium-chloride-solution"
 magnesium_molten = "magnesium-molten"
@@ -207,7 +220,7 @@ data:extend
         type = fluid,
         name = magnesium_gas,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/fluid/magnesium-gas.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-gas.png",
         order = b,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -221,7 +234,7 @@ data:extend
         type = fluid,
         name = magnesium_chloride_gas,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/fluid/magnesium-chloride-gas.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-chloride-gas.png",
         order = d,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -235,7 +248,7 @@ data:extend
         type = fluid,
         name = magnesium_chloride_solution,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/fluid/magnesium-chloride-solution.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-chloride-solution.png",
         order = e,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -244,12 +257,13 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     },
+    -- CASTING
     {
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         type = fluid,
         name = magnesium_molten,
         subgroup = is_magnesium_casting,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/fluid/magnesium-molten.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-molten.png",
         order = a,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -260,15 +274,31 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = angelsmods.functions.fluid_color(""),
+        flow_color = angelsmods.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 -- RECIPE
-local recipe = "recipe"
-magnesium_ore_recipe = "ore-crushed-mix6-processing"
-local magnesium_oxide_2 = "magnesium-oxide-2"
-local magnesium_gas_from_magnesium_chloride_gas = "magnesium-gas-from-magnesium-chloride-gas"
+magnesium_ore_recipe = "magnesium-ore-crushed-mix-processing"
+magnesium_oxide_2 = "magnesium-oxide-2"
+magnesium_gas_from_magnesium_chloride_gas = "magnesium-gas-from-magnesium-chloride-gas"
 magnesium_chloride_from_magnesium_chloride_solution = "magnesium-chloride-from-magnesium-chloride-solution"
 data:extend
 ({
-    -- ANGELS RESOURCE REFINING
     {
         type = recipe,
         name = magnesium_ore_recipe,
@@ -290,7 +320,7 @@ data:extend
         },
         results = {{type = item, name = magnesium_ore, amount = 4}},
     },
-    -- ANGELS METALLURGY SMELTING
+    -- SMELTING
     {
         type = recipe,
         name = magnesium_processed,
@@ -541,7 +571,7 @@ data:extend
         results = {{type = fluid, name = magnesium_chloride_gas, amount = 240}},
         main_product = magnesium_chloride_gas
     },
-    -- ANGELS METALLURGY CASTING
+    -- CASTING
     {
         type = recipe,
         name = magnesium_molten,
@@ -561,136 +591,7 @@ data:extend
     }
 })
 
--- TECHNOLOGY
-local technology = "technology"
-magnesium_smelting_1 = "magnesium-smelting-1"
-magnesium_smelting_2 = "magnesium-smelting-2"
-magnesium_smelting_3 = "magnesium-smelting-3"
-local tech_magnesium_smelting = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/technology/smelting-magnesium-tech.png"
-data:extend
-({
-    {
-        type = technology,
-        name = magnesium_smelting_1,
-        icon = tech_magnesium_smelting,
-        icon_size = 256,
-        prerequisites =
-        {
-            tech_metallurgy_1,
-            tech_coal_processing_1,
-            tech_ore_advanced_crushing
-        },
-        effects =
-        {
-            {type = unlock_recipe, recipe = magnesium_oxide},
-            {type = unlock_recipe, recipe = magnesium_gas},
-            {type = unlock_recipe, recipe = magnesium_ingot},
-            {type = unlock_recipe, recipe = magnesium_molten}
-        },
-        unit =
-        {
-            count = 100,
-            ingredients =
-            {
-                {automation_science_pack, 1}
-            },
-            time = 30
-        }
-    },
-    {
-        type = technology,
-        name = magnesium_smelting_2,
-        icon = tech_magnesium_smelting,
-        icon_size = 256,
-        prerequisites =
-        {
-            magnesium_smelting_1,
-            tech_ore_processing_1,
-            tech_powder_metallurgy_2
-        },
-        effects =
-        {
-            {type = unlock_recipe, recipe = magnesium_processed},
-            {type = unlock_recipe, recipe = magnesium_oxide_2},
-            {type = unlock_recipe, recipe = magnesium_powder}
-        },
-        unit =
-        {
-            count = 150,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1}
-            },
-            time = 30
-        }
-    },
-    {
-        type = technology,
-        name = magnesium_smelting_3,
-        icon = tech_magnesium_smelting,
-        icon_size = 256,
-        prerequisites =
-        {
-            magnesium_smelting_2,
-            tech_sulfur_processing_1,
-            tech_ore_processing_2
-        },
-        effects =
-        {
-            {type = unlock_recipe, recipe = magnesium_pellet},
-            {type = unlock_recipe, recipe = magnesium_chloride},
-            {type = unlock_recipe, recipe = magnesium_chloride_gas},
-            {type = unlock_recipe, recipe = magnesium_gas_from_magnesium_chloride_gas}
-        },
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1}
-            },
-            time = 30
-        }
-    }
-})
-
---[[
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = ,
-        weight = 
-    }
-})
-
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})
-
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -708,25 +609,4 @@ data:extend
         ingredients = {{type = , name = , amount = }},
         results = {{type = , name = , amount = }},
     }
-})
-]]
-
---[[
-data:extend
-({
-    {
-        type = ,
-        name = ,
-        icon = ,
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})
-]]
+})]]

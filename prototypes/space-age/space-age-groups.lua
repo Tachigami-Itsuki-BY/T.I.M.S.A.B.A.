@@ -7,6 +7,8 @@ is_space_environment_4 = "is-space-environment-4"
 is_space_environment_5 = "is-space-environment-5"
 is_space_environment_6 = "is-space-environment-6"
 is_space_environment_7 = "is-space-environment-7"
+is_space_environment_8 = "is-space-environment-8"
+is_space_environment_9 = "is-space-environment-9"
 is_space_processing_2 = "is-space-processing-2"
 data:extend
 ({
@@ -51,6 +53,18 @@ data:extend
         name = is_space_environment_7,
         group = space,
         order = f_f
+    },
+    {
+        type = item_subgroup,
+        name = is_space_environment_8,
+        group = space,
+        order = f_g
+    },
+    {
+        type = item_subgroup,
+        name = is_space_environment_9,
+        group = space,
+        order = f_h
     },
     {
         type = item_subgroup,
