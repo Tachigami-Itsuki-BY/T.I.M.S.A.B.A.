@@ -108,6 +108,7 @@ end
 
 -- INTERMEDIATE PRODUCTS
 local intermediate_products = "intermediate-products"
+is_alien_science_pack = "is-alien-science-pack"
 is_gears = "bob-gears"
 is_bearing_ball = "bob-bearings"
 is_bearing = "is-bearing"
@@ -118,6 +119,12 @@ is_uranium_235_recipe = "is-uranium-235_recipe"
 is_nuclear_cell = "is-nuclear-cell"
 data:extend
 ({
+    {
+        type = item_subgroup,
+        name = is_alien_science_pack,
+        group = intermediate_products,
+        order = a_a
+    },
     {
         type = item_subgroup,
         name = is_bearing,

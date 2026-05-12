@@ -203,4 +203,6 @@ require("prototypes.planet.vesta.vesta-groups")
 require("prototypes.planet.vesta.vesta-recipe")
 require("prototypes.planet.vesta.vesta-technology")
 
+require("prototypes.mods.space-science-pack")
+
 require("prototypes.prototypes-deleted")

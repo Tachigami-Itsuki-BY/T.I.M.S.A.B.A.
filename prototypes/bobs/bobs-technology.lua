@@ -52,7 +52,7 @@ data:extend
     },]]
     -- STEAM TURBINE
     {
-        localised_name = {"technology-name.steam-turbine-6"},
+        localised_name = {"technology-name.steam-turbine-4"},
         localised_description = {"technology-description.bob-steam-turbine"},
         type = technology,
         name = steam_turbine_4,

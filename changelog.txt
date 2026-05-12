@@ -1,4 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 12.05.2026
+  Locale:
+    - Исправлена опечатка в техническом названии технологии Парового Двигателя 4. (6 → 4)
+
+    - Corrected a typo in the technical name of the Steam Engine 4 technology. (6 → 4)
+
+  Scripting:
+    - Оптимизирован скрипт регенерации руд: теперь процесс запускается только при необходимости (при переходе с версий 0.0.X).
+
+    - Optimized ore regeneration script: it now triggers only when upgrading from 0.0.X versions to prevent redundant runs.
+
+  Modding:
+    - Мод «Bob's Tech» переведён в опциональную зависимость.
+    - Добавлена опциональная зависимость для мода «Space Age Science Packs».
+
+    - Moved "Bob's Tech" mod to optional dependencies.
+    - Added optional dependency for the "Space Age Science Packs" mod.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 12.05.2026
   Balancing:
@@ -702,6 +721,11 @@ Date: 10.05.2026
     - Добавлена однократная регенерация ресурсов для совместимости со старыми сохранениями. Новая руда появится в уже открытых чанках автоматически.
 
     - Added one-time resource regeneration for backward compatibility with existing saves. New ores will automatically appear in already explored chunks.
+
+  Modding:
+    - Добавлена опциональная зависимость для мода «Asteroid Belt».
+
+    - Added optional dependency for the "Asteroid Belt" mod.
 
   Other:
     - Модпак переведён из Альфа-версии в Бета-версию.

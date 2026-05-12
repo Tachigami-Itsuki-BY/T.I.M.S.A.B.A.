@@ -21,6 +21,12 @@ data_recipe[chemical_science_pack].ingredients =
     {type = item, name = sodium_hydroxide_angels, amount = 1}
 }
 
+if mods [bobtech] then
+    local transport_science_pack = "bob-advanced-logistic-science-pack"
+    data_recipe[transport_science_pack].energy_required = 16
+    data_recipe[transport_science_pack].results[1].amount = 4
+end
+
 data_recipe[production_science_pack].energy_required = 16
 data_recipe[production_science_pack].ingredients =
 {
@@ -58,6 +64,72 @@ data_recipe[promethium_science_pack].ingredients =
     {type = item, name = biter_egg, amount = 8}
 }
 data_recipe[promethium_science_pack].results[1].amount = 8
+
+if mods [bobtech] then
+    local alien_science_pack_orange = "bob-alien-science-pack-orange"
+    data_tool[alien_science_pack_orange].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack_orange].order = a
+    data_recipe[alien_science_pack_orange].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack_orange].order = a
+    data_recipe[alien_science_pack_orange].energy_required = 8
+    data_recipe[alien_science_pack_orange].results[1].amount = 8
+
+    local alien_science_pack_blue = "bob-alien-science-pack-blue"
+    data_tool[alien_science_pack_blue].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack_blue].order = b
+    data_recipe[alien_science_pack_blue].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack_blue].order = b
+    data_recipe[alien_science_pack_blue].energy_required = 8
+    data_recipe[alien_science_pack_blue].results[1].amount = 8
+
+    local alien_science_pack_yellow = "bob-alien-science-pack-yellow"
+    data_tool[alien_science_pack_yellow].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack_yellow].order = c
+    data_recipe[alien_science_pack_yellow].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack_yellow].order = c
+    data_recipe[alien_science_pack_yellow].energy_required = 8
+    data_recipe[alien_science_pack_yellow].results[1].amount = 8
+
+    local alien_science_pack_purple = "bob-alien-science-pack-purple"
+    data_tool[alien_science_pack_purple].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack_purple].order = d
+    data_recipe[alien_science_pack_purple].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack_purple].order = d
+    data_recipe[alien_science_pack_purple].energy_required = 8
+    data_recipe[alien_science_pack_purple].results[1].amount = 8
+
+    local alien_science_pack_green = "bob-alien-science-pack-green"
+    data_tool[alien_science_pack_green].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack_green].order = e
+    data_recipe[alien_science_pack_green].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack_green].order = e
+    data_recipe[alien_science_pack_green].energy_required = 8
+    data_recipe[alien_science_pack_green].results[1].amount = 8
+
+    local alien_science_pack_red = "bob-alien-science-pack-red"
+    data_tool[alien_science_pack_red].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack_red].order = f
+    data_recipe[alien_science_pack_red].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack_red].order = f
+    data_recipe[alien_science_pack_red].energy_required = 8
+    data_recipe[alien_science_pack_red].results[1].amount = 8
+
+    local alien_science_pack = "bob-alien-science-pack"
+    data_tool[alien_science_pack].subgroup = is_alien_science_pack
+    data_tool[alien_science_pack].order = g
+    data_recipe[alien_science_pack].subgroup = is_alien_science_pack
+    data_recipe[alien_science_pack].order = g
+    data_recipe[alien_science_pack].energy_required = 8
+    data_recipe[alien_science_pack].results[1].amount = 8
+
+    local gold_science_pack_bob = "bob-science-pack-gold"
+    data_tool[gold_science_pack_bob].subgroup = is_alien_science_pack
+    data_tool[gold_science_pack_bob].order = h
+    data_recipe[gold_science_pack_bob].subgroup = is_alien_science_pack
+    data_recipe[gold_science_pack_bob].order = h
+    data_recipe[gold_science_pack_bob].energy_required = 32
+    data_recipe[gold_science_pack_bob].results[1].amount = 4
+end
 
 local gear_wheels =
 {

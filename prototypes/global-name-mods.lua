@@ -275,8 +275,11 @@ sulfuric_bacteria = "sulfuric-bacteria"
 clowns_nuclear = "Clowns-Nuclear"
 plutonium_239_mods = "plutonium-239"
 
--- BOBREVAMP
-bobrevamp = "bobrevamp"
+-- BOBS
+bobtech = "bobtech"
 
 -- LOADERS MODERNIZED
 loaders_modernized = "loaders-modernized"
+
+-- SPACE AGE SCIENCE PACK
+space_age_science_packs = "sa-science-packs"

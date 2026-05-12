@@ -425,6 +425,9 @@ data_item[biolab].weight = 62500
 data_recipe[biolab].subgroup = is_gleba_building
 data_recipe[biolab].order = d
 data_recipe[biolab].energy_required = 8
+if mods [bobtech] then
+    data_recipe[biolab].ingredients[1].name = lab_2
+end
 data_recipe[biolab].ingredients[2].amount = 8
 data_recipe[biolab].ingredients[3].amount = 32
 data_recipe[biolab].ingredients[5].amount = 4

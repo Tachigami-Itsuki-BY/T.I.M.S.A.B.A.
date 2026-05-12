@@ -37,7 +37,7 @@ script.on_configuration_changed(function(data)
     local changes = data.mod_changes["TIMSABA"]
     if changes then
         local old = changes.old_version
-        if not old or old < "0.1.0" then
+        if old and old < "0.1.0" then
             local nauvis = game.surfaces["nauvis"]
             if nauvis then
                 local mgs = nauvis.map_gen_settings
@@ -51,14 +51,9 @@ script.on_configuration_changed(function(data)
                 nauvis.map_gen_settings = mgs
                 nauvis.regenerate_entity("molybdenite-ore")
                 nauvis.regenerate_entity("powellite-ore")
-            end
 
-            local aquilo = game.surfaces["aquilo"]
-            if aquilo then
-                -- Добавьте логику для Аквило сюда по аналогии
+                game.print({"mod-messages.ores-regenerated"})
             end
-
-            game.print({"mod-messages.ores-regenerated"})
         end
     end
 end)
