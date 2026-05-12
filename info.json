@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.(ALPHA)",
     "author": "Tachugami_Istuki",
@@ -24,7 +24,7 @@
         "bobrevamp >= 2.0.0",
         "bobvehicleequipment >= 2.0.0",
         "bobwarfare >= 2.0.0",
-        "? bobtech",
+        "? bobtech >= 2.0.0",
         "bobenemies >= 2.0.0",
         "angelsaddons-storage >= 2.0.0",
         "angelsbioprocessing >= 2.0.0",
@@ -69,7 +69,8 @@
         "! aai-loaders",
         "! Productivity",
         "? graille-bob-hardened-bile-remover",
-        "? Flare Stack"
+        "? Flare Stack",
+        "? sa-science-packs"
     ],
     "description": "Tachigami Itsuki Modpack for Space Age, Bob's and Angel's. \nПолная интеграция Space Age с модами Angel's и Bob's. \nЕдиный баланс, новые: сущности, предметы, жидкости, рецепты и технологии, а также обновлённые иконки. \nSeamless integration of Space Age with Angel's & Bob's mods. \nUnified balance, new entities, items, fluids, recipes, and technologies, plus updated icons.",
     "quality_required": true,
