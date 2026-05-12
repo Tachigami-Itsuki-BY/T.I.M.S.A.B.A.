@@ -1,4 +1,34 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+Date: 12.05.2026
+  Balancing:
+    - В некоторых технологиях изменены предварительные условия и стоимость исследования.
+    - В рецепт Строительный Лом скорректированы результаты: 
+        1. Добалвен Нитрид Кремния (1 ед. 6.25%)
+        2. Удалён Железный Стержень.
+        3. Удалён Стальной Стержень.
+    - В рецепте Машинный Лом изменен процент результатов:
+        1. Латунь (12.5%) → (25%)
+        2. Керамика (25%) → (12.5%)
+
+    - Changed prerequisites and research costs for some technologies.
+    - Adjusted results in the Construction Scrap recipe:
+        1. Added Silicon Nitride (1 unit, 6.25%)
+        2. Removed Iron Rod.
+        3. Removed Steel Rod.
+    - Changed percent results in the Machinery Scrap recipe:
+        1. Brass (12.5%) → (25%)
+        2. Ceramics (25%) → (12.5%)
+
+  Modding:
+    - Добавлена опциональная зависимость для мода «Flare Stack».
+    - Добавлена опциональная зависимость для мода «Loaders Modernized».
+    - Заменен необязательный мод "Loaders Modernized: Bob's Logistics" на "Loaders Modernized: Integrations". Удалите старый мод, так как он устарел.
+
+    - Added optional dependency for the "Flare Stack" mod.
+    - Added optional dependency for the "Loaders Modernized" mod.
+    - Replaced optional "Loaders Modernized: Bob's Logistics" with "Loaders Modernized: Integrations". Delete the old mod, as it is now obsolete.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 10.05.2026
   Features:
@@ -6,7 +36,7 @@ Date: 10.05.2026
         1. Молибденитовая.
         2. Повеллитовая.
     - Добавлена новая руда на Фульгоре: Браннеритовая.
-    - Добавлены астероиды на орбите Аквило:
+    - Добавлены новые астероиды на орбите Аквило:
         1. Антимонитовые.
         2. Германитовые.
     - Добавлены новые предметы и жидкости:
@@ -141,7 +171,7 @@ Date: 10.05.2026
         1. Molybdenite.
         2. Powellite.
     - Added new ore to Fulgora: Brannerite.
-    - Added asteroids in Aquilo's orbit:
+    - Added new asteroids in Aquilo's orbit:
         1. Antimonite.
         2. Germanite.
     - Added new items and fluids:
@@ -311,7 +341,7 @@ Date: 10.05.2026
         2. (16 ед.) → (8 ед.)
         3. (16 ед.) → (8 ед.)
     - Удалён рецепт Лавы (из Каменных Блоков).
-    - В рецепте Ракетного Двигателя скорректированны ингредиенты:
+    - В рецепте Ракетного Двигателя скорректированы ингредиенты:
         1. Электродвигатель (4 ед.) → Молибденовая Шестерня (16 ед.)
         2. Нитиноловая Пластина → Рениевый Подшипник.
         3. Добавлена Молибден-Рениевая Труба (8 ед.)

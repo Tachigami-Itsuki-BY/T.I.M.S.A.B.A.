@@ -411,7 +411,7 @@ bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter
 bulk_inserter_recipe(T4_bulk_inserter, titanium_gear_wheel, T3_bulk_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
 bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 
-if mods ["loaders-modernized-bobs"] then
+if mods ["loaders-modernized-integrations"] then
     local data_loader_1x1 = data.raw["loader-1x1"]
     local T0_loader = "mdrn-basic-loader"
     local T1_loader = "mdrn-loader"

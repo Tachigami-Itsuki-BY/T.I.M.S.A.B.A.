@@ -155,7 +155,7 @@ data:extend
     },
     -- CHEMISTRY
     {
-        localised_description = show_formula and {chemical_formula, "Ga(OH)3"} or nil,
+        localised_description = show_formula and {chemical_formula, "Ga(OH)[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
         name = galium_hydroxide_III,
         subgroup = is_gallium_chemistry,
@@ -166,7 +166,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = show_formula and {chemical_formula, "Ga2O3"} or nil,
+        localised_description = show_formula and {chemical_formula, "Ga[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
         name = galium_oxide_III,
         subgroup = is_gallium_chemistry,
@@ -177,7 +177,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = show_formula and {chemical_formula, "GaCl3"} or nil,
+        localised_description = show_formula and {chemical_formula, "GaCl[font=default-tiny-bold]3[/font]"} or nil,
         type = item,
         name = galium_chloride_III,
         subgroup = is_gallium_chemistry,
@@ -231,7 +231,7 @@ lithium_gallium_hydride_solution_ether = "lithium-gallium-hydride-solution-ether
 data:extend
 ({
     {
-        localised_description = show_formula and {chemical_formula, "NaGa(OH)4(aq)"} or nil,
+        localised_description = show_formula and {chemical_formula, "NaGa(OH)[font=default-tiny-bold]4(aq)[/font]"} or nil,
         type = fluid,
         name = sodium_tetrahydroxogallate_III_solution,
         subgroup = is_gallium_chemistry,
@@ -259,7 +259,7 @@ data:extend
         auto_barrel = false
     },
     {
-        localised_description = show_formula and {chemical_formula, "GaCl3(ether)"} or nil,
+        localised_description = show_formula and {chemical_formula, "GaCl[font=default-tiny-bold]3(ether)[/font]"} or nil,
         type = fluid,
         name = galium_chloride_III_solution_ether,
         subgroup = is_gallium_chemistry,
@@ -273,7 +273,7 @@ data:extend
         auto_barrel = false
     },
     {
-        localised_description = show_formula and {chemical_formula, "LiGaH4(ether)"} or nil,
+        localised_description = show_formula and {chemical_formula, "LiGaH[font=default-tiny-bold]4(ether)[/font]"} or nil,
         type = fluid,
         name = lithium_gallium_hydride_solution_ether,
         subgroup = is_gallium_chemistry,

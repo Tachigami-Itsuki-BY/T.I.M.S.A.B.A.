@@ -49,6 +49,8 @@ require("prototypes-final-fix.final-fix-autoplace-controls")
 require("prototypes-final-fix.final-fix-simulation")
 require("prototypes-final-fix.final-fix-pipe")
 
+require("prototypes-final-fix.mods-final-fix.flare-stack")
+
 local map_settings = data.raw["map-settings"]["map-settings"]
 map_settings.pollution.enabled = true
 map_settings.enemy_evolution.enabled = true

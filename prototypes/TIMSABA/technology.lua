@@ -558,7 +558,7 @@ data:extend
         name = tech_rhenium_synthesis,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/technology/rhenium-synthesis.png",
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, tech_rhenium_smelting_3, tech_molybdenite_processing_4},
+        prerequisites = {promethium_science_pack, tech_rhenium_smelting_3, tech_molybdenite_processing_4--[[, wolframite_processing_4]]},
         effects = {{type = unlock_recipe, recipe = rhenium_ore_recipe}},
         unit =
         {
@@ -574,7 +574,8 @@ data:extend
                 {electromagnetic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {metallurgic_science_pack, 1},
-                {cryogenic_science_pack, 1}
+                {cryogenic_science_pack, 1},
+                {promethium_science_pack, 1}
             },
             time = 30
         }
@@ -668,14 +669,16 @@ data:extend
         type = technology,
         name = phosphorus_processing,
         icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
-        prerequisites = {tech_advanced_ore_refining_3},
+        prerequisites = {tech_advanced_ore_refining_3, tech_metallurgy_4},
         effects =
         {
             {type = unlock_recipe, recipe = white_phosphorus_gas},
             {type = unlock_recipe, recipe = white_phosphorus},
             {type = unlock_recipe, recipe = phosphorus_trichloride_liquid},
             {type = unlock_recipe, recipe = phosphorus_pentachloride},
-            {type = unlock_recipe, recipe = phosphorus_pentafluoride_gas}
+            {type = unlock_recipe, recipe = phosphorus_pentafluoride_gas},
+            {type = unlock_recipe, recipe = metasilicic_acid},
+            {type = unlock_recipe, recipe = silicon_oxide_IV_from_metasilicic_acid}
         },
         unit =
         {
