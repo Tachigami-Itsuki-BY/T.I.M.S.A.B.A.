@@ -15,6 +15,8 @@ data:extend
 phosphate_ore = "phosphate-ore"
 white_phosphorus = "white-phosphorus"
 phosphorus_pentachloride = "phosphorus-pentachloride"
+calcium_silicate = "calcium-silicate"
+metasilicic_acid = "metasilicic-acid"
 data:extend
 ({
     {
@@ -66,6 +68,29 @@ data:extend
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-pentachloride.png",
         icon_size = 64,
         order = e,
+        stack_size = 200,
+        weight = 5000
+    },
+    -- SILICON
+    {
+        localised_description = show_formula and {chemical_formula, "CaSiO[font=default-tiny-bold]3[/font]"} or nil,
+        type = item,
+        name = calcium_silicate,
+        subgroup = is_silicon_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/calcium-silicate.png",
+        icon_size = 64,
+        order = i,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]3[/font]"} or nil,
+        type = item,
+        name = metasilicic_acid,
+        subgroup = is_silicon_chemistry,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/metasilicic-acid.png",
+        icon_size = 64,
+        order = j,
         stack_size = 200,
         weight = 5000
     }
@@ -154,7 +179,8 @@ data:extend
 })]]
 
 -- RECIPE
-phosphate_ore_recipe = "ore-crystal-mix8-processing"
+phosphate_ore_recipe = "phosphate-ore-crystal-mix-processing"
+silicon_oxide_IV_from_metasilicic_acid = "silicon-oxide-IV-from-metasilicic-acid"
 data:extend
 ({
     {
@@ -192,26 +218,26 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- 4Ca₅(PO₄)₃F + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
+        energy_required = 4, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
         ingredients =
         {
-            {type = item, name = phosphate_ore, amount = 16},
-            {type = item, name = sand_angels, amount = 72},
-            {type = item, name = coke_angels, amount = 120}
+            {type = item, name = phosphate_ore, amount = 8},
+            {type = item, name = sand_angels, amount = 36},
+            {type = item, name = coke_angels, amount = 60}
         },
         results =
         {
-            {type = fluid, name = white_phosphorus_gas, amount = 12},
-            {type = item, name = slag_angels, amount = 32}, -- 72
-            {type = item, name = calcium_silicate, amount = 4}, -- 8
-            {type = fluid, name = carbon_dioxide_angels, amount = 960} -- 1800
+            {type = fluid, name = white_phosphorus_gas, amount = 6},
+            {type = item, name = calcium_silicate, amount = 72},
+            {type = item, name = fluorite_angels, amount = 8},
+            {type = fluid, name = carbon_dioxide_angels, amount = 900}
         },
         main_product = white_phosphorus_gas
     },
     {
         type = recipe,
         name = white_phosphorus,
-        category = angels_cooling,
+        category = chemistry,
         subgroup = is_phosphorus,
         icons = TWO_I(white_phosphorus_gas, white_phosphorus),
         order = c,
@@ -224,12 +250,12 @@ data:extend
         ingredients =
         {
             {type = fluid, name = white_phosphorus_gas, amount = 240},
-            {type = fluid, name = coolant, amount = 240}
+            {type = fluid, name = water_purified_angels, amount = 240}
         },
         results =
         {
             {type = item, name = white_phosphorus, amount = 16},
-            {type = fluid, name = coolant_used, amount = 120, temperature = 300}
+            {type = fluid, name = steam, amount = 120} -- 240
         },
         main_product = white_phosphorus
     },
@@ -299,6 +325,54 @@ data:extend
             {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 1200
         },
         main_product = phosphorus_pentafluoride_gas
+    },
+    -- SILICON
+    {
+        type = recipe,
+        name = metasilicic_acid,
+        category = angels_chemical_smelting_3,
+        subgroup = is_silicon_chemistry,
+        icons = THREE_D_I(calcium_silicate, nil, hydrochloric_acid_angels, metasilicic_acid, calcium_chloride_solution, water_purified_angels),
+        order = j,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 8, -- CaSiO₃(s) + 2HCl(aq) --> H₂SiO₃(s) + CaCl₂(aq) + H₂O(l)
+        ingredients =
+        {
+            {type = item, name = calcium_silicate, amount = 16},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 480}
+        },
+        results =
+        {
+            {type = item, name = metasilicic_acid, amount = 16},
+            {type = fluid, name = calcium_chloride_solution, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = metasilicic_acid
+    },
+    {
+        type = recipe,
+        name = silicon_oxide_IV_from_metasilicic_acid,
+        category = angels_blast_smelting_4,
+        subgroup = is_silicon_chemistry,
+        icons = THREE_R_I(metasilicic_acid, silicon_oxide_IV, steam),
+        order = a_c,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 8, -- H₂SiO₃(s) --> SiO₂(s) + H₂O(l)
+        ingredients = {{type = item, name = metasilicic_acid, amount = 16}},
+        results =
+        {
+            {type = item, name = silicon_oxide_IV, amount = 16},
+            {type = fluid, name = steam, amount = 120} -- 240
+        },
+        main_product = silicon_oxide_IV
     }
 })
 

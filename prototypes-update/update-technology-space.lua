@@ -125,7 +125,7 @@ data_technology[asteroid_productivity].unit.ingredients =
 }
 data_technology[asteroid_productivity].max_level = 30
 
-data_technology[tech_advanced_full_asteroid_processing].prerequisites = {tech_molybdenum_synthesis, tech_rhenium_synthesis, tech_holmium_synthesis, tech_arsenic_synthesis}
+data_technology[tech_advanced_full_asteroid_processing].prerequisites = {tech_molybdenum_synthesis, tech_rhenium_synthesis, tech_holmium_synthesis}
 
 if mods ["CargoBayLimitResearch"] then
     data_technology["cargo-bay-limit-1"].unit.ingredients =

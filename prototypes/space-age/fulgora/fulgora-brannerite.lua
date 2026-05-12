@@ -211,7 +211,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 2, -- Brannerite crushed + Purified water -flotation-> Brannerite chunks + calcium_silicate + Fluoric waste water
+        energy_required = 2, -- Brannerite crushed + Purified water -flotation-> Brannerite chunks + Calcium silicate + Fluoric waste water
         ingredients =
         {
             {type = item, name = brannerite_crushed, amount = 2},

@@ -136,7 +136,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 2, -- Wolframite crushed + Purified water -flotation-> Wolframite chunks + Slag + Sulfuric waste water
+        energy_required = 2, -- Wolframite crushed + Purified water -flotation-> Wolframite chunks + Calcium silicate + Sulfuric waste water
         ingredients =
         {
             {type = item, name = wolframite_crushed, amount = 2},
@@ -145,7 +145,7 @@ data:extend
         results =
         {
             {type = item, name = wolframite_chunks, amount = 2},
-            {type = item, name = slag_angels, amount = 1, probability = 0.5},
+            {type = item, name = slag_angels, amount = 1, probability = 0.5}, -- calcium_silicate
             {type = fluid, name = water_yellow_waste, amount = 60}
         },
         main_product = wolframite_chunks
