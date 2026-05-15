@@ -207,6 +207,7 @@ data:extend
 
 -- ANGELS METTALURGY CASTING
 local casting = "angels-casting"
+is_titanium_casting = "angels-titanium-casting"
 is_stone_casting = "angels-stone-casting"
 is_bricks_casting = "is-bricks-casting"
 is_alloys_casting_2 = "is-alloys-casting-2"
@@ -298,6 +299,7 @@ is_sulfur_fluids = "angels-petrochem-sulfur-fluids"
 is_chlorine_fluids = "angels-petrochem-chlorine-fluids"
 is_calcium = "is-calcium"
 is_calcium_fluids = "is-calcium-fluids"
+is_others = "is-others"
 is_others_fluids = "is-others-fluids"
 is_natural_gas = "is-natural-gas"
 is_multi_phase_oil = "is-multi-phase-oil"
@@ -355,9 +357,15 @@ data:extend
     },
     {
         type = item_subgroup,
-        name = is_others_fluids,
+        name = is_others,
         group = petrochem_refining,
         order = i
+    },
+    {
+        type = item_subgroup,
+        name = is_others_fluids,
+        group = petrochem_refining,
+        order = i_a
     },
     {
         type = item_subgroup,

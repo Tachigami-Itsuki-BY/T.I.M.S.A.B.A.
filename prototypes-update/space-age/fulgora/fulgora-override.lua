@@ -68,7 +68,7 @@ data_recipe[supercapacitor].order = b
 data_recipe[supercapacitor].energy_required = 8
 data_recipe[supercapacitor].ingredients =
 {
-    {type = item, name = battery_silver_zinc, amount = 4}, -- battery_graphene
+    {type = item, name = battery_graphene, amount = 4},
     {type = item, name = advanced_processing_unit, amount = 16},
     {type = item, name = holmium_plate, amount = 8},
     {type = item, name = superconductor, amount = 8},
@@ -98,10 +98,10 @@ data_recipe[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].energy_required = 8
 data_recipe[electromagnetic_science_pack].ingredients =
 {
-    {type = item, name = accumulator_3, amount = 1}, -- accumulator_4
+    {type = item, name = accumulator_4, amount = 1},
     {type = item, name = supercapacitor, amount = 1},
-    {type = fluid, name = electrolyte, amount = 30},
-    {type = fluid, name = holmium_chloride_III_solution, amount = 30}
+    {type = item, name = holmium_plate, amount = 2},
+    {type = fluid, name = electrolyte, amount = 30}
 }
 
 -- BUILDING
@@ -119,7 +119,7 @@ data_recipe[recycler].ingredients =
     {type = item, name = advanced_processing_unit, amount = 8},
     {type = item, name = molybdenum_plate, amount = 16},
     {type = item, name = molybdenum_rhenium_plate, amount = 16},
-    {type = item, name = refined_concrete, amount = 16}
+    {type = item, name = reinforced_concrete, amount = 16}
 }
 data_furnace[recycler].subgroup = is_fulgora_building
 data_furnace[recycler].order = a
@@ -139,7 +139,7 @@ data_recipe[electromagnetic_plant].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 64},
     {type = item, name = molybdenum_rhenium_plate, amount = 64},
-    {type = item, name = refined_concrete, amount = 64},
+    {type = item, name = reinforced_concrete, amount = 64},
     {type = item, name = holmium_plate, amount = 128}
 }
 data_assembling[electromagnetic_plant].subgroup = is_fulgora_building
@@ -164,7 +164,7 @@ data_recipe[lightning_rod].ingredients =
     {type = item, name = platinum_cable, amount = 16},
     {type = item, name = steel_rod, amount = 8},
     {type = item, name = advanced_processing_unit, amount = 1},
-    {type = item, name = refined_concrete, amount = 4}
+    {type = item, name = reinforced_concrete, amount = 4}
 }
 data_lightning_attractor[lightning_rod].subgroup = is_fulgora_building
 data_lightning_attractor[lightning_rod].order = c
@@ -179,7 +179,7 @@ data_recipe[lightning_collector].order = d
 data_recipe[lightning_collector].energy_required = 4
 data_recipe[lightning_collector].ingredients =
 {
-    {type = item, name = accumulator_3, amount = 1}, -- accumulator_4
+    {type = item, name = accumulator_4, amount = 1},
     {type = item, name = lightning_rod, amount = 1},
     {type = item, name = supercapacitor, amount = 8},
     {type = fluid, name = electrolyte, amount = 60}

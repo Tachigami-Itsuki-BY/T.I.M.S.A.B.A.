@@ -8,7 +8,7 @@ data_recipe[rocket_silo].ingredients =
     {type = item, name = heat_shielding_tile, amount = 128},
     {type = item, name = advanced_processing_unit, amount = 64},
     {type = item, name = molybdenum_rhenium_pipe, amount = 64},
-    {type = item, name = refined_concrete, amount = 256},
+    {type = item, name = reinforced_concrete, amount = 256},
     {type = item, name = molybdenum_plate, amount = 256},
     {type = item, name = rhenium_plate, amount = 128},
     {type = item, name = molybdenum_rhenium_plate, amount = 512}
@@ -114,7 +114,7 @@ data_recipe[crusher].ingredients =
 {
     {type = item, name = electric_engine_unit, amount = 8},
     {type = item, name = low_density_structure, amount = 16},
-    {type = item, name = nitinol_plate_bob, amount = 8}
+    {type = item, name = molybdenum_rhenium_plate, amount = 8}
 }
 data_assembling[crusher].order = e
 data_assembling[crusher].energy_usage = 465 .. kW
@@ -425,7 +425,6 @@ data_item[promethium_asteroid_chunk].localised_description = show_formula and {c
 data_item[promethium_asteroid_chunk].stack_size = 200
 
 if mods [muluna_mods] then
-    local anorthite_chunk = "anorthite-chunk"
     local anorthite_crushing = "anorthite-crushing"
     advanced_anorthite_crushing = "advanced-anorthite-crushing"
     local anorthite_asteroids =
@@ -437,7 +436,7 @@ if mods [muluna_mods] then
         {type = data_asteroid, name = anorthite_chunk,                order = e},
         {type = data_item,     name = anorthite_chunk,                order = e},
         {type = data_recipe,   name = anorthite_crushing,             order = e_a},
-        {type = data_recipe,   name = advanced_anorthite_crushing,    order = e_b}
+        {type = data_recipe,   name = advanced_anorthite_crushing,    order = f_a}
     }
     for _, ASTEROID in pairs(anorthite_asteroids) do
         if ASTEROID.type[ASTEROID.name] then
@@ -446,6 +445,7 @@ if mods [muluna_mods] then
         end
     end
 
+    data_item[anorthite_chunk].localised_description = show_formula and {chemical_formula, "CaAl[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]8[/font]"} or nil
     data_item[anorthite_chunk].stack_size = 200
 
     data_recipe[anorthite_crushing].icons = TWO_I(anorthite_chunk, aluminium_oxide)

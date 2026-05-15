@@ -390,7 +390,7 @@ data_recipe[heating_tower].ingredients =
 {
     {type = item, name = boiler_4, amount = 2},
     {type = item, name = heat_pipe_2, amount = 4},
-    {type = item, name = refined_concrete, amount = 16}
+    {type = item, name = reinforced_concrete, amount = 16}
 }
 data_reactor[heating_tower].subgroup = is_gleba_building
 data_reactor[heating_tower].order = b

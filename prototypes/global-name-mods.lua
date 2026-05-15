@@ -20,6 +20,7 @@ astronomical_data_muluna = "muluna-astronomical-data"
 telescope = "muluna-telescope"
 oxygen_mods = "oxygen"
 carbon_dioxide_mods = "carbon-dioxide"
+anorthite_chunk = "anorthite-chunk"
 
 -- ARIG
 arig_mods = "planetaris-arig"

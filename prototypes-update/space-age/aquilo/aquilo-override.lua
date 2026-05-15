@@ -145,7 +145,7 @@ data_recipe[cryogenic_plant].ingredients =
     {type = item, name = niobium_titanium_plate, amount = 16},
     {type = item, name = niobium_iron_plate, amount = 16},
     {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
-    {type = item, name = refined_concrete, amount = 32},
+    {type = item, name = reinforced_concrete, amount = 32},
     {type = item, name = superconductor, amount = 16},
     {type = item, name = semiconductor, amount = 16}
 }
@@ -171,7 +171,8 @@ data_recipe[fusion_reactor].ingredients =
     {type = item, name = niobium_titanium_cable, amount = 256},
     {type = item, name = quantum_processor, amount = 256},
     {type = item, name = superconductor, amount = 256},
-    {type = item, name = semiconductor, amount = 256}
+    {type = item, name = semiconductor, amount = 256},
+    {type = item, name = reinforced_concrete, amount = 256}
 }
 data_reactor_fusion[fusion_reactor].subgroup = is_aquilo_power
 data_reactor_fusion[fusion_reactor].order = a
@@ -195,7 +196,8 @@ data_recipe[fusion_generator].ingredients =
     {type = item, name = niobium_titanium_cable, amount = 128},
     {type = item, name = quantum_processor, amount = 64},
     {type = item, name = superconductor, amount = 128},
-    {type = item, name = semiconductor, amount = 128}
+    {type = item, name = semiconductor, amount = 128},
+    {type = item, name = reinforced_concrete, amount = 128}
 }
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
@@ -210,7 +212,7 @@ data_fluid[fusion_plasma].heat_capacity = ((25 / 7500) * 1.728) .. kJ
 local fusion_power_cell = "fusion-power-cell"
 data_item[fusion_power_cell].subgroup = is_aquilo_power
 data_item[fusion_power_cell].order = d
-data_item[fusion_power_cell].fuel_value = 86400000 .. kJ
+data_item[fusion_power_cell].fuel_value = (172800 * 512) .. kJ
 data_recipe[fusion_power_cell].subgroup = is_aquilo_power
 data_recipe[fusion_power_cell].order = d
 data_recipe[fusion_power_cell].energy_required = 8
@@ -222,7 +224,7 @@ data_recipe[fusion_power_cell].ingredients =
     {type = item, name = lead_plate_bob, amount = 32},
     {type = item, name = holmium_plate, amount = 8},
     {type = fluid, name = deuterium_angels, amount = 240},
-    --{type = fluid, name = tritium_gas, amount = 240}
+    {type = fluid, name = tritium_gas, amount = 240}
 }
 data_recipe[fusion_power_cell].results[1].amount = 1
 

@@ -8,7 +8,7 @@ local is_smelting_machine_2 = "bob-smelting-machine"
 local is_reactor = "angels-power-nuclear-reactor-b"
 data:extend
 ({
-    --[[ BOILER
+    -- BOILER
     {
         type = item,
         name = boiler_6,
@@ -109,7 +109,7 @@ data:extend
             max_health = 900,
             maximum_temperature = 915
         }
-    }),]]
+    }),
     -- STEAM TURBINE
     {
         type = item,
@@ -139,7 +139,7 @@ data:extend
         {
             {type = item, name = molybdenum_gear_wheel, amount = 8},
             {type = item, name = rhenium_bearing, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = molybdenum_rhenium_pipe, amount = 8},
             {type = item, name = molybdenum_rhenium_plate, amount = 32},
             {type = item, name = steam_turbine_3, amount = 1}
@@ -162,7 +162,7 @@ data:extend
             maximum_temperature = 915
         }
     }),
-    --[[ SOLAR PANELS
+    -- SOLAR PANELS
     -- SMALL
     {
         type = item,
@@ -334,7 +334,7 @@ data:extend
         type = recipe,
         name = accumulator_4,
         category = crafting,
-        additional_categories = electromagnetics,
+        additional_categories = {electromagnetics},
         subgroup = is_accumulator,
         icon = "__base__/graphics/icons/accumulator.png",
         order = d,
@@ -359,6 +359,7 @@ data:extend
     ({
         data_accumulator[accumulator_1],
         {
+            localised_name = {"entity-name.accumulator-4"},
             name = accumulator_4,
             subgroup = is_accumulator,
             icon = "__base__/graphics/icons/accumulator.png",
@@ -403,9 +404,9 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = rhenium_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
-            {type = item, name = rhenium_plate, amount = 8},
+            {type = item, name = molybdenum_gear_wheel, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 4},
+            {type = item, name = molybdenum_plate, amount = 8},
             {type = item, name = electric_mining_drill_5, amount = 1}
         },
         results = {{type = item, name = electric_mining_drill_6, amount = 1}},
@@ -434,7 +435,7 @@ data:extend
         }
     }),
     -- PUMPJACK
-    --[[{
+    {
         type = item,
         name = pumpjack_5,
         subgroup = is_extraction_machine_pumpjack,
@@ -461,7 +462,7 @@ data:extend
         ingredients =
         {
             {type = item, name = molybdenum_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = molybdenum_rhenium_pipe, amount = 4},
             {type = item, name = molybdenum_rhenium_plate, amount = 4},
             {type = item, name = pumpjack_4, amount = 1}
@@ -517,10 +518,10 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = , amount = 8},
-            {type = item, name = , amount = 4},
-            {type = item, name = , amount = 4},
-            {type = item, name = , amount = 4},
+            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 4},
+            {type = item, name = niobium_iron_plate, amount = 4},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
             {type = item, name = pumpjack_5, amount = 1}
         },
         results = {{type = item, name = pumpjack_6, amount = 1}},
@@ -547,9 +548,9 @@ data:extend
                 usage_priority = "secondary-input"
             }
         }
-    }),]]
+    }),
     -- REACTOR
-    --[[{
+    {
         type = item,
         name = tritium_reactor,
         subgroup = is_reactor,
@@ -575,10 +576,11 @@ data:extend
         energy_required = 64,
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 512}, -- ЗАМЕНИТЬ!
+            {type = item, name = advanced_processing_unit, amount = 512},
             {type = item, name = heat_pipe_4, amount = 32},
             {type = item, name = lead_plate_bob, amount = 256},
             {type = item, name = molybdenum_rhenium_plate, amount = 256},
+            {type = item, name = carbon_concrete_brick, amount = 512},
             {type = item, name = deuterium_reactor, amount = 1}
         },
         results = {{type = item, name = tritium_reactor, amount = 1}},
@@ -604,7 +606,8 @@ data:extend
                 max_transfer = 10800000 .. kW,
                 minimum_glow_temperature = 250
             },
-            energy_source = {fuel_categories = {nuclear_fuel_T4}}
+            energy_source = {fuel_categories = {nuclear_fuel_T4}},
+            neighbour_bonus = 1.5
         }
     }),
     -- FURNACES
@@ -634,7 +637,7 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 4}, -- ЗАМЕНИТЬ!
+            {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = molybdenum_rhenium_plate, amount = 8},
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_furnace_3, amount = 1}
@@ -691,7 +694,7 @@ data:extend
         energy_required = 1,
         ingredients =
         {
-            {type = item, name = advanced_processing_unit, amount = 8}, -- ЗАМЕНИТЬ!
+            {type = item, name = advanced_processing_unit, amount = 8},
             {type = item, name = molybdenum_rhenium_plate, amount = 8},
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_mixing_furnace_3, amount = 1}
@@ -721,7 +724,7 @@ data:extend
                 drain = 90 .. kW
             }
         }
-    }),]]
+    }),
     -- CENTIFUGE
     {
         type = item,
@@ -753,7 +756,7 @@ data:extend
             {type = item, name = rhenium_bearing, amount = 32},
             {type = item, name = advanced_processing_unit, amount = 128},
             {type = item, name = molybdenum_plate, amount = 64},
-            {type = item, name = molybdenum_rhenium_plate, amount = 128},
+            {type = item, name = carbon_concrete_brick, amount = 128},
             {type = item, name = centrifuge_3, amount = 1}
         },
         results = {{type = item, name = centrifuge_4, amount = 1}},
@@ -785,18 +788,18 @@ data:extend
     })
 })
 
---data_boiler[boiler_5].next_upgrade = boiler_6
---data_generator[steam_engine_5].next_upgrade = steam_engine_6
+data_boiler[boiler_5].next_upgrade = boiler_6
+data_generator[steam_engine_5].next_upgrade = steam_engine_6
 data_generator[steam_turbine_3].next_upgrade = steam_turbine_4
---data_solar_panel[solar_panel_small_3].next_upgrade = solar_panel_small_4
---data_solar_panel[solar_panel_3].next_upgrade = solar_panel_4
---data_solar_panel[solar_panel_large_3].next_upgrade = solar_panel_large_4
---data_accumulator[accumulator_3].next_upgrade = accumulator_4
---data_mining_drill[electric_mining_drill_5].next_upgrade = electric_mining_drill_6
---data_mining_drill[electric_mining_drill_5].graphics_set.animation.animation_speed = 6
---data_mining_drill[pumpjack_4].next_upgrade = pumpjack_5
---data_mining_drill[pumpjack_5].next_upgrade = pumpjack_6
---data_reactor[deuterium_reactor].next_upgrade = tritium_reactor
+data_solar_panel[solar_panel_small_3].next_upgrade = solar_panel_small_4
+data_solar_panel[solar_panel_3].next_upgrade = solar_panel_4
+data_solar_panel[solar_panel_large_3].next_upgrade = solar_panel_large_4
+data_accumulator[accumulator_3].next_upgrade = accumulator_4
+data_mining_drill[electric_mining_drill_5].next_upgrade = electric_mining_drill_6
+data_mining_drill[electric_mining_drill_5].graphics_set.animation.animation_speed = 6
+data_mining_drill[pumpjack_4].next_upgrade = pumpjack_5
+data_mining_drill[pumpjack_5].next_upgrade = pumpjack_6
+data_reactor[deuterium_reactor].next_upgrade = tritium_reactor
 data_assembling[centrifuge_3].next_upgrade = centrifuge_4
---data_furnace[electric_furnace_3].next_upgrade = electric_furnace_4
---data_assembling[electric_mixing_furnace_3].next_upgrade = electric_mixing_furnace_4
+data_furnace[electric_furnace_3].next_upgrade = electric_furnace_4
+data_assembling[electric_mixing_furnace_3].next_upgrade = electric_mixing_furnace_4

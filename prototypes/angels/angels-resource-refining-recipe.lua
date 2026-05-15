@@ -10,7 +10,7 @@ data:extend
         category = angels_ore_sorting_2,
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_ferrous, crushed_rubyte, manganese_ore_angels),
-        order = f,
+        order = a_e,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -32,7 +32,7 @@ data:extend
         category = angels_ore_sorting_4,
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, crystal_ferrous, crystal_rubyte, chromium_ore_angels),
-        order = h,
+        order = a_g,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -51,10 +51,10 @@ data:extend
     {
         type = recipe,
         name = molybdenum_ore_recipe,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, powellite_purified, molybdenum_ore),
-        order = k,
+        order = a_j,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -72,8 +72,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -92,5 +91,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

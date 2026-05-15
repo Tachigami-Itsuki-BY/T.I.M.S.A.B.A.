@@ -1,20 +1,13 @@
-local technology = "technology"
 data:extend
 ({
     {
         localised_name = {"technology-name.battery-4"},
         localised_description = {"technology-description.battery"},
         type = technology,
-        name = battery_4,
+        name = tech_battery_4,
         icon = "__base__/graphics/technology/battery.png",
         icon_size = 256,
-        prerequisites =
-        {
-            battery_3,
-            utility_science_pack,
-            tech_potassium_processing,
-            tech_coal_processing_4
-        },
+        prerequisites = {tech_battery_3, utility_science_pack, tech_phosphorus_processing, tech_coal_processing_4},
         effects =
         {
             {type = unlock_recipe, recipe = hydrogen_fluoride_liquefied},
@@ -40,9 +33,14 @@ data:extend
     }
 })
 
-data_technology[electric_energy_accumulators_4].prerequisites =
+data_technology[tech_electric_energy_accumulators_4].prerequisites =
 {
-    electric_energy_accumulators_3,
+    tech_electric_energy_accumulators_3,
     utility_science_pack,
-    battery_4
+    tech_battery_4
 }
+
+table.insert(data_technology[centrifuge_4].prerequisites, tech_stone_smelting_5)
+
+table.insert(data_technology[tech_tritium_power].prerequisites, tech_stone_smelting_5)
+table.insert(data_technology[tech_tritium_power].prerequisites, centrifuge_4)

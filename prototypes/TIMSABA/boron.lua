@@ -106,7 +106,7 @@ data:extend
         category = angels_ore_sorting_3,
         subgroup = is_ore_sorting_advanced_2,
         icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_jivolite, borax),
-        order = h,
+        order = a_g,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,

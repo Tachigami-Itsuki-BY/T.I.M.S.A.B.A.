@@ -354,7 +354,7 @@ data_recipe[atomic_artillery_shell].ingredients =
 {
     {type = item, name = artillery_shell, amount = 1},
     {type = item, name = plutonium_239_bob, amount = 32},
-    {type = item, name = tungsten_carbide_bob, amount = 4},
+    {type = item, name = tungsten_carbide_plate_bob, amount = 4},
     {type = item, name = calcite, amount = 1}
 }
 
@@ -807,15 +807,15 @@ local function combat_robot_tool_recipe(name, gear_wheel, battery, prizma, plate
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 2},
-        {type = item, name = battery, amount = 1},
-        {type = item, name = prizma, amount = 1},
-        {type = item, name = plate, amount = 1}
+        {type = item, name = battery,    amount = 1},
+        {type = item, name = prizma,     amount = 1},
+        {type = item, name = plate,      amount = 1}
     }
 end
-combat_robot_tool_recipe(combat_robot_tool_1, steel_gear_wheel, battery_lead_acid, glass_bob, steel_plate)
-combat_robot_tool_recipe(combat_robot_tool_2, brass_gear_wheel, battery_lead_acid, glass_bob, brass_plate_bob)
-combat_robot_tool_recipe(combat_robot_tool_3, titanium_gear_wheel, battery_lithium_ion, polished_emerald_bob, titanium_plate_bob)
-combat_robot_tool_recipe(combat_robot_tool_4, nitinol_gear_wheel, battery_silver_zinc, polished_diamond_bob, nitinol_plate_bob)
+combat_robot_tool_recipe(combat_robot_tool_1, steel_gear_wheel,    battery_lead_acid,     glass_bob,            steel_plate)
+combat_robot_tool_recipe(combat_robot_tool_2, brass_gear_wheel,    battery_lithium_ion,   glass_bob,            brass_plate_bob)
+combat_robot_tool_recipe(combat_robot_tool_3, titanium_gear_wheel, battery_silver_zinc,   polished_emerald_bob, titanium_plate_bob)
+combat_robot_tool_recipe(combat_robot_tool_4, nitinol_gear_wheel,  battery_graphene,      polished_diamond_bob, nitinol_plate_bob)
 
 data_recipe[light_armor].energy_required = 4
 data_recipe[light_armor].ingredients[1].amount = 32
@@ -1013,7 +1013,7 @@ if data_item[alien_artifact] then
         {type = item, name = thorium_fuel_cell, amount = 16},
         {type = item, name = fission_reactor_2, amount = 1},
         {type = item, name = lithium_bob, amount = 32},
-        {type = item, name = tungsten_carbide_bob, amount = 64},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 64},
         {type = item, name = alien_artifact_yellow, amount = 64},
         {type = item, name = alien_artifact_green, amount = 64},
         {type = item, name = speed_module_4, amount = 1},
@@ -1045,7 +1045,7 @@ else
         {type = item, name = thorium_fuel_cell, amount = 16},
         {type = item, name = fission_reactor_2, amount = 1},
         {type = item, name = lithium_bob, amount = 32},
-        {type = item, name = tungsten_carbide_bob, amount = 64},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 64},
         {type = item, name = speed_module_4, amount = 1},
         {type = item, name = efficiency_module_4, amount = 1}
     }

@@ -305,7 +305,7 @@ data:extend
         category = angels_ore_sorting_2,
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_cupric, crushed_bobmonium, magnesium_ore),
-        order = g,
+        order = a_f,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,

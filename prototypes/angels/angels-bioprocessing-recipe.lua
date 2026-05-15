@@ -293,8 +293,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -313,5 +312,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

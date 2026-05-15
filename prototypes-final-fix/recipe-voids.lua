@@ -49,25 +49,27 @@ local fluids =
     -- RHENIUM
     potassium_perrhenate_solution, rhenium_acid,
     -- LITHIUM
-    lithium_chloride_solution, lithium_perchlorate_solution,
+    lithium_chloride_solution, lithium_perchlorate_solution, lithium_hexafluorophosphate_solution_carbonate,
     -- BORON
     boric_acid,
     -- POTASSIUM
     potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution,
+    -- PHOSPORUS
+    phosphorus_chloride_III_liquid, hexafluorophosphoric_acid, ionic_liquid,
     -- PETROCHEM
-    carbonic_acid,
-    urea_solution_angels, nitric_acid_angels, melamine_solution_angels, hydrazine_angels, dimethylhydrazine_angels, ammonium_chloride_solution_angels, cyanamide_solution, dicyandiamide_solution, ammonium_sulfate_solution, acrylonitrile, acetone_cyanohydrin, ammonium_fluoride_solution,
+    carbonic_acid, coal_tar_liquid,
+    urea_solution_angels, nitric_acid_angels, melamine_solution_angels, hydrazine_angels, dimethylhydrazine_angels, ammonium_chloride_solution_angels, cyanamide_solution, dicyandiamide_solution, ammonium_sulfate_solution, acrylonitrile, acetone_cyanohydrin, ammonium_fluoride_solution, adiponitrile_liquid, imidazole_solution,
     hydrofluoric_acid_angels,
     sodium_hydroxide_solution_angels, sodium_chloride_solution, sodium_sulfate_solution, sodium_carbonate_solution, sodium_nitrate_solution, sodium_hypochlorite_solution, sodium_chlorate_solution, sodium_perchlorate_solution, sodium_bicarbonate_solution, sodium_cyanide_solution,
     sulfuric_acid_angels, peroxydisulfuric_acid,
-    hydrochloric_acid_angels, allyl_chloride_angels, epichlorohydrin_angels, perchloric_acid_angels, hypochlorous_acid,
+    hydrochloric_acid_angels, allyl_chloride_angels, epichlorohydrin_angels, perchloric_acid_angels, hypochlorous_acid, chlorobutane_liquid,
     calcium_hydroxide_solution, calcium_chloride_solution,
     hydrogen_peroxide, hydrocyanic_acid,
     NGL_angels, condensates_angels,
     multi_phase_oil_angels, crude_oil, mineral_oil_angels, lubricant, fuel_oil_angels, liquid_fuel_bob, naphtha_angels,
     diethyl_ether, methyl_methacrylate, acetaldehyde, formic_acid,
-    methanol_angels, benzene_angels, acetone_angels, dimethyl_carbonate, ethylene_carbonate, ethylbenzene_angels, styrene_angels,
-    liquid_plastic_angels, liquid_resin_angels, liquid_rubber_angels,
+    methanol_angels, benzene_angels, acetone_angels, dimethyl_carbonate, ethylene_carbonate, ethylbenzene_angels, styrene_angels, ethylene_glycol_liquid, glyoxal_liquid,
+    liquid_plastic_angels, liquid_resin_angels, epoxy_resin_liquid, liquid_rubber_angels,
     glycerol_dichlorohydrin, glycerol_angels, nitroglycerin_bob, toluene_angels,
     -- BIOPROCESSING
     nutrient_pulp, raw_vegetable_oil, vegetable_oil,
@@ -100,8 +102,11 @@ local gases =
     tungsten_fluoride_VI_gas,
     -- BORON
     diborane_gas,
+    -- PHOSPORUS
+    phosphorus_fluoride_V_gas,
     -- PETROCHEM
-    compressed_air, hydrogen_angels, deuterium_angels, nitrogen_angels, oxygen_angels, chlorine_angels, carbon_monoxide_angels, carbon_dioxide_angels,
+    compressed_air, hydrogen_angels, deuterium_angels, tritium_gas, nitrogen_angels, oxygen_angels, chlorine_angels, argon_gas,
+    carbon_monoxide_angels, carbon_dioxide_angels,
     ammonia_angels, nitrogen_monoxide_angels, nitrogen_dioxide_angels, monochloramine_angels, dinitrogen_tetroxide_angels, methylamine_angels, dimethylamine_angels, nitrogen_oxide, nitrogen_liquid,
     hydrogen_fluoride_angels, oxygen_fluoride_gas,
     acid_angels, hydrogen_sulfide_angels, sulfur_dioxide_angels, sulfur_trioxide_gas,

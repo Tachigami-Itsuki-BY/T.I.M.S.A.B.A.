@@ -1,7 +1,7 @@
 local replacements_1 =
 {
 	[carbon] = carbon_angels,
-	[tungsten_carbide] = tungsten_carbide_bob,
+	[tungsten_carbide] = tungsten_carbide_plate_bob,
 	[tungsten_plate] = tungsten_plate_bob,
 	--[wolframite_ore] = tungsten_ore_bob,
 	[lithium_plate] = lithium_bob,

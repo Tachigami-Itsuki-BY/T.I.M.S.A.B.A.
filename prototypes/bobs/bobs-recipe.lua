@@ -1,8 +1,8 @@
 local is_gears = "bob-gears"
 local is_bearing_ball = "bob-bearings"
-advacned_deuterium_fuel_cell_reprocessing = "advacned-deuterium-fuel_cell-reprocessing"
-tritium_fuel_cell_reprocessing = "tritium-fuel_cell-reprocessing"
-advacned_tritium_fuel_cell_reprocessing = "advacned-tritium-fuel_cell-reprocessing"
+advanced_deuterium_fuel_cell_reprocessing = "advanced-deuterium-fuel-cell-reprocessing"
+tritium_fuel_cell_reprocessing = "tritium-fuel-cell-reprocessing"
+advanced_tritium_fuel_cell_reprocessing = "advanced-tritium-fuel-cell-reprocessing"
 data:extend
 ({
     {
@@ -28,7 +28,7 @@ data:extend
         category = angels_sintering_4,
         subgroup = is_gears,
         icons = TWO_I(copper_tungsten_powder, copper_tungsten_gear_wheel),
-        order = h,
+        order = i,
         enabled = false,
         auto_recycle = true,
         allow_productivity = true,
@@ -38,6 +38,24 @@ data:extend
         ingredients = {{type = item, name = copper_tungsten_powder, amount = 1}},
         results = {{type = item, name = copper_tungsten_gear_wheel, amount = 1}},
         main_product = copper_tungsten_gear_wheel
+    },
+    -- BEARING BALL
+    {
+        type = recipe,
+        name = iron_bearing_ball,
+        category = crafting,
+        subgroup = is_bearing_ball,
+        icons = TWO_I(iron_plate, iron_bearing_ball),
+        order = a,
+        enabled = true,
+        auto_recycle = true,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients = {{type = item, name = iron_plate, amount = 1}},
+        results = {{type = item, name = iron_bearing_ball, amount = 8}},
+        main_product = iron_bearing_ball
     },
     {
         type = recipe,
@@ -58,11 +76,28 @@ data:extend
     },
     {
         type = recipe,
+        name = tungsten_bearing_ball,
+        category = angels_sintering_4,
+        subgroup = is_bearing_ball,
+        icons = TWO_I(tungsten_powder, tungsten_bearing_ball),
+        order = g,
+        enabled = false,
+        auto_recycle = true,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients = {{type = item, name = tungsten_powder, amount = 1}},
+        results = {{type = item, name = tungsten_bearing_ball, amount = 8}},
+        main_product = tungsten_bearing_ball
+    },
+    {
+        type = recipe,
         name = copper_tungsten_bearing_ball,
         category = angels_sintering_4,
         subgroup = is_bearing_ball,
         icons = TWO_I(copper_tungsten_powder, copper_tungsten_bearing_ball),
-        order = h,
+        order = i,
         enabled = false,
         auto_recycle = true,
         allow_productivity = true,
@@ -72,6 +107,28 @@ data:extend
         ingredients = {{type = item, name = copper_tungsten_powder, amount = 1}},
         results = {{type = item, name = copper_tungsten_bearing_ball, amount = 8}},
         main_product = copper_tungsten_bearing_ball
+    },
+    -- BEARING
+    {
+        type = recipe,
+        name = iron_bearing,
+        category = crafting,
+        subgroup = is_bearing_ball,
+        icons = TWO_I(iron_plate, iron_bearing),
+        order = a,
+        enabled = true,
+        auto_recycle = true,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients =
+        {
+            {type = item, name = iron_bearing_ball, amount = 16},
+            {type = item, name = iron_plate, amount = 2}
+        },
+        results = {{type = item, name = iron_bearing, amount = 2}},
+        main_product = iron_bearing
     },
     {
         type = recipe,
@@ -97,11 +154,32 @@ data:extend
     },
     {
         type = recipe,
+        name = tungsten_bearing,
+        category = angels_sintering_4,
+        subgroup = is_bearing,
+        icons = B_F_L(nil, tungsten_bearing_ball, tungsten_powder, tungsten_bearing),
+        order = g,
+        enabled = false,
+        auto_recycle = true,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients =
+        {
+            {type = item, name = tungsten_bearing_ball, amount = 16},
+            {type = item, name = tungsten_powder, amount = 2}
+        },
+        results = {{type = item, name = tungsten_bearing, amount = 2}},
+        main_product = tungsten_bearing
+    },
+    {
+        type = recipe,
         name = copper_tungsten_bearing,
         category = angels_sintering_4,
         subgroup = is_bearing,
         icons = B_F_L(nil, copper_tungsten_bearing_ball, copper_tungsten_powder, copper_tungsten_bearing),
-        order = h,
+        order = i,
         enabled = false,
         auto_recycle = true,
         allow_productivity = true,
@@ -116,7 +194,7 @@ data:extend
         results = {{type = item, name = copper_tungsten_bearing, amount = 2}},
         main_product = copper_tungsten_bearing
     },
-    --[[{
+    {
         type = recipe,
         name = battery_graphene,
         category = chemistry_or_cryogenics,
@@ -131,9 +209,9 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = graphite, amount = 2},
+            {type = item, name = graphite_plate, amount = 2},
             {type = item, name = graphene, amount = 2},
-            {type = item, name = manganese_oxide, amount = 2},
+            {type = item, name = manganese_oxide_II, amount = 2},
             {type = item, name = aluminium_plate_bob, amount = 2},
             {type = item, name = plastic, amount = 4},
             {type = fluid, name = lithium_hexafluorophosphate_solution_carbonate, amount = 60}
@@ -143,10 +221,10 @@ data:extend
     },
     {
         type = recipe,
-        name = advacned_deuterium_fuel_cell_reprocessing,
+        name = advanced_deuterium_fuel_cell_reprocessing,
         category = centrifuging_4,
         subgroup = is_nuclear_cell,
-        icons = TWO_D_I(depleted_deuterium_fuel_cell, nil, tritium_gas, muon_fusion_catalyst),
+        icons = TWO_D_I(depleted_deuterium_fuel_cell, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas),
         order = i_b,
         enabled = false,
         auto_recycle = false,
@@ -154,11 +232,15 @@ data:extend
         allow_quality = true,
         allow_decomposition = false,
         energy_required = 64,
-        ingredients = {{type = item, name = depleted_deuterium_fuel_cell, amount = 8}},
+        ingredients =
+        {
+            {type = item, name = depleted_deuterium_fuel_cell, amount = 4},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
+        },
         results =
         {
-            {type = fluid, name = tritium_gas, amount = 480},
-            {type = item, name = muon_fusion_catalyst, amount = 8, probability = 0.5}
+            {type = item, name = muon_fusion_catalyst, amount = 4},
+            {type = fluid, name = tritium_gas, amount = 480}
         },
         main_product = tritium_gas
     },
@@ -190,7 +272,7 @@ data:extend
         category = centrifuging_4,
         subgroup = is_nuclear_cell,
         icons = TWO_D_I(depleted_tritium_fuel_cell, nil, muon_fusion_catalyst, tritium_gas),
-        order = j_a,
+        order = k_a,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -207,11 +289,11 @@ data:extend
     },
     {
         type = recipe,
-        name = advacned_tritium_fuel_cell_reprocessing,
-        category = centrifuging_4,
+        name = advanced_tritium_fuel_cell_reprocessing,
+        category = cryogenics,
         subgroup = is_nuclear_cell,
-        icons = TWO_D_I(depleted_tritium_fuel_cell, hydrofluoric_acid_angels, muon_fusion_catalyst, water_greenyellow_waste),
-        order = j_b,
+        icons = TWO_D_I(depleted_tritium_fuel_cell, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas),
+        order = k_b,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -220,25 +302,25 @@ data:extend
         energy_required = 64,
         ingredients =
         {
-            {type = item, name = depleted_tritium_fuel_cell, amount = 8},
+            {type = item, name = depleted_tritium_fuel_cell, amount = 4},
             {type = fluid, name = hydrofluoric_acid_angels, amount = 60},
         },
         results =
         {
-            {type = item, name = muon_fusion_catalyst, amount = 8},
-            {type = item, name = muon_fusion_catalyst, amount = 8, probability = 0.25},
-            {type = fluid, name = water_greenyellow_waste, amount = 60}
+            {type = item, name = muon_fusion_catalyst, amount = 4},
+            {type = item, name = muon_fusion_catalyst, amount = 4, probability = 0.25},
+            {type = fluid, name = tritium_gas, amount = 960},
+            {type = fluid, name = tritium_gas, amount = 960, probability = 0.25},
         },
         main_product = muon_fusion_catalyst
-    }]]
+    }
 })
 
 if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_gear_wheel].category = angels_sintering_2
 end
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -257,5 +339,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

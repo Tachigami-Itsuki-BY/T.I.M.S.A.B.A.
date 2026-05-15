@@ -203,14 +203,14 @@ data:extend
         name = powellite_chunks,
         category = angels_ore_refining_T2,
         subgroup = is_ore_processing_b,
-        icons = THREE_D_I(powellite_crushed, nil, water_purified_angels, powellite_chunks, sulfur, water_green_waste),
+        icons = THREE_D_I(powellite_crushed, nil, water_purified_angels, powellite_chunks, calcium_silicate, water_green_waste),
         order = h,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 2, -- Powellite crushed + Purified water -flotation-> Powellite chunks + calcium_silicate + Chloric waste water
+        energy_required = 2, -- Powellite crushed + Purified water -flotation-> Powellite chunks + Calcium silicate + Chloric waste water
         ingredients =
         {
             {type = item, name = powellite_crushed, amount = 2},
@@ -219,7 +219,7 @@ data:extend
         results =
         {
             {type = item, name = powellite_chunks, amount = 2},
-            {type = item, name = slag_angels, amount = 1, probability = 0.5}, -- calcium_silicate
+            {type = item, name = calcium_silicate, amount = 1, probability = 0.5},
             {type = fluid, name = water_green_waste, amount = 60}
         },
         main_product = powellite_chunks
@@ -314,7 +314,7 @@ data:extend
     {
         type = recipe,
         name = powellite_crystals_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, powellite_crystals),
         order = h,
@@ -339,7 +339,7 @@ data:extend
     {
         type = recipe,
         name = powellite_purified_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_T4,
         icons = RECYCLING_I(recycling_png, powellite_purified),
         order = h,

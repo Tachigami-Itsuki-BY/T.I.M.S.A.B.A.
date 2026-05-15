@@ -3,24 +3,30 @@ table.insert(data_technology[rocket_silo].prerequisites, tech_molybdenum_process
 table.insert(data_technology[rocket_silo].prerequisites, tech_rhenium_processing)
 table.insert(data_technology[rocket_silo].prerequisites, tech_molybdenum_rhenium_processing)
 table.insert(data_technology[rocket_silo].prerequisites, tech_robots_4)
-data_technology[rocket_silo].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1}
-}
+if not mods [muluna_mods] then
+    data_technology[rocket_silo].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
+else
+    data_technology[rocket_silo].research_trigger.item = "bob-logistic-robot-5"
+end
 
-data_technology["space-platform-thruster"].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1},
-    {space_science_pack, 1}
-}
+if not mods [muluna_mods] then
+    data_technology["space-platform-thruster"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1}
+    }
+end
 
 asteroid_collector = "asteroid-collector"
 cargo_bay = "cargo-bay"
@@ -170,7 +176,7 @@ data_technology[planet_discovery_vulcanus].unit.ingredients =
     {space_science_pack, 1}
 }
 
-data_technology[tungsten_carbide].prerequisites = {tech_wolframite_processing_1}
+data_technology[tungsten_carbide].prerequisites = {tech_wolframite_processing_1, tech_powder_metallurgy_6}
 data_technology[tungsten_carbide].effects =
 {
     {type = unlock_recipe, recipe = carbon},
@@ -301,11 +307,11 @@ data_technology[foundry].effects =
 data_technology[foundry].research_trigger =
 {
     type = craft_item,
-    item = tungsten_carbide_bob,
+    item = tungsten_carbide_plate_bob,
     count = 256
 }
 
-data_technology[big_mining_drill].prerequisites = {foundry, drills_5}
+data_technology[big_mining_drill].prerequisites = {foundry, tech_drills_6}
 
 data_technology[metallurgic_science_pack].research_trigger =
 {
@@ -315,7 +321,7 @@ data_technology[metallurgic_science_pack].research_trigger =
 }
 
 data_technology[vulcanus_transport_belt].localised_name = {"technology-name.vulcanus-transport-belt"}
-data_technology[vulcanus_transport_belt].prerequisites = {metallurgic_science_pack, logistics_5}
+data_technology[vulcanus_transport_belt].prerequisites = {metallurgic_science_pack, tech_logistics_5}
 
 data_technology["asteroid-reprocessing"].unit.ingredients =
 {
@@ -501,6 +507,7 @@ data_technology["captivity"].unit.ingredients =
 }
 
 -- FULGORA
+table.insert(data_technology[planet_discovery_fulgora].prerequisites, tech_electric_energy_accumulators_4)
 table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = fulgora_air})
 table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = fulgora_air_separation})
 data_technology[planet_discovery_fulgora].unit.ingredients =
@@ -608,5 +615,8 @@ data_technology[cryogenic_plant].research_trigger =
     item = lithium_bob,
     count = 256
 }
+
+table.insert(data_technology[fusion_reactor].prerequisites, tech_tritium_power)
+table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, recipe = advanced_tritium_fuel_cell_reprocessing})
 
 data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_4}

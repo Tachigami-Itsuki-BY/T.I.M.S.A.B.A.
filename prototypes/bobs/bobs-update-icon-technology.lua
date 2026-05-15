@@ -34,19 +34,19 @@ do
 	local technologies = {}
 	if reskins.bobs.triggers.power.steam then
 		-- BOILER
-		--technologies[boiler_6] = {tier = 6, icon_name = boiler_1, technology_icon_size = 128, technology_icon_extras = boiler_icon_extra}
+		technologies[boiler_6] = {tier = 6, icon_name = boiler_1, technology_icon_size = 128, technology_icon_extras = boiler_icon_extra}
 		-- STEAM ENGINE
-		--technologies[steam_engine_6] = {tier = 5, icon_name = steam_engine_1, technology_icon_size = 128}
+		technologies[steam_engine_6] = {tier = 6, icon_name = steam_engine_1, technology_icon_size = 128}
 		-- STEAM TURBINE
 		technologies[steam_turbine_4] = {tier = 4, prog_tier = 6, icon_name = steam_turbine_1, technology_icon_size = 128}
 	end
-	--[[if reskins.bobs.triggers.power.solar then
+	if reskins.bobs.triggers.power.solar then
 		-- SOLAR PANELS
-		technologies["solar-energy-4"] = {tier = 4, prog_tier = 5, icon_name = "solar-energy"}
+		technologies[tech_solar_energy_4] = {tier = 4, prog_tier = 5, icon_name = tech_solar_energy_1}
 	end
 	if reskins.bobs.triggers.power.accumulators then
 		-- ACCUMULATOR
-		technologies["electric-energy-accumulators-4"] = {tier = 4, prog_tier = 5, icon_name = accumulator_1}
+		technologies[tech_electric_energy_accumulators_4] = {tier = 4, prog_tier = 5, icon_name = accumulator_1}
 	end
 	local material_tiers =
 	{
@@ -57,27 +57,30 @@ do
 	}
 	if reskins.bobs.triggers.power.nuclear then
 		-- REACTOR
-		technologies["nuclear-power"] = {tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[uranium_reactor].tint }
-		technologies["nuclear-power"].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
-		technologies["bob-nuclear-power-2"] = {tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[thorium_reactor].tint }
-		technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-uranium-" .. material_tiers[2]
-		technologies["bob-nuclear-power-3"] = {tier = 3, prog_tier = 5, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[deuterium_reactor].tint }
-		technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-uranium-" .. material_tiers[3]
-		technologies["fusion-power-2"] = {tier = 4, prog_tier = 6, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[tritium_reactor].tint }
-		technologies["fusion-power-2"].icon_base = "nuclear-power-uranium-" .. material_tiers[4]
+		technologies[tech_nuclear_power] = {tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[uranium_reactor].tint}
+		technologies[tech_nuclear_power].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
+		technologies[tech_thorium_power] = {tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[thorium_reactor].tint}
+		technologies[tech_thorium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[2]
+		technologies[tech_deuterium_power] = {tier = 3, prog_tier = 5, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[deuterium_reactor].tint}
+		technologies[tech_deuterium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[3]
+		local tritium_tint = {r = 0.72, g = 0.05, b = 1.0, a = 1.0}
+		technologies[tech_tritium_power] = {tier = 4, prog_tier = 6, icon_name = "nuclear-power", tint = tritium_tint}
+		technologies[tech_tritium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[4]
 		if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
-			technologies["bob-nuclear-power-2"].icon_base = "nuclear-power-thorium-" .. material_tiers[2]
+			technologies[tech_thorium_power].icon_base = "nuclear-power-thorium-" .. material_tiers[2]
 			if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
-				technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[3]
+				technologies[tech_deuterium_power].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[3]
+				technologies[tech_tritium_power].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[4]
 			else
-				technologies["bob-nuclear-power-3"].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[3]
+				technologies[tech_deuterium_power].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[3]
+				technologies[tech_tritium_power].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[4]
 			end
 		end
-	end]]
+	end
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end
 
---[[do
+do
 	local inputs =
 	{
 		mod = bobs_mod,
@@ -115,10 +118,10 @@ end
 	local technologies =
 	{
 		-- ELECTRIC MINING DRILL
-		["drills-6"] = get_mining_drill_overrides(6),
+		[tech_drills_6] = get_mining_drill_overrides(6),
 		-- PUMPJACK
-		--["pumpjacks-5"] = get_pumpjack_overrides(5, 6),
-		--["pumpjacks-6"] = get_pumpjack_overrides(6, 7)
+		[tech_pumpjacks_5] = get_pumpjack_overrides(5, 6),
+		[tech_pumpjacks_6] = get_pumpjack_overrides(6, 7)
 	}
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end
@@ -152,25 +155,11 @@ do
 	---@type CreateIconsFromListTable
 	local technologies =
 	{
-		["advanced-material-processing-5"] =
-		{
-			technology_icon_size = 256,
-			flat_icon = false,
-			tier = 6,
-			icon_name = "advanced-material-processing",
-			technology_icon_extras = get_technology_light_layer("advanced-material-processing")
-		},
-		["multi-purpose-furnace-3"] =
-		{
-			technology_icon_size = 256,
-			flat_icon = false,
-			tier = 6,
-			icon_name = "electric-mixing-furnace",
-			technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")
-		}
+		[tech_advanced_material_processing_5] = {technology_icon_size = 256, flat_icon = false, tier = 6, icon_name = "advanced-material-processing", technology_icon_extras = get_technology_light_layer("advanced-material-processing")},
+		[tech_multi_purpose_furnace_3] = {technology_icon_size = 256, flat_icon = false, tier = 6, icon_name = "electric-mixing-furnace", technology_icon_extras = get_technology_light_layer("electric-mixing-furnace")}
 	}
 	reskins.internal.create_icons_from_list(technologies, inputs)
-end]]
+end
 
 -- CENTRIFUGE
 do
@@ -211,9 +200,9 @@ do
 	local batteries =
 	{
 		[battery_lead_acid] = {tier = 1, prog_tier = 2, technology = battery_lead_acid, tint = "ff781f"},
-		[battery_lithium_ion] = {tier = 2, prog_tier = 3, technology = battery_2, tint = "41ffdd"},
-		[battery_silver_zinc] = {tier = 3, prog_tier = 4, technology = battery_3, tint = "3dff40"},
-		--[battery_graphene] = {tier = 4, prog_tier = 5, technology = battery_4, tint = "333333"}
+		[battery_lithium_ion] = {tier = 2, prog_tier = 3, technology = tech_battery_2, tint = "41ffdd"},
+		[battery_silver_zinc] = {tier = 3, prog_tier = 4, technology = tech_battery_3, tint = "3dff40"},
+		[battery_graphene] = {tier = 4, prog_tier = 5, technology = tech_battery_4, tint = "333333"}
 	}
 	for name, map in pairs(batteries) do
 		local item = data.raw.item[name]
@@ -226,7 +215,15 @@ do
 		else
 			inputs.tint = util.color(map.tint)
 		end
-		data.raw["recipe"][name].crafting_machine_tint.primary = inputs.tint
+
+		local recipe = data.raw["recipe"][name]
+		if recipe then
+			if not recipe.crafting_machine_tint then
+				recipe.crafting_machine_tint = {}
+			end
+			recipe.crafting_machine_tint.primary = inputs.tint
+		end
+
 		reskins.lib.construct_icon(name, tier, inputs)
 		if data.raw.technology[map.technology] then
 			reskins.lib.construct_technology_icon(map.technology, inputs)

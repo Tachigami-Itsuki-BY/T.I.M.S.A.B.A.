@@ -230,9 +230,9 @@ data_resource[wolframite_ore].order = a
 data_resource[wolframite_ore].minable.mining_time = 4
 
 -- TUNGSTEN
-data_recipe[tungsten_carbide].category = angels_sintering_4
+data_recipe[tungsten_carbide].category = sintering_6
 data_recipe[tungsten_carbide].subgroup = is_vulcanus_tungsten
-data_recipe[tungsten_carbide].icons = THREE_I(tungsten_ore_bob, carbon_angels, tungsten_carbide_bob)
+data_recipe[tungsten_carbide].icons = THREE_I(tungsten_ore_bob, carbon_angels, tungsten_carbide_plate_bob)
 data_recipe[tungsten_carbide].order = a
 data_recipe[tungsten_carbide].energy_required = 4
 data_recipe[tungsten_carbide].ingredients =
@@ -242,7 +242,7 @@ data_recipe[tungsten_carbide].ingredients =
 }
 data_recipe[tungsten_carbide].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
-data_recipe[tungsten_plate].category = angels_sintering_4
+data_recipe[tungsten_plate].category = sintering_6
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_ore_bob, tungsten_plate_bob)
 data_recipe[tungsten_plate].order = b
@@ -258,7 +258,7 @@ data_recipe[metallurgic_science_pack].energy_required = 8
 data_recipe[metallurgic_science_pack].ingredients =
 {
     {type = item, name = tungsten_plate_bob, amount = 2},
-    {type = item, name = tungsten_carbide_bob, amount = 4},
+    {type = item, name = tungsten_carbide_plate_bob, amount = 4},
     {type = fluid, name = lava, amount = 240}
 }
 
@@ -346,8 +346,8 @@ data_recipe[foundry].ingredients =
 {
     {type = item, name = advanced_processing_unit, amount = 32},
     {type = item, name = molybdenum_rhenium_plate, amount = 64},
-    {type = item, name = tungsten_carbide_bob, amount = 64},
-    {type = item, name = refined_concrete, amount = 16}
+    {type = item, name = tungsten_carbide_plate_bob, amount = 64},
+    {type = item, name = reinforced_concrete, amount = 16}
 }
 data_assembling[foundry].subgroup = is_vulcanus_building
 data_assembling[foundry].order = a
@@ -366,8 +366,8 @@ data_recipe[big_mining_drill].ingredients =
 {
     {type = item, name = electric_engine_unit, amount = 8},
     {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = electric_mining_drill_5, amount = 1},
-    {type = item, name = tungsten_carbide_bob, amount = 16},
+    {type = item, name = electric_mining_drill_6, amount = 1},
+    {type = item, name = tungsten_carbide_plate_bob, amount = 16},
     {type = item, name = molybdenum_rhenium_plate, amount = 16}
 }
 data_mining_drill[big_mining_drill].subgroup = is_vulcanus_building

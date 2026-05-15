@@ -49,8 +49,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
@@ -62,8 +61,8 @@ data:extend
         stack_size = 200,
         weight = 5000
     }
-})
-data:extend
+})]]
+--[[data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
@@ -79,5 +78,4 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     }
-})
-]]
+})]]

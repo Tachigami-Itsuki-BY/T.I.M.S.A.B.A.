@@ -268,7 +268,7 @@ data:extend
     {
         type = recipe,
         name = antimonite_crushed_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_crushed),
         order = f,
@@ -290,7 +290,7 @@ data:extend
     {
         type = recipe,
         name = antimonite_chunks_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_chunks),
         order = g,
@@ -314,7 +314,7 @@ data:extend
     {
         type = recipe,
         name = antimonite_crystals_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_crystals),
         order = h,
@@ -339,7 +339,7 @@ data:extend
     {
         type = recipe,
         name = antimonite_purified_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_antimonite,
         icons = RECYCLING_I(recycling_png, antimonite_purified),
         order = i,

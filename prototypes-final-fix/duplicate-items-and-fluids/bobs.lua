@@ -1,4 +1,3 @@
-local tungsten_gear_wheel = "bob-tungsten-gear-wheel"
 local fibreglass_board = "bob-fibreglass-board"
 local lead_oxide_bob = "bob-lead-oxide"
 local silicon_powder_bob = "bob-silicon-powder"
@@ -11,7 +10,6 @@ local tin_cable_bob = "bob-tinned-copper-cable"
 local gold_cable_bob = "bob-gilded-copper-cable"
 local replacements =
 {
-	[tungsten_gear_wheel] = copper_tungsten_gear_wheel,
 	[fibreglass_board] = glass_fiber_board,
     [sour_gas_bob] = hydrogen_sulfide_angels,
 	[lead_oxide_bob] = lead_oxide_II,
@@ -415,9 +413,6 @@ data_recipe["bob-solder-alloy-recycling"] = nil
 data_recipe["bob-solder-alloy-lead"] = nil
 data_recipe["bob-solder"] = nil
 
-data_item[tungsten_gear_wheel] = nil
-data_recipe[tungsten_gear_wheel] = nil
-data_recipe["bob-tungsten-gear-wheel-recycling"] = nil
 data_item[fibreglass_board] = nil
 data_recipe["bob-fibreglass-board-recycling"] = nil
 
@@ -449,7 +444,7 @@ data_item[gold_cable_bob] = nil
 data_recipe[gold_cable_bob] = nil
 data_recipe["bob-gilded-copper-cable-recycling"] = nil
 
-data_recipe[tungsten_carbide_bob] = nil
+data_recipe[tungsten_carbide_plate_bob] = nil
 
 -- LOGISTICS
 data_recipe["bob-plastic-pipe-recycling"] = nil

@@ -30,7 +30,7 @@ if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
 end
 
 -- BOILER
---[[do
+do
 	local inputs =
 	{
 		type = boiler_1,
@@ -39,7 +39,7 @@ end
 		group = power,
 		particles = {[big] = 3}
 	}
-	local tier_map = {["boiler"] = {tier = 6, prog_tier = 6}}
+	local tier_map = {[boiler_6] = {tier = 6, prog_tier = 6}}
 	for name, map in pairs(tier_map) do
 		---@type data.BoilerPrototype
 		local entity = data.raw[inputs.type][name]
@@ -419,7 +419,7 @@ do
 		}
 		::continue::
 	end
-end]]
+end
 
 -- STEAM TURBINE
 do
@@ -576,7 +576,7 @@ do
 end
 
 -- SOLAR PANELS
---[[do
+do
 	local inputs =
 	{
 		type = solar_panel_1,
@@ -2317,10 +2317,10 @@ do
 		entity.wet_mining_graphics_set.working_visualisations = drill_wet_working_visualisation(speed, inputs)
 		::continue::
 	end
-end]]
+end
 
 -- PUMPJACK
---[[do
+do
 	local inputs =
 	{
 		type = "mining-drill",
@@ -2384,7 +2384,7 @@ end]]
 					height = 284,
 					direction_count = 1,
 					shift = util.by_pixel(0, 3.5),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+					blend_mode = reskins.lib.settings.blend_mode,
 					scale = 0.5
 				}
 			}
@@ -2502,10 +2502,14 @@ end]]
 		}
 		::continue::
 	end
-end]]
+end
 
 -- REACTOR
 do
+	if reskins and reskins.bobs and reskins.bobs.nuclear_reactor_index then
+		reskins.bobs.nuclear_reactor_index[tritium_reactor] = {name = "tritium", tint = {r = 0.72, g = 0.05, b = 1.0, a = 1.0}}
+		reskins.bobs.nuclear_reactor_index[tritium_reactor].fuel = "tritium"
+	end
 	local inputs =
 	{
 		type = "reactor",
@@ -2519,11 +2523,12 @@ do
 		[uranium_reactor] = {tier = 1, prog_tier = 3, material = "base"},
 		[thorium_reactor] = {tier = 2, prog_tier = 4, material = "aluminum-invar"},
 		[deuterium_reactor] = {tier = 3, prog_tier = 5, material = "silver-titanium"},
-		--[tritium_reactor] = {tier = 4, prog_tier = 6, material = "gold-copper"}
+		[tritium_reactor] = {tier = 4, prog_tier = 6, material = "gold-copper"}
 		-- "base", "aluminum-invar", "silver-aluminum", "silver-titanium", "gold-copper"
 	}
 	local function skin_reactor_entity(name, tint, material)
-		local entity = data.raw["reactor"][name]
+		local entity = data_reactor[name]
+		if not entity then return end
 		entity.picture =
 		{
 			layers =
@@ -2602,6 +2607,7 @@ do
 	end
 	local function skin_reactor_remnants(name, tint, material)
 		local remnant = data.raw["corpse"][name .. "-remnants"]
+		if not remnant then return end
 		remnant.animation =
 		{
 			layers =
@@ -2629,7 +2635,7 @@ do
 					height = 396,
 					direction_count = 1,
 					shift = util.by_pixel(7, 4),
-					blend_mode = reskins.lib.settings.blend_mode, -- "additive",
+					blend_mode = reskins.lib.settings.blend_mode,
 					scale = 0.5
 				},
 				{
@@ -2667,14 +2673,22 @@ do
 		reskins.lib.create_remnant(name, inputs)
 		skin_reactor_remnants(name, inputs.tint, map.material)
 		skin_reactor_entity(name, inputs.tint, map.material)
-		inputs.icon_base = "nuclear-reactor-" .. reskins.bobs.nuclear_reactor_index[name].name .. "-" .. map.material
+		if name == uranium_reactor then
+			inputs.icon_base = "nuclear-reactor-uranium-base"
+		elseif name == thorium_reactor then
+			inputs.icon_base = "nuclear-reactor-uranium-aluminum-invar"
+		elseif name == deuterium_reactor then
+			inputs.icon_base = "nuclear-reactor-uranium-silver-titanium"
+		else
+			inputs.icon_base = "nuclear-reactor-uranium-gold-copper"
+		end
 		reskins.lib.construct_icon(name, tier, inputs)
 		::continue::
 	end
 end
 
 -- FURNACES
---[[do
+do
 	local electric_furnace_map =
 	{
 		[electric_furnace_4] = {icon_name = electric_furnace_1, furnace = "standard", tier = 6, type = "furnace"},
@@ -2995,7 +3009,7 @@ end
 		end
 		::continue::
 	end
-end]]
+end
 
 -- CENTRIFUGE
 do

@@ -220,7 +220,7 @@ data:extend
         results =
         {
             {type = item, name = brannerite_chunks, amount = 2},
-            {type = item, name = slag_angels, amount = 1, probability = 0.5}, -- calcium_silicate
+            {type = item, name = calcium_silicate, amount = 1, probability = 0.5},
             {type = fluid, name = water_greenyellow_waste, amount = 60}
         },
         main_product = brannerite_chunks
@@ -269,7 +269,7 @@ data:extend
     {
         type = recipe,
         name = brannerite_crushed_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_crushed),
         order = f,
@@ -291,7 +291,7 @@ data:extend
     {
         type = recipe,
         name = brannerite_chunks_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_chunks),
         order = g,
@@ -315,7 +315,7 @@ data:extend
     {
         type = recipe,
         name = brannerite_crystals_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_crystals),
         order = h,
@@ -340,7 +340,7 @@ data:extend
     {
         type = recipe,
         name = brannerite_purified_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_brannerite,
         icons = RECYCLING_I(recycling_png, brannerite_purified),
         order = i,
@@ -365,7 +365,7 @@ data:extend
     {
         type = recipe,
         name = holmium_ore_recipe,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_brannerite,
         icons = AR_FOUR_I(hybride_catalyst, brannerite_purified, powellite_purified, holmium_ore),
         order = j,

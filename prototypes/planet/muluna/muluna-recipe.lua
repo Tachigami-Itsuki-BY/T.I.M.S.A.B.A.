@@ -369,7 +369,31 @@ if mods [muluna_mods] then
             main_product = heat
         }
     })
+
+    -- SPACE
+    anorthite_crushing_2 = "anorthite-crushing-2"
+    data:extend
+    ({
+        {
+            type = recipe,
+            name = anorthite_crushing_2,
+            category = crushing,
+            subgroup = is_space_environment_7,
+            icons = TWO_I(anorthite_chunk, lime_angels),
+            order = e_b,
+            enabled = false,
+            auto_recycle = false,
+            allow_productivity = true,
+            allow_quality = false,
+            allow_decomposition = false,
+            energy_required = 4,
+            ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
+            results = {{type = item, name = lime_angels, amount = 8}},
+            main_product = lime_angels
+        }
+    })
 end
+
 
 --[[
     data:extend

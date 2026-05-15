@@ -14,7 +14,7 @@ data:extend
 -- ITEM
 phosphate_ore = "phosphate-ore"
 white_phosphorus = "white-phosphorus"
-phosphorus_pentachloride = "phosphorus-pentachloride"
+phosphorus_chloride_V = "phosphorus-chloride-V"
 calcium_silicate = "calcium-silicate"
 metasilicic_acid = "metasilicic-acid"
 data:extend
@@ -63,9 +63,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "PCl[font=default-tiny-bold]5[/font]"} or nil,
         type = item,
-        name = phosphorus_pentachloride,
+        name = phosphorus_chloride_V,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-pentachloride.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-chloride-V.png",
         icon_size = 64,
         order = e,
         stack_size = 200,
@@ -112,8 +112,9 @@ data:extend
 
 -- FLUID
 white_phosphorus_gas = "white-phosphorus-gas"
-phosphorus_trichloride_liquid = "phosphorus-trichloride-liquid"
-phosphorus_pentafluoride_gas = "phosphorus-pentafluoride-gas"
+phosphorus_chloride_III_liquid = "phosphorus-chloride-III-liquid"
+phosphorus_fluoride_V_gas = "phosphorus-fluoride-V-gas"
+hexafluorophosphoric_acid = "hexafluorophosphoric-acid-solution"
 data:extend
 ({
     {
@@ -133,9 +134,9 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "PCl[font=default-tiny-bold]3[/font]"} or nil,
         type = fluid,
-        name = phosphorus_trichloride_liquid,
+        name = phosphorus_chloride_III_liquid,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-trichloride-liquid.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-chloride-III-liquid.png",
         order = d,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
@@ -147,14 +148,28 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "PF[font=default-tiny-bold]5[/font]"} or nil,
         type = fluid,
-        name = phosphorus_pentafluoride_gas,
+        name = phosphorus_fluoride_V_gas,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-pentafluoride-gas.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-fluoride-V-gas.png",
         order = f,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("PF5"),
         flow_color = TIMSABA.functions.flow_color("PF5"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "HPF[font=default-tiny-bold]6(aq)[/font]"} or nil,
+        type = fluid,
+        name = hexafluorophosphoric_acid,
+        subgroup = is_phosphorus,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/hexafluorophosphoric-acid-solution.png",
+        order = g,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = angelsmods.functions.fluid_color("HPF6Wp"),
+        flow_color = angelsmods.functions.flow_color("HPF6Wp"),
         max_temperature = 0,
         auto_barrel = false
     }
@@ -185,11 +200,11 @@ data:extend
 ({
     {
         type = recipe,
-        name = phosphate_ore,
+        name = phosphate_ore_recipe,
         category = angels_ore_sorting_4,
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_jivolite, phosphate_ore),
-        order = i,
+        order = a_e,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -227,7 +242,7 @@ data:extend
         },
         results =
         {
-            {type = fluid, name = white_phosphorus_gas, amount = 6},
+            {type = fluid, name = white_phosphorus_gas, amount = 90},
             {type = item, name = calcium_silicate, amount = 72},
             {type = item, name = fluorite_angels, amount = 8},
             {type = fluid, name = carbon_dioxide_angels, amount = 900}
@@ -261,10 +276,10 @@ data:extend
     },
     {
         type = recipe,
-        name = phosphorus_trichloride_liquid,
+        name = phosphorus_chloride_III_liquid,
         category = chemistry,
         subgroup = is_phosphorus,
-        icons = THREE_I(white_phosphorus, chlorine_angels, phosphorus_trichloride_liquid),
+        icons = THREE_I(white_phosphorus, chlorine_angels, phosphorus_chloride_III_liquid),
         order = d,
         enabled = false,
         auto_recycle = false,
@@ -277,15 +292,15 @@ data:extend
             {type = item, name = white_phosphorus, amount = 4},
             {type = fluid, name = chlorine_angels, amount = 360}
         },
-        results = {{type = fluid, name = phosphorus_trichloride_liquid, amount = 240}},
-        main_product = phosphorus_trichloride_liquid
+        results = {{type = fluid, name = phosphorus_chloride_III_liquid, amount = 240}},
+        main_product = phosphorus_chloride_III_liquid
     },
     {
         type = recipe,
-        name = phosphorus_pentachloride,
+        name = phosphorus_chloride_V,
         category = chemistry,
         subgroup = is_phosphorus,
-        icons = THREE_I(phosphorus_trichloride_liquid, chlorine_angels, phosphorus_pentachloride),
+        icons = THREE_I(phosphorus_chloride_III_liquid, chlorine_angels, phosphorus_chloride_V),
         order = e,
         enabled = false,
         auto_recycle = false,
@@ -295,18 +310,18 @@ data:extend
         energy_required = 8, -- PCl₃ + Cl₂ --> PCl₅
         ingredients =
         {
-            {type = fluid, name = phosphorus_trichloride_liquid, amount = 240},
+            {type = fluid, name = phosphorus_chloride_III_liquid, amount = 240},
             {type = fluid, name = chlorine_angels, amount = 240}
         },
-        results = {{type = item, name = phosphorus_pentachloride, amount = 16}},
-        main_product = phosphorus_pentachloride
+        results = {{type = item, name = phosphorus_chloride_V, amount = 16}},
+        main_product = phosphorus_chloride_V
     },
     {
         type = recipe,
-        name = phosphorus_pentafluoride_gas,
+        name = phosphorus_fluoride_V_gas,
         category = chemistry,
         subgroup = is_phosphorus,
-        icons = TWO_D_I(phosphorus_pentachloride, hydrogen_fluoride_angels, phosphorus_pentafluoride_gas, hydrogen_chloride_angels),
+        icons = TWO_D_I(phosphorus_chloride_V, hydrogen_fluoride_angels, phosphorus_fluoride_V_gas, hydrogen_chloride_angels),
         order = f,
         enabled = false,
         auto_recycle = false,
@@ -316,15 +331,36 @@ data:extend
         energy_required = 8, -- PCl₅ + 5HF --> PF₅ + 5HCl
         ingredients =
         {
-            {type = item, name = phosphorus_pentachloride, amount = 16},
+            {type = item, name = phosphorus_chloride_V, amount = 16},
             {type = fluid, name = hydrogen_fluoride_angels, amount = 1200}
         },
         results =
         {
-            {type = fluid, name = phosphorus_pentafluoride_gas, amount = 16},
+            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 16},
             {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 1200
         },
-        main_product = phosphorus_pentafluoride_gas
+        main_product = phosphorus_fluoride_V_gas
+    },
+    {
+        type = recipe,
+        name = hexafluorophosphoric_acid,
+        category = chemistry,
+        subgroup = is_phosphorus,
+        icons = THREE_I(phosphorus_fluoride_V_gas, hydrofluoric_acid_angels, hexafluorophosphoric_acid),
+        order = g,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- PF₅(g) + HF(aq) --> HPF₆(aq)
+        ingredients =
+        {
+            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
+            {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
+        },
+        results = {{type = fluid, name = hexafluorophosphoric_acid, amount = 4}},
+        main_product = hexafluorophosphoric_acid
     },
     -- SILICON
     {

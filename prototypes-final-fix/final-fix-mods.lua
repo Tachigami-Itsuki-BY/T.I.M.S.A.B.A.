@@ -84,9 +84,6 @@ end
 -- SPACE AGE
 
 -- MODS
-local drain = 15
-local kW = "kW"
-local kJ = "kJ"
 if mods [muluna_mods] then
     local muluna_mining_machine =
     {
@@ -95,7 +92,7 @@ if mods [muluna_mods] then
         {name = "bob-mining-drill-2-ground-digger",      order = c, tier = 3, energy_usage = 360},
         {name = "bob-mining-drill-3-ground-digger",      order = d, tier = 4, energy_usage = 480},
         {name = "bob-mining-drill-4-ground-digger",      order = e, tier = 5, energy_usage = 600},
-        --{name = "electric-mining-drill-6-ground-digger", order = f, tier = 6, energy_usage = 720}
+        {name = "electric-mining-drill-6-ground-digger", order = f, tier = 6, energy_usage = 720}
     }
     for _, BUILD in pairs(muluna_mining_machine) do
         data_assembling[BUILD.name].subgroup = is_extraction_machine_muluna
