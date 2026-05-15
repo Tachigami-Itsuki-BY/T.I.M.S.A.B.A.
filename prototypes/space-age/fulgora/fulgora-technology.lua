@@ -18,7 +18,7 @@ data:extend
         name = tech_brannerite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
         icon_size = 256,
-        prerequisites = {recycling},
+        prerequisites = {recycling, tech_advanced_ore_refining_5},
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_crushed},

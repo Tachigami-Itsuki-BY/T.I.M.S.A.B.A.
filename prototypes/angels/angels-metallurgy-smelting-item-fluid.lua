@@ -304,7 +304,7 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     },
-    --[[{
+    {
         localised_description = show_formula and {chemical_formula, "KMnO[font=default-tiny-bold]4[/font]"} or nil,
         type = item,
         name = potassium_permanganate,
@@ -313,7 +313,7 @@ data:extend
         order = f,
         stack_size = 200,
         weight = 5000
-    }]]
+    }
 })
 
 -- SILICON
@@ -905,7 +905,7 @@ data:extend
         stack_size = 200,
         weight = 5000
     },
-    --[[{
+    {
         localised_description = show_formula and {chemical_formula, "LiF"} or nil,
         type = item,
         name = lithium_fluoride,
@@ -924,7 +924,7 @@ data:extend
         order = k,
         stack_size = 200,
         weight = 5000
-    },]]
+    },
     -- FLUID
     {
         localised_description = show_formula and {chemical_formula, "LiCl[font=default-tiny-bold](aq)[/font]"} or nil,
@@ -954,21 +954,7 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     },
-    --[[{
-        localised_description = show_formula and {chemical_formula, "LiOH[font=default-tiny-bold](aq)[/font]"} or nil,
-        type = fluid,
-        name = lithium_hydroxide_solution,
-        subgroup = is_alloys,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/lithium/lithium-hydroxide-solution.png",
-        order = g,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color("LiOHWp"),
-        flow_color = TIMSABA.functions.flow_color("LiOHWp"),
-        max_temperature = 0,
-        auto_barrel = false
-    },]]
-    --[[{
+    {
         localised_description = show_formula and {chemical_formula, "LiPF[font=default-tiny-bold]6(carbonate)[/font]"} or nil,
         type = fluid,
         name = lithium_hexafluorophosphate_solution_carbonate,
@@ -981,11 +967,10 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("LiPF6Ec"),
         max_temperature = 0,
         auto_barrel = false
-    }]]
+    }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
@@ -996,8 +981,10 @@ data:extend
         order = ,
         stack_size = 200,
         weight = 5000
-    },
-    -- FLUID
+    }
+})]]
+--[[data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
         type = fluid,
@@ -1012,5 +999,4 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     }
-})
-]]
+})]]

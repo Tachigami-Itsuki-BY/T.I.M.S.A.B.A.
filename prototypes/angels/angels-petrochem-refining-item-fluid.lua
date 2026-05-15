@@ -1,13 +1,14 @@
 -- ANGELS PETROCHEM REFINING
 -- BASIC PETROCHEN FLUIDS
 tritium_gas = "tritium-gas"
---[[data:extend
+argon_gas = "argon-gas"
+data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "T[font=default-tiny-bold]2[/font]"} or nil,
         type = fluid,
         name = tritium_gas,
-        subgroup = "angels-petrochem-basic-fluids",
+        subgroup = is_basic_fluids,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/tritium-gas.png",
         order = d,
         default_temperature = 0,
@@ -16,15 +17,50 @@ tritium_gas = "tritium-gas"
         flow_color = TIMSABA.functions.flow_color("TTT"),
         max_temperature = 0,
         auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Ar"} or nil,
+        type = fluid,
+        name = argon_gas,
+        subgroup = is_basic_fluids,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/argon-gas.png",
+        order = h,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("ArArAr"),
+        flow_color = TIMSABA.functions.flow_color("ArArAr"),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
     }
 })]]
 
 -- COAL
 coke_processed = "coke-processed"
-coal_tar_liquid = "coal-tar-liquid"
 pitch = "pitch"
 raw_graphite_block = "raw-graphite-block"
-graphite = "graphite"
+graphite_block = "graphite-block"
+graphite_plate = "graphite-plate"
+graphite_electrode = "graphite-electrode"
+graphite_chips = "graphite-chips"
+carbon_nanotube = "carbon-nanotube"
 graphene_oxide = "graphene-oxide"
 graphene = "graphene"
 data:extend
@@ -41,7 +77,7 @@ data:extend
         fuel_category = base_fuel,
         fuel_value = 7200 .. kJ
     },
-    --[[{
+    {
         localised_description = show_formula and {chemical_formula, "C"} or nil,
         type = item,
         name = pitch,
@@ -64,10 +100,50 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "C"} or nil,
         type = item,
-        name = graphite,
+        name = graphite_block,
         subgroup = is_coal,
-        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphite.png",
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphite-block.png",
         order = i,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = graphite_plate,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphite-plate.png",
+        order = j,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = graphite_chips,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphite-chips.png",
+        order = k,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C"} or nil,
+        type = item,
+        name = graphite_electrode,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphite-electrode.png",
+        order = l,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "С"} or nil,
+        type = item,
+        name = carbon_nanotube,
+        subgroup = is_coal,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/carbon-nanotube.png",
+        order = m,
         stack_size = 200,
         weight = 5000
     },
@@ -77,7 +153,7 @@ data:extend
         name = graphene_oxide,
         subgroup = is_coal,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphene-oxide.png",
-        order = j,
+        order = n,
         stack_size = 200,
         weight = 5000
     },
@@ -87,11 +163,30 @@ data:extend
         name = graphene,
         subgroup = is_coal,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/graphene.png",
-        order = k,
+        order = o,
         stack_size = 200,
         weight = 5000
-    },
-    -- FLUID
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
+-- FLUID
+coal_tar_liquid = "coal-tar-liquid"
+data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]10[/font]H[font=default-tiny-bold]8[/font]"} or nil,
         type = fluid,
@@ -105,8 +200,26 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("CCC"),
         max_temperature = 0,
         auto_barrel = false
-    }]]
+    }
 })
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
 
 -- CARBON FLUIDS 1
 carbonic_acid = "carbonic-acid"
@@ -129,16 +242,12 @@ data:extend
 })
 
 -- NITROGEN
+local is_nitrogen = "angels-petrochem-nitrogen"
 ammonium_sulfate = "ammonium-sulfate"
 ammonium_chloride = "ammonium-chloride"
 ammonium_hydrosulfate = "ammonium-hydrosulfate"
-cyanamide_solution = "cyanamide-solution"
-dicyandiamide_solution = "dicyandiamide-solution"
-ammonium_sulfate_solution = "ammonium-sulfate-solution"
-acrylonitrile = "acrylonitrile-liquid"
-acetone_cyanohydrin = "acetone-cyanohydrin-liquid"
-nitrogen_oxide = "nitrogen-oxide-gas"
-local is_nitrogen = "angels-petrochem-nitrogen"
+hexamethylenediamine = "hexamethylenediamine"
+imidazole = "imidazole"
 data:extend
 ({
     {
@@ -171,7 +280,54 @@ data:extend
         stack_size = 200,
         weight = 5000
     },
-    -- FLUID
+    {
+        localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]16[/font]N[font=default-tiny-bold]2[/font]"} or nil,
+        type = item,
+        name = hexamethylenediamine,
+        subgroup = is_nitrogen,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/hexamethylenediamine.png",
+        icon_size = 64,
+        order = g,
+        stack_size = 200,
+        weight = 5000
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]4[/font]N[font=default-tiny-bold]2[/font]"} or nil,
+        type = item,
+        name = imidazole,
+        subgroup = is_nitrogen,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/imidazole.png",
+        order = h,
+        stack_size = 200,
+        weight = 5000
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
+-- FLUID
+cyanamide_solution = "cyanamide-solution"
+dicyandiamide_solution = "dicyandiamide-solution"
+ammonium_sulfate_solution = "ammonium-sulfate-solution"
+acrylonitrile = "acrylonitrile-liquid"
+acetone_cyanohydrin = "acetone-cyanohydrin-liquid"
+nitrogen_oxide = "nitrogen-oxide-gas"
+adiponitrile_liquid = "adiponitrile-liquid"
+imidazole_solution = "imidazole-solution"
+data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]2[/font]CN[font=default-tiny-bold](aq)[/font]"} or nil,
         type = fluid,
@@ -255,15 +411,61 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("N2O"),
         max_temperature = 0,
         auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]8[/font]N[font=default-tiny-bold]2[/font]"} or nil,
+        type = fluid,
+        name = adiponitrile_liquid,
+        subgroup = is_nitrogen_fluids,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/adiponitrile-liquid.png",
+        order = w,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C6H8N2"),
+        flow_color = TIMSABA.functions.flow_color("C6H8N2"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]4[/font]N[font=default-tiny-bold]2(aq)[/font]"} or nil,
+        type = fluid,
+        name = imidazole_solution,
+        subgroup = is_nitrogen_fluids,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/imidazole-solution.png",
+        order = x,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C3H4O2Wp"),
+        flow_color = TIMSABA.functions.flow_color("C3H4O2Wp"),
+        max_temperature = 0,
+        auto_barrel = false
     }
 })
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
 
 -- FLUORINE
 hydrogen_fluoride_liquefied = "hydrogen-fluoride-liquefied"
 oxygen_fluoride_gas = "oxygen-fluoride-gas"
 data:extend
 ({
-    --[[{
+    {
         localised_description = show_formula and {chemical_formula, "HF"} or nil,
         type = fluid,
         name = hydrogen_fluoride_liquefied,
@@ -276,7 +478,7 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("HF"),
         max_temperature = 0,
         auto_barrel = false
-    },]]
+    },
     {
         localised_description = show_formula and {chemical_formula, "OF[font=default-tiny-bold]2[/font]"} or nil,
         type = fluid,
@@ -491,13 +693,14 @@ data:extend
 })
 
 -- CHLORINE
+-- FLUID
 phosgene_gas = "phosgene-gas"
 chlorine_oxide_gas = "chlorine-oxide-gas"
 hypochlorous_acid = "hypochlorous-acid-solution"
 chloroethane_gas = "chloroethane-gas"
+chlorobutane_liquid = "chlorobutane-liquid"
 data:extend
 ({
-    -- FLUID
     {
         localised_description = show_formula and {chemical_formula, "COCl[font=default-tiny-bold]2[/font]"} or nil,
         type = fluid,
@@ -553,8 +756,40 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("C2H5Cl"),
         max_temperature = 0,
         auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]4[/font]H[font=default-tiny-bold]9[/font]Cl"} or nil,
+        type = fluid,
+        name = chlorobutane_liquid,
+        subgroup = is_chlorine_fluids,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/chlorobutane-liquid.png",
+        order = k,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C4H9Cl"),
+        flow_color = TIMSABA.functions.flow_color("C4H9Cl"),
+        max_temperature = 0,
+        auto_barrel = false
     }
 })
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
 
 -- CALCIUM
 calcium = "calcium"
@@ -637,8 +872,39 @@ data:extend
 })
 
 -- OTHERS
+imidazolium_salt = "imidazolium-salt"
+data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]Cl"} or nil,
+        type = item,
+        name = imidazolium_salt,
+        subgroup = is_others,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/imidazolium-salt.png",
+        order = a,
+        stack_size = 200,
+        weight = 5000
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
+-- FLUID
 hydrogen_peroxide = "hydrogen-peroxide-liquid"
 hydrocyanic_acid = "hydrocyanic-acid"
+ionic_liquid = "ionic-liquid"
 data:extend
 ({
     {
@@ -668,8 +934,40 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("HCN"),
         max_temperature = 0,
         auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]PF[font=default-tiny-bold]6[/font]"} or nil,
+        type = fluid,
+        name = ionic_liquid,
+        subgroup = is_others_fluids,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/ionic-liquid.png",
+        order = c,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = {r = 0.537, g = 0.675, b = 0.706},
+        flow_color = {r = 0.537, g = 0.675, b = 0.706},
+        max_temperature = 0,
+        auto_barrel = false
     }
 })
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
 
 -- CARBON FLUIDS 2
 acetylene_gas = "acetylene-gas"
@@ -773,8 +1071,6 @@ data:extend
 
 -- ETHANE
 polyethylene = "polyethylene"
-ethylene_oxide = "ethylene-oxide-gas"
-ethylene_carbonate = "ethylene-carbonate-liquid"
 data:extend
 ({
     {
@@ -786,8 +1082,30 @@ data:extend
         order = d,
         stack_size = 200,
         weight = 5000
-    },
-    -- FLUID
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
+-- FLUID
+ethylene_oxide = "ethylene-oxide-gas"
+ethylene_carbonate = "ethylene-carbonate-liquid"
+ethylene_glycol_liquid = "ethylene-glycol-liquid"
+glyoxal_liquid = "glyoxal-liquid"
+data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O"} or nil,
         type = fluid,
@@ -815,16 +1133,60 @@ data:extend
         flow_color = TIMSABA.functions.flow_color("C3H4O3"),
         max_temperature = 0,
         auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]2[/font]"} or nil,
+        type = fluid,
+        name = ethylene_glycol_liquid,
+        subgroup = is_ethane,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/ethylene-glycol-liquid.png",
+        order = g,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C2H6O2"),
+        flow_color = TIMSABA.functions.flow_color("C2H6O2"),
+        max_temperature = 0,
+        auto_barrel = false
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]2[/font]"} or nil,
+        type = fluid,
+        name = glyoxal_liquid,
+        subgroup = is_ethane,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/glyoxal-liquid.png",
+        order = h,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color("C2H2O2"),
+        flow_color = TIMSABA.functions.flow_color("C2H2O2"),
+        max_temperature = 0,
+        auto_barrel = false
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 -- BUTANE
-butene_gas = "butene-gas"
 phenol = "phenol"
 bisphenol_a = "bisphenol-a"
 data:extend
 ({
-    -- ITEM
     {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]5[/font]OH"} or nil,
         type = item,
@@ -844,8 +1206,13 @@ data:extend
         order = i,
         stack_size = 200,
         weight = 5000
-    },
-    -- FLUID
+    }
+})
+
+-- FLUID
+butene_gas = "butene-gas"
+data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]4[/font]H[font=default-tiny-bold]8[/font]"} or nil,
         type = fluid,
@@ -861,6 +1228,44 @@ data:extend
         auto_barrel = false
     }
 })
+
+-- RESINE
+epoxy_resin_liquid = "epoxy-resin-liquid"
+data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]21[/font]H[font=default-tiny-bold]24[/font]O[font=default-tiny-bold]4[/font]"} or nil,
+        type = fluid,
+        name = epoxy_resin_liquid,
+        subgroup = is_resin,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/solids/epoxy-resine-liquid.png",
+        order = c,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = {r = 0.812, g = 0.686, b = 0.635, a = 1.000},
+        flow_color = {r = 0.812, g = 0.686, b = 0.635, a = 0.500},
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/angels///.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
 
 -- EXPLOSIVES
 glycerol_dichlorohydrin = "glycerol-dichlorohydrin-liquid"
@@ -882,8 +1287,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
@@ -894,7 +1298,11 @@ data:extend
         order = ,
         stack_size = 200,
         weight = 5000
-    },
+    }
+})]]
+
+--[[data:extend
+({
     {
         localised_description = show_formula and {chemical_formula, ""} or nil,
         type = fluid,
@@ -909,5 +1317,4 @@ data:extend
         max_temperature = 0,
         auto_barrel = false
     }
-})
-]]
+})]]

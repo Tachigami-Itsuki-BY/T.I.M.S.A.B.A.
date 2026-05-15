@@ -1124,25 +1124,25 @@ data_recipe[mineral_catalyst].icons = TWO_I(sludge_mineral, mineral_catalyst)
 data_recipe[mineral_catalyst].order = a
 data_recipe[mineral_catalyst].ingredients[1].amount = 30
 
-local iron_ore_processing = "angels-ore-crushed-mix1-processing"
-data_recipe[iron_ore_processing].icons = AR_FOUR_I(mineral_catalyst, crushed_saphirite, crushed_jivolite, iron_ore)
-data_recipe[iron_ore_processing].order = b
-data_recipe[iron_ore_processing].energy_required = 2
+local iron_ore_recipe = "angels-ore-crushed-mix1-processing"
+data_recipe[iron_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_saphirite, crushed_jivolite, iron_ore)
+data_recipe[iron_ore_recipe].order = a_a
+data_recipe[iron_ore_recipe].energy_required = 2
 
-local copper_ore_processing = "angels-ore-crushed-mix2-processing"
-data_recipe[copper_ore_processing].icons = AR_FOUR_I(mineral_catalyst, crushed_stiratite, crushed_crotinnium, copper_ore)
-data_recipe[copper_ore_processing].order = c
-data_recipe[copper_ore_processing].energy_required = 2
+local copper_ore_recipe = "angels-ore-crushed-mix2-processing"
+data_recipe[copper_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_stiratite, crushed_crotinnium, copper_ore)
+data_recipe[copper_ore_recipe].order = a_b
+data_recipe[copper_ore_recipe].energy_required = 2
 
-local lead_ore_processing = "angels-ore-crushed-mix3-processing"
-data_recipe[lead_ore_processing].icons = AR_FOUR_I(mineral_catalyst, crushed_crotinnium, crushed_rubyte, lead_ore_bob)
-data_recipe[lead_ore_processing].order = d
-data_recipe[lead_ore_processing].energy_required = 2
+local lead_ore_recipe = "angels-ore-crushed-mix3-processing"
+data_recipe[lead_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_crotinnium, crushed_rubyte, lead_ore_bob)
+data_recipe[lead_ore_recipe].order = a_c
+data_recipe[lead_ore_recipe].energy_required = 2
 
-local tin_ore_processing = "angels-ore-crushed-mix4-processing"
-data_recipe[tin_ore_processing].icons = AR_FOUR_I(mineral_catalyst, crushed_stiratite, crushed_bobmonium, tin_ore_bob)
-data_recipe[tin_ore_processing].order = e
-data_recipe[tin_ore_processing].energy_required = 2
+local tin_ore_recipe = "angels-ore-crushed-mix4-processing"
+data_recipe[tin_ore_recipe].icons = AR_FOUR_I(mineral_catalyst, crushed_stiratite, crushed_bobmonium, tin_ore_bob)
+data_recipe[tin_ore_recipe].order = a_d
+data_recipe[tin_ore_recipe].energy_required = 2
 
 data_item[crystal_catalyst].subgroup = is_ore_sorting_advanced_2
 data_item[crystal_catalyst].order = a
@@ -1151,56 +1151,56 @@ data_recipe[crystal_catalyst].icons = TWO_I(seedling_crystal, crystal_catalyst)
 data_recipe[crystal_catalyst].order = a
 data_recipe[crystal_catalyst].ingredients[1].amount = 30
 
-local silicon_ore_processing = "angels-ore-chunk-mix1-processing"
-data_recipe[silicon_ore_processing].localised_name = {"recipe-name.ore-chunk-mix1-processing"}
-data_recipe[silicon_ore_processing].subgroup = is_ore_sorting_advanced_2
-data_recipe[silicon_ore_processing].icons = AR_FOUR_I(crystal_catalyst, chunk_rubyte, chunk_bobmonium, silicon_ore_bob)
-data_recipe[silicon_ore_processing].order = b
-data_recipe[silicon_ore_processing].energy_required = 2
+local silicon_ore_recipe = "angels-ore-chunk-mix1-processing"
+data_recipe[silicon_ore_recipe].localised_name = {"recipe-name.ore-chunk-mix1-processing"}
+data_recipe[silicon_ore_recipe].subgroup = is_ore_sorting_advanced_2
+data_recipe[silicon_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_rubyte, chunk_bobmonium, silicon_ore_bob)
+data_recipe[silicon_ore_recipe].order = a_a
+data_recipe[silicon_ore_recipe].energy_required = 2
 
-local nickel_ore_processing = "angels-ore-chunk-mix2-processing"
-data_recipe[nickel_ore_processing].subgroup = is_ore_sorting_advanced_2
-data_recipe[nickel_ore_processing].icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_rubyte, nickel_ore_bob)
-data_recipe[nickel_ore_processing].order = c
-data_recipe[nickel_ore_processing].energy_required = 2
+local nickel_ore_recipe = "angels-ore-chunk-mix2-processing"
+data_recipe[nickel_ore_recipe].subgroup = is_ore_sorting_advanced_2
+data_recipe[nickel_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_rubyte, nickel_ore_bob)
+data_recipe[nickel_ore_recipe].order = a_b
+data_recipe[nickel_ore_recipe].energy_required = 2
 
-local aluminium_ore_processing = "angels-ore-chunk-mix3-processing"
-data_recipe[aluminium_ore_processing].localised_name = {"recipe-name.ore-chunk-mix3-processing"}
-data_recipe[aluminium_ore_processing].subgroup = is_ore_sorting_advanced_2
-data_recipe[aluminium_ore_processing].icons = AR_FOUR_I(crystal_catalyst, chunk_jivolite, chunk_crotinnium, aluminium_ore_bob)
-data_recipe[aluminium_ore_processing].order = d
-data_recipe[aluminium_ore_processing].energy_required = 2
+local aluminium_ore_recipe = "angels-ore-chunk-mix3-processing"
+data_recipe[aluminium_ore_recipe].localised_name = {"recipe-name.ore-chunk-mix3-processing"}
+data_recipe[aluminium_ore_recipe].subgroup = is_ore_sorting_advanced_2
+data_recipe[aluminium_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_jivolite, chunk_crotinnium, aluminium_ore_bob)
+data_recipe[aluminium_ore_recipe].order = a_c
+data_recipe[aluminium_ore_recipe].energy_required = 2
 
-local zinc_ore_processing = "angels-ore-chunk-mix4-processing"
-data_recipe[zinc_ore_processing].subgroup = is_ore_sorting_advanced_2
-data_recipe[zinc_ore_processing].icons = AR_FOUR_I(crystal_catalyst, chunk_jivolite, chunk_bobmonium, zinc_ore_bob)
-data_recipe[zinc_ore_processing].order = e
-data_recipe[zinc_ore_processing].energy_required = 2
+local zinc_ore_recipe = "angels-ore-chunk-mix4-processing"
+data_recipe[zinc_ore_recipe].subgroup = is_ore_sorting_advanced_2
+data_recipe[zinc_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_jivolite, chunk_bobmonium, zinc_ore_bob)
+data_recipe[zinc_ore_recipe].order = a_d
+data_recipe[zinc_ore_recipe].energy_required = 2
 
-local silver_ore_processing = "angels-ore-chunk-mix5-processing"
-data_recipe[silver_ore_processing].subgroup = is_ore_sorting_advanced_2
-data_recipe[silver_ore_processing].icons = AR_FOUR_I(crystal_catalyst, chunk_stiratite, chunk_crotinnium, silver_ore_bob)
-data_recipe[silver_ore_processing].order = f
-data_recipe[silver_ore_processing].energy_required = 2
-data_recipe[silver_ore_processing].ingredients =
+local silver_ore_recipe = "angels-ore-chunk-mix5-processing"
+data_recipe[silver_ore_recipe].subgroup = is_ore_sorting_advanced_2
+data_recipe[silver_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_stiratite, chunk_crotinnium, silver_ore_bob)
+data_recipe[silver_ore_recipe].order = a_e
+data_recipe[silver_ore_recipe].energy_required = 2
+data_recipe[silver_ore_recipe].ingredients =
 {
     {type = item, name = crystal_catalyst, amount = 1},
     {type = item, name = chunk_stiratite, amount = 2},
     {type = item, name = chunk_crotinnium, amount = 2}
 }
 
-local fluorite_ore_processing = "angels-ore-chunk-mix6-processing"
-data_recipe[fluorite_ore_processing].subgroup = is_ore_sorting_advanced_2
-data_recipe[fluorite_ore_processing].icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_stiratite, fluorite_angels)
-data_recipe[fluorite_ore_processing].order = g
-data_recipe[fluorite_ore_processing].energy_required = 2
-data_recipe[fluorite_ore_processing].ingredients =
+local fluorite_ore_recipe = "angels-ore-chunk-mix6-processing"
+data_recipe[fluorite_ore_recipe].subgroup = is_ore_sorting_advanced_2
+data_recipe[fluorite_ore_recipe].icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_stiratite, fluorite_angels)
+data_recipe[fluorite_ore_recipe].order = a_f
+data_recipe[fluorite_ore_recipe].energy_required = 2
+data_recipe[fluorite_ore_recipe].ingredients =
 {
     {type = item, name = crystal_catalyst, amount = 1},
     {type = item, name = chunk_saphirite, amount = 2},
     {type = item, name = chunk_stiratite, amount = 2}
 }
-data_recipe[fluorite_ore_processing].results[1].amount = 4
+data_recipe[fluorite_ore_recipe].results[1].amount = 4
 
 data_item[hybride_catalyst].subgroup = is_ore_sorting_advanced_3
 data_item[hybride_catalyst].order = a
@@ -1208,89 +1208,89 @@ data_recipe[hybride_catalyst].subgroup = is_ore_sorting_advanced_3
 data_recipe[hybride_catalyst].icons = THREE_I(mineral_catalyst, crystal_catalyst, hybride_catalyst)
 data_recipe[hybride_catalyst].order = a
 
-data_recipe[titanium_ore_processing].localised_name = {"recipe-name.ore-crystal-mix1-processing"}
-data_recipe[titanium_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[titanium_ore_processing].icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_crotinnium, titanium_ore_bob)
-data_recipe[titanium_ore_processing].order = b
-data_recipe[titanium_ore_processing].energy_required = 2
-data_recipe[titanium_ore_processing].ingredients =
+data_recipe[titanium_ore_recipe].localised_name = {"recipe-name.ore-crystal-mix1-processing"}
+data_recipe[titanium_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[titanium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_crotinnium, titanium_ore_bob)
+data_recipe[titanium_ore_recipe].order = a_a
+data_recipe[titanium_ore_recipe].energy_required = 2
+data_recipe[titanium_ore_recipe].ingredients =
 {
     {type = item, name = hybride_catalyst, amount = 1},
     {type = item, name = crystal_saphirite, amount = 2},
     {type = item, name = crystal_crotinnium, amount = 2}
 }
-data_recipe[titanium_ore_processing].results[1].amount = 4
+data_recipe[titanium_ore_recipe].results[1].amount = 4
 
-data_recipe[gold_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[gold_ore_processing].icons = AR_FOUR_I(hybride_catalyst, crystal_rubyte, crystal_bobmonium, gold_ore_bob)
-data_recipe[gold_ore_processing].order = c
-data_recipe[gold_ore_processing].energy_required = 2
-data_recipe[gold_ore_processing].ingredients =
+data_recipe[gold_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[gold_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_rubyte, crystal_bobmonium, gold_ore_bob)
+data_recipe[gold_ore_recipe].order = a_b
+data_recipe[gold_ore_recipe].energy_required = 2
+data_recipe[gold_ore_recipe].ingredients =
 {
     {type = item, name = hybride_catalyst, amount = 1},
     {type = item, name = crystal_rubyte, amount = 2},
     {type = item, name = crystal_bobmonium, amount = 2}
 }
-data_recipe[gold_ore_processing].results[1].amount = 4
+data_recipe[gold_ore_recipe].results[1].amount = 4
 
-data_recipe[cobalt_ore_processing].localised_name = {"recipe-name.ore-crystal-mix3-processing"}
-data_recipe[cobalt_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[cobalt_ore_processing].icons = AR_FOUR_I(hybride_catalyst, crystal_jivolite, crystal_bobmonium, cobalt_ore_bob)
-data_recipe[cobalt_ore_processing].order = d
-data_recipe[cobalt_ore_processing].energy_required = 2
-data_recipe[cobalt_ore_processing].ingredients =
+data_recipe[cobalt_ore_recipe].localised_name = {"recipe-name.ore-crystal-mix3-processing"}
+data_recipe[cobalt_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[cobalt_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_jivolite, crystal_bobmonium, cobalt_ore_bob)
+data_recipe[cobalt_ore_recipe].order = a_c
+data_recipe[cobalt_ore_recipe].energy_required = 2
+data_recipe[cobalt_ore_recipe].ingredients =
 {
     {type = item, name = hybride_catalyst, amount = 1},
     {type = item, name = crystal_jivolite, amount = 2},
     {type = item, name = crystal_bobmonium, amount = 2}
 }
-data_recipe[cobalt_ore_processing].results[1].amount = 4
+data_recipe[cobalt_ore_recipe].results[1].amount = 4
 
 --data_recipe["angels-ore-crystal-mix4-processing"].icons = AR_FOUR_I(hybride_catalyst, , , , )
 --data_recipe["angels-ore-crystal-mix4-processing"].order = e
 
-data_recipe[uranium_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[uranium_ore_processing].icons = AR_FOUR_I(hybride_catalyst, crystal_stiratite, crystal_rubyte, uranium_ore)
-data_recipe[uranium_ore_processing].order = f
-data_recipe[uranium_ore_processing].energy_required = 2
-data_recipe[uranium_ore_processing].ingredients =
+data_recipe[uranium_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[uranium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_stiratite, crystal_rubyte, uranium_ore)
+data_recipe[uranium_ore_recipe].order = a_d
+data_recipe[uranium_ore_recipe].energy_required = 2
+data_recipe[uranium_ore_recipe].ingredients =
 {
     {type = item, name = hybride_catalyst, amount = 1},
     {type = item, name = crystal_stiratite, amount = 2},
     {type = item, name = crystal_rubyte, amount = 2}
 }
-data_recipe[uranium_ore_processing].results = {{type = item, name = uranium_ore, amount = 4}}
+data_recipe[uranium_ore_recipe].results = {{type = item, name = uranium_ore, amount = 4}}
 
-local thorium_ore_processing = "angels-ore-crystal-mix6-processing"
-data_recipe[thorium_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[thorium_ore_processing].icons = AR_FOUR_I(hybride_catalyst, crystal_ferrous, crystal_cupric, thorium_ore_bob)
-data_recipe[thorium_ore_processing].order = g
-data_recipe[thorium_ore_processing].energy_required = 2
-data_recipe[thorium_ore_processing].results[1].amount = 4
+local thorium_ore_recipe = "angels-ore-crystal-mix6-processing"
+data_recipe[thorium_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[thorium_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_ferrous, crystal_cupric, thorium_ore_bob)
+data_recipe[thorium_ore_recipe].order = a_f
+data_recipe[thorium_ore_recipe].energy_required = 2
+data_recipe[thorium_ore_recipe].results[1].amount = 4
 
-data_recipe[tungsten_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[tungsten_ore_processing].icons = AR_FOUR_I(hybride_catalyst, pure_saphirite, pure_stiratite, tungsten_ore_bob)
-data_recipe[tungsten_ore_processing].order = i
-data_recipe[tungsten_ore_processing].energy_required = 2
-data_recipe[tungsten_ore_processing].ingredients =
+data_recipe[tungsten_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[tungsten_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, pure_saphirite, pure_stiratite, tungsten_ore_bob)
+data_recipe[tungsten_ore_recipe].order = a_h
+data_recipe[tungsten_ore_recipe].energy_required = 2
+data_recipe[tungsten_ore_recipe].ingredients =
 {
     {type = item, name = hybride_catalyst, amount = 1},
     {type = item, name = pure_saphirite, amount = 2},
     {type = item, name = pure_stiratite, amount = 2}
 }
-data_recipe[tungsten_ore_processing].results[1].amount = 4
+data_recipe[tungsten_ore_recipe].results[1].amount = 4
 
-data_recipe[platinum_ore_processing].subgroup = is_ore_sorting_advanced_3
-data_recipe[platinum_ore_processing].icons = AR_FOUR_I(hybride_catalyst, crystal_cupric, pure_bobmonium, platinum_ore_angels)
-data_recipe[platinum_ore_processing].order = j
-data_recipe[platinum_ore_processing].energy_required = 2
-data_recipe[platinum_ore_processing].ingredients =
+data_recipe[platinum_ore_recipe].subgroup = is_ore_sorting_advanced_3
+data_recipe[platinum_ore_recipe].icons = AR_FOUR_I(hybride_catalyst, crystal_cupric, pure_bobmonium, platinum_ore_angels)
+data_recipe[platinum_ore_recipe].order = a_i
+data_recipe[platinum_ore_recipe].energy_required = 2
+data_recipe[platinum_ore_recipe].ingredients =
 {
     {type = item, name = hybride_catalyst, amount = 1},
     {type = item, name = crystal_cupric, amount = 2},
     {type = item, name = pure_bobmonium, amount = 2}
 }
-data_recipe[platinum_ore_processing].results[1].amount = 4
+data_recipe[platinum_ore_recipe].results[1].amount = 4
 
 data_item_subgroup["angels-geode-processing-1"].order = d
 

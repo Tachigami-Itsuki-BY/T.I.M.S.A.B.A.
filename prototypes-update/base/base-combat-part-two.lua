@@ -1,6 +1,3 @@
-local kW = "kW"
-local kJ = "kJ"
-
 data_item_subgroup["vehicle-equipment"].order = g_b
 
 local vehicle_belt_immunity_eq = "bob-vehicle-belt-immunity-equipment"
@@ -245,7 +242,7 @@ vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_2, advanced_circuit, alumin
 vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_3, processing_unit, gold_plate_bob, titanium_plate_bob, gold_cable, vehicle_solar_panel_eq_2)
 if data_item[alien_artifact] then
     vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_4, advanced_processing_unit, tungsten_plate_bob, nitinol_plate_bob, alien_artifact, vehicle_solar_panel_eq_3)
-    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_5, advanced_processing_unit, tungsten_carbide_bob, orange_alloy, platinum_cable, vehicle_solar_panel_eq_4)
+    vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_5, advanced_processing_unit, tungsten_carbide_plate_bob, orange_alloy, platinum_cable, vehicle_solar_panel_eq_4)
 end
 
 local vehicle_fission_cell_eq_1 = "bob-vehicle-fission-cell-equipment-1"
@@ -303,7 +300,7 @@ if data_item[alien_artifact] then
         {type = item, name = thorium_fuel_cell, amount = 8},
         {type = item, name = vehicle_fission_cell_eq_3, amount = 1},
         {type = item, name = lithium_bob, amount = 16},
-        {type = item, name = tungsten_carbide_bob, amount = 32},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 32},
         {type = item, name = alien_artifact_yellow, amount = 16},
         {type = item, name = alien_artifact_green, amount = 16},
         {type = item, name = speed_module_3, amount = 1}
@@ -332,7 +329,7 @@ else
         {type = item, name = thorium_fuel_cell, amount = 8},
         {type = item, name = vehicle_fission_cell_eq_3, amount = 1},
         {type = item, name = lithium_bob, amount = 16},
-        {type = item, name = tungsten_carbide_bob, amount = 32},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 32},
         {type = item, name = speed_module_3, amount = 1}
     }
     data_recipe[vehicle_fission_cell_eq_5].ingredients =
@@ -408,7 +405,7 @@ if data_item[alien_artifact] then
         {type = item, name = thorium_fuel_cell, amount = 16},
         {type = item, name = vehicle_fission_reactor_eq_3, amount = 1},
         {type = item, name = lithium_bob, amount = 32},
-        {type = item, name = tungsten_carbide_bob, amount = 64},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 64},
         {type = item, name = alien_artifact_yellow, amount = 32},
         {type = item, name = alien_artifact_green, amount = 32},
         {type = item, name = speed_module_3, amount = 1},
@@ -439,7 +436,7 @@ else
         {type = item, name = thorium_fuel_cell, amount = 16},
         {type = item, name = vehicle_fission_reactor_eq_3, amount = 1},
         {type = item, name = lithium_bob, amount = 32},
-        {type = item, name = tungsten_carbide_bob, amount = 64},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 64},
         {type = item, name = speed_module_3, amount = 1},
         {type = item, name = efficiency_module_3, amount = 1}
     }
@@ -602,80 +599,83 @@ end
 if data_item[alien_artifact] then
     data_recipe[vehicle_plasma_cannon_eq_1].ingredients =
     {
-        {type = item, name = battery_lead_acid, amount = 32},
-        {type = item, name = advanced_circuit, amount = 32},
-        {type = item, name = invar_plate_bob, amount = 64},
-        {type = item, name = cobalt_steel_plate_bob, amount = 64},
-        {type = item, name = alien_artifact, amount = 64},
-        {type = fluid, name = nitrogen_angels, amount = 480}
+        {type = item,  name = battery_lead_acid,      amount = 32},
+        {type = item,  name = advanced_circuit,       amount = 32},
+        {type = item,  name = invar_plate_bob,        amount = 64},
+        {type = item,  name = cobalt_steel_plate_bob, amount = 64},
+        {type = item,  name = alien_artifact,         amount = 64},
+        {type = fluid, name = nitrogen_angels,        amount = 480}
     }
     data_recipe[vehicle_plasma_cannon_eq_2].ingredients =
     {
-        {type = item, name = battery_lithium_ion, amount = 64},
-        {type = item, name = processing_unit, amount = 32},
-        {type = item, name = vehicle_plasma_cannon_eq_1, amount = 1},
-        {type = item, name = titanium_plate_bob, amount = 64},
-        {type = item, name = tungsten_plate_bob, amount = 64},
-        {type = item, name = alien_artifact_orange, amount = 32},
-        {type = fluid, name = hydrogen_angels, amount = 480}
+        {type = item,  name = battery_lithium_ion,        amount = 32},
+        {type = item,  name = processing_unit,            amount = 32},
+        {type = item,  name = vehicle_plasma_cannon_eq_1, amount = 1},
+        {type = item,  name = titanium_plate_bob,         amount = 64},
+        {type = item,  name = tungsten_plate_bob,         amount = 64},
+        {type = item,  name = alien_artifact_orange,      amount = 32},
+        {type = fluid, name = hydrogen_angels,            amount = 480}
     }
     data_recipe[vehicle_plasma_cannon_eq_3].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 64},
-        {type = item, name = advanced_processing_unit, amount = 32},
-        {type = item, name = vehicle_plasma_cannon_eq_2, amount = 1},
-        {type = item, name = copper_tungsten_plate_bob, amount = 64},
-        {type = item, name = nitinol_plate_bob, amount = 64},
-        {type = item, name = alien_artifact_red, amount = 32},
-        {type = item, name = alien_artifact_yellow, amount = 32},
-        {type = fluid, name = deuterium_angels, amount = 15}
+        {type = item,  name = battery_silver_zinc,        amount = 32},
+        {type = item,  name = advanced_processing_unit,   amount = 32},
+        {type = item,  name = vehicle_plasma_cannon_eq_2, amount = 1},
+        {type = item,  name = copper_tungsten_plate_bob,  amount = 64},
+        {type = item,  name = nitinol_plate_bob,          amount = 64},
+        {type = item,  name = alien_artifact_red,         amount = 32},
+        {type = item,  name = alien_artifact_yellow,      amount = 32},
+        {type = fluid, name = deuterium_angels,           amount = 15}
     }
     data_recipe[vehicle_plasma_cannon_eq_4].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 8},
-        {type = item, name = heat_shielding_tile, amount = 8},
-        {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = vehicle_plasma_cannon_eq_3, amount = 1},
-        {type = item, name = orange_alloy, amount = 64},
-        {type = item, name = efficiency_module_5, amount = 1},
-        {type = item, name = quality_module_5, amount = 1},
-        {type = fluid, name = yellow_fluid, amount = 480}
+        {type = item,  name = battery_graphene,           amount = 32},
+        {type = item,  name = low_density_structure,      amount = 8},
+        {type = item,  name = heat_shielding_tile,        amount = 8},
+        {type = item,  name = advanced_processing_unit,   amount = 64},
+        {type = item,  name = vehicle_plasma_cannon_eq_3, amount = 1},
+        {type = item,  name = orange_alloy,               amount = 64},
+        {type = item,  name = efficiency_module_5,        amount = 1},
+        {type = item,  name = quality_module_5,           amount = 1},
+        {type = fluid, name = yellow_fluid,               amount = 480}
     }
 else
     data_recipe[vehicle_plasma_cannon_eq_1].ingredients =
     {
-        {type = item, name = battery_lead_acid, amount = 32},
-        {type = item, name = advanced_circuit, amount = 32},
-        {type = item, name = invar_plate_bob, amount = 64},
-        {type = item, name = cobalt_steel_plate_bob, amount = 64},
-        {type = fluid, name = nitrogen_angels, amount = 480}
+        {type = item,  name = battery_lead_acid,      amount = 32},
+        {type = item,  name = advanced_circuit,       amount = 32},
+        {type = item,  name = invar_plate_bob,        amount = 64},
+        {type = item,  name = cobalt_steel_plate_bob, amount = 64},
+        {type = fluid, name = nitrogen_angels,        amount = 480}
     }
     data_recipe[vehicle_plasma_cannon_eq_2].ingredients =
     {
-        {type = item, name = battery_lithium_ion, amount = 64},
-        {type = item, name = processing_unit, amount = 32},
-        {type = item, name = vehicle_plasma_cannon_eq_1, amount = 1},
-        {type = item, name = titanium_plate_bob, amount = 64},
-        {type = item, name = tungsten_plate_bob, amount = 64},
-        {type = fluid, name = hydrogen_angels, amount = 480}
+        {type = item,  name = battery_lithium_ion,        amount = 32},
+        {type = item,  name = processing_unit,            amount = 32},
+        {type = item,  name = vehicle_plasma_cannon_eq_1, amount = 1},
+        {type = item,  name = titanium_plate_bob,         amount = 64},
+        {type = item,  name = tungsten_plate_bob,         amount = 64},
+        {type = fluid, name = hydrogen_angels,            amount = 480}
     }
     data_recipe[vehicle_plasma_cannon_eq_3].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 64},
-        {type = item, name = advanced_processing_unit, amount = 32},
-        {type = item, name = vehicle_plasma_cannon_eq_2, amount = 1},
-        {type = item, name = copper_tungsten_plate_bob, amount = 64},
-        {type = item, name = nitinol_plate_bob, amount = 64},
-        {type = fluid, name = deuterium_angels, amount = 15}
+        {type = item,  name = battery_silver_zinc,        amount = 32},
+        {type = item,  name = advanced_processing_unit,   amount = 32},
+        {type = item,  name = vehicle_plasma_cannon_eq_2, amount = 1},
+        {type = item,  name = copper_tungsten_plate_bob,  amount = 64},
+        {type = item,  name = nitinol_plate_bob,          amount = 64},
+        {type = fluid, name = deuterium_angels,           amount = 60}
     }
     data_recipe[vehicle_plasma_cannon_eq_4].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 8},
-        {type = item, name = heat_shielding_tile, amount = 8},
-        {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = vehicle_plasma_cannon_eq_3, amount = 1},
-        {type = item, name = efficiency_module_5, amount = 1},
-        {type = item, name = quality_module_5, amount = 1}
+        {type = item,  name = battery_graphene,           amount = 32},
+        {type = item,  name = low_density_structure,      amount = 8},
+        {type = item,  name = heat_shielding_tile,        amount = 8},
+        {type = item,  name = advanced_processing_unit,   amount = 64},
+        {type = item,  name = vehicle_plasma_cannon_eq_3, amount = 1},
+        {type = item,  name = efficiency_module_5,        amount = 1},
+        {type = item,  name = quality_module_5,           amount = 1},
+        {type = fluid, name = tritium_gas,                amount = 60}
     }
 end
 
@@ -994,9 +994,9 @@ local function artillery_turret_recipe(name, gear_wheel, circuit, plate_1, plate
     end
     data_recipe[name].ingredients = ingredients
 end
-artillery_turret_recipe(artillery_turret_1, copper_tungsten_gear_wheel, advanced_processing_unit, refined_concrete, copper_tungsten_plate_bob)
-artillery_turret_recipe(artillery_turret_2, molybdenum_gear_wheel, advanced_processing_unit, molybdenum_rhenium_plate, molybdenum_plate, artillery_turret_1)
-artillery_turret_recipe(artillery_turret_3, niobium_tungsten_molybdenum_gear_wheel, advanced_processing_unit, niobium_titanium_plate, niobium_tungsten_molybdenum_plate, artillery_turret_2)
+artillery_turret_recipe(artillery_turret_1, copper_tungsten_gear_wheel, advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob)
+artillery_turret_recipe(artillery_turret_2, molybdenum_gear_wheel, advanced_processing_unit, carbon_concrete_brick, molybdenum_plate, artillery_turret_1)
+artillery_turret_recipe(artillery_turret_3, niobium_tungsten_molybdenum_gear_wheel, advanced_processing_unit, reinforced_graphene_concrete_brick, niobium_tungsten_molybdenum_plate, artillery_turret_2)
 
 local plasma_turret_1 = "bob-plasma-turret-1"
 local plasma_turret_2 = "bob-plasma-turret-2"
@@ -1031,80 +1031,83 @@ end
 if data_item[alien_artifact] then
     data_recipe[plasma_turret_1].ingredients =
     {
-        {type = item, name = battery_lead_acid, amount = 64},
-        {type = item, name = advanced_circuit, amount = 32},
-        {type = item, name = invar_plate_bob, amount = 64},
-        {type = item, name = cobalt_steel_plate_bob, amount = 64},
-        {type = item, name = alien_artifact, amount = 128},
-        {type = fluid, name = nitrogen_angels, amount = 960}
+        {type = item,  name = battery_lead_acid,      amount = 64},
+        {type = item,  name = advanced_circuit,       amount = 32},
+        {type = item,  name = invar_plate_bob,        amount = 64},
+        {type = item,  name = cobalt_steel_plate_bob, amount = 64},
+        {type = item,  name = alien_artifact,         amount = 128},
+        {type = fluid, name = nitrogen_angels,        amount = 960}
     }
     data_recipe[plasma_turret_2].ingredients =
     {
-        {type = item, name = battery_lithium_ion, amount = 128},
-        {type = item, name = processing_unit, amount = 32},
-        {type = item, name = plasma_turret_1, amount = 1},
-        {type = item, name = titanium_plate_bob, amount = 64},
-        {type = item, name = tungsten_plate_bob, amount = 64},
-        {type = item, name = alien_artifact_orange, amount = 64},
-        {type = fluid, name = hydrogen_angels, amount = 960}
+        {type = item,  name = battery_lithium_ion,   amount = 64},
+        {type = item,  name = processing_unit,       amount = 32},
+        {type = item,  name = plasma_turret_1,       amount = 1},
+        {type = item,  name = titanium_plate_bob,    amount = 64},
+        {type = item,  name = tungsten_plate_bob,    amount = 64},
+        {type = item,  name = alien_artifact_orange, amount = 64},
+        {type = fluid, name = hydrogen_angels,       amount = 960}
     }
     data_recipe[plasma_turret_3].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 128},
-        {type = item, name = advanced_processing_unit, amount = 32},
-        {type = item, name = plasma_turret_2, amount = 1},
-        {type = item, name = copper_tungsten_plate_bob, amount = 64},
-        {type = item, name = nitinol_plate_bob, amount = 64},
-        {type = item, name = alien_artifact_red, amount = 64},
-        {type = item, name = alien_artifact_yellow, amount = 64},
-        {type = fluid, name = deuterium_angels, amount = 30}
+        {type = item,  name = battery_silver_zinc,       amount = 64},
+        {type = item,  name = advanced_processing_unit,  amount = 32},
+        {type = item,  name = plasma_turret_2,           amount = 1},
+        {type = item,  name = copper_tungsten_plate_bob, amount = 64},
+        {type = item,  name = nitinol_plate_bob,         amount = 64},
+        {type = item,  name = alien_artifact_red,        amount = 64},
+        {type = item,  name = alien_artifact_yellow,     amount = 64},
+        {type = fluid, name = deuterium_angels,          amount = 120}
     }
     data_recipe[plasma_turret_4].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 16},
-        {type = item, name = heat_shielding_tile, amount = 16},
-        {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = plasma_turret_3, amount = 1},
-        {type = item, name = orange_alloy, amount = 64},
-        {type = item, name = efficiency_module_5, amount = 1},
-        {type = item, name = quality_module_5, amount = 1},
-        {type = fluid, name = yellow_fluid, amount = 960}
+        {type = item,  name = battery_graphene,         amount = 64},
+        {type = item,  name = low_density_structure,    amount = 16},
+        {type = item,  name = heat_shielding_tile,      amount = 16},
+        {type = item,  name = advanced_processing_unit, amount = 64},
+        {type = item,  name = plasma_turret_3,          amount = 1},
+        {type = item,  name = orange_alloy,             amount = 64},
+        {type = item,  name = efficiency_module_5,      amount = 1},
+        {type = item,  name = quality_module_5,         amount = 1},
+        {type = fluid, name = yellow_fluid,             amount = 960}
     }
 else
     data_recipe[plasma_turret_1].ingredients =
     {
-        {type = item, name = battery_lead_acid, amount = 64},
-        {type = item, name = advanced_circuit, amount = 32},
-        {type = item, name = invar_plate_bob, amount = 64},
-        {type = item, name = cobalt_steel_plate_bob, amount = 64},
-        {type = fluid, name = nitrogen_angels, amount = 960}
+        {type = item,  name = battery_lead_acid,      amount = 64},
+        {type = item,  name = advanced_circuit,       amount = 32},
+        {type = item,  name = invar_plate_bob,        amount = 64},
+        {type = item,  name = cobalt_steel_plate_bob, amount = 64},
+        {type = fluid, name = nitrogen_angels,        amount = 960}
     }
     data_recipe[plasma_turret_2].ingredients =
     {
-        {type = item, name = battery_lithium_ion, amount = 128},
-        {type = item, name = processing_unit, amount = 32},
-        {type = item, name = plasma_turret_1, amount = 1},
-        {type = item, name = titanium_plate_bob, amount = 64},
-        {type = item, name = tungsten_plate_bob, amount = 64},
-        {type = fluid, name = hydrogen_angels, amount = 960}
+        {type = item,  name = battery_lithium_ion, amount = 64},
+        {type = item,  name = processing_unit,     amount = 32},
+        {type = item,  name = plasma_turret_1,     amount = 1},
+        {type = item,  name = titanium_plate_bob,  amount = 64},
+        {type = item,  name = tungsten_plate_bob,  amount = 64},
+        {type = fluid, name = hydrogen_angels,     amount = 960}
     }
     data_recipe[plasma_turret_3].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 128},
-        {type = item, name = advanced_processing_unit, amount = 32},
-        {type = item, name = plasma_turret_2, amount = 1},
-        {type = item, name = copper_tungsten_plate_bob, amount = 64},
-        {type = item, name = nitinol_plate_bob, amount = 64},
-        {type = fluid, name = deuterium_angels, amount = 30}
+        {type = item,  name = battery_silver_zinc,       amount = 64},
+        {type = item,  name = advanced_processing_unit,  amount = 32},
+        {type = item,  name = plasma_turret_2,           amount = 1},
+        {type = item,  name = copper_tungsten_plate_bob, amount = 64},
+        {type = item,  name = nitinol_plate_bob,         amount = 64},
+        {type = fluid, name = deuterium_angels,          amount = 120}
     }
     data_recipe[plasma_turret_4].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 16},
-        {type = item, name = heat_shielding_tile, amount = 16},
-        {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = plasma_turret_3, amount = 1},
-        {type = item, name = efficiency_module_5, amount = 1},
-        {type = item, name = quality_module_5, amount = 1}
+        {type = item,  name = battery_graphene,         amount = 64},
+        {type = item,  name = low_density_structure,    amount = 16},
+        {type = item,  name = heat_shielding_tile,      amount = 16},
+        {type = item,  name = advanced_processing_unit, amount = 64},
+        {type = item,  name = plasma_turret_3,          amount = 1},
+        {type = item,  name = efficiency_module_5,      amount = 1},
+        {type = item,  name = quality_module_5,         amount = 1},
+        {type = fluid, name = tritium_gas,              amount = 120}
     }
 end
 

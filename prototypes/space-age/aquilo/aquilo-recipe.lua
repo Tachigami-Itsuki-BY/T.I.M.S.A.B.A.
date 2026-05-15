@@ -613,7 +613,7 @@ data:extend
     {
         type = recipe,
         name = arsenic_recipe,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_antimonite,
         icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, germanite_purified, arsenic),
         order = j,
@@ -710,6 +710,7 @@ data:extend
         main_product = hydrocyanic_acid
     }
 })
+
 --[[data:extend
 ({
     {

@@ -242,7 +242,6 @@ warehouses_recipe(warehouse_passive_provider, electronic_circuit, steel_plate)
 warehouses_recipe(warehouse_requester, advanced_circuit, steel_plate)
 warehouses_recipe(warehouse_storage, electronic_circuit, steel_plate)
 
-local kJ = "kJ"
 local L2_inserter = "long-handed-inserter"
 local entities =
 {
@@ -338,8 +337,8 @@ local function transport_belt_recipe(name, gear_wheel, plate, transport_belt, be
     data_recipe[name].results = {{type = item, name = name, amount = 2}}
 end
 transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate)
-transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, T0_transport_belt)
-transport_belt_recipe(T2_transport_belt, steel_gear_wheel, bronze_plate_bob, T1_transport_belt)
+transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, T0_transport_belt, iron_bearing)
+transport_belt_recipe(T2_transport_belt, steel_gear_wheel, bronze_plate_bob, T1_transport_belt, steel_bearing)
 transport_belt_recipe(T3_transport_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_transport_belt, cobalt_steel_bearing)
 transport_belt_recipe(T4_transport_belt, titanium_gear_wheel, titanium_plate_bob, T3_transport_belt, titanium_bearing)
 transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_transport_belt, nitinol_bearing)
@@ -360,8 +359,8 @@ local function underground_belt_recipe(name, gear_wheel, plate, underground_belt
     data_recipe[name].ingredients = ingredients
 end
 underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate)
-underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, T0_underground_belt)
-underground_belt_recipe(T2_underground_belt, steel_gear_wheel, bronze_plate_bob, T1_underground_belt)
+underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, T0_underground_belt, iron_bearing)
+underground_belt_recipe(T2_underground_belt, steel_gear_wheel, bronze_plate_bob, T1_underground_belt, steel_bearing)
 underground_belt_recipe(T3_underground_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_underground_belt, cobalt_steel_bearing)
 underground_belt_recipe(T4_underground_belt, titanium_gear_wheel, titanium_plate_bob, T3_underground_belt, titanium_bearing)
 underground_belt_recipe(T5_underground_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_underground_belt, nitinol_bearing)
@@ -383,8 +382,8 @@ local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, beari
     data_recipe[name].ingredients = ingredients
 end
 splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate)
-splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter)
-splitter_recipe(T2_splitter, steel_gear_wheel, electronic_circuit, bronze_plate_bob, T1_splitter)
+splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter, iron_bearing)
+splitter_recipe(T2_splitter, steel_gear_wheel, electronic_circuit, bronze_plate_bob, T1_splitter, steel_bearing)
 splitter_recipe(T3_splitter, cobalt_steel_gear_wheel, advanced_circuit, aluminium_plate_bob, T2_splitter, cobalt_steel_bearing)
 splitter_recipe(T4_splitter, titanium_gear_wheel, processing_unit, titanium_plate_bob, T3_splitter, titanium_bearing)
 splitter_recipe(T5_splitter, nitinol_gear_wheel, advanced_processing_unit, nitinol_plate_bob, T4_splitter, nitinol_bearing)
@@ -392,6 +391,8 @@ data_recipe[T0_splitter].ingredients[1].amount = 4
 data_recipe[T0_splitter].ingredients[2].amount = 4
 
 table.insert(data_recipe[T1_inserter].ingredients, {type = item, name = T0_inserter, amount = 1})
+table.insert(data_recipe[T1_inserter].ingredients, {type = item, name = iron_bearing, amount = 1})
+table.insert(data_recipe[L2_inserter].ingredients, {type = item, name = steel_bearing, amount = 1})
 
 local function bulk_inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
     local ingredients =
@@ -406,7 +407,7 @@ local function bulk_inserter_recipe(name, gear_wheel, inserter, circuit, plate, 
     end
     data_recipe[name].ingredients = ingredients
 end
-bulk_inserter_recipe(T2_bulk_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob)
+bulk_inserter_recipe(T2_bulk_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
 bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
 bulk_inserter_recipe(T4_bulk_inserter, titanium_gear_wheel, T3_bulk_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
 bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
@@ -605,12 +606,14 @@ for _, pipe in pairs(pipes) do
     data_recipe[pipe.name].order = pipe.order
     data_pipe[pipe.name].order = pipe.order
 end
+data_recipe[stone_pipe].category = smelting
+if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe].additional_categories = {angels_sintering_1} end
+data_recipe[stone_pipe].ingredients[1].name = stone
+data_recipe[stone_pipe].ingredients[1].amount = 2
 data_recipe[plastic_pipe].category = crafting_fluid
 data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
 data_recipe[plastic_pipe].auto_recycle = false
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_pipe].category = angels_sintering_2
-end
+if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_pipe].category = angels_sintering_2 end
 data_recipe[tungsten_pipe].category = angels_sintering_4
 data_recipe[tungsten_pipe].ingredients[1].name = tungsten_powder
 data_recipe[copper_tungsten_pipe].category = angels_sintering_4
@@ -657,13 +660,15 @@ pipe_to_ground_recipe(ceramic_pipe_to_ground,                 ceramic_pipe,    s
 pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe,        tungsten_powder, 32)
 pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,      nitinol_plate_bob, 40)
 pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_powder, 40)
+data_recipe[stone_pipe_to_ground].category = smelting
+if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1} end
+data_recipe[stone_pipe_to_ground].ingredients[2].name = stone
+data_recipe[stone_pipe_to_ground].ingredients[2].amount = 8
 data_recipe[plastic_pipe_to_ground].category = crafting_fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
 data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
-end
+if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2 end
 data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4
 data_recipe[copper_tungsten_pipe_to_ground].category = angels_sintering_4
 
@@ -708,6 +713,7 @@ bobmods.lib.recipe.update_recycling_recipe
     T4_splitter,
     T5_splitter,
     T1_inserter,
+    L2_inserter,
     T2_bulk_inserter,
     T3_bulk_inserter,
     T4_bulk_inserter,
@@ -722,20 +728,14 @@ bobmods.lib.recipe.update_recycling_recipe
     substation_2,
     substation_3,
     substation_4,
-    tungsten_pipe,
-    copper_tungsten_pipe,
     iron_pipe_to_ground,
     copper_pipe_to_ground,
     stone_pipe_to_ground,
     bronze_pipe_to_ground,
     steel_pipe_to_ground,
-    plastic_pipe_to_ground,
     brass_pipe_to_ground,
     titanium_pipe_to_ground,
-    ceramic_pipe_to_ground,
-    tungsten_pipe_to_ground,
-    nitinol_pipe_to_ground,
-    copper_tungsten_pipe_to_ground
+    nitinol_pipe_to_ground
 })
 
 data_transport_belt[T5_transport_belt].next_upgrade = vulcanus_transport_belt

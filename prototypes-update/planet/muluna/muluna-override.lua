@@ -276,10 +276,9 @@ if mods [muluna_mods] then
     {
         {type = item, name = landfill, amount = 256},
         {type = item, name = small_lamp, amount = 16},
-        {type = item, name = copper_tungsten_pipe, amount = 8},
-        {type = item, name = copper_tungsten_plate_bob, amount = 16},
-        {type = item, name = nitinol_pipe, amount = 8},
-        {type = item, name = nitinol_plate_bob, amount = 16},
+        {type = item, name = molybdenum_rhenium_pipe, amount = 16},
+        {type = item, name = molybdenum_rhenium_plate, amount = 16},
+        {type = item, name = reinforced_concrete, amount = 16},
         {type = item, name = glass_bob, amount = 32}
     }
     data_assembling[greenhouse_wood].subgroup = is_muluna_recipe_tree
@@ -582,9 +581,9 @@ if mods [muluna_mods] then
     data_recipe[advanced_boiler].energy_required = 8
     data_recipe[advanced_boiler].ingredients =
     {
-        {type = item, name = nitinol_pipe, amount = 4},
-        {type = item, name = nitinol_plate_bob, amount = 8},
-        {type = item, name = boiler_6, amount = 1}
+        {type = item, name = molybdenum_rhenium_pipe, amount = 4},
+        {type = item, name = molybdenum_rhenium_plate, amount = 8},
+        {type = item, name = boiler_5, amount = 1}
     }
     data_assembling[advanced_boiler].subgroup = is_muluna_boiler
     data_assembling[advanced_boiler].order = z
@@ -610,9 +609,9 @@ if mods [muluna_mods] then
     data_recipe[vacuum_heating_tower].energy_required = 8
     data_recipe[vacuum_heating_tower].ingredients =
     {
-        {type = item, name = nitinol_pipe, amount = 16},
+        {type = item, name = molybdenum_rhenium_plate, amount = 16},
         {type = item, name = heat_pipe_4, amount = 8},
-        {type = item, name = refined_concrete, amount = 32},
+        {type = item, name = reinforced_concrete, amount = 32},
         {type = item, name = efficiency_module_3, amount = 1},
         {type = item, name = heating_tower, amount = 1},
         {type = item, name = heat_exchanger_4, amount = 2}
@@ -644,11 +643,11 @@ if mods [muluna_mods] then
     data_recipe[cycling_steam_turbine].energy_required = 8
     data_recipe[cycling_steam_turbine].ingredients =
     {
-        {type = item, name = copper_tungsten_pipe, amount = 16},
-        {type = item, name = nitinol_pipe, amount = 16},
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
+        {type = item, name = niobium_iron_bearing, amount = 16},
         {type = item, name = steam_turbine_4, amount = 1},
-        {type = item, name = copper_tungsten_plate_bob, amount = 8},
-        {type = item, name = nitinol_plate_bob, amount = 8},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+        {type = item, name = niobium_titanium_plate, amount = 8},
         {type = item, name = superconductor, amount = 8},
         {type = item, name = quality_module_3, amount = 1}
     }
@@ -742,7 +741,7 @@ if mods [muluna_mods] then
     {
         {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = low_density_structure, amount = 16},
-        {type = item, name = nitinol_plate_bob, amount = 8},
+        {type = item, name = molybdenum_rhenium_plate, amount = 8},
         {type = item, name = steam_crusher, amount = 1}
     }
     data_assembling[crusher].subgroup = is_muluna_building
@@ -758,8 +757,8 @@ if mods [muluna_mods] then
     data_recipe[crusher_2].energy_required = 8
     data_recipe[crusher_2].ingredients =
     {
-        {type = item, name = platinum_plate, amount = 8},
-        {type = item, name = cobalt_steel_plate_bob, amount = 8},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+        {type = item, name = niobium_iron_plate, amount = 8},
         {type = item, name = speed_module_3, amount = 1},
         {type = item, name = crusher, amount = 1}
     }
@@ -784,7 +783,8 @@ if mods [muluna_mods] then
         {type = item, name = pentapod_egg, amount = 4},
         {type = item, name = biter_egg, amount = 4},
         {type = item, name = biolab, amount = 4},
-        {type = fluid, name = antimony_acid, amount = 480},
+        {type = item, name = antimony_plate, amount = 32},
+        {type = item, name = germanium_plate, amount = 32},
         {type = fluid, name = fluoroketone_cold, amount = 480}
     }
     data_lab[cryolab].subgroup = is_muluna_building
@@ -869,7 +869,7 @@ if mods [muluna_mods] then
     data_recipe[data_cable].order = y
     data_recipe[data_cable].ingredients =
     {
-        {type = item, name = platinum_cable, amount = 8},
+        {type = item, name = aluminium_cable, amount = 8},
         {type = item, name = silicon_carbide_bob, amount = 1},
         {type = item, name = silicon_boule_mods, amount = 1}
     }
@@ -887,7 +887,7 @@ if mods [muluna_mods] then
     {
         {type = item, name = electric_engine_unit, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 32},
-        {type = item, name = cobalt_steel_plate_bob, amount = 64},
+        {type = item, name = molybdenum_rhenium_plate, amount = 64},
         {type = item, name = data_cable, amount = 8},
         {type = item, name = silicon_cell_mods, amount = 16}
     }
@@ -1098,26 +1098,30 @@ if mods [muluna_mods] then
         {type = unlock_recipe, recipe = tree_crushing}
     }
 
-    local silicon_processing = "muluna-silicon-processing"
-    data_technology[silicon_processing].prerequisites = {"muluna-aluminum-processing", "muluna-anorthite-processing"}
-    data_technology[silicon_processing].effects =
+    local tech_anorthite_processing = "muluna-anorthite-processing"
+    table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
+
+    local tech_silicon_processing = "muluna-silicon-processing"
+    data_technology[tech_silicon_processing].prerequisites = {"muluna-aluminum-processing", tech_anorthite_processing}
+    data_technology[tech_silicon_processing].effects =
     {
         {type = unlock_recipe, recipe = advanced_anorthite_crushing},
         {type = unlock_recipe, recipe = silicon_cell_mods},
         {type = unlock_recipe, recipe = silicon_solar_panel_small_1},
         {type = unlock_recipe, recipe = silicon_solar_panel_small_2},
         {type = unlock_recipe, recipe = silicon_solar_panel_small_3},
-        --{type = unlock_recipe, recipe = silicon_solar_panel_small_4},
+        {type = unlock_recipe, recipe = silicon_solar_panel_small_4},
         {type = unlock_recipe, recipe = silicon_solar_panel_1},
         {type = unlock_recipe, recipe = silicon_solar_panel_2},
         {type = unlock_recipe, recipe = silicon_solar_panel_3},
-        --{type = unlock_recipe, recipe = silicon_solar_panel_4},
+        {type = unlock_recipe, recipe = silicon_solar_panel_4},
         {type = unlock_recipe, recipe = silicon_solar_panel_large_1},
         {type = unlock_recipe, recipe = silicon_solar_panel_large_2},
         {type = unlock_recipe, recipe = silicon_solar_panel_large_3},
-        --{type = unlock_recipe, recipe = silicon_solar_panel_large_4}
+        {type = unlock_recipe, recipe = silicon_solar_panel_large_4}
     }
-    data_technology[silicon_processing].unit.ingredients =
+
+    data_technology[tech_silicon_processing].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -1188,11 +1192,18 @@ if mods [muluna_mods] then
             }
         }
     end
-    local tehc_fertilized_greenhouses_vulcanus = "muluna-fertilized-greenhouses-vulcanus"
-    data_technology[tehc_fertilized_greenhouses_vulcanus].icons = greenhouse_technology_icon(data_fluid[fluoroketone_cold].icon, 64)
-    data_technology[tehc_fertilized_greenhouses_vulcanus].effects =
+    local tech_fertilized_greenhouses_vulcanus = "muluna-fertilized-greenhouses-vulcanus"
+    data_technology[tech_fertilized_greenhouses_vulcanus].icons = greenhouse_technology_icon(data_fluid[fluoroketone_cold].icon, 64)
+    data_technology[tech_fertilized_greenhouses_vulcanus].effects =
     {
         {type = unlock_recipe, recipe = tree_growth_greenhouse_vulcanus},
         {type = unlock_recipe, recipe = tree_growth_greenhouse_water_saving_vulcanus}
     }
+
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_titanium_processing)
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_iron_processing)
+
+    table.insert(data_technology[crusher_2].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+    table.insert(data_technology[crusher_2].prerequisites, tech_niobium_iron_processing)
 end

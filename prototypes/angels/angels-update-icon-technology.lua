@@ -48,22 +48,22 @@ do
 		technologies[tech_powder_metallurgy_3] = {tier = 3, prog_tier = 3, icon_name = powder_metallurgy}
 		technologies[tech_powder_metallurgy_4] = {tier = 4, prog_tier = 4, icon_name = powder_metallurgy}
 		technologies[tech_powder_metallurgy_5] = {tier = 5, prog_tier = 5, icon_name = powder_metallurgy}
-		--technologies[tech_powder_metallurgy_6] = {tier = 6, prog_tier = 6, icon_name = powder_metallurgy}
+		technologies[tech_powder_metallurgy_6] = {tier = 6, prog_tier = 6, icon_name = powder_metallurgy}
 	else
 		technologies[tech_powder_metallurgy_2] = {tier = 1, prog_tier = 2, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
 		technologies[tech_powder_metallurgy_3] = {tier = 2, prog_tier = 3, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
 		technologies[tech_powder_metallurgy_4] = {tier = 3, prog_tier = 4, icon_name = powder_metallurgy, defer_to_data_updates = true}
 		technologies[tech_powder_metallurgy_5] = {tier = 4, prog_tier = 5, icon_name = powder_metallurgy, defer_to_data_updates = true}
-		--technologies[tech_powder_metallurgy_6] = {tier = 5, prog_tier = 6, icon_name = powder_metallurgy, defer_to_data_updates = true}
-		--technologies[tech_powder_metallurgy_7] = {tier = 6, prog_tier = 6, icon_name = powder_metallurgy, defer_to_data_updates = true}
+		technologies[tech_powder_metallurgy_6] = {tier = 5, prog_tier = 6, icon_name = powder_metallurgy, defer_to_data_updates = false}
+		technologies[tech_powder_metallurgy_7] = {tier = 6, prog_tier = 6, icon_name = powder_metallurgy, defer_to_data_updates = false}
 	end
 	if angelsmods and angelsmods.functions.is_special_vanilla() then
 		technologies[tech_powder_metallurgy_2] = {tier = 1, prog_tier = 2, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
 		technologies[tech_powder_metallurgy_3] = {tier = 2, prog_tier = 3, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
 		technologies[tech_powder_metallurgy_4] = {tier = 3, prog_tier = 4, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
 		technologies[tech_powder_metallurgy_5] = {tier = 4, prog_tier = 5, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
-		--technologies[tech_powder_metallurgy_6] = {tier = 5, prog_tier = 6, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
-		--technologies[tech_powder_metallurgy_7] = {tier = 6, prog_tier = 6, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = true}
+		technologies[tech_powder_metallurgy_6] = {tier = 5, prog_tier = 6, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = false}
+		technologies[tech_powder_metallurgy_7] = {tier = 6, prog_tier = 6, icon_name = powder_metallurgy_special_vanilla, defer_to_data_updates = false}
 	end
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end

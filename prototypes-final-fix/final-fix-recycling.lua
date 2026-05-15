@@ -13,6 +13,13 @@ for name, recipe_name in pairs(data.raw.recipe) do
 end
 
 local _recycling = "-recycling"
+local stone_pipe_recycling = stone_pipe .. _recycling
+data_recipe[stone_pipe_recycling].results = {{type = item, name = stone_pipe, amount = 1, probability = 0.25}}
+data_recipe[stone_pipe_recycling].main_product = stone_pipe
+local stone_pipe_to_ground_recycling = stone_pipe_to_ground .. _recycling
+data_recipe[stone_pipe_to_ground_recycling].results = {{type = item, name = stone_pipe_to_ground, amount = 1, probability = 0.25}}
+data_recipe[stone_pipe_to_ground_recycling].main_product = stone_pipe_to_ground
+
 local plastic_pipe_recycling = plastic_pipe .. _recycling
 --data_recipe[plastic_pipe_recycling].results = {{type = item, name = plastic_pipe, amount = 1, probability = 0.25}}
 --data_recipe[plastic_pipe_recycling].main_product = plastic_pipe
@@ -90,7 +97,7 @@ data_recipe[concrete_recycling] = nil
 local hazard_concrete_recycling = hazard_concrete .. _recycling
 data_recipe[hazard_concrete_recycling] = nil
 
-local refined_concrete_recycling = refined_concrete .. _recycling
-data_recipe[refined_concrete_recycling] = nil
-local refined_hazard_concrete_recycling = refined_hazard_concrete .. _recycling
-data_recipe[refined_hazard_concrete_recycling] = nil
+local reinforced_concrete_recycling = reinforced_concrete .. _recycling
+data_recipe[reinforced_concrete_recycling] = nil
+local reinforced_hazard_concrete_recycling = reinforced_hazard_concrete .. _recycling
+data_recipe[reinforced_hazard_concrete_recycling] = nil

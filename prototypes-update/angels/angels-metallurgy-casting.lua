@@ -926,10 +926,10 @@ data_recipe[tungsten_plate_angels].ingredients[1].name = tungsten_powder
 data_recipe[tungsten_plate_angels].ingredients[1].amount = 16
 data_recipe[tungsten_plate_angels].results[1].amount = 16
 
-data_item[tungsten_carbide_bob].localised_description = show_formula and {chemical_formula, "WC"} or nil
-data_item[tungsten_carbide_bob].order = b
+data_item[tungsten_carbide_plate_bob].localised_description = show_formula and {chemical_formula, "WC"} or nil
+data_item[tungsten_carbide_plate_bob].order = b
 
-data_recipe[tungsten_carbide_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_bob)
+data_recipe[tungsten_carbide_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
 data_recipe[tungsten_carbide_2].order = b_a
 data_recipe[tungsten_carbide_2].energy_required = 8 -- W + C --> WC
 data_recipe[tungsten_carbide_2].ingredients =
@@ -1082,30 +1082,39 @@ data_recipe[concrete].ingredients =
 }
 data_recipe[concrete].results[1].amount = 8
 
+data_recipe[concrete_2].icons = TWO_I(concrete_liquid, concrete)
+data_recipe[concrete_2].order = a_a
+data_recipe[concrete_2].ingredients[1].amount = 60
+
 data_item[hazard_concrete].order = b
 data_recipe[hazard_concrete].icons = TWO_I(concrete, hazard_concrete)
 data_recipe[hazard_concrete].energy_required = 0.25
 data_recipe[hazard_concrete].ingredients[1].amount = 1
 data_recipe[hazard_concrete].results[1].amount = 1
 
-data_item[refined_concrete].order = c
-data_recipe[refined_concrete].icons = FOUR_D_I(lime_angels, sand_angels, iron_rod, water, refined_concrete)
-data_recipe[refined_concrete].order = c
-data_recipe[refined_concrete].energy_required = 8
-data_recipe[refined_concrete].ingredients =
+
+data_item[reinforced_concrete].localised_name = {"item-name.reinforced-concrete"}
+data_item[reinforced_concrete].order = c
+data_recipe[reinforced_concrete].localised_name = {"item-name.reinforced-concrete"}
+data_recipe[reinforced_concrete].icons = FOUR_D_I(lime_angels, sand_angels, iron_rod, water, reinforced_concrete)
+data_recipe[reinforced_concrete].order = c
+data_recipe[reinforced_concrete].energy_required = 8
+data_recipe[reinforced_concrete].ingredients =
 {
     {type = item, name = lime_angels, amount = 8},
     {type = item, name = sand_angels, amount = 4},
     {type = item, name = iron_rod, amount = 8},
     {type = fluid, name = water, amount = 120}
 }
-data_recipe[refined_concrete].results[1].amount = 8
+data_recipe[reinforced_concrete].results[1].amount = 8
 
-data_item[refined_hazard_concrete].order = d
-data_recipe[refined_hazard_concrete].icons = TWO_I(refined_concrete, refined_hazard_concrete)
-data_recipe[refined_hazard_concrete].energy_required = 0.25
-data_recipe[refined_hazard_concrete].ingredients[1].amount = 1
-data_recipe[refined_hazard_concrete].results[1].amount = 1
+data_item[reinforced_hazard_concrete].localised_name = {"item-name.reinforced-concrete-hazard"}
+data_item[reinforced_hazard_concrete].order = d
+data_recipe[reinforced_hazard_concrete].localised_name = {"item-name.reinforced-concrete-hazard"}
+data_recipe[reinforced_hazard_concrete].icons = TWO_I(reinforced_concrete, reinforced_hazard_concrete)
+data_recipe[reinforced_hazard_concrete].energy_required = 0.25
+data_recipe[reinforced_hazard_concrete].ingredients[1].amount = 1
+data_recipe[reinforced_hazard_concrete].results[1].amount = 1
 
 data_fluid[concrete_liquid].order = e
 data_recipe[concrete_liquid].icons = THREE_D_I(cement, slag_angels, water, concrete_liquid, nil, nil, number_1)
@@ -1122,10 +1131,6 @@ data_recipe[concrete_liquid_2].ingredients[3].amount = 16
 data_recipe[concrete_liquid_2].ingredients[4].amount = 8
 data_recipe[concrete_liquid_2].results[1].amount = 480
 
-data_recipe[concrete_2].icons = TWO_I(concrete_liquid, concrete)
-data_recipe[concrete_2].order = e_b
-data_recipe[concrete_2].ingredients[1].amount = 60
-
 -- BRICK
 local clay_brick_raw = "angels-clay-brick-raw"
 data_item[clay_brick_raw].subgroup = is_bricks_casting
@@ -1136,12 +1141,14 @@ data_recipe[clay_brick_raw].order = a
 
 data_item[clay_brick].subgroup = is_bricks_casting
 data_item[clay_brick].order = b
+data_recipe[clay_brick].additional_categories = {metallurgy}
 data_recipe[clay_brick].subgroup = is_bricks_casting
 data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
 data_recipe[clay_brick].order = b
 
 data_item[stone_brick].subgroup = is_bricks_casting
 data_item[stone_brick].order = c
+data_recipe[stone_brick].additional_categories = {metallurgy}
 data_recipe[stone_brick].subgroup = is_bricks_casting
 data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
 data_recipe[stone_brick].order = c
@@ -1149,6 +1156,7 @@ data_recipe[stone_brick].energy_required = 4
 
 data_item[concrete_brick].subgroup = is_bricks_casting
 data_item[concrete_brick].order = d
+data_recipe[concrete_brick].additional_categories = {metallurgy}
 data_recipe[concrete_brick].subgroup = is_bricks_casting
 data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
 data_recipe[concrete_brick].order = d
@@ -1156,6 +1164,7 @@ data_recipe[concrete_brick].ingredients[1].amount = 60
 
 data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
 data_item[reinforced_concrete_brick].order = e
+data_recipe[reinforced_concrete_brick].additional_categories = {metallurgy}
 data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
 data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
 data_recipe[reinforced_concrete_brick].order = e
@@ -1403,7 +1412,7 @@ bobmods.lib.recipe.update_recycling_recipe
     gold_cable,
     platinum_cable,
     concrete,
-    refined_concrete,
+    reinforced_concrete,
     concrete_brick,
     reinforced_concrete_brick,
 })

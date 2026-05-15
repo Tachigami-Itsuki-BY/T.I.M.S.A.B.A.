@@ -1,0 +1,7 @@
+{
+    "recipe":
+    [
+        ["refined-concrete-2", "reinforced-concrete-2"],
+        ["refined-hazard-concrete-processing", "reinforced-hazard-concrete-processing"]
+    ]
+}

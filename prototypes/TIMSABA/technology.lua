@@ -126,7 +126,7 @@ data:extend
         name = tech_powellite_processing_2,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/technology/powellite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_ore_floatation, tech_powellite_processing_1, production_science_pack},
+        prerequisites = {tech_ore_floatation, tech_powellite_processing_1, production_science_pack, tech_advanced_ore_refining_3},
         effects =
         {
             {type = unlock_recipe, recipe = powellite_chunks},
@@ -624,7 +624,7 @@ data:extend
             {type = unlock_recipe, recipe = potassium_hypochlorite_solution},
             {type = unlock_recipe, recipe = potassium_chlorate},
             {type = unlock_recipe, recipe = potassium_chlorate_solution},
-            --{type = unlock_recipe, recipe = potassium_permanganate}
+            {type = unlock_recipe, recipe = potassium_permanganate}
         },
         unit =
         {
@@ -665,18 +665,19 @@ data:extend
         }
     },
     -- PHOSPHORUS
-    --[[{
+    {
         type = technology,
-        name = phosphorus_processing,
+        name = tech_phosphorus_processing,
         icons = TIMSABA.functions.create_gas_tech_icon("PPP"),
         prerequisites = {tech_advanced_ore_refining_3, tech_metallurgy_4},
         effects =
         {
+            {type = unlock_recipe, recipe = phosphate_ore_recipe},
             {type = unlock_recipe, recipe = white_phosphorus_gas},
             {type = unlock_recipe, recipe = white_phosphorus},
-            {type = unlock_recipe, recipe = phosphorus_trichloride_liquid},
-            {type = unlock_recipe, recipe = phosphorus_pentachloride},
-            {type = unlock_recipe, recipe = phosphorus_pentafluoride_gas},
+            {type = unlock_recipe, recipe = phosphorus_chloride_III_liquid},
+            {type = unlock_recipe, recipe = phosphorus_chloride_V},
+            {type = unlock_recipe, recipe = phosphorus_fluoride_V_gas},
             {type = unlock_recipe, recipe = metasilicic_acid},
             {type = unlock_recipe, recipe = silicon_oxide_IV_from_metasilicic_acid}
         },
@@ -692,13 +693,12 @@ data:extend
             },
             time = 30
         }
-    }]]
+    }
 })
 
 data_technology[tech_magnesium_smelting_1].prerequisites = {tech_metallurgy_1, tech_coal_processing_1, tech_ore_advanced_crushing, tech_powellite_processing_1}
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = technology,
@@ -714,5 +714,4 @@ data:extend
             time = 
         }
     }
-})
-]]
+})]]

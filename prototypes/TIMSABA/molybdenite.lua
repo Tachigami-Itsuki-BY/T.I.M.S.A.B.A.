@@ -268,7 +268,7 @@ data:extend
     {
         type = recipe,
         name = molybdenite_crushed_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = angels_ore_sorting_5,
         subgroup = is_ore_sorting_T1,
         icons = RECYCLING_I(recycling_png, molybdenite_crushed),
         order = g,
@@ -290,7 +290,7 @@ data:extend
     {
         type = recipe,
         name = molybdenite_chunks_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_T2,
         icons = RECYCLING_I(recycling_png, molybdenite_chunks),
         order = g,
@@ -314,7 +314,7 @@ data:extend
     {
         type = recipe,
         name = molybdenite_crystals_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, molybdenite_crystals),
         order = g,
@@ -339,7 +339,7 @@ data:extend
     {
         type = recipe,
         name = molybdenite_purified_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_T4,
         icons = RECYCLING_I(recycling_png, molybdenite_purified),
         order = g,

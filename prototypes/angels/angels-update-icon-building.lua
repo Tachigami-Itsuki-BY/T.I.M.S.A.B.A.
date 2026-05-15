@@ -362,7 +362,7 @@ do
 end
 
 -- ORE SORTING FACILITY
---[[do
+do
     local inputs =
     {
         type = assembling_machine,
@@ -437,7 +437,7 @@ end
         }
         ::continue::
     end
-end]]
+end
 
 -- ORE POWDERIZER
 do
@@ -505,7 +505,7 @@ do
 end
 
 -- ELECTROWINNING CELL
---[[do
+do
     local inputs =
     {
         type = assembling_machine,
@@ -568,7 +568,7 @@ end
         }
         ::continue::
     end
-end]]
+end
 
 -- FILTRATION UNIT
 do
@@ -704,7 +704,7 @@ do
         group = "smelting",
         make_remnants = false
     }
-    local tier_map
+    local tier_map = {}
     if settings.startup[setting_early_sintering_oven].value then
         tier_map =
         {
@@ -713,15 +713,15 @@ do
             [sintering_oven_3] = {tier = 3, prog_tier = 3},
             [sintering_oven_4] = {tier = 4, prog_tier = 4},
             [sintering_oven_5] = {tier = 5, prog_tier = 5},
-            --[sintering_oven_6] = {tier = 6, prog_tier = 6}
+            [sintering_oven_6] = {tier = 6, prog_tier = 6}
         }
     else
         tier_map =
         {
             [sintering_oven_4] = {tier = 1, prog_tier = 4, defer_to_data_updates = true},
             [sintering_oven_5] = {tier = 2, prog_tier = 5, defer_to_data_updates = true},
-            --[sintering_oven_6] = {tier = 3, prog_tier = 6, defer_to_data_updates = true},
-            --[sintering_oven_7] = {tier = 4, prog_tier = 6, defer_to_data_updates = true}
+            [sintering_oven_6] = {tier = 3, prog_tier = 6, defer_to_data_updates = false},
+            [sintering_oven_7] = {tier = 4, prog_tier = 6, defer_to_data_updates = false}
         }
     end
     for name, map in pairs(tier_map) do

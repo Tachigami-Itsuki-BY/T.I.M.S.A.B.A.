@@ -62,53 +62,49 @@ data:extend
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = false,
-        energy_required = 0.25, -- Construction Scrap = Plate / Material / Space Material / Ore
+        energy_required = 0.25, -- Construction Scrap = Plate / Material / Ore
         ingredients = {{type = item, name = construction_scrap, amount = 1}},
         results =
         {
             -- Plate
-            {type = item, name = iron_plate, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 1
-            {type = item, name = steel_plate, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 2
-            {type = item, name = copper_plate, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 3
-            {type = item, name = lead_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 4
-            {type = item, name = tin_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 5
-            {type = item, name = silicon_wafer, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 6
-            {type = item, name = nickel_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 7
-            {type = item, name = aluminium_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 8
-            {type = item, name = zinc_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 9
-            {type = item, name = silver_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 10
-            {type = item, name = titanium_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 11
-            {type = item, name = gold_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 12
-            {type = item, name = tungsten_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 13
-            {type = item, name = tungsten_carbide_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 14
-            {type = item, name = copper_tungsten_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 15
-            {type = item, name = platinum_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 16
-            {type = item, name = molybdenum_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 17
-            {type = item, name = rhenium_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 18
-            {type = item, name = molybdenum_rhenium_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 19
-            {type = item, name = bronze_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 20
-            {type = item, name = brass_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 21
-            {type = item, name = gunmetal_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 22
-            {type = item, name = invar_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 23
-            {type = item, name = cobalt_steel_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 24
-            {type = item, name = nitinol_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 25
+            {type = item, name = iron_plate, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = steel_plate, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = copper_plate, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = lead_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = tin_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = nickel_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = aluminium_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = zinc_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = silver_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = titanium_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = gold_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = tungsten_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = tungsten_carbide_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = copper_tungsten_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = platinum_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = molybdenum_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = rhenium_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = molybdenum_rhenium_plate, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = bronze_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = brass_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = gunmetal_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = invar_plate_bob, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = cobalt_steel_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = nitinol_plate_bob, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
             -- Material
-            {type = item, name = ice, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false}, -- 1
-            {type = item, name = wood, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false}, -- 2
-            {type = item, name = stone, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false}, -- 3
-            {type = item, name = clay_brick, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false}, -- 4
-            {type = item, name = stone_brick, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false}, -- 5
-            {type = item, name = concrete_brick, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 6
-            {type = item, name = reinforced_concrete_brick, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 7
-            {type = item, name = concrete, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false}, -- 8
-            {type = item, name = refined_concrete, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 9
-            {type = item, name = glass_bob, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false}, -- 10
-            {type = item, name = silicon_nitride_bob, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false}, -- 11
-            -- Space Material
-            {type = item, name = low_density_structure, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 1
-            {type = item, name = heat_shielding_tile, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}, -- 2
+            {type = item, name = ice, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
+            {type = item, name = wood, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
+            {type = item, name = stone, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
+            {type = item, name = clay_brick, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
+            {type = item, name = concrete_brick, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
+            {type = item, name = reinforced_concrete_brick, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
+            {type = item, name = concrete, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
+            {type = item, name = reinforced_concrete, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
+            {type = item, name = glass_bob, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
+            {type = item, name = silicon_nitride_bob, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
             -- Ore
-            {type = item, name = brannerite_ore, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false} -- 1
+            {type = item, name = brannerite_ore, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false}
         }
     },
     {
@@ -134,15 +130,18 @@ data:extend
             {type = item, name = ceramic_gear_wheel, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
             {type = item, name = cobalt_steel_gear_wheel, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
             {type = item, name = titanium_gear_wheel, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
+            {type = item, name = tungsten_gear_wheel, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
             {type = item, name = nitinol_gear_wheel, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
             {type = item, name = copper_tungsten_gear_wheel, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
             {type = item, name = molybdenum_gear_wheel, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
             -- Bearing
+            {type = item, name = iron_bearing, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
             {type = item, name = steel_bearing, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
             {type = item, name = brass_bearing, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
             {type = item, name = ceramic_bearing, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
             {type = item, name = cobalt_steel_bearing, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
             {type = item, name = titanium_bearing, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
+            {type = item, name = tungsten_bearing, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
             {type = item, name = nitinol_bearing, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
             {type = item, name = copper_tungsten_bearing, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
             {type = item, name = rhenium_bearing, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
@@ -162,7 +161,7 @@ data:extend
             {type = item, name = battery_lead_acid, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
             {type = item, name = battery_lithium_ion, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
             {type = item, name = battery_silver_zinc, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-            --{type = item, name = battery_graphene, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}
+            {type = item, name = battery_graphene, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false}
         }
     }
 })
@@ -173,19 +172,22 @@ if mods [muluna_mods] then
         -- Geaw Wheel
         {type = item, name = iron_gear_wheel, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
         {type = item, name = steel_gear_wheel, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
-        {type = item, name = brass_gear_wheel, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
-        {type = item, name = ceramic_gear_wheel, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
+        {type = item, name = brass_gear_wheel, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
+        {type = item, name = ceramic_gear_wheel, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
         {type = item, name = cobalt_steel_gear_wheel, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
         {type = item, name = titanium_gear_wheel, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
+        {type = item, name = tungsten_gear_wheel, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
         {type = item, name = nitinol_gear_wheel, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = copper_tungsten_gear_wheel, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = molybdenum_gear_wheel, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
         -- Bearing
+        {type = item, name = iron_bearing, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
         {type = item, name = steel_bearing, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
-        {type = item, name = brass_bearing, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
-        {type = item, name = ceramic_bearing, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
+        {type = item, name = brass_bearing, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
+        {type = item, name = ceramic_bearing, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
         {type = item, name = cobalt_steel_bearing, amount = 1, probability = 0.125, show_details_in_recipe_tooltip = false},
         {type = item, name = titanium_bearing, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
+        {type = item, name = tungsten_bearing, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
         {type = item, name = nitinol_bearing, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = copper_tungsten_bearing, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = rhenium_bearing, amount = 1, probability = 0.015625, show_details_in_recipe_tooltip = false},
@@ -218,10 +220,10 @@ data:extend
     {
         type = recipe,
         name = calcium_recipe,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, powellite_crushed, brannerite_crushed, calcium),
-        order = h,
+        order = a_g,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,

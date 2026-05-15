@@ -726,7 +726,7 @@ data:extend
     {
         type = recipe,
         name = niobium_tungsten_molybdenum_plate,
-        category = angels_sintering_4,
+        category = sintering_6,
         subgroup = is_niobium_tungsten_molybdenum,
         icons = TWO_I(niobium_tungsten_molybdenum_powder_mixture, niobium_tungsten_molybdenum_plate),
         order = a,
@@ -743,7 +743,7 @@ data:extend
     {
         type = recipe,
         name = niobium_tungsten_molybdenum_gear_wheel,
-        category = angels_sintering_4,
+        category = sintering_6,
         subgroup = is_niobium_tungsten_molybdenum,
         icons = TWO_I(niobium_tungsten_molybdenum_powder_mixture, niobium_tungsten_molybdenum_gear_wheel),
         order = b,

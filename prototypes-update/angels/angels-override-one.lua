@@ -125,7 +125,7 @@ local function ore_leaching_plant_recipe(name, pipe, circuit, brick, plate, ore_
 end
 ore_leaching_plant_recipe(ore_leaching_plant_1, brass_pipe, advanced_circuit, concrete_brick, aluminium_plate_bob)
 ore_leaching_plant_recipe(ore_leaching_plant_2, titanium_pipe, processing_unit, reinforced_concrete_brick, titanium_plate_bob, ore_leaching_plant_1)
-ore_leaching_plant_recipe(ore_leaching_plant_3, copper_tungsten_pipe, advanced_processing_unit, reinforced_concrete_brick, copper_tungsten_plate_bob, ore_leaching_plant_2)
+ore_leaching_plant_recipe(ore_leaching_plant_3, copper_tungsten_pipe, advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, ore_leaching_plant_2)
 
 data_item_subgroup["angels-ore-refining"].order = z_d
 
@@ -160,7 +160,7 @@ local function ore_refinery_recipe(name, circuit, brick, plate, ore_refinery)
     data_recipe[name].ingredients = ingredients
 end
 ore_refinery_recipe(ore_refinery_1, processing_unit, reinforced_concrete_brick, titanium_plate_bob)
-ore_refinery_recipe(ore_refinery_2, advanced_processing_unit, reinforced_concrete_brick, copper_tungsten_plate_bob, ore_refinery_1)
+ore_refinery_recipe(ore_refinery_2, advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, ore_refinery_1)
 
 data_item_subgroup["angels-ore-sorter"].order = z_e
 
@@ -203,7 +203,7 @@ ore_sorting_facility_recipe(ore_sorting_facility_1, iron_gear_wheel, basic_circu
 ore_sorting_facility_recipe(ore_sorting_facility_2, steel_gear_wheel, electronic_circuit, clay_brick, steel_plate, ore_sorting_facility_1)
 ore_sorting_facility_recipe(ore_sorting_facility_3, brass_gear_wheel, advanced_circuit, concrete_brick, aluminium_plate_bob, ore_sorting_facility_2)
 ore_sorting_facility_recipe(ore_sorting_facility_4, titanium_gear_wheel, processing_unit, reinforced_concrete_brick, titanium_plate_bob, ore_sorting_facility_3)
-ore_sorting_facility_recipe(ore_sorting_facility_5, copper_tungsten_gear_wheel, advanced_processing_unit, reinforced_concrete_brick, copper_tungsten_plate_bob, ore_sorting_facility_4)
+ore_sorting_facility_recipe(ore_sorting_facility_5, copper_tungsten_gear_wheel, advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, ore_sorting_facility_4)
 
 data_item_subgroup["angels-powderizer"].order = z_f
 
@@ -276,7 +276,7 @@ local function electro_whinning_cell_recipe(name, pipe, circuit, brick, plate, e
     data_recipe[name].ingredients = ingredients
 end
 electro_whinning_cell_recipe(electro_whinning_cell_1, titanium_pipe, processing_unit, reinforced_concrete_brick, titanium_plate_bob)
-electro_whinning_cell_recipe(electro_whinning_cell_2, copper_tungsten_pipe, advanced_processing_unit, reinforced_concrete_brick, copper_tungsten_plate_bob, electro_whinning_cell_1)
+electro_whinning_cell_recipe(electro_whinning_cell_2, copper_tungsten_pipe, advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, electro_whinning_cell_1)
 
 data_item_subgroup["angels-refining-buildings"].order = z_h
 
@@ -423,7 +423,7 @@ end
 ore_processing_machine_recipe(ore_processing_machine_1, steel_gear_wheel, clay_brick, bronze_plate_bob)
 ore_processing_machine_recipe(ore_processing_machine_2, brass_gear_wheel, concrete_brick, aluminium_plate_bob, ore_processing_machine_1)
 ore_processing_machine_recipe(ore_processing_machine_3, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, ore_processing_machine_2)
-ore_processing_machine_recipe(ore_processing_machine_4, copper_tungsten_gear_wheel, reinforced_concrete_brick, copper_tungsten_plate_bob, ore_processing_machine_3)
+ore_processing_machine_recipe(ore_processing_machine_4, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, ore_processing_machine_3)
 
 local pellet_pressed =
 {
@@ -456,8 +456,8 @@ local function pellet_press_recipe(name, gear_wheel, brick, plate, pellet_press)
 end
 pellet_press_recipe(pellet_press_1, brass_gear_wheel, concrete_brick, aluminium_plate_bob)
 pellet_press_recipe(pellet_press_2, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, pellet_press_1)
-pellet_press_recipe(pellet_press_3, copper_tungsten_gear_wheel, reinforced_concrete_brick, copper_tungsten_plate_bob, pellet_press_2)
-pellet_press_recipe(pellet_press_4, nitinol_gear_wheel, reinforced_concrete_brick, nitinol_plate_bob, pellet_press_3)
+pellet_press_recipe(pellet_press_3, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, pellet_press_2)
+pellet_press_recipe(pellet_press_4, nitinol_gear_wheel, carbon_concrete_brick, nitinol_plate_bob, pellet_press_3)
 
 local powder_mixers =
 {
@@ -491,7 +491,7 @@ end
 powder_mixer_recipe(powder_mixer_1, steel_gear_wheel, clay_brick, bronze_plate_bob)
 powder_mixer_recipe(powder_mixer_2, brass_gear_wheel, concrete_brick, aluminium_plate_bob, powder_mixer_1)
 powder_mixer_recipe(powder_mixer_3, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, powder_mixer_2)
-powder_mixer_recipe(powder_mixer_4, copper_tungsten_gear_wheel, reinforced_concrete_brick, copper_tungsten_plate_bob, powder_mixer_3)
+powder_mixer_recipe(powder_mixer_4, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, powder_mixer_3)
 
 local blast_furnaces =
 {
@@ -561,7 +561,7 @@ end
 chemical_furnace_recipe(chemical_furnace_1, electronic_circuit, steel_pipe, clay_brick, steel_plate)
 chemical_furnace_recipe(chemical_furnace_2, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, chemical_furnace_1)
 chemical_furnace_recipe(chemical_furnace_3, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, chemical_furnace_2)
-chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, tungsten_pipe, reinforced_concrete_brick, tungsten_plate_bob, chemical_furnace_3)
+chemical_furnace_recipe(chemical_furnace_4, advanced_processing_unit, tungsten_pipe, reinforced_titanium_concrete_brick, tungsten_plate_bob, chemical_furnace_3)
 
 -- ANGELS METTALURGY CASTING
 local induction_furnaces =
@@ -670,7 +670,7 @@ end
 strand_casting_machine_recipe(strand_casting_machine_1, steel_gear_wheel, electronic_circuit, steel_pipe, clay_brick, steel_plate)
 strand_casting_machine_recipe(strand_casting_machine_2, brass_gear_wheel, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, strand_casting_machine_1)
 strand_casting_machine_recipe(strand_casting_machine_3, titanium_gear_wheel, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, strand_casting_machine_2)
-strand_casting_machine_recipe(strand_casting_machine_4, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe, reinforced_concrete_brick, copper_tungsten_plate_bob, strand_casting_machine_3)
+strand_casting_machine_recipe(strand_casting_machine_4, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, strand_casting_machine_3)
 
 if settings.startup[setting_early_sintering_oven].value then
     local sintering_ovens =
@@ -707,11 +707,11 @@ if settings.startup[setting_early_sintering_oven].value then
         end
         data_recipe[name].ingredients = ingredients
     end
-    sintering_oven_recipe(sintering_oven_1, electronic_circuit, clay_brick, steel_plate)
+    sintering_oven_recipe(sintering_oven_1, basic_circuit_board, clay_brick, steel_plate)
     sintering_oven_recipe(sintering_oven_2, electronic_circuit, clay_brick, bronze_plate_bob, sintering_oven_1)
     sintering_oven_recipe(sintering_oven_3, advanced_circuit, concrete_brick, aluminium_plate_bob, sintering_oven_2)
     sintering_oven_recipe(sintering_oven_4, processing_unit, titanium_plate_bob, reinforced_concrete_brick, sintering_oven_3)
-    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, tungsten_plate_bob, reinforced_concrete_brick, sintering_oven_4)
+    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, sintering_oven_4)
     bobmods.lib.recipe.update_recycling_recipe({sintering_oven_1, sintering_oven_2, sintering_oven_3, sintering_oven_4, sintering_oven_5})
 else
     local sintering_ovens =
@@ -745,7 +745,7 @@ else
         data_recipe[name].ingredients = ingredients
     end
     sintering_oven_recipe(sintering_oven_4, processing_unit, titanium_plate_bob, reinforced_concrete_brick)
-    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, tungsten_plate_bob, reinforced_concrete_brick, sintering_oven_4)
+    sintering_oven_recipe(sintering_oven_5, advanced_processing_unit, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, sintering_oven_4)
     bobmods.lib.recipe.update_recycling_recipe({sintering_oven_4, sintering_oven_5})
 end
 
@@ -1269,7 +1269,7 @@ local function advanced_chemical_plant_recipe(name, circuit, pipe, plate, brick,
     data_recipe[name].ingredients = ingredients
 end
 advanced_chemical_plant_recipe(advanced_chemical_plant_1, electronic_circuit, bronze_pipe, bronze_plate_bob, clay_brick)
-advanced_chemical_plant_recipe(advanced_chemical_plant_2, processing_unit, titanium_pipe, titanium_plate_bob, concrete_brick, advanced_chemical_plant_1)
+advanced_chemical_plant_recipe(advanced_chemical_plant_2, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, advanced_chemical_plant_1)
 
 data_item_subgroup[is_buildings_gas_refinery].order = z_e
 
@@ -1312,7 +1312,7 @@ end
 gas_refinery_recipe(gas_refinery_1, electronic_circuit, steel_pipe, steel_plate, clay_brick)
 gas_refinery_recipe(gas_refinery_2, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, gas_refinery_1)
 gas_refinery_recipe(gas_refinery_3, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, gas_refinery_2)
-gas_refinery_recipe(gas_refinery_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_concrete_brick, gas_refinery_3)
+gas_refinery_recipe(gas_refinery_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, gas_refinery_3)
 
 local advanced_gas_refinerys =
 {
@@ -1352,8 +1352,8 @@ local function advanced_gas_refinery_recipe(name, circuit, pipe, plate, brick, a
 end
 advanced_gas_refinery_recipe(advanced_gas_refinery_1, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick)
 advanced_gas_refinery_recipe(advanced_gas_refinery_2, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, advanced_gas_refinery_1)
-advanced_gas_refinery_recipe(advanced_gas_refinery_3, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_concrete_brick, advanced_gas_refinery_2)
-advanced_gas_refinery_recipe(advanced_gas_refinery_4, advanced_processing_unit, molybdenum_rhenium_pipe, molybdenum_rhenium_plate, reinforced_concrete_brick, advanced_gas_refinery_3)
+advanced_gas_refinery_recipe(advanced_gas_refinery_3, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, advanced_gas_refinery_2)
+advanced_gas_refinery_recipe(advanced_gas_refinery_4, advanced_processing_unit, molybdenum_rhenium_pipe, molybdenum_rhenium_plate, carbon_concrete_brick, advanced_gas_refinery_3)
 
 data_item_subgroup[is_buildings_oil_refinery].order = z_g
 
@@ -1437,7 +1437,7 @@ end
 separator_recipe(separator_1, electronic_circuit, steel_pipe, steel_plate, clay_brick)
 separator_recipe(separator_2, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, separator_1)
 separator_recipe(separator_3, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, separator_2)
-separator_recipe(separator_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_concrete_brick, separator_3)
+separator_recipe(separator_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, separator_3)
 
 data_item_subgroup[is_buildings_steam].order = z_i
 
@@ -1480,7 +1480,7 @@ end
 steam_cracker_recipe(steam_cracker_1, electronic_circuit, steel_pipe, bronze_plate_bob, clay_brick)
 steam_cracker_recipe(steam_cracker_2, advanced_circuit, brass_pipe, aluminium_plate_bob, concrete_brick, steam_cracker_1)
 steam_cracker_recipe(steam_cracker_3, processing_unit, titanium_pipe, titanium_plate_bob, reinforced_concrete_brick, steam_cracker_2)
-steam_cracker_recipe(steam_cracker_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_concrete_brick, steam_cracker_3)
+steam_cracker_recipe(steam_cracker_4, advanced_processing_unit, copper_tungsten_pipe, copper_tungsten_plate_bob, reinforced_titanium_concrete_brick, steam_cracker_3)
 
 local flare_stack = "angels-flare-stack"
 data_item[flare_stack].subgroup = is_buildings_petrochem_others

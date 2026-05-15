@@ -1,5 +1,49 @@
 -- ANGELS PETROCHEM REFINING
+-- BASIC PETROCHEN FLUIDS
+data:extend
+({
+    {
+        type = recipe,
+        name = argon_gas,
+        category = chemistry,
+        subgroup = is_basic_fluids,
+        icons = TWO_I(compressed_air, argon_gas),
+        order = h,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 8,
+        ingredients = {{type = fluid, name = compressed_air, amount = 960}},
+        results = {{type = fluid, name = argon_gas, amount_min = 0, amount_max = 15}},
+        main_product = argon_gas
+    }
+})
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- COAL
+raw_graphite_block_2 = "raw-graphite-block-2"
 data:extend
 ({
     {
@@ -19,130 +63,200 @@ data:extend
         results = {{type = item, name = coke_processed, amount = 1}},
         main_product = coke_processed
     },
-    --[[{
-        type = recipe,
-        name = coal_tar_liquid,
-        category = chemistry,
-        subgroup = is_carbon_fluids_1,
-        icons = THREE_R_I(coal_crushed_angels, coal_tar_liquid, coke_angels),
-        order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- coal crushed --> coal tar liquid + coke
-        ingredients = {{type = item, name = coal_crushed_angels, amount = 4}},
-        results =
-        {
-            {type = fluid, name = coal_tar_liquid, amount = 30},
-            {type = item, name = coke_angels, amount = 2}
-        },
-        main_product = coal_tar_liquid
-    },
     {
         type = recipe,
         name = pitch,
         category = chemistry,
         subgroup = is_coal,
-        icons = TWO_D_I(coal_tar_liquid, steam, pitch, naphtha_angels),
+        icons = TWO_D_I(coal_tar_liquid, steam, pitch, liquid_fuel_bob),
         order = g,
         enabled = false,
         auto_recycle = false,
-        allow_productivity = false,
+        allow_productivity = true,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 4, -- coal tar liquid + steam --> pitch + naphtha
+        energy_required = 4, -- Coal tar liquid + Steam --> Pitch + Liquid fuel
         ingredients =
         {
-            {type = fluid, name = coal_tar_liquid, amount = 120},
+            {type = fluid, name = coal_tar_liquid, amount = 60},
             {type = fluid, name = steam, amount = 60}
         },
         results =
         {
-            {type = item, name = pitch, amount = 8},
-            {type = fluid, name = naphtha_angels, amount = 60}
+            {type = item, name = pitch, amount = 4},
+            {type = fluid, name = liquid_fuel_bob, amount = 60, ignored_by_productivity = 60}
         },
         main_product = pitch
     },
     {
         type = recipe,
-        name = raw_graphite,
-        category = angels_advanced_chemistry,
+        name = raw_graphite_block,
+        category = chemistry,
         subgroup = is_coal,
-        icons = THREE_I(coke_pellet_angels, pitch, raw_graphite),
+        icons = THREE_I(coke_angels, pitch, raw_graphite_block),
         order = h,
         enabled = false,
         auto_recycle = false,
-        allow_productivity = false,
+        allow_productivity = true,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 4, -- coke pellet + pitch --> raw graphite block
+        energy_required = 4, -- Coke + Pitch --> Raw graphite block
         ingredients =
         {
-            {type = item, name = coke_pellet_angels, amount = 8},
-            {type = item, name = pitch, amount = 8}
+            {type = item, name = coke_angels, amount = 4},
+            {type = item, name = pitch, amount = 4}
         },
         results = {{type = item, name = raw_graphite_block, amount = 1}},
         main_product = raw_graphite_block
     },
     {
         type = recipe,
-        name = graphite,
+        name = raw_graphite_block_2,
+        category = chemistry,
+        subgroup = is_coal,
+        icons = THREE_I(graphite_chips, pitch, raw_graphite_block),
+        order = h_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- Graphite chips + Pitch --> Raw graphite block
+        ingredients =
+        {
+            {type = item, name = graphite_chips, amount = 4},
+            {type = item, name = pitch, amount = 4}
+        },
+        results = {{type = item, name = raw_graphite_block, amount = 1}},
+        main_product = raw_graphite_block
+    },
+    {
+        type = recipe,
+        name = graphite_block,
         category = smelting,
         subgroup = is_coal,
-        icons = TWO_I(raw_graphite, graphite),
+        icons = TWO_I(raw_graphite_block, graphite_block),
         order = i,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 4, -- raw graphite block --> graphite
-        ingredients = {{type = item, name = raw_graphite_block, amount = 1}},
-        results = {{type = item, name = graphite, amount = 4}},
-        main_product = graphite
+        energy_required = 4, -- Raw graphite block --> Graphite block
+        ingredients = {{type = item, name = raw_graphite_block, amount = 4}},
+        results = {{type = item, name = graphite_block, amount = 4}},
+        main_product = graphite_block
     },
     {
         type = recipe,
-        name = graphene_oxide,
-        category = angels_advanced_chemistry,
+        name = graphite_plate,
+        category = advanced_crafting,
         subgroup = is_coal,
-        icons = THREE_D_I(graphite, potassium_permanganate, sulfuric_acid, graphene_oxide, manganese_sulfate, potassium_sulfate_solution),
+        icons = THREE_R_I(graphite_block, graphite_plate, graphite_chips),
         order = j,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- Graphite block --> Graphite plate + Graphite chips
+        ingredients = {{type = item, name = graphite_block, amount = 1}},
+        results =
+        {
+            {type = item, name = graphite_plate, amount = 2},
+            {type = item, name = graphite_chips, amount = 4}
+        },
+        main_product = graphite_plate
+    },
+    {
+        type = recipe,
+        name = graphite_electrode,
+        category = smelting,
+        subgroup = is_coal,
+        icons = THREE_I(graphite_block, pitch, graphite_electrode),
+        order = l,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- Graphite block + Pitch --> Graphite electrode
+        ingredients =
+        {
+            {type = item, name = graphite_block, amount = 1},
+            {type = item, name = pitch, amount = 4}
+        },
+        results = {{type = item, name = graphite_electrode, amount = 4}},
+        main_product = graphite_electrode
+    },
+    {
+        type = recipe,
+        name = carbon_nanotube,
+        category = angels_petrochem_electrolyser,
+        subgroup = is_coal,
+        icons = THREE_R_I(graphite_electrode, carbon_nanotube, graphite_chips),
+        order = m,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 4, -- graphite + 2KMnO₄ + 3H₂SO₄ --> graphene oxide + 2MnSO₄ + K₂SO₄(aq)
+        energy_required = 8, -- Graphite electrode -electrolyser/cat(4)/Argon gas-> Carbon nanotube + Graphite chips
         ingredients =
         {
-            {type = item, name = graphite, amount = 8},
-            {type = item, name = potassium_permanganate, amount = 8},
-            {type = fluid, name = sulfuric_acid, amount = 180}
+            {type = item, name = graphite_electrode, amount = 16},
+            {type = fluid, name = argon_gas, amount = 240},
+            {type = item, name = catalyst_yellow, amount = 1}
         },
         results =
         {
-            {type = item, name = graphene_oxide, amount = 8},
-            {type = item, name = manganese_sulfate, amount = 4}, -- 8
-            {type = fluid, name = potassium_sulfate_solution, amount = 30} -- 60
+            {type = item, name = carbon_nanotube, amount = 8},
+            {type = item, name = graphite_chips, amount = 16},
+            {type = fluid, name = argon_gas, amount = 120}, -- 240
+            {type = item, name = catalyst_carrier, amount = 1}
+        },
+        main_product = carbon_nanotube
+    },
+    {
+        type = recipe,
+        name = graphene_oxide,
+        category = chemistry,
+        subgroup = is_coal,
+        icons = THREE_D_I(graphite_plate, potassium_permanganate, sulfuric_acid, graphene_oxide, manganese_sulfate_II_solution, potassium_sulfate_solution),
+        order = n,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 8, -- 4Graphite plate + 2KMnO₄ + 3H₂SO₄ --> Graphene oxide + 2MnSO₄(aq) + K₂SO₄(aq)
+        ingredients =
+        {
+            {type = item, name = graphite_plate, amount = 8},
+            {type = item, name = potassium_permanganate, amount = 4},
+            {type = fluid, name = sulfuric_acid, amount = 90}
+        },
+        results =
+        {
+            {type = item, name = graphene_oxide, amount = 2},
+            {type = fluid, name = manganese_sulfate_II_solution, amount = 2}, -- 4
+            {type = fluid, name = potassium_sulfate_solution, amount = 15} -- 30
         },
         main_product = graphene_oxide
     },
     {
         type = recipe,
         name = graphene,
-        category = angels_advanced_chemistry,
+        category = chemistry,
         subgroup = is_coal,
         icons = THREE_D_I(graphene_oxide, nil, dinitrogen_tetroxide_angels, graphene, steam, nitrogen_angels),
-        order = k,
+        order = o,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
-        allow_quality = false,
+        allow_quality = true,
         allow_decomposition = false,
-        energy_required = 4, -- graphene oxide + N₂H₄ --> graphene + H₂O(g) + N₂
+        energy_required = 8, -- Graphene oxide + N₂H₄ --> Graphene + H₂O(g) + N₂
         ingredients =
         {
             {type = item, name = graphene_oxide, amount = 8},
@@ -155,8 +269,51 @@ data:extend
             {type = fluid, name = nitrogen_angels, amount = 60} -- 120
         },
         main_product = graphene
-    }]]
+    },
+    -- COAL FLUID
+    {
+        type = recipe,
+        name = coal_tar_liquid,
+        category = chemistry,
+        subgroup = is_carbon_fluids_1,
+        icons = THREE_R_I(coal, coal_tar_liquid, coke_angels),
+        order = d,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- Coal crushed --> Coal tar liquid + Coke
+        ingredients = {{type = item, name = coal, amount = 4}},
+        results =
+        {
+            {type = fluid, name = coal_tar_liquid, amount = 30},
+            {type = item, name = coke_angels, amount = 2}
+        },
+        main_product = coal_tar_liquid
+    }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- CARBON FLUIDS 1
 carbonic_acid_reversed = "carbonic-acid-reversed"
@@ -261,6 +418,49 @@ data:extend
             {type = fluid, name = steam, amount = 120}
         }
     },
+    {
+        type = recipe,
+        name = hexamethylenediamine,
+        category = chemistry,
+        subgroup = is_nitrogen,
+        icons = THREE_I(adiponitrile_liquid, hydrogen_angels, hexamethylenediamine),
+        order = g,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₆H₈N₂(l) + 4H₂(g) --> С₆H₁₆N₂(s)
+        ingredients =
+        {
+            {type = fluid, name = adiponitrile_liquid, amount = 60},
+            {type = fluid, name = hydrogen_angels, amount = 240}
+        },
+        results = {{type = item, name = hexamethylenediamine, amount = 4}},
+        main_product = hexamethylenediamine
+    },
+    {
+        type = recipe,
+        name = imidazole,
+        category = chemistry,
+        subgroup = is_nitrogen,
+        icons = THREE_R_I(imidazole_solution, imidazole, steam),
+        order = h,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₃H₄N₂(aq) --> C₃H₄N₂(s) + H₂O(g)
+        ingredients = {{type = fluid, name = imidazole_solution, amount = 60}},
+        results =
+        {
+            {type = item, name = imidazole, amount = 4},
+            {type = fluid, name = steam, amount = 30} -- 60
+        },
+        main_product = imidazole
+    },
+    -- FLUID
     {
         type = recipe,
         name = nitrogen_monoxide_2,
@@ -469,11 +669,79 @@ data:extend
             {type = item, name = catalyst_carrier, amount = 1}
         },
         main_product = acetone_cyanohydrin
+    },
+    {
+        type = recipe,
+        name = adiponitrile_liquid,
+        category = chemistry,
+        subgroup = is_nitrogen_fluids,
+        icons = THREE_I(butadiene_angels, hydrocyanic_acid, adiponitrile_liquid),
+        order = w,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₄H₆(g) + 2HCN(l) --> C₆H₈N₂(l)
+        ingredients =
+        {
+            {type = fluid, name = butadiene_angels, amount = 60},
+            {type = fluid, name = hydrocyanic_acid, amount = 120}
+        },
+        results = {{type = fluid, name = adiponitrile_liquid, amount = 60}},
+        main_product = adiponitrile_liquid
+    },
+    {
+        type = recipe,
+        name = imidazole_solution,
+        category = angels_advanced_chemistry,
+        subgroup = is_nitrogen_fluids,
+        icons = THREE_D_I(glyoxal_liquid, ammonia_angels, formaldehyde_angels, imidazole_solution, nil, water_purified_angels),
+        order = x,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- 2NH₃(g) + CH₂O(l) + C₂H₂O₂(l) --> C₃H₄N₂(aq) + 2H₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = glyoxal_liquid, amount = 120},
+            {type = fluid, name = ammonia_angels, amount = 60},
+            {type = fluid, name = formaldehyde_angels, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = imidazole_solution, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 60} -- 120
+        },
+        main_product = imidazole_solution
     }
 })
 
--- FLUORINE
 --[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
+-- FLUORINE
+data:extend
 ({
     {
         type = recipe,
@@ -500,7 +768,7 @@ data:extend
         },
         main_product = hydrogen_fluoride_liquefied
     }
-})]]
+})
 
 -- SODIUM
 sodium_chloride = "sodium-chloride"
@@ -1040,7 +1308,6 @@ data:extend
 })
 
 -- CHLORINE
---hypochlorous_acid_reversed = "hypochlorous-acid-reversed"
 data:extend
 ({
     {
@@ -1111,26 +1378,6 @@ data:extend
         results = {{type = fluid, name = hypochlorous_acid, amount = 120}},
         main_product = hypochlorous_acid
     },
-    --[[{
-        type = recipe,
-        name = hypochlorous_acid_reversed,
-        category = chemistry,
-        subgroup = is_chlorine_fluids,
-        icons = THREE_R_I(hypochlorous_acid, chlorine_oxide_gas, water_purified_angels),
-        order = i_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- 2HClO(aq) --> (Cl₂O + H₂O) + 2H₂O
-        ingredients = {{type = fluid, name = hypochlorous_acid, amount = 120}},
-        results =
-        {
-            {type = fluid, name = chlorine_oxide_gas, amount = 60},
-            {type = fluid, name = water_purified_angels, amount = 180}
-        },
-    },]]
     {
         type = recipe,
         name = chloroethane_gas,
@@ -1151,8 +1398,54 @@ data:extend
         },
         results = {{type = fluid, name = chloroethane_gas, amount = 60}},
         main_product = chloroethane_gas
+    },
+    {
+        type = recipe,
+        name = chlorobutane_liquid,
+        category = chemistry,
+        subgroup = is_chlorine_fluids,
+        icons = TWO_D_I(butane_angels, chlorine_angels, chlorobutane_liquid, hydrogen_chloride_angels),
+        order = k,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₄H₁₀(g) + Cl₂(g) --> C₄H₉Cl(l) + HCl(g)
+        ingredients =
+        {
+            {type = fluid, name = butane_angels, amount = 60},
+            {type = fluid, name = chlorine_angels, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = chlorobutane_liquid, amount = 60},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 30} -- 60
+        },
+        main_product = chlorobutane_liquid
     }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- CALCIUM
 lime_from_calcium_hydroxide = "lime-from-calcium-hydroxide"
@@ -1407,6 +1700,33 @@ data:extend
 ({
     {
         type = recipe,
+        name = imidazolium_salt,
+        category = chemistry,
+        subgroup = is_others,
+        icons = THREE_I(imidazole, chlorobutane_liquid, imidazolium_salt),
+        order = a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₃H₄N₂(s) + C₄H₉Cl(l) -Ar-> [C₇H₁₃N₂]Cl(s)
+        ingredients =
+        {
+            {type = item, name = imidazole, amount = 4},
+            {type = fluid, name = chlorobutane_liquid, amount = 60},
+            {type = fluid, name = argon_gas, amount = 60}
+        },
+        results =
+        {
+            {type = item, name = imidazolium_salt, amount = 4},
+            {type = fluid, name = argon_gas, amount = 30} -- 60
+        },
+        main_product = imidazolium_salt
+    },
+    -- FLUID
+    {
+        type = recipe,
         name = hydrogen_peroxide,
         category = chemistry,
         subgroup = is_others_fluids,
@@ -1429,8 +1749,54 @@ data:extend
             {type = fluid, name = sulfuric_acid_angels, amount = 120} -- 240
         },
         main_product = hydrogen_peroxide
+    },
+    {
+        type = recipe,
+        name = ionic_liquid,
+        category = chemistry,
+        subgroup = is_others_fluids,
+        icons = TWO_D_I(imidazolium_salt, hexafluorophosphoric_acid, ionic_liquid, hydrochloric_acid_angels),
+        order = c,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- [C₇H₁₃N₂]Cl(s) + HPF₆(aq) --> [C₇H₁₃N₂]PF₆(l) + HCl(aq)
+        ingredients =
+        {
+            {type = item, name = imidazolium_salt, amount = 60},
+            {type = fluid, name = hexafluorophosphoric_acid, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = ionic_liquid, amount = 60},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 30} -- 60
+        },
+        main_product = ionic_liquid
     }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- MULTI-PHASE OIL
 lubricant_from_naphtha = "lubricant-from-naphtha"
@@ -1672,6 +2038,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- METHANE
 methane_from_ethane = "methane-from-ethane"
 methane_and_propene_from_butane = "methane-and-propene-from-butane"
@@ -1755,6 +2142,27 @@ data:extend
         main_product = dimethyl_carbonate
     },
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- ETHANE
 ethane_and_ethylene_from_butane = "ethane-and-ethylene-from-butane"
@@ -1887,8 +2295,77 @@ data:extend
             {type = item, name = catalyst_carrier, amount = 1}
         },
         main_product = ethylene_carbonate
+    },
+    {
+        type = recipe,
+        name = ethylene_glycol_liquid,
+        category = chemistry,
+        subgroup = is_ethane,
+        icons = THREE_I(ethylene_oxide, water_purified_angels, ethylene_glycol_liquid),
+        order = g,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₂H₄O(l) + H₂O(l) --> C₂H₆O₂(l)
+        ingredients =
+        {
+            {type = fluid, name = ethylene_oxide, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 60}
+        },
+        results = {{type = fluid, name = ethylene_glycol_liquid, amount = 60}},
+        main_product = ethylene_glycol_liquid
+    },
+    {
+        type = recipe,
+        name = glyoxal_liquid,
+        category = chemistry,
+        subgroup = is_ethane,
+        icons = TWO_D_I(ethylene_glycol_liquid, oxygen_angels, glyoxal_liquid, water_purified_angels),
+        order = h,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- C₂H₆O₂(l) + O₂(g) -cat(Ag/Cu)-> C₂H₂O₂(l) + 2H₂O(l)
+        ingredients =
+        {
+            {type = fluid, name = ethylene_glycol_liquid, amount = 60},
+            {type = fluid, name = oxygen_angels, amount = 60},
+            {type = item, name = catalyst_green, amount = 1}
+        },
+        results =
+        {
+            {type = fluid, name = glyoxal_liquid, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 60}, -- 120
+            {type = item, name = catalyst_carrier, amount = 1}
+        },
+        main_product = glyoxal_liquid
     }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- BUTANE
 butene_gas_from_butane_gas = "butene-gas-from-butane-gas"
@@ -2051,6 +2528,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- PLASTIC
 liquid_plastic_4 = "liquid-plastic-4"
 liquid_plastic_5 = "liquid-plastic-5"
@@ -2110,6 +2608,80 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
+-- RESINE
+data:extend
+({
+    {
+        type = recipe,
+        name = epoxy_resin_liquid,
+        category = angels_advanced_chemistry,
+        subgroup = is_resin,
+        icons = THREE_D_I(bisphenol_a, epichlorohydrin_angels, sodium_hydroxide_solution_angels, epoxy_resin_liquid, sodium_chloride_solution, water_purified_angels),
+        order = c,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- 2С₃H₅ClO(l) + C₁₅H₁₆O₂(s) + 2NaOH(aq) --> C₂₁H₂₄O₄(l) + 2NaCl(aq) + 2H₂O(l)
+        ingredients =
+        {
+            {type = item, name = bisphenol_a, amount = 8},
+            {type = fluid, name = epichlorohydrin_angels, amount = 60},
+            {type = fluid, name = sodium_hydroxide_solution_angels, amount = 120}
+        },
+        results =
+        {
+            {type = fluid, name = epoxy_resin_liquid, amount = 120},
+            {type = fluid, name = sodium_chloride_solution, amount = 120}, -- 240
+            {type = fluid, name = water_purified_angels, amount = 120} -- 240
+        },
+        main_product = epoxy_resin_liquid
+    }
+})
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = , -- 
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- EXPLOSIVES
 data:extend
 ({
@@ -2140,8 +2712,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -2160,5 +2731,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

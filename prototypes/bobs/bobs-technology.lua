@@ -1,7 +1,7 @@
 data:extend
 ({
     -- BOILER
-    --[[{
+    {
         localised_name = {"technology-name.boiler-6"},
         localised_description = {"technology-description.bob-boiler"},
         type = technology,
@@ -49,7 +49,7 @@ data:extend
             },
             time = 30
         }
-    },]]
+    },
     -- STEAM TURBINE
     {
         localised_name = {"technology-name.steam-turbine-4"},
@@ -76,14 +76,14 @@ data:extend
         }
     },
     -- SOLAR PANELS
-    --[[{
+    {
         localised_name = {"technology-name.solar-energy-4"},
         localised_description = {"technology-description.solar-energy"},
         type = technology,
-        name = solar_energy_4,
+        name = tech_solar_energy_4,
         icon = "__base__/graphics/technology/solar-energy.png",
         icon_size = 256,
-        prerequisites = {solar_energy_3, utility_science_pack, advanced_processing_unit},
+        prerequisites = {tech_solar_energy_3, utility_science_pack, advanced_processing_unit},
         effects =
         {
             {type = unlock_recipe, recipe = solar_panel_small_4},
@@ -109,10 +109,10 @@ data:extend
         localised_name = {"technology-name.electric-energy-accumulators-4"},
         localised_description = {"technology-description.electric-energy-accumulators"},
         type = technology,
-        name = electric_energy_accumulators_4,
+        name = tech_electric_energy_accumulators_4,
         icon = "__base__/graphics/technology/electric-energy-acumulators.png",
         icon_size = 256,
-        prerequisites = {electric_energy_accumulators_3, utility_science_pack},
+        prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack},
         effects = {{type = unlock_recipe, recipe = accumulator_4}},
         unit =
         {
@@ -132,10 +132,10 @@ data:extend
     {
         localised_name = {"technology-name.drills-6"},
         type = technology,
-        name = drills_6,
+        name = tech_drills_6,
         icon = "__base__/graphics/technology/mining-productivity.png",
         icon_size = 256,
-        prerequisites = {drills_5, space_science_pack},
+        prerequisites = {tech_drills_5, space_science_pack},
         effects = {{type = unlock_recipe, recipe = electric_mining_drill_6}},
         unit =
         {
@@ -151,15 +151,15 @@ data:extend
             },
             time = 30
         }
-    },]]
+    },
     -- PUMPJACK
-    --[[{
+    {
         localised_name = {"technology-name.pumpjacks-5"},
         type = technology,
         name = tech_pumpjacks_5,
         icon = "__base__/graphics/technology/oil-gathering.png",
         icon_size = 256,
-        prerequisites = {tech_pumpjacks_3, space_science_pack},
+        prerequisites = {tech_pumpjacks_4, space_science_pack},
         effects = {{type = unlock_recipe, recipe = pumpjack_5}},
         unit =
         {
@@ -201,19 +201,19 @@ data:extend
             },
             time = 30
         }
-    },]]
+    },
     -- REACTOR
-    --[[{
-        localised_name = {"technology-name.fusion-power-2"},
+    {
+        localised_name = {"technology-name.tritium-power"},
         type = technology,
-        name = tech_fusion_power_2,
+        name = tech_tritium_power,
         icon = "__base__/graphics/technology/nuclear-power.png",
         icon_size = 256,
         prerequisites = {tech_fusion_power_1, space_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = tritium_reactor},
-            {type = unlock_recipe, recipe = advacned_deuterium_fuel_cell_reprocessing},
+            {type = unlock_recipe, recipe = advanced_deuterium_fuel_cell_reprocessing},
             {type = unlock_recipe, recipe = tritium_fuel_cell},
             {type = unlock_recipe, recipe = tritium_fuel_cell_reprocessing}
         },
@@ -236,10 +236,10 @@ data:extend
     {
         localised_name = {"technology-name.advanced-material-processing-5"},
         type = technology,
-        name = advanced_material_processing_5,
+        name = tech_advanced_material_processing_5,
         icon = "__base__/graphics/technology/advanced-material-processing-2.png",
         icon_size = 256,
-        prerequisites = {advanced_material_processing_4, space_science_pack},
+        prerequisites = {tech_advanced_material_processing_4, space_science_pack},
         effects = {{type = unlock_recipe, recipe = electric_furnace_4}},
         unit =
         {
@@ -257,9 +257,9 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.multi-porpose-furnace-3"},
+        localised_name = {"technology-name.multi-purpose-furnace-3"},
         type = technology,
-        name = multi_porpose_furnace_3,
+        name = tech_multi_purpose_furnace_3,
         icons =
         {
             {
@@ -281,7 +281,7 @@ data:extend
             },
         },
         icon_size = 256,
-        prerequisites = {multi_porpose_furnace_2, space_science_pack},
+        prerequisites = {tech_multi_purpose_furnace_2, space_science_pack},
         effects = {{type = unlock_recipe, recipe = electric_mixing_furnace_4}},
         unit =
         {
@@ -297,7 +297,7 @@ data:extend
             },
             time = 30
         }
-    },]]
+    },
     -- CENTRIFUGE
     {
         localised_name = {"technology-name.centrifuge-4"},
@@ -324,8 +324,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = ,
@@ -341,5 +340,4 @@ data:extend
             time = 
         }
     }
-})
-]]
+})]]

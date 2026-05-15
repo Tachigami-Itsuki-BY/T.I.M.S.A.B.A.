@@ -268,7 +268,7 @@ data:extend
     {
         type = recipe,
         name = germanite_crushed_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crushed),
         order = f,
@@ -290,7 +290,7 @@ data:extend
     {
         type = recipe,
         name = germanite_chunks_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_chunks),
         order = g,
@@ -314,7 +314,7 @@ data:extend
     {
         type = recipe,
         name = germanite_crystals_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_crystals),
         order = h,
@@ -339,7 +339,7 @@ data:extend
     {
         type = recipe,
         name = germanite_purified_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_germanite,
         icons = RECYCLING_I(recycling_png, germanite_purified),
         order = i,

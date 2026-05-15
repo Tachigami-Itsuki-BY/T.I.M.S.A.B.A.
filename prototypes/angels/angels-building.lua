@@ -94,7 +94,7 @@ data:extend
         {
             {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = reinforced_concrete_brick, amount = 32},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 32},
             {type = item, name = copper_tungsten_plate_bob, amount = 16},
             {type = item, name = ore_floatation_cell_3, amount = 1}
         },
@@ -152,7 +152,7 @@ data:extend
         {
             {type = item, name = molybdenum_rhenium_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = reinforced_concrete_brick, amount = 32},
+            {type = item, name = carbon_concrete_brick, amount = 32},
             {type = item, name = molybdenum_rhenium_plate, amount = 16},
             {type = item, name = ore_leaching_plant_3, amount = 1}
         },
@@ -209,7 +209,7 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 16},
-            {type = item, name = reinforced_concrete_brick, amount = 128},
+            {type = item, name = carbon_concrete_brick, amount = 128},
             {type = item, name = molybdenum_rhenium_plate, amount = 32},
             {type = item, name = ore_refinery_2, amount = 1}
         },
@@ -265,7 +265,7 @@ data:extend
         ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 16},
-            {type = item, name = reinforced_concrete_brick, amount = 128},
+            {type = item, name = reinforced_graphene_concrete_brick, amount = 128},
             {type = item, name = niobium_tungsten_molybdenum_plate, amount = 32},
             {type = item, name = ore_refinery_3, amount = 1}
         },
@@ -295,7 +295,7 @@ data:extend
         },
     }),
     -- ORE SORTING FACILITY
-    --[[{
+    {
         type = item,
         name = ore_sorting_facility_6,
         subgroup = is_ore_sorter,
@@ -321,10 +321,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = nitinol_gear_wheel, amount = 32},
+            {type = item, name = molybdenum_gear_wheel, amount = 32},
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = reinforced_concrete_brick, amount = 64},
-            {type = item, name = nitinol_plate_bob, amount = 32},
+            {type = item, name = carbon_concrete_brick, amount = 64},
+            {type = item, name = molybdenum_plate, amount = 32},
             {type = item, name = ore_sorting_facility_5, amount = 1}
         },
         results = {{type = item, name = ore_sorting_facility_6, amount = 1}},
@@ -350,9 +350,9 @@ data:extend
                 drain = 90 .. kW
             },
             energy_usage = 630 .. kW,
-            crafting_categories = {angels_ore_sorting_1, angels_ore_sorting_2, angels_ore_sorting_3, angels_ore_sorting_4, angels_ore_sorting_5, angels_ore_sorting_6}
+            crafting_categories = {angels_ore_sorting_1, angels_ore_sorting_2, angels_ore_sorting_3, angels_ore_sorting_4, angels_ore_sorting_5, ore_sorting_6}
         }
-    }),]]
+    }),
     -- POWDERIZER
     {
         type = item,
@@ -381,7 +381,7 @@ data:extend
         ingredients =
         {
             {type = item, name = copper_tungsten_gear_wheel, amount = 4},
-            {type = item, name = reinforced_concrete_brick, amount = 8},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 8},
             {type = item, name = copper_tungsten_plate_bob, amount = 4},
             {type = item, name = powderizer_3, amount = 1}
         },
@@ -412,7 +412,7 @@ data:extend
         }
     }),
     -- ELECTROWINNING CELL
-    --[[{
+    {
         type = item,
         name = electro_whinning_cell_3,
         subgroup = is_ore_whinning,
@@ -438,10 +438,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = nitinol_pipe, amount = 16},
+            {type = item, name = molybdenum_rhenium_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = reinforced_concrete_brick, amount = 16},
-            {type = item, name = nitinol_plate_bob, amount = 16},
+            {type = item, name = carbon_concrete_brick, amount = 16},
+            {type = item, name = molybdenum_rhenium_plate, amount = 16},
             {type = item, name = electro_whinning_cell_2, amount = 1}
         },
         results = {{type = item, name = electro_whinning_cell_3, amount = 1}},
@@ -455,7 +455,7 @@ data:extend
             name = electro_whinning_cell_3,
             subgroup = is_ore_whinning,
             icons = TIMSABA.numeral_tier({{icon = "__angelsrefininggraphics__/graphics/icons/electro-whinning-cell-ico.png", icon_size = 32}}, 3, angelsmods.refining.number_tint),
-            order = с,
+            order = c,
             minable = {result = electro_whinning_cell_3},
             module_slots = 3,
             crafting_speed = 3,
@@ -495,10 +495,10 @@ data:extend
         energy_required = 4,
         ingredients =
         {
-            {type = item, name = copper_tungsten_pipe, amount = 16},
+            {type = item, name = niobium_iron_plate, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = reinforced_concrete_brick, amount = 16},
-            {type = item, name = copper_tungsten_plate_bob, amount = 16},
+            {type = item, name = reinforced_graphene_concrete_brick, amount = 16},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16},
             {type = item, name = electro_whinning_cell_3, amount = 1}
         },
         results = {{type = item, name = electro_whinning_cell_4, amount = 1}},
@@ -525,7 +525,7 @@ data:extend
             },
             energy_usage = 420 .. kW
         }
-    }),]]
+    }),
     -- FILTRATION UNIT
     {
         type = item,
@@ -555,7 +555,7 @@ data:extend
         {
             {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = reinforced_concrete_brick, amount = 16},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 16},
             {type = item, name = copper_tungsten_plate_bob, amount = 8},
             {type = item, name = filtration_unit_3, amount = 1}
         },
@@ -613,7 +613,7 @@ data:extend
         {
             {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = reinforced_concrete_brick, amount = 64},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 64},
             {type = item, name = copper_tungsten_plate_bob, amount = 32},
             {type = item, name = crystallizer_3, amount = 1}
         },
@@ -645,7 +645,7 @@ data:extend
 })
 
 -- ANGELS METALLURGY CASTING
---[[if settings.startup[setting_early_sintering_oven].value then
+if settings.startup[setting_early_sintering_oven].value then
     data:extend
     ({
         {
@@ -653,7 +653,7 @@ data:extend
             type = item,
             name = sintering_oven_6,
             subgroup = is_sintering_oven,
-            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 6, angelsmods.smelting.number_tint),
+            icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 6, angelsmods.smelting.number_tint),
             order = f,
             place_result = sintering_oven_6,
             stack_size = 32,
@@ -665,7 +665,7 @@ data:extend
             name = sintering_oven_6,
             category = crafting,
             subgroup = is_sintering_oven,
-            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 6, angelsmods.smelting.number_tint),
+            icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 6, angelsmods.smelting.number_tint),
             order = f,
             enabled = false,
             auto_recycle = true,
@@ -677,8 +677,8 @@ data:extend
             ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 4},
-                {type = item, name = copper_tungsten_plate_bob, amount = 64},
-                {type = item, name = reinforced_concrete_brick, amount = 32},
+                {type = item, name = molybdenum_rhenium_plate, amount = 64},
+                {type = item, name = carbon_concrete_brick, amount = 32},
                 {type = item, name = sintering_oven_5, amount = 1}
             },
             results = {{type = item, name = sintering_oven_6, amount = 1}},
@@ -692,7 +692,7 @@ data:extend
                 localised_description = {"entity-description.angels-sintering-oven"},
                 name = sintering_oven_6,
                 subgroup = is_sintering_oven,
-                icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 6, angelsmods.smelting.number_tint),
+                icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 6, angelsmods.smelting.number_tint),
                 order = f,
                 minable = {result = sintering_oven_6},
                 module_slots = 6,
@@ -716,7 +716,7 @@ else
             type = item,
             name = sintering_oven_6,
             subgroup = is_sintering_oven,
-            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 3, angelsmods.smelting.number_tint),
+            icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 3, angelsmods.smelting.number_tint),
             order = c,
             place_result = sintering_oven_6,
             stack_size = 32,
@@ -728,7 +728,7 @@ else
             name = sintering_oven_6,
             category = crafting,
             subgroup = is_sintering_oven,
-            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 3, angelsmods.smelting.number_tint),
+            icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 3, angelsmods.smelting.number_tint),
             order = c,
             enabled = false,
             auto_recycle = true,
@@ -740,8 +740,8 @@ else
             ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 4},
-                {type = item, name = nitinol_plate_bob, amount = 64},
-                {type = item, name = reinforced_concrete_brick, amount = 32},
+                {type = item, name = molybdenum_rhenium_plate, amount = 64},
+                {type = item, name = carbon_concrete_brick, amount = 32},
                 {type = item, name = sintering_oven_5, amount = 1}
             },
             results = {{type = item, name = sintering_oven_6, amount = 1}},
@@ -755,7 +755,7 @@ else
                 localised_description = {"entity-description.angels-sintering-oven"},
                 name = sintering_oven_6,
                 subgroup = is_sintering_oven,
-                icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 3, angelsmods.smelting.number_tint),
+                icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 3, angelsmods.smelting.number_tint),
                 order = c,
                 minable = {result = sintering_oven_6},
                 module_slots = 3,
@@ -769,13 +769,13 @@ else
                 },
                 energy_usage = 630 .. kW
             }
-        })
+        }),
         {
             localised_name = {"entity-name.sintering-oven-7-4"},
             type = item,
             name = sintering_oven_7,
             subgroup = is_sintering_oven,
-            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 4, angelsmods.smelting.number_tint),
+            icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 4, angelsmods.smelting.number_tint),
             order = d,
             place_result = sintering_oven_7,
             stack_size = 32,
@@ -787,7 +787,7 @@ else
             name = sintering_oven_7,
             category = crafting,
             subgroup = is_sintering_oven,
-            icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 4, angelsmods.smelting.number_tint),
+            icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 4, angelsmods.smelting.number_tint),
             order = d,
             enabled = false,
             auto_recycle = true,
@@ -799,8 +799,8 @@ else
             ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 4},
-                {type = item, name = holmium_plate, amount = 64},
-                {type = item, name = reinforced_concrete_brick, amount = 32},
+                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
+                {type = item, name = reinforced_graphene_concrete_brick, amount = 32},
                 {type = item, name = sintering_oven_6, amount = 1}
             },
             results = {{type = item, name = sintering_oven_7, amount = 1}},
@@ -814,7 +814,7 @@ else
                 localised_description = {"entity-description.angels-sintering-oven"},
                 name = sintering_oven_7,
                 subgroup = is_sintering_oven,
-                icons = TIMSABA.numeral_tier({{icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}}, 4, angelsmods.smelting.number_tint),
+                icons = TIMSABA.numeral_tier({icon = "__angelssmeltinggraphics__/graphics/icons/sintering-oven.png", icon_size = 64, scale = 0.5}, 4, angelsmods.smelting.number_tint),
                 order = d,
                 minable = {result = sintering_oven_7},
                 module_slots = 4,
@@ -830,7 +830,7 @@ else
             }
         })
     })
-end]]
+end
 
 -- ANGELS WATER TREATMENT
 data:extend
@@ -1038,7 +1038,7 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 8},
             {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = copper_tungsten_plate_bob, amount = 64},
-            {type = item, name = reinforced_concrete_brick, amount = 64},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 64},
             {type = item, name = salination_plant_2, amount = 1}
         },
         results = {{type = item, name = salination_plant_3, amount = 1}},
@@ -1095,7 +1095,7 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 8},
             {type = item, name = molybdenum_rhenium_pipe, amount = 16},
             {type = item, name = molybdenum_rhenium_plate, amount = 64},
-            {type = item, name = reinforced_concrete_brick, amount = 64},
+            {type = item, name = carbon_concrete_brick, amount = 64},
             {type = item, name = salination_plant_3, amount = 1}
         },
         results = {{type = item, name = salination_plant_4, amount = 1}},
@@ -1153,15 +1153,15 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 2},
             {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = copper_tungsten_plate_bob, amount = 4},
-            {type = item, name = reinforced_concrete_brick, amount = 4},
-            {type = item, name = "angels-electric-boiler-3", amount = 1}
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 4},
+            {type = item, name = electric_boiler_3, amount = 1}
         },
         results = {{type = item, name = electric_boiler_4, amount = 1}},
         main_product = electric_boiler_4
     },
     util.merge
     ({
-        data_assembling["angels-electric-boiler"],
+        data_assembling[electric_boiler_1],
         {
             localised_description = {"entity-description.angels-electric-boiler"},
             name = electric_boiler_4,
@@ -1275,7 +1275,7 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = copper_tungsten_pipe, amount = 16},
             {type = item, name = copper_tungsten_plate_bob, amount = 16},
-            {type = item, name = reinforced_concrete_brick, amount = 8},
+            {type = item, name = reinforced_titanium_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_2, amount = 1}
         },
         results = {{type = item, name = advanced_chemical_plant_3, amount = 1}},
@@ -1332,7 +1332,7 @@ data:extend
             {type = item, name = advanced_processing_unit, amount = 4},
             {type = item, name = molybdenum_rhenium_pipe, amount = 16},
             {type = item, name = molybdenum_rhenium_plate, amount = 16},
-            {type = item, name = reinforced_concrete_brick, amount = 8},
+            {type = item, name = carbon_concrete_brick, amount = 8},
             {type = item, name = advanced_chemical_plant_3, amount = 1}
         },
         results = {{type = item, name = advanced_chemical_plant_4, amount = 1}},
@@ -1371,25 +1371,28 @@ data_assembling[ore_leaching_plant_4].next_upgrade = nil
 data_assembling[ore_refinery_2].next_upgrade = ore_refinery_3
 data_assembling[ore_refinery_3].next_upgrade = ore_refinery_4
 data_assembling[ore_refinery_4].next_upgrade = nil
---data_assembling[ore_sorting_facility_5].next_upgrade = ore_sorting_facility_6
---data_assembling[ore_sorting_facility_6].next_upgrade = nil
+data_assembling[ore_sorting_facility_5].next_upgrade = ore_sorting_facility_6
+data_assembling[ore_sorting_facility_6].next_upgrade = nil
 data_assembling[powderizer_3].next_upgrade = powderizer_4
 data_assembling[powderizer_4].next_upgrade = nil
---data_assembling[electro_whinning_cell_2].next_upgrade = electro_whinning_cell_3
---data_assembling[electro_whinning_cell_3].next_upgrade = electro_whinning_cell_4
---data_assembling[electro_whinning_cell_4].next_upgrade = nil
+data_assembling[electro_whinning_cell_2].next_upgrade = electro_whinning_cell_3
+data_assembling[electro_whinning_cell_3].next_upgrade = electro_whinning_cell_4
+data_assembling[electro_whinning_cell_4].next_upgrade = nil
 data_assembling[filtration_unit_3].next_upgrade = filtration_unit_4
 data_assembling[filtration_unit_4].next_upgrade = nil
 data_assembling[crystallizer_3].next_upgrade = crystallizer_4
 data_assembling[crystallizer_4].next_upgrade = nil
---[[if settings.startup[setting_early_sintering_oven].value then
+if settings.startup[setting_early_sintering_oven].value then
     data_assembling[sintering_oven_5].next_upgrade = sintering_oven_6
     data_assembling[sintering_oven_6].next_upgrade = nil
+    table.insert(data_assembling[sintering_oven_6].crafting_categories, sintering_6)
 else
     data_assembling[sintering_oven_5].next_upgrade = sintering_oven_6
     data_assembling[sintering_oven_6].next_upgrade = sintering_oven_7
+    table.insert(data_assembling[sintering_oven_6].crafting_categories, sintering_6)
     data_assembling[sintering_oven_7].next_upgrade = nil
-end]]
+    table.insert(data_assembling[sintering_oven_7].crafting_categories, sintering_6)
+end
 data_assembling[hydro_plant_3].next_upgrade = hydro_plant_4
 data_assembling[hydro_plant_4].next_upgrade = nil
 data_assembling[washing_plant_2].next_upgrade = washing_plant_3

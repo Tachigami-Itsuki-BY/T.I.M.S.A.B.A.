@@ -94,6 +94,38 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = item,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/.png",
+        order = ,
+        stack_size = 200,
+        weight = 5000
+    }
+})]]
+
+--[[data:extend
+({
+    {
+        localised_description = show_formula and {chemical_formula, ""} or nil,
+        type = fluid,
+        name = ,
+        subgroup = ,
+        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/.png",
+        order = ,
+        default_temperature = 0,
+        heat_capacity = "0.1kJ",
+        base_color = TIMSABA.functions.fluid_color(""),
+        flow_color = TIMSABA.functions.flow_color(""),
+        max_temperature = 0,
+        auto_barrel = false
+    }
+})]]
+
 wolframite_crushed_sorting = "wolframite-crushed-sorting"
 wolframite_chunks_sorting = "wolframite-chunks-sorting"
 wolframite_crystals_sorting = "wolframite-crystals-sorting"
@@ -194,7 +226,7 @@ data:extend
     {
         type = recipe,
         name = wolframite_crushed_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_crushed),
         order = f,
@@ -216,7 +248,7 @@ data:extend
     {
         type = recipe,
         name = wolframite_chunks_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_chunks),
         order = g,
@@ -240,7 +272,7 @@ data:extend
     {
         type = recipe,
         name = wolframite_crystals_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_crystals),
         order = h,
@@ -265,7 +297,7 @@ data:extend
     {
         type = recipe,
         name = wolframite_purified_sorting,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_vulcanus_wolframite,
         icons = RECYCLING_I(recycling_png, wolframite_purified),
         order = i,
@@ -291,7 +323,7 @@ data:extend
     {
         type = recipe,
         name = rhenium_ore_recipe,
-        category = angels_ore_sorting_5,--angels_ore_sorting_6,
+        category = ore_sorting_6,
         subgroup = is_vulcanus_wolframite,
         icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, wolframite_purified, rhenium_ore),
         order = j,
@@ -310,36 +342,6 @@ data:extend
         results = {{type = item, name = rhenium_ore, amount = 4}}
     }
 })
-
---[[
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    },
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})
-]]
 
 --[[
 data:extend

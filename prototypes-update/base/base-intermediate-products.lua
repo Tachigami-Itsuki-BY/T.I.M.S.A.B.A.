@@ -139,7 +139,10 @@ local gear_wheels =
     --{name = ceramic_gear_wheel, order = d},
     {name = cobalt_steel_gear_wheel, order = e},
     {name = titanium_gear_wheel, order = f},
-    {name = nitinol_gear_wheel, order = g}
+    {name = tungsten_gear_wheel, order = g},
+    {name = nitinol_gear_wheel, order = h},
+    --{name = copper_tungsten_gear_wheel, order = i},
+    --{name = molybdenum_gear_wheel, order = j}
 }
 for _, ITEM in pairs(gear_wheels) do
     data_item[ITEM.name].order = ITEM.order
@@ -164,17 +167,26 @@ data_recipe[cobalt_steel_gear_wheel].icons = TWO_I(cobalt_steel_plate_bob, cobal
 data_item[titanium_gear_wheel].localised_description = show_formula and {chemical_formula, "Ti"} or nil
 data_recipe[titanium_gear_wheel].icons = TWO_I(titanium_plate_bob, titanium_gear_wheel)
 
+data_item[tungsten_gear_wheel].localised_description = show_formula and {chemical_formula, "W"} or nil
+data_recipe[tungsten_gear_wheel].category = angels_sintering_4
+data_recipe[tungsten_gear_wheel].icons = TWO_I(tungsten_powder, tungsten_gear_wheel)
+data_recipe[tungsten_gear_wheel].ingredients[1].name = tungsten_powder
+
 data_item[nitinol_gear_wheel].localised_description = show_formula and {chemical_formula, "NiTi"} or nil
 data_recipe[nitinol_gear_wheel].icons = TWO_I(nitinol_plate_bob, nitinol_gear_wheel)
 
 local bearing_balls =
 {
+    --{name = iron_bearing_ball, order = a},
     {name = steel_bearing_ball, order = b},
     --{name = brass_bearing_ball, order = c},
     {name = ceramic_bearing_ball, order = d},
     {name = cobalt_steel_bearing_ball, order = e},
     {name = titanium_bearing_ball, order = f},
-    {name = nitinol_bearing_ball, order = g}
+    --{name = tungsten_bearing_ball, order = g},
+    {name = nitinol_bearing_ball, order = h},
+    --{name = copper_tungsten_bearing_ball, order = i},
+    --{name = rhenium_bearing_ball, order = j}
 }
 for _, ITEM in pairs(bearing_balls) do
     data_item[ITEM.name].order = ITEM.order
@@ -188,9 +200,7 @@ data_item[steel_bearing_ball].localised_description = show_formula and {chemical
 data_recipe[steel_bearing_ball].icons = TWO_I(steel_plate, steel_bearing_ball)
 
 data_item[ceramic_bearing_ball].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_bearing_ball].category = angels_sintering_2
-end
+if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing_ball].category = angels_sintering_2 end
 data_recipe[ceramic_bearing_ball].icons = TWO_I(silicon_nitride_bob, ceramic_bearing_ball)
 
 data_item[cobalt_steel_bearing_ball].localised_description = show_formula and {chemical_formula, "CoFeC"} or nil
@@ -204,12 +214,16 @@ data_recipe[nitinol_bearing_ball].icons = TWO_I(nitinol_plate_bob, nitinol_beari
 
 local bearings =
 {
+    --{name = iron_bearing, order = a},
     {name = steel_bearing, order = b},
     --{name = brass_bearing, order = c},
     {name = ceramic_bearing, order = d},
     {name = cobalt_steel_bearing, order = e},
     {name = titanium_bearing, order = f},
-    {name = nitinol_bearing, order = g}
+    --{name = tungsten_bearing_ball, order = g},
+    {name = nitinol_bearing, order = h},
+    --{name = copper_tungsten_bearing, order = i},
+    --{name = rhenium_bearing, order = j}
 }
 for _, ITEM in pairs(bearings) do
     data_item[ITEM.name].subgroup = is_bearing
@@ -226,9 +240,7 @@ data_recipe[steel_bearing].ingredients[1].amount = 2
 
 data_item[ceramic_bearing].localised_description = show_formula and {chemical_formula, "Si[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]4[/font]"} or nil
 data_recipe[ceramic_bearing].category = crafting
-if settings.startup[setting_early_sintering_oven].value then
-    data_recipe[ceramic_bearing].category = angels_sintering_2
-end
+if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_bearing].category = angels_sintering_2 end
 data_recipe[ceramic_bearing].icons = B_F_L(nil, ceramic_bearing_ball, silicon_nitride_bob, ceramic_bearing)
 data_recipe[ceramic_bearing].ingredients =
 {
@@ -321,7 +333,7 @@ data_recipe[low_density_structure].ingredients =
 
 data_item[heat_shielding_tile].order = h
 data_recipe[heat_shielding_tile].order = h
-data_recipe[heat_shielding_tile].icons = THREE_I(silicon_nitride_bob, tungsten_carbide_bob, heat_shielding_tile)
+data_recipe[heat_shielding_tile].icons = THREE_I(silicon_nitride_bob, tungsten_carbide_plate_bob, heat_shielding_tile)
 data_recipe[heat_shielding_tile].energy_required = 16
 data_recipe[heat_shielding_tile].ingredients[1].amount = 8
 data_recipe[heat_shielding_tile].ingredients[2].amount = 4
@@ -861,27 +873,27 @@ local depleted_uranium_fuel_cell = "depleted-uranium-fuel-cell"
 data_item[depleted_uranium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_uranium_fuel_cell].order = c
 
-local nuclear_fuel_reprocessing = "nuclear-fuel-reprocessing"
-data_recipe[nuclear_fuel_reprocessing].subgroup = is_nuclear_cell
-data_recipe[nuclear_fuel_reprocessing].icons = TWO_I(depleted_uranium_fuel_cell, uranium_238)
-data_recipe[nuclear_fuel_reprocessing].order = c_a
-data_recipe[nuclear_fuel_reprocessing].energy_required = 64
-data_recipe[nuclear_fuel_reprocessing].ingredients[1].amount = 4
-data_recipe[nuclear_fuel_reprocessing].results = {{type = item, name = uranium_238, amount = 4}}
+local nuclear_fuel_cell_reprocessing = "nuclear-fuel-reprocessing"
+data_recipe[nuclear_fuel_cell_reprocessing].subgroup = is_nuclear_cell
+data_recipe[nuclear_fuel_cell_reprocessing].icons = TWO_I(depleted_uranium_fuel_cell, uranium_238)
+data_recipe[nuclear_fuel_cell_reprocessing].order = c_a
+data_recipe[nuclear_fuel_cell_reprocessing].energy_required = 64
+data_recipe[nuclear_fuel_cell_reprocessing].ingredients[1].amount = 4
+data_recipe[nuclear_fuel_cell_reprocessing].results = {{type = item, name = uranium_238, amount = 4}}
 
-local advanced_nuclear_fuel_reprocessing = "angels-advanced-uranium-reprocessing"
-data_recipe[advanced_nuclear_fuel_reprocessing].subgroup = is_nuclear_cell
-data_recipe[advanced_nuclear_fuel_reprocessing].icons = THREE_D_I(depleted_uranium_fuel_cell, nil, hydrofluoric_acid_angels, uranium_238, neptunium_240, water_greenyellow_waste)
-data_recipe[advanced_nuclear_fuel_reprocessing].order = c_b
-data_recipe[advanced_nuclear_fuel_reprocessing].energy_required = 64
-data_recipe[advanced_nuclear_fuel_reprocessing].ingredients[1].amount = 8
-data_recipe[advanced_nuclear_fuel_reprocessing].results =
+local advanced_nuclear_fuel_cell_reprocessing = "angels-advanced-uranium-reprocessing"
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].subgroup = is_nuclear_cell
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].icons = THREE_D_I(depleted_uranium_fuel_cell, nil, hydrofluoric_acid_angels, uranium_238, neptunium_240, water_greenyellow_waste)
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].order = c_b
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].energy_required = 64
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].ingredients[1].amount = 4
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].results =
 {
     {type = item, name = uranium_238, amount = 4},
     {type = item, name = neptunium_240, amount = 1, probability = 0.5},
     {type = fluid, name = water_greenyellow_waste, amount = 60}
 }
-data_recipe[advanced_nuclear_fuel_reprocessing].allow_productivity = true
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].allow_productivity = true
 
 data_item[mixed_oxide_fuel_cell].subgroup = is_nuclear_cell
 data_item[mixed_oxide_fuel_cell].order = d
@@ -979,7 +991,7 @@ data_recipe[advanced_thorium_fuel_cell_reprocessing].subgroup = is_nuclear_cell
 data_recipe[advanced_thorium_fuel_cell_reprocessing].icons = FOUR_THREE_R_I(depleted_thorium_fuel_cell, nil, hydrofluoric_acid_angels, neptunium_240, uranium_234, muon_fusion_catalyst, water_greenyellow_waste)
 data_recipe[advanced_thorium_fuel_cell_reprocessing].order = g_b
 data_recipe[advanced_thorium_fuel_cell_reprocessing].energy_required = 64
-data_recipe[advanced_thorium_fuel_cell_reprocessing].ingredients[1].amount = 8
+data_recipe[advanced_thorium_fuel_cell_reprocessing].ingredients[1].amount = 4
 data_recipe[advanced_thorium_fuel_cell_reprocessing].results =
 {
     {type = item, name = neptunium_240, amount = 2},
@@ -1008,7 +1020,7 @@ data_item[depleted_deuterium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_deuterium_fuel_cell].order = i
 
 data_recipe[deuterium_fuel_cell_reprocessing].subgroup = is_nuclear_cell
-data_recipe[deuterium_fuel_cell_reprocessing].icons = TWO_I(depleted_deuterium_fuel_cell, muon_fusion_catalyst)
+data_recipe[deuterium_fuel_cell_reprocessing].icons = THREE_D_I(depleted_deuterium_fuel_cell, nil, muon_fusion_catalyst, deuterium_angels)
 data_recipe[deuterium_fuel_cell_reprocessing].order = i_a
 data_recipe[deuterium_fuel_cell_reprocessing].energy_required = 64
 data_recipe[deuterium_fuel_cell_reprocessing].ingredients[1].amount = 4

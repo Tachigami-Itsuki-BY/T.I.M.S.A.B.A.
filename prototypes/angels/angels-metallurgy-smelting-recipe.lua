@@ -388,10 +388,10 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- Cu + CuCl₂(aq) --> 2CuCl + H₂O
+        energy_required = 8, -- Cu(s) + CuCl₂(aq) --> 2CuCl(s) + H₂O(g)
         ingredients =
         {
-            {type = item, name = copper_ingot, amount = 16},
+            {type = item, name = copper_powder, amount = 16},
             {type = fluid, name = copper_chloride_II_solution_angels, amount = 240}
         },
         results =
@@ -406,24 +406,25 @@ data:extend
         name = copper_chloride_I_alt,
         category = angels_chemical_smelting_4,
         subgroup = is_copper_chemistry,
-        icons = THREE_D_I(copper_chloride_II_solution_angels, nil, sulfur_dioxide_angels, copper_chloride_I, sulfuric_acid_angels, hydrogen_chloride_angels),
+        icons = THREE_D_I(copper_chloride_II_solution_angels, sulfur_dioxide_angels, water_purified_angels, copper_chloride_I, sulfuric_acid_angels, hydrochloric_acid_angels),
         order = e_a,
         enabled = false,
         auto_recycle = false,
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- 2(CuCl₂ + H₂O) + SO₂ --> 2CuCl + H₂SO₄ + 2HCl
+        energy_required = 8, -- 2CuCl₂(aq) + SO₂(g) + 2H₂O(l) --> 2CuCl(s) + H₂SO₄(l) + 2HCl(aq)
         ingredients =
         {
             {type = fluid, name = copper_chloride_II_solution_angels, amount = 480},
-            {type = fluid, name = sulfur_dioxide_angels, amount = 240}
+            {type = fluid, name = sulfur_dioxide_angels, amount = 240},
+            {type = fluid, name = water_purified_angels, amount = 480}
         },
         results =
         {
             {type = item, name = copper_chloride_I, amount = 32},
             {type = fluid, name = sulfuric_acid_angels, amount = 120}, -- 240
-            {type = fluid, name = hydrogen_chloride_angels, amount = 240} -- 480
+            {type = fluid, name = hydrochloric_acid_angels, amount = 240} -- 480
         },
         main_product = copper_chloride_I
     },
@@ -720,12 +721,12 @@ data:extend
         results = {{type = fluid, name = manganese_sulfate_II_solution, amount = 240}},
         main_product = manganese_sulfate_II_solution
     },
-    --[[{
+    {
         type = recipe,
         name = potassium_permanganate,
         category = angels_advanced_chemistry,
         subgroup = is_manganese_chemistry,
-        icons = FOUR_THREE_I(manganese_oxide, potassium_hydroxide_solution, oxygen_angels, chlorine_angels, potassium_permanganate, potassium_chloride_solution, water_purified_angels),
+        icons = FOUR_THREE_I(manganese_oxide_II, potassium_hydroxide_solution, oxygen_angels, chlorine_angels, potassium_permanganate, potassium_chloride_solution, water_purified_angels),
         order = f,
         enabled = false,
         auto_recycle = false,
@@ -735,7 +736,7 @@ data:extend
         energy_required = 8, -- 2MnO₂ + 4KOH(aq) + O₂ + Cl₂ --> 2KMnO₄(s) + 2KCl(aq) + 4H₂O
         ingredients =
         {
-            {type = item, name = manganese_oxide, amount = 16},
+            {type = item, name = manganese_oxide_II, amount = 16},
             {type = fluid, name = potassium_hydroxide_solution, amount = 480},
             {type = fluid, name = oxygen_angels, amount = 120},
             {type = fluid, name = chlorine_angels, amount = 120}
@@ -747,7 +748,7 @@ data:extend
             {type = fluid, name = water_purified_angels, amount = 240} -- 480
         },
         main_product = potassium_permanganate
-    }]]
+    }
 })
 
 -- SILICON
@@ -1955,12 +1956,12 @@ data:extend
         results = {{type = item, name = lithium_hydride, amount = 16}},
         main_product = lithium_hydride
     },
-    --[[{
+    {
         type = recipe,
         name = lithium_hydroxide,
         category = angels_petrochem_electrolyser,
         subgroup = is_alloys,
-        icons = FOUR_R_I(lithium_chloride_solution, lithium_hydroxide, hydrogen_angels, chlorine_angels),
+        icons = FOUR_R_I(lithium_chloride_solution, hydrogen_angels, lithium_hydroxide, chlorine_angels),
         order = h,
         enabled = false,
         auto_recycle = false,
@@ -1971,14 +1972,14 @@ data:extend
         ingredients =
         {
             {type = fluid, name = lithium_chloride_solution, amount = 240},
-            {type = item, name = electrode, amount = 1}
+            {type = item, name = graphite_electrode, amount = 1}
         },
         results =
         {
             {type = item, name = lithium_hydroxide, amount = 16},
             {type = fluid, name = hydrogen_angels, amount = 60}, -- 120
             {type = fluid, name = chlorine_angels, amount = 60}, -- 120
-            {type = item, name = electrode_used, amount = 1}
+            {type = item, name = graphite_chips, amount = 4}
         },
         main_product = lithium_hydroxide
     },
@@ -2012,7 +2013,7 @@ data:extend
         name = lithium_hexafluorophosphate,
         category = chemistry,
         subgroup = is_alloys,
-        icons = THREE_I(lithium_fluoride, phosphorus_pentafluoride_gas, lithium_hexafluorophosphate),
+        icons = THREE_I(lithium_fluoride, phosphorus_fluoride_V_gas, lithium_hexafluorophosphate),
         order = k,
         enabled = false,
         auto_recycle = false,
@@ -2023,13 +2024,13 @@ data:extend
         ingredients =
         {
             {type = item, name = lithium_fluoride, amount = 4},
-            {type = fluid, name = phosphorus_pentafluoride_gas, amount = 60},
+            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
             {type = fluid, name = hydrogen_fluoride_liquefied, amount = 60}
         },
         results =
         {
             {type = item, name = lithium_hexafluorophosphate, amount = 4},
-            {type = fluid, name = hydrogen_fluoride_liquefied, amount = 30}
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 30}
         },
         main_product = lithium_hexafluorophosphate
     },
@@ -2053,11 +2054,10 @@ data:extend
         },
         results = {{type = fluid, name = lithium_hexafluorophosphate_solution_carbonate, amount = 60}},
         main_product = lithium_hexafluorophosphate_solution_carbonate
-    }]]
+    }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -2076,5 +2076,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

@@ -23,22 +23,22 @@ end
 data_recipe[small_lamp].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 1},
-    {type = item, name = copper_cable, amount = 4},
-    {type = item, name = iron_plate, amount = 1},
-    {type = item, name = glass_bob, amount = 4}
+    {type = item, name = copper_cable,        amount = 4},
+    {type = item, name = iron_plate,          amount = 1},
+    {type = item, name = glass_bob,           amount = 4}
 }
 
 local function combinator_recipe(name, circuit, cable)
     data_recipe[name].ingredients =
     {
        {type = item, name = circuit, amount = 4},
-       {type = item, name = cable, amount = 4}
+       {type = item, name = cable,   amount = 4}
     }
 end
 combinator_recipe(combinator_arithmetic, electronic_circuit, tin_cable)
-combinator_recipe(combinator_decider, electronic_circuit, tin_cable)
-combinator_recipe(combinator_selector, advanced_circuit, silver_cable)
-combinator_recipe(combinator_constant, electronic_circuit, tin_cable)
+combinator_recipe(combinator_decider,    electronic_circuit, tin_cable)
+combinator_recipe(combinator_selector,   advanced_circuit,   silver_cable)
+combinator_recipe(combinator_constant,   electronic_circuit, tin_cable)
 
 local power_switch = "power-switch"
 local programmable_speaker = "programmable-speaker"
@@ -58,16 +58,16 @@ end
 data_recipe[power_switch].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 2},
-    {type = item, name = copper_cable, amount = 4},
-    {type = item, name = iron_plate, amount = 4}
+    {type = item, name = copper_cable,       amount = 4},
+    {type = item, name = iron_plate,         amount = 4}
 }
 
 data_recipe[programmable_speaker].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 2},
-    {type = item, name = copper_cable, amount = 4},
-    {type = item, name = iron_plate, amount = 4},
-    {type = item, name = iron_rod, amount = 4}
+    {type = item, name = copper_cable,       amount = 4},
+    {type = item, name = iron_plate,         amount = 4},
+    {type = item, name = iron_rod,           amount = 4}
 }
 
 local rail = "rail"
@@ -79,9 +79,9 @@ data_rail_planner[rail_ramp].weight = 125000
 data_recipe[rail_ramp].energy_required = 8
 data_recipe[rail_ramp].ingredients =
 {
-    {type = item, name = rail, amount = 8},
-    {type = item, name = refined_concrete, amount = 128},
-    {type = item, name = steel_plate, amount = 16}
+    {type = item, name = rail,                amount = 8},
+    {type = item, name = reinforced_concrete, amount = 128},
+    {type = item, name = steel_plate,         amount = 16}
 }
 
 local rail_support = "rail-support"
@@ -90,8 +90,8 @@ data_item[rail_support].weight = 62500
 data_recipe[rail_support].energy_required = 4
 data_recipe[rail_support].ingredients =
 {
-    {type = item, name = refined_concrete, amount = 32},
-    {type = item, name = steel_plate, amount = 16}
+    {type = item, name = reinforced_concrete, amount = 32},
+    {type = item, name = steel_plate,         amount = 16}
 }
 
 local train_stop = "train-stop"
@@ -100,9 +100,9 @@ data_item[train_stop].weight = 125000
 data_recipe[train_stop].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
-    {type = item, name = iron_plate, amount = 8},
-    {type = item, name = iron_rod, amount = 8},
-    {type = item, name = steel_plate, amount = 4}
+    {type = item, name = iron_plate,         amount = 8},
+    {type = item, name = iron_rod,           amount = 8},
+    {type = item, name = steel_plate,        amount = 4}
 }
 
 local rail_signal = "rail-signal"
@@ -111,7 +111,7 @@ data_item[rail_signal].weight = 31250
 data_recipe[rail_signal].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 1},
-    {type = item, name = iron_plate, amount = 4}
+    {type = item, name = iron_plate,         amount = 4}
 }
 
 local rail_chain_signal = "rail-chain-signal"
@@ -120,7 +120,7 @@ data_item[rail_chain_signal].weight = 31250
 data_recipe[rail_chain_signal].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 1},
-    {type = item, name = iron_plate, amount = 4}
+    {type = item, name = iron_plate,         amount = 4}
 }
 
 local locomotive_1 = "locomotive"
@@ -148,18 +148,20 @@ local function locomotive_recipe(name, gear_wheel, bearing, circuit, locomotive,
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 32},
-        {type = item, name = bearing, amount = 16},
-        {type = item, name = circuit, amount = 8},
-        {type = item, name = plate, amount = 16}
+        {type = item, name = bearing,    amount = 16},
+        {type = item, name = circuit,    amount = 8},
+        {type = item, name = plate,      amount = 16}
     }
-    if locomotive then
+    if name == locomotive_1 then
+        table.insert(ingredients, {type = item, name = engine_unit, amount = 8})
+    else
         table.insert(ingredients, {type = item, name = locomotive, amount = 1})
     end
     data_recipe[name].ingredients = ingredients
 end
-locomotive_recipe(locomotive_1, iron_gear_wheel, engine_unit, electronic_circuit, nil, iron_plate)
-locomotive_recipe(locomotive_2, steel_gear_wheel, steel_bearing, advanced_circuit, locomotive_1, steel_plate)
-locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing, processing_unit, locomotive_2, titanium_plate_bob)
+locomotive_recipe(locomotive_1, iron_gear_wheel,     iron_bearing,     electronic_circuit, nil,          iron_plate)
+locomotive_recipe(locomotive_2, steel_gear_wheel,    steel_bearing,    advanced_circuit,   locomotive_1, steel_plate)
+locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing, processing_unit,    locomotive_2, titanium_plate_bob)
 
 local cargo_wagon_1 = "cargo-wagon"
 local cargo_wagon_2 = "bob-cargo-wagon-2"
@@ -180,19 +182,16 @@ for _, TRANSPORT in pairs(cargo_wagons) do
     data_wagon_cargo[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
 end
 local function cargo_wagon_recipe(name, gear_wheel, bearing, cargo_wagon, plate)
-    local ingredients =
+    data_recipe[name].ingredients =
     {
-        {type = item, name = gear_wheel, amount = 16},
+        {type = item, name = gear_wheel,  amount = 16},
+        {type = item, name = bearing,     amount = 8},
         {type = item, name = cargo_wagon, amount = 1},
-        {type = item, name = plate, amount = 32}
+        {type = item, name = plate,       amount = 32}
     }
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 8})
-    end
-    data_recipe[name].ingredients = ingredients
 end
-cargo_wagon_recipe(cargo_wagon_1, iron_gear_wheel, nil, iron_chest, iron_plate)
-cargo_wagon_recipe(cargo_wagon_2, steel_gear_wheel, steel_bearing, cargo_wagon_1, steel_plate)
+cargo_wagon_recipe(cargo_wagon_1, iron_gear_wheel,     iron_bearing,     iron_chest,    iron_plate)
+cargo_wagon_recipe(cargo_wagon_2, steel_gear_wheel,    steel_bearing,    cargo_wagon_1, steel_plate)
 cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)
 
 local fluid_wagon_1 = "fluid-wagon"
@@ -214,20 +213,17 @@ for _, TRANSPORT in pairs(fluid_wagons) do
     data_wagon_fluid[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
 end
 local function fluid_wagon_recipe(name, gear_wheel, bearing, fluid_wagon, plate)
-    local ingredients =
+    data_recipe[name].ingredients =
     {
-        {type = item, name = gear_wheel, amount = 16},
+        {type = item, name = gear_wheel,  amount = 16},
+        {type = item, name = bearing,     amount = 8},
         {type = item, name = fluid_wagon, amount = 1},
-        {type = item, name = plate, amount = 32}
+        {type = item, name = plate,       amount = 32}
     }
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 8})
-    end
-    data_recipe[name].ingredients = ingredients
 end
-fluid_wagon_recipe(fluid_wagon_1, iron_gear_wheel, nil, storage_tank_1, iron_plate)
-fluid_wagon_recipe(fluid_wagon_2, steel_gear_wheel, steel_bearing, fluid_wagon_1, steel_plate)
-fluid_wagon_recipe(fluid_wagon_3, titanium_gear_wheel, titanium_bearing, fluid_wagon_2, titanium_plate_bob)
+fluid_wagon_recipe(fluid_wagon_1, iron_gear_wheel,     iron_bearing,     storage_tank_1, iron_plate)
+fluid_wagon_recipe(fluid_wagon_2, steel_gear_wheel,    steel_bearing,    fluid_wagon_1,  steel_plate)
+fluid_wagon_recipe(fluid_wagon_3, titanium_gear_wheel, titanium_bearing, fluid_wagon_2,  titanium_plate_bob)
 
 local artillery_wagon_1 = "artillery-wagon"
 local artillery_wagon_2 = "bob-artillery-wagon-2"
@@ -239,29 +235,30 @@ local artillery_wagons =
     {name = artillery_wagon_3, order = c, weight = 4000, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(artillery_wagons) do
+    data_item_entity[TRANSPORT.name].subgroup = is_artillery_wagon
     data_item_entity[TRANSPORT.name].order = TRANSPORT.order
     data_item_entity[TRANSPORT.name].stack_size = 16
     data_item_entity[TRANSPORT.name].weight = 62500
+    data_recipe[TRANSPORT.name].subgroup = is_artillery_wagon
     data_recipe[TRANSPORT.name].order = TRANSPORT.order
+    data_wagon_artillery[TRANSPORT.name].subgroup = is_artillery_wagon
     data_wagon_artillery[TRANSPORT.name].weight = TRANSPORT.weight
     data_wagon_artillery[TRANSPORT.name].manual_range_modifier = 2
     data_wagon_artillery[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
 end
 local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artillery_wagon, plate)
-    data_item_entity[name].subgroup = is_artillery_wagon
-    data_recipe[name].subgroup = is_artillery_wagon
     data_recipe[name].ingredients =
     {
-        {type = item, name = gear_wheel, amount = 16},
-        {type = item, name = bearing, amount = 8},
-        {type = item, name = circuit, amount = 32},
+        {type = item, name = gear_wheel,      amount = 16},
+        {type = item, name = bearing,         amount = 8},
+        {type = item, name = circuit,         amount = 32},
         {type = item, name = artillery_wagon, amount = 1},
-        {type = item, name = plate, amount = 32}
+        {type = item, name = plate,           amount = 32}
     }
 end
-artillery_wagon_recipe(artillery_wagon_1, copper_tungsten_gear_wheel, copper_tungsten_bearing, advanced_processing_unit, artillery_turret_1, copper_tungsten_plate_bob)
-artillery_wagon_recipe(artillery_wagon_2, molybdenum_gear_wheel, rhenium_bearing, advanced_processing_unit, artillery_wagon_1, molybdenum_rhenium_plate)
-artillery_wagon_recipe(artillery_wagon_3, niobium_tungsten_molybdenum_gear_wheel, niobium_iron_bearing, advanced_processing_unit, artillery_wagon_2, niobium_titanium_plate)
+artillery_wagon_recipe(artillery_wagon_1, copper_tungsten_gear_wheel,             copper_tungsten_bearing, advanced_processing_unit, artillery_turret_1, copper_tungsten_plate_bob)
+artillery_wagon_recipe(artillery_wagon_2, molybdenum_gear_wheel,                  rhenium_bearing,         advanced_processing_unit, artillery_wagon_1,  molybdenum_rhenium_plate)
+artillery_wagon_recipe(artillery_wagon_3, niobium_tungsten_molybdenum_gear_wheel, niobium_iron_bearing,    advanced_processing_unit, artillery_wagon_2,  niobium_tungsten_molybdenum_plate)
 
 local car = "car"
 data_item_entity[car].weight = 1000000
@@ -269,7 +266,7 @@ data_recipe[car].energy_required = 4
 data_recipe[car].ingredients =
 {
     {type = item, name = engine_unit, amount = 8},
-    {type = item, name = iron_plate, amount = 16},
+    {type = item, name = iron_plate,  amount = 16},
     {type = item, name = steel_plate, amount = 4}
 }
 data_car[car].consumption = 225 .. kW
@@ -303,15 +300,15 @@ local function tank_recipe(name, gear_wheel, bearing, circuit, vehicle, plate)
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 16},
-        {type = item, name = bearing, amount = 16},
-        {type = item, name = circuit, amount = 4},
-        {type = item, name = vehicle, amount = 1},
-        {type = item, name = plate, amount = 64}
+        {type = item, name = bearing,    amount = 16},
+        {type = item, name = circuit,    amount = 4},
+        {type = item, name = vehicle,    amount = 1},
+        {type = item, name = plate,      amount = 64}
     }
 end
-tank_recipe(tank_1, brass_gear_wheel, brass_bearing, advanced_circuit, car, invar_plate_bob)
-tank_recipe(tank_2, titanium_gear_wheel, titanium_bearing, processing_unit, tank_1, titanium_plate_bob)
-tank_recipe(tank_3, nitinol_gear_wheel, nitinol_bearing, advanced_processing_unit, tank_2, tungsten_carbide_bob)
+tank_recipe(tank_1, brass_gear_wheel,    brass_bearing,    advanced_circuit,         car,    invar_plate_bob)
+tank_recipe(tank_2, titanium_gear_wheel, titanium_bearing, processing_unit,          tank_1, titanium_plate_bob)
+tank_recipe(tank_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
 
 local logistic_robot_1 = "logistic-robot"
 local logistic_robot_2 = "bob-logistic-robot-2"
@@ -381,10 +378,10 @@ end
 local function roboport_recipe(name, antenna, door, chargepad, plate, roboport)
     local ingredients =
     {
-        {type = item, name = antenna, amount = 4},
-        {type = item, name = door, amount = 1},
+        {type = item, name = antenna,   amount = 4},
+        {type = item, name = door,      amount = 1},
         {type = item, name = chargepad, amount = 4},
-        {type = item, name = plate, amount = 16}
+        {type = item, name = plate,     amount = 16}
     }
     if roboport then
         table.insert(data_recipe[name].ingredients, {type = item, name = roboport, amount = 1})
@@ -393,8 +390,8 @@ local function roboport_recipe(name, antenna, door, chargepad, plate, roboport)
 end
 roboport_recipe(roboport_1, roboport_antenna_1, roboport_door_1, roboport_chargepad_1, steel_plate)
 roboport_recipe(roboport_2, roboport_antenna_2, roboport_door_2, roboport_chargepad_2, aluminium_plate_bob, roboport_1)
-roboport_recipe(roboport_3, roboport_antenna_3, roboport_door_3, roboport_chargepad_3, titanium_plate_bob, roboport_2)
-roboport_recipe(roboport_4, roboport_antenna_4, roboport_door_4, roboport_chargepad_4, nitinol_plate_bob, roboport_3)
+roboport_recipe(roboport_3, roboport_antenna_3, roboport_door_3, roboport_chargepad_3, titanium_plate_bob,  roboport_2)
+roboport_recipe(roboport_4, roboport_antenna_4, roboport_door_4, roboport_chargepad_4, nitinol_plate_bob,   roboport_3)
 
 local logistic_zone =
 {
@@ -420,7 +417,7 @@ local function logistic_zone_expander_recipe(name, antenna, plate, zone_expander
     local ingredients =
     {
         {type = item, name = antenna, amount = 4},
-        {type = item, name = plate, amount = 4}
+        {type = item, name = plate,   amount = 4}
     }
     if zone_expander then
         table.insert(data_recipe[name].ingredients, {type = item, name = zone_expander, amount = 1})
@@ -429,8 +426,8 @@ local function logistic_zone_expander_recipe(name, antenna, plate, zone_expander
 end
 logistic_zone_expander_recipe(logistic_zone_expander_1, roboport_antenna_1, steel_plate)
 logistic_zone_expander_recipe(logistic_zone_expander_2, roboport_antenna_2, aluminium_plate_bob, logistic_zone_expander_1)
-logistic_zone_expander_recipe(logistic_zone_expander_3, roboport_antenna_3, titanium_plate_bob, logistic_zone_expander_2)
-logistic_zone_expander_recipe(logistic_zone_expander_4, roboport_antenna_4, nitinol_plate_bob, logistic_zone_expander_3)
+logistic_zone_expander_recipe(logistic_zone_expander_3, roboport_antenna_3, titanium_plate_bob,  logistic_zone_expander_2)
+logistic_zone_expander_recipe(logistic_zone_expander_4, roboport_antenna_4, nitinol_plate_bob,   logistic_zone_expander_3)
 
 local robochests =
 {
@@ -451,10 +448,10 @@ for _, BUILD in pairs(robochests) do
 end
 data_recipe[robochest_1].ingredients =
 {
-    {type = item, name = roboport_antenna_1, amount = 1},
-    {type = item, name = roboport_door_1, amount = 1},
+    {type = item, name = roboport_antenna_1,   amount = 1},
+    {type = item, name = roboport_door_1,      amount = 1},
     {type = item, name = roboport_chargepad_1, amount = 1},
-    {type = item, name = steel_plate, amount = 8}
+    {type = item, name = steel_plate,          amount = 8}
 }
 
 local robo_port =
@@ -478,7 +475,7 @@ local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
     local ingredients =
     {
         {type = item, name = chargepad, amount = 4},
-        {type = item, name = plate, amount = 8}
+        {type = item, name = plate,     amount = 8}
     }
     if charge_port then
         table.insert(data_recipe[name].ingredients, {type = item, name = charge_port, amount = 1})
@@ -487,8 +484,8 @@ local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
 end
 robo_charge_port_recipe(robo_charge_port_1, roboport_chargepad_1, steel_plate)
 robo_charge_port_recipe(robo_charge_port_2, roboport_chargepad_2, aluminium_plate_bob, robo_charge_port_1)
-robo_charge_port_recipe(robo_charge_port_3, roboport_chargepad_3, titanium_plate_bob, robo_charge_port_2)
-robo_charge_port_recipe(robo_charge_port_4, roboport_chargepad_4, nitinol_plate_bob, robo_charge_port_3)
+robo_charge_port_recipe(robo_charge_port_3, roboport_chargepad_3, titanium_plate_bob,  robo_charge_port_2)
+robo_charge_port_recipe(robo_charge_port_4, roboport_chargepad_4, nitinol_plate_bob,   robo_charge_port_3)
 
 local robo_port_large =
 {
@@ -517,7 +514,7 @@ local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port
     local ingredients =
     {
         {type = item, name = chargepad, amount = 9},
-        {type = item, name = plate, amount = 16}
+        {type = item, name = plate,     amount = 16}
     }
     if charge_port_large then
         table.insert(data_recipe[name].ingredients, {type = item, name = charge_port_large, amount = 1})
@@ -526,8 +523,8 @@ local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port
 end
 robo_charge_port_large_recipe(robo_charge_port_large_1, roboport_chargepad_1, steel_plate)
 robo_charge_port_large_recipe(robo_charge_port_large_2, roboport_chargepad_2, aluminium_plate_bob, robo_charge_port_large_1)
-robo_charge_port_large_recipe(robo_charge_port_large_3, roboport_chargepad_3, titanium_plate_bob, robo_charge_port_large_2)
-robo_charge_port_large_recipe(robo_charge_port_large_4, roboport_chargepad_4, nitinol_plate_bob, robo_charge_port_large_3)
+robo_charge_port_large_recipe(robo_charge_port_large_3, roboport_chargepad_3, titanium_plate_bob,  robo_charge_port_large_2)
+robo_charge_port_large_recipe(robo_charge_port_large_4, roboport_chargepad_4, nitinol_plate_bob,   robo_charge_port_large_3)
 
 local function rp_antenna_recipe(name, circuit, cable, plate)
     data_item[name].subgroup = is_rp_antena
@@ -536,14 +533,14 @@ local function rp_antenna_recipe(name, circuit, cable, plate)
     data_recipe[name].ingredients =
     {
         {type = item, name = circuit, amount = 4},
-        {type = item, name = cable, amount = 2},
-        {type = item, name = plate, amount = 1}
+        {type = item, name = cable,   amount = 2},
+        {type = item, name = plate,   amount = 1}
     }
 end
-rp_antenna_recipe(roboport_antenna_1, electronic_circuit, copper_cable, iron_plate)
-rp_antenna_recipe(roboport_antenna_2, advanced_circuit, tin_cable, aluminium_plate_bob)
-rp_antenna_recipe(roboport_antenna_3, processing_unit, insulated_cable, nickel_plate_bob)
-rp_antenna_recipe(roboport_antenna_4, advanced_processing_unit, gold_cable, gold_plate_bob)
+rp_antenna_recipe(roboport_antenna_1, electronic_circuit,       copper_cable,    iron_plate)
+rp_antenna_recipe(roboport_antenna_2, advanced_circuit,         tin_cable,       aluminium_plate_bob)
+rp_antenna_recipe(roboport_antenna_3, processing_unit,          insulated_cable, nickel_plate_bob)
+rp_antenna_recipe(roboport_antenna_4, advanced_processing_unit, gold_cable,      gold_plate_bob)
 
 local function rp_door_recipe(name, gear_wheel, bearing, plate)
     data_item[name].subgroup = is_rp_door
@@ -552,17 +549,17 @@ local function rp_door_recipe(name, gear_wheel, bearing, plate)
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 16},
-        {type = item, name = plate, amount = 16}
+        {type = item, name = plate,      amount = 16}
     }
     if bearing then
         table.insert(data_recipe[name].ingredients, {type = item, name = bearing, amount = 16})
     end
     data_recipe[name].ingredients = ingredients
 end
-rp_door_recipe(roboport_door_1, iron_gear_wheel, nil, iron_plate)
-rp_door_recipe(roboport_door_2, steel_gear_wheel, steel_bearing, steel_plate)
+rp_door_recipe(roboport_door_1, iron_gear_wheel,     nil,              iron_plate)
+rp_door_recipe(roboport_door_2, steel_gear_wheel,    steel_bearing,    steel_plate)
 rp_door_recipe(roboport_door_3, titanium_gear_wheel, titanium_bearing, titanium_plate_bob)
-rp_door_recipe(roboport_door_4, nitinol_gear_wheel, nitinol_bearing, nitinol_plate_bob)
+rp_door_recipe(roboport_door_4, nitinol_gear_wheel,  nitinol_bearing,  nitinol_plate_bob)
 
 local function rp_chargepad_recipe(name, battery, circuit, plate)
     data_item[name].subgroup = is_rp_chargepad
@@ -575,23 +572,35 @@ local function rp_chargepad_recipe(name, battery, circuit, plate)
         {type = item, name = plate, amount = 2}
     }
 end
-rp_chargepad_recipe(roboport_chargepad_1, battery_lead_acid, electronic_circuit, steel_plate)
-rp_chargepad_recipe(roboport_chargepad_2, battery_lead_acid, advanced_circuit, invar_plate_bob)
-rp_chargepad_recipe(roboport_chargepad_3, battery_lithium_ion, processing_unit, titanium_plate_bob)
-rp_chargepad_recipe(roboport_chargepad_4, battery_silver_zinc, advanced_processing_unit, nitinol_plate_bob)
+rp_chargepad_recipe(roboport_chargepad_1, battery_lead_acid,     electronic_circuit,       steel_plate)
+rp_chargepad_recipe(roboport_chargepad_2, battery_lithium_ion,   advanced_circuit,         invar_plate_bob)
+rp_chargepad_recipe(roboport_chargepad_3, battery_silver_zinc,   processing_unit,          titanium_plate_bob)
+rp_chargepad_recipe(roboport_chargepad_4, battery_graphene,      advanced_processing_unit, nitinol_plate_bob)
 
 local flying_robot_frames =
 {
     flying_robot_frame_1,
     flying_robot_frame_2,
     flying_robot_frame_3,
-    flying_robot_frame_4,
+    flying_robot_frame_4
 }
 for _, name in pairs(flying_robot_frames) do
     data_item[name].subgroup = is_flying_robot_frames
     data_recipe[name].subgroup = is_flying_robot_frames
     data_recipe[name].energy_required = 16
 end
+local function flying_robot_frame_recipe(name, battery, plate)
+    data_recipe[name].ingredients =
+    {
+        {type = item, name = battery,              amount = 2},
+        {type = item, name = plate,                amount = 1},
+        {type = item, name = electric_engine_unit, amount = 1}
+    }
+end
+flying_robot_frame_recipe(flying_robot_frame_1, battery_lead_acid,   steel_plate)
+flying_robot_frame_recipe(flying_robot_frame_2, battery_lithium_ion, aluminium_plate_bob)
+flying_robot_frame_recipe(flying_robot_frame_3, battery_silver_zinc, titanium_plate_bob)
+flying_robot_frame_recipe(flying_robot_frame_4, battery_graphene,    nitinol_plate_bob)
 
 local function robot_brain_recipe(name, circuit_1, circuit_2)
     data_item[name].subgroup = is_robot_brain
@@ -599,16 +608,16 @@ local function robot_brain_recipe(name, circuit_1, circuit_2)
     data_recipe[name].energy_required = 8
     data_recipe[name].ingredients =
     {
-        {type = item, name = circuit_1, amount = 2},
-        {type = item, name = circuit_2, amount = 2},
-        {type = item, name = solder, amount = 4},
-        {type = item, name = module_case, amount = 1},
+        {type = item, name = circuit_1,   amount = 2},
+        {type = item, name = circuit_2,   amount = 2},
+        {type = item, name = solder,      amount = 4},
+        {type = item, name = module_case, amount = 1}
     }
 end
 robot_brain_recipe(robot_brain_1, basic_circuit_board, electronic_circuit)
-robot_brain_recipe(robot_brain_2, electronic_circuit, advanced_circuit)
-robot_brain_recipe(robot_brain_3, advanced_circuit, processing_unit)
-robot_brain_recipe(robot_brain_4, processing_unit, advanced_processing_unit)
+robot_brain_recipe(robot_brain_2, electronic_circuit,  advanced_circuit)
+robot_brain_recipe(robot_brain_3, advanced_circuit,    processing_unit)
+robot_brain_recipe(robot_brain_4, processing_unit,     advanced_processing_unit)
 
 local robot_tool_c_1 = "bob-robot-tool-construction"
 local robot_tool_c_2 = "bob-robot-tool-construction-2"
@@ -623,19 +632,19 @@ local function robot_tool_recipe(name, gear_wheel, bearing, cable, plate)
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 2},
-        {type = item, name = bearing, amount = 2},
-        {type = item, name = cable, amount = 4},
-        {type = item, name = plate, amount = 1},
+        {type = item, name = bearing,    amount = 2},
+        {type = item, name = cable,      amount = 4},
+        {type = item, name = plate,      amount = 1}
     }
 end
-robot_tool_recipe(robot_tool_c_1, steel_gear_wheel, steel_bearing, copper_cable, steel_plate)
-robot_tool_recipe(robot_tool_c_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, tin_cable, cobalt_steel_plate_bob)
-robot_tool_recipe(robot_tool_c_3, titanium_gear_wheel, titanium_bearing, insulated_cable, titanium_plate_bob)
-robot_tool_recipe(robot_tool_c_4, nitinol_gear_wheel, nitinol_bearing, gold_cable, nitinol_plate_bob)
-robot_tool_recipe(robot_tool_l_1, steel_gear_wheel, steel_bearing, copper_cable, steel_plate)
-robot_tool_recipe(robot_tool_l_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, tin_cable, cobalt_steel_plate_bob)
-robot_tool_recipe(robot_tool_l_3, titanium_gear_wheel, titanium_bearing, insulated_cable, titanium_plate_bob)
-robot_tool_recipe(robot_tool_l_4, nitinol_gear_wheel, nitinol_bearing, gold_cable, nitinol_plate_bob)
+robot_tool_recipe(robot_tool_c_1, steel_gear_wheel,        steel_bearing,        copper_cable,    steel_plate)
+robot_tool_recipe(robot_tool_c_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, tin_cable,       cobalt_steel_plate_bob)
+robot_tool_recipe(robot_tool_c_3, titanium_gear_wheel,     titanium_bearing,     insulated_cable, titanium_plate_bob)
+robot_tool_recipe(robot_tool_c_4, nitinol_gear_wheel,      nitinol_bearing,      gold_cable,      nitinol_plate_bob)
+robot_tool_recipe(robot_tool_l_1, steel_gear_wheel,        steel_bearing,        copper_cable,    steel_plate)
+robot_tool_recipe(robot_tool_l_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, tin_cable,       cobalt_steel_plate_bob)
+robot_tool_recipe(robot_tool_l_3, titanium_gear_wheel,     titanium_bearing,     insulated_cable, titanium_plate_bob)
+robot_tool_recipe(robot_tool_l_4, nitinol_gear_wheel,      nitinol_bearing,      gold_cable,      nitinol_plate_bob)
 
 local robot_tool_c_groups =
 {
@@ -774,7 +783,7 @@ data_recipe[spidertron_cannon].ingredients =
 data_recipe[mech_armor_plate].ingredients =
 {
     {type = item, name = low_density_structure, amount = 4},
-    {type = item, name = tungsten_carbide_bob, amount = 2}
+    {type = item, name = tungsten_carbide_plate_bob, amount = 2}
 }
 
 data_recipe[mech_brain].ingredients =
@@ -881,6 +890,10 @@ bobmods.lib.recipe.update_recycling_recipe
     roboport_door_2,
     roboport_door_3,
     roboport_door_4,
+    flying_robot_frame_1,
+    flying_robot_frame_2,
+    flying_robot_frame_3,
+    flying_robot_frame_4,
     roboport_chargepad_1,
     roboport_chargepad_2,
     roboport_chargepad_3,

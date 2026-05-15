@@ -1,4 +1,182 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 17.05.2026
+  Features:
+    - Добавлена поддержка Muluna, Moon of Nauvis: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - Добавлены новые сущности:
+        1. Бойлер и Паровой Двигатель Т6.
+        2. Солнечные Панели Т4.
+        3. Аккумулятор Высокой Ёмкости Т4.
+        4. Электрический Бур Т6.
+        5. Реактор Т4 и Топливная ячейка Т4.
+        6. Электропечи Т6(Т4).
+        7. Установка Сортировки Руды Т6.
+        8. Электролизные Ванны Т3 и Т4.
+        9. Печи для Спекания Т3 и Т4. Если «Ранние Печи для Спекания» включены, тогда: Печь для Спекания Т6.
+    - Добавлены новые предметы и жидкости:
+        Ветка Угля:
+          1. Пек.
+          2. Угольный Дёготь.
+          3. Сырой Графитовый Блок.
+          4. Графитовый Блок.
+          5. Графитовая Пластина.
+          6. Графитовый Электрод.
+          7. Графитовые Крошка.
+          8. Углеродная Нанотрубка.
+          9. Оксид Графена.
+          10. Графен.
+          11. Графеновая Батарейка.
+        Ветка Фосфора:
+          1. Фосфоритная Руда.
+          2. Белый Фосфор (предмет и жидкость).
+          3. Хлорид Фосфора(III).
+          4. Хлорид фосфора(V).
+          5. Фторид Фосфора(V).
+          6. Гексафторфосфорная Кислота.
+        Остальные:
+          1. Тритий.
+          2. Аргон.
+          3. Сжиженный Фторид Водорода.
+          4. Перманганат Калия.
+          5. Фторид Лития.
+          6. Гексафторфосфат Лития.
+          7. Раствор Гексафторфосфата Лития (карбонатный).
+          8. Силикат Кальция.
+          9. Метакремниевая Кислота.
+          10. Жидкая Эпоксидная Смола.
+          11. Адипонитрил.
+          12. Очищенный Жидкий Бетон.
+          13. Этиленгликоль.
+          14. Глиоксаль.
+          15. Имидазол (предмет и жидкость).
+          16. Хлорбутан.
+          17. Ионная Жидкость.
+          18. Титановый Стержень.
+          19. Гексаметилендиамин.
+          20. Соль Имидазолия.
+          21. Усиленный Титанобетонный Кирпич.
+          22. Углебетонный Кирпич.
+          23. Усиленный Графенобетонный Кирпич.
+          24. Железный Шарик для Подшипника.
+          25. Железный Подшиник.
+          26. Вольфрамовый Шарик для Подшипника.
+          27. Вольфрамовый Подшиник.
+    - Добавлены новые рецепты.
+    - Добавлены новые технологии.
+
+    - Added support for Muluna, Moon of Nauvis: seamlessly integrated the new planet into the gameplay flow.
+    - Added new entities:
+        1. T6 Boiler and Steam Engine.
+        2. T4 Solar Panels.
+        3. T4 High Capacity Accumulator.
+        4. T6 Electric Mining Drill.
+        5. T4 Reactor and T4 Fuel Cell.
+        6. T6(T4) Electric Furnaces.
+        7. T6 Ore Sorting Facility.
+        8. T3 and T4 Electrowinning Cells.
+        9. T3 and T4 Sintering Ovens. If "Early Sintering Oven" is enabled, then: T6 Sintering Ovens.
+    - Added new items and fluids:
+      Coal Branch:
+        1. Pitch.
+        2. Coal Tar Liquid.
+        3. Raw Graphite Block.
+        4. Graphite Block.
+        5. Graphite Plate.
+        6. Graphite Electrode.
+        7. Graphite Chips.
+        8. Carbon Nanotube.
+        9. Graphene Oxide.
+        10. Graphene.
+        11. Graphene Battery.
+      Phosphorus Branch:
+        1. Phosphorite Ore.
+        2. White Phosphorus (item and fluid).
+        3. Phosphorus(III) Chloride.
+        4. Phosphorus(V) Chloride.
+        5. Phosphorus(V) Fluoride.
+        6. Hexafluorophosphoric Acid.
+      Others:
+        1. Tritium Gas.
+        2. Argon Gas.
+        3. Liquefied Hydrogen Fluoride.
+        4. Potassium Permanganate.
+        5. Lithium Fluoride.
+        6. Lithium Hexafluorophosphate.
+        7. Lithium Hexafluorophosphate Solution (carbonate).
+        8. Calcium Silicate.
+        9. Metasilicic Acid.
+        10. Liquid Epoxy Resin.
+        11. Adiponitrile.
+        12. Purified Liquid Concrete.
+        13. Ethylene Glycol.
+        14. Glyoxal.
+        15. Imidazole (item and fluid).
+        16. Chlorobutane.
+        17. Ionic Liquid.
+        18. Titanium Rod.
+        19. Hexamethylenediamine.
+        20. Imidazolium Salt.
+        21. Reinforced Titanium Concrete Brick.
+        22. Carbon Concrete Brick.
+        23. Reinforced Graphene Concrete Brick.
+        24. Iron Bearing Ball.
+        25. Iron Bearing.
+        26. Tungsten Bearing Ball.
+        27. Tungsten Bearing.
+    - Added new recipes.
+    - Added new technologies.
+
+  Balancing:
+    - Переработка рецептов: стоимость крафта и характеристики строений Muluna синхронизированы с экономикой сборки.
+    - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
+    - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
+    - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно Цинковая Батарейка → Графеновая Батарейка.
+    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритиевый Газ (240 ед.)
+    - В некоторых рецептах произведена замена ингредиентов.
+    - В рецепте Хлорид Меди(I) произведена замена ингредиента: Медный Слиток → Медный Порошок.
+    - В рецепте Хлорид Меди(I) (альтернативный) скорректированы ингредиенты и результаты:
+        1. Добавлена Очищенная Вода (480 ед.)
+        2. Хлорид Водорода → Соляная Кислота.
+    - В рецепте Хлорид Меди(I) изменено производственное здание: Химическая Печь Т4 → Улучшенный Химический Завод.
+    - В некоторых технологиях изменены предварительные условия и стоимость исследования.
+    - Возвращена Вольфрамовая Шестерня.
+
+    - Recipe Overhaul: Muluna crafting costs and building stats are now synchronized with the modpack's economy.
+    - Replaced an ingredient in the Electromagnetic Science Pack recipe: T3 High Capacity Accumulator → T4 High Capacity Accumulator.
+    - Replaced an ingredient in the Big Mining Drill: T5 Electric Mining Drill → T6 Electric Mining Drill.
+    - Replaced an ingredient in the Supercapacitor recip: Silver Zinc Battery → Graphene Battery.
+    - Added an ingredient to the Fusion Power Cell recipe: Tritium Gas (240 units)
+    - Replaced ingredients in the some recipes.
+    - Replaced an ingredient in the Copper(I) Chloride recipe: Copper Ingot → Copper Powder.
+    - Replaced ingredients and results in the Copper(I) Chloride (alternative) recipe:
+        1. Added Purified Water (480 units)
+        2. Hydrogen Chloride → Hydrochloric Acid.
+    - Changed production machine for Copper(I) Chloride (alternative) recipe: T4 Chemical Furnace → Advanced Chemical Plant.
+    - Changed prerequisites and research costs for some technologies.
+    - Returned Tungsten Gear Wheel.
+
+  Locale:
+    - Добавлено описание для некоторых технологий.
+
+    - Added a description for some technologies.
+
+  Modding:
+    - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
+
+    - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
+
+  Other:
+    - Модпак перенесен из Бета-версии в Релизную версии.
+
+    - Moved modpack from Beta version to Release version.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.3
+Date: 13.05.2026
+  Bugfixes:
+    - Исправлена ​​ошибка, из-за которой модпак не запускался, если Жидкотопливные Генераторы из мода «Bob's Power» были отключены.
+
+    - Fixed a bug where the modpack would not launch if Fluid Burning Generators from "Bob's Power" were disabled.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 12.05.2026
   Locale:
@@ -106,8 +284,8 @@ Date: 10.05.2026
           10. Перренат Калия.
           11. Рениевая Кислота.
           12. Перренат Аммония.
-          13. Рениевый Шарик для Подщиника. 
-          14. Рениевый Подщиник.
+          13. Рениевый Шарик для Подшипника. 
+          14. Рениевый Подшипник.
         Ветка Ниобия:
           1. Ниобиевая Руда.
           2. Обработанный Ниобий.
@@ -162,7 +340,7 @@ Date: 10.05.2026
           14. Ниобий-Титановая Проволока.
           15. Расплавленный Феррониобий.
           16. Феррониобивая Пластина.
-          17. Феррониобивый Шарик для Подщиника.
+          17. Феррониобивый Шарик для Подшипника.
           18. Феррониобивый Подшипник.
           19. Ниобий-Вольфрам-Молибденовая Порошковая Смесь.
           20. Ниобий-Вольфрам-Молибденовая Пластина.
@@ -475,7 +653,7 @@ Date: 10.05.2026
         3. Кобальт-Стальная Пластина → Ниобий-Вольфрам-Молибденовая Шестерня.
         4. Добавлена Ниобий-Титановая Проволока (256 ед. и 128 ед.)
         5. Добавлен Полупроводник (256 ед. и 128 ед.)
-    - В рецепт Термоядерная Энергетическая Ячейка добавлен ингредиент: Вольфрамовая Пластина (8 ед.)
+    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Вольфрамовая Пластина (8 ед.)
     - В рецепте Рельсовой Пушки скорректированы ингредиенты:
         1. Вольфрамовая Пластина (8 ед.) → Ниобий-Вольфрам-Молибденовая Пластина (4 ед.)
         2. Добавлена Ниобий-Титановая Проволока (4 ед.)
