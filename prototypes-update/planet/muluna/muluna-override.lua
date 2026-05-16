@@ -1232,9 +1232,6 @@ if mods [muluna_mods] then
         {type = unlock_recipe, recipe = dinitrogen_tetroxide_space}
     }
 
-    --data_recipe[anorthite_crushing_1].allow_productivity = true
-    --data_recipe[advanced_anorthite_crushing_1].allow_productivity = true
-
     data_technology[tech_asteroid_productivity].effects =
     {
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},

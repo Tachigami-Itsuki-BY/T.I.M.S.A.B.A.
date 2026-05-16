@@ -9,6 +9,8 @@ data_fluid[liquid_fuel_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-liquid-f
 data_fluid[liquid_fuel_bob].base_color = {r = 255 / 255, g = 220 / 255, b = 78 / 255}
 data_fluid[liquid_fuel_bob].flow_color = {r = 255 / 255, g = 222 / 255, b = 87 / 255}
 
-data_recipe[silicon_solar_panel_small_4].icons = BUILDING_R_IS(solar_panel_small_4, silicon_cell_mods)
-data_recipe[silicon_solar_panel_4].icons = BUILDING_R_IS(solar_panel_4, silicon_cell_mods)
-data_recipe[silicon_solar_panel_large_4].icons = BUILDING_R_IS(solar_panel_large_4, silicon_cell_mods)
+if mods [muluna_mods] then
+    data_recipe[silicon_solar_panel_small_4].icons = BUILDING_R_IS(solar_panel_small_4, silicon_cell_mods)
+    data_recipe[silicon_solar_panel_4].icons = BUILDING_R_IS(solar_panel_4, silicon_cell_mods)
+    data_recipe[silicon_solar_panel_large_4].icons = BUILDING_R_IS(solar_panel_large_4, silicon_cell_mods)
+end
