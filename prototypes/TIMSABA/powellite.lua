@@ -459,7 +459,7 @@ end
 data:extend
 ({
     {
-        localised_name = {"", "[entity=powellite-ore] ", {"entity-name.powellite-ore"}},
+        localised_name = {"", "[entity=powellite-ore] ", {"entity-name.powellite"}},
         type = "autoplace-control",
         name = powellite_ore,
         order = a_h,

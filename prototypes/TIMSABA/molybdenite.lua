@@ -459,7 +459,7 @@ end
 data:extend
 ({
     {
-        localised_name = {"", "[entity=molybdenite-ore] ", {"entity-name.molybdenite-ore"}},
+        localised_name = {"", "[entity=molybdenite-ore] ", {"entity-name.molybdenite"}},
         type = "autoplace-control",
         name = molybdenite_ore,
         order = a_h,

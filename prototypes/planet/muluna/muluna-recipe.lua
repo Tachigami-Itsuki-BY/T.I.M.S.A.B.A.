@@ -370,8 +370,30 @@ if mods [muluna_mods] then
         }
     })
 
+    --[[data:extend
+    ({
+        {
+            type = recipe,
+            name = ,
+            category = ,
+            subgroup = ,
+            icons = ,
+            order = ,
+            enabled = false,
+            auto_recycle = false,
+            allow_productivity = false,
+            allow_quality = false,
+            allow_decomposition = false,
+            energy_required = ,
+            ingredients = {{type = , name = , amount = }},
+            results = {{type = , name = , amount = }},
+            main_product = 
+        }
+    })]]
+
     -- SPACE
     anorthite_crushing_2 = "anorthite-crushing-2"
+    anorthite_crushing_3 = "anorthite-crushing-3"
     data:extend
     ({
         {
@@ -384,19 +406,33 @@ if mods [muluna_mods] then
             enabled = false,
             auto_recycle = false,
             allow_productivity = true,
-            allow_quality = false,
+            allow_quality = true,
             allow_decomposition = false,
             energy_required = 4,
             ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
             results = {{type = item, name = lime_angels, amount = 8}},
             main_product = lime_angels
+        },
+        {
+            type = recipe,
+            name = anorthite_crushing_3,
+            category = crushing,
+            subgroup = is_space_environment_7,
+            icons = TWO_I(anorthite_chunk, silicon_ore_bob),
+            order = e_c,
+            enabled = false,
+            auto_recycle = false,
+            allow_productivity = true,
+            allow_quality = true,
+            allow_decomposition = false,
+            energy_required = 4,
+            ingredients = {{type = item, name = anorthite_chunk, amount = 1}},
+            results = {{type = item, name = silicon_ore_bob, amount = 8}},
+            main_product = silicon_ore_bob
         }
     })
-end
 
-
---[[
-    data:extend
+    --[[data:extend
     ({
         {
             type = recipe,
@@ -408,12 +444,12 @@ end
             enabled = false,
             auto_recycle = false,
             allow_productivity = true,
-            allow_quality = false,
+            allow_quality = true,
             allow_decomposition = false,
             energy_required = ,
             ingredients = {{type = , name = , amount = }},
             results = {{type = , name = , amount = }},
             main_product = 
         }
-    })
-]]
+    })]]
+end

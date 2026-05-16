@@ -197,4 +197,13 @@ if mods [muluna_mods] then
 
 	data_recipe["copper-cable-recycling"].surface_conditions = nil
 	data_recipe["copper-cable-recycling-muluna"] = nil
+
+	local tech_space_platform_thruster = "space-platform-thruster"
+    data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}
+
+    data_technology[thruster_oxidizer].prerequisites = {tech_space_platform_thruster, space_platform}
+
+	local tech_fluid_barreling = "fluid-barreling"
+	data_technology[tech_fluid_barreling].hidden = true
+	data_technology[tech_fluid_barreling].hidden_in_factoriopedia = true
 end

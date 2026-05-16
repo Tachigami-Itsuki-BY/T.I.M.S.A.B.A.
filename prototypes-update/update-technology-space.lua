@@ -76,7 +76,7 @@ data_technology[tech_advanced_asteroid_processing].effects =
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_1},
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_2},
     {type = unlock_recipe, recipe = lime_space},
-    {type = unlock_recipe, recipe = sodium_hydroxide_space},
+    {type = unlock_recipe, recipe = sodium_hydroxide_space}
 }
 data_technology[tech_advanced_asteroid_processing].prerequisites = {electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack}
 data_technology[tech_advanced_asteroid_processing].unit.ingredients =
@@ -92,8 +92,8 @@ data_technology[tech_advanced_asteroid_processing].unit.ingredients =
     {metallurgic_science_pack, 1}
 }
 
-local asteroid_productivity = "asteroid-productivity"
-data_technology[asteroid_productivity].effects =
+tech_asteroid_productivity = "asteroid-productivity"
+data_technology[tech_asteroid_productivity].effects =
 {
     {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
     {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
@@ -115,9 +115,9 @@ data_technology[asteroid_productivity].effects =
     {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
     {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
     {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
-    {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
+    {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1}
 }
-data_technology[asteroid_productivity].unit.ingredients =
+data_technology[tech_asteroid_productivity].unit.ingredients =
 {
     {automation_science_pack, 1},
     {logistic_science_pack, 1},
@@ -129,7 +129,7 @@ data_technology[asteroid_productivity].unit.ingredients =
     {agricultural_science_pack, 1},
     {metallurgic_science_pack, 1}
 }
-data_technology[asteroid_productivity].max_level = 30
+data_technology[tech_asteroid_productivity].max_level = 30
 
 data_technology[tech_advanced_full_asteroid_processing].prerequisites = {tech_molybdenum_synthesis, tech_rhenium_synthesis, tech_holmium_synthesis}
 

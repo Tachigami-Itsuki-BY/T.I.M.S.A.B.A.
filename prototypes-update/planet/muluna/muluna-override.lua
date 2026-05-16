@@ -473,7 +473,7 @@ if mods [muluna_mods] then
     }
     data_recipe[space_science_pack_muluna].results[1].amount = 2
 
-    local interstellar_science_pack = "interstellar-science-pack"
+    interstellar_science_pack = "interstellar-science-pack"
     data_tool[interstellar_science_pack].subgroup = is_muluna_recipe
     data_tool[interstellar_science_pack].order = h
     data_recipe[interstellar_science_pack].subgroup = is_muluna_recipe
@@ -1100,12 +1100,13 @@ if mods [muluna_mods] then
 
     local tech_anorthite_processing = "muluna-anorthite-processing"
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
+    table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_3})
 
     local tech_silicon_processing = "muluna-silicon-processing"
     data_technology[tech_silicon_processing].prerequisites = {"muluna-aluminum-processing", tech_anorthite_processing}
     data_technology[tech_silicon_processing].effects =
     {
-        {type = unlock_recipe, recipe = advanced_anorthite_crushing},
+        {type = unlock_recipe, recipe = advanced_anorthite_crushing_1},
         {type = unlock_recipe, recipe = silicon_cell_mods},
         {type = unlock_recipe, recipe = silicon_solar_panel_small_1},
         {type = unlock_recipe, recipe = silicon_solar_panel_small_2},
@@ -1206,4 +1207,60 @@ if mods [muluna_mods] then
 
     table.insert(data_technology[crusher_2].prerequisites, tech_niobium_tungsten_molybdenum_processing)
     table.insert(data_technology[crusher_2].prerequisites, tech_niobium_iron_processing)
+
+    data_technology["muluna-regolith-digging"].research_trigger.name = electric_mining_drill_5 .. "-ground-digger"
+
+    -- METALLIC
+    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_2})
+    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_3})
+    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_4})
+    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_5})
+    table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_6})
+
+    -- OXIDE
+    data_technology[oxide_asteroid_crushing_1].effects =
+    {
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
+        {type = unlock_recipe, recipe = ice_melting},
+        {type = unlock_recipe, recipe = nitrogen_oxide_separation},
+        {type = unlock_recipe, recipe = chlorine_oxide_separation},
+        {type = unlock_recipe, recipe = hydrogen_chloride_separation},
+        {type = unlock_recipe, recipe = nitrogen_monoxide_space},
+        {type = unlock_recipe, recipe = hydrazine_space},
+        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space}
+    }
+
+    --data_recipe[anorthite_crushing_1].allow_productivity = true
+    --data_recipe[advanced_anorthite_crushing_1].allow_productivity = true
+
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_2, change = 0.1},
+        --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_3, change = 0.1},
+        --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1}
+    }
 end

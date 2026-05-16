@@ -203,3 +203,51 @@ if mods [bobtech] and mods [space_age_science_packs] then
     data_technology[tech_alien_research].icon_size = 256
     data_technology[tech_alien_research].icons = nil
 end
+
+-- MULUNA interstellar_science_pack
+if mods[muluna_mods] then
+    local memo = {}
+    local function leads_to_root(tech_name)
+        if tech_name == interstellar_science_pack then return true end
+        if memo[tech_name] ~= nil then return memo[tech_name] end
+        local tech = data.raw.technology[tech_name]
+        if not tech or not tech.prerequisites then
+            memo[tech_name] = false
+            return false
+        end
+        for _, prereq in ipairs(tech.prerequisites) do
+            if leads_to_root(prereq) then
+                memo[tech_name] = true
+                return true
+            end
+        end
+        memo[tech_name] = false
+        return false
+    end
+
+    for tech_name, tech in pairs(data.raw.technology) do
+        if tech_name ~= interstellar_science_pack and leads_to_root(tech_name) then
+            if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
+                local has_pack = false
+                for _, ingredient in ipairs(tech.unit.ingredients) do
+                    if type(ingredient) == "table" then
+                        if ingredient[1] == interstellar_science_pack then
+                            has_pack = true
+                            break
+                        end
+                        if ingredient.name == interstellar_science_pack then
+                            has_pack = true
+                            break
+                        end
+                    elseif ingredient == interstellar_science_pack then
+                        has_pack = true
+                        break
+                    end
+                end
+                if not has_pack then
+                    table.insert(tech.unit.ingredients, {interstellar_science_pack, 1})
+                end
+            end
+        end
+    end
+end

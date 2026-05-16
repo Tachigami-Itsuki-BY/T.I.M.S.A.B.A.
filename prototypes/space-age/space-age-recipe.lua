@@ -1,4 +1,3 @@
-is_space_processing = "space-processing"
 -- METALLIC
 metallic_asteroid_crushing_2 = "metallic-asteroid-crushing-2" -- Copper ore
 metallic_asteroid_crushing_3 = "metallic-asteroid-crushing-3" -- Lead ore
@@ -436,6 +435,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- CARBONIC
 --carbonic_asteroid_crushing_2 = "carbonic-asteroid-crushing-2"
 --carbonic_asteroid_crushing_3 = "carbonic-asteroid-crushing-3"
@@ -540,6 +560,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- OXIDE
 oxide_asteroid_crushing_2 = "oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
@@ -637,7 +678,7 @@ data:extend
         allow_decomposition = false,
         energy_required = 4,
         ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = lithium_oxide, amount = 4}},
+        results = {{type = item, name = lithium_oxide, amount = 8}},
         main_product = lithium_oxide
     },
     {
@@ -658,6 +699,27 @@ data:extend
         main_product = oxygen_fluoride_gas
     }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- SPACE PROCESSING
 nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
@@ -846,6 +908,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- SPACE PROCESSING 2
 lime_space = "lime-space"
 sodium_hydroxide_space = "sodium-hydroxide-space"
@@ -921,8 +1004,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -941,5 +1023,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]
