@@ -425,18 +425,18 @@ data_item[promethium_asteroid_chunk].localised_description = show_formula and {c
 data_item[promethium_asteroid_chunk].stack_size = 200
 
 if mods [muluna_mods] then
-    local anorthite_crushing = "anorthite-crushing"
-    advanced_anorthite_crushing = "advanced-anorthite-crushing"
+    anorthite_crushing_1 = "anorthite-crushing"
+    advanced_anorthite_crushing_1 = "advanced-anorthite-crushing"
     local anorthite_asteroids =
     {
-        {type = data_asteroid, name = "small-anorthite-asteroid",     order = a},
-        {type = data_asteroid, name = "medium-anorthite-asteroid",    order = b},
-        {type = data_asteroid, name = "big-anorthite-asteroid",       order = c},
-        {type = data_asteroid, name = "huge-anorthite-asteroid",      order = d},
-        {type = data_asteroid, name = anorthite_chunk,                order = e},
-        {type = data_item,     name = anorthite_chunk,                order = e},
-        {type = data_recipe,   name = anorthite_crushing,             order = e_a},
-        {type = data_recipe,   name = advanced_anorthite_crushing,    order = f_a}
+        {type = data_asteroid, name = "small-anorthite-asteroid",    order = a},
+        {type = data_asteroid, name = "medium-anorthite-asteroid",   order = b},
+        {type = data_asteroid, name = "big-anorthite-asteroid",      order = c},
+        {type = data_asteroid, name = "huge-anorthite-asteroid",     order = d},
+        {type = data_asteroid, name = anorthite_chunk,               order = e},
+        {type = data_item,     name = anorthite_chunk,               order = e},
+        {type = data_recipe,   name = anorthite_crushing_1,          order = e_a},
+        {type = data_recipe,   name = advanced_anorthite_crushing_1, order = f_a}
     }
     for _, ASTEROID in pairs(anorthite_asteroids) do
         if ASTEROID.type[ASTEROID.name] then
@@ -448,13 +448,13 @@ if mods [muluna_mods] then
     data_item[anorthite_chunk].localised_description = show_formula and {chemical_formula, "CaAl[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]8[/font]"} or nil
     data_item[anorthite_chunk].stack_size = 200
 
-    data_recipe[anorthite_crushing].icons = TWO_I(anorthite_chunk, aluminium_oxide)
-    data_recipe[anorthite_crushing].energy_required = 4
-    data_recipe[anorthite_crushing].results = {{type = item, name = aluminium_oxide, amount = 8}}
+    data_recipe[anorthite_crushing_1].icons = TWO_I(anorthite_chunk, aluminium_oxide)
+    data_recipe[anorthite_crushing_1].energy_required = 4
+    data_recipe[anorthite_crushing_1].results = {{type = item, name = aluminium_oxide, amount = 8}}
 
-    data_recipe[advanced_anorthite_crushing].icons = TWO_I(anorthite_chunk, silicon_boule_mods)
-    data_recipe[advanced_anorthite_crushing].energy_required = 4
-    data_recipe[advanced_anorthite_crushing].results = {{type = item, name = silicon_boule_mods, amount = 8}}
+    data_recipe[advanced_anorthite_crushing_1].icons = TWO_I(anorthite_chunk, silicon_boule_mods)
+    data_recipe[advanced_anorthite_crushing_1].energy_required = 4
+    data_recipe[advanced_anorthite_crushing_1].results = {{type = item, name = silicon_boule_mods, amount = 8}}
 end
 
 if mods [hyarion_mods] then
@@ -601,7 +601,7 @@ if mods [hyarion_mods] then
     data_recipe[planetaris_promethium_science_pack].results[1].amount = 32
 end
 
-local ice_melting = "ice-melting"
+ice_melting = "ice-melting"
 data_recipe[ice_melting].subgroup = is_space_processing
 data_recipe[ice_melting].icons = TWO_I(ice, water)
 data_recipe[ice_melting].order = a

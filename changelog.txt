@@ -1,6 +1,31 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 16.05.2026
+  Features:
+    - [Muluna] Добавлен рецепт Кремней Руды из Анортитового Куска.
+
+    - [Muluna] Added recipe for Silicon Ore from Anorthite Chunk.
+  Balancing:
+    - [Muluna] Добавлен новый научный пакет в стоимость исследования некоторым технологиям.
+    - [Muluna] В рецептах Газификация Древесины уменьшен процент результат: Измельчённый Глинозем (75%) → (50%)
+
+    - [Muluna] Added a new science pack requirement to the research cost of certain technologies.
+    - [Muluna] Decreased result chance for Wood Gasification recipes: Crushed Alumina (75%) → (50%)
+
+  Bugfixes:
+    - [All] Исправлена ​​ошибка, приводящая к сбою, вызванному недопустимым прогрессивным уровнем (7), переданным в «reskins-library» для технологии Насосная Установка 6.
+    - [All] Исправлена ошибка, из-за которой отсутствовали рецепты в соответсвующих технологиях если у вас включен мод «Muluna, Moon of Nauvis».
+
+    - [All] Fixed crash caused by invalid progressive tier (7) passed to "reskins-library" for Pumpjack 6 technology.
+    - [All] Fixed missing recipes in corresponding technologies when the "Muluna, Moon of Nauvis" mod is enabled.
+
+  Locale:
+    - [All] Незначительные исправления локализации.
+
+    - [All] Minor localization fixes.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
-Date: 17.05.2026
+Date: 15.05.2026
   Features:
     - Добавлена поддержка Muluna, Moon of Nauvis: реализовано бесшовное внедрение новой планеты в игровой процесс.
     - Добавлены новые сущности:
@@ -13,6 +38,7 @@ Date: 17.05.2026
         7. Установка Сортировки Руды Т6.
         8. Электролизные Ванны Т3 и Т4.
         9. Печи для Спекания Т3 и Т4. Если «Ранние Печи для Спекания» включены, тогда: Печь для Спекания Т6.
+        10. Насосные Установки Т3 и Т4.
     - Добавлены новые предметы и жидкости:
         Ветка Угля:
           1. Пек.
@@ -75,6 +101,7 @@ Date: 17.05.2026
         7. T6 Ore Sorting Facility.
         8. T3 and T4 Electrowinning Cells.
         9. T3 and T4 Sintering Ovens. If "Early Sintering Oven" is enabled, then: T6 Sintering Ovens.
+        10. T3 and T4 Pumpjacks.
     - Added new items and fluids:
       Coal Branch:
         1. Pitch.

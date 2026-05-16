@@ -1,4 +1,5 @@
 local space = "space"
+is_space_processing = "space-processing"
 is_space_platform_mods = "is-space-platform-mods"
 is_space_environment_1 = "space-environment"
 is_space_environment_2 = "is-space-environment-2"

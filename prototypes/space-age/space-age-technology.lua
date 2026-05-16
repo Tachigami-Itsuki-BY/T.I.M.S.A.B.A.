@@ -30,7 +30,7 @@ data:extend
             {type = unlock_recipe, recipe = fluoroketone_liquid},
             {type = unlock_recipe, recipe = oxygen_fluoride_space},
             {type = unlock_recipe, recipe = advanced_thruster_fuel},
-            {type = unlock_recipe, recipe = advanced_thruster_oxidizer},
+            {type = unlock_recipe, recipe = advanced_thruster_oxidizer}
         },
         unit =
         {
@@ -67,7 +67,7 @@ data:extend
             {type = change_recipe_productivity, recipe = full_metallic_asteroid_crushing_7, change = 0.1},
             {type = change_recipe_productivity, recipe = full_metallic_asteroid_crushing_8, change = 0.1},
             {type = change_recipe_productivity, recipe = full_oxide_asteroid_crushing_1, change = 0.1},
-            {type = change_recipe_productivity, recipe = full_oxide_asteroid_crushing_2, change = 0.1},
+            {type = change_recipe_productivity, recipe = full_oxide_asteroid_crushing_2, change = 0.1}
         },
         unit =
         {

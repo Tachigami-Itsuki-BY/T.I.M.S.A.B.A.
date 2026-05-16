@@ -121,7 +121,7 @@ do
 		[tech_drills_6] = get_mining_drill_overrides(6),
 		-- PUMPJACK
 		[tech_pumpjacks_5] = get_pumpjack_overrides(5, 6),
-		[tech_pumpjacks_6] = get_pumpjack_overrides(6, 7)
+		[tech_pumpjacks_6] = get_pumpjack_overrides(6, 6)
 	}
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end
