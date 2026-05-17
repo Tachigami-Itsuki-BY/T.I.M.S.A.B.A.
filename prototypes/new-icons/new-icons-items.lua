@@ -1,23 +1,4 @@
 -- ANGELS
---[[
-data_item[coal_crushed_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/coal-crushed.png"
-data_item[coal_crushed_angels].icon_size = nil
-data_item[coke_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/coke.png"
-data_item[coke_angels].icon_size = nil
-data_item[carbon_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/carbon.png"
-data_item[carbon_angels].icon_size = nil
-
-data_item[ammonium_nitrate_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/ammonium-nitrate.png"
-data_item[ammonium_nitrate_angels].icon_size = nil
-data_item[ammonium_perchlorate_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/ammonium-perchlorate.png"
-data_item[ammonium_perchlorate_angels].icon_size = nil
-
-data_item[calcium_chloride_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/calcium-chloride.png"
-data_item[calcium_chloride_angels].icon_size = nil
-data_item[calcium_sulfate_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/calcium-sulfate.png"
-data_item[calcium_sulfate_angels].icon_size = nil
-]]
-
 data_item[tin_ore_bob].icons = nil
 data_item[tin_ore_bob].icon = "__reskins-angels__/graphics/icons/smelting/ores/bob-tin-ore/bob-tin-ore.png"
 

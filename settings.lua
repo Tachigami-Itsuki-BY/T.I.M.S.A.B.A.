@@ -22,6 +22,13 @@ data:extend
         setting_type = startup,
         default_value = false,
         order = c
+    },
+    {
+        type = bool_setting,
+        name = "setting-multi-building",
+        setting_type = startup,
+        default_value = false,
+        order = d
     }
 })
 

@@ -1,7 +1,7 @@
-require("prototypes.global-name")
-require("prototypes.global-name-items")
-require("prototypes.global-name-fluids")
-require("prototypes.global-name-mods")
+require("prototypes.global-name.global-name")
+require("prototypes.global-name.global-name-items")
+require("prototypes.global-name.global-name-fluids")
+require("prototypes.global-name.global-name-mods")
 require("prototypes.prototypes-setting")
 
 require("prototypes.recipe-category")
@@ -50,9 +50,9 @@ AR_IIFI_ALT_I = require("lib.generator-icons-shattered").alt_AR_item_item_fluid_
 
 require("prototypes.TIMSABA-functions")
 
-require("prototypes.new-icons")
-require("prototypes.new-icons-items")
-require("prototypes.new-icons-fluids")
+require("prototypes.new-icons.new-icons")
+require("prototypes.new-icons.new-icons-items")
+require("prototypes.new-icons.new-icons-fluids")
 
 require("prototypes.angels-ground-water-pump-recipe")
 
