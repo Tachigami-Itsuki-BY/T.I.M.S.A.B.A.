@@ -20,7 +20,7 @@ if settings.startup[setting_multi_building].value then
                 end
             end
 
-            l.shift = { orig_x + offset.x, orig_y + offset.y }
+            l.shift = {orig_x + offset.x, orig_y + offset.y}
             return l
         end
 
@@ -184,7 +184,7 @@ if settings.startup[setting_multi_building].value then
                             local layer = table.deepcopy(l)
                             local ox = layer.shift and (layer.shift.x or (type(layer.shift) == "table" and layer.shift[1] or 0)) or 0
                             local oy = layer.shift and (layer.shift.y or (type(layer.shift) == "table" and layer.shift[2] or 0)) or 0
-                            layer.shift = { x = ox + offset.x, y = oy + offset.y }
+                            layer.shift = {x = ox + offset.x, y = oy + offset.y}
                             table.insert(out, layer)
                         end
                     end
@@ -276,6 +276,140 @@ if settings.startup[setting_multi_building].value then
         new_ent.factoriopedia_alternative = basename
         new_ent.next_upgrade = nil
         new_ent.localised_name = {"entity-name." .. (multiplier == 2 and "double" or "quad") .. "-building", {"entity-name." .. basename}}
+
+        if base_entity.corpse then
+            local base_corpse_name = type(base_entity.corpse) == "string" and base_entity.corpse or (type(base_entity.corpse) == "table" and base_entity.corpse[1])
+            local base_corpse_proto = data.raw["corpse"][base_corpse_name]
+            if base_corpse_proto then
+                local new_corpse = table.deepcopy(base_corpse_proto)
+                new_corpse.name = newname .. "-remnants"
+
+                new_corpse.selection_box = table.deepcopy(new_ent.selection_box)
+                if new_corpse.tile_width and new_corpse.tile_height then
+                    new_corpse.tile_width = new_ent.tile_width or (multiplier == 2 and base_corpse_proto.tile_width * 2 or base_corpse_proto.tile_width * 2)
+                    new_corpse.tile_height = new_ent.tile_height or (multiplier == 2 and base_corpse_proto.tile_height * 2 or base_corpse_proto.tile_height * 2)
+                end
+
+                if entity_type == "generator" then
+                    local offsets_v = multiplier == 2 and {{x = 0, y = -2.5}, {x = 0, y = 2.5}} or {{x = 0, y = -7.5}, {x = 0, y = -2.5}, {x = 0, y = 2.5}, {x = 0, y = 7.5}}
+                    local offsets_h = multiplier == 2 and {{x = -2.5, y = 0}, {x = 2.5, y = 0}} or {{x = -7.5, y = 0}, {x = -2.5, y = 0}, {x = 2.5, y = 0}, {x = 7.5, y = 0}}
+
+                    local base_layers = {}
+                    local parent_width, parent_height, parent_scale, parent_directions
+                    local anim_root = base_corpse_proto.animation
+
+                    if anim_root then
+                        local first_variation = anim_root[1] or anim_root
+
+                        parent_width = first_variation.width
+                        parent_height = first_variation.height
+                        parent_scale = first_variation.scale
+                        parent_directions = first_variation.direction_count or 4
+
+                        if first_variation.layers then
+                            base_layers = first_variation.layers
+                        else
+                            base_layers = {first_variation}
+                        end
+                    end
+
+                    local function build_projection_layers(offsets, frame_number)
+                        local final_layers = {}
+                        for _, offset in ipairs(offsets) do
+                            for _, l in ipairs(base_layers) do
+                                if type(l) == "table" then
+                                    local layer_copy = {}
+                                    for key, val in pairs(l) do
+                                        if type(key) == "string" then
+                                            layer_copy[key] = table.deepcopy(val)
+                                        end
+                                    end
+
+                                    layer_copy.width = layer_copy.width or parent_width
+                                    layer_copy.height = layer_copy.height or parent_height
+                                    layer_copy.scale = layer_copy.scale or parent_scale
+
+                                    layer_copy.frame_count = layer_copy.frame_count or layer_copy.direction_count or parent_directions
+
+                                    local orig_line_length = layer_copy.line_length
+
+                                    layer_copy.direction_count = 1
+
+                                    layer_copy.frame_sequence = {frame_number}
+
+                                    layer_copy.line_length = orig_line_length or 1
+
+                                    table.insert(final_layers, shift_layer_extreme(layer_copy, offset))
+                                end
+                            end
+                        end
+                        return final_layers
+                    end
+
+                    local final_layers_v = build_projection_layers(offsets_v, 1)
+                    local final_layers_h = build_projection_layers(offsets_h, 2)
+
+                    new_corpse.direction_count = 4
+                    new_corpse.animation =
+                    {
+                        { layers = final_layers_v },
+                        { layers = final_layers_h },
+                        { layers = final_layers_v },
+                        { layers = final_layers_h }
+                    }
+
+                    if new_corpse.horiz_animation then new_corpse.horiz_animation = nil end
+
+                    new_corpse.tile_width = 3
+                    new_corpse.tile_height = multiplier == 2 and 5 or 9
+
+                    new_corpse.by_side = true
+                else
+                    local orig_box = base_entity.collision_box
+                    local raw_x = 1.5
+
+                    if orig_box and type(orig_box) == "table" then
+                        if orig_box[2] and orig_box[2][1] then
+                            raw_x = tonumber(orig_box[2][1]) or 1.5
+                        elseif orig_box.right_bottom then
+                            raw_x = tonumber(orig_box.right_bottom.x or orig_box.right_bottom) or 1.5
+                        end
+                    end
+
+                    local step = math.ceil(raw_x * 2) / 2
+                    if string.find(basename, "large", 1, true) then
+                        step = 1.5
+                    elseif raw_x < 1.1 then
+                        step = 1.0
+                    end
+
+                    local current_offsets = {}
+                    if multiplier == 2 then
+                        current_offsets = {{x = 0, y = -step}, {x = 0, y = step}}
+                    elseif multiplier == 4 then
+                        current_offsets = {
+                            {x = -step, y = -step}, {x = step, y = -step},
+                            {x = -step, y = step},  {x = step, y = step}
+                        }
+                    end
+
+                    if type(new_corpse.animation) == "table" and new_corpse.animation and new_corpse.animation[1] then
+                        local final_animation_array = {}
+                        for _, direction_anim in ipairs(new_corpse.animation) do
+                            local res = merge_timsaba_layers(direction_anim, nil, current_offsets)
+                            table.insert(final_animation_array, res)
+                        end
+                        new_corpse.animation = final_animation_array
+                    else
+                        local res = merge_timsaba_layers(new_corpse.animation, nil, current_offsets)
+                        new_corpse.animation = res.layers or res
+                    end
+                end
+
+                data:extend({new_corpse})
+                new_ent.corpse = new_corpse.name
+            end
+        end
 
         if new_ent.flags then
             for i = #new_ent.flags, 1, -1 do if new_ent.flags[i] == "player-creation" then table.remove(new_ent.flags, i) end end

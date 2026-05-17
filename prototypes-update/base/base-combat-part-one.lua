@@ -781,11 +781,13 @@ local function combat_robot_brain_recipe(name, circuit_1, circuit_2)
         {type = item, name = solder, amount = 4}
     }
 end
-combat_robot_brain_recipe(combat_robot_brain_1, basic_circuit_board, electronic_circuit)
-combat_robot_brain_recipe(combat_robot_brain_2, electronic_circuit, advanced_circuit)
-combat_robot_brain_recipe(combat_robot_brain_3, advanced_circuit, processing_unit)
-combat_robot_brain_recipe(combat_robot_brain_4, processing_unit, advanced_processing_unit)
-
+if data_recipe[combat_robot_brain_1] then
+    combat_robot_brain_recipe(combat_robot_brain_1, basic_circuit_board, electronic_circuit)
+    combat_robot_brain_recipe(combat_robot_brain_2, electronic_circuit,  advanced_circuit)
+    combat_robot_brain_recipe(combat_robot_brain_3, advanced_circuit,    processing_unit)
+    combat_robot_brain_recipe(combat_robot_brain_4, processing_unit,     advanced_processing_unit)
+    bobmods.lib.recipe.update_recycling_recipe({combat_robot_brain_1, combat_robot_brain_2, combat_robot_brain_3, combat_robot_brain_4})
+end
 local combat_robot_tool_1 = "bob-robot-tool-combat"
 local combat_robot_tool_2 = "bob-robot-tool-combat-2"
 local combat_robot_tool_3 = "bob-robot-tool-combat-3"
@@ -812,10 +814,13 @@ local function combat_robot_tool_recipe(name, gear_wheel, battery, prizma, plate
         {type = item, name = plate,      amount = 1}
     }
 end
-combat_robot_tool_recipe(combat_robot_tool_1, steel_gear_wheel,    battery_lead_acid,     glass_bob,            steel_plate)
-combat_robot_tool_recipe(combat_robot_tool_2, brass_gear_wheel,    battery_lithium_ion,   glass_bob,            brass_plate_bob)
-combat_robot_tool_recipe(combat_robot_tool_3, titanium_gear_wheel, battery_silver_zinc,   polished_emerald_bob, titanium_plate_bob)
-combat_robot_tool_recipe(combat_robot_tool_4, nitinol_gear_wheel,  battery_graphene,      polished_diamond_bob, nitinol_plate_bob)
+if data_recipe[combat_robot_tool_1] then
+    combat_robot_tool_recipe(combat_robot_tool_1, steel_gear_wheel,    battery_lead_acid,     glass_bob,            steel_plate)
+    combat_robot_tool_recipe(combat_robot_tool_2, brass_gear_wheel,    battery_lithium_ion,   glass_bob,            brass_plate_bob)
+    combat_robot_tool_recipe(combat_robot_tool_3, titanium_gear_wheel, battery_silver_zinc,   polished_emerald_bob, titanium_plate_bob)
+    combat_robot_tool_recipe(combat_robot_tool_4, nitinol_gear_wheel,  battery_graphene,      polished_diamond_bob, nitinol_plate_bob)
+    bobmods.lib.recipe.update_recycling_recipe({combat_robot_tool_1, combat_robot_tool_2, combat_robot_tool_3, combat_robot_tool_4})
+end
 
 data_recipe[light_armor].energy_required = 4
 data_recipe[light_armor].ingredients[1].amount = 32
@@ -1561,14 +1566,14 @@ bobmods.lib.recipe.update_recycling_recipe
     distractor_capsule,
     destroyer_capsule,
     laser_robot_capsule,
-    combat_robot_brain_1,
-    combat_robot_brain_2,
-    combat_robot_brain_3,
-    combat_robot_brain_4,
-    combat_robot_tool_1,
-    combat_robot_tool_2,
-    combat_robot_tool_3,
-    combat_robot_tool_4,
+    --combat_robot_brain_1,
+    --combat_robot_brain_2,
+    --combat_robot_brain_3,
+    --combat_robot_brain_4,
+    --combat_robot_tool_1,
+    --combat_robot_tool_2,
+    --combat_robot_tool_3,
+    --combat_robot_tool_4,
     light_armor,
     heavy_armor,
     modular_armor,
