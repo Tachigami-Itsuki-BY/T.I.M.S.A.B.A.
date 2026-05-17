@@ -1,3 +1,8 @@
+local map_settings = data.raw["map-settings"]["map-settings"]
+map_settings.pollution.enabled = true
+map_settings.enemy_evolution.enabled = true
+map_settings.enemy_expansion.enabled = true
+
 for name in pairs(data.raw.item) do
     if string.find(name, "barrel") and name ~= "barrel" and name ~= "angels-barreling-pump" then
         data.raw.item[name] = nil
@@ -51,7 +56,5 @@ require("prototypes-final-fix.final-fix-pipe")
 
 require("prototypes-final-fix.mods-final-fix.flare-stack")
 
-local map_settings = data.raw["map-settings"]["map-settings"]
-map_settings.pollution.enabled = true
-map_settings.enemy_evolution.enabled = true
-map_settings.enemy_expansion.enabled = true
+require("prototypes.multi-building.scripting")
+require("prototypes.multi-building.entities")

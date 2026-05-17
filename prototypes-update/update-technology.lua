@@ -30,8 +30,10 @@ table.insert(data_technology[tech_robotics_3].unit.ingredients, {production_scie
 table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1})
 
 table.insert(data_technology[tech_robotics_4].prerequisites, tech_battery_4)
-table.insert(data_technology[tech_robotics_4].unit.ingredients, {utility_science_pack, 1})
-table.insert(data_technology[tech_robots_3].unit.ingredients, {utility_science_pack, 1})
+if mods [bobtech] then
+    table.insert(data_technology[tech_robotics_4].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_robots_3].unit.ingredients, {utility_science_pack, 1})
+end
 
 data_technology[tech_robo_modular_1].effects =
 {
@@ -241,13 +243,18 @@ local vehicle_roboport_eq_3 = "bob-vehicle-roboport-equipment-3"
 table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, tech_battery_3)
 table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
+
 local personal_roboport_mk4_eq = "bob-personal-roboport-mk4-equipment"
 table.insert(data_technology[personal_roboport_mk4_eq].prerequisites, tech_battery_4)
-table.insert(data_technology[personal_roboport_mk4_eq].unit.ingredients, {utility_science_pack, 1})
+if mods [bobtech] then
+    table.insert(data_technology[personal_roboport_mk4_eq].unit.ingredients, {utility_science_pack, 1})
+end
 
 local vehicle_roboport_eq_4 = "bob-vehicle-roboport-equipment-4"
 table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
-table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
+if mods [bobtech] then
+    table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
+end
 
 local energy_shield_eq_2 = "energy-shield-mk2-equipment"
 data_technology[energy_shield_eq_2].prerequisites = {"energy-shield-equipment", power_armor_1, productivity_module_1, tech_military_3}

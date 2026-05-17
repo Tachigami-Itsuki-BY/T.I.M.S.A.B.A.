@@ -56,7 +56,11 @@ data:extend
             max_health = 450,
             target_temperature = 915,
             energy_consumption = 10800 .. kW,
-            energy_source = {emissions_per_minute = {pollution = 24}}
+            energy_source =
+            {
+                emissions_per_minute = {pollution = 24},
+                fuel_categories = {base_fuel, advanced_fuel}
+            }
         }
     }),
     -- STEAM ENGINE
@@ -789,17 +793,30 @@ data:extend
 })
 
 data_boiler[boiler_5].next_upgrade = boiler_6
+data_boiler[boiler_6].next_upgrade = nil
 data_generator[steam_engine_5].next_upgrade = steam_engine_6
+data_generator[steam_engine_6].next_upgrade = nil
 data_generator[steam_turbine_3].next_upgrade = steam_turbine_4
+data_generator[steam_turbine_4].next_upgrade = nil
 data_solar_panel[solar_panel_small_3].next_upgrade = solar_panel_small_4
+data_solar_panel[solar_panel_small_4].next_upgrade = nil
 data_solar_panel[solar_panel_3].next_upgrade = solar_panel_4
+data_solar_panel[solar_panel_4].next_upgrade = nil
 data_solar_panel[solar_panel_large_3].next_upgrade = solar_panel_large_4
+data_solar_panel[solar_panel_large_4].next_upgrade = nil
 data_accumulator[accumulator_3].next_upgrade = accumulator_4
+data_accumulator[accumulator_4].next_upgrade = nil
 data_mining_drill[electric_mining_drill_5].next_upgrade = electric_mining_drill_6
-data_mining_drill[electric_mining_drill_5].graphics_set.animation.animation_speed = 6
+data_mining_drill[electric_mining_drill_6].next_upgrade = nil
+data_mining_drill[electric_mining_drill_6].graphics_set.animation.animation_speed = 6
 data_mining_drill[pumpjack_4].next_upgrade = pumpjack_5
 data_mining_drill[pumpjack_5].next_upgrade = pumpjack_6
+data_mining_drill[pumpjack_6].next_upgrade = nil
 data_reactor[deuterium_reactor].next_upgrade = tritium_reactor
+data_reactor[tritium_reactor].next_upgrade = nil
 data_assembling[centrifuge_3].next_upgrade = centrifuge_4
+data_assembling[centrifuge_4].next_upgrade = nil
 data_furnace[electric_furnace_3].next_upgrade = electric_furnace_4
+data_furnace[electric_furnace_4].next_upgrade = nil
 data_assembling[electric_mixing_furnace_3].next_upgrade = electric_mixing_furnace_4
+data_assembling[electric_mixing_furnace_4].next_upgrade = nil
