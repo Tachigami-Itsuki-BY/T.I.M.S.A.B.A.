@@ -16,36 +16,41 @@ data_technology[tech_titanium_processing].effects =
 }
 
 -- ADVANCED LOGISTICS
-data_technology[tech_robotics_1].effects =
-{
-    {type = unlock_recipe, recipe = flying_robot_frame_1},
-    {type = unlock_recipe, recipe = module_case},
-    {type = unlock_recipe, recipe = robot_brain_1},
-}
-
-table.insert(data_technology[tech_robotics_2].prerequisites, tech_battery_2)
-
-table.insert(data_technology[tech_robotics_3].prerequisites, tech_battery_3)
-table.insert(data_technology[tech_robotics_3].unit.ingredients, {production_science_pack, 1})
-table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1})
-
-table.insert(data_technology[tech_robotics_4].prerequisites, tech_battery_4)
-if mods [bobtech] then
-    table.insert(data_technology[tech_robotics_4].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[tech_robots_3].unit.ingredients, {utility_science_pack, 1})
+if data_technology[tech_robotics_1] then
+    data_technology[tech_robotics_1].effects =
+    {
+        {type = unlock_recipe, recipe = flying_robot_frame_1},
+        {type = unlock_recipe, recipe = module_case},
+        {type = unlock_recipe, recipe = robot_brain_1},
+    }
 end
 
-data_technology[tech_robo_modular_1].effects =
-{
-    {type = unlock_recipe, recipe = roboport_1},
-    {type = unlock_recipe, recipe = robochest_1},
-    {type = unlock_recipe, recipe = logistic_zone_expander_1},
-    {type = unlock_recipe, recipe = robo_charge_port_1},
-    {type = unlock_recipe, recipe = robo_charge_port_large_1},
-    {type = unlock_recipe, recipe = roboport_antenna_1},
-    {type = unlock_recipe, recipe = roboport_chargepad_1},
-    {type = unlock_recipe, recipe = roboport_door_1}
-}
+if data_technology[tech_robotics_2] then table.insert(data_technology[tech_robotics_2].prerequisites, tech_battery_2) end
+if data_technology[tech_robotics_3] then
+    table.insert(data_technology[tech_robotics_3].prerequisites, tech_battery_3)
+    table.insert(data_technology[tech_robotics_3].unit.ingredients, {production_science_pack, 1})
+end
+if data_technology[tech_robots_2] then table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1}) end
+if data_technology[tech_robotics_4] then
+    table.insert(data_technology[tech_robotics_4].prerequisites, tech_battery_4)
+    if mods [bobtech] then
+        table.insert(data_technology[tech_robotics_4].unit.ingredients, {utility_science_pack, 1})
+        table.insert(data_technology[tech_robots_3].unit.ingredients, {utility_science_pack, 1})
+    end
+end
+if data_technology[tech_robo_modular_1] then
+    data_technology[tech_robo_modular_1].effects =
+    {
+        {type = unlock_recipe, recipe = roboport_1},
+        {type = unlock_recipe, recipe = robochest_1},
+        {type = unlock_recipe, recipe = logistic_zone_expander_1},
+        {type = unlock_recipe, recipe = robo_charge_port_1},
+        {type = unlock_recipe, recipe = robo_charge_port_large_1},
+        {type = unlock_recipe, recipe = roboport_antenna_1},
+        {type = unlock_recipe, recipe = roboport_chargepad_1},
+        {type = unlock_recipe, recipe = roboport_door_1}
+    }
+end
 
 -- PRODUCTION
 data_technology[boiler_3].prerequisites = {boiler_2, chemical_science_pack, tech_ceramics, tech_invar_smelting_1}

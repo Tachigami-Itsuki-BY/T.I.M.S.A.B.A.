@@ -279,42 +279,49 @@ local entities =
     {type_1 = data_inserter, type_2 = data_item, name = T5_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.20, rotation_speed = 1800/21600, EPMR = 300},
 }
 for _, BUILD in pairs(entities) do
-    if BUILD.type_1 == data_transport_belt then
-        data_item[BUILD.name].stack_size = 200
-        data_item[BUILD.name].weight = 5000
-        data_transport_belt[BUILD.name].speed = BUILD.speed
-        data_transport_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
-    end
-    if BUILD.type_1 == data_underground_belt then
-        if BUILD.max_distance then
-            data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
+    if BUILD.name then
+        if BUILD.type_1 == data_transport_belt and data_transport_belt[BUILD.name] then
+            if data_item[BUILD.name] then data_item[BUILD.name].stack_size = 200 end
+            data_transport_belt[BUILD.name].speed = BUILD.speed
+            data_transport_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
         end
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
-        data_recipe[BUILD.name].energy_required = 1
-        data_underground_belt[BUILD.name].speed = BUILD.speed
-        data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
-    end
-    if BUILD.type_1 == data_splitter then
-        data_item[BUILD.name].stack_size = 16
-        data_item[BUILD.name].weight = 62500
-        data_recipe[BUILD.name].energy_required = 1
-        data_splitter[BUILD.name].speed = BUILD.speed
-        data_splitter[BUILD.name].animation_speed_coefficient = BUILD.ASC
-    end
-    if BUILD.type_1 == data_inserter then
-        data_inserter[BUILD.name].rotation_speed = BUILD.rotation_speed
-        data_inserter[BUILD.name].extension_speed = BUILD.extension_speed
-    end
-    if BUILD.type_1 == data_inserter and BUILD.name ~= T0_inserter then
-        data_inserter[BUILD.name].energy_per_rotation = ((BUILD.EPMR / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
-        data_inserter[BUILD.name].energy_per_movement = ((BUILD.EPMR / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
-    end
-    if BUILD.type_2 == data_item then
-        data_item[BUILD.name].stack_size = BUILD.stack
-        data_item[BUILD.name].weight = BUILD.weight
-        data_recipe[BUILD.name].category = crafting
-        data_recipe[BUILD.name].additional_categories = {electromagnetics}
+        if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
+            if BUILD.max_distance then
+                data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
+            end
+            if data_item[BUILD.name] then
+                data_item[BUILD.name].stack_size = 32
+                data_item[BUILD.name].weight = 31250
+            end
+            if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
+            data_underground_belt[BUILD.name].speed = BUILD.speed
+            data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+        end
+        if BUILD.type_1 == data_splitter then
+            if data_item[BUILD.name] then
+                data_item[BUILD.name].stack_size = 16
+                data_item[BUILD.name].weight = 62500
+            end
+            if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
+            data_splitter[BUILD.name].speed = BUILD.speed
+            data_splitter[BUILD.name].animation_speed_coefficient = BUILD.ASC
+        end
+        if BUILD.type_1 == data_inserter and data_inserter[BUILD.name] then
+            data_inserter[BUILD.name].rotation_speed = BUILD.rotation_speed
+            data_inserter[BUILD.name].extension_speed = BUILD.extension_speed
+        end
+        if BUILD.type_1 == data_inserter and BUILD.name ~= T0_inserter and data_inserter[BUILD.name] and BUILD.EPMR then
+            data_inserter[BUILD.name].energy_per_rotation = ((BUILD.EPMR / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
+            data_inserter[BUILD.name].energy_per_movement = ((BUILD.EPMR / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
+        end
+        if BUILD.type_2 == data_item and data_item[BUILD.name] then
+            data_item[BUILD.name].stack_size = BUILD.stack
+            data_item[BUILD.name].weight = BUILD.weight
+            if data_recipe[BUILD.name] then
+                data_recipe[BUILD.name].category = crafting
+                data_recipe[BUILD.name].additional_categories = {electromagnetics}
+            end
+        end
     end
 end
 data_inserter[T0_inserter].energy_per_rotation = (450/2.6/2) .. kJ -- rotation_speed
@@ -336,13 +343,20 @@ local function transport_belt_recipe(name, gear_wheel, plate, transport_belt, be
     data_recipe[name].ingredients = ingredients
     data_recipe[name].results = {{type = item, name = name, amount = 2}}
 end
-transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate)
-transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, T0_transport_belt, iron_bearing)
+if data_recipe[T0_transport_belt] then
+    transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate)
+    transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, T0_transport_belt, iron_bearing)
+else
+    transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, nil, iron_bearing)
+end
 transport_belt_recipe(T2_transport_belt, steel_gear_wheel, bronze_plate_bob, T1_transport_belt, steel_bearing)
 transport_belt_recipe(T3_transport_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_transport_belt, cobalt_steel_bearing)
 transport_belt_recipe(T4_transport_belt, titanium_gear_wheel, titanium_plate_bob, T3_transport_belt, titanium_bearing)
 transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_transport_belt, nitinol_bearing)
-data_recipe[T0_transport_belt].ingredients[1].amount = 2
+if data_recipe[T0_transport_belt] then
+    data_recipe[T0_transport_belt].ingredients[1].amount = 2
+    bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt})
+end
 
 local function underground_belt_recipe(name, gear_wheel, plate, underground_belt, bearing)
     local ingredients =
@@ -358,13 +372,20 @@ local function underground_belt_recipe(name, gear_wheel, plate, underground_belt
     end
     data_recipe[name].ingredients = ingredients
 end
-underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate)
-underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, T0_underground_belt, iron_bearing)
+if data_recipe[T0_underground_belt] then
+    underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate)
+    underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, T0_underground_belt, iron_bearing)
+else
+    underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, nil, iron_bearing)
+end
 underground_belt_recipe(T2_underground_belt, steel_gear_wheel, bronze_plate_bob, T1_underground_belt, steel_bearing)
 underground_belt_recipe(T3_underground_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_underground_belt, cobalt_steel_bearing)
 underground_belt_recipe(T4_underground_belt, titanium_gear_wheel, titanium_plate_bob, T3_underground_belt, titanium_bearing)
 underground_belt_recipe(T5_underground_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_underground_belt, nitinol_bearing)
-data_recipe[T0_underground_belt].ingredients[1].amount = 8
+if data_recipe[T0_underground_belt] then
+    data_recipe[T0_underground_belt].ingredients[1].amount = 8
+    bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt})
+end
 
 local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
     local ingredients =
@@ -381,14 +402,21 @@ local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, beari
     end
     data_recipe[name].ingredients = ingredients
 end
-splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate)
-splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter, iron_bearing)
+if data_recipe[T0_splitter] then
+    splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate)
+    splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter, iron_bearing)
+else
+    splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, nil, iron_bearing)
+end
 splitter_recipe(T2_splitter, steel_gear_wheel, electronic_circuit, bronze_plate_bob, T1_splitter, steel_bearing)
 splitter_recipe(T3_splitter, cobalt_steel_gear_wheel, advanced_circuit, aluminium_plate_bob, T2_splitter, cobalt_steel_bearing)
 splitter_recipe(T4_splitter, titanium_gear_wheel, processing_unit, titanium_plate_bob, T3_splitter, titanium_bearing)
 splitter_recipe(T5_splitter, nitinol_gear_wheel, advanced_processing_unit, nitinol_plate_bob, T4_splitter, nitinol_bearing)
-data_recipe[T0_splitter].ingredients[1].amount = 4
-data_recipe[T0_splitter].ingredients[2].amount = 4
+if data_recipe[T0_splitter] then
+    data_recipe[T0_splitter].ingredients[1].amount = 4
+    data_recipe[T0_splitter].ingredients[2].amount = 4
+    bobmods.lib.recipe.update_recycling_recipe({T0_splitter})
+end
 
 table.insert(data_recipe[T1_inserter].ingredients, {type = item, name = T0_inserter, amount = 1})
 table.insert(data_recipe[T1_inserter].ingredients, {type = item, name = iron_bearing, amount = 1})
@@ -430,31 +458,33 @@ if mods ["loaders-modernized-integrations"] then
         {name = T5_loader, speed = 10/60, ins_amount = 8, ASC = 32}
     }
     for _, BUILD in pairs(loaders) do
-        data_item[BUILD.name].order = z
-        data_item[BUILD.name].stack_size = 32
-        data_item[BUILD.name].weight = 31250
-        data_recipe[BUILD.name].order = z
-        data_loader_1x1[BUILD.name].order = z
-        data_loader_1x1[BUILD.name].speed = BUILD.speed
-        data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
-        local recipe_variants = {BUILD.name, "stack-" .. BUILD.name}
-        for _, r_name in ipairs(recipe_variants) do
-            if data_recipe[r_name] then
-                local recipe = data_recipe[r_name]
-                if recipe.ingredients then
-                    for _, ingredient in pairs(recipe.ingredients) do
-                        local name = ingredient.name or ingredient[1]
-                        if name and name:find("inserter") then
-                            if ingredient.name then
-                                ingredient.amount = BUILD.ins_amount
-                            else
-                                ingredient[2] = BUILD.ins_amount
+        if data_item[BUILD.name] then
+            data_item[BUILD.name].order = z
+            data_item[BUILD.name].stack_size = 32
+            data_item[BUILD.name].weight = 31250
+            data_recipe[BUILD.name].order = z
+            data_loader_1x1[BUILD.name].order = z
+            data_loader_1x1[BUILD.name].speed = BUILD.speed
+            data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            local recipe_variants = {BUILD.name, "stack-" .. BUILD.name}
+            for _, r_name in ipairs(recipe_variants) do
+                if data_recipe[r_name] then
+                    local recipe = data_recipe[r_name]
+                    if recipe.ingredients then
+                        for _, ingredient in pairs(recipe.ingredients) do
+                            local name = ingredient.name or ingredient[1]
+                            if name and name:find("inserter") then
+                                if ingredient.name then
+                                    ingredient.amount = BUILD.ins_amount
+                                else
+                                    ingredient[2] = BUILD.ins_amount
+                                end
                             end
                         end
                     end
-                end
-                if bobmods and bobmods.lib and bobmods.lib.recipe and bobmods.lib.recipe.update_recycling_recipe then
-                    bobmods.lib.recipe.update_recycling_recipe(r_name)
+                    if bobmods and bobmods.lib and bobmods.lib.recipe and bobmods.lib.recipe.update_recycling_recipe then
+                        bobmods.lib.recipe.update_recycling_recipe(r_name)
+                    end
                 end
             end
         end
@@ -489,17 +519,19 @@ local medium_poles =
     {name = medium_electric_pole_3, order = c, max_wire = 19,   supply_area = 6.5},
     {name = medium_electric_pole_4, order = d, max_wire = 22.5, supply_area = 7.5}
 }
-for _, MP in pairs(medium_poles) do
-    data_item[MP.name].subgroup = is_medium_electric_pole
-    data_item[MP.name].order = MP.order
-    data_item[MP.name].stack_size = 32
-    data_item[MP.name].weight = 31250
-    data_recipe[MP.name].subgroup = is_medium_electric_pole
-    data_recipe[MP.name].order = MP.order
-    data_electric_pole[MP.name].subgroup = is_medium_electric_pole
-    data_electric_pole[MP.name].order = MP.order
-    data_electric_pole[MP.name].maximum_wire_distance = MP.max_wire
-    data_electric_pole[MP.name].supply_area_distance = MP.supply_area
+for _, BUILD in pairs(medium_poles) do
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_medium_electric_pole
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_medium_electric_pole
+        data_recipe[BUILD.name].order = BUILD.order
+        data_electric_pole[BUILD.name].subgroup = is_medium_electric_pole
+        data_electric_pole[BUILD.name].order = BUILD.order
+        data_electric_pole[BUILD.name].maximum_wire_distance = BUILD.max_wire
+        data_electric_pole[BUILD.name].supply_area_distance = BUILD.supply_area
+    end
 end
 
 data_recipe[medium_electric_pole_1].ingredients =
@@ -511,22 +543,24 @@ data_recipe[medium_electric_pole_1].ingredients =
 
 local big_poles =
 {
-    {name = big_electric_pole_1,   order = a, max_wire = 16},
+    {name = big_electric_pole_1, order = a, max_wire = 16},
     {name = big_electric_pole_2, order = b, max_wire = 32},
     {name = big_electric_pole_3, order = c, max_wire = 48},
     {name = big_electric_pole_4, order = d}
 }
-for _, BP in pairs(big_poles) do
-    data_item[BP.name].subgroup = is_big_electric_pole
-    data_item[BP.name].order = BP.order
-    data_item[BP.name].stack_size = 32
-    data_item[BP.name].weight = 31250
-    data_recipe[BP.name].subgroup = is_big_electric_pole
-    data_recipe[BP.name].order = BP.order
-    data_electric_pole[BP.name].subgroup = is_big_electric_pole
-    data_electric_pole[BP.name].order = BP.order
-    if BP.max_wire then
-        data_electric_pole[BP.name].maximum_wire_distance = BP.max_wire
+for _, BUILD in pairs(big_poles) do
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_big_electric_pole
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_big_electric_pole
+        data_recipe[BUILD.name].order = BUILD.order
+        data_electric_pole[BUILD.name].subgroup = is_big_electric_pole
+        data_electric_pole[BUILD.name].order = BUILD.order
+        if BUILD.max_wire then
+            data_electric_pole[BUILD.name].maximum_wire_distance = BUILD.max_wire
+        end
     end
 end
 
@@ -539,9 +573,12 @@ local function big_electric_pole_recipe(name, electric_pole, cable, plate)
     }
 end
 big_electric_pole_recipe(big_electric_pole_1, small_electric_pole, copper_cable, steel_plate)
-big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
-big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
-big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
+if data_recipe[big_electric_pole_2] then
+    big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
+    big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
+    bobmods.lib.recipe.update_recycling_recipe({big_electric_pole_2, big_electric_pole_3, big_electric_pole_4})
+end
 
 data_recipe[big_electric_pole_1].ingredients[1].amount = 4
 
@@ -552,20 +589,22 @@ local substations =
     {name = substation_3, order = c, max_wire = 32, supply_area = 16},
     {name = substation_4, order = d, max_wire = 40, supply_area = 20}
 }
-for _, s in pairs(substations) do
-    data_item[s.name].subgroup = is_substation
-    data_item[s.name].order = s.order
-    data_item[s.name].stack_size = 32
-    data_item[s.name].weight = 31250
-    data_recipe[s.name].subgroup = is_substation
-    data_recipe[s.name].order = s.order
-    data_electric_pole[s.name].subgroup = is_substation
-    data_electric_pole[s.name].order = s.order
-    if s.max_wire then
-        data_electric_pole[s.name].maximum_wire_distance = s.max_wire
-    end
-    if s.supply_area then
-        data_electric_pole[s.name].supply_area_distance = s.supply_area
+for _, BUILD in pairs(substations) do
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_substation
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_substation
+        data_recipe[BUILD.name].order = BUILD.order
+        data_electric_pole[BUILD.name].subgroup = is_substation
+        data_electric_pole[BUILD.name].order = BUILD.order
+        if BUILD.max_wire then
+            data_electric_pole[BUILD.name].maximum_wire_distance = BUILD.max_wire
+        end
+        if BUILD.supply_area then
+            data_electric_pole[BUILD.name].supply_area_distance = BUILD.supply_area
+        end
     end
 end
 
@@ -579,9 +618,12 @@ local function substation_recipe(name, circuit, electric_pole, cable, plate)
     }
 end
 substation_recipe(substation_1, electronic_circuit, small_electric_pole, copper_cable, steel_plate)
-substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
-substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
-substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
+if data_recipe[substation_2] then
+    substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
+    substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
+    substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
+    bobmods.lib.recipe.update_recycling_recipe({substation_2, substation_3, substation_4})
+end
 
 data_recipe[substation_1].ingredients[2].amount = 4
 
@@ -694,19 +736,19 @@ bobmods.lib.recipe.update_recycling_recipe
     warehouse_passive_provider,
     warehouse_requester,
     warehouse_storage,
-    T0_transport_belt,
+    --T0_transport_belt,
     T1_transport_belt,
     T2_transport_belt,
     T3_transport_belt,
     T4_transport_belt,
     T5_transport_belt,
-    T0_underground_belt,
+    --T0_underground_belt,
     T1_underground_belt,
     T2_underground_belt,
     T3_underground_belt,
     T4_underground_belt,
     T5_underground_belt,
-    T0_splitter,
+    --T0_splitter,
     T1_splitter,
     T2_splitter,
     T3_splitter,
@@ -721,13 +763,13 @@ bobmods.lib.recipe.update_recycling_recipe
     small_electric_pole,
     medium_electric_pole_1,
     big_electric_pole_1,
-    big_electric_pole_2,
-    big_electric_pole_3,
-    big_electric_pole_4,
+    --big_electric_pole_2,
+    --big_electric_pole_3,
+    --big_electric_pole_4,
     substation_1,
-    substation_2,
-    substation_3,
-    substation_4,
+    --substation_2,
+    --substation_3,
+    --substation_4,
     iron_pipe_to_ground,
     copper_pipe_to_ground,
     stone_pipe_to_ground,

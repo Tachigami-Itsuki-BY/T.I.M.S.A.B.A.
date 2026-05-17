@@ -1,4 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 17.05.2026
+  Bugfixes:
+    - [Bob's Logistics] Исправлена ошибка, из-за которой модпак не запускался, если Конвейеры Т0 из мода «Bob's Logistics» были отключены.
+    - [Bob's Logistics] Исправлена ошибка, из-за которой модпак не запускался, если Компонеты для Дронов из мода «Bob's Logistics» были отключены.
+    - [Bob's Power] Исправлена ошибка, из-за которой модпак не запускался, если Столбы Т2-Т4 из мода «Bob's Power» были отключены.
+
+    - [Bob's Logistics] Fixed a bug where the modpack would not launch if T0 Belts from "Bob's Logistics" were disabled.
+    - [Bob's Logistics] Fixed a bug where the modpack would not launch if Drone Components from "Bob's Logistics" were disabled.
+    - [Bob's Power] Fixed a bug where the modpack would not launch if T2-T4 Poles from "Bob's Power" were disabled.
+
+  Graphics:
+    - [Addons] Исправлено некорректное отображение остатков после уничтожения зданий х2 и х4. (Частично. Нужна помощь в решение проблем)
+
+    - [Addons] Fixed incorrect item recovery display after x2 and x4 buildings were destroyed. (Partially. Need help solving the problems)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 17.05.2026
   Features:

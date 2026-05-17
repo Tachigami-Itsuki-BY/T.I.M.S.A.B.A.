@@ -371,7 +371,6 @@ do
 				}
 			}
 		}
-
 		entity.vertical_animation =
 		{
 			layers =
