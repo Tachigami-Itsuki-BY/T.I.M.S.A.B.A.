@@ -648,8 +648,7 @@ for _, pipe in pairs(pipes) do
     data_recipe[pipe.name].order = pipe.order
     data_pipe[pipe.name].order = pipe.order
 end
-data_recipe[stone_pipe].category = smelting
-if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe].additional_categories = {angels_sintering_1} end
+data_recipe[stone_pipe].category = crafting
 data_recipe[stone_pipe].ingredients[1].name = stone
 data_recipe[stone_pipe].ingredients[1].amount = 2
 data_recipe[plastic_pipe].category = crafting_fluid
