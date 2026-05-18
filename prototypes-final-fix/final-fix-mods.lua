@@ -204,7 +204,7 @@ if mods [bobtech] and mods [space_age_science_packs] then
     data_technology[tech_alien_research].icons = nil
 end
 
--- MULUNA interstellar_science_pack
+-- MULUNA
 if mods[muluna_mods] then
     local memo = {}
     local function leads_to_root(tech_name)

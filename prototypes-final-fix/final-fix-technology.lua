@@ -1,3 +1,5 @@
+data_technology[tech_automation_1].effects = {{type = unlock_recipe, recipe = assembling_machine_1}}
+
 for _, tech in pairs(data.raw.technology) do
     local unit = tech.unit
     if unit then

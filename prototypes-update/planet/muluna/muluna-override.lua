@@ -29,6 +29,7 @@ if mods [muluna_mods] then
     data_recipe[stone_crushing].icons = TWO_I(stone, stone_crushed_angels)
     data_recipe[stone_crushing].order = a_b
     data_recipe[stone_crushing].energy_required = 4
+    data_recipe[stone_crushing].ingredients[1].amount = 1
     data_recipe[stone_crushing].results = {{type = item, name = stone_crushed_angels, amount = 4}}
     data_recipe[stone_crushing].main_product = stone_crushed_angels
 
@@ -292,9 +293,9 @@ if mods [muluna_mods] then
     data_assembling[greenhouse_wood].energy_source.drain = 60 .. kW
 
     -- CELLULOSE
-    data_recipe[cellulose_mods].subgroup = is_muluna_recipe_cellulose
+    data_recipe[cellulose_mods].subgroup = is_bio_processing_wood
     data_recipe[cellulose_mods].icons = TWO_I(wood, cellulose_fiber_angels, number_2)
-    data_recipe[cellulose_mods].order = a
+    data_recipe[cellulose_mods].order = b_b
     data_recipe[cellulose_mods].ingredients =
     {
         {type = item, name = wood, amount = 16},
@@ -321,7 +322,7 @@ if mods [muluna_mods] then
     {
         {type = fluid, name = methane_angels, amount = 30},
         {type = fluid, name = tar_mods, amount = 15},
-        {type = item, name = alumina_crushed, amount = 1, probability = 0.75, ignored_by_productivity = 1}
+        {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[wood_gasification].main_product = tar_mods
     data_recipe[wood_gasification].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
@@ -342,7 +343,7 @@ if mods [muluna_mods] then
         {type = fluid, name = tar_mods, amount = 30},
         {type = fluid, name = naphtha_angels, amount = 15},
         {type = fluid, name = fuel_oil_angels, amount = 15},
-        {type = item, name = alumina_crushed, amount = 1, probability = 0.75, ignored_by_productivity = 1}
+        {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[advanced_wood_gasification].main_product = tar_mods
     data_recipe[advanced_wood_gasification].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
@@ -534,7 +535,7 @@ if mods [muluna_mods] then
     }
     data_recipe[advanced_water_boiling].results =
     {
-        {type = fluid, name = steam, amount = 15, temperature = 915},
+        {type = fluid, name = steam, amount = 15, temperature = 165},
         {type = fluid, name = carbon_dioxide_angels, amount = 15, temperature = 165}
     }
 
@@ -550,7 +551,7 @@ if mods [muluna_mods] then
     }
     data_recipe[advanced_water_boiling_compressed_air].results =
     {
-        {type = fluid, name = steam, amount = 15, temperature = 915},
+        {type = fluid, name = steam, amount = 15, temperature = 165},
         {type = fluid, name = carbon_dioxide_angels, amount = 15, temperature = 165}
     }
 
@@ -581,14 +582,14 @@ if mods [muluna_mods] then
     data_recipe[advanced_boiler].energy_required = 8
     data_recipe[advanced_boiler].ingredients =
     {
-        {type = item, name = molybdenum_rhenium_pipe, amount = 4},
-        {type = item, name = molybdenum_rhenium_plate, amount = 8},
-        {type = item, name = boiler_5, amount = 1}
+        {type = item, name = steel_pipe, amount = 4},
+        {type = item, name = steel_plate, amount = 8},
+        {type = item, name = boiler_1, amount = 1}
     }
     data_assembling[advanced_boiler].subgroup = is_muluna_boiler
     data_assembling[advanced_boiler].order = z
     data_assembling[advanced_boiler].crafting_speed = 4
-    data_assembling[advanced_boiler].energy_usage = 10800 .. kW
+    data_assembling[advanced_boiler].energy_usage = 1800 .. kW
     data_assembling[advanced_boiler].energy_source.fuel_categories = {base_fuel, advanced_fuel}
     data_assembling[advanced_boiler].energy_source.effectivity = nil
 
@@ -612,7 +613,7 @@ if mods [muluna_mods] then
         {type = item, name = molybdenum_rhenium_plate, amount = 16},
         {type = item, name = heat_pipe_4, amount = 8},
         {type = item, name = reinforced_concrete, amount = 32},
-        {type = item, name = efficiency_module_3, amount = 1},
+        {type = item, name = efficiency_module_5, amount = 1},
         {type = item, name = heating_tower, amount = 1},
         {type = item, name = heat_exchanger_4, amount = 2}
     }
@@ -649,7 +650,7 @@ if mods [muluna_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
         {type = item, name = niobium_titanium_plate, amount = 8},
         {type = item, name = superconductor, amount = 8},
-        {type = item, name = quality_module_3, amount = 1}
+        {type = item, name = quality_module_5, amount = 1}
     }
     data_generator_fusion[cycling_steam_turbine].subgroup = is_muluna_turbine
     data_generator_fusion[cycling_steam_turbine].order = z
@@ -678,7 +679,7 @@ if mods [muluna_mods] then
     data_furnace[steam_stone_furnace].icons = nil
     data_furnace[steam_stone_furnace].icon = "__TIMSABA__/graphics/icons/muluna/muluna-steam-stone-furnace.png"
     data_furnace[steam_stone_furnace].order = a
-    data_furnace[steam_stone_furnace].energy_usage = 675 .. kW
+    data_furnace[steam_stone_furnace].energy_usage = (675 / 6) .. kW
     data_furnace[steam_stone_furnace].energy_source.effectivity = 0.25
     data_furnace[steam_stone_furnace].energy_source.fluid_box.maximum_temperature = 1000
 
@@ -696,14 +697,14 @@ if mods [muluna_mods] then
     data_recipe[steam_steel_furnace].energy_required = 4
     data_recipe[steam_steel_furnace].ingredients =
     {
-        {type = item, name = steel_plate, amount = 4},
+        {type = item, name = steel_pipe, amount = 4},
         {type = item, name = steam_stone_furnace, amount = 1}
     }
     data_furnace[steam_steel_furnace].subgroup = is_muluna_building
     data_furnace[steam_steel_furnace].icons = nil
     data_furnace[steam_steel_furnace].icon = "__TIMSABA__/graphics/icons/muluna/muluna-steam-steel-furnace.png"
     data_furnace[steam_steel_furnace].order = b
-    data_furnace[steam_steel_furnace].energy_usage = 675 .. kW
+    data_furnace[steam_steel_furnace].energy_usage = (675 / 6) .. kW
     data_furnace[steam_steel_furnace].energy_source.effectivity = 0.5
     data_furnace[steam_steel_furnace].energy_source.fluid_box.maximum_temperature = 1000
 
@@ -729,7 +730,7 @@ if mods [muluna_mods] then
     data_assembling[steam_crusher].icon = "__TIMSABA__/graphics/icons/muluna/muluna-steam-crusher.png"
     data_assembling[steam_crusher].order = c
     data_assembling[steam_crusher].crafting_speed = 0.5
-    data_assembling[steam_crusher].energy_usage = 675 .. kW
+    data_assembling[steam_crusher].energy_usage = (675 / 6) .. kW
     data_assembling[steam_crusher].energy_source.fluid_box.maximum_temperature = 1000
     data_assembling[steam_crusher].graphics_set.animation.animation_speed = 0.5
 
@@ -759,7 +760,7 @@ if mods [muluna_mods] then
     {
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
         {type = item, name = niobium_iron_plate, amount = 8},
-        {type = item, name = speed_module_3, amount = 1},
+        {type = item, name = speed_module_5, amount = 1},
         {type = item, name = crusher, amount = 1}
     }
     data_assembling[crusher_2].subgroup = is_muluna_building
@@ -778,7 +779,7 @@ if mods [muluna_mods] then
     data_recipe[cryolab].energy_required = 8
     data_recipe[cryolab].ingredients =
     {
-        {type = item, name = productivity_module_3, amount = 1},
+        {type = item, name = productivity_module_5, amount = 1},
         {type = item, name = quantum_processor, amount = 32},
         {type = item, name = pentapod_egg, amount = 4},
         {type = item, name = biter_egg, amount = 4},
@@ -1066,7 +1067,7 @@ if mods [muluna_mods] then
             scale = 1
         },
         {
-            icon = "__base__/graphics/icons/copper-wire.png",
+            icon = "__TIMSABA__/graphics/icons/muluna/aluminium-cable.png",
             icon_size = data_item[copper_cable].icon_size,
             shift = {-16,16},
             scale = 1
@@ -1173,10 +1174,6 @@ if mods [muluna_mods] then
     data_technology[tech_wood_gas_processing_to_crude_oil].icon = "__TIMSABA__/graphics/icons/muluna/wood-gas-processing-to-crude-oil.png"
     data_technology[tech_wood_gas_processing_to_crude_oil].icon_size = 256
 
-    data_technology[vacuum_heating_tower].icons = nil
-    data_technology[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower-technology.png"
-    data_technology[vacuum_heating_tower].icon_size = 256
-
     local function greenhouse_technology_icon(item_sprite,item_sprite_size)
         if not item_sprite_size then item_sprite_size = 64 end
         return
@@ -1201,14 +1198,28 @@ if mods [muluna_mods] then
         {type = unlock_recipe, recipe = tree_growth_greenhouse_water_saving_vulcanus}
     }
 
-    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_titanium_processing)
-    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_tungsten_molybdenum_processing)
-    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_iron_processing)
+    table.insert(data_technology[crusher].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[crusher].unit.ingredients, {utility_science_pack, 1})
 
     table.insert(data_technology[crusher_2].prerequisites, tech_niobium_tungsten_molybdenum_processing)
     table.insert(data_technology[crusher_2].prerequisites, tech_niobium_iron_processing)
+    table.insert(data_technology[crusher_2].prerequisites, speed_module_5)
 
-    data_technology["muluna-regolith-digging"].research_trigger.name = electric_mining_drill_5 .. "-ground-digger"
+    data_technology[vacuum_heating_tower].icons = nil
+    data_technology[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower-technology.png"
+    data_technology[vacuum_heating_tower].icon_size = 256
+    table.insert(data_technology[vacuum_heating_tower].prerequisites, efficiency_module_5)
+
+    table.insert(data_technology[cryolab].prerequisites, productivity_module_5)
+
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_titanium_processing)
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_iron_processing)
+    table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_5)
+
+    --data_technology["muluna-regolith-digging"].research_trigger.entity = electric_mining_drill_5 .. "-ground-digger"
+
+    table.insert(data_technology[satellite_radar].prerequisites, radar_5)
 
     -- METALLIC
     table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_2})

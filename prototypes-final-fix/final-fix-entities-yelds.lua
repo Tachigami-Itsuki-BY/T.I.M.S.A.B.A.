@@ -346,6 +346,20 @@ data_resource["angels-fissure"].minable.results[1].amount_max = 30
 data_resource["angels-natural-gas"].minable.results[1].amount_min = 30
 data_resource["angels-natural-gas"].minable.results[1].amount_max = 30
 
+-- MULUNA
+if mods [muluna_mods] then
+    data_entity["lunar-rock"].minable.results =
+    {
+        {type = item, name = sulfur, amount= 2},
+        {type = item, name = stone, amount = 16}
+    }
+    data_entity["lunar-huge-rock"].minable.results =
+    {
+        {type = item, name = sulfur, amount= 4},
+        {type = item, name = stone, amount = 32}
+    }
+end
+
 -- MODS
 if mods [vulcanus_sulfuric_bacteria_mods] then
     data_entity["sulfuric-stromatolite"].minable.results =

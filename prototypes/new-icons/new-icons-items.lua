@@ -1,4 +1,7 @@
 -- ANGELS
+data_item[slag_angels].icons = nil
+data_item[slag_angels].icon = "__reskins-angels__/graphics/icons/refining/intermediates/slag.png"
+
 data_item[tin_ore_bob].icons = nil
 data_item[tin_ore_bob].icon = "__reskins-angels__/graphics/icons/smelting/ores/bob-tin-ore/bob-tin-ore.png"
 

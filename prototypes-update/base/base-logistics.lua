@@ -536,7 +536,7 @@ end
 
 data_recipe[medium_electric_pole_1].ingredients =
 {
-    {type = item, name = small_electric_pole, amount = 1},
+    {type = item, name = iron_rod, amount = 2},
     {type = item, name = copper_cable, amount = 2},
     {type = item, name = steel_plate, amount = 2}
 }
@@ -572,15 +572,18 @@ local function big_electric_pole_recipe(name, electric_pole, cable, plate)
         {type = item, name = plate, amount = 4}
     }
 end
-big_electric_pole_recipe(big_electric_pole_1, small_electric_pole, copper_cable, steel_plate)
+data_recipe[big_electric_pole_1].ingredients =
+{
+    {type = item, name = iron_rod, amount = 4},
+    {type = item, name = copper_cable, amount = 4},
+    {type = item, name = steel_plate, amount = 4}
+}
 if data_recipe[big_electric_pole_2] then
     big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
     big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
     big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
     bobmods.lib.recipe.update_recycling_recipe({big_electric_pole_2, big_electric_pole_3, big_electric_pole_4})
 end
-
-data_recipe[big_electric_pole_1].ingredients[1].amount = 4
 
 local substations =
 {
@@ -617,15 +620,19 @@ local function substation_recipe(name, circuit, electric_pole, cable, plate)
         {type = item, name = plate, amount = 8}
     }
 end
-substation_recipe(substation_1, electronic_circuit, small_electric_pole, copper_cable, steel_plate)
+data_recipe[substation_1].ingredients =
+{
+    {type = item, name = iron_rod, amount = 8},
+    {type = item, name = copper_cable, amount = 4},
+    {type = item, name = steel_plate, amount = 8},
+    {type = item, name = electronic_circuit, amount = 4}
+}
 if data_recipe[substation_2] then
     substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
     substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
     substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
     bobmods.lib.recipe.update_recycling_recipe({substation_2, substation_3, substation_4})
 end
-
-data_recipe[substation_1].ingredients[2].amount = 4
 
 local pipes =
 {
@@ -648,8 +655,9 @@ for _, pipe in pairs(pipes) do
     data_recipe[pipe.name].order = pipe.order
     data_pipe[pipe.name].order = pipe.order
 end
-data_recipe[stone_pipe].category = smelting
-if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe].additional_categories = {angels_sintering_1} end
+data_recipe[stone_pipe].category = smelting_filtering
+data_recipe[stone_pipe].additional_categories = {angels_sintering_4, metallurgy}
+if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe].additional_categories = {angels_sintering_1, metallurgy} end
 data_recipe[stone_pipe].ingredients[1].name = stone
 data_recipe[stone_pipe].ingredients[1].amount = 2
 data_recipe[plastic_pipe].category = crafting_fluid
@@ -702,8 +710,9 @@ pipe_to_ground_recipe(ceramic_pipe_to_ground,                 ceramic_pipe,    s
 pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe,        tungsten_powder, 32)
 pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,      nitinol_plate_bob, 40)
 pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_powder, 40)
-data_recipe[stone_pipe_to_ground].category = smelting
-if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1} end
+data_recipe[stone_pipe_to_ground].category = smelting_filtering
+data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_4, metallurgy}
+if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy} end
 data_recipe[stone_pipe_to_ground].ingredients[2].name = stone
 data_recipe[stone_pipe_to_ground].ingredients[2].amount = 8
 data_recipe[plastic_pipe_to_ground].category = crafting_fluid

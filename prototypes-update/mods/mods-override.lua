@@ -34,6 +34,7 @@ if mods [vulcanus_sulfuric_bacteria_mods] then
         {type = item, name = calcite, amount = 1},
         {type = fluid, name = sulfuric_acid_angels, amount = 120}
     }
+    data_recipe[sulfuric_bacteria_filtering].results[1].probability = 0.03125
 
     local sulfuric_bacteria_cultivation = "sulfuric-bacteria-cultivation"
     data_recipe[sulfuric_bacteria_cultivation].subgroup = is_vulcanus_sulfuric
@@ -51,6 +52,15 @@ if mods [vulcanus_sulfuric_bacteria_mods] then
     data_recipe[sulfuric_bacteria_melting].icons = RECYCLING_I(recycling_png, sulfuric_bacteria)
     data_recipe[sulfuric_bacteria_melting].order = e
     data_recipe[sulfuric_bacteria_melting].ingredients[3].amount = 60
+    data_recipe[sulfuric_bacteria_melting].results =
+    {
+        {type = item, name = sulfuric_bacteria, amount = 1, probability = 0.5},
+        {type = item, name = wolframite_ore, amount = 1, probability = 0.25},
+        {type = item, name = coal, amount = 1, probability = 0.125},
+        {type = item, name = carbon_angels, amount = 1, probability = 0.0625},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 1, probability = 0.03125},
+        {type = item, name = stone, amount = 1, probability = 0.5}
+    }
 end
 
 if mods [moshine_mods] or mods [muluna_mods] then

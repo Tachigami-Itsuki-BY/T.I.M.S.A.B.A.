@@ -1,7 +1,5 @@
 local _C6H10O5n_ = "(C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]10[/font]O[font=default-tiny-bold]5[/font])[font=default-tiny-bold]n[/font]"
-local kJ = "kJ"
 -- GREEN
-local is_bio_green = "angels-bio-processing-green"
 data_item[algae_green].order = a
 data_item[algae_green].spoil_ticks = 180 * minute
 data_item[algae_green].spoil_result = spoilage
@@ -171,7 +169,7 @@ data_recipe[saw_crystal_full].ingredients[1].amount = 8
 data_recipe[saw_crystal_full].results[1].amount = 8
 
 -- WOOD and SEED
-data_item_subgroup["angels-bio-processing-wood"].order = f
+data_item_subgroup[is_bio_processing_wood].order = f
 
 data_item[wood].localised_description = show_formula and {chemical_formula, _C6H10O5n_} or nil
 data_item[wood].fuel_value = 1800 .. kJ

@@ -1,5 +1,6 @@
 -- ANGELS RESOURCE REFINING
 local resource_refining = "angels-resource-refining"
+is_processing_crafting = "angels-processing-crafting"
 is_ores = "angels-ores"
 is_ore_processing_a = "angels-ore-processing-a"
 is_ore_processing_b = "angels-ore-processing-b"
@@ -543,6 +544,8 @@ data:extend
 
 -- ANGELS BIOPROCESSING NAUVIS
 ig_bio_processing_nauvis = "angels-bio-processing-nauvis"
+is_bio_green = "angels-bio-processing-green"
+is_bio_processing_wood = "angels-bio-processing-wood"
 is_bio_processing_paste = "angels-bio-processing-paste"
 is_bio_processing_alien_pre = "angels-bio-processing-alien-pre"
 is_bio_processing_alien_small_recipe = "bio-processing-alien-small-recipe"

@@ -594,6 +594,7 @@ data_furnace[steel_furnace].energy_usage = 450 .. kW
 data_furnace[steel_furnace].energy_source.fuel_categories = {base_fuel}
 data_item[stone_mixing_furnace].order = a
 data_recipe[stone_mixing_furnace].order = a
+data_recipe[stone_mixing_furnace].enabled = true
 data_assembling[stone_mixing_furnace].order = a
 data_assembling[stone_mixing_furnace].energy_usage = 225 .. kW
 data_assembling[stone_mixing_furnace].energy_source.fuel_categories = {base_fuel}
