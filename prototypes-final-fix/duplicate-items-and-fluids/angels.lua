@@ -88,6 +88,7 @@ data_item["angels-plutonium-239"] = nil
 data_item["angels-thorium-232"] = nil
 
 -- ANGELS RESOURCE REFINING
+data_recipe["angels-stone-from-crushed-stone"] = nil
 data_item["angels-thorium-ore"] = nil
 data_recipe["angels-thorium-ore-recycling"] = nil
 local iron_pebbles = "angels-iron-pebbles"

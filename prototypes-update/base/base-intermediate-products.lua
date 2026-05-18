@@ -22,7 +22,6 @@ data_recipe[chemical_science_pack].ingredients =
 }
 
 if mods [bobtech] then
-    local transport_science_pack = "bob-advanced-logistic-science-pack"
     data_recipe[transport_science_pack].energy_required = 16
     data_recipe[transport_science_pack].results[1].amount = 4
 end

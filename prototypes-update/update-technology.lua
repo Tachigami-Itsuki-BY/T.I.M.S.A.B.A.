@@ -14,6 +14,12 @@ data_technology[tech_titanium_processing].effects =
     {type = unlock_recipe, recipe = titanium_pipe},
     {type = unlock_recipe, recipe = titanium_pipe_to_ground}
 }
+local tech_logistic_system = "logistic-system"
+if mods [bobtech] then
+    data_technology[tech_logistic_system].prerequisites = {transport_science_pack, tech_construction_robotics, tech_logistic_robotics}
+else
+    data_technology[tech_logistic_system].prerequisites = {chemical_science_pack, tech_construction_robotics, tech_logistic_robotics}
+end
 
 -- ADVANCED LOGISTICS
 if data_technology[tech_robotics_1] then
@@ -110,8 +116,6 @@ replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_
 table.insert(data_technology[centrifuge_3].prerequisites, tech_stone_smelting_4)
 
 -- INTERMEDIATE PRODUCTS
-table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_rod})
-
 data_technology[battery_lead_acid].effects =
 {
     {type = unlock_recipe, recipe = lead_oxide_IV},
@@ -403,6 +407,8 @@ table.insert(data_technology["bob-vehicle-big-turret-equipment-4"].prerequisites
 table.insert(data_technology["bob-plasma-turrets-4"].prerequisites, tech_battery_4)
 
 -- ANGELS RESOURCE REFINING
+table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = stone})
+
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})
 

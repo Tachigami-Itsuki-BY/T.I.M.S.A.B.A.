@@ -186,7 +186,6 @@ if mods [panglia_mods] then
 end
 
 if mods [muluna_mods] then
-    local satellite_radar = "muluna-satellite-radar"
     data_item[satellite_radar].subgroup = is_space_platform_mods
     data_item[satellite_radar].order = c
     data_item[satellite_radar].stack_size = 1

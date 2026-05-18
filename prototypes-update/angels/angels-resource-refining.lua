@@ -1,13 +1,8 @@
-local is_processing_crafting = "angels-processing-crafting"
 data_item_subgroup[is_processing_crafting].order = a
 
 data_recipe["angels-ore1-crushed-hand"].icons = THREE_R_I(saphirite_ore, crushed_saphirite, stone_crushed_angels)
 
 data_recipe["angels-ore3-crushed-hand"].icons = THREE_R_I(stiratite_ore, crushed_stiratite, stone_crushed_angels)
-
-local stone_from_crushed_stone = "angels-stone-from-crushed-stone"
-data_recipe[stone_from_crushed_stone].icons = TWO_I(stone_crushed_angels, stone)
-data_recipe[stone_from_crushed_stone].order = c_a
 
 data_item[stone].subgroup = is_processing_crafting
 data_item[stone].order = d

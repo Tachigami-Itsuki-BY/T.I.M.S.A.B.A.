@@ -1148,7 +1148,8 @@ data_recipe[clay_brick].order = b
 
 data_item[stone_brick].subgroup = is_bricks_casting
 data_item[stone_brick].order = c
-data_recipe[stone_brick].additional_categories = {metallurgy}
+data_recipe[stone_brick].additional_categories = {angels_sintering_4, metallurgy}
+if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_brick].additional_categories = {angels_sintering_1, metallurgy} end
 data_recipe[stone_brick].subgroup = is_bricks_casting
 data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
 data_recipe[stone_brick].order = c

@@ -6,6 +6,23 @@ data:extend
 ({
     {
         type = recipe,
+        name = stone,
+        category = angels_ore_refining_T1,
+        subgroup = is_processing_crafting,
+        icons = TWO_I(slag_angels, stone),
+        order = d,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients = {{type = item, name = slag_angels, amount = 1}},
+        results = {{type = item, name = stone, amount = 1}},
+        main_product = stone
+    },
+    {
+        type = recipe,
         name = manganese_ore_recipe,
         category = angels_ore_sorting_2,
         subgroup = is_ore_sorting_advanced_1,
