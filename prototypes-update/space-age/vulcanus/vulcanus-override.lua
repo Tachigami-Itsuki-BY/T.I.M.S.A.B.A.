@@ -4,7 +4,7 @@ data_fluid[lava].order = a
 
 data_recipe[saphirite_from_lava].localised_name = {"recipe-name.saphirite-from-lava"}
 data_recipe[saphirite_from_lava].subgroup = is_lava
-data_recipe[saphirite_from_lava].icons = TWO_D_I(lava, calcite, saphirite_ore, stone)
+data_recipe[saphirite_from_lava].icons = TWO_D_I(lava, calcite, ore_saphirite, stone)
 data_recipe[saphirite_from_lava].order = a_a
 data_recipe[saphirite_from_lava].ingredients =
 {
@@ -13,15 +13,15 @@ data_recipe[saphirite_from_lava].ingredients =
 }
 data_recipe[saphirite_from_lava].results =
 {
-    {type = item, name = saphirite_ore, amount = 16},
+    {type = item, name = ore_saphirite, amount = 16},
     {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
 }
-data_recipe[saphirite_from_lava].main_product = saphirite_ore
+data_recipe[saphirite_from_lava].main_product = ore_saphirite
 data_recipe[saphirite_from_lava].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
 data_recipe[stiratite_from_lava].localised_name = {"recipe-name.stiratite-from-lava"}
 data_recipe[stiratite_from_lava].subgroup = is_lava
-data_recipe[stiratite_from_lava].icons = TWO_D_I(lava, calcite, stiratite_ore, stone)
+data_recipe[stiratite_from_lava].icons = TWO_D_I(lava, calcite, ore_stiratite, stone)
 data_recipe[stiratite_from_lava].order = a_c
 data_recipe[stiratite_from_lava].ingredients =
 {
@@ -30,10 +30,10 @@ data_recipe[stiratite_from_lava].ingredients =
 }
 data_recipe[stiratite_from_lava].results =
 {
-    {type = item, name = stiratite_ore, amount = 16},
+    {type = item, name = ore_stiratite, amount = 16},
     {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
 }
-data_recipe[stiratite_from_lava].main_product = stiratite_ore
+data_recipe[stiratite_from_lava].main_product = ore_stiratite
 data_recipe[stiratite_from_lava].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
 
 -- MOLTEN

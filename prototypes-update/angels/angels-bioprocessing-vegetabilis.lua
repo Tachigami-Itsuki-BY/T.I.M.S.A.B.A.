@@ -99,20 +99,27 @@ data_recipe[seed_kendallion].results = {{type = item, name = seed_kendallion, am
 local garden_temperate_a = "angels-temperate-garden-a"
 data_recipe[garden_temperate_a].icons = CORNER_I(garden_temperate, seed_wheaton, seed_tianaton, seed_okarinome, seed_kendallion, nil, seed_quillnoa, bio_token)
 data_recipe[garden_temperate_a].energy_required = 256
-data_recipe[garden_temperate_a].results[2].amount = 4
-data_recipe[garden_temperate_a].results[3].amount = 4
-data_recipe[garden_temperate_a].results[4].amount = 4
-data_recipe[garden_temperate_a].results[5].amount = 4
-data_recipe[garden_temperate_a].results[6].amount = 4
+data_recipe[garden_temperate_a].results =
+{
+    {type = item, name = bio_token, amount = 16},
+    {type = item, name = seed_wheaton, amount = 4, probability = 0.125},
+    {type = item, name = seed_tianaton, amount = 4, probability = 0.125},
+    {type = item, name = seed_okarinome, amount = 4, probability = 0.125},
+    {type = item, name = seed_kendallion, amount = 4, probability = 0.0625},
+    {type = item, name = seed_quillnoa, amount = 4, probability = 0.0625}
+}
 
 local garden_temperate_b = "angels-temperate-garden-b"
 data_recipe[garden_temperate_b].icons = CORNER_I(garden_temperate, seed_wheaton, seed_tianaton, seed_okarinome, seed_kendallion, nil, seed_quillnoa)
 data_recipe[garden_temperate_b].energy_required = 256
-data_recipe[garden_temperate_b].results[1].amount = 4
-data_recipe[garden_temperate_b].results[2].amount = 4
-data_recipe[garden_temperate_b].results[3].amount = 4
-data_recipe[garden_temperate_b].results[4].amount = 4
-data_recipe[garden_temperate_b].results[5].amount = 4
+data_recipe[garden_temperate_b].results =
+{
+    {type = item, name = seed_wheaton, amount = 4, probability = 0.25},
+    {type = item, name = seed_tianaton, amount = 4, probability = 0.25},
+    {type = item, name = seed_okarinome, amount = 4, probability = 0.25},
+    {type = item, name = seed_kendallion, amount = 4, probability = 0.125},
+    {type = item, name = seed_quillnoa, amount = 4, probability = 0.125}
+}
 
 data_item_subgroup["angels-farming-temperate"].order = b_b
 
@@ -228,20 +235,27 @@ data_recipe[seed_mushredtato].results = {{type = item, name = seed_mushredtato, 
 local garden_swamp_a = "angels-swamp-garden-a"
 data_recipe[garden_swamp_a].icons = CORNER_I(garden_swamp, seed_elendilomone, seed_zombieecalyptus, seed_saundsrcress, seed_mushredtato, nil, seed_nexeflax, bio_token)
 data_recipe[garden_swamp_a].energy_required = 256
-data_recipe[garden_swamp_a].results[2].amount = 4
-data_recipe[garden_swamp_a].results[3].amount = 4
-data_recipe[garden_swamp_a].results[4].amount = 4
-data_recipe[garden_swamp_a].results[5].amount = 4
-data_recipe[garden_swamp_a].results[6].amount = 4
+data_recipe[garden_swamp_a].results =
+{
+    {type = item, name = bio_token, amount = 16},
+    {type = item, name = seed_elendilomone, amount = 4, probability = 0.125},
+    {type = item, name = seed_zombieecalyptus, amount = 4, probability = 0.125},
+    {type = item, name = seed_saundsrcress, amount = 4, probability = 0.125},
+    {type = item, name = seed_nexeflax, amount = 4, probability = 0.0625},
+    {type = item, name = seed_mushredtato, amount = 4, probability = 0.0625}
+}
 
 local garden_swamp_b = "angels-swamp-garden-b"
 data_recipe[garden_swamp_b].icons = CORNER_I(garden_swamp, seed_elendilomone, seed_zombieecalyptus, seed_saundsrcress, seed_mushredtato, nil, seed_nexeflax)
 data_recipe[garden_swamp_b].energy_required = 256
-data_recipe[garden_swamp_b].results[1].amount = 4
-data_recipe[garden_swamp_b].results[2].amount = 4
-data_recipe[garden_swamp_b].results[3].amount = 4
-data_recipe[garden_swamp_b].results[4].amount = 4
-data_recipe[garden_swamp_b].results[5].amount = 4
+data_recipe[garden_swamp_b].results =
+{
+    {type = item, name = seed_elendilomone, amount = 4, probability = 0.25},
+    {type = item, name = seed_zombieecalyptus, amount = 4, probability = 0.25},
+    {type = item, name = seed_saundsrcress, amount = 4, probability = 0.25},
+    {type = item, name = seed_nexeflax, amount = 4, probability = 0.125},
+    {type = item, name = seed_mushredtato, amount = 4, probability = 0.125}
+}
 
 data_item_subgroup["angels-farming-swamp"].order = c_b
 
@@ -357,20 +371,27 @@ data_recipe[seed_arumbiphila].results = {{type = item, name = seed_arumbiphila, 
 local garden_desert_a = "angels-desert-garden-a"
 data_recipe[garden_desert_a].icons = CORNER_I(garden_swamp, seed_binafran, seed_primedeadelion, seed_nilaubergine, seed_arumbiphila, nil, seed_zelosquash, bio_token)
 data_recipe[garden_desert_a].energy_required = 256
-data_recipe[garden_desert_a].results[2].amount = 4
-data_recipe[garden_desert_a].results[3].amount = 4
-data_recipe[garden_desert_a].results[4].amount = 4
-data_recipe[garden_desert_a].results[5].amount = 4
-data_recipe[garden_desert_a].results[6].amount = 4
+data_recipe[garden_desert_a].results =
+{
+    {type = item, name = bio_token, amount = 16},
+    {type = item, name = seed_binafran, amount = 4, probability = 0.125},
+    {type = item, name = seed_primedeadelion, amount = 4, probability = 0.125},
+    {type = item, name = seed_nilaubergine, amount = 4, probability = 0.125},
+    {type = item, name = seed_zelosquash, amount = 4, probability = 0.0625},
+    {type = item, name = seed_arumbiphila, amount = 4, probability = 0.0625}
+}
 
 local garden_desert_b = "angels-desert-garden-b"
 data_recipe[garden_desert_b].icons = CORNER_I(garden_swamp, seed_binafran, seed_primedeadelion, seed_nilaubergine, seed_arumbiphila, nil, seed_zelosquash)
 data_recipe[garden_desert_b].energy_required = 256
-data_recipe[garden_desert_b].results[1].amount = 4
-data_recipe[garden_desert_b].results[2].amount = 4
-data_recipe[garden_desert_b].results[3].amount = 4
-data_recipe[garden_desert_b].results[4].amount = 4
-data_recipe[garden_desert_b].results[5].amount = 4
+data_recipe[garden_desert_b].results =
+{
+    {type = item, name = seed_binafran, amount = 4, probability = 0.25},
+    {type = item, name = seed_primedeadelion, amount = 4, probability = 0.25},
+    {type = item, name = seed_nilaubergine, amount = 4, probability = 0.25},
+    {type = item, name = seed_zelosquash, amount = 4, probability = 0.125},
+    {type = item, name = seed_arumbiphila, amount = 4, probability = 0.125}
+}
 
 data_item_subgroup["angels-farming-desert"].order = d_b
 

@@ -1,4 +1,36 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 19.05.2026
+  Balancing:
+    - [All] Изменены добываемые предметы и скорректированы шансы их выпадения для некоторых сущностей.
+    - [All] В рецептах Экстракции Семян скорректирован процент результатов.
+    - [Muluna] В рецепте Теплицы произведена замена ингредиента:
+        1. Молибден-Рений → Сталь.
+        2. Железобетон → Каменный Кирпич.
+    - [All] В рецепте Дроблёного Камня произведена замена ингредиента: Шлак → Камень.
+    - [All] В рецепте Камня заменено производственное здание: Дробилка Руды → Установка Сортировки Руды.
+    - [All] В рецепте Отсыпки Территории (Камень) добалвен новый ингредиент: Дроблёный Камень.
+    - [All] В рецепте Отсыпки Территории (Грязь) добалвен новый ингредиент: Дроблёный Камень.
+
+    - [All] Changed mined items and adjusted their drop chances for some entities.
+    - [All] Adjusted result chances in the Seed Extraction recipes.
+    - [Muluna] Replaced an ingredient in the Greenhouse recipe:
+        1. Molybdenum-Rhenium → Steel.
+        2. Reinforced Concrete → Stone Brick.
+    - [All] Replaced an ingredient in the Stone Crushed recipe: Slag → Stone.
+    - [All] Changed production machine for Stone recipe: Ore Crusher → Ore Sorting Facility.
+    - [All] Added new an ingredient in the Landfill (Stone) recipe: Stone Crushed.
+    - [All] Added new an ingredient in the Landfill (Mud) recipe: Stone Crushed.
+
+  Graphics:
+    - [All] В рецепте Камня обновлена иконка.
+    - [All] В рецепте Отсыпки Территории (Камень) обновлена иконка.
+    - [All] В рецепте Отсыпки Территории (Грязь) обновлена иконка.
+
+    - [All] Updated the icon for the Stone recipe.
+    - [All] Updated the icon for the Landfill (Stone) recipe.
+    - [All] Updated the icon for the Landfill (Mud) recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 18.05.2026
   Balancing:
@@ -11,7 +43,6 @@ Date: 18.05.2026
     - [Muluna] В рецепте Вакуумной Нагревательной Башни произведена замена ингредиента: Модуль Эффектиности 3 → Модуль Эффектиности 5.
     - [Muluna] В рецепте Криолабы произведена замена ингредиента: Модуль Продуктивности 3 → Модуль Продуктивности 5.
     - [Muluna] В рецепте Конденсаторной Турбины произведена замена ингредиента: Модуль Качества 3 → Модуль Качества 5.
-    - [Muluna] В технологии Раскопки Лунного Реголита произведена замена сущности: Электрический Бур (Копание) Т1 → Электрический Бур (Копание) Т5.
     - [All] Рецепт Каменноя Фильтрующей Печи теперь доступен по умолчанию.
     - [Muluna] В рецепте Паровой Стальной Печи произведена замена ингредиента: Стальная Пластина → Стальная Труба.
     - [Muluna] В рецепте Вакуумного Бойлера произведена замена ингредиентов:
@@ -31,7 +62,6 @@ Date: 18.05.2026
     - [Muluna] Replaced an ingredient in the Vacuum Heating Tower recipe: Efficiency Module 3 → Efficiency Module 5.
     - [Muluna] Replaced an ingredient in the Cryolab recipe: Productivity Module 3 → Productivity Module 5.
     - [Muluna] Replaced an ingredient in the Condenser Turbine recipe: Quality Module 3 → Quality Module 5.
-    - [Muluna] Replaced a entity in the Lunar Regolith Digging technology: Electric Mining Drill (Digging) T1 → Electric Mining Drill (Digging) T5.
     - [All] The Stone Filtering Furnace recipe is now available by default.
     - [Muluna] Replaced an ingredient in the Steel Steam Furnace recipe: Steel Plate → Steel Pipe.
     - [Muluna] Replaced ingredients in the Vacuum Boiler recipe:
@@ -48,14 +78,14 @@ Date: 18.05.2026
     - [All] Fixed an issue where Stone Bricks could not be crafted from Stone due to a recipe conflict with the Stone Pipe recipe. (Thanks to Senpaiarham04 for pointing this out)
 
   Graphics:
-    - [Muluna] В технологии Обработки Анортита исправлена иконка.
+    - [Muluna] В технологии Обработки Алюминия обновлена иконка.
 
-    - [Muluna] Fixed the icon for the Anorthite Processing technology.
+    - [Muluna] Updated the icon for the Aluminum Processing technology.
 
   Locale:
-    - [Muluna] В технологии Обработки Алюминия исправлено описание.
+    - [Muluna] В технологии Обработки Анортита обновлено описание.
 
-    - [Muluna] Fixed the description for the Aluminum Processing technology.
+    - [Muluna] Updated the description for the Anorthite Processing technology.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 17.05.2026

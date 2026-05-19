@@ -70,6 +70,7 @@ if mods [muluna_mods] then
         -- SOLAR PANELS
         -- SMALL
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-small-1"},
             type = recipe,
             name = silicon_solar_panel_small_1,
             category = crafting,
@@ -95,6 +96,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-small-2"},
             type = recipe,
             name = silicon_solar_panel_small_2,
             category = crafting,
@@ -120,6 +122,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-small-3"},
             type = recipe,
             name = silicon_solar_panel_small_3,
             category = crafting,
@@ -145,6 +148,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-small-4"},
             type = recipe,
             name = silicon_solar_panel_small_4,
             category = crafting,
@@ -171,6 +175,7 @@ if mods [muluna_mods] then
         },
         -- MEDIUM
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-2"},
             type = recipe,
             name = silicon_solar_panel_2,
             category = crafting,
@@ -196,6 +201,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-3"},
             type = recipe,
             name = silicon_solar_panel_3,
             category = crafting,
@@ -221,6 +227,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-4"},
             type = recipe,
             name = silicon_solar_panel_4,
             category = crafting,
@@ -247,6 +254,7 @@ if mods [muluna_mods] then
         },
         -- LARGE
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-large-1"},
             type = recipe,
             name = silicon_solar_panel_large_1,
             category = crafting,
@@ -272,6 +280,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-large-2"},
             type = recipe,
             name = silicon_solar_panel_large_2,
             category = crafting,
@@ -297,6 +306,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-large-3"},
             type = recipe,
             name = silicon_solar_panel_large_3,
             category = crafting,
@@ -322,6 +332,7 @@ if mods [muluna_mods] then
             --surface_conditions = 
         },
         {
+            localised_name = {"recipe-name.muluna-silicon-solar-panel-large-4"},
             type = recipe,
             name = silicon_solar_panel_large_4,
             category = crafting,

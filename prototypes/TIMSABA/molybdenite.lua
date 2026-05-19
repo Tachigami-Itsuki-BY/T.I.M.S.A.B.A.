@@ -7,17 +7,7 @@ molybdenite_purified = "molybdenite-purified"
 data:extend
 ({
     {
-        localised_description =
-        {
-            "",
-            "Can be refined and sorted for pure ores:\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=rhenium-ore] Re\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=bob-gold-ore] Au\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=selenium] Se"
-        },
+        localised_description = {"item-description.molybdenite-ore"},
         type = item,
         name = molybdenite_ore,
         subgroup = is_ores,
@@ -48,18 +38,7 @@ data:extend
         }
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=rhenium-ore] Re\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=bob-gold-ore] Au\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=selenium] Se"
-        },
+        localised_description = {"item-description.molybdenite-crushed"},
         type = item,
         name = molybdenite_crushed,
         subgroup = is_ore_processing_a,
@@ -70,18 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=rhenium-ore] Re\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=bob-gold-ore] Au\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=selenium] Se"
-        },
+        localised_description = {"item-description.molybdenite-chunk"},
         type = item,
         name = molybdenite_chunks,
         subgroup = is_ore_processing_b,
@@ -92,18 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=rhenium-ore] Re\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=bob-gold-ore] Au\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=selenium] Se"
-        },
+        localised_description = {"item-description.molybdenite-crystal"},
         type = item,
         name = molybdenite_crystals,
         subgroup = is_ore_processing_c,
@@ -114,17 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=rhenium-ore] Re\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=bob-gold-ore] Au\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=selenium] Se"
-        },
+        localised_description = {"item-description.molybdenite-pure"},
         type = item,
         name = molybdenite_purified,
         subgroup = is_ore_processing_d,
@@ -473,17 +420,7 @@ data:extend
 ({
     resource(
         {
-            localised_description =
-            {
-                "",
-                "Can be refined and sorted for pure ores:\n",
-                "      [img=item/molybdenum-ore] Molybdenum ore\n",
-                "      [img=item/rhenium-ore] Rhenium ore\n",
-                "      [img=item/bob-silver-ore] Silver ore\n",
-                "      [img=item/bob-gold-ore] Gold ore\n",
-                "      [img=item/bob-tungsten-ore] Tungsten ore\n",
-                "      [img=item/selenium] Selenium"
-            },
+            localised_description = {"entity-description.molybdenite-ore"},
             name = molybdenite_ore,
             subgroup = is_ores,
             order = g,

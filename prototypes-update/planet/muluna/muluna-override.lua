@@ -15,12 +15,12 @@ if mods [muluna_mods] then
     data_recipe[regolith_sorting].results =
     {
         {type = item, name = stone, amount = 2},
-        {type = item, name = saphirite_ore, amount = 1},
-        {type = item, name = jivolite_ore, amount = 1},
-        {type = item, name = stiratite_ore, amount = 1},
-        {type = item, name = crotinnium_ore, amount = 1},
-        {type = item, name = rubyte_ore, amount = 1},
-        {type = item, name = bobmonium_ore, amount = 1}
+        {type = item, name = ore_saphirite, amount = 1},
+        {type = item, name = ore_jivolite, amount = 1},
+        {type = item, name = ore_stiratite, amount = 1},
+        {type = item, name = ore_crotinnium, amount = 1},
+        {type = item, name = ore_rubyte, amount = 1},
+        {type = item, name = ore_bobmonium, amount = 1}
     }
     data_recipe[regolith_sorting].main_product = stone
 
@@ -277,9 +277,9 @@ if mods [muluna_mods] then
     {
         {type = item, name = landfill, amount = 256},
         {type = item, name = small_lamp, amount = 16},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 16},
-        {type = item, name = molybdenum_rhenium_plate, amount = 16},
-        {type = item, name = reinforced_concrete, amount = 16},
+        {type = item, name = steel_pipe, amount = 16},
+        {type = item, name = steel_plate, amount = 16},
+        {type = item, name = stone_brick, amount = 16},
         {type = item, name = glass_bob, amount = 32}
     }
     data_assembling[greenhouse_wood].subgroup = is_muluna_recipe_tree
@@ -1217,9 +1217,15 @@ if mods [muluna_mods] then
     table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_iron_processing)
     table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_5)
 
-    --data_technology["muluna-regolith-digging"].research_trigger.entity = electric_mining_drill_5 .. "-ground-digger"
+    local tech_regolith_digging = "muluna-regolith-digging"
+    data_technology[tech_regolith_digging].localised_description = {"technology-description.muluna-regolith-digging"}
+    --data_technology[tech_regolith_digging].research_trigger.entity = electric_mining_drill_5 .. "-ground-digger"
 
     table.insert(data_technology[satellite_radar].prerequisites, radar_5)
+
+    local tech_advanced_stone_processing = "muluna-advanced-stone-processing"
+    table.insert(data_technology[tech_advanced_stone_processing].unit.ingredients, {production_science_pack, 1})
+    table.insert(data_technology[tech_advanced_stone_processing].unit.ingredients, {utility_science_pack, 1})
 
     -- METALLIC
     table.insert(data_technology[metallic_asteroid_crushing_1].effects, {type = unlock_recipe, recipe = metallic_asteroid_crushing_2})
