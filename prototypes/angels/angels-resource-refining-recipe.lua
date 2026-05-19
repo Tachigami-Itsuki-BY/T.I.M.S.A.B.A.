@@ -7,9 +7,9 @@ data:extend
     {
         type = recipe,
         name = stone,
-        category = angels_ore_refining_T1,
+        category = angels_ore_sorting_1,
         subgroup = is_processing_crafting,
-        icons = TWO_I(slag_angels, stone),
+        icons = RECYCLING_I(recycling_png, slag_angels),
         order = d,
         enabled = false,
         auto_recycle = false,
@@ -17,8 +17,8 @@ data:extend
         allow_quality = false,
         allow_decomposition = false,
         energy_required = 1,
-        ingredients = {{type = item, name = slag_angels, amount = 1}},
-        results = {{type = item, name = stone, amount = 1}},
+        ingredients = {{type = item, name = slag_angels, amount = 4}},
+        results = {{type = item, name = stone, amount = 2}},
         main_product = stone
     },
     {

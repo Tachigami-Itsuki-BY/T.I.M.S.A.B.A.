@@ -16,10 +16,10 @@ if settings.startup[setting_no_spoilage].value then
     ({
         {
             type = recipe,
-            name = saphirite_ore,
+            name = ore_saphirite,
             category = "angels-bio-void",
             subgroup = is_ores,
-            icons = TWO_I(saphirite_bacteria, saphirite_ore),
+            icons = TWO_I(saphirite_bacteria, ore_saphirite),
             order = a,
             enabled = true,
             auto_recycle = false,
@@ -28,15 +28,15 @@ if settings.startup[setting_no_spoilage].value then
             allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = saphirite_bacteria, amount = 1}},
-            results = {{type = item, name = saphirite_ore, amount = 1}},
-            main_product = saphirite_ore
+            results = {{type = item, name = ore_saphirite, amount = 1}},
+            main_product = ore_saphirite
         },
         {
             type = recipe,
-            name = jivolite_ore,
+            name = ore_jivolite,
             category = "angels-bio-void",
             subgroup = is_ores,
-            icons = TWO_I(jivolite_bacteria, jivolite_ore),
+            icons = TWO_I(jivolite_bacteria, ore_jivolite),
             order = b,
             enabled = true,
             auto_recycle = false,
@@ -45,15 +45,15 @@ if settings.startup[setting_no_spoilage].value then
             allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = jivolite_bacteria, amount = 1}},
-            results = {{type = item, name = jivolite_ore, amount = 1}},
-            main_product = jivolite_ore
+            results = {{type = item, name = ore_jivolite, amount = 1}},
+            main_product = ore_jivolite
         },
         {
             type = recipe,
-            name = stiratite_ore,
+            name = ore_stiratite,
             category = "angels-bio-void",
             subgroup = is_ores,
-            icons = TWO_I(stiratite_bacteria, stiratite_ore),
+            icons = TWO_I(stiratite_bacteria, ore_stiratite),
             order = c,
             enabled = true,
             auto_recycle = false,
@@ -62,15 +62,15 @@ if settings.startup[setting_no_spoilage].value then
             allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = stiratite_bacteria, amount = 1}},
-            results = {{type = item, name = stiratite_ore, amount = 1}},
-            main_product = stiratite_ore
+            results = {{type = item, name = ore_stiratite, amount = 1}},
+            main_product = ore_stiratite
         },
         {
             type = recipe,
-            name = crotinnium_ore,
+            name = ore_crotinnium,
             category = "angels-bio-void",
             subgroup = is_ores,
-            icons = TWO_I(crotinnium_bacteria, crotinnium_ore),
+            icons = TWO_I(crotinnium_bacteria, ore_crotinnium),
             order = d,
             enabled = true,
             auto_recycle = false,
@@ -79,15 +79,15 @@ if settings.startup[setting_no_spoilage].value then
             allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = crotinnium_bacteria, amount = 1}},
-            results = {{type = item, name = crotinnium_ore, amount = 1}},
-            main_product = crotinnium_ore
+            results = {{type = item, name = ore_crotinnium, amount = 1}},
+            main_product = ore_crotinnium
         },
         {
             type = recipe,
-            name = rubyte_ore,
+            name = ore_rubyte,
             category = "angels-bio-void",
             subgroup = is_ores,
-            icons = TWO_I(rubyte_bacteria, rubyte_ore),
+            icons = TWO_I(rubyte_bacteria, ore_rubyte),
             order = e,
             enabled = true,
             auto_recycle = false,
@@ -96,15 +96,15 @@ if settings.startup[setting_no_spoilage].value then
             allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = rubyte_bacteria, amount = 1}},
-            results = {{type = item, name = rubyte_ore, amount = 1}},
-            main_product = rubyte_ore
+            results = {{type = item, name = ore_rubyte, amount = 1}},
+            main_product = ore_rubyte
         },
         {
             type = recipe,
-            name = bobmonium_ore,
+            name = ore_bobmonium,
             category = "angels-bio-void",
             subgroup = is_ores,
-            icons = TWO_I(bobmonium_bacteria, bobmonium_ore),
+            icons = TWO_I(bobmonium_bacteria, ore_bobmonium),
             order = f,
             enabled = true,
             auto_recycle = false,
@@ -113,8 +113,8 @@ if settings.startup[setting_no_spoilage].value then
             allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = bobmonium_bacteria, amount = 1}},
-            results = {{type = item, name = bobmonium_ore, amount = 1}},
-            main_product = bobmonium_ore
+            results = {{type = item, name = ore_bobmonium, amount = 1}},
+            main_product = ore_bobmonium
         },
         {
             type = recipe,

@@ -7,17 +7,7 @@ powellite_purified = "powellite-purified"
 data:extend
 ({
     {
-        localised_description =
-        {
-            "",
-            "Can be refined and sorted for pure ores:\n",
-            "   [item=calcium] Ca\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=holmium-ore] Ho"
-        },
+        localised_description = {"item-description.powellite-ore"},
         type = item,
         name = powellite_ore,
         subgroup = is_ores,
@@ -48,18 +38,7 @@ data:extend
         }
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=calcium] Ca\n",
-            "   [item=copper-ore] Cu\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=holmium-ore] Ho"
-        },
+        localised_description = {"item-description.powellite-crushed"},
         type = item,
         name = powellite_crushed,
         subgroup = is_ore_processing_a,
@@ -70,18 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=calcium] Ca\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=holmium-ore] Ho"
-        },
+        localised_description = {"item-description.powellite-chunk"},
         type = item,
         name = powellite_chunks,
         subgroup = is_ore_processing_b,
@@ -92,18 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=calcium] Ca\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=holmium-ore] Ho"
-        },
+        localised_description = {"item-description.powellite-crystal"},
         type = item,
         name = powellite_crystals,
         subgroup = is_ore_processing_c,
@@ -114,17 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=calcium] Ca\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=molybdenum-ore] Mo\n",
-            "   [item=holmium-ore] Ho"
-        },
+        localised_description = {"item-description.powellite-pure"},
         type = item,
         name = powellite_purified,
         subgroup = is_ore_processing_d,
@@ -473,17 +420,7 @@ data:extend
 ({
     resource(
         {
-            localised_description =
-            {
-                "",
-                "Can be refined and sorted for pure ores:\n",
-                "      [img=item/calcium] Calcium\n",
-                "      [img=item/copper-ore] Copper ore\n",
-                "      [img=item/bob-lead-ore] Lead ore\n",
-                "      [img=item/bob-tungsten-ore] Tungsten ore\n",
-                "      [img=item/molybdenum-ore] Molybdenum ore\n",
-                "      [img=item/holmium-ore] Holmium ore"
-            },
+            localised_description = {"entity-description.powellite-ore"},
             name = powellite_ore,
             subgroup = is_ores,
             order = g,

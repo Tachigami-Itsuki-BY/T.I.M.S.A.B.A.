@@ -1,11 +1,11 @@
 local data_autoplace_control = data.raw["autoplace-control"]
 data_autoplace_control[coal].order = a
-data_autoplace_control[saphirite_ore].order = a_a
-data_autoplace_control[jivolite_ore].order = a_b
-data_autoplace_control[stiratite_ore].order = a_c
-data_autoplace_control[crotinnium_ore].order = a_d
-data_autoplace_control[rubyte_ore].order = a_e
-data_autoplace_control[bobmonium_ore].order = a_f
+data_autoplace_control[ore_saphirite].order = a_a
+data_autoplace_control[ore_jivolite].order = a_b
+data_autoplace_control[ore_stiratite].order = a_c
+data_autoplace_control[ore_crotinnium].order = a_d
+data_autoplace_control[ore_rubyte].order = a_e
+data_autoplace_control[ore_bobmonium].order = a_f
 -- a_g
 -- a_h
 data_autoplace_control[crude_oil].order = a_i

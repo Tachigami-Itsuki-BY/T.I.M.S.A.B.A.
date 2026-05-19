@@ -28,7 +28,7 @@ data:extend
         name = jivolite_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, jivolite_ore, stone),
+        icons = TWO_D_I(lava, calcite, ore_jivolite, stone),
         order = a_b,
         enabled = false,
         auto_recycle = false,
@@ -43,10 +43,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = jivolite_ore, amount = 16},
+            {type = item, name = ore_jivolite, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = jivolite_ore,
+        main_product = ore_jivolite,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     },
     {
@@ -54,7 +54,7 @@ data:extend
         name = crotinnium_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, crotinnium_ore, stone),
+        icons = TWO_D_I(lava, calcite, ore_crotinnium, stone),
         order = a_d,
         enabled = false,
         auto_recycle = false,
@@ -69,10 +69,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = crotinnium_ore, amount = 16},
+            {type = item, name = ore_crotinnium, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = crotinnium_ore,
+        main_product = ore_crotinnium,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     },
     {
@@ -80,7 +80,7 @@ data:extend
         name = rubyte_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, rubyte_ore, stone),
+        icons = TWO_D_I(lava, calcite, ore_rubyte, stone),
         order = a_e,
         enabled = false,
         auto_recycle = false,
@@ -95,10 +95,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = rubyte_ore, amount = 16},
+            {type = item, name = ore_rubyte, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = rubyte_ore,
+        main_product = ore_rubyte,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     },
     {
@@ -106,7 +106,7 @@ data:extend
         name = bobmonium_from_lava,
         category = metallurgy,
         subgroup = is_lava,
-        icons = TWO_D_I(lava, calcite, bobmonium_ore, stone),
+        icons = TWO_D_I(lava, calcite, ore_bobmonium, stone),
         order = a_f,
         enabled = false,
         auto_recycle = false,
@@ -121,10 +121,10 @@ data:extend
         },
         results =
         {
-            {type = item, name = bobmonium_ore, amount = 16},
+            {type = item, name = ore_bobmonium, amount = 16},
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
-        main_product = bobmonium_ore,
+        main_product = ore_bobmonium,
         surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
     }
 })
