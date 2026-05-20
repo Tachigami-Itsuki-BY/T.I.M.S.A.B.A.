@@ -49,7 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = {"item-description.powellite-chunk"},
+        localised_description = {"item-description.powellite-chunks"},
         type = item,
         name = powellite_chunks,
         subgroup = is_ore_processing_b,
@@ -60,7 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = {"item-description.powellite-crystal"},
+        localised_description = {"item-description.powellite-crystals"},
         type = item,
         name = powellite_crystals,
         subgroup = is_ore_processing_c,
@@ -71,7 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = {"item-description.powellite-pure"},
+        localised_description = {"item-description.powellite-purified"},
         type = item,
         name = powellite_purified,
         subgroup = is_ore_processing_d,

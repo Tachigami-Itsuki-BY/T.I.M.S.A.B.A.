@@ -49,7 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = {"item-description.molybdenite-chunk"},
+        localised_description = {"item-description.molybdenite-chunks"},
         type = item,
         name = molybdenite_chunks,
         subgroup = is_ore_processing_b,
@@ -60,7 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = {"item-description.molybdenite-crystal"},
+        localised_description = {"item-description.molybdenite-crystals"},
         type = item,
         name = molybdenite_crystals,
         subgroup = is_ore_processing_c,
@@ -71,7 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description = {"item-description.molybdenite-pure"},
+        localised_description = {"item-description.molybdenite-purified"},
         type = item,
         name = molybdenite_purified,
         subgroup = is_ore_processing_d,

@@ -145,7 +145,6 @@ local soil_alt = "angels-solid-soil-alternative"
 data_recipe[soil_alt].icons = THREE_I(sand_angels, compost_angels, soil_angels)
 data_recipe[soil_alt].order = d_a
 
-local saw = "angels-solid-saw"
 data_item[saw].order = e
 data_recipe[saw].icons = TWO_I(iron_plate, saw)
 data_recipe[saw].order = e

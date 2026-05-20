@@ -6,18 +6,7 @@ wolframite_purified = "wolframite-purified"
 data:extend
 ({
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=niobium-ore] Nb\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=angels-manganese-ore] Mn\n",
-            "   [item=magnesium-ore] Mg\n",
-            "   [item=rhenium-ore] Re"
-        },
+        localised_description = {"item-description.wolframite-crushed"},
         type = item,
         name = wolframite_crushed,
         subgroup = is_vulcanus_wolframite,
@@ -28,18 +17,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=niobium-ore] Nb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=angels-manganese-ore] Mn\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=magnesium-ore] Mg\n",
-            "   [item=rhenium-ore] Re"
-        },
+        localised_description = {"item-description.wolframite-chunks"},
         type = item,
         name = wolframite_chunks,
         subgroup = is_vulcanus_wolframite,
@@ -50,18 +28,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=niobium-ore] Nb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=angels-manganese-ore] Mn\n",
-            "   [item=magnesium-ore] Mg\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=rhenium-ore] Re"
-        },
+        localised_description = {"item-description.wolframite-crystals"},
         type = item,
         name = wolframite_crystals,
         subgroup = is_vulcanus_wolframite,
@@ -72,17 +39,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=bob-tungsten-ore] W\n",
-            "   [item=niobium-ore] Nb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=angels-manganese-ore] Mn\n",
-            "   [item=magnesium-ore] Mg\n",
-            "   [item=rhenium-ore] Re"
-        },
+        localised_description = {"item-description.wolframite-purified"},
         type = item,
         name = wolframite_purified,
         subgroup = is_vulcanus_wolframite,

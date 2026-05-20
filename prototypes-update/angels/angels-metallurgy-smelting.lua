@@ -670,8 +670,12 @@ data_recipe[nickel_ingot_3].results =
     {type = fluid, name = carbon_monoxide_angels, amount = 480} -- 960
 }
 
+data_item[nickel_powder].hidden = true
+data_item[nickel_powder].hidden_in_factoriopedia = true
 data_item[nickel_powder].localised_description = show_formula and {chemical_formula, "Ni"} or nil
 data_item[nickel_powder].order = e
+data_recipe[nickel_powder].hidden = true
+data_recipe[nickel_powder].hidden_in_factoriopedia = true
 data_recipe[nickel_powder].icons = TWO_I(nickel_ingot, nickel_powder)
 data_recipe[nickel_powder].order = e
 

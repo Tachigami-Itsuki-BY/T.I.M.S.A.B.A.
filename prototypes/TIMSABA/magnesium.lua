@@ -610,3 +610,6 @@ data:extend
         results = {{type = , name = , amount = }},
     }
 })]]
+
+data_recipe[magnesium_molten].hidden = true
+data_recipe[magnesium_molten].hidden_in_factoriopedia = true

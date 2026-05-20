@@ -52,7 +52,7 @@ require("prototypes-final-fix.final-fix-module")
 require("prototypes-final-fix.final-fix-settings")
 require("prototypes-final-fix.final-fix-autoplace-controls")
 require("prototypes-final-fix.final-fix-simulation")
-require("prototypes-final-fix.final-fix-pipe")
+require("prototypes-final-fix.final-fix-entities")
 
 require("prototypes-final-fix.mods-final-fix.flare-stack")
 

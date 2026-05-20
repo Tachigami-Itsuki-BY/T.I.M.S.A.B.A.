@@ -43,6 +43,8 @@ if mods["Flare Stack"] then
     local incinerator = "incinerator"
     data_item[incinerator].subgroup = is_flare_stack
     data_item[incinerator].order = a
+    data_item[incinerator].stack_size = 32
+    data_item[incinerator].weight = 31250
     data_recipe[incinerator].subgroup = is_flare_stack
     data_recipe[incinerator].order = a
     data_recipe[incinerator].ingredients =
@@ -60,6 +62,8 @@ if mods["Flare Stack"] then
     local electric_incinerator = "electric-incinerator"
     data_item[electric_incinerator].subgroup = is_flare_stack
     data_item[electric_incinerator].order = b
+    data_item[electric_incinerator].stack_size = 32
+    data_item[electric_incinerator].weight = 31250
     data_recipe[electric_incinerator].subgroup = is_flare_stack
     data_recipe[electric_incinerator].order = b
     data_recipe[electric_incinerator].ingredients =
