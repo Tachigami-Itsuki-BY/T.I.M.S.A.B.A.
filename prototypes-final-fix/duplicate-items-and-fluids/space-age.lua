@@ -3,7 +3,6 @@ local replacements_1 =
 	[carbon] = carbon_angels,
 	[tungsten_carbide] = tungsten_carbide_plate_bob,
 	[tungsten_plate] = tungsten_plate_bob,
-	--[wolframite_ore] = tungsten_ore_bob,
 	[lithium_plate] = lithium_bob,
 	[lithium] = lithium_chloride_angels,
 	[ammonia] = ammonia_angels,
@@ -97,8 +96,12 @@ data_item[lithium_plate] = nil
 data_fluid[ammonia] = nil
 data_fluid[lithium_brine] = nil
 data_item[carbon] = nil
---data_item[wolframite_ore] = nil
-data_item[tungsten_plate] = nil
+if mods [muluna_mods] then
+	data_item[tungsten_plate].hidden = true
+	data_item[tungsten_plate].hidden_in_factoriopedia = true
+else
+	data_item[tungsten_plate] = nil
+end
 data_item[tungsten_carbide] = nil
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil

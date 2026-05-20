@@ -397,13 +397,13 @@ data:extend
         {
             {type = fluid, name = nitrobenzene_liquid, amount = 60},
             {type = fluid, name = hydrogen_angels, amount = 180},
-            {type = item, name = nickel_powder, amount = 8}
+            {type = item, name = catalyst_yellow, amount = 1}
         },
         results =
         {
             {type = fluid, name = aniline_liquid, amount = 60},
             {type = fluid, name = water_purified_angels, amount = 60}, -- 120
-            {type = item, name = nickel_powder, amount = 4} -- 8
+            {type = item, name = catalyst_carrier, amount = 1}
         },
         main_product = aniline_liquid
     },

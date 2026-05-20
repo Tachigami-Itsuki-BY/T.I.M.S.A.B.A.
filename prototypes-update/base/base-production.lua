@@ -151,6 +151,27 @@ if settings.startup["bobmods-power-fluidgenerator"].value then
     bobmods.lib.recipe.update_recycling_recipe({fluid_generator_1, fluid_generator_2, fluid_generator_3, hydrazine_generator})
 end
 
+local burner_electric_generator = "bob-burner-generator"
+if data_item[burner_electric_generator] then
+    data_item[burner_electric_generator].order = z
+    data_item[burner_electric_generator].stack_size = 32
+    data_item[burner_electric_generator].weight = 31250
+    data_recipe[burner_electric_generator].order = z
+    data_recipe[burner_electric_generator].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = stone_furnace, amount = 1},
+        {type = item, name = iron_plate, amount = 8}
+    }
+    data_burner_generator[burner_electric_generator].order = z
+    data_burner_generator[burner_electric_generator].max_power_output = 450 .. kW
+    data_burner_generator[burner_electric_generator].burner.fuel_categories = {base_fuel, advanced_fuel}
+    data_burner_generator[burner_electric_generator].burner.effectivity = 0.5
+    data_burner_generator[burner_electric_generator].burner.emissions_per_minute = {pollution = 16}
+
+    bobmods.lib.recipe.update_recycling_recipe({burner_electric_generator})
+end
+
 local solar_panels_small =
 {
     {name = solar_panel_small_1, production = 30, order = a, localised_name = {"entity-name.solar-panel-small-1"}},
@@ -674,6 +695,8 @@ end
 centrifuge_recipe(centrifuge_1, steel_gear_wheel,    steel_bearing,    advanced_circuit,         concrete_brick,            steel_plate)
 centrifuge_recipe(centrifuge_2, titanium_gear_wheel, titanium_bearing, processing_unit,          reinforced_concrete_brick, titanium_plate_bob, centrifuge_1)
 centrifuge_recipe(centrifuge_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, reinforced_titanium_concrete_brick, nitinol_plate_bob, centrifuge_2)
+
+data_item_subgroup["bob-assembly-machine"].order = e_a
 
 local assembling_machines =
 {

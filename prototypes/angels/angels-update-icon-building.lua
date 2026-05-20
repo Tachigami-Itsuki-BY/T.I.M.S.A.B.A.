@@ -1,10 +1,4 @@
-local assembling_machine = "assembling-machine"
 local angels_mod = "angels"
-local big = "big"
-local medium = "medium"
-local big_tint = "big-tint"
-local refining = "refining"
-local petrochem = "petrochem"
 if not (reskins.angels and reskins.angels.triggers.refining.entities) then
 	return
 end
@@ -389,7 +383,7 @@ do
             {
                 {
                     filename = "__angelsrefininggraphics__/graphics/entity/ore-sorting-facility/ore-sorting-facility-base.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 449,
                     height = 458,
                     frame_count = 40,
@@ -400,7 +394,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/refining/ore-sorting-facility/ore-sorting-facility-mask.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 449,
                     height = 458,
                     frame_count = 40,
@@ -412,7 +406,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/refining/ore-sorting-facility/ore-sorting-facility-highlights.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 449,
                     height = 458,
                     frame_count = 40,
@@ -424,7 +418,7 @@ do
                 },
                 {
                     filename = "__angelsrefininggraphics__/graphics/entity/ore-sorting-facility/ore-sorting-facility-shadow.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 528,
                     height = 356,
                     repeat_count = 40,
@@ -536,7 +530,7 @@ do
             {
                 {
                     filename = "__angelsrefininggraphics__/graphics/entity/electro-whinning-cell/electro-whinning-cell.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     frame_count = 36,
@@ -546,7 +540,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/refining/electrowinning-cell/electrowinning-cell-mask.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     repeat_count = 36,
@@ -556,7 +550,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/refining/electrowinning-cell/electrowinning-cell-highlights.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     repeat_count = 36,
@@ -1161,7 +1155,7 @@ do
             {
                 {
                     filename = "__angelspetrochemgraphics__/graphics/entity/advanced-chemical-plant/advanced-chemical-plant.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     frame_count = 16,
@@ -1171,7 +1165,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/petrochem/advanced-chemical-plant/advanced-chemical-plant-base-patch.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     repeat_count = 16,
@@ -1180,7 +1174,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/petrochem/advanced-chemical-plant/advanced-chemical-plant-mask.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     repeat_count = 16,
@@ -1190,7 +1184,7 @@ do
                 },
                 {
                     filename = "__reskins-angels__/graphics/entity/petrochem/advanced-chemical-plant/advanced-chemical-plant-highlights.png",
-                    priority = "extra-high",
+                    priority = extra_high,
                     width = 224,
                     height = 224,
                     repeat_count = 16,

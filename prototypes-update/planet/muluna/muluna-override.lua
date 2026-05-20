@@ -253,6 +253,7 @@ if mods [muluna_mods] then
     }
 
     local tree_crushing = "muluna-tree-crushing"
+    data_recipe[tree_crushing].category = lumber_mill_recipe_category
     data_recipe[tree_crushing].subgroup = is_muluna_recipe_tree
     data_recipe[tree_crushing].icons = TWO_I(tree_angels, wood)
     data_recipe[tree_crushing].order = b
@@ -276,6 +277,7 @@ if mods [muluna_mods] then
     data_recipe[greenhouse_wood].ingredients =
     {
         {type = item, name = landfill, amount = 256},
+        {type = item, name = basic_circuit_board, amount = 8},
         {type = item, name = small_lamp, amount = 16},
         {type = item, name = steel_pipe, amount = 16},
         {type = item, name = steel_plate, amount = 16},
@@ -410,9 +412,9 @@ if mods [muluna_mods] then
     data_recipe[rocket_fuel_aluminum].energy_required = 16
     data_recipe[rocket_fuel_aluminum].ingredients =
     {
-        {type = item, name = ice, amount = 4},
+        {type = item, name = ice, amount = 8},
         {type = item, name = aluminium_plate_crushed, amount = 16},
-        {type = fluid, name = water, amount = 240}
+        {type = fluid, name = water, amount = 120}
     }
     data_recipe[rocket_fuel_aluminum].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
 
@@ -1103,6 +1105,9 @@ if mods [muluna_mods] then
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_3})
 
+    local tech_greenhouses = "muluna-greenhouses"
+    table.insert(data_technology[tech_greenhouses].effects, {type = unlock_recipe, recipe = lumber_mill})
+
     local tech_silicon_processing = "muluna-silicon-processing"
     data_technology[tech_silicon_processing].prerequisites = {"muluna-aluminum-processing", tech_anorthite_processing}
     data_technology[tech_silicon_processing].effects =
@@ -1146,7 +1151,12 @@ if mods [muluna_mods] then
         }
     }
 
-    data_technology["muluna-alice-propellant"].icons =
+    local tech_wood_gas_processing = "wood-gas-processing"
+    data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/wood-gas-processing.png"
+    data_technology[tech_wood_gas_processing].icon_size = 256
+
+    local tech_alice_propellant = "muluna-alice-propellant"
+    data_technology[tech_alice_propellant].icons =
     {
         {
             icon = data_item[aluminium_plate_crushed].icon,
@@ -1161,10 +1171,7 @@ if mods [muluna_mods] then
             scale = 1
         }
     }
-
-    local tech_wood_gas_processing = "wood-gas-processing"
-    data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/wood-gas-processing.png"
-    data_technology[tech_wood_gas_processing].icon_size = 256
+    data_technology[tech_alice_propellant].prerequisites = {tech_wood_gas_processing}
 
     local tech_advanced_wood_gas_processing = "advanced-wood-gas-processing"
     data_technology[tech_advanced_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/advanced-wood-gas-processing.png"
@@ -1219,7 +1226,7 @@ if mods [muluna_mods] then
 
     local tech_regolith_digging = "muluna-regolith-digging"
     data_technology[tech_regolith_digging].localised_description = {"technology-description.muluna-regolith-digging"}
-    --data_technology[tech_regolith_digging].research_trigger.entity = electric_mining_drill_5 .. "-ground-digger"
+    data_technology[tech_regolith_digging].research_trigger.entity = electric_mining_drill_5 .. "-ground-digger"
 
     table.insert(data_technology[satellite_radar].prerequisites, radar_5)
 

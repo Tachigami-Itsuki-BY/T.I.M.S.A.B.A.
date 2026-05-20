@@ -1,9 +1,4 @@
 local bobs_mod = "bobs"
-local small = "small"
-local big = "big"
-local medium = "medium"
-local power = "power"
-local generator = "generator"
 if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
 	return
 end
@@ -33,7 +28,7 @@ end
 do
 	local inputs =
 	{
-		type = boiler_1,
+		type = boiler,
 		base_entity_name = boiler_1,
 		mod = bobs_mod,
 		group = power,
@@ -93,7 +88,7 @@ do
 			{
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-N-idle.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 269,
 					height = 221,
 					shift = util.by_pixel(-1.25, 5.25),
@@ -101,7 +96,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-N-idle-mask.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 269,
 					height = 221,
 					shift = util.by_pixel(-1.25, 5.25),
@@ -110,7 +105,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-N-idle-highlights.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 269,
 					height = 221,
 					shift = util.by_pixel(-1.25, 5.25),
@@ -119,7 +114,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-N-shadow.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 274,
 					height = 164,
 					scale = 0.5,
@@ -134,7 +129,7 @@ do
 			{
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-E-idle.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 216,
 					height = 301,
 					shift = util.by_pixel(-3, 1.25),
@@ -142,7 +137,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-E-idle-mask.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 216,
 					height = 301,
 					shift = util.by_pixel(-3, 1.25),
@@ -151,7 +146,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-E-idle-highlights.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 216,
 					height = 301,
 					shift = util.by_pixel(-3, 1.25),
@@ -160,7 +155,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-E-shadow.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 184,
 					height = 194,
 					scale = 0.5,
@@ -175,7 +170,7 @@ do
 			{
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-S-idle.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 260,
 					height = 192,
 					shift = util.by_pixel(4, 13),
@@ -183,7 +178,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-S-idle-mask.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 260,
 					height = 192,
 					shift = util.by_pixel(4, 13),
@@ -192,7 +187,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-S-idle-highlights.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 260,
 					height = 192,
 					shift = util.by_pixel(4, 13),
@@ -201,7 +196,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-S-shadow.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 311,
 					height = 131,
 					scale = 0.5,
@@ -216,7 +211,7 @@ do
 			{
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-W-idle.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 196,
 					height = 273,
 					shift = util.by_pixel(1.5, 7.75),
@@ -224,7 +219,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-W-idle-mask.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 196,
 					height = 273,
 					shift = util.by_pixel(1.5, 7.75),
@@ -233,7 +228,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/boiler/boiler-W-idle-highlights.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 196,
 					height = 273,
 					shift = util.by_pixel(1.5, 7.75),
@@ -242,7 +237,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/boiler/boiler-W-shadow.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 206,
 					height = 218,
 					scale = 0.5,
@@ -578,7 +573,7 @@ end
 do
 	local inputs =
 	{
-		type = solar_panel_1,
+		type = solar_panel,
 		base_entity_name = solar_panel_1,
 		mod = bobs_mod,
 		group = power,
@@ -697,7 +692,7 @@ do
 				{
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/solar-panel-small.png",
-						priority = "high",
+						priority = high,
 						width = 180,
 						height = 150,
 						shift = util.by_pixel(5, 0.5),
@@ -705,7 +700,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/solar-panel-small-mask.png",
-						priority = "high",
+						priority = high,
 						width = 180,
 						height = 150,
 						shift = util.by_pixel(5, 0.5),
@@ -714,7 +709,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/solar-panel-small-highlights.png",
-						priority = "high",
+						priority = high,
 						width = 180,
 						height = 150,
 						shift = util.by_pixel(5, 0.5),
@@ -723,7 +718,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/solar-panel-small-shadow.png",
-						priority = "high",
+						priority = high,
 						width = 180,
 						height = 150,
 						shift = util.by_pixel(5, 0.5),
@@ -738,7 +733,7 @@ do
 				{
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-small/base/solar-panel-small-shadow-overlay.png",
-						priority = "high",
+						priority = high,
 						width = 180,
 						height = 150,
 						shift = util.by_pixel(5, 0.5),
@@ -755,7 +750,7 @@ do
 				{
 					{
 						filename = "__base__/graphics/entity/solar-panel/solar-panel.png",
-						priority = "high",
+						priority = high,
 						width = 230,
 						height = 224,
 						shift = util.by_pixel(-3, 3.5),
@@ -763,7 +758,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel/solar-panel-mask.png",
-						priority = "high",
+						priority = high,
 						width = 230,
 						height = 224,
 						shift = util.by_pixel(-3, 3.5),
@@ -772,7 +767,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel/solar-panel-highlights.png",
-						priority = "high",
+						priority = high,
 						width = 230,
 						height = 224,
 						shift = util.by_pixel(-3, 3.5),
@@ -781,7 +776,7 @@ do
 					},
 					{
 						filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow.png",
-						priority = "high",
+						priority = high,
 						width = 220,
 						height = 180,
 						shift = util.by_pixel(9.5, 6),
@@ -796,7 +791,7 @@ do
 				{
 					{
 						filename = "__base__/graphics/entity/solar-panel/solar-panel-shadow-overlay.png",
-						priority = "high",
+						priority = high,
 						width = 214,
 						height = 180,
 						shift = util.by_pixel(10.5, 6),
@@ -811,7 +806,7 @@ do
 				{
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/solar-panel-large.png",
-						priority = "high",
+						priority = high,
 						width = 308,
 						height = 274,
 						shift = util.by_pixel(5, 3.5),
@@ -819,7 +814,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/solar-panel-large-mask.png",
-						priority = "high",
+						priority = high,
 						width = 308,
 						height = 274,
 						shift = util.by_pixel(5, 3.5),
@@ -828,7 +823,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/solar-panel-large-highlights.png",
-						priority = "high",
+						priority = high,
 						width = 308,
 						height = 274,
 						shift = util.by_pixel(5, 3.5),
@@ -837,7 +832,7 @@ do
 					},
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/solar-panel-large-shadow.png",
-						priority = "high",
+						priority = high,
 						width = 308,
 						height = 274,
 						shift = util.by_pixel(5, 3.5),
@@ -852,7 +847,7 @@ do
 				{
 					{
 						filename = "__reskins-bobs__/graphics/entity/power/solar-panel-large/base/solar-panel-large-shadow-overlay.png",
-						priority = "high",
+						priority = high,
 						width = 308,
 						height = 274,
 						shift = util.by_pixel(5, 3.5),
@@ -869,7 +864,7 @@ end
 do
 	local inputs =
 	{
-		type = accumulator_1,
+		type = accumulator,
 		icon_name = accumulator_1,
 		base_entity_name = accumulator_1,
 		mod = bobs_mod,
@@ -884,7 +879,7 @@ do
 			{
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/accumulator/wires/accumulator-" .. inputs.wire .. ".png",
-					priority = "high",
+					priority = high,
 					width = 130,
 					height = 189,
 					repeat_count = repeat_count,
@@ -893,7 +888,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/accumulator/accumulator-mask.png",
-					priority = "high",
+					priority = high,
 					width = 130,
 					height = 189,
 					repeat_count = repeat_count,
@@ -903,7 +898,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/power/accumulator/accumulator-highlights.png",
-					priority = "high",
+					priority = high,
 					width = 130,
 					height = 189,
 					repeat_count = repeat_count,
@@ -913,7 +908,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/accumulator/accumulator-shadow.png",
-					priority = "high",
+					priority = high,
 					width = 234,
 					height = 106,
 					repeat_count = repeat_count,
@@ -932,7 +927,7 @@ do
 				accumulator_picture_tinted(inputs, 24),
 				{
 					filename = "__base__/graphics/entity/accumulator/accumulator-charge.png",
-					priority = "high",
+					priority = high,
 					width = 178,
 					height = 206,
 					line_length = 6,
@@ -952,7 +947,7 @@ do
 				accumulator_picture_tinted(inputs, 24),
 				{
 					filename = "__base__/graphics/entity/accumulator/accumulator-discharge.png",
-					priority = "high",
+					priority = high,
 					width = 170,
 					height = 210,
 					line_length = 6,
@@ -1022,11 +1017,11 @@ end
 do
 	local inputs =
 	{
-		type = "mining-drill",
+		type = mining_drill,
 		icon_name = electric_mining_drill_1,
 		base_entity_name = electric_mining_drill_1,
 		mod = bobs_mod,
-		group = "mining",
+		group = mining,
 		particles = {["medium-long"] = 3},
 	}
 	local tier_map = {[electric_mining_drill_6] = {tier = 6, prog_tier = 6}}
@@ -1036,7 +1031,7 @@ do
 			layers =
 			{
 				{
-					priority = "high",
+					priority = high,
 					filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill.png",
 					line_length = 6,
 					width = 162,
@@ -1048,7 +1043,7 @@ do
 					scale = 0.5
 				},
 				{
-					priority = "high",
+					priority = high,
 					filename = "__reskins-bobs__/graphics/entity/mining/mining-drill/drill/electric-mining-drill-mask.png",
 					line_length = 6,
 					width = 162,
@@ -1061,7 +1056,7 @@ do
 					scale = 0.5
 				},
 				{
-					priority = "high",
+					priority = high,
 					filename = "__reskins-bobs__/graphics/entity/mining/mining-drill/drill/electric-mining-drill-highlights.png",
 					line_length = 6,
 					width = 162,
@@ -1074,7 +1069,7 @@ do
 					scale = 0.5
 				},
 				{
-					priority = "high",
+					priority = high,
 					filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-shadow.png",
 					line_length = 7,
 					width = 218,
@@ -1093,7 +1088,7 @@ do
 		local function horizontal_drill_shadow(speed)
 			return
 			{
-				priority = "high",
+				priority = high,
 				filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-horizontal-shadow.png",
 				line_length = 7,
 				width = 180,
@@ -1113,7 +1108,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-horizontal-front.png",
 						line_length = 6,
 						width = 66,
@@ -1125,7 +1120,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__reskins-bobs__/graphics/entity/mining/mining-drill/drill/electric-mining-drill-horizontal-front-mask.png",
 						line_length = 6,
 						width = 66,
@@ -1138,7 +1133,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__reskins-bobs__/graphics/entity/mining/mining-drill/drill/electric-mining-drill-horizontal-front-highlights.png",
 						line_length = 6,
 						width = 66,
@@ -1159,7 +1154,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-horizontal.png",
 						line_length = 6,
 						width = 80,
@@ -1171,7 +1166,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__reskins-bobs__/graphics/entity/mining/mining-drill/drill/electric-mining-drill-horizontal-mask.png",
 						line_length = 6,
 						width = 80,
@@ -1184,7 +1179,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__reskins-bobs__/graphics/entity/mining/mining-drill/drill/electric-mining-drill-horizontal-highlights.png",
 						line_length = 6,
 						width = 80,
@@ -1214,7 +1209,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = drill_type .. "/electric-mining-drill-N.png",
 						width = 190,
 						height = 208,
@@ -1224,7 +1219,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-output.png",
 						line_length = 5,
 						width = 60,
@@ -1235,7 +1230,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-shadow.png",
 						width = 212,
 						height = 204,
@@ -1252,7 +1247,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = drill_type .. "/electric-mining-drill-E.png",
 						width = 192,
 						height = 188,
@@ -1262,7 +1257,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-output.png",
 						line_length = 5,
 						width = 50,
@@ -1273,7 +1268,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-shadow.png",
 						width = 222,
 						height = 182,
@@ -1290,7 +1285,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S.png",
 						width = 184,
 						height = 192,
@@ -1300,7 +1295,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-shadow.png",
 						width = 212,
 						height = 204,
@@ -1317,7 +1312,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = drill_type .. "/electric-mining-drill-W.png",
 						width = 192,
 						height = 188,
@@ -1327,7 +1322,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-output.png",
 						line_length = 5,
 						width = 50,
@@ -1338,7 +1333,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-shadow.png",
 						width = 200,
 						height = 182,
@@ -1379,7 +1374,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-smoke.png",
 							line_length = 5,
 							width = 42,
@@ -1424,7 +1419,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-smoke.png",
 							line_length = 5,
 							width = 46,
@@ -1441,7 +1436,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-smoke.png",
 							line_length = 5,
 							width = 48,
@@ -1458,7 +1453,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-smoke.png",
 							line_length = 5,
 							width = 46,
@@ -1482,7 +1477,7 @@ do
 				north_animation = nil,
 				east_animation =
 				{
-					priority = "high",
+					priority = high,
 					filename = drill_type .. "/electric-mining-drill-E-front.png",
 					width = 136,
 					height = 148,
@@ -1495,7 +1490,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = drill_type .. "/electric-mining-drill-S-output.png",
 							line_length = 5,
 							width = 84,
@@ -1506,7 +1501,7 @@ do
 							scale = 0.5
 						},
 						{
-							priority = "high",
+							priority = high,
 							filename = drill_type .. "/electric-mining-drill-S-front.png",
 							width = 190,
 							height = 104,
@@ -1519,7 +1514,7 @@ do
 				},
 				west_animation =
 				{
-					priority = "high",
+					priority = high,
 					filename = drill_type .. "/electric-mining-drill-W-front.png",
 					width = 134,
 					height = 140,
@@ -1544,7 +1539,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = drill_type .. "/electric-mining-drill-N-wet.png",
 						width = 190,
 						height = 198,
@@ -1554,7 +1549,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-output.png",
 						line_length = 5,
 						width = 60,
@@ -1565,7 +1560,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-shadow.png",
 						width = 248,
 						height = 222,
@@ -1582,7 +1577,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet.png",
 						width = 194,
 						height = 208,
@@ -1592,7 +1587,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-output.png",
 						line_length = 5,
 						width = 50,
@@ -1603,7 +1598,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-shadow.png",
 						width = 260,
 						height = 202,
@@ -1620,7 +1615,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet.png",
 						width = 192,
 						height = 208,
@@ -1630,7 +1625,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-shadow.png",
 						width = 248,
 						height = 192,
@@ -1647,7 +1642,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = drill_type .. "/electric-mining-drill-E-wet.png",
 						width = 194,
 						height = 208,
@@ -1657,7 +1652,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-output.png",
 						line_length = 5,
 						width = 50,
@@ -1668,7 +1663,7 @@ do
 						scale = 0.5
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-shadow.png",
 						width = 226,
 						height = 202,
@@ -1709,7 +1704,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-smoke.png",
 							line_length = 5,
 							width = 42,
@@ -1750,7 +1745,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-smoke.png",
 							line_length = 5,
 							width = 46,
@@ -1767,7 +1762,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-smoke.png",
 							line_length = 5,
 							width = 48,
@@ -1784,7 +1779,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-smoke.png",
 							line_length = 5,
 							width = 46,
@@ -1806,7 +1801,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-window-background.png",
 							width = 22,
 							height = 14,
@@ -1821,7 +1816,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-window-background.png",
 							width = 30,
 							height = 20,
@@ -1836,7 +1831,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-window-background.png",
 							width = 22,
 							height = 14,
@@ -1857,7 +1852,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-background.png",
 							width = 22,
 							height = 14,
@@ -1872,7 +1867,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-background.png",
 							width = 28,
 							height = 18,
@@ -1887,7 +1882,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-background.png",
 							width = 22,
 							height = 14,
@@ -1908,7 +1903,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-flow.png",
 							width = 24,
 							height = 14,
@@ -1923,7 +1918,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-flow.png",
 							width = 26,
 							height = 16,
@@ -1938,7 +1933,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-flow.png",
 							width = 24,
 							height = 14,
@@ -1962,7 +1957,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-window-background.png",
 							width = 172,
 							height = 90,
@@ -1977,7 +1972,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-window-background-front.png",
 							width = 80,
 							height = 106,
@@ -1992,7 +1987,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-window-background-front.png",
 							width = 172,
 							height = 22,
@@ -2007,7 +2002,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-window-background-front.png",
 							width = 82,
 							height = 110,
@@ -2026,7 +2021,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-fluid-background.png",
 							width = 178,
 							height = 94,
@@ -2041,7 +2036,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-background-front.png",
 							width = 80,
 							height = 102,
@@ -2056,7 +2051,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-background-front.png",
 							width = 178,
 							height = 28,
@@ -2071,7 +2066,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-background-front.png",
 							width = 82,
 							height = 106,
@@ -2090,7 +2085,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-fluid-flow.png",
 							width = 172,
 							height = 88,
@@ -2105,7 +2100,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-W-wet-fluid-flow-front.png",
 							width = 78,
 							height = 102,
@@ -2120,7 +2115,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-S-wet-fluid-flow-front.png",
 							width = 172,
 							height = 22,
@@ -2135,7 +2130,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-E-wet-fluid-flow-front.png",
 							width = 78,
 							height = 106,
@@ -2153,7 +2148,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-N-wet-front.png",
 							width = 200,
 							height = 130,
@@ -2168,7 +2163,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = drill_type .. "/electric-mining-drill-W-wet-front.png",
 							width = 208,
 							height = 144,
@@ -2183,7 +2178,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = drill_type .. "/electric-mining-drill-S-output.png",
 							line_length = 5,
 							width = 84,
@@ -2194,7 +2189,7 @@ do
 							scale = 0.5
 						},
 						{
-							priority = "high",
+							priority = high,
 							filename = drill_type .. "/electric-mining-drill-S-wet-front.png",
 							width = 192,
 							height = 140,
@@ -2210,7 +2205,7 @@ do
 					layers =
 					{
 						{
-							priority = "high",
+							priority = high,
 							filename = drill_type .. "/electric-mining-drill-E-wet-front.png",
 							width = 208,
 							height = 148,
@@ -2322,11 +2317,11 @@ end
 do
 	local inputs =
 	{
-		type = "mining-drill",
+		type = mining_drill,
 		icon_name = pumpjack_1,
 		base_entity_name = pumpjack_1,
 		mod = bobs_mod,
-		group = "mining",
+		group = mining,
 		particles = {[small] = 3},
 	}
 	local tier_map =
@@ -2423,7 +2418,7 @@ do
 			{
 				{
 					filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-base.png" or "__base__/graphics/entity/pumpjack/pumpjack-base.png",
-					priority = "extra-high",
+					priority = extra_high,
 					width = 261,
 					height = 273,
 					shift = util.by_pixel(-2.25, -4.75),
@@ -2446,7 +2441,7 @@ do
 				layers =
 				{
 					{
-						priority = "high",
+						priority = high,
 						filename = map.is_water_miner and "__reskins-bobs__/graphics/entity/mining/pumpjack/water-pumpjack-horsehead.png" or "__base__/graphics/entity/pumpjack/pumpjack-horsehead.png",
 						animation_speed = animation_speed,
 						repeat_count = 6,
@@ -2458,7 +2453,7 @@ do
 						shift = util.by_pixel(-4, -24)
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-mask.png",
 						animation_speed = animation_speed,
 						repeat_count = 6,
@@ -2471,7 +2466,7 @@ do
 						tint = inputs.tint
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__reskins-bobs__/graphics/entity/mining/pumpjack/pumpjack-horsehead-highlights.png",
 						animation_speed = animation_speed,
 						repeat_count = 6,
@@ -2484,7 +2479,7 @@ do
 						blend_mode = reskins.lib.settings.blend_mode
 					},
 					{
-						priority = "high",
+						priority = high,
 						filename = "__base__/graphics/entity/pumpjack/pumpjack-horsehead-shadow.png",
 						animation_speed = animation_speed,
 						repeat_count = 6,
@@ -2511,7 +2506,7 @@ do
 	end
 	local inputs =
 	{
-		type = "reactor",
+		type = reactor,
 		icon_name = uranium_reactor,
 		base_entity_name = uranium_reactor,
 		mod = bobs_mod,
@@ -2690,14 +2685,14 @@ end
 do
 	local electric_furnace_map =
 	{
-		[electric_furnace_4] = {icon_name = electric_furnace_1, furnace = "standard", tier = 6, type = "furnace"},
-		[electric_mixing_furnace_4] = {icon_name = electric_mixing_furnace_1, furnace = "mixing", tier = 6, type = "assembling-machine", has_fluids = true},
+		[electric_furnace_4] = {icon_name = electric_furnace_1, furnace = "standard", tier = 6, type = furnace},
+		[electric_mixing_furnace_4] = {icon_name = electric_mixing_furnace_1, furnace = "mixing", tier = 6, type = assembling_machine, has_fluids = true},
 	}
 	local function furnace_heater_animation()
 		return
 		{
 			filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/animations/electric-furnace-heater.png",
-			priority = "high",
+			priority = high,
 			width = 60,
 			height = 56,
 			frame_count = 12,
@@ -2736,7 +2731,7 @@ do
 		return
 		{
 			filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/lights/" .. working_type .. ".png",
-			priority = "high",
+			priority = high,
 			width = 238,
 			height = 212,
 			shift = util.by_pixel(1, 1),
@@ -2763,7 +2758,7 @@ do
 			animation =
 			{
 				filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/animations/propeller-large.png",
-				priority = "high",
+				priority = high,
 				width = 38,
 				height = 26,
 				frame_count = 4,
@@ -2783,7 +2778,7 @@ do
 			animation =
 			{
 				filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/animations/propeller-small.png",
-				priority = "high",
+				priority = high,
 				width = 24,
 				height = 16,
 				frame_count = 4,
@@ -2799,7 +2794,7 @@ do
 		local water_reflection = {
 			pictures = {
 				filename = "__base__/graphics/entity/electric-furnace/electric-furnace-reflection.png",
-				priority = "extra-high",
+				priority = extra_high,
 				width = 24,
 				height = 24,
 				shift = util.by_pixel(5, 40),
@@ -2876,7 +2871,7 @@ do
 			{
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/" .. inputs.icon_name .. "-base.png",
-					priority = "high",
+					priority = high,
 					width = 238,
 					height = 212,
 					shift = util.by_pixel(1, 1),
@@ -2884,7 +2879,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/" .. inputs.icon_name .. "-mask.png",
-					priority = "high",
+					priority = high,
 					width = 238,
 					height = 212,
 					shift = util.by_pixel(1, 1),
@@ -2893,7 +2888,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/" .. inputs.icon_name .. "-highlights.png",
-					priority = "high",
+					priority = high,
 					width = 238,
 					height = 212,
 					shift = util.by_pixel(1, 1),
@@ -2902,7 +2897,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/electric-furnace/electric-furnace-shadow.png",
-					priority = "high",
+					priority = high,
 					width = 228,
 					height = 172,
 					shift = util.by_pixel(10.75, 7.25),
@@ -3014,11 +3009,11 @@ end
 do
 	local inputs =
 	{
-		type = "assembling-machine",
+		type = assembling_machine,
 		icon_name = centrifuge_1,
 		base_entity_name = centrifuge_1,
 		mod = bobs_mod,
-		group = "assembly",
+		group = assembly,
 		particles = {[big] = 1, [medium] = 2},
 	}
 	local tier_map = {[centrifuge_4] = {tier = 4, prog_tier = 6}}
@@ -3070,7 +3065,7 @@ do
 			{
 				{
 					filename = "__base__/graphics/entity/centrifuge/centrifuge-C.png",
-					priority = "high",
+					priority = high,
 					scale = 0.5,
 					line_length = 8,
 					width = 237,
@@ -3081,7 +3076,7 @@ do
 				{
 					filename = "__base__/graphics/entity/centrifuge/centrifuge-C-shadow.png",
 					draw_as_shadow = true,
-					priority = "high",
+					priority = high,
 					scale = 0.5,
 					line_length = 8,
 					width = 279,
@@ -3091,7 +3086,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/centrifuge/centrifuge-B.png",
-					priority = "high",
+					priority = high,
 					scale = 0.5,
 					line_length = 8,
 					width = 156,
@@ -3101,7 +3096,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-B-mask.png",
-					priority = "high",
+					priority = high,
 					tint = inputs.tint,
 					scale = 0.5,
 					line_length = 8,
@@ -3112,7 +3107,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-B-highlights.png",
-					priority = "high",
+					priority = high,
 					blend_mode = reskins.lib.settings.blend_mode,
 					scale = 0.5,
 					line_length = 8,
@@ -3124,7 +3119,7 @@ do
 				{
 					filename = "__base__/graphics/entity/centrifuge/centrifuge-B-shadow.png",
 					draw_as_shadow = true,
-					priority = "high",
+					priority = high,
 					scale = 0.5,
 					line_length = 8,
 					width = 251,
@@ -3134,7 +3129,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/centrifuge/centrifuge-A.png",
-					priority = "high",
+					priority = high,
 					scale = 0.5,
 					line_length = 8,
 					width = 139,
@@ -3144,7 +3139,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-A-mask.png",
-					priority = "high",
+					priority = high,
 					tint = inputs.tint,
 					scale = 0.5,
 					line_length = 8,
@@ -3155,7 +3150,7 @@ do
 				},
 				{
 					filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-A-highlights.png",
-					priority = "high",
+					priority = high,
 					blend_mode = reskins.lib.settings.blend_mode,
 					scale = 0.5,
 					line_length = 8,
@@ -3166,7 +3161,7 @@ do
 				},
 				{
 					filename = "__base__/graphics/entity/centrifuge/centrifuge-A-shadow.png",
-					priority = "high",
+					priority = high,
 					draw_as_shadow = true,
 					scale = 0.5,
 					line_length = 8,
@@ -3195,7 +3190,7 @@ do
 					{
 						{
 							filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-C-light.png",
-							priority = "high",
+							priority = high,
 							scale = 0.5,
 							blend_mode = "additive",
 							line_length = 8,
@@ -3207,7 +3202,7 @@ do
 						},
 						{
 							filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-B-light.png",
-							priority = "high",
+							priority = high,
 							scale = 0.5,
 							blend_mode = "additive",
 							line_length = 8,
@@ -3219,7 +3214,7 @@ do
 						},
 						{
 							filename = "__reskins-bobs__/graphics/entity/assembly/centrifuge/centrifuge-A-light.png",
-							priority = "high",
+							priority = high,
 							scale = 0.5,
 							blend_mode = "additive",
 							line_length = 8,

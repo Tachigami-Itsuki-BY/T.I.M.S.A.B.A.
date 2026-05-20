@@ -502,6 +502,7 @@ if mods ["loaders-modernized-integrations"] then
         data_recipe[stack_loader].ingredients[3].name = T5_loader
         data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
         data_loader_1x1[stack_loader].order = b
+        data_loader_1x1[stack_loader].minable.mining_time = 0.5
         bobmods.lib.recipe.update_recycling_recipe({stack_loader})
     end
 end

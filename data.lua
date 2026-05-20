@@ -138,6 +138,7 @@ require("prototypes.space-age.aquilo.aquilo-technology")
 
 require("prototypes.planet.muluna.muluna-groups")
 require("prototypes.planet.muluna.muluna-item-fluid")
+require("prototypes.planet.muluna.muluna-building")
 require("prototypes.planet.muluna.muluna-recipe")
 require("prototypes.planet.muluna.muluna-technology")
 

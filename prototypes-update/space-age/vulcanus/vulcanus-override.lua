@@ -199,32 +199,12 @@ data_recipe[carbon].surface_conditions = {{property = "pressure", min = 4000, ma
 
 -- WOLFRAMITE
 data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
-data_item[wolframite_ore].localised_description =
-{
-    "",
-    "Can be refined and sorted for pure ores:\n",
-    "   [item=bob-tungsten-ore] W\n",
-    "   [item=iron-ore] Fe\n",
-    "   [item=angels-manganese-ore] Mn\n",
-    "   [item=magnesium-ore] Mg\n",
-    "   [item=niobium-ore] Nb\n",
-    "   [item=rhenium-ore] Re"
-}
+data_item[wolframite_ore].localised_description = {"item-description.wolframite-ore"}
 data_item[wolframite_ore].subgroup = is_vulcanus_wolframite
 data_item[wolframite_ore].order = a
 data_item[wolframite_ore].stack_size = 200
-data_resource[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
-data_resource[wolframite_ore].localised_description =
-{
-    "",
-    "Can be refined and sorted for pure ores:\n",
-    "      [img=item/bob-tungsten-ore] Tungsten ore\n",
-    "      [img=item/iron-ore] Iron ore\n",
-    "      [img=item/angels-manganese-ore] Manganese ore\n",
-    "      [img=item/magnesium-ore] Magnesium ore\n",
-    "      [img=item/niobium-ore] Niobium ore\n",
-    "      [img=item/rhenium-ore] Rhenium ore"
-}
+data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
+data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
 data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
 data_resource[wolframite_ore].order = a
 data_resource[wolframite_ore].minable.mining_time = 4
@@ -240,7 +220,7 @@ data_recipe[tungsten_carbide].ingredients =
     {type = item, name = tungsten_ore_bob, amount = 4},
     {type = item, name = carbon_angels, amount = 1}
 }
-data_recipe[tungsten_carbide].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[tungsten_carbide].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[tungsten_plate].category = sintering_6
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
@@ -248,7 +228,7 @@ data_recipe[tungsten_plate].icons = TWO_I(tungsten_ore_bob, tungsten_plate_bob)
 data_recipe[tungsten_plate].order = b
 data_recipe[tungsten_plate].energy_required = 8
 data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_ore_bob, amount = 4}}
-data_recipe[tungsten_plate].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[tungsten_plate].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_tool[metallurgic_science_pack].subgroup = is_vulcanus_tungsten
 data_tool[metallurgic_science_pack].order = c
@@ -281,10 +261,10 @@ data_tile[foundation].subgroup = is_vulcanus_tungsten
 data_tile[foundation].order = d
 
 -- LOGISTICS
-data_item[vulcanus_transport_belt].localised_name = {"item-name.vulcanus-transport-belt"}
+data_item[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
 data_item[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
 data_item[vulcanus_transport_belt].stack_size = 200
-data_recipe[vulcanus_transport_belt].localised_name = {"recipe-name.vulcanus-transport-belt"}
+data_recipe[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
 data_recipe[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_transport_belt].ingredients =
 {
@@ -298,10 +278,10 @@ data_transport_belt[vulcanus_transport_belt].localised_name = {"entity-name.vulc
 data_transport_belt[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
 data_transport_belt[vulcanus_transport_belt].speed = 12/60
 
-data_item[vulcanus_underground_belt].localised_name = {"item-name.vulcanus-underground-belt"}
+data_item[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_item[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
 data_item[vulcanus_underground_belt].stack_size = 32
-data_recipe[vulcanus_underground_belt].localised_name = {"recipe-name.vulcanus-underground-belt"}
+data_recipe[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_recipe[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_underground_belt].energy_required = 1
 data_recipe[vulcanus_underground_belt].ingredients =
@@ -316,10 +296,10 @@ data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_underground_belt[vulcanus_underground_belt].speed = 12/60
 data_underground_belt[vulcanus_underground_belt].max_distance = 48
 
-data_item[vulcanus_splitter].localised_name = {"item-name.vulcanus-splitter"}
+data_item[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_item[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_item[vulcanus_splitter].stack_size = 16
-data_recipe[vulcanus_splitter].localised_name = {"recipe-name.vulcanus-splitter"}
+data_recipe[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_recipe[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_splitter].energy_required = 1
 data_recipe[vulcanus_splitter].ingredients =

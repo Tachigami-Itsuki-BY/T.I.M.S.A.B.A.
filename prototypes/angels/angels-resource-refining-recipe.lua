@@ -9,7 +9,7 @@ data:extend
         name = stone,
         category = angels_ore_sorting_1,
         subgroup = is_processing_crafting,
-        icons = RECYCLING_I(recycling_png, slag_angels),
+        icons = TWO_I(slag_angels, stone),
         order = d,
         enabled = false,
         auto_recycle = false,

@@ -1,4 +1,46 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.7
+Date: 20.05.2026
+  Features:
+    - [Muluna] Добавлено новое здание: Лесопилка.
+
+    - [Muluna] Added new building: Lamber mill.
+
+  Balancing:
+    - [Nauvis] Скрыты рецепты Расплавленный Марганец, Расплавленный Магний, Расплавленный Кобальт, Расплавленный Хром, Порошок Никеля, Порошок Сурьмы и Порошок Германия из-за своей ненадобности.
+    - [Aquilo] В рецепте Анилина произведена замена ингредиента: Порошок Никеля → Желтый Катализатор.
+    - [Muluna] В рецепте Обработка Дерева заменено производственное здание: Дробилка → Лесопилка.
+    - [Muluna] В рецепт Теплицы добавлен новый ингредиент: Базовая Печатная Плата.
+    - [Muluna] В технологии Раскопки Лунного Реголита произведена замена сущности: Электрический Бур (Копание) Т1 → Электрический Бур (Копание) Т5.
+    - [Muluna] В рецепте Ракетного Топлива ALICE скорректированы ингредиенты:
+        1. Лёд (4 ед.) → (8 ед.)
+        2. Вода (240 ед.) → (120 ед.)
+    - [All] Сбалансирован Твёрдотопливный Электрогенератор в соответствии с общим балансом модпака.
+
+    - [Nauvis] Hidden the recipes for Molten Manganese, Molten Magnesium, Molten Cobalt, Molten Chromium, Nickel Powder, Antimony Powder, and Germanium Powder as they are no longer needed.
+    - [Aquilo] Replaced an ingredient in the Aniline recipe: Nickel Powder → Yellow Catalyst.
+    - [Muluna] Changed production machine for Tree Processing recipe: Crusher → Lamber mill.
+    - [Muluna] Added new an ingredient in the Greenhouse recipe: Basic Circuit Board.
+    - [Muluna] Replaced a entity in the Lunar Regolith Digging technology: Electric Mining Drill (Digging) T1 → Electric Mining Drill (Digging) T5.
+    - [Muluna] Adjusted ingredients in the ALICE Propellant recipe:
+        1. Ice (4 units) → (8 units)
+        2. Water (240 units) → (120 units)
+    - [All] Rebalanced the Burner Electric Generator to match the overall modpack balance.
+
+  Bugfixes:
+    - [Muluna] Исправлена критическая ошибка при генерации планеты Мулуна, вызывавшая вылет игры из-за отсутствия предметов.
+    - [Muluna] Переработан состав и алгоритм распределения стартового груза на поверхности планеты для обеспечения стабильности сборки.
+    - [All] Исправлена ошибка, из-за которой нельзя было в Твёрдотопливный Электрогенератор положить твёрдое топливо.
+
+    - [Muluna] Fixed a critical crash during Muluna planet generation caused by missing items.
+    - [Muluna] Reworked the composition and distribution algorithm of the starting cargo on the planet surface to ensure modpack stability.
+    - [All] Fixed a bug preventing Solid Fuel from being placed into the Burner Electric Generator.
+
+  Graphics:
+    - [All] В рецепте Камня обновлена иконка.
+
+    - [All] Updated the icon for the Stone recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 19.05.2026
   Balancing:

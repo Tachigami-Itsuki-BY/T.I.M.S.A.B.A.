@@ -23,8 +23,13 @@ end
 data_technology[logistic_science_pack].unit.time = 16
 
 for _, tech in pairs(data.raw.technology) do
-    if tech.research_trigger and tech.research_trigger.count then
-        tech.research_trigger.count = 256
+    if tech.research_trigger then
+        if tech.research_trigger.count then
+            tech.research_trigger.count = 256
+        end
+        if tech.research_trigger.amount then
+            tech.research_trigger.amount = 960
+        end
     end
 end
 
