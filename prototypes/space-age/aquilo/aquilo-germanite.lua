@@ -7,17 +7,7 @@ germanite_purified = "germanite-purified"
 data:extend
 ({
     {
-        localised_description =
-        {
-            "",
-            "Can be refined and sorted for pure ores:\n",
-            "   [item=germanium-ore] Ge\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=galium-ore] Ga\n",
-            "   [item=vanadium-ore] V\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.germanite-ore"},
         type = item,
         name = germanite_ore,
         subgroup = is_germanite,
@@ -48,18 +38,7 @@ data:extend
         }
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=germanium-ore] Ge\n",
-            "   [item=copper-ore] Cu\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=galium-ore] Ga\n",
-            "   [item=vanadium-ore] V\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.germanite-crushed"},
         type = item,
         name = germanite_crushed,
         subgroup = is_germanite,
@@ -70,18 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=germanium-ore] Ge\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=galium-ore] Ga\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=vanadium-ore] V\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.germanite-chunks"},
         type = item,
         name = germanite_chunks,
         subgroup = is_germanite,
@@ -92,18 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=germanium-ore] Ge\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=galium-ore] Ga\n",
-            "   [item=vanadium-ore] V\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.germanite-crystals"},
         type = item,
         name = germanite_crystals,
         subgroup = is_germanite,
@@ -114,17 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=germanium-ore] Ge\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=galium-ore] Ga\n",
-            "   [item=vanadium-ore] V\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.germanite-purified"},
         type = item,
         name = germanite_purified,
         subgroup = is_germanite,

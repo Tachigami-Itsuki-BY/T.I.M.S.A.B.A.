@@ -730,12 +730,12 @@ end
 vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_1, battery_lead_acid, electronic_circuit, steel_plate)
 vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_2, battery_lead_acid, advanced_circuit, plastic, vehicle_laser_defense_eq_1, polished_sapphire_bob)
 vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_3, battery_lithium_ion, advanced_circuit, invar_plate_bob, vehicle_laser_defense_eq_2, polished_emerald_bob)
-vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_4, battery_lithium_ion, processing_unit, titanium_plate_bob, vehicle_laser_defense_eq_3, polished_amethyst_bob)
+vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_4, battery_silver_zinc, processing_unit, titanium_plate_bob, vehicle_laser_defense_eq_3, polished_amethyst_bob)
 if data_item[alien_artifact] then
-    vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_5, battery_silver_zinc, processing_unit, nitinol_plate_bob, vehicle_laser_defense_eq_4, polished_topaz_bob, alien_artifact)
+    vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_5, battery_graphene, processing_unit, nitinol_plate_bob, vehicle_laser_defense_eq_4, polished_topaz_bob, alien_artifact)
     data_recipe[vehicle_laser_defense_eq_6].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 8},
+        {type = item, name = battery_graphene, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = vehicle_laser_defense_eq_5, amount = 1},
         {type = item, name = polished_diamond_bob, amount = 1},
@@ -746,10 +746,10 @@ if data_item[alien_artifact] then
         {type = fluid, name = green_fluid, amount = 480}
     }
 else
-    vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_5, battery_silver_zinc, processing_unit, nitinol_plate_bob, vehicle_laser_defense_eq_4, polished_topaz_bob)
+    vehicle_laser_defense_eq_recipe(vehicle_laser_defense_eq_5, battery_graphene, processing_unit, nitinol_plate_bob, vehicle_laser_defense_eq_4, polished_topaz_bob)
     data_recipe[vehicle_laser_defense_eq_6].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 8},
+        {type = item, name = battery_graphene, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = vehicle_laser_defense_eq_5, amount = 1},
         {type = item, name = polished_diamond_bob, amount = 1},
@@ -917,8 +917,8 @@ end
 laser_turret_recipe(laser_turret_1, battery_lead_acid, electronic_circuit, steel_plate)
 laser_turret_recipe(laser_turret_2, battery_lead_acid, advanced_circuit, steel_plate, laser_turret_1, polished_sapphire_bob)
 laser_turret_recipe(laser_turret_3, battery_lithium_ion, advanced_circuit, invar_plate_bob, laser_turret_2, polished_emerald_bob)
-laser_turret_recipe(laser_turret_4, battery_lithium_ion, processing_unit, titanium_plate_bob, laser_turret_3, polished_topaz_bob)
-laser_turret_recipe(laser_turret_5, battery_silver_zinc, advanced_processing_unit, nitinol_plate_bob, laser_turret_4, polished_diamond_bob)
+laser_turret_recipe(laser_turret_4, battery_silver_zinc, processing_unit, titanium_plate_bob, laser_turret_3, polished_topaz_bob)
+laser_turret_recipe(laser_turret_5, battery_graphene, advanced_processing_unit, nitinol_plate_bob, laser_turret_4, polished_diamond_bob)
 
 local sniper_turret_1 = "bob-sniper-turret-1"
 local sniper_turret_2 = "bob-sniper-turret-2"

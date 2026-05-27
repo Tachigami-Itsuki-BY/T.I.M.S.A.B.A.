@@ -127,7 +127,7 @@ if mods [muluna_mods] then
             {
                 {property = gravity, max = 0.1, min = 0.1},
                 {property = pressure, max = 0}
-            } 
+            }
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-3"},
@@ -218,7 +218,7 @@ if mods [muluna_mods] then
             {
                 {property = gravity, max = 0.1, min = 0.1},
                 {property = pressure, max = 0}
-            } 
+            }
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-3"},

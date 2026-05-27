@@ -456,20 +456,20 @@ data_recipe[robochest_1].ingredients =
 
 local robo_port =
 {
-    {name = robo_charge_port_1, energy = 900},
-    {name = robo_charge_port_2, energy = 1800},
-    {name = robo_charge_port_3, energy = 2700},
-    {name = robo_charge_port_4, energy = 3600}
+    {name = robo_charge_port_1, energy = 1800, energy_usage = 30},
+    {name = robo_charge_port_2, energy = 3600, energy_usage = 60},
+    {name = robo_charge_port_3, energy = 5400, energy_usage = 90},
+    {name = robo_charge_port_4, energy = 7200, energy_usage = 120}
 }
 for _, BUILD in pairs(robo_port) do
     data_item[BUILD.name].stack_size = 32
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].energy_required = 4
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 100) .. kJ -- 100000kJ
+    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 64) .. kJ -- 100000kJ
     data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 4) .. kW -- 6250kW
-    data_roboport[BUILD.name].energy_usage = 15 .. kW -- 1kW
-    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 2) .. kW -- 1250kW
-    data_roboport[BUILD.name].recharge_minimum = 18000 .. kJ -- 20000kJ
+    data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
+    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 4) .. kW -- 1250kW
+    data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 64) * 0.1) .. kJ -- 20000kJ
 end
 local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
     local ingredients =
@@ -489,10 +489,10 @@ robo_charge_port_recipe(robo_charge_port_4, roboport_chargepad_4, nitinol_plate_
 
 local robo_port_large =
 {
-    {name = robo_charge_port_large_1, order = a, energy = 900},
-    {name = robo_charge_port_large_2, order = b, energy = 1800},
-    {name = robo_charge_port_large_3, order = c, energy = 2700},
-    {name = robo_charge_port_large_4, order = d, energy = 3600}
+    {name = robo_charge_port_large_1, order = a, energy = 1800, energy_usage = 67.5},
+    {name = robo_charge_port_large_2, order = b, energy = 3600, energy_usage = 135},
+    {name = robo_charge_port_large_3, order = c, energy = 5400, energy_usage = 202.5},
+    {name = robo_charge_port_large_4, order = d, energy = 7200, energy_usage = 270}
 }
 for _, BUILD in pairs(robo_port_large) do
     data_item[BUILD.name].subgroup = is_logistic_roboport_charge_large
@@ -504,11 +504,11 @@ for _, BUILD in pairs(robo_port_large) do
     data_recipe[BUILD.name].energy_required = 4
     data_roboport[BUILD.name].subgroup = is_logistic_roboport_charge_large
     data_roboport[BUILD.name].order = BUILD.order
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 100) .. kJ -- 100MJ
-    data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 8) .. kW -- 12500kW
-    data_roboport[BUILD.name].energy_usage = 15 .. kW -- 1kW
-    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 2) .. kW -- 1250kW
-    data_roboport[BUILD.name].recharge_minimum = 18000 .. kJ -- 20000kJ
+    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 144) .. kJ -- 100MJ
+    data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 9) .. kW -- 12500kW
+    data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
+    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 9) .. kW -- 1250kW
+    data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 144) * 0.1) .. kJ -- 20000kJ
 end
 local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port_large)
     local ingredients =
@@ -767,7 +767,7 @@ data_recipe[spidertron].ingredients =
 data_recipe[heavy_spidertron].ingredients =
 {
     {type = item, name = rtg, amount = 4},
-    {type = item, name = rocket_launcher, amount = 8},
+    {type = item, name = rocket_turret, amount = 2},
     {type = item, name = mech_armor_plate, amount = 16},
     {type = item, name = mech_frame, amount = 1},
     {type = item, name = mech_leg, amount = 8}

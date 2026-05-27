@@ -7,17 +7,7 @@ antimonite_purified = "antimonite-purified"
 data:extend
 ({
     {
-        localised_description =
-        {
-            "",
-            "Can be refined and sorted for pure ores:\n",
-            "   [item=antimony-ore] Sb\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.antimonite-ore"},
         type = item,
         name = antimonite_ore,
         subgroup = is_antimonite,
@@ -48,18 +38,7 @@ data:extend
         }
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=antimony-ore] Sb\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.antimonite-crushed"},
         type = item,
         name = antimonite_crushed,
         subgroup = is_antimonite,
@@ -70,18 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=antimony-ore] Sb\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=copper-ore] Cu\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.antimonite-chunks"},
         type = item,
         name = antimonite_chunks,
         subgroup = is_antimonite,
@@ -92,18 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=antimony-ore] Sb\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.antimonite-crystals"},
         type = item,
         name = antimonite_crystals,
         subgroup = is_antimonite,
@@ -114,17 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=antimony-ore] Sb\n",
-            "   [item=bob-lead-ore] Pb\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=copper-ore] Cu\n",
-            "   [item=bob-silver-ore] Ag\n",
-            "   [item=arsenic] As"
-        },
+        localised_description = {"item-description.antimonite-purified"},
         type = item,
         name = antimonite_purified,
         subgroup = is_antimonite,

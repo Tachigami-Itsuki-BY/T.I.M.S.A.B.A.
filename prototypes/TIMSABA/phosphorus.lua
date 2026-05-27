@@ -233,7 +233,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 4, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
+        energy_required = 16, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
         ingredients =
         {
             {type = item, name = phosphate_ore, amount = 8},
@@ -261,16 +261,16 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- P₄(g) -H₂O-> P₄(s)
+        energy_required = 4, -- P₄(g) -H₂O-> P₄(s)
         ingredients =
         {
-            {type = fluid, name = white_phosphorus_gas, amount = 240},
-            {type = fluid, name = water_purified_angels, amount = 240}
+            {type = fluid, name = white_phosphorus_gas, amount = 60},
+            {type = fluid, name = water_purified_angels, amount = 60}
         },
         results =
         {
-            {type = item, name = white_phosphorus, amount = 16},
-            {type = fluid, name = steam, amount = 120} -- 240
+            {type = item, name = white_phosphorus, amount = 4},
+            {type = fluid, name = steam, amount = 30} -- 60
         },
         main_product = white_phosphorus
     },
@@ -286,13 +286,13 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- P₄ + 6Cl₂ --> 4PCl₃
+        energy_required = 4, -- P₄ + 6Cl₂ --> 4PCl₃
         ingredients =
         {
-            {type = item, name = white_phosphorus, amount = 4},
-            {type = fluid, name = chlorine_angels, amount = 360}
+            {type = item, name = white_phosphorus, amount = 1},
+            {type = fluid, name = chlorine_angels, amount = 90}
         },
-        results = {{type = fluid, name = phosphorus_chloride_III_liquid, amount = 240}},
+        results = {{type = fluid, name = phosphorus_chloride_III_liquid, amount = 60}},
         main_product = phosphorus_chloride_III_liquid
     },
     {
@@ -307,13 +307,13 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- PCl₃ + Cl₂ --> PCl₅
+        energy_required = 4, -- PCl₃ + Cl₂ --> PCl₅
         ingredients =
         {
-            {type = fluid, name = phosphorus_chloride_III_liquid, amount = 240},
-            {type = fluid, name = chlorine_angels, amount = 240}
+            {type = fluid, name = phosphorus_chloride_III_liquid, amount = 60},
+            {type = fluid, name = chlorine_angels, amount = 60}
         },
-        results = {{type = item, name = phosphorus_chloride_V, amount = 16}},
+        results = {{type = item, name = phosphorus_chloride_V, amount = 4}},
         main_product = phosphorus_chloride_V
     },
     {
@@ -328,16 +328,16 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 8, -- PCl₅ + 5HF --> PF₅ + 5HCl
+        energy_required = 4, -- PCl₅ + 5HF --> PF₅ + 5HCl
         ingredients =
         {
-            {type = item, name = phosphorus_chloride_V, amount = 16},
-            {type = fluid, name = hydrogen_fluoride_angels, amount = 1200}
+            {type = item, name = phosphorus_chloride_V, amount = 4},
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 300}
         },
         results =
         {
-            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 1200
+            {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
+            {type = fluid, name = hydrogen_chloride_angels, amount = 120} -- 300
         },
         main_product = phosphorus_fluoride_V_gas
     },

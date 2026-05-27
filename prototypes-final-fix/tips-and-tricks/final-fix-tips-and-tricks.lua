@@ -1,0 +1,4 @@
+local data_tips_and_tricks_item = data.raw["tips-and-tricks-item"]
+data_tips_and_tricks_item["angelsaddons-storage"].localised_description = require("prototypes-final-fix.tips-and-tricks.angels-tips-and-tricks.1-angelsaddons-storage-description")
+data_tips_and_tricks_item["angels-petrochem"].localised_description = require("prototypes-final-fix.tips-and-tricks..angels-tips-and-tricks.1-petrochem-description")
+data_tips_and_tricks_item["angels-bio-vegetables-1a"].localised_description = require("prototypes-final-fix.tips-and-tricks.angels-tips-and-tricks.1-2-1-bio-vegetables-farming-description")

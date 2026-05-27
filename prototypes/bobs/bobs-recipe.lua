@@ -222,9 +222,10 @@ data:extend
     {
         type = recipe,
         name = advanced_deuterium_fuel_cell_reprocessing,
-        category = centrifuging_4,
+        category = angels_advanced_chemistry,
+        additional_categories = {cryogenics},
         subgroup = is_nuclear_cell,
-        icons = TWO_D_I(depleted_deuterium_fuel_cell, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas),
+        icons = THREE_D_I(depleted_deuterium_fuel_cell, nil, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas, water_greenyellow_waste),
         order = i_b,
         enabled = false,
         auto_recycle = false,
@@ -240,7 +241,8 @@ data:extend
         results =
         {
             {type = item, name = muon_fusion_catalyst, amount = 4},
-            {type = fluid, name = tritium_gas, amount = 480}
+            {type = fluid, name = tritium_gas, amount = 480},
+            {type = fluid, name = water_greenyellow_waste, amount = 60}
         },
         main_product = tritium_gas
     },
@@ -269,7 +271,8 @@ data:extend
     {
         type = recipe,
         name = tritium_fuel_cell_reprocessing,
-        category = centrifuging_4,
+        category = angels_advanced_chemistry,
+        additional_categories = {cryogenics},
         subgroup = is_nuclear_cell,
         icons = TWO_D_I(depleted_tritium_fuel_cell, nil, muon_fusion_catalyst, tritium_gas),
         order = k_a,
@@ -290,9 +293,10 @@ data:extend
     {
         type = recipe,
         name = advanced_tritium_fuel_cell_reprocessing,
-        category = cryogenics,
+        category = angels_advanced_chemistry,
+        additional_categories = {cryogenics},
         subgroup = is_nuclear_cell,
-        icons = TWO_D_I(depleted_tritium_fuel_cell, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas),
+        icons = THREE_D_I(depleted_tritium_fuel_cell, nil, hydrofluoric_acid_angels, muon_fusion_catalyst, tritium_gas, water_greenyellow_waste),
         order = k_b,
         enabled = false,
         auto_recycle = false,
@@ -311,6 +315,7 @@ data:extend
             {type = item, name = muon_fusion_catalyst, amount = 4, probability = 0.25},
             {type = fluid, name = tritium_gas, amount = 960},
             {type = fluid, name = tritium_gas, amount = 960, probability = 0.25},
+            {type = fluid, name = water_greenyellow_waste, amount = 60}
         },
         main_product = muon_fusion_catalyst
     }

@@ -49,8 +49,8 @@ data_recipe[cargo_landing_pad].ingredients =
     {type = item, name = electric_engine_unit, amount = 32},
     {type = item, name = heat_shielding_tile, amount = 128},
     {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = concrete, amount = 128},
-    {type = item, name = steel_plate, amount = 32}
+    {type = item, name = reinforced_concrete, amount = 128},
+    {type = item, name = molybdenum_rhenium_plate, amount = 32}
 }
 
 data_item[space_platform_foundation].stack_size = 200
@@ -201,6 +201,7 @@ if mods [muluna_mods] then
         {type = item, name = silicon_cell_mods, amount = 128},
         {type = item, name = telescope, amount = 64}
     }
+    data_accumulator[satellite_radar].localised_name = {"entity-name.satellite-radar"}
     data_accumulator[satellite_radar].subgroup = is_space_platform_mods
     data_accumulator[satellite_radar].order = c
 
@@ -307,7 +308,7 @@ for _, ASTEROID in pairs(metallic_asteroids) do
     end
 end
 
-data_item[metallic_asteroid_chunk].stack_size = 200
+data_item[metallic_asteroid_chunk].stack_size = 50
 
 data_recipe[metallic_asteroid_crushing_1].localised_name = {"recipe-name.metallic-asteroid-crushing-1"}
 data_recipe[metallic_asteroid_crushing_1].icons = TWO_I(metallic_asteroid_chunk, iron_ore)
@@ -346,7 +347,7 @@ for _, ASTEROID in pairs(carbonic_asteroids) do
     end
 end
 
-data_item[carbonic_asteroid_chunk].stack_size = 200
+data_item[carbonic_asteroid_chunk].stack_size = 50
 
 data_recipe[carbonic_asteroid_crushing_1].localised_name = {"recipe-name.carbonic-asteroid-crushing-1"}
 data_recipe[carbonic_asteroid_crushing_1].icons = TWO_I(carbonic_asteroid_chunk, coal)
@@ -385,7 +386,7 @@ for _, ASTEROID in pairs(oxide_asteroids) do
     end
 end
 
-data_item[oxide_asteroid_chunk].stack_size = 200
+data_item[oxide_asteroid_chunk].stack_size = 50
 
 data_recipe[oxide_asteroid_crushing_1].localised_name = {"recipe-name.oxide-asteroid-crushing-1"}
 data_recipe[oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, ice)
@@ -421,7 +422,7 @@ for _, ASTEROID in pairs(promethium_asteroids) do
 end
 
 data_item[promethium_asteroid_chunk].localised_description = show_formula and {chemical_formula, "Pm"} or nil
-data_item[promethium_asteroid_chunk].stack_size = 200
+data_item[promethium_asteroid_chunk].stack_size = 50
 
 if mods [muluna_mods] then
     anorthite_crushing_1 = "anorthite-crushing"
@@ -445,7 +446,8 @@ if mods [muluna_mods] then
     end
 
     data_item[anorthite_chunk].localised_description = show_formula and {chemical_formula, "CaAl[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]8[/font]"} or nil
-    data_item[anorthite_chunk].stack_size = 200
+    data_item[anorthite_chunk].stack_size = 50
+    data_item[anorthite_chunk].weight = 20000
 
     data_recipe[anorthite_crushing_1].icons = TWO_I(anorthite_chunk, aluminium_oxide)
     data_recipe[anorthite_crushing_1].energy_required = 4
@@ -454,6 +456,10 @@ if mods [muluna_mods] then
     data_recipe[advanced_anorthite_crushing_1].icons = TWO_I(anorthite_chunk, silicon_boule_mods)
     data_recipe[advanced_anorthite_crushing_1].energy_required = 4
     data_recipe[advanced_anorthite_crushing_1].results = {{type = item, name = silicon_boule_mods, amount = 8}}
+
+    data_resource[metallic_asteroid_chunk].factoriopedia_simulation = nil
+    data_resource[carbonic_asteroid_chunk].factoriopedia_simulation = nil
+    data_resource[oxide_asteroid_chunk].factoriopedia_simulation = nil
 end
 
 if mods [hyarion_mods] then
@@ -479,7 +485,8 @@ if mods [hyarion_mods] then
         end
     end
 
-    data_item[bismuth_asteroid_chunk].stack_size = 200
+    data_item[bismuth_asteroid_chunk].stack_size = 50
+    data_item[bismuth_asteroid_chunk].weight = 20000
 
     data_recipe[bismuth_asteroid_crushing].icons = TWO_I(bismuth_asteroid_chunk, raw_bismuth)
     data_recipe[bismuth_asteroid_crushing].energy_required = 4
@@ -526,7 +533,8 @@ if mods [secretas_frozeta_mods] then
         end
     end
 
-    data_item[auric_asteroid_chunk].stack_size = 200
+    data_item[auric_asteroid_chunk].stack_size = 50
+    data_item[auric_asteroid_chunk].weight = 20000
 
     data_recipe[auric_asteroid_crushing].icons = TWO_I(auric_asteroid_chunk, gold_ore_bob)
     data_recipe[auric_asteroid_crushing].energy_required = 4

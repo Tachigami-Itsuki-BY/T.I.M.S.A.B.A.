@@ -7,17 +7,7 @@ brannerite_purified = "brannerite-purified"
 data:extend
 ({
     {
-        localised_description =
-        {
-            "",
-            "Can be refined and sorted for pure ores:\n",
-            "   [item=holmium-ore] Ho\n",
-            "   [item=calcium] Ca\n",
-            "   [item=uranium-ore] U\n",
-            "   [item=bob-thorium-ore] Th\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=bob-rutile-ore] Ti"
-        },
+        localised_description = {"item-description.brannerite-ore"},
         type = item,
         name = brannerite_ore,
         subgroup = is_brannerite,
@@ -48,18 +38,7 @@ data:extend
         }
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=holmium-ore] Ho\n",
-            "   [item=calcium] Ca\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=uranium-ore] U\n",
-            "   [item=bob-thorium-ore] Th\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=bob-rutile-ore] Ti"
-        },
+        localised_description = {"item-description.brannerite-crushed"},
         type = item,
         name = brannerite_crushed,
         subgroup = is_brannerite,
@@ -70,18 +49,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=holmium-ore] Ho\n",
-            "   [item=calcium] Ca\n",
-            "   [item=uranium-ore] U\n",
-            "   [item=bob-thorium-ore] Th\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=bob-rutile-ore] Ti"
-        },
+        localised_description = {"item-description.brannerite-chunks"},
         type = item,
         name = brannerite_chunks,
         subgroup = is_brannerite,
@@ -92,18 +60,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=holmium-ore] Ho\n",
-            "   [item=calcium] Ca\n",
-            "   [item=uranium-ore] U\n",
-            "   [item=bob-thorium-ore] Th\n",
-            "   [item=iron-ore] Fe\n",
-            "Can be refined further prior to sorting for:\n",
-            "   [item=bob-rutile-ore] Ti"
-        },
+        localised_description = {"item-description.brannerite-crystals"},
         type = item,
         name = brannerite_crystals,
         subgroup = is_brannerite,
@@ -114,17 +71,7 @@ data:extend
         weight = 5000
     },
     {
-        localised_description =
-        {
-            "",
-            "Can be sorted for pure ores:\n",
-            "   [item=holmium-ore] Ho\n",
-            "   [item=calcium] Ca\n",
-            "   [item=uranium-ore] U\n",
-            "   [item=bob-thorium-ore] Th\n",
-            "   [item=iron-ore] Fe\n",
-            "   [item=bob-rutile-ore] Ti"
-        },
+        localised_description = {"item-description.brannerite-purified"},
         type = item,
         name = brannerite_purified,
         subgroup = is_brannerite,

@@ -10,7 +10,7 @@ tungsten_bearing = "tungsten-bearing"
 copper_tungsten_bearing = "copper-tungsten-bearing"
 battery_graphene = "graphene-battery"
 tritium_fuel_cell = "tritium-fuel-cell"
-depleted_tritium_fuel_cell = "used-up-tritium-fuel-cell"
+depleted_tritium_fuel_cell = "depleted-tritium-fuel-cell"
 data:extend
 ({
     {

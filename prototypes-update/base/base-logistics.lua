@@ -242,6 +242,7 @@ warehouses_recipe(warehouse_passive_provider, electronic_circuit, steel_plate)
 warehouses_recipe(warehouse_requester, advanced_circuit, steel_plate)
 warehouses_recipe(warehouse_storage, electronic_circuit, steel_plate)
 
+local simulations = require("__TIMSABA__.prototypes.factoriopedia-simulations")
 local L2_inserter = "long-handed-inserter"
 local entities =
 {
@@ -252,12 +253,12 @@ local entities =
     {type_1 = data_transport_belt, name = T4_transport_belt, speed = 8/60,  ASC = 32},
     {type_1 = data_transport_belt, name = T5_transport_belt, speed = 10/60, ASC = 32},
 
-    {type_1 = data_underground_belt, name = T0_underground_belt, speed = 1/60,  ASC = 30},
-    {type_1 = data_underground_belt, name = T1_underground_belt, speed = 2/60,  ASC = 30},
-    {type_1 = data_underground_belt, name = T2_underground_belt, speed = 4/60,  ASC = 32, max_distance = 16},
-    {type_1 = data_underground_belt, name = T3_underground_belt, speed = 6/60,  ASC = 31.25, max_distance = 24},
-    {type_1 = data_underground_belt, name = T4_underground_belt, speed = 8/60,  ASC = 32, max_distance = 32},
-    {type_1 = data_underground_belt, name = T5_underground_belt, speed = 10/60, ASC = 32, max_distance = 40},
+    {type_1 = data_underground_belt, name = T0_underground_belt, speed = 1/60,  ASC = 30,    simulation = simulations.factoriopedia_T0_underground_belt},
+    {type_1 = data_underground_belt, name = T1_underground_belt, speed = 2/60,  ASC = 30,    simulation = simulations.factoriopedia_T1_underground_belt},
+    {type_1 = data_underground_belt, name = T2_underground_belt, speed = 4/60,  ASC = 32,    simulation = simulations.factoriopedia_T2_underground_belt, max_distance = 16},
+    {type_1 = data_underground_belt, name = T3_underground_belt, speed = 6/60,  ASC = 31.25, simulation = simulations.factoriopedia_T3_underground_belt, max_distance = 24},
+    {type_1 = data_underground_belt, name = T4_underground_belt, speed = 8/60,  ASC = 32,    simulation = simulations.factoriopedia_T4_underground_belt, max_distance = 32},
+    {type_1 = data_underground_belt, name = T5_underground_belt, speed = 10/60, ASC = 32,    simulation = simulations.factoriopedia_T5_underground_belt, max_distance = 40},
 
     {type_1 = data_splitter, name = T0_splitter, speed = 1/60,  ASC = 30},
     {type_1 = data_splitter, name = T1_splitter, speed = 2/60,  ASC = 30},
@@ -294,8 +295,10 @@ for _, BUILD in pairs(entities) do
                 data_item[BUILD.name].weight = 31250
             end
             if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
+            data_underground_belt[BUILD.name].localised_description = {"entity-description.underground-belt"}
             data_underground_belt[BUILD.name].speed = BUILD.speed
             data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
         end
         if BUILD.type_1 == data_splitter then
             if data_item[BUILD.name] then
@@ -303,6 +306,7 @@ for _, BUILD in pairs(entities) do
                 data_item[BUILD.name].weight = 62500
             end
             if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
+            data_splitter[BUILD.name].localised_description = {"entity-description.splitter"}
             data_splitter[BUILD.name].speed = BUILD.speed
             data_splitter[BUILD.name].animation_speed_coefficient = BUILD.ASC
         end
@@ -353,10 +357,7 @@ transport_belt_recipe(T2_transport_belt, steel_gear_wheel, bronze_plate_bob, T1_
 transport_belt_recipe(T3_transport_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_transport_belt, cobalt_steel_bearing)
 transport_belt_recipe(T4_transport_belt, titanium_gear_wheel, titanium_plate_bob, T3_transport_belt, titanium_bearing)
 transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_transport_belt, nitinol_bearing)
-if data_recipe[T0_transport_belt] then
-    data_recipe[T0_transport_belt].ingredients[1].amount = 2
-    bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt})
-end
+if data_recipe[T0_transport_belt] then data_recipe[T0_transport_belt].ingredients[1].amount = 2 bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt}) end
 
 local function underground_belt_recipe(name, gear_wheel, plate, underground_belt, bearing)
     local ingredients =
@@ -382,10 +383,8 @@ underground_belt_recipe(T2_underground_belt, steel_gear_wheel, bronze_plate_bob,
 underground_belt_recipe(T3_underground_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_underground_belt, cobalt_steel_bearing)
 underground_belt_recipe(T4_underground_belt, titanium_gear_wheel, titanium_plate_bob, T3_underground_belt, titanium_bearing)
 underground_belt_recipe(T5_underground_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_underground_belt, nitinol_bearing)
-if data_recipe[T0_underground_belt] then
-    data_recipe[T0_underground_belt].ingredients[1].amount = 8
-    bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt})
-end
+data_underground_belt[T5_underground_belt].factoriopedia_simulation = simulations.factoriopedia_T5_underground_belt
+if data_recipe[T0_underground_belt] then data_recipe[T0_underground_belt].ingredients[1].amount = 8 bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt}) end
 
 local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
     local ingredients =
@@ -669,20 +668,21 @@ data_recipe[tungsten_pipe].category = angels_sintering_4
 data_recipe[tungsten_pipe].ingredients[1].name = tungsten_powder
 data_recipe[copper_tungsten_pipe].category = angels_sintering_4
 data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
+
 local pipes_to_ground =
 {
-    {name = iron_pipe_to_ground,            order = a},
-    {name = copper_pipe_to_ground,          order = b},
-    {name = stone_pipe_to_ground,           order = c},
-    {name = bronze_pipe_to_ground,          order = d},
-    {name = steel_pipe_to_ground,           order = e},
-    {name = plastic_pipe_to_ground,         order = f},
-    {name = brass_pipe_to_ground,           order = g},
-    {name = titanium_pipe_to_ground,        order = h},
-    {name = ceramic_pipe_to_ground,         order = i},
-    {name = tungsten_pipe_to_ground,        order = j},
-    {name = nitinol_pipe_to_ground,         order = k},
-    {name = copper_tungsten_pipe_to_ground, order = l}
+    {name = iron_pipe_to_ground,            order = a, simulations = simulations.factoriopedia_iron_pipe_to_ground},
+    {name = copper_pipe_to_ground,          order = b, simulations = simulations.factoriopedia_copper_pipe_to_ground},
+    {name = stone_pipe_to_ground,           order = c, simulations = simulations.factoriopedia_stone_pipe_to_ground},
+    {name = bronze_pipe_to_ground,          order = d, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
+    {name = steel_pipe_to_ground,           order = e, simulations = simulations.factoriopedia_steel_pipe_to_ground},
+    {name = plastic_pipe_to_ground,         order = f, simulations = simulations.factoriopedia_plastic_pipe_to_ground},
+    {name = brass_pipe_to_ground,           order = g, simulations = simulations.factoriopedia_brass_pipe_to_ground},
+    {name = titanium_pipe_to_ground,        order = h, simulations = simulations.factoriopedia_titanium_pipe_to_ground},
+    {name = ceramic_pipe_to_ground,         order = i, simulations = simulations.factoriopedia_ceramic_pipe_to_ground},
+    {name = tungsten_pipe_to_ground,        order = j, simulations = simulations.factoriopedia_tungsten_pipe_to_ground},
+    {name = nitinol_pipe_to_ground,         order = k, simulations = simulations.factoriopedia_nitinol_pipe_to_ground},
+    {name = copper_tungsten_pipe_to_ground, order = l, simulations = simulations.factoriopedia_copper_tungsten_pipe_to_ground}
 }
 for _, pipe in pairs(pipes_to_ground) do
     data_item[pipe.name].order = pipe.order
@@ -691,6 +691,7 @@ for _, pipe in pairs(pipes_to_ground) do
     data_recipe[pipe.name].order = pipe.order
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order
+    data_pipe_to_ground[pipe.name].factoriopedia_simulation = pipe.simulations
 end
 local function pipe_to_ground_recipe(name, pipe, plate, count)
     data_recipe[name].ingredients =

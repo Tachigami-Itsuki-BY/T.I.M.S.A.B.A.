@@ -902,6 +902,7 @@ data_recipe[geode_red_liquify].ingredients[1].amount = 4
 data_recipe[geode_red_liquify].results[1].amount = 30
 
 local crystal_dust_liquify = "angels-crystal-dust-liquify"
+data_recipe[crystal_dust_liquify].localised_name = {"recipe-name.angels-crystal-dust-liquify"}
 data_recipe[crystal_dust_liquify].icons = THREE_I(crystal_dust, sulfuric_acid_angels, slurry_crystal)
 data_recipe[crystal_dust_liquify].energy_required = 4
 data_recipe[crystal_dust_liquify].ingredients[1].amount = 8

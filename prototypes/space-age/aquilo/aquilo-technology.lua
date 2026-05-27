@@ -24,6 +24,7 @@ data:extend
     -- ANTIMONITE
     {
         localised_name = {"technology-name.antimonite-processing-1"},
+        localised_description = {"technology-description.antimonite-processing-1"},
         type = technology,
         name = antimonite_prcoessing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
@@ -49,6 +50,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimonite-processing-2"},
+        localised_description = {"technology-description.antimonite-processing-2"},
         type = technology,
         name = antimonite_prcoessing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
@@ -80,6 +82,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimonite-processing-3"},
+        localised_description = {"technology-description.antimonite-processing-3"},
         type = technology,
         name = antimonite_prcoessing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
@@ -112,6 +115,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimonite-processing-4"},
+        localised_description = {"technology-description.antimonite-processing-4"},
         type = technology,
         name = antimonite_prcoessing_4, -- ???
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
@@ -145,6 +149,7 @@ data:extend
     -- ANTIMONY
     {
         localised_name = {"technology-name.antimony-smelting-1"},
+        localised_description = {"technology-description.antimony-smelting-1"},
         type = technology,
         name = tech_antimony_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
@@ -179,6 +184,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimony-smelting-2"},
+        localised_description = {"technology-description.antimony-smelting-2"},
         type = technology,
         name = antimony_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
@@ -213,6 +219,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimony-smelting-3"},
+        localised_description = {"technology-description.antimony-smelting-3"},
         type = technology,
         name = antimony_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
@@ -248,6 +255,7 @@ data:extend
     -- GERMANITE
     {
         localised_name = {"technology-name.germanite-processing-1"},
+        localised_description = {"technology-description.germanite-processing-1"},
         type = technology,
         name = germanite_prcoessing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
@@ -273,6 +281,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanite-processing-2"},
+        localised_description = {"technology-description.germanite-processing-2"},
         type = technology,
         name = germanite_prcoessing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
@@ -304,6 +313,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanite-processing-3"},
+        localised_description = {"technology-description.germanite-processing-3"},
         type = technology,
         name = germanite_prcoessing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
@@ -336,6 +346,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanite-processing-4"},
+        localised_description = {"technology-description.germanite-processing-4"},
         type = technology,
         name = germanite_prcoessing_4, -- ???
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
@@ -369,6 +380,7 @@ data:extend
     -- GERMANIUM
     {
         localised_name = {"technology-name.germanium-smelting-1"},
+        localised_description = {"technology-description.germanium-smelting-1"},
         type = technology,
         name = tech_germanium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
@@ -403,6 +415,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanium-smelting-2"},
+        localised_description = {"technology-description.germanium-smelting-2"},
         type = technology,
         name = germanium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
@@ -435,6 +448,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanium-smelting-3"},
+        localised_description = {"technology-description.germanium-smelting-3"},
         type = technology,
         name = germanium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
@@ -661,8 +675,7 @@ data:extend
 
 table.insert(data_technology[tech_molybdenum_smelting_3].prerequisites, planet_discovery_aquilo)
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = technology,
@@ -678,7 +691,6 @@ data:extend
             time = 
         }
     }
-})
-]]
+})]]
 
 -- AQUILO CRYOGENIC CASTING 

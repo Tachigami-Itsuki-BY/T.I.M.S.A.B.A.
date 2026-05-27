@@ -260,6 +260,7 @@ data_technology[foundry].effects =
     -- ROD
     {type = unlock_recipe, recipe = casting_iron_rod},
     {type = unlock_recipe, recipe = casting_steel_rod},
+    {type = unlock_recipe, recipe = casting_titanium_rod},
     -- GEAR WHEEL
     {type = unlock_recipe, recipe = casting_iron_gear_wheel},
     {type = unlock_recipe, recipe = casting_steel_gear_wheel},
@@ -268,12 +269,14 @@ data_technology[foundry].effects =
     {type = unlock_recipe, recipe = casting_titanium_gear_wheel},
     {type = unlock_recipe, recipe = casting_nitinol_gear_wheel},
     -- BEARING BALL
+    {type = unlock_recipe, recipe = casting_iron_bearing_ball},
     {type = unlock_recipe, recipe = casting_steel_bearing_ball},
     {type = unlock_recipe, recipe = casting_brass_bearing_ball},
     {type = unlock_recipe, recipe = casting_cobalt_steel_bearing_ball},
     {type = unlock_recipe, recipe = casting_titanium_bearing_ball},
     {type = unlock_recipe, recipe = casting_nitinol_bearing_ball},
     -- BEARING
+    {type = unlock_recipe, recipe = casting_iron_bearing},
     {type = unlock_recipe, recipe = casting_steel_bearing},
     {type = unlock_recipe, recipe = casting_brass_bearing},
     {type = unlock_recipe, recipe = casting_cobalt_steel_bearing},

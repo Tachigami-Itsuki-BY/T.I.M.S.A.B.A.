@@ -1,6 +1,3 @@
-local kW = "kW"
-local kJ = "kJ"
-
 data_gun[pistol].stack_size = 1
 data_gun[pistol].weight = 1000000
 
@@ -265,7 +262,7 @@ data_recipe[atomic_rocket_3].ingredients =
     {type = item, name = muon_fusion_catalyst, amount = 1},
     {type = item, name = rocket_booster_angels, amount = 2},
     {type = item, name = explosives, amount = 16},
-    {type = fluid, name = deuterium_angels, amount = 3200}
+    {type = fluid, name = deuterium_angels, amount = 960}
 }
 
 local flamethrower = "flamethrower"
@@ -1469,12 +1466,12 @@ end
 laser_defense_eq_recipe(laser_defense_eq_1, battery_lead_acid, electronic_circuit, steel_plate)
 laser_defense_eq_recipe(laser_defense_eq_2, battery_lead_acid, advanced_circuit, plastic, laser_defense_eq_1, polished_sapphire_bob)
 laser_defense_eq_recipe(laser_defense_eq_3, battery_lithium_ion, advanced_circuit, invar_plate_bob, laser_defense_eq_2, polished_emerald_bob)
-laser_defense_eq_recipe(laser_defense_eq_4, battery_lithium_ion, processing_unit, titanium_plate_bob, laser_defense_eq_3, polished_amethyst_bob)
+laser_defense_eq_recipe(laser_defense_eq_4, battery_silver_zinc, processing_unit, titanium_plate_bob, laser_defense_eq_3, polished_amethyst_bob)
 if data_item[alien_artifact] then
-    laser_defense_eq_recipe(laser_defense_eq_5, battery_silver_zinc, processing_unit, nitinol_plate_bob, laser_defense_eq_4, polished_topaz_bob, alien_artifact)
+    laser_defense_eq_recipe(laser_defense_eq_5, battery_graphene, processing_unit, nitinol_plate_bob, laser_defense_eq_4, polished_topaz_bob, alien_artifact)
     data_recipe[laser_defense_eq_6].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 4},
+        {type = item, name = battery_graphene, amount = 4},
         {type = item, name = advanced_processing_unit, amount = 4},
         {type = item, name = laser_defense_eq_5, amount = 1},
         {type = item, name = polished_diamond_bob, amount = 1},
@@ -1485,10 +1482,10 @@ if data_item[alien_artifact] then
         {type = fluid, name = green_fluid, amount = 240}
     }
 else
-    laser_defense_eq_recipe(laser_defense_eq_5, battery_silver_zinc, processing_unit, nitinol_plate_bob, laser_defense_eq_4, polished_topaz_bob)
+    laser_defense_eq_recipe(laser_defense_eq_5, battery_graphene, processing_unit, nitinol_plate_bob, laser_defense_eq_4, polished_topaz_bob)
     data_recipe[laser_defense_eq_6].ingredients =
     {
-        {type = item, name = battery_silver_zinc, amount = 4},
+        {type = item, name = battery_graphene, amount = 4},
         {type = item, name = advanced_processing_unit, amount = 4},
         {type = item, name = laser_defense_eq_5, amount = 1},
         {type = item, name = polished_diamond_bob, amount = 1},

@@ -91,7 +91,7 @@ if mods [muluna_mods] then
         {type = fluid, name = copper_molten_angels, amount = 60},
         {type = fluid, name = aluminium_molten_angels, amount = 15}
     }
-    data_recipe[casting_aluminium_cable].results = {{type = item, name = aluminium_cable, amount = 8}}
+    data_recipe[casting_aluminium_cable].results = {{type = item, name = aluminium_cable, amount = 16}}
     data_recipe[casting_aluminium_cable].main_product = aluminium_cable
 
     local low_density_structure_muluna = "low-density-structure-from-aluminum"
@@ -121,6 +121,7 @@ if mods [muluna_mods] then
 
     -- SILICON SOLAR PANELS
     local silicon_solar_panel_1 = "muluna-silicon-solar-panel"
+    data_recipe[silicon_solar_panel_1].localised_name = {"recipe-name.muluna-silicon-solar-panel-1"}
     data_recipe[silicon_solar_panel_1].category = crafting
     data_recipe[silicon_solar_panel_1].subgroup = is_muluna_SPM_silicon
     data_recipe[silicon_solar_panel_1].icons = BUILDING_R_IS(solar_panel_1, silicon_cell_mods)
