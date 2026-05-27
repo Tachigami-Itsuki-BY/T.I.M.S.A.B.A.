@@ -14,6 +14,7 @@ data:extend
 ({
     {
         localised_name = {"technology-name.brannerite-processing-1"},
+        localised_description = {"technology-description.brannerite-processing-1"},
         type = technology,
         name = tech_brannerite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -47,6 +48,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.brannerite-processing-2"},
+        localised_description = {"technology-description.brannerite-processing-2"},
         type = technology,
         name = brannerite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -75,6 +77,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.brannerite-processing-3"},
+        localised_description = {"technology-description.brannerite-processing-3"},
         type = technology,
         name = brannerite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -106,6 +109,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.brannerite-processing-4"},
+        localised_description = {"technology-description.brannerite-processing-4"},
         type = technology,
         name = brannerite_processing_4,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -160,6 +164,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.holmium-smelting-1"},
+        localised_description = {"technology-description.holmium-smelting-1"},
         type = technology,
         name = tech_holmium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/smelting-holmium-tech.png",
@@ -179,6 +184,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.holmium-smelting-2"},
+        localised_description = {"technology-description.holmium-smelting-2"},
         type = technology,
         name = holmium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/smelting-holmium-tech.png",
@@ -210,6 +216,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.holmium-smelting-3"},
+        localised_description = {"technology-description.holmium-smelting-3"},
         type = technology,
         name = holmium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/smelting-holmium-tech.png",

@@ -3,6 +3,8 @@ setting_no_spoilage = "setting-no-spoilage"
 setting_early_cliff_explosives = "setting-early-cliff-explosives"
 setting_science_pack_nostalgia = "setting-science-pack-nostalgia"
 setting_multi_building = "setting-multi-building"
+setting_dynamic_underground_belts = "setting-dynamic-underground-belts"
+setting_dynamic_pipe_to_ground = "setting-dynamic-pipe-to-ground"
 
 if angelsmods and angelsmods.trigger then
     local player_choice = settings.startup[setting_early_sintering_oven].value

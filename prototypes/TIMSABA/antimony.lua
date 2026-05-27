@@ -631,3 +631,8 @@ data:extend
         main_product = 
     }
 })]]
+
+data_item[antimony_powder].hidden = true
+data_item[antimony_powder].hidden_in_factoriopedia = true
+data_recipe[antimony_powder].hidden = true
+data_recipe[antimony_powder].hidden_in_factoriopedia = true

@@ -21,7 +21,7 @@ data:extend
         ingredients = {{type = item, name = stone, amount = 64}},
         results = {{type = fluid, name = lava, amount = 480}},
         main_product = lava,
-        surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
         type = recipe,
@@ -47,7 +47,7 @@ data:extend
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
         main_product = ore_jivolite,
-        surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
         type = recipe,
@@ -73,7 +73,7 @@ data:extend
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
         main_product = ore_crotinnium,
-        surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
         type = recipe,
@@ -99,7 +99,7 @@ data:extend
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
         main_product = ore_rubyte,
-        surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
         type = recipe,
@@ -125,9 +125,30 @@ data:extend
             {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
         },
         main_product = ore_bobmonium,
-        surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- MOLTEN
 advanced_molten_iron = "advanced-molten-iron"
@@ -628,6 +649,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- PLATE
 casting_lead = "casting-lead"
 casting_tin = "casting-tin"
@@ -921,18 +963,42 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- INTERMEDIATES
 casting_steel_rod = "casting-steel-rod"
+casting_titanium_rod = "casting-titanium-rod"
 casting_steel_gear_wheel = "casting-steel-gear-wheel"
 casting_brass_gear_wheel = "casting-brass-gear-wheel"
 casting_cobalt_steel_gear_wheel = "casting-cobalt-steel-gear-wheel"
 casting_titanium_gear_wheel = "casting-titanium-gear-wheel"
 casting_nitinol_gear_wheel = "casting-nitinol-gear-wheel"
+casting_iron_bearing_ball = "casting-iron-bearing-ball"
 casting_steel_bearing_ball = "casting-steel-bearing-ball"
 casting_brass_bearing_ball = "casting-brass-bearing-ball"
 casting_cobalt_steel_bearing_ball = "casting-cobalt-steel-bearing-ball"
 casting_titanium_bearing_ball = "casting-titanium-bearing-ball"
 casting_nitinol_bearing_ball = "casting-nitinol-bearing-ball"
+casting_iron_bearing = "casting-iron-bearing"
 casting_steel_bearing = "casting-steel-bearing"
 casting_brass_bearing = "casting-brass-bearing"
 casting_cobalt_steel_bearing = "casting-cobalt-steel-bearing"
@@ -960,6 +1026,23 @@ data:extend
         ingredients = {{type = fluid, name = steel_molten_angels, amount = 30}},
         results = {{type = item, name = steel_rod, amount = 4}},
         main_product = steel_rod
+    },
+    {
+        type = recipe,
+        name = casting_titanium_rod,
+        category = metallurgy,
+        subgroup = is_vulcanus_rod,
+        icons = TWO_I(titanium_molten_angels, titanium_rod),
+        order = c,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients = {{type = fluid, name = titanium_molten_angels, amount = 30}},
+        results = {{type = item, name = titanium_rod, amount = 4}},
+        main_product = titanium_rod
     },
     -- GEAR WHEEL
     {
@@ -1050,11 +1133,28 @@ data:extend
     -- BEARING BALL
     {
         type = recipe,
+        name = casting_iron_bearing_ball,
+        category = metallurgy,
+        subgroup = is_vulcanus_bearing_ball,
+        icons = TWO_I(iron_molten_angels, iron_bearing_ball),
+        order = a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients = {{type = fluid, name = iron_molten_angels, amount = 15}},
+        results = {{type = item, name = iron_bearing_ball, amount = 8}},
+        main_product = iron_bearing_ball
+    },
+    {
+        type = recipe,
         name = casting_steel_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(steel_molten_angels, steel_bearing_ball),
-        order = a,
+        order = b,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1071,7 +1171,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(brass_molten_angels, brass_bearing_ball),
-        order = b,
+        order = c,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1088,7 +1188,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(cobalt_steel_molten_angels, cobalt_steel_bearing_ball),
-        order = c,
+        order = d,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1105,7 +1205,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(titanium_molten_angels, titanium_bearing_ball),
-        order = d,
+        order = e,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1122,7 +1222,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(nitinol_molten_angels, nitinol_bearing_ball),
-        order = e,
+        order = f,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1136,11 +1236,32 @@ data:extend
     -- BEARING
     {
         type = recipe,
+        name = casting_iron_bearing,
+        category = metallurgy,
+        subgroup = is_vulcanus_bearing,
+        icons = B_F_L(nil, iron_bearing_ball, iron_molten_angels, iron_bearing),
+        order = a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 1,
+        ingredients =
+        {
+            {type = item, name = iron_bearing_ball, amount = 16},
+            {type = fluid, name = iron_molten_angels, amount = 30}
+        },
+        results = {{type = item, name = iron_bearing, amount = 2}},
+        main_product = iron_bearing
+    },
+    {
+        type = recipe,
         name = casting_steel_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(nil, steel_bearing_ball, steel_molten_angels, steel_bearing),
-        order = a,
+        order = b,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1161,7 +1282,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, brass_bearing_ball, brass_molten_angels, brass_bearing),
-        order = b,
+        order = c,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1183,7 +1304,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, cobalt_steel_bearing_ball, cobalt_steel_molten_angels, cobalt_steel_bearing),
-        order = c,
+        order = d,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1205,7 +1326,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, titanium_bearing_ball, titanium_molten_angels, titanium_bearing),
-        order = d,
+        order = e,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1227,7 +1348,7 @@ data:extend
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, nitinol_bearing_ball, nitinol_molten_angels, nitinol_bearing),
-        order = e,
+        order = f,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -1329,6 +1450,27 @@ data:extend
         main_product = platinum_cable
     }
 })
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
 
 -- PIPE
 casting_copper_pipe = "casting-copper-pipe"
@@ -1443,6 +1585,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- PIPE TO GROUND
 casting_copper_pipe_to_ground = "casting-copper-pipe-to-ground"
 casting_bronze_pipe_to_ground = "casting-bronze-pipe-to-ground"
@@ -1556,6 +1719,27 @@ data:extend
     }
 })
 
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- VOLCANIC AIR
 vulcanus_air_separation = "vulcanus-air-separation"
 data:extend
@@ -1603,8 +1787,7 @@ data:extend
     }
 })
 
---[[
-data:extend
+--[[data:extend
 ({
     {
         type = recipe,
@@ -1623,5 +1806,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

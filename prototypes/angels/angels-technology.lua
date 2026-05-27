@@ -64,8 +64,8 @@ data:extend
     },
     -- ANGELS METALLURGY CASTING
     {
-        localised_name = {"technology-name.stome-smelting-4"},
-        localised_description = {"technology-description.angels-stome-smelting"},
+        localised_name = {"technology-name.stone-smelting-4"},
+        localised_description = {"technology-description.angels-stone-smelting"},
         type = technology,
         name = tech_stone_smelting_4,
         icon = data_technology[tech_stone_smelting_1].icon,
@@ -91,8 +91,8 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.stome-smelting-5"},
-        localised_description = {"technology-description.angels-stome-smelting"},
+        localised_name = {"technology-name.stone-smelting-5"},
+        localised_description = {"technology-description.angels-stone-smelting"},
         type = technology,
         name = tech_stone_smelting_5,
         icon = data_technology[tech_stone_smelting_1].icon,
@@ -121,8 +121,8 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.stome-smelting-6"},
-        localised_description = {"technology-description.angels-stome-smelting"},
+        localised_name = {"technology-name.stone-smelting-6"},
+        localised_description = {"technology-description.angels-stone-smelting"},
         type = technology,
         name = tech_stone_smelting_6,
         icon = data_technology[tech_stone_smelting_1].icon,

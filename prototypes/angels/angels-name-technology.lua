@@ -1,4 +1,5 @@
-tech_fusion_power_1 = "angels-fusion-power-1"
+tech_thorium_power = "angels-thorium-power"
+tech_deuterium_power = "angels-fusion-power-1"
 
 -- ANGELS RESOURCE REFINING
 tech_ore_crushing = "angels-ore-crushing"

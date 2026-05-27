@@ -28,6 +28,7 @@ data:extend
     -- MAGNESIUM
     {
         localised_name = {"technology-name.magnesium-smelting-1"},
+        localised_description = {"technology-description.magnesium-smelting-1"},
         type = technology,
         name = tech_magnesium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/technology/smelting-magnesium-tech.png",
@@ -52,6 +53,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.magnesium-smelting-2"},
+        localised_description = {"technology-description.magnesium-smelting-2"},
         type = technology,
         name = tech_magnesium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/technology/smelting-magnesium-tech.png",
@@ -76,6 +78,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.magnesium-smelting-3"},
+        localised_description = {"technology-description.magnesium-smelting-3"},
         type = technology,
         name = tech_magnesium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/technology/smelting-magnesium-tech.png",
@@ -103,6 +106,7 @@ data:extend
     -- POWELLITE
     {
         localised_name = {"technology-name.powellite-processing-1"},
+        localised_description = {"technology-description.powellite-processing-1"},
         type = technology,
         name = tech_powellite_processing_1,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/technology/powellite-processing.png",
@@ -122,6 +126,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.powellite-processing-2"},
+        localised_description = {"technology-description.powellite-processing-2"},
         type = technology,
         name = tech_powellite_processing_2,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/technology/powellite-processing.png",
@@ -147,6 +152,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.powellite-processing-3"},
+        localised_description = {"technology-description.powellite-processing-3"},
         type = technology,
         name = powellite_processing_3,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/technology/powellite-processing.png",
@@ -174,6 +180,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.powellite-processing-4"},
+        localised_description = {"technology-description.powellite-processing-4"},
         type = technology,
         name = tech_powellite_processing_4,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/technology/powellite-processing.png",
@@ -203,6 +210,7 @@ data:extend
     -- MOLYBDENITE
     {
         localised_name = {"technology-name.molybdenite-processing-1"},
+        localised_description = {"technology-description.molybdenite-processing-1"},
         type = technology,
         name = molybdenite_processing_1,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/technology/molybdenite-processing.png",
@@ -229,6 +237,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.molybdenite-processing-2"},
+        localised_description = {"technology-description.molybdenite-processing-2"},
         type = technology,
         name = molybdenite_processing_2,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/technology/molybdenite-processing.png",
@@ -256,6 +265,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.molybdenite-processing-3"},
+        localised_description = {"technology-description.molybdenite-processing-3"},
         type = technology,
         name = molybdenite_processing_3,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/technology/molybdenite-processing.png",
@@ -286,6 +296,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.molybdenite-processing-4"},
+        localised_description = {"technology-description.molybdenite-processing-4"},
         type = technology,
         name = tech_molybdenite_processing_4,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/technology/molybdenite-processing.png",

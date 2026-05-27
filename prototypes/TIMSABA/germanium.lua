@@ -612,3 +612,8 @@ data:extend
         main_product = 
     }
 })]]
+
+data_item[germanium_powder].hidden = true
+data_item[germanium_powder].hidden_in_factoriopedia = true
+data_recipe[germanium_powder].hidden = true
+data_recipe[germanium_powder].hidden_in_factoriopedia = true

@@ -261,6 +261,9 @@ data_fish["angels-alien-fish-1"].minable = {mining_time = 0.4, result = levac_fi
 data_fish["angels-alien-fish-2"].minable = {mining_time = 0.4, result = dorflurp_jellyfish, count = 4}
 data_fish["angels-alien-fish-3"].minable = {mining_time = 0.4, result = santa_ray, count = 4}
 
+data_tree["angels-puffer-nest"].order = z
+
+data_tree[garden_temperate].order = z_a
 data_tree[garden_temperate].minable.results =
 {
     {type = item, name = garden_temperate, amount = 1},
@@ -270,6 +273,7 @@ data_tree[garden_temperate].minable.results =
     {type = item, name = quillnoa, amount = 4, probability = 0.0625},
     {type = item, name = kendallion, amount = 4, probability = 0.0625}
 }
+data_tree[garden_swamp].order = z_b
 data_tree[garden_swamp].minable.results =
 {
     {type = item, name = garden_swamp, amount = 1},
@@ -279,6 +283,7 @@ data_tree[garden_swamp].minable.results =
     {type = item, name = nexeflax, amount = 4, probability = 0.0625},
     {type = item, name = mushredtato, amount = 4, probability = 0.0625}
 }
+data_tree[garden_desert].order = z_c
 data_tree[garden_desert].minable.results =
 {
     {type = item, name = garden_desert, amount = 1},
@@ -288,8 +293,11 @@ data_tree[garden_desert].minable.results =
     {type = item, name = zelosquash, amount = 4, probability = 0.0625},
     {type = item, name = arumbiphila, amount = 4, probability = 0.0625}
 }
+data_tree[tree_temperate].order = z_d
 data_tree[tree_temperate].minable.results[1].amount = 128
+data_tree[tree_swamp].order = z_e
 data_tree[tree_swamp].minable.results[1].amount = 128
+data_tree[tree_desert].order = z_f
 data_tree[tree_desert].minable.results[1].amount = 128
 
 data_entity["angels-crystal-rock"].minable.results =

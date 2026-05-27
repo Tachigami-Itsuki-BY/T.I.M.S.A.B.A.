@@ -178,8 +178,8 @@ data_technology[tech_tungsten_alloy_processing].effects =
     {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
 }
 
-data_technology[tech_nuclear_power].prerequisites = {heat_pipe_2, tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
-data_technology[tech_nuclear_power].effects =
+data_technology[tech_uranium_power].prerequisites = {heat_pipe_2, tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
+data_technology[tech_uranium_power].effects =
 {
     {type = unlock_recipe, recipe = uranium_reactor},
     {type = unlock_recipe, recipe = uranium_235_fuel_cell},
@@ -212,7 +212,9 @@ data_technology["angels-thorium-power"].effects =
 
 advanced_thorium_fuel_cell_reprocessing = "angels-advanced-thorium-fuel-cell-reprocessing"
 deuterium_fuel_cell_reprocessing = "angels-deuterium-fuel-cell-reprocessing"
-data_technology[tech_fusion_power_1].effects =
+data_technology[tech_deuterium_power].localised_name = {"technology-name.deuterium-power"}
+data_technology[tech_deuterium_power].localised_description = {"technology-description.deuterium-power"}
+data_technology[tech_deuterium_power].effects =
 {
     {type = unlock_recipe, recipe = deuterium_reactor},
     {type = unlock_recipe, recipe = advanced_thorium_fuel_cell_reprocessing},
@@ -230,7 +232,7 @@ data_technology[tech_uranium_ammo].effects =
     {type = unlock_recipe, recipe = uranium_explosive_cannon_shell}
 }
 
-table.insert(data_technology[fission_reactor_4].prerequisites, tech_fusion_power_1)
+table.insert(data_technology[fission_reactor_4].prerequisites, tech_deuterium_power)
 
 local personal_roboport_mk2_eq = "personal-roboport-mk2-equipment"
 data_technology[personal_roboport_mk2_eq].prerequisites = {"personal-roboport-equipment", tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
@@ -275,6 +277,17 @@ data_technology[energy_shield_eq_2].unit.ingredients =
     {chemical_science_pack, 1}
 }
 data_technology[energy_shield_eq_2].unit.count = 200
+
+table.insert(data_technology["bob-personal-laser-defense-equipment-4"].prerequisites, tech_battery_3)
+table.insert(data_technology["bob-personal-laser-defense-equipment-5"].prerequisites, tech_battery_4)
+table.insert(data_technology["bob-personal-laser-defense-equipment-6"].prerequisites, tech_battery_4)
+
+table.insert(data_technology["bob-vehicle-laser-defense-equipment-4"].prerequisites, tech_battery_3)
+table.insert(data_technology["bob-vehicle-laser-defense-equipment-5"].prerequisites, tech_battery_4)
+table.insert(data_technology["bob-vehicle-laser-defense-equipment-6"].prerequisites, tech_battery_4)
+
+table.insert(data_technology["bob-laser-turrets-4"].prerequisites, tech_battery_3)
+table.insert(data_technology["bob-laser-turrets-5"].prerequisites, tech_battery_4)
 
 local artillery = "artillery"
 data_technology[artillery].prerequisites = {metallurgic_science_pack, tech_military_4}
@@ -350,7 +363,7 @@ data_technology[artillery_wagon_3].unit.ingredients =
     {promethium_science_pack, 1}
 }
 
-data_technology[atomic_rocket].prerequisites = {"rocketry", tech_military_4, tech_fusion_power_1}
+data_technology[atomic_rocket].prerequisites = {"rocketry", tech_military_4, tech_deuterium_power}
 data_technology[atomic_rocket].unit.ingredients =
 {
     {automation_science_pack, 1},

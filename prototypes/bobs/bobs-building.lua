@@ -428,7 +428,7 @@ data:extend
             minable = {mining_time = 0.5, result = electric_mining_drill_6},
             max_health = 1050,
             energy_usage = 720 .. kW,
-            module_slots = 12,
+            module_slots = 6,
             mining_speed = 6,
             energy_source =
             {
@@ -486,7 +486,7 @@ data:extend
             minable = {mining_time = 1, result = pumpjack_5},
             max_health = 300,
             energy_usage = 600 .. kW,
-            module_slots = 10,
+            module_slots = 5,
             mining_speed = 5,
             energy_source =
             {
@@ -543,7 +543,7 @@ data:extend
             minable = {mining_time = 1, result = pumpjack_6},
             max_health = 350,
             energy_usage = 720 .. kW,
-            module_slots = 12,
+            module_slots = 6,
             mining_speed = 6,
             energy_source =
             {
@@ -594,7 +594,7 @@ data:extend
     ({
         data_reactor[uranium_reactor],
         {
-            localised_description = {"", {"entity-description.nuclear-reactor"}, {"entity-description.bob-reactor-max-temperature", "2000"}},
+            localised_description = {"entity-description.tritium-reactor"},
             name = tritium_reactor,
             subgroup = is_reactor,
             icon = "__base__/graphics/icons/nuclear-reactor.png",

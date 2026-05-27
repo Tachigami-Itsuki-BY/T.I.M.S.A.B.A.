@@ -1,3 +1,4 @@
+local simulations = require("__TIMSABA__.prototypes.factoriopedia-simulations")
 -- LAVA
 data_fluid[lava].subgroup = is_lava
 data_fluid[lava].order = a
@@ -268,7 +269,7 @@ data_recipe[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-tra
 data_recipe[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_transport_belt].ingredients =
 {
-    {type = item, name = molybdenum_gear_wheel, amount = 2},
+    {type = item, name = molybdenum_gear_wheel, amount = 4},
     {type = item, name = rhenium_bearing, amount = 4},
     {type = item, name = T5_transport_belt, amount = 2},
     {type = item, name = molybdenum_rhenium_plate, amount = 2}
@@ -286,7 +287,7 @@ data_recipe[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_underground_belt].energy_required = 1
 data_recipe[vulcanus_underground_belt].ingredients =
 {
-    {type = item, name = molybdenum_gear_wheel, amount = 8},
+    {type = item, name = molybdenum_gear_wheel, amount = 16},
     {type = item, name = rhenium_bearing, amount = 16},
     {type = item, name = T5_underground_belt, amount = 2},
     {type = item, name = molybdenum_rhenium_plate, amount = 8}
@@ -295,6 +296,7 @@ data_underground_belt[vulcanus_underground_belt].localised_name = {"entity-name.
 data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
 data_underground_belt[vulcanus_underground_belt].speed = 12/60
 data_underground_belt[vulcanus_underground_belt].max_distance = 48
+data_underground_belt[vulcanus_underground_belt].factoriopedia_simulation = simulations.factoriopedia_vulcanus_underground_belt
 
 data_item[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_item[vulcanus_splitter].subgroup = is_vulcanus_logistics
@@ -304,9 +306,9 @@ data_recipe[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_recipe[vulcanus_splitter].energy_required = 1
 data_recipe[vulcanus_splitter].ingredients =
 {
-    {type = item, name = molybdenum_gear_wheel, amount = 4},
+    {type = item, name = molybdenum_gear_wheel, amount = 8},
     {type = item, name = rhenium_bearing, amount = 8},
-    {type = item, name = advanced_processing_unit, amount = 2},
+    {type = item, name = advanced_processing_unit, amount = 1},
     {type = item, name = T5_splitter, amount = 1},
     {type = item, name = molybdenum_rhenium_plate, amount = 4}
 }

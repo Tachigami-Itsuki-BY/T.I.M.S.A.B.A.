@@ -209,7 +209,7 @@ data:extend
         name = tech_tritium_power,
         icon = "__base__/graphics/technology/nuclear-power.png",
         icon_size = 256,
-        prerequisites = {tech_fusion_power_1, space_science_pack},
+        prerequisites = {tech_deuterium_power, space_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = tritium_reactor},

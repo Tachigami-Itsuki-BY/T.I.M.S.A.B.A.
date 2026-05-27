@@ -1,4 +1,73 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.8
+Date: 27.05.2026
+  Features:
+    - [Vulcanus] Добавлен рецепт Литьё Титанового Стержня.
+    - [Vulcanus] Добавлен рецепт Литьё Железного Шарика для Подшипника.
+    - [Vulcanus] Добавлен рецепт Литьё Железного Подшипника.
+
+    - [Vulcanus] Added recipe for Casting Titanium Rod.
+    - [Vulcanus] Added recipe for Casting Iron Bearing Ball.
+    - [Vulcanus] Added recipe for Casting Iron Bearing.
+
+  Balancing:
+    - [Aquilo] Скрыты предметы и рецепты Порошка Сурьмы и Порошка Германия из-за своей ненадобности.
+    - [All] В рецептах Лазерной Турели Т4, Персональной Лазерной Защиты Т4 и Транспортной Лазерной Защиты Т4 произведена замена ингредиента: Литий-Ионный Аккумулятор → Серебряно-Цинковый Аккумулятор.
+    - [All] В рецептах Лазерной Турели Т5, Персональной Лазерной Защиты Т5-Т6 и Транспортной Лазерной Защиты Т5-Т6 произведена замена ингредиента: Серебряно-Цинковый Аккумулятор → Графеновый Аккумулятор.
+    - [All] В некоторых технологиях изменены предварительные условия.
+    - [Vulcanus] В рецептах Конвеера Вулканус, Подземного Конвеера Вулканус и Разделителя Вулканус скорректированы ингредиенты.
+    - [All] В рецепте Грузовой Посадочной Площадке произведена замена ингредиентов:
+        1. Стальная пластина → Молибден-Рениевая Пластина.
+        2. Бетон → Железобетон.
+    - [All] Для Станций Подзарядки Дронов скорректированы энергетические параметры.
+    - [All] В рецепте Тяжёлого Паукатрона произведена замена ингредиента: Ракетница → Ракетная Турель.
+    - [All] Для Ремкомплектов скорректирована прочность.
+    - [All] В Электрических Бурах и Насосных Установках уменьшено кол-во слотов для модулей. Перед обновлением, пожалуйста, соберите все модули.
+    - [All] Для Электропечей возращенно загрязнение.
+    - [All] В рецептах использованых топливных ячейках заменено производственное здание: Центрифуга → Продвинутый Химический Завод.
+    - [All] Скорректированы некоторые рецепты.
+    - [All] В рецептах Древесины возвращён результат: Пильное Полотно.
+
+    - [Aquilo] Hidden the items and recipes for Antimony Powder and Germanium Powder as they are no longer needed.
+    - [All] Replaced an ingredient in the T4 Laser Turret, Personal Laser Defense T4 and Vehicle Laser Defense T4 recipes: Lithium-ion Battery → Silver Zinc Battery.
+    - [All] Replaced an ingredient in the T5 Laser Turret, Personal Laser Defense T5-T6 and Vehicle Laser Defense T5-T6 recipes: Silver Zinc Battery → Graphene Battery.
+    - [All] Changed prerequisites for some technologies.
+    - [Vulcanus] Adjusted ingredients in the Vulcanus Transport Belt, Vulcanus Underground Belt and, Vulcanus Splitter recipes.
+    - [All] Replaced ingredients in the Cargo Landing Pad recipe: 
+        1. Steel Plate → Molybdenum-Rhenium Plate.
+        2. Conrete → Reinforced Conrete.
+    - [All] Adjusted energy parameters for Robot Charging Points.
+    - [All] Replaced an ingredient in the Heavy Spidertrone recipe: Rocket Launcher → Rocket Turret.
+    - [All] Adjusted durability for Repair Packs.
+    - [All] Decreased module slots in the Electric Mining Drills and Pumpjacks. Please collect all modules before updating.
+    - [All] Returned pollution for the Electric Furnaces.
+    - [All] Changed production machine for Used-Up Fuel Cells recipes: Centrifuge → Advanced Chemical Plant.
+    - [All] Adjusted some recipes.
+    - [All] Returned a result in the Woods recipes: Saw Blade.
+
+  Locale:
+    - [All] Исправлены некоторые Английские названия.
+    - [All] Добавлена ​​полная Русская локализация модпака.
+    - [All] Скорректировано описание для некоторых Сущностей.
+    - [All] Исправлены некоторые Русские названия.
+
+    - [All] Corrected some English names.
+    - [All] Added full Russian localization of the modpack.
+    - [All] Adjusted a description for some Entities.
+    - [All] Corrected some Russians names.
+
+  Scripting:
+    - [All] Модулиризовали обработку событий, чтобы избежать конфликтов при регистрации script.on_event.
+    - [All] Обновленны некототые симуляцие в Факториопедии.
+
+    - [All] Modularized script events handling to prevent script.on_event registration conflicts.
+    - [All] Updated some simulations in Factoriopedia.
+
+  Modding:
+    - [Mods] Удалён мод «Productivity» из списка несовместимых.
+
+    - [Mods] Removed "Productivity" mod from incompatible.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 20.05.2026
   Features:
@@ -7,7 +76,7 @@ Date: 20.05.2026
     - [Muluna] Added new building: Lamber mill.
 
   Balancing:
-    - [Nauvis] Скрыты рецепты Расплавленный Марганец, Расплавленный Магний, Расплавленный Кобальт, Расплавленный Хром, Порошок Никеля, Порошок Сурьмы и Порошок Германия из-за своей ненадобности.
+    - [Nauvis] Скрыты рецепты Расплавленного Марганца, Расплавленного Магния, Расплавленного Кобальта, Расплавленного Хрома и Порошка Никеля (Предмет и Рецепт) из-за своей ненадобности.
     - [Aquilo] В рецепте Анилина произведена замена ингредиента: Порошок Никеля → Желтый Катализатор.
     - [Muluna] В рецепте Обработка Дерева заменено производственное здание: Дробилка → Лесопилка.
     - [Muluna] В рецепт Теплицы добавлен новый ингредиент: Базовая Печатная Плата.
@@ -17,7 +86,7 @@ Date: 20.05.2026
         2. Вода (240 ед.) → (120 ед.)
     - [All] Сбалансирован Твёрдотопливный Электрогенератор в соответствии с общим балансом модпака.
 
-    - [Nauvis] Hidden the recipes for Molten Manganese, Molten Magnesium, Molten Cobalt, Molten Chromium, Nickel Powder, Antimony Powder, and Germanium Powder as they are no longer needed.
+    - [Nauvis] Hidden the recipes for Molten Manganese, Molten Magnesium, Molten Cobalt, Molten Chromium and, Nickel Powder (Item and Recipe) as they are no longer needed.
     - [Aquilo] Replaced an ingredient in the Aniline recipe: Nickel Powder → Yellow Catalyst.
     - [Muluna] Changed production machine for Tree Processing recipe: Crusher → Lamber mill.
     - [Muluna] Added new an ingredient in the Greenhouse recipe: Basic Circuit Board.
@@ -148,9 +217,9 @@ Date: 17.05.2026
 Version: 1.0.3
 Date: 17.05.2026
   Features:
-    - [All] Мод «Modular Buildings Redux» добавлен в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Эта функция является Аддоном и может быть включена/отключена в настройках мода.
+    - [Mods/Addons] Добавлен мод «Modular Buildings Redux» в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Эта функция является Аддоном и может быть включена/отключена в настройках мода.
 
-    - [All] Marked "Modular Buildings Redux" mod as incompatible, and all of its generator optimization functionality (with Space Age, Quality, and Bob's support) is now built directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. This function is an Addon and can be enabled/disabled in the mod settings.
+    - [Mods/Addons] Added "Modular Buildings Redux" mod to incompatible, and all of its generator optimization functionality (with Space Age, Quality, and Bob's support) is now built directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. This function is an Addon and can be enabled/disabled in the mod settings.
 
   Bugfixes:
     - [Bob's Tech] Исправлена ошибка, из-за которой модпак не запускался, если мод «Bob's Tech» был отключен.
@@ -201,10 +270,10 @@ Date: 15.05.2026
         4. Электрический Бур Т6.
         5. Реактор Т4 и Топливная ячейка Т4.
         6. Электропечи Т6(Т4).
-        7. Установка Сортировки Руды Т6.
-        8. Электролизные Ванны Т3 и Т4.
+        7. Рудо-Сортировочный Завод Т6.
+        8. Электролитические Ячейки Т3 и Т4.
         9. Печи для Спекания Т3 и Т4. Если «Ранние Печи для Спекания» включены, тогда: Печь для Спекания Т6.
-        10. Насосные Установки Т3 и Т4.
+        10. Насосные Вышки Т3 и Т4.
     - Добавлены новые предметы и жидкости:
         Ветка Угля:
           1. Пек.
@@ -217,7 +286,7 @@ Date: 15.05.2026
           8. Углеродная Нанотрубка.
           9. Оксид Графена.
           10. Графен.
-          11. Графеновая Батарейка.
+          11. Графеновый Аккумулятор.
         Ветка Фосфора:
           1. Фосфоритная Руда.
           2. Белый Фосфор (предмет и жидкость).
@@ -323,8 +392,8 @@ Date: 15.05.2026
     - Переработка рецептов: стоимость крафта и характеристики строений Muluna синхронизированы с экономикой сборки.
     - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
     - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
-    - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно Цинковая Батарейка → Графеновая Батарейка.
-    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритиевый Газ (240 ед.)
+    - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно-Цинковый Аккумулятор → Графеновый Аккумулятор.
+    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритий (240 ед.)
     - В некоторых рецептах произведена замена ингредиентов.
     - В рецепте Хлорид Меди(I) произведена замена ингредиента: Медный Слиток → Медный Порошок.
     - В рецепте Хлорид Меди(I) (альтернативный) скорректированы ингредиенты и результаты:
@@ -1328,14 +1397,14 @@ Date: 18.04.2026
     - Decreased a result in the Crystal Slurry Ceramic Filtering recipe: Sulfuric Waste Water (30 units) → (15 units)
 
   Graphics:
-    - Обновлены иконки для технологий Батарейка 2 и Батарейка 3.
+    - Обновлены иконки для технологий Аккумулятор 2 и Аккумулятор 3.
 
     - Updated icon for Battery 2 and Battery 3 technologies.
 
   Locale:
     - Вольфрамовая Руда (Вулканус) переименована в Вольфрамитовую Руду.
     - Добавлена химическая формула для Пушечной Бронзы.
-    - Добавлено описание для технологий Батарейка 2 и Батарейка 3.
+    - Добавлено описание для технологий Аккумулятор 2 и Аккумулятор 3.
 
     - Renamed the Tungsten Ore (Vulcanus) to Wolframite Ore.
     - Added a chemical formula for Gunmetal.
@@ -1807,7 +1876,7 @@ Date: 07.04.2026
 Version: 0.0.15
 Date: 06.04.2026
   Balancing:
-    - В рецепте Переработки Дейтериевых Топливных Ячеек заменен ингредиент: Катализатор Мюонного Синтеза (4 ед. 5%) → Дейтериевый Газ (960 ед.)
+    - В рецепте Переработки Дейтериевых Топливных Ячеек заменен ингредиент: Катализатор Мюонного Синтеза (4 ед. 5%) → Дейтерий (960 ед.)
     - В рецепте Зеленые Водоросли понижен уровень производственного здания: T2 → T1.
     - В рецепте Базовое Выращивание Водорослей повышен уровень производственного здания: T1 → T2.
     - В технологии Улучшенная Переработка Водорослей добавлено новое предварительное условие.
@@ -1827,7 +1896,7 @@ Date: 05.04.2026
     - В технологии Центрифуга 4 изменено время исследования и расход научных пакетов:
         1. (15 сек.) → (30 сек.)
         2. (150 ед.) → (200 ед.)
-    - В рецепте Термоядерной Энергетической Ячейки заменен ингредиент: Аммиачный Газ → Дейтериевый Газ.
+    - В рецепте Термоядерной Энергетической Ячейки заменен ингредиент: Аммиак → Дейтерий.
     - В рецепте Нейтрализации Кислоты увеличена температура пара: (765 °C) → (915 °C)
 
     - Replaced ingredients in the T5 Boiler recipe:

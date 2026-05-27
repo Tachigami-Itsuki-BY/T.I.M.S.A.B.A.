@@ -44,6 +44,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.wolframite-processing-1"},
+        localised_description = {"technology-description.wolframite-processing-1"},
         type = technology,
         name = tech_wolframite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
@@ -76,6 +77,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.wolframite-processing-2"},
+        localised_description = {"technology-description.wolframite-processing-2"},
         type = technology,
         name = wolframite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
@@ -104,6 +106,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.wolframite-processing-3"},
+        localised_description = {"technology-description.wolframite-processing-3"},
         type = technology,
         name = wolframite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
@@ -135,6 +138,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.wolframite-processing-4"},
+        localised_description = {"technology-description.wolframite-processing-4"},
         type = technology,
         name = wolframite_processing_4,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
@@ -167,6 +171,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.niobium-smelting-1"},
+        localised_description = {"technology-description.niobium-smelting-1"},
         type = technology,
         name = niobium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png",
@@ -194,6 +199,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.niobium-smelting-2"},
+        localised_description = {"technology-description.niobium-smelting-2"},
         type = technology,
         name = niobium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png",
@@ -223,6 +229,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.niobium-smelting-3"},
+        localised_description = {"technology-description.niobium-smelting-3"},
         type = technology,
         name = niobium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png",

@@ -55,6 +55,10 @@ require("prototypes-final-fix.final-fix-simulation")
 require("prototypes-final-fix.final-fix-entities")
 
 require("prototypes-final-fix.mods-final-fix.flare-stack")
+require("prototypes-final-fix.mods-final-fix.compatibility")
 
-require("prototypes.multi-building.scripting")
-require("prototypes.multi-building.entities")
+require("prototypes-final-fix.multi-building.scripting")
+require("prototypes-final-fix.multi-building.entities")
+
+require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
+require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")

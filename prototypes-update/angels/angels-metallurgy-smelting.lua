@@ -1172,7 +1172,6 @@ data_recipe[titanium_powder].icons = TWO_I(titanium_ingot, titanium_powder)
 data_recipe[titanium_powder].order = e
 
 -- TITANIUM CHEMISTRY
-data_fluid[titanium_chloride_IV].localised_name = {"fluid-name.titanium-chloride-IV"}
 data_fluid[titanium_chloride_IV].subgroup = is_titanium_chemistry
 data_fluid[titanium_chloride_IV].order = a
 data_recipe[titanium_chloride_IV].subgroup = is_titanium_chemistry
@@ -1187,7 +1186,6 @@ data_recipe[titanium_chloride_IV].ingredients =
 data_recipe[titanium_chloride_IV].results[1].amount = 240
 
 local titanium_chloride_IV_2 = "angels-liquid-titanium-tetrachloride-2"
-data_recipe[titanium_chloride_IV_2].localised_name = {"fluid-name.titanium-chloride-IV"}
 data_recipe[titanium_chloride_IV_2].subgroup = is_titanium_chemistry
 data_recipe[titanium_chloride_IV_2].icons = THREE_I(titanium_processed, chlorine_angels, titanium_chloride_IV)
 data_recipe[titanium_chloride_IV_2].order = a_a
@@ -1699,7 +1697,6 @@ data_recipe[tungsten_oxide_VI_2].results =
     {type = fluid, name = steam, amount = 60} -- 90 / 120
 }
 
-data_fluid[tungsten_fluoride_VI_gas].localised_name = {"fluid-name.tungsten-fluoride-VI-gas"}
 data_fluid[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
 data_fluid[tungsten_fluoride_VI_gas].order = b
 data_recipe[tungsten_fluoride_VI_gas].category = angels_chemical_smelting_3
@@ -1750,7 +1747,6 @@ data_recipe[ammonium_paratungstate_2].results =
 }
 data_recipe[ammonium_paratungstate_2].main_product = ammonium_paratungstate
 
-data_fluid[ammonium_tungstate_solution].localised_name = {"fluid-name.ammonium-tungstate-solution"}
 data_fluid[ammonium_tungstate_solution].localised_description = show_formula and {chemical_formula, "(NH[font=default-tiny-bold]4[/font])[font=default-tiny-bold]2[/font]WO[font=default-tiny-bold]4(aq)[/font]"} or nil
 data_fluid[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_fluid[ammonium_tungstate_solution].order = f

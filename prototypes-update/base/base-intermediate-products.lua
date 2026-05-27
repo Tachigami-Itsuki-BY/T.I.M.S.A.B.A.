@@ -391,6 +391,7 @@ data_recipe[phenolic_board].ingredients =
     {type = fluid, name = liquid_resin_angels, amount = 15}
 }
 
+data_recipe[glass_fiber_board].localised_name = {"item-name.angels-glass-fiber-board"}
 data_recipe[glass_fiber_board].category = advanced_crafting
 data_recipe[glass_fiber_board].additional_categories = {electronics_fluid}
 data_recipe[glass_fiber_board].subgroup = "bob-boards"
@@ -480,38 +481,40 @@ data_item[uranium_238].localised_description = show_formula and {chemical_formul
 
 data_item[neptunium_240].localised_description = show_formula and {chemical_formula, "Np-240"} or nil
 data_item[neptunium_240].subgroup = is_nuclear_item
-data_item[neptunium_240].order = e
+data_item[neptunium_240].order = c
 
 if not mods [shattered_mods] then
-    data_item[plutonium_239_bob].localised_description = show_formula and {chemical_formula, "Pu-239"} or nil
-    data_item[plutonium_239_bob].subgroup = is_nuclear_item
-    data_item[plutonium_239_bob].order = f
-    data_item[plutonium_239_bob].stack_size = 200
-end
-
-data_item[thorium_ore_bob].localised_description = show_formula and {chemical_formula, "Th"} or nil
-data_item[thorium_ore_bob].subgroup = is_nuclear_item
-data_item[thorium_ore_bob].order = g
-
-if not mods [shattered_mods] then
-    data_item[thorium_232_bob].localised_description = show_formula and {chemical_formula, "Th-232"} or nil
-    data_item[thorium_232_bob].subgroup = is_nuclear_item
-    data_item[thorium_232_bob].order = h
-    data_item[thorium_232_bob].stack_size = 200
-
     data_item[americium_241_angels].localised_description = show_formula and {chemical_formula, "Am-241"} or nil
     data_item[americium_241_angels].subgroup = is_nuclear_item
-    data_item[americium_241_angels].order = i
+    data_item[americium_241_angels].order = d
     data_item[americium_241_angels].stack_size = 200
 
     data_item[curium_245_angels].localised_description = show_formula and {chemical_formula, "Cm-245"} or nil
     data_item[curium_245_angels].subgroup = is_nuclear_item
-    data_item[curium_245_angels].order = j
+    data_item[curium_245_angels].order = e
     data_item[curium_245_angels].stack_size = 200
 end
 
+data_item[thorium_ore_bob].localised_description = show_formula and {chemical_formula, "Th"} or nil
+data_item[thorium_ore_bob].subgroup = is_nuclear_item
+data_item[thorium_ore_bob].order = f
+
+if not mods [shattered_mods] then
+    data_item[thorium_232_bob].localised_description = show_formula and {chemical_formula, "Th-232"} or nil
+    data_item[thorium_232_bob].subgroup = is_nuclear_item
+    data_item[thorium_232_bob].order = g
+    data_item[thorium_232_bob].stack_size = 200
+end
+
+if not mods [shattered_mods] then
+    data_item[plutonium_239_bob].localised_description = show_formula and {chemical_formula, "Pu-239"} or nil
+    data_item[plutonium_239_bob].subgroup = is_nuclear_item
+    data_item[plutonium_239_bob].order = h
+    data_item[plutonium_239_bob].stack_size = 200
+end
+
 data_item[muon_fusion_catalyst].subgroup = is_nuclear_item
-data_item[muon_fusion_catalyst].order = k
+data_item[muon_fusion_catalyst].order = i
 
 local uranium_processing = "uranium-processing"
 data_recipe[uranium_processing].subgroup = is_nuclear_recipe
@@ -521,9 +524,9 @@ data_recipe[uranium_processing].energy_required = 8
 data_recipe[uranium_processing].ingredients[1].amount = 8
 data_recipe[uranium_processing].results =
 {
-    {type = item, name = uranium_234, amount = 2, probability = 0.0005},
+    {type = item, name = uranium_234, amount = 2, probability = 0.0055},
     {type = item, name = uranium_235, amount = 2, probability = 0.007},
-    {type = item, name = uranium_238, amount = 4, probability = 0.9925}
+    {type = item, name = uranium_238, amount = 2, probability = 0.9875}
 }
 
 local plutonium_synthesis = "angels-plutonium-synthesis"
@@ -554,7 +557,7 @@ data_recipe[plutonium_recovery].ingredients =
 }
 data_recipe[plutonium_recovery].results =
 {
-    {type = item, name = plutonium_239_bob, amount = 4},
+    {type = item, name = plutonium_239_bob, amount = 5},
     {type = item, name = uranium_238, amount = 16}
 }
 
@@ -608,6 +611,11 @@ end
 data_recipe[thorium_processing].order = f
 data_recipe[thorium_processing].energy_required = 16
 data_recipe[thorium_processing].ingredients[1].amount = 4
+data_recipe[thorium_processing].results =
+{
+    {type = item, name = thorium_232_bob, amount = 4},
+    {type = item, name = plutonium_239_bob, amount = 1, probability = 0.125}
+}
 
 data_recipe[plutonium_breeding].subgroup = is_nuclear_recipe
 if mods [shattered_mods] then
@@ -873,6 +881,8 @@ data_item[depleted_uranium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_uranium_fuel_cell].order = c
 
 local nuclear_fuel_cell_reprocessing = "nuclear-fuel-reprocessing"
+data_recipe[nuclear_fuel_cell_reprocessing].category = angels_advanced_chemistry
+data_recipe[nuclear_fuel_cell_reprocessing].additional_categories = {cryogenics}
 data_recipe[nuclear_fuel_cell_reprocessing].subgroup = is_nuclear_cell
 data_recipe[nuclear_fuel_cell_reprocessing].icons = TWO_I(depleted_uranium_fuel_cell, uranium_238)
 data_recipe[nuclear_fuel_cell_reprocessing].order = c_a
@@ -881,6 +891,8 @@ data_recipe[nuclear_fuel_cell_reprocessing].ingredients[1].amount = 4
 data_recipe[nuclear_fuel_cell_reprocessing].results = {{type = item, name = uranium_238, amount = 4}}
 
 local advanced_nuclear_fuel_cell_reprocessing = "angels-advanced-uranium-reprocessing"
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].category = angels_advanced_chemistry
+data_recipe[advanced_nuclear_fuel_cell_reprocessing].additional_categories = {cryogenics}
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].subgroup = is_nuclear_cell
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].icons = THREE_D_I(depleted_uranium_fuel_cell, nil, hydrofluoric_acid_angels, uranium_238, neptunium_240, water_greenyellow_waste)
 data_recipe[advanced_nuclear_fuel_cell_reprocessing].order = c_b
@@ -920,6 +932,8 @@ if mods [shattered_mods] then
 else
     data_recipe[mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, nil, americium_241_angels, curium_245_angels, uranium_238)
 end
+data_recipe[mixed_oxide_reprocessing].category = angels_advanced_chemistry
+data_recipe[mixed_oxide_reprocessing].additional_categories = {cryogenics}
 data_recipe[mixed_oxide_reprocessing].order = e_a
 data_recipe[mixed_oxide_reprocessing].energy_required = 64
 data_recipe[mixed_oxide_reprocessing].ingredients[1].amount = 4
@@ -931,6 +945,8 @@ data_recipe[mixed_oxide_reprocessing].results =
 }
 data_recipe[mixed_oxide_reprocessing].allow_productivity = true
 
+data_recipe[advanced_mixed_oxide_reprocessing].category = angels_advanced_chemistry
+data_recipe[advanced_mixed_oxide_reprocessing].additional_categories = {cryogenics}
 data_recipe[advanced_mixed_oxide_reprocessing].subgroup = is_nuclear_cell
 if mods [shattered_mods] then
     data_recipe[advanced_mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, hydrofluoric_acid_angels, plutonium_239_shattered, curium_245_shattered, water_greenyellow_waste)
@@ -968,6 +984,8 @@ local depleted_thorium_fuel_cell = "angels-depleted-thorium-fuel-cell"
 data_item[depleted_thorium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_thorium_fuel_cell].order = g
 
+data_recipe[thorium_fuel_cell_reprocessing].category = angels_advanced_chemistry
+data_recipe[thorium_fuel_cell_reprocessing].additional_categories = {cryogenics}
 data_recipe[thorium_fuel_cell_reprocessing].subgroup = is_nuclear_cell
 if mods [shattered_mods] then
     data_recipe[thorium_fuel_cell_reprocessing].icons = FOUR_D_I(depleted_thorium_fuel_cell, nil, nil, nil, neptunium_240, thorium_shattered, uranium_234, curium_245_shattered)
@@ -986,6 +1004,8 @@ data_recipe[thorium_fuel_cell_reprocessing].results =
 }
 data_recipe[thorium_fuel_cell_reprocessing].allow_productivity = true
 
+data_recipe[advanced_thorium_fuel_cell_reprocessing].category = angels_advanced_chemistry
+data_recipe[advanced_thorium_fuel_cell_reprocessing].additional_categories = {cryogenics}
 data_recipe[advanced_thorium_fuel_cell_reprocessing].subgroup = is_nuclear_cell
 data_recipe[advanced_thorium_fuel_cell_reprocessing].icons = FOUR_THREE_R_I(depleted_thorium_fuel_cell, nil, hydrofluoric_acid_angels, neptunium_240, uranium_234, muon_fusion_catalyst, water_greenyellow_waste)
 data_recipe[advanced_thorium_fuel_cell_reprocessing].order = g_b
@@ -1018,6 +1038,8 @@ data_recipe[deuterium_fuel_cell].allow_productivity = true
 data_item[depleted_deuterium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_deuterium_fuel_cell].order = i
 
+data_recipe[deuterium_fuel_cell_reprocessing].category = angels_advanced_chemistry
+data_recipe[deuterium_fuel_cell_reprocessing].additional_categories = {cryogenics}
 data_recipe[deuterium_fuel_cell_reprocessing].subgroup = is_nuclear_cell
 data_recipe[deuterium_fuel_cell_reprocessing].icons = THREE_D_I(depleted_deuterium_fuel_cell, nil, muon_fusion_catalyst, deuterium_angels)
 data_recipe[deuterium_fuel_cell_reprocessing].order = i_a

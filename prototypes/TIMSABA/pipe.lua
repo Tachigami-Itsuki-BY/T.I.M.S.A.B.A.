@@ -644,10 +644,13 @@ local function TIMSABA_pipetoground_disabled_visualizaton()
     }
 end
 
+local simulations = require("__TIMSABA__.prototypes.factoriopedia-simulations")
+local pipe = "pipe"
+local pipe_to_ground = "pipe-to-ground"
 data:extend
 ({
     {
-        type = "pipe",
+        type = pipe,
         name = molybdenum_rhenium_pipe,
         subgroup = is_pipe,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe.png",
@@ -692,7 +695,7 @@ data:extend
         vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}},
     },
     {
-        type = "pipe-to-ground",
+        type = pipe_to_ground,
         name = molybdenum_rhenium_pipe_to_ground,
         subgroup = is_pipe_to_ground,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe-to-ground.png",
@@ -729,7 +732,8 @@ data:extend
         pictures = TIMSABA_pipetogroundpictures("molybdenum-rhenium"),
         visualization = TIMSABA_pipetoground_visualization(),
         disabled_visualization = TIMSABA_pipetoground_disabled_visualizaton(),
-        impact_category = "metal"
+        impact_category = "metal",
+        factoriopedia_simulation = simulations.factoriopedia_molybdenum_rhenium_pipe_to_ground
     }
 })
 
@@ -754,8 +758,6 @@ if not reskins or not reskins.lib then
     return
 end
 
-local pipe = "pipe"
-local pipe_to_ground = "pipe-to-ground"
 local icons_pipe =
 {
     {name = molybdenum_rhenium_pipe, type = item},

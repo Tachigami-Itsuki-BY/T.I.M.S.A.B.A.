@@ -57,21 +57,27 @@ do
 	}
 	if reskins.bobs.triggers.power.nuclear then
 		-- REACTOR
-		technologies[tech_nuclear_power] = {tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[uranium_reactor].tint}
-		technologies[tech_nuclear_power].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
+		technologies[tech_uranium_power] = {tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[uranium_reactor].tint}
+		technologies[tech_uranium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
+		technologies[tech_uranium_power_2] = {tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[thorium_reactor].tint}
+		technologies[tech_uranium_power_2].icon_base = "nuclear-power-uranium-" .. material_tiers[2]
 		technologies[tech_thorium_power] = {tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[thorium_reactor].tint}
 		technologies[tech_thorium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[2]
+		technologies[tech_uranium_power_3] = {tier = 3, prog_tier = 5, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[deuterium_reactor].tint}
+		technologies[tech_uranium_power_3].icon_base = "nuclear-power-uranium-" .. material_tiers[3]
 		technologies[tech_deuterium_power] = {tier = 3, prog_tier = 5, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[deuterium_reactor].tint}
 		technologies[tech_deuterium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[3]
 		local tritium_tint = {r = 0.72, g = 0.05, b = 1.0, a = 1.0}
 		technologies[tech_tritium_power] = {tier = 4, prog_tier = 6, icon_name = "nuclear-power", tint = tritium_tint}
 		technologies[tech_tritium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[4]
 		if reskins.lib.settings.get_value("bobmods-revamp-nuclear") == true then
-			technologies[tech_thorium_power].icon_base = "nuclear-power-thorium-" .. material_tiers[2]
+			technologies[tech_uranium_power_2].icon_base = "nuclear-power-thorium-" .. material_tiers[2]
 			if reskins.lib.settings.get_value("bobmods-plates-bluedeuterium") == true then
+				technologies[tech_uranium_power_3].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[3]
 				technologies[tech_deuterium_power].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[3]
 				technologies[tech_tritium_power].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[4]
 			else
+				technologies[tech_uranium_power_3].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[3]
 				technologies[tech_deuterium_power].icon_base = "nuclear-power-deuterium-pink-" .. material_tiers[3]
 				technologies[tech_tritium_power].icon_base = "nuclear-power-deuterium-blue-" .. material_tiers[4]
 			end

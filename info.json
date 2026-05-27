@@ -1,9 +1,11 @@
 {
     "name": "TIMSABA",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.",
     "author": "Tachugami_Istuki",
+    "contact": "TG: @Tachigami, Discord: tachigamiitsuki.(Рус/Eng)",
+    "homepage": "https://github.com/Tachigami-Itsuki-BY/T.I.M.S.A.B.A.",
     "dependencies":
     [
         "base >= 2.0.0",
@@ -67,7 +69,6 @@
         "? RPGsystem",
         "! aai-containers",
         "! aai-loaders",
-        "! Productivity",
         "? graille-bob-hardened-bile-remover",
         "? Flare Stack",
         "? sa-science-packs",

@@ -229,7 +229,7 @@ data:extend
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = false,
-        energy_required = 8, -- 4Graphite plate + 2KMnO₄ + 3H₂SO₄ --> Graphene oxide + 2MnSO₄(aq) + K₂SO₄(aq)
+        energy_required = 4, -- 4Graphite plate + 2KMnO₄ + 3H₂SO₄ --> Graphene oxide + 2MnSO₄(aq) + K₂SO₄(aq)
         ingredients =
         {
             {type = item, name = graphite_plate, amount = 8},
@@ -239,7 +239,7 @@ data:extend
         results =
         {
             {type = item, name = graphene_oxide, amount = 2},
-            {type = fluid, name = manganese_sulfate_II_solution, amount = 2}, -- 4
+            {type = fluid, name = manganese_sulfate_II_solution, amount = 30}, -- 60
             {type = fluid, name = potassium_sulfate_solution, amount = 15} -- 30
         },
         main_product = graphene_oxide
@@ -256,7 +256,7 @@ data:extend
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = false,
-        energy_required = 8, -- Graphene oxide + N₂H₄ --> Graphene + H₂O(g) + N₂
+        energy_required = 4, -- Graphene oxide + N₂H₄ --> Graphene + H₂O(g) + N₂
         ingredients =
         {
             {type = item, name = graphene_oxide, amount = 8},
@@ -343,11 +343,11 @@ data:extend
 
 -- NITROGEN
 local is_nitrogen = "angels-petrochem-nitrogen"
+ammonia_gas_alt = "ammonia-gas-alt"
 nitrogen_monoxide_2 = "nitrogen-monoxide-2"
 ammonium_chloride_reprocess = "ammonium-chloride-reprocess"
-ammonium_chloride_solution_alt = "ammonium-chloride-solution-alt"
-ammonia_gas_alt = "ammonia-gas-alt"
 melamine_solution_from_dicyandiamide_solution = "melamine-solution-from-dicyandiamide-solution"
+ammonium_chloride_solution_alt = "ammonium-chloride-solution-alt"
 ammonium_sulfate_solution_alt = "ammonium-sulfate-solution-alt"
 ammonium_hydrosulfate_reprocess = "ammonium-hydrosulfate-reprocess"
 data:extend
@@ -463,6 +463,29 @@ data:extend
     -- FLUID
     {
         type = recipe,
+        name = ammonia_gas_alt,
+        category = chemistry,
+        subgroup = is_nitrogen_fluids,
+        icons = THREE_R_I(ammonia_solution, ammonia_angels, steam),
+        order = b_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 2, -- NH₃(aq) --> NH₃ + H₂O
+        ingredients =
+        {
+            {type = fluid, name = ammonia_solution, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = ammonia_angels, amount = 60},
+            {type = fluid, name = steam, amount = 60},
+        },
+    },
+    {
+        type = recipe,
         name = nitrogen_monoxide_2,
         category = chemistry,
         subgroup = is_nitrogen_fluids,
@@ -490,49 +513,6 @@ data:extend
     },
     {
         type = recipe,
-        name = ammonium_chloride_solution_alt,
-        category = angels_liquifying,
-        subgroup = is_nitrogen_fluids,
-        icons = THREE_I(ammonium_chloride, water_purified_angels, ammonium_chloride_solution_angels),
-        order = o_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- NH₄Cl + H₂O --> NH₄Cl(aq)
-        ingredients =
-        {
-            {type = item, name = ammonium_chloride, amount = 4},
-            {type = fluid, name = water_purified_angels, amount = 60}
-        },
-        results = {{type = fluid, name = ammonium_chloride_solution_angels, amount = 60}}
-    },
-    {
-        type = recipe,
-        name = ammonia_gas_alt,
-        category = chemistry,
-        subgroup = is_nitrogen_fluids,
-        icons = THREE_R_I(ammonia_solution, ammonia_angels, steam),
-        order = i_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 2, -- NH₃(aq) --> NH₃ + H₂O
-        ingredients =
-        {
-            {type = fluid, name = ammonia_solution, amount = 60}
-        },
-        results =
-        {
-            {type = fluid, name = ammonia_angels, amount = 60},
-            {type = fluid, name = steam, amount = 60},
-        },
-    },
-    {
-        type = recipe,
         name = melamine_solution_from_dicyandiamide_solution,
         category = angels_advanced_chemistry,
         subgroup = is_nitrogen_fluids,
@@ -555,6 +535,26 @@ data:extend
             {type = fluid, name = water_purified_angels, amount = 30}, -- 40
             {type = fluid, name = ammonia_angels, amount = 30} -- 60
         }
+    },
+    {
+        type = recipe,
+        name = ammonium_chloride_solution_alt,
+        category = angels_liquifying,
+        subgroup = is_nitrogen_fluids,
+        icons = THREE_I(ammonium_chloride, water_purified_angels, ammonium_chloride_solution_angels),
+        order = o_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- NH₄Cl + H₂O --> NH₄Cl(aq)
+        ingredients =
+        {
+            {type = item, name = ammonium_chloride, amount = 4},
+            {type = fluid, name = water_purified_angels, amount = 60}
+        },
+        results = {{type = fluid, name = ammonium_chloride_solution_angels, amount = 60}}
     },
     {
         type = recipe,

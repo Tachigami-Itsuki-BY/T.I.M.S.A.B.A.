@@ -176,15 +176,27 @@ data_item[wood].fuel_category = base_fuel
 
 local wood_1 = "angels-wood-sawing-1"
 data_recipe[wood_1].icons = TWO_I(tree_angels, wood, number_1)
-data_recipe[wood_1].results = {{type = item, name = wood, amount = 8}}
+data_recipe[wood_1].results =
+{
+    {type = item, name = wood, amount = 8},
+    {type = item, name = saw, amount = 1, probability = 0.5}
+}
 
 local wood_2 = "angels-wood-sawing-2"
 data_recipe[wood_2].icons = TWO_I(tree_angels, wood, number_2)
-data_recipe[wood_2].results = {{type = item, name = wood, amount = 16}}
+data_recipe[wood_2].results =
+{
+    {type = item, name = wood, amount = 16},
+    {type = item, name = saw_crystal_tipped, amount = 1, probability = 0.5}
+}
 
 local wood_3 = "angels-wood-sawing-3"
 data_recipe[wood_3].icons = TWO_I(tree_angels, wood, number_3)
-data_recipe[wood_3].results = {{type = item, name = wood, amount = 32}}
+data_recipe[wood_3].results =
+{
+    {type = item, name = wood, amount = 32},
+    {type = item, name = saw_crystal_full, amount = 1, probability = 0.5}
+}
 
 local cellulose_fiber_raw_wood = "angels-cellulose-fiber-raw-wood"
 if mods [muluna_mods] then
@@ -252,6 +264,7 @@ data_recipe[tree_seed_1].ingredients[1].amount = 2
 data_recipe[tree_seed_1].ingredients[2].amount = 60
 
 local tree_seed_2 = "angels-tree-seed-2"
+data_recipe[tree_seed_2].localised_name = data_recipe[tree_seed_1].localised_name
 data_recipe[tree_seed_2].icons = THREE_D_I(tree_angels, fertilizer_angels, water, tree_seed, nil, nil, number_2)
 data_recipe[tree_seed_2].order = a_b
 data_recipe[tree_seed_2].energy_required = 16
@@ -261,6 +274,7 @@ data_recipe[tree_seed_2].ingredients[3].amount = 60
 data_recipe[tree_seed_2].results[1].amount = 8
 
 local tree_seed_3 = "angels-tree-seed-3"
+data_recipe[tree_seed_3].localised_name = data_recipe[tree_seed_1].localised_name
 data_recipe[tree_seed_3].icons = FOUR_D_I(tree_angels, fertilizer_angels, water, carbon_dioxide_angels, tree_seed, nil, nil, nil, number_3)
 data_recipe[tree_seed_3].order = a_c
 data_recipe[tree_seed_3].energy_required = 16

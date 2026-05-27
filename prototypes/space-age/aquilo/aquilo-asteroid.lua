@@ -349,7 +349,7 @@ local types =
     antimonite = "metallic",
     germanite = "carbonic"
 }
-local sizes = {"1", "2", "3", "4", "5"} 
+local sizes = {"1", "2", "3", "4", "5"}
 for my_type, source_type in pairs(types) do
     for _, s in pairs(sizes) do
         local source_name = source_type .. "-asteroid-explosion-" .. s
