@@ -41,6 +41,8 @@ if mods [muluna_mods] then
     data_recipe[landfill_stone_crushed].ingredients = {{type = item, name = stone_crushed_angels, amount = 64}}
 
     local stone_bricks_stone_crushed = "stone-bricks-stone-crushed"
+    data_recipe[stone_bricks_stone_crushed].category = smelting_filtering
+    data_recipe[stone_bricks_stone_crushed].additional_categories = {angels_sintering_1, metallurgy}
     data_recipe[stone_bricks_stone_crushed].subgroup = is_muluna_crushing
     data_recipe[stone_bricks_stone_crushed].icons = TWO_I(stone_crushed_angels, stone_brick)
     data_recipe[stone_bricks_stone_crushed].order = a_d
@@ -861,7 +863,7 @@ if mods [muluna_mods] then
         data_recipe[datacell_empty_astronomical_data_empty].results =
         {
             {type = item, name = datacell_empty, amount = 1},
-            {type = fluid, name = astronomical_data_muluna, amount = 240}
+            {type = fluid, name = astronomical_data_muluna, amount = 960}
         }
     end
 
@@ -980,6 +982,7 @@ if mods [muluna_mods] then
         local telescope_observation_moshine = "muluna-telescope-observation-moshine"
         data_recipe[telescope_observation_moshine].icons = BUILDING_R_I(astronomical_data_muluna, planet_moshine)
         data_recipe[telescope_observation_moshine].energy_required = 4
+        data_recipe[telescope_observation_moshine].results[1].amount = 30
     end
 
     if mods [shattered_mods] then
@@ -1285,4 +1288,24 @@ if mods [muluna_mods] then
         {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1}
     }
+
+    table.insert(data_technology["rocket-part-productivity"].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology["rocket-part-productivity-2"].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology["rocket-part-productivity-3"].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology["rocket-part-productivity-4"].unit.ingredients, {utility_science_pack, 1})
+
+    table.insert(data_technology["rocket-part-productivity-vulcanus"].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology["rocket-part-productivity-vulcanus-2"].unit.ingredients, {utility_science_pack, 1})
+
+    table.insert(data_technology["rocket-part-productivity-gleba"].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology["rocket-part-productivity-gleba-2"].unit.ingredients, {utility_science_pack, 1})
+
+    table.insert(data_technology["rocket-part-productivity-fulgora"].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology["rocket-part-productivity-fulgora-2"].unit.ingredients, {utility_science_pack, 1})
+
+    local tech_RPPA = "rocket-part-productivity-aquilo"
+    table.insert(data_technology[tech_RPPA].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_RPPA].unit.ingredients, {metallurgic_science_pack, 1})
+    table.insert(data_technology[tech_RPPA].unit.ingredients, {agricultural_science_pack, 1})
+    table.insert(data_technology[tech_RPPA].unit.ingredients, {electromagnetic_science_pack, 1})
 end

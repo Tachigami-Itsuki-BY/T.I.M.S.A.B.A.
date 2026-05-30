@@ -1,4 +1,55 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 30.05.2026
+  Features:
+    - [Mods] Добавлена поддержка Moshine: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [Nauvis] Добавлен рецепт Каменный Блок (из Дроблёного Камня).
+
+    - [Mods] Added support for Moshine: seamlessly integrated the new planet into the gameplay flow.
+    - [Nauvis] Added Stone Brick (from Crushed Stone) recipe.
+
+  Bugfixes:
+    - [All] Исправлена ​​ошибка загрузки модов, вызывавшая сбой из-за несоответствия collision_mask на высокоуровневых буровых установках.
+
+    - [All] Fixed mod loading crash caused by collision_mask mismatch on high-tier mining drills.
+
+  Balancing:
+    - [All] Технологии Переработка Повеллита (3 и 4) перемещены на 1 научный пакет назад.
+    - [Moshine] В рецепте Прометиевого Научного Пакета произведена замена ингредиента: Кусок Прометиевого Астероида → Прометиевая Руда.
+    - [All] Меха-Броня получила усиление защитных характеристик для лучшего соответствия текущему балансу.
+    - [All] Пересмотрена стоимость всех технологии.
+
+    - [All] Moved back by 1 science pack the Powellite Processing technologies (3 and 4).
+    - [Moshine] Replaced an ingredient in the Promethium Science Pack recipe: Promethium Asteroid Chunk → Promethium Ore.
+    - [All] Mecha Armor has received defensive stats buffs to better match current balance.
+    - [All] Revised the cost of all technologies.
+
+  Graphics:
+    - [Aquilo] Обновлены иконки для Антимонитовой Руды.
+    - [All] Обновлены иконки для некоторых технологий.
+
+    - [Aquilo] Updated icons for Antimonite Ore.
+    - [All] Updated icons for some technologies.
+
+  Locale:
+    - [All] Исправлены отсутствующие названия рецептов.
+    - [All] Обновлена Русская локализация.
+
+    - [All] Fixed missing recipe names.
+    - [All] Updated Russian localization.
+
+  Modding:
+    - [Mods] Мод «Moshine» переведён в опциональную зависимость.
+    - [Mods] Добавлены моды (Утилиты/Графические) которыми я пользуюсь в опциональные зависимости.
+
+    - [Mods] Moved "«Moshine»" mod to optional dependencies.
+    - [Mods] Added mods (Utilities/Graphics) that I use to optional dependencies.
+
+  Other:
+    - [All] Добавлена ссылка на ДС сервер.
+
+    - [All] Added link to DS server.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 27.05.2026
   Features:
@@ -58,7 +109,7 @@ Date: 27.05.2026
 
   Scripting:
     - [All] Модулиризовали обработку событий, чтобы избежать конфликтов при регистрации script.on_event.
-    - [All] Обновленны некототые симуляцие в Факториопедии.
+    - [All] Обновленны некототые симуляции в Факториопедии.
 
     - [All] Modularized script events handling to prevent script.on_event registration conflicts.
     - [All] Updated some simulations in Factoriopedia.

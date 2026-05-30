@@ -76,6 +76,7 @@ local smelting = "angels-smelting"
 is_iron_chemistry = "is-iron-chemistry"
 is_steel = "is-steel"
 is_copper_chemistry = "is-copper-chemistry"
+is_lead = "angels-lead"
 is_lead_chemistry = "is-lead-chemistry"
 is_tin_chemistry = "is-tin-chemistry"
 is_manganese_chemistry = "is-manganese-chemistry"
@@ -259,6 +260,8 @@ data:extend
 
 -- ANGELS WATER TREATMENT
 local water_treatment = "angels-water-treatment"
+is_water_cleaning_fluid = "angels-water-cleaning-fluid"
+is_water_cleaning = "angels-water-cleaning"
 is_water_treatment_building = "angels-water-treatment-building"
 is_washing_building = "angels-washing-building"
 is_hydro_building = "is-hydro-building"

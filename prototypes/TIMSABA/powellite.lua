@@ -261,7 +261,7 @@ data:extend
     {
         type = recipe,
         name = powellite_crystals_sorting,
-        category = ore_sorting_6,
+        category = angels_ore_sorting_5,
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, powellite_crystals),
         order = h,

@@ -21,3 +21,5 @@ data_equipment_grid[power_armor_equipment_grid_4].height = 12
 power_armor_equipment_grid_5 = "power-armor-equipment-grid-mk5"
 data_equipment_grid[power_armor_equipment_grid_5].width = 12
 data_equipment_grid[power_armor_equipment_grid_5].height = 16
+
+mech_armor_equipment_grid = "mech-armor-equipment-grid"

@@ -15,7 +15,7 @@ data:extend
     {
         type = item_group,
         name = gleba,
-        order = y,
+        order = x_b,
         icon = "__TIMSABA__/graphics/icons/space-age/gleba/gleba-planet.png",
         icon_size = 128,
     },

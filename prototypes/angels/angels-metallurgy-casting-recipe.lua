@@ -144,8 +144,27 @@ data:extend
 })]]
 
 -- BRICKS
+stone_brick_from_stone_crushed = "stone-brick-from-stone-crushed"
 data:extend
 ({
+    {
+        type = recipe,
+        name = stone_brick_from_stone_crushed,
+        category = smelting,
+        additional_categories = {angels_sintering_1, metallurgy},
+        subgroup = is_bricks_casting,
+        icons = TWO_I(stone_crushed_angels, stone_brick),
+        order = c_a,
+        enabled = true,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = true,
+        allow_decomposition = false,
+        energy_required = 4,
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        results = {{type = item, name = stone_brick, amount = 1}},
+        main_product = stone_brick
+    },
     {
         type = recipe,
         name = reinforced_titanium_concrete_brick,

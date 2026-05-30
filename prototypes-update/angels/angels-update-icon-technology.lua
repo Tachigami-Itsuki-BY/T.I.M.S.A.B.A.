@@ -36,12 +36,42 @@ do
 	local inputs =
 	{
 		mod = angels_mod,
-		group = "smelting",
+		group = smelting,
 		type = technology,
 		technology_icon_size = 256,
 	}
+
+	---@param material string
+	---@return CreateIconsFromListOverrides
+	local function get_smelting_overrides(material)
+		---@type CreateIconsFromListOverrides
+		local override =
+		{
+			subgroup = "smelting",
+			flat_icon = true,
+			image = "smelting-" .. material .. "-technology-icon",
+		}
+
+		return override
+	end
+
 	---@type CreateIconsFromListTable
-	local technologies = {}
+	local technologies =
+	{
+		[tech_iron_smelting_1] = get_smelting_overrides("iron"),
+		[tech_copper_smelting_1] = get_smelting_overrides("copper"),
+		[tech_lead_smelting_1] = get_smelting_overrides("lead"),
+		[tech_tin_smelting_1] = get_smelting_overrides("tin"),
+		[tech_manganese_smelting_1] = get_smelting_overrides("manganese"),
+		[tech_silicon_smelting_1] = get_smelting_overrides("silicon"),
+		[tech_nickel_smelting_1] = get_smelting_overrides("nickel"),
+		[tech_aluminium_smelting_1] = get_smelting_overrides("aluminium"),
+		[tech_zinc_smelting_1] = get_smelting_overrides("zinc"),
+		[tech_silver_smelting_1] = get_smelting_overrides("silver"),
+		[tech_titanium_smelting_1] = get_smelting_overrides("titanium"),
+		[tech_gold_smelting_1] = get_smelting_overrides("gold"),
+		[tech_platinum_smelting_1] = get_smelting_overrides("platinum")
+	}
 	if settings.startup[setting_early_sintering_oven].value then
 		technologies[tech_powder_metallurgy_1] = {tier = 1, prog_tier = 1, icon_name = powder_metallurgy}
 		technologies[tech_powder_metallurgy_2] = {tier = 2, prog_tier = 2, icon_name = powder_metallurgy}

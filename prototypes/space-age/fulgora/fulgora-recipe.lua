@@ -19,7 +19,7 @@ data:extend
         ingredients = {},
         results = {{type = fluid, name = fulgora_air, amount = 240}},
         main_product = fulgora_air,
-        surface_conditions = {{property = "pressure", min = 800, max = 800}}
+        surface_conditions = {{property = pressure, min = 800, max = 800}}
     },
     {
         type = recipe,

@@ -1,8 +1,8 @@
 tech_advanced_asteroid_processing = "advanced-asteroid-processing"
 tech_full_asteroid_processing = "full-asteroid-processing"
-local full_asteroid_productivity = "full-asteroid-productivity"
+tech_full_asteroid_productivity = "full-asteroid-productivity"
 tech_advanced_full_asteroid_processing = "advanced-full-asteroid-processing"
-local advanced_full_asteroid_productivity = "advanced-full-asteroid-productivity"
+tech_advanced_full_asteroid_productivity = "advanced-full-asteroid-productivity"
 
 advanced_thruster_fuel = "advanced-thruster-fuel"
 advanced_thruster_oxidizer = "advanced-thruster-oxidizer"
@@ -54,7 +54,7 @@ data:extend
     {
         localised_name = {"technology-name.full-asteroid-productivity"},
         type = technology,
-        name = full_asteroid_productivity,
+        name = tech_full_asteroid_productivity,
         icons = util.technology_icon_constant_productivity("__space-age__/graphics/technology/asteroid-productivity.png"),
         prerequisites = {tech_full_asteroid_processing},
         effects =
@@ -131,7 +131,7 @@ data:extend
     {
         localised_name = {"technology-name.advanced-full-asteroid-productivity"},
         type = technology,
-        name = advanced_full_asteroid_productivity,
+        name = tech_advanced_full_asteroid_productivity,
         icons = util.technology_icon_constant_productivity("__space-age__/graphics/technology/asteroid-productivity.png"),
         prerequisites = {tech_advanced_full_asteroid_processing},
         effects =

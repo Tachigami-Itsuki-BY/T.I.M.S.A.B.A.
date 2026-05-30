@@ -142,6 +142,12 @@ require("prototypes.planet.muluna.muluna-building")
 require("prototypes.planet.muluna.muluna-recipe")
 require("prototypes.planet.muluna.muluna-technology")
 
+require("prototypes.planet.moshine.moshine-groups")
+require("prototypes.planet.moshine.moshine-item-fluid")
+require("prototypes.planet.moshine.moshine-monazite")
+require("prototypes.planet.moshine.moshine-recipe")
+require("prototypes.planet.moshine.moshine-technology")
+
 require("prototypes.planet.arig.arig-groups")
 require("prototypes.planet.arig.arig-recipe")
 require("prototypes.planet.arig.arig-technology")
@@ -169,10 +175,6 @@ require("prototypes.planet.hyarion.hyarion-technology")
 require("prototypes.planet.maraxsis.maraxsis-groups")
 require("prototypes.planet.maraxsis.maraxsis-recipe")
 require("prototypes.planet.maraxsis.maraxsis-technology")
-
-require("prototypes.planet.moshine.moshine-groups")
-require("prototypes.planet.moshine.moshine-recipe")
-require("prototypes.planet.moshine.moshine-technology")
 
 --require("prototypes.planet.nexus.nexus-groups")
 --require("prototypes.planet.nexus.nexus-recipe")

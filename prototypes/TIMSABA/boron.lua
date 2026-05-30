@@ -1,6 +1,6 @@
 -- GROUPS
 local smelting = "angels-smelting"
-local is_boron = "is-boron"
+is_boron = "is-boron"
 data:extend
 ({
     {
@@ -42,14 +42,14 @@ data:extend
 })]]
 
 -- FLUID
-boric_acid = "boric-acid"
+boric_acid_solution = "boric-acid-solution"
 diborane_gas = "diborane-gas"
 data:extend
 ({
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]BO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         type = fluid,
-        name = boric_acid,
+        name = boric_acid_solution,
         subgroup = is_boron,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/boric-acid-solution.png",
         order = b,
@@ -125,10 +125,10 @@ data:extend
     -- SMELTING
     {
         type = recipe,
-        name = boric_acid,
+        name = boric_acid_solution,
         category = chemistry,
         subgroup = is_boron,
-        icons = TWO_D_I(borax, sulfuric_acid_angels, boric_acid, sodium_sulfate_solution),
+        icons = TWO_D_I(borax, sulfuric_acid_angels, boric_acid_solution, sodium_sulfate_solution),
         order = b,
         enabled = false,
         auto_recycle = false,
@@ -143,17 +143,17 @@ data:extend
         },
         results =
         {
-            {type = fluid, name = boric_acid, amount = 960},
+            {type = fluid, name = boric_acid_solution, amount = 960},
             {type = fluid, name = sodium_sulfate_solution, amount = 120} -- 240
         },
-        main_product = boric_acid
+        main_product = boric_acid_solution
     },
     {
         type = recipe,
         name = boric_acid_from_hydrochloric_acid,
         category = angels_advanced_chemistry,
         subgroup = is_boron,
-        icons = THREE_D_I(borax, nil, hydrochloric_acid_angels, boric_acid, sodium_chloride_solution, water_purified_angels),
+        icons = THREE_D_I(borax, nil, hydrochloric_acid_angels, boric_acid_solution, sodium_chloride_solution, water_purified_angels),
         order = b_a,
         enabled = false,
         auto_recycle = false,
@@ -168,7 +168,7 @@ data:extend
         },
         results =
         {
-            {type = fluid, name = boric_acid, amount = 960},
+            {type = fluid, name = boric_acid_solution, amount = 960},
             {type = fluid, name = sodium_chloride_solution, amount = 240}, -- 480
             {type = fluid, name = water_purified_angels, amount = 120} -- 240
         }
@@ -178,7 +178,7 @@ data:extend
         name = boric_acid_from_diborane_gas,
         category = chemistry,
         subgroup = is_boron,
-        icons = TWO_D_I(diborane_gas, water_purified_angels, boric_acid, hydrogen_angels),
+        icons = TWO_D_I(diborane_gas, water_purified_angels, boric_acid_solution, hydrogen_angels),
         order = b_b,
         enabled = false,
         auto_recycle = false,
@@ -193,7 +193,7 @@ data:extend
         },
         results =
         {
-            {type = fluid, name = boric_acid, amount = 240},
+            {type = fluid, name = boric_acid_solution, amount = 240},
             {type = fluid, name = hydrogen_angels, amount = 240} -- 720
         }
     }

@@ -12,7 +12,7 @@ data:extend
     {
         type = item_group,
         name = aquilo,
-        order = y,
+        order = x_d,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/aquilo-planet.png",
         icon_size = 128,
     },

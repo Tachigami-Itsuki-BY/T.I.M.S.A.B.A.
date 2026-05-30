@@ -35,7 +35,7 @@ data_recipe[stiratite_from_lava].results =
     {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
 }
 data_recipe[stiratite_from_lava].main_product = ore_stiratite
-data_recipe[stiratite_from_lava].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[stiratite_from_lava].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 -- MOLTEN
 data_recipe[molten_iron].localised_name = {"recipe-name.molten-iron"}
@@ -156,7 +156,7 @@ data_recipe[steam_condensation].order = a_b
 data_recipe[steam_condensation].energy_required = 16
 data_recipe[steam_condensation].ingredients[1].amount = 960
 data_recipe[steam_condensation].results[1].amount = 120
-data_recipe[steam_condensation].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[steam_condensation].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 local simple_coal_liquefaction = "simple-coal-liquefaction"
 data_recipe[simple_coal_liquefaction].subgroup = is_calcite
@@ -177,7 +177,7 @@ data_recipe[simple_coal_liquefaction].results =
     {type = fluid, name = oxygen_angels, amount = 30}
 }
 data_recipe[simple_coal_liquefaction].main_product = naphtha_angels
-data_recipe[simple_coal_liquefaction].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[simple_coal_liquefaction].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 local carbon = "carbon"
 data_recipe[carbon].category = chemistry

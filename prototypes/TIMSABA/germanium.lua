@@ -334,7 +334,7 @@ data:extend
     {
         type = recipe,
         name = germanium_ingot,
-        category = angels_blast_smelting_4,
+        category = angels_chemical_smelting_4,
         subgroup = is_germanium,
         icons = TWO_D_I(germanium_oxide_IV, hydrogen_angels, germanium_ingot, steam),
         order = d,

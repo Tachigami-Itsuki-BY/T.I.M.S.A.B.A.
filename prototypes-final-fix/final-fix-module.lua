@@ -121,3 +121,17 @@ data_module[quality_module_5].effect =
 --data_module[agricultural_module_3].effect = {}
 --data_module[agricultural_module_4].effect = {}
 --data_module[agricultural_module_5].effect = {}
+
+-- MOSHINE
+if mods [moshine_mods] then
+    data_module["ai-tier-1"].effect = {speed = 0.03125}
+    data_module["ai-tier-2"].effect = {speed = 0.25}
+    data_module["ai-tier-3"].effect = {speed = 0.5}
+    data_module["ai-tier-4"].effect = {speed = 1}
+    data_module["ai-tier-5"].effect = {speed = 2}
+    data_module["ai-tier-6"].effect = {speed = 4}
+    data_module["ai-tier-7"].effect = {speed = 8}
+    data_module["ai-tier-8"].effect = {speed = 16}
+    data_module["ai-tier-9"].effect = {speed = 32}
+    data_module["ai-tier-10"].effect = {speed = 64}
+end

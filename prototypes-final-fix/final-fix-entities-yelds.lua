@@ -237,15 +237,50 @@ data_entity["lithium-iceberg-huge"].minable.results =
     {type = item, name = lithium_chloride_angels, amount_min = 2, amount_max = 4}
 }
 
-data_resource[crude_oil].minable.results[1].amount_min = 15
-data_resource[crude_oil].minable.results[1].amount_max = 15
-data_resource["sulfuric-acid-geyser"].minable.results[1].amount_min = 15
-data_resource["sulfuric-acid-geyser"].minable.results[1].amount_max = 15
-data_resource["lithium-brine"].localised_name = {"entity-name.thermal-water-geyser"}
-data_resource["lithium-brine"].minable.results[1].amount_min = 15
-data_resource["lithium-brine"].minable.results[1].amount_max = 15
-data_resource["fluorine-vent"].minable.results[1].amount_min = 15
-data_resource["fluorine-vent"].minable.results[1].amount_max = 15
+-- Fluid
+data_resource[crude_oil].order = a
+data_resource[crude_oil].minable.results[1].amount_min = 30
+data_resource[crude_oil].minable.results[1].amount_max = 30
+
+local natural_gas_vent = "angels-natural-gas"
+data_resource[natural_gas_vent].order = b
+data_resource[natural_gas_vent].minable.results[1].amount_min = 30
+data_resource[natural_gas_vent].minable.results[1].amount_max = 30
+
+local fissure = "angels-fissure"
+data_resource[fissure].order = c
+data_resource[fissure].minable.results[1].amount_min = 30
+data_resource[fissure].minable.results[1].amount_max = 30
+
+local sulfuric_acid_geyser = "sulfuric-acid-geyser"
+data_resource[sulfuric_acid_geyser].order = d
+data_resource[sulfuric_acid_geyser].minable.results[1].amount_min = 30
+data_resource[sulfuric_acid_geyser].minable.results[1].amount_max = 30
+
+local thermal_geyser = "lithium-brine"
+data_resource[thermal_geyser].order = e
+data_resource[thermal_geyser].localised_name = {"entity-name.thermal-water-geyser"}
+data_resource[thermal_geyser].minable.results[1].amount_min = 30
+data_resource[thermal_geyser].minable.results[1].amount_max = 30
+
+local fluorine_vent = "fluorine-vent"
+data_resource[fluorine_vent].order = f
+data_resource[fluorine_vent].minable.results[1].amount_min = 30
+data_resource[fluorine_vent].minable.results[1].amount_max = 30
+
+if mods [moshine_mods] then
+    local fulgoran_data_source = "fulgoran-data-source"
+    data_resource[fulgoran_data_source].order = g
+    data_resource[fulgoran_data_source].minable.results[1].amount_min = 120
+    data_resource[fulgoran_data_source].minable.results[1].amount_max = 120
+
+    local steam_geyser = "steam-geyser"
+    data_resource[steam_geyser].icon = "__TIMSABA__/graphics/icons/moshine/steam-geyser.png"
+    data_resource[steam_geyser].stages.layers[1].filename = "__TIMSABA__/graphics/icons/moshine/steam-geyser-entity.png"
+    data_resource[steam_geyser].order = g
+    data_resource[steam_geyser].minable.results[1].amount_min = 30
+    data_resource[steam_geyser].minable.results[1].amount_max = 30
+end
 
 -- BOB
 if not mods ["graille-bob-hardened-bile-remover"] then
@@ -311,22 +346,33 @@ data_entity["angels-crystal-rock"].minable.results =
     {type = item, name = geode_yellow, amount = 2}
 }
 
-data_resource["angels-fissure"].minable.results[1].amount_min = 30
-data_resource["angels-fissure"].minable.results[1].amount_max = 30
-data_resource["angels-natural-gas"].minable.results[1].amount_min = 30
-data_resource["angels-natural-gas"].minable.results[1].amount_max = 30
-
 -- MULUNA
 if mods [muluna_mods] then
     data_entity["lunar-rock"].minable.results =
     {
-        {type = item, name = sulfur, amount= 2},
+        {type = item, name = sulfur, amount = 2},
         {type = item, name = stone, amount = 16}
     }
     data_entity["lunar-huge-rock"].minable.results =
     {
-        {type = item, name = sulfur, amount= 4},
+        {type = item, name = sulfur, amount = 4},
         {type = item, name = stone, amount = 32}
+    }
+end
+
+-- MOSHINE
+if mods [moshine_mods] then
+    data_entity["moshine-huge-volcanic-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 4, amount_max = 8},
+        {type = item, name = monazite_ore, amount_min = 4, amount_max = 16},
+        {type = item, name = barite, amount_min = 4, amount_max = 16},
+        {type = item, name = biotite_mica, amount_min = 4, amount_max = 16}
+    }
+    data_entity["moshine-big-fulgora-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 16, amount_max = 32},
+        {type = item, name = coal, amount_min = 16, amount_max = 32}
     }
 end
 

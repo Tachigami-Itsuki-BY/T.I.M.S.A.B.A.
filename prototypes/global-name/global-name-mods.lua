@@ -129,6 +129,9 @@ silicon_boule_mods = "silicon"
 silicon_cell_mods = "silicon-cell"
 silicon_carbide_mods = "silicon-carbide"
 glass_mods = "glass"
+neodymium_mods = "neodymium"
+neodymium_magnet = "magnet"
+neural_computer = "neural_computer"
 
 -- NEXUS
 nexus_mods = "Nexus"

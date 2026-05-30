@@ -51,7 +51,7 @@ local fluids =
     -- LITHIUM
     lithium_chloride_solution, lithium_perchlorate_solution, lithium_hexafluorophosphate_solution_carbonate,
     -- BORON
-    boric_acid,
+    boric_acid_solution,
     -- POTASSIUM
     potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution,
     -- PHOSPORUS
@@ -91,6 +91,11 @@ local fluids =
     potassium_metagermanate_solution, germanium_chloride_IV, sodium_metagermanate_solution,
     -- GALIUM
     sodium_tetrahydroxogallate_III_solution, galium_chloride_III_solution_ether, lithium_gallium_hydride_solution_ether,
+    -- MODS
+    -- MULUNA
+    tar_mods,
+    -- MOSHINE
+    water_orange_waste, orthophosphoric_acid,
 }
 local gases =
 {
@@ -124,6 +129,9 @@ local gases =
     -- AQUILO
     fluorine, difluorochloromethane_gas, tetrafluoroethylene_gas, hexafluoropropylene_gas, hexafluoropropylene_oxide_gas,
     aquilo_air, tetrafluorohydrazine_gas, nitrogen_trifluoride_gas, nitrogen_trifluoride_liquefied,
+    -- MODS
+    -- MOSHINE
+    moshine_air,
 }
 for _, fluid_name in pairs(fluids) do
     if data.raw.fluid[fluid_name] then

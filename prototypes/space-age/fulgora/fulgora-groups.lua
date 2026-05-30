@@ -10,7 +10,7 @@ data:extend
     {
         type = item_group,
         name = fulgora,
-        order = y,
+        order = x_c,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/fulgora-planet.png",
         icon_size = 128,
     },

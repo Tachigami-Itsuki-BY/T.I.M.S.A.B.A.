@@ -1,6 +1,6 @@
 -- GROUPS
 local smelting = "angels-smelting"
-local is_phosphorus = "is-phosphorus"
+is_phosphorus = "is-phosphorus"
 data:extend
 ({
     {
@@ -359,7 +359,7 @@ data:extend
             {type = fluid, name = phosphorus_fluoride_V_gas, amount = 60},
             {type = fluid, name = hydrofluoric_acid_angels, amount = 60}
         },
-        results = {{type = fluid, name = hexafluorophosphoric_acid, amount = 4}},
+        results = {{type = fluid, name = hexafluorophosphoric_acid, amount = 60}},
         main_product = hexafluorophosphoric_acid
     },
     -- SILICON

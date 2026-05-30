@@ -5,15 +5,16 @@ local recipes =
     {planet = "gleba", fluid = water, amount = 60},
     {planet = "fulgora", fluid = multi_phase_oil_angels, amount = 60},
     {planet = "aquilo", fluid = ammonia_solution, amount = 60},
+    {planet = "moshine", fluid = lava, amount = 60},
     -- new planet
 }
 for _, RECIPE in ipairs(recipes) do
-    if data.raw.fluid[RECIPE.fluid] then
+    if data_fluid[RECIPE.fluid] and data_planet[RECIPE.planet] then
         data:extend
         ({
             {
                 localised_name = {"recipe-name.extract-ground", {"fluid-name." .. RECIPE.fluid}},
-                type = "recipe",
+                type = recipe,
                 name = "extract-ground-" .. RECIPE.fluid,
                 category = extract_ground,
                 enabled = true,

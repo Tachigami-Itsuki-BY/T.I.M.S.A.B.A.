@@ -1,7 +1,7 @@
 -- GROUPS
 local smelting = "angels-smelting"
-local is_potassium = "is-potassium"
-local is_potassium_fluid = "is-potassium-fluid"
+is_potassium = "is-potassium"
+is_potassium_fluid = "is-potassium-fluid"
 data:extend
 ({
     {

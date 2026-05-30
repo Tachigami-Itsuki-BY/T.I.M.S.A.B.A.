@@ -1,6 +1,7 @@
 if mods [moshine_mods] then
     local replacements =
     {
+		[neodymium_mods] = neodymium_magnet,
         [sand_mods] = sand_angels,
         [glass_mods] = glass_bob,
         [silicon_carbide_mods] = silicon_carbide_bob
@@ -84,6 +85,26 @@ if mods [moshine_mods] then
 	    end
     end
 
+	data_item[neodymium_mods] = nil
+	data_recipe["neodymium-recycling"] = nil
 	data_item[glass_mods] = nil
-	data_item["silicon-carbide-recycling"] = nil
+	data_recipe["glass-recycling"] = nil
+	data_recipe["silicon-carbide-recycling"] = nil
+
+	data_recipe["concrete-from-molten-iron-and-sand"] = nil
+	data_recipe["petroleum-from-sand-sulfur-steam-carbon"] = nil
+
+	data_technology["moshine-concrete-from-molten-iron-and-sand"] = nil
+	data_technology["moshine-petroleum-from-sand-sulfur-steam-carbon"] = nil
+
+	local better_substation = "snouz_better_substation"
+	data_item[better_substation] = nil
+	data_recipe[better_substation] = nil
+	data_electric_pole[better_substation] = nil
+
+	data_recipe["snouz_better_substation-recycling"] = nil
+
+	data_technology["snouz_better_substation_tech"] = nil
+
+	data_tile["moshine-lava"].fluid = lava
 end

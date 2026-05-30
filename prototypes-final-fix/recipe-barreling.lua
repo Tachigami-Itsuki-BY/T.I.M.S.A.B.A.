@@ -76,7 +76,7 @@ local dangerous_fluids =
     -- LITHIUM
     lithium_chloride_solution, lithium_perchlorate_solution, lithium_hexafluorophosphate_solution_carbonate,
     -- BORON
-    boric_acid,
+    boric_acid_solution,
     -- POTASSIUM
     potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution,
     -- PHOSPORUS

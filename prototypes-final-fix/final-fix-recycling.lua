@@ -101,3 +101,15 @@ local reinforced_concrete_recycling = reinforced_concrete .. _recycling
 data_recipe[reinforced_concrete_recycling] = nil
 local reinforced_hazard_concrete_recycling = reinforced_hazard_concrete .. _recycling
 data_recipe[reinforced_hazard_concrete_recycling] = nil
+
+if mods [muluna_mods] or mods [moshine_mods] then
+    local silicon_cell_mods_recyclin = silicon_cell_mods .. _recycling
+    data_recipe[silicon_cell_mods_recyclin].results = {{type = item, name = silicon_cell_mods, amount = 1, probability = 0.25}}
+    data_recipe[silicon_cell_mods_recyclin].main_product = silicon_cell_mods
+end
+
+if mods [moshine_mods] then
+    local neodymium_magnet_recyclin = neodymium_magnet .. _recycling
+    data_recipe[neodymium_magnet_recyclin].results = {{type = item, name = neodymium_magnet, amount = 1, probability = 0.25}}
+    data_recipe[neodymium_magnet_recyclin].main_product = neodymium_magnet
+end

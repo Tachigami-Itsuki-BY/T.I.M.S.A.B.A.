@@ -20,7 +20,7 @@ if mods [muluna_mods] then
         {
             type = item_group,
             name = muluna,
-            order = y,
+            order = y_a,
             icon = "__TIMSABA__/graphics/icons/muluna/muluna-planet.png",
             icon_size = 128,
         },
