@@ -16,10 +16,18 @@ local simple_fluids =
 {
     -- MULUNA
     tar_mods,
+    -- MOSHINE
+    water_orange_waste,
 }
-local dangerous_fluids = {}
+local dangerous_fluids =
+{
+    -- MOSHINE
+    orthophosphoric_acid,
+}
 local gases =
 {
+    -- MOSHINE
+    moshine_air,
     -- MARAXSIS
     atmosphere_maraxsis,
 }

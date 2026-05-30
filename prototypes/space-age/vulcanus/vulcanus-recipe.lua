@@ -1740,7 +1740,7 @@ data:extend
     }
 })]]
 
--- VOLCANIC AIR
+-- VULCANUS AIR
 vulcanus_air_separation = "vulcanus-air-separation"
 data:extend
 ({
@@ -1761,7 +1761,7 @@ data:extend
         ingredients = {},
         results = {{type = fluid, name = vulcanus_air, amount = 240}},
         main_product = vulcanus_air,
-        surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
         type = recipe,

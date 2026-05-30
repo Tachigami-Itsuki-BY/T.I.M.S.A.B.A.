@@ -84,15 +84,15 @@ end
 
 if mods [moshine_mods] and mods [muluna_mods] then -- MOSHINE
     data_item[silicon_boule_mods].subgroup = is_moshine_recipe
-    data_item[silicon_boule_mods].order = b
+    data_item[silicon_boule_mods].order = g
 
     data_item[silicon_cell_mods].subgroup = is_moshine_recipe
-    data_item[silicon_cell_mods].order = c
+    data_item[silicon_cell_mods].order = h
     data_recipe[silicon_cell_mods].subgroup = is_moshine_recipe
-    data_recipe[silicon_cell_mods].order = c
+    data_recipe[silicon_cell_mods].order = h
 
     data_recipe[silicon_carbide_mods].subgroup = is_moshine_recipe
-    data_recipe[silicon_carbide_mods].order = d
+    data_recipe[silicon_carbide_mods].order = i
 elseif mods [muluna_mods] then -- MULUNA
     data_item[silicon_boule_mods].subgroup = is_muluna_recipe_silicon
     data_item[silicon_boule_mods].order = a
@@ -106,15 +106,15 @@ elseif mods [muluna_mods] then -- MULUNA
     data_recipe[silicon_carbide_mods].order = c
 elseif mods [moshine_mods] then -- MOSHINE
     data_item[silicon_boule_mods].subgroup = is_moshine_recipe
-    data_item[silicon_boule_mods].order = b
+    data_item[silicon_boule_mods].order = g
 
     data_item[silicon_cell_mods].subgroup = is_moshine_recipe
-    data_item[silicon_cell_mods].order = c
+    data_item[silicon_cell_mods].order = h
     data_recipe[silicon_cell_mods].subgroup = is_moshine_recipe
-    data_recipe[silicon_cell_mods].order = c
+    data_recipe[silicon_cell_mods].order = h
 
     data_recipe[silicon_carbide_mods].subgroup = is_moshine_recipe
-    data_recipe[silicon_carbide_mods].order = d
+    data_recipe[silicon_carbide_mods].order = i
 end
 
 if mods ["AsteroidBelt"] then

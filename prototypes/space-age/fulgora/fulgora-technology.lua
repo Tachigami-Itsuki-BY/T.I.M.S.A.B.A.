@@ -1,14 +1,14 @@
 planet_discovery_fulgora = "planet-discovery-fulgora"
 recycling = "recycling"
 tech_brannerite_processing_1 = "brannerite-processing-1"
-local brannerite_processing_2 = "brannerite-processing-2"
-local brannerite_processing_3 = "brannerite-processing-3"
-local brannerite_processing_4 = "brannerite-processing-4"
-local calcium_synthesis = "calcium-synthesis"
+local tech_brannerite_processing_2 = "brannerite-processing-2"
+local tech_brannerite_processing_3 = "brannerite-processing-3"
+tech_brannerite_processing_4 = "brannerite-processing-4"
+local tech_calcium_synthesis = "calcium-synthesis"
 tech_holmium_processing = "holmium-processing"
 tech_holmium_smelting_1 = "holmium-smelting-1"
-local holmium_smelting_2 = "holmium-smelting-2"
-local holmium_smelting_3 = "holmium-smelting-3"
+local tech_holmium_smelting_2 = "holmium-smelting-2"
+tech_holmium_smelting_3 = "holmium-smelting-3"
 tech_holmium_synthesis = "holmium-synthesis"
 data:extend
 ({
@@ -50,7 +50,7 @@ data:extend
         localised_name = {"technology-name.brannerite-processing-2"},
         localised_description = {"technology-description.brannerite-processing-2"},
         type = technology,
-        name = brannerite_processing_2,
+        name = tech_brannerite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
         icon_size = 256,
         prerequisites = {electromagnetic_science_pack, tech_brannerite_processing_1},
@@ -79,10 +79,10 @@ data:extend
         localised_name = {"technology-name.brannerite-processing-3"},
         localised_description = {"technology-description.brannerite-processing-3"},
         type = technology,
-        name = brannerite_processing_3,
+        name = tech_brannerite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, brannerite_processing_2},
+        prerequisites = {cryogenic_science_pack, tech_brannerite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_crystals},
@@ -111,10 +111,10 @@ data:extend
         localised_name = {"technology-name.brannerite-processing-4"},
         localised_description = {"technology-description.brannerite-processing-4"},
         type = technology,
-        name = brannerite_processing_4,
+        name = tech_brannerite_processing_4,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
         icon_size = 256,
-        prerequisites = {promethium_science_pack, brannerite_processing_3},
+        prerequisites = {promethium_science_pack, tech_brannerite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = brannerite_purified},
@@ -142,7 +142,7 @@ data:extend
     },
     {
         type = technology,
-        name = calcium_synthesis,
+        name = tech_calcium_synthesis,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/calcium-synthesis.png",
         icon_size = 256,
         prerequisites = {tech_brannerite_processing_1, tech_powellite_processing_1},
@@ -186,10 +186,10 @@ data:extend
         localised_name = {"technology-name.holmium-smelting-2"},
         localised_description = {"technology-description.holmium-smelting-2"},
         type = technology,
-        name = holmium_smelting_2,
+        name = tech_holmium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/smelting-holmium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_holmium_smelting_1, electromagnetic_science_pack, brannerite_processing_2},
+        prerequisites = {tech_holmium_smelting_1, electromagnetic_science_pack, tech_brannerite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = holmium_processed},
@@ -218,10 +218,10 @@ data:extend
         localised_name = {"technology-name.holmium-smelting-3"},
         localised_description = {"technology-description.holmium-smelting-3"},
         type = technology,
-        name = holmium_smelting_3,
+        name = tech_holmium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/smelting-holmium-tech.png",
         icon_size = 256,
-        prerequisites = {holmium_smelting_2, cryogenic_science_pack, tech_vulcanus_metallurgic, brannerite_processing_3},
+        prerequisites = {tech_holmium_smelting_2, cryogenic_science_pack, tech_vulcanus_metallurgic, tech_brannerite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = holmium_fluoride_III_3},
@@ -252,7 +252,7 @@ data:extend
         name = tech_holmium_synthesis,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/holmium-synthesis.png",
         icon_size = 256,
-        prerequisites = {promethium_science_pack, brannerite_processing_4, holmium_smelting_3, tech_powellite_processing_4},
+        prerequisites = {promethium_science_pack, tech_brannerite_processing_4, tech_holmium_smelting_3, tech_powellite_processing_4},
         effects = {{type = unlock_recipe, recipe = holmium_ore_recipe}},
         unit =
         {

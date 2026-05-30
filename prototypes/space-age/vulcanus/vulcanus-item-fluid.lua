@@ -9,8 +9,8 @@ data:extend
         order = a,
         default_temperature = 0,
         heat_capacity = "0.1kJ",
-        base_color = {r = 187 / 255, g = 166 / 255, b = 91 / 255},
-        flow_color = {r = 190 / 255, g = 170 / 255, b = 99 / 255},
+        base_color = {r = 140 / 255, g = 60 / 255, b = 30 / 255},
+        flow_color = {r = 150 / 255, g = 65 / 255, b = 40 / 255},
         max_temperature = 0,
         auto_barrel = false
     }

@@ -571,6 +571,7 @@ for _, BUILD in pairs(furnaces) do
     end
     if data_assembling[BUILD.name] then
         data_assembling[BUILD.name].order = BUILD.order
+        data_assembling[BUILD.name].ingredient_count = 2
         if BUILD.name == stone_mixing_furnace or BUILD.name == steel_mixing_furnace then
             data_assembling[BUILD.name].energy_usage = BUILD.energy_usage .. kW
             data_assembling[BUILD.name].energy_source.fuel_categories = {base_fuel}

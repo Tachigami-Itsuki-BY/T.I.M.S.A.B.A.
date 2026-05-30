@@ -182,7 +182,7 @@ data_recipe[copper_cathode].results =
 data_recipe[copper_cathode].main_product = copper_cathode
 
 -- LEAD
-data_item_subgroup["angels-lead"].order = c
+data_item_subgroup[is_lead].order = c
 
 data_item[lead_ore_bob].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_ore_bob].order = a
@@ -712,7 +712,7 @@ data_recipe[nickel_cathode].energy_required = 8 -- 2(NiSO₄ + H₂O) + 2(H₃BO
 data_recipe[nickel_cathode].ingredients =
 {
     {type = fluid, name = nickel_sulfate_II_solution, amount = 240},
-    {type = fluid, name = boric_acid, amount = 240},
+    {type = fluid, name = boric_acid_solution, amount = 240},
     {type = item, name = electrode, amount = 1}
 }
 data_recipe[nickel_cathode].results =

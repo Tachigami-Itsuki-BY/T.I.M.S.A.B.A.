@@ -1,10 +1,3 @@
-local kW = "kW"
-local kJ = "kJ"
-local J = "J"
-local combinator_arithmetic = "arithmetic-combinator"
-local combinator_decider = "decider-combinator"
-local combinator_selector = "selector-combinator"
-local combinator_constant = "constant-combinator"
 local circuit_networks_1 =
 {
     small_lamp,
@@ -40,13 +33,11 @@ combinator_recipe(combinator_decider,    electronic_circuit, tin_cable)
 combinator_recipe(combinator_selector,   advanced_circuit,   silver_cable)
 combinator_recipe(combinator_constant,   electronic_circuit, tin_cable)
 
-local power_switch = "power-switch"
-local programmable_speaker = "programmable-speaker"
 local circuit_networks_2 =
 {
     power_switch,
     programmable_speaker,
-    "display-panel"
+    display_panel
 }
 for _, name in pairs(circuit_networks_2) do
     data_item[name].subgroup = is_circuit_networks
@@ -123,9 +114,6 @@ data_recipe[rail_chain_signal].ingredients =
     {type = item, name = iron_plate,         amount = 4}
 }
 
-local locomotive_1 = "locomotive"
-local locomotive_2 = "bob-locomotive-2"
-local locomotive_3 = "bob-locomotive-3"
 local locomotives =
 {
     {name = locomotive_1, order = a, max_speed = 0.5, max_power = 450,  effectivity = 1.00, equipment_grid = small_equipment_grid},
@@ -163,9 +151,6 @@ locomotive_recipe(locomotive_1, iron_gear_wheel,     iron_bearing,     electroni
 locomotive_recipe(locomotive_2, steel_gear_wheel,    steel_bearing,    advanced_circuit,   locomotive_1, steel_plate)
 locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing, processing_unit,    locomotive_2, titanium_plate_bob)
 
-local cargo_wagon_1 = "cargo-wagon"
-local cargo_wagon_2 = "bob-cargo-wagon-2"
-local cargo_wagon_3 = "bob-cargo-wagon-3"
 local cargo_wagons =
 {
     {name = cargo_wagon_1, order = a, inventory_size = 40,  equipment_grid = small_equipment_grid},
@@ -194,9 +179,6 @@ cargo_wagon_recipe(cargo_wagon_1, iron_gear_wheel,     iron_bearing,     iron_ch
 cargo_wagon_recipe(cargo_wagon_2, steel_gear_wheel,    steel_bearing,    cargo_wagon_1, steel_plate)
 cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)
 
-local fluid_wagon_1 = "fluid-wagon"
-local fluid_wagon_2 = "bob-fluid-wagon-2"
-local fluid_wagon_3 = "bob-fluid-wagon-3"
 local fluid_wagons =
 {
     {name = fluid_wagon_1, order = a, capacity = 24000, equipment_grid = small_equipment_grid},

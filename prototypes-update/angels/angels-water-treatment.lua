@@ -189,6 +189,7 @@ data_item_subgroup["angels-water-cleaning"].order = e
 
 local water_yellow_waste_purification = "angels-yellow-waste-water-purification"
 data_recipe[water_yellow_waste_purification].icons = FOUR_R_I(water_yellow_waste, water_mineralized_angels, sulfur, water_purified_angels)
+data_recipe[water_yellow_waste_purification].order = a
 data_recipe[water_yellow_waste_purification].ingredients[1].amount = 120
 data_recipe[water_yellow_waste_purification].results[1].amount = 30
 data_recipe[water_yellow_waste_purification].results[2].amount = 60
@@ -196,6 +197,7 @@ data_recipe[water_yellow_waste_purification].results[3].amount = 2
 
 local water_greenyellow_waste_purification = "angels-greenyellow-waste-water-purification"
 data_recipe[water_greenyellow_waste_purification].icons = FOUR_R_I(water_greenyellow_waste, water_mineralized_angels, fluorite_angels, water_purified_angels)
+data_recipe[water_greenyellow_waste_purification].order = b
 data_recipe[water_greenyellow_waste_purification].ingredients[1].amount = 120
 data_recipe[water_greenyellow_waste_purification].results =
 {
@@ -206,6 +208,7 @@ data_recipe[water_greenyellow_waste_purification].results =
 
 local water_green_waste_purification = "angels-green-waste-water-purification"
 data_recipe[water_green_waste_purification].icons = FOUR_R_I(water_green_waste, water_saline_angels, salt_angels, water_purified_angels)
+data_recipe[water_green_waste_purification].order = c
 data_recipe[water_green_waste_purification].ingredients[1].amount = 120
 data_recipe[water_green_waste_purification].results =
 {
@@ -216,6 +219,7 @@ data_recipe[water_green_waste_purification].results =
 
 local water_red_waste_purification = "angels-red-waste-water-purification"
 data_recipe[water_red_waste_purification].icons = FOUR_R_I(water_red_waste, water_mineralized_angels, sodium_nitrate_angels, water_purified_angels)
+data_recipe[water_red_waste_purification].order = d
 data_recipe[water_red_waste_purification].ingredients[1].amount = 120
 data_recipe[water_red_waste_purification].results =
 {

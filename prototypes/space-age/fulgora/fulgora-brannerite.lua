@@ -97,25 +97,6 @@ data:extend
     }
 })]]
 
--- FLUID
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
-
 brannerite_crushed_sorting = "brannerite-crushed-sorting"
 brannerite_chunks_sorting = "brannerite-chunks-sorting"
 brannerite_crystals_sorting = "brannerite-crystals-sorting"
@@ -136,7 +117,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 2, -- Brannerite ore -crushing-> Brannerite crushed + Stone crushed (crushing)
+        energy_required = 2, -- Brannerite ore -crushing-> Brannerite crushed + Stone crushed
         ingredients = {{type = item, name = brannerite_ore, amount = 2}},
         results =
         {

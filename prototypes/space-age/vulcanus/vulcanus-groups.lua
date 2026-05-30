@@ -20,7 +20,7 @@ data:extend
     {
         type = item_group,
         name = vulcanus,
-        order = y,
+        order = x_a,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/vulcanus-planet.png",
         icon_size = 128,
     },

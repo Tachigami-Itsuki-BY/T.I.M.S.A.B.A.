@@ -1,0 +1,13 @@
+{
+    "fluid":
+    [
+        ["boric-acid", "boric-acid-solution"]
+    ],
+    "recipe":
+    [
+        ["boric-acid", "boric-acid-solution"],
+        ["boric-acid-canister", "boric-acid-solution-canister"],
+        ["empty-boric-acid-canister", "empty-boric-acid-solution-canister"],
+        ["boric-acid-void", "boric-acid-solution-void"]
+    ]
+}

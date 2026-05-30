@@ -373,9 +373,9 @@ data:extend
             max_health = 450,
             energy_source =
             {
-                type = "electric",
+                type = electric,
                 buffer_capacity = 38400 .. kJ,
-                usage_priority = "tertiary",
+                usage_priority = tertiary,
                 input_flow_limit = 2400 .. kW,
                 output_flow_limit = 2400 .. kW
             }
@@ -726,7 +726,9 @@ data:extend
                 usage_priority = "secondary-input",
                 emissions_per_minute = {pollution = 0},
                 drain = 90 .. kW
-            }
+            },
+            crafting_categories = {smelting, smelting_filtering, smelting_chemical},
+            ingredient_count = 2
         }
     }),
     -- CENTIFUGE
@@ -809,6 +811,7 @@ data_accumulator[accumulator_4].next_upgrade = nil
 data_mining_drill[electric_mining_drill_5].next_upgrade = electric_mining_drill_6
 data_mining_drill[electric_mining_drill_6].next_upgrade = nil
 data_mining_drill[electric_mining_drill_6].graphics_set.animation.animation_speed = 6
+data_mining_drill[electric_mining_drill_6].collision_mask = data_mining_drill[electric_mining_drill_5].collision_mask
 data_mining_drill[pumpjack_4].next_upgrade = pumpjack_5
 data_mining_drill[pumpjack_5].next_upgrade = pumpjack_6
 data_mining_drill[pumpjack_6].next_upgrade = nil

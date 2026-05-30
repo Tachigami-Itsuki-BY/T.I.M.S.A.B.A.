@@ -1765,7 +1765,7 @@ data:extend
         energy_required = 4, -- [C₇H₁₃N₂]Cl(s) + HPF₆(aq) --> [C₇H₁₃N₂]PF₆(l) + HCl(aq)
         ingredients =
         {
-            {type = item, name = imidazolium_salt, amount = 60},
+            {type = item, name = imidazolium_salt, amount = 4},
             {type = fluid, name = hexafluorophosphoric_acid, amount = 60}
         },
         results =

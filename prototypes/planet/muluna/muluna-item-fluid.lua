@@ -10,12 +10,11 @@ if mods [muluna_mods] then
             order = d,
             stack_size = 200,
             weight = 5000
-        },
+        }
     })
 end
 
---[[
-    data:extend
+    --[[data:extend
     ({
         {
             localised_description = show_formula and {chemical_formula, ""} or nil,
@@ -26,7 +25,11 @@ end
             order = ,
             stack_size = 200,
             weight = 5000
-        },
+        }
+    })]]
+
+    --[[data:extend
+    ({
         {
             localised_description = show_formula and {chemical_formula, ""} or nil,
             type = fluid,
@@ -41,5 +44,4 @@ end
             max_temperature = 0,
             auto_barrel = false
         }
-    })
-]]
+    })]]

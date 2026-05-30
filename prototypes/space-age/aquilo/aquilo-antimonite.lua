@@ -97,25 +97,6 @@ data:extend
     }
 })]]
 
--- FLUID
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
-
 antimonite_crushed_sorting = "antimonite-crushed-sorting"
 antimonite_chunks_sorting = "antimonite-chunks-sorting"
 antimonite_crystals_sorting = "antimonite-crystals-sorting"
@@ -135,7 +116,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 2, -- Antimonite Ore -crushing-> Antimonite crushed + Stone crushed (crushing)
+        energy_required = 2, -- Antimonite ore -crushing-> Antimonite crushed + Stone crushed
         ingredients = {{type = item, name = antimonite_ore, amount = 2}},
         results =
         {

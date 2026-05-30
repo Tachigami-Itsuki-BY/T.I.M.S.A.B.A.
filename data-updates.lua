@@ -65,23 +65,3 @@ require("prototypes-update.mods.dynamic-pipe-to-ground")
 for _, fluid in pairs(data.raw.fluid) do
     fluid.auto_barrel = false
 end
-
---[[if mods ["Unipipe"] and mods ["the-one-mod-with-underground-bits"] then
-    data_pipe_to_ground["zy-unipipe-hidden-linked-pipe"].ignore_by_tomwub = true
-
-    local orig_meta = getmetatable(data_pipe_to_ground)
-    setmetatable(data_pipe_to_ground,
-    {
-        __newindex = function(t, key, value)
-            if key == "zy-unipipe-hidden-linked-pipe" and type(value) == "table" then
-                value.ignore_by_tomwub = true
-            end
-            if orig_meta and orig_meta.__newindex then
-                orig_meta.__newindex(t, key, value)
-            else
-                rawset(t, key, value)
-            end
-        end,
-        __index = orig_meta and orig_meta.__index or nil
-    })
-end]]

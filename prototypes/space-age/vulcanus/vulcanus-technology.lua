@@ -1,12 +1,12 @@
 planet_discovery_vulcanus = "planet-discovery-vulcanus"
 tech_vulcanus_metallurgic = "vulcanus-metallurgic"
 tech_wolframite_processing_1 = "wolframite-processing-1"
-local wolframite_processing_2 = "wolframite-processing-2"
-local wolframite_processing_3 = "wolframite-processing-3"
-local wolframite_processing_4 = "wolframite-processing-4"
-local niobium_smelting_1 = "niobium-smelting-1"
-local niobium_smelting_2 = "niobium-smelting-2"
-local niobium_smelting_3 = "niobium-smelting-3"
+local tech_wolframite_processing_2 = "wolframite-processing-2"
+local tech_wolframite_processing_3 = "wolframite-processing-3"
+local tech_wolframite_processing_4 = "wolframite-processing-4"
+local tech_niobium_smelting_1 = "niobium-smelting-1"
+local tech_niobium_smelting_2 = "niobium-smelting-2"
+local tech_niobium_smelting_3 = "niobium-smelting-3"
 tech_niobium_synthesis = "niobium-synthesis"
 tech_niobium_titanium_processing = "niobium-titanium-processing"
 tech_niobium_iron_processing = "niobium-iron-processing"
@@ -79,7 +79,7 @@ data:extend
         localised_name = {"technology-name.wolframite-processing-2"},
         localised_description = {"technology-description.wolframite-processing-2"},
         type = technology,
-        name = wolframite_processing_2,
+        name = tech_wolframite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
         icon_size = 256,
         prerequisites = {metallurgic_science_pack, tech_wolframite_processing_1},
@@ -108,10 +108,10 @@ data:extend
         localised_name = {"technology-name.wolframite-processing-3"},
         localised_description = {"technology-description.wolframite-processing-3"},
         type = technology,
-        name = wolframite_processing_3,
+        name = tech_wolframite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
         icon_size = 256,
-        prerequisites = {cryogenic_science_pack, wolframite_processing_2},
+        prerequisites = {cryogenic_science_pack, tech_wolframite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = wolframite_crystals},
@@ -140,10 +140,10 @@ data:extend
         localised_name = {"technology-name.wolframite-processing-4"},
         localised_description = {"technology-description.wolframite-processing-4"},
         type = technology,
-        name = wolframite_processing_4,
+        name = tech_wolframite_processing_4,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
         icon_size = 256,
-        prerequisites = {promethium_science_pack, wolframite_processing_3},
+        prerequisites = {promethium_science_pack, tech_wolframite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = wolframite_purified},
@@ -173,7 +173,7 @@ data:extend
         localised_name = {"technology-name.niobium-smelting-1"},
         localised_description = {"technology-description.niobium-smelting-1"},
         type = technology,
-        name = niobium_smelting_1,
+        name = tech_niobium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png",
         icon_size = 256,
         prerequisites = {tech_wolframite_processing_1},
@@ -201,10 +201,10 @@ data:extend
         localised_name = {"technology-name.niobium-smelting-2"},
         localised_description = {"technology-description.niobium-smelting-2"},
         type = technology,
-        name = niobium_smelting_2,
+        name = tech_niobium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png",
         icon_size = 256,
-        prerequisites = {niobium_smelting_1, metallurgic_science_pack, wolframite_processing_2},
+        prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack, tech_wolframite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_processed},
@@ -231,10 +231,10 @@ data:extend
         localised_name = {"technology-name.niobium-smelting-3"},
         localised_description = {"technology-description.niobium-smelting-3"},
         type = technology,
-        name = niobium_smelting_3,
+        name = tech_niobium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-technology.png",
         icon_size = 256,
-        prerequisites = {niobium_smelting_2, cryogenic_science_pack, wolframite_processing_3},
+        prerequisites = {tech_niobium_smelting_2, cryogenic_science_pack, tech_wolframite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_pellet},
@@ -266,7 +266,7 @@ data:extend
         name = tech_niobium_titanium_processing,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-titanium-technology.png",
         icon_size = 256,
-        prerequisites = {niobium_smelting_1, metallurgic_science_pack},
+        prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_titanium_molten},
@@ -294,7 +294,7 @@ data:extend
         name = tech_niobium_iron_processing,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/casting-niobium-iron-technology.png",
         icon_size = 256,
-        prerequisites = {niobium_smelting_1, metallurgic_science_pack},
+        prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_iron_molten},
@@ -323,7 +323,7 @@ data:extend
         name = tech_niobium_tungsten_molybdenum_processing,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/niobium-tungsten-molybdenum-processing.png",
         icon_size = 256,
-        prerequisites = {niobium_smelting_1, metallurgic_science_pack},
+        prerequisites = {tech_niobium_smelting_1, metallurgic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = niobium_tungsten_molybdenum_powder_mixture},
@@ -348,7 +348,7 @@ data:extend
     }
 })
 
-data_technology[tech_rhenium_synthesis].prerequisites = {promethium_science_pack, wolframite_processing_4, tech_rhenium_smelting_3, tech_molybdenite_processing_4}
+data_technology[tech_rhenium_synthesis].prerequisites = {promethium_science_pack, tech_wolframite_processing_4, tech_rhenium_smelting_3, tech_molybdenite_processing_4}
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_niobium_titanium_processing)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_niobium_iron_processing)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_niobium_tungsten_molybdenum_processing)

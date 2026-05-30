@@ -723,7 +723,9 @@ data_technology[tech_zinc_smelting_3].effects =
 
 -- SILVER
 data_technology[tech_silver_smelting_1].prerequisites = {tech_ore_floatation, tech_metallurgy_2}
+
 data_technology[tech_silver_smelting_2].prerequisites = {tech_ore_processing_2, tech_silver_smelting_1, tech_powder_metallurgy_3, tech_nitrogen_processing_2}
+
 data_technology[tech_silver_smelting_3].prerequisites = {tech_ore_processing_3, tech_silver_smelting_2, tech_sodium_processing_2}
 silver_ingot_3 = "angels-ingot-silver-3"
 data_technology[tech_silver_smelting_3].effects =
@@ -779,7 +781,7 @@ data_technology[tech_cobalt_smelting_3].effects =
     {type = unlock_recipe, recipe = cobalt_oxide_II_III_3}
 }
 
--- chromium
+-- CHROMIUM
 data_technology[tech_chromium_smelting_1].localised_name = {"technology-name.chromium-smelting-1"}
 data_technology[tech_chromium_smelting_1].effects =
 {

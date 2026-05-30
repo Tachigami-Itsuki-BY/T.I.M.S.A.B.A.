@@ -97,25 +97,6 @@ data:extend
     }
 })]]
 
--- FLUID
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
-
 germanite_crushed_sorting = "germanite-crushed-sorting"
 germanite_chunks_sorting = "germanite-chunks-sorting"
 germanite_crystals_sorting = "germanite-crystals-sorting"
@@ -135,7 +116,7 @@ data:extend
         allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 2, -- Germanite Ore -crushing-> Germanite crushed + Stone crushed (crushing)
+        energy_required = 2, -- Germanite ore -crushing-> Germanite crushed + Stone crushed
         ingredients = {{type = item, name = germanite_ore, amount = 2}},
         results =
         {
