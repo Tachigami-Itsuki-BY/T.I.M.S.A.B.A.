@@ -18,7 +18,7 @@ data:extend
         allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = item, name = slag_angels, amount = 4}},
-        results = {{type = item, name = stone, amount = 2}},
+        results = {{type = item, name = stone, amount = 8}},
         main_product = stone
     },
     {

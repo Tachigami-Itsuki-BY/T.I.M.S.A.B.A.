@@ -62,6 +62,8 @@ require("prototypes-update.mods.mods-override")
 require("prototypes-update.mods.dynamic-underground-belts")
 require("prototypes-update.mods.dynamic-pipe-to-ground")
 
+require("prototypes-update.update-horogon-balance")
+
 for _, fluid in pairs(data.raw.fluid) do
     fluid.auto_barrel = false
 end

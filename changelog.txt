@@ -1,4 +1,23 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 31.05.2026
+  Features:
+    - [Addons] Добавлены аддоны и настройки баланса от Horogon.
+
+    - [Addons] Added addons and balance settings by Horogon.
+
+  Balancing:
+    - [All] В рецепте Камень увеличено кол-во результата: Камень (2 ед.) → (8 ед.)
+    - [All] В рецепте Каменноугольной Смолы произведена замена результат: Жидкое Топливо → Фенол, Бензол и Водород.
+
+    - [All] Increased a result in the Stone reciep: Stone (2 units) → (8 units)
+    - [All] Replaced an ingredient in the Coal Tar recipe: Liquid Fuel → Phenol, Benzene, and Hydrogne.
+
+  Other:
+    - [All] Я добавил файл с настройками своего мода на свой Discord-сервер. С его помощью вы сможете использовать модпак на 100% так, как он был задуман.
+
+    - [All] I've added a file with my mod settings to my Discord server. With it, you can experience the modpack 100% the way it was intended.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 30.05.2026
   Features:
@@ -42,7 +61,7 @@ Date: 30.05.2026
     - [Mods] Мод «Moshine» переведён в опциональную зависимость.
     - [Mods] Добавлены моды (Утилиты/Графические) которыми я пользуюсь в опциональные зависимости.
 
-    - [Mods] Moved "«Moshine»" mod to optional dependencies.
+    - [Mods] Moved "Moshine" mod to optional dependencies.
     - [Mods] Added mods (Utilities/Graphics) that I use to optional dependencies.
 
   Other:

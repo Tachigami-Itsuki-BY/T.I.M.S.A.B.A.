@@ -768,6 +768,14 @@ if mods [bobtech] then
     data_lab[lab_alien].energy_usage = 120 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe({lab_2, lab_alien})
+
+    if settings.startup[setting_horogon_extra_science_packs].value then
+        table.insert(data_lab[lab_alien].inputs, metallurgic_science_pack)
+        table.insert(data_lab[lab_alien].inputs, agricultural_science_pack)
+        table.insert(data_lab[lab_alien].inputs, electromagnetic_science_pack)
+        table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
+        table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
+    end
 end
 
 bobmods.lib.recipe.update_recycling_recipe

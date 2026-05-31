@@ -68,23 +68,25 @@ data:extend
         name = pitch,
         category = chemistry,
         subgroup = is_coal,
-        icons = TWO_D_I(coal_tar_liquid, steam, pitch, liquid_fuel_bob),
+        icons = FOUR_THREE_R_I(coal_tar_liquid, nil, steam, pitch, phenol, benzene_angels, hydrogen_angels),
         order = g,
         enabled = false,
         auto_recycle = false,
-        allow_productivity = true,
+        allow_productivity = false,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = 4, -- Coal tar liquid + Steam --> Pitch + Liquid fuel
+        energy_required = 4, -- 2C₁₀H₈(l) + 2H₂O(g) --> 2C(s) + 2C₆H₅OH(s) + C₆H₆(l) + H₂(g)
         ingredients =
         {
-            {type = fluid, name = coal_tar_liquid, amount = 60},
+            {type = fluid, name = coal_tar_liquid, amount = 120},
             {type = fluid, name = steam, amount = 60}
         },
         results =
         {
-            {type = item, name = pitch, amount = 4},
-            {type = fluid, name = liquid_fuel_bob, amount = 60, ignored_by_productivity = 60}
+            {type = item, name = pitch, amount = 2},
+            {type = item, name = phenol, amount = 2},
+            {type = fluid, name = benzene_angels, amount = 15},
+            {type = fluid, name = hydrogen_angels, amount = 15}
         },
         main_product = pitch
     },

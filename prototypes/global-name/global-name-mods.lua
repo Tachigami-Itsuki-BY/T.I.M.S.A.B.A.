@@ -22,6 +22,7 @@ telescope = "muluna-telescope"
 oxygen_mods = "oxygen"
 carbon_dioxide_mods = "carbon-dioxide"
 anorthite_chunk = "anorthite-chunk"
+interstellar_science_pack = "interstellar-science-pack"
 
 -- ARIG
 arig_mods = "planetaris-arig"
