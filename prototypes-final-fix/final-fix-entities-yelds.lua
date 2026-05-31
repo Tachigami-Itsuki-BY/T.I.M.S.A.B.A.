@@ -280,6 +280,7 @@ if mods [moshine_mods] then
     data_resource[steam_geyser].order = g
     data_resource[steam_geyser].minable.results[1].amount_min = 30
     data_resource[steam_geyser].minable.results[1].amount_max = 30
+    data_resource[steam_geyser].minable.results[1].temperature = 915
 end
 
 -- BOB

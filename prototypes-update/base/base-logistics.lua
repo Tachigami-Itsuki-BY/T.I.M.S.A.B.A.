@@ -504,6 +504,27 @@ if mods ["loaders-modernized-integrations"] then
         data_loader_1x1[stack_loader].minable.mining_time = 0.5
         bobmods.lib.recipe.update_recycling_recipe({stack_loader})
     end
+    local scat_loader = "mdrn-chute-loader"
+    if data_loader_1x1[scat_loader] then
+        data_item[scat_loader].stack_size = 32
+        data_item[scat_loader].weight = 31250
+        if data_underground_belt[T0_underground_belt] then
+            data_recipe[scat_loader].ingredients =
+            {
+                {type = item, name = T0_underground_belt, amount = 2},
+                {type = item, name = T0_inserter, amount = 4}
+            }
+        else
+            data_recipe[scat_loader].ingredients =
+            {
+                {type = item, name = iron_plate, amount = 8},
+                {type = item, name = T0_inserter, amount = 4}
+            }
+        end
+        data_loader_1x1[scat_loader].minable.mining_time = 0.5
+        data_loader_1x1[scat_loader].speed = 0.5/60
+        bobmods.lib.recipe.update_recycling_recipe({scat_loader})
+    end
 end
 
 data_item[small_electric_pole].stack_size = 32

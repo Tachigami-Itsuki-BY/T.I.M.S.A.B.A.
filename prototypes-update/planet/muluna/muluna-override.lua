@@ -479,7 +479,6 @@ if mods [muluna_mods] then
     }
     data_recipe[space_science_pack_muluna].results[1].amount = 2
 
-    interstellar_science_pack = "interstellar-science-pack"
     data_tool[interstellar_science_pack].subgroup = is_muluna_recipe
     data_tool[interstellar_science_pack].order = h
     data_recipe[interstellar_science_pack].subgroup = is_muluna_recipe
