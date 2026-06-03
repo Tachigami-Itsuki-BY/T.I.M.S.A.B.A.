@@ -1,3 +1,76 @@
+
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 03.06.2026
+  Features:
+    - [Mods] Добавлена поддержка Panglia Planet: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [Addons] Добавлены новые настройки баланса от Horogon.
+    - [All] Добавлено 3 рецепта Сортировки Дроблёного Камня.
+
+    - [Mods] Added support for Panglia Planet: seamlessly integrated the new planet into the gameplay flow.
+    - [Addons] Added new balance settings by Horogon.
+    - [All] Added 3 Crushed Stone Sorting recipes.
+
+  Changes:
+    - [All] Теперь предмет [Калий] создаётся без мода «Moshine».
+
+    - [All] Now the item [Potassium] is created without the “Moshine” mod.
+
+  Balancing:
+    - [All] Скорректирована стоимость исследования практически для всех технологий.
+    - [All] В рецепт Мелкокалиберной Турели Т1 добавлен новый ингредиент: Железный Подшипник.
+    - [All] У Мелкокалиберных и Артиллерийских Турелей скорректирован бонус урона:
+        1. Т1 0% → 25%.
+        2. Т2 25% → 50%.
+        3. Т3 50% → 75%.
+        4. Т4 75% → 100%.
+        5. Т5 100% → 125%.
+    - [All] В рецепт Мелкокалиберной Турели Т2 добавлен новый ингредиент: Стальной Подшипник.
+    - [All] В рецепт Снайперской Турели Т1 добавлен новый ингредиент: Железный Подшипник.
+    - [All] У Снайперской Турели Т3 уменьшен бонус урона: 3100% → 2400%.
+    - [Moshine] Удалена технология Переработка Калия 2.
+
+    - [All] Adjusted research costs for almost all technologies.
+    - [All] Added new an ingredient in the T1 Gun Turret recipe: Iron Bearing.
+    - [All] Adjusted damage bonus for the Gun and Artillery Turrets:
+        1. T1 0% → 25%.
+        2. T2 25% → 50%.
+        3. T3 50% → 75%.
+        4. T4 75% → 100%.
+        5. T5 100% → 125%.
+    - [All] Added new an ingredient in the T2 Gun Turret recipe: Steel Bearing.
+    - [All] Added new an ingredient in the T1 Sniper Turret recipe: Iron Bearing.
+    - [All] Decreased damage bonus for the T3 Sniper Turret: 3100% → 2400%.
+    - [Moshine] Removed Potassium Processing 2 technology.
+
+  Locale:
+    - [All] Изменено название предмета и рецепта: Фосфатная руда → Фторапатит.
+    - [All] Обновлена Русская локализация.
+    - [All] Обновлена Английская локализация.
+    - [All] Добавлена химическая формула для Камня и Дробленого Камня.
+
+    - [All] Changed the name of the item and recipe: Phosphate Ore → Fluorapatite.
+    - [All] Updated Russian localization.
+    - [All] Updated English localization.
+    - [All] Added chemical formula for Stone and Crushed Stone.
+
+  Optimizations:
+    - [All] Была проведена незначительная оптимизация кода для повышения скорости загрузки игры.
+
+    - [All] Performed minor code optimization to improve game loading speed.
+
+  Modding:
+    - [Mods] Мод «Panglia Planet» переведён в опциональную зависимость.
+    - [Mods] Мод «Rocket-Silo Construction» добавлен в опциональную зависимость.
+    - [Mods] Мод «AAI Containers & Warehouses» удалён из списка несовместимых.
+    - [Mods] Мод «AAI Loaders» удалён из списка несовместимых.
+    - [Mods] Мод «Prismatic Belts» добавлен в опциональную зависимость.
+
+    - [Mods] Moved "Panglia Planet" mod to optional dependencies.
+    - [Mods] Added "Rocket-Silo Construction" mod to optional dependencies.
+    - [Mods] Removed "AAI Containers & Warehouses" mod from incompatible.
+    - [Mods] Removed "AAI Loaders" mod from incompatible.
+    - [Mods] Added "Prismatic Belts" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 31.05.2026
@@ -11,12 +84,7 @@ Date: 31.05.2026
     - [All] В рецепте Каменноугольной Смолы произведена замена результат: Жидкое Топливо → Фенол, Бензол и Водород.
 
     - [All] Increased a result in the Stone reciep: Stone (2 units) → (8 units)
-    - [All] Replaced an ingredient in the Coal Tar recipe: Liquid Fuel → Phenol, Benzene, and Hydrogne.
-
-  Other:
-    - [All] Я добавил файл с настройками своего мода на свой Discord-сервер. С его помощью вы сможете использовать модпак на 100% так, как он был задуман.
-
-    - [All] I've added a file with my mod settings to my Discord server. With it, you can experience the modpack 100% the way it was intended.
+    - [All] Replaced a result in the Coal Tar recipe: Liquid Fuel → Phenol, Benzene, and Hydrogne.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 30.05.2026
@@ -40,7 +108,7 @@ Date: 30.05.2026
 
     - [All] Moved back by 1 science pack the Powellite Processing technologies (3 and 4).
     - [Moshine] Replaced an ingredient in the Promethium Science Pack recipe: Promethium Asteroid Chunk → Promethium Ore.
-    - [All] Mecha Armor has received defensive stats buffs to better match current balance.
+    - [All] Received Mecha Armor defensive stats buffs to better match current balance.
     - [All] Revised the cost of all technologies.
 
   Graphics:
@@ -134,7 +202,7 @@ Date: 27.05.2026
     - [All] Updated some simulations in Factoriopedia.
 
   Modding:
-    - [Mods] Удалён мод «Productivity» из списка несовместимых.
+    - [Mods] Мод «Productivity» удалён из списка несовместимых.
 
     - [Mods] Removed "Productivity" mod from incompatible.
 ---------------------------------------------------------------------------------------------------
@@ -160,7 +228,7 @@ Date: 20.05.2026
     - [Aquilo] Replaced an ingredient in the Aniline recipe: Nickel Powder → Yellow Catalyst.
     - [Muluna] Changed production machine for Tree Processing recipe: Crusher → Lamber mill.
     - [Muluna] Added new an ingredient in the Greenhouse recipe: Basic Circuit Board.
-    - [Muluna] Replaced a entity in the Lunar Regolith Digging technology: Electric Mining Drill (Digging) T1 → Electric Mining Drill (Digging) T5.
+    - [Muluna] Replaced a entity in the Lunar Regolith Digging technology: T1 Electric Mining Drill (Digging) → T5 Electric Mining Drill (Digging).
     - [Muluna] Adjusted ingredients in the ALICE Propellant recipe:
         1. Ice (4 units) → (8 units)
         2. Water (240 units) → (120 units)

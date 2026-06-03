@@ -174,6 +174,7 @@ if mods[moshine_mods] then
         data_recipe[datacell_dna_raw].subgroup = is_moshine_datacell
         data_recipe[datacell_dna_raw].icons = THREE_R_I(datacell_empty, datacell_dna_raw, datacell_empty)
         data_recipe[datacell_dna_raw].order = h
+        data_recipe[datacell_dna_raw].energy_required = 64
 
         data_tool[datacell_dna_sequenced].subgroup = is_moshine_datacell
         data_tool[datacell_dna_sequenced].order = i
@@ -357,7 +358,7 @@ if mods[moshine_mods] then
         {type = item, name = model_unstable, amount = 1, probability = 0.015625}
     }
 
-    local ai_tier_10 = "ai-tier-10"
+    ai_tier_10 = "ai-tier-10"
     data_module[ai_tier_10].subgroup = is_moshine_ai_core
     data_module[ai_tier_10].stack_size = 32
     data_module[ai_tier_10].weight = 31250
@@ -729,6 +730,7 @@ if mods[moshine_mods] then
         webbed_processor_tile
     })
 
+    -- TECHNOLOGY
     data_technology[planet_discovery_moshine].prerequisites = {metallurgic_science_pack, electromagnetic_science_pack}
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = moshine_air_separation})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = moshine_air_separation_2})

@@ -23,6 +23,7 @@ carnallite = "carnallite"
 potassium_chloride = "potassium-chloride"
 potassium_hydroxide = "potassium-hydroxide"
 potassium_chlorate = "potassium-chlorate"
+potassium = "potassium"
 data:extend
 ({
     {
@@ -86,9 +87,19 @@ data:extend
         order = e,
         stack_size = 200,
         weight = 5000
-    }
+    },
     -- f potassium_perchlorate
     -- g potassium_sulfate
+    {
+        localised_description = show_formula and {chemical_formula, "K"} or nil,
+        type = item,
+        name = potassium,
+        subgroup = is_potassium,
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium.png",
+        order = z,
+        stack_size = 200,
+        weight = 5000
+    }
 })
 
 --[[data:extend
@@ -207,6 +218,7 @@ data:extend
 -- RECIPE
 carnallite_reprocessing = "carnallite-reprocessing"
 potassium_hydroxide_solution_from_potassium_sulfate_solution = "potassium-hydroxide-solution-from-potassium-sulfate-solution"
+potassium_chloride_solution_2 = "potassium-chloride-solution-2"
 data:extend
 ({
     {
@@ -319,6 +331,31 @@ data:extend
             {type = fluid, name = water_purified_angels, amount = 60}
         },
         results = {{type = fluid, name = potassium_chloride_solution, amount = 60}},
+        main_product = potassium_chloride_solution
+    },
+    {
+        type = recipe,
+        name = potassium_chloride_solution_2,
+        category = chemistry,
+        subgroup = is_potassium_fluid,
+        icons = TWO_D_I(potassium, hydrochloric_acid_angels, potassium_chloride_solution, hydrogen_angels),
+        order = b_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4, -- 2K(s) + 2HCl(aq) --> 2KCl(aq) + H₂(g)
+        ingredients =
+        {
+            {type = item, name = potassium, amount = 4},
+            {type = fluid, name = hydrochloric_acid_angels, amount = 60}
+        },
+        results =
+        {
+            {type = fluid, name = potassium_chloride_solution, amount = 60},
+            {type = fluid, name = hydrogen_angels, amount = 15} -- 30
+        },
         main_product = potassium_chloride_solution
     },
     {

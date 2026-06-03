@@ -23,6 +23,13 @@ data_recipe[chemical_science_pack].ingredients =
 
 if mods [bobtech] then
     data_recipe[transport_science_pack].energy_required = 16
+    data_recipe[transport_science_pack].ingredients =
+    {
+        {type = item, name = T3_inserter, amount = 4},
+        {type = item, name = T3_transport_belt, amount = 2},
+        {type = item, name = flying_robot_frame_1, amount = 1},
+        {type = item, name = steel_chest, amount = 2}
+    }
     data_recipe[transport_science_pack].results[1].amount = 4
 end
 
@@ -349,8 +356,8 @@ data_recipe[rtg].ingredients =
     {type = item, name = plutonium_239_bob, amount = 1}
 }
 
-data_recipe[basic_electronic_components].energy_required = 4
-data_recipe[basic_electronic_components].results[1].amount = 4
+data_recipe[resistor].energy_required = 4
+data_recipe[resistor].results[1].amount = 4
 
 data_recipe[transistor].energy_required = 4
 data_recipe[transistor].ingredients =
@@ -361,30 +368,34 @@ data_recipe[transistor].ingredients =
 }
 data_recipe[transistor].results[1].amount = 4
 
-data_recipe[integrated_electronics].energy_required = 4
-data_recipe[integrated_electronics].ingredients =
+data_recipe[integrated_circuit].energy_required = 4
+data_recipe[integrated_circuit].ingredients =
 {
     {type = item, name = silicon_wafer, amount = 4},
     {type = item, name = insulated_cable, amount = 4},
     {type = item, name = plastic, amount = 1},
     {type = fluid, name = sulfuric_acid_angels, amount = 15}
 }
-data_recipe[integrated_electronics].results[1].amount = 4
+data_recipe[integrated_circuit].results[1].amount = 4
 
-data_recipe[processing_electronics].energy_required = 4
-data_recipe[processing_electronics].ingredients =
+data_recipe[CPU].energy_required = 4
+data_recipe[CPU].ingredients =
 {
     {type = item, name = silicon_nitride_bob, amount = 1},
     {type = item, name = platinum_cable, amount = 4},
     {type = item, name = silicon_wafer, amount = 8},
     {type = fluid, name = sulfuric_acid_angels, amount = 15}
 }
-data_recipe[processing_electronics].results[1].amount = 4
+data_recipe[CPU].results[1].amount = 4
 
+data_item[wooden_board].order = a
 data_recipe[wooden_board].icons = TWO_I(wood, wooden_board)
+data_recipe[wooden_board].order = a
 data_recipe[wooden_board].energy_required = 1
 
+data_item[phenolic_board].order = b
 data_recipe[phenolic_board].icons = THREE_I(paper, liquid_resin_angels, phenolic_board)
+data_recipe[phenolic_board].order = b
 data_recipe[phenolic_board].ingredients =
 {
     {type = item, name = paper, amount = 4},
@@ -394,9 +405,9 @@ data_recipe[phenolic_board].ingredients =
 data_recipe[glass_fiber_board].localised_name = {"item-name.angels-glass-fiber-board"}
 data_recipe[glass_fiber_board].category = advanced_crafting
 data_recipe[glass_fiber_board].additional_categories = {electronics_fluid}
-data_recipe[glass_fiber_board].subgroup = "bob-boards"
+data_recipe[glass_fiber_board].subgroup = is_boards
 data_recipe[glass_fiber_board].icons = THREE_I(glass_coil_fiber, liquid_resin_angels, glass_fiber_board)
-data_recipe[glass_fiber_board].order = "c-a3[glass-fiber-board]"
+data_recipe[glass_fiber_board].order = c
 data_recipe[glass_fiber_board].energy_required = 4
 data_recipe[glass_fiber_board].ingredients =
 {
@@ -404,6 +415,20 @@ data_recipe[glass_fiber_board].ingredients =
     {type = fluid, name = liquid_resin_angels, amount = 60}
 }
 
+data_item[basic_circuit_board].order = a
+data_item[basic_circuit_board].subgroup = is_circuit_boards
+data_recipe[basic_circuit_board].order = a
+data_recipe[basic_circuit_board].subgroup = is_circuit_boards
+data_recipe[basic_circuit_board].ingredients =
+{
+    {type = item, name = wooden_board, amount = 1},
+    {type = item, name = copper_cable, amount = 4}
+}
+
+data_item[circuit_board].order = b
+data_item[circuit_board].subgroup = is_circuit_boards
+data_recipe[circuit_board].order = b
+data_recipe[circuit_board].subgroup = is_circuit_boards
 data_recipe[circuit_board].energy_required = 4
 data_recipe[circuit_board].ingredients =
 {
@@ -413,6 +438,10 @@ data_recipe[circuit_board].ingredients =
     {type = fluid, name = iron_chloride_III_solution_angels, amount = 15}
 }
 
+data_item[superior_circuit_board].order = c
+data_item[superior_circuit_board].subgroup = is_circuit_boards
+data_recipe[superior_circuit_board].order = c
+data_recipe[superior_circuit_board].subgroup = is_circuit_boards
 data_recipe[superior_circuit_board].energy_required = 4
 data_recipe[superior_circuit_board].ingredients =
 {
@@ -422,6 +451,10 @@ data_recipe[superior_circuit_board].ingredients =
     {type = fluid, name = iron_chloride_III_solution_angels, amount = 15}
 }
 
+data_item[multi_layer_circuit_board].order = d
+data_item[multi_layer_circuit_board].subgroup = is_circuit_boards
+data_recipe[multi_layer_circuit_board].order = d
+data_recipe[multi_layer_circuit_board].subgroup = is_circuit_boards
 data_recipe[multi_layer_circuit_board].energy_required = 8
 data_recipe[multi_layer_circuit_board].ingredients =
 {
@@ -431,39 +464,41 @@ data_recipe[multi_layer_circuit_board].ingredients =
     {type = fluid, name = iron_chloride_III_solution_angels, amount = 30}
 }
 
-data_recipe[basic_circuit_board].ingredients =
-{
-    {type = item, name = wooden_board, amount = 1},
-    {type = item, name = copper_cable, amount = 4}
-}
-
+data_item[electronic_circuit].order = a
+data_recipe[electronic_circuit].order = a
 data_recipe[electronic_circuit].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 1},
-    {type = item, name = basic_electronic_components, amount = 4},
+    {type = item, name = resistor, amount = 4},
     {type = item, name = solder, amount = 2}
 }
 
+data_item[advanced_circuit].order = b
+data_recipe[advanced_circuit].order = b
 data_recipe[advanced_circuit].energy_required = 4
 
+data_item[processing_unit].order = c
+data_recipe[processing_unit].order = c
 data_recipe[processing_unit].energy_required = 4
 data_recipe[processing_unit].ingredients =
 {
     {type = item, name = superior_circuit_board, amount = 1},
-    {type = item, name = basic_electronic_components, amount = 8},
+    {type = item, name = resistor, amount = 8},
     {type = item, name = transistor, amount = 8},
-    {type = item, name = integrated_electronics, amount = 4},
+    {type = item, name = integrated_circuit, amount = 4},
     {type = item, name = solder, amount = 4}
 }
 
+data_item[advanced_processing_unit].order = d
+data_recipe[advanced_processing_unit].order = d
 data_recipe[advanced_processing_unit].energy_required = 8
 data_recipe[advanced_processing_unit].ingredients =
 {
     {type = item, name = multi_layer_circuit_board, amount = 1},
-    {type = item, name = basic_electronic_components, amount = 8},
-    {type = item, name = processing_electronics, amount = 4},
+    {type = item, name = resistor, amount = 8},
+    {type = item, name = CPU, amount = 4},
     {type = item, name = transistor, amount = 8},
-    {type = item, name = integrated_electronics, amount = 8},
+    {type = item, name = integrated_circuit, amount = 8},
     {type = item, name = solder, amount = 8}
 }
 
@@ -1170,10 +1205,10 @@ local materials =
     electric_engine_unit,
     low_density_structure,
     heat_shielding_tile,
-    basic_electronic_components,
+    resistor,
     transistor,
-    integrated_electronics,
-    processing_electronics,
+    integrated_circuit,
+    CPU,
     circuit_board,
     superior_circuit_board,
     multi_layer_circuit_board,
@@ -1214,7 +1249,6 @@ local materials =
 }
 for _, name in pairs(materials) do
     data_item[name].stack_size = 200
-    data_item[name].weight = 5000
 end
 
 local nuclear_cells =
@@ -1254,8 +1288,8 @@ bobmods.lib.recipe.update_recycling_recipe
     heat_shielding_tile,
     rtg,
     transistor,
-    integrated_electronics,
-    processing_electronics,
+    integrated_circuit,
+    CPU,
     circuit_board,
     superior_circuit_board,
     multi_layer_circuit_board,

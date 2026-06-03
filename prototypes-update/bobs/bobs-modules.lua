@@ -24,12 +24,12 @@ local function module_boards(name, polished_1, polished_2)
     data_recipe[name].energy_required = 8
     data_recipe[name].ingredients =
     {
-        {type = item, name = basic_electronic_components, amount = 16},
-        {type = item, name = transistor,                  amount = 8},
-        {type = item, name = polished_1,                  amount = 1},
-        {type = item, name = solder,                      amount = 4},
-        {type = item, name = polished_2,                  amount = 1},
-        {type = item, name = basic_module_board,          amount = 1}
+        {type = item, name = resistor,           amount = 16},
+        {type = item, name = transistor,         amount = 8},
+        {type = item, name = polished_1,         amount = 1},
+        {type = item, name = solder,             amount = 4},
+        {type = item, name = polished_2,         amount = 1},
+        {type = item, name = basic_module_board, amount = 1}
     }
 end
 module_boards(speed_circuit_board,            polished_sapphire_bob, crystal_splinter_blue)
@@ -60,12 +60,12 @@ local function advanced_module_boards(name, polished_1, polished_2)
     data_recipe[name].energy_required = 8
     data_recipe[name].ingredients =
     {
-        {type = item, name = transistor,             amount = 16},
-        {type = item, name = integrated_electronics, amount = 8},
-        {type = item, name = polished_1,             amount = 2},
-        {type = item, name = solder,                 amount = 8},
-        {type = item, name = polished_2,             amount = 1},
-        {type = item, name = advanced_module_board,  amount = 1}
+        {type = item, name = transistor,            amount = 16},
+        {type = item, name = integrated_circuit,    amount = 8},
+        {type = item, name = polished_1,            amount = 2},
+        {type = item, name = solder,                amount = 8},
+        {type = item, name = polished_2,            amount = 1},
+        {type = item, name = advanced_module_board, amount = 1}
     }
 end
 advanced_module_boards(advanced_speed_circuit_board,            polished_sapphire_bob, crystal_shard_blue)
@@ -89,8 +89,8 @@ local function processor_module_boards(name, polished_1, polished_2)
     data_recipe[name].energy_required = 8
     data_recipe[name].ingredients =
     {
-        {type = item, name = integrated_electronics, amount = 16},
-        {type = item, name = processing_electronics, amount = 8},
+        {type = item, name = integrated_circuit,     amount = 16},
+        {type = item, name = CPU,                    amount = 8},
         {type = item, name = polished_1,             amount = 4},
         {type = item, name = solder,                 amount = 16},
         {type = item, name = polished_2,             amount = 1},

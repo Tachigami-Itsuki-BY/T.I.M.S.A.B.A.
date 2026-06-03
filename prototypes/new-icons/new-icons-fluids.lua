@@ -670,7 +670,7 @@ if mods [maraxsis_mods] then
 end
 
 if mods [panglia_mods] then
-    data_fluid[branbalite_slurry_panglia].icon = "__TIMSABA__/graphics/icons/panglia/panglia_branbalite_slurry.png"
+    data_fluid[branbalite_slurry].icon = "__TIMSABA__/graphics/icons/panglia/panglia_branbalite_slurry.png"
 end
 
 if mods [arig_mods] then

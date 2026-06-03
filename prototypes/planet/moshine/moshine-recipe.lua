@@ -458,7 +458,6 @@ if mods[moshine_mods] then
 
     -- SMELTING
     lead_ingot_4 = "lead-ingot-4"
-    potassium_chloride_solution_2 = "potassium-chloride-solution-2"
     orthophosphoric_acid_from_phosphate_ore = "orthophosphoric-acid-from-phosphate-ore"
     data:extend
     ({
@@ -535,32 +534,6 @@ if mods[moshine_mods] then
             },
             main_product = boron
         },
-        -- POTASSIUM
-        {
-            type = recipe,
-            name = potassium_chloride_solution_2,
-            category = chemistry,
-            subgroup = is_potassium_fluid,
-            icons = TWO_D_I(potassium, hydrochloric_acid_angels, potassium_chloride_solution, hydrogen_angels),
-            order = b_a,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = 4, -- 2K(s) + 2HCl(aq) --> 2KCl(aq) + H₂(g)
-            ingredients =
-            {
-                {type = item, name = potassium, amount = 4},
-                {type = fluid, name = hydrochloric_acid_angels, amount = 60}
-            },
-            results =
-            {
-                {type = fluid, name = potassium_chloride_solution, amount = 60},
-                {type = fluid, name = hydrogen_angels, amount = 15} -- 30
-            },
-            main_product = potassium_chloride_solution
-        },
         -- PHOSPHORUS
         {
             type = recipe,
@@ -593,7 +566,7 @@ if mods[moshine_mods] then
             name = orthophosphoric_acid_from_phosphate_ore,
             category = chemistry,
             subgroup = is_phosphorus,
-            icons = THREE_D_I(phosphate_ore, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
+            icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
             order = h_a,
             enabled = false,
             auto_recycle = false,
@@ -603,7 +576,7 @@ if mods[moshine_mods] then
             energy_required = 4, -- Ca₅(PO₄)₃F + 5H₂SO₄(l) + 4H₂O(l) --> 3H₃PO₄(aq) + HF(aq) + 5CaSO₄(s)
             ingredients =
             {
-                {type = item, name = phosphate_ore, amount = 4},
+                {type = item, name = fluorapatite, amount = 4},
                 {type = fluid, name = sulfuric_acid_angels, amount = 300},
                 {type = fluid, name = water_purified_angels, amount = 240}
             },

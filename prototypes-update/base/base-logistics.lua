@@ -466,9 +466,9 @@ if mods ["loaders-modernized-integrations"] then
             data_loader_1x1[BUILD.name].speed = BUILD.speed
             data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
             local recipe_variants = {BUILD.name, "stack-" .. BUILD.name}
-            for _, r_name in ipairs(recipe_variants) do
-                if data_recipe[r_name] then
-                    local recipe = data_recipe[r_name]
+            for _, recipe_name in ipairs(recipe_variants) do
+                if data_recipe[recipe_name] then
+                    local recipe = data_recipe[recipe_name]
                     if recipe.ingredients then
                         for _, ingredient in pairs(recipe.ingredients) do
                             local name = ingredient.name or ingredient[1]
@@ -481,9 +481,7 @@ if mods ["loaders-modernized-integrations"] then
                             end
                         end
                     end
-                    if bobmods and bobmods.lib and bobmods.lib.recipe and bobmods.lib.recipe.update_recycling_recipe then
-                        bobmods.lib.recipe.update_recycling_recipe(r_name)
-                    end
+                    bobmods.lib.recipe.update_recycling_recipe({recipe_name})
                 end
             end
         end
@@ -498,32 +496,51 @@ if mods ["loaders-modernized-integrations"] then
         data_recipe[stack_loader].subgroup = is_gleba_logistics
         data_recipe[stack_loader].order = b
         data_recipe[stack_loader].ingredients[1].name = vulcanus_underground_belt
+        local recipe_variants = {stack_loader, "stack-" .. stack_loader}
+        for _, recipe_name in ipairs(recipe_variants) do
+            if data_recipe[recipe_name] then
+                local recipe = data_recipe[recipe_name]
+                if recipe.ingredients then
+                    for _, ingredient in pairs(recipe.ingredients) do
+                        local name = ingredient.name or ingredient[1]
+                        if name and name:find("inserter") then
+                            if ingredient.name then
+                                ingredient.amount = 8
+                            else
+                                ingredient[2] = 8
+                            end
+                        end
+                    end
+                end
+            end
+        end
         data_recipe[stack_loader].ingredients[3].name = T5_loader
         data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
         data_loader_1x1[stack_loader].order = b
         data_loader_1x1[stack_loader].minable.mining_time = 0.5
         bobmods.lib.recipe.update_recycling_recipe({stack_loader})
     end
-    local scat_loader = "mdrn-chute-loader"
-    if data_loader_1x1[scat_loader] then
-        data_item[scat_loader].stack_size = 32
-        data_item[scat_loader].weight = 31250
+    local chute_loader = "mdrn-chute-loader"
+    if data_loader_1x1[chute_loader] then
+        data_item[chute_loader].stack_size = 32
+        data_item[chute_loader].weight = 31250
         if data_underground_belt[T0_underground_belt] then
-            data_recipe[scat_loader].ingredients =
+            data_recipe[chute_loader].ingredients =
             {
                 {type = item, name = T0_underground_belt, amount = 2},
                 {type = item, name = T0_inserter, amount = 4}
             }
         else
-            data_recipe[scat_loader].ingredients =
+            data_recipe[chute_loader].ingredients =
             {
                 {type = item, name = iron_plate, amount = 8},
                 {type = item, name = T0_inserter, amount = 4}
             }
         end
-        data_loader_1x1[scat_loader].minable.mining_time = 0.5
-        data_loader_1x1[scat_loader].speed = 0.5/60
-        bobmods.lib.recipe.update_recycling_recipe({scat_loader})
+        data_loader_1x1[chute_loader].next_upgrade = T0_loader
+        data_loader_1x1[chute_loader].minable.mining_time = 0.5
+        data_loader_1x1[chute_loader].speed = 0.5/60
+        bobmods.lib.recipe.update_recycling_recipe({chute_loader})
     end
 end
 

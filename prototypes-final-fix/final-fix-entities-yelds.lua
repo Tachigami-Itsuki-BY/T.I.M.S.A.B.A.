@@ -377,6 +377,23 @@ if mods [moshine_mods] then
     }
 end
 
+-- PANGLIA
+if mods [panglia_mods] then
+    data_entity["panglia-huge-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 16, amount_max = 32}}
+    data_entity["panglia-big-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 4, amount_max = 16}}
+    data_entity["panglia-huge-igneous-rock"].minable.results = {{type = item, name = igneous_rock, amount_min = 32, amount_max = 128}}
+    data_entity["panglia-big-rock"].minable.results =
+    {
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 32},
+        {type = item, name = stone, amount_min = 0, amount_max = 16}
+    }
+end
+
 -- MODS
 if mods [vulcanus_sulfuric_bacteria_mods] then
     data_entity["sulfuric-stromatolite"].minable.results =

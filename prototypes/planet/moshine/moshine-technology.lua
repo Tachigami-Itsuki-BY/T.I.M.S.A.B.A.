@@ -9,7 +9,6 @@ if mods[moshine_mods] then
     local tech_neodymium_smelting_2 = "neodymium-smelting-2"
     local tech_neodymium_smelting_3 = "neodymium-smelting-3"
     tech_boron_processing_2 = "boron-processing-2"
-    local tech_potassium_processing_2 = "potassium-processing-2"
     local tech_phosphorus_processing_2 = "phosphorus-processing-2"
     data:extend
     ({
@@ -243,29 +242,6 @@ if mods[moshine_mods] then
                 {type = unlock_recipe, recipe = boron_oxide_III},
                 {type = unlock_recipe, recipe = boron}
             },
-            unit =
-            {
-                count = 100,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {metallurgic_science_pack, 1}
-                },
-                time = 30
-            }
-        },
-        {
-            type = technology,
-            name = tech_potassium_processing_2,
-            icons = TIMSABA.functions.create_gas_tech_icon("KKK"),
-            prerequisites = {tech_potassium_processing, planet_discovery_moshine},
-            effects = {{type = unlock_recipe, recipe = potassium_chloride_solution_2}},
             unit =
             {
                 count = 100,

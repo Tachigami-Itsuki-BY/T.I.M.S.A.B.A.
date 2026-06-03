@@ -15,6 +15,8 @@ setting_horogon_logistics_multiplier = "setting-ze-horogon-logistics-multiplier-
 setting_horogon_military_multiplier = "setting-zf-horogon-military-multiplier-mk"
 setting_horogon_power_multiplier = "setting-zg-horogon-power-multiplier-mk"
 setting_horogon_production_multiplier = "setting-zh-horogon-production-multiplier-mk"
+setting_horogon_mech_armor_technology_cost = "setting-zi-horogon-mech-armor-technology-cost"
+setting_horogon_power_armor_chain_from_mech = "setting-zj-horogon-power-armor-chain-from-mech"
 
 if angelsmods and angelsmods.trigger then
     local player_choice = settings.startup[setting_early_sintering_oven].value

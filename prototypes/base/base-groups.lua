@@ -34,7 +34,7 @@ data_item_subgroup["bob-energy-steam-engine"].order = b_a
 data_item_subgroup["bob-energy-fluid-generator"].order = b_c
 data_item_subgroup["bob-energy-solar-panel"].order = b_e
 data_item_subgroup["bob-energy-accumulator"].order = b_g
-is_energy_steam_turbine = "is-energy-steam-engine"
+is_energy_steam_turbine = "is-energy-steam-turbine"
 is_solar_panel_small = "solar-panel-small"
 is_solar_panel_large = "solar-panel-large"
 is_extraction_machine_mining = "is-extraction-machine-mining"
@@ -112,6 +112,11 @@ is_alien_science_pack = "is-alien-science-pack"
 is_gears = "bob-gears"
 is_bearing_ball = "bob-bearings"
 is_bearing = "is-bearing"
+data_item_subgroup["bob-electronic-components"].order = d
+is_boards = "bob-boards"
+data_item_subgroup[is_boards].order = d_a
+is_circuit_boards = "is-circuit-boards"
+data_item_subgroup["bob-electronic-boards"].order = d_c
 is_nuclear_item = "is-nuclear-item"
 is_nuclear_recipe = "is-nuclear-recipe"
 is_uranium_235_item = "is-uranium-235-item"
@@ -133,33 +138,39 @@ data:extend
     },
     {
         type = item_subgroup,
+        name = is_circuit_boards,
+        group = intermediate_products,
+        order = d_b
+    },
+    {
+        type = item_subgroup,
         name = is_nuclear_item,
         group = intermediate_products,
-        order = e_b
+        order = e
     },
     {
         type = item_subgroup,
         name = is_nuclear_recipe,
         group = intermediate_products,
-        order = e_c
+        order = e_a
     },
     {
         type = item_subgroup,
         name = is_uranium_235_item,
         group = intermediate_products,
-        order = e_d
+        order = e_b
     },
     {
         type = item_subgroup,
         name = is_uranium_235_recipe,
         group = intermediate_products,
-        order = e_e
+        order = e_c
     },
     {
         type = item_subgroup,
         name = is_nuclear_cell,
         group = intermediate_products,
-        order = e_f
+        order = e_d
     }
 })
 

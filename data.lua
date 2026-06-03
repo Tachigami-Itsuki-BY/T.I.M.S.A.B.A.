@@ -50,6 +50,8 @@ AR_IIFI_ALT_I = require("lib.generator-icons-shattered").alt_AR_item_item_fluid_
 
 require("prototypes.TIMSABA-functions")
 
+if mods ["bobores"] >= "2.1.0" then require("compatibility.migrations-mods.bobores") end
+
 require("prototypes.new-icons.new-icons")
 require("prototypes.new-icons.new-icons-items")
 require("prototypes.new-icons.new-icons-fluids")
@@ -148,6 +150,10 @@ require("prototypes.planet.moshine.moshine-monazite")
 require("prototypes.planet.moshine.moshine-recipe")
 require("prototypes.planet.moshine.moshine-technology")
 
+require("prototypes.planet.panglia.panglia-groups")
+require("prototypes.planet.panglia.panglia-recipe")
+require("prototypes.planet.panglia.panglia-technology")
+
 require("prototypes.planet.arig.arig-groups")
 require("prototypes.planet.arig.arig-recipe")
 require("prototypes.planet.arig.arig-technology")
@@ -180,10 +186,6 @@ require("prototypes.planet.maraxsis.maraxsis-technology")
 --require("prototypes.planet.nexus.nexus-recipe")
 --require("prototypes.planet.nexus.nexus-technology")
 
-require("prototypes.planet.panglia.panglia-groups")
-require("prototypes.planet.panglia.panglia-recipe")
-require("prototypes.planet.panglia.panglia-technology")
-
 require("prototypes.planet.paracelsin.paracelsin-groups")
 require("prototypes.planet.paracelsin.paracelsin-recipe")
 require("prototypes.planet.paracelsin.paracelsin-technology")
@@ -209,5 +211,3 @@ require("prototypes.planet.vesta.vesta-recipe")
 require("prototypes.planet.vesta.vesta-technology")
 
 require("prototypes.mods.space-science-pack")
-
-require("prototypes.prototypes-deleted")

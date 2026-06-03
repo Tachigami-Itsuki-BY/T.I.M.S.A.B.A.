@@ -826,7 +826,7 @@ if pump_1 then
     pump_1.graphics_set = {animation = pump_1.graphics_set.animation}
     pump_1.energy_source = {type = "void"}
     pump_1.energy_usage = 15 .. kW
-    pump_1.surface_conditions = {{property = "gravity", min = 8, max = 40}}
+    pump_1.surface_conditions = {{property = gravity, min = 1, max = 40}}
     pump_1.active_components_only = true
     data_assembling[ground_water_pump] = pump_1
     data_pump_offshore[ground_water_pump] = nil

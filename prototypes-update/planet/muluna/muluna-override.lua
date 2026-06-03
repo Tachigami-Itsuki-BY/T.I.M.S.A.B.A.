@@ -738,8 +738,10 @@ if mods [muluna_mods] then
     data_assembling[steam_crusher].energy_source.fluid_box.maximum_temperature = 1000
     data_assembling[steam_crusher].graphics_set.animation.animation_speed = 0.5
 
+    data_item[crusher].localised_name = {"entity-name.crusher-1"}
     data_item[crusher].subgroup = is_muluna_building
     data_item[crusher].order = d
+    data_recipe[crusher].localised_name = {"entity-name.crusher-1"}
     data_recipe[crusher].subgroup = is_muluna_building
     data_recipe[crusher].order = d
     data_recipe[crusher].ingredients =
@@ -749,6 +751,7 @@ if mods [muluna_mods] then
         {type = item, name = molybdenum_rhenium_plate, amount = 8},
         {type = item, name = steam_crusher, amount = 1}
     }
+    data_assembling[crusher].localised_name = {"entity-name.crusher-1"}
     data_assembling[crusher].subgroup = is_muluna_building
     data_assembling[crusher].order = d
 
@@ -922,28 +925,69 @@ if mods [muluna_mods] then
     })
 
     data_fluid[astronomical_data_muluna].subgroup = is_muluna_recipe_astronomical
+    data_fluid[astronomical_data_muluna].order = a
 
     local telescope_observation_nauvis = "muluna-telescope-observation-nauvis"
+    data_recipe[telescope_observation_nauvis].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_nauvis].icons = BUILDING_R_I(astronomical_data_muluna, planet_nauvis)
+    data_recipe[telescope_observation_nauvis].order = a_a
     data_recipe[telescope_observation_nauvis].energy_required = 4
     data_recipe[telescope_observation_nauvis].results[1].amount = 15
 
-    local telescope_observation_muluna = "muluna-telescope-observation-muluna"
-    data_recipe[telescope_observation_muluna].icons = BUILDING_R_I(astronomical_data_muluna, planet_muluna)
-    data_recipe[telescope_observation_muluna].energy_required = 4
-    data_recipe[telescope_observation_muluna].results[1].amount = 15
-
     local telescope_observation_vulcanus = "muluna-telescope-observation-vulcanus"
+    data_recipe[telescope_observation_vulcanus].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_vulcanus].icons = BUILDING_R_I(astronomical_data_muluna, planet_vulcanus)
+    data_recipe[telescope_observation_vulcanus].order = a_b
     data_recipe[telescope_observation_vulcanus].energy_required = 4
     data_recipe[telescope_observation_vulcanus].results[1].amount = 30
 
     local telescope_observation_gleba = "muluna-telescope-observation-gleba"
+    data_recipe[telescope_observation_gleba].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_gleba].icons = BUILDING_R_I(astronomical_data_muluna, planet_gleba)
+    data_recipe[telescope_observation_gleba].order = a_c
     data_recipe[telescope_observation_gleba].energy_required = 4
     data_recipe[telescope_observation_gleba].results[1].amount = 30
 
-    if mods [terrapalus_mods] then
+    local telescope_observation_fulgora = "muluna-telescope-observation-fulgora"
+    data_recipe[telescope_observation_fulgora].subgroup = is_muluna_recipe_astronomical
+    data_recipe[telescope_observation_fulgora].icons = BUILDING_R_I(astronomical_data_muluna, planet_fulgora)
+    data_recipe[telescope_observation_fulgora].order = a_d
+    data_recipe[telescope_observation_fulgora].energy_required = 4
+    data_recipe[telescope_observation_fulgora].results[1].amount = 30
+
+    local telescope_observation_aquilo = "muluna-telescope-observation-aquilo"
+    data_recipe[telescope_observation_aquilo].subgroup = is_muluna_recipe_astronomical
+    data_recipe[telescope_observation_aquilo].icons = BUILDING_R_I(astronomical_data_muluna, planet_aquilo)
+    data_recipe[telescope_observation_aquilo].order = a_e
+    data_recipe[telescope_observation_aquilo].energy_required = 4
+    data_recipe[telescope_observation_aquilo].results[1].amount = 60
+
+    if mods [moshine_mods] then
+        local telescope_observation_moshine = "muluna-telescope-observation-moshine"
+        data_recipe[telescope_observation_moshine].subgroup = is_muluna_recipe_astronomical
+        data_recipe[telescope_observation_moshine].icons = BUILDING_R_I(astronomical_data_muluna, planet_moshine)
+        data_recipe[telescope_observation_moshine].order = a_f
+        data_recipe[telescope_observation_moshine].energy_required = 4
+        data_recipe[telescope_observation_moshine].results[1].amount = 30
+    end
+
+    local telescope_observation_muluna = "muluna-telescope-observation-muluna"
+    data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical
+    data_recipe[telescope_observation_muluna].icons = BUILDING_R_I(astronomical_data_muluna, planet_muluna)
+    data_recipe[telescope_observation_muluna].order = b_a
+    data_recipe[telescope_observation_muluna].energy_required = 4
+    data_recipe[telescope_observation_muluna].results[1].amount = 15
+
+    if mods [panglia_mods] then
+        local telescope_observation_panglia = "muluna-telescope-observation-panglia"
+        data_recipe[telescope_observation_panglia].subgroup = is_muluna_recipe_astronomical
+        data_recipe[telescope_observation_panglia].icons = BUILDING_R_I(astronomical_data_muluna, planet_panglia)
+        data_recipe[telescope_observation_panglia].order = b_b
+        data_recipe[telescope_observation_panglia].energy_required = 4
+        data_recipe[telescope_observation_panglia].results[1].amount = 15
+    end
+
+    --[[if mods [terrapalus_mods] then
         local telescope_observation_terrapalus = "muluna-telescope-observation-terrapalus"
         data_recipe[telescope_observation_terrapalus].icons = BUILDING_R_I(astronomical_data_muluna, planet_terrapalus)
         data_recipe[telescope_observation_terrapalus].energy_required = 4
@@ -961,27 +1005,10 @@ if mods [muluna_mods] then
         data_recipe[telescope_observation_castra].energy_required = 4
     end
 
-    local telescope_observation_fulgora = "muluna-telescope-observation-fulgora"
-    data_recipe[telescope_observation_fulgora].icons = BUILDING_R_I(astronomical_data_muluna, planet_fulgora)
-    data_recipe[telescope_observation_fulgora].energy_required = 4
-    data_recipe[telescope_observation_fulgora].results[1].amount = 30
-
     if mods [shchierbin_mods] then
         local telescope_observation_shchierbin = "muluna-telescope-observation-shchierbin"
         data_recipe[telescope_observation_shchierbin].icons = BUILDING_R_I(astronomical_data_muluna, planet_shchierbin)
         data_recipe[telescope_observation_shchierbin].energy_required = 4
-    end
-
-    local telescope_observation_aquilo = "muluna-telescope-observation-aquilo"
-    data_recipe[telescope_observation_aquilo].icons = BUILDING_R_I(astronomical_data_muluna, planet_aquilo)
-    data_recipe[telescope_observation_aquilo].energy_required = 4
-    data_recipe[telescope_observation_aquilo].results[1].amount = 60
-
-    if mods [moshine_mods] then
-        local telescope_observation_moshine = "muluna-telescope-observation-moshine"
-        data_recipe[telescope_observation_moshine].icons = BUILDING_R_I(astronomical_data_muluna, planet_moshine)
-        data_recipe[telescope_observation_moshine].energy_required = 4
-        data_recipe[telescope_observation_moshine].results[1].amount = 30
     end
 
     if mods [shattered_mods] then
@@ -1014,12 +1041,6 @@ if mods [muluna_mods] then
         data_recipe[telescope_observation_frozeta].energy_required = 4
     end
 
-    if mods [panglia_mods] then
-        local telescope_observation_panglia = "muluna-telescope-observation-panglia"
-        data_recipe[telescope_observation_panglia].icons = BUILDING_R_I(astronomical_data_muluna, planet_panglia)
-        data_recipe[telescope_observation_panglia].energy_required = 4
-    end
-
     if mods [vesta_mods] then
         local telescope_observation_vesta = "muluna-telescope-observation-vesta"
         data_recipe[telescope_observation_vesta].icons = BUILDING_R_I(astronomical_data_muluna, planet_vesta)
@@ -1030,15 +1051,17 @@ if mods [muluna_mods] then
         local telescope_observation_corrundum = "muluna-telescope-observation-corrundum"
         data_recipe[telescope_observation_corrundum].icons = BUILDING_R_I(astronomical_data_muluna, planet_corrundum)
         data_recipe[telescope_observation_corrundum].energy_required = 4
-    end
+    end]]
 
     local telescope_observation_space_platform = "muluna-telescope-observation-space-platform"
     data_recipe[telescope_observation_space_platform].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_space_platform].icons = BUILDING_R_I(astronomical_data_muluna, space_platform)
+    data_recipe[telescope_observation_space_platform].order = a_z
     data_recipe[telescope_observation_space_platform].energy_required = 4
     data_recipe[telescope_observation_space_platform].ingredients = nil
     data_recipe[telescope_observation_space_platform].results[1].amount = 120
 
+    -- TECHNOLOGY
     data_technology[thruster_oxidizer].icons = nil
     data_technology[thruster_oxidizer].icon = "__TIMSABA__/graphics/icons/muluna/thruster-oxidizer-technology.png"
     data_technology[thruster_oxidizer].icon_size = 256
