@@ -300,8 +300,14 @@ data_recipe[biter_egg].results[1].amount = 4
 if mods [panglia_mods] then
     local cloning_biter_egg = "cloning-biter-egg"
     data_recipe[cloning_biter_egg].subgroup = is_gleba_recipe
-    data_recipe[cloning_biter_egg].icons = THREE_I(biter_egg, bioflux, biter_egg)
+    data_recipe[cloning_biter_egg].icons = STONKS_I(stonks_png, biter_egg)
     data_recipe[cloning_biter_egg].order = a_a
+    data_recipe[cloning_biter_egg].energy_required = 32
+    data_recipe[cloning_biter_egg].ingredients =
+    {
+        {type = item, name = bioflux, amount = 4},
+        {type = item, name = biter_egg, amount = 2}
+    }
 end
 
 local coal_synthesis = "coal-synthesis"

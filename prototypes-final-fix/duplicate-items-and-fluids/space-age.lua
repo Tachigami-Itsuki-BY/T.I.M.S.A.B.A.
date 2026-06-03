@@ -92,29 +92,29 @@ for _, tree in pairs(data.raw.tree or {}) do
 end
 
 data_item[lithium] = nil
+data_recipe[lithium .. _recycling] = nil
+
 data_item[lithium_plate] = nil
+data_recipe[lithium_plate .. _recycling] = nil
+
 data_fluid[ammonia] = nil
 data_fluid[lithium_brine] = nil
+
 data_item[carbon] = nil
-if mods [muluna_mods] then
-	data_item[tungsten_plate].hidden = true
-	data_item[tungsten_plate].hidden_in_factoriopedia = true
-else
-	data_item[tungsten_plate] = nil
-end
+data_recipe[carbon .. _recycling] = nil
+
+data_item[tungsten_plate] = nil
+data_recipe[tungsten_plate .. _recycling] = nil
+
 data_item[tungsten_carbide] = nil
+data_recipe[tungsten_carbide .. _recycling] = nil
+
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil
+
 local holmium_solution = "holmium-solution"
 data_fluid[holmium_solution] = nil
 data_recipe[holmium_solution] = nil
-
-data_recipe["lithium-recycling"] = nil
-data_recipe["lithium-plate-recycling"] = nil
-data_recipe["carbon-recycling"] = nil
-data_recipe["tungsten-ore-recycling"] = nil
-data_recipe["tungsten-plate-recycling"] = nil
-data_recipe["tungsten-carbide-recycling"] = nil
 
 data_recipe["concrete-from-molten-iron"] = nil
 
@@ -139,3 +139,15 @@ for _, technology in pairs(data.raw.technology or {}) do
 end
 data_recipe[fluoroketone] = nil
 data_recipe[fluoroketone_cooling] = nil
+
+if mods [muluna_mods] then
+	if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
+		for i = #Muluna.constants.cargo_drop_spawn_imports, 1, -1 do
+			local path = Muluna.constants.cargo_drop_spawn_imports[i]
+
+			if path and string.find(path, "tungsten%-plate") then
+				table.remove(Muluna.constants.cargo_drop_spawn_imports, i)
+			end
+		end
+	end
+end

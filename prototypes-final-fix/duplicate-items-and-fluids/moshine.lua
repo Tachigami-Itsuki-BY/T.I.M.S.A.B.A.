@@ -86,10 +86,12 @@ if mods [moshine_mods] then
     end
 
 	data_item[neodymium_mods] = nil
-	data_recipe["neodymium-recycling"] = nil
+	data_recipe[neodymium_mods .. _recycling] = nil
+
 	data_item[glass_mods] = nil
-	data_recipe["glass-recycling"] = nil
-	data_recipe["silicon-carbide-recycling"] = nil
+	data_recipe[glass_mods .. _recycling] = nil
+
+	data_recipe[silicon_carbide_mods .. _recycling] = nil
 
 	data_recipe["concrete-from-molten-iron-and-sand"] = nil
 	data_recipe["petroleum-from-sand-sulfur-steam-carbon"] = nil
@@ -100,11 +102,25 @@ if mods [moshine_mods] then
 	local better_substation = "snouz_better_substation"
 	data_item[better_substation] = nil
 	data_recipe[better_substation] = nil
+	data_recipe[better_substation .. _recycling] = nil
+	if mods [panglia_mods] then
+		data_recipe[item_ .. better_substation .. _panglia_crushing] = nil
+	end
 	data_electric_pole[better_substation] = nil
-
-	data_recipe["snouz_better_substation-recycling"] = nil
-
-	data_technology["snouz_better_substation_tech"] = nil
+	data_technology[better_substation .. "_tech"] = nil
 
 	data_tile["moshine-lava"].fluid = lava
+
+	local long_stack_inserter = "long-stack-inserter"
+	data_item[long_stack_inserter] = nil
+	data_recipe[long_stack_inserter] = nil
+    data_recipe[long_stack_inserter .. _recycling] = nil
+    if mods [panglia_mods] then
+		data_recipe[item_ .. long_stack_inserter .. _panglia_crushing] = nil
+	end
+	data_inserter[long_stack_inserter] = nil
+	if mods [panglia_mods] then
+		data_inserter[long_stack_inserter .. _panglia_fast_version] = nil
+	end
+    data_technology[long_stack_inserter] = nil
 end

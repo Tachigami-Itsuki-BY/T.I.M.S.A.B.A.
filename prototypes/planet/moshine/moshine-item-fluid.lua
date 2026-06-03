@@ -321,7 +321,6 @@ if mods[moshine_mods] then
     lead_sulfate_II = "lead-sulfate-II"
     boron_oxide_III = "boron-oxide-III"
     boron = "boron"
-    potassium = "potassium"
     data:extend
     ({
         {
@@ -352,17 +351,6 @@ if mods[moshine_mods] then
             name = boron,
             subgroup = is_boron,
             icon = "__TIMSABA__/graphics/icons/moshine/boron.png",
-            order = z,
-            stack_size = 200,
-            weight = 5000
-        },
-        -- POTASSIUM
-        {
-            localised_description = show_formula and {chemical_formula, "K"} or nil,
-            type = item,
-            name = potassium,
-            subgroup = is_potassium,
-            icon = "__TIMSABA__/graphics/icons/moshine/potassium.png",
             order = z,
             stack_size = 200,
             weight = 5000

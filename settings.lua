@@ -125,5 +125,19 @@ data:extend
     horogon_multiplier("setting-zh-horogon-production-multiplier-mk3", 1),
     horogon_multiplier("setting-zh-horogon-production-multiplier-mk4", 1),
     horogon_multiplier("setting-zh-horogon-production-multiplier-mk5", 1),
-    horogon_multiplier("setting-zh-horogon-production-multiplier-mk6", 1)
+    horogon_multiplier("setting-zh-horogon-production-multiplier-mk6", 1),
+    {
+        type = double_setting,
+        name = "setting-zi-horogon-mech-armor-technology-cost",
+        setting_type = startup,
+        default_value = 4096,
+        minimum_value = 1,
+        maximum_value = 1000000
+    },
+    {
+        type = bool_setting,
+        name = "setting-zj-horogon-power-armor-chain-from-mech",
+        setting_type = startup,
+        default_value = true
+    }
 })

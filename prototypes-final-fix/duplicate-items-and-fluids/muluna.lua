@@ -103,33 +103,74 @@ if mods [muluna_mods] then
 	end
 
 	data_tile["muluna-gravel"] = nil
-	data_item[alumina_mods] = nil
-    data_item[aluminium_plate_mods] = nil
-	data_recipe["aluminum-plate-recycling"] = nil
-	data_item[stone_crushed_mods] = nil
-    data_item[cellulose_mods] = nil
-    data_item[sapling_muluna] = nil
+
+	local mod_items =
+	{
+		alumina_mods,
+		aluminium_plate_mods,
+		stone_crushed_mods,
+		cellulose_mods,
+		sapling_muluna
+	}
+	for _, name in ipairs(mod_items) do
+		data_item[name] = nil
+		data_recipe[name .. _recycling] = nil
+
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+	end
+
+	local mod_recipes =
+	{
+		"casting-aluminum",
+		"oxygen-venting",
+		"hydrogen-venting",
+		"carbon-dioxide-venting",
+		"thruster-fuel-from-rocket-fuel",
+		carbon_dioxide_mods,
+		"atmosphere-oxygen-separation"
+	}
+	for _, name in ipairs(mod_recipes) do
+		data_recipe[name] = nil
+	end
+
 	data_plant["muluna-placed-tree"] = nil
+
     data_fluid[molten_aluminium_mods] = nil
 	data_recipe[molten_aluminium_mods] = nil
-	data_recipe["casting-aluminum"] = nil
-	data_recipe["oxygen-venting"] = nil
-	data_recipe["hydrogen-venting"] = nil
-	data_recipe["carbon-dioxide-venting"] = nil
+
 	data_technology["muluna-gas-venting"] = nil
-
-	local muluna_rocket_buggy = "muluna-rocket-buggy"
-	data_technology[muluna_rocket_buggy] = nil
-	data_item_entity[muluna_rocket_buggy] = nil
-    data_recipe[muluna_rocket_buggy] = nil
-    data_car[muluna_rocket_buggy] = nil
-	data_recipe["muluna-rocket-buggy-recycling"] = nil
-
-	data_technology[thruster_fuel].effects = {{type = unlock_recipe, recipe = thruster_fuel}}
-
 	data_technology["thruster-fuel-productivity"] = nil
 
-	data_recipe["thruster-fuel-from-rocket-fuel"] = nil
+	local muluna_objects =
+	{
+		{name = "muluna-rocket-buggy", item_table = data_item_entity, custom_table = data_car,       has_tech = true},
+		{name = "space-chest-muluna",  item_table = data_item,        custom_table = data_container, has_tech = true},
+		{name = "muluna-greenhouse",   item_table = data_item,        custom_table = nil,            has_tech = false}
+	}
+	for _, obj in ipairs(muluna_objects) do
+		local name = obj.name
+
+		obj.item_table[name] = nil
+
+		data_recipe[name] = nil
+		data_recipe[name .. _recycling] = nil
+
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+
+		if obj.custom_table then
+			obj.custom_table[name] = nil
+		end
+
+		if obj.has_tech then
+			data_technology[name] = nil
+		end
+	end
+
+	data_technology[thruster_fuel].effects = {{type = unlock_recipe, recipe = thruster_fuel}}
 
 	local carbonic_asteroid_crushing = "carbonic-asteroid-crushing"
 	data_technology[carbonic_asteroid_crushing].effects =
@@ -137,18 +178,6 @@ if mods [muluna_mods] then
 		{type = unlock_recipe, recipe = carbonic_asteroid_crushing},
 		{type = unlock_recipe, recipe = "electric-engine-unit-from-carbon"}
 	}
-
-	data_recipe["stone-crushed-recycling"] = nil
-	data_recipe["cellulose-recycling"] = nil
-	data_recipe["muluna-sapling-recycling"] = nil
-
-	data_recipe[carbon_dioxide_mods] = nil
-	data_recipe["atmosphere-oxygen-separation"] = nil
-
-	local greenhouse = "muluna-greenhouse"
-	data_item[greenhouse] = nil
-    data_recipe[greenhouse] = nil
-	data_recipe["muluna-greenhouse-recycling"] = nil
 
 	local regolith_digging = "muluna-regolith-digging"
 	local alumina_crushing = "alumina-crushing"
@@ -195,8 +224,8 @@ if mods [muluna_mods] then
 		end
 	end
 
-	data_recipe["copper-cable-recycling"].surface_conditions = nil
-	data_recipe["copper-cable-recycling-muluna"] = nil
+	data_recipe[copper_cable .. _recycling].surface_conditions = nil
+	data_recipe[copper_cable .. _recycling .. "-muluna"] = nil
 
 	local tech_space_platform_thruster = "space-platform-thruster"
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}

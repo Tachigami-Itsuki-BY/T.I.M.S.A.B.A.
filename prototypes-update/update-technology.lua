@@ -421,9 +421,12 @@ table.insert(data_technology["bob-plasma-turrets-4"].prerequisites, tech_battery
 
 -- ANGELS RESOURCE REFINING
 table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = stone})
+table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = crushed_stone_sorting_1})
 
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})
+
+table.insert(data_technology[tech_advanced_ore_refining_2].effects, {type = unlock_recipe, recipe = crushed_stone_sorting_2})
 
 table.insert(data_technology[tech_ore_electro_whinning_cell].effects, {type = unlock_recipe, recipe = chromium_ore_recipe})
 
@@ -442,7 +445,8 @@ data_technology[tech_advanced_ore_refining_3].effects =
     {type = unlock_recipe, recipe = gold_ore_recipe},
     {type = unlock_recipe, recipe = cobalt_ore_recipe},
     --{type = unlock_recipe, recipe = "angels-ore-crystal-mix4-processing"} ???
-    {type = unlock_recipe, recipe = uranium_ore_recipe}
+    {type = unlock_recipe, recipe = uranium_ore_recipe},
+    {type = unlock_recipe, recipe = crushed_stone_sorting_3}
 }
 
 tungsten_ore_recipe = "angels-ore-pure-mix1-processing"

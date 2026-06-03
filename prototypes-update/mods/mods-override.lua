@@ -129,9 +129,10 @@ if mods ["AsteroidBelt"] then
 end
 
 if mods [clowns_nuclear] then
-    local thermonuclear_bomb = "thermonuclear-bomb"
-    data_ammo[thermonuclear_bomb] = nil
-    data_recipe[thermonuclear_bomb] = nil
-    data_recipe["thermonuclear-bomb-recycling"] = nil
-    data_technology[thermonuclear_bomb] = nil
+    data_technology[atomic_rocket].effects =
+    {
+        {type = unlock_recipe, recipe = atomic_rocket},
+        {type = unlock_recipe, recipe = "angels-atomic-bomb"},
+        {type = unlock_recipe, recipe = "angels-atomic-bomb-2"}
+    }
 end

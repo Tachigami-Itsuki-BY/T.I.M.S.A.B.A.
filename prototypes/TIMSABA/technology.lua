@@ -628,6 +628,7 @@ data:extend
             {type = unlock_recipe, recipe = carnallite},
             {type = unlock_recipe, recipe = carnallite_reprocessing},
             {type = unlock_recipe, recipe = potassium_chloride_solution},
+            {type = unlock_recipe, recipe = potassium_chloride_solution_2},
             {type = unlock_recipe, recipe = potassium_hydroxide},
             {type = unlock_recipe, recipe = potassium_hydroxide_solution},
             {type = unlock_recipe, recipe = potassium_hypochlorite_solution},
@@ -681,7 +682,7 @@ data:extend
         prerequisites = {tech_advanced_ore_refining_3, tech_metallurgy_4},
         effects =
         {
-            {type = unlock_recipe, recipe = phosphate_ore_recipe},
+            {type = unlock_recipe, recipe = fluorapatite_recipe},
             {type = unlock_recipe, recipe = white_phosphorus_gas},
             {type = unlock_recipe, recipe = white_phosphorus},
             {type = unlock_recipe, recipe = phosphorus_chloride_III_liquid},

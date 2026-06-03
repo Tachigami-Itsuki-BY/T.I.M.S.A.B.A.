@@ -138,13 +138,17 @@ data_thruster[thruster].order = f
 
 
 if mods [panglia_mods] then
+    data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
+    data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
+    data_asteroid_collector[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
+
     local asteroid_collector_2 = "snouz_better_asteroid_collector"
-    data_item[asteroid_collector_2].subgroup = is_space_platform_mods
-    data_item[asteroid_collector_2].order = a
+    data_item[asteroid_collector_2].subgroup = space_platform
+    data_item[asteroid_collector_2].order = e
     data_item[asteroid_collector_2].stack_size = 8
     data_item[asteroid_collector_2].weight = 125000
-    data_recipe[asteroid_collector_2].subgroup = is_space_platform_mods
-    data_recipe[asteroid_collector_2].order = a
+    data_recipe[asteroid_collector_2].subgroup = space_platform
+    data_recipe[asteroid_collector_2].order = e
     data_recipe[asteroid_collector_2].energy_required = 8
     data_recipe[asteroid_collector_2].ingredients =
     {
@@ -158,39 +162,55 @@ if mods [panglia_mods] then
         {type = item, name = asteroid_collector_2, amount = 1},
         {type = fluid, name = fluoroketone_hot, amount = 30}
     }
-    data_asteroid_collector[asteroid_collector_2].subgroup = is_space_platform_mods
-    data_asteroid_collector[asteroid_collector_2].order = a
+    data_asteroid_collector[asteroid_collector_2].localised_description = data_asteroid_collector[asteroid_collector].localised_description
+    data_asteroid_collector[asteroid_collector_2].subgroup = space_platform
+    data_asteroid_collector[asteroid_collector_2].order = e
+    data_asteroid_collector[asteroid_collector_2].inventory_size = 80
+    data_asteroid_collector[asteroid_collector_2].passive_energy_usage = 500 .. J
+    data_asteroid_collector[asteroid_collector_2].arm_energy_usage = 1000 .. J
+    data_asteroid_collector[asteroid_collector_2].arm_slow_energy_usage = 1500 .. J
 
     local spaceship_wall = "snouz_wall_hull"
     data_item[spaceship_wall].subgroup = is_space_platform_mods
-    data_item[spaceship_wall].order = b
+    data_item[spaceship_wall].order = a
     data_item[spaceship_wall].stack_size = 200
-    data_item[spaceship_wall].weight = 5000
     data_recipe[spaceship_wall].subgroup = is_space_platform_mods
-    data_recipe[spaceship_wall].order = b
+    data_recipe[spaceship_wall].order = a
     data_recipe[spaceship_wall].energy_required = 8
     data_recipe[spaceship_wall].ingredients =
     {
         {type = item, name = space_platform_foundation, amount = 1},
-        {type = item, name = asteroid_collector, amount = 1},
+        {type = item, name = stone_wall, amount = 1},
         {type = item, name = panglite_fiber, amount = 4}
     }
     data_wall[spaceship_wall].subgroup = is_space_platform_mods
-    data_wall[spaceship_wall].order = b
+    data_wall[spaceship_wall].order = a
 
-    bobmods.lib.recipe.update_recycling_recip
+    bobmods.lib.recipe.update_recycling_recipe
     ({
         asteroid_collector_2,
         spaceship_wall
     })
+
+    data_technology[spaceship_wall].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1}
+    }
 end
 
 if mods [muluna_mods] then
     data_item[satellite_radar].subgroup = is_space_platform_mods
-    data_item[satellite_radar].order = c
+    data_item[satellite_radar].order = b
     data_item[satellite_radar].stack_size = 1
     data_recipe[satellite_radar].subgroup = is_space_platform_mods
-    data_recipe[satellite_radar].order = c
+    data_recipe[satellite_radar].order = b
     data_recipe[satellite_radar].energy_required = 8
     data_recipe[satellite_radar].ingredients =
     {
@@ -203,7 +223,7 @@ if mods [muluna_mods] then
     }
     data_accumulator[satellite_radar].localised_name = {"entity-name.satellite-radar"}
     data_accumulator[satellite_radar].subgroup = is_space_platform_mods
-    data_accumulator[satellite_radar].order = c
+    data_accumulator[satellite_radar].order = b
 
     bobmods.lib.recipe.update_recycling_recipe({satellite_radar})
 end
@@ -211,11 +231,11 @@ end
 if mods [hyarion_mods] then
     local space_manufactorer = "planetaris-space-manufacturer"
     data_item[space_manufactorer].subgroup = is_space_platform_mods
-    data_item[space_manufactorer].order = d
+    data_item[space_manufactorer].order = c
     data_item[space_manufactorer].stack_size = 32
     data_item[space_manufactorer].weight = 31250
     data_recipe[space_manufactorer].subgroup = is_space_platform_mods
-    data_recipe[space_manufactorer].order = d
+    data_recipe[space_manufactorer].order = c
     data_recipe[space_manufactorer].energy_required = 16
     data_recipe[space_manufactorer].ingredients =
     {
@@ -225,15 +245,15 @@ if mods [hyarion_mods] then
         {type = item, name = beryllium_plate, amount = 64}
     }
     data_assembling[space_manufactorer].subgroup = is_space_platform_mods
-    data_assembling[space_manufactorer].order = d
+    data_assembling[space_manufactorer].order = c
 
     local beryllium_coating = "planetaris-beryllium-coating"
     data_item[beryllium_coating].subgroup = is_space_platform_mods
-    data_item[beryllium_coating].order = e
+    data_item[beryllium_coating].order = d
     data_item[beryllium_coating].stack_size = 200
     data_item[beryllium_coating].weight = 5000
     data_recipe[beryllium_coating].subgroup = is_space_platform_mods
-    data_recipe[beryllium_coating].order = e
+    data_recipe[beryllium_coating].order = d
     data_recipe[beryllium_coating].energy_required = 4
     data_recipe[beryllium_coating].ingredients =
     {
@@ -242,15 +262,15 @@ if mods [hyarion_mods] then
         {type = item, name = refractory_ceramics, amount = 2}
     }
     data_wall[beryllium_coating].subgroup = is_space_platform_mods
-    data_wall[beryllium_coating].order = e
+    data_wall[beryllium_coating].order = d
 
     local zero_grav_accumulator = "planetaris-zero-grav-accumulator"
     data_item[zero_grav_accumulator].subgroup = is_space_platform_mods
-    data_item[zero_grav_accumulator].order = f
+    data_item[zero_grav_accumulator].order = e
     data_item[zero_grav_accumulator].stack_size = 32
     data_item[zero_grav_accumulator].weight = 31250
     data_recipe[zero_grav_accumulator].subgroup = is_space_platform_mods
-    data_recipe[zero_grav_accumulator].order = f
+    data_recipe[zero_grav_accumulator].order = e
     data_recipe[zero_grav_accumulator].ingredients =
     {
         {type = item, name = battery_lead_acid, amount = 32},
@@ -259,15 +279,15 @@ if mods [hyarion_mods] then
         {type = item, name = refractory_ceramics, amount = 16}
     }
     data_accumulator[zero_grav_accumulator].subgroup = is_space_platform_mods
-    data_accumulator[zero_grav_accumulator].order = f
+    data_accumulator[zero_grav_accumulator].order = e
 
     local electromagnetic_radar = "planetaris-electromagnetic-radar"
     data_item[electromagnetic_radar].subgroup = is_space_platform_mods
-    data_item[electromagnetic_radar].order = g
+    data_item[electromagnetic_radar].order = f
     data_item[electromagnetic_radar].stack_size = 32
     data_item[electromagnetic_radar].weight = 31250
     data_recipe[electromagnetic_radar].subgroup = is_space_platform_mods
-    data_recipe[electromagnetic_radar].order = g
+    data_recipe[electromagnetic_radar].order = f
     data_recipe[electromagnetic_radar].energy_required = 8
     data_recipe[electromagnetic_radar].ingredients =
     {
@@ -277,7 +297,7 @@ if mods [hyarion_mods] then
         {type = item, name = refractory_ceramics, amount = 8}
     }
     data_radar[electromagnetic_radar].subgroup = is_space_platform_mods
-    data_radar[electromagnetic_radar].order = g
+    data_radar[electromagnetic_radar].order = f
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

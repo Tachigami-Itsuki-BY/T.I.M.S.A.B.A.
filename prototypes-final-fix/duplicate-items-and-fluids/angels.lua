@@ -82,140 +82,151 @@ for _, tree in pairs(data.raw.tree or {}) do
 	end
 end
 
-data_item[tree_seed_angels] = nil
+local miscellaneous_items =
+{
+    {name = tree_seed_angels,       has_base_recipe = false},
+    {name = "angels-plutonium-239", has_base_recipe = true},
+    {name = "angels-thorium-232",   has_base_recipe = true}
+}
+for _, item in ipairs(miscellaneous_items) do
+    local name = item.name
 
-data_item["angels-plutonium-239"] = nil
-data_item["angels-thorium-232"] = nil
+	data_item[name] = nil
+	data_recipe[name .. _recycling] = nil
+
+	if item.has_base_recipe then
+		data_recipe[name] = nil
+	end
+
+	if mods[panglia_mods] then 
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
+	end
+end
 
 -- ANGELS RESOURCE REFINING
 data_recipe["angels-stone-from-crushed-stone"] = nil
-data_item["angels-thorium-ore"] = nil
-data_recipe["angels-thorium-ore-recycling"] = nil
-local iron_pebbles = "angels-iron-pebbles"
-data_item[iron_pebbles] = nil
-data_recipe[iron_pebbles] = nil
-data_recipe["angels-iron-pebbles-recycling"] = nil
-data_recipe["angels-iron-pebbles-smelting"] = nil
-local iron_nugget = "angels-iron-nugget"
-data_item[iron_nugget] = nil
-data_recipe[iron_nugget] = nil
-data_recipe["angels-iron-nugget-recycling"] = nil
-data_recipe["angels-iron-nugget-smelting"] = nil
-local iron_slag = "angels-iron-slag"
-data_item[iron_slag] = nil
-data_recipe[iron_slag] = nil
-data_recipe["angels-iron-slag-recycling"] = nil
-data_recipe["angels-iron-slag-smelting"] = nil
-local copper_pebbles = "angels-copper-pebbles"
-data_item[copper_pebbles] = nil
-data_recipe[copper_pebbles] = nil
-data_recipe["angels-copper-pebbles-recycling"] = nil
-data_recipe["angels-copper-pebbles-smelting"] = nil
-local copper_nugget = "angels-copper-nugget"
-data_item[copper_nugget] = nil
-data_recipe[copper_nugget] = nil
-data_recipe["angels-copper-nugget-recycling"] = nil
-data_recipe["angels-copper-nugget-smelting"] = nil
-local copper_slag = "angels-copper-slag"
-data_item[copper_slag] = nil
-data_recipe[copper_slag] = nil
-data_recipe["angels-copper-slag-recycling"] = nil
-data_recipe["angels-copper-slag-smelting"] = nil
+
+local angels_resources =
+{
+    {name = "angels-thorium-ore",    has_base_recipe = false, has_smelting = false},
+    {name = "angels-iron-pebbles",   has_base_recipe = true,  has_smelting = true},
+    {name = "angels-iron-nugget",    has_base_recipe = true,  has_smelting = true},
+    {name = "angels-iron-slag",      has_base_recipe = true,  has_smelting = true},
+    {name = "angels-copper-pebbles", has_base_recipe = true,  has_smelting = true},
+    {name = "angels-copper-nugget",  has_base_recipe = true,  has_smelting = true},
+    {name = "angels-copper-slag",    has_base_recipe = true,  has_smelting = true}
+}
+for _, item in ipairs(angels_resources) do
+    local name = item.name
+
+    data_item[name] = nil
+    data_recipe[name .. _recycling] = nil
+
+    if item.has_base_recipe then
+        data_recipe[name] = nil
+    end
+
+    if item.has_smelting then
+        data_recipe[name .. _smelting] = nil
+    end
+
+    if mods[panglia_mods] then
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+    end
+end
 
 -- ANGELS METALLURGY SMELTING
-data_item["angels-lead-ore"] = nil
-data_recipe["angels-lead-ore-recycling"] = nil
-data_item["angels-tin-ore"] = nil
-data_recipe["angels-tin-ore-recycling"] = nil
-data_item["angels-quartz"] = nil
-data_recipe["angels-quartz-recycling"] = nil
-data_item["angels-nickel-ore"] = nil
-data_recipe["angels-nickel-ore-recycling"] = nil
-data_item["angels-bauxite-ore"] = nil
-data_recipe["angels-bauxite-ore-recycling"] = nil
-data_item["angels-zinc-ore"] = nil
-data_recipe["angels-zinc-ore-recycling"] = nil
-data_item["angels-silver-ore"] = nil
-data_recipe["angels-silver-ore-recycling"] = nil
-data_item["angels-rutile-ore"] = nil
-data_recipe["angels-rutile-ore-recycling"] = nil
-data_item["angels-gold-ore"] = nil
-data_recipe["angels-gold-ore-recycling"] = nil
-data_item["angels-cobalt-ore"] = nil
-data_recipe["angels-cobalt-ore-recycling"] = nil
-data_item["angels-tungsten-ore"] = nil
-data_recipe["angels-tungsten-ore-recycling"] = nil
-data_recipe["angels-powder-tungsten-recycling"] = nil
-local solder_mixture = "angels-solder-mixture"
-data_item[solder_mixture] = nil
-data_recipe[solder_mixture] = nil
-data_recipe["angels-solder-mixture-recycling"] = nil
-data_recipe["angels-solder-mixture-smelting"] = nil
+local angels_ores =
+{
+    {name = "angels-lead-ore",        is_ore = true},
+    {name = "angels-tin-ore",         is_ore = true},
+    {name = "angels-quartz",          is_ore = true},
+    {name = "angels-nickel-ore",      is_ore = true},
+    {name = "angels-bauxite-ore",     is_ore = true},
+    {name = "angels-zinc-ore",        is_ore = true},
+    {name = "angels-silver-ore",      is_ore = true},
+    {name = "angels-rutile-ore",      is_ore = true},
+    {name = "angels-gold-ore",        is_ore = true},
+    {name = "angels-cobalt-ore",      is_ore = true},
+    {name = "angels-tungsten-ore",    is_ore = true},
+
+    {name = "angels-powder-tungsten", is_ore = false, has_item = false},
+
+    {name = "angels-solder-mixture",  is_ore = false, has_item = true, has_base_recipe = true, has_smelting = true}
+}
+for _, item in ipairs(angels_ores) do
+    local name = item.name
+
+    data_recipe[name .. _recycling] = nil
+
+    if mods[panglia_mods] then 
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+    end
+
+    if item.is_ore then
+        data_item[name] = nil
+    else
+        if item.has_item then        data_item[name] = nil end
+        if item.has_base_recipe then data_recipe[name] = nil end
+        if item.has_smelting then    data_recipe[name .. _smelting] = nil end
+    end
+end
 
 -- ANGELS METALLURGY CASTING
-data_recipe["angels-rod-iron-2"] = nil
-local rod_stack_iron = "angels-rod-stack-iron"
-data_item[rod_stack_iron] = nil
-data_recipe[rod_stack_iron] = nil
-data_recipe["angels-rod-stack-iron-recycling"] = nil
-data_recipe["angels-rod-stack-iron-2"] = nil
-local rod_stack_steel = "angels-rod-stack-steel"
-data_item[rod_stack_steel] = nil
-data_recipe[rod_stack_steel] = nil
-data_recipe["angels-rod-stack-steel-recycling"] = nil
-data_recipe["angels-rod-stack-steel-2"] = nil
-data_item["angels-plate-steel"] = nil
-data_recipe["angels-plate-steel-recycling"] = nil
-data_recipe["angels-rod-steel-2"] = nil
-data_item["angels-plate-lead"] = nil
-data_recipe["angels-plate-lead-recycling"] = nil
-data_item["angels-plate-tin"] = nil
-data_recipe["angels-plate-tin-recycling"] = nil
-data_item["angels-silicon-wafer"] = nil
-data_recipe["angels-silicon-wafer-recycling"] = nil
-data_item["angels-plate-nickel"] = nil
-data_recipe["angels-plate-nickel-recycling"] = nil
-data_item["angels-plate-aluminium"] = nil
-data_recipe["angels-plate-aluminium-recycling"] = nil
-data_item["angels-plate-zinc"] = nil
-data_recipe["angels-plate-zinc-recycling"] = nil
-data_item["angels-plate-silver"] = nil
-data_recipe["angels-plate-silver-recycling"] = nil
-data_item["angels-plate-titanium"] = nil
-data_recipe["angels-plate-titanium-recycling"] = nil
-data_item["angels-plate-gold"] = nil
-data_recipe["angels-plate-gold-recycling"] = nil
-data_item["angels-plate-tungsten"] = nil
-data_recipe["angels-plate-tungsten-recycling"] = nil
-data_item["angels-plate-glass"] = nil
-data_recipe["angels-plate-glass-recycling"] = nil
-data_item["angels-solder"] = nil
-data_recipe["angels-solder-recycling"] = nil
+local angels_plates_and_molds =
+{
+    {name = "angels-rod-stack-iron",            has_base = true, extra_recipe = "angels-rod-stack-iron-2"},
+    {name = "angels-rod-stack-steel",           has_base = true, extra_recipe = "angels-rod-stack-steel-2"},
 
-data_item["angels-motor-casing-0"] = nil
-data_recipe["angels-motor-casing-0-recycling"] = nil
+    {name = "angels-plate-steel",               has_base = false},
+    {name = "angels-plate-lead",                has_base = false},
+    {name = "angels-plate-tin",                 has_base = false},
+    {name = "angels-silicon-wafer",             has_base = false},
+    {name = "angels-plate-nickel",              has_base = false},
+    {name = "angels-plate-aluminium",           has_base = false},
+    {name = "angels-plate-zinc",                has_base = false},
+    {name = "angels-plate-silver",              has_base = false},
+    {name = "angels-plate-titanium",            has_base = false},
+    {name = "angels-plate-gold",                has_base = false},
+    {name = "angels-plate-tungsten",            has_base = false},
+    {name = "angels-plate-glass",               has_base = false},
+    {name = "angels-solder",                    has_base = false},
+    {name = "angels-motor-casing-0",            has_base = false},
+
+    {name = "angels-mold-expendable",           has_base = true},
+    {name = "angels-mold-non-expendable",       has_base = true, extra_recipe = "angels-mold-non-expendable-wash"},
+    {name = "angels-spent-mold-non-expendable", has_base = false},
+    {name = "angels-casting-powder-tungsten",   has_base = true, extra_recipe = "angels-casting-powder-tungsten-2"},
+}
+for _, item in ipairs(angels_plates_and_molds) do
+    local name = item.name
+
+    data_item[name] = nil
+    data_recipe[name .. _recycling] = nil
+
+    if item.has_base then
+        data_recipe[name] = nil
+    end
+
+    if item.extra_recipe then
+        data_recipe[item.extra_recipe] = nil
+    end
+
+    if mods[panglia_mods] then
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+    end
+end
+
+data_recipe["angels-rod-iron-2"] = nil
+
+data_recipe["angels-rod-steel-2"] = nil
+
 data_recipe["angels-casing-resin-mold"] = nil
-data_recipe["angels-mold-expendable"] = nil
-data_item["angels-mold-expendable"] = nil
-data_recipe["angels-mold-expendable-recycling"] = nil
-local mold_non_expendable = "angels-mold-non-expendable"
-data_item[mold_non_expendable] = nil
-data_recipe[mold_non_expendable] = nil
-data_recipe["angels-mold-non-expendable-recycling"] = nil
-data_item["angels-spent-mold-non-expendable"] = nil
-data_recipe["angels-spent-mold-non-expendable-recycling"] = nil
-data_recipe["angels-mold-non-expendable-wash"] = nil
 
 data_recipe["angels-plate-glass-2"] = nil
 data_recipe["angels-plate-glass-3"] = nil
 
 data_recipe["angels-liquid-molten-solder-4"] = nil
-
-local tungsten_casting_powder = "angels-casting-powder-tungsten"
-data_item[tungsten_casting_powder] = nil
-data_recipe[tungsten_casting_powder] = nil
-data_recipe["angels-casting-powder-tungsten-recycling"] = nil
-data_recipe["angels-casting-powder-tungsten-2"] = nil
 
 if settings.startup[setting_early_sintering_oven].value == false then
 	data_item[sintering_oven_1] = nil
@@ -241,36 +252,60 @@ if settings.startup[setting_early_sintering_oven].value == false then
         {type = unlock_recipe, recipe = powderizer_2}
     }
 
-	data_recipe["angels-sintering-oven-recycling"] = nil
-	data_recipe["angels-sintering-oven-2-recycling"] = nil
-	data_recipe["angels-sintering-oven-3-recycling"] = nil
+	data_recipe[sintering_oven_1 .. _recycling] = nil
+	data_recipe[sintering_oven_2 .. _recycling] = nil
+	data_recipe[sintering_oven_3 .. _recycling] = nil
 end
 
 -- ANGELS WATER TREATMENT
 data_recipe["angels-solid-salt-dissolving"] = nil
 
 -- ANGELS PETROCHEM REFINING
-data_item["angels-solid-resin"] = nil
-data_recipe["angels-solid-resin-recycling"] = nil
-data_item["angels-solid-rubber"] = nil
-data_recipe["angels-solid-rubber-recycling"] = nil
+local angels_solids =
+{
+    "angels-solid-resin",
+    "angels-solid-rubber"
+}
+for _, name in ipairs(angels_solids) do
+    data_item[name] = nil
+    data_recipe[name .. _recycling] = nil
+
+    if mods[panglia_mods] then
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+    end
+end
+
 
 -- ANGELS BIOPROCESSING
-data_recipe["angels-tree-seed-recycling"] = nil
-data_recipe["angels-liquid-polluted-fish-atmosphere-raw-meat"] = nil
-data_recipe["angels-alien-fish-0-raw"] = nil
-data_recipe["angels-angels-liquid-polluted-fish-atmosphere-raw-meat"] = nil
-data_recipe["angels-crystal-splinter-cutting"] = nil
-data_recipe["angels-crystal-shard-cutting"] = nil
-data_recipe["angels-crystal-full-cutting"] = nil
+local angels_standalone_recipes =
+{
+    "angels-tree-seed-recycling",
+    "angels-liquid-polluted-fish-atmosphere-raw-meat",
+    "angels-alien-fish-0-raw",
+    "angels-angels-liquid-polluted-fish-atmosphere-raw-meat",
+    "angels-crystal-splinter-cutting",
+    "angels-crystal-shard-cutting",
+    "angels-crystal-full-cutting"
+}
+for _, recipe_name in ipairs(angels_standalone_recipes) do
+    data_recipe[recipe_name] = nil
+end
 
 -- VOIDS
-data_item["angels-chemical-void"] = nil
-data_item["angels-water-void"] = nil
+local angels_voids =
+{
+    "angels-chemical-void",
+    "angels-water-void"
+}
+for _, name in ipairs(angels_voids) do
+    data_item[name] = nil
+    data_recipe[name .. _recycling] = nil
 
-if mods [panglia_mods] then
-    data_recipe["item-angels-thorium-ore-panglia_crushing"] = nil
+    if mods[panglia_mods] then
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
+    end
 end
+
 
 -- REPLACEMENT RECIPE (FLUID --> ITEM)
 local polyethylene_angels = "angels-liquid-polyethylene"

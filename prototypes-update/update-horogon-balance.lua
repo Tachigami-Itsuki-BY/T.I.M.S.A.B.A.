@@ -53,6 +53,16 @@ local function set_technology_count_from_fraction(tech_name, source_tech_name, f
     end
 end
 
+local function set_technology_count_from_value(tech_name, count)
+    set_technology_count(tech_name, math.ceil(count))
+end
+
+local function set_technology_count_for_names(names, count)
+    for _, tech_name in pairs(names) do
+        set_technology_count_from_value(tech_name, count)
+    end
+end
+
 local function add_recipe_ingredient(recipe_name, ingredient_type, ingredient_name, amount)
     local recipe_data = data_recipe[recipe_name]
     if not recipe_data then return end
@@ -92,8 +102,12 @@ local function tier_multiplier(setting_prefix, level)
 end
 
 local function apply_tier_multipliers(technologies, setting_prefix)
+    local applied = {}
     for _, tech in pairs(technologies) do
-        multiply_technology_count(tech.name, tier_multiplier(setting_prefix, tech.level))
+        if tech.name and not applied[tech.name] then
+            multiply_technology_count(tech.name, tier_multiplier(setting_prefix, tech.level))
+            applied[tech.name] = true
+        end
     end
 end
 
@@ -124,7 +138,40 @@ local logistics_technologies =
     {name = "bob-fluid-wagon-2", level = 2},
     {name = "bob-fluid-wagon-3", level = 3},
     {name = "bob-armoured-railway-1", level = 2},
-    {name = "bob-armoured-railway-2", level = 3}
+    {name = "bob-armoured-railway-2", level = 3},
+    {name = "fluid-handling", level = 1},
+    {name = "fluid-handling-1", level = 1},
+    {name = "fluid-handling-2", level = 2},
+    {name = "fluid-handling-3", level = 3},
+    {name = "fluid-handling-4", level = 4},
+    {name = "bob-fluid-handling", level = 1},
+    {name = "bob-fluid-handling-1", level = 1},
+    {name = "bob-fluid-handling-2", level = 2},
+    {name = "bob-fluid-handling-3", level = 3},
+    {name = "bob-fluid-handling-4", level = 4},
+    {name = "angels-fluid-control", level = 1},
+    {name = "angels-fluid-control-1", level = 1},
+    {name = "angels-fluid-control-2", level = 2},
+    {name = "angels-fluid-control-3", level = 3},
+    {name = "angels-fluid-control-4", level = 4},
+    {name = "roboport", level = 1},
+    {name = "bob-roboport-2", level = 2},
+    {name = "bob-roboport-3", level = 3},
+    {name = "bob-roboport-4", level = 4},
+    {name = "bob-robo-modular-1", level = 1},
+    {name = "bob-robo-modular-2", level = 2},
+    {name = "bob-robo-modular-3", level = 3},
+    {name = "bob-robo-modular-4", level = 4},
+    {name = "bob-robochests", level = 1},
+    {name = "bob-robochests-1", level = 1},
+    {name = "bob-robochests-2", level = 2},
+    {name = "bob-robochests-3", level = 3},
+    {name = "bob-robochests-4", level = 4},
+    {name = "bob-roboports", level = 1},
+    {name = "bob-roboports-1", level = 1},
+    {name = "bob-roboports-2", level = 2},
+    {name = "bob-roboports-3", level = 3},
+    {name = "bob-roboports-4", level = 4}
 }
 
 local military_technologies =
@@ -144,9 +191,10 @@ local military_technologies =
     {name = tank_1, level = 2},
     {name = tank_2, level = 3},
     {name = tank_3, level = 4},
-    {name = power_armor_3, level = 3},
-    {name = power_armor_4, level = 4},
-    {name = power_armor_5, level = 5},
+    {name = "bob-tank-2", level = 3},
+    {name = "bob-tank-3", level = 4},
+    {name = "bob-tanks-2", level = 3},
+    {name = "bob-tanks-3", level = 4},
     {name = "energy-shield-equipment", level = 1},
     {name = "energy-shield-mk2-equipment", level = 2},
     {name = "battery-equipment", level = 1},
@@ -176,7 +224,12 @@ local military_technologies =
     {name = "defender", level = 2},
     {name = "distractor", level = 3},
     {name = "destroyer", level = 4},
+    -- Laser drone is a T4 combat drone, but combat drones use +1 tier for scaling.
     {name = "bob-robot-laser-drones", level = 5},
+    {name = "bob-robot-laser-drone", level = 5},
+    {name = "bob-laser-robot", level = 5},
+    {name = "bob-laser-robot-drones", level = 5},
+    {name = "bob-laser-robot-drone", level = 5},
     {name = "gun-turret", level = 1},
     {name = "turrets", level = 1},
     {name = "bob-turrets-2", level = 2},
@@ -318,18 +371,301 @@ local production_technologies =
     {name = "advanced-material-processing-3", level = 3},
     {name = tech_advanced_material_processing_4, level = 4},
     {name = tech_advanced_material_processing_5, level = 5},
+    {name = "bob-steel-mixing-furnace", level = 1},
+    {name = "bob-fluid-furnace", level = 1},
+    {name = "bob-electric-mixing-furnace", level = 2},
+    {name = "angels-multi-purpose-furnace-1", level = 2},
     {name = tech_multi_purpose_furnace_2, level = 2},
+    {name = "angels-multi-purpose-furnace-2", level = 3},
     {name = tech_multi_purpose_furnace_3, level = 3},
+    {name = "multi-purpose-furnace-3", level = 3},
     {name = tech_drills_2, level = 2},
     {name = tech_drills_3, level = 3},
     {name = tech_drills_4, level = 4},
     {name = tech_drills_5, level = 5},
     {name = tech_drills_6, level = 6},
+    {name = "bob-area-mining-drill-1", level = 2},
+    {name = "bob-area-mining-drill-2", level = 3},
+    {name = "bob-area-mining-drill-3", level = 4},
+    {name = "bob-area-mining-drill-4", level = 5},
+    {name = "bob-area-mining-drills-1", level = 2},
+    {name = "bob-area-mining-drills-2", level = 3},
+    {name = "bob-area-mining-drills-3", level = 4},
+    {name = "bob-area-mining-drills-4", level = 5},
+    {name = "bob-area-drills-1", level = 2},
+    {name = "bob-area-drills-2", level = 3},
+    {name = "bob-area-drills-3", level = 4},
+    {name = "bob-area-drills-4", level = 5},
+    {name = "area-mining-drill-1", level = 2},
+    {name = "area-mining-drill-2", level = 3},
+    {name = "area-mining-drill-3", level = 4},
+    {name = "area-mining-drill-4", level = 5},
     {name = tech_pumpjacks_2, level = 2},
     {name = tech_pumpjacks_3, level = 3},
     {name = tech_pumpjacks_4, level = 4},
     {name = tech_pumpjacks_5, level = 5},
     {name = tech_pumpjacks_6, level = 6},
+    {name = centrifuge_3, level = 3},
+    {name = centrifuge_4, level = 4},
+
+    -- Angel's ore processing / refining / metallurgy chains.
+    -- These technologies are production infrastructure, so they use production multipliers.
+    {name = tech_ore_processing_1, level = 1},
+    {name = tech_ore_processing_2, level = 2},
+    {name = tech_ore_processing_3, level = 3},
+    {name = tech_ore_processing_4, level = 4},
+    {name = tech_ore_processing_5, level = 5},
+
+    {name = tech_metallurgy_1, level = 1},
+    {name = tech_metallurgy_2, level = 2},
+    {name = tech_metallurgy_3, level = 3},
+    {name = tech_metallurgy_4, level = 4},
+    {name = tech_metallurgy_5, level = 5},
+
+    {name = tech_powder_metallurgy_1, level = 1},
+    {name = tech_powder_metallurgy_2, level = 2},
+    {name = tech_powder_metallurgy_3, level = 3},
+    {name = tech_powder_metallurgy_4, level = 4},
+    {name = tech_powder_metallurgy_5, level = 5},
+    {name = tech_powder_metallurgy_6, level = 6},
+    {name = tech_powder_metallurgy_7, level = 6},
+
+    {name = tech_ore_crushing, level = 1},
+    {name = tech_ore_floatation, level = 2},
+    {name = tech_ore_leaching, level = 3},
+    {name = tech_ore_refining, level = 4},
+    {name = tech_ore_powderizer, level = 2},
+    {name = tech_ore_advanced_crushing, level = 3},
+    {name = tech_ore_advanced_floatation, level = 3},
+    {name = tech_ore_electro_whinning_cell, level = 4},
+
+    {name = tech_advanced_ore_refining_1, level = 1},
+    {name = tech_advanced_ore_refining_2, level = 2},
+    {name = tech_advanced_ore_refining_3, level = 3},
+    {name = tech_advanced_ore_refining_4, level = 4},
+    {name = tech_advanced_ore_refining_5, level = 5},
+    {name = tech_advanced_ore_refining_6, level = 6},
+
+    -- Extra Angel's compatibility aliases. Some Angel's technologies use the
+    -- base prototype name for tier 1, while higher tiers use numbered names.
+    -- Duplicates are safe because apply_tier_multipliers() de-duplicates by name.
+    {name = "angels-ore-processing", level = 1},
+    {name = "angels-ore-processing-2", level = 2},
+    {name = "angels-ore-processing-3", level = 3},
+    {name = "angels-ore-processing-4", level = 4},
+    {name = "angels-ore-processing-5", level = 5},
+
+    {name = "angels-metallurgy", level = 1},
+    {name = "angels-metallurgy-2", level = 2},
+    {name = "angels-metallurgy-3", level = 3},
+    {name = "angels-metallurgy-4", level = 4},
+    {name = "angels-metallurgy-5", level = 5},
+
+    {name = "angels-powder-metallurgy", level = 1},
+    {name = "angels-powder-metallurgy-2", level = 2},
+    {name = "angels-powder-metallurgy-3", level = 3},
+    {name = "angels-powder-metallurgy-4", level = 4},
+    {name = "angels-powder-metallurgy-5", level = 5},
+    {name = "powder-metallurgy-6", level = 6},
+    {name = "powder-metallurgy-7", level = 6},
+
+    {name = "angels-strand-casting", level = 1},
+    {name = "angels-strand-casting-2", level = 2},
+    {name = "angels-strand-casting-3", level = 3},
+    {name = "angels-strand-casting-4", level = 4},
+
+    {name = "angels-advanced-ore-refining", level = 1},
+    {name = "angels-advanced-ore-refining-1", level = 1},
+    {name = "angels-advanced-ore-refining-2", level = 2},
+    {name = "angels-advanced-ore-refining-3", level = 3},
+    {name = "angels-advanced-ore-refining-4", level = 4},
+    {name = "advanced-ore-refining-5", level = 5},
+    {name = "advanced-ore-refining-6", level = 6},
+
+    {name = "angels-ore-electro-whinning-cell", level = 4},
+    {name = "angels-ore-refining", level = 4},
+    {name = "angels-ore-powderizer", level = 2},
+    {name = "angels-ore-advanced-crushing", level = 3},
+    {name = "angels-ore-advanced-floatation", level = 3},
+
+    {name = "angels-thermal-water-extraction", level = 1},
+    {name = "angels-thermal-water-extraction-2", level = 2},
+    {name = "angels-thermal-water-processing", level = 2},
+
+    {name = "angels-slag-processing", level = 1},
+    {name = "angels-slag-processing-1", level = 1},
+    {name = "angels-slag-processing-2", level = 2},
+    {name = "angels-slag-processing-3", level = 3},
+    {name = "angles-slag-processing-1", level = 1},
+    {name = "angles-slag-processing-2", level = 2},
+    {name = "angles-slag-processing-3", level = 3},
+
+    -- Angel's water treatment, petrochemistry and extra compatibility aliases.
+    {name = tech_water_washing_1, level = 1},
+    {name = tech_water_treatment_3, level = 3},
+    {name = tech_water_treatment_4, level = 4},
+    {name = tech_water_treatment_5, level = 5},
+    {name = tech_water_treatment_6, level = 6},
+    {name = electric_boiler_1, level = 1},
+    {name = electric_boiler_2, level = 2},
+    {name = electric_boiler_3, level = 3},
+    {name = electric_boiler_4, level = 4},
+    {name = tech_basic_chemistry_2, level = 2},
+    {name = tech_advanced_chemistry_2, level = 2},
+    {name = tech_advanced_chemistry_3, level = 3},
+    {name = tech_advanced_chemistry_4, level = 4},
+    {name = tech_advanced_chemistry_5, level = 5},
+    {name = tech_advanced_chemistry_6, level = 6},
+    {name = tech_nitrogen_processing_1, level = 1},
+    {name = tech_nitrogen_processing_2, level = 2},
+    {name = tech_nitrogen_processing_3, level = 3},
+    {name = tech_nitrogen_processing_4, level = 4},
+
+    {name = "powder-metallurgy", level = 1},
+    {name = "powder-metallurgy-1", level = 1},
+    {name = "powder-metallurgy-2", level = 2},
+    {name = "powder-metallurgy-3", level = 3},
+    {name = "powder-metallurgy-4", level = 4},
+    {name = "powder-metallurgy-5", level = 5},
+
+    {name = "angels-water-treatment", level = 1},
+    {name = "angels-water-treatment-1", level = 1},
+    {name = "angels-water-treatment-2", level = 2},
+    {name = "angels-water-treatment-3", level = 3},
+    {name = "angels-water-treatment-4", level = 4},
+    {name = "water-treatment-5", level = 5},
+    {name = "water-treatment-6", level = 6},
+    {name = "angels-water-washing", level = 1},
+    {name = "angels-water-washing-1", level = 1},
+    {name = "angels-water-washing-2", level = 2},
+    {name = "water-washing-1", level = 1},
+    {name = "water-washing-2", level = 2},
+    {name = "angels-washing", level = 1},
+    {name = "angels-washing-1", level = 1},
+    {name = "angels-washing-2", level = 2},
+
+    {name = "angels-electric-boiler", level = 1},
+    {name = "angels-electric-boiler-1", level = 1},
+    {name = "angels-electric-boiler-2", level = 2},
+    {name = "angels-electric-boiler-3", level = 3},
+    {name = "electric-boiler-4", level = 4},
+    {name = "angels-cooling", level = 1},
+    {name = "angels-cooling-1", level = 1},
+    {name = "angels-coolant-1", level = 1},
+
+    {name = "angels-basic-chemistry", level = 1},
+    {name = "angels-basic-chemistry-1", level = 1},
+    {name = "angels-basic-chemistry-2", level = 2},
+    {name = "angels-advanced-chemistry", level = 1},
+    {name = "angels-advanced-chemistry-1", level = 1},
+    {name = "angels-advanced-chemistry-2", level = 2},
+    {name = "angels-advanced-chemistry-3", level = 3},
+    {name = "angels-advanced-chemistry-4", level = 4},
+    {name = "angels-advanced-chemistry-5", level = 5},
+    {name = "advanced-chemistry-6", level = 6},
+    {name = "angels-nitrogen-processing", level = 1},
+    {name = "angels-nitrogen-processing-1", level = 1},
+    {name = "angels-nitrogen-processing-2", level = 2},
+    {name = "angels-nitrogen-processing-3", level = 3},
+    {name = "angels-nitrogen-processing-4", level = 4},
+
+    -- Angel's petrochemical processing chains shown in the technology pack.
+    {name = "oil-gathering", level = 1},
+    {name = "angels-gas-processing", level = 1},
+    {name = "angels-gas-processing-1", level = 1},
+    {name = "angels-advanced-gas-processing", level = 2},
+    {name = "angels-advanced-gas-processing-1", level = 2},
+    {name = "angels-oil-processing", level = 1},
+    {name = "angels-oil-processing-1", level = 1},
+    {name = "angels-advanced-oil-processing", level = 2},
+    {name = "angels-advanced-oil-processing-1", level = 2},
+    {name = "angels-steam-cracking", level = 1},
+    {name = "angels-steam-cracking-1", level = 1},
+    {name = "angels-gas-synthesis", level = 2},
+    {name = "angels-gas-synthesis-1", level = 2},
+    {name = "angels-coal-processing", level = 1},
+    {name = "angels-coal-processing-1", level = 1},
+    {name = "angels-coal-processing-2", level = 2},
+    {name = "angels-coal-processing-3", level = 3},
+    {name = "coal-processing-4", level = 4},
+    {name = "angels-coal-cracking", level = 2},
+    {name = "angels-coal-cracking-1", level = 2},
+    {name = "angels-sodium-processing", level = 1},
+    {name = "angels-sodium-processing-1", level = 1},
+    {name = "angels-sodium-processing-2", level = 2},
+    {name = "angels-sulfur-processing", level = 1},
+    {name = "angels-sulfur-processing-1", level = 1},
+    {name = "angels-chlorine-processing", level = 1},
+    {name = "angels-chlorine-processing-1", level = 1},
+    {name = "angels-chlorine-processing-2", level = 2},
+    {name = "angels-chlorine-processing-3", level = 3},
+    {name = "angels-chlorine-processing-4", level = 4},
+    {name = "angels-plastic", level = 2},
+    {name = "angels-plastic-1", level = 2},
+    {name = "angels-resin", level = 2},
+    {name = "angels-resins", level = 2},
+    {name = "angels-resin-1", level = 2},
+    {name = "angels-rubber", level = 2},
+    {name = "angels-rubbers", level = 2},
+    {name = "angels-rubber-1", level = 2},
+    {name = "angels-explosives", level = 3},
+    {name = "angels-explosives-1", level = 3},
+    -- Angel's bioprocessing chains shown in the technology pack.
+    {name = "angels-bio-processing-brown", level = 1},
+    {name = "angels-bio-processing-green", level = 2},
+    {name = "angels-bio-processing-red", level = 2},
+    {name = "angels-bio-processing-blue", level = 2},
+    {name = "angels-bio-processing-alien", level = 3},
+    {name = "angels-bio-processing-crystal-splinter", level = 3},
+    {name = "angels-bio-processing-crystal-splinter-1", level = 3},
+    {name = "angels-bio-processing-crystal-shard", level = 4},
+    {name = "angels-bio-processing-crystal-shard-1", level = 4},
+    {name = "angels-bio-processing-crystal-full", level = 5},
+    {name = "angels-bio-processing-paste", level = 2},
+    {name = "angels-composting", level = 1},
+    {name = "angels-gardens", level = 1},
+    {name = "angels-bio-farm", level = 1},
+    {name = "angels-bio-farm-1", level = 1},
+    {name = "angels-bio-farm-2", level = 2},
+    {name = "angels-bio-farm-3", level = 3},
+    {name = "angels-bio-farm-alien", level = 3},
+    {name = "angels-bio-desert-farming", level = 2},
+    {name = "angels-bio-desert-farm", level = 2},
+    {name = "angels-bio-temperate-farming", level = 2},
+    {name = "angels-bio-temperate-farm", level = 2},
+    {name = "angels-bio-swamp-farming", level = 2},
+    {name = "angels-bio-swamp-farm", level = 2},
+    {name = "angels-bio-nutrient-paste", level = 2},
+    {name = "angels-bio-pressing", level = 1},
+    {name = "angels-bio-pressing-1", level = 1},
+    {name = "angels-bio-pressing-2", level = 2},
+    {name = "angels-bio-pressing-fish", level = 3},
+    {name = "angels-bio-pressing-fish-1", level = 3},
+    {name = "angels-bio-pressing-fish-2", level = 4},
+    {name = "angels-bio-fermentation", level = 2},
+    {name = "angels-bio-plastic", level = 3},
+    {name = "angels-bio-paper", level = 1},
+    {name = "angels-bio-wood-processing", level = 1},
+    {name = "angels-bio-arboretum", level = 1},
+    {name = "angels-bio-arboretum-1", level = 1},
+    {name = "angels-bio-arboretum-desert", level = 2},
+    {name = "angels-bio-arboretum-temperate", level = 2},
+    {name = "angels-bio-arboretum-swamp", level = 2},
+    {name = "angels-bio-refugium-fish", level = 2},
+    {name = "angels-bio-refugium-fish-1", level = 2},
+    {name = "angels-bio-refugium-fish-2", level = 3},
+    {name = "angels-bio-refugium-hatchery", level = 3},
+    {name = "angels-bio-refugium-butchery", level = 3},
+    {name = "angels-bio-refugium-butchery-1", level = 3},
+    {name = "angels-bio-refugium-puffer", level = 3},
+    {name = "angels-bio-refugium-puffer-1", level = 3},
+    {name = "angels-bio-refugium-biter", level = 4},
+    {name = "angels-bio-refugium-biter-1", level = 4},
+    {name = "angels-bio-yield-module", level = 3},
+    {name = "angels-bio-yield-module-2", level = 4},
+    {name = "angels-bio-yield-module-3", level = 5},
+
+
     {name = tech_modules_2, level = 2},
     {name = tech_modules_3, level = 3},
     {name = tech_modules_4, level = 4},
@@ -372,6 +708,23 @@ function horogon_apply_tier_technology_counts()
     apply_tier_multipliers(power_technologies, setting_horogon_power_multiplier)
     apply_tier_multipliers(production_technologies, setting_horogon_production_multiplier)
 
+    -- Armor technologies use fixed Horogon costs and are not affected by the
+    -- military technology multiplier.
+    local mech_armor_count = setting_number(setting_horogon_mech_armor_technology_cost, 4096)
+    set_technology_count_from_value(mech_armor, mech_armor_count)
+    if setting_bool(setting_horogon_power_armor_chain_from_mech) then
+        set_technology_count_for_names({power_armor_5, "bob-power-armor-5", "power-armor-5"}, mech_armor_count * 0.75)
+        set_technology_count_for_names({power_armor_4, "bob-power-armor-4", "power-armor-4"}, mech_armor_count * 0.75 * 0.75)
+        set_technology_count_for_names({power_armor_3, "bob-power-armor-3", "power-armor-3"}, mech_armor_count * 0.75 * 0.75 * 0.75)
+        set_technology_count_for_names({power_armor_2, "bob-power-armor-2", "power-armor-2"}, mech_armor_count * 0.75 * 0.75 * 0.75 * 0.75)
+        set_technology_count_for_names({power_armor_1, "bob-power-armor-1", "power-armor-1"}, mech_armor_count * 0.75 * 0.75 * 0.75 * 0.75 * 0.75)
+    else
+        set_technology_count_for_names({power_armor_2, "bob-power-armor-2", "power-armor-2"}, 1024)
+        set_technology_count_for_names({power_armor_3, "bob-power-armor-3", "power-armor-3"}, 1400)
+        set_technology_count_for_names({power_armor_4, "bob-power-armor-4", "power-armor-4"}, 1800)
+        set_technology_count_for_names({power_armor_5, "bob-power-armor-5", "power-armor-5"}, 2048)
+    end
+
     set_technology_count(tech_uranium_power, 1000)
     multiply_technology_count("angels-thorium-power", tier_multiplier(setting_horogon_power_multiplier, 2))
     multiply_technology_count(tech_deuterium_power, tier_multiplier(setting_horogon_power_multiplier, 3))
@@ -388,7 +741,8 @@ function horogon_apply_tier_technology_counts()
     set_technology_count_from_fraction("bob-heat-exchanger-4", tech_tritium_power, 0.4)
 end
 
-horogon_apply_tier_technology_counts()
+-- Applied from data-final-fixes.lua after other mods/final-fix code have finished
+-- recalculating technology costs. Calling it here would apply multipliers twice.
 
 if setting_bool(setting_horogon_extra_science_packs) then
     local mk5_mk6_technologies =

@@ -124,4 +124,20 @@ if mods [secretas_frozeta_mods] then
     data_recipe[quality_module_4_S] = nil
 
     data_technology["gold-plate-productivity"] = nil
+
+    local hyper_inserter = "hyper-inserter"
+    data_item[hyper_inserter] = nil
+    data_recipe[hyper_inserter] = nil
+    data_recipe[hyper_inserter .. _recycling] = nil
+    if mods [panglia_mods] then data_recipe[item_ .. hyper_inserter .. _panglia_crushing] = nil end
+    data_inserter[hyper_inserter] = nil
+    data_technology[hyper_inserter] = nil
+
+    local gold_heat_pipe = "gold-heat-pipe"
+    data_item[gold_heat_pipe] = nil
+    data_recipe[gold_heat_pipe] = nil
+    data_recipe[gold_heat_pipe .. _recycling] = nil
+    if mods [panglia_mods] then data_recipe[item_ .. gold_heat_pipe .. _panglia_crushing] = nil end
+    data_heat_pipe[gold_heat_pipe] = nil
+    data_technology[gold_heat_pipe] = nil
 end

@@ -30,6 +30,13 @@ local simple_fluids =
     -- BIOPROCESSING
     nutrient_pulp, raw_vegetable_oil, vegetable_oil,
     water_for_fish, polluted_water_for_fish, raw_fish_oil, fish_oil,
+    -- MODS
+    -- MULUNA
+    tar_mods,
+    -- MOSHINE
+    water_orange_waste,
+    -- PANGLIA
+    branbalite_slurry,
 }
 local dangerous_fluids =
 {
@@ -113,6 +120,9 @@ local dangerous_fluids =
     potassium_metagermanate_solution, germanium_chloride_IV, sodium_metagermanate_solution,
     -- GALIUM
     sodium_tetrahydroxogallate_III_solution, galium_chloride_III_solution_ether, lithium_gallium_hydride_solution_ether,
+    -- MODS
+    -- MOSHINE
+    orthophosphoric_acid,
 }
 local gases =
 {
@@ -146,6 +156,11 @@ local gases =
     -- AQUILO
     fluorine, difluorochloromethane_gas, tetrafluoroethylene_gas, hexafluoropropylene_gas, hexafluoropropylene_oxide_gas,
     aquilo_air, tetrafluorohydrazine_gas, nitrogen_trifluoride_gas, nitrogen_trifluoride_liquefied,
+    -- MODS
+    -- MOSHINE
+    moshine_air,
+    -- MARAXSIS
+    atmosphere_maraxsis,
 }
 local fluid_map = {}
 local function fill_fluid_map(list, item_name, subgroup_name, suffix, tech_name)

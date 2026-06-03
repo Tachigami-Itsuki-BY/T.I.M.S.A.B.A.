@@ -12,7 +12,7 @@ data:extend
 })
 
 -- ITEM
-phosphate_ore = "phosphate-ore"
+fluorapatite = "fluorapatite"
 white_phosphorus = "white-phosphorus"
 phosphorus_chloride_V = "phosphorus-chloride-V"
 calcium_silicate = "calcium-silicate"
@@ -22,28 +22,28 @@ data:extend
     {
         localised_description = show_formula and {chemical_formula, "Ca[font=default-tiny-bold]5[/font](PO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]F"} or nil,
         type = item,
-        name = phosphate_ore,
+        name = fluorapatite,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphate-ore.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite.png",
         order = a,
         stack_size = 200,
         weight = 5000,
         pictures =
         {
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphate-ore-1.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite-1.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphate-ore-2.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite-2.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
             },
             {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphate-ore-3.png",
+                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite-3.png",
                 width = 64,
                 height = 64,
                 scale = 0.5
@@ -194,16 +194,16 @@ data:extend
 })]]
 
 -- RECIPE
-phosphate_ore_recipe = "phosphate-ore-crystal-mix-processing"
+fluorapatite_recipe = "phosphate-ore-crystal-mix-processing"
 silicon_oxide_IV_from_metasilicic_acid = "silicon-oxide-IV-from-metasilicic-acid"
 data:extend
 ({
     {
         type = recipe,
-        name = phosphate_ore_recipe,
+        name = fluorapatite_recipe,
         category = angels_ore_sorting_4,
         subgroup = is_ore_sorting_advanced_3,
-        icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_jivolite, phosphate_ore),
+        icons = AR_FOUR_I(hybride_catalyst, crystal_saphirite, crystal_jivolite, fluorapatite),
         order = a_e,
         enabled = false,
         auto_recycle = false,
@@ -217,8 +217,8 @@ data:extend
             {type = item, name = crystal_saphirite, amount = 2},
             {type = item, name = crystal_jivolite, amount = 2}
         },
-        results = {{type = item, name = phosphate_ore, amount = 4}},
-        main_product = phosphate_ore
+        results = {{type = item, name = fluorapatite, amount = 4}},
+        main_product = fluorapatite
     },
     -- SMELTING
     {
@@ -226,7 +226,7 @@ data:extend
         name = white_phosphorus_gas,
         category = chemistry,
         subgroup = is_phosphorus,
-        icons = FOUR_THREE_R_I(phosphate_ore, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
+        icons = FOUR_THREE_R_I(fluorapatite, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
         order = b,
         enabled = false,
         auto_recycle = false,
@@ -236,7 +236,7 @@ data:extend
         energy_required = 16, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
         ingredients =
         {
-            {type = item, name = phosphate_ore, amount = 8},
+            {type = item, name = fluorapatite, amount = 8},
             {type = item, name = sand_angels, amount = 36},
             {type = item, name = coke_angels, amount = 60}
         },

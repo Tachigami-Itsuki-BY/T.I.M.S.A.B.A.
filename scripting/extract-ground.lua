@@ -11,6 +11,10 @@ if script.active_mods["Moshine"] then
     surface_to_recipe["moshine"] = "extract-ground-lava"
 end
 
+if script.active_mods["panglia_planet"] then
+    surface_to_recipe["panglia"] = "extract-ground-water"
+end
+
 local function on_entity_built(event)
     local entity = event.created_entity or event.entity
     if not (entity and entity.valid and (entity.name == "angels-ground-water-pump" or (entity.type == "entity-ghost" and entity.ghost_name == "angels-ground-water-pump"))) then

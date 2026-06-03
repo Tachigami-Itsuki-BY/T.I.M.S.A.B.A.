@@ -1,9 +1,86 @@
 -- ANGELS RESOURCE REFINING
+crushed_stone_sorting_1 = "crushed-stone-sorting-1"
+crushed_stone_sorting_2 = "crushed-stone-sorting-2"
+crushed_stone_sorting_3 = "crushed-stone-sorting-3"
 manganese_ore_recipe = "ore-crushed-mix5-processing"
 chromium_ore_recipe = "ore-crystal-mix7-processing"
 molybdenum_ore_recipe = "molybdenum-ore-pure-mix-processing"
 data:extend
 ({
+    {
+        type = recipe,
+        name = crushed_stone_sorting_1,
+        category = angels_ore_sorting_1,
+        subgroup = is_processing_crafting,
+        icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_1),
+        order = f_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> Ca + 2Fe + Mg + SiO₂
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        results =
+        {
+            {type = item, name = calcium, amount_min = 0, amount_max = 4, probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, probability = 0.5},
+            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, probability = 0.5}
+        },
+        main_product = calcium
+    },
+    {
+        type = recipe,
+        name = crushed_stone_sorting_2,
+        category = angels_ore_sorting_3,
+        subgroup = is_processing_crafting,
+        icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_2),
+        order = f_b,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na + Ca + 2Fe + Mg + 2Al + SiO₂
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        results =
+        {
+            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = calcium, amount_min = 0, amount_max = 4, probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, probability = 0.5},
+            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, probability = 0.5}
+        },
+        main_product = sodium_angels
+    },
+    {
+        type = recipe,
+        name = crushed_stone_sorting_3,
+        category = angels_ore_sorting_4,
+        subgroup = is_processing_crafting,
+        icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_3),
+        order = f_c,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na + 2K + Ca + 2Fe + Mg + 2Al + SiO₂
+        ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
+        results =
+        {
+            {type = item, name = sodium_angels, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = potassium, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = calcium, amount_min = 0, amount_max = 4, probability = 0.5},
+            {type = item, name = iron_ore, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = magnesium_ore, amount_min = 0, amount_max = 4, probability = 0.5},
+            {type = item, name = aluminium_ore_bob, amount_min = 0, amount_max = 8, probability = 0.5},
+            {type = item, name = sand_angels, amount_min = 0, amount_max = 4, probability = 0.5}
+        },
+        main_product = sodium_angels
+    },
     {
         type = recipe,
         name = stone,

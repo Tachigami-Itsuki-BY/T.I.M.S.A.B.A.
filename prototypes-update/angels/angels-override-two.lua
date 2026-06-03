@@ -1,5 +1,3 @@
-local drain = 15
-local kW = "kW"
 -- BARRELING AND FLUID CONTROL
 data_item_subgroup["angels-fluid-control"].order = a
 
@@ -585,7 +583,7 @@ data_recipe[biter_refugium].ingredients =
 {
     {type = item, name = processing_unit, amount = 4},
     {type = item, name = titanium_pipe, amount = 32},
-    {type = item, name = wall, amount = 4},
+    {type = item, name = stone_wall, amount = 4},
     {type = item, name = titanium_plate_bob, amount = 32},
     {type = item, name = reinforced_concrete_brick, amount = 64}
 }

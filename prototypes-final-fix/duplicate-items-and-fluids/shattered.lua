@@ -43,4 +43,19 @@ if mods [shattered_mods] then
     data_recipe["bob-thorium-232-recycling"] = nil
     data_item[thorium_232_bob] = nil
     data_recipe["angels-thorium-232-recycling"] = nil
+
+    data_fluid[helium_mods] = nil
+
+    data_technology["s1_shattered_modules"] = nil
+
+    data_module["speed-module-3-shattered"] = nil
+    data_recipe["ske_speed_module_3"] = nil
+
+    data_module["efficiency-module-3-shattered"] = nil
+    data_recipe["ske_efficiency_module_3"] = nil
+
+    data_module["productivity-module-3-shattered"] = nil
+    data_recipe["ske_production_module_3"] = nil
+
+    data_recipe["nitrogen"] = nil
 end

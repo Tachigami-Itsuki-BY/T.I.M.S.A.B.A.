@@ -96,6 +96,8 @@ local fluids =
     tar_mods,
     -- MOSHINE
     water_orange_waste, orthophosphoric_acid,
+    -- PANGLIA
+    branbalite_slurry,
 }
 local gases =
 {

@@ -310,11 +310,12 @@ function Public.building_recipe_icon(name_1, name_2)
     }
 end
 
-function Public.recycling_recipe_icon(name_1, name_2)
+function Public.recycling_recipe_icon(name_1, name_2, number)
     return build_icons
     {
         {name_1, 0.500000, {0,0}},
         {name_2, 0.375000, {0,0}},
+        {number, 0.500000, {0,0}},
     }
 end
 

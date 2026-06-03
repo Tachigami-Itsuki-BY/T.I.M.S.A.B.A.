@@ -44,6 +44,14 @@ for recipe_name, _ in pairs(data_recipe) do
     end
 end
 
+if mods [panglia_mods] then
+    for recipe_name, _ in pairs(data_recipe) do
+        if string.find(recipe_name, "dormant%-panglia_crushing") then
+            data_recipe[recipe_name] = nil
+        end
+    end
+end
+
 data_item[lead_oxide_II].hidden = false
 data_item[lead_oxide_II].hidden_in_factoriopedia = false
 data_item[silicon_powder].hidden = false
@@ -249,6 +257,7 @@ if mods [bobtech] and mods [space_age_science_packs] then
     data_technology[tech_transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
     data_technology[tech_transport_science_pack].icon_size = 256
     data_technology[tech_transport_science_pack].icons = nil
+
     local tech_alien_research = "bob-alien-research"
     data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
     data_technology[tech_alien_research].icon_size = 256

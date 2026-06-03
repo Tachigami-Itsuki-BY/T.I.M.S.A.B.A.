@@ -88,4 +88,9 @@ if mods [paracelsin_mods] then
 	data_item[zinc_mods] = nil
 	data_item[zinc_plate_mods] = nil
 	data_fluid[nitric_acid_mods] = nil
+
+	local advanced_repair_device = "advanced-repair-device"
+	data_repair_tool[advanced_repair_device] = nil
+	data_recipe[advanced_repair_device] = nil
+    data_technology[advanced_repair_device] = nil
 end

@@ -80,4 +80,6 @@ if mods["Flare Stack"] then
     data_furnace[electric_incinerator].energy_source.drain = 15 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe({incinerator, electric_incinerator})
+
+    if mods [panglia_mods] then data_recipe["item-flare-stack-panglia_crushing"] = nil end
 end

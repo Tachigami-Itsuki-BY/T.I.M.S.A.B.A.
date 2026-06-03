@@ -584,9 +584,9 @@ for _, EQUIPMENT in pairs(vehicle_plasma_cannon_eq) do
     data_recipe[EQUIPMENT.name].energy_required = 8
     data_active_defense_equipment[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
     data_active_defense_equipment[EQUIPMENT.name].energy_source.input_flow_limit = (EQUIPMENT.energy_consumption / 4) .. kW
+    data_active_defense_equipment[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.cooldown = EQUIPMENT.cooldown
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
-    data_active_defense_equipment[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.min_range = 16
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
     local ammo_type = data_active_defense_equipment[EQUIPMENT.name].attack_parameters.ammo_type
@@ -702,9 +702,9 @@ for _, EQUIPMENT in pairs(vehicle_laser_defenses_eq) do
     data_recipe[EQUIPMENT.name].energy_required = 8
     data_active_defense_equipment[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
     data_active_defense_equipment[EQUIPMENT.name].energy_source.input_flow_limit = (EQUIPMENT.energy_consumption * 1.5) .. kW
+    data_active_defense_equipment[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.cooldown = EQUIPMENT.cooldown
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
-    data_active_defense_equipment[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.ammo_type.action.action_delivery.max_length = EQUIPMENT.range
     data_active_defense_equipment[EQUIPMENT.name].attack_parameters.ammo_type.action.action_delivery.duration = EQUIPMENT.cooldown
@@ -758,9 +758,9 @@ else
     }
 end
 
-data_item[wall].stack_size = 200
-data_recipe[wall].energy_required = 1
-data_recipe[wall].ingredients[1].amount = 4
+data_item[stone_wall].stack_size = 200
+data_recipe[stone_wall].energy_required = 1
+data_recipe[stone_wall].ingredients[1].amount = 4
 
 local gate = "gate"
 data_item[gate].stack_size = 32
@@ -843,32 +843,34 @@ radar_recipe(radar_5, nitinol_gear_wheel, advanced_processing_unit, nitinol_plat
 
 local gun_turrets =
 {
-    {name = gun_turret_1, range = 16},
-    {name = gun_turret_2, range = 20},
-    {name = gun_turret_3, range = 24},
-    {name = gun_turret_4, range = 28},
-    {name = gun_turret_5, range = 32}
+    {name = gun_turret_1, range = 16, damage_modifier = 1.25},
+    {name = gun_turret_2, range = 20, damage_modifier = 1.50},
+    {name = gun_turret_3, range = 24, damage_modifier = 1.75},
+    {name = gun_turret_4, range = 28, damage_modifier = 2.00},
+    {name = gun_turret_5, range = 32, damage_modifier = 2.25}
 }
 for _, BUILD in pairs(gun_turrets) do
     data_ammo_turret[BUILD.name].attack_parameters.range = BUILD.range
     data_ammo_turret[BUILD.name].attack_parameters.cooldown = 7.5
+    data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
 end
 local function gun_turret_recipe(name, gear_wheel, plate, gun_turret, bearing)
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},
-        {type = item, name = plate, amount = 16}
+        {type = item, name = plate, amount = 16},
+        {type = item, name = bearing, amount = 8}
     }
     if gun_turret then
         table.insert(ingredients, {type = item, name = gun_turret, amount = 1})
     end
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 8})
+    if name == gun_turret_1 then
+        table.insert(ingredients, {type = item, name = copper_plate, amount = 8})
     end
     data_recipe[name].ingredients = ingredients
 end
-gun_turret_recipe(gun_turret_1, iron_gear_wheel, iron_plate, nil, copper_plate)
-gun_turret_recipe(gun_turret_2, steel_gear_wheel, steel_plate, gun_turret_1)
+gun_turret_recipe(gun_turret_1, iron_gear_wheel, iron_plate, nil, iron_bearing)
+gun_turret_recipe(gun_turret_2, steel_gear_wheel, steel_plate, gun_turret_1, steel_bearing)
 gun_turret_recipe(gun_turret_3, brass_gear_wheel, invar_plate_bob, gun_turret_2, brass_bearing)
 gun_turret_recipe(gun_turret_4, titanium_gear_wheel, titanium_plate_bob, gun_turret_3, titanium_bearing)
 gun_turret_recipe(gun_turret_5, nitinol_gear_wheel, nitinol_plate_bob, gun_turret_4, nitinol_bearing)
@@ -888,9 +890,9 @@ for _, BUILD in pairs(laser_turrets) do
     data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ
     data_electric_turret[BUILD.name].energy_source.input_flow_limit = (BUILD.energy_consumption * 1.5) .. kW
     data_electric_turret[BUILD.name].energy_source.drain = nil
+    data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
     data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
     data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
-    data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
     data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
     local ammo = data_electric_turret[BUILD.name].attack_parameters.ammo_type
     if ammo and ammo.action and ammo.action.action_delivery then
@@ -927,7 +929,7 @@ local sniper_turrets =
 {
     {name = sniper_turret_1, range = 32, cooldown = 240, damage_modifier = 8},
     {name = sniper_turret_2, range = 40, cooldown = 240, damage_modifier = 16},
-    {name = sniper_turret_3, range = 48, cooldown = 240, damage_modifier = 32}
+    {name = sniper_turret_3, range = 48, cooldown = 240, damage_modifier = 24}
 }
 for _, BUILD in pairs(sniper_turrets) do
     data_item[BUILD.name].subgroup = is_turret_3
@@ -943,15 +945,15 @@ local function sniper_turret_recipe(name, gear_wheel, plate_1, plate_2, sniper_t
     {
         {type = item, name = gear_wheel, amount = 16},
         {type = item, name = plate_1, amount = 16},
-        {type = item, name = plate_2, amount = 16}
+        {type = item, name = plate_2, amount = 16},
+        {type = item, name = bearing, amount = 16}
     }
     if sniper_turret then
         table.insert(ingredients, {type = item, name = sniper_turret, amount = 1})
-        table.insert(ingredients, {type = item, name = bearing, amount = 16})
     end
     data_recipe[name].ingredients = ingredients
 end
-sniper_turret_recipe(sniper_turret_1, iron_gear_wheel, iron_plate, copper_plate)
+sniper_turret_recipe(sniper_turret_1, iron_gear_wheel, iron_plate, copper_plate, nil, iron_bearing)
 sniper_turret_recipe(sniper_turret_2, cobalt_steel_gear_wheel, steel_plate, invar_plate_bob, sniper_turret_1, cobalt_steel_bearing)
 sniper_turret_recipe(sniper_turret_3, titanium_gear_wheel, titanium_plate_bob, nitinol_plate_bob, sniper_turret_2, nitinol_bearing)
 
@@ -960,13 +962,13 @@ local artillery_wagon_cannon_2 = "bob-artillery-wagon-cannon-2"
 local artillery_wagon_cannon_3 = "bob-artillery-wagon-cannon-3"
 local artillery_wagon_cannons =
 {
-    {name = artillery_wagon_cannon_1, cooldown = 240, range = 4,  damage_modifier = 1.00},
-    {name = artillery_wagon_cannon_2, cooldown = 240, range = 8,  damage_modifier = 1.25},
-    {name = artillery_wagon_cannon_3, cooldown = 240, range = 12, damage_modifier = 1.50}
+    {name = artillery_wagon_cannon_1, cooldown = 240, range = 4,  damage_modifier = 1.25},
+    {name = artillery_wagon_cannon_2, cooldown = 240, range = 8,  damage_modifier = 1.50},
+    {name = artillery_wagon_cannon_3, cooldown = 240, range = 12, damage_modifier = 1.75}
 }
 for _, BUILD in pairs(artillery_wagon_cannons) do
-    data_gun[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
     data_gun[BUILD.name].attack_parameters.range = BUILD.range * 32
+    data_gun[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
     data_gun[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
 end
 local artillery_turrets =
@@ -1016,9 +1018,9 @@ for _, BUILD in pairs(plasma_turrets) do
     data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ
     data_electric_turret[BUILD.name].energy_source.input_flow_limit = (BUILD.energy_consumption / 4) .. kW
     data_electric_turret[BUILD.name].energy_source.drain = nil
+    data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
     data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
     data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
-    data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
     data_electric_turret[BUILD.name].attack_parameters.min_range = 16
     data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
     local ammo_type = data_electric_turret[BUILD.name].attack_parameters.ammo_type
@@ -1171,7 +1173,7 @@ bobmods.lib.recipe.update_recycling_recipe
     vehicle_laser_defense_eq_4,
     vehicle_laser_defense_eq_5,
     vehicle_laser_defense_eq_6,
-    wall,
+    stone_wall,
     flamethrower_turret,
     radar_1,
     radar_2,

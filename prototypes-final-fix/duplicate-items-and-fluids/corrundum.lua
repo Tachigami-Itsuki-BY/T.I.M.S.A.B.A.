@@ -1,6 +1,7 @@
 if mods [corrundum_mods] then
     local replacements =
     {
+		[sulfur_ore_mods] = sulfur,
 		[petroleum_gas] = methane_angels,
         [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
         [sulfur_dioxide_mods] = sulfur_dioxide_angels,
@@ -86,5 +87,6 @@ if mods [corrundum_mods] then
 	    end
     end
 
+	data_item[sulfur_ore_mods] = nil
     data_item[calcium_sulfate_mods] = nil
 end
