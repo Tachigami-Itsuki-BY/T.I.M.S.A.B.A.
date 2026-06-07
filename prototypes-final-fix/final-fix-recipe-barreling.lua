@@ -330,7 +330,13 @@ local function create_container_recipes(fluids, info)
             subgroup = info.sub,
             icons = fill_icons,
             enabled = false,
-            ingredients = {
+            auto_recycle = false,
+            allow_productivity = false,
+            allow_quality = false,
+            allow_decomposition = false,
+            hide_from_player_crafting = true,
+            ingredients =
+            {
                 {type = item, name = info.item, amount = 1},
                 {type = fluid, name = fluids.name, amount = 60}
             },
@@ -345,6 +351,11 @@ local function create_container_recipes(fluids, info)
             subgroup = info.sub .. "-empty",
             icons = empty_icons,
             enabled = false,
+            auto_recycle = false,
+            allow_productivity = false,
+            allow_quality = false,
+            allow_decomposition = false,
+            hide_from_player_crafting = true,
             ingredients = {{type = item, name = fluids.name .. "-" .. info.name, amount = 1}},
             results =
             {

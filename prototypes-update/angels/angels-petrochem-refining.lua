@@ -875,7 +875,9 @@ data_recipe[enriched_hydrogen_sulfide_angels].ingredients[2].amount = 60
 data_recipe[enriched_hydrogen_sulfide_angels].results[1].amount = 60
 data_recipe[enriched_hydrogen_sulfide_angels].results[2].amount = 60
 
+data_fluid[sulfur_dioxide_angels].subgroup = is_sulfur_fluids
 data_fluid[sulfur_dioxide_angels].order = d
+data_recipe[sulfur_dioxide_angels].subgroup = is_sulfur_fluids
 data_recipe[sulfur_dioxide_angels].icons = THREE_I(sulfur, oxygen_angels, sulfur_dioxide_angels)
 data_recipe[sulfur_dioxide_angels].order = d
 -- S + O₂ --> SO₂
@@ -899,7 +901,9 @@ data_recipe[sulfur_gas_calcium_sulfate].results =
     {type = fluid, name = carbon_dioxide_angels, amount = 60}
 }
 
+data_fluid[sulfuric_acid_angels].subgroup = is_sulfur_fluids
 data_fluid[sulfuric_acid_angels].order = f
+data_recipe[sulfuric_acid_angels].subgroup = is_sulfur_fluids
 data_recipe[sulfuric_acid_angels].icons = THREE_I(sulfur_trioxide_gas, water_purified_angels, sulfuric_acid_angels)
 data_recipe[sulfuric_acid_angels].order = f
 -- SO₃ + H₂O --> H₂SO₄

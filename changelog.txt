@@ -1,5 +1,30 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.1
+Date: 07.06.2026
+  Changes:
+    - [All] Скрыты рецепт Наполнения и Опустошения ёмкости из меню крафта игрока.
+
+    - [All] Hidden recipes for Filling and Emptying containers in the player's crafting menu.
+
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой в рецепте Манипулятора Т1 вместо Базовой Печатной Платы требовалась Электросхема.
+
+    - [All] Fixed a bug where the T1 Inserter recipe required a Electronic Circuit instead of a Basic Circuit Board.
+
+  Balancing:
+    - [Arig] Обновлена ​​добыча с Сущностей на планете Ариг.
+
+    - [Arig] Updated loot from Entities on planet Arig.
+
+  Locale:
+    - [Rus] Переменованы рецепты: Переработка минеральной суспензии в __1__ и __2__ → Переработка минерального шлама в __1__ и __2__.
+
+  Scripting:
+    - [All] Добавлена функция для упорядочивания рецептов.
+
+    - [All] Added a function for organizing recipes.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 07.06.2026
   Features:
@@ -36,7 +61,7 @@ Date: 07.06.2026
 
   Locale:
     - [All] Переименована технология: Конвейер Вулкан → Логистика Вулкана.
-    - [RUS] Переименованы Предмет и Рецепт: Каменный блок → Каменный Кирпич.
+    - [Rus] Переименованы Предмет и Рецепт: Каменный блок → Каменный Кирпич.
 
     - [All] Renamed technology: Vulcanus Transport Belt → Vulcanus Logistics.
 
@@ -49,12 +74,12 @@ Date: 07.06.2026
 
   Other:
     - [All] Модпак работает как на новых, так и на старых версиях BA!
-    - [All] Если вы обновили моды «Bob's» до версии 2.1.0 или выше: РЕКОМЕНДУЕТСЯ начать новую игру. К сожалению, я не могу изменить перенос модов «Bob's»
+    - [All] Если вы обновили моды «Bob's» до версии 2.1.0 или выше: РЕКОМЕНДУЕТСЯ начать новую игру. К сожалению, я не могу повлиять на миграцию прототипов от модов «Bob's».
     - [All] Тем, кто остался на более старых версиях модов, ничего не изменится.
     - [All] Если вы заметите какие-либо незначительные ошибки, пожалуйста, сообщите мне об этом в Discord (сервер/личные сообщения) или на портале модов Factorio.
 
     - [All] The modpack works on both new and old versions of BA!
-    - [All] If you have updated "Bob's" mods to 2.1.0 or higher: It is RECOMMENDED to start a new game. Unfortunately, I cannot change the migration of "Bob's" mods
+    - [All] If you have updated "Bob's" mods to 2.1.0 or higher: It is RECOMMENDED to start a new game. Unfortunately, I can't influence the migration of prototypes from "Bob's" mods.
     - [All] For those who stayed on older mods versions, nothing will change for you.
     - [All] If you notice any minor errors, please let me know on Discord (Server/PM) or on the Factorio Mod Portal.
 

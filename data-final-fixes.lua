@@ -43,6 +43,8 @@ require("prototypes-final-fix.final-fix-recipe-barreling")
 require("prototypes-final-fix.final-fix-recipe-voids")
 
 require("prototypes-final-fix.mods-final-fix.final-fix-mods")
+require("prototypes-final-fix.mods-final-fix.flare-stack")
+require("prototypes-final-fix.mods-final-fix.rocket-silo-construction")
 require("prototypes-final-fix.mods-final-fix.bobs-new")
 
 require("prototypes-final-fix.final-fix-weights")
@@ -56,9 +58,6 @@ require("prototypes-final-fix.final-fix-settings")
 require("prototypes-final-fix.final-fix-autoplace-controls")
 require("prototypes-final-fix.final-fix-simulation")
 require("prototypes-final-fix.final-fix-entities")
-
-require("prototypes-final-fix.mods-final-fix.flare-stack")
-require("prototypes-final-fix.mods-final-fix.rocket-silo-construction")
 
 require("prototypes-final-fix.multi-building.scripting")
 require("prototypes-final-fix.multi-building.entities")

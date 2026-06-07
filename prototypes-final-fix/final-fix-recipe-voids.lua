@@ -143,7 +143,7 @@ for _, fluid_name in pairs(fluids) do
         ({
             {
                 localised_name = {"recipe-name.void", {"fluid-name." .. fluid_name}},
-                type = "recipe",
+                type = recipe,
                 name = fluid_name .. "-void",
                 category = "angels-water-void",
                 subgroup = "angels-water-void",
@@ -154,8 +154,11 @@ for _, fluid_name in pairs(fluids) do
                 },
                 order = fluid_name .. "-void",
                 enabled = true,
-                hide_from_player_crafting = true,
+                auto_recycle = false,
                 allow_productivity = false,
+                allow_quality = false,
+                allow_decomposition = false,
+                hide_from_player_crafting = true,
                 energy_required = 4,
                 ingredients = {{type = fluid, name = fluid_name, amount = 480}},
                 results = {}
@@ -169,7 +172,7 @@ for _, gas_name in pairs(gases) do
         ({
             {
                 localised_name = {"recipe-name.void", {"fluid-name." .. gas_name}},
-                type = "recipe",
+                type = recipe,
                 name = gas_name .. "-void",
                 category = "angels-chemical-void",
                 subgroup = "angels-chemical-void",

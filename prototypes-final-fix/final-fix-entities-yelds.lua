@@ -399,6 +399,41 @@ end
 
 -- ARIG
 if mods [arig_mods] then
+    data_entity["arig-medium-sand-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 4, amount_max = 16},
+        {type = item, name = coal, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_saphirite, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_jivolite, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_stiratite, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_crotinnium, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_rubyte, amount_min = 4, amount_max = 16},
+        {type = item, name = ore_bobmonium, amount_min = 4, amount_max = 16}
+    }
+    data_entity["arig-big-sand-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 16, amount_max = 32},
+        {type = item, name = coal, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_saphirite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_jivolite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_stiratite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_crotinnium, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_rubyte, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_bobmonium, amount_min = 16, amount_max = 32}
+    }
+    data_entity["arig-crash"].minable.results =
+    {
+        {type = item, name = advanced_processing_unit, amount_min = 16, amount_max = 32},
+        {type = item, name = niobium_titanium_plate, amount_min = 16, amount_max = 32},
+        {type = item, name = niobium_titanium_cable, amount_min = 8, amount_max = 16},
+        {type = item, name = niobium_iron_plate, amount_min = 16, amount_max = 32},
+        {type = item, name = niobium_iron_bearing, amount_min = 16, amount_max = 32},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount_min = 16, amount_max = 32},
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount_min = 16, amount_max = 32},
+        {type = item, name = vulcanus_transport_belt, amount_min = 16, amount_max = 32},
+        {type = item, name = T5_inserter, amount_min = 8, amount_max = 16}
+    }
+
     data_plant["tree-plant"].minable.results[2].amount = 960
     data_plant[yumako_tree].minable.results[2] = {type = fluid, name = steam, amount = 960, temperature = 915}
     data_plant[jellystem].minable.results[2].amount = 960
