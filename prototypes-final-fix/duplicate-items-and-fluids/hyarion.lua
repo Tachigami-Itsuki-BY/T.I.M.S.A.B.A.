@@ -97,18 +97,4 @@ if mods [hyarion_mods] then
     data_item[polished_emerald_hyarion] = nil
     data_item[polished_ruby_hyarion] = nil
     data_item[polished_sapphire_hyarion] = nil
-
-	if mods [panglia_mods] then
-		data_recipe["item-planetaris-assembling-machine-4-panglia_crushing"] = nil
-	end
-
-	data_recipe["planetaris-assembling-machine-4-recycling"] = nil
-	data_technology["planetaris-automation-4"] = nil
-
-	data_assembling[assembling_machine_3].next_upgrade = assembling_machine_4
-
-	local planetaris_assembling_machine_4 = "planetaris-assembling-machine-4"
-    data_item[planetaris_assembling_machine_4] = nil
-    data_recipe[planetaris_assembling_machine_4] = nil
-    data_assembling[planetaris_assembling_machine_4] = nil
 end

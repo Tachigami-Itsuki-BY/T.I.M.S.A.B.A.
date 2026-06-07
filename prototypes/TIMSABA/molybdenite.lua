@@ -346,6 +346,7 @@ local function resource(resource_parameters, autoplace_parameters)
     return
     {
         localised_description = resource_parameters.localised_description,
+        factoriopedia_description = resource_parameters.factoriopedia_description,
         type = "resource",
         name = resource_parameters.name,
         subgroup = resource_parameters.subgroup,
@@ -390,7 +391,7 @@ local function resource(resource_parameters, autoplace_parameters)
             sheet =
             {
                 filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-                priority = "extra-high",
+                priority = extra_high,
                 size = 128,
                 frame_count = 8,
                 variation_count = 8,
@@ -421,6 +422,7 @@ data:extend
     resource(
         {
             localised_description = {"entity-description.molybdenite-ore"},
+            factoriopedia_description = "",
             name = molybdenite_ore,
             subgroup = is_ores,
             order = g,

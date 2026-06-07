@@ -199,6 +199,7 @@ local military_technologies =
     {name = "energy-shield-mk2-equipment", level = 2},
     {name = "battery-equipment", level = 1},
     {name = "battery-mk2-equipment", level = 2},
+    {name = "battery-mk3-equipment", level = 3},
     {name = "bob-battery-equipment-3", level = 3},
     {name = "bob-battery-equipment-4", level = 4},
     {name = "bob-battery-equipment-5", level = 5},

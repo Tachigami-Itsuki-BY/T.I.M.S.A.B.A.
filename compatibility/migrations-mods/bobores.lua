@@ -1,10 +1,9 @@
-local run_migration = require("migrations-mods.utils")
+local run_migration = require("compatibility.migrations-mods.utils")
 
--- Проверяем условия версии
-if script.active_mods["bobores"] >= "2.1.0" then
-    -- Задаем только список замен для этого мода
-    local bobs_replacements = {["bob-tungsten-ore"] = "tungsten-ore-timsaba"}
+return function()
+    if not prototypes.item["bob-tungsten-ore"] then
+        local bobs_replacements = {["bob-tungsten-ore"] = "timsaba-tungsten-ore"}
 
-    -- Запускаем весь большой процесс замены одной строчкой!
-    run_migration(bobs_replacements)
+        run_migration(bobs_replacements)
+    end
 end

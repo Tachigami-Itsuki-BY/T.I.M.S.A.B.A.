@@ -69,6 +69,10 @@ data_item[tungsten_powder].hidden_in_factoriopedia = false
 data_item[tungsten_oxide_VI].hidden = false
 data_item[tungsten_oxide_VI].hidden_in_factoriopedia = false
 
+data_resource[ore_saphirite].icons = nil
+data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
+data_resource[ore_saphirite].icon_size = data_item[ore_saphirite].icon_size
+
 -- BOBS FIX
 data_fluid[nitroglycerin_bob].subgroup = is_explosives
 data_fluid[nitroglycerin_bob].order = d

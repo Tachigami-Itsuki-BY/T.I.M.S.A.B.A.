@@ -1,5 +1,64 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 07.06.2026
+  Features:
+    - [Mods] Добавлена поддержка Planetaris: Arig: реализовано бесшовное внедрение новой планеты в игровой процесс.
+
+    - [Mods] Added support for Planetaris: Arig: seamlessly integrated the new planet into the gameplay flow.
+
+  Bugfixes:
+    - [All] Исправлены мелкие ошибки, не влияющие на игровой процесс.
+
+    - [All] Fixed minor bugs that did not affect gameplay.
+
+  Balancing:
+    - [All] В рецептах Каменных Труб и Каменных Подземных Труб возвращён старый ингредиент: Каменный Кирпич.
+    - [All] Незначительные корректировки рецептов.
+    - [All] Небольшие правки в технологиях.
+    - [All] Небольшие правки в сущностях.
+    - [All] Дерево технологий основано на модах «Bob's» версии 2.1.0 и выше, поэтому возможны различия.
+    - [Fulgora] В рецептах Переработки Ломов удалены результаты: Молибден и Рений.
+
+    - [All] Returned old an ingredient in the Stone Pipe and Stone Pipe-to-Ground recipes: Stone Brick.
+    - [All] Minor adjustments in the recipes.
+    - [All] Minor adjustments in the technologies.
+    - [All] Minor adjustments in the entities.
+    - [All] The tech tree is based on "Bob's" mods version 2.1.0 and above, so differences may occur.
+    - [Fulgora] Removed results in the Scrap Recycling recipes: Molybdenum and Rhenium.
+
+  Graphics:
+    - [All] Обновлены иконки для Логистика Вулкана.
+    - [All] Обновлены иконки для Латунного Шарика для Подшипника и Латунного Подшипника.
+
+    - [All] Updated icons for Vulcanus Logistics.
+    - [All] Updated icons for Brass Bearing Ball and Brass Bearing.
+
+  Locale:
+    - [All] Переименована технология: Конвейер Вулкан → Логистика Вулкана.
+    - [RUS] Переименованы Предмет и Рецепт: Каменный блок → Каменный Кирпич.
+
+    - [All] Renamed technology: Vulcanus Transport Belt → Vulcanus Logistics.
+
+  Modding:
+    - [Mods] Новые версии модов «Bob's» и «Angel's» теперь корректно работают с «TIMSABA».
+    - [Mods] Мод «Planetaris: Arig» переведён в опциональную зависимость.
+
+    - [Mods] New versions of the "Bob's" and "Angel's" mods now work properly with "TIMSABA".
+    - [Mods] Moved "Planetaris: Arig" mod to optional dependencies.
+
+  Other:
+    - [All] Модпак работает как на новых, так и на старых версиях BA!
+    - [All] Если вы обновили моды «Bob's» до версии 2.1.0 или выше: РЕКОМЕНДУЕТСЯ начать новую игру. К сожалению, я не могу изменить перенос модов «Bob's»
+    - [All] Тем, кто остался на более старых версиях модов, ничего не изменится.
+    - [All] Если вы заметите какие-либо незначительные ошибки, пожалуйста, сообщите мне об этом в Discord (сервер/личные сообщения) или на портале модов Factorio.
+
+    - [All] The modpack works on both new and old versions of BA!
+    - [All] If you have updated "Bob's" mods to 2.1.0 or higher: It is RECOMMENDED to start a new game. Unfortunately, I cannot change the migration of "Bob's" mods
+    - [All] For those who stayed on older mods versions, nothing will change for you.
+    - [All] If you notice any minor errors, please let me know on Discord (Server/PM) or on the Factorio Mod Portal.
+
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
 Date: 03.06.2026
   Features:
@@ -12,9 +71,9 @@ Date: 03.06.2026
     - [All] Added 3 Crushed Stone Sorting recipes.
 
   Changes:
-    - [All] Теперь предмет [Калий] создаётся без мода «Moshine».
+    - [All] Теперь предмет Калий создаётся без мода «Moshine».
 
-    - [All] Now the item [Potassium] is created without the “Moshine” mod.
+    - [All] Now the item Potassium is created without the "Moshine" mod.
 
   Balancing:
     - [All] Скорректирована стоимость исследования практически для всех технологий.

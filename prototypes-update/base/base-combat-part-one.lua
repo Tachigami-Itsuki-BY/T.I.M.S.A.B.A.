@@ -355,7 +355,9 @@ data_recipe[atomic_artillery_shell].ingredients =
     {type = item, name = calcite, amount = 1}
 }
 
-data_item_subgroup["bob-ammo-parts"].order = b_a
+local is_ammo_parts = "bob-ammo-parts"
+data_item_subgroup[is_ammo_parts].group = ig_combat
+data_item_subgroup[is_ammo_parts].order = b_a
 
 local petroleum_jelly = "bob-petroleum-jelly"
 local gun_cotton = "bob-gun-cotton"
@@ -1061,12 +1063,6 @@ else
     }
 end
 
-local battery_eq_1 = "battery-equipment"
-local battery_eq_2 = "battery-mk2-equipment"
-local battery_eq_3 = "bob-battery-mk3-equipment"
-local battery_eq_4 = "bob-battery-mk4-equipment"
-local battery_eq_5 = "bob-battery-mk5-equipment"
-local battery_eq_6 = "bob-battery-mk6-equipment"
 local batterys_eq =
 {
     {name = battery_eq_1, buffer_capacity = 30000},
@@ -1077,14 +1073,18 @@ local batterys_eq =
     {name = battery_eq_6, buffer_capacity = 960000}
 }
 for _, EQUIPMENT in pairs(batterys_eq) do
-    data_item[EQUIPMENT.name].subgroup = is_equipment_3
-    data_item[EQUIPMENT.name].stack_size = 32
-    data_item[EQUIPMENT.name].weight = 31250
-    data_recipe[EQUIPMENT.name].subgroup = is_equipment_3
-    data_recipe[EQUIPMENT.name].energy_required = 8
-    data_battery_equipment[EQUIPMENT.name].energy_source.buffer_capacity = EQUIPMENT.buffer_capacity .. kJ
+    if data_item[EQUIPMENT.name] then
+        data_item[EQUIPMENT.name].subgroup = is_equipment_3
+        data_item[EQUIPMENT.name].stack_size = 32
+        data_item[EQUIPMENT.name].weight = 31250
+        data_recipe[EQUIPMENT.name].subgroup = is_equipment_3
+        data_recipe[EQUIPMENT.name].energy_required = 8
+        data_battery_equipment[EQUIPMENT.name].energy_source.buffer_capacity = EQUIPMENT.buffer_capacity .. kJ
+    end
 end
 local function battery_eq_recipe(name, battery, circuit, alien_artifact_1, alien_artifact_2)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = battery, amount = 2},

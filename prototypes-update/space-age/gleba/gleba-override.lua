@@ -368,7 +368,6 @@ data_inserter[stack_inserter].energy_per_rotation = (600 / 2) / (RS_SI * 60) .. 
 data_inserter[stack_inserter].energy_per_movement = (600 / 2) / (0.20 * 60) .. kJ
 
 -- BUILDING
-local agricultural_tower = "agricultural-tower"
 data_item[agricultural_tower].subgroup = is_gleba_building
 data_item[agricultural_tower].order = a
 data_item[agricultural_tower].stack_size = 32

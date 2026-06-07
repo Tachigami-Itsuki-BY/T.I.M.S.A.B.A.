@@ -98,6 +98,8 @@ local fluids =
     water_orange_waste, orthophosphoric_acid,
     -- PANGLIA
     branbalite_slurry,
+    -- ARIG
+    heavy_oil_timsaba
 }
 local gases =
 {

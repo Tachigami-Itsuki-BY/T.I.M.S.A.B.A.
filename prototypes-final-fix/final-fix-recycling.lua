@@ -20,9 +20,7 @@ local concrete_recipes =
     reinforced_hazard_concrete
 }
 for _, concrete_name in ipairs(concrete_recipes) do
-    if concrete_name then
-        data_recipe[concrete_name .. _recycling] = nil
-    end
+    data_recipe[concrete_name .. _recycling] = nil
 end
 
 local recycling_items =
@@ -43,20 +41,23 @@ local recycling_items =
     tungsten_ore_bob, wolframite_ore
 }
 
-if mods[muluna_mods] or mods[moshine_mods] then
+if mods [muluna_mods] or mods [moshine_mods] then
     table.insert(recycling_items, silicon_cell_mods)
 end
 
-if mods[moshine_mods] then
+if mods [moshine_mods] then
     table.insert(recycling_items, neodymium_magnet)
 end
 
-if mods[panglia_mods] then
+if mods [panglia_mods] then
     table.insert(recycling_items, universe_precursor)
 end
 
+if mods [arig_mods] then
+    table.insert(recycling_items, silica_arig)
+end
+
 for _, name in ipairs(recycling_items) do
-    local recipe = data_recipe[name .. _recycling]
-    recipe.results = {{type = item, name = name, amount = 1, probability = 0.25}}
-    recipe.main_product = name
+    data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, probability = 0.25}}
+    data_recipe[name .. _recycling].main_product = ""
 end

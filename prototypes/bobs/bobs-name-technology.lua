@@ -48,19 +48,24 @@ tech_logistics_2 = "logistics-2"
 tech_logistics_3 = "logistics-3"
 tech_logistics_4 = "logistics-4"
 tech_logistics_5 = "logistics-5"
-tech_robots_1 = "bob-robots-1"
-tech_robots_2 = "bob-robots-2"
-tech_robots_3 = "bob-robots-3"
-tech_robots_4 = "bob-robots-4"
+tech_T3_inserter = "bob-express-inserter"
 
 tech_steel_processing = "steel-processing"
-tech_zinc_processing = "bob-zinc-processing"
-tech_brass_processign = "bob-zinc-processing"
+if mods [bobplates] >= "2.1.0" then
+    tech_brass_processing = "bob-brass-processing"
+else
+    tech_brass_processing = "bob-zinc-processing"
+end
+tech_cobalt_processing = "bob-cobalt-processing"
 tech_ceramics = "bob-ceramics"
 tech_titanium_processing = "bob-titanium-processing"
 tech_nitinol_processing = "bob-nitinol-processing"
 tech_tungsten_processing = "bob-tungsten-processing"
-tech_tungsten_alloy_processing = "bob-tungsten-alloy-processing"
+if mods [bobplates] >= "2.1.0" then
+    tech_tungsten_alloy_processing = "timsaba-tungsten-alloy-processing"
+else
+    tech_tungsten_alloy_processing = "bob-tungsten-alloy-processing"
+end
 tech_lithium_processing = "bob-lithium-processing"
 tech_battery_2 = "bob-battery-2"
 tech_battery_3 = "bob-battery-3"
@@ -83,3 +88,11 @@ tech_modules_2 = "bob-modules-2"
 tech_modules_3 = "bob-modules-3"
 tech_modules_4 = "bob-modules-4"
 tech_modules_5 = "bob-modules-5"
+
+tech_exoskeleton_eq_2 = "bob-exoskeleton-equipment-2"
+
+tech_sniper_turret_2 = "bob-sniper-turrets-2"
+
+tech_plasma_turret_3 = "bob-plasma-turrets-3"
+
+tech_fluid_handling_4 = "bob-fluid-handling-4"

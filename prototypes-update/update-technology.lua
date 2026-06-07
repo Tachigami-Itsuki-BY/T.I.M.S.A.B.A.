@@ -1,19 +1,6 @@
 -- LOGISTICS
-data_technology[tech_zinc_processing].effects =
-{
-    {type = unlock_recipe, recipe = brass_gear_wheel},
-    {type = unlock_recipe, recipe = brass_pipe},
-    {type = unlock_recipe, recipe = brass_pipe_to_ground}
-}
+data_technology[tech_logistics_5].prerequisites = {tech_logistics_4, tech_nitinol_processing, advanced_processing_unit, utility_science_pack}
 
-data_technology[tech_titanium_processing].effects =
-{
-    {type = unlock_recipe, recipe = titanium_gear_wheel},
-    {type = unlock_recipe, recipe = titanium_bearing_ball},
-    {type = unlock_recipe, recipe = titanium_bearing},
-    {type = unlock_recipe, recipe = titanium_pipe},
-    {type = unlock_recipe, recipe = titanium_pipe_to_ground}
-}
 local tech_logistic_system = "logistic-system"
 if mods [bobtech] then
     data_technology[tech_logistic_system].prerequisites = {transport_science_pack, tech_construction_robotics, tech_logistic_robotics}
@@ -61,7 +48,7 @@ end
 -- PRODUCTION
 data_technology[boiler_3].prerequisites = {boiler_2, chemical_science_pack, tech_ceramics, tech_invar_smelting_1}
 
-data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_processign}
+data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_processing}
 
 data_technology[tech_steam_turbine_1].prerequisites = {steam_engine_3, tech_ceramics, tech_aluminium_smelting_1}
 
@@ -77,9 +64,14 @@ data_technology[tech_electric_energy_accumulators_1].effects = {{type = unlock_r
 data_technology[tech_electric_energy_accumulators_2].effects = {{type = unlock_recipe, recipe = accumulator_2}}
 data_technology[tech_electric_energy_accumulators_3].effects = {{type = unlock_recipe, recipe = accumulator_3}}
 
-data_technology[tech_drills_3].prerequisites = {tech_drills_2, chemical_science_pack, tech_brass_processign}
+data_technology[tech_drills_3].prerequisites = {tech_drills_2, chemical_science_pack, tech_brass_processing}
 
-table.insert(data_technology[heat_exchanger_2].prerequisites, tech_brass_processign)
+data_technology[heat_exchanger_2].prerequisites =
+{
+    tech_heat_exchanger_1,
+    heat_pipe_2,
+    tech_brass_processing
+}
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]
@@ -116,6 +108,98 @@ replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_
 table.insert(data_technology[centrifuge_3].prerequisites, tech_stone_smelting_4)
 
 -- INTERMEDIATE PRODUCTS
+data_technology[tech_brass_processing].prerequisites = {tech_brass_smelting_1, lubricant}
+data_technology[tech_brass_processing].effects =
+{
+    {type = unlock_recipe, recipe = brass_gear_wheel},
+    {type = unlock_recipe, recipe = brass_bearing_ball},
+    {type = unlock_recipe, recipe = brass_bearing},
+    {type = unlock_recipe, recipe = brass_pipe},
+    {type = unlock_recipe, recipe = brass_pipe_to_ground}
+}
+
+data_technology[tech_titanium_processing].effects =
+{
+    {type = unlock_recipe, recipe = titanium_gear_wheel},
+    {type = unlock_recipe, recipe = titanium_bearing_ball},
+    {type = unlock_recipe, recipe = titanium_bearing},
+    {type = unlock_recipe, recipe = titanium_pipe},
+    {type = unlock_recipe, recipe = titanium_pipe_to_ground}
+}
+
+data_technology[tech_ceramics].prerequisites = {chemical_science_pack, lubricant}
+data_technology[tech_ceramics].effects =
+{
+    {type = unlock_recipe, recipe = silicon_nitride_bob},
+    {type = unlock_recipe, recipe = ceramic_gear_wheel},
+    {type = unlock_recipe, recipe = ceramic_bearing_ball},
+    {type = unlock_recipe, recipe = ceramic_bearing},
+    {type = unlock_recipe, recipe = ceramic_pipe},
+    {type = unlock_recipe, recipe = ceramic_pipe_to_ground}
+}
+data_technology[tech_ceramics].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1}
+}
+
+data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
+if mods [bobplates] >= "2.1.0" then
+    data_technology[tech_tungsten_processing].effects =
+    {
+        {type = unlock_recipe, recipe = tungsten_gear_wheel},
+        {type = unlock_recipe, recipe = tungsten_bearing_ball},
+        {type = unlock_recipe, recipe = tungsten_bearing},
+        {type = unlock_recipe, recipe = tungsten_pipe},
+        {type = unlock_recipe, recipe = tungsten_pipe_to_ground},
+        {type = unlock_recipe, recipe = tungsten_carbide_plate_2}
+    }
+else
+    data_technology[tech_tungsten_processing].effects =
+    {
+        {type = unlock_recipe, recipe = tungsten_gear_wheel},
+        {type = unlock_recipe, recipe = tungsten_bearing_ball},
+        {type = unlock_recipe, recipe = tungsten_bearing},
+        {type = unlock_recipe, recipe = tungsten_pipe},
+        {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
+    }
+end
+
+data_technology[tech_tungsten_alloy_processing].prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack}
+if mods [bobplates] >= "2.1.0" then
+    data_technology[tech_tungsten_alloy_processing].effects =
+    {
+        {type = unlock_recipe, recipe = copper_tungsten_powder},
+        {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
+        {type = unlock_recipe, recipe = copper_tungsten_gear_wheel},
+        {type = unlock_recipe, recipe = copper_tungsten_bearing_ball},
+        {type = unlock_recipe, recipe = copper_tungsten_bearing},
+        {type = unlock_recipe, recipe = copper_tungsten_pipe},
+        {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
+    }
+else
+    data_technology[tech_tungsten_alloy_processing].effects =
+    {
+        {type = unlock_recipe, recipe = copper_tungsten_powder},
+        {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
+        {type = unlock_recipe, recipe = tungsten_carbide_plate_2},
+        {type = unlock_recipe, recipe = copper_tungsten_gear_wheel},
+        {type = unlock_recipe, recipe = copper_tungsten_bearing_ball},
+        {type = unlock_recipe, recipe = copper_tungsten_bearing},
+        {type = unlock_recipe, recipe = copper_tungsten_pipe},
+        {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
+    }
+end
+data_technology[tech_tungsten_alloy_processing].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1}
+}
+
 data_technology[battery_lead_acid].effects =
 {
     {type = unlock_recipe, recipe = lead_oxide_IV},
@@ -135,48 +219,6 @@ data_technology[tech_battery_2].effects =
 }
 
 data_technology[tech_battery_3].localised_description = {"technology-description.battery"}
-
-data_technology[tech_brass_processign].prerequisites = {tech_brass_smelting_1, lubricant}
-data_technology[tech_brass_processign].effects =
-{
-    {type = unlock_recipe, recipe = brass_gear_wheel},
-    {type = unlock_recipe, recipe = brass_bearing_ball},
-    {type = unlock_recipe, recipe = brass_bearing},
-    {type = unlock_recipe, recipe = brass_pipe},
-    {type = unlock_recipe, recipe = brass_pipe_to_ground}
-}
-
-data_technology[tech_ceramics].effects =
-{
-    {type = unlock_recipe, recipe = silicon_nitride_bob},
-    {type = unlock_recipe, recipe = ceramic_gear_wheel},
-    {type = unlock_recipe, recipe = ceramic_bearing_ball},
-    {type = unlock_recipe, recipe = ceramic_bearing},
-    {type = unlock_recipe, recipe = ceramic_pipe},
-    {type = unlock_recipe, recipe = ceramic_pipe_to_ground}
-}
-
-data_technology[tech_tungsten_processing].effects =
-{
-    {type = unlock_recipe, recipe = tungsten_gear_wheel},
-    {type = unlock_recipe, recipe = tungsten_bearing_ball},
-    {type = unlock_recipe, recipe = tungsten_bearing},
-    {type = unlock_recipe, recipe = tungsten_pipe},
-    {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
-}
-
-tungsten_carbide_2 = "bob-tungsten-carbide-2"
-data_technology[tech_tungsten_alloy_processing].effects =
-{
-    {type = unlock_recipe, recipe = copper_tungsten_powder},
-    {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
-    {type = unlock_recipe, recipe = tungsten_carbide_2},
-    {type = unlock_recipe, recipe = copper_tungsten_gear_wheel},
-    {type = unlock_recipe, recipe = copper_tungsten_bearing_ball},
-    {type = unlock_recipe, recipe = copper_tungsten_bearing},
-    {type = unlock_recipe, recipe = copper_tungsten_pipe},
-    {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
-}
 
 data_technology[tech_uranium_power].prerequisites = {heat_pipe_2, tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
 data_technology[tech_uranium_power].effects =
@@ -386,7 +428,7 @@ data_technology["bob-atomic-artillery-shell"].unit.ingredients =
     {metallurgic_science_pack, 1}
 }
 
-data_technology[tank_1].prerequisites = {explosives, "automobilism", tech_brass_processign, tech_invar_smelting_1, tech_military_2}
+data_technology[tank_1].prerequisites = {explosives, "automobilism", tech_brass_processing, tech_invar_smelting_1, tech_military_2}
 data_technology[tank_1].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -1192,7 +1234,7 @@ data_technology[electric_boiler_3].prerequisites = {electric_boiler_2, tech_adva
 data_technology["angels-coolant-1"].prerequisites = {"angels-cooling", "angels-slag-processing-2", "angels-oil-processing", tech_battery_2}
 
 -- ANGELS PETROCHEM REFINING
-coke_purification_2 = "angels-coke-purification-2"
+data_technology[tech_coal_processing_3].prerequisites = {tech_coal_processing_2}
 data_technology[tech_coal_processing_3].effects = {{type = unlock_recipe, recipe = coke_purification_2}}
 
 sodium_nitrate_processing = "angels-solid-sodium-nitrate-processing"

@@ -22,11 +22,12 @@ for _, BUILD in pairs(valves) do
         {type = item, name = basic_circuit_board, amount = 1},
         {type = item, name = iron_pipe, amount = 2}
     }
+    if BUILD.name == valve_inspector then
+        data_storage_tank[BUILD.name].order = BUILD.order
+    else
+        data_valve[BUILD.name].order = BUILD.order
+    end
 end
-data_storage_tank[valve_inspector].order = a
-data_valve[valve_one_way].order = b
-data_valve[valve_overflow].order = c
-data_valve[valve_top_up].order = d
 
 data_item_subgroup["angels-fluid-tanks"].order = b
 

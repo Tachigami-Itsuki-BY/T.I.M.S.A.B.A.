@@ -362,7 +362,7 @@ for my_type, source_type in pairs(types) do
     end
 end
 
-local simulations = require("__TIMSABA__.prototypes.factoriopedia-simulations")
+local simulations = require("prototypes.factoriopedia-simulations")
 local sounds = require("__base__.prototypes.entity.sounds")
 local space_age_sounds = require ("__space-age__.prototypes.entity.sounds")
 local asteroid_sizes = {"chunk", "small", "medium", "big", "huge"}

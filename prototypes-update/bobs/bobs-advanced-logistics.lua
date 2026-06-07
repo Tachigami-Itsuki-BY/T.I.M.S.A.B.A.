@@ -366,7 +366,7 @@ local function roboport_recipe(name, antenna, door, chargepad, plate, roboport)
         {type = item, name = plate,     amount = 16}
     }
     if roboport then
-        table.insert(data_recipe[name].ingredients, {type = item, name = roboport, amount = 1})
+        table.insert(ingredients, {type = item, name = roboport, amount = 1})
     end
     data_recipe[name].ingredients = ingredients
 end
@@ -402,7 +402,7 @@ local function logistic_zone_expander_recipe(name, antenna, plate, zone_expander
         {type = item, name = plate,   amount = 4}
     }
     if zone_expander then
-        table.insert(data_recipe[name].ingredients, {type = item, name = zone_expander, amount = 1})
+        table.insert(ingredients, {type = item, name = zone_expander, amount = 1})
     end
     data_recipe[name].ingredients = ingredients
 end
@@ -460,7 +460,7 @@ local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
         {type = item, name = plate,     amount = 8}
     }
     if charge_port then
-        table.insert(data_recipe[name].ingredients, {type = item, name = charge_port, amount = 1})
+        table.insert(ingredients, {type = item, name = charge_port, amount = 1})
     end
     data_recipe[name].ingredients = ingredients
 end
@@ -499,7 +499,7 @@ local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port
         {type = item, name = plate,     amount = 16}
     }
     if charge_port_large then
-        table.insert(data_recipe[name].ingredients, {type = item, name = charge_port_large, amount = 1})
+        table.insert(ingredients, {type = item, name = charge_port_large, amount = 1})
     end
     data_recipe[name].ingredients = ingredients
 end

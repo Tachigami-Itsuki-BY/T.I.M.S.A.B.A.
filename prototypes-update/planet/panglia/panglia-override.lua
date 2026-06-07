@@ -335,7 +335,24 @@ if mods [panglia_mods] then
         {type = item, name = biotite_mica, amount_min = 0, amount_max = 64, probability = 0.5}
     }
 
-    --
+    if mods [arig_mods] then
+        local cosmic_incubator_recipe_arig = "cosmic_incubator_recipe_arig"
+        data_recipe[cosmic_incubator_recipe_arig].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_arig].icons = GALAXY_I(galaxy_png, planet_arig)
+        data_recipe[cosmic_incubator_recipe_arig].order = b_g
+        data_recipe[cosmic_incubator_recipe_arig].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_arig].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
 
     if mods [muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
@@ -423,12 +440,6 @@ if mods [panglia_mods] then
         data_recipe[cosmic_incubator_recipe_paracelsin].icons = GALAXY_I(galaxy_png, planet_paracelsin)
     end
 
-    if mods [arig_mods] then
-        local cosmic_incubator_recipe_arig = "cosmic_incubator_recipe_arig"
-        data_recipe[cosmic_incubator_recipe_arig].subgroup = is_panglia_universe
-        data_recipe[cosmic_incubator_recipe_arig].icons = GALAXY_I(galaxy_png, planet_arig)
-    end
-
     if mods [hyarion_mods] then
         local cosmic_incubator_recipe_hyarion = "cosmic_incubator_recipe_hyarion"
         data_recipe[cosmic_incubator_recipe_hyarion].subgroup = is_panglia_universe
@@ -484,9 +495,9 @@ if mods [panglia_mods] then
         {type = item, name = panglite_fiber, amount = 8}
     }
     data_furnace[panglia_crusher].subgroup = is_panglia_building
-    data_furnace[panglia_crusher].energy_usage = (240 - 15) .. kW
+    data_furnace[panglia_crusher].energy_usage = (240 - drain) .. kW
     data_furnace[panglia_crusher].energy_source.emissions_per_minute = {pollution = 16}
-    data_furnace[panglia_crusher].energy_source.drain = 15 .. kW
+    data_furnace[panglia_crusher].energy_source.drain = drain .. kW
 
 
     local cloning_vat = "cloning-vat"
@@ -505,9 +516,9 @@ if mods [panglia_mods] then
     data_assembling[cloning_vat].subgroup = is_panglia_building
     data_assembling[cloning_vat].crafting_speed = 2
     data_assembling[cloning_vat].module_slots = 4
-    data_assembling[cloning_vat].energy_usage = (480 - 15) .. kW
+    data_assembling[cloning_vat].energy_usage = (480 - drain) .. kW
     data_assembling[cloning_vat].energy_source.emissions_per_minute = {pollution = -1}
-    data_assembling[cloning_vat].energy_source.drain = 15 .. kW
+    data_assembling[cloning_vat].energy_source.drain = drain .. kW
 
     local simulation_chamber = "simulation_chamber"
     data_item[simulation_chamber].subgroup = is_panglia_building
@@ -516,8 +527,8 @@ if mods [panglia_mods] then
     data_recipe[simulation_chamber].subgroup = is_panglia_building
     data_furnace[simulation_chamber].subgroup = is_panglia_building
     data_furnace[simulation_chamber].crafting_speed = 0.125
-    data_furnace[simulation_chamber].energy_usage = (240 - 15) .. kW
-    data_furnace[simulation_chamber].energy_source.drain = 15 .. kW
+    data_furnace[simulation_chamber].energy_usage = (240 - drain) .. kW
+    data_furnace[simulation_chamber].energy_source.drain = drain .. kW
 
     local thinking_brain = "thinking-brain"
     data_item[thinking_brain].subgroup = is_panglia_building
@@ -555,6 +566,8 @@ if mods [panglia_mods] then
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.range = 32
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.cooldown = 3.75
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.damage_modifier = 2.25
+    data_ammo_turret[snouz_long_electric_gun_turret].energy_source.input_flow_limit = (1200 - 60) .. kW
+    data_ammo_turret[snouz_long_electric_gun_turret].energy_source.drain = 60 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

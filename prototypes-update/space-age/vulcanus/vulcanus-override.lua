@@ -1,4 +1,4 @@
-local simulations = require("__TIMSABA__.prototypes.factoriopedia-simulations")
+local simulations = require("prototypes.factoriopedia-simulations")
 -- LAVA
 data_fluid[lava].subgroup = is_lava
 data_fluid[lava].order = a
@@ -18,7 +18,7 @@ data_recipe[saphirite_from_lava].results =
     {type = item, name = stone, amount = 8, ignored_by_productivity = 8}
 }
 data_recipe[saphirite_from_lava].main_product = ore_saphirite
-data_recipe[saphirite_from_lava].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[saphirite_from_lava].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[stiratite_from_lava].localised_name = {"recipe-name.stiratite-from-lava"}
 data_recipe[stiratite_from_lava].subgroup = is_lava
@@ -196,7 +196,7 @@ data_recipe[carbon].results =
     {type = fluid, name = water_yellow_waste, amount = 30},
     {type = fluid, name = oxygen_angels, amount = 30} -- 45
 }
-data_recipe[carbon].surface_conditions = {{property = "pressure", min = 4000, max = 4000}}
+data_recipe[carbon].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 -- WOLFRAMITE
 data_item[wolframite_ore].localised_name = {"item-name.wolframite-ore"}
@@ -206,6 +206,7 @@ data_item[wolframite_ore].order = a
 data_item[wolframite_ore].stack_size = 200
 data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
 data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
+data_resource[wolframite_ore].factoriopedia_description = ""
 data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
 data_resource[wolframite_ore].order = a
 data_resource[wolframite_ore].minable.mining_time = 4

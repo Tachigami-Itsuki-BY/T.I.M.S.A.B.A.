@@ -1,3 +1,6 @@
+-- BASE
+space_age = "space-age"
+
 -- MULUNA
 muluna_mods = "planet-muluna"
 planet_muluna = "muluna"
@@ -70,6 +73,7 @@ hyper_transport_belt_arig = "planetaris-hyper-transport-belt"
 hyper_underground_belt_arig = "planetaris-hyper-underground-belt"
 hyper_splitter_arig = "planetaris-hyper-splitter"
 sandstone_brick = "planetaris-sandstone-brick"
+compression_science_pack = "planetaris-compression-science-pack"
 
 -- CASTRA
 castra_mods = "castra"
@@ -285,10 +289,24 @@ clowns_nuclear = "Clowns-Nuclear"
 plutonium_239_mods = "plutonium-239"
 
 -- BOBS
+boblogistics = "boblogistics"
+bobores = "bobores"
+bobplates = "bobplates"
 bobtech = "bobtech"
+
+-- ANGELS
+angelspetrochem = "angelspetrochem"
 
 -- LOADERS MODERNIZED
 loaders_modernized = "loaders-modernized"
+loaders_modernized_integrations = "loaders-modernized-integrations"
 
 -- SPACE AGE SCIENCE PACK
 space_age_science_packs = "sa-science-packs"
+
+-- PRIZMATIC BELTS
+prismatic_belts = "prismatic-belts"
+
+-- RESKINS
+reskins_library = "reskins-library"
+reskins_bobs = "reskins-bobs"

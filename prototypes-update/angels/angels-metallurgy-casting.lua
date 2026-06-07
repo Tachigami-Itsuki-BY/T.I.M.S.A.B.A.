@@ -929,15 +929,15 @@ data_recipe[tungsten_plate_angels].results[1].amount = 16
 data_item[tungsten_carbide_plate_bob].localised_description = show_formula and {chemical_formula, "WC"} or nil
 data_item[tungsten_carbide_plate_bob].order = b
 
-data_recipe[tungsten_carbide_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
-data_recipe[tungsten_carbide_2].order = b_a
-data_recipe[tungsten_carbide_2].energy_required = 8 -- W + C --> WC
-data_recipe[tungsten_carbide_2].ingredients =
+data_recipe[tungsten_carbide_plate_2].icons = THREE_I(tungsten_powder, carbon_angels, tungsten_carbide_plate_bob)
+data_recipe[tungsten_carbide_plate_2].order = b_a
+data_recipe[tungsten_carbide_plate_2].energy_required = 8 -- W + C --> WC
+data_recipe[tungsten_carbide_plate_2].ingredients =
 {
     {type = item, name = tungsten_powder, amount = 16},
     {type = item, name = carbon_angels, amount = 16}
 }
-data_recipe[tungsten_carbide_2].results[1].amount = 16
+data_recipe[tungsten_carbide_plate_2].results[1].amount = 16
 
 data_item[copper_tungsten_plate_bob].localised_description = show_formula and {chemical_formula, "WCu"} or nil
 data_item[copper_tungsten_plate_bob].order = c

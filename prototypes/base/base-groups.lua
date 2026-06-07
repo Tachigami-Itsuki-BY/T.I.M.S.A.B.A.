@@ -175,7 +175,7 @@ data:extend
 })
 
 -- COMBAT
-local combat = "combat"
+ig_combat = "combat"
 is_shotgun = "is-shotgun"
 is_laser = "is-laser"
 is_rocket = "is-rocket"
@@ -219,229 +219,229 @@ data:extend
     {
         type = item_subgroup,
         name = is_shotgun,
-        group = combat,
+        group = ig_combat,
         order = a_a
     },
     {
         type = item_subgroup,
         name = is_laser,
-        group = combat,
+        group = ig_combat,
         order = a_b
     },
     {
         type = item_subgroup,
         name = is_rocket,
-        group = combat,
+        group = ig_combat,
         order = a_c
     },
     {
         type = item_subgroup,
         name = is_flame,
-        group = combat,
+        group = ig_combat,
         order = a_d
     },
     {
         type = item_subgroup,
         name = is_bullet_projectile,
-        group = combat,
+        group = ig_combat,
         order = b_b
     },
     {
         type = item_subgroup,
         name = is_bullet,
-        group = combat,
+        group = ig_combat,
         order = b_c
     },
     {
         type = item_subgroup,
         name = is_ammo_magazine,
-        group = combat,
+        group = ig_combat,
         order = b_d
     },
     {
         type = item_subgroup,
         name = is_ammo_shotgun,
-        group = combat,
+        group = ig_combat,
         order = b_e
     },
     {
         type = item_subgroup,
         name = is_rocket_warhead,
-        group = combat,
+        group = ig_combat,
         order = b_f
     },
     {
         type = item_subgroup,
         name = is_ammo_rocket,
-        group = combat,
+        group = ig_combat,
         order = b_g
     },
     {
         type = item_subgroup,
         name = is_combat_robots_entites,
-        group = combat,
+        group = ig_combat,
         order = c_a
     },
     {
         type = item_subgroup,
         name = is_combat_robots,
-        group = combat,
+        group = ig_combat,
         order = c_c
     },
     {
         type = item_subgroup,
         name = is_combat_robot_brain,
-        group = combat,
+        group = ig_combat,
         order = c_d
     },
     {
         type = item_subgroup,
         name = is_combat_robot_tool,
-        group = combat,
+        group = ig_combat,
         order = c_e
     },
     {
         type = item_subgroup,
         name = is_equipment_2,
-        group = combat,
+        group = ig_combat,
         order = e_a
     },
     {
         type = item_subgroup,
         name = is_equipment_3,
-        group = combat,
+        group = ig_combat,
         order = e_b
     },
     {
         type = item_subgroup,
         name = is_equipment_4,
-        group = combat,
+        group = ig_combat,
         order = e_c
     },
     {
         type = item_subgroup,
         name = is_equipment_5,
-        group = combat,
+        group = ig_combat,
         order = e_d
     },
     {
         type = item_subgroup,
         name = is_utility_equipment_2,
-        group = combat,
+        group = ig_combat,
         order = f_a
     },
     {
         type = item_subgroup,
         name = is_utility_equipment_3,
-        group = combat,
+        group = ig_combat,
         order = f_b
     },
     {
         type = item_subgroup,
         name = is_utility_equipment_4,
-        group = combat,
+        group = ig_combat,
         order = f_c
     },
     {
         type = item_subgroup,
         name = is_military_equipment_2,
-        group = combat,
+        group = ig_combat,
         order = g_a
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_2,
-        group = combat,
+        group = ig_combat,
         order = g_c
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_3,
-        group = combat,
+        group = ig_combat,
         order = g_d
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_4,
-        group = combat,
+        group = ig_combat,
         order = g_e
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_5,
-        group = combat,
+        group = ig_combat,
         order = g_f
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_6,
-        group = combat,
+        group = ig_combat,
         order = g_g
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_7,
-        group = combat,
+        group = ig_combat,
         order = g_h
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_8,
-        group = combat,
+        group = ig_combat,
         order = g_i
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_9,
-        group = combat,
+        group = ig_combat,
         order = g_j
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_10,
-        group = combat,
+        group = ig_combat,
         order = g_k
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_11,
-        group = combat,
+        group = ig_combat,
         order = g_l
     },
     {
         type = item_subgroup,
         name = is_vehicle_equipment_12,
-        group = combat,
+        group = ig_combat,
         order = g_m
     },
     {
         type = item_subgroup,
         name = is_defensive_structure_2,
-        group = combat,
+        group = ig_combat,
         order = h_a
     },
     {
         type = item_subgroup,
         name = is_turret_2,
-        group = combat,
+        group = ig_combat,
         order = i_a
     },
     {
         type = item_subgroup,
         name = is_turret_3,
-        group = combat,
+        group = ig_combat,
         order = i_b
     },
     {
         type = item_subgroup,
         name = is_turret_4,
-        group = combat,
+        group = ig_combat,
         order = i_c
     },
     {
         type = item_subgroup,
         name = is_turret_5,
-        group = combat,
+        group = ig_combat,
         order = i_d
     },
 })

@@ -602,8 +602,8 @@ if mods[moshine_mods] then
     }
     data_assembling[data_processor].subgroup = is_moshine_building
     data_assembling[data_processor].order = a
-    data_assembling[data_processor].energy_usage = (240 - 15) .. kW
-    data_assembling[data_processor].energy_source.drain = 15 .. kW
+    data_assembling[data_processor].energy_usage = (240 - drain) .. kW
+    data_assembling[data_processor].energy_source.drain = drain .. kW
 
     data_item[neural_computer].subgroup = is_moshine_building
     data_item[neural_computer].order = b
@@ -673,8 +673,8 @@ if mods[moshine_mods] then
     }
     data_furnace[ai_trainer].subgroup = is_moshine_building
     data_furnace[ai_trainer].order = e
-    data_furnace[ai_trainer].energy_usage = (480 - 15) .. kW
-    data_furnace[ai_trainer].energy_source.drain = 15 .. kW
+    data_furnace[ai_trainer].energy_usage = (480 - drain) .. kW
+    data_furnace[ai_trainer].energy_source.drain = drain .. kW
 
     local processing_grid = "processing-grid"
     data_item[processing_grid].subgroup = is_moshine_building
