@@ -1,5 +1,3 @@
-local path = "path"
-
 local Public = {}
 
 local function get_item_data(item_name)
@@ -28,7 +26,7 @@ local function create_icon_entry(prototype_data_or_path, item_name, item_type, s
         return nil
     end
     local icon_properties = {}
-    if type(prototype_data_or_path) == "string" and item_type == path then
+    if type(prototype_data_or_path) == "string" and item_type == "path" then
         icon_properties.icon = prototype_data_or_path
         icon_properties.scale = scale_base
         icon_properties.shift = shift_pos
@@ -61,7 +59,7 @@ local function add_optional_icon(icons, index, item_name_or_path, scale, shift)
     if item_name_or_path then
         local icon_entry
         if string.find(item_name_or_path, "%.") or string.find(item_name_or_path, "[/\\]") then
-            icon_entry = create_icon_entry(item_name_or_path, nil, path, scale, shift)
+            icon_entry = create_icon_entry(item_name_or_path, nil, "path", scale, shift)
         else
             local data, type = get_item_data(item_name_or_path)
             icon_entry = create_icon_entry(data, item_name_or_path, type, scale, shift)

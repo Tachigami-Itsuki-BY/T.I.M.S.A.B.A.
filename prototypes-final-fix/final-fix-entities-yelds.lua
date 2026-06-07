@@ -34,8 +34,10 @@ for tree_name, tree_data in pairs(data.raw.tree) do
     end
 end
 
-data_plant["yumako-tree"].minable.results[1].amount = 64
-data_plant["jellystem"].minable.results[1].amount = 64
+local yumako_tree = "yumako-tree"
+data_plant[yumako_tree].minable.results[1].amount = 64
+local jellystem = "jellystem"
+data_plant[jellystem].minable.results[1].amount = 64
 
 data_tree["slipstack"].minable.results[1].amount = 8
 data_tree["funneltrunk"].minable.results[2].amount = 8
@@ -375,6 +377,7 @@ if mods [moshine_mods] then
         {type = item, name = stone, amount_min = 16, amount_max = 32},
         {type = item, name = coal, amount_min = 16, amount_max = 32}
     }
+    data_resource["steam-geyser"].minable.results[1] = {type = fluid, name = steam, amount_min = 30, amount_max = 30, temperature = 915}
 end
 
 -- PANGLIA
@@ -392,6 +395,21 @@ if mods [panglia_mods] then
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 32},
         {type = item, name = stone, amount_min = 0, amount_max = 16}
     }
+end
+
+-- ARIG
+if mods [arig_mods] then
+    data_plant["tree-plant"].minable.results[2].amount = 960
+    data_plant[yumako_tree].minable.results[2] = {type = fluid, name = steam, amount = 960, temperature = 915}
+    data_plant[jellystem].minable.results[2].amount = 960
+    local cactus_plant = "planetaris-cactus-plant"
+    data_plant[cactus_plant].minable.results[1].amount = 4
+    data_plant[cactus_plant].minable.results[2].amount = 960
+
+    local heavy_oil_geyser = "heavy-oil-geyser"
+    data_resource[heavy_oil_geyser].minable.results[1].name = heavy_oil_timsaba
+    data_resource[heavy_oil_geyser].minable.results[1].amount_min = 30
+    data_resource[heavy_oil_geyser].minable.results[1].amount_max = 30
 end
 
 -- MODS

@@ -1,11 +1,33 @@
 require("prototypes.global-name.global-name")
 require("prototypes.global-name.global-name-items")
 require("prototypes.global-name.global-name-fluids")
+require("prototypes.global-name.global-name-recipe")
 require("prototypes.global-name.global-name-mods")
 require("prototypes.prototypes-setting")
 
 require("prototypes.recipe-category")
 require("prototypes.fuel-category")
+
+require("prototypes.base.base-groups")
+require("prototypes.bobs.bobs-groups")
+require("prototypes.angels.angels-groups")
+require("prototypes.space-age.space-age-groups")
+require("prototypes.space-age.vulcanus.vulcanus-groups")
+require("prototypes.space-age.gleba.gleba-groups")
+require("prototypes.space-age.fulgora.fulgora-groups")
+require("prototypes.space-age.aquilo.aquilo-groups")
+
+require("prototypes.bobs.bobs-name-building")
+require("prototypes.angels.angels-name-building")
+
+require("prototypes.bobs.bobs-name-technology")
+require("prototypes.angels.angels-name-technology")
+
+require("compatibility.bobs-mods.bobores")
+require("compatibility.bobs-mods.boblogistics")
+require("compatibility.bobs-mods.bobplates")
+
+require("compatibility.angels-mods.angelspetrochem")
 
 TWO_I = require("lib.generator-icons").double_icon
 TWO_D_I = require("lib.generator-icons").double_to_double_icon
@@ -50,22 +72,11 @@ AR_IIFI_ALT_I = require("lib.generator-icons-shattered").alt_AR_item_item_fluid_
 
 require("prototypes.TIMSABA-functions")
 
-if mods ["bobores"] >= "2.1.0" then require("compatibility.migrations-mods.bobores") end
-
 require("prototypes.new-icons.new-icons")
 require("prototypes.new-icons.new-icons-items")
 require("prototypes.new-icons.new-icons-fluids")
 
 require("prototypes.angels-ground-water-pump-recipe")
-
-require("prototypes.base.base-groups")
-require("prototypes.bobs.bobs-groups")
-require("prototypes.angels.angels-groups")
-require("prototypes.space-age.space-age-groups")
-require("prototypes.space-age.vulcanus.vulcanus-groups")
-require("prototypes.space-age.gleba.gleba-groups")
-require("prototypes.space-age.fulgora.fulgora-groups")
-require("prototypes.space-age.aquilo.aquilo-groups")
 
 require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
@@ -74,9 +85,6 @@ require("prototypes.angels.angels-metallurgy-casting-item-fluid")
 require("prototypes.angels.angels-water-treatment-item-fluid")
 require("prototypes.angels.angels-petrochem-refining-item-fluid")
 require("prototypes.angels.angels-bioprocessing-item-fluid")
-
-require("prototypes.bobs.bobs-name-technology")
-require("prototypes.angels.angels-name-technology")
 
 require("prototypes.TIMSABA.magnesium")
 require("prototypes.TIMSABA.boron")
@@ -108,9 +116,7 @@ require("prototypes.space-age.aquilo.aquilo-item-fluid")
 require("prototypes.space-age.aquilo.aquilo-asteroid")
 
 require("prototypes.base.base-recipe")
-require("prototypes.bobs.bobs-name-building")
 require("prototypes.bobs.bobs-building")
-
 require("prototypes.bobs.bobs-recipe")
 require("prototypes.angels.angels-resource-refining-recipe")
 require("prototypes.angels.angels-metallurgy-smelting-recipe")
@@ -118,7 +124,6 @@ require("prototypes.angels.angels-metallurgy-casting-recipe")
 require("prototypes.angels.angels-water-treatment-recipe")
 require("prototypes.angels.angels-petrochem-refining-recipe")
 require("prototypes.angels.angels-bioprocessing-recipe")
-require("prototypes.angels.angels-name-building")
 require("prototypes.angels.angels-building")
 
 require("prototypes.space-age.space-age-recipe")
@@ -155,12 +160,17 @@ require("prototypes.planet.panglia.panglia-recipe")
 require("prototypes.planet.panglia.panglia-technology")
 
 require("prototypes.planet.arig.arig-groups")
+require("prototypes.planet.arig.arig-item-fluid")
 require("prototypes.planet.arig.arig-recipe")
 require("prototypes.planet.arig.arig-technology")
 
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
+
+require("prototypes.planet.hyarion.hyarion-groups")
+require("prototypes.planet.hyarion.hyarion-recipe")
+require("prototypes.planet.hyarion.hyarion-technology")
 
 require("prototypes.planet.corrundum.corrundum-groups")
 require("prototypes.planet.corrundum.corrundum-recipe")
@@ -173,10 +183,6 @@ require("prototypes.planet.corrundum.corrundum-technology")
 require("prototypes.planet.frozeta.frozeta-groups")
 require("prototypes.planet.frozeta.frozeta-recipe")
 require("prototypes.planet.frozeta.frozeta-technology")
-
-require("prototypes.planet.hyarion.hyarion-groups")
-require("prototypes.planet.hyarion.hyarion-recipe")
-require("prototypes.planet.hyarion.hyarion-technology")
 
 require("prototypes.planet.maraxsis.maraxsis-groups")
 require("prototypes.planet.maraxsis.maraxsis-recipe")

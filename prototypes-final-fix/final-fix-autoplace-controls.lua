@@ -19,23 +19,37 @@ data_autoplace_control[wolframite_ore_ac].order = b_a
 data_autoplace_control[calcite].order = b_b
 data_autoplace_control["sulfuric_acid_geyser"].order = b_c
 
---data_autoplace_control["gleba_stone"].order = c
+--data_autoplace_control["gleba_stone"].order = b_d
 
-data_autoplace_control[scrap].order = d
+data_autoplace_control[scrap].order = b_e
 
-data_autoplace_control["aquilo_crude_oil"].order = e
+data_autoplace_control["aquilo_crude_oil"].order = b_f
 local thermal_water_geyser_ac = "lithium_brine"
 data_autoplace_control[thermal_water_geyser_ac].localised_name = {"", "[entity=lithium-brine] ", {"entity-name.thermal-water-geyser"}}
-data_autoplace_control[thermal_water_geyser_ac].order = e_a
-data_autoplace_control["fluorine_vent"].order = e_b
+data_autoplace_control[thermal_water_geyser_ac].order = b_g
+data_autoplace_control["fluorine_vent"].order = b_h
 
 -- MULUNA
 if mods [muluna_mods] then
     data_autoplace_control[metallic_asteroid_chunk].localised_name = {"", "[entity=metallic-asteroid-chunk] ", {"entity-name.metallic-chunk"}}
-    data_autoplace_control[metallic_asteroid_chunk].order = f
+    data_autoplace_control[metallic_asteroid_chunk].order = c
     data_autoplace_control[carbonic_asteroid_chunk].localised_name = {"", "[entity=carbonic-asteroid-chunk] ", {"entity-name.carbonic-chunk"}}
-    data_autoplace_control[carbonic_asteroid_chunk].order = f_a
+    data_autoplace_control[carbonic_asteroid_chunk].order = c_a
     data_autoplace_control[oxide_asteroid_chunk].localised_name = {"", "[entity=oxide-asteroid-chunk] ", {"entity-name.oxide-chunk"}}
-    data_autoplace_control[oxide_asteroid_chunk].order = f_b
-    data_autoplace_control[anorthite_chunk].order = f_c
+    data_autoplace_control[oxide_asteroid_chunk].order = c_b
+    data_autoplace_control[anorthite_chunk].order = c_c
 end
+
+-- MOSHINE
+if mods [moshine_mods] then
+    data_autoplace_control["multi_ore"].order = c_d
+    data_autoplace_control["steam_geyser"].order = c_e
+end
+
+-- ARIG
+if mods [arig_mods] then
+    data_autoplace_control["arig_stone"].order = c_f
+    data_autoplace_control["heavy-oil-geyser"].order = c_g
+end
+
+--

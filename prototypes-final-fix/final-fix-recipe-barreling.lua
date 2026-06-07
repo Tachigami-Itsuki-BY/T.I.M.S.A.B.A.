@@ -37,6 +37,8 @@ local simple_fluids =
     water_orange_waste,
     -- PANGLIA
     branbalite_slurry,
+    -- ARIG
+    heavy_oil_timsaba
 }
 local dangerous_fluids =
 {

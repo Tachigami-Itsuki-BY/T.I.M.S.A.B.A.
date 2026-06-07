@@ -9,17 +9,7 @@ data_item[iron_chest].weight = 31250
 data_container[iron_chest].next_upgrade = steel_chest
 data_container[iron_chest].inventory_size = 40
 
-local logistic_chests_1 = "bob-logistic-chests-1"
-data_item[steel_chest].subgroup = logistic_chests_1
-data_item[steel_chest].order = a
-data_item[steel_chest].stack_size = 32
-data_item[steel_chest].weight = 31250
-data_recipe[steel_chest].subgroup = logistic_chests_1
-data_recipe[steel_chest].order = a
-data_container[steel_chest].subgroup = logistic_chests_1
-data_container[steel_chest].order = a
-data_container[steel_chest].inventory_size = 60
-
+local is_logistic_chests = "bob-logistic-chests-1"
 active_provider_chest = "active-provider-chest"
 buffer_chest = "buffer-chest"
 passive_provider_chest = "passive-provider-chest"
@@ -27,6 +17,7 @@ requester_chest = "requester-chest"
 storage_chest = "storage-chest"
 local chests =
 {
+    {name = steel_chest, order = a},
     {name = active_provider_chest, order = b},
     {name = buffer_chest, order = c},
     {name = passive_provider_chest, order = d},
@@ -34,12 +25,22 @@ local chests =
     {name = storage_chest, order = f}
 }
 for _, BUILD in pairs(chests) do
+    data_item[BUILD.name].subgroup = is_logistic_chests
     data_item[BUILD.name].order = BUILD.order
     data_item[BUILD.name].stack_size = 32
     data_item[BUILD.name].weight = 31250
+    data_recipe[BUILD.name].subgroup = is_logistic_chests
     data_recipe[BUILD.name].order = BUILD.order
-    data_logistic_container[BUILD.name].order = BUILD.order
-    data_logistic_container[BUILD.name].inventory_size = 60
+    if BUILD.name == steel_chest then
+        data_container[BUILD.name].subgroup = is_logistic_chests
+        data_container[BUILD.name].order = BUILD.order
+        data_container[BUILD.name].inventory_size = 60
+    end
+    if BUILD.name ~= steel_chest then
+        data_logistic_container[BUILD.name].subgroup = is_logistic_chests
+        data_logistic_container[BUILD.name].order = BUILD.order
+        data_logistic_container[BUILD.name].inventory_size = 60
+    end
 end
 
 local function chset_recipe(name, material, chest)
@@ -242,8 +243,7 @@ warehouses_recipe(warehouse_passive_provider, electronic_circuit, steel_plate)
 warehouses_recipe(warehouse_requester, advanced_circuit, steel_plate)
 warehouses_recipe(warehouse_storage, electronic_circuit, steel_plate)
 
-local simulations = require("__TIMSABA__.prototypes.factoriopedia-simulations")
-local L2_inserter = "long-handed-inserter"
+local simulations = require("prototypes.factoriopedia-simulations")
 local entities =
 {
     {type_1 = data_transport_belt, name = T0_transport_belt, speed = 1/60,  ASC = 30},
@@ -357,7 +357,11 @@ transport_belt_recipe(T2_transport_belt, steel_gear_wheel, bronze_plate_bob, T1_
 transport_belt_recipe(T3_transport_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_transport_belt, cobalt_steel_bearing)
 transport_belt_recipe(T4_transport_belt, titanium_gear_wheel, titanium_plate_bob, T3_transport_belt, titanium_bearing)
 transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_transport_belt, nitinol_bearing)
-if data_recipe[T0_transport_belt] then data_recipe[T0_transport_belt].ingredients[1].amount = 2 bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt}) end
+
+if data_recipe[T0_transport_belt] then
+    data_recipe[T0_transport_belt].ingredients[1].amount = 2
+    bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt})
+end
 
 local function underground_belt_recipe(name, gear_wheel, plate, underground_belt, bearing)
     local ingredients =
@@ -384,7 +388,10 @@ underground_belt_recipe(T3_underground_belt, cobalt_steel_gear_wheel, aluminium_
 underground_belt_recipe(T4_underground_belt, titanium_gear_wheel, titanium_plate_bob, T3_underground_belt, titanium_bearing)
 underground_belt_recipe(T5_underground_belt, nitinol_gear_wheel, nitinol_plate_bob, T4_underground_belt, nitinol_bearing)
 data_underground_belt[T5_underground_belt].factoriopedia_simulation = simulations.factoriopedia_T5_underground_belt
-if data_recipe[T0_underground_belt] then data_recipe[T0_underground_belt].ingredients[1].amount = 8 bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt}) end
+if data_recipe[T0_underground_belt] then
+    data_recipe[T0_underground_belt].ingredients[1].amount = 8
+    bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt})
+end
 
 local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
     local ingredients =
@@ -417,22 +424,31 @@ if data_recipe[T0_splitter] then
     bobmods.lib.recipe.update_recycling_recipe({T0_splitter})
 end
 
-table.insert(data_recipe[T1_inserter].ingredients, {type = item, name = T0_inserter, amount = 1})
-table.insert(data_recipe[T1_inserter].ingredients, {type = item, name = iron_bearing, amount = 1})
-table.insert(data_recipe[L2_inserter].ingredients, {type = item, name = steel_bearing, amount = 1})
+local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
+    data_recipe[name].ingredients =
+    {
+        {type = item, name = gear_wheel, amount = 1},
+        {type = item, name = bearing, amount = 1},
+        {type = item, name = inserter, amount = 1},
+        {type = item, name = circuit, amount = 1},
+        {type = item, name = plate, amount = 1}
+    }
+end
+inserter_recipe(T1_inserter, iron_gear_wheel, T0_inserter, electronic_circuit, iron_plate, iron_bearing)
+inserter_recipe(L2_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
+inserter_recipe(T3_inserter, cobalt_steel_gear_wheel, L2_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
+inserter_recipe(T4_inserter, titanium_gear_wheel, T3_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
+inserter_recipe(T5_inserter, nitinol_gear_wheel, T4_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 
 local function bulk_inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
-    local ingredients =
+    data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 4},
+        {type = item, name = bearing, amount = 4},
         {type = item, name = inserter, amount = 1},
         {type = item, name = circuit, amount = 1},
         {type = item, name = plate, amount = 4}
     }
-    if bearing then
-        table.insert(ingredients, {type = item, name = bearing, amount = 4})
-    end
-    data_recipe[name].ingredients = ingredients
 end
 bulk_inserter_recipe(T2_bulk_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
 bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
@@ -441,12 +457,6 @@ bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, adv
 
 if mods ["loaders-modernized-integrations"] then
     local data_loader_1x1 = data.raw["loader-1x1"]
-    local T0_loader = "mdrn-basic-loader"
-    local T1_loader = "mdrn-loader"
-    local T2_loader = "mdrn-fast-loader"
-    local T3_loader = "mdrn-express-loader"
-    local T4_loader = "mdrn-turbo-loader"
-    local T5_loader = "mdrn-ultimate-loader"
     local loaders =
     {
         {name = T0_loader, speed = 1/60,  ins_amount = 8, ASC = 30},
@@ -462,9 +472,6 @@ if mods ["loaders-modernized-integrations"] then
             data_item[BUILD.name].stack_size = 32
             data_item[BUILD.name].weight = 31250
             data_recipe[BUILD.name].order = z
-            data_loader_1x1[BUILD.name].order = z
-            data_loader_1x1[BUILD.name].speed = BUILD.speed
-            data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
             local recipe_variants = {BUILD.name, "stack-" .. BUILD.name}
             for _, recipe_name in ipairs(recipe_variants) do
                 if data_recipe[recipe_name] then
@@ -481,9 +488,15 @@ if mods ["loaders-modernized-integrations"] then
                             end
                         end
                     end
-                    bobmods.lib.recipe.update_recycling_recipe({recipe_name})
                 end
             end
+            if mods [loaders_modernized_integrations] >= "2.0.7" and mods [boblogistics] >= "2.1.0" then
+                data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
+            end
+            data_loader_1x1[BUILD.name].order = z
+            data_loader_1x1[BUILD.name].speed = BUILD.speed
+            data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            bobmods.lib.recipe.update_recycling_recipe({BUILD.name})
         end
     end
     local stack_loader = "mdrn-stack-loader"
@@ -495,7 +508,11 @@ if mods ["loaders-modernized-integrations"] then
         data_item[stack_loader].weight = 31250
         data_recipe[stack_loader].subgroup = is_gleba_logistics
         data_recipe[stack_loader].order = b
-        data_recipe[stack_loader].ingredients[1].name = vulcanus_underground_belt
+        if mods [arig_mods] then
+            data_recipe[stack_loader].ingredients[1].name = hyper_underground_belt_arig
+        else
+            data_recipe[stack_loader].ingredients[1].name = vulcanus_underground_belt
+        end
         local recipe_variants = {stack_loader, "stack-" .. stack_loader}
         for _, recipe_name in ipairs(recipe_variants) do
             if data_recipe[recipe_name] then
@@ -696,8 +713,6 @@ end
 data_recipe[stone_pipe].category = smelting_filtering
 data_recipe[stone_pipe].additional_categories = {angels_sintering_4, metallurgy}
 if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe].additional_categories = {angels_sintering_1, metallurgy} end
-data_recipe[stone_pipe].ingredients[1].name = stone
-data_recipe[stone_pipe].ingredients[1].amount = 2
 data_recipe[plastic_pipe].category = crafting_fluid
 data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
 data_recipe[plastic_pipe].auto_recycle = false
@@ -753,8 +768,6 @@ pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copp
 data_recipe[stone_pipe_to_ground].category = smelting_filtering
 data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_4, metallurgy}
 if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy} end
-data_recipe[stone_pipe_to_ground].ingredients[2].name = stone
-data_recipe[stone_pipe_to_ground].ingredients[2].amount = 8
 data_recipe[plastic_pipe_to_ground].category = crafting_fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
@@ -805,6 +818,10 @@ bobmods.lib.recipe.update_recycling_recipe
     T5_splitter,
     T1_inserter,
     L2_inserter,
+    T2_inserter,
+    T3_inserter,
+    T4_inserter,
+    T5_inserter,
     T2_bulk_inserter,
     T3_bulk_inserter,
     T4_bulk_inserter,

@@ -385,3 +385,23 @@ data_recipe[platinum_ore_smelting] = nil
 data_recipe[processed_platinum_smelting] = nil
 data_recipe[solid_ammonium_chloroplatinate_smelting] = nil
 --data_recipe[] = nil
+
+--[[if mods [boblogistics] >= "2.1.0" then
+    local ceramic_pipe = "bob-ceramic-pipe"
+    data_item[ceramic_pipe] = nil
+    data_recipe[ceramic_pipe] = nil
+    data_recipe[ceramic_pipe .. _recycling] = nil
+    if mods[panglia_mods] then
+        data_recipe[item_ .. ceramic_pipe .. _panglia_crushing] = nil
+    end
+    data_pipe[ceramic_pipe] = nil
+
+    local ceramic_pipe_to_ground = "bob-ceramic-pipe-to-ground"
+    data_item[ceramic_pipe_to_ground] = nil
+    data_recipe[ceramic_pipe_to_ground] = nil
+    data_recipe[ceramic_pipe_to_ground .. _recycling] = nil
+    if mods[panglia_mods] then
+        data_recipe[item_ .. ceramic_pipe_to_ground .. _panglia_crushing] = nil
+    end
+    data_pipe_to_ground[ceramic_pipe_to_ground] = nil
+end]]

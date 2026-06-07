@@ -7,7 +7,8 @@ local recipes =
     {planet = planet_aquilo, fluid = ammonia_solution, amount = 60},
     {planet = planet_moshine, fluid = lava, amount = 60},
     {planet = planet_panglia, fluid = water, amount = 60},
-    -- {planet = "planet_", fluid = , amount = 60}, new planet
+    {planet = planet_arig, fluid = sand_arig, amount = 60},
+    -- {planet = planet_, fluid = , amount = 60}, new planet
 }
 for _, RECIPE in ipairs(recipes) do
     if data_fluid[RECIPE.fluid] and data_planet[RECIPE.planet] then

@@ -148,6 +148,7 @@ local table_of_chemical_elements =
     --Og = {{, , }, {, , }, {, , }}, -- Oganesson
     -- OTHERS
     Cc = {{069, 069, 069}, {054, 054, 054}, {036, 036, 036}}, -- Crude Oil
+    Sa = {{255, 220, 189}, {199, 163, 133}, {170, 142, 119}}, -- Sand Fluid
     -- SOLUTIONS
     Wp = {{090, 106, 164}, {090, 106, 164}, {090, 106, 164}}, -- Water purified
     De = {{187, 174, 174}, {187, 174, 174}, {187, 174, 174}}, -- Diethyl ether

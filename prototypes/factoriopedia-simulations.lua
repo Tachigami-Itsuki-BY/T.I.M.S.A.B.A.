@@ -266,6 +266,62 @@ simulations.factoriopedia_molybdenum_rhenium_pipe_to_ground =
     ]]
 }
 
+-- FOR 2.1.0 BA
+simulations.factoriopedia_T4_underground_belt_2_1_0 =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkMEKgzAMht8l5zo2qaK+yhjDapCAptKmYyK++1o97LDDxk4hf9PvS7uCGQPOjligWYE6yx6a6wqeBm7HlHE7ITQgNPnWtJkEZ2wWuEc3OBtrZnAU2BRQzJ7QXLabAmQhITxYe7PcOUwGXRxQPzIVzNZHjOW0R0KfCgXLXqOvJ4fdcaoVyDInJPEc0jYf1vxva/ndaoPs2vhyEpxi8v5WBQ90fr9QlHmt67qo9Dk/62rbXsb1gWs=",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_stone_pipe_to_ground_2_1_0 =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkM0KgzAMgN8l5ypO2k19lTFG1SABm0pbx0T67qt62GEMxo75+74kK7TjjJMjDtCsQJ1lD811BU8D63HLsTYIDQQyXrc688EyZhNNmAWbDc7O3EMUQNzjE5pTvAlADhQID9IeLHeeTYsuNYifiAIm6xPE8rZDAhe5ErCk+VwlW08Ou6N6KqP4sJR/Wi7fLHK7iwKahHy/TMADnd8b1LmsZV2rShZlIasYX1rddDs=",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_nitinol_pipe_to_ground_2_1_0 =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkN0KgzAMhd8l13Vo0U37KmMMf4IEbFraOibSd1/Vi12MwdhVSM7hO0lW6KYZrSMOoFag3rAHdV3B08jttM241QgKAmnfdm3GFIjNlFmymAWTjc7MPEAUQDzgE1QRbwKQQ/Lhwdqb5c6z7tAlg/iRKcAanyTD2x4JnZ8qActeU95ADvtDLWQUHzny75zLt5xyu40C6gR9P07AA53fDdVZNmXTVHWZy7ysY3wBiFd2tQ==",
+            position = {0, 0}
+        }
+    ]]
+}
+
+-- MODS
+simulations.hyper_underground_belt_arig =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqlkMsKg0AMRf8l61GsjEX9lVKKj2ADmhnmUSrivzfqoosuWuhqyE3mnJAF2jGidcQB6gWoM+yhvizgaeBm3DJuJoQa7NgwhsaRT+6zRZdE7tENzsibtDgGWBWQZE+oT+tVAXKgQHjg9mK+cZxadDKgfscqsMYLyfC2jdBznRYKZqGkhTh7ctgdba0gCESwxDZuG32Y87/M1XeziWFXywUo4CTJ+8IKHuj8/qE455WuqqLUWZ7pcl1fL9GFvw==",
+            position = {0, 0}
+        }
+    ]]
+}
+
 local make_asteroid_simulation = function(name, wait)
     return
     [[

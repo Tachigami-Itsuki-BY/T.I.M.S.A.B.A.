@@ -6,13 +6,23 @@ data_recipe[module_contact].results[1].amount = 4
 
 local module_circuit_board = "bob-module-circuit-board"
 data_recipe[module_circuit_board].energy_required = 8
-data_recipe[module_circuit_board].ingredients[1].amount = 4
-data_recipe[module_circuit_board].ingredients[3].amount = 4
-data_recipe[module_circuit_board].ingredients[4].amount = 30
+data_recipe[module_circuit_board].ingredients =
+{
+    {type = item, name = wooden_board, amount = 4},
+    {type = item, name = copper_plate, amount = 4},
+    {type = item, name = tin_plate_bob, amount = 2},
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 30}
+}
 
 local basic_module_board = "bob-module-processor-board"
 data_recipe[basic_module_board].energy_required = 8
-data_recipe[basic_module_board].ingredients[5].amount = 30
+data_recipe[basic_module_board].ingredients =
+{
+    {type = item, name = phenolic_board, amount = 4},
+    {type = item, name = silver_cable, amount = 16},
+    {type = item, name = module_contact, amount = 8},
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 30}
+}
 
 local speed_circuit_board = "bob-speed-processor"
 local efficiency_circuit_board = "bob-efficiency-processor"
@@ -43,10 +53,9 @@ local advanced_module_board = "bob-module-processor-board-2"
 data_recipe[advanced_module_board].energy_required = 8
 data_recipe[advanced_module_board].ingredients =
 {
-    {type = item,  name = glass_fiber_board, amount = 4},
-    {type = item,  name = copper_plate,      amount = 4},
-    {type = item,  name = silver_plate_bob,  amount = 4},
-    {type = item,  name = module_contact,    amount = 16},
+    {type = item,  name = glass_fiber_board,                 amount = 4},
+    {type = item,  name = gold_cable,                        amount = 16},
+    {type = item,  name = module_contact,                    amount = 16},
     {type = fluid, name = iron_chloride_III_solution_angels, amount = 60}
 }
 
@@ -77,7 +86,13 @@ advanced_module_boards(advanced_quality_circuit_board,          polished_diamond
 
 local processor_module_board = "bob-module-processor-board-3"
 data_recipe[processor_module_board].energy_required = 8
-data_recipe[processor_module_board].ingredients[4].amount = 60
+data_recipe[processor_module_board].ingredients =
+{
+    {type = item,  name = glass_fiber_board,                 amount = 4},
+    {type = item,  name = platinum_cable,                    amount = 16},
+    {type = item,  name = module_contact,                    amount = 16},
+    {type = fluid, name = iron_chloride_III_solution_angels, amount = 60}
+}
 
 local processor_speed_circuit_board = "bob-speed-processor-3"
 local processor_efficiency_circuit_board = "bob-efficiency-processor-3"
@@ -241,10 +256,14 @@ local beacon_1 = "beacon"
 data_item[beacon_1].stack_size = 32
 data_item[beacon_1].weight = 31250
 data_recipe[beacon_1].energy_required = 16
-data_recipe[beacon_1].ingredients[1].amount = 16
-data_recipe[beacon_1].ingredients[2].amount = 16
-data_recipe[beacon_1].ingredients[3].amount = 8
-data_recipe[beacon_1].ingredients[4].amount = 8
+data_recipe[beacon_1].ingredients =
+{
+    {type = item, name = basic_circuit_board,       amount = 16},
+    {type = item, name = electronic_circuit,        amount = 16},
+    {type = item, name = steel_plate,               amount = 8},
+    {type = item, name = copper_cable,              amount = 8},
+    {type = item, name = crystal_splinter_harmonic, amount = 1}
+}
 
 local beacon_2 = "bob-beacon-2"
 data_item[beacon_2].stack_size = 32

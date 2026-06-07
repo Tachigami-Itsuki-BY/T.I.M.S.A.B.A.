@@ -1632,6 +1632,7 @@ data_item[tungsten_processed].localised_description = show_formula and {chemical
 data_item[tungsten_processed].order = b
 data_recipe[tungsten_processed].icons = TWO_I(tungsten_ore_bob, tungsten_processed)
 data_recipe[tungsten_processed].order = b
+data_recipe[tungsten_processed].ingredients[1].name = tungsten_ore_bob
 data_recipe[tungsten_processed].results[1].amount = 4
 
 data_item[tungsten_pellet].localised_description = show_formula and {chemical_formula, "W"} or nil

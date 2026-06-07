@@ -1,5 +1,3 @@
-local is_gears = "bob-gears"
-local is_bearing_ball = "bob-bearings"
 advanced_deuterium_fuel_cell_reprocessing = "advanced-deuterium-fuel-cell-reprocessing"
 tritium_fuel_cell_reprocessing = "tritium-fuel-cell-reprocessing"
 advanced_tritium_fuel_cell_reprocessing = "advanced-tritium-fuel-cell-reprocessing"
@@ -113,7 +111,7 @@ data:extend
         type = recipe,
         name = iron_bearing,
         category = crafting,
-        subgroup = is_bearing_ball,
+        subgroup = is_bearing,
         icons = TWO_I(iron_plate, iron_bearing),
         order = a,
         enabled = true,

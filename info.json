@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.",
     "author": "Tachugami_Istuki",
@@ -84,7 +84,7 @@
         "? Moshine",
         "? panglia_planet",
         "! maraxsis",
-        "! planetaris-arig",
+        "? planetaris-arig",
         "! planetaris-hyarion",
         "! castra",
         "! corrundum",

@@ -903,10 +903,12 @@ data_fluid[sulfuric_acid_angels].order = f
 data_recipe[sulfuric_acid_angels].icons = THREE_I(sulfur_trioxide_gas, water_purified_angels, sulfuric_acid_angels)
 data_recipe[sulfuric_acid_angels].order = f
 -- SO₃ + H₂O --> H₂SO₄
-data_recipe[sulfuric_acid_angels].ingredients[1].name = sulfur_trioxide_gas
-data_recipe[sulfuric_acid_angels].ingredients[1].amount = 60
-data_recipe[sulfuric_acid_angels].ingredients[2].amount = 60
-data_recipe[sulfuric_acid_angels].results[1].amount = 60
+data_recipe[sulfuric_acid_angels].ingredients =
+{
+    {type = fluid, name = sulfur_trioxide_gas, amount = 60},
+    {type = fluid, name = water_purified_angels, amount = 60}
+}
+data_recipe[sulfuric_acid_angels].results = {{type = fluid, name = sulfuric_acid_angels, amount = 60}}
 
 -- CHLORINE FLUIDS
 data_item_subgroup[is_chlorine_fluids].order = g
@@ -1996,4 +1998,6 @@ data_recipe[catalyst_yellow].subgroup = is_buildings_chemical_plant
 data_recipe[catalyst_yellow].icons = AR_FOUR_I(catalyst_carrier, tungsten_ore_bob, platinum_ore_angels, catalyst_yellow)
 data_recipe[catalyst_yellow].order = h
 data_recipe[catalyst_yellow].ingredients[1].amount = 8
+data_recipe[catalyst_yellow].ingredients[2].name = tungsten_ore_bob
+data_recipe[catalyst_yellow].ingredients[3].name = platinum_ore_angels
 data_recipe[catalyst_yellow].results[1].amount = 8

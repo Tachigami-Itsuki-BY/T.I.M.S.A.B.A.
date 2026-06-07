@@ -11,7 +11,7 @@ data_item[stone].order = d
 data_item[landfill].subgroup = is_processing_crafting
 data_item[landfill].order = e
 data_recipe[landfill].subgroup = is_processing_crafting
-data_recipe[landfill].icons = BUILDING_R_I(landfill, stone)
+data_recipe[landfill].icons = THREE_I(stone, stone_crushed_angels, landfill)
 data_recipe[landfill].order = e
 data_recipe[landfill].energy_required = 1
 data_recipe[landfill].ingredients =
@@ -22,7 +22,7 @@ data_recipe[landfill].ingredients =
 
 local solid_mud_landfill = "angels-solid-mud-landfill"
 data_recipe[solid_mud_landfill].subgroup = is_processing_crafting
-data_recipe[solid_mud_landfill].icons = BUILDING_R_I(landfill, mud_angels)
+data_recipe[solid_mud_landfill].icons = THREE_I(mud_angels, stone_crushed_angels, landfill)
 data_recipe[solid_mud_landfill].order = e_a
 data_recipe[solid_mud_landfill].energy_required = 1
 data_recipe[solid_mud_landfill].ingredients =
@@ -33,7 +33,7 @@ data_recipe[solid_mud_landfill].ingredients =
 
 data_item[ore_saphirite].localised_description = {"item-description.saphirite-ore"}
 data_item[ore_saphirite].order = a
-data_resource[ore_saphirite].localised_description = {"entity-description.saphirite-ore",}
+data_resource[ore_saphirite].localised_description = {"entity-description.saphirite-ore"}
 data_resource[ore_saphirite].order = a
 
 data_item[ore_jivolite].localised_description = {"item-description.jivolite-ore"}
@@ -226,22 +226,22 @@ data_recipe[dust_cupric].results =
     {type = fluid, name = water_yellow_waste, amount = 30}
 }
 
-data_item[pure_saphirite].localised_description = {"item-description.-pure"}
+data_item[pure_saphirite].localised_description = {"item-description.saphirite-pure"}
 data_recipe[pure_saphirite].icons = TWO_I(crystal_saphirite, pure_saphirite)
 
-data_item[pure_jivolite].localised_description = {"item-description.-pure"}
+data_item[pure_jivolite].localised_description = {"item-description.jivolite-pure"}
 data_recipe[pure_jivolite].icons = TWO_I(crystal_jivolite, pure_jivolite)
 
-data_item[pure_stiratite].localised_description = {"item-description.-pure"}
+data_item[pure_stiratite].localised_description = {"item-description.stiratite-pure"}
 data_recipe[pure_stiratite].icons = TWO_I(crystal_stiratite, pure_stiratite)
 
-data_item[pure_crotinnium].localised_description = {"item-description.-pure"}
+data_item[pure_crotinnium].localised_description = {"item-description.crotinnium-pure"}
 data_recipe[pure_crotinnium].icons = TWO_I(crystal_crotinnium, pure_crotinnium)
 
-data_item[pure_rubyte].localised_description = {"item-description.-pure"}
+data_item[pure_rubyte].localised_description = {"item-description.rubyte-pure"}
 data_recipe[pure_rubyte].icons = TWO_I(crystal_rubyte, pure_rubyte)
 
-data_item[pure_bobmonium].localised_description = {"item-description.-pure"}
+data_item[pure_bobmonium].localised_description = {"item-description.bobmonium-pure"}
 data_recipe[pure_bobmonium].icons = TWO_I(crystal_bobmonium, pure_bobmonium)
 
 data_item[crystal_ferrous].localised_description = {"item-description.ferrous-crystal"}
@@ -819,6 +819,7 @@ data_recipe[tungsten_ore_recipe].ingredients =
     {type = item, name = pure_saphirite, amount = 2},
     {type = item, name = pure_stiratite, amount = 2}
 }
+data_recipe[tungsten_ore_recipe].results[1].name = tungsten_ore_bob
 data_recipe[tungsten_ore_recipe].results[1].amount = 4
 
 data_recipe[platinum_ore_recipe].subgroup = is_ore_sorting_advanced_3

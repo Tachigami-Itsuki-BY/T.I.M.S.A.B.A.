@@ -210,6 +210,7 @@ data:extend
 -- ANGELS METTALURGY CASTING
 local casting = "angels-casting"
 is_titanium_casting = "angels-titanium-casting"
+is_tungsten_casting = "angels-tungsten-casting"
 is_stone_casting = "angels-stone-casting"
 is_bricks_casting = "is-bricks-casting"
 is_alloys_casting_2 = "is-alloys-casting-2"

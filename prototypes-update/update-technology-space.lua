@@ -47,9 +47,6 @@ if not mods [muluna_mods] then
         {type = unlock_recipe, recipe = metallic_asteroid_crushing_5},
         {type = unlock_recipe, recipe = metallic_asteroid_crushing_6},
         {type = unlock_recipe, recipe = carbonic_asteroid_crushing_1},
-        --{type = unlock_recipe, recipe = carbonic_asteroid_crushing_2},
-        --{type = unlock_recipe, recipe = carbonic_asteroid_crushing_3},
-        --{type = unlock_recipe, recipe = carbonic_asteroid_crushing_4},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
@@ -102,9 +99,6 @@ data_technology[tech_asteroid_productivity].effects =
     {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
     {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
     {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-    --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_2, change = 0.1},
-    --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_3, change = 0.1},
-    --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_4, change = 0.1},
     {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
     {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
     {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
@@ -325,6 +319,36 @@ data_technology[metallurgic_science_pack].research_trigger =
 
 data_technology[vulcanus_transport_belt].localised_name = {"technology-name.vulcanus-transport-belt"}
 data_technology[vulcanus_transport_belt].prerequisites = {metallurgic_science_pack, tech_logistics_5}
+data_technology[vulcanus_transport_belt].effects =
+{
+    {type = unlock_recipe, recipe = vulcanus_transport_belt},
+    {type = unlock_recipe, recipe = vulcanus_underground_belt},
+    {type = unlock_recipe, recipe = vulcanus_splitter}
+}
+if mods [bobtech] then
+    data_technology[vulcanus_transport_belt].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {transport_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+else
+    data_technology[vulcanus_transport_belt].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+end
 
 data_technology["asteroid-reprocessing"].unit.ingredients =
 {
@@ -445,6 +469,17 @@ data_technology[carbon_fiber].unit.ingredients =
     {agricultural_science_pack, 1}
 }
 
+data_technology[toolbelt_eq].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
 data_technology[rocket_turret].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -457,6 +492,64 @@ data_technology[rocket_turret].unit.ingredients =
     {agricultural_science_pack, 1}
 }
 
+data_technology["health"].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {military_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[plastic .. _productivity].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[rocket_fuel .. _productivity].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology["tree-seeding"].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[factorian_fish_breeding].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+local tech_transport_belt_capacity_1 = "transport-belt-capacity-1"
+local tech_transport_belt_capacity_2 = "transport-belt-capacity-2"
 if mods [loaders_modernized] then
     data_technology[stack_inserter].prerequisites = {carbon_fiber, "bob-bulk-inserter-4", vulcanus_transport_belt}
     data_technology[stack_inserter].unit.ingredients =
@@ -471,7 +564,7 @@ if mods [loaders_modernized] then
         {metallurgic_science_pack, 1}
     }
 
-    data_technology["transport-belt-capacity-1"].unit.ingredients =
+    data_technology[tech_transport_belt_capacity_1].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -483,7 +576,7 @@ if mods [loaders_modernized] then
         {metallurgic_science_pack, 1}
     }
 
-    data_technology["transport-belt-capacity-2"].unit.ingredients =
+    data_technology[tech_transport_belt_capacity_2].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -496,6 +589,12 @@ if mods [loaders_modernized] then
     }
 else
     data_technology[stack_inserter].prerequisites = {carbon_fiber, "bob-bulk-inserter-4"}
+end
+
+if mods [bobtech] then
+    table.insert(data_technology[stack_inserter].unit.ingredients, {transport_science_pack, 1})
+    table.insert(data_technology[tech_transport_belt_capacity_1].unit.ingredients, {transport_science_pack, 1})
+    table.insert(data_technology[tech_transport_belt_capacity_2].unit.ingredients, {transport_science_pack, 1})
 end
 
 data_technology["captivity"].unit.ingredients =
@@ -588,6 +687,14 @@ table.insert(data_technology[planet_discovery_aquilo].effects, {type = unlock_re
 table.insert(data_technology[planet_discovery_aquilo].effects, {type = unlock_recipe, recipe = nitrogen_trifluoride_liquefied_elecrolysis})
 
 data_technology[heating_tower].effects = {{type = unlock_recipe, recipe = heating_tower}}
+
+local tech_lithium_processing = "lithium-processing"
+data_technology[tech_lithium_processing].effects =
+{
+    {type = unlock_recipe, recipe = lithium},
+    {type = unlock_recipe, recipe = lithium_plate}
+}
+
 table.insert(data_technology[cryogenic_plant].prerequisites, tech_antimony_smelting_1)
 table.insert(data_technology[cryogenic_plant].prerequisites, tech_germanium_smelting_1)
 data_technology[cryogenic_plant].effects =

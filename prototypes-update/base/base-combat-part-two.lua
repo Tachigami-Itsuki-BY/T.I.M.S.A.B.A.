@@ -565,10 +565,6 @@ else
     vehicle_battery_eq_recipe(vehicle_battery_eq_6, vehicle_battery_eq_5, advanced_processing_unit)
 end
 
-local vehicle_plasma_cannon_eq_1 = "bob-vehicle-big-turret-equipment-1"
-local vehicle_plasma_cannon_eq_2 = "bob-vehicle-big-turret-equipment-2"
-local vehicle_plasma_cannon_eq_3 = "bob-vehicle-big-turret-equipment-3"
-local vehicle_plasma_cannon_eq_4 = "bob-vehicle-big-turret-equipment-4"
 local vehicle_plasma_cannon_eq =
 {
     {name = vehicle_plasma_cannon_eq_1, range = 32, cooldown = 240, damage_modifier = 4,  energy_consumption = 12000},

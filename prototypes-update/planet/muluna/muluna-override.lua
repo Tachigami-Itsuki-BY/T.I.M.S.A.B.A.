@@ -971,6 +971,15 @@ if mods [muluna_mods] then
         data_recipe[telescope_observation_moshine].results[1].amount = 30
     end
 
+    if mods [arig_mods] then
+        local telescope_observation_arig = "muluna-telescope-observation-arig"
+        data_recipe[telescope_observation_arig].subgroup = is_muluna_recipe_astronomical
+        data_recipe[telescope_observation_arig].icons = BUILDING_R_I(astronomical_data_muluna, planet_arig)
+        data_recipe[telescope_observation_arig].order = a_g
+        data_recipe[telescope_observation_arig].energy_required = 4
+        data_recipe[telescope_observation_arig].results[1].amount = 15
+    end
+
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_muluna].icons = BUILDING_R_I(astronomical_data_muluna, planet_muluna)
@@ -1021,12 +1030,6 @@ if mods [muluna_mods] then
         local telescope_observation_paracelsin = "muluna-telescope-observation-paracelsin"
         data_recipe[telescope_observation_paracelsin].icons = BUILDING_R_I(astronomical_data_muluna, planet_paracelsin)
         data_recipe[telescope_observation_paracelsin].energy_required = 4
-    end
-
-    if mods [arig_mods] then
-        local telescope_observation_arig = "muluna-telescope-observation-arig"
-        data_recipe[telescope_observation_arig].icons = BUILDING_R_I(astronomical_data_muluna, planet_arig)
-        data_recipe[telescope_observation_arig].energy_required = 4
     end
 
     if mods [hyarion_mods] then

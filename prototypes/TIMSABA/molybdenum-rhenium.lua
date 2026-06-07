@@ -104,7 +104,8 @@ data:extend
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe.png",
         order = m,
         stack_size = 200,
-        weight = 5000
+        weight = 5000,
+        place_result = molybdenum_rhenium_pipe
     },
     {
         type = item,
@@ -113,7 +114,8 @@ data:extend
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe-to-ground.png",
         order = m,
         stack_size = 32,
-        weight = 31250
+        weight = 31250,
+        place_result = molybdenum_rhenium_pipe_to_ground
     }
 })
 

@@ -20,7 +20,7 @@ local function create_icon_entry(prototype_data_or_path, item_name, item_type, s
         return nil
     end
     local icon_properties = {}
-    if type(prototype_data_or_path) == "string" and item_type == path then
+    if type(prototype_data_or_path) == "string" and item_type == "path" then
         icon_properties.icon = prototype_data_or_path
         icon_properties.scale = scale_base
         icon_properties.shift = shift_pos

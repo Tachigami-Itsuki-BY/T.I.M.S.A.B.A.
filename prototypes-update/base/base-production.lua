@@ -174,7 +174,7 @@ if data_item[burner_electric_generator] then
     data_burner_generator[burner_electric_generator].max_power_output = 450 .. kW
     data_burner_generator[burner_electric_generator].burner.fuel_categories = {base_fuel, advanced_fuel}
     data_burner_generator[burner_electric_generator].burner.effectivity = 0.5
-    data_burner_generator[burner_electric_generator].burner.emissions_per_minute = {pollution = 16}
+    data_burner_generator[burner_electric_generator].burner.emissions_per_minute.pollution = 16
 
     bobmods.lib.recipe.update_recycling_recipe({burner_electric_generator})
 end
@@ -357,7 +357,7 @@ for _, BUILD in pairs(mining_machines) do
     data_mining_drill[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_mining_drill[BUILD.name].module_slots = BUILD.mining_speed
     data_mining_drill[BUILD.name].mining_speed = BUILD.mining_speed
-    data_mining_drill[BUILD.name].energy_source.emissions_per_minute = {pollution = BUILD.mining_speed}
+    data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.mining_speed
     if BUILD.subgroup == is_extraction_machine_mining then
         data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
     end
@@ -427,7 +427,7 @@ if data_item[area_mining_drill_1] then
         data_mining_drill[BUILD.name].energy_usage = BUILD.energy_usage .. kW
         data_mining_drill[BUILD.name].module_slots = (BUILD.mining_speed * 2)
         data_mining_drill[BUILD.name].mining_speed = BUILD.mining_speed
-        data_mining_drill[BUILD.name].energy_source.emissions_per_minute = {pollution = (BUILD.mining_speed * 2)}
+        data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = (BUILD.mining_speed * 2)
         data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
         data_mining_drill[BUILD.name].resource_searching_radius = 4.49
     end
@@ -565,7 +565,7 @@ for _, BUILD in pairs(furnaces) do
             data_furnace[BUILD.name].crafting_speed = BUILD.crafting_speed
             data_furnace[BUILD.name].module_slots = BUILD.crafting_speed
             data_furnace[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
-            data_furnace[BUILD.name].energy_source.emissions_per_minute = {pollution = BUILD.crafting_speed}
+            data_furnace[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
             data_furnace[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
         end
     end
@@ -579,7 +579,7 @@ for _, BUILD in pairs(furnaces) do
             data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
             data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
             data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
-            data_assembling[BUILD.name].energy_source.emissions_per_minute = {pollution = BUILD.crafting_speed}
+            data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
             data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
         end
     end
@@ -638,7 +638,7 @@ for _, BUILD in pairs(centrifuges) do
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
-    data_assembling[BUILD.name].energy_source.emissions_per_minute = {pollution = BUILD.crafting_speed}
+    data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
 end
 local function centrifuge_recipe(name, gear_wheel, bearing, circuit, material, plate, centrifuge)
@@ -677,7 +677,7 @@ for _, BUILD in pairs(assembling_machines) do
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
-    data_assembling[BUILD.name].energy_source.emissions_per_minute = {pollution = 0}
+    data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
 end
 local function assembling_recipe(name, gear_wheel, circuit, pipe, assembling, plate, bearing)

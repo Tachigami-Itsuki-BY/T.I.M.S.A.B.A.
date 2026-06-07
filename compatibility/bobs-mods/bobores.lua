@@ -1,5 +1,5 @@
-if mods ["bobores"] >= "2.1.0" then
-    local icon_tungsten_ore = "__reskins-library__/graphics/icons/shared/ores/bob-tungsten-ore"
+if mods [bobores] >= "2.1.0" then
+    local icon_tungsten_ore = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/bob-tungsten-ore"
     data:extend
     ({
         {
