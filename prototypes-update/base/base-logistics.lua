@@ -434,7 +434,7 @@ local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, beari
         {type = item, name = plate, amount = 1}
     }
 end
-inserter_recipe(T1_inserter, iron_gear_wheel, T0_inserter, electronic_circuit, iron_plate, iron_bearing)
+inserter_recipe(T1_inserter, iron_gear_wheel, T0_inserter, basic_circuit_board, iron_plate, iron_bearing)
 inserter_recipe(L2_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
 inserter_recipe(T3_inserter, cobalt_steel_gear_wheel, L2_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
 inserter_recipe(T4_inserter, titanium_gear_wheel, T3_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
