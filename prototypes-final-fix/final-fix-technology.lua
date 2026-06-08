@@ -299,7 +299,7 @@ if mods[arig_mods] then
     local memo = {}
 
     local function leads_to_root(tech_name, visited)
-        if tech_name == compression_science_pack then return true end
+        if tech_name == tech_compression_science then return true end
         if memo[tech_name] ~= nil then return memo[tech_name] end
 
         -- Инициализируем список посещенных для текущей ветки, если его нет
@@ -334,7 +334,7 @@ if mods[arig_mods] then
 
     for tech_name, tech in pairs(data.raw.technology) do
         -- Передаем пустую таблицу visited для каждого нового независимого поиска
-        if tech_name ~= compression_science_pack and leads_to_root(tech_name, {}) then
+        if tech_name ~= tech_compression_science and leads_to_root(tech_name, {}) then
             if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
                 local has_pack = false
                 local has_datacell = false
