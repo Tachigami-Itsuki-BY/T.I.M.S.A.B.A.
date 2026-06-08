@@ -776,6 +776,9 @@ if mods [bobtech] then
         table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
         table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
     end
+    if mods [arig_mods] then
+        table.insert(data_lab[lab_alien].inputs, compression_science_pack)
+    end
 end
 
 bobmods.lib.recipe.update_recycling_recipe

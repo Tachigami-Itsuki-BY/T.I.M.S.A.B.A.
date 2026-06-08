@@ -268,6 +268,6 @@ if mods [bobtech] and mods [space_age_science_packs] then
     data_technology[tech_alien_research].icons = nil
 end
 
-if mods [moshine_mods] then
+--[[if mods [moshine_mods] then
     data_recipe[boron].category = smelting_filtering
-end
+end]]

@@ -40,7 +40,7 @@ if mods [arig_mods] then
 
     local carbon_arig = "planetaris-carbon"
     data_recipe[carbon_arig].subgroup = is_arig_recipe
-    data_recipe[carbon_arig].icons = THREE_I(coal, carbon_angels)
+    data_recipe[carbon_arig].icons = TWO_I(coal, carbon_angels)
     data_recipe[carbon_arig].order = b_e
     data_recipe[carbon_arig].ingredients = {{type = item, name = coal, amount = 2}}
     data_recipe[carbon_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
@@ -640,6 +640,8 @@ if mods [arig_mods] then
         {type = unlock_recipe, recipe = raw_quartz_arig},
         {type = unlock_recipe, recipe = compression_landfill}
     }
+
+    tech_compression_science = "planetaris-compression-science"
 
     table.insert(data_technology[arig_roboport].prerequisites, "bob-robo-modular-4")
     data_technology[arig_roboport].unit.ingredients =

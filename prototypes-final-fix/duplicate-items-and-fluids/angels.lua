@@ -229,15 +229,20 @@ data_recipe["angels-plate-glass-3"] = nil
 data_recipe["angels-liquid-molten-solder-4"] = nil
 
 if settings.startup[setting_early_sintering_oven].value == false then
-	data_item[sintering_oven_1] = nil
-	data_item[sintering_oven_2] = nil
-	data_item[sintering_oven_3] = nil
-	data_recipe[sintering_oven_1] = nil
-	data_recipe[sintering_oven_2] = nil
-	data_recipe[sintering_oven_3] = nil
-	data_assembling[sintering_oven_1] = nil
-	data_assembling[sintering_oven_2] = nil
-	data_assembling[sintering_oven_3] = nil
+    local sintering_ovens =
+    {
+        sintering_oven_1,
+        sintering_oven_2,
+        sintering_oven_3
+    }
+    for _, BUILD in pairs(sintering_ovens) do
+        data_item[BUILD] = nil
+        data_recipe[BUILD] = nil
+        data_recipe[BUILD .. _recycling] = nil
+        if mods [panglia_mods] then
+            data_recipe[item_ .. BUILD .. _panglia_crushing] = nil
+        end
+    end
 
     data_technology[tech_powder_metallurgy_1] = nil
     data_technology[tech_powder_metallurgy_2].prerequisites = {tech_metallurgy_2}
@@ -251,10 +256,6 @@ if settings.startup[setting_early_sintering_oven].value == false then
         {type = unlock_recipe, recipe = powder_mixer_2},
         {type = unlock_recipe, recipe = powderizer_2}
     }
-
-	data_recipe[sintering_oven_1 .. _recycling] = nil
-	data_recipe[sintering_oven_2 .. _recycling] = nil
-	data_recipe[sintering_oven_3 .. _recycling] = nil
 end
 
 -- ANGELS WATER TREATMENT
@@ -321,29 +322,20 @@ local replacements_2 =
 	[cellulose_acetate_mixture] = cellulose_triacetate,
 	[cellulose_acetate] = cellulose_diacetate
 }
-for _, technology in pairs(data.raw.technology or {}) do
-	if technology.effects then
-		for _, effect in pairs(technology.effects) do
-			if effect.type == unlock_recipe then
-				local replace = replacements_2[effect.recipe]
-				if replace then
-					effect.recipe = replace
-				end
-			end
-		end
-	end
+for _, technology in pairs(data_technology or {}) do
+    for _, effect in pairs(technology.effects or {}) do
+        if effect.type == unlock_recipe then
+            local replace = replacements_2[effect.recipe]
+            if replace then
+                effect.recipe = replace
+            end
+        end
+    end
 end
-data_fluid[polyethylene_angels] = nil
-data_recipe[polyethylene_angels] = nil
-data_fluid[phenol_angels] = nil
-data_recipe[phenol_angels] = nil
-data_fluid[bisphenol_a_angels] = nil
-data_recipe[bisphenol_a_angels] = nil
-
-data_fluid[cellulose_acetate_mixture] = nil
-data_recipe[cellulose_acetate_mixture] = nil
-data_fluid[cellulose_acetate] = nil
-data_recipe[cellulose_acetate] = nil
+for old_name, _ in pairs(replacements_2) do
+    data_fluid[old_name] = nil
+    data_recipe[old_name] = nil
+end
 
 -- REPLACEMENT RECIPE (RECIPE = ITEM)
 local platinum_ore_processing = "angels-platinum-ore-processing"

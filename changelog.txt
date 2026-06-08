@@ -1,5 +1,26 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.2
+Date: 08.06.2026
+  Bugfixes:
+    - [All] Исправлена ​​ошибка, из-за которой модпак не загружался, если дополнение «Ранняя Печь для Спекания» было отключено, а мод «Panglia Planet» был включен.
+
+    - [All] Fixed a bug where the modpack would not load if the "Early Sintering Oven" addon was disabled and the "Panglia Planet" mod was enabled.
+
+  Balancing:
+    - [Moshine] AI Модули теперь имеют линейную прогрессию скорости, а не геометрическую.
+    - [Arig] В технологию Чистого Песка добавлено новое предварительное условие и новый научный пакет: Криогенный Научный Пакет.
+    - [Arig] Небольшие правки в стоимости технологий.
+
+    - [Moshine] AI Modules now have a linear speed progression rather than a geometric one.
+    - [Arig] Added a new prerequisite and a new science pack to the Pure Sand technology: Cryogenic Science Pack.
+    - [Arig] Minor adjustments to technology costs.
+
+  Graphics:
+    - [Arig] В рецепте Углерода обновлена иконка.
+
+    - [Arig] Updated the icon for the Carbon recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.1
 Date: 07.06.2026
   Changes:
@@ -18,12 +39,14 @@ Date: 07.06.2026
     - [Arig] Updated loot from Entities on planet Arig.
 
   Locale:
-    - [Rus] Переменованы рецепты: Переработка минеральной суспензии в __1__ и __2__ → Переработка минерального шлама в __1__ и __2__.
+    - [Rus] Переименованы рецепты: Переработка минеральной суспензии в __1__ и __2__ → Переработка минерального шлама в __1__ и __2__.
 
-  Scripting:
-    - [All] Добавлена функция для упорядочивания рецептов.
+    - [Eng] Renamed item and recipe: Advanced Circuit → Advanced Electronic Circuit.
 
-    - [All] Added a function for organizing recipes.
+  Optimizations:
+    - [All] Добавлена функция для автоматического упорядочивания рецептов.
+
+    - [All] Added a function for automatic organizing recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.0
 Date: 07.06.2026

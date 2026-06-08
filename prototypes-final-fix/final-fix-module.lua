@@ -124,14 +124,14 @@ data_module[quality_module_5].effect =
 
 -- MOSHINE
 if mods [moshine_mods] then
-    data_module["ai-tier-1"].effect = {speed = 0.03125}
-    data_module["ai-tier-2"].effect = {speed = 0.25}
-    data_module["ai-tier-3"].effect = {speed = 0.5}
-    data_module["ai-tier-4"].effect = {speed = 1}
-    data_module["ai-tier-5"].effect = {speed = 2}
-    data_module["ai-tier-6"].effect = {speed = 4}
-    data_module["ai-tier-7"].effect = {speed = 8}
-    data_module["ai-tier-8"].effect = {speed = 16}
-    data_module["ai-tier-9"].effect = {speed = 32}
-    data_module["ai-tier-10"].effect = {speed = 64}
+    data_module["ai-tier-1"].effect = {speed = 0.25}
+    data_module["ai-tier-2"].effect = {speed = 0.50}
+    data_module["ai-tier-3"].effect = {speed = 0.75}
+    data_module["ai-tier-4"].effect = {speed = 1.00}
+    data_module["ai-tier-5"].effect = {speed = 1.25}
+    data_module["ai-tier-6"].effect = {speed = 1.50}
+    data_module["ai-tier-7"].effect = {speed = 1.75}
+    data_module["ai-tier-8"].effect = {speed = 2.00}
+    data_module["ai-tier-9"].effect = {speed = 2.25}
+    data_module["ai-tier-10"].effect = {speed = 2.50}
 end
