@@ -99,7 +99,9 @@ local fluids =
     -- PANGLIA
     branbalite_slurry,
     -- ARIG
-    heavy_oil_timsaba
+    heavy_oil_timsaba,
+    -- HYARION
+    polishing_compound_hyarion,
 }
 local gases =
 {
@@ -136,6 +138,8 @@ local gases =
     -- MODS
     -- MOSHINE
     moshine_air,
+    -- HYARION
+    hyarion_air,
 }
 for _, fluid_name in pairs(fluids) do
     if data.raw.fluid[fluid_name] then

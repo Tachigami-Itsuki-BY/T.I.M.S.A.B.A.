@@ -38,7 +38,9 @@ local simple_fluids =
     -- PANGLIA
     branbalite_slurry,
     -- ARIG
-    heavy_oil_timsaba
+    heavy_oil_timsaba,
+    -- HYARION
+    polishing_compound_hyarion,
 }
 local dangerous_fluids =
 {
@@ -161,8 +163,8 @@ local gases =
     -- MODS
     -- MOSHINE
     moshine_air,
-    -- MARAXSIS
-    atmosphere_maraxsis,
+    -- HYARION
+    hyarion_air,
 }
 local fluid_map = {}
 local function fill_fluid_map(list, item_name, subgroup_name, suffix, tech_name)

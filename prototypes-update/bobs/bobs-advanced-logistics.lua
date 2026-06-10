@@ -11,7 +11,13 @@ for _, name in pairs(circuit_networks_1) do
     data_item[name].stack_size = 64
     data_item[name].weight = 15625
     data_recipe[name].subgroup = is_circuit_networks
+    if name == small_lamp then
+        data_lamp[name].energy_usage_per_tick = (drain / 4) .. kW
+    end
 end
+data.raw["arithmetic-combinator"][combinator_arithmetic].active_energy_usage = (drain / 8) .. kW
+data.raw["decider-combinator"][combinator_decider].active_energy_usage = (drain / 8) .. kW
+data.raw["selector-combinator"][combinator_selector].active_energy_usage = (drain / 8) .. kW
 
 data_recipe[small_lamp].ingredients =
 {
@@ -207,22 +213,22 @@ fluid_wagon_recipe(fluid_wagon_1, iron_gear_wheel,     iron_bearing,     storage
 fluid_wagon_recipe(fluid_wagon_2, steel_gear_wheel,    steel_bearing,    fluid_wagon_1,  steel_plate)
 fluid_wagon_recipe(fluid_wagon_3, titanium_gear_wheel, titanium_bearing, fluid_wagon_2,  titanium_plate_bob)
 
-local artillery_wagon_1 = "artillery-wagon"
-local artillery_wagon_2 = "bob-artillery-wagon-2"
-local artillery_wagon_3 = "bob-artillery-wagon-3"
 local artillery_wagons =
 {
-    {name = artillery_wagon_1, order = a, weight = 2000, equipment_grid = small_equipment_grid},
-    {name = artillery_wagon_2, order = b, weight = 3000, equipment_grid = medium_equipment_grid},
-    {name = artillery_wagon_3, order = c, weight = 4000, equipment_grid = large_equipment_grid}
+    {name = artillery_wagon_1, order = a, weight = 2000, equipment_grid = small_equipment_grid,  localised_name = {"entity-name.artillery-wagon-1"}},
+    {name = artillery_wagon_2, order = b, weight = 3000, equipment_grid = medium_equipment_grid, localised_name = {"entity-name.artillery-wagon-2"}},
+    {name = artillery_wagon_3, order = c, weight = 4000, equipment_grid = large_equipment_grid,  localised_name = {"entity-name.artillery-wagon-3"}}
 }
 for _, TRANSPORT in pairs(artillery_wagons) do
+    data_item_entity[TRANSPORT.name].localised_name = TRANSPORT.localised_name
     data_item_entity[TRANSPORT.name].subgroup = is_artillery_wagon
     data_item_entity[TRANSPORT.name].order = TRANSPORT.order
     data_item_entity[TRANSPORT.name].stack_size = 16
     data_item_entity[TRANSPORT.name].weight = 62500
+    data_recipe[TRANSPORT.name].localised_name = TRANSPORT.localised_name
     data_recipe[TRANSPORT.name].subgroup = is_artillery_wagon
     data_recipe[TRANSPORT.name].order = TRANSPORT.order
+    data_wagon_artillery[TRANSPORT.name].localised_name = TRANSPORT.localised_name
     data_wagon_artillery[TRANSPORT.name].subgroup = is_artillery_wagon
     data_wagon_artillery[TRANSPORT.name].weight = TRANSPORT.weight
     data_wagon_artillery[TRANSPORT.name].manual_range_modifier = 2

@@ -187,10 +187,18 @@ if mods [arig_mods] then
     data_recipe[raw_quartz_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     if mods [hyarion_mods] then
-        local advanced_raw_quartz = "planetaris-advanced-raw-quartz"
+        advanced_raw_quartz = "planetaris-advanced-raw-quartz"
         data_recipe[advanced_raw_quartz].subgroup = is_arig_recipe
-        data_recipe[advanced_raw_quartz].icons = FOUR_D_I(sandstone_brick, coal, steam, fuel_oil_angels, raw_quartz_arig)
+        data_recipe[advanced_raw_quartz].icons = TWO_I(sandstone_brick, raw_quartz_arig, number_2)
         data_recipe[advanced_raw_quartz].order = j_a
+        data_recipe[advanced_raw_quartz].ingredients =
+        {
+            {type = item, name = coal, amount = 1},
+            {type = item, name = sandstone_brick, amount = 1},
+            {type = fluid, name = steam, amount = 15},
+            {type = fluid, name = fuel_oil_angels, amount = 15}
+        }
+        data_recipe[advanced_raw_quartz].surface_conditions = {{property = pressure, min = 600, max = 600}}
     end
 
     data_recipe[raw_diamond_arig].subgroup = is_arig_recipe
@@ -326,7 +334,7 @@ if mods [arig_mods] then
     data_roboport[arig_roboport].energy_usage = (5 * 60) .. kW
     data_roboport[arig_roboport].charging_energy = 4500 .. kW
     data_roboport[arig_roboport].charging_station_count = 4
-    data_roboport[arig_roboport].ogistics_radius = 16 * 4
+    data_roboport[arig_roboport].logistics_radius = 16 * 4
     data_roboport[arig_roboport].construction_radius = 32 * 4
     data_roboport[arig_roboport].radar_range = 5 * 2
     data_roboport[arig_roboport].recharge_minimum = 36000 .. kJ
@@ -373,16 +381,26 @@ if mods [arig_mods] then
 
     if mods [hyarion_mods] then
         data_item[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
+        data_item[hyper_transport_belt_arig].order = b
         data_recipe[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
+        data_recipe[hyper_transport_belt_arig].order = b
         data_transport_belt[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
+        data_transport_belt[hyper_transport_belt_arig].order = b
 
         data_item[hyper_underground_belt_arig].subgroup = is_hyarion_logistics
+        data_item[hyper_underground_belt_arig].order = c
         data_recipe[hyper_underground_belt_arig].subgroup = is_hyarion_logistics
+        data_recipe[hyper_underground_belt_arig].order = c
         data_underground_belt[hyper_underground_belt_arig].subgroup = is_hyarion_logistics
+        data_underground_belt[hyper_underground_belt_arig].order = c
 
         data_item[hyper_splitter_arig].subgroup = is_hyarion_logistics
+        data_item[hyper_splitter_arig].order = d
         data_recipe[hyper_splitter_arig].subgroup = is_hyarion_logistics
+        data_recipe[hyper_splitter_arig].order = d
+        data_recipe[hyper_splitter_arig].ingredients[3].name = simulating_unit
         data_splitter[hyper_splitter_arig].subgroup = is_hyarion_logistics
+        data_splitter[hyper_splitter_arig].order = d
     else
         data_item[hyper_transport_belt_arig].subgroup = is_arig_logistics
         data_item[hyper_transport_belt_arig].order = h
@@ -604,7 +622,7 @@ if mods [arig_mods] then
         data_recipe[hyarion_water_harvesting].icons = BUILDING_R_I(water, planet_hyarion)
         data_recipe[hyarion_water_harvesting].order = a_g
         data_recipe[hyarion_water_harvesting].energy_required = 16
-        data_recipe[hyarion_water_harvesting].results[1].amount = 30
+        data_recipe[hyarion_water_harvesting].results[1].amount = 15
     end
 
     -- b_a panglia_water_harvesting

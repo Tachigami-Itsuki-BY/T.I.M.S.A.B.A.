@@ -164,13 +164,16 @@ require("prototypes.planet.arig.arig-item-fluid")
 require("prototypes.planet.arig.arig-recipe")
 require("prototypes.planet.arig.arig-technology")
 
+require("prototypes.planet.hyarion.hyarion-groups")
+require("prototypes.planet.hyarion.hyarion-item-fluid")
+require("prototypes.planet.hyarion.hyarion-recipe")
+require("prototypes.planet.hyarion.hyarion-technology")
+
+-- tellus
+
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
-
-require("prototypes.planet.hyarion.hyarion-groups")
-require("prototypes.planet.hyarion.hyarion-recipe")
-require("prototypes.planet.hyarion.hyarion-technology")
 
 require("prototypes.planet.corrundum.corrundum-groups")
 require("prototypes.planet.corrundum.corrundum-recipe")

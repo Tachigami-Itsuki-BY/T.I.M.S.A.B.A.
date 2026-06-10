@@ -1,4 +1,3 @@
--- Тяжёлая нефть
 if mods [arig_mods] then
     heavy_oil_timsaba = "timsaba-heavy-oil"
     data:extend

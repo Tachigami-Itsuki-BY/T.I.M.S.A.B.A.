@@ -129,9 +129,9 @@ if settings.startup["bobmods-power-fluidgenerator"].value then
             data_generator[BUILD.name].localised_name = BUILD.localised_name
         end
         data_generator[BUILD.name].effectivity = nil
-        data_generator[BUILD.name].fluid_usage_per_tick = BUILD.fluid_usage_per_tick
-        data_generator[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
         data_generator[BUILD.name].max_power_output = BUILD.max_power_output .. kW
+        data_generator[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
+        data_generator[BUILD.name].fluid_usage_per_tick = BUILD.fluid_usage_per_tick
     end
     data_generator[hydrazine_generator].fluid_box.filter = hydrazine_angels
     local function fluid_generator_recipe(name, gear_wheel, bearing, circuit, pipe, fluid_generator, plate_1, plate_2)
@@ -778,6 +778,10 @@ if mods [bobtech] then
     end
     if mods [arig_mods] then
         table.insert(data_lab[lab_alien].inputs, compression_science_pack)
+    end
+    if mods[hyarion_mods] then
+        table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
+        table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
     end
 end
 

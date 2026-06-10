@@ -13,6 +13,7 @@ data:extend
 
 -- ITEM
 selenium = "selenium"
+selenium_powder = "selenium-powder"
 data:extend
 ({
     {
@@ -45,6 +46,16 @@ data:extend
                 scale = 0.5
             }]]
         }
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "Se"} or nil,
+        type = item,
+        name = selenium_powder,
+        subgroup = is_selenium,
+        icon = "__TIMSABA__/graphics/icons/angels/resource/selenium/selenium-powder.png",
+        order = b,
+        stack_size = 200,
+        weight = 5000
     }
 })
 
@@ -59,5 +70,48 @@ data:extend
         order = ,
         stack_size = 200,
         weight = 5000
+    }
+})]]
+
+-- RECIPE
+data:extend
+({
+    {
+        type = recipe,
+        name = selenium_powder,
+        category = powderizing_4,
+        subgroup = is_selenium,
+        icons = TWO_I(selenium, selenium_powder),
+        order = b,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 0.5,
+        ingredients = {{type = item, name = selenium, amount = 1}},
+        results = {{type = item, name = selenium_powder, amount = 1}},
+        main_product = selenium_powder
+    }
+})
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = ,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
     }
 })]]

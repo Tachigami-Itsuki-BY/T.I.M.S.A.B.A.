@@ -192,6 +192,9 @@ for _, suffix in ipairs(suffixes) do
 
         if mods[panglia_mods] then
             data_recipe[item_ .. name .. _panglia_crushing] = nil
+        end
+
+        if mods [solar_productivity] then
             for i = 1, 99 do
                 local sp_prefix = "sp-" .. i .. "-"
                 if sp_prefix then

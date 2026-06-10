@@ -1,5 +1,7 @@
+data_item[rocket_silo].order = a
 data_item[rocket_silo].stack_size = 1
 data_item[rocket_silo].weight = 100000000
+data_recipe[rocket_silo].order = a
 data_recipe[rocket_silo].energy_required = 32
 data_recipe[rocket_silo].ingredients =
 {
@@ -13,12 +15,11 @@ data_recipe[rocket_silo].ingredients =
     {type = item, name = rhenium_plate, amount = 128},
     {type = item, name = molybdenum_rhenium_plate, amount = 512}
 }
-data_rocket_silo[rocket_silo].energy_usage = 4785 .. kW
+data_rocket_silo[rocket_silo].order = a
+data_rocket_silo[rocket_silo].energy_usage = (4800 - drain) .. kW
 data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
 
-if mods [muluna_mods] then
-    data_recipe[rocket_part].icons = R_P_I(rocket_part, nil, nil, number_1)
-end
+data_recipe[rocket_part].order = b
 data_recipe[rocket_part].energy_required = 4
 data_recipe[rocket_part].ingredients =
 {
@@ -30,8 +31,9 @@ data_recipe[rocket_part].ingredients =
 }
 
 if mods [muluna_mods] then
-    local rocket_part_muluna = "rocket-part-muluna"
-    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna, nil, number_2)
+    rocket_part_muluna = "rocket-part-muluna"
+    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
+    data_recipe[rocket_part_muluna].order = b_a
     data_recipe[rocket_part_muluna].energy_required = 4
     data_recipe[rocket_part_muluna].ingredients =
     {
@@ -229,7 +231,6 @@ if mods [muluna_mods] then
 end
 
 if mods [hyarion_mods] then
-    local space_manufactorer = "planetaris-space-manufacturer"
     data_item[space_manufactorer].subgroup = is_space_platform_mods
     data_item[space_manufactorer].order = c
     data_item[space_manufactorer].stack_size = 32
@@ -246,25 +247,11 @@ if mods [hyarion_mods] then
     }
     data_assembling[space_manufactorer].subgroup = is_space_platform_mods
     data_assembling[space_manufactorer].order = c
+    data_assembling[space_manufactorer].module_slots = 8
+    data_assembling[space_manufactorer].energy_usage = (240 - drain) .. kW
+    data_assembling[space_manufactorer].energy_source.emissions_per_minute.pollution = 0
+    data_assembling[space_manufactorer].energy_source.drain = drain .. kW
 
-    local beryllium_coating = "planetaris-beryllium-coating"
-    data_item[beryllium_coating].subgroup = is_space_platform_mods
-    data_item[beryllium_coating].order = d
-    data_item[beryllium_coating].stack_size = 200
-    data_item[beryllium_coating].weight = 5000
-    data_recipe[beryllium_coating].subgroup = is_space_platform_mods
-    data_recipe[beryllium_coating].order = d
-    data_recipe[beryllium_coating].energy_required = 4
-    data_recipe[beryllium_coating].ingredients =
-    {
-        {type = item, name = sandstone_brick, amount = 16},
-        {type = item, name = beryllium_plate, amount = 4},
-        {type = item, name = refractory_ceramics, amount = 2}
-    }
-    data_wall[beryllium_coating].subgroup = is_space_platform_mods
-    data_wall[beryllium_coating].order = d
-
-    local zero_grav_accumulator = "planetaris-zero-grav-accumulator"
     data_item[zero_grav_accumulator].subgroup = is_space_platform_mods
     data_item[zero_grav_accumulator].order = e
     data_item[zero_grav_accumulator].stack_size = 32
@@ -273,15 +260,17 @@ if mods [hyarion_mods] then
     data_recipe[zero_grav_accumulator].order = e
     data_recipe[zero_grav_accumulator].ingredients =
     {
-        {type = item, name = battery_lead_acid, amount = 32},
+        {type = item, name = battery_graphene, amount = 32},
         {type = item, name = bismuth_transistor, amount = 16},
         {type = item, name = beryllium_plate, amount = 8},
         {type = item, name = refractory_ceramics, amount = 16}
     }
     data_accumulator[zero_grav_accumulator].subgroup = is_space_platform_mods
     data_accumulator[zero_grav_accumulator].order = e
+    data_accumulator[zero_grav_accumulator].energy_source.buffer_capacity = 76800 .. kJ
+    data_accumulator[zero_grav_accumulator].energy_source.input_flow_limit = 4800 .. kW
+    data_accumulator[zero_grav_accumulator].energy_source.output_flow_limit = 4800 .. kW
 
-    local electromagnetic_radar = "planetaris-electromagnetic-radar"
     data_item[electromagnetic_radar].subgroup = is_space_platform_mods
     data_item[electromagnetic_radar].order = f
     data_item[electromagnetic_radar].stack_size = 32
@@ -298,11 +287,15 @@ if mods [hyarion_mods] then
     }
     data_radar[electromagnetic_radar].subgroup = is_space_platform_mods
     data_radar[electromagnetic_radar].order = f
+    data_radar[electromagnetic_radar].energy_per_sector = (1200 * 30) .. kJ
+    data_radar[electromagnetic_radar].energy_per_nearby_scan = (1200 / 5) .. kJ
+    data_radar[electromagnetic_radar].energy_usage = 1200 .. kW
+    data_radar[electromagnetic_radar].max_distance_of_nearby_sector_revealed = 13
+    data_radar[electromagnetic_radar].max_distance_of_sector_revealed = 29
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
         space_manufactorer,
-        beryllium_coating,
         zero_grav_accumulator,
         electromagnetic_radar
     })
@@ -484,8 +477,7 @@ end
 
 if mods [hyarion_mods] then
     local bismuth_asteroid_chunk = "bismuth-asteroid-chunk"
-    local bismuth_asteroid_crushing = "bismuth-asteroid-crushing"
-    local polished_bismuth = "planetaris-polished-bismuth"
+    bismuth_asteroid_crushing = "bismuth-asteroid-crushing"
     local bismuth_asteroids =
     {
         {type = data_asteroid, name = "small-bismuth-asteroid",  order = a},
@@ -495,8 +487,10 @@ if mods [hyarion_mods] then
         {type = data_item,     name = bismuth_asteroid_chunk,    order = e},
         {type = data_recipe,   name = bismuth_asteroid_crushing, order = e_a},
         {type = data_item,     name = raw_bismuth,               order = f},
-        {type = data_item,     name = polished_bismuth,          order = g}, {type = data_recipe,   name = polished_bismuth,          order = g},
-        {type = data_item,     name = bismuth_transistor,        order = h}, {type = data_recipe,   name = bismuth_transistor,        order = h}
+        {type = data_item,     name = polished_bismuth,          order = g},
+        {type = data_recipe,   name = polished_bismuth,          order = g},
+        {type = data_item,     name = bismuth_transistor,        order = i},
+        {type = data_recipe,   name = bismuth_transistor,        order = i}
     }
     for _, BA in pairs(bismuth_asteroids) do
         if BA.type[BA.name] then
@@ -505,6 +499,7 @@ if mods [hyarion_mods] then
         end
     end
 
+    data_item[bismuth_asteroid_chunk].localised_description = show_formula and {chemical_formula, "Bi"} or nil
     data_item[bismuth_asteroid_chunk].stack_size = 50
     data_item[bismuth_asteroid_chunk].weight = 20000
 
@@ -512,6 +507,7 @@ if mods [hyarion_mods] then
     data_recipe[bismuth_asteroid_crushing].energy_required = 4
     data_recipe[bismuth_asteroid_crushing].results = {{type = item, name = raw_bismuth, amount = 16}}
 
+    data_item[raw_bismuth].localised_description = show_formula and {chemical_formula, "Bi"} or nil
     data_item[raw_bismuth].stack_size = 200
 
     data_item[polished_bismuth].stack_size = 200
@@ -527,11 +523,13 @@ if mods [hyarion_mods] then
     data_recipe[bismuth_transistor].energy_required = 1
     data_recipe[bismuth_transistor].ingredients =
     {
-        {type = item, name = polished_bismuth, amount = 2},
-        {type = item, name = copper_cable, amount = 16},
+        {type = item, name = bismuth_oxyselenide, amount = 2},
+        {type = item, name = niobium_titanium_cable, amount = 16},
         {type = item, name = plastic, amount = 4},
-        {type = fluid, name = sulfuric_acid_angels, amount = 30}
+        {type = fluid, name = photoresist_liquid, amount = 30}
     }
+
+    bobmods.lib.recipe.update_recycling_recipe({bismuth_transistor})
 end
 
 if mods [secretas_frozeta_mods] then
@@ -572,10 +570,10 @@ bobmods.lib.recipe.update_recycling_recipe
 })
 
 if mods [hyarion_mods] then
-    local space_facilities = "space-facilities"
-    data_tool[space_science_pack].subgroup = space_facilities
+    local is_space_facilities = "space-facilities"
+    data_tool[space_science_pack].subgroup = is_space_facilities
     data_tool[space_science_pack].order = a
-    data_recipe[space_science_pack].subgroup = space_facilities
+    data_recipe[space_science_pack].subgroup = is_space_facilities
     data_recipe[space_science_pack].icons = R_P_I(space_science_pack, space_platform, nil, number_1)
     data_recipe[space_science_pack].order = a
     data_recipe[space_science_pack].energy_required = 16
@@ -587,22 +585,22 @@ if mods [hyarion_mods] then
     }
     data_recipe[space_science_pack].results[1].amount = 4
 
-    local planetaris_space_science_pack = "planetaris-space-science-pack"
-    data_recipe[planetaris_space_science_pack].subgroup = space_facilities
-    data_recipe[planetaris_space_science_pack].icons = R_P_I(space_science_pack, space_platform, nil, number_2)
-    data_recipe[planetaris_space_science_pack].order = a_a
-    data_recipe[planetaris_space_science_pack].energy_required = 32
-    data_recipe[planetaris_space_science_pack].ingredients =
+    space_science_pack_hyarion = "planetaris-space-science-pack"
+    data_recipe[space_science_pack_hyarion].subgroup = is_space_facilities
+    data_recipe[space_science_pack_hyarion].icons = R_P_I(space_science_pack, space_platform, nil, number_2)
+    data_recipe[space_science_pack_hyarion].order = a_a
+    data_recipe[space_science_pack_hyarion].energy_required = 32
+    data_recipe[space_science_pack_hyarion].ingredients =
     {
         {type = item, name = nitinol_plate_bob, amount = 8},
         {type = item, name = carbon_angels, amount = 16},
         {type = item, name = ice, amount = 16}
     }
-    data_recipe[planetaris_space_science_pack].results[1].amount = 32
+    data_recipe[space_science_pack_hyarion].results[1].amount = 32
 
-    data_tool[promethium_science_pack].subgroup = space_facilities
+    data_tool[promethium_science_pack].subgroup = is_space_facilities
     data_tool[promethium_science_pack].order = b
-    data_recipe[promethium_science_pack].subgroup = space_facilities
+    data_recipe[promethium_science_pack].subgroup = is_space_facilities
     data_recipe[promethium_science_pack].icons = R_P_I(promethium_science_pack, space_platform, nil, number_1)
     data_recipe[promethium_science_pack].order = b
     data_recipe[promethium_science_pack].energy_required = 16
@@ -614,18 +612,23 @@ if mods [hyarion_mods] then
     }
     data_recipe[promethium_science_pack].results[1].amount = 8
 
-    local planetaris_promethium_science_pack = "planetaris-promethium-science-pack"
-    data_recipe[planetaris_promethium_science_pack].subgroup = space_facilities
-    data_recipe[planetaris_promethium_science_pack].icons = R_P_I(promethium_science_pack, space_platform, nil, number_2)
-    data_recipe[planetaris_promethium_science_pack].order = b_a
-    data_recipe[planetaris_promethium_science_pack].energy_required = 32
-    data_recipe[planetaris_promethium_science_pack].ingredients =
+    local promethium_science_pack_hyarion = "planetaris-promethium-science-pack"
+    data_recipe[promethium_science_pack_hyarion].subgroup = is_space_facilities
+    data_recipe[promethium_science_pack_hyarion].icons = R_P_I(promethium_science_pack, space_platform, nil, number_2)
+    data_recipe[promethium_science_pack_hyarion].order = b_a
+    data_recipe[promethium_science_pack_hyarion].energy_required = 32
+    data_recipe[promethium_science_pack_hyarion].ingredients =
     {
         {type = item, name = promethium_asteroid_chunk, amount = 64},
         {type = item, name = quantum_processor, amount = 2},
         {type = item, name = biter_egg, amount = 16}
     }
-    data_recipe[planetaris_promethium_science_pack].results[1].amount = 32
+    data_recipe[promethium_science_pack_hyarion].results[1].amount = 32
+
+    if mods [moshine_mods] then
+        data_recipe[promethium_science_pack_hyarion].ingredients[1].name = promethium_ore
+        data_recipe[promethium_science_pack_hyarion].ingredients[1].amount = 256
+    end
 end
 
 ice_melting = "ice-melting"

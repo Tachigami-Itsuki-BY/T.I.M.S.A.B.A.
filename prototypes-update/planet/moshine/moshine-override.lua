@@ -498,13 +498,11 @@ if mods[moshine_mods] then
     data_item[space_train_destroyed_battery_pack].subgroup = is_moshine_logistics_battery
     data_item[space_train_destroyed_battery_pack].order = a
     data_item[space_train_destroyed_battery_pack].stack_size = 200
-    data_item[space_train_destroyed_battery_pack].weight = 5000
 
     local space_train_discharged_battery_pack = "space-train-discharged-battery-pack"
     data_item[space_train_discharged_battery_pack].subgroup = is_moshine_logistics_battery
     data_item[space_train_discharged_battery_pack].order = b
     data_item[space_train_discharged_battery_pack].stack_size = 200
-    data_item[space_train_discharged_battery_pack].weight = 5000
 
     local space_train_battery_pack = "space-train-battery-pack"
     data_recipe[space_train_battery_pack].subgroup = is_moshine_logistics_battery
@@ -528,7 +526,6 @@ if mods[moshine_mods] then
     data_item[space_train_battery_pack].subgroup = is_moshine_logistics_battery
     data_item[space_train_battery_pack].order = c
     data_item[space_train_battery_pack].stack_size = 200
-    data_item[space_train_destroyed_battery_pack].weight = 5000
 
     local space_train_battery_pack_recharge = "space-train-battery-pack-recharge"
     data_recipe[space_train_battery_pack_recharge].subgroup = is_moshine_logistics_battery
@@ -554,7 +551,7 @@ if mods[moshine_mods] then
     }
     data_solar_panel[big_solar_panel].subgroup = is_moshine_building_energy
     data_solar_panel[big_solar_panel].order = a
-    data_solar_panel[big_solar_panel].production = (480 * 4) .. kW
+    data_solar_panel[big_solar_panel].production = (240 * 16) .. kW
 
     local big_accumulator = "big-accumulator"
     data_item[big_accumulator].subgroup = is_moshine_building_energy
@@ -568,7 +565,7 @@ if mods[moshine_mods] then
     data_recipe[big_accumulator].ingredients =
     {
         {type = item, name = substation_4, amount = 1},
-        {type = item, name = accumulator_4, amount = 8},
+        {type = item, name = accumulator_4, amount = 4},
         {type = item, name = niobium_titanium_cable, amount = 32},
         {type = item, name = reinforced_concrete, amount = 32},
         {type = item, name = supercapacitor, amount = 8},
@@ -579,10 +576,10 @@ if mods[moshine_mods] then
     data_accumulator[big_accumulator].energy_source =
     {
         type = electric,
-        buffer_capacity = (38400 * 8) .. kJ,
+        buffer_capacity = (38400 * 16) .. kJ,
         usage_priority = tertiary,
-        input_flow_limit = (2400 * 8) .. kW,
-        output_flow_limit = (2400 * 8) .. kW
+        input_flow_limit = (2400 * 16) .. kW,
+        output_flow_limit = (2400 * 16) .. kW
     }
 
     -- BUILDING

@@ -98,7 +98,7 @@ for _, item in ipairs(miscellaneous_items) do
 		data_recipe[name] = nil
 	end
 
-	if mods[panglia_mods] then 
+	if mods[panglia_mods] then
 		data_recipe[item_ .. name .. _panglia_crushing] = nil
 	end
 end
@@ -242,6 +242,7 @@ if settings.startup[setting_early_sintering_oven].value == false then
         if mods [panglia_mods] then
             data_recipe[item_ .. BUILD .. _panglia_crushing] = nil
         end
+        data_assembling[BUILD] = nil
     end
 
     data_technology[tech_powder_metallurgy_1] = nil

@@ -23,13 +23,15 @@ require("prototypes-final-fix.duplicate-items-and-fluids.angels")
 require("prototypes-final-fix.duplicate-items-and-fluids.space-age")
 require("prototypes-final-fix.duplicate-items-and-fluids.muluna")
 require("prototypes-final-fix.duplicate-items-and-fluids.moshine")
-
+-- panglia
 require("prototypes-final-fix.duplicate-items-and-fluids.arig")
+require("prototypes-final-fix.duplicate-items-and-fluids.hyarion")
+-- tellus
+
 require("prototypes-final-fix.duplicate-items-and-fluids.castra")
 require("prototypes-final-fix.duplicate-items-and-fluids.corrundum")
 --require("prototypes-final-fix.duplicate-items-and-fluids.cubium")
 require("prototypes-final-fix.duplicate-items-and-fluids.frozeta")
-require("prototypes-final-fix.duplicate-items-and-fluids.hyarion")
 require("prototypes-final-fix.duplicate-items-and-fluids.maraxsis")
 --require("prototypes-final-fix.duplicate-items-and-fluids.nexus")
 require("prototypes-final-fix.duplicate-items-and-fluids.paracelsin")
