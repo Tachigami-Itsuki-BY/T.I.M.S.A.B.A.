@@ -875,13 +875,13 @@ data_recipe[zinc_pellet].ingredients[1].amount = 4
 data_item[zinc_ingot].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_item[zinc_ingot].order = d
 data_recipe[zinc_ingot].category = angels_chemical_smelting_1
-data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, manganese_ingot, zinc_ingot, magnesium_chloride_solution)
+data_recipe[zinc_ingot].icons = TWO_D_I(zinc_chloride_solution, magnesium_ingot, zinc_ingot, magnesium_chloride_solution)
 data_recipe[zinc_ingot].order = d
 data_recipe[zinc_ingot].energy_required = 8 -- ZnCl₂(aq) + Mg --> Zn + MgCl₂(aq)
 data_recipe[zinc_ingot].ingredients =
 {
     {type = fluid, name = zinc_chloride_solution, amount = 240},
-    {type = item, name = manganese_ingot, amount = 16},
+    {type = item, name = magnesium_ingot, amount = 16},
 }
 data_recipe[zinc_ingot].results =
 {

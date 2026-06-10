@@ -52,4 +52,12 @@ if mods [arig_mods] then
     data_autoplace_control["heavy-oil-geyser"].order = c_g
 end
 
---
+-- HYARION
+if mods [hyarion_mods] then
+    data_autoplace_control["hyarion_iron"].order = c_h
+    data_autoplace_control["hyarion_carbon"].order = c_i
+    data_autoplace_control["hyarion_quartz"].order = c_j
+    data_autoplace_control["hyarion_ruby"].order = c_k
+    data_autoplace_control["hyarion_sapphire"].order = c_l
+    data_autoplace_control["hyarion_emerald"].order = c_m
+end
