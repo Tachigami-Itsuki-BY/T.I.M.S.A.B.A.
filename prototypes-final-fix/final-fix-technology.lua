@@ -209,6 +209,7 @@ data_technology["bob-infinite-character-logistic-trash-slots-1"].effects = {{typ
         end
     end
 end]]
+
 -- MULUNA
 if mods[muluna_mods] then
     local memo = {}
@@ -285,6 +286,7 @@ if mods[muluna_mods] then
     end
 end
 
+-- MOSHINE
 if mods [moshine_mods] then
     data_technology["moshine-tech-neural_computer"].research_trigger =
     {
@@ -364,6 +366,103 @@ if mods[arig_mods] then
 
                 if not has_pack and not should_exclude then
                     table.insert(tech.unit.ingredients, {compression_science_pack, 1})
+                end
+            end
+        end
+    end
+end
+
+-- HYARION
+if mods[hyarion_mods] then
+    local memo = {}
+
+    -- Определяем списки целевых технологий и пакетов для добавления
+    local target_techs =
+    {
+        [polishing_science_pack] = true,
+        [refraction_science_pack] = true
+    }
+    local packs_to_add =
+    {
+        {polishing_science_pack, 1},
+        {refraction_science_pack, 1}
+    }
+
+    local function leads_to_root(tech_name, visited)
+        -- Изменено: проверяем, является ли технология одной из целевых
+        if target_techs[tech_name] then return true end
+        if memo[tech_name] ~= nil then return memo[tech_name] end
+
+        visited = visited or {}
+        if visited[tech_name] then
+            return false
+        end
+
+        local tech = data.raw.technology[tech_name]
+        if not tech or not tech.prerequisites then
+            memo[tech_name] = false
+            return false
+        end
+
+        visited[tech_name] = true
+
+        for _, prereq in ipairs(tech.prerequisites) do
+            if leads_to_root(prereq, visited) then
+                memo[tech_name] = true
+                visited[tech_name] = nil
+                return true
+            end
+        end
+
+        visited[tech_name] = nil
+        memo[tech_name] = false
+        return false
+    end
+
+    for tech_name, tech in pairs(data.raw.technology) do
+        -- Изменено: исключаем обе целевые технологии из поиска путей к самим себе
+        if not target_techs[tech_name] and leads_to_root(tech_name, {}) then
+            if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
+
+                -- Таблица для отслеживания уже имеющихся целевых пакетов в технологии
+                local has_pack =
+                {
+                    [polishing_science_pack] = false,
+                    [refraction_science_pack] = false
+                }
+                local has_datacell = false
+                local has_science_pack = false
+
+                for _, ingredient in ipairs(tech.unit.ingredients) do
+                    local name = ""
+                    if type(ingredient) == "table" then
+                        name = ingredient.name or ingredient[1] or ""
+                    else
+                        name = ingredient or ""
+                    end
+
+                    -- Изменено: отмечаем, если найден один из целевых пакетов
+                    if has_pack[name] ~= nil then
+                        has_pack[name] = true
+                    end
+                    if string.find(name, "datacell%-") then
+                        has_datacell = true
+                    end
+                    if string.find(name, "%-science%-pack") then
+                        has_science_pack = true
+                    end
+                end
+
+                local should_exclude = has_datacell and not has_science_pack
+
+                -- Изменено: поочередно проверяем и добавляем каждый недостающий пакет
+                if not should_exclude then
+                    for _, pack_data in ipairs(packs_to_add) do
+                        local pack_name = pack_data[1]
+                        if not has_pack[pack_name] then
+                            table.insert(tech.unit.ingredients, {pack_name, pack_data[2]})
+                        end
+                    end
                 end
             end
         end

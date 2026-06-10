@@ -1,36 +1,52 @@
 if mods [hyarion_mods] then
     local hyarion = "hyarion"
-    is_hyarion_ore = "hyarion-ore"
-    is_hyarion_new_recipe = "hyarion-new-recipe"
-    is_hyarion_logistics = "hyarion-logistics"
-    is_hyarion_building = "hyarion-building"
-    is_hyarion_mining = "hyarion-mining"
-    is_hyarion_war = "hyarion-war"
-    is_hyarion_recipe_a = "hyarion-recipe-a"
-    is_hyarion_recipe_b = "hyarion-recipe-b"
-    is_hyarion_recipe_c = "hyarion-recipe-c"
-    is_hyarion_recipe_particle = "hyarion-recipe-particle"
-    is_hyarion_recipe_space = "hyarion-recipe-space"
+    is_hyarion_air = "is-hyarion-air"
+    is_hyarion_recipe_ore = "is-hyarion-recipe-ore"
+    is_hyarion_recipe_polished = "is-hyarion-recipe-polished"
+    is_hyarion_recipe_other = "is-hyarion-recipe-other"
+    is_hyarion_recipe_particle = "is-hyarion-recipe-particle"
+    is_hyarion_logistics = "is-hyarion-logistics"
+    is_hyarion_mining = "is-hyarion-mining"
+    is_hyarion_building = "is-hyarion-building"
+    is_hyarion_war = "is-hyarion-war"
     data:extend
     ({
         {
             type = item_group,
             name = hyarion,
-            order = y,
+            order = x_g,
             icon = "__TIMSABA__/graphics/icons/hyarion/hyarion-planet.png",
             icon_size = 128,
         },
         {
             type = item_subgroup,
-            name = is_hyarion_ore,
+            name = is_hyarion_air,
             group = hyarion,
             order = a
         },
         {
             type = item_subgroup,
-            name = is_hyarion_new_recipe,
+            name = is_hyarion_recipe_ore,
             group = hyarion,
             order = b
+        },
+        {
+            type = item_subgroup,
+            name = is_hyarion_recipe_polished,
+            group = hyarion,
+            order = b_a
+        },
+        {
+            type = item_subgroup,
+            name = is_hyarion_recipe_other,
+            group = hyarion,
+            order = b_b
+        },
+        {
+            type = item_subgroup,
+            name = is_hyarion_recipe_particle,
+            group = hyarion,
+            order = b_c
         },
         {
             type = item_subgroup,
@@ -40,51 +56,21 @@ if mods [hyarion_mods] then
         },
         {
             type = item_subgroup,
-            name = is_hyarion_building,
-            group = hyarion,
-            order = c_a
-        },
-        {
-            type = item_subgroup,
             name = is_hyarion_mining,
-            group = hyarion,
-            order = c_b
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_war,
-            group = hyarion,
-            order = c_c
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_a,
             group = hyarion,
             order = d
         },
         {
             type = item_subgroup,
-            name = is_hyarion_recipe_b,
-            group = hyarion,
-            order = d_a
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_c,
-            group = hyarion,
-            order = d_b
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_particle,
-            group = hyarion,
-            order = d_c
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_space,
+            name = is_hyarion_building,
             group = hyarion,
             order = e
+        },
+        {
+            type = item_subgroup,
+            name = is_hyarion_war,
+            group = hyarion,
+            order = f
         }
     })
 end

@@ -69,7 +69,6 @@ data_recipe[supercapacitor].energy_required = 8
 data_recipe[supercapacitor].ingredients =
 {
     {type = item, name = battery_graphene, amount = 4},
-    {type = item, name = advanced_processing_unit, amount = 16},
     {type = item, name = holmium_plate, amount = 8},
     {type = item, name = superconductor, amount = 8},
     {type = fluid, name = electrolyte, amount = 60}
@@ -168,6 +167,7 @@ data_recipe[lightning_rod].ingredients =
 }
 data_lightning_attractor[lightning_rod].subgroup = is_fulgora_building
 data_lightning_attractor[lightning_rod].order = c
+data_lightning_attractor[lightning_rod].efficiency = 0.25
 
 local lightning_collector = "lightning-collector"
 data_item[lightning_collector].subgroup = is_fulgora_building
@@ -186,6 +186,7 @@ data_recipe[lightning_collector].ingredients =
 }
 data_lightning_attractor[lightning_collector].subgroup = is_fulgora_building
 data_lightning_attractor[lightning_collector].order = d
+data_lightning_attractor[lightning_collector].efficiency = 0.5
 
 -- WAR
 local teslagun = "teslagun"

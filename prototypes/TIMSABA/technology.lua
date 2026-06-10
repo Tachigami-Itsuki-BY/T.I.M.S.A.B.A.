@@ -303,7 +303,8 @@ data:extend
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_purified},
-            {type = unlock_recipe, recipe = molybdenite_purified_sorting}
+            {type = unlock_recipe, recipe = molybdenite_purified_sorting},
+            {type = unlock_recipe, recipe = selenium_powder}
         },
         unit =
         {

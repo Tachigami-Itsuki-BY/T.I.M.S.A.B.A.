@@ -57,6 +57,10 @@ if mods [arig_mods] then
     table.insert(recycling_items, silica_arig)
 end
 
+if mods [hyarion_mods] then
+    table.insert(recycling_items, polished_bismuth)
+end
+
 for _, name in ipairs(recycling_items) do
     data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, probability = 0.25}}
     data_recipe[name .. _recycling].main_product = ""

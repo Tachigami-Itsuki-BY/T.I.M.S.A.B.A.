@@ -170,6 +170,13 @@ if mods [bobplates] >= "2.1.0" then
     end
 
     data_recipe["bob-carbon-from-acid"] = nil
+
+    -- LITHIUM
+    data_technology[tech_lithium_processing].hidden = false
+    data_technology[tech_lithium_processing].hidden_in_factoriopedia = false
+
+    -- BATTERY
+    data_technology[tech_battery_3].effects = {{type = unlock_recipe, recipe = battery_silver_zinc}}
 end
 
 if mods [boblogistics] >= "2.1.0" then
@@ -344,12 +351,17 @@ if mods [boblogistics] >= "2.1.0" then
     end
     data_pipe_to_ground[aluminium_pipe_to_ground] = nil
 
-    -- LITHIUM
-    data_technology[tech_lithium_processing].hidden = false
-    data_technology[tech_lithium_processing].hidden_in_factoriopedia = false
+    data_transport_belt[T3_transport_belt].next_upgrade = T4_transport_belt
+    data_transport_belt[T4_transport_belt].next_upgrade = T5_transport_belt
+    data_transport_belt[T5_transport_belt].next_upgrade = vulcanus_transport_belt
 
-    -- BATTERY
-    data_technology[tech_battery_3].effects = {{type = unlock_recipe, recipe = battery_silver_zinc}}
+    data_underground_belt[T3_underground_belt].next_upgrade = T4_underground_belt
+    data_underground_belt[T4_underground_belt].next_upgrade = T5_underground_belt
+    data_underground_belt[T5_underground_belt].next_upgrade = vulcanus_underground_belt
+
+    data_splitter[T3_splitter].next_upgrade = T4_splitter
+    data_splitter[T4_splitter].next_upgrade = T5_splitter
+    data_splitter[T5_splitter].next_upgrade = vulcanus_splitter
 end
 
 -- FIXED ALL TECHNOLOGIES

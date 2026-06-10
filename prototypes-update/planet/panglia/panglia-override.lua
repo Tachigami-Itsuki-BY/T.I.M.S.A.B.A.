@@ -354,6 +354,28 @@ if mods [panglia_mods] then
         }
     end
 
+    if mods [hyarion_mods] then
+        local cosmic_incubator_recipe_hyarion = "cosmic_incubator_recipe_hyarion"
+        data_recipe[cosmic_incubator_recipe_hyarion].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_hyarion].icons = GALAXY_I(galaxy_png, planet_hyarion)
+        data_recipe[cosmic_incubator_recipe_hyarion].order = b_h
+        data_recipe[cosmic_incubator_recipe_hyarion].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_hyarion].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = metallic_ore, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = carbon_angels, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = raw_quartz_arig, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
     if mods [muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
         data_recipe[cosmic_incubator_recipe_muluna].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.muluna"}}
@@ -438,12 +460,6 @@ if mods [panglia_mods] then
         local cosmic_incubator_recipe_paracelsin = "cosmic_incubator_recipe_paracelsin"
         data_recipe[cosmic_incubator_recipe_paracelsin].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_paracelsin].icons = GALAXY_I(galaxy_png, planet_paracelsin)
-    end
-
-    if mods [hyarion_mods] then
-        local cosmic_incubator_recipe_hyarion = "cosmic_incubator_recipe_hyarion"
-        data_recipe[cosmic_incubator_recipe_hyarion].subgroup = is_panglia_universe
-        data_recipe[cosmic_incubator_recipe_hyarion].icons = GALAXY_I(galaxy_png, planet_hyarion)
     end
 
     if mods [secretas_frozeta_mods] then

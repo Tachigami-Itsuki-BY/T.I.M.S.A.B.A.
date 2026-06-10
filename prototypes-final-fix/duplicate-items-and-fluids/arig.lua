@@ -85,13 +85,13 @@ if mods [arig_mods] then
 
 	data_item[glass_panel_arig] = nil
 	data_recipe[glass_panel_arig .. _recycling] = nil
-	if mods[panglia_mods] then 
+	if mods[panglia_mods] then
 		data_recipe[item_ .. glass_panel_arig .. _panglia_crushing] = nil
 	end
 
     data_item[raw_diamond_arig] = nil
 	data_recipe[raw_diamond_arig .. _recycling] = nil
-	if mods[panglia_mods] then 
+	if mods[panglia_mods] then
 		data_recipe[item_ .. raw_diamond_arig .. _panglia_crushing] = nil
 	end
 

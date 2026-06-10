@@ -42,13 +42,14 @@ require("prototypes-update.space-age.vulcanus.vulcanus-override")
 require("prototypes-update.planet.muluna.muluna-override")
 require("prototypes-update.planet.moshine.moshine-override")
 require("prototypes-update.planet.panglia.panglia-override")
-
 require("prototypes-update.planet.arig.arig-override")
+require("prototypes-update.planet.hyarion.hyarion-override")
+-- tellus
+
 require("prototypes-update.planet.castra.castra-override")
 require("prototypes-update.planet.corrundum.corrundum-override")
 --require("prototypes-update.planet.cubium.cubium-override")
 require("prototypes-update.planet.frozeta.frozeta-override")
-require("prototypes-update.planet.hyarion.hyarion-override")
 require("prototypes-update.planet.maraxsis.maraxsis-override")
 --require("prototypes-update.planet.nexus.nexus-override")
 require("prototypes-update.planet.paracelsin.paracelsin-override")

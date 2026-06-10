@@ -308,7 +308,7 @@ data_recipe[fusion_reactor_eq].ingredients =
     {type = item, name = supercapacitor, amount = 16},
     {type = item, name = carbon_fiber, amount = 64}
 }
-data_generator_equipment[fusion_reactor_eq].power = 3000 .. kW
+data_generator_eq[fusion_reactor_eq].power = 3000 .. kW
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

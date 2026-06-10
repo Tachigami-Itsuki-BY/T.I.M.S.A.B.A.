@@ -1,5 +1,45 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+Date: 10.06.2026
+  Features:
+    - [Mods] Добавлена поддержка Planetaris: Hyarion: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [All] Добавлен новый предмет и рецепт: Селениевый порошок.
+
+    - [Mods] Added support for Planetaris: Hyarion: seamlessly integrated the new planet into the gameplay flow.
+    - [All] Added new item and recipe: Selenium powder.
+
+  Bugfixes:
+    - [Addons] Исправлена ошибка, из-за которой модпак не загружался, если дополнение «Ранняя Печь для Спекания» было отключено.
+    - [Mods] Исправлена ошибка, из-за которой модпак не загружался, если мод «Panglia Planet» был отключено, а мод «Solar Productivity» был включен.
+
+    - [Addons] Fixed a bug where the modpack would not load if the "Early Sintering Oven" addon was disabled.
+    - [Mods] Fixed a bug where the modpack would not load if the "Panglia Planet" mod was disabled and the "Solar Productivity" mod was enabled.
+
+  Balancing:
+    - [Moshine] У Солнечный Панелей на Гипер Ячейках и Аккумуляторов на Гипер Ячейках скорректированы энергетические параметры.
+    - [All] В рецепте Суперконденсатора удалён ингредиент: Продвинутый Процессор.
+
+    - [Moshine] Adjusted energy parameters for the Hyper Cell Solar Panels and Hyper Cell Accumulators.
+    - [All] Removed an ingredient in the Supercapacitor recipe: Advanced Processing Unit.
+
+  Graphics:
+    - [All] Добавлены тени для Каменных, Керамических и Нитиноловых, труб и подземных труб.
+
+    - [All] Added shadows for Stone, Ceramic and Nitinol pipes and pipes-to-ground.
+
+  Locale:
+    - [Moshine] Небольшие правки в локализации.
+
+    - [Moshine] Minor adjustments to localization.
+
+  Modding:
+    - [Mods] Мод «Planetaris: Hyarion» переведён в опциональную зависимость.
+    - [Mods] Мод «Planetaris: Tellus» временно добавлен в список несовместимых.
+
+    - [Mods] Moved "Planetaris: Hyarion" mod to optional dependencies.
+    - [Mods] Temporarily added "Planetaris: Tellus" mod to incompatible.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.2
 Date: 08.06.2026
   Bugfixes:
@@ -62,7 +102,7 @@ Date: 07.06.2026
 
   Balancing:
     - [All] В рецептах Каменных Труб и Каменных Подземных Труб возвращён старый ингредиент: Каменный Кирпич.
-    - [All] Незначительные корректировки рецептов.
+    - [All] Небольшие правки в рецептах.
     - [All] Небольшие правки в технологиях.
     - [All] Небольшие правки в сущностях.
     - [All] Дерево технологий основано на модах «Bob's» версии 2.1.0 и выше, поэтому возможны различия.
@@ -281,7 +321,7 @@ Date: 27.05.2026
     - [All] Replaced ingredients in the Cargo Landing Pad recipe: 
         1. Steel Plate → Molybdenum-Rhenium Plate.
         2. Conrete → Reinforced Conrete.
-    - [All] Adjusted energy parameters for Robot Charging Points.
+    - [All] Adjusted energy parameters for the Robot Charging Points.
     - [All] Replaced an ingredient in the Heavy Spidertrone recipe: Rocket Launcher → Rocket Turret.
     - [All] Adjusted durability for Repair Packs.
     - [All] Decreased module slots in the Electric Mining Drills and Pumpjacks. Please collect all modules before updating.
@@ -462,7 +502,7 @@ Date: 17.05.2026
 Version: 1.0.3
 Date: 17.05.2026
   Features:
-    - [Mods/Addons] Добавлен мод «Modular Buildings Redux» в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Эта функция является Аддоном и может быть включена/отключена в настройках мода.
+    - [Mods/Addons] Мод «Modular Buildings Redux» добавлен в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Эта функция является Аддоном и может быть включена/отключена в настройках мода.
 
     - [Mods/Addons] Added "Modular Buildings Redux" mod to incompatible, and all of its generator optimization functionality (with Space Age, Quality, and Bob's support) is now built directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. This function is an Addon and can be enabled/disabled in the mod settings.
 

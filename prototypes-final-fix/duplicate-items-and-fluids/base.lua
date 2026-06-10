@@ -8,7 +8,7 @@ if mods ["bobequipment"] < "2.1.0" then
     if mods [panglia_mods] then
         data_recipe[item_ .. battery_mk3_SA .. _panglia_crushing] = nil
     end
-    data_battery_equipment[battery_mk3_SA] = nil
+    data_battery_eq[battery_mk3_SA] = nil
     data_technology[battery_mk3_SA] = nil
 end
 

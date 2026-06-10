@@ -317,6 +317,12 @@ data_splitter[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitte
 data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_splitter[vulcanus_splitter].speed = 12/60
 
+if mods [arig_mods] then
+    data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
+    data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
+    data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
+end
+
 -- BUILDING
 data_item[foundry].subgroup = is_vulcanus_building
 data_item[foundry].order = a

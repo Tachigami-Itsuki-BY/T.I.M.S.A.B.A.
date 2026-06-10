@@ -8,7 +8,8 @@ if mods [hyarion_mods] then
         [polished_diamond_hyarion] = polished_diamond_bob,
         [polished_emerald_hyarion] = polished_emerald_bob,
         [polished_ruby_hyarion] = polished_ruby_bob,
-        [polished_sapphire_hyarion] = polished_sapphire_bob
+        [polished_sapphire_hyarion] = polished_sapphire_bob,
+		[carbon_nanotube_hyarion] = carbon_nanotube
     }
     for _, recipe in pairs(data.raw.recipe or {}) do
         for _, ingredient in pairs(recipe.ingredients or {}) do
@@ -90,11 +91,37 @@ if mods [hyarion_mods] then
     end
 
 	data_fluid[aluminium_hyarion] = nil
-	data_item[raw_emerald_hyarion] = nil
-    data_item[raw_ruby_hyarion] = nil
-    data_item[raw_sapphire_hyarion] = nil
-    data_item[polished_diamond_hyarion] = nil
-    data_item[polished_emerald_hyarion] = nil
-    data_item[polished_ruby_hyarion] = nil
-    data_item[polished_sapphire_hyarion] = nil
+
+	local beryllium_wall = "planetaris-beryllium-coating"
+	local hyarion_items =
+	{
+		raw_emerald_hyarion,
+		raw_ruby_hyarion,
+		raw_sapphire_hyarion,
+		polished_diamond_hyarion,
+		polished_emerald_hyarion,
+		polished_ruby_hyarion,
+		polished_sapphire_hyarion,
+		carbon_nanotube_hyarion,
+		beryllium_wall
+	}
+	for _, ITEM in ipairs(hyarion_items) do
+		data_item[ITEM] = nil
+		if ITEM == carbon_nanotube_hyarion then
+			data_recipe[ITEM] = nil
+		end
+		data_recipe[ITEM .. _recycling] = nil
+		if mods [panglia_mods] then
+			data_recipe[item_ .. ITEM .. _panglia_crushing] = nil
+		end
+		if ITEM == beryllium_wall then
+			data_recipe[ITEM] = nil
+			data_wall[ITEM] = nil
+		end
+	end
+
+	data_recipe["planetaris-metallic-smelting"] = nil
+	data_recipe["planetaris-burner-drill-alternative"] = nil
+	data_recipe["planetaris-hyarion-rocket-silo"] = nil
+	data_recipe["planetaris-hyarion-cargo-landing-pad"] = nil
 end

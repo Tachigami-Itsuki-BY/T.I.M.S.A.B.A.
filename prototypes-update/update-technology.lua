@@ -45,6 +45,9 @@ if data_technology[tech_robo_modular_1] then
     }
 end
 
+data_technology[artillery_wagon_2].localised_name = {"entity-name.artillery-wagon-2"}
+data_technology[artillery_wagon_3].localised_name = {"entity-name.artillery-wagon-3"}
+
 -- PRODUCTION
 data_technology[boiler_3].prerequisites = {boiler_2, chemical_science_pack, tech_ceramics, tech_invar_smelting_1}
 
@@ -345,6 +348,7 @@ data_technology[artillery].unit.ingredients =
     {metallurgic_science_pack, 1},
 }
 
+data_technology[artillery_turret_2].localised_name = {"entity-name.artillery-turret-2"}
 data_technology[artillery_turret_2].prerequisites = {artillery, cryogenic_science_pack}
 data_technology[artillery_turret_2].unit.ingredients =
 {
@@ -359,6 +363,7 @@ data_technology[artillery_turret_2].unit.ingredients =
     {cryogenic_science_pack, 1}
 }
 
+data_technology[artillery_turret_3].localised_name = {"entity-name.artillery-turret-3"}
 data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, promethium_science_pack}
 data_technology[artillery_turret_3].unit.ingredients =
 {
