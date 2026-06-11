@@ -107,9 +107,6 @@ if mods [hyarion_mods] then
 	}
 	for _, ITEM in ipairs(hyarion_items) do
 		data_item[ITEM] = nil
-		if ITEM == carbon_nanotube_hyarion then
-			data_recipe[ITEM] = nil
-		end
 		data_recipe[ITEM .. _recycling] = nil
 		if mods [panglia_mods] then
 			data_recipe[item_ .. ITEM .. _panglia_crushing] = nil

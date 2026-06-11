@@ -1,7 +1,65 @@
 if mods ["Rocket-Silo-Construction"] then
+    local is_construction_stage = "is-construction-stage"
+    local is_silo_stage = "is-silo-stage"
+    data:extend
+    ({
+        {
+            type = item_subgroup,
+            name = is_construction_stage,
+            group = ig_space,
+            order = a_a
+        },
+        {
+            type = item_subgroup,
+            name = is_silo_stage,
+            group = ig_space,
+            order = a_b
+        }
+    })
+
+    local entity_name = "entity-name."
+    local entity_description = "entity-description."
+    local excavation_site = "rsc-excavation-site"
+    data_item[excavation_site].localised_name = {entity_name .. excavation_site}
+    data_item[excavation_site].localised_description = {entity_description .. excavation_site}
+    data_item[excavation_site].weight = 1000000000
+    data_recipe[excavation_site].localised_name = data_item[excavation_site].localised_name
+    data_recipe[excavation_site].localised_description = data_item[excavation_site].localised_description
+    data_recipe[excavation_site].energy_required = 128
+    data_recipe[excavation_site].ingredients =
+    {
+        {type = item, name = electric_engine_unit, amount = 64},
+        {type = item, name = advanced_processing_unit, amount = 64},
+        {type = item, name = molybdenum_rhenium_pipe, amount = 32},
+        {type = item, name = molybdenum_plate, amount = 256},
+        {type = item, name = rhenium_plate, amount = 256},
+        {type = item, name = reinforced_titanium_concrete_brick, amount = 256}
+    }
+
+    local recipe_name = "recipe-name."
     local construction_stage1 = "rsc-construction-stage1"
-    data_recipe[construction_stage1].localised_name = {"recipe-name.rsc-construction-stage1"}
-    data_recipe[construction_stage1].energy_required = 4
+    local construction_stage2 = "rsc-construction-stage2"
+    local construction_stage3 = "rsc-construction-stage3"
+    local construction_stage4 = "rsc-construction-stage4"
+    local construction_stage5 = "rsc-construction-stage5"
+    local construction_stage6 = "rsc-construction-stage6"
+    local construction_stages =
+    {
+        {name = construction_stage1, order = a},
+        {name = construction_stage2, order = b},
+        {name = construction_stage3, order = c},
+        {name = construction_stage4, order = d},
+        {name = construction_stage5, order = e},
+        {name = construction_stage6, order = f}
+    }
+    for _, RECIPE in pairs(construction_stages) do
+        data_recipe[RECIPE.name].localised_name = {recipe_name .. RECIPE.name}
+        data_recipe[RECIPE.name].subgroup = is_construction_stage
+        data_recipe[RECIPE.name].order = RECIPE.order
+        data_recipe[RECIPE.name].energy_required = 4
+        data_recipe[RECIPE.name].hidden = false
+        data_recipe[RECIPE.name].hidden_in_factoriopedia = false
+    end
     data_recipe[construction_stage1].results =
     {
         {type = item, name = "rsc-building-stage1", amount = 1, probability = 0},
@@ -12,9 +70,6 @@ if mods ["Rocket-Silo-Construction"] then
         {type = item, name = soil_angels, amount = 32}
     }
 
-    local construction_stage2 = "rsc-construction-stage2"
-    data_recipe[construction_stage2].localised_name = {"recipe-name.rsc-construction-stage2"}
-    data_recipe[construction_stage2].energy_required = 4
     data_recipe[construction_stage2].ingredients =
     {
         {type = item, name = titanium_rod, amount = 32},
@@ -29,9 +84,6 @@ if mods ["Rocket-Silo-Construction"] then
         {type = item, name = stone, amount = 32}
     }
 
-    local construction_stage3 = "rsc-construction-stage3"
-    data_recipe[construction_stage3].localised_name = {"recipe-name.rsc-construction-stage3"}
-    data_recipe[construction_stage3].energy_required = 4
     data_recipe[construction_stage3].results =
     {
         {type = item, name = "rsc-building-stage3", amount = 1, probability = 0},
@@ -44,9 +96,6 @@ if mods ["Rocket-Silo-Construction"] then
         {type = item, name = ore_bobmonium, amount = 4}
     }
 
-    local construction_stage4 = "rsc-construction-stage4"
-    data_recipe[construction_stage4].localised_name = {"recipe-name.rsc-construction-stage4"}
-    data_recipe[construction_stage4].energy_required = 4
     data_recipe[construction_stage4].ingredients =
     {
         {type = item, name = titanium_rod, amount = 32},
@@ -62,9 +111,6 @@ if mods ["Rocket-Silo-Construction"] then
         {type = item, name = stone, amount = 32}
     }
 
-    local construction_stage5 = "rsc-construction-stage5"
-    data_recipe[construction_stage5].localised_name = {"recipe-name.rsc-construction-stage5"}
-    data_recipe[construction_stage5].energy_required = 4
     data_recipe[construction_stage5].ingredients =
     {
         {type = item, name = advanced_processing_unit, amount = 16},
@@ -74,9 +120,6 @@ if mods ["Rocket-Silo-Construction"] then
         {type = item, name = platinum_cable, amount = 256}
     }
 
-    local construction_stage6 = "rsc-construction-stage6"
-    data_recipe[construction_stage6].localised_name = {"recipe-name.rsc-construction-stage6"}
-    data_recipe[construction_stage6].energy_required = 4
     data_recipe[construction_stage6].ingredients =
     {
         {type = item, name = electric_engine_unit, amount = 4},
@@ -87,60 +130,32 @@ if mods ["Rocket-Silo-Construction"] then
         {type = item, name = reinforced_concrete, amount = 8}
     }
 
-    local excavation_site = "rsc-excavation-site"
-    data_item[excavation_site].localised_name = {"entity-name.rsc-excavation-site"}
-    data_item[excavation_site].localised_description = {"entity-description.rsc-excavation-site"}
-    data_item[excavation_site].weight = 1000000000
-    data_recipe[excavation_site].localised_name = data_item[excavation_site].localised_name
-    data_recipe[excavation_site].localised_description = data_item[excavation_site].localised_description
-    data_recipe[excavation_site].energy_required = 128
-    data_recipe[excavation_site].ingredients =
-    {
-        {type = item, name = electric_engine_unit, amount = 64},
-        {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 32},
-        {type = item, name = molybdenum_plate, amount = 256},
-        {type = item, name = rhenium_plate, amount = 256},
-        {type = item, name = reinforced_titanium_concrete_brick, amount = 256}
-    }
-
     local silo_stage1 = "rsc-silo-stage1"
-    data_assembling[silo_stage1].localised_name = {"entity-name.rsc-silo-stage1"}
-    data_assembling[silo_stage1].localised_description = {"entity-description.rsc-silo-stage1"}
-    data_assembling[silo_stage1].energy_usage = (128000 - 4000) .. kW
-    data_assembling[silo_stage1].energy_source.emissions_per_minute = {pollution = 256}
-    data_assembling[silo_stage1].energy_source.drain = 4000 .. kW
-
     local silo_stage2 = "rsc-silo-stage2"
-    data_assembling[silo_stage2].localised_name = {"entity-name.rsc-silo-stage2"}
-    data_assembling[silo_stage2].localised_description = {"entity-description.rsc-silo-stage2"}
-    data_assembling[silo_stage2].energy_usage = (128000 - 4000) .. kW
-    data_assembling[silo_stage2].energy_source.drain = 4000 .. kW
-
     local silo_stage3 = "rsc-silo-stage3"
-    data_assembling[silo_stage3].localised_name = {"entity-name.rsc-silo-stage3"}
-    data_assembling[silo_stage3].localised_description = {"entity-description.rsc-silo-stage3"}
-    data_assembling[silo_stage3].energy_usage = (128000 - 4000) .. kW
-    data_assembling[silo_stage3].energy_source.emissions_per_minute = {pollution = 256}
-    data_assembling[silo_stage3].energy_source.drain = 4000 .. kW
-
     local silo_stage4 = "rsc-silo-stage4"
-    data_assembling[silo_stage4].localised_name = {"entity-name.rsc-silo-stage4"}
-    data_assembling[silo_stage4].localised_description = {"entity-description.rsc-silo-stage4"}
-    data_assembling[silo_stage4].energy_usage = (128000 - 4000) .. kW
-    data_assembling[silo_stage4].energy_source.drain = 4000 .. kW
-
     local silo_stage5 = "rsc-silo-stage5"
-    data_assembling[silo_stage5].localised_name = {"entity-name.rsc-silo-stage5"}
-    data_assembling[silo_stage5].localised_description = {"entity-description.rsc-silo-stage5"}
-    data_assembling[silo_stage5].energy_usage = (128000 - 4000) .. kW
-    data_assembling[silo_stage5].energy_source.drain = 4000 .. kW
-
     local silo_stage6 = "rsc-silo-stage6"
-    data_assembling[silo_stage6].localised_name = {"entity-name.rsc-silo-stage6"}
-    data_assembling[silo_stage6].localised_description = {"entity-description.rsc-silo-stage6"}
-    data_assembling[silo_stage6].energy_usage = (128000 - 4000) .. kW
-    data_assembling[silo_stage6].energy_source.drain = 4000 .. kW
+    local silo_stages =
+    {
+        {name = silo_stage1, order = a},
+        {name = silo_stage2, order = b},
+        {name = silo_stage3, order = c},
+        {name = silo_stage4, order = d},
+        {name = silo_stage5, order = e},
+        {name = silo_stage6, order = f}
+    }
+    for _, BUILD in pairs(silo_stages) do
+        data_assembling[BUILD.name].localised_name = {entity_name .. BUILD.name}
+        data_assembling[BUILD.name].localised_description = {entity_description .. BUILD.name}
+        data_assembling[BUILD.name].subgroup = is_silo_stage
+        data_assembling[BUILD.name].order = BUILD.order
+        data_assembling[BUILD.name].energy_usage = (128000 - 4000) .. kW
+        data_assembling[BUILD.name].energy_source.emissions_per_minute = {pollution = 256}
+        data_assembling[BUILD.name].energy_source.drain = 4000 .. kW
+        data_assembling[BUILD.name].hidden = false
+        data_assembling[BUILD.name].hidden_in_factoriopedia = false
+    end
 
     bobmods.lib.recipe.update_recycling_recipe({excavation_site})
 

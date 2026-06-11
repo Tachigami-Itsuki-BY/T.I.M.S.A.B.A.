@@ -1,5 +1,50 @@
 if mods["Flare Stack"] then
+    local deleted_fuels =
+    {
+        [uranium_234_fuel_cell] = true,
+        [uranium_235_fuel_cell] = true,
+        [mixed_oxide_fuel_cell] = true,
+        [thorium_fuel_cell] = true,
+        [deuterium_fuel_cell] = true,
+        [tritium_fuel_cell] = true,
+        [rocket_booster_angels] = true,
+        [rocket_fuel] = true,
+        [nuclear_fuel] = true,
+        [plutonium_fuel_angels] = true,
+        [fusion_fuel_angels] = true,
+        [fusion_power_cell] = true
+    }
+
+    if mods [panglia_mods] then
+        deleted_fuels[space_train_battery_pack] = true
+    end
+
     for recipe_name, recipe in pairs(data.raw.recipe) do
+        local is_flaring = recipe_name:find("-flaring")
+        local is_incineration = recipe_name:find("-incineration")
+        if is_flaring or is_incineration then
+            if is_flaring then
+                data.raw.recipe[recipe_name] = nil
+            elseif is_incineration then
+                local ingredient = recipe.ingredients and (recipe.ingredients[1] or recipe.ingredients)
+                if ingredient then
+                    local item_name = ingredient.name or ingredient[1]
+                    local item = data.raw.item[item_name]
+
+                    -- Условие удаление рецепта:
+                    -- 1. Предмета нет в базе [not item]
+                    -- 2. ИЛИ у него нет fuel_value (и это не дерево)
+                    -- 3. ИЛИ его имя находится в нашем списке deleted_fuels
+                    if not item or (not item.fuel_value and item.name ~= "wood") or deleted_fuels[item_name] then
+                        data.raw.recipe[recipe_name] = nil
+                    end
+                else
+                    data.raw.recipe[recipe_name] = nil
+                end
+            end
+        end
+    end
+    --[[for recipe_name, recipe in pairs(data.raw.recipe) do
         local is_flaring = recipe_name:find("-flaring")
         local is_incineration = recipe_name:find("-incineration")
         if is_flaring or is_incineration then
@@ -18,16 +63,18 @@ if mods["Flare Stack"] then
                 end
             end
         end
-    end
+    end]]
 
     local flare_stack = "flare-stack"
     data_item[flare_stack] = nil
     data_recipe[flare_stack] = nil
+    data_recipe[flare_stack .. _recycling] = nil
+    if mods [panglia_mods] then
+        data_recipe[item_ .. flare_stack .. _panglia_crushing] = nil
+    end
     data_furnace[flare_stack] = nil
 
-    data_recipe["flare-stack-recycling"] = nil
-
-    data_technology["flare-stack-fluid-venting-tech"] = nil
+    data_technology[flare_stack .. "-fluid-venting-tech"] = nil
 
     local is_flare_stack = "is-flare-stack"
     data:extend
@@ -80,6 +127,4 @@ if mods["Flare Stack"] then
     data_furnace[electric_incinerator].energy_source.drain = 15 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe({incinerator, electric_incinerator})
-
-    if mods [panglia_mods] then data_recipe["item-flare-stack-panglia_crushing"] = nil end
 end

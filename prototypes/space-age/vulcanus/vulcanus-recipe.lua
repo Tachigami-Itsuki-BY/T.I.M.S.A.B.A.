@@ -1,3 +1,71 @@
+-- VULCANUS AIR
+vulcanus_air_separation = "vulcanus-air-separation"
+data:extend
+({
+    {
+        type = recipe,
+        name = vulcanus_air,
+        category = angels_petrochem_air_filtering,
+        subgroup = is_vulcanus_air,
+        icon = data_fluid[vulcanus_air].icon,
+        order = a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        always_show_products = true,
+        energy_required = 8,
+        ingredients = {},
+        results = {{type = fluid, name = vulcanus_air, amount = 240}},
+        main_product = vulcanus_air,
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
+    },
+    {
+        type = recipe,
+        name = vulcanus_air_separation,
+        category = angels_advanced_chemistry,
+        subgroup = is_vulcanus_air,
+        icons = FOUR_R_I(vulcanus_air, nitrogen_angels, carbon_dioxide_angels, hydrogen_sulfide_angels),
+        order = a_a,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 2,
+        ingredients = {{type = fluid, name = vulcanus_air, amount = 120}},
+        results =
+        {
+            {type = fluid, name = nitrogen_angels, amount = 60},
+            {type = fluid, name = carbon_dioxide_angels, amount = 30},
+            {type = fluid, name = hydrogen_sulfide_angels, amount = 30}
+        },
+        main_product = nitrogen_angels
+    }
+})
+
+--[[data:extend
+({
+    {
+        type = recipe,
+        name = ,
+        category = metallurgy,
+        subgroup = ,
+        icons = ,
+        order = ,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = false,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = ,
+        ingredients = {{type = , name = , amount = }},
+        results = {{type = , name = , amount = }},
+        main_product = 
+    }
+})]]
+
 -- LAVA
 jivolite_from_lava = "jivolite-from-lava"
 crotinnium_from_lava = "crotinnium-from-lava"
@@ -1740,53 +1808,36 @@ data:extend
     }
 })]]
 
--- VULCANUS AIR
-vulcanus_air_separation = "vulcanus-air-separation"
+-- ROCKET PART TUNGSTEN
+rocket_part_tungsten = "rocket-part-tungsten"
 data:extend
 ({
     {
+        localised_name = {"item-name.rocket-part"},
         type = recipe,
-        name = vulcanus_air,
-        category = angels_petrochem_air_filtering,
-        subgroup = is_vulcanus_air,
-        icon = data_fluid[vulcanus_air].icon,
-        order = a,
+        name = rocket_part_tungsten,
+        category = data_recipe[rocket_part].category,
+        subgroup = data_recipe[rocket_part].subgroup,
+        icons = R_P_I(rocket_part, nil, nil, number_2),
+        order = b_a,
         enabled = false,
         auto_recycle = false,
-        allow_productivity = false,
+        allow_productivity = true,
         allow_quality = false,
         allow_decomposition = false,
-        always_show_products = true,
-        energy_required = 8,
-        ingredients = {},
-        results = {{type = fluid, name = vulcanus_air, amount = 240}},
-        main_product = vulcanus_air,
-        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
-    },
-    {
-        type = recipe,
-        name = vulcanus_air_separation,
-        category = angels_advanced_chemistry,
-        subgroup = is_vulcanus_air,
-        icons = FOUR_R_I(vulcanus_air, nitrogen_angels, carbon_dioxide_angels, hydrogen_sulfide_angels),
-        order = a_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 2,
-        ingredients = {{type = fluid, name = vulcanus_air, amount = 120}},
-        results =
+        energy_required = 4,
+        ingredients =
         {
-            {type = fluid, name = nitrogen_angels, amount = 60},
-            {type = fluid, name = carbon_dioxide_angels, amount = 30},
-            {type = fluid, name = hydrogen_sulfide_angels, amount = 30}
+            {type = item, name = low_density_structure, amount = 4},
+            {type = item, name = heat_shielding_tile, amount = 32},
+            {type = item, name = advanced_processing_unit, amount = 4},
+            {type = item, name = copper_tungsten_pipe, amount = 32},
+            {type = item, name = rocket_fuel, amount = 4}
         },
-        main_product = nitrogen_angels
+        results = data_recipe[rocket_part].results,
+        main_product = data_recipe[rocket_part].main_product
     }
 })
-
 --[[data:extend
 ({
     {

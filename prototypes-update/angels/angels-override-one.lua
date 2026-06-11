@@ -15,7 +15,6 @@ data_assembling[burner_ore_crusher].order = a
 data_assembling[burner_ore_crusher].crafting_speed = 0.5
 data_assembling[burner_ore_crusher].energy_usage = 225 .. kW
 data_assembling[burner_ore_crusher].energy_source.emissions_per_minute.pollution = 4
-data_assembling[burner_ore_crusher].energy_source.fuel_categories = {base_fuel}
 
 data_item_subgroup["angels-ore-crusher"].order = z_a
 
@@ -508,7 +507,6 @@ for _, BUILD in pairs(blast_furnaces) do
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 4
-    data_assembling[BUILD.name].energy_source.fuel_categories = {base_fuel, advanced_fuel}
 end
 local function blast_furnace_recipe(name, circuit, pipe, brick, plate, blast_furnace)
     local ingredients =

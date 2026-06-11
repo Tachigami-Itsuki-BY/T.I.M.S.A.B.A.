@@ -72,6 +72,8 @@ tech_battery_3 = "bob-battery-3"
 tech_battery_4 = "bob-battery-4"
 tech_electronics = "bob-electronics"
 
+tech_heat_shield = "bob-heat-shield"
+
 tech_uranium_power = "nuclear-power"
 tech_uranium_processing = "uranium-processing"
 tech_plutonium_based_power_systems = "kovarex-enrichment-process"

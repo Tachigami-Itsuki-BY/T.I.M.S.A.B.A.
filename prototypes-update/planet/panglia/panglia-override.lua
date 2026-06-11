@@ -96,7 +96,6 @@ if mods [panglia_mods] then
     {
         {type = item, name = resistor, amount = 4},
         {type = item, name = transistor, amount = 4},
-        {type = item, name = electronic_circuit, amount = 1},
         {type = item, name = solder, amount = 2},
         {type = item, name = panglite_fiber, amount = 2}
     }

@@ -730,4 +730,8 @@ data_technology[cryogenic_plant].research_trigger =
 table.insert(data_technology[fusion_reactor].prerequisites, tech_tritium_power)
 table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, recipe = advanced_tritium_fuel_cell_reprocessing})
 
-data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_4}
+if mods [bobequipment] then
+    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_4}
+else
+    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_1}
+end

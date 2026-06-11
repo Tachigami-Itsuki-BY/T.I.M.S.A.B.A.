@@ -349,8 +349,11 @@ data_item[heat_shielding_tile].order = h
 data_recipe[heat_shielding_tile].order = h
 data_recipe[heat_shielding_tile].icons = THREE_I(silicon_nitride_bob, tungsten_carbide_plate_bob, heat_shielding_tile)
 data_recipe[heat_shielding_tile].energy_required = 16
-data_recipe[heat_shielding_tile].ingredients[1].amount = 8
-data_recipe[heat_shielding_tile].ingredients[2].amount = 4
+data_recipe[heat_shielding_tile].ingredients =
+{
+    {type = item, name = silicon_nitride_bob, amount = 8},
+    {type = item, name = tungsten_carbide_plate_bob, amount = 4}
+}
 data_recipe[heat_shielding_tile].results[1].amount = 16
 
 data_item[rtg].order = i

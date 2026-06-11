@@ -19,7 +19,7 @@ if mods[moshine_mods] then
             name = tech_monazite_processing_1,
             icon = "__TIMSABA__/graphics/icons/moshine/technology/monazite-processing.png",
             icon_size = 256,
-            prerequisites = {planet_discovery_moshine},
+            prerequisites = {planet_discovery_moshine, tech_advanced_ore_refining_5},
             effects =
             {
                 {type = unlock_recipe, recipe = monazite_crushed},

@@ -504,7 +504,6 @@ if mods[moshine_mods] then
     data_item[space_train_discharged_battery_pack].order = b
     data_item[space_train_discharged_battery_pack].stack_size = 200
 
-    local space_train_battery_pack = "space-train-battery-pack"
     data_recipe[space_train_battery_pack].subgroup = is_moshine_logistics_battery
     data_recipe[space_train_battery_pack].icon = data_item[space_train_discharged_battery_pack].icon
     data_recipe[space_train_battery_pack].order = b_a
@@ -591,12 +590,21 @@ if mods[moshine_mods] then
     data_recipe[data_processor].subgroup = is_moshine_building
     data_recipe[data_processor].order = a
     data_recipe[data_processor].energy_required = 8
-    data_recipe[data_processor].ingredients =
-    {
-        {type = item, name = assembling_machine_6, amount = 1},
-        {type = item, name = silicon_carbide_bob, amount = 4},
-        {type = item, name = productivity_module_5, amount = 4}
-    }
+    if mods [bobmodules] then
+        data_recipe[data_processor].ingredients =
+        {
+            {type = item, name = assembling_machine_6, amount = 1},
+            {type = item, name = silicon_carbide_bob, amount = 4},
+            {type = item, name = productivity_module_5, amount = 4}
+        }
+    else
+        data_recipe[data_processor].ingredients =
+        {
+            {type = item, name = assembling_machine_6, amount = 1},
+            {type = item, name = silicon_carbide_bob, amount = 4},
+            {type = item, name = productivity_module_3, amount = 4}
+        }
+    end
     data_assembling[data_processor].subgroup = is_moshine_building
     data_assembling[data_processor].order = a
     data_assembling[data_processor].energy_usage = (240 - drain) .. kW
@@ -836,7 +844,9 @@ if mods[moshine_mods] then
     }
 
     local tech_data_processor_building = "moshine-tech-data-processor-building"
-    table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_5)
+    if mods [bobmodules] then
+       table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_5)
+    end
     data_technology[tech_data_processor_building].unit.ingredients =
     {
         {automation_science_pack, 1},
