@@ -15,8 +15,6 @@ for name in pairs(data.raw.recipe) do
     end
 end
 
-require("prototypes-final-fix.final-fix-prototypes-deleted")
-
 require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
 require("prototypes-final-fix.duplicate-items-and-fluids.angels")
@@ -60,6 +58,8 @@ require("prototypes-final-fix.final-fix-settings")
 require("prototypes-final-fix.final-fix-autoplace-controls")
 require("prototypes-final-fix.final-fix-simulation")
 require("prototypes-final-fix.final-fix-entities")
+require("prototypes-final-fix.final-fix-fuel-categories")
+require("prototypes-final-fix.final-fix-prototypes-deleted")
 
 require("prototypes-final-fix.multi-building.scripting")
 require("prototypes-final-fix.multi-building.entities")

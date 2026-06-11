@@ -216,7 +216,6 @@ if mods [hyarion_mods] then
         {type = item, name = polished_quartz_hyarion, amount = 2}
     }
 
-    local crystalization_motor = "planetaris-crystalization-motor"
     data_item[crystalization_motor].subgroup = is_hyarion_recipe_other
     data_item[crystalization_motor].order = d
     data_recipe[crystalization_motor].subgroup = is_hyarion_recipe_other
@@ -327,6 +326,25 @@ if mods [hyarion_mods] then
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
+    data_recipe[carbon_nanotube_hyarion].subgroup = is_hyarion_recipe_other
+    data_recipe[carbon_nanotube_hyarion].icons = TWO_I(methane_angels, carbon_nanotube)
+    data_recipe[carbon_nanotube_hyarion].order = k
+    data_recipe[carbon_nanotube_hyarion].energy_required = 4 -- CH₄ -N₂/cat-> C + H₂
+    data_recipe[carbon_nanotube_hyarion].ingredients =
+    {
+        {type = fluid, name = methane_angels, amount = 30},
+        {type = fluid, name = nitrogen_angels, amount = 30},
+        {type = item, name = catalyst_red, amount = 1}
+    }
+    data_recipe[carbon_nanotube_hyarion].results =
+    {
+        {type = item, name = carbon_nanotube, amount = 2},
+        {type = fluid, name = nitrogen_angels, amount = 15},
+        {type = item, name = catalyst_carrier, amount = 1}
+    }
+    data_recipe[carbon_nanotube_hyarion].main_product = carbon_nanotube
+    data_recipe[carbon_nanotube_hyarion].surface_conditions = {{property = pressure, min = 8000, max = 8000}}
+
     -- RECIPE MANIPULATION
     local carbon_nanotube_particle_manipulation = "planetaris-advanced-carbon-nanotube"
     data_recipe[carbon_nanotube_particle_manipulation].subgroup = is_hyarion_recipe_particle
@@ -424,7 +442,6 @@ if mods [hyarion_mods] then
     data_mining_drill[geode_mining_drill].energy_source.emissions_per_minute.pollution = 32
 
     -- BUILDING
-    local quartz_furnace = "planetaris-quartz-furnace"
     data_item[quartz_furnace].subgroup = is_hyarion_building
     data_item[quartz_furnace].order = a
     data_item[quartz_furnace].stack_size = 32
@@ -435,9 +452,7 @@ if mods [hyarion_mods] then
     data_furnace[quartz_furnace].subgroup = is_hyarion_building
     data_furnace[quartz_furnace].order = a
     data_furnace[quartz_furnace].energy_usage = 225 .. kW
-    data_furnace[quartz_furnace].energy_source.fuel_categories = {base_fuel}
 
-    refraction_ray_collector = "planetaris-refraction-ray-collector"
     data_item[refraction_ray_collector].subgroup = is_hyarion_building
     data_item[refraction_ray_collector].order = b
     data_item[refraction_ray_collector].stack_size = 32
@@ -591,13 +606,23 @@ if mods [hyarion_mods] then
     data_recipe[personal_ruby_laser_defense_eq].subgroup = is_hyarion_war
     data_recipe[personal_ruby_laser_defense_eq].order = a
     data_recipe[personal_ruby_laser_defense_eq].energy_required = 32
-    data_recipe[personal_ruby_laser_defense_eq].ingredients =
-    {
-        {type = item, name = laser_defense_eq_6, amount = 1},
-        {type = item, name = simulating_unit, amount = 16},
-        {type = item, name = crystalization_motor, amount = 8},
-        {type = item, name = ruby_laser, amount = 4}
-    }
+    if mods [bobequipment] then
+        data_recipe[personal_ruby_laser_defense_eq].ingredients =
+        {
+            {type = item, name = laser_defense_eq_6, amount = 1},
+            {type = item, name = simulating_unit, amount = 16},
+            {type = item, name = crystalization_motor, amount = 8},
+            {type = item, name = ruby_laser, amount = 4}
+        }
+    else
+        data_recipe[personal_ruby_laser_defense_eq].ingredients =
+        {
+            {type = item, name = laser_defense_eq_1, amount = 1},
+            {type = item, name = simulating_unit, amount = 16},
+            {type = item, name = crystalization_motor, amount = 8},
+            {type = item, name = ruby_laser, amount = 4}
+        }
+    end
     data_active_defense_eq[personal_ruby_laser_defense_eq].subgroup = is_hyarion_war
     data_active_defense_eq[personal_ruby_laser_defense_eq].order = a
     data_active_defense_eq[personal_ruby_laser_defense_eq].energy_source.buffer_capacity = (960 * 2) .. kJ
@@ -699,6 +724,9 @@ if mods [hyarion_mods] then
     table.insert(data_technology[tech_diamond_polishing].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[tech_diamond_polishing].unit.ingredients, {electromagnetic_science_pack, 1})
 
+    if mods [bobequipment] then
+        table.insert(data_technology[ruby_laser].prerequisites, laser_defense_eq_6)
+    end
     table.insert(data_technology[ruby_laser].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[ruby_laser].unit.ingredients, {electromagnetic_science_pack, 1})
 
@@ -716,12 +744,6 @@ if mods [hyarion_mods] then
     table.insert(data_technology[tech_hyper_automation].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[tech_hyper_automation].unit.ingredients, {electromagnetic_science_pack, 1})
 
-    rocket_part_hyarion = "planetaris-hyarion-rocket-part"
-    data_technology[refraction_science_pack].effects =
-    {
-        {type = unlock_recipe, recipe = refraction_science_pack},
-        {type = unlock_recipe, recipe = rocket_part_hyarion}
-    }
     data_technology[refraction_science_pack].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -750,7 +772,9 @@ if mods [hyarion_mods] then
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {electromagnetic_science_pack, 1})
 
-    data_technology["planetaris-particle-manipulation"].unit.ingredients =
+    local tech_particle_manipulation = "planetaris-particle-manipulation"
+    table.insert(data_technology[tech_particle_manipulation].prerequisites, carbon_fiber)
+    data_technology[tech_particle_manipulation].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -759,6 +783,7 @@ if mods [hyarion_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1},
         {compression_science_pack, 1},
         {refraction_science_pack, 1}
@@ -768,7 +793,11 @@ if mods [hyarion_mods] then
 
     table.insert(data_technology[unstable_gem .. s].unit.ingredients, {utility_science_pack, 1})
 
-    data_technology["planetaris-beryllium" .. _processing].unit.ingredients =
+    local tech_beryllium_processing = "planetaris-beryllium-processing"
+    rocket_part_hyarion = "planetaris-hyarion-rocket-part"
+    table.insert(data_technology[tech_beryllium_processing].effects, {type = unlock_recipe, recipe = carbon_nanotube_hyarion})
+    table.insert(data_technology[tech_beryllium_processing].effects, {type = unlock_recipe, recipe = rocket_part_hyarion})
+    data_technology[tech_beryllium_processing].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -777,6 +806,7 @@ if mods [hyarion_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1},
         {compression_science_pack, 1},
         {refraction_science_pack, 1}
@@ -798,6 +828,7 @@ if mods [hyarion_mods] then
         {utility_science_pack, 1},
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1},
         {compression_science_pack, 1},
         {refraction_science_pack, 1}

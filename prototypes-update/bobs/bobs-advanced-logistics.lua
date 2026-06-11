@@ -594,13 +594,23 @@ local function robot_brain_recipe(name, circuit_1, circuit_2)
     data_item[name].subgroup = is_robot_brain
     data_recipe[name].subgroup = is_robot_brain
     data_recipe[name].energy_required = 8
-    data_recipe[name].ingredients =
-    {
-        {type = item, name = circuit_1,   amount = 2},
-        {type = item, name = circuit_2,   amount = 2},
-        {type = item, name = solder,      amount = 4},
-        {type = item, name = module_case, amount = 1}
-    }
+    if mods [bobmodules] then
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = circuit_1,   amount = 2},
+            {type = item, name = circuit_2,   amount = 2},
+            {type = item, name = solder,      amount = 4},
+            {type = item, name = module_case, amount = 1}
+        }
+    else
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = circuit_1,   amount = 2},
+            {type = item, name = circuit_2,   amount = 2},
+            {type = item, name = solder,      amount = 4},
+            --{type = item, name = module_case, amount = 1}
+        }
+    end
 end
 robot_brain_recipe(robot_brain_1, basic_circuit_board, electronic_circuit)
 robot_brain_recipe(robot_brain_2, electronic_circuit,  advanced_circuit)
@@ -774,12 +784,21 @@ data_recipe[mech_armor_plate].ingredients =
     {type = item, name = tungsten_carbide_plate_bob, amount = 2}
 }
 
-data_recipe[mech_brain].ingredients =
-{
-    {type = item, name = advanced_processing_unit, amount = 16},
-    {type = item, name = solder, amount = 128},
-    {type = item, name = module_case, amount = 1}
-}
+if mods [bobmodules] then
+    data_recipe[mech_brain].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 16},
+        {type = item, name = solder, amount = 128},
+        {type = item, name = module_case, amount = 1}
+    }
+else
+    data_recipe[mech_brain].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 16},
+        {type = item, name = solder, amount = 128},
+        --{type = item, name = module_case, amount = 1}
+    }
+end
 
 data_recipe[mech_frame].energy_required = 4
 data_recipe[mech_frame].ingredients =

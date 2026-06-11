@@ -146,6 +146,81 @@ data_armor[mech_armor].resistances =
     }
 }
 
+tech_rocket_part_productivity = "rocket-part-productivity"
+data_technology[tech_rocket_part_productivity].effects =
+{
+    {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+    {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+}
+table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[tech_rocket_part_productivity .. "-2"].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[tech_rocket_part_productivity .. "-3"].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[tech_rocket_part_productivity .. "-4"].unit.ingredients, {utility_science_pack, 1})
+
+if mods [muluna_mods] then
+    -- ROCKET PART
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
+
+    tech_rocket_part_productivity_vulcanus = "rocket-part-productivity-vulcanus"
+    data_technology[tech_rocket_part_productivity_vulcanus].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_vulcanus].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_vulcanus .. "-2"].unit.ingredients, {utility_science_pack, 1})
+
+    tech_rocket_part_productivity_gleba = "rocket-part-productivity-gleba"
+    data_technology[tech_rocket_part_productivity_gleba].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_gleba].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_gleba .. "-2"].unit.ingredients, {utility_science_pack, 1})
+
+    tech_rocket_part_productivity_fulgora = "rocket-part-productivity-fulgora"
+    data_technology[tech_rocket_part_productivity_fulgora].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_fulgora].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_fulgora .. "-2"].unit.ingredients, {utility_science_pack, 1})
+
+    tech_rocket_part_productivity_aquilo = "rocket-part-productivity-aquilo"
+    data_technology[tech_rocket_part_productivity_aquilo].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {utility_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {metallurgic_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {agricultural_science_pack, 1})
+    table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {electromagnetic_science_pack, 1})
+
+    if mods [hyarion_mods] then
+        data_recipe[rocket_part_tungsten].ingredients =
+        {
+            {type = item, name = low_density_structure, amount = 4},
+            {type = item, name = heat_shielding_tile, amount = 32},
+            {type = item, name = advanced_processing_unit, amount = 4},
+            {type = item, name = copper_tungsten_pipe, amount = 32},
+            {type = item, name = rocket_fuel, amount = 4}
+        }
+
+        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+    end
+end
+
+if not mods [muluna_mods] and mods [hyarion_mods] then
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+end
+
 -- MODS
 if mods [muluna_mods] then
     local muluna_mining_machine =
@@ -313,6 +388,8 @@ if mods [hyarion_mods] then
     }
     data_recipe[remelting_of_metal_ore_2].results[1].amount = 8
 
+    data_recipe[carbon_nanotube_hyarion].localised_name = {"item-name.carbon-nanotube"}
+
     -- BUILDING
     local lamp_post = "lamp-post"
     data_item[lamp_post].subgroup = is_hyarion_building
@@ -336,14 +413,14 @@ if mods [hyarion_mods] then
 
     -- SPACE
     data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, planet_hyarion)
-    data_recipe[rocket_part_hyarion].order = b_b
+    data_recipe[rocket_part_hyarion].order = b_c
     data_recipe[rocket_part_hyarion].energy_required = 4
     data_recipe[rocket_part_hyarion].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 1},
-        {type = item, name = heat_shielding_tile, amount = 8},
-        {type = item, name = simulating_unit, amount = 2},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 32},
+        {type = item, name = low_density_structure, amount = 4},
+        {type = item, name = beryllium_plate, amount = 16},
+        {type = item, name = simulating_unit, amount = 4},
+        {type = item, name = carbon_nanotube, amount = 16},
         {type = item, name = rocket_fuel, amount = 8}
     }
 

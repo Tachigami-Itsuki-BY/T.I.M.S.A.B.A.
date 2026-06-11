@@ -177,6 +177,20 @@ if mods [bobplates] >= "2.1.0" then
 
     -- BATTERY
     data_technology[tech_battery_3].effects = {{type = unlock_recipe, recipe = battery_silver_zinc}}
+
+    -- HEAT SHIELD
+    data_technology[tech_heat_shield].prerequisites = {tech_ceramics, tech_powder_metallurgy_4, tech_tungsten_processing}
+    table.insert(data_technology[tech_heat_shield].unit.ingredients, {production_science_pack, 1})
+
+    -- VULCANUS
+    data_recipe[tungsten_carbide].results[1].amount = 1
+    data_recipe[tungsten_plate].hidden = false
+    data_recipe[tungsten_plate].hidden_in_factoriopedia = false
+
+    data_technology["tungsten-steel"].effects = {{type = unlock_recipe, recipe = tungsten_plate}}
+
+    -- AQUILO
+    data_recipe[lithium_plate].category = smelting
 end
 
 if mods [boblogistics] >= "2.1.0" then
@@ -464,7 +478,9 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
     tech_prerequisites(heat_exchanger_4, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_advanced_material_processing_4, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_multi_purpose_furnace_2, tech_tungsten_alloy_processing)
-    tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_tungsten_alloy_processing)
+    if mods [bobvehicleequipment] then
+        tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_tungsten_alloy_processing)
+    end
     tech_prerequisites(tech_plasma_turret_3, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_fluid_handling_4, tech_tungsten_alloy_processing)
     -- LITHIUM PROCESSING
@@ -474,7 +490,9 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
     tech_prerequisites(tech_logistics_3, tech_cobalt_processing)
     tech_prerequisites(tech_T3_inserter, tech_cobalt_processing)
     tech_prerequisites(tech_robots_1, tech_cobalt_processing)
-    tech_prerequisites(tech_exoskeleton_eq_2, tech_cobalt_processing)
+    if mods [bobequipment] then
+        tech_prerequisites(tech_exoskeleton_eq_2, tech_cobalt_processing)
+    end
     tech_prerequisites(tech_sniper_turret_2, tech_cobalt_processing)
     -- SPACE LOGISTICS
     --tech_prerequisites(vulcanus_transport_belt, tech_logistics_5)

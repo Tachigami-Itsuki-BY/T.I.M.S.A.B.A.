@@ -10,12 +10,20 @@ end
 
 -- ADVANCED LOGISTICS
 if data_technology[tech_robotics_1] then
-    data_technology[tech_robotics_1].effects =
-    {
-        {type = unlock_recipe, recipe = flying_robot_frame_1},
-        {type = unlock_recipe, recipe = module_case},
-        {type = unlock_recipe, recipe = robot_brain_1},
-    }
+    if mods [bobmodules] then
+        data_technology[tech_robotics_1].effects =
+        {
+            {type = unlock_recipe, recipe = flying_robot_frame_1},
+            {type = unlock_recipe, recipe = module_case},
+            {type = unlock_recipe, recipe = robot_brain_1},
+        }
+    else
+        data_technology[tech_robotics_1].effects =
+        {
+            {type = unlock_recipe, recipe = flying_robot_frame_1},
+            {type = unlock_recipe, recipe = robot_brain_1},
+        }
+    end
 end
 
 if data_technology[tech_robotics_2] then table.insert(data_technology[tech_robotics_2].prerequisites, tech_battery_2) end
@@ -277,43 +285,7 @@ data_technology[tech_uranium_ammo].effects =
     {type = unlock_recipe, recipe = uranium_explosive_cannon_shell}
 }
 
-table.insert(data_technology[fission_reactor_4].prerequisites, tech_deuterium_power)
-
-local personal_roboport_mk2_eq = "personal-roboport-mk2-equipment"
-data_technology[personal_roboport_mk2_eq].prerequisites = {"personal-roboport-equipment", tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
-data_technology[personal_roboport_mk2_eq].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1}
-}
-
-local vehicle_roboport_eq_2 = "bob-vehicle-roboport-equipment-2"
-data_technology[vehicle_roboport_eq_2].prerequisites = {"bob-vehicle-roboport-equipment-1", tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
-
-local personal_roboport_mk3_eq = "bob-personal-roboport-mk3-equipment"
-table.insert(data_technology[personal_roboport_mk3_eq].prerequisites, tech_battery_3)
-table.insert(data_technology[personal_roboport_mk3_eq].unit.ingredients, {production_science_pack, 1})
-
-local vehicle_roboport_eq_3 = "bob-vehicle-roboport-equipment-3"
-table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, tech_battery_3)
-table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
-
-
-local personal_roboport_mk4_eq = "bob-personal-roboport-mk4-equipment"
-table.insert(data_technology[personal_roboport_mk4_eq].prerequisites, tech_battery_4)
-if mods [bobtech] then
-    table.insert(data_technology[personal_roboport_mk4_eq].unit.ingredients, {utility_science_pack, 1})
-end
-
-local vehicle_roboport_eq_4 = "bob-vehicle-roboport-equipment-4"
-table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
-if mods [bobtech] then
-    table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
-end
-
-local energy_shield_eq_2 = "energy-shield-mk2-equipment"
-data_technology[energy_shield_eq_2].prerequisites = {"energy-shield-equipment", power_armor_1, productivity_module_1, tech_military_3}
+data_technology[energy_shield_eq_2].prerequisites = {energy_shield_eq_1, power_armor_1, productivity_module_1, tech_military_3}
 data_technology[energy_shield_eq_2].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -323,13 +295,47 @@ data_technology[energy_shield_eq_2].unit.ingredients =
 }
 data_technology[energy_shield_eq_2].unit.count = 200
 
-table.insert(data_technology["bob-personal-laser-defense-equipment-4"].prerequisites, tech_battery_3)
-table.insert(data_technology["bob-personal-laser-defense-equipment-5"].prerequisites, tech_battery_4)
-table.insert(data_technology["bob-personal-laser-defense-equipment-6"].prerequisites, tech_battery_4)
+if mods [bobequipment] then
+    table.insert(data_technology[fission_reactor_4].prerequisites, tech_deuterium_power)
 
-table.insert(data_technology["bob-vehicle-laser-defense-equipment-4"].prerequisites, tech_battery_3)
-table.insert(data_technology["bob-vehicle-laser-defense-equipment-5"].prerequisites, tech_battery_4)
-table.insert(data_technology["bob-vehicle-laser-defense-equipment-6"].prerequisites, tech_battery_4)
+    data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
+    data_technology[roboport_eq_2].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
+
+    table.insert(data_technology[roboport_eq_3].prerequisites, tech_battery_3)
+    table.insert(data_technology[roboport_eq_3].unit.ingredients, {production_science_pack, 1})
+
+    table.insert(data_technology[roboport_eq_4].prerequisites, tech_battery_4)
+    if mods [bobtech] then
+        table.insert(data_technology[roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
+    end
+
+    table.insert(data_technology[laser_defense_eq_4].prerequisites, tech_battery_3)
+    table.insert(data_technology[laser_defense_eq_5].prerequisites, tech_battery_4)
+    table.insert(data_technology[laser_defense_eq_6].prerequisites, tech_battery_4)
+end
+
+if mods [bobvehicleequipment] then
+    data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
+
+    table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, tech_battery_3)
+    table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
+
+    table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
+    if mods [bobtech] then
+        table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
+    end
+
+    table.insert(data_technology[vehicle_laser_defense_eq_4].prerequisites, tech_battery_3)
+    table.insert(data_technology[vehicle_laser_defense_eq_5].prerequisites, tech_battery_4)
+    table.insert(data_technology[vehicle_laser_defense_eq_6].prerequisites, tech_battery_4)
+
+    table.insert(data_technology[vehicle_plasma_cannon_eq_4].prerequisites, tech_battery_4)
+end
 
 table.insert(data_technology["bob-laser-turrets-4"].prerequisites, tech_battery_3)
 table.insert(data_technology["bob-laser-turrets-5"].prerequisites, tech_battery_4)
@@ -463,7 +469,6 @@ data_technology[tech_tank_3].unit.ingredients =
     {utility_science_pack, 1}
 }
 
-table.insert(data_technology["bob-vehicle-big-turret-equipment-4"].prerequisites, tech_battery_4)
 table.insert(data_technology["bob-plasma-turrets-4"].prerequisites, tech_battery_4)
 
 -- ANGELS RESOURCE REFINING
@@ -1513,161 +1518,163 @@ data_technology[tech_bio_processing_crystal_full].effects =
 }
 
 -- MODULE
--- SPEED
-data_technology[speed_module_2].prerequisites = {speed_module_1, tech_modules_2}
-data_technology[speed_module_2].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1}
-}
+if mods [bobmodules] then
+    -- SPEED
+    data_technology[speed_module_2].prerequisites = {speed_module_1, tech_modules_2}
+    data_technology[speed_module_2].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
 
-data_technology[speed_module_3].prerequisites = {speed_module_2, tech_modules_3}
-data_technology[speed_module_3].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1}
-}
+    data_technology[speed_module_3].prerequisites = {speed_module_2, tech_modules_3}
+    data_technology[speed_module_3].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1}
+    }
 
-data_technology[speed_module_4].prerequisites = {speed_module_3, tech_modules_4}
-data_technology[speed_module_4].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1}
-}
+    data_technology[speed_module_4].prerequisites = {speed_module_3, tech_modules_4}
+    data_technology[speed_module_4].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
 
-data_technology[speed_module_5].prerequisites = {speed_module_4, tech_modules_5}
-data_technology[speed_module_5].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1},
-    {space_science_pack, 1}
-}
+    data_technology[speed_module_5].prerequisites = {speed_module_4, tech_modules_5}
+    data_technology[speed_module_5].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1}
+    }
 
--- EFFICIENCY
-data_technology[efficiency_module_2].prerequisites = {efficiency_module_1, tech_modules_2}
-data_technology[efficiency_module_2].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1}
-}
+    -- EFFICIENCY
+    data_technology[efficiency_module_2].prerequisites = {efficiency_module_1, tech_modules_2}
+    data_technology[efficiency_module_2].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
 
-data_technology[efficiency_module_3].prerequisites = {efficiency_module_2, tech_modules_3}
-data_technology[efficiency_module_3].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1}
-}
+    data_technology[efficiency_module_3].prerequisites = {efficiency_module_2, tech_modules_3}
+    data_technology[efficiency_module_3].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1}
+    }
 
-data_technology[efficiency_module_4].prerequisites = {efficiency_module_3, tech_modules_4}
-data_technology[efficiency_module_4].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1}
-}
+    data_technology[efficiency_module_4].prerequisites = {efficiency_module_3, tech_modules_4}
+    data_technology[efficiency_module_4].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
 
-data_technology[efficiency_module_5].prerequisites = {efficiency_module_4, tech_modules_5}
-data_technology[efficiency_module_5].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1},
-    {space_science_pack, 1}
-}
+    data_technology[efficiency_module_5].prerequisites = {efficiency_module_4, tech_modules_5}
+    data_technology[efficiency_module_5].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1}
+    }
 
--- PRODUCTIVITY
-data_technology[productivity_module_2].prerequisites = {productivity_module_1, tech_modules_2}
-data_technology[productivity_module_2].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1}
-}
+    -- PRODUCTIVITY
+    data_technology[productivity_module_2].prerequisites = {productivity_module_1, tech_modules_2}
+    data_technology[productivity_module_2].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
 
-data_technology[productivity_module_3].prerequisites = {productivity_module_2, tech_modules_3}
-data_technology[productivity_module_3].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1}
-}
+    data_technology[productivity_module_3].prerequisites = {productivity_module_2, tech_modules_3}
+    data_technology[productivity_module_3].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1}
+    }
 
-data_technology[productivity_module_4].prerequisites = {productivity_module_3, tech_modules_4}
-data_technology[productivity_module_4].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1}
-}
+    data_technology[productivity_module_4].prerequisites = {productivity_module_3, tech_modules_4}
+    data_technology[productivity_module_4].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
 
-data_technology[productivity_module_5].prerequisites = {productivity_module_4, tech_modules_5}
-data_technology[productivity_module_5].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1},
-    {space_science_pack, 1}
-}
+    data_technology[productivity_module_5].prerequisites = {productivity_module_4, tech_modules_5}
+    data_technology[productivity_module_5].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1}
+    }
 
--- QUALITY
-data_technology[quality_module_2].prerequisites = {quality_module_1, tech_modules_2}
-data_technology[quality_module_2].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1}
-}
+    -- QUALITY
+    data_technology[quality_module_2].prerequisites = {quality_module_1, tech_modules_2}
+    data_technology[quality_module_2].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
 
-data_technology[quality_module_3].prerequisites = {quality_module_2, tech_modules_3}
-data_technology[quality_module_3].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1}
-}
+    data_technology[quality_module_3].prerequisites = {quality_module_2, tech_modules_3}
+    data_technology[quality_module_3].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1}
+    }
 
-data_technology[quality_module_4].prerequisites = {quality_module_3, tech_modules_4}
-data_technology[quality_module_4].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1}
-}
+    data_technology[quality_module_4].prerequisites = {quality_module_3, tech_modules_4}
+    data_technology[quality_module_4].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1}
+    }
 
-data_technology[quality_module_5].prerequisites = {quality_module_4, tech_modules_5}
-data_technology[quality_module_5].unit.ingredients =
-{
-    {automation_science_pack, 1},
-    {logistic_science_pack, 1},
-    {chemical_science_pack, 1},
-    {production_science_pack, 1},
-    {utility_science_pack, 1},
-    {space_science_pack, 1}
-}
+    data_technology[quality_module_5].prerequisites = {quality_module_4, tech_modules_5}
+    data_technology[quality_module_5].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1}
+    }
+end
 
 -- OTHERS
 data_technology[rocket_fuel].prerequisites = {tech_nitrogen_processing_4}

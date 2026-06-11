@@ -24,7 +24,8 @@ data:extend
             {type = unlock_recipe, recipe = advanced_molten_iron},
             {type = unlock_recipe, recipe = advanced_molten_steel},
             {type = unlock_recipe, recipe = advanced_molten_aluminium},
-            {type = unlock_recipe, recipe = advanced_molten_titanium}
+            {type = unlock_recipe, recipe = advanced_molten_titanium},
+            {type = unlock_recipe, recipe = rocket_part_tungsten}
         },
         unit =
         {
@@ -49,7 +50,7 @@ data:extend
         name = tech_wolframite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/technology/wolframite-processing.png",
         icon_size = 256,
-        prerequisites = {planet_discovery_vulcanus},
+        prerequisites = {planet_discovery_vulcanus, tech_advanced_ore_refining_5},
         effects =
         {
             {type = unlock_recipe, recipe = wolframite_crushed},

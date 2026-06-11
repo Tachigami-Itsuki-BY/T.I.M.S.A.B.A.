@@ -17,8 +17,8 @@ full_metallic_asteroid_crushing_7 = "full-metallic-asteroid-crushing-7" -- Tungs
 full_metallic_asteroid_crushing_8 = "full-metallic-asteroid-crushing-8" -- Platinum ore
 advanced_full_metallic_asteroid_crushing_1 = "advanced-full-metallic-asteroid-crushing-1" -- Molybdenum ore
 advanced_full_metallic_asteroid_crushing_2 = "advanced-full-metallic-asteroid-crushing-2" -- Rhenium ore
-advanced_full_metallic_asteroid_crushing_3 = "advanced-full-metallic-asteroid-crushing-3" -- Holmium ore
-advanced_full_metallic_asteroid_crushing_4 = "advanced-full-metallic-asteroid-crushing-4" -- Niobium ore
+advanced_full_metallic_asteroid_crushing_3 = "advanced-full-metallic-asteroid-crushing-3" -- Niobium ore
+advanced_full_metallic_asteroid_crushing_4 = "advanced-full-metallic-asteroid-crushing-4" -- Holmium ore
 advanced_full_metallic_asteroid_crushing_5 = "advanced-full-metallic-asteroid-crushing-5" -- Antimony ore
 advanced_full_metallic_asteroid_crushing_6 = "advanced-full-metallic-asteroid-crushing-6" -- Germanium ore
 advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Galium ore
@@ -336,25 +336,8 @@ data:extend
         name = advanced_full_metallic_asteroid_crushing_3,
         category = crushing,
         subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, holmium_ore),
-        order = h_c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = holmium_ore, amount = 8}},
-        main_product = holmium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_4,
-        category = crushing,
-        subgroup = is_space_environment_1,
         icons = TWO_I(metallic_asteroid_chunk, niobium_ore),
-        order = h_d,
+        order = h_c,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -364,6 +347,23 @@ data:extend
         ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
         results = {{type = item, name = niobium_ore, amount = 8}},
         main_product = niobium_ore
+    },
+    {
+        type = recipe,
+        name = advanced_full_metallic_asteroid_crushing_4,
+        category = crushing,
+        subgroup = is_space_environment_1,
+        icons = TWO_I(metallic_asteroid_chunk, holmium_ore),
+        order = h_d,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 4,
+        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
+        results = {{type = item, name = holmium_ore, amount = 8}},
+        main_product = holmium_ore
     },
     {
         type = recipe,

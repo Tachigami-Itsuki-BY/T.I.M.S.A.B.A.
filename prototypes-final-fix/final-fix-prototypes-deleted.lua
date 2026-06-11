@@ -328,3 +328,53 @@ if mods [clowns_nuclear] then
         end
     end
 end
+
+-- Функция проверки: существует ли прототип в игре
+local function prototype_exists(product)
+    local p_name = product.name or product[1]
+    local p_type = product.type or item -- На всякий случай, хотя в 2.0 type обязателен
+
+    if p_type == fluid then
+        return data_fluid[p_name] ~= nil
+    else
+        -- Проверяем все основные типы предметов в 2.0
+        return data_item[p_name] ~= nil
+        or data_capsule[p_name] ~= nil
+        or data_tool[p_name] ~= nil
+        or data_ammo[p_name] ~= nil
+        or data_armor[p_name] ~= nil
+        or data_gun[p_name] ~= nil
+        or data_module[p_name] ~= nil
+        or data.raw["spidertron-remote"] ~= nil
+    end
+end
+
+-- Основной цикл очистки рецептов
+for recipe_name, recipe in pairs(data_recipe) do
+    local should_delete = false
+
+    -- 1. Проверяем выходы рецепта (results теперь всегда таблица в 2.0)
+    if recipe.results then
+        for _, product in ipairs(recipe.results) do
+            if not prototype_exists(product) then
+                should_delete = true
+                break
+            end
+        end
+    end
+
+    -- 2. Проверяем ингредиенты (защита от крашей, если у мода рецепт требует удалённый флюид)
+    if not should_delete and recipe.ingredients then
+        for _, ingredient in ipairs(recipe.ingredients) do
+            if not prototype_exists(ingredient) then
+                should_delete = true
+                break
+            end
+        end
+    end
+
+    -- Если нашли "призрака" — полностью вырезаем рецепт из data.raw
+    if should_delete then
+        data_recipe[recipe_name] = nil
+    end
+end

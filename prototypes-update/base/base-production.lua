@@ -28,7 +28,6 @@ for _, BUILD in pairs(boilers) do
     data_boiler[BUILD.name].localised_name = BUILD.localised_name
     data_boiler[BUILD.name].order = BUILD.order
     data_boiler[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
-    data_boiler[BUILD.name].energy_source.fuel_categories = {base_fuel, advanced_fuel}
 end
 local function boiler_recipe(name, pipe, boiler, plate)
     data_recipe[name].ingredients =
@@ -172,7 +171,6 @@ if data_item[burner_electric_generator] then
     data_burner_generator[burner_electric_generator].localised_name = {"entity-name.burner-generator"}
     data_burner_generator[burner_electric_generator].order = z
     data_burner_generator[burner_electric_generator].max_power_output = 450 .. kW
-    data_burner_generator[burner_electric_generator].burner.fuel_categories = {base_fuel, advanced_fuel}
     data_burner_generator[burner_electric_generator].burner.effectivity = 0.5
     data_burner_generator[burner_electric_generator].burner.emissions_per_minute.pollution = 16
 
@@ -372,7 +370,6 @@ data_recipe[burner_mining_drill].ingredients =
 }
 data_mining_drill[burner_mining_drill].energy_usage = 225 .. kW
 data_mining_drill[burner_mining_drill].energy_source.emissions_per_minute.pollution = 8
-data_mining_drill[burner_mining_drill].energy_source.fuel_categories = {base_fuel}
 data_mining_drill[burner_mining_drill].mining_speed = 0.5
 data_mining_drill[pumpjack_1].max_health = 100
 local function mining_drill_recipe(name, gear_wheel, circuit, mining_drill, plate)
@@ -560,7 +557,6 @@ for _, BUILD in pairs(furnaces) do
         data_furnace[BUILD.name].order = BUILD.order
         if BUILD.name == stone_furnace or BUILD.name == steel_furnace then
             data_furnace[BUILD.name].energy_usage = BUILD.energy_usage .. kW
-            data_furnace[BUILD.name].energy_source.fuel_categories = {base_fuel}
         else
             data_furnace[BUILD.name].crafting_speed = BUILD.crafting_speed
             data_furnace[BUILD.name].module_slots = BUILD.crafting_speed
@@ -574,7 +570,6 @@ for _, BUILD in pairs(furnaces) do
         data_assembling[BUILD.name].ingredient_count = 2
         if BUILD.name == stone_mixing_furnace or BUILD.name == steel_mixing_furnace then
             data_assembling[BUILD.name].energy_usage = BUILD.energy_usage .. kW
-            data_assembling[BUILD.name].energy_source.fuel_categories = {base_fuel}
         else
             data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
             data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
@@ -661,6 +656,21 @@ centrifuge_recipe(centrifuge_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_
 
 data_item_subgroup["bob-assembly-machine"].order = e_a
 
+if data_item[burner_assembling_machine] then
+    data_item[burner_assembling_machine].stack_size = 32
+    data_item[burner_assembling_machine].weight = 31250
+    data_recipe[burner_assembling_machine].energy_required = 1
+    data_recipe[burner_assembling_machine].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = iron_plate,      amount = 8}
+    }
+    data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
+    bobmods.lib.recipe.update_recycling_recipe({burner_assembling_machine})
+
+    table.insert(data_recipe[assembling_machine_1].ingredients, {type = item, name = burner_assembling_machine, amount = 1})
+end
+
 local assembling_machines =
 {
     {name = assembling_machine_1, crafting_speed = 1, energy_usage = 60},
@@ -694,29 +704,16 @@ local function assembling_recipe(name, gear_wheel, circuit, pipe, assembling, pl
     end
     data_recipe[name].ingredients = ingredients
 end
-assembling_recipe(assembling_machine_1, iron_gear_wheel,            basic_circuit_board,      iron_pipe,               nil,                  iron_plate,                iron_bearing)
+if data_item[burner_assembling_machine] then
+    assembling_recipe(assembling_machine_1, iron_gear_wheel,        basic_circuit_board,      iron_pipe,          burner_assembling_machine, iron_plate,                iron_bearing)
+else
+    assembling_recipe(assembling_machine_1, iron_gear_wheel,        basic_circuit_board,      iron_pipe,                                nil, iron_plate,                iron_bearing)
+end
 assembling_recipe(assembling_machine_2, steel_gear_wheel,           electronic_circuit,       steel_pipe,              assembling_machine_1, steel_plate,               steel_bearing)
 assembling_recipe(assembling_machine_3, brass_gear_wheel,           advanced_circuit,         brass_pipe,              assembling_machine_2, brass_plate_bob,           brass_bearing)
 assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_unit,          titanium_pipe,           assembling_machine_3, titanium_plate_bob,        titanium_bearing)
 assembling_recipe(assembling_machine_5, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe,    assembling_machine_4, copper_tungsten_plate_bob, copper_tungsten_bearing)
 assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
-
-local burner_assembling_machine = "bob-burner-assembling-machine"
-if data_item[burner_assembling_machine] then
-    data_item[burner_assembling_machine].stack_size = 32
-    data_item[burner_assembling_machine].weight = 31250
-    data_recipe[burner_assembling_machine].energy_required = 1
-    data_recipe[burner_assembling_machine].ingredients =
-    {
-        {type = item, name = iron_gear_wheel, amount = 4},
-        {type = item, name = iron_plate,      amount = 8}
-    }
-    data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
-    data_assembling[burner_assembling_machine].energy_source.fuel_categories = {base_fuel}
-    bobmods.lib.recipe.update_recycling_recipe({burner_assembling_machine})
-
-    table.insert(data_recipe[assembling_machine_1].ingredients, {type = item, name = burner_assembling_machine, amount = 1})
-end
 
 data_item[lab].subgroup = is_lab
 data_item[lab].order = a

@@ -27,7 +27,7 @@ if mods [hyarion_mods] then
             name = hyarion_air_separation,
             category = angels_advanced_chemistry,
             subgroup = is_hyarion_air,
-            icons = FOUR_R_I(hyarion_air, nitrogen_angels, carbon_dioxide_angels, silane_gas),
+            icons = FOUR_R_I(hyarion_air, nitrogen_angels, methane_angels, silane_gas),
             order = a_a,
             enabled = false,
             auto_recycle = false,
@@ -39,7 +39,7 @@ if mods [hyarion_mods] then
             results =
             {
                 {type = fluid, name = nitrogen_angels, amount = 60},
-                {type = fluid, name = carbon_dioxide_angels, amount = 30},
+                {type = fluid, name = methane_angels, amount = 30},
                 {type = fluid, name = silane_gas, amount = 30}
             },
             main_product = nitrogen_angels

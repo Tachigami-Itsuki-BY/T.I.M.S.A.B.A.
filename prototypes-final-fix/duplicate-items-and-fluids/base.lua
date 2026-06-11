@@ -1,6 +1,6 @@
 data_recipe[steel_plate] = nil
 
-if mods ["bobequipment"] < "2.1.0" then
+if mods [bobequipment] and mods [bobequipment] < "2.1.0" then
     local battery_mk3_SA = "battery-mk3-equipment"
     data_item[battery_mk3_SA] = nil
     data_recipe[battery_mk3_SA] = nil

@@ -19,6 +19,7 @@ data_rocket_silo[rocket_silo].order = a
 data_rocket_silo[rocket_silo].energy_usage = (4800 - drain) .. kW
 data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
 
+data_recipe[rocket_part].icons = R_P_I(rocket_part, nil, nil, number_1)
 data_recipe[rocket_part].order = b
 data_recipe[rocket_part].energy_required = 4
 data_recipe[rocket_part].ingredients =
@@ -26,21 +27,21 @@ data_recipe[rocket_part].ingredients =
     {type = item, name = low_density_structure, amount = 2},
     {type = item, name = heat_shielding_tile, amount = 16},
     {type = item, name = advanced_processing_unit, amount = 2},
-    {type = item, name = molybdenum_rhenium_pipe, amount = 64},
+    {type = item, name = molybdenum_rhenium_pipe, amount = 32},
     {type = item, name = rocket_fuel, amount = 2}
 }
 
 if mods [muluna_mods] then
     rocket_part_muluna = "rocket-part-muluna"
     data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
-    data_recipe[rocket_part_muluna].order = b_a
+    data_recipe[rocket_part_muluna].order = b_b
     data_recipe[rocket_part_muluna].energy_required = 4
     data_recipe[rocket_part_muluna].ingredients =
     {
         {type = item, name = low_density_structure, amount = 1},
         {type = item, name = heat_shielding_tile, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 32},
+        {type = item, name = molybdenum_rhenium_pipe, amount = 16},
         {type = item, name = rocket_fuel, amount = 1}
     }
 end
@@ -54,6 +55,8 @@ data_recipe[cargo_landing_pad].ingredients =
     {type = item, name = reinforced_concrete, amount = 128},
     {type = item, name = molybdenum_rhenium_plate, amount = 32}
 }
+
+data_item_subgroup[space_platform].order = b
 
 data_item[space_platform_foundation].stack_size = 200
 data_item[space_platform_foundation].weight = 5000
@@ -281,7 +284,7 @@ if mods [hyarion_mods] then
     data_recipe[electromagnetic_radar].ingredients =
     {
         {type = item, name = bismuth_transistor, amount = 8},
-        {type = item, name = tungsten_plate_bob, amount = 32},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 32},
         {type = item, name = simulating_unit, amount = 16},
         {type = item, name = refractory_ceramics, amount = 8}
     }

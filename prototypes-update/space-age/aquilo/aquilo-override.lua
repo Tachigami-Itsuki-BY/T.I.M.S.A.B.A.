@@ -209,7 +209,6 @@ data_fluid[fusion_plasma].subgroup = is_aquilo_power
 data_fluid[fusion_plasma].order = c
 data_fluid[fusion_plasma].heat_capacity = ((25 / 7500) * 1.728) .. kJ
 
-local fusion_power_cell = "fusion-power-cell"
 data_item[fusion_power_cell].subgroup = is_aquilo_power
 data_item[fusion_power_cell].order = d
 data_item[fusion_power_cell].fuel_value = (172800 * 512) .. kJ
@@ -296,18 +295,33 @@ data_item[fusion_reactor_eq].weight = 125000
 data_recipe[fusion_reactor_eq].subgroup = is_aquilo_war
 data_recipe[fusion_reactor_eq].order = d
 data_recipe[fusion_reactor_eq].energy_required = 32
-data_recipe[fusion_reactor_eq].ingredients =
-{
-    {type = item, name = fission_reactor_4, amount = 1},
-    {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
-    {type = item, name = niobium_titanium_cable, amount = 128},
-    {type = item, name = quantum_processor, amount = 64},
-    {type = item, name = superconductor, amount = 32},
-    {type = item, name = semiconductor, amount = 32},
-    {type = item, name = fusion_power_cell, amount = 8},
-    {type = item, name = supercapacitor, amount = 16},
-    {type = item, name = carbon_fiber, amount = 64}
-}
+if mods [bobequipment] then
+    data_recipe[fusion_reactor_eq].ingredients =
+    {
+        {type = item, name = fission_reactor_4, amount = 1},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
+        {type = item, name = niobium_titanium_cable, amount = 128},
+        {type = item, name = quantum_processor, amount = 64},
+        {type = item, name = superconductor, amount = 32},
+        {type = item, name = semiconductor, amount = 32},
+        {type = item, name = fusion_power_cell, amount = 8},
+        {type = item, name = supercapacitor, amount = 16},
+        {type = item, name = carbon_fiber, amount = 64}
+    }
+else
+    data_recipe[fusion_reactor_eq].ingredients =
+    {
+        {type = item, name = fission_reactor_1, amount = 1},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
+        {type = item, name = niobium_titanium_cable, amount = 128},
+        {type = item, name = quantum_processor, amount = 64},
+        {type = item, name = superconductor, amount = 32},
+        {type = item, name = semiconductor, amount = 32},
+        {type = item, name = fusion_power_cell, amount = 8},
+        {type = item, name = supercapacitor, amount = 16},
+        {type = item, name = carbon_fiber, amount = 64}
+    }
+end
 data_generator_eq[fusion_reactor_eq].power = 3000 .. kW
 
 bobmods.lib.recipe.update_recycling_recipe
