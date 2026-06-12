@@ -7,6 +7,11 @@ Date: 19.06.2026
 
     - [Mods] Added support for Planetaris: Tellus: seamlessly integrated the new planet into the gameplay flow.
 
+  Bugfixes:
+    - [All] Исправлены различные технические ошибки.
+
+    - [All] Various technical errors have been corrected.
+
   Modding:
     - [Mods] Мод «Planetaris: Tellus» переведён в опциональную зависимость.
     - [Mods] Мод «Bob's Character classes» добавлен в опциональную зависимость.

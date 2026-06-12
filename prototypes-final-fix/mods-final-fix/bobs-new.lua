@@ -470,7 +470,17 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
 
     -- FIXED PREREQUISITES
     local function tech_prerequisites(name, tech)
+        -- Если не передано имя или ID требования, вообще ничего не делаем
+        if not name or not tech then return end
+
+        -- Если такой технологии нет в базе игры, выходим
         if not data_technology[name] then return end
+
+        -- Создаем таблицу требований, если её не было
+        if not data_technology[name].prerequisites then
+            data_technology[name].prerequisites = {}
+        end
+
         table.insert(data_technology[name].prerequisites, tech)
     end
     -- COPPER-TUNGSTEN PROCESSING
