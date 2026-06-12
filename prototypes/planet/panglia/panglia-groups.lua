@@ -12,7 +12,7 @@ if mods [panglia_mods] then
             name = panglia,
             order = y_b,
             icon = "__TIMSABA__/graphics/icons/panglia/panglia-planet.png",
-            icon_size = 128,
+            icon_size = 128
         },
         {
             type = item_subgroup,

@@ -102,6 +102,8 @@ local fluids =
     heavy_oil_timsaba,
     -- HYARION
     polishing_compound_hyarion,
+    -- TELLUS
+    chlorophyll, water_infected,
 }
 local gases =
 {

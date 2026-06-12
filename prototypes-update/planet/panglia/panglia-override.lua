@@ -375,6 +375,25 @@ if mods [panglia_mods] then
         }
     end
 
+    if mods [tellus_mods] then
+        local cosmic_incubator_recipe_tellus = "cosmic_incubator_recipe_tellus"
+        data_recipe[cosmic_incubator_recipe_tellus].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_tellus].icons = GALAXY_I(galaxy_png, planet_tellus)
+        data_recipe[cosmic_incubator_recipe_tellus].order = b_i
+        data_recipe[cosmic_incubator_recipe_tellus].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_tellus].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
     if mods [muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
         data_recipe[cosmic_incubator_recipe_muluna].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.muluna"}}

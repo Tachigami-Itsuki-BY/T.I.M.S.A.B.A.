@@ -13,7 +13,7 @@ if mods [arig_mods] then
             name = arig,
             order = x_f,
             icon = "__TIMSABA__/graphics/icons/arig/arig-planet.png",
-            icon_size = 128,
+            icon_size = 128
         },
         {
             type = item_subgroup,

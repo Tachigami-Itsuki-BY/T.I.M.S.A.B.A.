@@ -22,3 +22,9 @@ if angelsmods and angelsmods.trigger then
     local player_choice = settings.startup[setting_early_sintering_oven].value
     angelsmods.trigger.early_sintering_oven = player_choice
 end
+
+-- BOBS
+setting_bobmods_power_steam = "bobmods-power-steam"
+
+setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
+setting_bobmods_logistics_trains = "bobmods-logistics-trains"

@@ -16,7 +16,7 @@ if mods [hyarion_mods] then
             name = hyarion,
             order = x_g,
             icon = "__TIMSABA__/graphics/icons/hyarion/hyarion-planet.png",
-            icon_size = 128,
+            icon_size = 128
         },
         {
             type = item_subgroup,

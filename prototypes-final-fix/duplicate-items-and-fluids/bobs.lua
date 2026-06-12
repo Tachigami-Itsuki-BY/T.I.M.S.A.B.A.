@@ -29,52 +29,7 @@ local replacements =
 	[steam_mining_drill] = burner_mining_drill,
 	--[steam_assembling_machine] = burner_assembling_machine
 }
-for _, recipe in pairs(data.raw.recipe or {}) do
-    for _, ingredient in pairs(recipe.ingredients or {}) do
-        local replace = replacements[ingredient.name]
-	    if replace then
-            ingredient.name = replace
-        end
-    end
-	for _, result in pairs(recipe.results or {}) do
-    	local replace = replacements[result.name]
-	    if replace then
-    		result.name = replace
-    	end
-    end
-    if recipe.main_product then
-    	local replace = replacements[recipe.main_product]
-	    if replace then
-    		recipe.main_product = replace
-    	end
-    end
-end
-for _, technology in pairs(data.raw.technology or {}) do
-	if technology.effects then
-		for _, effect in pairs(technology.effects) do
-			if effect.type == unlock_recipe then
-				local replace = replacements[effect.recipe]
-				if replace then
-					effect.recipe = replace
-				end
-			end
-		end
-	end
-end
-for _, technology in pairs(data.raw.technology or {}) do
-	if technology.research_trigger then
-		local replace = replacements[technology.research_trigger.item]
-		if replace then
-			technology.research_trigger.item = replace
-		end
-	end
-	if technology.research_trigger then
-		local replace = replacements[technology.research_trigger.fluid]
-		if replace then
-			technology.research_trigger.fluid = replace
-		end
-	end
-end
+delete_duplicate_item_and_fluid(replacements)
 
 data_technology["steam-power"].effects =
 {
@@ -236,3 +191,13 @@ data_logistic_container[buffer_chest].next_upgrade = nil
 data_logistic_container[passive_provider_chest].next_upgrade = nil
 data_logistic_container[requester_chest].next_upgrade = nil
 data_logistic_container[storage_chest].next_upgrade = nil
+
+-- TECHNOLOGY
+local delete_technology =
+{
+    "bob-lead-processing",
+    "bob-aluminium-processing",
+}
+for _, TECH in pairs(delete_technology) do
+    data_technology[TECH] = nil
+end

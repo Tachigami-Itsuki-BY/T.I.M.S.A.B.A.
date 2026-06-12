@@ -1,81 +1,87 @@
+-- BOILER
+if settings.startup[setting_bobmods_power_steam].value then
+    data:extend
+    ({
+        {
+            localised_name = {"technology-name.boiler-6"},
+            localised_description = {"technology-description.bob-boiler"},
+            type = technology,
+            name = boiler_6,
+            icon = "__bobpower__/graphics/icons/technology/boiler.png",
+            icon_size = 256,
+            prerequisites = {boiler_5, space_science_pack},
+            effects = {{type = unlock_recipe, recipe = boiler_6}},
+            unit =
+            {
+                count = 50,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        -- STEAM ENGINE
+        {
+            localised_name = {"technology-name.steam-engine-6"},
+            localised_description = {"technology-description.bob-steam-engine"},
+            type = technology,
+            name = steam_engine_6,
+            icon = "__bobpower__/graphics/icons/technology/steam-engine.png",
+            icon_size = 256,
+            prerequisites = {steam_engine_5, space_science_pack},
+            effects = {{type = unlock_recipe, recipe = steam_engine_6}},
+            unit =
+            {
+                count = 50,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        },
+        -- STEAM TURBINE
+        {
+            localised_name = {"technology-name.steam-turbine-4"},
+            localised_description = {"technology-description.bob-steam-turbine"},
+            type = technology,
+            name = steam_turbine_4,
+            icon = "__bobpower__/graphics/icons/technology/steam-turbine.png",
+            icon_size = 256,
+            prerequisites = {steam_turbine_3, space_science_pack},
+            effects = {{type = unlock_recipe, recipe = steam_turbine_4}},
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+end
+
+-- SOLAR PANELS
 data:extend
 ({
-    -- BOILER
-    {
-        localised_name = {"technology-name.boiler-6"},
-        localised_description = {"technology-description.bob-boiler"},
-        type = technology,
-        name = boiler_6,
-        icon = "__bobpower__/graphics/icons/technology/boiler.png",
-        icon_size = 256,
-        prerequisites = {boiler_5, space_science_pack},
-        effects = {{type = unlock_recipe, recipe = boiler_6}},
-        unit =
-        {
-            count = 50,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
-            },
-            time = 30
-        }
-    },
-    -- STEAM ENGINE
-    {
-        localised_name = {"technology-name.steam-engine-6"},
-        localised_description = {"technology-description.bob-steam-engine"},
-        type = technology,
-        name = steam_engine_6,
-        icon = "__bobpower__/graphics/icons/technology/steam-engine.png",
-        icon_size = 256,
-        prerequisites = {steam_engine_5, space_science_pack},
-        effects = {{type = unlock_recipe, recipe = steam_engine_6}},
-        unit =
-        {
-            count = 50,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
-            },
-            time = 30
-        }
-    },
-    -- STEAM TURBINE
-    {
-        localised_name = {"technology-name.steam-turbine-4"},
-        localised_description = {"technology-description.bob-steam-turbine"},
-        type = technology,
-        name = steam_turbine_4,
-        icon = "__bobpower__/graphics/icons/technology/steam-turbine.png",
-        icon_size = 256,
-        prerequisites = {steam_turbine_3, space_science_pack},
-        effects = {{type = unlock_recipe, recipe = steam_turbine_4}},
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
-            },
-            time = 30
-        }
-    },
-    -- SOLAR PANELS
     {
         localised_name = {"technology-name.solar-energy-4"},
         localised_description = {"technology-description.solar-energy"},
@@ -103,8 +109,12 @@ data:extend
             },
             time = 30
         }
-    },
-    -- ACCUMULATOR
+    }
+})
+
+-- ACCUMULATOR
+data:extend
+({
     {
         localised_name = {"technology-name.electric-energy-accumulators-4"},
         localised_description = {"technology-description.electric-energy-accumulators"},
@@ -127,8 +137,12 @@ data:extend
             },
             time = 30
         }
-    },
-    -- ELECTRIC MINING DRILL
+    }
+})
+
+-- ELECTRIC MINING DRILL
+data:extend
+({
     {
         localised_name = {"technology-name.drills-6"},
         type = technology,
@@ -151,8 +165,12 @@ data:extend
             },
             time = 30
         }
-    },
-    -- PUMPJACK
+    }
+})
+
+-- PUMPJACK
+data:extend
+({
     {
         localised_name = {"technology-name.pumpjacks-5"},
         type = technology,
@@ -201,8 +219,12 @@ data:extend
             },
             time = 30
         }
-    },
-    -- REACTOR
+    }
+})
+
+-- REACTOR
+data:extend
+({
     {
         localised_name = {"technology-name.tritium-power"},
         type = technology,
@@ -231,8 +253,12 @@ data:extend
             },
             time = 240
         }
-    },
-    -- FURNACES
+    }
+})
+
+-- FURNACES
+data:extend
+({
     {
         localised_name = {"technology-name.advanced-material-processing-5"},
         type = technology,
@@ -297,8 +323,12 @@ data:extend
             },
             time = 30
         }
-    },
-    -- CENTRIFUGE
+    }
+})
+
+-- CENTRIFUGE
+data:extend
+({
     {
         localised_name = {"technology-name.centrifuge-4"},
         type = technology,

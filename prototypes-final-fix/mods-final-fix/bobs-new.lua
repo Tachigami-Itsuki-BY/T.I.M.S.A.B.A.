@@ -470,7 +470,9 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
 
     -- FIXED PREREQUISITES
     local function tech_prerequisites(name, tech)
-        table.insert(data_technology[name].prerequisites, tech)
+        if data_technology[name] then
+            table.insert(data_technology[name].prerequisites, tech)
+        end
     end
     -- COPPER-TUNGSTEN PROCESSING
     tech_prerequisites(boiler_5, tech_tungsten_alloy_processing)

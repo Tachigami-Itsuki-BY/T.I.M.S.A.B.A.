@@ -28,7 +28,7 @@ if mods[moshine_mods] then
             name = moshine,
             order = x_e,
             icon = "__TIMSABA__/graphics/icons/moshine/moshine-planet.png",
-            icon_size = 128,
+            icon_size = 128
         },
         {
             type = item_subgroup,

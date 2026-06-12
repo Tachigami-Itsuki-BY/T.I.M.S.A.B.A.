@@ -40,6 +40,9 @@ local building_types = {boiler, burner_generator, furnace, assembling_machine}
 for _, t_type in pairs(building_types) do
     if data.raw[t_type] then
         for _, building in pairs(data.raw[t_type]) do
+            if building.name == biochamber then
+                goto continue
+            end
             if building.energy_source then
                 -- Проверяем, находится ли имя текущего здания в нашем списке исключений
                 if building_exceptions[building.name] then
@@ -50,6 +53,8 @@ for _, t_type in pairs(building_types) do
                     set_exclusive_fuel_categories(building.energy_source, {base_fuel, advanced_fuel})
                 end
             end
+
+            ::continue::
         end
     end
 end

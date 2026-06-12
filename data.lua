@@ -169,7 +169,8 @@ require("prototypes.planet.hyarion.hyarion-item-fluid")
 require("prototypes.planet.hyarion.hyarion-recipe")
 require("prototypes.planet.hyarion.hyarion-technology")
 
--- tellus
+require("prototypes.planet.tellus.tellus-groups")
+require("prototypes.planet.tellus.tellus-recipe")
 
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")
@@ -179,9 +180,9 @@ require("prototypes.planet.corrundum.corrundum-groups")
 require("prototypes.planet.corrundum.corrundum-recipe")
 require("prototypes.planet.corrundum.corrundum-technology")
 
---require("prototypes.planet.cubium.cubium-groups")
---require("prototypes.planet.cubium.cubium-recipe")
---require("prototypes.planet.cubium.cubium-technology")
+require("prototypes.planet.cubium.cubium-groups")
+require("prototypes.planet.cubium.cubium-recipe")
+require("prototypes.planet.cubium.cubium-technology")
 
 require("prototypes.planet.frozeta.frozeta-groups")
 require("prototypes.planet.frozeta.frozeta-recipe")
@@ -191,17 +192,17 @@ require("prototypes.planet.maraxsis.maraxsis-groups")
 require("prototypes.planet.maraxsis.maraxsis-recipe")
 require("prototypes.planet.maraxsis.maraxsis-technology")
 
---require("prototypes.planet.nexus.nexus-groups")
---require("prototypes.planet.nexus.nexus-recipe")
---require("prototypes.planet.nexus.nexus-technology")
+require("prototypes.planet.nexus.nexus-groups")
+require("prototypes.planet.nexus.nexus-recipe")
+require("prototypes.planet.nexus.nexus-technology")
 
 require("prototypes.planet.paracelsin.paracelsin-groups")
 require("prototypes.planet.paracelsin.paracelsin-recipe")
 require("prototypes.planet.paracelsin.paracelsin-technology")
 
---require("prototypes.planet.rubia.rubia-groups")
---require("prototypes.planet.rubia.rubia-recipe")
---require("prototypes.planet.rubia.rubia-technology")
+require("prototypes.planet.rubia.rubia-groups")
+require("prototypes.planet.rubia.rubia-recipe")
+require("prototypes.planet.rubia.rubia-technology")
 
 require("prototypes.planet.shattered.shattered-groups")
 require("prototypes.planet.shattered.shattered-recipe")

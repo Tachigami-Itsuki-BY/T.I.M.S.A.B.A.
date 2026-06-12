@@ -625,6 +625,16 @@ if mods [arig_mods] then
         data_recipe[hyarion_water_harvesting].results[1].amount = 15
     end
 
+    local tellus_water_harvesting = "planetaris-tellus-water-harvesting"
+    if mods [tellus_mods] then
+        data_recipe[tellus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.tellus"}}
+        data_recipe[tellus_water_harvesting].subgroup = is_arig_water
+        data_recipe[tellus_water_harvesting].icons = BUILDING_R_I(water_infected, planet_hyarion)
+        data_recipe[tellus_water_harvesting].order = a_h
+        data_recipe[tellus_water_harvesting].energy_required = 16
+        data_recipe[tellus_water_harvesting].results[1].amount = 480
+    end
+
     -- b_a panglia_water_harvesting
 
     -- TECHNOLOGY
@@ -769,6 +779,9 @@ if mods [arig_mods] then
     table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = arig_water_harvesting})
     if mods [hyarion_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = hyarion_water_harvesting})
+    end
+    if mods [tellus_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = tellus_water_harvesting})
     end
     if mods [panglia_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = panglia_water_harvesting})

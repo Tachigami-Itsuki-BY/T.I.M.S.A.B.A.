@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.4.2",
+    "version": "1.5.0",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.",
     "author": "Tachugami_Istuki",
@@ -85,7 +85,7 @@
         "? panglia_planet",
         "? planetaris-arig",
         "? planetaris-hyarion",
-        "! planetaris-tellus",
+        "? planetaris-tellus",
         "! maraxsis",
         "! castra",
         "! corrundum",

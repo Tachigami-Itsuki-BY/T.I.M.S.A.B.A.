@@ -658,17 +658,6 @@ if mods [muluna_mods] then
     data_fluid[cooled_steam_mods].icon = "__TIMSABA__/graphics/icons/muluna/cooled-steam.png"
 end
 
-if mods [maraxsis_mods] or mods [muluna_mods] or mods [shchierbin_mods] then
-    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
-end
-
-if mods [maraxsis_mods] then
-    data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
-    data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
-    data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
-    data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
-end
-
 if mods [panglia_mods] then
     data_fluid[branbalite_slurry].icon = "__TIMSABA__/graphics/icons/panglia/panglia_branbalite_slurry.png"
 end
@@ -680,6 +669,19 @@ end
 
 if mods [hyarion_mods] then
     data_fluid[polishing_compound_hyarion].icon = "__TIMSABA__/graphics/icons/hyarion/polishing-compound.png"
+end
+
+
+
+if mods [maraxsis_mods] or mods [muluna_mods] or mods [shchierbin_mods] then
+    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
+end
+
+if mods [maraxsis_mods] then
+    data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
+    data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
+    data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
+    data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
 end
 
 if mods [corrundum_mods] then

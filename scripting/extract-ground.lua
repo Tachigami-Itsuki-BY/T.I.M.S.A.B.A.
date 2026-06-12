@@ -23,6 +23,10 @@ if script.active_mods["planetaris-hyarion"] then
     surface_to_recipe["hyarion"] = "extract-ground-lava"
 end
 
+if script.active_mods["planetaris-tellus"] then
+    surface_to_recipe["tellus"] = "extract-ground-planetaris-infected-water"
+end
+
 local function on_entity_built(event)
     local entity = event.created_entity or event.entity
     if not (entity and entity.valid and (entity.name == "angels-ground-water-pump" or (entity.type == "entity-ghost" and entity.ghost_name == "angels-ground-water-pump"))) then

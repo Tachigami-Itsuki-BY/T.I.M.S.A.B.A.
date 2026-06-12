@@ -41,6 +41,8 @@ local simple_fluids =
     heavy_oil_timsaba,
     -- HYARION
     polishing_compound_hyarion,
+    -- TELLUS
+    chlorophyll, water_infected,
 }
 local dangerous_fluids =
 {

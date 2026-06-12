@@ -113,7 +113,14 @@ zero_grav_accumulator = "planetaris-zero-grav-accumulator"
 electromagnetic_radar = "planetaris-electromagnetic-radar"
 
 -- TELLUS
-
+tellus_mods = "planetaris-tellus"
+planet_tellus = "tellus"
+chlorophyll = "planetaris-chlorophyll"
+magnesium_bacteria = "planetaris-magnesium-bacteria"
+magnesium_dust = "planetaris-magnesium-dust"
+magnesium_sheet = "planetaris-magnesium-sheet"
+compost_tellus = "planetaris-compost"
+water_infected = "planetaris-infected-water"
 
 -- CASTRA
 castra_mods = "castra"

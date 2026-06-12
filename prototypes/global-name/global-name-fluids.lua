@@ -38,6 +38,8 @@ slurry_crystal = "angels-crystal-slurry"
 seedling_crystal = "angels-crystal-seedling"
 iron_chloride_III_solution_angels = "angels-liquid-ferric-chloride-solution"
 copper_chloride_II_solution_angels = "angels-liquid-cupric-chloride-solution"
+milling_drum = "angels-milling-drum"
+milling_drum_lubricated = "angels-milling-drum-lubricated"
 
 -- ANGELS METALLURGY SMELTING
 hexafluorosilicic_acid = "angels-liquid-hexafluorosilicic-acid"

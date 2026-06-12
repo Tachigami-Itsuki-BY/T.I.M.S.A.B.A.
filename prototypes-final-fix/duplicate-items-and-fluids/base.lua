@@ -11,5 +11,3 @@ if mods [bobequipment] and mods [bobequipment] < "2.1.0" then
     data_battery_eq[battery_mk3_SA] = nil
     data_technology[battery_mk3_SA] = nil
 end
-
-data_fluid[sulfuric_acid] = nil

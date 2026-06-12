@@ -15,9 +15,9 @@ for _, name in pairs(circuit_networks_1) do
         data_lamp[name].energy_usage_per_tick = (drain / 4) .. kW
     end
 end
-data.raw["arithmetic-combinator"][combinator_arithmetic].active_energy_usage = (drain / 8) .. kW
-data.raw["decider-combinator"][combinator_decider].active_energy_usage = (drain / 8) .. kW
-data.raw["selector-combinator"][combinator_selector].active_energy_usage = (drain / 8) .. kW
+data.raw[combinator_arithmetic][combinator_arithmetic].active_energy_usage = (drain / 8) .. kW
+data.raw[combinator_decider][combinator_decider].active_energy_usage = (drain / 8) .. kW
+data.raw[combinator_selector][combinator_selector].active_energy_usage = (drain / 8) .. kW
 
 data_recipe[small_lamp].ingredients =
 {
@@ -127,16 +127,18 @@ local locomotives =
     {name = locomotive_3, order = c, max_speed = 1.5, max_power = 1350, effectivity = 1.00, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(locomotives) do
-    data_item_entity[TRANSPORT.name].order = TRANSPORT.order
-    data_item_entity[TRANSPORT.name].stack_size = 32
-    data_item_entity[TRANSPORT.name].weight = 31250
-    data_recipe[TRANSPORT.name].order = TRANSPORT.order
-    data_locomotive[TRANSPORT.name].order = TRANSPORT.order
-    data_locomotive[TRANSPORT.name].max_speed = TRANSPORT.max_speed
-    data_locomotive[TRANSPORT.name].max_power = TRANSPORT.max_power .. kW
-    data_locomotive[TRANSPORT.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-    data_locomotive[TRANSPORT.name].energy_source.effectivity = TRANSPORT.effectivity
-    data_locomotive[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    if data_item_entity[TRANSPORT.name] then
+        data_item_entity[TRANSPORT.name].order = TRANSPORT.order
+        data_item_entity[TRANSPORT.name].stack_size = 32
+        data_item_entity[TRANSPORT.name].weight = 31250
+        data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_locomotive[TRANSPORT.name].order = TRANSPORT.order
+        data_locomotive[TRANSPORT.name].max_speed = TRANSPORT.max_speed
+        data_locomotive[TRANSPORT.name].max_power = TRANSPORT.max_power .. kW
+        data_locomotive[TRANSPORT.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+        data_locomotive[TRANSPORT.name].energy_source.effectivity = TRANSPORT.effectivity
+        data_locomotive[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    end
 end
 local function locomotive_recipe(name, gear_wheel, bearing, circuit, locomotive, plate)
     local ingredients =
@@ -154,8 +156,10 @@ local function locomotive_recipe(name, gear_wheel, bearing, circuit, locomotive,
     data_recipe[name].ingredients = ingredients
 end
 locomotive_recipe(locomotive_1, iron_gear_wheel,     iron_bearing,     electronic_circuit, nil,          iron_plate)
-locomotive_recipe(locomotive_2, steel_gear_wheel,    steel_bearing,    advanced_circuit,   locomotive_1, steel_plate)
-locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing, processing_unit,    locomotive_2, titanium_plate_bob)
+if settings.startup[setting_bobmods_logistics_trains].value then
+    locomotive_recipe(locomotive_2, steel_gear_wheel,    steel_bearing,    advanced_circuit,   locomotive_1, steel_plate)
+    locomotive_recipe(locomotive_3, titanium_gear_wheel, titanium_bearing, processing_unit,    locomotive_2, titanium_plate_bob)
+end
 
 local cargo_wagons =
 {
@@ -164,13 +168,15 @@ local cargo_wagons =
     {name = cargo_wagon_3, order = c, inventory_size = 120, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(cargo_wagons) do
-    data_item_entity[TRANSPORT.name].order = TRANSPORT.order
-    data_item_entity[TRANSPORT.name].stack_size = 32
-    data_item_entity[TRANSPORT.name].weight = 31250
-    data_recipe[TRANSPORT.name].order = TRANSPORT.order
-    data_wagon_cargo[TRANSPORT.name].order = TRANSPORT.order
-    data_wagon_cargo[TRANSPORT.name].inventory_size = TRANSPORT.inventory_size
-    data_wagon_cargo[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    if data_item_entity[TRANSPORT.name] then
+        data_item_entity[TRANSPORT.name].order = TRANSPORT.order
+        data_item_entity[TRANSPORT.name].stack_size = 32
+        data_item_entity[TRANSPORT.name].weight = 31250
+        data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_wagon_cargo[TRANSPORT.name].order = TRANSPORT.order
+        data_wagon_cargo[TRANSPORT.name].inventory_size = TRANSPORT.inventory_size
+        data_wagon_cargo[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    end
 end
 local function cargo_wagon_recipe(name, gear_wheel, bearing, cargo_wagon, plate)
     data_recipe[name].ingredients =
@@ -182,8 +188,10 @@ local function cargo_wagon_recipe(name, gear_wheel, bearing, cargo_wagon, plate)
     }
 end
 cargo_wagon_recipe(cargo_wagon_1, iron_gear_wheel,     iron_bearing,     iron_chest,    iron_plate)
-cargo_wagon_recipe(cargo_wagon_2, steel_gear_wheel,    steel_bearing,    cargo_wagon_1, steel_plate)
-cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)
+if settings.startup[setting_bobmods_logistics_trains].value then
+    cargo_wagon_recipe(cargo_wagon_2, steel_gear_wheel,    steel_bearing,    cargo_wagon_1, steel_plate)
+    cargo_wagon_recipe(cargo_wagon_3, titanium_gear_wheel, titanium_bearing, cargo_wagon_2, titanium_plate_bob)
+end
 
 local fluid_wagons =
 {
@@ -192,13 +200,15 @@ local fluid_wagons =
     {name = fluid_wagon_3, order = c, capacity = 72000, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(fluid_wagons) do
-    data_item_entity[TRANSPORT.name].order = TRANSPORT.order
-    data_item_entity[TRANSPORT.name].stack_size = 32
-    data_item_entity[TRANSPORT.name].weight = 31250
-    data_recipe[TRANSPORT.name].order = TRANSPORT.order
-    data_wagon_fluid[TRANSPORT.name].order = TRANSPORT.order
-    data_wagon_fluid[TRANSPORT.name].capacity = TRANSPORT.capacity
-    data_wagon_fluid[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    if data_item_entity[TRANSPORT.name] then
+        data_item_entity[TRANSPORT.name].order = TRANSPORT.order
+        data_item_entity[TRANSPORT.name].stack_size = 32
+        data_item_entity[TRANSPORT.name].weight = 31250
+        data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_wagon_fluid[TRANSPORT.name].order = TRANSPORT.order
+        data_wagon_fluid[TRANSPORT.name].capacity = TRANSPORT.capacity
+        data_wagon_fluid[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    end
 end
 local function fluid_wagon_recipe(name, gear_wheel, bearing, fluid_wagon, plate)
     data_recipe[name].ingredients =
@@ -210,8 +220,10 @@ local function fluid_wagon_recipe(name, gear_wheel, bearing, fluid_wagon, plate)
     }
 end
 fluid_wagon_recipe(fluid_wagon_1, iron_gear_wheel,     iron_bearing,     storage_tank_1, iron_plate)
-fluid_wagon_recipe(fluid_wagon_2, steel_gear_wheel,    steel_bearing,    fluid_wagon_1,  steel_plate)
-fluid_wagon_recipe(fluid_wagon_3, titanium_gear_wheel, titanium_bearing, fluid_wagon_2,  titanium_plate_bob)
+if settings.startup[setting_bobmods_logistics_trains].value then
+    fluid_wagon_recipe(fluid_wagon_2, steel_gear_wheel,    steel_bearing,    fluid_wagon_1,  steel_plate)
+    fluid_wagon_recipe(fluid_wagon_3, titanium_gear_wheel, titanium_bearing, fluid_wagon_2,  titanium_plate_bob)
+end
 
 local artillery_wagons =
 {

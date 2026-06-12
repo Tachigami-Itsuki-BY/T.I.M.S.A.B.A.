@@ -1274,9 +1274,7 @@ data_recipe[copper_chloride_II_solution_angels].main_product = copper_chloride_I
 data_item_subgroup["angels-ore-sorting-fluid"].order = h_c
 
 -- BUILDING
-local milling_drum = "angels-milling-drum"
 data_recipe[milling_drum].icons = TWO_I(steel_plate, milling_drum)
 
-local milling_drum_lubricated = "angels-milling-drum-lubricated"
 data_recipe[milling_drum_lubricated].icons = BUILDING_R_I(milling_drum, lubricant)
 data_recipe[milling_drum_lubricated].ingredients[2].amount = 15
