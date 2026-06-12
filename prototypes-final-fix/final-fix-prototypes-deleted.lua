@@ -39,6 +39,12 @@ for _, tier in ipairs(tier_configs) do
     end
 end
 
+if not data_item["bob-titanium-chest"] then
+  bobmods.lib.recipe.replace_ingredient("bob-player-frame-2", "bob-titanium-chest", "steel-chest")
+
+  bobmods.lib.recipe.update_recycling_recipe({"bob-player-frame-2"})
+end
+
 -- ADVANCED LOGISTICS
 local rail_suffixes =
 {
