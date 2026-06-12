@@ -324,12 +324,14 @@ local logistic_robots =
     {name = logistic_robot_5, MPS = 5, max_energy = 4500, EPT = 0}
 }
 for _, DRONE in pairs(logistic_robots) do
-    data_item[DRONE.name].stack_size = 64
-    data_item[DRONE.name].weight = 15625
-    data_logistic_robot[DRONE.name].max_payload_size = DRONE.MPS * 2
-    data_logistic_robot[DRONE.name].speed = (DRONE.MPS * 2) / 60
-    data_logistic_robot[DRONE.name].max_energy = DRONE.max_energy .. kJ
-    data_logistic_robot[DRONE.name].energy_per_tick = DRONE.EPT .. J
+    if data_item[DRONE.name] then
+        data_item[DRONE.name].stack_size = 64
+        data_item[DRONE.name].weight = 15625
+        data_logistic_robot[DRONE.name].max_payload_size = DRONE.MPS * 2
+        data_logistic_robot[DRONE.name].speed = (DRONE.MPS * 2) / 60
+        data_logistic_robot[DRONE.name].max_energy = DRONE.max_energy .. kJ
+        data_logistic_robot[DRONE.name].energy_per_tick = DRONE.EPT .. J
+    end
 end
 
 local construction_robot_1 = "construction-robot"
@@ -346,12 +348,14 @@ local construction_robots =
     {name = construction_robot_5, MPS = 5, max_energy = 4500, EPT = 0}
 }
 for _, DRONE in pairs(construction_robots) do
-    data_item[DRONE.name].stack_size = 64
-    data_item[DRONE.name].weight = 15625
-    data_construction_robot[DRONE.name].max_payload_size = DRONE.MPS
-    data_construction_robot[DRONE.name].speed = (DRONE.MPS * 2) / 60
-    data_construction_robot[DRONE.name].max_energy = DRONE.max_energy .. kJ
-    data_construction_robot[DRONE.name].energy_per_tick = DRONE.EPT .. J
+    if data_item[DRONE.name] then
+        data_item[DRONE.name].stack_size = 64
+        data_item[DRONE.name].weight = 15625
+        data_construction_robot[DRONE.name].max_payload_size = DRONE.MPS
+        data_construction_robot[DRONE.name].speed = (DRONE.MPS * 2) / 60
+        data_construction_robot[DRONE.name].max_energy = DRONE.max_energy .. kJ
+        data_construction_robot[DRONE.name].energy_per_tick = DRONE.EPT .. J
+    end
 end
 
 local roboports =
@@ -362,20 +366,26 @@ local roboports =
     {name = roboport_4, input_flow_limit = 14400, charging_energy = 3600, charging_station_count = 4, tier = 4}
 }
 for _, BUILD in pairs(roboports) do
-    data_item[BUILD.name].stack_size = 8
-    data_item[BUILD.name].weight = 125000
-    data_recipe[BUILD.name].energy_required = 4
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 100) .. kJ -- 200MJ
-    data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.input_flow_limit .. kW -- 12.5MW
-    data_roboport[BUILD.name].energy_usage = (BUILD.tier * 60) .. kW -- 100kW
-    data_roboport[BUILD.name].charging_energy = BUILD.charging_energy .. kW -- 2500kW
-    data_roboport[BUILD.name].charging_station_count = BUILD.charging_station_count
-    data_roboport[BUILD.name].logistics_radius = 16 * BUILD.charging_station_count
-    data_roboport[BUILD.name].construction_radius = 32 * BUILD.charging_station_count
-    data_roboport[BUILD.name].radar_range = BUILD.tier * 2
-    data_roboport[BUILD.name].recharge_minimum = 36000 .. kJ -- 40000kJ 
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].stack_size = 8
+        data_item[BUILD.name].weight = 125000
+        data_recipe[BUILD.name].energy_required = 4
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 100) .. kJ -- 200MJ
+        data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.input_flow_limit .. kW -- 12.5MW
+        data_roboport[BUILD.name].energy_usage = (BUILD.tier * 60) .. kW -- 100kW
+        data_roboport[BUILD.name].charging_energy = BUILD.charging_energy .. kW -- 2500kW
+        data_roboport[BUILD.name].charging_station_count = BUILD.charging_station_count
+        data_roboport[BUILD.name].logistics_radius = 16 * BUILD.charging_station_count
+        data_roboport[BUILD.name].construction_radius = 32 * BUILD.charging_station_count
+        data_roboport[BUILD.name].radar_range = BUILD.tier * 2
+        data_roboport[BUILD.name].recharge_minimum = 36000 .. kJ -- 40000kJ
+    end
 end
 local function roboport_recipe(name, antenna, door, chargepad, plate, roboport)
+    if not name or not antenna or not door or not chargepad or not plate then
+        return
+    end
+
     local ingredients =
     {
         {type = item, name = antenna,   amount = 4},
@@ -401,19 +411,25 @@ local logistic_zone =
     {name = logistic_zone_expander_4, input_flow_limit = 2400, charging_energy = 4800, charging_station_count = 4}
 }
 for _, BUILD in pairs(logistic_zone) do
-    data_item[BUILD.name].stack_size = 16
-    data_item[BUILD.name].weight = 62500
-    data_recipe[BUILD.name].energy_required = 4
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 20) .. kJ -- 10MJ * charging_station_count
-    data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.input_flow_limit .. kW -- 500kW * charging_station_count
-    data_roboport[BUILD.name].energy_usage = (BUILD.charging_station_count * 30) .. kW -- 25kW * charging_station_count
-    data_roboport[BUILD.name].charging_energy = BUILD.charging_energy .. kW -- 1000kW * charging_station_count
-    data_roboport[BUILD.name].logistics_radius = 8 * BUILD.charging_station_count
-    data_roboport[BUILD.name].construction_radius = 16 * BUILD.charging_station_count
-    data_roboport[BUILD.name].radar_range = BUILD.charging_station_count
-    data_roboport[BUILD.name].recharge_minimum = 6000 .. kJ -- 5000kJ
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].stack_size = 16
+        data_item[BUILD.name].weight = 62500
+        data_recipe[BUILD.name].energy_required = 4
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.input_flow_limit * 20) .. kJ -- 10MJ * charging_station_count
+        data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.input_flow_limit .. kW -- 500kW * charging_station_count
+        data_roboport[BUILD.name].energy_usage = (BUILD.charging_station_count * 30) .. kW -- 25kW * charging_station_count
+        data_roboport[BUILD.name].charging_energy = BUILD.charging_energy .. kW -- 1000kW * charging_station_count
+        data_roboport[BUILD.name].logistics_radius = 8 * BUILD.charging_station_count
+        data_roboport[BUILD.name].construction_radius = 16 * BUILD.charging_station_count
+        data_roboport[BUILD.name].radar_range = BUILD.charging_station_count
+        data_roboport[BUILD.name].recharge_minimum = 6000 .. kJ -- 5000kJ
+    end
 end
 local function logistic_zone_expander_recipe(name, antenna, plate, zone_expander)
+    if not name or not antenna or not plate then
+        return
+    end
+
     local ingredients =
     {
         {type = item, name = antenna, amount = 4},
@@ -437,22 +453,26 @@ local robochests =
     {name = robochest_4, energy = 3600}
 }
 for _, BUILD in pairs(robochests) do
-    data_item[BUILD.name].stack_size = 8
-    data_item[BUILD.name].weight = 125000
-    data_recipe[BUILD.name].energy_required = 4
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 20) .. kJ -- 20000kJ
-    data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.energy .. kW -- 1200kW
-    data_roboport[BUILD.name].energy_usage = 15 .. kW -- 5kW
-    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 2) .. kW -- 1000kW
-    data_roboport[BUILD.name].recharge_minimum = 4500 .. kJ -- 5000kJ
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].stack_size = 8
+        data_item[BUILD.name].weight = 125000
+        data_recipe[BUILD.name].energy_required = 4
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 20) .. kJ -- 20000kJ
+        data_roboport[BUILD.name].energy_source.input_flow_limit = BUILD.energy .. kW -- 1200kW
+        data_roboport[BUILD.name].energy_usage = 15 .. kW -- 5kW
+        data_roboport[BUILD.name].charging_energy = (BUILD.energy * 2) .. kW -- 1000kW
+        data_roboport[BUILD.name].recharge_minimum = 4500 .. kJ -- 5000kJ
+    end
 end
-data_recipe[robochest_1].ingredients =
-{
-    {type = item, name = roboport_antenna_1,   amount = 1},
-    {type = item, name = roboport_door_1,      amount = 1},
-    {type = item, name = roboport_chargepad_1, amount = 1},
-    {type = item, name = steel_plate,          amount = 8}
-}
+if data_recipe[robochest_1] then
+    data_recipe[robochest_1].ingredients =
+    {
+        {type = item, name = roboport_antenna_1,   amount = 1},
+        {type = item, name = roboport_door_1,      amount = 1},
+        {type = item, name = roboport_chargepad_1, amount = 1},
+        {type = item, name = steel_plate,          amount = 8}
+    }
+end
 
 local robo_port =
 {
@@ -462,16 +482,22 @@ local robo_port =
     {name = robo_charge_port_4, energy = 7200, energy_usage = 120}
 }
 for _, BUILD in pairs(robo_port) do
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].energy_required = 4
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 64) .. kJ -- 100000kJ
-    data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 4) .. kW -- 6250kW
-    data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
-    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 4) .. kW -- 1250kW
-    data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 64) * 0.1) .. kJ -- 20000kJ
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].energy_required = 4
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 64) .. kJ -- 100000kJ
+        data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 4) .. kW -- 6250kW
+        data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
+        data_roboport[BUILD.name].charging_energy = (BUILD.energy * 4) .. kW -- 1250kW
+        data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 64) * 0.1) .. kJ -- 20000kJ
+    end
 end
 local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
+    if not name or not chargepad or not plate then
+        return
+    end
+
     local ingredients =
     {
         {type = item, name = chargepad, amount = 4},
@@ -495,22 +521,28 @@ local robo_port_large =
     {name = robo_charge_port_large_4, order = d, energy = 7200, energy_usage = 270}
 }
 for _, BUILD in pairs(robo_port_large) do
-    data_item[BUILD.name].subgroup = is_logistic_roboport_charge_large
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 16
-    data_item[BUILD.name].weight = 62500
-    data_recipe[BUILD.name].subgroup = is_logistic_roboport_charge_large
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 4
-    data_roboport[BUILD.name].subgroup = is_logistic_roboport_charge_large
-    data_roboport[BUILD.name].order = BUILD.order
-    data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 144) .. kJ -- 100MJ
-    data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 9) .. kW -- 12500kW
-    data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
-    data_roboport[BUILD.name].charging_energy = (BUILD.energy * 9) .. kW -- 1250kW
-    data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 144) * 0.1) .. kJ -- 20000kJ
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_logistic_roboport_charge_large
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 16
+        data_item[BUILD.name].weight = 62500
+        data_recipe[BUILD.name].subgroup = is_logistic_roboport_charge_large
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 4
+        data_roboport[BUILD.name].subgroup = is_logistic_roboport_charge_large
+        data_roboport[BUILD.name].order = BUILD.order
+        data_roboport[BUILD.name].energy_source.buffer_capacity = (BUILD.energy * 144) .. kJ -- 100MJ
+        data_roboport[BUILD.name].energy_source.input_flow_limit = (BUILD.energy * 9) .. kW -- 12500kW
+        data_roboport[BUILD.name].energy_usage = BUILD.energy_usage .. kW -- 1kW
+        data_roboport[BUILD.name].charging_energy = (BUILD.energy * 9) .. kW -- 1250kW
+        data_roboport[BUILD.name].recharge_minimum = ((BUILD.energy * 144) * 0.1) .. kJ -- 20000kJ
+    end
 end
 local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port_large)
+    if not name or not chargepad or not plate then
+        return
+    end
+
     local ingredients =
     {
         {type = item, name = chargepad, amount = 9},
@@ -527,6 +559,10 @@ robo_charge_port_large_recipe(robo_charge_port_large_3, roboport_chargepad_3, ti
 robo_charge_port_large_recipe(robo_charge_port_large_4, roboport_chargepad_4, nitinol_plate_bob,   robo_charge_port_large_3)
 
 local function rp_antenna_recipe(name, circuit, cable, plate)
+    if not name or not circuit or not cable or not plate then
+        return
+    end
+
     data_item[name].subgroup = is_rp_antena
     data_recipe[name].subgroup = is_rp_antena
     data_recipe[name].energy_required = 8
@@ -543,6 +579,10 @@ rp_antenna_recipe(roboport_antenna_3, processing_unit,          insulated_cable,
 rp_antenna_recipe(roboport_antenna_4, advanced_processing_unit, gold_cable,      gold_plate_bob)
 
 local function rp_door_recipe(name, gear_wheel, bearing, plate)
+    if not name or not gear_wheel or not bearing or not plate then
+        return
+    end
+
     data_item[name].subgroup = is_rp_door
     data_recipe[name].subgroup = is_rp_door
     data_recipe[name].energy_required = 8
@@ -562,6 +602,10 @@ rp_door_recipe(roboport_door_3, titanium_gear_wheel, titanium_bearing, titanium_
 rp_door_recipe(roboport_door_4, nitinol_gear_wheel,  nitinol_bearing,  nitinol_plate_bob)
 
 local function rp_chargepad_recipe(name, battery, circuit, plate)
+    if not name or not battery or not circuit or not plate then
+        return
+    end
+
     data_item[name].subgroup = is_rp_chargepad
     data_recipe[name].subgroup = is_rp_chargepad
     data_recipe[name].energy_required = 8
@@ -585,11 +629,17 @@ local flying_robot_frames =
     flying_robot_frame_4
 }
 for _, name in pairs(flying_robot_frames) do
-    data_item[name].subgroup = is_flying_robot_frames
-    data_recipe[name].subgroup = is_flying_robot_frames
-    data_recipe[name].energy_required = 16
+    if data_item[name] then
+        data_item[name].subgroup = is_flying_robot_frames
+        data_recipe[name].subgroup = is_flying_robot_frames
+        data_recipe[name].energy_required = 16
+    end
 end
 local function flying_robot_frame_recipe(name, battery, plate)
+    if not name or not battery or not plate then
+        return
+    end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = battery,              amount = 2},
@@ -603,6 +653,10 @@ flying_robot_frame_recipe(flying_robot_frame_3, battery_silver_zinc, titanium_pl
 flying_robot_frame_recipe(flying_robot_frame_4, battery_graphene,    nitinol_plate_bob)
 
 local function robot_brain_recipe(name, circuit_1, circuit_2)
+    if not name or not circuit_1 or not circuit_2 then
+        return
+    end
+
     data_item[name].subgroup = is_robot_brain
     data_recipe[name].subgroup = is_robot_brain
     data_recipe[name].energy_required = 8
@@ -638,6 +692,10 @@ local robot_tool_l_2 = "bob-robot-tool-logistic-2"
 local robot_tool_l_3 = "bob-robot-tool-logistic-3"
 local robot_tool_l_4 = "bob-robot-tool-logistic-4"
 local function robot_tool_recipe(name, gear_wheel, bearing, cable, plate)
+    if not name or not gear_wheel or not bearing or not cable then
+        return
+    end
+
     data_recipe[name].energy_required = 4
     data_recipe[name].ingredients =
     {
@@ -664,8 +722,10 @@ local robot_tool_c_groups =
     robot_tool_c_4,
 }
 for _, name in pairs(robot_tool_c_groups) do
-    data_item[name].subgroup = is_robot_tool_c
-    data_recipe[name].subgroup = is_robot_tool_c
+    if data_item[name] then
+        data_item[name].subgroup = is_robot_tool_c
+        data_recipe[name].subgroup = is_robot_tool_c
+    end
 end
 
 local robot_tool_l_groups =
@@ -676,8 +736,10 @@ local robot_tool_l_groups =
     robot_tool_l_4,
 }
 for _, name in pairs(robot_tool_l_groups) do
-    data_item[name].subgroup = is_robot_tool_l
-    data_recipe[name].subgroup = is_robot_tool_l
+    if data_item[name] then
+        data_item[name].subgroup = is_robot_tool_l
+        data_recipe[name].subgroup = is_robot_tool_l
+    end
 end
 
 local roboport_materials =
@@ -712,7 +774,9 @@ local roboport_materials =
     robot_tool_l_4,
 }
 for _, name in pairs(roboport_materials) do
-    data_item[name].stack_size = 200
+    if data_item[name] then
+        data_item[name].stack_size = 200
+    end
 end
 
 if mods [maraxsis_mods] then
@@ -721,125 +785,6 @@ if mods [maraxsis_mods] then
     data_item_entity[spiderling].weight = 1000000
     data_recipe[spiderling].subgroup = is_spidertron
 end
-
-local antron = "bob-antron"
-local tankotron = "bob-tankotron"
-local logitron = "bob-logistic-spidertron"
-local spidertron = "spidertron"
-local heavy_spidertron = "bob-heavy-spidertron"
-local spidertrons =
-{
-    {name = antron, order = a},
-    {name = tankotron, order = b},
-    {name = logitron, order = c},
-    {name = spidertron, order = d},
-    {name = heavy_spidertron, order = e}
-}
-for _, ENTITES in pairs(spidertrons) do
-    data_item_entity[ENTITES.name].subgroup = is_spidertron
-    data_item_entity[ENTITES.name].order = ENTITES.order
-    data_item_entity[ENTITES.name].weight = 1000000
-    data_recipe[ENTITES.name].subgroup = is_spidertron
-    data_recipe[ENTITES.name].order = ENTITES.order
-    data_recipe[ENTITES.name].energy_required = 4
-    data_spider_vechicle[ENTITES.name].subgroup = is_spidertron
-    data_spider_vechicle[ENTITES.name].order = ENTITES.order
-end
-data_spider_vechicle[antron].movement_energy_consumption  = 225 .. kW
-data_spider_vechicle[antron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-data_recipe[tankotron].ingredients =
-{
-    {type = item, name = spidertron_cannon, amount = 2},
-    {type = item, name = mech_armor_plate, amount = 4},
-    {type = item, name = mech_frame, amount = 1},
-    {type = item, name = mech_leg, amount = 6}
-}
-data_spider_vechicle[tankotron].movement_energy_consumption  = 225 .. kW
-data_spider_vechicle[tankotron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-data_recipe[logitron].ingredients =
-{
-    {type = item, name = steel_chest, amount = 1},
-    {type = item, name = gun_turret_1, amount = 2},
-    {type = item, name = mech_armor_plate, amount = 4},
-    {type = item, name = mech_frame, amount = 1},
-    {type = item, name = mech_leg, amount = 8}
-}
-data_spider_vechicle[logitron].movement_energy_consumption  = 225 .. kW
-data_spider_vechicle[logitron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-data_recipe[spidertron].ingredients =
-{
-    {type = item, name = rtg, amount = 2},
-    {type = item, name = rocket_turret, amount = 1},
-    {type = item, name = mech_armor_plate, amount = 8},
-    {type = item, name = mech_frame, amount = 1},
-    {type = item, name = mech_leg, amount = 8}
-}
-data_recipe[heavy_spidertron].ingredients =
-{
-    {type = item, name = rtg, amount = 4},
-    {type = item, name = rocket_turret, amount = 2},
-    {type = item, name = mech_armor_plate, amount = 16},
-    {type = item, name = mech_frame, amount = 1},
-    {type = item, name = mech_leg, amount = 8}
-}
-
-data_recipe[spidertron_cannon].energy_required = 8
-data_recipe[spidertron_cannon].ingredients =
-{
-    {type = item, name = iron_gear_wheel, amount = 4},
-    {type = item, name = steel_plate, amount = 16}
-}
-
-data_recipe[mech_armor_plate].ingredients =
-{
-    {type = item, name = low_density_structure, amount = 4},
-    {type = item, name = tungsten_carbide_plate_bob, amount = 2}
-}
-
-if mods [bobmodules] then
-    data_recipe[mech_brain].ingredients =
-    {
-        {type = item, name = advanced_processing_unit, amount = 16},
-        {type = item, name = solder, amount = 128},
-        {type = item, name = module_case, amount = 1}
-    }
-else
-    data_recipe[mech_brain].ingredients =
-    {
-        {type = item, name = advanced_processing_unit, amount = 16},
-        {type = item, name = solder, amount = 128},
-        --{type = item, name = module_case, amount = 1}
-    }
-end
-
-data_recipe[mech_frame].energy_required = 4
-data_recipe[mech_frame].ingredients =
-{
-    {type = item, name = low_density_structure, amount = 64},
-    {type = item, name = mech_brain, amount = 1}
-}
-
-data_recipe[mech_hip].ingredients =
-{
-    {type = item, name = titanium_gear_wheel, amount = 4},
-    {type = item, name = titanium_bearing, amount = 4},
-    {type = item, name = electric_engine_unit, amount = 4},
-    {type = item, name = low_density_structure, amount = 2}
-}
-
-data_recipe[mech_knee].ingredients =
-{
-    {type = item, name = titanium_gear_wheel, amount = 8},
-    {type = item, name = titanium_bearing, amount = 2},
-    {type = item, name = electric_engine_unit, amount = 8},
-    {type = item, name = low_density_structure, amount = 2}
-}
-
-data_recipe[mech_leg_segment].ingredients =
-{
-    {type = item, name = nitinol_pipe, amount = 2},
-    {type = item, name = nitinol_plate_bob, amount = 2}
-}
 
 local materials =
 {
@@ -854,9 +799,152 @@ local materials =
     mech_leg_segment
 }
 for _, name in pairs(materials) do
-    data_item[name].subgroup = is_spidertron_material
-    data_item[name].stack_size = 200
-    data_recipe[name].subgroup = is_spidertron_material
+    if data_item[name] then
+        data_item[name].subgroup = is_spidertron_material
+        data_item[name].stack_size = 200
+        data_recipe[name].subgroup = is_spidertron_material
+    end
+end
+
+if data_recipe[spidertron_cannon] then
+    data_recipe[spidertron_cannon].energy_required = 8
+    data_recipe[spidertron_cannon].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = steel_plate, amount = 16}
+    }
+
+    data_recipe[mech_armor_plate].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 4},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 2}
+    }
+
+    if mods [bobmodules] then
+        data_recipe[mech_brain].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 16},
+            {type = item, name = solder, amount = 128},
+            {type = item, name = module_case, amount = 1}
+        }
+    else
+        data_recipe[mech_brain].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 16},
+            {type = item, name = solder, amount = 128},
+            --{type = item, name = module_case, amount = 1}
+        }
+    end
+
+    data_recipe[mech_frame].energy_required = 4
+    data_recipe[mech_frame].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 64},
+        {type = item, name = mech_brain, amount = 1}
+    }
+
+    data_recipe[mech_hip].ingredients =
+    {
+        {type = item, name = titanium_gear_wheel, amount = 4},
+        {type = item, name = titanium_bearing, amount = 4},
+        {type = item, name = electric_engine_unit, amount = 4},
+        {type = item, name = low_density_structure, amount = 2}
+    }
+
+    data_recipe[mech_knee].ingredients =
+    {
+        {type = item, name = titanium_gear_wheel, amount = 8},
+        {type = item, name = titanium_bearing, amount = 2},
+        {type = item, name = electric_engine_unit, amount = 8},
+        {type = item, name = low_density_structure, amount = 2}
+    }
+
+    data_recipe[mech_leg_segment].ingredients =
+    {
+        {type = item, name = nitinol_pipe, amount = 2},
+        {type = item, name = nitinol_plate_bob, amount = 2}
+    }
+
+    local antron = "bob-antron"
+    local tankotron = "bob-tankotron"
+    local logitron = "bob-logistic-spidertron"
+    local spidertron = "spidertron"
+    local heavy_spidertron = "bob-heavy-spidertron"
+    local spidertrons =
+    {
+        {name = antron, order = a},
+        {name = tankotron, order = b},
+        {name = logitron, order = c},
+        {name = spidertron, order = d},
+        {name = heavy_spidertron, order = e}
+    }
+    for _, ENTITES in pairs(spidertrons) do
+        data_item_entity[ENTITES.name].subgroup = is_spidertron
+        data_item_entity[ENTITES.name].order = ENTITES.order
+        data_item_entity[ENTITES.name].weight = 1000000
+        data_recipe[ENTITES.name].subgroup = is_spidertron
+        data_recipe[ENTITES.name].order = ENTITES.order
+        data_recipe[ENTITES.name].energy_required = 4
+        data_spider_vechicle[ENTITES.name].subgroup = is_spidertron
+        data_spider_vechicle[ENTITES.name].order = ENTITES.order
+    end
+
+    data_spider_vechicle[antron].movement_energy_consumption  = 225 .. kW
+    data_spider_vechicle[antron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+
+    data_recipe[tankotron].ingredients =
+    {
+        {type = item, name = spidertron_cannon, amount = 2},
+        {type = item, name = mech_armor_plate, amount = 4},
+        {type = item, name = mech_frame, amount = 1},
+        {type = item, name = mech_leg, amount = 6}
+    }
+    data_spider_vechicle[tankotron].movement_energy_consumption  = 225 .. kW
+    data_spider_vechicle[tankotron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+
+    data_recipe[logitron].ingredients =
+    {
+        {type = item, name = steel_chest, amount = 1},
+        {type = item, name = gun_turret_1, amount = 2},
+        {type = item, name = mech_armor_plate, amount = 4},
+        {type = item, name = mech_frame, amount = 1},
+        {type = item, name = mech_leg, amount = 8}
+    }
+    data_spider_vechicle[logitron].movement_energy_consumption  = 225 .. kW
+    data_spider_vechicle[logitron].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+
+    data_recipe[spidertron].ingredients =
+    {
+        {type = item, name = rtg, amount = 2},
+        {type = item, name = rocket_turret, amount = 1},
+        {type = item, name = mech_armor_plate, amount = 8},
+        {type = item, name = mech_frame, amount = 1},
+        {type = item, name = mech_leg, amount = 8}
+    }
+
+    data_recipe[heavy_spidertron].ingredients =
+    {
+        {type = item, name = rtg, amount = 4},
+        {type = item, name = rocket_turret, amount = 2},
+        {type = item, name = mech_armor_plate, amount = 16},
+        {type = item, name = mech_frame, amount = 1},
+        {type = item, name = mech_leg, amount = 8}
+    }
+
+    bobmods.lib.recipe.update_recycling_recipe
+    ({
+        spidertron_cannon,
+        mech_armor_plate,
+        mech_brain,
+        mech_frame,
+        mech_hip,
+        mech_knee,
+        mech_leg_segment,
+        tankotron,
+        logitron,
+        spidertron,
+        heavy_spidertron
+    })
 end
 
 bobmods.lib.recipe.update_recycling_recipe
@@ -928,16 +1016,5 @@ bobmods.lib.recipe.update_recycling_recipe
     robot_tool_l_1,
     robot_tool_l_2,
     robot_tool_l_3,
-    robot_tool_l_4,
-    tankotron,
-    logitron,
-    spidertron,
-    heavy_spidertron,
-    spidertron_cannon,
-    mech_armor_plate,
-    mech_brain,
-    mech_frame,
-    mech_hip,
-    mech_knee,
-    mech_leg_segment,
+    robot_tool_l_4
 })

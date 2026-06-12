@@ -193,11 +193,14 @@ data_logistic_container[requester_chest].next_upgrade = nil
 data_logistic_container[storage_chest].next_upgrade = nil
 
 -- TECHNOLOGY
-local delete_technology =
+data_technology["bob-lead-processing"].effects = {}
+data_technology["bob-aluminium-processing"].effects = {}
+
+--[[local delete_technology =
 {
     "bob-lead-processing",
     "bob-aluminium-processing",
 }
 for _, TECH in pairs(delete_technology) do
     data_technology[TECH] = nil
-end
+end]]

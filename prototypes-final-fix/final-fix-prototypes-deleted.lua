@@ -336,8 +336,37 @@ if mods [clowns_nuclear] then
 end
 
 -- Функция проверки: существует ли прототип в игре
+--[[local function prototype_exists(product)
+    local p_name = product.name or product[1]
+    local p_type = product.type or item -- На всякий случай, хотя в 2.0 type обязателен
+
+    if p_type == fluid then
+        return data_fluid[p_name] ~= nil
+    else
+        -- Проверяем все основные типы предметов в 2.0
+        return data_item[p_name] ~= nil
+        or data_capsule[p_name] ~= nil
+        or data_tool[p_name] ~= nil
+        or data_ammo[p_name] ~= nil
+        or data_armor[p_name] ~= nil
+        or data_gun[p_name] ~= nil
+        or data_module[p_name] ~= nil
+        or data.raw["spidertron-remote"] ~= nil
+    end
+end]]
+
+-- Функция проверки: существует ли прототип в игре
 local function prototype_exists(product)
     local p_name = product.name or product[1]
+
+    -- БЕЗОПАСНОСТЬ: Если имени нет (мало ли), пропускаем, чтобы не упасть с ошибкой
+    if not p_name then return false end
+
+    -- НОВОЕ: Если имя НАЧИНАЕТСЯ на par-, считаем, что прототип "существует" (не трогаем его)
+    if string.match(p_name, "^par%-") then
+        return true
+    end
+
     local p_type = product.type or item -- На всякий случай, хотя в 2.0 type обязателен
 
     if p_type == fluid then
@@ -356,35 +385,51 @@ local function prototype_exists(product)
 end
 
 -- Основной цикл очистки рецептов
-for recipe_name, recipe in pairs(data_recipe) do
-    local should_delete = false
-
-    -- 1. Проверяем выходы рецепта
-    if recipe.results then
-        for _, product in ipairs(recipe.results) do
-            if not prototype_exists(product) then
-                should_delete = true
-                break
+-- Шаг 1. Собираем рецепты, которые используются в par- технологиях
+local protected_recipes = {}
+for tech_name, tech in pairs(data_technology) do
+    if string.find(tech_name, "^par%-") and tech.effects then
+        for _, effect in ipairs(tech.effects) do
+            if effect.type == unlock_recipe then
+                protected_recipes[effect.recipe] = true
             end
         end
-    end
-
-    -- 2. Проверяем ингредиенты (защита от крашей, если у мода рецепт требует удалённый флюид)
-    if not should_delete and recipe.ingredients then
-        for _, ingredient in ipairs(recipe.ingredients) do
-            if not prototype_exists(ingredient) then
-                should_delete = true
-                break
-            end
-        end
-    end
-
-    -- Если нашли "призрака" — полностью вырезаем рецепт из data.raw
-    if should_delete then
-        data_recipe[recipe_name] = nil
     end
 end
 
+-- Шаг 2. Основной цикл очистки рецептов
+for recipe_name, recipe in pairs(data_recipe) do
+    if string.find(recipe_name, "^par%-") or protected_recipes[recipe_name] then
+        -- ничего не делаем, пропускаем удаление
+    else
+        local should_delete = false
+
+        -- 1. Проверяем выходы рецепта
+        if recipe.results then
+            for _, product in ipairs(recipe.results) do
+                if not prototype_exists(product) then
+                    should_delete = true
+                    break
+                end
+            end
+        end
+
+        -- 2. Проверяем ингредиенты (защита от крашей, если у мода рецепт требует удалённый флюид)
+        if not should_delete and recipe.ingredients then
+            for _, ingredient in ipairs(recipe.ingredients) do
+                if not prototype_exists(ingredient) then
+                    should_delete = true
+                    break
+                end
+            end
+        end
+
+        -- Если нашли "призрака" — полностью вырезаем рецепт из data.raw
+        if should_delete then
+            data_recipe[recipe_name] = nil
+        end
+    end
+end
 
 -- Функция проверки: существует ли прототип в игре
 local function request_prototype_exists(product)
@@ -400,6 +445,11 @@ local function request_prototype_exists(product)
     end
 
     if not p_name or type(p_name) == "table" then return false end
+
+    -- НОВОЕ: Если в имени предмета/жидкости есть "par-", считаем, что он существует (не трогаем)
+    if string.find(p_name, "par%-") then
+        return true
+    end
 
     if p_type == fluid then
         return data_fluid[p_name] ~= nil
@@ -418,7 +468,8 @@ end
 -- Цикл очистки ТОЛЬКО для request- рецептов
 for recipe_name, recipe in pairs(data_recipe) do
     -- Строгий фильтр: работаем только если в имени рецепта есть "request-"
-    if string.find(recipe_name, "request-") then
+    -- НОВОЕ: И полностью игнорируем рецепт, если в его названии есть "par-"
+    if string.find(recipe_name, "request-") and not string.find(recipe_name, "par%-") then
         local should_delete = false
 
         -- 1. Проверяем результаты

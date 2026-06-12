@@ -246,6 +246,43 @@ local replacements_2 =
 	[cellulose_acetate_mixture] = cellulose_triacetate,
 	[cellulose_acetate] = cellulose_diacetate
 }
+-- Безопасная функция замены по индексу родительской таблицы
+local function replace_fluid_in_table(item_table)
+    if not item_table then return end
+
+    for i = 1, #item_table do
+        local item = item_table[i]
+
+        if type(item) == "table" then
+            local current_name = item.name or item[1]
+            local target_replacement = replacements_2[current_name]
+
+            if target_replacement then
+                -- Считаем количество: берем из .amount или из второго элемента
+                local old_amount = item.amount or item[2] or 1
+                local new_amount = math.ceil(old_amount / 10)
+
+                if item.name then
+                    -- Формат словаря: {name = "...", amount = ...}
+                    item.name = target_replacement
+                    item.type = item
+                    item.amount = new_amount
+                    item.temperature = nil
+                else
+                    -- Формат простого массива: {"...", ...}
+                    item_table[i] = {target_replacement, new_amount}
+                end
+            end
+        end
+    end
+end
+
+-- Шаг 1. Проходим по всем рецептам (в 2.0 структура плоская и линейная)
+for _, recipe in pairs(data_recipe or data_recipe or {}) do
+    replace_fluid_in_table(recipe.ingredients)
+    replace_fluid_in_table(recipe.results)
+end
+
 for _, technology in pairs(data_technology or {}) do
     for _, effect in pairs(technology.effects or {}) do
         if effect.type == unlock_recipe then
@@ -256,6 +293,7 @@ for _, technology in pairs(data_technology or {}) do
         end
     end
 end
+
 for old_name, _ in pairs(replacements_2) do
     data_fluid[old_name] = nil
     data_recipe[old_name] = nil
