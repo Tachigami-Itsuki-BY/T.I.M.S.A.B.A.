@@ -3,8 +3,6 @@ if mods [tellus_mods] then
     is_chloroplast = "is-chloroplast"
     is_tellus_magnesium = "is-tellus-magnesium"
     is_mycelia = "is-mycelia"
-    is_parasite = "is-parasite"
-    --is_ = "is-"
     is_tellus_recipe = "is-tellus-recipe"
     data:extend
     ({
@@ -35,21 +33,9 @@ if mods [tellus_mods] then
         },
         {
             type = item_subgroup,
-            name = is_parasite,
-            group = tellus,
-            order = d
-        },
-        --[[{
-            type = item_subgroup,
-            name = ,
-            group = tellus,
-            order = e
-        },]]
-        {
-            type = item_subgroup,
             name = is_tellus_recipe,
             group = tellus,
-            order = f
+            order = d
         }
     })
 end

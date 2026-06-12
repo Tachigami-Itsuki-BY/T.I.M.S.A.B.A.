@@ -254,22 +254,35 @@ local function replace_fluid_in_table(item_table)
         local item = item_table[i]
 
         if type(item) == "table" then
-            local current_name = item.name or item[1]
-            local target_replacement = replacements_2[current_name]
+            local current_name = nil
+            local old_amount = 1
+            local is_dictionary = false
 
-            if target_replacement then
-                -- Считаем количество: берем из .amount или из второго элемента
-                local old_amount = item.amount or item[2] or 1
+            -- Четкое разделение форматов Factorio, чтобы имя никогда не стало таблицей
+            if item.name then
+                current_name = item.name
+                old_amount = item.amount or 1
+                is_dictionary = true
+            elseif type(item[1]) == "string" then
+                current_name = item[1]
+                old_amount = item[2] or 1
+                is_dictionary = false
+            end
+
+            -- Если имя успешно определено как строка, проверяем замену
+            if current_name and replacements_2[current_name] then
+                local target_replacement = replacements_2[current_name]
                 local new_amount = math.ceil(old_amount / 10)
 
-                if item.name then
+                if is_dictionary then
                     -- Формат словаря: {name = "...", amount = ...}
                     item.name = target_replacement
-                    item.type = item
+                    item.type = "item"
                     item.amount = new_amount
                     item.temperature = nil
                 else
                     -- Формат простого массива: {"...", ...}
+                    -- Полностью заменяем элемент на чистый массив строк/чисел без ссылок
                     item_table[i] = {target_replacement, new_amount}
                 end
             end
@@ -277,12 +290,13 @@ local function replace_fluid_in_table(item_table)
     end
 end
 
--- Шаг 1. Проходим по всем рецептам (в 2.0 структура плоская и линейная)
-for _, recipe in pairs(data_recipe or data_recipe or {}) do
+-- Шаг 1. Проходим по всем рецептам
+for _, recipe in pairs(data_recipe or data.raw["recipe"] or {}) do
     replace_fluid_in_table(recipe.ingredients)
     replace_fluid_in_table(recipe.results)
 end
 
+-- Шаг 2. Замена рецептов в эффектах технологий
 for _, technology in pairs(data_technology or {}) do
     for _, effect in pairs(technology.effects or {}) do
         if effect.type == unlock_recipe then
@@ -294,6 +308,7 @@ for _, technology in pairs(data_technology or {}) do
     end
 end
 
+-- Шаг 3. Полное удаление старых жидкостей и рецептов
 for old_name, _ in pairs(replacements_2) do
     data_fluid[old_name] = nil
     data_recipe[old_name] = nil
