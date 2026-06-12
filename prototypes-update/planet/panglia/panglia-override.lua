@@ -678,6 +678,7 @@ if mods [panglia_mods] then
         {electromagnetic_science_pack, 1}
     }
 
+    table.insert(data_technology[panglia_crusher].prerequisites, tech_advanced_material_processing_5)
     data_technology[panglia_crusher].unit.ingredients =
     {
         {automation_science_pack, 1},

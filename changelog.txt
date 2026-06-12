@@ -8,9 +8,9 @@ Date: 19.06.2026
     - [Mods] Added support for Planetaris: Tellus: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлены различные технические ошибки.
+    - [All] Исправлены различные технические ошибки, связанные с совместимостью и настройками модов.
 
-    - [All] Various technical errors have been corrected.
+    - [All] Fixed various compatibility and mod settings technical bugs.
 
   Modding:
     - [Mods] Мод «Planetaris: Tellus» переведён в опциональную зависимость.

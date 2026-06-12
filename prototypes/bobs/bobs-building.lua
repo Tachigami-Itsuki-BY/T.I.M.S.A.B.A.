@@ -83,7 +83,7 @@ if settings.startup[setting_bobmods_power_steam].value then
             allow_productivity = false,
             allow_quality = true,
             allow_decomposition = true,
-            energy_required = 16,
+            energy_required = 1,
             ingredients =
             {
                 {type = item, name = molybdenum_gear_wheel, amount = 8},
@@ -134,7 +134,7 @@ if settings.startup[setting_bobmods_power_steam].value then
             allow_productivity = false,
             allow_quality = true,
             allow_decomposition = true,
-            energy_required = 16,
+            energy_required = 1,
             ingredients =
             {
                 {type = item, name = molybdenum_gear_wheel, amount = 8},
