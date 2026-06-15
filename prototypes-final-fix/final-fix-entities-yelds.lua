@@ -507,6 +507,10 @@ end
 
 -- HYARION
 if mods [hyarion_mods] then
+    local pointy_crystal = "hyarion-pointy-crystal"
+    data_tree[pointy_crystal].minable.results[1].amount_min = 16
+    data_tree[pointy_crystal].minable.results[1].amount_max = 32
+
     data_entity["hyarion-" .. big_volcanic_rock].minable.results =
     {
         {type = item, name = carbon_angels, amount_min = 8, amount_max = 16},
@@ -543,6 +547,70 @@ if mods [hyarion_mods] then
     {
         {type = item, name = carbon_angels, amount_min = 8, amount_max = 16},
         {type = item, name = metallic_ore, amount_min = 0, amount_max = 4}
+    }
+end
+
+-- TELLUS
+if mods [tellus_mods] then
+    data_plant["mushell"].minable.results =
+    {
+        {type = item, name = wood, amount = 8},
+        {type = item, name = mushell_seed, amount_min = 1, amount_max = 4}
+    }
+
+    data_plant["mushell-plant"].minable.results =
+    {
+        {type = item, name = wood, amount = 8},
+        {type = item, name = mushell_seed, amount_min = 1, amount_max = 4}
+    }
+
+    data_tree["moldant"].minable.results =
+    {
+        {type = item, name = wood, amount = 4},
+        {type = item, name = spoilage, amount = 4}
+    }
+
+    data_plant["carbolyte"].minable.results =
+    {
+        {type = item, name = carbolyte_crust, amount = 64},
+        {type = fluid, name = sulfuric_acid_angels, amount = 480}
+    }
+
+    data_plant["holmiumnite"].minable.results =
+    {
+        {type = item, name = holmiumnite_bulb, amount = 64},
+        {type = fluid, name = multi_phase_oil_angels, amount = 480}
+    }
+
+    if mods [hyarion_mods] then
+        data_plant["planetaris-big-charged-crystal"].minable.results =
+        {
+            {type = item, name = unstable_crystal, amount = 64},
+            {type = fluid, name = lava, amount = 240}
+        }
+    end
+
+    data_plant["myceliae"].minable.results =
+    {
+        {type = item, name = mushroom_cap, amount = 64},
+        {type = fluid, name = water, amount = 240}
+    }
+
+    data_plant["chloroplast"].minable.results =
+    {
+        {type = item, name = chloroplast_fruit, amount = 64},
+        {type = fluid, name = chlorophyll, amount = 240}
+    }
+
+    data_entity["planetaris-magnesium-stromatolite"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 4, amount_max = 8},
+        {type = item, name = magnesium_ore, amount_min = 8, amount_max = 16},
+        {type = item, name = ore_saphirite, amount_min = 4, amount_max = 8},
+        {type = item, name = ore_jivolite, amount_min = 4, amount_max = 8},
+        {type = item, name = magnesium_bacteria, amount_min = 16, amount_max = 32},
+        {type = item, name = saphirite_bacteria, amount_min = 8, amount_max = 16},
+        {type = item, name = jivolite_bacteria, amount_min = 8, amount_max = 16}
     }
 end
 

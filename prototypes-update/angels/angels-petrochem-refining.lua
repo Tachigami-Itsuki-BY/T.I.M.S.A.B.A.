@@ -1943,10 +1943,23 @@ data_capsule[cliff_explosives].subgroup = is_explosives
 data_capsule[cliff_explosives].order = f
 data_recipe[cliff_explosives].subgroup = is_explosives
 data_recipe[cliff_explosives].order = f
-data_recipe[cliff_explosives].ingredients[1].amount = 4
-data_recipe[cliff_explosives].ingredients[2].amount = 4
-data_recipe[cliff_explosives].ingredients[3].amount = 4
-data_recipe[cliff_explosives].ingredients[4].amount = 4
+if settings.startup[setting_early_cliff_explosives].value then
+    data_recipe[cliff_explosives].ingredients =
+    {
+        {type = item, name = grenade, amount = 4},
+        {type = item, name = explosives, amount = 4},
+        {type = item, name = barrel, amount = 4},
+        {type = item, name = limestone_angels, amount = 4}
+    }
+else
+    data_recipe[cliff_explosives].ingredients =
+    {
+        {type = item, name = grenade, amount = 4},
+        {type = item, name = explosives, amount = 4},
+        {type = item, name = barrel, amount = 4},
+        {type = item, name = calcite, amount = 4}
+    }
+end
 
 -- OTHERS
 data_item[electrode].subgroup = is_buildings_electrolyser

@@ -753,7 +753,7 @@ if mods [bobtech] then
         {type = item, name = alien_artifact_orange, amount = 4},
         {type = item, name = alien_artifact_blue,   amount = 4},
         {type = item, name = alien_artifact_yellow, amount = 4},
-        {type = item, name = alien_artifact_purple, amount = 4},
+        {type = item, name = alien_artifact_magenta, amount = 4},
         {type = item, name = alien_artifact_green,  amount = 4},
         {type = item, name = alien_artifact_red,    amount = 4},
         {type = item, name = alien_artifact,        amount = 8}
@@ -776,9 +776,13 @@ if mods [bobtech] then
     if mods [arig_mods] then
         table.insert(data_lab[lab_alien].inputs, compression_science_pack)
     end
-    if mods[hyarion_mods] then
+    if mods [hyarion_mods] then
         table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
         table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
+    end
+    if mods [tellus_mods] then
+        table.insert(data_lab[lab_alien].inputs, bioengineering_sciecne_pack)
+        table.insert(data_lab[lab_alien].inputs, pathological_sciecne_pack)
     end
 end
 

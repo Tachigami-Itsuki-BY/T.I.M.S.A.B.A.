@@ -9,6 +9,7 @@ local recipes =
     {planet = planet_panglia, fluid = water},
     {planet = planet_arig, fluid = sand_arig},
     {planet = planet_hyarion, fluid = lava},
+    {planet = planet_tellus, fluid = water_infected},
     -- {planet = planet_, fluid = },
 }
 for _, RECIPE in ipairs(recipes) do

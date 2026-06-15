@@ -1,6 +1,6 @@
 if mods [muluna_mods] then
 	local sapling_muluna = "muluna-sapling"
-    local replacements_1 =
+    local replacements =
     {
         [alumina_mods] = aluminium_oxide,
 		[aluminium_plate_mods] = aluminium_plate_bob,
@@ -13,94 +13,7 @@ if mods [muluna_mods] then
         [carbon_dioxide_mods] = carbon_dioxide_angels,
 		[atmosphere_maraxsis] = compressed_air
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements_1[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
-        end
-
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements_1[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
-
-        if recipe.main_product then
-	    	local replace = replacements_1[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
-        end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements_1[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements_1[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements_1[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements_1[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements_1[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements_1[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements_1[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-	for _, spawner in pairs(data.raw["unit-spawner"] or {}) do
-		if spawner.loot then
-    		for _, entry in pairs(spawner.loot) do
-				local new = replacements_1[entry.item]
-				if new then
-					entry.item = new
-				end
-    		end
-  		end
-	end
+    delete_duplicate_item_and_fluid(replacements)
 
 	data_tile["muluna-gravel"] = nil
 

@@ -11,84 +11,7 @@ if mods [hyarion_mods] then
         [polished_sapphire_hyarion] = polished_sapphire_bob,
 		[carbon_nanotube_hyarion] = carbon_nanotube
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
-        end
-
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
-
-        if recipe.main_product then
-	    	local replace = replacements[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
-        end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
+	delete_duplicate_item_and_fluid(replacements)
 
 	data_fluid[aluminium_hyarion] = nil
 
@@ -105,15 +28,15 @@ if mods [hyarion_mods] then
 		carbon_nanotube_hyarion,
 		beryllium_wall
 	}
-	for _, ITEM in ipairs(hyarion_items) do
-		data_item[ITEM] = nil
-		data_recipe[ITEM .. _recycling] = nil
+	for _, name in ipairs(hyarion_items) do
+		data_item[name] = nil
+		data_recipe[name .. _recycling] = nil
 		if mods [panglia_mods] then
-			data_recipe[item_ .. ITEM .. _panglia_crushing] = nil
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
 		end
-		if ITEM == beryllium_wall then
-			data_recipe[ITEM] = nil
-			data_wall[ITEM] = nil
+		if name == beryllium_wall then
+			data_recipe[name] = nil
+			data_wall[name] = nil
 		end
 	end
 

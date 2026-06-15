@@ -1,7 +1,7 @@
 -- GROUPS
 local smelting = "angels-smelting"
 local casting = "angels-casting"
-local is_magnesium = "is-magnesium"
+is_magnesium = "is-magnesium"
 local is_magnesium_chemistry = "is-magnesium-chemistry"
 local is_magnesium_casting = "is-magnesium-casting"
 data:extend

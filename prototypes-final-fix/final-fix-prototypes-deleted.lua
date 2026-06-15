@@ -39,6 +39,12 @@ for _, tier in ipairs(tier_configs) do
     end
 end
 
+if not data_item["bob-titanium-chest"] then
+  bobmods.lib.recipe.replace_ingredient("bob-player-frame-2", "bob-titanium-chest", "steel-chest")
+
+  bobmods.lib.recipe.update_recycling_recipe({"bob-player-frame-2"})
+end
+
 -- ADVANCED LOGISTICS
 local rail_suffixes =
 {
@@ -329,9 +335,19 @@ if mods [clowns_nuclear] then
     end
 end
 
+
 -- Функция проверки: существует ли прототип в игре
 local function prototype_exists(product)
     local p_name = product.name or product[1]
+
+    -- БЕЗОПАСНОСТЬ: Если имени нет (мало ли), пропускаем, чтобы не упасть с ошибкой
+    if not p_name then return false end
+
+    -- НОВОЕ: Если имя НАЧИНАЕТСЯ на par-, считаем, что прототип "существует" (не трогаем его)
+    if string.match(p_name, "^par%-") then
+        return true
+    end
+
     local p_type = product.type or item -- На всякий случай, хотя в 2.0 type обязателен
 
     if p_type == fluid then
@@ -351,30 +367,104 @@ end
 
 -- Основной цикл очистки рецептов
 for recipe_name, recipe in pairs(data_recipe) do
-    local should_delete = false
+    if string.find(recipe_name, "^par%-") then
+        -- ничего не делаем, пропускаем удаление
+    elseif string.find(recipe_name, "^preserved%-") and string.find(recipe_name, "^depreservation%-") then
+        -- ничего не делаем, пропускаем удаление
+    else
+        local should_delete = false
 
-    -- 1. Проверяем выходы рецепта (results теперь всегда таблица в 2.0)
-    if recipe.results then
-        for _, product in ipairs(recipe.results) do
-            if not prototype_exists(product) then
-                should_delete = true
-                break
+        -- 1. Проверяем выходы рецепта
+        if recipe.results then
+            for _, product in ipairs(recipe.results) do
+                if not prototype_exists(product) then
+                    should_delete = true
+                    break
+                end
             end
         end
-    end
 
-    -- 2. Проверяем ингредиенты (защита от крашей, если у мода рецепт требует удалённый флюид)
-    if not should_delete and recipe.ingredients then
-        for _, ingredient in ipairs(recipe.ingredients) do
-            if not prototype_exists(ingredient) then
-                should_delete = true
-                break
+        -- 2. Проверяем ингредиенты (защита от крашей, если у мода рецепт требует удалённый флюид)
+        if not should_delete and recipe.ingredients then
+            for _, ingredient in ipairs(recipe.ingredients) do
+                if not prototype_exists(ingredient) then
+                    should_delete = true
+                    break
+                end
             end
         end
+
+        -- Если нашли "призрака" — полностью вырезаем рецепт из data.raw
+        if should_delete then
+            data_recipe[recipe_name] = nil
+        end
+    end
+end
+
+-- Функция проверки: существует ли прототип в игре
+local function request_prototype_exists(product)
+    local p_name, p_type
+
+    if type(product) == "table" then
+        -- В 2.0 имя может быть в product.name или в первом элементе массива product[1]
+        p_name = product.name or product[1]
+        p_type = product.type or item
+    else
+        p_name = product
+        p_type = item
     end
 
-    -- Если нашли "призрака" — полностью вырезаем рецепт из data.raw
-    if should_delete then
-        data_recipe[recipe_name] = nil
+    if not p_name or type(p_name) == "table" then return false end
+
+    -- НОВОЕ: Если в имени предмета/жидкости есть "par-", считаем, что он существует (не трогаем)
+    if string.find(p_name, "par%-") then
+        return true
+    end
+
+    if p_type == fluid then
+        return data_fluid[p_name] ~= nil
+    else
+        return data_item[p_name] ~= nil
+        or data_capsule[p_name] ~= nil
+        or data_tool[p_name] ~= nil
+        or data_ammo[p_name] ~= nil
+        or data_armor[p_name] ~= nil
+        or data_gun[p_name] ~= nil
+        or data_module[p_name] ~= nil
+        or (data.raw["spidertron-remote"] and data.raw["spidertron-remote"][p_name] ~= nil)
+    end
+end
+
+-- Цикл очистки ТОЛЬКО для request- рецептов
+for recipe_name, recipe in pairs(data_recipe) do
+    -- Строгий фильтр: работаем только если в имени рецепта есть "request-"
+    -- НОВОЕ: И полностью игнорируем рецепт, если в его названии есть "par-"
+    if string.find(recipe_name, "request-") and not string.find(recipe_name, "par%-") then
+        local should_delete = false
+
+        -- 1. Проверяем результаты
+        if recipe.results then
+            for _, product in pairs(recipe.results) do
+                if not request_prototype_exists(product) then
+                    should_delete = true
+                    break
+                end
+            end
+        end
+
+        -- 2. Проверяем ингредиенты
+        if not should_delete and recipe.ingredients then
+            for _, ingredient in pairs(recipe.ingredients) do
+                if not request_prototype_exists(ingredient) then
+                    should_delete = true
+                    break
+                end
+            end
+        end
+
+        -- Если нашли удаленный предмет — стираем этот конкретный request-рецепт
+        if should_delete then
+            data_recipe[recipe_name] = nil
+        end
     end
 end

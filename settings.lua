@@ -54,6 +54,18 @@ if mods ["bobtech"] and mods ["sa-science-packs"] then
     })
 end
 
+if mods ["planetaris-tellus"] then
+    data:extend
+    ({
+        {
+            type = bool_setting,
+            name = "setting-tellus-dye-concrete-brick",
+            setting_type = startup,
+            default_value = true
+        }
+    })
+end
+
 --[[data:extend
 ({
     {

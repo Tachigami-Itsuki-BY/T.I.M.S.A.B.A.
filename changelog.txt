@@ -1,37 +1,81 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+Date: 19.06.2026
+  Features:
+    - [Mods] Добавлена поддержка Planetaris: Tellus: реализовано бесшовное внедрение новой планеты в игровой процесс.
+
+    - [Mods] Added support for Planetaris: Tellus: seamlessly integrated the new planet into the gameplay flow.
+
+  Bugfixes:
+    - [All] Исправлены различные технические ошибки, связанные с совместимостью и настройками модов.
+
+    - [All] Fixed various compatibility and mod settings technical bugs.
+
+  Balancing:
+    - [All] В рецепте Ракетной Шахты произведена замена ингредиентов:
+        1. Молибден-Рений → Медно-Вольфрам.
+        2. Молибден → Вольфрам.
+        3. Рений → Карбид Вольфрама.
+    - [All] Скорректирован лут у некоторых сущностей.
+
+    - [All] Replaced ingredients in the Rocket Silo recipe:
+        1. Molybdenum-Rhenium → Copper-Tungsten.
+        2. Molybdenum → Tungsten.
+        3. Rhenium → Tungsten Carbide.
+    - [All] Adjusted loot for some entities.
+
+  Locale:
+    - [All] Небольшие правки в локализации.
+
+    - [All] Minor adjustments to localization.
+
+  Modding:
+    - [Mods] Мод «Planetaris: Tellus» переведён в опциональную зависимость.
+    - [Mods] Мод «Bob's Character classes» добавлен в опциональную зависимость.
+
+    - [Mods] Moved "Planetaris: Tellus" mod to optional dependencies.
+    - [Mods] Added "Bob's Character classes" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
+Version: 1.4.3
+Date: 11.06.2026
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой модпак не загружался, если мод «Muluna, Moon of Nauvis» был отключен.
+
+    - [All] Fixed a bug where the modpack would not load if the "Muluna, Moon of Nauvis" mod was disabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.2
 Date: 11.06.2026
   Features:
-    - [All] Добавле новый рецепт: Деталь Ракеты.
+    - [All] Добавлен новый рецепт: Деталь Ракеты.
 
     - [All] Added new recipe: Rocket Part.
 
   Balancing:
     - [All] Небольшие правки в рецептах.
     - [All] Небольшие правки в технологиях.
-    - [All] Переработанны рецепты: Детали Ракеты.
+    - [All] Переработаны рецепты: Детали Ракеты.
     - [All] Переработана Персональная и Транспортная Экипировка.
 
     - [All] Minor adjustments to recipes.
     - [All] Minor adjustments to technologies.
     - [All] Rebalanced recipes: Rocket Parts.
-    - [All] Rebalanced Personal and Vehicle Equipments.
+    - [All] Rebalanced Personal and Vehicle Equipment.
 
   Scripting:
     - [All] Добавлен код для автоматического добавления новых Топливных Категорий в Здания и Транспорт.
-    - [All] Добавлен код на автоматическое удаление каких либо реццептов если они ссылаются на ранее удалённый прототип в модпаке.
+    - [All] Добавлен код для автоматического Удаления каких либо Рецептов если они ссылаются на ранее Удалённые Прототипы в модпаке.
 
     - [All] Added code to automatically add new Fuel Categories to Buildings and Vehicles.
-    - [All] Added code to automatically delete any recipes if they refer to a previously deleted prototype in the modpack.
+    - [All] Added code to automatically Delete any Recipes if they refer to a previously Deleted Prototype in the modpack.
 
   Modding:
     - [Mods] Мод «Bob's Personal Equipment mod» переведён в опциональную зависимость.
     - [Mods] Мод «Bob's Modules» переведён в опциональную зависимость.
     - [Mods] Мод «Bob's Vehicle Equipment» переведён в опциональную зависимость.
 
-    - [Mods] Moved "Bob's Personal Equipment mod" mod to optional dependencies. It is not recommended to remove it unless you install another mod that changes the balance of Personal Equipment.
-    - [Mods] Moved "Bob's Modules" mod to optional dependencies. It is not recommended to remove it unless you install another mod that changes the balance of the Modules.
+    - [Mods] Moved "Bob's Personal Equipment mod" mod to optional dependencies.
+    - [Mods] Moved "Bob's Modules" mod to optional dependencies.
     - [Mods] Moved "Bob's Vehicle Equipment" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.1
@@ -517,7 +561,7 @@ Date: 18.05.2026
   Bugfixes:
     - [All] Исправлена ​​ошибка, из-за которой Каменные Блоки нельзя было изготовить из Камня из-за конфликта рецептов с рецептом Каменной Трубы. (Спасибо Senpaiarham04 за то, что обратил на это внимание)
 
-    - [All] Fixed an issue where Stone Bricks could not be crafted from Stone due to a recipe conflict with the Stone Pipe recipe. (Thanks to Senpaiarham04 for pointing this out)
+    - [All] Fixed a bug where Stone Bricks could not be crafted from Stone due to a recipe conflict with the Stone Pipe recipe. (Thanks to Senpaiarham04 for pointing this out)
 
   Graphics:
     - [Muluna] В технологии Обработки Алюминия обновлена иконка.
@@ -2255,7 +2299,7 @@ Date: 05.04.2026
   Bugfixes:
     - Исправлена ошибка, из-за которой изменения Реакторов из версии 0.0.9 не применялись.
 
-    - Fixed an issue where Reactor changes from version 0.0.9 were not applied.
+    - Fixed a bug where Reactor changes from version 0.0.9 were not applied.
 
   Balancing:
     - У Насосной Установки Т1 уменьшено кол-во ОЗ: (200 ед.) → (100 ед.)

@@ -206,11 +206,14 @@ local atomic_rocket_2 = "angels-atomic-bomb"
 local atomic_rocket_3 = "angels-atomic-bomb-2"
 local rockets =
 {
-    {type = data_ammo, name = rocket,           order = b}, {type = data_recipe, name = rocket,           order = b},
-    {type = data_ammo, name = explosive_rocket, order = c}, {type = data_recipe, name = explosive_rocket, order = c},
-    {type = data_ammo, name = atomic_rocket,    order = d}, {type = data_recipe, name = atomic_rocket,    order = d},
-                                                            {type = data_recipe, name = atomic_rocket_2,  order = d_a},
-                                                            {type = data_recipe, name = atomic_rocket_3,  order = d_b},
+    {type = data_ammo, name = rocket,             order = b},
+    {type = data_recipe, name = rocket,           order = b},
+    {type = data_ammo, name = explosive_rocket,   order = c},
+    {type = data_recipe, name = explosive_rocket, order = c},
+    {type = data_ammo, name = atomic_rocket,      order = d},
+    {type = data_recipe, name = atomic_rocket,    order = d},
+    {type = data_recipe, name = atomic_rocket_2,  order = d_a},
+    {type = data_recipe, name = atomic_rocket_3,  order = d_b},
 }
 for _, AMMO in pairs(rockets) do
     if AMMO.type[AMMO.name] then
@@ -755,65 +758,64 @@ data_capsule[laser_robot_capsule].capsule_action.attack_parameters.range = 24
 --[laser_robot_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
 data_recipe[laser_robot_capsule].ingredients[1].amount = 4
 
-local combat_robot_brain_1 = "bob-robot-brain-combat"
-local combat_robot_brain_2 = "bob-robot-brain-combat-2"
-local combat_robot_brain_3 = "bob-robot-brain-combat-3"
-local combat_robot_brain_4 = "bob-robot-brain-combat-4"
-local combat_robot_brains =
-{
-    {name = combat_robot_brain_1},
-    {name = combat_robot_brain_2},
-    {name = combat_robot_brain_3},
-    {name = combat_robot_brain_4}
-}
-for _, ITEM in pairs(combat_robot_brains) do
-    data_item[ITEM.name].subgroup = is_combat_robot_brain
-    data_item[ITEM.name].stack_size = 200
-    data_recipe[ITEM.name].subgroup = is_combat_robot_brain
-    data_recipe[ITEM.name].energy_required = 4
-end
-local function combat_robot_brain_recipe(name, circuit_1, circuit_2)
-    data_recipe[name].ingredients =
+if settings.startup[setting_bobmods_logistics_robotparts].value then
+    local combat_robot_brain_1 = "bob-robot-brain-combat"
+    local combat_robot_brain_2 = "bob-robot-brain-combat-2"
+    local combat_robot_brain_3 = "bob-robot-brain-combat-3"
+    local combat_robot_brain_4 = "bob-robot-brain-combat-4"
+    local combat_robot_brains =
     {
-        {type = item, name = circuit_1, amount = 1},
-        {type = item, name = circuit_2, amount = 1},
-        {type = item, name = solder, amount = 4}
+        {name = combat_robot_brain_1},
+        {name = combat_robot_brain_2},
+        {name = combat_robot_brain_3},
+        {name = combat_robot_brain_4}
     }
-end
-if data_recipe[combat_robot_brain_1] then
+    for _, ITEM in pairs(combat_robot_brains) do
+        data_item[ITEM.name].subgroup = is_combat_robot_brain
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].subgroup = is_combat_robot_brain
+        data_recipe[ITEM.name].energy_required = 4
+    end
+    local function combat_robot_brain_recipe(name, circuit_1, circuit_2)
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = circuit_1, amount = 1},
+            {type = item, name = circuit_2, amount = 1},
+            {type = item, name = solder, amount = 4}
+        }
+    end
     combat_robot_brain_recipe(combat_robot_brain_1, basic_circuit_board, electronic_circuit)
     combat_robot_brain_recipe(combat_robot_brain_2, electronic_circuit,  advanced_circuit)
     combat_robot_brain_recipe(combat_robot_brain_3, advanced_circuit,    processing_unit)
     combat_robot_brain_recipe(combat_robot_brain_4, processing_unit,     advanced_processing_unit)
     bobmods.lib.recipe.update_recycling_recipe({combat_robot_brain_1, combat_robot_brain_2, combat_robot_brain_3, combat_robot_brain_4})
-end
-local combat_robot_tool_1 = "bob-robot-tool-combat"
-local combat_robot_tool_2 = "bob-robot-tool-combat-2"
-local combat_robot_tool_3 = "bob-robot-tool-combat-3"
-local combat_robot_tool_4 = "bob-robot-tool-combat-4"
-local combat_robot_tools =
-{
-    {name = combat_robot_tool_1},
-    {name = combat_robot_tool_2},
-    {name = combat_robot_tool_3},
-    {name = combat_robot_tool_4}
-}
-for _, ITEM in pairs(combat_robot_tools) do
-    data_item[ITEM.name].subgroup = is_combat_robot_tool
-    data_item[ITEM.name].stack_size = 200
-    data_recipe[ITEM.name].subgroup = is_combat_robot_tool
-    data_recipe[ITEM.name].energy_required = 4
-end
-local function combat_robot_tool_recipe(name, gear_wheel, battery, prizma, plate)
-    data_recipe[name].ingredients =
+
+    local combat_robot_tool_1 = "bob-robot-tool-combat"
+    local combat_robot_tool_2 = "bob-robot-tool-combat-2"
+    local combat_robot_tool_3 = "bob-robot-tool-combat-3"
+    local combat_robot_tool_4 = "bob-robot-tool-combat-4"
+    local combat_robot_tools =
     {
-        {type = item, name = gear_wheel, amount = 2},
-        {type = item, name = battery,    amount = 1},
-        {type = item, name = prizma,     amount = 1},
-        {type = item, name = plate,      amount = 1}
+        {name = combat_robot_tool_1},
+        {name = combat_robot_tool_2},
+        {name = combat_robot_tool_3},
+        {name = combat_robot_tool_4}
     }
-end
-if data_recipe[combat_robot_tool_1] then
+    for _, ITEM in pairs(combat_robot_tools) do
+        data_item[ITEM.name].subgroup = is_combat_robot_tool
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].subgroup = is_combat_robot_tool
+        data_recipe[ITEM.name].energy_required = 4
+    end
+    local function combat_robot_tool_recipe(name, gear_wheel, battery, prizma, plate)
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = gear_wheel, amount = 2},
+            {type = item, name = battery,    amount = 1},
+            {type = item, name = prizma,     amount = 1},
+            {type = item, name = plate,      amount = 1}
+        }
+    end
     combat_robot_tool_recipe(combat_robot_tool_1, steel_gear_wheel,    battery_lead_acid,     glass_bob,            steel_plate)
     combat_robot_tool_recipe(combat_robot_tool_2, brass_gear_wheel,    battery_lithium_ion,   glass_bob,            brass_plate_bob)
     combat_robot_tool_recipe(combat_robot_tool_3, titanium_gear_wheel, battery_silver_zinc,   polished_emerald_bob, titanium_plate_bob)
@@ -894,7 +896,7 @@ if data_item[alien_artifact] then
             {type = item, name = power_armor_3, amount = 1},
             {type = item, name = silicon_nitride_bob, amount = 64},
             {type = item, name = alien_artifact_yellow, amount = 32},
-            {type = item, name = alien_artifact_purple, amount = 32},
+            {type = item, name = alien_artifact_magenta, amount = 32},
             {type = item, name = speed_module_4, amount = 4},
             {type = item, name = efficiency_module_4, amount = 4}
         }
@@ -906,7 +908,7 @@ if data_item[alien_artifact] then
             {type = item, name = power_armor_3, amount = 1},
             {type = item, name = silicon_nitride_bob, amount = 64},
             {type = item, name = alien_artifact_yellow, amount = 32},
-            {type = item, name = alien_artifact_purple, amount = 32},
+            {type = item, name = alien_artifact_magenta, amount = 32},
             {type = item, name = speed_module_3, amount = 4},
             {type = item, name = efficiency_module_3, amount = 4}
         }
@@ -1209,7 +1211,7 @@ battery_eq_recipe(battery_eq_3, battery_eq_2, battery_lithium_ion)
 if mods [bobequipment] then
     if data_item[alien_artifact] then
         battery_eq_recipe(battery_eq_4, battery_eq_3, processing_unit, alien_artifact_orange, alien_artifact_blue)
-        battery_eq_recipe(battery_eq_5, battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_purple)
+        battery_eq_recipe(battery_eq_5, battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_magenta)
         battery_eq_recipe(battery_eq_6, battery_eq_5, advanced_processing_unit, alien_artifact_red, alien_artifact_green)
     else
         battery_eq_recipe(battery_eq_4, battery_eq_3, processing_unit)
@@ -1560,10 +1562,10 @@ if mods [bobequipment] then
         energy_shield_eq_recipe(energy_shield_eq_3, processing_unit, alien_artifact, energy_shield_eq_2, productivity_module_2)
         energy_shield_eq_recipe(energy_shield_eq_4, advanced_processing_unit, nil, energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)
         if mods [bobmodules] then
-            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_purple)
+            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_magenta)
             energy_shield_eq_recipe(energy_shield_eq_6, advanced_processing_unit, nil, energy_shield_eq_5, productivity_module_5, alien_artifact_red, alien_artifact_green)
         else
-            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_3, alien_artifact_yellow, alien_artifact_purple)
+            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_3, alien_artifact_yellow, alien_artifact_magenta)
             energy_shield_eq_recipe(energy_shield_eq_6, advanced_processing_unit, nil, energy_shield_eq_5, productivity_module_3, alien_artifact_red, alien_artifact_green)
         end
     else

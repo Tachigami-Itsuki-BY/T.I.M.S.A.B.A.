@@ -470,6 +470,17 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
 
     -- FIXED PREREQUISITES
     local function tech_prerequisites(name, tech)
+        -- Если не передано имя или ID требования, вообще ничего не делаем
+        if not name or not tech then return end
+
+        -- Если такой технологии нет в базе игры, выходим
+        if not data_technology[name] then return end
+
+        -- Создаем таблицу требований, если её не было
+        if not data_technology[name].prerequisites then
+            data_technology[name].prerequisites = {}
+        end
+
         table.insert(data_technology[name].prerequisites, tech)
     end
     -- COPPER-TUNGSTEN PROCESSING
@@ -478,9 +489,7 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
     tech_prerequisites(heat_exchanger_4, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_advanced_material_processing_4, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_multi_purpose_furnace_2, tech_tungsten_alloy_processing)
-    if mods [bobvehicleequipment] then
-        tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_tungsten_alloy_processing)
-    end
+    tech_prerequisites(vehicle_plasma_cannon_eq_3, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_plasma_turret_3, tech_tungsten_alloy_processing)
     tech_prerequisites(tech_fluid_handling_4, tech_tungsten_alloy_processing)
     -- LITHIUM PROCESSING
@@ -490,13 +499,9 @@ if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
     tech_prerequisites(tech_logistics_3, tech_cobalt_processing)
     tech_prerequisites(tech_T3_inserter, tech_cobalt_processing)
     tech_prerequisites(tech_robots_1, tech_cobalt_processing)
-    if mods [bobequipment] then
-        tech_prerequisites(tech_exoskeleton_eq_2, tech_cobalt_processing)
-    end
+    tech_prerequisites(tech_exoskeleton_eq_2, tech_cobalt_processing)
     tech_prerequisites(tech_sniper_turret_2, tech_cobalt_processing)
     -- SPACE LOGISTICS
     --tech_prerequisites(vulcanus_transport_belt, tech_logistics_5)
-    if mods [loaders_modernized_integrations] then
-        tech_prerequisites(stack_inserter, vulcanus_transport_belt)
-    end
+    tech_prerequisites(stack_inserter, vulcanus_transport_belt)
 end

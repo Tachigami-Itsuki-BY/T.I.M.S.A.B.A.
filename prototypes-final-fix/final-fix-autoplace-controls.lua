@@ -19,7 +19,7 @@ data_autoplace_control[wolframite_ore_ac].order = b_a
 data_autoplace_control[calcite].order = b_b
 data_autoplace_control["sulfuric_acid_geyser"].order = b_c
 
---data_autoplace_control["gleba_stone"].order = b_d
+data_autoplace_control["gleba_stone"].order = b_d
 
 data_autoplace_control[scrap].order = b_e
 
@@ -60,4 +60,9 @@ if mods [hyarion_mods] then
     data_autoplace_control["hyarion_ruby"].order = c_k
     data_autoplace_control["hyarion_sapphire"].order = c_l
     data_autoplace_control["hyarion_emerald"].order = c_m
+end
+
+-- TELLUS
+if mods [tellus_mods] then
+    data_autoplace_control["tellus_stone"].order = c_n
 end

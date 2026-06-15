@@ -148,6 +148,11 @@ local jellynut_processing = "jellynut-processing"
 data_recipe[jellynut_processing].subgroup = is_jellynut
 data_recipe[jellynut_processing].icons = TWO_D_I(jellynut, nil, jelly, jellynut_seed)
 data_recipe[jellynut_processing].order = c_a
+data_recipe[jellynut_processing].results =
+{
+    {type = item, name = jelly, amount = 4},
+    {type = item, name = jellynut_seed, amount = 1, probability = 0.03125}
+}
 
 local artificial_jellynut_soil = "artificial-jellynut-soil"
 data_item[artificial_jellynut_soil].subgroup = is_jellynut
@@ -194,7 +199,11 @@ local yumako_processing = "yumako-processing"
 data_recipe[yumako_processing].subgroup = is_yumako
 data_recipe[yumako_processing].icons = TWO_D_I(yumako, nil, yumako_mash, yumako_seed)
 data_recipe[yumako_processing].order = c_a
-data_recipe[yumako_processing].results[2].amount = 4
+data_recipe[yumako_processing].results =
+{
+    {type = item, name = yumako_mash, amount = 4},
+    {type = item, name = yumako_seed, amount = 1, probability = 0.03125}
+}
 
 local artificial_yumako_soil = "artificial-yumako-soil"
 data_item[artificial_yumako_soil].subgroup = is_yumako
@@ -238,6 +247,7 @@ end
 data_capsule[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_capsule[bioflux].order = b
 data_capsule[bioflux].stack_size = 200
+data_capsule[bioflux].fuel_value = 3600 .. kJ
 data_recipe[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[bioflux].icons = THREE_I(jelly, yumako_mash, bioflux)
 data_recipe[bioflux].order = b
@@ -451,6 +461,7 @@ data_recipe[captive_biter_spawner].ingredients[3].amount = 16
 data_recipe[captive_biter_spawner].ingredients[4].amount = 120
 data_assembling[captive_biter_spawner].subgroup = is_gleba_building
 data_assembling[captive_biter_spawner].order = e
+data_assembling[captive_biter_spawner].energy_usage = 225 .. kW
 
 -- WAR
 local capture_robot_rocket = "capture-robot-rocket"

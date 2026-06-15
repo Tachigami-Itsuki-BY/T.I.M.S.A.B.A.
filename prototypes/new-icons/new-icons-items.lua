@@ -128,6 +128,34 @@ data_item[stiratite_bacteria].pictures =
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
 }
 
+-- TELLUS
+if mods [tellus_mods] then
+    data_item[magnesium_bacteria].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria.png"
+    data_item[magnesium_bacteria].pictures =
+    {
+        {
+            filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-1.png",
+            width = 64,
+            height = 64,
+            scale = 0.5
+        },
+        {
+            filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-2.png",
+            width = 64,
+            height = 64,
+            scale = 0.5
+        },
+        {
+            filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-3.png",
+            width = 64,
+            height = 64,
+            scale = 0.5
+        }
+    }
+    data_item[magnesium_dust].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-dust.png"
+    data_item[magnesium_sheet].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-sheet.png"
+end
+
 -- TERRAPALUS
 if mods [terrapalus_mods] then
     data_item[palusium_powder].icon = "__TIMSABA__/graphics/icons/terrapalus/palusium-powder.png"

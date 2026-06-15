@@ -9,11 +9,11 @@ data_recipe[rocket_silo].ingredients =
     {type = item, name = low_density_structure, amount = 64},
     {type = item, name = heat_shielding_tile, amount = 128},
     {type = item, name = advanced_processing_unit, amount = 64},
-    {type = item, name = molybdenum_rhenium_pipe, amount = 64},
+    {type = item, name = copper_tungsten_pipe, amount = 64},
     {type = item, name = reinforced_concrete, amount = 256},
-    {type = item, name = molybdenum_plate, amount = 256},
-    {type = item, name = rhenium_plate, amount = 128},
-    {type = item, name = molybdenum_rhenium_plate, amount = 512}
+    {type = item, name = tungsten_plate_bob, amount = 256},
+    {type = item, name = tungsten_carbide_plate_bob, amount = 128},
+    {type = item, name = copper_tungsten_plate_bob, amount = 512}
 }
 data_rocket_silo[rocket_silo].order = a
 data_rocket_silo[rocket_silo].energy_usage = (4800 - drain) .. kW
@@ -43,6 +43,21 @@ if mods [muluna_mods] then
         {type = item, name = advanced_processing_unit, amount = 1},
         {type = item, name = molybdenum_rhenium_pipe, amount = 16},
         {type = item, name = rocket_fuel, amount = 1}
+    }
+end
+
+if mods[tellus_mods] then
+    rocket_part_tellus = "planetaris-tellus-rocket-part"
+    data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
+    data_recipe[rocket_part_tellus].order = b_c
+    data_recipe[rocket_part_tellus].energy_required = 4
+    data_recipe[rocket_part_tellus].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 4},
+        {type = item, name = magnesium_sheet, amount = 8},
+        {type = item, name = pesticide, amount = 2},
+        {type = item, name = mycelia_composite, amount = 8},
+        {type = item, name = rocket_fuel, amount = 8}
     }
 end
 

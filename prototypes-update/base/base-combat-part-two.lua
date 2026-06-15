@@ -584,10 +584,10 @@ if mods [bobvehicleequipment] then
         vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_3, processing_unit, alien_artifact, vehicle_energy_shield_eq_2, productivity_module_2)
         vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_4, advanced_processing_unit, nil, vehicle_energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)
         if mods [bobmodules] then
-            vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_5, advanced_processing_unit, nil, vehicle_energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_purple)
+            vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_5, advanced_processing_unit, nil, vehicle_energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_magenta)
             vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_6, advanced_processing_unit, nil, vehicle_energy_shield_eq_5, productivity_module_5, alien_artifact_red, alien_artifact_green)
         else
-            vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_5, advanced_processing_unit, nil, vehicle_energy_shield_eq_4, productivity_module_3, alien_artifact_yellow, alien_artifact_purple)
+            vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_5, advanced_processing_unit, nil, vehicle_energy_shield_eq_4, productivity_module_3, alien_artifact_yellow, alien_artifact_magenta)
             vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_6, advanced_processing_unit, nil, vehicle_energy_shield_eq_5, productivity_module_3, alien_artifact_red, alien_artifact_green)
         end
     else
@@ -642,7 +642,7 @@ if mods [bobvehicleequipment] then
     vehicle_battery_eq_recipe(vehicle_battery_eq_3, vehicle_battery_eq_2, battery_lithium_ion)
     if data_item[alien_artifact] then
         vehicle_battery_eq_recipe(vehicle_battery_eq_4, vehicle_battery_eq_3, processing_unit, alien_artifact_orange, alien_artifact_blue)
-        vehicle_battery_eq_recipe(vehicle_battery_eq_5, vehicle_battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_purple)
+        vehicle_battery_eq_recipe(vehicle_battery_eq_5, vehicle_battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_magenta)
         vehicle_battery_eq_recipe(vehicle_battery_eq_6, vehicle_battery_eq_5, advanced_processing_unit, alien_artifact_red, alien_artifact_green)
     else
         vehicle_battery_eq_recipe(vehicle_battery_eq_4, vehicle_battery_eq_3, processing_unit)

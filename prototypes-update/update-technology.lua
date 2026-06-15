@@ -26,19 +26,70 @@ if data_technology[tech_robotics_1] then
     end
 end
 
-if data_technology[tech_robotics_2] then table.insert(data_technology[tech_robotics_2].prerequisites, tech_battery_2) end
+if data_technology[tech_robotics_2] then
+    table.insert(data_technology[tech_robotics_2].prerequisites, tech_battery_2)
+end
+
 if data_technology[tech_robotics_3] then
     table.insert(data_technology[tech_robotics_3].prerequisites, tech_battery_3)
-    table.insert(data_technology[tech_robotics_3].unit.ingredients, {production_science_pack, 1})
+
+    local already_has_pack = false
+    for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
+        if ingredient[1] == production_science_pack or ingredient.name == production_science_pack then
+            already_has_pack = true
+            break
+        end
+    end
+
+    if not already_has_pack then
+        table.insert(data_technology[tech_robotics_3].unit.ingredients, {production_science_pack, 1})
+    end
 end
-if data_technology[tech_robots_2] then table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1}) end
+
+if data_technology[tech_robots_2] then
+    -- Флаг, который покажет, нашли ли мы уже этот пакет
+    local already_has_pack = false
+
+    -- Проверяем все существующие ингредиенты
+    for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
+        -- Проверка работает для обоих форматов записи: {"name", count} и {name="name", amount=count}
+        if ingredient[1] == production_science_pack or ingredient.name == production_science_pack then
+            already_has_pack = true
+            break
+        end
+    end
+
+    -- Если пакета нет, добавляем его
+    if not already_has_pack then
+        table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1})
+    end
+end
+
 if data_technology[tech_robotics_4] then
     table.insert(data_technology[tech_robotics_4].prerequisites, tech_battery_4)
     if mods [bobtech] then
-        table.insert(data_technology[tech_robotics_4].unit.ingredients, {utility_science_pack, 1})
-        table.insert(data_technology[tech_robots_3].unit.ingredients, {utility_science_pack, 1})
+        -- Создаем список технологий, в которые нужно добавить пакет
+        local target_technologies = {tech_robotics_4, tech_robots_3}
+        for _, tech_name in ipairs(target_technologies) do
+            -- Проверяем, существует ли вообще такая технология в базе данных
+            if data_technology[tech_name] and data_technology[tech_name].unit and data_technology[tech_name].unit.ingredients then
+                local already_has_pack = false
+                -- Ищем, нет ли уже utility_science_pack в ингредиентах
+                for _, ingredient in ipairs(data_technology[tech_name].unit.ingredients) do
+                    if ingredient == utility_science_pack or ingredient.name == utility_science_pack then
+                        already_has_pack = true
+                        break
+                    end
+                end
+                -- Если пакета нет, добавляем его
+                if not already_has_pack then
+                    table.insert(data_technology[tech_name].unit.ingredients, {utility_science_pack, 1})
+                end
+            end
+        end
     end
 end
+
 if data_technology[tech_robo_modular_1] then
     data_technology[tech_robo_modular_1].effects =
     {
@@ -129,15 +180,6 @@ data_technology[tech_brass_processing].effects =
     {type = unlock_recipe, recipe = brass_pipe_to_ground}
 }
 
-data_technology[tech_titanium_processing].effects =
-{
-    {type = unlock_recipe, recipe = titanium_gear_wheel},
-    {type = unlock_recipe, recipe = titanium_bearing_ball},
-    {type = unlock_recipe, recipe = titanium_bearing},
-    {type = unlock_recipe, recipe = titanium_pipe},
-    {type = unlock_recipe, recipe = titanium_pipe_to_ground}
-}
-
 data_technology[tech_ceramics].prerequisites = {chemical_science_pack, lubricant}
 data_technology[tech_ceramics].effects =
 {
@@ -153,6 +195,15 @@ data_technology[tech_ceramics].unit.ingredients =
     {automation_science_pack, 1},
     {logistic_science_pack, 1},
     {chemical_science_pack, 1}
+}
+
+data_technology[tech_titanium_processing].effects =
+{
+    {type = unlock_recipe, recipe = titanium_gear_wheel},
+    {type = unlock_recipe, recipe = titanium_bearing_ball},
+    {type = unlock_recipe, recipe = titanium_bearing},
+    {type = unlock_recipe, recipe = titanium_pipe},
+    {type = unlock_recipe, recipe = titanium_pipe_to_ground}
 }
 
 data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
@@ -176,6 +227,15 @@ else
         {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
     }
 end
+
+data_technology[tech_nitinol_processing].effects =
+{
+    {type = unlock_recipe, recipe = nitinol_gear_wheel},
+    {type = unlock_recipe, recipe = nitinol_bearing_ball},
+    {type = unlock_recipe, recipe = nitinol_bearing},
+    {type = unlock_recipe, recipe = nitinol_pipe},
+    {type = unlock_recipe, recipe = nitinol_pipe_to_ground}
+}
 
 data_technology[tech_tungsten_alloy_processing].prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack}
 if mods [bobplates] >= "2.1.0" then

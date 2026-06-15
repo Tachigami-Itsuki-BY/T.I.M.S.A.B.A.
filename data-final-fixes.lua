@@ -15,6 +15,8 @@ for name in pairs(data.raw.recipe) do
     end
 end
 
+delete_duplicate_item_and_fluid = require("prototypes-final-fix.duplicate-items-and-fluids").delete_duplicate_item_and_fluid
+
 require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
 require("prototypes-final-fix.duplicate-items-and-fluids.angels")
@@ -24,14 +26,14 @@ require("prototypes-final-fix.duplicate-items-and-fluids.moshine")
 -- panglia
 require("prototypes-final-fix.duplicate-items-and-fluids.arig")
 require("prototypes-final-fix.duplicate-items-and-fluids.hyarion")
--- tellus
+require("prototypes-final-fix.duplicate-items-and-fluids.tellus")
 
 require("prototypes-final-fix.duplicate-items-and-fluids.castra")
 require("prototypes-final-fix.duplicate-items-and-fluids.corrundum")
---require("prototypes-final-fix.duplicate-items-and-fluids.cubium")
+-- cubium
 require("prototypes-final-fix.duplicate-items-and-fluids.frozeta")
 require("prototypes-final-fix.duplicate-items-and-fluids.maraxsis")
---require("prototypes-final-fix.duplicate-items-and-fluids.nexus")
+require("prototypes-final-fix.duplicate-items-and-fluids.nexus")
 require("prototypes-final-fix.duplicate-items-and-fluids.paracelsin")
 require("prototypes-final-fix.duplicate-items-and-fluids.shattered")
 require("prototypes-final-fix.duplicate-items-and-fluids.shchierbin")

@@ -1,86 +1,9 @@
 local tree_seed_angels = "angels-tree-seed"
-local replacements_1 =
+local replacements =
 {
 	[tree_seed_angels] = tree_seed
 }
-for _, recipe in pairs(data.raw.recipe or {}) do
-    for _, ingredient in pairs(recipe.ingredients or {}) do
-        local replace = replacements_1[ingredient.name]
-		if replace then
-            ingredient.name = replace
-        end
-    end
-
-	for _, result in pairs(recipe.results or {}) do
-		local replace = replacements_1[result.name]
-		if replace then
-			result.name = replace
-		end
-	end
-
-    if recipe.main_product then
-		local replace = replacements_1[recipe.main_product]
-		if replace then
-			recipe.main_product = replace
-		end
-    end
-end
-for _, tile in pairs(data.raw.tile or {}) do
-	if tile.fluid then
-		local replace = replacements_1[tile.fluid]
-		if replace then
-			tile.fluid = replace
-		end
-	end
-end
-for _, technology in pairs(data.raw.technology or {}) do
-	if technology.research_trigger then
-		local replace = replacements_1[technology.research_trigger.item]
-		if replace then
-			technology.research_trigger.item = replace
-		end
-	end
-	if technology.research_trigger then
-		local replace = replacements_1[technology.research_trigger.fluid]
-		if replace then
-			technology.research_trigger.fluid = replace
-		end
-	end
-end
-for _, resource in pairs(data.raw.resource or {}) do
-	if resource.minable.result then
-		local replace = replacements_1[resource.minable.result]
-		if replace then
-			resource.minable.result = replace
-		end
-	end
-	for _, results in pairs(resource.minable.results or {}) do
-		local replace = replacements_1[results.name]
-		if replace then
-			results.name = replace
-		end
-	end
-end
-for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	if entity.minable then
-		for _, results in pairs(entity.minable.results or {}) do
-			local replace = replacements_1[results.name]
-			if replace then
-				results.name = replace
-			end
-		end
-	end
-end
-for _, tree in pairs(data.raw.tree or {}) do
-	if tree.minable then
-		for _, results in pairs(tree.minable.results or {}) do
-			local replace = replacements_1[results.name]
-			if replace then
-				results.name = replace
-			end
-		end
-	end
-end
+delete_duplicate_item_and_fluid(replacements)
 
 local miscellaneous_items =
 {
@@ -323,6 +246,57 @@ local replacements_2 =
 	[cellulose_acetate_mixture] = cellulose_triacetate,
 	[cellulose_acetate] = cellulose_diacetate
 }
+-- Безопасная функция замены по индексу родительской таблицы
+local function replace_fluid_in_table(item_table)
+    if not item_table then return end
+
+    for i = 1, #item_table do
+        local item = item_table[i]
+
+        if type(item) == "table" then
+            local current_name = nil
+            local old_amount = 1
+            local is_dictionary = false
+
+            -- Четкое разделение форматов Factorio, чтобы имя никогда не стало таблицей
+            if item.name then
+                current_name = item.name
+                old_amount = item.amount or 1
+                is_dictionary = true
+            elseif type(item[1]) == "string" then
+                current_name = item[1]
+                old_amount = item[2] or 1
+                is_dictionary = false
+            end
+
+            -- Если имя успешно определено как строка, проверяем замену
+            if current_name and replacements_2[current_name] then
+                local target_replacement = replacements_2[current_name]
+                local new_amount = math.ceil(old_amount / 10)
+
+                if is_dictionary then
+                    -- Формат словаря: {name = "...", amount = ...}
+                    item.name = target_replacement
+                    item.type = "item"
+                    item.amount = new_amount
+                    item.temperature = nil
+                else
+                    -- Формат простого массива: {"...", ...}
+                    -- Полностью заменяем элемент на чистый массив строк/чисел без ссылок
+                    item_table[i] = {target_replacement, new_amount}
+                end
+            end
+        end
+    end
+end
+
+-- Шаг 1. Проходим по всем рецептам
+for _, recipe in pairs(data_recipe or data.raw["recipe"] or {}) do
+    replace_fluid_in_table(recipe.ingredients)
+    replace_fluid_in_table(recipe.results)
+end
+
+-- Шаг 2. Замена рецептов в эффектах технологий
 for _, technology in pairs(data_technology or {}) do
     for _, effect in pairs(technology.effects or {}) do
         if effect.type == unlock_recipe then
@@ -333,6 +307,8 @@ for _, technology in pairs(data_technology or {}) do
         end
     end
 end
+
+-- Шаг 3. Полное удаление старых жидкостей и рецептов
 for old_name, _ in pairs(replacements_2) do
     data_fluid[old_name] = nil
     data_recipe[old_name] = nil

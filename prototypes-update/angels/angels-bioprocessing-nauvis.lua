@@ -832,11 +832,11 @@ if data_item[alien_artifact] then
     data_recipe[alien_artifact_yellow].ingredients = {{type = item, name = alien_small_artifact_yellow, amount = 32}}
     data_recipe[alien_artifact_yellow].results[1].amount = 1
 
-    data_item[alien_artifact_purple].order = d
-    data_recipe[alien_artifact_purple].icons = TWO_I(alien_small_artifact_purple, alien_artifact_purple)
-    data_recipe[alien_artifact_purple].order = d
-    data_recipe[alien_artifact_purple].ingredients = {{type = item, name = alien_small_artifact_purple, amount = 32}}
-    data_recipe[alien_artifact_purple].results[1].amount = 1
+    data_item[alien_artifact_magenta].order = d
+    data_recipe[alien_artifact_magenta].icons = TWO_I(alien_small_artifact_purple, alien_artifact_magenta)
+    data_recipe[alien_artifact_magenta].order = d
+    data_recipe[alien_artifact_magenta].ingredients = {{type = item, name = alien_small_artifact_purple, amount = 32}}
+    data_recipe[alien_artifact_magenta].results[1].amount = 1
 
     data_item[alien_artifact_green].order = e
     data_recipe[alien_artifact_green].icons = TWO_I(alien_small_artifact_green, alien_artifact_green)
@@ -888,16 +888,16 @@ if data_item[alien_artifact] then
     }
     data_recipe[alien_artifact_yellow_from_small].results[1].amount = 4
 
-    local alien_artifact_purple_from_small = "bob-alien-artifact-purple-from-small"
-    data_recipe[alien_artifact_purple_from_small].subgroup = is_bio_processing_alien_large_recipe
-    data_recipe[alien_artifact_purple_from_small].icons = TWO_D_I(alien_artifact, alien_artifact_purple, alien_artifact_purple)
-    data_recipe[alien_artifact_purple_from_small].order = d
-    data_recipe[alien_artifact_purple_from_small].ingredients =
+    local alien_artifact_magenta_from_small = "bob-alien-artifact-purple-from-small"
+    data_recipe[alien_artifact_magenta_from_small].subgroup = is_bio_processing_alien_large_recipe
+    data_recipe[alien_artifact_magenta_from_small].icons = TWO_D_I(alien_artifact, alien_artifact_magenta, alien_artifact_magenta)
+    data_recipe[alien_artifact_magenta_from_small].order = d
+    data_recipe[alien_artifact_magenta_from_small].ingredients =
     {
         {type = item, name = alien_artifact, amount = 4},
-        {type = item, name = alien_artifact_purple, amount = 1}
+        {type = item, name = alien_artifact_magenta, amount = 1}
     }
-    data_recipe[alien_artifact_purple_from_small].results[1].amount = 4
+    data_recipe[alien_artifact_magenta_from_small].results[1].amount = 4
 
     local alien_artifact_green_from_small = "bob-alien-artifact-green-from-small"
     data_recipe[alien_artifact_green_from_small].subgroup = is_bio_processing_alien_large_recipe
@@ -945,7 +945,7 @@ if data_item[alien_artifact] then
     data_recipe[yellow_fluid].results[1].amount = 120
 
     data_fluid[purple_fluid].order = d
-    data_recipe[purple_fluid].icons = TWO_D_I(alien_artifact_purple, sulfuric_acid_angels, purple_fluid)
+    data_recipe[purple_fluid].icons = TWO_D_I(alien_artifact_magenta, sulfuric_acid_angels, purple_fluid)
     data_recipe[purple_fluid].order = d
     data_recipe[purple_fluid].ingredients[2].amount = 120
     data_recipe[purple_fluid].results[1].amount = 120

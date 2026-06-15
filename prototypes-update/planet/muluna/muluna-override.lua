@@ -1037,6 +1037,15 @@ if mods [muluna_mods] then
         data_recipe[telescope_observation_hyarion].results[1].amount = 30
     end
 
+    if mods [tellus_mods] then
+        local telescope_observation_tellus = "muluna-telescope-observation-tellus"
+        data_recipe[telescope_observation_tellus].subgroup = is_muluna_recipe_astronomical
+        data_recipe[telescope_observation_tellus].icons = BUILDING_R_I(astronomical_data_muluna, planet_tellus)
+        data_recipe[telescope_observation_tellus].order = a_i
+        data_recipe[telescope_observation_tellus].energy_required = 4
+        data_recipe[telescope_observation_tellus].results[1].amount = 30
+    end
+
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_muluna].icons = BUILDING_R_I(astronomical_data_muluna, planet_muluna)

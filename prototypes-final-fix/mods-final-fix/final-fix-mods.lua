@@ -153,46 +153,98 @@ data_technology[tech_rocket_part_productivity].effects =
     {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
 }
 table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
-table.insert(data_technology[tech_rocket_part_productivity .. "-2"].unit.ingredients, {utility_science_pack, 1})
-table.insert(data_technology[tech_rocket_part_productivity .. "-3"].unit.ingredients, {utility_science_pack, 1})
-table.insert(data_technology[tech_rocket_part_productivity .. "-4"].unit.ingredients, {utility_science_pack, 1})
 
 if mods [muluna_mods] then
     -- ROCKET PART
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
 
+    local tech_rocket_part_productivity_2 = "rocket-part-productivity-2"
+    table.insert(data_technology[tech_rocket_part_productivity_2].unit.ingredients, {utility_science_pack, 1})
+    data_technology[tech_rocket_part_productivity_2].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+    }
+
+    local tech_rocket_part_productivity_3 = "rocket-part-productivity-3"
+    table.insert(data_technology[tech_rocket_part_productivity_3].unit.ingredients, {utility_science_pack, 1})
+    data_technology[tech_rocket_part_productivity_3].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+    }
+
+    local tech_rocket_part_productivity_4 = "rocket-part-productivity-4"
+    table.insert(data_technology[tech_rocket_part_productivity_4].unit.ingredients, {utility_science_pack, 1})
+    data_technology[tech_rocket_part_productivity_4].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+    }
+
     tech_rocket_part_productivity_vulcanus = "rocket-part-productivity-vulcanus"
     data_technology[tech_rocket_part_productivity_vulcanus].effects =
     {
         {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
     }
     table.insert(data_technology[tech_rocket_part_productivity_vulcanus].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[tech_rocket_part_productivity_vulcanus .. "-2"].unit.ingredients, {utility_science_pack, 1})
+
+    local tech_rocket_part_productivity_vulcanus_2 = "rocket-part-productivity-vulcanus-2"
+    table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].unit.ingredients, {utility_science_pack, 1})
+    data_technology[tech_rocket_part_productivity_vulcanus].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+    }
 
     tech_rocket_part_productivity_gleba = "rocket-part-productivity-gleba"
     data_technology[tech_rocket_part_productivity_gleba].effects =
     {
         {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
     }
     table.insert(data_technology[tech_rocket_part_productivity_gleba].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[tech_rocket_part_productivity_gleba .. "-2"].unit.ingredients, {utility_science_pack, 1})
+
+    local tech_rocket_part_productivity_gleba_2 = "rocket-part-productivity-gleba-2"
+    data_technology[tech_rocket_part_productivity_gleba_2].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_gleba_2].unit.ingredients, {utility_science_pack, 1})
 
     tech_rocket_part_productivity_fulgora = "rocket-part-productivity-fulgora"
     data_technology[tech_rocket_part_productivity_fulgora].effects =
     {
         {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
     }
     table.insert(data_technology[tech_rocket_part_productivity_fulgora].unit.ingredients, {utility_science_pack, 1})
-    table.insert(data_technology[tech_rocket_part_productivity_fulgora .. "-2"].unit.ingredients, {utility_science_pack, 1})
+
+    local tech_rocket_part_productivity_fulgora_2 = "rocket-part-productivity-fulgora-2"
+    data_technology[tech_rocket_part_productivity_gleba_2].effects =
+    {
+        {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
+    }
+    table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].unit.ingredients, {utility_science_pack, 1})
 
     tech_rocket_part_productivity_aquilo = "rocket-part-productivity-aquilo"
     data_technology[tech_rocket_part_productivity_aquilo].effects =
     {
         {type = change_recipe_productivity, recipe = rocket_part, change = 0.1},
-        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1}
+        {type = change_recipe_productivity, recipe = rocket_part_tungsten, change = 0.1},
+        {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1}
     }
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {metallurgic_science_pack, 1})
@@ -210,16 +262,26 @@ if mods [muluna_mods] then
         }
 
         table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
     end
+
+    -- tellus
 end
 
 if not mods [muluna_mods] and mods [hyarion_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
 end
+
+-- tellus
 
 -- MODS
 if mods [muluna_mods] then
@@ -403,7 +465,7 @@ if mods [hyarion_mods] then
     {
         {type = item, name = small_lamp, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
-        {type = item, name = charged_fluorite_hyarion, amount = 1}
+        {type = item, name = charged_alexandrite_hyarion, amount = 1}
     }
     data_lamp[lamp_post].subgroup = is_hyarion_building
     data_lamp[lamp_post].order = h

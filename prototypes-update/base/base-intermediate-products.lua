@@ -1277,7 +1277,6 @@ local nuclear_cells =
 }
 for _, name in pairs(nuclear_cells) do
     data_item[name].stack_size = 50
-    data_item[name].weight = 20000
 end
 
 bobmods.lib.recipe.update_recycling_recipe

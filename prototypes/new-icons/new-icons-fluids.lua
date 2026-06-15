@@ -658,17 +658,6 @@ if mods [muluna_mods] then
     data_fluid[cooled_steam_mods].icon = "__TIMSABA__/graphics/icons/muluna/cooled-steam.png"
 end
 
-if mods [maraxsis_mods] or mods [muluna_mods] or mods [shchierbin_mods] then
-    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
-end
-
-if mods [maraxsis_mods] then
-    data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
-    data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
-    data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
-    data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
-end
-
 if mods [panglia_mods] then
     data_fluid[branbalite_slurry].icon = "__TIMSABA__/graphics/icons/panglia/panglia_branbalite_slurry.png"
 end
@@ -680,6 +669,24 @@ end
 
 if mods [hyarion_mods] then
     data_fluid[polishing_compound_hyarion].icon = "__TIMSABA__/graphics/icons/hyarion/polishing-compound.png"
+end
+
+if mods [tellus_mods] then
+    data_fluid[bacteriochlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/bacteriochlorophyll.png"
+    data_fluid[chlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/chlorophyll.png"
+    data_fluid[water_infected].icon = "__TIMSABA__/graphics/icons/tellus/infected-water.png"
+    data_fluid[seed_compound].icon = "__TIMSABA__/graphics/icons/tellus/seed-compound.png"
+end
+
+if mods [maraxsis_mods] or mods [muluna_mods] or mods [shchierbin_mods] then
+    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
+end
+
+if mods [maraxsis_mods] then
+    data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
+    data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
+    data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
+    data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
 end
 
 if mods [corrundum_mods] then
@@ -746,6 +753,7 @@ if mods [shattered_mods] then
     data_fluid[californium_251_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_251.png"
     data_fluid[californium_252_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_252.png"
 end
+
 --[[
 data_fluid[].base_color = TIMSABA.functions.fluid_color("")
 data_fluid[].flow_color = TIMSABA.functions.flow_color("")

@@ -28,12 +28,15 @@ if mods ["Rocket-Silo-Construction"] then
     data_recipe[excavation_site].energy_required = 128
     data_recipe[excavation_site].ingredients =
     {
-        {type = item, name = electric_engine_unit, amount = 64},
+        {type = item, name = electric_engine_unit, amount = 128},
+        {type = item, name = low_density_structure, amount = 64},
+        {type = item, name = heat_shielding_tile, amount = 128},
         {type = item, name = advanced_processing_unit, amount = 64},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 32},
-        {type = item, name = molybdenum_plate, amount = 256},
-        {type = item, name = rhenium_plate, amount = 256},
-        {type = item, name = reinforced_titanium_concrete_brick, amount = 256}
+        {type = item, name = copper_tungsten_pipe, amount = 64},
+        {type = item, name = reinforced_concrete, amount = 256},
+        {type = item, name = tungsten_plate_bob, amount = 256},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 128},
+        {type = item, name = copper_tungsten_plate_bob, amount = 512}
     }
 
     local recipe_name = "recipe-name."
@@ -73,7 +76,7 @@ if mods ["Rocket-Silo-Construction"] then
     data_recipe[construction_stage2].ingredients =
     {
         {type = item, name = titanium_rod, amount = 32},
-        {type = item, name = molybdenum_rhenium_plate, amount = 16},
+        {type = item, name = copper_tungsten_plate_bob, amount = 16},
         {type = item, name = reinforced_concrete, amount = 64},
         {type = item, name = reinforced_titanium_concrete_brick, amount = 16},
         {type = fluid, name = concrete_liquid, amount = 480}
@@ -99,9 +102,9 @@ if mods ["Rocket-Silo-Construction"] then
     data_recipe[construction_stage4].ingredients =
     {
         {type = item, name = titanium_rod, amount = 32},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 16},
-        {type = item, name = molybdenum_rhenium_pipe_to_ground, amount = 4},
-        {type = item, name = molybdenum_rhenium_plate, amount = 16},
+        {type = item, name = copper_tungsten_pipe, amount = 16},
+        {type = item, name = copper_tungsten_pipe_to_ground, amount = 4},
+        {type = item, name = copper_tungsten_plate_bob, amount = 16},
         {type = item, name = reinforced_concrete, amount = 64},
         {type = item, name = reinforced_titanium_concrete_brick, amount = 16}
     }
@@ -114,7 +117,7 @@ if mods ["Rocket-Silo-Construction"] then
     data_recipe[construction_stage5].ingredients =
     {
         {type = item, name = advanced_processing_unit, amount = 16},
-        {type = item, name = molybdenum_rhenium_plate, amount = 16},
+        {type = item, name = copper_tungsten_plate_bob, amount = 16},
         {type = item, name = reinforced_titanium_concrete_brick, amount = 16},
         {type = item, name = heat_shielding_tile, amount = 32},
         {type = item, name = platinum_cable, amount = 256}
