@@ -61,6 +61,15 @@ if mods [hyarion_mods] then
     table.insert(recycling_items, polished_bismuth)
 end
 
+if mods [tellus_mods] then
+    table.insert(recycling_items, blue_dye)
+    table.insert(recycling_items, yellow_dye)
+    table.insert(recycling_items, magenta_dye)
+    table.insert(recycling_items, green_dye)
+    table.insert(recycling_items, red_dye)
+    table.insert(recycling_items, cyan_dye)
+end
+
 for _, name in ipairs(recycling_items) do
     data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, probability = 0.25}}
     data_recipe[name .. _recycling].main_product = ""

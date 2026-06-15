@@ -8,8 +8,7 @@ local circuit_networks_1 =
 }
 for _, name in pairs(circuit_networks_1) do
     data_item[name].subgroup = is_circuit_networks
-    data_item[name].stack_size = 64
-    data_item[name].weight = 15625
+    data_item[name].stack_size = 50
     data_recipe[name].subgroup = is_circuit_networks
     if name == small_lamp then
         data_lamp[name].energy_usage_per_tick = (drain / 4) .. kW
@@ -310,11 +309,6 @@ tank_recipe(tank_1, brass_gear_wheel,    brass_bearing,    advanced_circuit,    
 tank_recipe(tank_2, titanium_gear_wheel, titanium_bearing, processing_unit,          tank_1, titanium_plate_bob)
 tank_recipe(tank_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
 
-local logistic_robot_1 = "logistic-robot"
-local logistic_robot_2 = "bob-logistic-robot-2"
-local logistic_robot_3 = "bob-logistic-robot-3"
-local logistic_robot_4 = "bob-logistic-robot-4"
-local logistic_robot_5 = "bob-logistic-robot-5"
 local logistic_robots =
 {
     {name = logistic_robot_1, MPS = 1, max_energy = 900,  EPT = 25},
@@ -325,8 +319,7 @@ local logistic_robots =
 }
 for _, DRONE in pairs(logistic_robots) do
     if data_item[DRONE.name] then
-        data_item[DRONE.name].stack_size = 64
-        data_item[DRONE.name].weight = 15625
+        data_item[DRONE.name].stack_size = 50
         data_logistic_robot[DRONE.name].max_payload_size = DRONE.MPS * 2
         data_logistic_robot[DRONE.name].speed = (DRONE.MPS * 2) / 60
         data_logistic_robot[DRONE.name].max_energy = DRONE.max_energy .. kJ
@@ -349,8 +342,7 @@ local construction_robots =
 }
 for _, DRONE in pairs(construction_robots) do
     if data_item[DRONE.name] then
-        data_item[DRONE.name].stack_size = 64
-        data_item[DRONE.name].weight = 15625
+        data_item[DRONE.name].stack_size = 50
         data_construction_robot[DRONE.name].max_payload_size = DRONE.MPS
         data_construction_robot[DRONE.name].speed = (DRONE.MPS * 2) / 60
         data_construction_robot[DRONE.name].max_energy = DRONE.max_energy .. kJ
@@ -563,9 +555,6 @@ local function rp_antenna_recipe(name, circuit, cable, plate)
         return
     end
 
-    data_item[name].subgroup = is_rp_antena
-    data_recipe[name].subgroup = is_rp_antena
-    data_recipe[name].energy_required = 8
     data_recipe[name].ingredients =
     {
         {type = item, name = circuit, amount = 4},
@@ -583,9 +572,6 @@ local function rp_door_recipe(name, gear_wheel, bearing, plate)
         return
     end
 
-    data_item[name].subgroup = is_rp_door
-    data_recipe[name].subgroup = is_rp_door
-    data_recipe[name].energy_required = 8
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 16},
@@ -596,19 +582,16 @@ local function rp_door_recipe(name, gear_wheel, bearing, plate)
     end
     data_recipe[name].ingredients = ingredients
 end
-rp_door_recipe(roboport_door_1, iron_gear_wheel,     nil,              iron_plate)
-rp_door_recipe(roboport_door_2, steel_gear_wheel,    steel_bearing,    steel_plate)
-rp_door_recipe(roboport_door_3, titanium_gear_wheel, titanium_bearing, titanium_plate_bob)
-rp_door_recipe(roboport_door_4, nitinol_gear_wheel,  nitinol_bearing,  nitinol_plate_bob)
+rp_door_recipe(roboport_door_1, steel_gear_wheel,        steel_bearing,           steel_plate)
+rp_door_recipe(roboport_door_2, cobalt_steel_gear_wheel, cobalt_steel_bearing,    cobalt_steel_plate_bob)
+rp_door_recipe(roboport_door_3, titanium_gear_wheel,     titanium_bearing,        titanium_plate_bob)
+rp_door_recipe(roboport_door_4, nitinol_gear_wheel,      nitinol_bearing,         nitinol_plate_bob)
 
 local function rp_chargepad_recipe(name, battery, circuit, plate)
     if not name or not battery or not circuit or not plate then
         return
     end
 
-    data_item[name].subgroup = is_rp_chargepad
-    data_recipe[name].subgroup = is_rp_chargepad
-    data_recipe[name].energy_required = 8
     data_recipe[name].ingredients =
     {
         {type = item, name = battery, amount = 2},
@@ -631,6 +614,7 @@ local flying_robot_frames =
 for _, name in pairs(flying_robot_frames) do
     if data_item[name] then
         data_item[name].subgroup = is_flying_robot_frames
+        data_item[name].stack_size = 200
         data_recipe[name].subgroup = is_flying_robot_frames
         data_recipe[name].energy_required = 16
     end
@@ -657,9 +641,6 @@ local function robot_brain_recipe(name, circuit_1, circuit_2)
         return
     end
 
-    data_item[name].subgroup = is_robot_brain
-    data_recipe[name].subgroup = is_robot_brain
-    data_recipe[name].energy_required = 8
     if mods [bobmodules] then
         data_recipe[name].ingredients =
         {
@@ -696,7 +677,6 @@ local function robot_tool_recipe(name, gear_wheel, bearing, cable, plate)
         return
     end
 
-    data_recipe[name].energy_required = 4
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 2},
@@ -714,68 +694,41 @@ robot_tool_recipe(robot_tool_l_2, cobalt_steel_gear_wheel, cobalt_steel_bearing,
 robot_tool_recipe(robot_tool_l_3, titanium_gear_wheel,     titanium_bearing,     insulated_cable, titanium_plate_bob)
 robot_tool_recipe(robot_tool_l_4, nitinol_gear_wheel,      nitinol_bearing,      gold_cable,      nitinol_plate_bob)
 
-local robot_tool_c_groups =
-{
-    robot_tool_c_1,
-    robot_tool_c_2,
-    robot_tool_c_3,
-    robot_tool_c_4,
-}
-for _, name in pairs(robot_tool_c_groups) do
-    if data_item[name] then
-        data_item[name].subgroup = is_robot_tool_c
-        data_recipe[name].subgroup = is_robot_tool_c
-    end
-end
-
-local robot_tool_l_groups =
-{
-    robot_tool_l_1,
-    robot_tool_l_2,
-    robot_tool_l_3,
-    robot_tool_l_4,
-}
-for _, name in pairs(robot_tool_l_groups) do
-    if data_item[name] then
-        data_item[name].subgroup = is_robot_tool_l
-        data_recipe[name].subgroup = is_robot_tool_l
-    end
-end
-
 local roboport_materials =
 {
-    roboport_antenna_1,
-    roboport_antenna_2,
-    roboport_antenna_3,
-    roboport_antenna_4,
-    roboport_door_1,
-    roboport_door_2,
-    roboport_door_3,
-    roboport_door_4,
-    roboport_chargepad_1,
-    roboport_chargepad_2,
-    roboport_chargepad_3,
-    roboport_chargepad_4,
-    flying_robot_frame_1,
-    flying_robot_frame_2,
-    flying_robot_frame_3,
-    flying_robot_frame_4,
-    robot_brain_1,
-    robot_brain_2,
-    robot_brain_3,
-    robot_brain_4,
-    robot_tool_c_1,
-    robot_tool_c_2,
-    robot_tool_c_3,
-    robot_tool_c_4,
-    robot_tool_l_1,
-    robot_tool_l_2,
-    robot_tool_l_3,
-    robot_tool_l_4,
+    {name = roboport_antenna_1,   subgroup = is_rp_antena,    order = a, energy_required = 8},
+    {name = roboport_antenna_2,   subgroup = is_rp_antena,    order = b, energy_required = 8},
+    {name = roboport_antenna_3,   subgroup = is_rp_antena,    order = c, energy_required = 8},
+    {name = roboport_antenna_4,   subgroup = is_rp_antena,    order = d, energy_required = 8},
+    {name = roboport_door_1,      subgroup = is_rp_door,      order = a, energy_required = 8},
+    {name = roboport_door_2,      subgroup = is_rp_door,      order = b, energy_required = 8},
+    {name = roboport_door_3,      subgroup = is_rp_door,      order = c, energy_required = 8},
+    {name = roboport_door_4,      subgroup = is_rp_door,      order = d, energy_required = 8},
+    {name = roboport_chargepad_1, subgroup = is_rp_chargepad, order = a, energy_required = 8},
+    {name = roboport_chargepad_2, subgroup = is_rp_chargepad, order = b, energy_required = 8},
+    {name = roboport_chargepad_3, subgroup = is_rp_chargepad, order = c, energy_required = 8},
+    {name = roboport_chargepad_4, subgroup = is_rp_chargepad, order = d, energy_required = 8},
+    {name = robot_brain_1,        subgroup = is_robot_brain,  order = a, energy_required = 8},
+    {name = robot_brain_2,        subgroup = is_robot_brain,  order = b, energy_required = 8},
+    {name = robot_brain_3,        subgroup = is_robot_brain,  order = c, energy_required = 8},
+    {name = robot_brain_4,        subgroup = is_robot_brain,  order = d, energy_required = 8},
+    {name = robot_tool_c_1,       subgroup = is_robot_tool_c, order = a, energy_required = 4},
+    {name = robot_tool_c_2,       subgroup = is_robot_tool_c, order = b, energy_required = 4},
+    {name = robot_tool_c_3,       subgroup = is_robot_tool_c, order = c, energy_required = 4},
+    {name = robot_tool_c_4,       subgroup = is_robot_tool_c, order = d, energy_required = 4},
+    {name = robot_tool_l_1,       subgroup = is_robot_tool_l, order = a, energy_required = 4},
+    {name = robot_tool_l_2,       subgroup = is_robot_tool_l, order = b, energy_required = 4},
+    {name = robot_tool_l_3,       subgroup = is_robot_tool_l, order = c, energy_required = 4},
+    {name = robot_tool_l_4,       subgroup = is_robot_tool_l, order = d, energy_required = 4}
 }
-for _, name in pairs(roboport_materials) do
-    if data_item[name] then
-        data_item[name].stack_size = 200
+for _, materials in pairs(roboport_materials) do
+    if data_item[materials.name] then
+        data_item[materials.name].subgroup = materials.subgroup
+        data_item[materials.name].order = materials.order
+        data_item[materials.name].stack_size = 200
+        data_recipe[materials.name].subgroup = materials.subgroup
+        data_recipe[materials.name].order = materials.order
+        data_recipe[materials.name].energy_required = materials.energy_required
     end
 end
 

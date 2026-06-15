@@ -266,7 +266,7 @@ simulations.factoriopedia_molybdenum_rhenium_pipe_to_ground =
     ]]
 }
 
--- FOR 2.1.0 BA
+-- BOB'S 2.1.0
 simulations.factoriopedia_T4_underground_belt_2_1_0 =
 {
     init =
@@ -307,7 +307,7 @@ simulations.factoriopedia_nitinol_pipe_to_ground_2_1_0 =
     ]]
 }
 
--- MODS
+-- ARIG
 simulations.hyper_underground_belt_arig =
 {
     init =
@@ -317,6 +317,112 @@ simulations.hyper_underground_belt_arig =
         game.surfaces[1].create_entities_from_blueprint_string
         {
             string = "0eNqlkMsKg0AMRf8l61GsjEX9lVKKj2ADmhnmUSrivzfqoosuWuhqyE3mnJAF2jGidcQB6gWoM+yhvizgaeBm3DJuJoQa7NgwhsaRT+6zRZdE7tENzsibtDgGWBWQZE+oT+tVAXKgQHjg9mK+cZxadDKgfscqsMYLyfC2jdBznRYKZqGkhTh7ctgdba0gCESwxDZuG32Y87/M1XeziWFXywUo4CTJ+8IKHuj8/qE455WuqqLUWZ7pcl1fL9GFvw==",
+            position = {0, 0}
+        }
+    ]]
+}
+
+-- TELLUS
+simulations.factoriopedia_orange_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqVkN0KgzAMhd8l13W4Uof2VcYY/gQJaFraOibSd1+rF7sYG+wqJOfkOyQbdNOC1hEH0BtQb9iDvm7gaeR2yjNuZwQNxrU8YmHJYhFMMTqz8ABRAPGAT9DneBOAHCgQHoi9We+8zB26ZBC/UQKs8WnbcE7NxFMlYN1rihnIYX+oZxnFB17+i6+/4VW+hALOifX+joAHOr8bqotsVNNUtSplqeoYXw79bAw=",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_blue_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkMEKgzAMht8l5zqc1KF9lTFG1SABTUtbx0T67mv1sMMYjJ1Ckj/fn2SDblrQOuIAagPqDXtQ1w08jaynXGM9Iyiwk2YM2pEv8khhyWIRTDE6s/AAUQDxgE9Q53gTgBwoEB6sPVnvvMwduiQQPzIFWOMTxnDeI6NPtYB1j8lvIIf90T1XUXz4VH/7NN98ZL6NAs4J+n6cgAc6vwvqS9XKtq0bWValbGJ8AYUwdrA=",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_yellow_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqlkNsKgzAMQP8lz3VsRYf2V8YYVYMEalrauk2k/z47Hwa7PO0xt3OSLNCaCZ0njqAWoM5yAHVaINDA2uQc6xFBgTOaMWpPocgjhSOHRbTF4O3EPSQBxD3eQR3SWQBypEi4sZ7BfOFpbNGvDeILc0Zj7O2dKsDZsIIs500yfFcJmEHJXbUae/LYbdWDTOLDJP8w1b9MZb6PIo4r9vU8AVf04dlQHWVTNk1Vl3u5L+uUHspmeJo=",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_magenta_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqlkMEKgzAMht8l5zqc1KG+yhijapCATUtbx0T67mv1sMMYDHYKSX++L+kG/bygdcQBug1oMOyhu27gaWI15xkrjdCBnRVjUI58odWEHFRhyWIRTDE5s/AIUQDxiE/ozvEmIEUoEB64vVnvvOgeXQqI37ECrPGJZDhvk+mnWsC616QcyeFwvJ6rKD5U1T+q5ptK5gspoE7c9w8KeKDze6C+VK1s27qRZVXKJsYXUS96Tw==",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_green_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkMEKgzAMht8l5yoqdWhfZYxRNUhA09LWMZG++6oedhiDsWOSn+9LskE3LWgdcQC1AfWGPajrBp5G1tPeYz0jKLCTZgzakc9Gh8iZJYtZMKkyCw8QBRAP+ARVxpsA5ECB8IQdxXrnZe7QpYD4FSrAGp84hvdNdnZeC1hBybxOwoEc9ue0rKL4EFX/i5pvIrlfRwHnRH3/TsADnT8C9aVqZdvWjSyqQjYxvgAiuHfx",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_red_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkMEKgzAMht8l5yoqdmhfZYyhNkhA09LWMZG++6wedhiDsWOSn+9LskE/LWgdcQC1AQ2GPajrBp5G7qbU425GUGCnjjF0jnzmUGeWLGbBZKMzC2uIAog1PkGV8SYAOVAgPFFHsd55mXt0e0D8hhRgjd8phtMWiZxLASsomctdp8nhcE7LKooPTfWvpvmmqdNlFHDeme+vCXig80dAXqq2blvZ1EVV1E2ML+iLdXE=",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_cyan_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkMEKgzAMht8l5ypOrGhfZYxRNUhA09LWMZG++6wedhiDsWOSn+9LskE3LWgdcQC1AfWGPajrBp5G1lPqsZ4RFNhJMwbtyGf9qjmzZDELJhudWXiAKIB4wCeoS7wJQA4UCE/WUax3XuYO3R4QPzIFWON3jOG0R0LnUsAKqs7l7hvIYX9OL2UUH57yb0/zzVOl2yjgvEPfjxPwQOePgKzLtmpb2VRFWVRNjC+RMnbD",
+            position = {0, 0}
+        }
+    ]]
+}
+simulations.factoriopedia_black_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqVkN0KgzAMRt8l11XU6dC+yhjDnyBhmpa2jon03dcquxob7DLJyflINuimBbUhdiA3oF6xBXnZwNLI7RR73M4IMnBtf080aUycSkajFh7ACyAe8Aky91cByI4c4WHYi/XGy9yhCYD4aRKglQ3LimNmFKaVgBXkKa1CykAG+2OaF1582Is/7fU3exnvIIfzrnq/RsADjd2B6lw0ZdNUdZkVWVl7/wJmi2qT",
             position = {0, 0}
         }
     ]]

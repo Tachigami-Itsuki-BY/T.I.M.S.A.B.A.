@@ -28,15 +28,15 @@ if mods [hyarion_mods] then
 		carbon_nanotube_hyarion,
 		beryllium_wall
 	}
-	for _, ITEM in ipairs(hyarion_items) do
-		data_item[ITEM] = nil
-		data_recipe[ITEM .. _recycling] = nil
+	for _, name in ipairs(hyarion_items) do
+		data_item[name] = nil
+		data_recipe[name .. _recycling] = nil
 		if mods [panglia_mods] then
-			data_recipe[item_ .. ITEM .. _panglia_crushing] = nil
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
 		end
-		if ITEM == beryllium_wall then
-			data_recipe[ITEM] = nil
-			data_wall[ITEM] = nil
+		if name == beryllium_wall then
+			data_recipe[name] = nil
+			data_wall[name] = nil
 		end
 	end
 

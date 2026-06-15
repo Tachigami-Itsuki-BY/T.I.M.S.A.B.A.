@@ -70,12 +70,10 @@ if data_technology[tech_robotics_4] then
     if mods [bobtech] then
         -- Создаем список технологий, в которые нужно добавить пакет
         local target_technologies = {tech_robotics_4, tech_robots_3}
-
         for _, tech_name in ipairs(target_technologies) do
             -- Проверяем, существует ли вообще такая технология в базе данных
             if data_technology[tech_name] and data_technology[tech_name].unit and data_technology[tech_name].unit.ingredients then
                 local already_has_pack = false
-
                 -- Ищем, нет ли уже utility_science_pack в ингредиентах
                 for _, ingredient in ipairs(data_technology[tech_name].unit.ingredients) do
                     if ingredient == utility_science_pack or ingredient.name == utility_science_pack then
@@ -83,7 +81,6 @@ if data_technology[tech_robotics_4] then
                         break
                     end
                 end
-
                 -- Если пакета нет, добавляем его
                 if not already_has_pack then
                     table.insert(data_technology[tech_name].unit.ingredients, {utility_science_pack, 1})
@@ -183,15 +180,6 @@ data_technology[tech_brass_processing].effects =
     {type = unlock_recipe, recipe = brass_pipe_to_ground}
 }
 
-data_technology[tech_titanium_processing].effects =
-{
-    {type = unlock_recipe, recipe = titanium_gear_wheel},
-    {type = unlock_recipe, recipe = titanium_bearing_ball},
-    {type = unlock_recipe, recipe = titanium_bearing},
-    {type = unlock_recipe, recipe = titanium_pipe},
-    {type = unlock_recipe, recipe = titanium_pipe_to_ground}
-}
-
 data_technology[tech_ceramics].prerequisites = {chemical_science_pack, lubricant}
 data_technology[tech_ceramics].effects =
 {
@@ -207,6 +195,15 @@ data_technology[tech_ceramics].unit.ingredients =
     {automation_science_pack, 1},
     {logistic_science_pack, 1},
     {chemical_science_pack, 1}
+}
+
+data_technology[tech_titanium_processing].effects =
+{
+    {type = unlock_recipe, recipe = titanium_gear_wheel},
+    {type = unlock_recipe, recipe = titanium_bearing_ball},
+    {type = unlock_recipe, recipe = titanium_bearing},
+    {type = unlock_recipe, recipe = titanium_pipe},
+    {type = unlock_recipe, recipe = titanium_pipe_to_ground}
 }
 
 data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
@@ -230,6 +227,15 @@ else
         {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
     }
 end
+
+data_technology[tech_nitinol_processing].effects =
+{
+    {type = unlock_recipe, recipe = nitinol_gear_wheel},
+    {type = unlock_recipe, recipe = nitinol_bearing_ball},
+    {type = unlock_recipe, recipe = nitinol_bearing},
+    {type = unlock_recipe, recipe = nitinol_pipe},
+    {type = unlock_recipe, recipe = nitinol_pipe_to_ground}
+}
 
 data_technology[tech_tungsten_alloy_processing].prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack}
 if mods [bobplates] >= "2.1.0" then

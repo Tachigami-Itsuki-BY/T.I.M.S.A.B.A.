@@ -12,6 +12,24 @@ Date: 19.06.2026
 
     - [All] Fixed various compatibility and mod settings technical bugs.
 
+  Balancing:
+    - [All] В рецепте Ракетной Шахты произведена замена ингредиентов:
+        1. Молибден-Рений → Медно-Вольфрам.
+        2. Молибден → Вольфрам.
+        3. Рений → Карбид Вольфрама.
+    - [All] Скорректирован лут у некоторых сущностей.
+
+    - [All] Replaced ingredients in the Rocket Silo recipe:
+        1. Molybdenum-Rhenium → Copper-Tungsten.
+        2. Molybdenum → Tungsten.
+        3. Rhenium → Tungsten Carbide.
+    - [All] Adjusted loot for some entities.
+
+  Locale:
+    - [All] Небольшие правки в локализации.
+
+    - [All] Minor adjustments to localization.
+
   Modding:
     - [Mods] Мод «Planetaris: Tellus» переведён в опциональную зависимость.
     - [Mods] Мод «Bob's Character classes» добавлен в опциональную зависимость.

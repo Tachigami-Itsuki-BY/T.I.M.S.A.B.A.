@@ -360,7 +360,7 @@ transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, 
 
 if data_recipe[T0_transport_belt] then
     data_recipe[T0_transport_belt].ingredients[1].amount = 2
-    bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt})
+    --bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt})
 end
 
 local function underground_belt_recipe(name, gear_wheel, plate, underground_belt, bearing)
@@ -390,7 +390,7 @@ underground_belt_recipe(T5_underground_belt, nitinol_gear_wheel, nitinol_plate_b
 data_underground_belt[T5_underground_belt].factoriopedia_simulation = simulations.factoriopedia_T5_underground_belt
 if data_recipe[T0_underground_belt] then
     data_recipe[T0_underground_belt].ingredients[1].amount = 8
-    bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt})
+    --bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt})
 end
 
 local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
@@ -421,7 +421,7 @@ splitter_recipe(T5_splitter, nitinol_gear_wheel, advanced_processing_unit, nitin
 if data_recipe[T0_splitter] then
     data_recipe[T0_splitter].ingredients[1].amount = 4
     data_recipe[T0_splitter].ingredients[2].amount = 4
-    bobmods.lib.recipe.update_recycling_recipe({T0_splitter})
+    --bobmods.lib.recipe.update_recycling_recipe({T0_splitter})
 end
 
 local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
@@ -637,7 +637,7 @@ if data_recipe[big_electric_pole_2] then
     big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
     big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
     big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
-    bobmods.lib.recipe.update_recycling_recipe({big_electric_pole_2, big_electric_pole_3, big_electric_pole_4})
+    --bobmods.lib.recipe.update_recycling_recipe({big_electric_pole_2, big_electric_pole_3, big_electric_pole_4})
 end
 
 local substations =
@@ -686,7 +686,7 @@ if data_recipe[substation_2] then
     substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
     substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
     substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
-    bobmods.lib.recipe.update_recycling_recipe({substation_2, substation_3, substation_4})
+    --bobmods.lib.recipe.update_recycling_recipe({substation_2, substation_3, substation_4})
 end
 
 local pipes =
@@ -712,11 +712,15 @@ for _, pipe in pairs(pipes) do
 end
 data_recipe[stone_pipe].category = smelting_filtering
 data_recipe[stone_pipe].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe].additional_categories = {angels_sintering_1, metallurgy} end
+if settings.startup[setting_early_sintering_oven].value then
+    data_recipe[stone_pipe].additional_categories = {angels_sintering_1, metallurgy}
+end
 data_recipe[plastic_pipe].category = crafting_fluid
 data_recipe[plastic_pipe].ingredients = {{type = fluid, name = liquid_plastic_angels, amount = 15}}
 data_recipe[plastic_pipe].auto_recycle = false
-if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_pipe].category = angels_sintering_2 end
+if settings.startup[setting_early_sintering_oven].value then
+    data_recipe[ceramic_pipe].category = angels_sintering_2
+end
 data_recipe[tungsten_pipe].category = angels_sintering_4
 data_recipe[tungsten_pipe].ingredients[1].name = tungsten_powder
 data_recipe[copper_tungsten_pipe].category = angels_sintering_4
@@ -767,12 +771,16 @@ pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,     
 pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_powder, 40)
 data_recipe[stone_pipe_to_ground].category = smelting_filtering
 data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy} end
+if settings.startup[setting_early_sintering_oven].value then
+    data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy}
+end
 data_recipe[plastic_pipe_to_ground].category = crafting_fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
 data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
-if settings.startup[setting_early_sintering_oven].value then data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2 end
+if settings.startup[setting_early_sintering_oven].value then
+    data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
+end
 data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4
 data_recipe[copper_tungsten_pipe_to_ground].category = angels_sintering_4
 
@@ -798,19 +806,19 @@ bobmods.lib.recipe.update_recycling_recipe
     warehouse_passive_provider,
     warehouse_requester,
     warehouse_storage,
-    --T0_transport_belt,
+    T0_transport_belt,
     T1_transport_belt,
     T2_transport_belt,
     T3_transport_belt,
     T4_transport_belt,
     T5_transport_belt,
-    --T0_underground_belt,
+    T0_underground_belt,
     T1_underground_belt,
     T2_underground_belt,
     T3_underground_belt,
     T4_underground_belt,
     T5_underground_belt,
-    --T0_splitter,
+    T0_splitter,
     T1_splitter,
     T2_splitter,
     T3_splitter,
@@ -829,13 +837,13 @@ bobmods.lib.recipe.update_recycling_recipe
     small_electric_pole,
     medium_electric_pole_1,
     big_electric_pole_1,
-    --big_electric_pole_2,
-    --big_electric_pole_3,
-    --big_electric_pole_4,
+    big_electric_pole_2,
+    big_electric_pole_3,
+    big_electric_pole_4,
     substation_1,
-    --substation_2,
-    --substation_3,
-    --substation_4,
+    substation_2,
+    substation_3,
+    substation_4,
     iron_pipe_to_ground,
     copper_pipe_to_ground,
     stone_pipe_to_ground,

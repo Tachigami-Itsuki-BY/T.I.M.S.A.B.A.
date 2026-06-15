@@ -1,19 +1,46 @@
 if mods [arig_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
-    -- RECIPE
+    -- CACTUS
     local cactus_seeds = "planetaris-cactus-seeds"
-    data_item[cactus_seeds].subgroup = is_arig_recipe
+    data_item[cactus_seeds].subgroup = is_cactus
     data_item[cactus_seeds].order = a
     data_item[cactus_seeds].stack_size = 200
 
-    data_capsule[cactus_arig].subgroup = is_arig_recipe
+    data_capsule[cactus_arig].subgroup = is_cactus
     data_capsule[cactus_arig].order = b
     data_capsule[cactus_arig].stack_size = 200
 
+    if mods [tellus_mods] then
+        local cactus_mash = "planetaris-cactus-mash"
+        data_item[cactus_mash].subgroup = is_cactus
+        data_item[cactus_mash].order = c
+        data_item[cactus_mash].stack_size = 200
+        data_item[cactus_mash].fuel_category = base_fuel
+        data_item[cactus_mash].fuel_value = 900 .. kJ
+        data_recipe[cactus_mash].subgroup = is_cactus
+        data_recipe[cactus_mash].icons = TWO_D_I(cactus_arig, water, cactus_mash, cactus_seeds)
+        data_recipe[cactus_mash].order = c
+        data_recipe[cactus_mash].ingredients =
+        {
+            {type = item, name = cactus_arig, amount = 1},
+            {type = fluid, name = water, amount = 30}
+        }
+        data_recipe[cactus_mash].results =
+        {
+            {type = item, name = cactus_mash, amount = 2},
+            {type = item, name = cactus_seeds, amount = 1, probability = 0.25}
+        }
+        data_recipe[cactus_mash].main_product = cactus_mash
+
+        data_item[arigian_bacteria].subgroup = is_cactus
+        data_item[arigian_bacteria].order = d
+        data_item[arigian_bacteria].stack_size = 200
+    end
+
     local cactus_wood = "planetaris-cactus-wood"
-    data_recipe[cactus_wood].subgroup = is_arig_recipe
-    data_recipe[cactus_wood].icons = TWO_I(cactus_arig, wood, number_1)
-    data_recipe[cactus_wood].order = b_b
+    data_recipe[cactus_wood].subgroup = is_cactus
+    data_recipe[cactus_wood].icons = TWO_D_I(cactus_arig, nil, wood, cactus_seeds, number_1)
+    data_recipe[cactus_wood].order = e_a
     data_recipe[cactus_wood].ingredients[1].amount = 4
     data_recipe[cactus_wood].results =
     {
@@ -22,9 +49,9 @@ if mods [arig_mods] then
     }
 
     local compression_cactus_wood = "planetaris-compression-cactus-wood"
-    data_recipe[compression_cactus_wood].subgroup = is_arig_recipe
-    data_recipe[compression_cactus_wood].icons = TWO_I(cactus_arig, wood, number_2)
-    data_recipe[compression_cactus_wood].order = b_c
+    data_recipe[compression_cactus_wood].subgroup = is_cactus
+    data_recipe[compression_cactus_wood].icons = TWO_D_I(cactus_arig, nil, wood, cactus_seeds, number_2)
+    data_recipe[compression_cactus_wood].order = e_b
     data_recipe[compression_cactus_wood].results =
     {
         {type = item, name = wood, amount = 1},
@@ -32,35 +59,36 @@ if mods [arig_mods] then
     }
 
     local compression_wood_coal = "planetaris-compression-wood-coal"
-    data_recipe[compression_wood_coal].subgroup = is_arig_recipe
+    data_recipe[compression_wood_coal].subgroup = is_cactus
     data_recipe[compression_wood_coal].icons = TWO_I(wood, coal)
-    data_recipe[compression_wood_coal].order = b_d
+    data_recipe[compression_wood_coal].order = e_c
     data_recipe[compression_wood_coal].ingredients[1].amount = 2
     data_recipe[compression_wood_coal].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     local carbon_arig = "planetaris-carbon"
-    data_recipe[carbon_arig].subgroup = is_arig_recipe
+    data_recipe[carbon_arig].subgroup = is_cactus
     data_recipe[carbon_arig].icons = TWO_I(coal, carbon_angels)
-    data_recipe[carbon_arig].order = b_e
+    data_recipe[carbon_arig].order = e_d
     data_recipe[carbon_arig].ingredients = {{type = item, name = coal, amount = 2}}
     data_recipe[carbon_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     local plastic_arig = "planetaris-plastic-bar"
-    data_recipe[plastic_arig].subgroup = is_arig_recipe
+    data_recipe[plastic_arig].subgroup = is_cactus
     data_recipe[plastic_arig].icons = THREE_I(coal, methane_angels, plastic)
-    data_recipe[plastic_arig].order = b_f
+    data_recipe[plastic_arig].order = e_f
     data_recipe[plastic_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
+    -- RECIPE
     data_fluid[sand_arig].subgroup = is_arig_recipe
-    data_fluid[sand_arig].order = c
+    data_fluid[sand_arig].order = a
 
     data_fluid[pure_sand_arig].subgroup = is_arig_recipe
-    data_fluid[pure_sand_arig].order = d
+    data_fluid[pure_sand_arig].order = b
 
     local sand_sifting = "planetaris-sand-sifting"
     data_recipe[sand_sifting].subgroup = is_arig_recipe
     data_recipe[sand_sifting].icons = TWO_I(sand_arig, pure_sand_arig, number_1)
-    data_recipe[sand_sifting].order = d_a
+    data_recipe[sand_sifting].order = b_a
     data_recipe[sand_sifting].ingredients[1].amount = 240
     data_recipe[sand_sifting].results =
     {
@@ -78,7 +106,7 @@ if mods [arig_mods] then
 
     data_recipe[advanced_sand_sifting].subgroup = is_arig_recipe
     data_recipe[advanced_sand_sifting].icons = TWO_I(sand_arig, pure_sand_arig, number_2)
-    data_recipe[advanced_sand_sifting].order =  d_b
+    data_recipe[advanced_sand_sifting].order =  c_b
     data_recipe[advanced_sand_sifting].ingredients[1].amount = 240
     data_recipe[advanced_sand_sifting].results =
     {
@@ -94,41 +122,41 @@ if mods [arig_mods] then
     local advanced_pure_sand_sifting = "planetaris-advanced-pure-sand-sifting"
     data_recipe[advanced_pure_sand_sifting].subgroup = is_arig_recipe
     data_recipe[advanced_pure_sand_sifting].icons = TWO_I(sand_arig, pure_sand_arig, number_3)
-    data_recipe[advanced_pure_sand_sifting].order = d_c
+    data_recipe[advanced_pure_sand_sifting].order = c_c
     data_recipe[advanced_pure_sand_sifting].ingredients[1].amount = 240
     data_recipe[advanced_pure_sand_sifting].results[1].amount = 30
 
     data_item[sandstone_brick].subgroup = is_arig_recipe
-    data_item[sandstone_brick].order = e
+    data_item[sandstone_brick].order = d
     data_item[sandstone_brick].stack_size = 200
     data_recipe[sandstone_brick].subgroup = is_arig_recipe
     data_recipe[sandstone_brick].icons = TWO_I(pure_sand_arig, sandstone_brick)
-    data_recipe[sandstone_brick].order = e
+    data_recipe[sandstone_brick].order = d
     data_recipe[sandstone_brick].ingredients[1].amount = 60
 
     local sandstone_path = "planetaris-sandstone-path"
     data_tile[sandstone_path].subgroup = is_arig_recipe
-    data_tile[sandstone_path].order = e
+    data_tile[sandstone_path].order = d
 
     local sandstone_foundation = "planetaris-sandstone-foundation"
     data_item[sandstone_foundation].subgroup = is_arig_recipe
-    data_item[sandstone_foundation].order = f
+    data_item[sandstone_foundation].order = e
     data_item[sandstone_foundation].stack_size = 200
     data_recipe[sandstone_foundation].subgroup = is_arig_recipe
-    data_recipe[sandstone_foundation].order = f
+    data_recipe[sandstone_foundation].order = e
     data_recipe[sandstone_foundation].ingredients =
     {
         {type = item, name = stone_brick, amount = 4},
         {type = item, name = sandstone_brick, amount = 4}
     }
     data_tile[sandstone_foundation].subgroup = is_arig_recipe
-    data_tile[sandstone_foundation].order = f
+    data_tile[sandstone_foundation].order = e
 
     local advanced_heavy_oil_cracking = "planetaris-advanced-heavy-oil-cracking"
     data_recipe[advanced_heavy_oil_cracking].category = angels_steam_cracking
     data_recipe[advanced_heavy_oil_cracking].subgroup = is_arig_recipe
     data_recipe[advanced_heavy_oil_cracking].icons = TWO_D_I(heavy_oil_timsaba, steam, fuel_oil_angels, methane_angels)
-    data_recipe[advanced_heavy_oil_cracking].order = g_a
+    data_recipe[advanced_heavy_oil_cracking].order = f_a
     data_recipe[advanced_heavy_oil_cracking].energy_required = 4
     data_recipe[advanced_heavy_oil_cracking].ingredients =
     {
@@ -145,25 +173,25 @@ if mods [arig_mods] then
     local compression_rocket_fuel = "planetaris-compression-rocket-fuel"
     data_recipe[compression_rocket_fuel].subgroup = is_arig_recipe
     data_recipe[compression_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_arig)
-    data_recipe[compression_rocket_fuel].order = g_b
+    data_recipe[compression_rocket_fuel].order = f_b
     data_recipe[compression_rocket_fuel].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     data_recipe[glass_panel_arig].category = metallurgy
     data_recipe[glass_panel_arig].subgroup = is_arig_recipe
     data_recipe[glass_panel_arig].icons = TWO_I(pure_sand_arig, glass_bob)
-    data_recipe[glass_panel_arig].order = h
+    data_recipe[glass_panel_arig].order = g
     data_recipe[glass_panel_arig].energy_required = 4
     data_recipe[glass_panel_arig].ingredients = {{type = fluid, name = pure_sand_arig, amount = 120}}
     data_recipe[glass_panel_arig].results = {{type = item, name = glass_bob, amount = 4}}
     data_recipe[glass_panel_arig].main_product = glass_bob
 
     data_item[heavy_glass_arig].subgroup = is_arig_recipe
-    data_item[heavy_glass_arig].order = i
+    data_item[heavy_glass_arig].order = h
     data_item[heavy_glass_arig].stack_size = 200
     data_recipe[heavy_glass_arig].category = metallurgy
     data_recipe[heavy_glass_arig].subgroup = is_arig_recipe
     data_recipe[heavy_glass_arig].icons = THREE_I(tungsten_powder, glass_molten_angels, heavy_glass_arig)
-    data_recipe[heavy_glass_arig].order = i
+    data_recipe[heavy_glass_arig].order = h
     data_recipe[heavy_glass_arig].energy_required = 4
     data_recipe[heavy_glass_arig].ingredients =
     {
@@ -173,11 +201,11 @@ if mods [arig_mods] then
 
     data_item[raw_quartz_arig].localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil
     data_item[raw_quartz_arig].subgroup = is_arig_recipe
-    data_item[raw_quartz_arig].order = j
+    data_item[raw_quartz_arig].order = i
     data_item[raw_quartz_arig].stack_size = 200
     data_recipe[raw_quartz_arig].subgroup = is_arig_recipe
     data_recipe[raw_quartz_arig].icons = THREE_D_I(sandstone_brick, steam, fuel_oil_angels, raw_quartz_arig)
-    data_recipe[raw_quartz_arig].order = j
+    data_recipe[raw_quartz_arig].order = i
     data_recipe[raw_quartz_arig].ingredients =
     {
         {type = item, name = sandstone_brick, amount = 1},
@@ -190,7 +218,7 @@ if mods [arig_mods] then
         advanced_raw_quartz = "planetaris-advanced-raw-quartz"
         data_recipe[advanced_raw_quartz].subgroup = is_arig_recipe
         data_recipe[advanced_raw_quartz].icons = TWO_I(sandstone_brick, raw_quartz_arig, number_2)
-        data_recipe[advanced_raw_quartz].order = j_a
+        data_recipe[advanced_raw_quartz].order = i_a
         data_recipe[advanced_raw_quartz].ingredients =
         {
             {type = item, name = coal, amount = 1},
@@ -203,7 +231,7 @@ if mods [arig_mods] then
 
     data_recipe[raw_diamond_arig].subgroup = is_arig_recipe
     data_recipe[raw_diamond_arig].icons = THREE_D_I(raw_quartz_arig, carbon_angels, methane_angels, raw_diamond_bob, sand_angels, hydrogen_angels)
-    data_recipe[raw_diamond_arig].order = j_b
+    data_recipe[raw_diamond_arig].order = i_b
     -- SiO₂ + C + CH4 --> C + SiO₂ + 2H₂
     data_recipe[raw_diamond_arig].ingredients =
     {
@@ -222,11 +250,11 @@ if mods [arig_mods] then
 
     data_item[silica_arig].localised_description = show_formula and {chemical_formula, "SiO[font=default-tiny-bold]2[/font]"} or nil
     data_item[silica_arig].subgroup = is_arig_recipe
-    data_item[silica_arig].order = k
+    data_item[silica_arig].order = j
     data_item[silica_arig].stack_size = 200
     data_recipe[silica_arig].subgroup = is_arig_recipe
     data_recipe[silica_arig].icons = FOUR_THREE_R_I(raw_quartz_arig, calcite, sulfuric_acid_angels, silica_arig, steam, calcium_sulfate_angels, carbon_dioxide_angels)
-    data_recipe[silica_arig].order = k
+    data_recipe[silica_arig].order = j
     -- SiO₂ + CaCO₃ + H₂SO₄ --> SiO₂ + CaSO₄ + H₂O + CO₂
     data_recipe[silica_arig].ingredients =
     {
@@ -245,9 +273,9 @@ if mods [arig_mods] then
     data_recipe[silica_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     data_tool[compression_science_pack].subgroup = is_arig_recipe
-    data_tool[compression_science_pack].order = l
+    data_tool[compression_science_pack].order = k
     data_recipe[compression_science_pack].subgroup = is_arig_recipe
-    data_recipe[compression_science_pack].order = l
+    data_recipe[compression_science_pack].order = k
     data_recipe[compression_science_pack].energy_required = 8
     data_recipe[compression_science_pack].ingredients =
     {
@@ -259,7 +287,7 @@ if mods [arig_mods] then
     local compression_landfill = "planetaris-landfill-compression"
     data_recipe[compression_landfill].subgroup = is_arig_recipe
     data_recipe[compression_landfill].icons = TWO_I(stone, landfill)
-    data_recipe[compression_landfill].order = l_a
+    data_recipe[compression_landfill].order = k_a
     data_recipe[compression_landfill].ingredients[1].amount = 32
 
     -- LOGISTICS
@@ -325,7 +353,7 @@ if mods [arig_mods] then
         {type = item, name = niobium_titanium_cable, amount = 16},
         {type = item, name = niobium_iron_bearing, amount = 16},
         {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-        {type = item, name = sandstone_brick, amount = 16},
+        {type = item, name = sandstone_brick, amount = 16}
     }
     data_roboport[arig_roboport].subgroup = is_arig_logistics
     data_roboport[arig_roboport].order = g
@@ -629,7 +657,7 @@ if mods [arig_mods] then
     if mods [tellus_mods] then
         data_recipe[tellus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.tellus"}}
         data_recipe[tellus_water_harvesting].subgroup = is_arig_water
-        data_recipe[tellus_water_harvesting].icons = BUILDING_R_I(water_infected, planet_hyarion)
+        data_recipe[tellus_water_harvesting].icons = BUILDING_R_I(water_infected, planet_tellus)
         data_recipe[tellus_water_harvesting].order = a_h
         data_recipe[tellus_water_harvesting].energy_required = 16
         data_recipe[tellus_water_harvesting].results[1].amount = 480
@@ -639,6 +667,7 @@ if mods [arig_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_arig = "planet-discovery-arig"
+    data_technology[planet_discovery_arig].prerequisites = {tech_niobium_iron_processing, tech_niobium_titanium_processing, tech_niobium_tungsten_molybdenum_processing}
     data_technology[planet_discovery_arig].unit.ingredients =
     {
         {automation_science_pack, 1},

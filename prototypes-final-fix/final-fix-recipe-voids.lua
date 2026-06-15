@@ -103,7 +103,7 @@ local fluids =
     -- HYARION
     polishing_compound_hyarion,
     -- TELLUS
-    chlorophyll, water_infected,
+    chlorophyll, water_infected, seed_compound, bacteriochlorophyll,
 }
 local gases =
 {
@@ -211,6 +211,8 @@ local organics =
     binafran, primedeadelion, nilaubergine, zelosquash, arumbiphila,
     beans, corn, leaves, nuts, pips, fruits,
     jellynut, jelly, yumako, yumako_mash, bioflux,
+    -- TELLUS
+    chloroplast_mash, mycelia,
 }
 for _, organic_name in pairs(organics) do
     if data.raw.item[organic_name] or data.raw.capsule[organic_name] then

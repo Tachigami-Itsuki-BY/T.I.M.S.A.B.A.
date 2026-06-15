@@ -335,25 +335,6 @@ if mods [clowns_nuclear] then
     end
 end
 
--- Функция проверки: существует ли прототип в игре
---[[local function prototype_exists(product)
-    local p_name = product.name or product[1]
-    local p_type = product.type or item -- На всякий случай, хотя в 2.0 type обязателен
-
-    if p_type == fluid then
-        return data_fluid[p_name] ~= nil
-    else
-        -- Проверяем все основные типы предметов в 2.0
-        return data_item[p_name] ~= nil
-        or data_capsule[p_name] ~= nil
-        or data_tool[p_name] ~= nil
-        or data_ammo[p_name] ~= nil
-        or data_armor[p_name] ~= nil
-        or data_gun[p_name] ~= nil
-        or data_module[p_name] ~= nil
-        or data.raw["spidertron-remote"] ~= nil
-    end
-end]]
 
 -- Функция проверки: существует ли прототип в игре
 local function prototype_exists(product)
@@ -385,21 +366,10 @@ local function prototype_exists(product)
 end
 
 -- Основной цикл очистки рецептов
--- Шаг 1. Собираем рецепты, которые используются в par- технологиях
-local protected_recipes = {}
-for tech_name, tech in pairs(data_technology) do
-    if string.find(tech_name, "^par%-") and tech.effects then
-        for _, effect in ipairs(tech.effects) do
-            if effect.type == unlock_recipe then
-                protected_recipes[effect.recipe] = true
-            end
-        end
-    end
-end
-
--- Шаг 2. Основной цикл очистки рецептов
 for recipe_name, recipe in pairs(data_recipe) do
-    if string.find(recipe_name, "^par%-") or protected_recipes[recipe_name] then
+    if string.find(recipe_name, "^par%-") then
+        -- ничего не делаем, пропускаем удаление
+    elseif string.find(recipe_name, "^preserved%-") and string.find(recipe_name, "^depreservation%-") then
         -- ничего не делаем, пропускаем удаление
     else
         local should_delete = false

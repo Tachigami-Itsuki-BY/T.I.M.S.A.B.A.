@@ -1,5 +1,4 @@
 if mods [hyarion_mods] then
-
     -- RECIPE ORE
     data_item[metallic_ore].subgroup = is_hyarion_recipe_ore
     data_item[metallic_ore].order = a
@@ -98,14 +97,14 @@ if mods [hyarion_mods] then
         {type = fluid, name = polishing_compound_hyarion, amount = 15}
     }
 
-    data_item[fluorite_hyarion].subgroup = is_hyarion_recipe_polished
-    data_item[fluorite_hyarion].order = g
-    data_item[fluorite_hyarion].stack_size = 200
-    data_recipe[fluorite_hyarion].subgroup = is_hyarion_recipe_polished
-    data_recipe[fluorite_hyarion].icons = FOUR_D_I(polished_diamond_bob, polished_sapphire_bob, polishing_compound_hyarion, polished_emerald_bob, fluorite_hyarion)
-    data_recipe[fluorite_hyarion].order = g
-    data_recipe[fluorite_hyarion].energy_required = 8
-    data_recipe[fluorite_hyarion].ingredients =
+    data_item[alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
+    data_item[alexandrite_hyarion].order = g
+    data_item[alexandrite_hyarion].stack_size = 200
+    data_recipe[alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
+    data_recipe[alexandrite_hyarion].icons = FOUR_D_I(polished_diamond_bob, polished_sapphire_bob, polishing_compound_hyarion, polished_emerald_bob, alexandrite_hyarion)
+    data_recipe[alexandrite_hyarion].order = g
+    data_recipe[alexandrite_hyarion].energy_required = 8
+    data_recipe[alexandrite_hyarion].ingredients =
     {
         {type = item, name = polished_diamond_bob, amount = 1},
         {type = item, name = polished_sapphire_bob, amount = 4},
@@ -117,16 +116,16 @@ if mods [hyarion_mods] then
     data_fluid[refraction_light].subgroup = is_hyarion_recipe_polished
     data_fluid[refraction_light].order = h
 
-    data_item[charged_fluorite_hyarion].subgroup = is_hyarion_recipe_polished
-    data_item[charged_fluorite_hyarion].order = i
-    data_item[charged_fluorite_hyarion].stack_size = 200
-    data_recipe[charged_fluorite_hyarion].subgroup = is_hyarion_recipe_polished
-    data_recipe[charged_fluorite_hyarion].icons = THREE_I(fluorite_hyarion, refraction_light, charged_fluorite_hyarion)
-    data_recipe[charged_fluorite_hyarion].order = i
-    data_recipe[charged_fluorite_hyarion].energy_required = 4
-    data_recipe[charged_fluorite_hyarion].ingredients =
+    data_item[charged_alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
+    data_item[charged_alexandrite_hyarion].order = i
+    data_item[charged_alexandrite_hyarion].stack_size = 200
+    data_recipe[charged_alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
+    data_recipe[charged_alexandrite_hyarion].icons = THREE_I(alexandrite_hyarion, refraction_light, charged_alexandrite_hyarion)
+    data_recipe[charged_alexandrite_hyarion].order = i
+    data_recipe[charged_alexandrite_hyarion].energy_required = 4
+    data_recipe[charged_alexandrite_hyarion].ingredients =
     {
-        {type = item, name = fluorite_hyarion, amount = 1},
+        {type = item, name = alexandrite_hyarion, amount = 1},
         {type = fluid, name = refraction_light, amount = 60}
     }
 
@@ -139,12 +138,12 @@ if mods [hyarion_mods] then
     data_fluid[pure_light].subgroup = is_hyarion_recipe_polished
     data_fluid[pure_light].order = k
     data_recipe[pure_light].subgroup = is_hyarion_recipe_polished
-    data_recipe[pure_light].icons = TWO_D_I(refraction_light, fluorite_hyarion, pure_light, unstable_shard)
+    data_recipe[pure_light].icons = TWO_D_I(refraction_light, alexandrite_hyarion, pure_light, unstable_shard)
     data_recipe[pure_light].order = k
     data_recipe[pure_light].ingredients =
     {
         {type = fluid, name = refraction_light, amount = 60},
-        {type = item, name = fluorite_hyarion, amount = 1}
+        {type = item, name = alexandrite_hyarion, amount = 1}
     }
     data_recipe[pure_light].results =
     {
@@ -155,7 +154,7 @@ if mods [hyarion_mods] then
 
     local fluorite_discharge = "planetaris-fluorite-discharge"
     data_recipe[fluorite_discharge].subgroup = is_hyarion_recipe_polished
-    data_recipe[fluorite_discharge].icons = THREE_R_I(charged_fluorite_hyarion, unstable_shard, pure_light)
+    data_recipe[fluorite_discharge].icons = THREE_R_I(charged_alexandrite_hyarion, unstable_shard, pure_light)
     data_recipe[fluorite_discharge].order = k_a
     data_recipe[fluorite_discharge].results =
     {
@@ -178,6 +177,41 @@ if mods [hyarion_mods] then
         {type = item, name = polished_ruby_bob, amount = 4},
         {type = fluid, name = pure_light, amount = 30}
     }
+
+    if mods [tellus_mods] then
+        data_item[unstable_crystal].subgroup = is_hyarion_recipe_polished
+        data_item[unstable_crystal].order = m
+        data_item[unstable_crystal].stack_size = 200
+
+        local unstable_crystallizer = "planetaris-unstable-crystallizer"
+        data_item[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
+        data_item[unstable_crystallizer].order = n
+        data_item[unstable_crystallizer].stack_size = 200
+        data_item[unstable_crystallizer].fuel_category = base_fuel
+        data_item[unstable_crystallizer].fuel_value = 900 .. kJ
+        data_recipe[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
+        data_recipe[unstable_crystallizer].icons = THREE_I(unstable_shard, lava, unstable_crystallizer)
+        data_recipe[unstable_crystallizer].order = n
+        data_recipe[unstable_crystallizer].ingredients =
+        {
+            {type = item, name = unstable_shard, amount = 8},
+            {type = fluid, name = lava, amount = 60}
+        }
+
+        data_item[unstable_bacteria].subgroup = is_hyarion_recipe_polished
+        data_item[unstable_bacteria].order = o
+        data_item[unstable_bacteria].stack_size = 200
+
+        local unstable_crystal_manipulation = "planetaris-unstable-crystal-manipulation"
+        data_recipe[unstable_crystal_manipulation].subgroup = is_hyarion_recipe_polished
+        data_recipe[unstable_crystal_manipulation].icons = TWO_D_I(unstable_crystal, charged_alexandrite_hyarion, unstable_bacteria, unstable_crystallizer)
+        data_recipe[unstable_crystal_manipulation].order = o_a
+        data_recipe[unstable_crystal_manipulation].results =
+        {
+            {type = item, name = unstable_bacteria, amount = 4},
+            {type = item, name = unstable_crystallizer, amount = 1, probability = 0.03125}
+        }
+    end
 
     -- RECIPE BASIC
     data_item[simulating_unit].subgroup = is_hyarion_recipe_other
@@ -587,7 +621,7 @@ if mods [hyarion_mods] then
     data_recipe[refraction_generator].ingredients =
     {
         {type = item, name = holmium_plate, amount = 64},
-        {type = item, name = fluorite_hyarion, amount = 16},
+        {type = item, name = alexandrite_hyarion, amount = 16},
         {type = item, name = fiber_optics_cable, amount = 32},
         {type = item, name = simulating_unit, amount = 16},
         {type = item, name = crystalization_motor, amount = 8}

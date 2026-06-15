@@ -23,12 +23,6 @@ require("prototypes.angels.angels-name-building")
 require("prototypes.bobs.bobs-name-technology")
 require("prototypes.angels.angels-name-technology")
 
-require("compatibility.bobs-mods.bobores")
-require("compatibility.bobs-mods.boblogistics")
-require("compatibility.bobs-mods.bobplates")
-
-require("compatibility.angels-mods.angelspetrochem")
-
 TWO_I = require("lib.generator-icons").double_icon
 TWO_D_I = require("lib.generator-icons").double_to_double_icon
 TWO_FIVE_I = require("lib.generator-icons").quintuple_double_icon
@@ -71,6 +65,12 @@ THREE_FFI_I = require("lib.generator-icons-shattered").fluid_fluid_item_icon
 AR_IIFI_ALT_I = require("lib.generator-icons-shattered").alt_AR_item_item_fluid_item_icon
 
 require("prototypes.TIMSABA-functions")
+
+require("compatibility.bobs-mods.bobores")
+require("compatibility.bobs-mods.boblogistics")
+require("compatibility.bobs-mods.bobplates")
+
+require("compatibility.angels-mods.angelspetrochem")
 
 require("prototypes.new-icons.new-icons")
 require("prototypes.new-icons.new-icons-items")
@@ -145,9 +145,9 @@ require("prototypes.space-age.aquilo.aquilo-technology")
 
 require("prototypes.planet.muluna.muluna-groups")
 require("prototypes.planet.muluna.muluna-item-fluid")
-require("prototypes.planet.muluna.muluna-building")
 require("prototypes.planet.muluna.muluna-recipe")
 require("prototypes.planet.muluna.muluna-technology")
+require("prototypes.planet.muluna.muluna-building")
 
 require("prototypes.planet.moshine.moshine-groups")
 require("prototypes.planet.moshine.moshine-item-fluid")
@@ -170,7 +170,9 @@ require("prototypes.planet.hyarion.hyarion-recipe")
 require("prototypes.planet.hyarion.hyarion-technology")
 
 require("prototypes.planet.tellus.tellus-groups")
+require("prototypes.planet.tellus.tellus-item-fluid")
 require("prototypes.planet.tellus.tellus-recipe")
+require("prototypes.planet.tellus.tellus-colored-prototypes")
 
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")

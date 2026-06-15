@@ -20,6 +20,8 @@ molybdenum_rhenium_plate = "molybdenum-rhenium-plate"
 molybdenum_gear_wheel = "molybdenum-gear-wheel"
 rhenium_bearing_ball = "rhenium-bearing-ball"
 rhenium_bearing = "rhenium-bearing"
+local pipe_drop_move = {filename = "__base__/sound/item/metal-small-inventory-move.ogg", volume = 0.8}
+local pipe_pick = {filename = "__base__/sound/item/metal-small-inventory-pickup.ogg", volume = 0.8}
 molybdenum_rhenium_pipe = "molybdenum-rhenium-pipe"
 molybdenum_rhenium_pipe_to_ground = "molybdenum-rhenium-pipe-to-ground"
 data:extend
@@ -105,7 +107,10 @@ data:extend
         order = m,
         stack_size = 200,
         weight = 5000,
-        place_result = molybdenum_rhenium_pipe
+        place_result = molybdenum_rhenium_pipe,
+        drop_sound = pipe_drop_move,
+        inventory_move_sound = pipe_drop_move,
+        pick_sound = pipe_pick
     },
     {
         type = item,
@@ -115,7 +120,10 @@ data:extend
         order = m,
         stack_size = 32,
         weight = 31250,
-        place_result = molybdenum_rhenium_pipe_to_ground
+        place_result = molybdenum_rhenium_pipe_to_ground,
+        drop_sound = pipe_drop_move,
+        inventory_move_sound = pipe_drop_move,
+        pick_sound = pipe_pick
     }
 })
 

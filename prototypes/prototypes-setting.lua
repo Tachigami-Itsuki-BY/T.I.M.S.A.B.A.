@@ -28,3 +28,14 @@ setting_bobmods_power_steam = "bobmods-power-steam"
 
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
 setting_bobmods_logistics_trains = "bobmods-logistics-trains"
+
+-- TELLUS
+setting_dye_secondary_color = "dye-secondary-color"
+setting_dye_pipes = "dye-enable-pipes"
+setting_dye_stone_path = "dye-enable-stone-path"
+setting_dye_concrete = "dye-enable-concrete"
+setting_dye_hazard_concrete = "dye-enable-hazard-concrete"
+setting_dye_reinforced_concrete = "dye-enable-refined-concrete"
+setting_dye_reinforced_hazard_concrete = "dye-enable-refined-hazard-concrete"
+setting_dye_stone_wall = "dye-enable-wall"
+setting_dye_concrete_brick = "setting-tellus-dye-concrete-brick"

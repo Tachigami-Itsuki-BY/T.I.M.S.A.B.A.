@@ -247,6 +247,7 @@ end
 data_capsule[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_capsule[bioflux].order = b
 data_capsule[bioflux].stack_size = 200
+data_capsule[bioflux].fuel_value = 3600 .. kJ
 data_recipe[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[bioflux].icons = THREE_I(jelly, yumako_mash, bioflux)
 data_recipe[bioflux].order = b
@@ -460,6 +461,7 @@ data_recipe[captive_biter_spawner].ingredients[3].amount = 16
 data_recipe[captive_biter_spawner].ingredients[4].amount = 120
 data_assembling[captive_biter_spawner].subgroup = is_gleba_building
 data_assembling[captive_biter_spawner].order = e
+data_assembling[captive_biter_spawner].energy_usage = 225 .. kW
 
 -- WAR
 local capture_robot_rocket = "capture-robot-rocket"

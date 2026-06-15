@@ -7,7 +7,7 @@ if mods [arig_mods] then
             name = heavy_oil_timsaba,
             subgroup = is_arig_recipe,
             icon = "__TIMSABA__/graphics/icons/arig/heavy-oil.png",
-            order = g,
+            order = f,
             default_temperature = 0,
             heat_capacity = "0.1kJ",
             base_color = {r = 102 / 255, g = 033 / 255, b = 005 / 255},

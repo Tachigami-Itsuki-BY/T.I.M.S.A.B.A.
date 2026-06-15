@@ -896,7 +896,7 @@ if data_item[alien_artifact] then
             {type = item, name = power_armor_3, amount = 1},
             {type = item, name = silicon_nitride_bob, amount = 64},
             {type = item, name = alien_artifact_yellow, amount = 32},
-            {type = item, name = alien_artifact_purple, amount = 32},
+            {type = item, name = alien_artifact_magenta, amount = 32},
             {type = item, name = speed_module_4, amount = 4},
             {type = item, name = efficiency_module_4, amount = 4}
         }
@@ -908,7 +908,7 @@ if data_item[alien_artifact] then
             {type = item, name = power_armor_3, amount = 1},
             {type = item, name = silicon_nitride_bob, amount = 64},
             {type = item, name = alien_artifact_yellow, amount = 32},
-            {type = item, name = alien_artifact_purple, amount = 32},
+            {type = item, name = alien_artifact_magenta, amount = 32},
             {type = item, name = speed_module_3, amount = 4},
             {type = item, name = efficiency_module_3, amount = 4}
         }
@@ -1211,7 +1211,7 @@ battery_eq_recipe(battery_eq_3, battery_eq_2, battery_lithium_ion)
 if mods [bobequipment] then
     if data_item[alien_artifact] then
         battery_eq_recipe(battery_eq_4, battery_eq_3, processing_unit, alien_artifact_orange, alien_artifact_blue)
-        battery_eq_recipe(battery_eq_5, battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_purple)
+        battery_eq_recipe(battery_eq_5, battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_magenta)
         battery_eq_recipe(battery_eq_6, battery_eq_5, advanced_processing_unit, alien_artifact_red, alien_artifact_green)
     else
         battery_eq_recipe(battery_eq_4, battery_eq_3, processing_unit)
@@ -1562,10 +1562,10 @@ if mods [bobequipment] then
         energy_shield_eq_recipe(energy_shield_eq_3, processing_unit, alien_artifact, energy_shield_eq_2, productivity_module_2)
         energy_shield_eq_recipe(energy_shield_eq_4, advanced_processing_unit, nil, energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)
         if mods [bobmodules] then
-            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_purple)
+            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_magenta)
             energy_shield_eq_recipe(energy_shield_eq_6, advanced_processing_unit, nil, energy_shield_eq_5, productivity_module_5, alien_artifact_red, alien_artifact_green)
         else
-            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_3, alien_artifact_yellow, alien_artifact_purple)
+            energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_3, alien_artifact_yellow, alien_artifact_magenta)
             energy_shield_eq_recipe(energy_shield_eq_6, advanced_processing_unit, nil, energy_shield_eq_5, productivity_module_3, alien_artifact_red, alien_artifact_green)
         end
     else

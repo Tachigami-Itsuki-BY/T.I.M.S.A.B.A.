@@ -43,6 +43,9 @@ for _, t_type in pairs(building_types) do
             if building.name == biochamber then
                 goto continue
             end
+            if building.name == "captive-biter-spawner" then
+                goto continue
+            end
             if building.energy_source then
                 -- Проверяем, находится ли имя текущего здания в нашем списке исключений
                 if building_exceptions[building.name] then
@@ -52,6 +55,9 @@ for _, t_type in pairs(building_types) do
                     -- Для всех остальных зданий, даем оба вида топлива
                     set_exclusive_fuel_categories(building.energy_source, {base_fuel, advanced_fuel})
                 end
+            end
+            if building.burner then
+                set_exclusive_fuel_categories(building.burner, {base_fuel, advanced_fuel})
             end
 
             ::continue::

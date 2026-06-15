@@ -4,6 +4,9 @@ local TIMSABA_pipetogroundpictures = require("lib.pipes").TIMSABA_pipetogroundpi
 local TIMSABA_pipetoground_visualization = require("lib.pipes").TIMSABA_pipetoground_visualization
 local TIMSABA_pipetoground_disabled_visualizaton = require("lib.pipes").TIMSABA_pipetoground_disabled_visualizaton
 
+local hit_effects = require("__base__.prototypes.entity.hit-effects")
+local sounds = require("__base__.prototypes.entity.sounds")
+
 local simulations = require("prototypes.factoriopedia-simulations")
 data:extend
 ({
@@ -17,12 +20,14 @@ data:extend
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 0.5, result = molybdenum_rhenium_pipe},
         max_health = 350,
-        corpse = "small-remnants",
+        corpse = "pipe-remnants",
+        dying_explosion = "pipe-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 90}},
-        fast_replaceable_group = "pipe",
+        fast_replaceable_group = pipe,
         collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        damaged_trigger_effect = hit_effects.entity(),
         fluid_box =
         {
             volume = 100,
@@ -37,20 +42,11 @@ data:extend
         },
         pictures = TIMSABA_pipepictures("molybdenum-rhenium"),
         impact_category = "metal",
-        working_sound =
-        {
-            sound =
-            {
-                {
-                    filename = "__base__/sound/pipe.ogg",
-                    volume = 0.65
-                }
-            },
-            match_volume_to_activity = true,
-            max_sounds_per_prototype = 3
-        },
-        horizontal_window_bounding_box = {{-0.25, -0.25}, {0.25, 0.15625}},
-        vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}},
+        working_sound = sounds.pipe,
+        open_sound = sounds.metal_small_open,
+        close_sound = sounds.metal_small_close,
+        horizontal_window_bounding_box = {{-0.25, -0.28125}, {0.25, 0.15625}},
+        vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}}
     },
     {
         type = pipe_to_ground,
@@ -62,10 +58,11 @@ data:extend
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 0.5, result = molybdenum_rhenium_pipe_to_ground},
         max_health = 400,
-        corpse = "small-remnants",
+        corpse = "pipe-to-ground-remnants",
+        dying_explosion = "pipe-to-ground-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 80}},
-        fast_replaceable_group = "pipe",
+        fast_replaceable_group = pipe,
         collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
         fluid_box =
@@ -82,11 +79,14 @@ data:extend
                     position = {0, 0},
                     direction = defines.direction.south,
                     connection_type = "underground",
-                    max_underground_distance = 35
+                    max_underground_distance = 48
                 }
             },
             hide_connection_info = true
         },
+        working_sound = sounds.pipe,
+        open_sound = sounds.metal_small_open,
+        close_sound = sounds.metal_small_close,
         pictures = TIMSABA_pipetogroundpictures("molybdenum-rhenium"),
         visualization = TIMSABA_pipetoground_visualization(),
         disabled_visualization = TIMSABA_pipetoground_disabled_visualizaton(),

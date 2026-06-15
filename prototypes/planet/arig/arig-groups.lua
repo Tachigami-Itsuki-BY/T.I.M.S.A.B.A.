@@ -1,6 +1,7 @@
 if mods [arig_mods] then
     local arig = "arig"
     is_arig_ore = "is-arig-ore"
+    is_cactus = "is-cactus"
     is_arig_recipe = "is-arig-recipe"
     is_arig_logistics = "is-arig-logistics"
     is_arig_power = "is-arig-power"
@@ -23,33 +24,39 @@ if mods [arig_mods] then
         },
         {
             type = item_subgroup,
-            name = is_arig_recipe,
+            name = is_cactus,
             group = arig,
             order = b
         },
         {
             type = item_subgroup,
-            name = is_arig_logistics,
+            name = is_arig_recipe,
             group = arig,
             order = c
         },
         {
             type = item_subgroup,
-            name = is_arig_power,
+            name = is_arig_logistics,
             group = arig,
             order = d
         },
         {
             type = item_subgroup,
-            name = is_arig_building,
+            name = is_arig_power,
             group = arig,
             order = e
         },
         {
             type = item_subgroup,
-            name = is_arig_water,
+            name = is_arig_building,
             group = arig,
             order = f
+        },
+        {
+            type = item_subgroup,
+            name = is_arig_water,
+            group = arig,
+            order = g
         }
     })
 end

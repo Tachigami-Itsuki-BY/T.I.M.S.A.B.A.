@@ -465,7 +465,7 @@ if mods [hyarion_mods] then
     {
         {type = item, name = small_lamp, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 1},
-        {type = item, name = charged_fluorite_hyarion, amount = 1}
+        {type = item, name = charged_alexandrite_hyarion, amount = 1}
     }
     data_lamp[lamp_post].subgroup = is_hyarion_building
     data_lamp[lamp_post].order = h

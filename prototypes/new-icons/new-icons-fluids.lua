@@ -671,7 +671,12 @@ if mods [hyarion_mods] then
     data_fluid[polishing_compound_hyarion].icon = "__TIMSABA__/graphics/icons/hyarion/polishing-compound.png"
 end
 
-
+if mods [tellus_mods] then
+    data_fluid[bacteriochlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/bacteriochlorophyll.png"
+    data_fluid[chlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/chlorophyll.png"
+    data_fluid[water_infected].icon = "__TIMSABA__/graphics/icons/tellus/infected-water.png"
+    data_fluid[seed_compound].icon = "__TIMSABA__/graphics/icons/tellus/seed-compound.png"
+end
 
 if mods [maraxsis_mods] or mods [muluna_mods] or mods [shchierbin_mods] then
     data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
@@ -748,6 +753,7 @@ if mods [shattered_mods] then
     data_fluid[californium_251_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_251.png"
     data_fluid[californium_252_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_252.png"
 end
+
 --[[
 data_fluid[].base_color = TIMSABA.functions.fluid_color("")
 data_fluid[].flow_color = TIMSABA.functions.flow_color("")
