@@ -102,7 +102,7 @@ if mods [panglia_mods] then
 
     local low_density_structure_from_panglite_fiber = "panglia_low_density_structure_from_panglite_fiber"
     data_recipe[low_density_structure_from_panglite_fiber].subgroup = is_panglia_recipe
-    data_recipe[low_density_structure_from_panglite_fiber].icons = THREE_I(panglite_fiber, steam, low_density_structure)
+    data_recipe[low_density_structure_from_panglite_fiber].icons = BUILDING_R_I(low_density_structure, panglite_fiber)
     data_recipe[low_density_structure_from_panglite_fiber].order = h_a
     data_recipe[low_density_structure_from_panglite_fiber].energy_required = 4
     data_recipe[low_density_structure_from_panglite_fiber].ingredients =
@@ -336,6 +336,7 @@ if mods [panglia_mods] then
 
     if mods [arig_mods] then
         local cosmic_incubator_recipe_arig = "cosmic_incubator_recipe_arig"
+        data_recipe[cosmic_incubator_recipe_arig].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.arig"}}
         data_recipe[cosmic_incubator_recipe_arig].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_arig].icons = GALAXY_I(galaxy_png, planet_arig)
         data_recipe[cosmic_incubator_recipe_arig].order = b_g
@@ -355,6 +356,7 @@ if mods [panglia_mods] then
 
     if mods [hyarion_mods] then
         local cosmic_incubator_recipe_hyarion = "cosmic_incubator_recipe_hyarion"
+        data_recipe[cosmic_incubator_recipe_hyarion].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.hyarion"}}
         data_recipe[cosmic_incubator_recipe_hyarion].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_hyarion].icons = GALAXY_I(galaxy_png, planet_hyarion)
         data_recipe[cosmic_incubator_recipe_hyarion].order = b_h
@@ -377,6 +379,7 @@ if mods [panglia_mods] then
 
     if mods [tellus_mods] then
         local cosmic_incubator_recipe_tellus = "cosmic_incubator_recipe_tellus"
+        data_recipe[cosmic_incubator_recipe_tellus].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.tellus"}}
         data_recipe[cosmic_incubator_recipe_tellus].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_tellus].icons = GALAXY_I(galaxy_png, planet_tellus)
         data_recipe[cosmic_incubator_recipe_tellus].order = b_i

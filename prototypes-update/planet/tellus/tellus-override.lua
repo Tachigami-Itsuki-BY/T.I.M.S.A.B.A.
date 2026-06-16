@@ -737,6 +737,9 @@ if mods [tellus_mods] then
     data_assembling[bioassembler_dead].minable.result = compost_angels
     data_assembling[bioassembler_dead].minable.count = 8
 
+    local bioassembler_revive = "planetaris-revive-bioassembler"
+    data_recipe[bioassembler_revive].ingredients[1].amount = 16
+
     local air_purifier = "planetaris-air-purifier"
     data_item[air_purifier].subgroup = is_tellus_building
     data_item[air_purifier].order = c
@@ -778,6 +781,10 @@ if mods [tellus_mods] then
     local incubator_dead = "planetaris-incubator-dead"
     data_assembling[incubator_dead].minable.result = compost_angels
     data_assembling[incubator_dead].minable.count = 8
+
+    local incubator_revive = "planetaris-revive-incubator"
+    data_recipe[incubator_revive].energy_required = 4
+    data_recipe[incubator_revive].ingredients[1].amount = 16
 
     bobmods.lib.recipe.update_recycling_recipe
     ({

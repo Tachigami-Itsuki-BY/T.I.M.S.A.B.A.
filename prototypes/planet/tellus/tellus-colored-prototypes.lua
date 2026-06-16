@@ -615,7 +615,7 @@ if mods [tellus_mods] then
                     {
                         type = wall,
                         name = color .. "-stone-wall",
-                        icon = "__TIMSABA__/graphics/icons/tellus/" .. color .. "-wall.png",
+                        icon = "__TIMSABA__/graphics/icons/tellus/" .. color .. "-stone-wall.png",
                         flags = {"placeable-neutral", "player-creation"},
                         collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
                         selection_box = {{-0.5, -0.5}, {0.5, 0.5}},

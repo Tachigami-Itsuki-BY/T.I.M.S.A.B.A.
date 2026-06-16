@@ -93,6 +93,8 @@ data_belt_immunity_eq = data.raw["belt-immunity-equipment"]
 data_energy_shield_eq = data.raw["energy-shield-equipment"]
 data_active_defense_eq = data.raw["active-defense-equipment"]
 data_rocket_silo = data.raw["rocket-silo"]
+data_SP_starter_pack = data.raw["space-platform-starter-pack"]
+data_spidertron_remote = data.raw["spidertron-remote"]
 
 -- GLOBAL NAME
 item = "item"
