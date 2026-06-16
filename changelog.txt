@@ -1,7 +1,19 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+Date: 16.06.2026
+  Bugfixes:
+    - [All] Исправлена ​​критическая ошибка, которая могла привести к удалению рецептов, которые не должны были быть удалены.
+
+    - [All] Fixed a critical error that could cause recipes to be deleted that should not have been deleted.
+
+  Locale:
+    - [All] Для упрощения поиска все файлы локализации разделены на подгруппы.
+
+    - [All] To simplify the search, all localization files are divided into subgroups.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.0
-Date: 19.06.2026
+Date: 15.06.2026
   Features:
     - [Mods] Добавлена поддержка Planetaris: Tellus: реализовано бесшовное внедрение новой планеты в игровой процесс.
 
@@ -32,10 +44,8 @@ Date: 19.06.2026
 
   Modding:
     - [Mods] Мод «Planetaris: Tellus» переведён в опциональную зависимость.
-    - [Mods] Мод «Bob's Character classes» добавлен в опциональную зависимость.
 
     - [Mods] Moved "Planetaris: Tellus" mod to optional dependencies.
-    - [Mods] Added "Bob's Character classes" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.3
 Date: 11.06.2026

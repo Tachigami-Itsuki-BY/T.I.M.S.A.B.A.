@@ -83,10 +83,9 @@ data_recipe[space_platform_foundation].ingredients =
     {type = item, name = nitinol_plate_bob, amount = 16}
 }
 
-local data_spsp = data.raw["space-platform-starter-pack"]
 local space_platform_starter_pack = "space-platform-starter-pack"
-data_spsp[space_platform_starter_pack].subgroup = space_platform
-data_spsp[space_platform_starter_pack].order = b
+data_SP_starter_pack[space_platform_starter_pack].subgroup = space_platform
+data_SP_starter_pack[space_platform_starter_pack].order = b
 data_recipe[space_platform_starter_pack].subgroup = space_platform
 data_recipe[space_platform_starter_pack].order = b
 data_recipe[space_platform_starter_pack].energy_required = 64

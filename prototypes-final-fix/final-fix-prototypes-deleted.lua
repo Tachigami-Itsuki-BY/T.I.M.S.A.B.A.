@@ -335,8 +335,94 @@ if mods [clowns_nuclear] then
     end
 end
 
+-- Кэшируем функции для максимального быстродействия в Factorio
+local sub = string.sub
+local find = string.find
 
--- Функция проверки: существует ли прототип в игре
+-- Универсальная и безопасная функция проверки прототипа
+local function prototype_exists(product)
+    if not product then return false end
+
+    -- Строгий формат TIMSABA: читаем поля напрямую
+    local p_name = product.name
+    local p_type = product.type
+
+    -- Защита от кривых таблиц сторонних модов
+    if not p_name or type(p_name) ~= "string" then return false end
+
+    -- Если в имени предмета есть "par-", он гарантированно существует
+    if find(p_name, "par%-") then
+        return true
+    end
+
+    -- Проверка жидкости
+    if p_type == "fluid" then
+        return data_fluid[p_name] ~= nil
+    end
+
+    -- Проверка всех типов предметов в Factorio 2.0
+    return data_item[p_name] ~= nil
+    or data_capsule[p_name] ~= nil
+    or data_tool[p_name] ~= nil
+    or data_ammo[p_name] ~= nil
+    or data_armor[p_name] ~= nil
+    or data_gun[p_name] ~= nil
+    or data_module[p_name] ~= nil
+    or data_spidertron_remote[p_name] ~= nil
+    or data_repair_tool[p_name] ~= nil
+    or data_rail_planner[p_name] ~= nil
+    or data_item_entity[p_name] ~= nil
+    or data_SP_starter_pack[p_name] ~= nil
+end
+
+-- Очередь на удаление
+local to_delete = {}
+
+-- Один цикл для обработки всех рецептов игры
+for recipe_name, recipe in pairs(data_recipe) do
+
+    -- Условие пропуска рецепта (безопасные префиксы и суффиксы)
+    local is_protected = sub(recipe_name, 1, 4) == "par-"
+    or sub(recipe_name, -10) == "-preserved"
+    or sub(recipe_name, -15) == "-depreservation"
+    or (find(recipe_name, "par%-") and find(recipe_name, "request-"))
+
+    if not is_protected then
+        local should_delete = false
+
+        -- 1. Проверяем ингредиенты
+        if recipe.ingredients then
+            for i = 1, #recipe.ingredients do
+                if not prototype_exists(recipe.ingredients[i]) then
+                    should_delete = true
+                    break
+                end
+            end
+        end
+
+        -- 2. Проверяем выходы рецепта (результаты)
+        if not should_delete and recipe.results then
+            for i = 1, #recipe.results do
+                if not prototype_exists(recipe.results[i]) then
+                    should_delete = true
+                    break
+                end
+            end
+        end
+
+        -- Если нашли "призрака" — отправляем в очередь на вырезание
+        if should_delete then
+            to_delete[#to_delete + 1] = recipe_name
+        end
+    end
+end
+
+-- Безопасное удаление без нарушения итератора pairs
+for i = 1, #to_delete do
+    data_recipe[to_delete[i]] = nil
+end
+
+--[[-- Функция проверки: существует ли прототип в игре
 local function prototype_exists(product)
     local p_name = product.name or product[1]
 
@@ -467,4 +553,4 @@ for recipe_name, recipe in pairs(data_recipe) do
             data_recipe[recipe_name] = nil
         end
     end
-end
+end]]

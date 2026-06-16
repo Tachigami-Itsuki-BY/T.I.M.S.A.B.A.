@@ -192,7 +192,7 @@ end
 data:extend({
     -- ANTIMONITE
     -- BIG (12 x 10)
-    make_particle {
+    make_particle{
         name = "antimonite-asteroid-particle-big",
         pictures =
         {{
@@ -207,7 +207,7 @@ data:extend({
         life_time = 240, ended_in_water_trigger_effect = false
     },
     -- MEDIUM (12 x 10)
-    make_particle {
+    make_particle{
         name = "antimonite-asteroid-chunk-particle-medium",
         pictures =
         {{
@@ -222,7 +222,7 @@ data:extend({
         life_time = 180, ended_in_water_trigger_effect = false
     },
     -- SMALL (12 x 10)
-    make_particle {
+    make_particle{
         name = "antimonite-asteroid-particle-small",
         pictures =
         {{
@@ -237,7 +237,7 @@ data:extend({
         life_time = 120, ended_in_water_trigger_effect = false
     },
     -- TOP BIG (16 x 6)
-    make_particle {
+    make_particle{
         name = "antimonite-asteroid-particle-top-big",
         pictures =
         {{
@@ -252,7 +252,7 @@ data:extend({
         life_time = 80, render_layer = "air-object", movement_modifier = 0.1, ended_in_water_trigger_effect = false
     },
     -- TOP SMALL (16 x 6)
-    make_particle {
+    make_particle{
         name = "antimonite-asteroid-particle-top-small",
         pictures =
         {{
@@ -268,7 +268,7 @@ data:extend({
     },
     -- GERMANITE
     -- BIG (12 x 10)
-    make_particle {
+    make_particle{
         name = "germanite-asteroid-particle-big",
         pictures =
         {{
@@ -283,7 +283,7 @@ data:extend({
         life_time = 240, ended_in_water_trigger_effect = false
     },
     -- MEDIUM (12 x 10)
-    make_particle {
+    make_particle{
         name = "germanite-asteroid-chunk-particle-medium",
         pictures =
         {{
@@ -298,7 +298,7 @@ data:extend({
         life_time = 180, ended_in_water_trigger_effect = false
     },
     -- SMALL (12 x 10)
-    make_particle {
+    make_particle{
         name = "germanite-asteroid-particle-small",
         pictures =
         {{
@@ -313,7 +313,7 @@ data:extend({
         life_time = 120, ended_in_water_trigger_effect = false
     },
     -- TOP BIG (16 x 6)
-    make_particle {
+    make_particle{
         name = "germanite-asteroid-particle-top-big",
         pictures =
         {{
@@ -328,7 +328,7 @@ data:extend({
         life_time = 80, render_layer = "air-object", movement_modifier = 0.1, ended_in_water_trigger_effect = false
     },
     -- TOP SMALL (16 x 6)
-    make_particle {
+    make_particle{
         name = "germanite-asteroid-particle-top-small",
         pictures =
         {{
@@ -405,10 +405,11 @@ local asteroids_data =
             specular_purity = 0,
             sss_contrast = 1,
             sss_amount = 0,
-            lights = {
-                { color = {0.96,1,0.99}, direction = {0.7,0.6,-1} },
-                { color = {0.57,0.33,0.23}, direction = {-0.72,-0.46,1} },
-                { color = {0.1,0.1,0.1}, direction = {-0.4,-0.25,-0.5} },
+            lights =
+            {
+                {color = {0.96,1,0.99}, direction = {0.7,0.6,-1}},
+                {color = {0.57,0.33,0.23}, direction = {-0.72,-0.46,1}},
+                {color = {0.1,0.1,0.1}, direction = {-0.4,-0.25,-0.5}}
             },
             ambient_light = {0.01, 0.01, 0.01}
         }
@@ -446,7 +447,7 @@ local collision_radiuses =
     1, -- medium
     2, -- big
     4.5  -- huge
-    }
+}
 local graphics_scale =
 {
     0.5, -- chunk
