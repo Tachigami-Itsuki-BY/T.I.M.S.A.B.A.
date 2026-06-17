@@ -1,7 +1,6 @@
 local bool_setting = "bool-setting"
 local double_setting = "double-setting"
 local startup = "startup"
-
 data:extend
 ({
     {
@@ -60,6 +59,18 @@ if mods ["planetaris-tellus"] then
         {
             type = bool_setting,
             name = "setting-tellus-dye-concrete-brick",
+            setting_type = startup,
+            default_value = true
+        }
+    })
+end
+
+if mods ["Flare Stack"] then
+    data:extend
+    ({
+        {
+            type = bool_setting,
+            name = "setting-real-incineration",
             setting_type = startup,
             default_value = true
         }

@@ -189,7 +189,6 @@ if mods [paracelsin_mods] then
 
     local vaterite_processing = "vaterite-processing"
     data_recipe[vaterite_processing].subgroup = is_paracelsin_recipe
-    data_recipe[vaterite_processing].icons = THREE_P_TWO_R_I(vaterite, nil, water, calcite, carbon_angels)
     data_recipe[vaterite_processing].order = f_b
 
     data_recipe[zinc_mods].subgroup = is_paracelsin_recipe

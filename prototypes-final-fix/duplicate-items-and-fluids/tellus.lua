@@ -63,4 +63,6 @@ if mods [tellus_mods] then
     end
 
     data_recipe["planetaris-tellus-rocket-silo"] = nil
+
+    data_technology["tellus-transport-belt-capacity-3"] = nil
 end

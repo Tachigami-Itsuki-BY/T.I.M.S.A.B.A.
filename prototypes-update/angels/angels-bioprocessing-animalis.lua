@@ -41,6 +41,7 @@ data_capsule[factorian_fish].spoil_ticks = 180 * minute
 data_recipe[factorian_fish].subgroup = is_bio_fish
 data_recipe[factorian_fish].order = a
 data_recipe[factorian_fish].energy_required = 64
+data_recipe[factorian_fish].reset_freshness_on_craft = true
 
 data_capsule[levac_fish].subgroup = is_bio_fish
 data_capsule[levac_fish].order = b
@@ -55,6 +56,7 @@ data_recipe[levac_fish].ingredients[4].amount = 120
 data_recipe[levac_fish].results[1].amount_min = 4
 data_recipe[levac_fish].results[1].amount_max = 8
 data_recipe[levac_fish].results[2].amount = 120
+data_recipe[levac_fish].reset_freshness_on_craft = true
 
 data_capsule[dorflurp_jellyfish].subgroup = is_bio_fish
 data_capsule[dorflurp_jellyfish].order = c
@@ -69,6 +71,7 @@ data_recipe[dorflurp_jellyfish].ingredients[4].amount = 120
 data_recipe[dorflurp_jellyfish].results[1].amount_min = 4
 data_recipe[dorflurp_jellyfish].results[1].amount_max = 8
 data_recipe[dorflurp_jellyfish].results[2].amount = 120
+data_recipe[dorflurp_jellyfish].reset_freshness_on_craft = true
 
 data_capsule[santa_ray].subgroup = is_bio_fish
 data_capsule[santa_ray].order = d
@@ -83,6 +86,7 @@ data_recipe[santa_ray].ingredients[4].amount = 120
 data_recipe[santa_ray].results[1].amount_min = 4
 data_recipe[santa_ray].results[1].amount_max = 8
 data_recipe[santa_ray].results[2].amount = 120
+data_recipe[santa_ray].reset_freshness_on_craft = true
 
 -- FISH KEEPING
 local factorian_fish_keeping = "angels-fish-keeping-0"
@@ -98,6 +102,7 @@ data_recipe[factorian_fish_keeping].results =
     {type = item, name = factorian_fish, amount = 1, probability = 0.5, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = polluted_water_for_fish, amount = 120}
 }
+data_recipe[factorian_fish_keeping].reset_freshness_on_craft = true
 
 local levac_fish_keeping = "angels-fish-keeping-1"
 data_recipe[levac_fish_keeping].subgroup = is_bio_fish_petting
@@ -112,6 +117,7 @@ data_recipe[levac_fish_keeping].results =
     {type = item, name = levac_fish, amount = 1, probability = 0.75, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = polluted_water_for_fish, amount = 120}
 }
+data_recipe[levac_fish_keeping].reset_freshness_on_craft = true
 
 local dorflurp_jelly_fish_keeping = "angels-fish-keeping-2"
 data_recipe[dorflurp_jelly_fish_keeping].subgroup = is_bio_fish_petting
@@ -126,6 +132,7 @@ data_recipe[dorflurp_jelly_fish_keeping].results =
     {type = item, name = dorflurp_jellyfish, amount = 1, probability = 0.75, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = polluted_water_for_fish, amount = 120}
 }
+data_recipe[dorflurp_jelly_fish_keeping].reset_freshness_on_craft = true
 
 local santa_ray_fish_keeping = "angels-fish-keeping-3"
 data_recipe[santa_ray_fish_keeping].subgroup = is_bio_fish_petting
@@ -139,21 +146,26 @@ data_recipe[santa_ray_fish_keeping].results =
     {type = item, name = santa_ray, amount = 1, ignored_by_productivity = 1, ignored_by_stats = 1},
     {type = fluid, name = polluted_water_for_fish, amount = 120}
 }
+data_recipe[santa_ray_fish_keeping].reset_freshness_on_craft = true
 
 -- RAW MEAT from FISH
 data_item_subgroup["angels-bio-fish-butchery"].order = b_b
 
 data_recipe[raw_meat_from_factorian_fish].icons = TWO_I(factorian_fish, raw_meat)
 data_recipe[raw_meat_from_factorian_fish].energy_required = 8
+data_recipe[raw_meat_from_factorian_fish].reset_freshness_on_craft = true
 
 data_recipe[raw_meat_from_levac_fish].icons = TWO_I(levac_fish, raw_meat)
 data_recipe[raw_meat_from_levac_fish].energy_required = 8
+data_recipe[raw_meat_from_levac_fish].reset_freshness_on_craft = true
 
 data_recipe[raw_meat_from_dorflurp_jelly_fish].icons = TWO_I(dorflurp_jellyfish, raw_meat)
 data_recipe[raw_meat_from_dorflurp_jelly_fish].energy_required = 8
+data_recipe[raw_meat_from_dorflurp_jelly_fish].reset_freshness_on_craft = true
 
 data_recipe[raw_meat_from_santa_ray_fish].icons = TWO_I(santa_ray, raw_meat)
 data_recipe[raw_meat_from_santa_ray_fish].energy_required = 8
+data_recipe[raw_meat_from_santa_ray_fish].reset_freshness_on_craft = true
 
 -- RAW FISH OIL
 data_item_subgroup["angels-bio-processor-press-fish"].order = b_c
@@ -163,20 +175,24 @@ data_recipe[raw_fish_oil_from_factorian_fish].icons = THREE_R_I(factorian_fish, 
 data_recipe[raw_fish_oil_from_factorian_fish].energy_required = 16
 data_recipe[raw_fish_oil_from_factorian_fish].results[1].amount = 240
 data_recipe[raw_fish_oil_from_factorian_fish].results[2].amount = 4
+data_recipe[raw_fish_oil_from_factorian_fish].reset_freshness_on_craft = true
 
 local raw_fish_oil_from_levac_fish = "angels-fish-pressing-1"
 data_recipe[raw_fish_oil_from_levac_fish].icons = THREE_R_I(levac_fish, fish_pulp, raw_fish_oil)
 data_recipe[raw_fish_oil_from_levac_fish].energy_required = 8
 data_recipe[raw_fish_oil_from_levac_fish].results[1].amount = 240
+data_recipe[raw_fish_oil_from_levac_fish].reset_freshness_on_craft = true
 
 local raw_fish_oil_from_dorflurp_jelly_fish = "angels-fish-pressing-2"
 data_recipe[raw_fish_oil_from_dorflurp_jelly_fish].icons = THREE_R_I(dorflurp_jellyfish, fish_pulp, raw_fish_oil)
 data_recipe[raw_fish_oil_from_dorflurp_jelly_fish].results[1].amount = 120
+data_recipe[raw_fish_oil_from_dorflurp_jelly_fish].reset_freshness_on_craft = true
 
 local raw_fish_oil_from_santa_ray_fish = "angels-fish-pressing-3"
 data_recipe[raw_fish_oil_from_santa_ray_fish].icons = THREE_R_I(santa_ray, fish_pulp, raw_fish_oil)
 data_recipe[raw_fish_oil_from_santa_ray_fish].energy_required = 4
 data_recipe[raw_fish_oil_from_santa_ray_fish].results[1].amount = 60
+data_recipe[raw_fish_oil_from_santa_ray_fish].reset_freshness_on_craft = true
 
 local fish_oil_filtration_1 = "angels-liquid-raw-fish-oil-filtering-1"
 data_recipe[fish_oil_filtration_1].icons = TWO_D_I(raw_fish_oil, water_thermal_angels, fish_oil, mineral_oil_angels)
@@ -232,6 +248,7 @@ data_recipe[gaseous_puffer_egg].ingredients[2].amount = 4
 data_recipe[gaseous_puffer_egg].ingredients[3].amount = 30
 data_recipe[gaseous_puffer_egg].ingredients[4].amount = 30
 data_recipe[gaseous_puffer_egg].results[2].amount = 30
+data_recipe[gaseous_puffer_egg].reset_freshness_on_craft = true
 
 data_item[rancid_puffer_egg].spoil_ticks = 180 * minute
 data_item[rancid_puffer_egg].spoil_result = spoilage
@@ -240,6 +257,7 @@ data_recipe[rancid_puffer_egg].ingredients[2].amount = 4
 data_recipe[rancid_puffer_egg].ingredients[3].amount = 30
 data_recipe[rancid_puffer_egg].ingredients[4].amount = 30
 data_recipe[rancid_puffer_egg].results[2].amount = 30
+data_recipe[rancid_puffer_egg].reset_freshness_on_craft = true
 
 data_item[blazing_puffer_egg].spoil_ticks = 180 * minute
 data_item[blazing_puffer_egg].spoil_result = spoilage
@@ -248,6 +266,7 @@ data_recipe[blazing_puffer_egg].ingredients[2].amount = 4
 data_recipe[blazing_puffer_egg].ingredients[3].amount = 30
 data_recipe[blazing_puffer_egg].ingredients[4].amount = 30
 data_recipe[blazing_puffer_egg].results[2].amount = 30
+data_recipe[blazing_puffer_egg].reset_freshness_on_craft = true
 
 data_item[acidic_puffer_egg].spoil_ticks = 180 * minute
 data_item[acidic_puffer_egg].spoil_result = spoilage
@@ -256,6 +275,7 @@ data_recipe[acidic_puffer_egg].ingredients[2].amount = 4
 data_recipe[acidic_puffer_egg].ingredients[3].amount = 30
 data_recipe[acidic_puffer_egg].ingredients[4].amount = 30
 data_recipe[acidic_puffer_egg].results[2].amount = 30
+data_recipe[acidic_puffer_egg].reset_freshness_on_craft = true
 
 data_item[corrosive_puffer_egg].spoil_ticks = 180 * minute
 data_item[corrosive_puffer_egg].spoil_result = spoilage
@@ -264,6 +284,7 @@ data_recipe[corrosive_puffer_egg].ingredients[2].amount = 4
 data_recipe[corrosive_puffer_egg].ingredients[3].amount = 30
 data_recipe[corrosive_puffer_egg].ingredients[4].amount = 30
 data_recipe[corrosive_puffer_egg].results[2].amount = 30
+data_recipe[corrosive_puffer_egg].reset_freshness_on_craft = true
 
 -- PUFFER
 local is_puffer_1 = "angels-bio-puffer-1"
@@ -273,26 +294,31 @@ data_item[gaseous_puffer].spoil_ticks = 360 * minute
 data_item[gaseous_puffer].spoil_result = spoilage
 data_recipe[gaseous_puffer].icons = THREE_D_I(gaseous_puffer_egg, nil, nil, puffer_egg_shell, gaseous_puffer, rancid_puffer)
 data_recipe[gaseous_puffer].energy_required = 8
+data_recipe[gaseous_puffer].reset_freshness_on_craft = true
 
 data_item[rancid_puffer].spoil_ticks = 360 * minute
 data_item[rancid_puffer].spoil_result = spoilage
 data_recipe[rancid_puffer].icons = THREE_D_I(rancid_puffer_egg, nil, nil, puffer_egg_shell, rancid_puffer, gaseous_puffer)
 data_recipe[rancid_puffer].energy_required = 8
+data_recipe[rancid_puffer].reset_freshness_on_craft = true
 
 data_item[blazing_puffer].spoil_ticks = 360 * minute
 data_item[blazing_puffer].spoil_result = spoilage
 data_recipe[blazing_puffer].icons = THREE_D_I(blazing_puffer_egg, nil, nil, puffer_egg_shell, blazing_puffer, gaseous_puffer)
 data_recipe[blazing_puffer].energy_required = 8
+data_recipe[blazing_puffer].reset_freshness_on_craft = true
 
 data_item[acidic_puffer].spoil_ticks = 360 * minute
 data_item[acidic_puffer].spoil_result = spoilage
 data_recipe[acidic_puffer].icons = THREE_D_I(acidic_puffer_egg, nil, nil, puffer_egg_shell, acidic_puffer, gaseous_puffer)
 data_recipe[acidic_puffer].energy_required = 8
+data_recipe[acidic_puffer].reset_freshness_on_craft = true
 
 data_item[corrosive_puffer].spoil_ticks = 360 * minute
 data_item[corrosive_puffer].spoil_result = spoilage
 data_recipe[corrosive_puffer].icons = THREE_D_I(corrosive_puffer_egg, nil, nil, puffer_egg_shell, corrosive_puffer, gaseous_puffer)
 data_recipe[corrosive_puffer].energy_required = 8
+data_recipe[corrosive_puffer].reset_freshness_on_craft = true
 
 data_item[puffer_egg_shell].subgroup = is_puffer_1
 data_item[puffer_egg_shell].order = y
@@ -315,6 +341,7 @@ data_recipe[gaseous_puffer_puffing].ingredients[2].amount = 30
 data_recipe[gaseous_puffer_puffing].ingredients[3].amount = 30
 data_recipe[gaseous_puffer_puffing].ingredients[4].amount = 120
 data_recipe[gaseous_puffer_puffing].results[3].amount = 240
+data_recipe[gaseous_puffer_puffing].reset_freshness_on_craft = true
 
 local rancid_puffer_puffing = "angels-puffer-puffing-2"
 data_recipe[rancid_puffer_puffing].subgroup = is_puffer_puffing
@@ -331,6 +358,7 @@ data_recipe[rancid_puffer_puffing].results =
     {type = item, name = rancid_puffer, amount = 1, probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = raw_gas_angels, amount = 240}
 }
+data_recipe[rancid_puffer_puffing].reset_freshness_on_craft = true
 
 local blazing_puffer_puffing = "angels-puffer-puffing-3"
 data_recipe[blazing_puffer_puffing].subgroup = is_puffer_puffing
@@ -346,6 +374,7 @@ data_recipe[blazing_puffer_puffing].results =
     {type = item, name = blazing_puffer, amount = 1, probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = urea_solution_angels, amount = 240}
 }
+data_recipe[blazing_puffer_puffing].reset_freshness_on_craft = true
 
 local acidic_puffer_puffing = "angels-puffer-puffing-4"
 data_recipe[acidic_puffer_puffing].subgroup = is_puffer_puffing
@@ -362,6 +391,7 @@ data_recipe[acidic_puffer_puffing].results =
     {type = item, name = acidic_puffer, amount = 1, probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = synthesis_angels, amount = 240}
 }
+data_recipe[acidic_puffer_puffing].reset_freshness_on_craft = true
 
 local corrosive_puffer_puffing = "angels-puffer-puffing-5"
 data_recipe[corrosive_puffer_puffing].subgroup = is_puffer_puffing
@@ -378,6 +408,7 @@ data_recipe[corrosive_puffer_puffing].results =
     {type = item, name = corrosive_puffer, amount = 1, probability = 0.95, ignored_by_productivity = 1, ignored_by_stats = 1, show_details_in_recipe_tooltip = false},
     {type = fluid, name = hydrazine_angels, amount = 240}
 }
+data_recipe[corrosive_puffer_puffing].reset_freshness_on_craft = true
 
 -- PUFFER ATMOSPHERE and WASTE
 data_item_subgroup["angels-bio-puffer-2"].order = d_c
@@ -390,6 +421,7 @@ data_recipe[puffer_atmosphere_2_3].ingredients[5].amount = 120
 data_recipe[puffer_atmosphere_2_3].results[5].amount = 30
 data_recipe[puffer_atmosphere_2_3].results[5].ignored_by_productivity = 30
 data_recipe[puffer_atmosphere_2_3].results[6].amount = 120
+data_recipe[puffer_atmosphere_2_3].reset_freshness_on_craft = true
 
 local puffer_waste_1_2 = "angels-puffer-puffing-12"
 data_recipe[puffer_waste_1_2].energy_required = 16
@@ -399,6 +431,7 @@ data_recipe[puffer_waste_1_2].ingredients[5].amount = 120
 data_recipe[puffer_waste_1_2].results[5].amount = 30
 data_recipe[puffer_waste_1_2].results[5].ignored_by_productivity = 30
 data_recipe[puffer_waste_1_2].results[6].amount = 120
+data_recipe[puffer_waste_1_2].reset_freshness_on_craft = true
 
 local puffer_waste_1_3 = "angels-puffer-puffing-13"
 data_recipe[puffer_waste_1_3].energy_required = 16
@@ -408,6 +441,7 @@ data_recipe[puffer_waste_1_3].ingredients[5].amount = 120
 data_recipe[puffer_waste_1_3].results[5].amount = 30
 data_recipe[puffer_waste_1_3].results[5].ignored_by_productivity = 30
 data_recipe[puffer_waste_1_3].results[6].amount = 120
+data_recipe[puffer_waste_1_3].reset_freshness_on_craft = true
 
 local puffer_waste_1_4 = "angels-puffer-puffing-14"
 data_recipe[puffer_waste_1_4].energy_required = 16
@@ -417,6 +451,7 @@ data_recipe[puffer_waste_1_4].ingredients[5].amount = 120
 data_recipe[puffer_waste_1_4].results[5].amount = 30
 data_recipe[puffer_waste_1_4].results[5].ignored_by_productivity = 30
 data_recipe[puffer_waste_1_4].results[6].amount = 120
+data_recipe[puffer_waste_1_4].reset_freshness_on_craft = true
 
 local puffer_waste_1_5 = "angels-puffer-puffing-15"
 data_recipe[puffer_waste_1_5].energy_required = 16
@@ -426,6 +461,7 @@ data_recipe[puffer_waste_1_5].ingredients[5].amount = 120
 data_recipe[puffer_waste_1_5].results[5].amount = 30
 data_recipe[puffer_waste_1_5].results[5].ignored_by_productivity = 30
 data_recipe[puffer_waste_1_5].results[6].amount = 120
+data_recipe[puffer_waste_1_5].reset_freshness_on_craft = true
 
 -- MIXED PUFFER
 data_item_subgroup["angels-bio-puffer-breeding-2"].order = d_d
@@ -437,6 +473,7 @@ data_recipe[puffer_mixed_2_3].ingredients[4].amount = 30
 data_recipe[puffer_mixed_2_3].ingredients[5].amount = 30
 data_recipe[puffer_mixed_2_3].results[3].amount = 30
 data_recipe[puffer_mixed_2_3].results[3].ignored_by_productivity = 30
+data_recipe[puffer_mixed_2_3].reset_freshness_on_craft = true
 
 local puffer_mixed_1_2 = "angels-puffer-breeding-12"
 data_recipe[puffer_mixed_1_2].energy_required = 64
@@ -445,6 +482,7 @@ data_recipe[puffer_mixed_1_2].ingredients[4].amount = 30
 data_recipe[puffer_mixed_1_2].ingredients[5].amount = 30
 data_recipe[puffer_mixed_1_2].results[3].amount = 30
 data_recipe[puffer_mixed_1_2].results[3].ignored_by_productivity = 30
+data_recipe[puffer_mixed_1_2].reset_freshness_on_craft = true
 
 local puffer_mixed_1_3 = "angels-puffer-breeding-13"
 data_recipe[puffer_mixed_1_3].energy_required = 64
@@ -453,6 +491,7 @@ data_recipe[puffer_mixed_1_3].ingredients[4].amount = 30
 data_recipe[puffer_mixed_1_3].ingredients[5].amount = 30
 data_recipe[puffer_mixed_1_3].results[3].amount = 30
 data_recipe[puffer_mixed_1_3].results[3].ignored_by_productivity = 30
+data_recipe[puffer_mixed_1_3].reset_freshness_on_craft = true
 
 local puffer_mixed_1_4 = "angels-puffer-breeding-14"
 data_recipe[puffer_mixed_1_4].energy_required = 64
@@ -461,6 +500,7 @@ data_recipe[puffer_mixed_1_4].ingredients[4].amount = 30
 data_recipe[puffer_mixed_1_4].ingredients[5].amount = 30
 data_recipe[puffer_mixed_1_4].results[3].amount = 30
 data_recipe[puffer_mixed_1_4].results[3].ignored_by_productivity = 30
+data_recipe[puffer_mixed_1_4].reset_freshness_on_craft = true
 
 local puffer_mixed_1_5 = "angels-puffer-breeding-15"
 data_recipe[puffer_mixed_1_5].energy_required = 64
@@ -469,6 +509,7 @@ data_recipe[puffer_mixed_1_5].ingredients[4].amount = 30
 data_recipe[puffer_mixed_1_5].ingredients[5].amount = 30
 data_recipe[puffer_mixed_1_5].results[3].amount = 30
 data_recipe[puffer_mixed_1_5].results[3].ignored_by_productivity = 30
+data_recipe[puffer_mixed_1_5].reset_freshness_on_craft = true
 
 -- RAW MEAT from PUFFER
 data_item_subgroup["angels-bio-puffer-butchery"].order = d_e
@@ -476,22 +517,27 @@ data_item_subgroup["angels-bio-puffer-butchery"].order = d_e
 local gaseous_puffer_butchery = "angels-puffer-butchery-1"
 data_recipe[gaseous_puffer_butchery].icons = TWO_I(gaseous_puffer, raw_meat)
 data_recipe[gaseous_puffer_butchery].energy_required = 16
+data_recipe[gaseous_puffer_butchery].reset_freshness_on_craft = true
 
 local rancid_puffer_butchery = "angels-puffer-butchery-2"
 data_recipe[rancid_puffer_butchery].icons = TWO_I(rancid_puffer, raw_meat)
 data_recipe[rancid_puffer_butchery].energy_required = 16
+data_recipe[rancid_puffer_butchery].reset_freshness_on_craft = true
 
 local blazing_puffer_butchery = "angels-puffer-butchery-3"
 data_recipe[blazing_puffer_butchery].icons = TWO_I(blazing_puffer, raw_meat)
 data_recipe[blazing_puffer_butchery].energy_required = 16
+data_recipe[blazing_puffer_butchery].reset_freshness_on_craft = true
 
 local acidic_puffer_butchery = "angels-puffer-butchery-4"
 data_recipe[acidic_puffer_butchery].icons = TWO_I(acidic_puffer, raw_meat)
 data_recipe[acidic_puffer_butchery].energy_required = 16
+data_recipe[acidic_puffer_butchery].reset_freshness_on_craft = true
 
 local corrosive_puffer_butchery = "angels-puffer-butchery-5"
 data_recipe[corrosive_puffer_butchery].icons = TWO_I(corrosive_puffer, raw_meat)
 data_recipe[corrosive_puffer_butchery].energy_required = 16
+data_recipe[corrosive_puffer_butchery].reset_freshness_on_craft = true
 
 -- SMALL BITER
 local is_biter_1 = "angels-bio-biter"
@@ -549,6 +595,7 @@ data_recipe[biter_small_egg].subgroup = is_biter_1
 data_recipe[biter_small_egg].icons = TWO_I(blazing_puffer_egg, biter_small_egg)
 data_recipe[biter_small_egg].order = a
 data_recipe[biter_small_egg].energy_required = 64
+data_recipe[biter_small_egg].reset_freshness_on_craft = true
 
 data_item[biter_small].order = b
 data_item[biter_small].spoil_ticks = 180 * minute
@@ -557,12 +604,14 @@ data_recipe[biter_small].icons = TWO_I(biter_small_egg, biter_small)
 data_recipe[biter_small].order = b
 data_recipe[biter_small].energy_required = 64
 data_recipe[biter_small].ingredients[3].amount = 15
+data_recipe[biter_small].reset_freshness_on_craft = true
 
 local biter_small_keeping = "angels-biter-small-keeping"
 data_recipe[biter_small_keeping].icons = TWO_I(biter_small, crystal_splinter)
 data_recipe[biter_small_keeping].order = b_a
 data_recipe[biter_small_keeping].energy_required = 32
 data_recipe[biter_small_keeping].ingredients[3].amount = 30
+data_recipe[biter_small_keeping].reset_freshness_on_craft = true
 
 data_item[biter_queen_small].order = c
 data_item[biter_queen_small].spoil_ticks = 180 * minute
@@ -572,6 +621,7 @@ local biter_small_breeding = "angels-biter-small-breeding"
 data_recipe[biter_small_breeding].order = c_a
 data_recipe[biter_small_breeding].energy_required = 64
 data_recipe[biter_small_breeding].ingredients[3].amount = 30
+data_recipe[biter_small_breeding].reset_freshness_on_craft = true
 
 local biter_small_butchering = "angels-biter-small-butchering"
 data_recipe[biter_small_butchering].subgroup = is_biter_1
@@ -583,6 +633,7 @@ data_recipe[biter_small_butchering].results =
     {type = item, name = raw_meat, amount = 1},
     {type = item, name = crystal_splinter, amount = 1, probability = 0.5}
 }
+data_recipe[biter_small_butchering].reset_freshness_on_craft = true
 
 local biter_queen_small_butchering = "angels-biter-queen-small-butchering"
 data_recipe[biter_queen_small_butchering].subgroup = is_biter_1
@@ -594,6 +645,7 @@ data_recipe[biter_queen_small_butchering].results =
     {type = item, name = raw_meat, amount_min = 1, amount_max = 2},
     {type = item, name = crystal_splinter, amount = 1}
 }
+data_recipe[biter_queen_small_butchering].reset_freshness_on_craft = true
 
 -- MEDIUM BITER
 data_item[biter_medium_egg].subgroup = is_biter_2
@@ -648,6 +700,7 @@ data_recipe[biter_medium_egg].subgroup = is_biter_2
 data_recipe[biter_medium_egg].icons = TWO_D_I(acidic_puffer_egg, crystal_splinter, biter_medium_egg)
 data_recipe[biter_medium_egg].order = a
 data_recipe[biter_medium_egg].energy_required = 64
+data_recipe[biter_medium_egg].reset_freshness_on_craft = true
 
 data_item[biter_medium].subgroup = is_biter_2
 data_item[biter_medium].order = b
@@ -658,6 +711,7 @@ data_recipe[biter_medium].icons = TWO_I(biter_medium_egg, biter_medium)
 data_recipe[biter_medium].order = b
 data_recipe[biter_medium].energy_required = 64
 data_recipe[biter_medium].ingredients[3].amount = 30
+data_recipe[biter_medium].reset_freshness_on_craft = true
 
 local biter_medium_keeping = "angels-biter-medium-keeping"
 data_recipe[biter_medium_keeping].subgroup = is_biter_2
@@ -665,6 +719,7 @@ data_recipe[biter_medium_keeping].icons = TWO_I(biter_medium, crystal_shard)
 data_recipe[biter_medium_keeping].order = b_a
 data_recipe[biter_medium_keeping].energy_required = 32
 data_recipe[biter_medium_keeping].ingredients[3].amount = 60
+data_recipe[biter_medium_keeping].reset_freshness_on_craft = true
 
 data_item[biter_queen_medium].subgroup = is_biter_2
 data_item[biter_queen_medium].order = c
@@ -676,6 +731,7 @@ data_recipe[biter_medium_breeding].subgroup = is_biter_2
 data_recipe[biter_medium_breeding].order = c_a
 data_recipe[biter_medium_breeding].energy_required = 64
 data_recipe[biter_medium_breeding].ingredients[3].amount = 60
+data_recipe[biter_medium_breeding].reset_freshness_on_craft = true
 
 local biter_medium_butchering = "angels-biter-medium-butchering"
 data_recipe[biter_medium_butchering].subgroup = is_biter_2
@@ -687,6 +743,7 @@ data_recipe[biter_medium_butchering].results =
     {type = item, name = raw_meat, amount = 2},
     {type = item, name = crystal_shard, amount = 1, probability = 0.5}
 }
+data_recipe[biter_medium_butchering].reset_freshness_on_craft = true
 
 local biter_queen_medium_butchering = "angels-biter-queen-medium-butchering"
 data_recipe[biter_queen_medium_butchering].subgroup = is_biter_2
@@ -698,6 +755,7 @@ data_recipe[biter_queen_medium_butchering].results =
     {type = item, name = raw_meat, amount_min = 2, amount_max = 4},
     {type = item, name = crystal_shard, amount = 1}
 }
+data_recipe[biter_queen_medium_butchering].reset_freshness_on_craft = true
 
 -- BIG BITER
 data_item[biter_big_egg].subgroup = is_biter_3
@@ -752,6 +810,7 @@ data_recipe[biter_big_egg].subgroup = is_biter_3
 data_recipe[biter_big_egg].icons = TWO_D_I(corrosive_puffer_egg, crystal_shard, biter_big_egg)
 data_recipe[biter_big_egg].order = a
 data_recipe[biter_big_egg].energy_required = 64
+data_recipe[biter_big_egg].reset_freshness_on_craft = true
 
 data_item[biter_big].subgroup = is_biter_3
 data_item[biter_big].order = b
@@ -762,6 +821,7 @@ data_recipe[biter_big].icons = TWO_I(biter_big_egg, biter_big)
 data_recipe[biter_big].order = b
 data_recipe[biter_big].energy_required = 64
 data_recipe[biter_big].ingredients[3].amount = 60
+data_recipe[biter_big].reset_freshness_on_craft = true
 
 local biter_big_keeping = "angels-biter-big-keeping"
 data_recipe[biter_big_keeping].subgroup = is_biter_3
@@ -769,6 +829,7 @@ data_recipe[biter_big_keeping].icons = TWO_I(biter_big, crystal_full)
 data_recipe[biter_big_keeping].order = b_a
 data_recipe[biter_big_keeping].energy_required = 32
 data_recipe[biter_big_keeping].ingredients[3].amount = 120
+data_recipe[biter_big_keeping].reset_freshness_on_craft = true
 
 data_item[biter_queen_big].subgroup = is_biter_3
 data_item[biter_queen_big].order = c
@@ -780,6 +841,7 @@ data_recipe[biter_big_breeding].subgroup = is_biter_3
 data_recipe[biter_big_breeding].order = c_a
 data_recipe[biter_big_breeding].energy_required = 64
 data_recipe[biter_big_breeding].ingredients[3].amount = 120
+data_recipe[biter_big_breeding].reset_freshness_on_craft = true
 
 local biter_big_butchering = "angels-biter-big-butchering"
 data_recipe[biter_big_butchering].subgroup = is_biter_3
@@ -791,6 +853,7 @@ data_recipe[biter_big_butchering].results =
     {type = item, name = raw_meat, amount = 4},
     {type = item, name = crystal_full, amount = 1, probability = 0.5}
 }
+data_recipe[biter_big_butchering].reset_freshness_on_craft = true
 
 local biter_queen_big_butchering = "angels-biter-queen-big-butchering"
 data_recipe[biter_queen_big_butchering].subgroup = is_biter_3
@@ -802,6 +865,7 @@ data_recipe[biter_queen_big_butchering].results =
     {type = item, name = raw_meat, amount_min = 4, amount_max = 8},
     {type = item, name = crystal_full, amount = 1}
 }
+data_recipe[biter_queen_big_butchering].reset_freshness_on_craft = true
 
 -- BIO ALIEN ITERMEDIATE
 data_item_subgroup["angels-bio-processing-alien-intermediate"].order = f
@@ -829,6 +893,7 @@ data_item[alien_meat].spoil_result = alien_bacteria
 data_recipe[alien_meat].category = angels_liquifying
 data_recipe[alien_meat].icons = THREE_I(raw_meat, alien_goo, alien_meat)
 data_recipe[alien_meat].ingredients[1].amount = 15
+data_recipe[alien_meat].reset_freshness_on_craft = true
 
 -- BIO ITERMEDIATE
 local petri_dish = "angels-petri-dish"

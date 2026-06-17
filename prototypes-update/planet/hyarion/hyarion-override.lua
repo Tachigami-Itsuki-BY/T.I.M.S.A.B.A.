@@ -361,9 +361,9 @@ if mods [hyarion_mods] then
     }
 
     data_recipe[carbon_nanotube_hyarion].subgroup = is_hyarion_recipe_other
-    data_recipe[carbon_nanotube_hyarion].icons = TWO_I(methane_angels, carbon_nanotube)
+    data_recipe[carbon_nanotube_hyarion].icons = THREE_R_I(methane_angels, carbon_nanotube, hydrogen_angels)
     data_recipe[carbon_nanotube_hyarion].order = k
-    data_recipe[carbon_nanotube_hyarion].energy_required = 4 -- CH₄ -N₂/cat-> C + H₂
+    data_recipe[carbon_nanotube_hyarion].energy_required = 4 -- CH₄ -N₂/cat-> C + 2H₂
     data_recipe[carbon_nanotube_hyarion].ingredients =
     {
         {type = fluid, name = methane_angels, amount = 30},
@@ -373,7 +373,8 @@ if mods [hyarion_mods] then
     data_recipe[carbon_nanotube_hyarion].results =
     {
         {type = item, name = carbon_nanotube, amount = 2},
-        {type = fluid, name = nitrogen_angels, amount = 15},
+        {type = fluid, name = hydrogen_angels, amount = 60},
+        {type = fluid, name = nitrogen_angels, amount = 15}, -- 30
         {type = item, name = catalyst_carrier, amount = 1}
     }
     data_recipe[carbon_nanotube_hyarion].main_product = carbon_nanotube

@@ -1101,8 +1101,13 @@ data_item[filter_ceramic].subgroup = is_catalysts_filters
 data_item[filter_ceramic].order = c
 data_item[filter_ceramic].weight = 5000
 data_recipe[filter_ceramic].subgroup = is_catalysts_filters
-data_recipe[filter_ceramic].icons = BUILDING_R_I(filter_ceramic, aluminium_oxide)
+data_recipe[filter_ceramic].icons = BUILDING_R_I(filter_ceramic, silicon_nitride_bob)
 data_recipe[filter_ceramic].order = c
+data_recipe[filter_ceramic].ingredients =
+{
+    {type = item, name = filter_frame, amount = 1},
+    {type = item, name = silicon_nitride_bob, amount = 1}
+}
 
 local filter_ceramic_refurbish = "angels-filter-ceramic-refurbish"
 data_recipe[filter_ceramic_refurbish].subgroup = is_catalysts_filters
@@ -1278,3 +1283,5 @@ data_recipe[milling_drum].icons = TWO_I(steel_plate, milling_drum)
 
 data_recipe[milling_drum_lubricated].icons = BUILDING_R_I(milling_drum, lubricant)
 data_recipe[milling_drum_lubricated].ingredients[2].amount = 15
+
+bobmods.lib.recipe.update_recycling_recipe({filter_coal, filter_ceramic})

@@ -740,49 +740,53 @@ if mods [bobtech] then
     data_lab[lab_2].order = b
     data_lab[lab_2].energy_usage = 120 .. kW
 
-    data_item[lab_alien].subgroup = is_lab
-    data_item[lab_alien].order = c
-    data_item[lab_alien].stack_size = 32
-    data_item[lab_alien].weight = 31250
-    data_recipe[lab_alien].subgroup = is_lab
-    data_recipe[lab_alien].order = c
-    data_recipe[lab_alien].energy_required = 1
-    data_recipe[lab_alien].ingredients =
-    {
-        {type = item, name = lab,                   amount = 1},
-        {type = item, name = alien_artifact_orange, amount = 4},
-        {type = item, name = alien_artifact_blue,   amount = 4},
-        {type = item, name = alien_artifact_yellow, amount = 4},
-        {type = item, name = alien_artifact_magenta, amount = 4},
-        {type = item, name = alien_artifact_green,  amount = 4},
-        {type = item, name = alien_artifact_red,    amount = 4},
-        {type = item, name = alien_artifact,        amount = 8}
-    }
-    data_lab[lab_alien].subgroup = is_lab
-    data_lab[lab_alien].order = c
-    data_lab[lab_alien].researching_speed = 4
-    data_lab[lab_alien].module_slots = 4
-    data_lab[lab_alien].energy_usage = 120 .. kW
+    bobmods.lib.recipe.update_recycling_recipe({lab_alien})
 
-    bobmods.lib.recipe.update_recycling_recipe({lab_2, lab_alien})
+    if mods [bobenemies] then
+        data_item[lab_alien].subgroup = is_lab
+        data_item[lab_alien].order = c
+        data_item[lab_alien].stack_size = 32
+        data_item[lab_alien].weight = 31250
+        data_recipe[lab_alien].subgroup = is_lab
+        data_recipe[lab_alien].order = c
+        data_recipe[lab_alien].energy_required = 1
+        data_recipe[lab_alien].ingredients =
+        {
+            {type = item, name = lab,                   amount = 1},
+            {type = item, name = alien_artifact_orange, amount = 4},
+            {type = item, name = alien_artifact_blue,   amount = 4},
+            {type = item, name = alien_artifact_yellow, amount = 4},
+            {type = item, name = alien_artifact_magenta, amount = 4},
+            {type = item, name = alien_artifact_green,  amount = 4},
+            {type = item, name = alien_artifact_red,    amount = 4},
+            {type = item, name = alien_artifact,        amount = 8}
+        }
+        data_lab[lab_alien].subgroup = is_lab
+        data_lab[lab_alien].order = c
+        data_lab[lab_alien].researching_speed = 4
+        data_lab[lab_alien].module_slots = 4
+        data_lab[lab_alien].energy_usage = 120 .. kW
 
-    if settings.startup[setting_horogon_extra_science_packs].value then
-        table.insert(data_lab[lab_alien].inputs, metallurgic_science_pack)
-        table.insert(data_lab[lab_alien].inputs, agricultural_science_pack)
-        table.insert(data_lab[lab_alien].inputs, electromagnetic_science_pack)
-        table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
-        table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
-    end
-    if mods [arig_mods] then
-        table.insert(data_lab[lab_alien].inputs, compression_science_pack)
-    end
-    if mods [hyarion_mods] then
-        table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
-        table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
-    end
-    if mods [tellus_mods] then
-        table.insert(data_lab[lab_alien].inputs, bioengineering_sciecne_pack)
-        table.insert(data_lab[lab_alien].inputs, pathological_sciecne_pack)
+        bobmods.lib.recipe.update_recycling_recipe({lab_alien})
+
+        if settings.startup[setting_horogon_extra_science_packs].value then
+            table.insert(data_lab[lab_alien].inputs, metallurgic_science_pack)
+            table.insert(data_lab[lab_alien].inputs, agricultural_science_pack)
+            table.insert(data_lab[lab_alien].inputs, electromagnetic_science_pack)
+            table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
+            table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
+        end
+        if mods [arig_mods] then
+            table.insert(data_lab[lab_alien].inputs, compression_science_pack)
+        end
+        if mods [hyarion_mods] then
+            table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
+            table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
+        end
+        if mods [tellus_mods] then
+            table.insert(data_lab[lab_alien].inputs, bioengineering_sciecne_pack)
+            table.insert(data_lab[lab_alien].inputs, pathological_sciecne_pack)
+        end
     end
 end
 

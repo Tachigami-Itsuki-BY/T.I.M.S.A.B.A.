@@ -603,7 +603,7 @@ if mods [panglia_mods] then
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.range = 32
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.cooldown = 3.75
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.damage_modifier = 2.25
-    data_ammo_turret[snouz_long_electric_gun_turret].energy_source.input_flow_limit = (1200 - 60) .. kW
+    data_ammo_turret[snouz_long_electric_gun_turret].energy_source.input_flow_limit = 1200 .. kW
     data_ammo_turret[snouz_long_electric_gun_turret].energy_source.drain = 60 .. kW
 
     bobmods.lib.recipe.update_recycling_recipe
@@ -702,4 +702,7 @@ if mods [panglia_mods] then
         {type = unlock_recipe, recipe = processing_unit_from_panglite_fiber},
         {type = unlock_recipe, recipe = advanced_processing_unit_from_panglite_fiber}
     }
+
+    -- ENERGY ROOTS
+    data_generator["panglia_energy_roots"].fluid_usage_per_tick = 7.5/60
 end
