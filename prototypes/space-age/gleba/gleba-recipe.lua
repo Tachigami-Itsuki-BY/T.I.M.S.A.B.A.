@@ -247,6 +247,7 @@ for _, RECIPE in ipairs(recipe_nutrients) do
             allow_productivity = true,
             allow_quality = true,
             allow_decomposition = false,
+            reset_freshness_on_craft = true, -- new
             energy_required = 2,
             ingredients = {{type = item, name = RECIPE.name, amount = RECIPE.ingredient}},
             results = {{type = item, name = nutrients, amount = RECIPE.result}},
@@ -304,6 +305,7 @@ for _, RECIPE in ipairs(recipe_breeding_fish) do
             allow_productivity = true,
             allow_quality = false,
             allow_decomposition = false,
+            reset_freshness_on_craft = true, -- new
             energy_required = 32,
             ingredients =
             {
@@ -347,6 +349,7 @@ for _, RECIPE in ipairs(recipe_breeding_puffer) do
             allow_productivity = true,
             allow_quality = false,
             allow_decomposition = false,
+            reset_freshness_on_craft = true, -- new
             energy_required = 32,
             ingredients =
             {
@@ -365,8 +368,8 @@ for _, RECIPE in ipairs(recipe_breeding_puffer) do
         }
     })
 end
---[[
-recipe_breeding_biter =
+
+--[[recipe_breeding_biter =
 {
     {name = biter_small,        order = f_a, ingredient = , unlock_recipe = tech_gleba_biology},
     {name = biter_queen_small,  order = f_b, ingredient = , unlock_recipe = tech_gleba_biology},
@@ -408,10 +411,9 @@ for _, RECIPE in ipairs(recipe_breeding_biter) do
             main_product = RECIPE.name
         }
     })
-end
-]]
---[[
-data:extend
+end]]
+
+--[[data:extend
 ({
     {
         type = recipe,
@@ -430,5 +432,4 @@ data:extend
         results = {{type = , name = , amount = }},
         main_product = 
     }
-})
-]]
+})]]

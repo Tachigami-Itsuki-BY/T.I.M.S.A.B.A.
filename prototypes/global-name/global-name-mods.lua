@@ -345,6 +345,7 @@ clowns_nuclear = "Clowns-Nuclear"
 plutonium_239_mods = "plutonium-239"
 
 -- BOBS
+bobenemies = "bobenemies"
 bobequipment = "bobequipment"
 boblogistics = "boblogistics"
 bobmodules = "bobmodules"

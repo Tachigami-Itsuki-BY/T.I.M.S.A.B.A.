@@ -1,4 +1,4 @@
-if mods [muluna_mods] or mods [shchierbin_mods] and not mods [maraxsis_mods] then
+if (mods [muluna_mods] or mods [shchierbin_mods]) and not mods [maraxsis_mods] then
     data_fluid[atmosphere_maraxsis] = nil
     data_recipe[atmosphere_maraxsis] = nil
 end
@@ -13,11 +13,24 @@ end
 
 if mods [secretas_frozeta_mods] or mods [nexus_mods] then
     data_item[gold_ore_mods] = nil
+    data_recipe[gold_ore_mods .. _recycling] = nil
+	if mods [panglia_mods] then
+		data_recipe[item_ .. gold_ore_mods .. _panglia_crushing] = nil
+	end
+
     data_item[gold_plate_mods] = nil
+    data_recipe[gold_plate_mods .. _recycling] = nil
+	if mods [panglia_mods] then
+		data_recipe[item_ .. gold_plate_mods .. _panglia_crushing] = nil
+	end
 end
 
 if mods [maraxsis_mods] or mods [moshine_mods] then
     data_item[sand_mods] = nil
+    data_recipe[sand_mods .. _recycling] = nil
+    if mods[panglia_mods] then
+        data_recipe[item_ .. sand_mods .. _panglia_crushing] = nil
+    end
 end
 
 if mods [maraxsis_mods] or mods [shchierbin_mods] then
@@ -26,10 +39,18 @@ end
 
 if mods [maraxsis_mods] or mods [shchierbin_mods] then
     data_item[salt_mods] = nil
+    data_recipe[salt_mods .. _recycling] = nil
+	if mods [panglia_mods] then
+		data_recipe[item_ .. salt_mods .. _panglia_crushing] = nil
+	end
 end
 
 if mods [moshine_mods] or mods [muluna_mods] then
     data_item[silicon_carbide_mods] = nil
+    data_recipe[silicon_carbide_mods .. _recycling] = nil
+	if mods [panglia_mods] then
+		data_recipe[item_ .. silicon_carbide_mods .. _panglia_crushing] = nil
+	end
 end
 
 if mods [muluna_mods] or mods [corrundum_mods] or mods [shchierbin_mods] then

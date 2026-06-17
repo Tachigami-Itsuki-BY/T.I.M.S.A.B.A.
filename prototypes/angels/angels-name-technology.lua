@@ -17,12 +17,12 @@ tech_advanced_ore_refining_5 = "advanced-ore-refining-5"
 tech_advanced_ore_refining_6 = "advanced-ore-refining-6"
 tech_ore_electro_whinning_cell = "angels-ore-electro-whinning-cell"
 
-tech_geode_processing_1 = "angles-geode-processing-1"
-tech_geode_processing_2 = "angles-geode-processing-2"
+tech_geode_processing_1 = "angels-geode-processing-1"
+tech_geode_processing_2 = "angels-geode-processing-2"
 
-tech_slag_processing_1 = "angles-slag-processing-1"
-tech_slag_processing_2 = "angles-slag-processing-2"
-tech_slag_processing_3 = "angles-slag-processing-3"
+tech_slag_processing_1 = "angels-slag-processing-1"
+tech_slag_processing_2 = "angels-slag-processing-2"
+tech_slag_processing_3 = "angels-slag-processing-3"
 
 -- ANGELS METALLURGY SMELTING AND CASTING
 tech_iron_smelting_1 = "angels-iron-smelting-1"

@@ -71,7 +71,7 @@ data_recipe[promethium_science_pack].ingredients =
 }
 data_recipe[promethium_science_pack].results[1].amount = 8
 
-if mods [bobtech] then
+if mods [bobtech] and mods [bobenemies] then
     local alien_science_pack_orange = "bob-alien-science-pack-orange"
     data_tool[alien_science_pack_orange].subgroup = is_alien_science_pack
     data_tool[alien_science_pack_orange].order = a
@@ -449,12 +449,12 @@ data_recipe[circuit_board].ingredients =
     {type = fluid, name = iron_chloride_III_solution_angels, amount = 15}
 }
 
-data_item[superior_circuit_board].order = c
-data_item[superior_circuit_board].subgroup = is_circuit_boards
-data_recipe[superior_circuit_board].order = c
-data_recipe[superior_circuit_board].subgroup = is_circuit_boards
-data_recipe[superior_circuit_board].energy_required = 4
-data_recipe[superior_circuit_board].ingredients =
+data_item[improved_circuit_board].order = c
+data_item[improved_circuit_board].subgroup = is_circuit_boards
+data_recipe[improved_circuit_board].order = c
+data_recipe[improved_circuit_board].subgroup = is_circuit_boards
+data_recipe[improved_circuit_board].energy_required = 4
+data_recipe[improved_circuit_board].ingredients =
 {
     {type = item, name = glass_fiber_board, amount = 1},
     {type = item, name = copper_plate, amount = 2},
@@ -462,12 +462,12 @@ data_recipe[superior_circuit_board].ingredients =
     {type = fluid, name = iron_chloride_III_solution_angels, amount = 15}
 }
 
-data_item[multi_layer_circuit_board].order = d
-data_item[multi_layer_circuit_board].subgroup = is_circuit_boards
-data_recipe[multi_layer_circuit_board].order = d
-data_recipe[multi_layer_circuit_board].subgroup = is_circuit_boards
-data_recipe[multi_layer_circuit_board].energy_required = 8
-data_recipe[multi_layer_circuit_board].ingredients =
+data_item[advanced_circuit_board].order = d
+data_item[advanced_circuit_board].subgroup = is_circuit_boards
+data_recipe[advanced_circuit_board].order = d
+data_recipe[advanced_circuit_board].subgroup = is_circuit_boards
+data_recipe[advanced_circuit_board].energy_required = 8
+data_recipe[advanced_circuit_board].ingredients =
 {
     {type = item, name = glass_fiber_board, amount = 1},
     {type = item, name = copper_plate, amount = 4},
@@ -493,7 +493,7 @@ data_recipe[processing_unit].order = c
 data_recipe[processing_unit].energy_required = 4
 data_recipe[processing_unit].ingredients =
 {
-    {type = item, name = superior_circuit_board, amount = 1},
+    {type = item, name = improved_circuit_board, amount = 1},
     {type = item, name = resistor, amount = 8},
     {type = item, name = transistor, amount = 8},
     {type = item, name = integrated_circuit, amount = 4},
@@ -505,7 +505,7 @@ data_recipe[advanced_processing_unit].order = d
 data_recipe[advanced_processing_unit].energy_required = 8
 data_recipe[advanced_processing_unit].ingredients =
 {
-    {type = item, name = multi_layer_circuit_board, amount = 1},
+    {type = item, name = advanced_circuit_board, amount = 1},
     {type = item, name = resistor, amount = 8},
     {type = item, name = CPU, amount = 4},
     {type = item, name = transistor, amount = 8},
@@ -1221,8 +1221,8 @@ local materials =
     integrated_circuit,
     CPU,
     circuit_board,
-    superior_circuit_board,
-    multi_layer_circuit_board,
+    improved_circuit_board,
+    advanced_circuit_board,
     basic_circuit_board,
     electronic_circuit,
     advanced_circuit,
@@ -1301,8 +1301,8 @@ bobmods.lib.recipe.update_recycling_recipe
     integrated_circuit,
     CPU,
     circuit_board,
-    superior_circuit_board,
-    multi_layer_circuit_board,
+    improved_circuit_board,
+    advanced_circuit_board,
     basic_circuit_board,
     electronic_circuit,
     processing_unit,

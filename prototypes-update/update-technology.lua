@@ -290,6 +290,7 @@ data_technology[tech_battery_2].effects =
 }
 
 data_technology[tech_battery_3].localised_description = {"technology-description.battery"}
+data_technology[tech_battery_3].prerequisites = {tech_metallurgy_4, tech_silver_smelting_2}
 
 data_technology[tech_uranium_power].prerequisites = {heat_pipe_2, tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
 data_technology[tech_uranium_power].effects =
@@ -577,6 +578,8 @@ data_technology[tech_advanced_ore_refining_4].effects =
     {type = unlock_recipe, recipe = tungsten_ore_recipe},
     {type = unlock_recipe, recipe = platinum_ore_recipe},
 }
+
+table.insert(data_technology[tech_slag_processing_2].prerequisites, tech_ceramics)
 
 -- ANGELS METALLURGY SMELTING
 -- IRON and STEEL

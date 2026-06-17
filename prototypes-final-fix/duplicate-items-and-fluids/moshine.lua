@@ -20,11 +20,6 @@ if mods [moshine_mods] then
 		data_recipe[item_ .. glass_mods .. _panglia_crushing] = nil
 	end
 
-	data_recipe[silicon_carbide_mods .. _recycling] = nil
-	if mods [panglia_mods] then
-		data_recipe[item_ .. silicon_carbide_mods .. _panglia_crushing] = nil
-	end
-
 	data_recipe["concrete-from-molten-iron-and-sand"] = nil
 	data_recipe["petroleum-from-sand-sulfur-steam-carbon"] = nil
 

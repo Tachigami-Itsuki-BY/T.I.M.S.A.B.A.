@@ -87,6 +87,7 @@ if mods [bobplates] >= "2.1.0" then
     data_recipe[cobalt_steel_bearing].main_product = cobalt_steel_bearing
 
     local tech_cobalt_processing = "bob-cobalt-processing"
+    data_technology[tech_cobalt_processing].enabled = true
     data_technology[tech_cobalt_processing].hidden = false
     data_technology[tech_cobalt_processing].hidden_in_factoriopedia = false
     data_technology[tech_cobalt_processing].effects =
@@ -172,11 +173,16 @@ if mods [bobplates] >= "2.1.0" then
     data_recipe["bob-carbon-from-acid"] = nil
 
     -- LITHIUM
+    data_technology[tech_lithium_processing].enabled = true
     data_technology[tech_lithium_processing].hidden = false
     data_technology[tech_lithium_processing].hidden_in_factoriopedia = false
 
     -- BATTERY
-    data_technology[tech_battery_3].effects = {{type = unlock_recipe, recipe = battery_silver_zinc}}
+    data_technology[tech_battery_3].effects =
+    {
+        {type = unlock_recipe, recipe = silver_oxide_I_bob},
+        {type = unlock_recipe, recipe = battery_silver_zinc}
+    }
 
     -- HEAT SHIELD
     data_technology[tech_heat_shield].prerequisites = {tech_ceramics, tech_powder_metallurgy_4, tech_tungsten_processing}

@@ -1,5 +1,40 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.2
+Date: 17.06.2026
+  Bugfixes:
+    - [All] Исправлены мелкие ошибки.
+    - [All] Исправлена ​​ошибка, препятствовавшая исследованию следующих технологий: Логистика 3 и Батарея 2.
+    - [All] Исправлена ​​ошибка, из-за которой процент порчи продукта наследовался от ингредиента.
+
+    - [All] Fixed minor bugs.
+    - [All] Fixed a bug preventing research of the following technologies: Logistics 3 and Battery 2.
+    - [All] Fixed a bug where the result would inherit the spoilage percentage from the ingredient.
+
+  Balancing:
+    - [All] В рецепте Керамического Фильтра произведена замена ингредиента: Глинозём → Нитрид Кремния.
+    - [Tellus] В рецепте Выращивание Магниевых Бактерий скорректированы ингредиенты.
+    - [Hyarion] В рецепт Углеродной Нанотрубки добавлен реузультат: Водород.
+    - [Tellus] Удалена технология Вместимость конвейера 3.
+
+    - [All] Replaced an ingredient in the Ceramic Filter recipe: Alumina → Silicon Nitride.
+    - [Tellus] Adjusted results in the Cultivation Magnesium Bacteria recipe.
+    - [Hyarion] Added a result in the Carbon Nanotube recipe: Hydrogen Gas.
+    - [Tellus] Removed Belt Capacity 3 technology.
+
+  Locale:
+    - [All] Небольшие правки в локализации.
+    - [Rus] Обновлена русская локализация.
+
+    - [All] Minor adjustments to localization.
+
+  Modding:
+    - [Mods] Добавлена настройка «Реальное сжигание» для мода «Flare Stack» в настройках модов (по умолчанию включена)
+    - [Mods] Мод «Bob's Enemies» переведён в опциональную зависимость.
+
+    - [Mods] Added setting "Real incineration" for "Flare Stack" mod in the mods settings (enabled by default)
+    - [Mods] Moved "Bob's Enemies" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.1
 Date: 16.06.2026
   Bugfixes:

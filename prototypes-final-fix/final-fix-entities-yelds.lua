@@ -324,12 +324,14 @@ data_resource[fluorine_vent].minable.results[1].amount_max = 30
 
 -- BOB
 local hardened_bile = "bob-hardened-bile"
-if mods ["graille-bob-hardened-bile-remover"] then
-    data_entity[hardened_bile].minable = data_entity[hardened_bile].minable or {mining_time = 1}
-    data_entity[hardened_bile].minable.results = {{type = item, name = resin_bob, amount_min = 8, amount_max = 16}}
-else
-    data_entity[hardened_bile].minable.results[1].amount_min = 8
-    data_entity[hardened_bile].minable.results[1].amount_max = 16
+if mods [bobenemies] then
+    if mods ["graille-bob-hardened-bile-remover"] then
+        data_entity[hardened_bile].minable = data_entity[hardened_bile].minable or {mining_time = 1}
+        data_entity[hardened_bile].minable.results = {{type = item, name = resin_bob, amount_min = 8, amount_max = 16}}
+    else
+        data_entity[hardened_bile].minable.results[1].amount_min = 8
+        data_entity[hardened_bile].minable.results[1].amount_max = 16
+    end
 end
 
 -- ANGELS

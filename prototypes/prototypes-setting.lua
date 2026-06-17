@@ -39,3 +39,6 @@ setting_dye_reinforced_concrete = "dye-enable-refined-concrete"
 setting_dye_reinforced_hazard_concrete = "dye-enable-refined-hazard-concrete"
 setting_dye_stone_wall = "dye-enable-wall"
 setting_dye_concrete_brick = "setting-tellus-dye-concrete-brick"
+
+-- MODS
+setting_real_incineration = "setting-real-incineration"

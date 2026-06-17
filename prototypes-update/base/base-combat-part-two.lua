@@ -214,12 +214,14 @@ if mods [bobvehicleequipment] then
         {name = vehicle_solar_panel_eq_5, power = 600}
     }
     for _, EQUIPMENT in pairs(vehicle_solar_panels_eq) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_6
-        data_item[EQUIPMENT.name].stack_size = 32
-        data_item[EQUIPMENT.name].weight = 31250
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_6
-        data_recipe[EQUIPMENT.name].energy_required = 4
-        data_solar_panel_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_6
+            data_item[EQUIPMENT.name].stack_size = 32
+            data_item[EQUIPMENT.name].weight = 31250
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_6
+            data_recipe[EQUIPMENT.name].energy_required = 4
+            data_solar_panel_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
+        end
     end
     local function vehicle_solar_panel_eq_recipe(name, circuit, plate_1, plate_2, cable, solar_panel, glass)
         local ingredients =
@@ -262,12 +264,14 @@ if mods [bobvehicleequipment] then
         {name = vehicle_fission_cell_eq_6, power = 1800}
     }
     for _, EQUIPMENT in pairs(vehicle_fission_cells_eq) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_7
-        data_item[EQUIPMENT.name].stack_size = 16
-        data_item[EQUIPMENT.name].weight = 62500
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_7
-        data_recipe[EQUIPMENT.name].energy_required = 8
-        data_generator_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_7
+            data_item[EQUIPMENT.name].stack_size = 16
+            data_item[EQUIPMENT.name].weight = 62500
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_7
+            data_recipe[EQUIPMENT.name].energy_required = 8
+            data_generator_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
+        end
     end
     data_recipe[vehicle_fission_cell_eq_1].ingredients =
     {
@@ -402,12 +406,14 @@ if mods [bobvehicleequipment] then
         {name = vehicle_fission_reactor_eq_6, power = 3600}
     }
     for _, EQUIPMENT in pairs(vehicle_fission_reactors) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_8
-        data_item[EQUIPMENT.name].stack_size = 8
-        data_item[EQUIPMENT.name].weight = 125000
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_8
-        data_recipe[EQUIPMENT.name].energy_required = 8
-        data_generator_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_8
+            data_item[EQUIPMENT.name].stack_size = 8
+            data_item[EQUIPMENT.name].weight = 125000
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_8
+            data_recipe[EQUIPMENT.name].energy_required = 8
+            data_generator_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
+        end
     end
     data_recipe[vehicle_fission_reactor_eq_1].ingredients =
     {
@@ -552,14 +558,16 @@ if mods [bobvehicleequipment] then
         {name = vehicle_energy_shield_eq_6, input_flow_limit = 1440, max_shield_value = 360}
     }
     for _, EQUIPMENT in pairs(vehicle_energy_shields_eq) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_9
-        data_item[EQUIPMENT.name].stack_size = 16
-        data_item[EQUIPMENT.name].weight = 62500
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_9
-        data_recipe[EQUIPMENT.name].energy_required = 8
-        data_energy_shield_eq[EQUIPMENT.name].energy_per_shield = 30 .. kJ
-        data_energy_shield_eq[EQUIPMENT.name].max_shield_value = EQUIPMENT.max_shield_value
-        data_energy_shield_eq[EQUIPMENT.name].energy_source.input_flow_limit = EQUIPMENT.input_flow_limit .. kW
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_9
+            data_item[EQUIPMENT.name].stack_size = 16
+            data_item[EQUIPMENT.name].weight = 62500
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_9
+            data_recipe[EQUIPMENT.name].energy_required = 8
+            data_energy_shield_eq[EQUIPMENT.name].energy_per_shield = 30 .. kJ
+            data_energy_shield_eq[EQUIPMENT.name].max_shield_value = EQUIPMENT.max_shield_value
+            data_energy_shield_eq[EQUIPMENT.name].energy_source.input_flow_limit = EQUIPMENT.input_flow_limit .. kW
+        end
     end
     local function vehicle_energy_shield_eq_recipe(name, circuit, plate, energy_shield_eq, module_, alien_artifact_1, alien_artifact_2)
         local ingredients = {{type = item, name = circuit, amount = 8}}
@@ -618,12 +626,14 @@ if mods [bobvehicleequipment] then
         {name = vehicle_battery_eq_6, buffer_capacity = 960000}
     }
     for _, EQUIPMENT in pairs(vehicle_batterys_eq) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_10
-        data_item[EQUIPMENT.name].stack_size = 32
-        data_item[EQUIPMENT.name].weight = 31250
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_10
-        data_recipe[EQUIPMENT.name].energy_required = 8
-        data_battery_eq[EQUIPMENT.name].energy_source.buffer_capacity = EQUIPMENT.buffer_capacity .. kJ
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_10
+            data_item[EQUIPMENT.name].stack_size = 32
+            data_item[EQUIPMENT.name].weight = 31250
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_10
+            data_recipe[EQUIPMENT.name].energy_required = 8
+            data_battery_eq[EQUIPMENT.name].energy_source.buffer_capacity = EQUIPMENT.buffer_capacity .. kJ
+        end
     end
     local function vehicle_battery_eq_recipe(name, battery, circuit, alien_artifact_1, alien_artifact_2)
         local ingredients =
@@ -658,23 +668,26 @@ if mods [bobvehicleequipment] then
         {name = vehicle_plasma_cannon_eq_4, range = 56, cooldown = 240, damage_modifier = 16, energy_consumption = 48000}
     }
     for _, EQUIPMENT in pairs(vehicle_plasma_cannon_eq) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_11
-        data_item[EQUIPMENT.name].stack_size = 16
-        data_item[EQUIPMENT.name].weight = 62500
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_11
-        data_recipe[EQUIPMENT.name].energy_required = 8
-        data_active_defense_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
-        data_active_defense_eq[EQUIPMENT.name].energy_source.input_flow_limit = (EQUIPMENT.energy_consumption / 4) .. kW
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.cooldown = EQUIPMENT.cooldown
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.min_range = 16
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
-        local ammo_type = data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type
-        local action = ammo_type.action[1] or ammo_type.action
-        local delivery = action.action_delivery[1] or action.action_delivery
-        if delivery then
-            delivery.max_range = EQUIPMENT.range * 1.5
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_11
+            data_item[EQUIPMENT.name].stack_size = 16
+            data_item[EQUIPMENT.name].weight = 62500
+            data_recipe[EQUIPMENT.name].category = crafting_fluid
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_11
+            data_recipe[EQUIPMENT.name].energy_required = 8
+            data_active_defense_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
+            data_active_defense_eq[EQUIPMENT.name].energy_source.input_flow_limit = (EQUIPMENT.energy_consumption / 4) .. kW
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.cooldown = EQUIPMENT.cooldown
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.min_range = 16
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
+            local ammo_type = data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type
+            local action = ammo_type.action[1] or ammo_type.action
+            local delivery = action.action_delivery[1] or action.action_delivery
+            if delivery then
+                delivery.max_range = EQUIPMENT.range * 1.5
+            end
         end
     end
     if data_item[alien_artifact] then
@@ -799,19 +812,21 @@ if mods [bobvehicleequipment] then
         {name = vehicle_laser_defense_eq_6, energy_consumption = 720, damage_modifier = 6, cooldown = 60, range = 36}
     }
     for _, EQUIPMENT in pairs(vehicle_laser_defenses_eq) do
-        data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_12
-        data_item[EQUIPMENT.name].stack_size = 16
-        data_item[EQUIPMENT.name].weight = 62500
-        data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_12
-        data_recipe[EQUIPMENT.name].energy_required = 8
-        data_active_defense_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
-        data_active_defense_eq[EQUIPMENT.name].energy_source.input_flow_limit = (EQUIPMENT.energy_consumption * 1.5) .. kW
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.cooldown = EQUIPMENT.cooldown
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action.action_delivery.max_length = EQUIPMENT.range
-        data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action.action_delivery.duration = EQUIPMENT.cooldown
+        if data_item[EQUIPMENT.name] then
+            data_item[EQUIPMENT.name].subgroup = is_vehicle_equipment_12
+            data_item[EQUIPMENT.name].stack_size = 16
+            data_item[EQUIPMENT.name].weight = 62500
+            data_recipe[EQUIPMENT.name].subgroup = is_vehicle_equipment_12
+            data_recipe[EQUIPMENT.name].energy_required = 8
+            data_active_defense_eq[EQUIPMENT.name].energy_source.buffer_capacity = (EQUIPMENT.energy_consumption * 2) .. kJ
+            data_active_defense_eq[EQUIPMENT.name].energy_source.input_flow_limit = (EQUIPMENT.energy_consumption * 1.5) .. kW
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.range = EQUIPMENT.range
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.cooldown = EQUIPMENT.cooldown
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.damage_modifier = EQUIPMENT.damage_modifier
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.energy_consumption = EQUIPMENT.energy_consumption .. kJ
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action.action_delivery.max_length = EQUIPMENT.range
+            data_active_defense_eq[EQUIPMENT.name].attack_parameters.ammo_type.action.action_delivery.duration = EQUIPMENT.cooldown
+        end
     end
     local function vehicle_laser_defense_eq_recipe(name, battery, circuit, plate, laser_defense_eq, polished, artifact)
         local ingredients =
@@ -1180,6 +1195,7 @@ local plasma_turrets =
 }
 for _, BUILD in pairs(plasma_turrets) do
     data_item[BUILD.name].subgroup = is_turret_5
+    data_recipe[BUILD.name].category = crafting_fluid
     data_recipe[BUILD.name].subgroup = is_turret_5
     data_electric_turret[BUILD.name].subgroup = is_turret_5
     data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ

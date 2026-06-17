@@ -274,14 +274,28 @@ if mods [muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
     end
 
-    -- tellus
+    if mods [tellus_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+    end
 end
 
 if not mods [muluna_mods] and mods [hyarion_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
 end
 
--- tellus
+if not mods [muluna_mods] and mods [tellus_mods] then
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
+end
 
 -- MODS
 if mods [muluna_mods] then
@@ -407,9 +421,11 @@ if mods [bobtech] and mods [space_age_science_packs] then
     data_technology[tech_transport_science_pack].icons = nil
 
     local tech_alien_research = "bob-alien-research"
-    data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
-    data_technology[tech_alien_research].icon_size = 256
-    data_technology[tech_alien_research].icons = nil
+    if data_technology[tech_alien_research] then
+        data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
+        data_technology[tech_alien_research].icon_size = 256
+        data_technology[tech_alien_research].icons = nil
+    end
 end
 
 if mods [moshine_mods] then

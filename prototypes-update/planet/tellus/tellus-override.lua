@@ -131,6 +131,11 @@ if mods [tellus_mods] then
     data_recipe[magnesium_bacteria_cultivation].subgroup = is_tellus_magnesium
     data_recipe[magnesium_bacteria_cultivation].icons = STONKS_I(stonks_png, magnesium_bacteria)
     data_recipe[magnesium_bacteria_cultivation].order = b_a
+    data_recipe[magnesium_bacteria_cultivation].ingredients =
+    {
+        {type = item, name = nutrients, amount = 2},
+        {type = item, name = magnesium_bacteria, amount = 2}
+    }
 
     local magnesium_saphirite_bacteria = "planetaris-magnesium-iron-bacteria"
     data_recipe[magnesium_saphirite_bacteria].subgroup = is_tellus_magnesium
