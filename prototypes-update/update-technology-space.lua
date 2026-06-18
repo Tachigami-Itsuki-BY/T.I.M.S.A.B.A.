@@ -654,6 +654,7 @@ data_technology[electromagnetic_science_pack].research_trigger =
 }
 
 data_technology[mech_armor].prerequisites = {electromagnetic_science_pack, "bob-power-armor-5"}
+table.insert(data_technology[mech_armor].unit.ingredients, {production_science_pack, 1})
 
 -- AQUILO
 if mods ["AsteroidBelt"] then

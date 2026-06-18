@@ -1061,6 +1061,13 @@ data_recipe[glass_coil_fiber_2].results[1].amount = 16
 data_recipe[glass_coil_fiber_2].results[2].amount = 60
 
 data_item[glass_bob].stack_size = 200
+data_recipe[glass_bob].hidden = false
+data_recipe[glass_bob].hidden_in_factoriopedia = false
+data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
+data_recipe[glass_bob].icons = TWO_I(sand_angels, glass_bob)
+data_recipe[glass_bob].energy_required = 4
+data_recipe[glass_bob].ingredients[1].name = sand_angels
+data_recipe[glass_bob].ingredients[1].amount = 8
 
 local glass_angels = "angels-plate-glass"
 data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)

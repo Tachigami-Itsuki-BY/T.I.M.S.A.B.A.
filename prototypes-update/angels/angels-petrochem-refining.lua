@@ -1901,24 +1901,26 @@ data_recipe[glycerol_angels].results =
 }
 data_recipe[glycerol_angels].main_product = glycerol_angels
 
-data_fluid[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}
-data_fluid[nitroglycerin_bob].localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]5[/font](ONO[font=default-tiny-bold]2[/font])[font=default-tiny-bold]3[/font]"} or nil
-data_recipe[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}
-data_recipe[nitroglycerin_bob].icons = TWO_D_I(glycerol_angels, nitric_acid_angels, nitroglycerin_bob, water_purified_angels)
-data_recipe[nitroglycerin_bob].energy_required = 2 -- C₃H₈O₃ + HNO₃ -H₂SO₄-> C₃H₅N₃O₉ + H₂O
-data_recipe[nitroglycerin_bob].ingredients =
-{
-    {type = fluid, name = glycerol_angels, amount = 30},
-    {type = fluid, name = nitric_acid_angels, amount = 30},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30}
-}
-data_recipe[nitroglycerin_bob].results =
-{
-    {type = fluid, name = nitroglycerin_bob, amount = 30},
-    {type = fluid, name = water_purified_angels, amount = 30},
-    {type = fluid, name = sulfuric_acid_angels, amount = 15}
-}
-data_recipe[nitroglycerin_bob].main_product = nitroglycerin_bob
+if mods [bobwarfare] then
+    data_fluid[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}
+    data_fluid[nitroglycerin_bob].localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]5[/font](ONO[font=default-tiny-bold]2[/font])[font=default-tiny-bold]3[/font]"} or nil
+    data_recipe[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}
+    data_recipe[nitroglycerin_bob].icons = TWO_D_I(glycerol_angels, nitric_acid_angels, nitroglycerin_bob, water_purified_angels)
+    data_recipe[nitroglycerin_bob].energy_required = 2 -- C₃H₈O₃ + HNO₃ -H₂SO₄-> C₃H₅N₃O₉ + H₂O
+    data_recipe[nitroglycerin_bob].ingredients =
+    {
+        {type = fluid, name = glycerol_angels, amount = 30},
+        {type = fluid, name = nitric_acid_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
+    }
+    data_recipe[nitroglycerin_bob].results =
+    {
+        {type = fluid, name = nitroglycerin_bob, amount = 30},
+        {type = fluid, name = water_purified_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 15}
+    }
+    data_recipe[nitroglycerin_bob].main_product = nitroglycerin_bob
+end
 
 data_fluid[toluene_angels].subgroup = is_explosives
 data_fluid[toluene_angels].order = e

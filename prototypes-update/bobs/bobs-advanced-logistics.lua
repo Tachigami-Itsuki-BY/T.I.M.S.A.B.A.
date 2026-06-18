@@ -231,21 +231,25 @@ local artillery_wagons =
     {name = artillery_wagon_3, order = c, weight = 4000, equipment_grid = large_equipment_grid,  localised_name = {"entity-name.artillery-wagon-3"}}
 }
 for _, TRANSPORT in pairs(artillery_wagons) do
-    data_item_entity[TRANSPORT.name].localised_name = TRANSPORT.localised_name
-    data_item_entity[TRANSPORT.name].subgroup = is_artillery_wagon
-    data_item_entity[TRANSPORT.name].order = TRANSPORT.order
-    data_item_entity[TRANSPORT.name].stack_size = 16
-    data_item_entity[TRANSPORT.name].weight = 62500
-    data_recipe[TRANSPORT.name].localised_name = TRANSPORT.localised_name
-    data_recipe[TRANSPORT.name].subgroup = is_artillery_wagon
-    data_recipe[TRANSPORT.name].order = TRANSPORT.order
-    data_wagon_artillery[TRANSPORT.name].localised_name = TRANSPORT.localised_name
-    data_wagon_artillery[TRANSPORT.name].subgroup = is_artillery_wagon
-    data_wagon_artillery[TRANSPORT.name].weight = TRANSPORT.weight
-    data_wagon_artillery[TRANSPORT.name].manual_range_modifier = 2
-    data_wagon_artillery[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    if data_item_entity[TRANSPORT.name] then
+        data_item_entity[TRANSPORT.name].localised_name = TRANSPORT.localised_name
+        data_item_entity[TRANSPORT.name].subgroup = is_artillery_wagon
+        data_item_entity[TRANSPORT.name].order = TRANSPORT.order
+        data_item_entity[TRANSPORT.name].stack_size = 16
+        data_item_entity[TRANSPORT.name].weight = 62500
+        data_recipe[TRANSPORT.name].localised_name = TRANSPORT.localised_name
+        data_recipe[TRANSPORT.name].subgroup = is_artillery_wagon
+        data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_wagon_artillery[TRANSPORT.name].localised_name = TRANSPORT.localised_name
+        data_wagon_artillery[TRANSPORT.name].subgroup = is_artillery_wagon
+        data_wagon_artillery[TRANSPORT.name].weight = TRANSPORT.weight
+        data_wagon_artillery[TRANSPORT.name].manual_range_modifier = 2
+        data_wagon_artillery[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    end
 end
 local function artillery_wagon_recipe(name, gear_wheel, bearing, circuit, artillery_wagon, plate)
+    if not data_recipe[name] then return end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel,      amount = 16},
@@ -279,23 +283,29 @@ local tanks =
     {name = tank_3, order = c, consumption = 1350, effectivity = 1.00, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(tanks) do
-    data_item_entity[TRANSPORT.name].subgroup = is_transport_tanks
-    data_item_entity[TRANSPORT.name].order = TRANSPORT.order
-    data_item_entity[TRANSPORT.name].stack_size = 1
-    data_item_entity[TRANSPORT.name].weight = 1000000
-    data_recipe[TRANSPORT.name].subgroup = is_transport_tanks
-    data_recipe[TRANSPORT.name].order = TRANSPORT.order
-    data_recipe[TRANSPORT.name].energy_required = 4
-    data_car[TRANSPORT.name].subgroup = is_transport_tanks
-    data_car[TRANSPORT.name].order = TRANSPORT.order
-    data_car[TRANSPORT.name].consumption = TRANSPORT.consumption .. kW
-    data_car[TRANSPORT.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
-    data_car[TRANSPORT.name].energy_source.effectivity = TRANSPORT.effectivity
-    data_car[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    if data_item_entity[TRANSPORT.name] then
+        data_item_entity[TRANSPORT.name].subgroup = is_transport_tanks
+        data_item_entity[TRANSPORT.name].order = TRANSPORT.order
+        data_item_entity[TRANSPORT.name].stack_size = 1
+        data_item_entity[TRANSPORT.name].weight = 1000000
+        data_recipe[TRANSPORT.name].subgroup = is_transport_tanks
+        data_recipe[TRANSPORT.name].order = TRANSPORT.order
+        data_recipe[TRANSPORT.name].energy_required = 4
+        data_car[TRANSPORT.name].subgroup = is_transport_tanks
+        data_car[TRANSPORT.name].order = TRANSPORT.order
+        data_car[TRANSPORT.name].consumption = TRANSPORT.consumption .. kW
+        data_car[TRANSPORT.name].energy_source.fuel_categories = {base_fuel, advanced_fuel, transport_fuel}
+        data_car[TRANSPORT.name].energy_source.effectivity = TRANSPORT.effectivity
+        data_car[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
+    end
 end
-data_car[tank_2].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower"}
-data_car[tank_3].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower", "bob-tank-laser"}
+if mods [bobwarfare] then
+    data_car[tank_2].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower"}
+    data_car[tank_3].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower", "bob-tank-laser"}
+end
 local function tank_recipe(name, gear_wheel, bearing, circuit, vehicle, plate)
+    if not data_recipe[name] then return end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 16},
@@ -374,9 +384,7 @@ for _, BUILD in pairs(roboports) do
     end
 end
 local function roboport_recipe(name, antenna, door, chargepad, plate, roboport)
-    if not name or not antenna or not door or not chargepad or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[antenna] or not data_item[door] or not data_item[chargepad] or not data_item[plate] then return end
 
     local ingredients =
     {
@@ -418,9 +426,7 @@ for _, BUILD in pairs(logistic_zone) do
     end
 end
 local function logistic_zone_expander_recipe(name, antenna, plate, zone_expander)
-    if not name or not antenna or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[antenna] or not data_item[plate] then return end
 
     local ingredients =
     {
@@ -486,9 +492,7 @@ for _, BUILD in pairs(robo_port) do
     end
 end
 local function robo_charge_port_recipe(name, chargepad, plate, charge_port)
-    if not name or not chargepad or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[chargepad] or not data_item[plate] then return end
 
     local ingredients =
     {
@@ -531,9 +535,7 @@ for _, BUILD in pairs(robo_port_large) do
     end
 end
 local function robo_charge_port_large_recipe(name, chargepad, plate, charge_port_large)
-    if not name or not chargepad or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[chargepad] or not data_recipe[plate] then return end
 
     local ingredients =
     {
@@ -551,7 +553,7 @@ robo_charge_port_large_recipe(robo_charge_port_large_3, roboport_chargepad_3, ti
 robo_charge_port_large_recipe(robo_charge_port_large_4, roboport_chargepad_4, nitinol_plate_bob,   robo_charge_port_large_3)
 
 local function rp_antenna_recipe(name, circuit, cable, plate)
-    if not name or not circuit or not cable or not plate then
+    if not data_recipe[name] or not data_item[circuit] or not data_item[cable] or not data_item[plate] then
         return
     end
 
@@ -568,9 +570,7 @@ rp_antenna_recipe(roboport_antenna_3, processing_unit,          insulated_cable,
 rp_antenna_recipe(roboport_antenna_4, advanced_processing_unit, gold_cable,      gold_plate_bob)
 
 local function rp_door_recipe(name, gear_wheel, bearing, plate)
-    if not name or not gear_wheel or not bearing or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[gear_wheel] or not data_item[bearing] or not data_item[plate] then return end
 
     local ingredients =
     {
@@ -588,9 +588,7 @@ rp_door_recipe(roboport_door_3, titanium_gear_wheel,     titanium_bearing,      
 rp_door_recipe(roboport_door_4, nitinol_gear_wheel,      nitinol_bearing,         nitinol_plate_bob)
 
 local function rp_chargepad_recipe(name, battery, circuit, plate)
-    if not name or not battery or not circuit or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[battery] or not data_item[circuit] or not data_item[plate] then return end
 
     data_recipe[name].ingredients =
     {
@@ -620,9 +618,7 @@ for _, name in pairs(flying_robot_frames) do
     end
 end
 local function flying_robot_frame_recipe(name, battery, plate)
-    if not name or not battery or not plate then
-        return
-    end
+    if not data_recipe[name] or not data_item[battery] or not data_item[plate] then return end
 
     data_recipe[name].ingredients =
     {
@@ -637,9 +633,7 @@ flying_robot_frame_recipe(flying_robot_frame_3, battery_silver_zinc, titanium_pl
 flying_robot_frame_recipe(flying_robot_frame_4, battery_graphene,    nitinol_plate_bob)
 
 local function robot_brain_recipe(name, circuit_1, circuit_2)
-    if not name or not circuit_1 or not circuit_2 then
-        return
-    end
+    if not data_recipe[name] or not data_item[circuit_1] or not data_item[circuit_2] then return end
 
     if mods [bobmodules] then
         data_recipe[name].ingredients =
@@ -673,9 +667,7 @@ local robot_tool_l_2 = "bob-robot-tool-logistic-2"
 local robot_tool_l_3 = "bob-robot-tool-logistic-3"
 local robot_tool_l_4 = "bob-robot-tool-logistic-4"
 local function robot_tool_recipe(name, gear_wheel, bearing, cable, plate)
-    if not name or not gear_wheel or not bearing or not cable then
-        return
-    end
+    if not data_recipe[name] or not data_item[gear_wheel] or not data_item[bearing] or not data_item[cable] or not data_item[plate] then return end
 
     data_recipe[name].ingredients =
     {

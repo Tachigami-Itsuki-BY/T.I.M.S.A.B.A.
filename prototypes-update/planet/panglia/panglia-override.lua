@@ -592,13 +592,23 @@ if mods [panglia_mods] then
     data_item[snouz_long_electric_gun_turret].stack_size = 32
     data_item[snouz_long_electric_gun_turret].weight = 31250
     data_recipe[snouz_long_electric_gun_turret].subgroup = is_panglia_war
-    data_recipe[snouz_long_electric_gun_turret].ingredients =
-    {
-        {type = item, name = radar_5, amount = 1},
-        {type = item, name = gun_turret_5, amount = 1},
-        {type = item, name = supercapacitor, amount = 4},
-        {type = item, name = panglite_fiber, amount = 4}
-    }
+    if mods [bobwarfare] then
+        data_recipe[snouz_long_electric_gun_turret].ingredients =
+        {
+            {type = item, name = radar_5, amount = 1},
+            {type = item, name = gun_turret_5, amount = 1},
+            {type = item, name = supercapacitor, amount = 4},
+            {type = item, name = panglite_fiber, amount = 4}
+        }
+    else
+        data_recipe[snouz_long_electric_gun_turret].ingredients =
+        {
+            {type = item, name = radar_1, amount = 1},
+            {type = item, name = gun_turret_1, amount = 1},
+            {type = item, name = supercapacitor, amount = 4},
+            {type = item, name = panglite_fiber, amount = 4}
+        }
+    end
     data_ammo_turret[snouz_long_electric_gun_turret].subgroup = is_panglia_war
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.range = 32
     data_ammo_turret[snouz_long_electric_gun_turret].attack_parameters.cooldown = 3.75
@@ -654,7 +664,11 @@ if mods [panglia_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack}
+    if mods [bobwarfare] then
+        data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack, tech_gun_turret_5, radar_5}
+    else
+        data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack, gun_turret_1, radar_1}
+    end
     data_technology[snouz_long_electric_gun_turret].unit.ingredients =
     {
         {automation_science_pack, 1},

@@ -360,7 +360,6 @@ transport_belt_recipe(T5_transport_belt, nitinol_gear_wheel, nitinol_plate_bob, 
 
 if data_recipe[T0_transport_belt] then
     data_recipe[T0_transport_belt].ingredients[1].amount = 2
-    --bobmods.lib.recipe.update_recycling_recipe({T0_transport_belt})
 end
 
 local function underground_belt_recipe(name, gear_wheel, plate, underground_belt, bearing)
@@ -390,7 +389,6 @@ underground_belt_recipe(T5_underground_belt, nitinol_gear_wheel, nitinol_plate_b
 data_underground_belt[T5_underground_belt].factoriopedia_simulation = simulations.factoriopedia_T5_underground_belt
 if data_recipe[T0_underground_belt] then
     data_recipe[T0_underground_belt].ingredients[1].amount = 8
-    --bobmods.lib.recipe.update_recycling_recipe({T0_underground_belt})
 end
 
 local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, bearing)
@@ -421,7 +419,6 @@ splitter_recipe(T5_splitter, nitinol_gear_wheel, advanced_processing_unit, nitin
 if data_recipe[T0_splitter] then
     data_recipe[T0_splitter].ingredients[1].amount = 4
     data_recipe[T0_splitter].ingredients[2].amount = 4
-    --bobmods.lib.recipe.update_recycling_recipe({T0_splitter})
 end
 
 local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
@@ -459,12 +456,12 @@ if mods ["loaders-modernized-integrations"] then
     local data_loader_1x1 = data.raw["loader-1x1"]
     local loaders =
     {
-        {name = T0_loader, speed = 1/60,  ins_amount = 8, ASC = 30},
-        {name = T1_loader, speed = 2/60,  ins_amount = 8, ASC = 30},
-        {name = T2_loader, speed = 4/60,  ins_amount = 8, ASC = 32},
-        {name = T3_loader, speed = 6/60,  ins_amount = 8, ASC = 31.25},
-        {name = T4_loader, speed = 8/60,  ins_amount = 8, ASC = 32},
-        {name = T5_loader, speed = 10/60, ins_amount = 8, ASC = 32}
+        {name = T0_loader, speed = 1/60,  ASC = 30},
+        {name = T1_loader, speed = 2/60,  ASC = 30},
+        {name = T2_loader, speed = 4/60,  ASC = 32},
+        {name = T3_loader, speed = 6/60,  ASC = 31.25},
+        {name = T4_loader, speed = 8/60,  ASC = 32},
+        {name = T5_loader, speed = 10/60, ASC = 32}
     }
     for _, BUILD in pairs(loaders) do
         if data_item[BUILD.name] then
@@ -481,9 +478,9 @@ if mods ["loaders-modernized-integrations"] then
                             local name = ingredient.name or ingredient[1]
                             if name and name:find("inserter") then
                                 if ingredient.name then
-                                    ingredient.amount = BUILD.ins_amount
+                                    ingredient.amount = 8
                                 else
-                                    ingredient[2] = BUILD.ins_amount
+                                    ingredient[2] = 8
                                 end
                             end
                         end
@@ -541,18 +538,34 @@ if mods ["loaders-modernized-integrations"] then
     if data_loader_1x1[chute_loader] then
         data_item[chute_loader].stack_size = 32
         data_item[chute_loader].weight = 31250
-        if data_underground_belt[T0_underground_belt] then
-            data_recipe[chute_loader].ingredients =
-            {
-                {type = item, name = T0_underground_belt, amount = 2},
-                {type = item, name = T0_inserter, amount = 4}
-            }
+        if settings.startup["mdrn-double-recipe"].value then
+            if data_item[T0_underground_belt] then
+                data_recipe[chute_loader].ingredients =
+                {
+                    {type = item, name = T0_underground_belt, amount = 2},
+                    {type = item, name = T0_inserter, amount = 2}
+                }
+            else
+                data_recipe[chute_loader].ingredients =
+                {
+                    {type = item, name = iron_plate, amount = 8},
+                    {type = item, name = T0_inserter, amount = 2}
+                }
+            end
         else
-            data_recipe[chute_loader].ingredients =
-            {
-                {type = item, name = iron_plate, amount = 8},
-                {type = item, name = T0_inserter, amount = 4}
-            }
+            if data_item[T0_underground_belt] then
+                data_recipe[chute_loader].ingredients =
+                {
+                    {type = item, name = T0_underground_belt, amount = 1},
+                    {type = item, name = T0_inserter, amount = 2}
+                }
+            else
+                data_recipe[chute_loader].ingredients =
+                {
+                    {type = item, name = iron_plate, amount = 4},
+                    {type = item, name = T0_inserter, amount = 2}
+                }
+            end
         end
         data_loader_1x1[chute_loader].next_upgrade = T0_loader
         data_loader_1x1[chute_loader].minable.mining_time = 0.5
@@ -637,7 +650,6 @@ if data_recipe[big_electric_pole_2] then
     big_electric_pole_recipe(big_electric_pole_2, big_electric_pole_1, tin_cable, brass_plate_bob)
     big_electric_pole_recipe(big_electric_pole_3, big_electric_pole_2, insulated_cable, titanium_plate_bob)
     big_electric_pole_recipe(big_electric_pole_4, big_electric_pole_3, gold_cable, nitinol_plate_bob)
-    --bobmods.lib.recipe.update_recycling_recipe({big_electric_pole_2, big_electric_pole_3, big_electric_pole_4})
 end
 
 local substations =
@@ -686,7 +698,6 @@ if data_recipe[substation_2] then
     substation_recipe(substation_2, advanced_circuit, substation_1, tin_cable, brass_plate_bob)
     substation_recipe(substation_3, processing_unit, substation_2, insulated_cable, titanium_plate_bob)
     substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
-    --bobmods.lib.recipe.update_recycling_recipe({substation_2, substation_3, substation_4})
 end
 
 local pipes =

@@ -1,12 +1,14 @@
 -- BASE
 
 -- COMBAT
-data_recipe["bob-gun-cotton"].ingredients =
-{
-    {type = item, name = cellulose_fiber_angels, amount = 4},
-    {type = fluid, name = nitric_acid_angels, amount = 60},
-    {type = fluid, name = sulfuric_acid_angels, amount = 60}
-}
+if mods [bobwarfare] then
+    data_recipe["bob-gun-cotton"].ingredients =
+    {
+        {type = item, name = cellulose_fiber_angels, amount = 4},
+        {type = fluid, name = nitric_acid_angels, amount = 60},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+    }
+end
 
 -- ANGELS FIX
 local oil_refinery_1 = "oil-refinery"
@@ -74,16 +76,18 @@ data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
 data_resource[ore_saphirite].icon_size = data_item[ore_saphirite].icon_size
 
 -- BOBS FIX
-data_fluid[nitroglycerin_bob].subgroup = is_explosives
-data_fluid[nitroglycerin_bob].order = d
-data_recipe[nitroglycerin_bob].subgroup = is_explosives
-data_recipe[nitroglycerin_bob].order = d
-data_recipe[nitroglycerin_bob].ingredients =
-{
-    {type = fluid, name = glycerol_angels, amount = 30},
-    {type = fluid, name = nitric_acid_angels, amount = 30},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30}
-}
+if mods [bobwarfare] then
+    data_fluid[nitroglycerin_bob].subgroup = is_explosives
+    data_fluid[nitroglycerin_bob].order = d
+    data_recipe[nitroglycerin_bob].subgroup = is_explosives
+    data_recipe[nitroglycerin_bob].order = d
+    data_recipe[nitroglycerin_bob].ingredients =
+    {
+        {type = fluid, name = glycerol_angels, amount = 30},
+        {type = fluid, name = nitric_acid_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 30}
+    }
+end
 
 data_recipe[lithium_perchlorate_bob].category = angels_liquifying
 
@@ -538,4 +542,10 @@ if mods [hyarion_mods] then
         {type = unlock_recipe, recipe = remelting_of_metal_ore_17},
         {type = unlock_recipe, recipe = remelting_of_metal_ore_18}
     }
+end
+
+-- MODS
+local tech_stack_loader = "mdrn-stack-loader"
+if mods [loaders_modernized_integrations] and data_technology[tech_stack_loader] then
+    data_technology[tech_stack_loader].prerequisites = {stack_inserter, "mdrn-ultimate-loader"}
 end

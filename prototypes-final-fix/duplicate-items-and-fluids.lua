@@ -96,6 +96,25 @@ function Public.delete_duplicate_item_and_fluid(replacements)
     		end
   		end
 	end
+    -- Fluid Turrets
+    for _, turret in pairs(data.raw["fluid-turret"] or {}) do
+        if turret.attack_parameters and turret.attack_parameters.fluids then
+            for i = #turret.attack_parameters.fluids, 1, -1 do
+                local fluid_entry = turret.attack_parameters.fluids[i]
+                local current_fluid = fluid_entry.type
+                local replace = replacements[current_fluid]
+                if replace then
+                    -- Если замена существует в игре, меняем имя на новое
+                    if data.raw.fluid[replace] then
+                        fluid_entry.type = replace
+                    else
+                        -- Если замена не существует, просто удаляем эту жидкость из списка разрешенных для турели
+                        table.remove(turret.attack_parameters.fluids, i)
+                    end
+                end
+            end
+        end
+    end
 end
 
 return Public

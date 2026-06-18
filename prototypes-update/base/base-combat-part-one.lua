@@ -13,44 +13,46 @@ data_recipe[submachine_gun].ingredients =
 }
 
 local rifle = "bob-rifle"
-data_gun[rifle].stack_size = 1
-data_gun[rifle].weight = 1000000
-data_recipe[rifle].energy_required = 1
-data_recipe[rifle].ingredients =
-{
-    {type = item, name = steel_gear_wheel, amount = 8},
-    {type = item, name = submachine_gun, amount = 1},
-    {type = item, name = aluminium_plate_bob, amount = 4},
-    {type = item, name = steel_plate, amount = 8}
-}
-
 local sniper_rifel = "bob-sniper-rifle"
-data_gun[sniper_rifel].stack_size = 1
-data_gun[sniper_rifel].weight = 1000000
-data_recipe[sniper_rifel].energy_required = 1
-data_recipe[sniper_rifel].ingredients =
-{
-    {type = item, name = steel_gear_wheel, amount = 4},
-    {type = item, name = rifle, amount = 1},
-    {type = item, name = wood, amount = 2},
-    {type = item, name = steel_plate, amount = 4}
-}
+if mods [bobwarfare] then
+    data_gun[rifle].stack_size = 1
+    data_gun[rifle].weight = 1000000
+    data_recipe[rifle].energy_required = 1
+    data_recipe[rifle].ingredients =
+    {
+        {type = item, name = steel_gear_wheel, amount = 8},
+        {type = item, name = submachine_gun, amount = 1},
+        {type = item, name = aluminium_plate_bob, amount = 4},
+        {type = item, name = steel_plate, amount = 8}
+    }
+
+    data_gun[sniper_rifel].stack_size = 1
+    data_gun[sniper_rifel].weight = 1000000
+    data_recipe[sniper_rifel].energy_required = 1
+    data_recipe[sniper_rifel].ingredients =
+    {
+        {type = item, name = steel_gear_wheel, amount = 4},
+        {type = item, name = rifle, amount = 1},
+        {type = item, name = wood, amount = 2},
+        {type = item, name = steel_plate, amount = 4}
+    }
+end
 
 local is_gun = "gun"
 local firearm_magazines =
 {
-    {type = data_ammo, name = firearm_magazine,         order = b}, {type = data_recipe, name = firearm_magazine,         order = b},
-    {type = data_ammo, name = piercing_rounds_magazine, order = c}, {type = data_recipe, name = piercing_rounds_magazine, order = c},
-    {type = data_ammo, name = uranium_rounds_magazine,  order = d}, {type = data_recipe, name = uranium_rounds_magazine,  order = d},
+    {name = firearm_magazine,         order = b},
+    {name = piercing_rounds_magazine, order = c},
+    {name = uranium_rounds_magazine,  order = d}
 }
 for _, AMMO in pairs(firearm_magazines) do
-    if AMMO.type[AMMO.name] then
-        AMMO.type[AMMO.name].subgroup = is_gun
-        AMMO.type[AMMO.name].order = AMMO.order
-        if AMMO.type == data_ammo then
-            AMMO.type[AMMO.name].magazine_size = 30
-            AMMO.type[AMMO.name].stack_size = 200
-        end
+    if data_ammo[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_gun
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].magazine_size = 30
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_gun
+        data_recipe[AMMO.name].order = AMMO.order
     end
 end
 data_recipe[piercing_rounds_magazine].energy_required = 1
@@ -106,18 +108,18 @@ local shotgun_shell = "shotgun-shell"
 local piercing_shotgun_shell = "piercing-shotgun-shell"
 local shotgun_shells =
 {
-    {type = data_ammo, name = shotgun_shell,          order = b}, {type = data_recipe, name = shotgun_shell,          order = b},
-    {type = data_ammo, name = piercing_shotgun_shell, order = c}, {type = data_recipe, name = piercing_shotgun_shell, order = c},
-    {type = data_ammo, name = uranium_shotgun_shell,  order = d}, {type = data_recipe, name = uranium_shotgun_shell,  order = d},
+    {name = shotgun_shell,          order = b},
+    {name = piercing_shotgun_shell, order = c},
+    {name = uranium_shotgun_shell,  order = d}
 }
 for _, AMMO in pairs(shotgun_shells) do
-    if AMMO.type[AMMO.name] then
-        AMMO.type[AMMO.name].subgroup = is_shotgun
-        AMMO.type[AMMO.name].order = AMMO.order
-        if AMMO.type == data_ammo then
-            AMMO.type[AMMO.name].magazine_size = 30
-            AMMO.type[AMMO.name].stack_size = 200
-        end
+    if data_ammo[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_gun
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].magazine_size = 30
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_gun
+        data_recipe[AMMO.name].order = AMMO.order
     end
 end
 data_recipe[shotgun_shell].energy_required = 1
@@ -131,30 +133,34 @@ data_recipe[piercing_shotgun_shell].ingredients =
 }
 data_recipe[piercing_shotgun_shell].results[1].amount = 2
 
-data_recipe[uranium_shotgun_shell].energy_required = 2
-data_recipe[uranium_shotgun_shell].ingredients =
-{
-    {type = item, name = piercing_shotgun_shell, amount = 2},
-    {type = item, name = uranium_238, amount = 4},
-    {type = item, name = brass_plate_bob, amount = 2}
-}
-data_recipe[uranium_shotgun_shell].results[1].amount = 2
+if mods [bobwarfare] then
+    data_recipe[uranium_shotgun_shell].energy_required = 2
+    data_recipe[uranium_shotgun_shell].ingredients =
+    {
+        {type = item, name = piercing_shotgun_shell, amount = 2},
+        {type = item, name = uranium_238, amount = 4},
+        {type = item, name = brass_plate_bob, amount = 2}
+    }
+    data_recipe[uranium_shotgun_shell].results[1].amount = 2
+end
 
 local laser = "bob-laser-rifle"
-data_gun[laser].subgroup = is_laser
-data_gun[laser].order = a
-data_gun[laser].stack_size = 1
-data_gun[laser].weight = 1000000
-data_recipe[laser].subgroup = is_laser
-data_recipe[laser].order = a
-data_recipe[laser].energy_required = 1
-data_recipe[laser].ingredients =
-{
-    {type = item, name = steel_gear_wheel, amount = 4},
-    {type = item, name = advanced_circuit, amount = 4},
-    {type = item, name = steel_plate, amount = 8},
-    {type = item, name = plastic, amount = 4}
-}
+if mods [bobwarfare] then
+    data_gun[laser].subgroup = is_laser
+    data_gun[laser].order = a
+    data_gun[laser].stack_size = 1
+    data_gun[laser].weight = 1000000
+    data_recipe[laser].subgroup = is_laser
+    data_recipe[laser].order = a
+    data_recipe[laser].energy_required = 1
+    data_recipe[laser].ingredients =
+    {
+        {type = item, name = steel_gear_wheel, amount = 4},
+        {type = item, name = advanced_circuit, amount = 4},
+        {type = item, name = steel_plate, amount = 8},
+        {type = item, name = plastic, amount = 4}
+    }
+end
 
 local laser_battery = "bob-laser-rifle-battery"
 local laser_battery_2 = "bob-laser-rifle-battery-ruby"
@@ -165,25 +171,23 @@ local laser_battery_6 = "bob-laser-rifle-battery-topaz"
 local laser_battery_7 = "bob-laser-rifle-battery-diamond"
 local laser_batterys =
 {
-    {type = data_ammo, name = laser_battery,   order = b}, {type = data_recipe, name = laser_battery, order = b},
-    {type = data_ammo, name = laser_battery_2, order = c}, {type = data_recipe, name = laser_battery_2, order = c},
-    {type = data_ammo, name = laser_battery_3, order = d}, {type = data_recipe, name = laser_battery_3, order = d},
-    {type = data_ammo, name = laser_battery_4, order = e}, {type = data_recipe, name = laser_battery_4, order = e},
-    {type = data_ammo, name = laser_battery_5, order = f}, {type = data_recipe, name = laser_battery_5, order = f},
-    {type = data_ammo, name = laser_battery_6, order = g}, {type = data_recipe, name = laser_battery_6, order = g},
-    {type = data_ammo, name = laser_battery_7, order = h}, {type = data_recipe, name = laser_battery_7, order = h}
+    {name = laser_battery,   order = b},
+    {name = laser_battery_2, order = c},
+    {name = laser_battery_3, order = d},
+    {name = laser_battery_4, order = e},
+    {name = laser_battery_5, order = f},
+    {name = laser_battery_6, order = g},
+    {name = laser_battery_7, order = h}
 }
 for _, AMMO in pairs(laser_batterys) do
-    if AMMO.type[AMMO.name] then
-        AMMO.type[AMMO.name].subgroup = is_laser
-        AMMO.type[AMMO.name].order = AMMO.order
-        if AMMO.type == data_ammo then
-            AMMO.type[AMMO.name].magazine_size = 30
-            AMMO.type[AMMO.name].stack_size = 200
-        end
-        if AMMO.type == data_recipe then
-            AMMO.type[AMMO.name].energy_required = 1
-        end
+    if data_ammo[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_laser
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].magazine_size = 30
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_laser
+        data_recipe[AMMO.name].order = AMMO.order
+        data_recipe[AMMO.name].energy_required = 1
     end
 end
 
@@ -206,22 +210,17 @@ local atomic_rocket_2 = "angels-atomic-bomb"
 local atomic_rocket_3 = "angels-atomic-bomb-2"
 local rockets =
 {
-    {type = data_ammo, name = rocket,             order = b},
-    {type = data_recipe, name = rocket,           order = b},
-    {type = data_ammo, name = explosive_rocket,   order = c},
-    {type = data_recipe, name = explosive_rocket, order = c},
-    {type = data_ammo, name = atomic_rocket,      order = d},
-    {type = data_recipe, name = atomic_rocket,    order = d},
-    {type = data_recipe, name = atomic_rocket_2,  order = d_a},
-    {type = data_recipe, name = atomic_rocket_3,  order = d_b},
+    {name = rocket,           order = b},
+    {name = explosive_rocket, order = c},
+    {name = atomic_rocket,    order = d}
 }
 for _, AMMO in pairs(rockets) do
-    if AMMO.type[AMMO.name] then
-        AMMO.type[AMMO.name].subgroup = is_rocket
-        AMMO.type[AMMO.name].order = AMMO.order
-        if AMMO.type == data_ammo then
-            AMMO.type[AMMO.name].stack_size = 200
-        end
+    if data_ammo[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_rocket
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_rocket
+        data_recipe[AMMO.name].order = AMMO.order
     end
 end
 data_ammo[atomic_rocket].stack_size = 10
@@ -236,6 +235,7 @@ data_recipe[atomic_rocket].ingredients =
     {type = item, name = explosives, amount = 8}
 }
 
+data_recipe[atomic_rocket_2].order = d_a
 data_recipe[atomic_rocket_2].energy_required = 32
 if mods [shattered_mods] then
     data_recipe[atomic_rocket_2].icons = R_P_I(atomic_rocket, plutonium_239_shattered, nil, number_2)
@@ -257,6 +257,7 @@ else
     }
 end
 
+data_recipe[atomic_rocket_3].order = d_b
 data_recipe[atomic_rocket_3].energy_required = 32
 data_recipe[atomic_rocket_3].icons = R_P_I(atomic_rocket, muon_fusion_catalyst, nil, number_3)
 data_recipe[atomic_rocket_3].ingredients =
@@ -298,18 +299,6 @@ data_recipe[flamethrower_ammo].ingredients =
     {type = fluid, name = naphtha_angels, amount = 60}
 }
 
-local function update_turret(tbl, changes)
-    for name, prototype in pairs(tbl) do
-        if string.find(name, "turret") then
-            for key, value in pairs(changes) do
-                prototype[key] = value
-            end
-        end
-    end
-end
-update_turret(data_item, {stack_size = 32, weight = 31250})
-update_turret(data_recipe, {energy_required = 16})
-
 local cannon_shell = "cannon-shell"
 local cannon_shells =
 {
@@ -321,7 +310,6 @@ local cannon_shells =
 for _, name in pairs(cannon_shells) do
     data_ammo[name].stack_size = 128
     data_ammo[name].weight = 7812.5
-
     data_recipe[name].energy_required = 8
 end
 
@@ -342,25 +330,29 @@ data_recipe[artillery_shell].ingredients =
 }
 
 local atomic_artillery_shell = "bob-atomic-artillery-shell"
-data_ammo[atomic_artillery_shell].stack_size = 32
-data_ammo[atomic_artillery_shell].weight = 31250
-if mods [shattered_mods] then
-    data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_shattered)
-else
-    data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_bob)
+if mods [bobwarfare] then
+    data_ammo[atomic_artillery_shell].stack_size = 32
+    data_ammo[atomic_artillery_shell].weight = 31250
+    if mods [shattered_mods] then
+        data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_shattered)
+    else
+        data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_bob)
+    end
+    data_recipe[atomic_artillery_shell].energy_required = 64
+    data_recipe[atomic_artillery_shell].ingredients =
+    {
+        {type = item, name = artillery_shell, amount = 1},
+        {type = item, name = plutonium_239_bob, amount = 32},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 4},
+        {type = item, name = calcite, amount = 1}
+    }
 end
-data_recipe[atomic_artillery_shell].energy_required = 64
-data_recipe[atomic_artillery_shell].ingredients =
-{
-    {type = item, name = artillery_shell, amount = 1},
-    {type = item, name = plutonium_239_bob, amount = 32},
-    {type = item, name = tungsten_carbide_plate_bob, amount = 4},
-    {type = item, name = calcite, amount = 1}
-}
 
 local is_ammo_parts = "bob-ammo-parts"
-data_item_subgroup[is_ammo_parts].group = ig_combat
-data_item_subgroup[is_ammo_parts].order = b_a
+if mods [bobwarfare] then
+    data_item_subgroup[is_ammo_parts].group = ig_combat
+    data_item_subgroup[is_ammo_parts].order = b_a
+end
 
 local petroleum_jelly = "bob-petroleum-jelly"
 local gun_cotton = "bob-gun-cotton"
@@ -386,63 +378,67 @@ local ammo_parts =
     {name = rocket_body,          order = j}
 }
 for _, ITEM in pairs(ammo_parts) do
-    data_item[ITEM.name].order = ITEM.order
-    data_item[ITEM.name].stack_size = 200
-    data_recipe[ITEM.name].order = ITEM.order
+    if data_item[ITEM.name] then
+        data_item[ITEM.name].order = ITEM.order
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].order = ITEM.order
+    end
 end
-data_item[petroleum_jelly].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
-data_recipe[petroleum_jelly].icons = TWO_D_I(hydrogen_angels, carbon_monoxide_angels, petroleum_jelly, steam)
-data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CₙH₍₂ₙ₊₂₎ + nH₂O (n = 32) petroleum_jelly (18-35)
-data_recipe[petroleum_jelly].ingredients =
-{
-    {type = fluid, name = hydrogen_angels, amount = 975},
-    {type = fluid, name = carbon_monoxide_angels, amount = 480},
-    {type = item, name = catalyst_red, amount = 1}
-}
-data_recipe[petroleum_jelly].results =
-{
-    {type = item, name = petroleum_jelly, amount = 1},
-    {type = fluid, name = steam, amount = 480, ignored_by_productivity = 0},
-    {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 0}
-}
-data_recipe[petroleum_jelly].main_product = petroleum_jelly
+if mods [bobwarfare] then
+    data_item[petroleum_jelly].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
+    data_recipe[petroleum_jelly].icons = TWO_D_I(hydrogen_angels, carbon_monoxide_angels, petroleum_jelly, steam)
+    data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CₙH₍₂ₙ₊₂₎ + nH₂O (n = 32) petroleum_jelly (18-35)
+    data_recipe[petroleum_jelly].ingredients =
+    {
+        {type = fluid, name = hydrogen_angels, amount = 975},
+        {type = fluid, name = carbon_monoxide_angels, amount = 480},
+        {type = item, name = catalyst_red, amount = 1}
+    }
+    data_recipe[petroleum_jelly].results =
+    {
+        {type = item, name = petroleum_jelly, amount = 1},
+        {type = fluid, name = steam, amount = 480, ignored_by_productivity = 0},
+        {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 0}
+    }
+    data_recipe[petroleum_jelly].main_product = petroleum_jelly
 
-data_item[gun_cotton].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]7[/font]N[font=default-tiny-bold]3[/font]O[font=default-tiny-bold]11[/font]"} or nil
-data_recipe[gun_cotton].category = chemistry
-data_recipe[gun_cotton].icons = TWO_D_I(cellulose_fiber_angels, nitric_acid_angels, gun_cotton, water_purified_angels)
-data_recipe[gun_cotton].energy_required = 2 -- (C₆H₁₀O₅)n + HNO₃ -H₂SO₄-> C₆H₇N₃O₁₁ + H₂O / n = 1
--- data_recipe[gun_cotton].ingredients --> "mods-final-fix/final-fix-mods"
-data_recipe[gun_cotton].results =
-{
-    {type = item, name = gun_cotton, amount = 4},
-    {type = fluid, name = sulfuric_acid_angels, amount = 30, ignored_by_productivity = 0},
-    {type = fluid, name = water_purified_angels, amount = 60, ignored_by_productivity = 0}
-}
-data_recipe[gun_cotton].main_product = gun_cotton
+    data_item[gun_cotton].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]7[/font]N[font=default-tiny-bold]3[/font]O[font=default-tiny-bold]11[/font]"} or nil
+    data_recipe[gun_cotton].category = chemistry
+    data_recipe[gun_cotton].icons = TWO_D_I(cellulose_fiber_angels, nitric_acid_angels, gun_cotton, water_purified_angels)
+    data_recipe[gun_cotton].energy_required = 2 -- (C₆H₁₀O₅)n + HNO₃ -H₂SO₄-> C₆H₇N₃O₁₁ + H₂O / n = 1
+    -- data_recipe[gun_cotton].ingredients --> "mods-final-fix/final-fix-mods"
+    data_recipe[gun_cotton].results =
+    {
+        {type = item, name = gun_cotton, amount = 4},
+        {type = fluid, name = sulfuric_acid_angels, amount = 30, ignored_by_productivity = 0},
+        {type = fluid, name = water_purified_angels, amount = 60, ignored_by_productivity = 0}
+    }
+    data_recipe[gun_cotton].main_product = gun_cotton
 
-data_fluid[nitroglycerin_bob].icons = nil
-data_fluid[nitroglycerin_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-nitroglycerin.png"
+    --data_fluid[nitroglycerin_bob].icons = nil
+    --data_fluid[nitroglycerin_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-nitroglycerin.png"
 
-data_recipe[cordite].category = chemistry
-data_recipe[cordite].icons = THREE_D_I(gun_cotton, petroleum_jelly, nitroglycerin_bob, cordite)
-data_recipe[cordite].energy_required = 8 -- 18C₆H₇N₃O₁₁ + C₃₀H₆₂ + 11C₃H₅N₃O₉ -aceton-> cordite ???
-data_recipe[cordite].ingredients =
-{
-    {type = item, name = gun_cotton, amount = 16},
-    {type = item, name = petroleum_jelly, amount = 1},
-    {type = fluid, name = nitroglycerin_bob, amount = 240},
-    {type = fluid, name = acetone_angels, amount = 60}
-}
-data_recipe[cordite].results =
-{
-    {type = item, name = cordite, amount = 32},
-    {type = fluid, name = acetone_angels, amount = 30, ignored_by_productivity = 0}
-}
-data_recipe[cordite].main_product = cordite
+    data_recipe[cordite].category = chemistry
+    data_recipe[cordite].icons = THREE_D_I(gun_cotton, petroleum_jelly, nitroglycerin_bob, cordite)
+    data_recipe[cordite].energy_required = 8 -- 18C₆H₇N₃O₁₁ + C₃₀H₆₂ + 11C₃H₅N₃O₉ -aceton-> cordite ???
+    data_recipe[cordite].ingredients =
+    {
+        {type = item, name = gun_cotton, amount = 16},
+        {type = item, name = petroleum_jelly, amount = 1},
+        {type = fluid, name = nitroglycerin_bob, amount = 240},
+        {type = fluid, name = acetone_angels, amount = 60}
+    }
+    data_recipe[cordite].results =
+    {
+        {type = item, name = cordite, amount = 32},
+        {type = fluid, name = acetone_angels, amount = 30, ignored_by_productivity = 0}
+    }
+    data_recipe[cordite].main_product = cordite
 
-table.insert(data_recipe[rocket_engine].ingredients, {type = item, name = engine_unit, amount = 1})
+    table.insert(data_recipe[rocket_engine].ingredients, {type = item, name = engine_unit, amount = 1})
 
-data_recipe[rocket_body].ingredients[3].amount = 15
+    data_recipe[rocket_body].ingredients[3].amount = 15
+end
 
 local bullet_projectile = "bob-bullet-projectile"
 local bullet_flame_projectile = "bob-flame-bullet-projectile"
@@ -464,22 +460,26 @@ local bullet_projectiles =
     {name = bullet_plasma_projectile,   order = h},
 }
 for _, ITEM in pairs(bullet_projectiles) do
-    data_item[ITEM.name].subgroup = is_bullet_projectile
-    data_item[ITEM.name].order = ITEM.order
-    data_item[ITEM.name].stack_size = 200
-    data_recipe[ITEM.name].subgroup = is_bullet_projectile
-    data_recipe[ITEM.name].order = ITEM.order
-    data_recipe[ITEM.name].energy_required = 1
-    if data_recipe[ITEM.name].ingredients[2].type == fluid then
-        data_recipe[ITEM.name].ingredients[2].amount = 15
+    if data_item[ITEM.name] then
+        data_item[ITEM.name].subgroup = is_bullet_projectile
+        data_item[ITEM.name].order = ITEM.order
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].subgroup = is_bullet_projectile
+        data_recipe[ITEM.name].order = ITEM.order
+        data_recipe[ITEM.name].energy_required = 1
+        if data_recipe[ITEM.name].ingredients[2].type == fluid then
+            data_recipe[ITEM.name].ingredients[2].amount = 15
+        end
+        data_recipe[ITEM.name].results[1].amount = 2
     end
-    data_recipe[ITEM.name].results[1].amount = 2
 end
-data_recipe[bullet_plasma_projectile].ingredients =
-{
-    {type = item, name = copper_plate, amount = 1},
-    {type = fluid, name = deuterium_angels, amount = 15}
-}
+if mods [bobwarfare] then
+    data_recipe[bullet_plasma_projectile].ingredients =
+    {
+        {type = item, name = copper_plate, amount = 1},
+        {type = fluid, name = deuterium_angels, amount = 15}
+    }
+end
 
 local bullet = "bob-bullet"
 local bullet_flame = "bob-flame-bullet"
@@ -501,12 +501,14 @@ local bullets =
     {name = bullet_plasma,   order = h}
 }
 for _, ITEM in pairs(bullets) do
-    data_item[ITEM.name].subgroup = is_bullet
-    data_item[ITEM.name].order = ITEM.order
-    data_item[ITEM.name].stack_size = 200
-    data_recipe[ITEM.name].subgroup = is_bullet
-    data_recipe[ITEM.name].order = ITEM.order
-    data_recipe[ITEM.name].energy_required = 1
+    if data_item[ITEM.name] then
+        data_item[ITEM.name].subgroup = is_bullet
+        data_item[ITEM.name].order = ITEM.order
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].subgroup = is_bullet
+        data_recipe[ITEM.name].order = ITEM.order
+        data_recipe[ITEM.name].energy_required = 1
+    end
 end
 
 local magazine_ammo = "bob-bullet-magazine"
@@ -529,14 +531,16 @@ local ammo_magazines =
     {name = magazine_plasma,   order = h}
 }
 for _, AMMO in pairs(ammo_magazines) do
-    data_ammo[AMMO.name].subgroup = is_ammo_magazine
-    data_ammo[AMMO.name].order = AMMO.order
-    data_ammo[AMMO.name].magazine_size = 60
-    data_ammo[AMMO.name].stack_size = 200
-    data_recipe[AMMO.name].subgroup = is_ammo_magazine
-    data_recipe[AMMO.name].order = AMMO.order
-    data_recipe[AMMO.name].energy_required = 8
-    data_recipe[AMMO.name].ingredients[1].amount = 32
+    if data_item[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_ammo_magazine
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].magazine_size = 60
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_ammo_magazine
+        data_recipe[AMMO.name].order = AMMO.order
+        data_recipe[AMMO.name].energy_required = 8
+        data_recipe[AMMO.name].ingredients[1].amount = 32
+    end
 end
 
 local shotgun_shell_better = "bob-better-shotgun-shell"
@@ -559,29 +563,33 @@ local ammo_shotguns =
     {name = shotgun_shell_plasma,    order = h}
 }
 for _, AMMO in pairs(ammo_shotguns) do
-    data_ammo[AMMO.name].subgroup = is_ammo_shotgun
-    data_ammo[AMMO.name].order = AMMO.order
-    data_ammo[AMMO.name].magazine_size = 60
-    data_ammo[AMMO.name].stack_size = 200
-    data_recipe[AMMO.name].subgroup = is_ammo_shotgun
-    data_recipe[AMMO.name].order = AMMO.order
-    data_recipe[AMMO.name].energy_required = 8
-    data_recipe[AMMO.name].ingredients[1].amount = 32
-    data_recipe[AMMO.name].ingredients[2].amount = 32
-    if data_recipe[AMMO.name].ingredients[3].type == item then
-        data_recipe[AMMO.name].ingredients[3].amount = 16
+    if data_item[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_ammo_shotgun
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].magazine_size = 60
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_ammo_shotgun
+        data_recipe[AMMO.name].order = AMMO.order
+        data_recipe[AMMO.name].energy_required = 8
+        data_recipe[AMMO.name].ingredients[1].amount = 32
+        data_recipe[AMMO.name].ingredients[2].amount = 32
+        if data_recipe[AMMO.name].ingredients[3].type == item then
+            data_recipe[AMMO.name].ingredients[3].amount = 16
+        end
+        if data_recipe[AMMO.name].ingredients[3].type == fluid then
+            data_recipe[AMMO.name].ingredients[3].amount = 240
+        end
+        data_recipe[AMMO.name].results[1].amount = 1
     end
-    if data_recipe[AMMO.name].ingredients[3].type == fluid then
-        data_recipe[AMMO.name].ingredients[3].amount = 240
-    end
-    data_recipe[AMMO.name].results[1].amount = 1
 end
-data_recipe[shotgun_shell_plasma].ingredients =
-{
-    {type = item, name = cordite, amount = 32},
-    {type = item, name = shotgun_shell_casing, amount = 32},
-    {type = fluid, name = deuterium_angels, amount = 240}
-}
+if mods [bobwarfare] then
+    data_recipe[shotgun_shell_plasma].ingredients =
+    {
+        {type = item, name = cordite, amount = 32},
+        {type = item, name = shotgun_shell_casing, amount = 32},
+        {type = fluid, name = deuterium_angels, amount = 240}
+    }
+end
 
 local rocket_warhead = "bob-rocket-warhead"
 local rocket_flame_warhead = "bob-flame-rocket-warhead"
@@ -603,25 +611,29 @@ local rocket_warheads =
     {name = rocket_plasma_warhead,    order = h},
 }
 for _, ITEM in pairs(rocket_warheads) do
-    data_item[ITEM.name].subgroup = is_rocket_warhead
-    data_item[ITEM.name].order = ITEM.order
-    data_item[ITEM.name].stack_size = 200
-    data_recipe[ITEM.name].subgroup = is_rocket_warhead
-    data_recipe[ITEM.name].order = ITEM.order
-    data_recipe[ITEM.name].energy_required = 4
-    if data_recipe[ITEM.name].ingredients[2].type == item then
-        data_recipe[ITEM.name].ingredients[2].amount = 4
+    if data_item[ITEM.name] then
+        data_item[ITEM.name].subgroup = is_rocket_warhead
+        data_item[ITEM.name].order = ITEM.order
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].subgroup = is_rocket_warhead
+        data_recipe[ITEM.name].order = ITEM.order
+        data_recipe[ITEM.name].energy_required = 4
+        if data_recipe[ITEM.name].ingredients[2].type == item then
+            data_recipe[ITEM.name].ingredients[2].amount = 4
+        end
+        if data_recipe[ITEM.name].ingredients[2].type == fluid then
+            data_recipe[ITEM.name].ingredients[2].amount = 60
+        end
+        data_recipe[ITEM.name].results[1].amount = 1
     end
-    if data_recipe[ITEM.name].ingredients[2].type == fluid then
-        data_recipe[ITEM.name].ingredients[2].amount = 60
-    end
-    data_recipe[ITEM.name].results[1].amount = 1
 end
-data_recipe[rocket_plasma_warhead].ingredients =
-{
-    {type = item, name = steel_plate, amount = 1},
-    {type = fluid, name = deuterium_angels, amount = 60}
-}
+if mods [bobwarfare] then
+    data_recipe[rocket_plasma_warhead].ingredients =
+    {
+        {type = item, name = steel_plate, amount = 1},
+        {type = fluid, name = deuterium_angels, amount = 60}
+    }
+end
 
 local rocket_bob = "bob-rocket"
 local rocket_flame = "bob-flame-rocket"
@@ -643,12 +655,14 @@ local ammo_rockets =
     {name = rocket_plasma,    order = h},
 }
 for _, AMMO in pairs(ammo_rockets) do
-    data_ammo[AMMO.name].subgroup = is_ammo_rocket
-    data_ammo[AMMO.name].order = AMMO.order
-    data_ammo[AMMO.name].stack_size = 200
-    data_recipe[AMMO.name].subgroup = is_ammo_rocket
-    data_recipe[AMMO.name].order = AMMO.order
-    data_recipe[AMMO.name].energy_required = 1
+    if data_ammo[AMMO.name] then
+        data_ammo[AMMO.name].subgroup = is_ammo_rocket
+        data_ammo[AMMO.name].order = AMMO.order
+        data_ammo[AMMO.name].stack_size = 200
+        data_recipe[AMMO.name].subgroup = is_ammo_rocket
+        data_recipe[AMMO.name].order = AMMO.order
+        data_recipe[AMMO.name].energy_required = 1
+    end
 end
 
 local grenade_capsules =
@@ -660,7 +674,9 @@ local grenade_capsules =
     slowdown_capsule,
 }
 for _, name in pairs(grenade_capsules) do
-    data_capsule[name].stack_size = 200
+    if data_capsule[name] then
+        data_capsule[name].stack_size = 200
+    end
 end
 
 data_capsule[grenade].capsule_action.attack_parameters.range = 16
@@ -678,14 +694,16 @@ data_recipe[cluster_grenade].ingredients =
     {type = item, name = explosives, amount = 4}
 }
 
-data_capsule[fire_capsule].capsule_action.attack_parameters.range = 24
-data_projectile[fire_capsule].action[1].cluster_count = 8
-data_recipe[fire_capsule].ingredients =
-{
-    {type = item, name = electronic_circuit, amount = 4},
-    {type = item, name = steel_plate, amount = 4},
-    {type = fluid, name = liquid_fuel_bob, amount = 120}
-}
+if mods [bobwarfare] then
+    data_capsule[fire_capsule].capsule_action.attack_parameters.range = 24
+    data_projectile[fire_capsule].action[1].cluster_count = 8
+    data_recipe[fire_capsule].ingredients =
+    {
+        {type = item, name = electronic_circuit, amount = 4},
+        {type = item, name = steel_plate, amount = 4},
+        {type = fluid, name = liquid_fuel_bob, amount = 120}
+    }
+end
 
 data_capsule[poison_capsule].capsule_action.attack_parameters.range = 24
 data_recipe[poison_capsule].ingredients =
@@ -713,8 +731,10 @@ data_combat_robot[distractor].subgroup = is_combat_robots_entites
 data_combat_robot[distractor].order = b
 data_combat_robot[destroyer].subgroup = is_combat_robots_entites
 data_combat_robot[destroyer].order = c
-data_combat_robot[laser_robot].subgroup = is_combat_robots_entites
-data_combat_robot[laser_robot].order = d
+if mods [bobwarfare] then
+    data_combat_robot[laser_robot].subgroup = is_combat_robots_entites
+    data_combat_robot[laser_robot].order = d
+end
 
 local combat_robots_2 =
 {
@@ -724,8 +744,10 @@ local combat_robots_2 =
     "bob-laser-robot"
 }
 for _, name in pairs(combat_robots_2) do
-    data_item[name].stack_size = 200
-    data_recipe[name].energy_required = 1
+    if data_item[name] then
+        data_item[name].stack_size = 200
+        data_recipe[name].energy_required = 1
+    end
 end
 
 local combat_robots =
@@ -736,11 +758,13 @@ local combat_robots =
     {name = laser_robot_capsule, order = d}
 }
 for _, CAPSULE in pairs(combat_robots) do
-    data_capsule[CAPSULE.name].subgroup = is_combat_robots
-    data_capsule[CAPSULE.name].order = CAPSULE.order
-    data_capsule[CAPSULE.name].stack_size = 200
-    data_recipe[CAPSULE.name].subgroup = is_combat_robots
-    data_recipe[CAPSULE.name].order = CAPSULE.order
+    if data_capsule[CAPSULE.name] then
+        data_capsule[CAPSULE.name].subgroup = is_combat_robots
+        data_capsule[CAPSULE.name].order = CAPSULE.order
+        data_capsule[CAPSULE.name].stack_size = 200
+        data_recipe[CAPSULE.name].subgroup = is_combat_robots
+        data_recipe[CAPSULE.name].order = CAPSULE.order
+    end
 end
 
 --[defender_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
@@ -754,9 +778,11 @@ data_capsule[destroyer_capsule].capsule_action.attack_parameters.range = 24
 --[destroyer_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
 data_recipe[destroyer_capsule].ingredients[1].amount = 4
 
-data_capsule[laser_robot_capsule].capsule_action.attack_parameters.range = 24
---[laser_robot_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
-data_recipe[laser_robot_capsule].ingredients[1].amount = 4
+if mods [bobwarfare] then
+    data_capsule[laser_robot_capsule].capsule_action.attack_parameters.range = 24
+    --[laser_robot_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
+    data_recipe[laser_robot_capsule].ingredients[1].amount = 4
+end
 
 if settings.startup[setting_bobmods_logistics_robotparts].value then
     local combat_robot_brain_1 = "bob-robot-brain-combat"
@@ -771,12 +797,16 @@ if settings.startup[setting_bobmods_logistics_robotparts].value then
         {name = combat_robot_brain_4}
     }
     for _, ITEM in pairs(combat_robot_brains) do
-        data_item[ITEM.name].subgroup = is_combat_robot_brain
-        data_item[ITEM.name].stack_size = 200
-        data_recipe[ITEM.name].subgroup = is_combat_robot_brain
-        data_recipe[ITEM.name].energy_required = 4
+        if data_item[ITEM.name] then
+            data_item[ITEM.name].subgroup = is_combat_robot_brain
+            data_item[ITEM.name].stack_size = 200
+            data_recipe[ITEM.name].subgroup = is_combat_robot_brain
+            data_recipe[ITEM.name].energy_required = 4
+        end
     end
     local function combat_robot_brain_recipe(name, circuit_1, circuit_2)
+        if not data_recipe[name] then return end
+
         data_recipe[name].ingredients =
         {
             {type = item, name = circuit_1, amount = 1},
@@ -802,12 +832,16 @@ if settings.startup[setting_bobmods_logistics_robotparts].value then
         {name = combat_robot_tool_4}
     }
     for _, ITEM in pairs(combat_robot_tools) do
-        data_item[ITEM.name].subgroup = is_combat_robot_tool
-        data_item[ITEM.name].stack_size = 200
-        data_recipe[ITEM.name].subgroup = is_combat_robot_tool
-        data_recipe[ITEM.name].energy_required = 4
+        if data_item[ITEM.name] then
+            data_item[ITEM.name].subgroup = is_combat_robot_tool
+            data_item[ITEM.name].stack_size = 200
+            data_recipe[ITEM.name].subgroup = is_combat_robot_tool
+            data_recipe[ITEM.name].energy_required = 4
+        end
     end
     local function combat_robot_tool_recipe(name, gear_wheel, battery, prizma, plate)
+        if not data_recipe[name] then return end
+
         data_recipe[name].ingredients =
         {
             {type = item, name = gear_wheel, amount = 2},
@@ -861,130 +895,132 @@ data_recipe[power_armor_2].ingredients =
     {type = item, name = efficiency_module_1, amount = 128}
 }
 
-data_recipe[power_armor_3].energy_required = 32
-if data_item[alien_artifact] then
-    data_recipe[power_armor_3].ingredients =
-    {
-        {type = item, name = processing_unit, amount = 64},
-        {type = item, name = power_armor_2, amount = 1},
-        {type = item, name = aluminium_plate_bob, amount = 32},
-        {type = item, name = invar_plate_bob, amount = 32},
-        {type = item, name = alien_artifact_orange, amount = 32},
-        {type = item, name = alien_artifact_blue, amount = 32},
-        {type = item, name = speed_module_3, amount = 4},
-        {type = item, name = efficiency_module_3, amount = 4}
-    }
-else
-    data_recipe[power_armor_3].ingredients =
-    {
-        {type = item, name = processing_unit, amount = 64},
-        {type = item, name = power_armor_2, amount = 1},
-        {type = item, name = aluminium_plate_bob, amount = 32},
-        {type = item, name = invar_plate_bob, amount = 32},
-        {type = item, name = speed_module_3, amount = 4},
-        {type = item, name = efficiency_module_3, amount = 4}
-    }
-end
+if mods [bobwarfare] then
+    data_recipe[power_armor_3].energy_required = 32
+    if data_item[alien_artifact] then
+        data_recipe[power_armor_3].ingredients =
+        {
+            {type = item, name = processing_unit, amount = 64},
+            {type = item, name = power_armor_2, amount = 1},
+            {type = item, name = aluminium_plate_bob, amount = 32},
+            {type = item, name = invar_plate_bob, amount = 32},
+            {type = item, name = alien_artifact_orange, amount = 32},
+            {type = item, name = alien_artifact_blue, amount = 32},
+            {type = item, name = speed_module_3, amount = 4},
+            {type = item, name = efficiency_module_3, amount = 4}
+        }
+    else
+        data_recipe[power_armor_3].ingredients =
+        {
+            {type = item, name = processing_unit, amount = 64},
+            {type = item, name = power_armor_2, amount = 1},
+            {type = item, name = aluminium_plate_bob, amount = 32},
+            {type = item, name = invar_plate_bob, amount = 32},
+            {type = item, name = speed_module_3, amount = 4},
+            {type = item, name = efficiency_module_3, amount = 4}
+        }
+    end
 
-data_recipe[power_armor_4].energy_required = 32
-if data_item[alien_artifact] then
-    if mods [bobmodules] then
-        data_recipe[power_armor_4].ingredients =
-        {
-            {type = item, name = low_density_structure, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 32},
-            {type = item, name = power_armor_3, amount = 1},
-            {type = item, name = silicon_nitride_bob, amount = 64},
-            {type = item, name = alien_artifact_yellow, amount = 32},
-            {type = item, name = alien_artifact_magenta, amount = 32},
-            {type = item, name = speed_module_4, amount = 4},
-            {type = item, name = efficiency_module_4, amount = 4}
-        }
+    data_recipe[power_armor_4].energy_required = 32
+    if data_item[alien_artifact] then
+        if mods [bobmodules] then
+            data_recipe[power_armor_4].ingredients =
+            {
+                {type = item, name = low_density_structure, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 32},
+                {type = item, name = power_armor_3, amount = 1},
+                {type = item, name = silicon_nitride_bob, amount = 64},
+                {type = item, name = alien_artifact_yellow, amount = 32},
+                {type = item, name = alien_artifact_magenta, amount = 32},
+                {type = item, name = speed_module_4, amount = 4},
+                {type = item, name = efficiency_module_4, amount = 4}
+            }
+        else
+            data_recipe[power_armor_4].ingredients =
+            {
+                {type = item, name = low_density_structure, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 32},
+                {type = item, name = power_armor_3, amount = 1},
+                {type = item, name = silicon_nitride_bob, amount = 64},
+                {type = item, name = alien_artifact_yellow, amount = 32},
+                {type = item, name = alien_artifact_magenta, amount = 32},
+                {type = item, name = speed_module_3, amount = 4},
+                {type = item, name = efficiency_module_3, amount = 4}
+            }
+        end
     else
-        data_recipe[power_armor_4].ingredients =
-        {
-            {type = item, name = low_density_structure, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 32},
-            {type = item, name = power_armor_3, amount = 1},
-            {type = item, name = silicon_nitride_bob, amount = 64},
-            {type = item, name = alien_artifact_yellow, amount = 32},
-            {type = item, name = alien_artifact_magenta, amount = 32},
-            {type = item, name = speed_module_3, amount = 4},
-            {type = item, name = efficiency_module_3, amount = 4}
-        }
+        if mods [bobmodules] then
+            data_recipe[power_armor_4].ingredients =
+            {
+                {type = item, name = low_density_structure, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 32},
+                {type = item, name = power_armor_3, amount = 1},
+                {type = item, name = silicon_nitride_bob, amount = 64},
+                {type = item, name = speed_module_4, amount = 4},
+                {type = item, name = efficiency_module_4, amount = 4}
+            }
+        else
+            data_recipe[power_armor_4].ingredients =
+            {
+                {type = item, name = low_density_structure, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 32},
+                {type = item, name = power_armor_3, amount = 1},
+                {type = item, name = silicon_nitride_bob, amount = 64},
+                {type = item, name = speed_module_3, amount = 4},
+                {type = item, name = efficiency_module_3, amount = 4}
+            }
+        end
     end
-else
-    if mods [bobmodules] then
-        data_recipe[power_armor_4].ingredients =
-        {
-            {type = item, name = low_density_structure, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 32},
-            {type = item, name = power_armor_3, amount = 1},
-            {type = item, name = silicon_nitride_bob, amount = 64},
-            {type = item, name = speed_module_4, amount = 4},
-            {type = item, name = efficiency_module_4, amount = 4}
-        }
-    else
-        data_recipe[power_armor_4].ingredients =
-        {
-            {type = item, name = low_density_structure, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 32},
-            {type = item, name = power_armor_3, amount = 1},
-            {type = item, name = silicon_nitride_bob, amount = 64},
-            {type = item, name = speed_module_3, amount = 4},
-            {type = item, name = efficiency_module_3, amount = 4}
-        }
-    end
-end
 
-data_recipe[power_armor_5].energy_required = 32
-if data_item[alien_artifact] then
-    if mods [bobmodules] then
-        data_recipe[power_armor_5].ingredients =
-        {
-            {type = item, name = mech_armor_plate, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 64},
-            {type = item, name = power_armor_4, amount = 1},
-            {type = item, name = nitinol_plate_bob, amount = 64},
-            {type = item, name = alien_artifact_red, amount = 32},
-            {type = item, name = alien_artifact_green, amount = 32},
-            {type = item, name = speed_module_5, amount = 4},
-            {type = item, name = efficiency_module_5, amount = 4}
-        }
+    data_recipe[power_armor_5].energy_required = 32
+    if data_item[alien_artifact] then
+        if mods [bobmodules] then
+            data_recipe[power_armor_5].ingredients =
+            {
+                {type = item, name = mech_armor_plate, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 64},
+                {type = item, name = power_armor_4, amount = 1},
+                {type = item, name = nitinol_plate_bob, amount = 64},
+                {type = item, name = alien_artifact_red, amount = 32},
+                {type = item, name = alien_artifact_green, amount = 32},
+                {type = item, name = speed_module_5, amount = 4},
+                {type = item, name = efficiency_module_5, amount = 4}
+            }
+        else
+            data_recipe[power_armor_5].ingredients =
+            {
+                {type = item, name = mech_armor_plate, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 64},
+                {type = item, name = power_armor_4, amount = 1},
+                {type = item, name = nitinol_plate_bob, amount = 64},
+                {type = item, name = alien_artifact_red, amount = 32},
+                {type = item, name = alien_artifact_green, amount = 32},
+                {type = item, name = speed_module_3, amount = 4},
+                {type = item, name = efficiency_module_3, amount = 4}
+            }
+        end
     else
-        data_recipe[power_armor_5].ingredients =
-        {
-            {type = item, name = mech_armor_plate, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 64},
-            {type = item, name = power_armor_4, amount = 1},
-            {type = item, name = nitinol_plate_bob, amount = 64},
-            {type = item, name = alien_artifact_red, amount = 32},
-            {type = item, name = alien_artifact_green, amount = 32},
-            {type = item, name = speed_module_3, amount = 4},
-            {type = item, name = efficiency_module_3, amount = 4}
-        }
-    end
-else
-    if mods [bobmodules] then
-        data_recipe[power_armor_5].ingredients =
-        {
-            {type = item, name = mech_armor_plate, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 64},
-            {type = item, name = power_armor_4, amount = 1},
-            {type = item, name = nitinol_plate_bob, amount = 64},
-            {type = item, name = speed_module_5, amount = 4},
-            {type = item, name = efficiency_module_5, amount = 4}
-        }
-    else
-        data_recipe[power_armor_5].ingredients =
-        {
-            {type = item, name = mech_armor_plate, amount = 4},
-            {type = item, name = advanced_processing_unit, amount = 64},
-            {type = item, name = power_armor_4, amount = 1},
-            {type = item, name = nitinol_plate_bob, amount = 64},
-            {type = item, name = speed_module_3, amount = 4},
-            {type = item, name = efficiency_module_3, amount = 4}
-        }
+        if mods [bobmodules] then
+            data_recipe[power_armor_5].ingredients =
+            {
+                {type = item, name = mech_armor_plate, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 64},
+                {type = item, name = power_armor_4, amount = 1},
+                {type = item, name = nitinol_plate_bob, amount = 64},
+                {type = item, name = speed_module_5, amount = 4},
+                {type = item, name = efficiency_module_5, amount = 4}
+            }
+        else
+            data_recipe[power_armor_5].ingredients =
+            {
+                {type = item, name = mech_armor_plate, amount = 4},
+                {type = item, name = advanced_processing_unit, amount = 64},
+                {type = item, name = power_armor_4, amount = 1},
+                {type = item, name = nitinol_plate_bob, amount = 64},
+                {type = item, name = speed_module_3, amount = 4},
+                {type = item, name = efficiency_module_3, amount = 4}
+            }
+        end
     end
 end
 

@@ -62,6 +62,7 @@ if mods ["Rocket-Silo-Construction"] then
         data_recipe[RECIPE.name].energy_required = 4
         data_recipe[RECIPE.name].hidden = false
         data_recipe[RECIPE.name].hidden_in_factoriopedia = false
+        data_recipe[RECIPE.name].hide_from_player_crafting = true
     end
     data_recipe[construction_stage1].results =
     {
