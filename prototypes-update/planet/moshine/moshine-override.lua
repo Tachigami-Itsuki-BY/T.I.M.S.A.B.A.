@@ -82,6 +82,7 @@ if mods[moshine_mods] then
 
     local glass = "glass"
     data_recipe[glass].localised_name = {"item-name.angels-plate-glass"}
+    data_recipe[glass].category = smelting_filtering
     data_recipe[glass].subgroup = is_moshine_recipe
     data_recipe[glass].icons = TWO_I(sand_angels, glass_bob)
     data_recipe[glass].order = j

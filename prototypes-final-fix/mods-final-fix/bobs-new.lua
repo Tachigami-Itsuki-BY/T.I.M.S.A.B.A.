@@ -206,7 +206,7 @@ if mods [boblogistics] >= "2.1.0" then
         {type = unlock_recipe, recipe = T4_underground_belt},
         {type = unlock_recipe, recipe = T4_splitter}
     }
-    if mods [loaders_modernized_integrations] then
+    if mods [loaders_modernized_integrations] and settings.startup["mdrn-unlock-technology"].allowed_values == "belt" then
         table.insert(data_technology[tech_logistics_4].effects, {type = unlock_recipe, recipe = T4_loader})
     end
 

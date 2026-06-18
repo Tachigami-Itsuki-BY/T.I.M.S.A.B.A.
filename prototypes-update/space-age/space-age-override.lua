@@ -231,15 +231,27 @@ if mods [muluna_mods] then
     data_recipe[satellite_radar].subgroup = is_space_platform_mods
     data_recipe[satellite_radar].order = b
     data_recipe[satellite_radar].energy_required = 8
-    data_recipe[satellite_radar].ingredients =
-    {
-        {type = item, name = advanced_processing_unit, amount = 512},
-        {type = item, name = radar_5, amount = 256},
-        {type = item, name = aluminium_plate_bob, amount = 512},
-        {type = item, name = superconductor, amount = 512},
-        {type = item, name = silicon_cell_mods, amount = 128},
-        {type = item, name = telescope, amount = 64}
-    }
+    if mods [bobwarfare] then
+        data_recipe[satellite_radar].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 512},
+            {type = item, name = radar_5, amount = 256},
+            {type = item, name = aluminium_plate_bob, amount = 512},
+            {type = item, name = superconductor, amount = 512},
+            {type = item, name = silicon_cell_mods, amount = 128},
+            {type = item, name = telescope, amount = 64}
+        }
+    else
+        data_recipe[satellite_radar].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 512},
+            {type = item, name = radar_1, amount = 256},
+            {type = item, name = aluminium_plate_bob, amount = 512},
+            {type = item, name = superconductor, amount = 512},
+            {type = item, name = silicon_cell_mods, amount = 128},
+            {type = item, name = telescope, amount = 64}
+        }
+    end
     data_accumulator[satellite_radar].localised_name = {"entity-name.satellite-radar"}
     data_accumulator[satellite_radar].subgroup = is_space_platform_mods
     data_accumulator[satellite_radar].order = b

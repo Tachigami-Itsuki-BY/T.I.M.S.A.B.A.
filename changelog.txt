@@ -1,11 +1,43 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+Date: 18.06.2026
+  Features:
+    - [All] Добавлен новый рецепт: Стекло.
+
+    - [All] Added new recipe: Glass.
+
+  Bugfixes:
+    - [All] Исправлены незначительные ошибки.
+
+    - [All] Fixed minor bugs.
+
+  Balancing:
+    - [Mods] В рецепте Погрузчика Скат скорректированы ингредиенты.
+    - [All] В технологию Фонарь добавлено новое предварительное условие: Механическая очистка.
+
+    - [Mods] Adjusted ingredients in the Skat Loader recipe.
+    - [All] Added a new prerequisite for the Lamp technology: Mechanical refining.
+
+  Modding:
+    - [Mods] Мод «Bob's Warfare» переведён в опциональную зависимость.
+    - [Mods] Мод «Electric Boiler» добавлен в список несовместимых.
+
+    - [Mods] Moved "Bob's Warfare" mod to optional dependencies.
+    - [Mods] Added "Electric Boiler" mod to incompatible.
+
+  Locale:
+    - [Mods] Обновлена локализация для мода Loaders Modernized.
+    - [Rus] Обновлена русская локализация.
+
+    - [Mods] Updated localization for the Loaders Modernized mod
+---------------------------------------------------------------------------------------------------
 Version: 1.5.2
 Date: 17.06.2026
   Bugfixes:
-    - [All] Исправлены мелкие ошибки.
+    - [All] Исправлены незначительные ошибки.
     - [All] Исправлена ​​ошибка, препятствовавшая исследованию следующих технологий: Логистика 3 и Батарея 2.
-    - [All] Исправлена ​​ошибка, из-за которой процент порчи продукта наследовался от ингредиента.
+    - [All] Исправлена ​​ошибка, из-за которой процент порчи результата наследовался от ингредиента.
 
     - [All] Fixed minor bugs.
     - [All] Fixed a bug preventing research of the following technologies: Logistics 3 and Battery 2.
@@ -14,7 +46,7 @@ Date: 17.06.2026
   Balancing:
     - [All] В рецепте Керамического Фильтра произведена замена ингредиента: Глинозём → Нитрид Кремния.
     - [Tellus] В рецепте Выращивание Магниевых Бактерий скорректированы ингредиенты.
-    - [Hyarion] В рецепт Углеродной Нанотрубки добавлен реузультат: Водород.
+    - [Hyarion] В рецепт Углеродной Нанотрубки добавлен результат: Водород.
     - [Tellus] Удалена технология Вместимость конвейера 3.
 
     - [All] Replaced an ingredient in the Ceramic Filter recipe: Alumina → Silicon Nitride.
@@ -231,7 +263,7 @@ Date: 07.06.2026
     - [Mods] Added support for Planetaris: Arig: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлены мелкие ошибки, не влияющие на игровой процесс.
+    - [All] Исправлены незначительные ошибки, не влияющие на игровой процесс.
 
     - [All] Fixed minor bugs that did not affect gameplay.
 
@@ -2259,7 +2291,7 @@ Date: 08.04.2026
     - Replaced an ingredient in the Void Chest recipe: Advanced Circuit → Electronic Circuit.
 
   Other:
-    - Убедитесь, что у вас не установлены старые версии модпака — это может вызвать ошибки.
+    - Убедитесь, что у вас не установлены старые версии модпака - это может вызвать ошибки.
 
     - Make sure you do not have any older versions of the modpack installed, as this may cause errors.
 ---------------------------------------------------------------------------------------------------
@@ -2274,7 +2306,7 @@ Date: 07.04.2026
     - В рецепте Коксовые Гранулы произведена замена ингредиента: Кокс (4 ед.) → Обработанный Кокс (1 ед.)
     - В технологии Переработка Руды 2 удалено требование: Переработка Угля 3.
     - Время исследования и расход научных пакетов приведены к общей экономике модпака.
-    - Все бесконечные технологии теперь ограничены: максимальный уровень — 30.
+    - Все бесконечные технологии теперь ограничены: максимальный уровень - 30.
     - В рецепте Кобальтата Натрия изменено время крафта: (12 сек.) → (8 сек.)
 
     - Replaced an ingredient in the Coke Pellet recipe: Coke (4 units) → Processed Coke (1 unit)

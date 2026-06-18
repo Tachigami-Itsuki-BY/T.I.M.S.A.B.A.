@@ -959,9 +959,11 @@ local mines =
     slowdown_mine
 }
 for _, name in pairs(mines) do
-    data_item[name].stack_size = 200
-    data_item[name].weight = 5000
-    data_recipe[name].energy_required = 4
+    if data_item[name] then
+        data_item[name].stack_size = 200
+        data_item[name].weight = 5000
+        data_recipe[name].energy_required = 4
+    end
 end
 
 local is_defensive_structure_1 = "defensive-structure"
@@ -992,17 +994,21 @@ local radars =
     {name = radar_5, energy_usage = 1200, EPNS = 5}
 }
 for _, BUILD in pairs(radars) do
-    data_item[BUILD.name].subgroup = is_defensive_structure_2
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].subgroup = is_defensive_structure_2
-    data_recipe[BUILD.name].energy_required = 4
-    data_radar[BUILD.name].subgroup = is_defensive_structure_2
-    data_radar[BUILD.name].energy_per_sector = (BUILD.energy_usage * 30) .. kJ
-    data_radar[BUILD.name].energy_per_nearby_scan = (BUILD.energy_usage / BUILD.EPNS) .. kJ
-    data_radar[BUILD.name].energy_usage = BUILD.energy_usage .. kW
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_defensive_structure_2
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_defensive_structure_2
+        data_recipe[BUILD.name].energy_required = 4
+        data_radar[BUILD.name].subgroup = is_defensive_structure_2
+        data_radar[BUILD.name].energy_per_sector = (BUILD.energy_usage * 30) .. kJ
+        data_radar[BUILD.name].energy_per_nearby_scan = (BUILD.energy_usage / BUILD.EPNS) .. kJ
+        data_radar[BUILD.name].energy_usage = BUILD.energy_usage .. kW
+    end
 end
 local function radar_recipe(name, gear_wheel, circuit, plate, radar, bearing)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 4},
@@ -1032,11 +1038,15 @@ local gun_turrets =
     {name = gun_turret_5, range = 32, damage_modifier = 2.25}
 }
 for _, BUILD in pairs(gun_turrets) do
-    data_ammo_turret[BUILD.name].attack_parameters.range = BUILD.range
-    data_ammo_turret[BUILD.name].attack_parameters.cooldown = 7.5
-    data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+    if data_ammo_turret[BUILD.name] then
+        data_ammo_turret[BUILD.name].attack_parameters.range = BUILD.range
+        data_ammo_turret[BUILD.name].attack_parameters.cooldown = 7.5
+        data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+    end
 end
 local function gun_turret_recipe(name, gear_wheel, plate, gun_turret, bearing)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},
@@ -1066,24 +1076,28 @@ local laser_turrets =
     {name = laser_turret_5, energy_consumption = 1200, damage_modifier = 10, cooldown = 60, range = 32}
 }
 for _, BUILD in pairs(laser_turrets) do
-    data_item[BUILD.name].subgroup = is_turret_2
-    data_recipe[BUILD.name].subgroup = is_turret_2
-    data_electric_turret[BUILD.name].subgroup = is_turret_2
-    data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ
-    data_electric_turret[BUILD.name].energy_source.input_flow_limit = (BUILD.energy_consumption * 1.5) .. kW
-    data_electric_turret[BUILD.name].energy_source.drain = nil
-    data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
-    data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
-    data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
-    data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
-    local ammo = data_electric_turret[BUILD.name].attack_parameters.ammo_type
-    if ammo and ammo.action and ammo.action.action_delivery then
-        local delivery = ammo.action.action_delivery
-        delivery.max_length = BUILD.range
-        delivery.duration = BUILD.cooldown
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_turret_2
+        data_recipe[BUILD.name].subgroup = is_turret_2
+        data_electric_turret[BUILD.name].subgroup = is_turret_2
+        data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ
+        data_electric_turret[BUILD.name].energy_source.input_flow_limit = (BUILD.energy_consumption * 1.5) .. kW
+        data_electric_turret[BUILD.name].energy_source.drain = nil
+        data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
+        data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
+        data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+        data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
+        local ammo = data_electric_turret[BUILD.name].attack_parameters.ammo_type
+        if ammo and ammo.action and ammo.action.action_delivery then
+            local delivery = ammo.action.action_delivery
+            delivery.max_length = BUILD.range
+            delivery.duration = BUILD.cooldown
+        end
     end
 end
 local function laser_turret_recipe(name, battery, circuit, plate, laser_turret, polished)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = battery, amount = 8},
@@ -1114,15 +1128,19 @@ local sniper_turrets =
     {name = sniper_turret_3, range = 48, cooldown = 240, damage_modifier = 24}
 }
 for _, BUILD in pairs(sniper_turrets) do
-    data_item[BUILD.name].subgroup = is_turret_3
-    data_recipe[BUILD.name].subgroup = is_turret_3
-    data_ammo_turret[BUILD.name].subgroup = is_turret_3
-    data_ammo_turret[BUILD.name].attack_parameters.range = BUILD.range
-    data_ammo_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
-    data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
-    data_ammo_turret[BUILD.name].attack_parameters.ammo_consumption_modifier = 4
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_turret_3
+        data_recipe[BUILD.name].subgroup = is_turret_3
+        data_ammo_turret[BUILD.name].subgroup = is_turret_3
+        data_ammo_turret[BUILD.name].attack_parameters.range = BUILD.range
+        data_ammo_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
+        data_ammo_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+        data_ammo_turret[BUILD.name].attack_parameters.ammo_consumption_modifier = 4
+    end
 end
 local function sniper_turret_recipe(name, gear_wheel, plate_1, plate_2, sniper_turret, bearing)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 16},
@@ -1149,9 +1167,11 @@ local artillery_wagon_cannons =
     {name = artillery_wagon_cannon_3, cooldown = 240, range = 12, damage_modifier = 1.75}
 }
 for _, BUILD in pairs(artillery_wagon_cannons) do
-    data_gun[BUILD.name].attack_parameters.range = BUILD.range * 32
-    data_gun[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
-    data_gun[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+    if data_gun[BUILD.name] then
+        data_gun[BUILD.name].attack_parameters.range = BUILD.range * 32
+        data_gun[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
+        data_gun[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+    end
 end
 local artillery_turrets =
 {
@@ -1160,12 +1180,16 @@ local artillery_turrets =
     {name = artillery_turret_3, localised_name = {"entity-name.artillery-turret-3"}}
 }
 for _, BUILD in pairs(artillery_turrets) do
-    data_item[BUILD.name].subgroup = is_turret_4
-    data_recipe[BUILD.name].subgroup = is_turret_4
-    data_artillery_turret[BUILD.name].subgroup = is_turret_4
-    data_artillery_turret[BUILD.name].manual_range_modifier = 2
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_turret_4
+        data_recipe[BUILD.name].subgroup = is_turret_4
+        data_artillery_turret[BUILD.name].subgroup = is_turret_4
+        data_artillery_turret[BUILD.name].manual_range_modifier = 2
+    end
 end
 local function artillery_turret_recipe(name, gear_wheel, circuit, plate_1, plate_2, artillery_turret)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 32},
@@ -1194,134 +1218,138 @@ local plasma_turrets =
     {name = plasma_turret_4, range = 56, cooldown = 240, damage_modifier = 16, energy_consumption = 48000}
 }
 for _, BUILD in pairs(plasma_turrets) do
-    data_item[BUILD.name].subgroup = is_turret_5
-    data_recipe[BUILD.name].category = crafting_fluid
-    data_recipe[BUILD.name].subgroup = is_turret_5
-    data_electric_turret[BUILD.name].subgroup = is_turret_5
-    data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ
-    data_electric_turret[BUILD.name].energy_source.input_flow_limit = (BUILD.energy_consumption / 4) .. kW
-    data_electric_turret[BUILD.name].energy_source.drain = nil
-    data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
-    data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
-    data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
-    data_electric_turret[BUILD.name].attack_parameters.min_range = 16
-    data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
-    local ammo_type = data_electric_turret[BUILD.name].attack_parameters.ammo_type
-    local action = ammo_type.action[1] or ammo_type.action
-    local delivery = action.action_delivery[1] or action.action_delivery
-    if delivery then
-        delivery.max_range = BUILD.range * 1.5
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_turret_5
+        data_recipe[BUILD.name].category = crafting_fluid
+        data_recipe[BUILD.name].subgroup = is_turret_5
+        data_electric_turret[BUILD.name].subgroup = is_turret_5
+        data_electric_turret[BUILD.name].energy_source.buffer_capacity = (BUILD.energy_consumption * 2) .. kJ
+        data_electric_turret[BUILD.name].energy_source.input_flow_limit = (BUILD.energy_consumption / 4) .. kW
+        data_electric_turret[BUILD.name].energy_source.drain = nil
+        data_electric_turret[BUILD.name].attack_parameters.range = BUILD.range
+        data_electric_turret[BUILD.name].attack_parameters.cooldown = BUILD.cooldown
+        data_electric_turret[BUILD.name].attack_parameters.damage_modifier = BUILD.damage_modifier
+        data_electric_turret[BUILD.name].attack_parameters.min_range = 16
+        data_electric_turret[BUILD.name].attack_parameters.ammo_type.energy_consumption = BUILD.energy_consumption .. kJ
+        local ammo_type = data_electric_turret[BUILD.name].attack_parameters.ammo_type
+        local action = ammo_type.action[1] or ammo_type.action
+        local delivery = action.action_delivery[1] or action.action_delivery
+        if delivery then
+            delivery.max_range = BUILD.range * 1.5
+        end
     end
 end
-if data_item[alien_artifact] then
-    data_recipe[plasma_turret_1].ingredients =
-    {
-        {type = item,  name = battery_lead_acid,      amount = 64},
-        {type = item,  name = advanced_circuit,       amount = 32},
-        {type = item,  name = invar_plate_bob,        amount = 64},
-        {type = item,  name = cobalt_steel_plate_bob, amount = 64},
-        {type = item,  name = alien_artifact,         amount = 128},
-        {type = fluid, name = nitrogen_angels,        amount = 960}
-    }
-    data_recipe[plasma_turret_2].ingredients =
-    {
-        {type = item,  name = battery_lithium_ion,   amount = 64},
-        {type = item,  name = processing_unit,       amount = 32},
-        {type = item,  name = plasma_turret_1,       amount = 1},
-        {type = item,  name = titanium_plate_bob,    amount = 64},
-        {type = item,  name = tungsten_plate_bob,    amount = 64},
-        {type = item,  name = alien_artifact_orange, amount = 64},
-        {type = fluid, name = hydrogen_angels,       amount = 960}
-    }
-    data_recipe[plasma_turret_3].ingredients =
-    {
-        {type = item,  name = battery_silver_zinc,       amount = 64},
-        {type = item,  name = advanced_processing_unit,  amount = 32},
-        {type = item,  name = plasma_turret_2,           amount = 1},
-        {type = item,  name = copper_tungsten_plate_bob, amount = 64},
-        {type = item,  name = nitinol_plate_bob,         amount = 64},
-        {type = item,  name = alien_artifact_red,        amount = 64},
-        {type = item,  name = alien_artifact_yellow,     amount = 64},
-        {type = fluid, name = deuterium_angels,          amount = 120}
-    }
-    if mods [bobmodules] then
-        data_recipe[plasma_turret_4].ingredients =
+if mods [bobwarfare] then
+    if data_item[alien_artifact] then
+        data_recipe[plasma_turret_1].ingredients =
         {
-            {type = item,  name = battery_graphene,         amount = 64},
-            {type = item,  name = low_density_structure,    amount = 16},
-            {type = item,  name = heat_shielding_tile,      amount = 16},
-            {type = item,  name = advanced_processing_unit, amount = 64},
-            {type = item,  name = plasma_turret_3,          amount = 1},
-            {type = item,  name = orange_alloy,             amount = 64},
-            {type = item,  name = efficiency_module_5,      amount = 1},
-            {type = item,  name = quality_module_5,         amount = 1},
-            {type = fluid, name = yellow_fluid,             amount = 960}
+            {type = item,  name = battery_lead_acid,      amount = 64},
+            {type = item,  name = advanced_circuit,       amount = 32},
+            {type = item,  name = invar_plate_bob,        amount = 64},
+            {type = item,  name = cobalt_steel_plate_bob, amount = 64},
+            {type = item,  name = alien_artifact,         amount = 128},
+            {type = fluid, name = nitrogen_angels,        amount = 960}
         }
+        data_recipe[plasma_turret_2].ingredients =
+        {
+            {type = item,  name = battery_lithium_ion,   amount = 64},
+            {type = item,  name = processing_unit,       amount = 32},
+            {type = item,  name = plasma_turret_1,       amount = 1},
+            {type = item,  name = titanium_plate_bob,    amount = 64},
+            {type = item,  name = tungsten_plate_bob,    amount = 64},
+            {type = item,  name = alien_artifact_orange, amount = 64},
+            {type = fluid, name = hydrogen_angels,       amount = 960}
+        }
+        data_recipe[plasma_turret_3].ingredients =
+        {
+            {type = item,  name = battery_silver_zinc,       amount = 64},
+            {type = item,  name = advanced_processing_unit,  amount = 32},
+            {type = item,  name = plasma_turret_2,           amount = 1},
+            {type = item,  name = copper_tungsten_plate_bob, amount = 64},
+            {type = item,  name = nitinol_plate_bob,         amount = 64},
+            {type = item,  name = alien_artifact_red,        amount = 64},
+            {type = item,  name = alien_artifact_yellow,     amount = 64},
+            {type = fluid, name = deuterium_angels,          amount = 120}
+        }
+        if mods [bobmodules] then
+            data_recipe[plasma_turret_4].ingredients =
+            {
+                {type = item,  name = battery_graphene,         amount = 64},
+                {type = item,  name = low_density_structure,    amount = 16},
+                {type = item,  name = heat_shielding_tile,      amount = 16},
+                {type = item,  name = advanced_processing_unit, amount = 64},
+                {type = item,  name = plasma_turret_3,          amount = 1},
+                {type = item,  name = orange_alloy,             amount = 64},
+                {type = item,  name = efficiency_module_5,      amount = 1},
+                {type = item,  name = quality_module_5,         amount = 1},
+                {type = fluid, name = yellow_fluid,             amount = 960}
+            }
+        else
+            data_recipe[plasma_turret_4].ingredients =
+            {
+                {type = item,  name = battery_graphene,         amount = 64},
+                {type = item,  name = low_density_structure,    amount = 16},
+                {type = item,  name = heat_shielding_tile,      amount = 16},
+                {type = item,  name = advanced_processing_unit, amount = 64},
+                {type = item,  name = plasma_turret_3,          amount = 1},
+                {type = item,  name = orange_alloy,             amount = 64},
+                {type = item,  name = efficiency_module_3,      amount = 1},
+                {type = item,  name = quality_module_3,         amount = 1},
+                {type = fluid, name = yellow_fluid,             amount = 960}
+            }
+        end
     else
-        data_recipe[plasma_turret_4].ingredients =
+        data_recipe[plasma_turret_1].ingredients =
         {
-            {type = item,  name = battery_graphene,         amount = 64},
-            {type = item,  name = low_density_structure,    amount = 16},
-            {type = item,  name = heat_shielding_tile,      amount = 16},
-            {type = item,  name = advanced_processing_unit, amount = 64},
-            {type = item,  name = plasma_turret_3,          amount = 1},
-            {type = item,  name = orange_alloy,             amount = 64},
-            {type = item,  name = efficiency_module_3,      amount = 1},
-            {type = item,  name = quality_module_3,         amount = 1},
-            {type = fluid, name = yellow_fluid,             amount = 960}
+            {type = item,  name = battery_lead_acid,      amount = 64},
+            {type = item,  name = advanced_circuit,       amount = 32},
+            {type = item,  name = invar_plate_bob,        amount = 64},
+            {type = item,  name = cobalt_steel_plate_bob, amount = 64},
+            {type = fluid, name = nitrogen_angels,        amount = 960}
         }
-    end
-else
-    data_recipe[plasma_turret_1].ingredients =
-    {
-        {type = item,  name = battery_lead_acid,      amount = 64},
-        {type = item,  name = advanced_circuit,       amount = 32},
-        {type = item,  name = invar_plate_bob,        amount = 64},
-        {type = item,  name = cobalt_steel_plate_bob, amount = 64},
-        {type = fluid, name = nitrogen_angels,        amount = 960}
-    }
-    data_recipe[plasma_turret_2].ingredients =
-    {
-        {type = item,  name = battery_lithium_ion, amount = 64},
-        {type = item,  name = processing_unit,     amount = 32},
-        {type = item,  name = plasma_turret_1,     amount = 1},
-        {type = item,  name = titanium_plate_bob,  amount = 64},
-        {type = item,  name = tungsten_plate_bob,  amount = 64},
-        {type = fluid, name = hydrogen_angels,     amount = 960}
-    }
-    data_recipe[plasma_turret_3].ingredients =
-    {
-        {type = item,  name = battery_silver_zinc,       amount = 64},
-        {type = item,  name = advanced_processing_unit,  amount = 32},
-        {type = item,  name = plasma_turret_2,           amount = 1},
-        {type = item,  name = copper_tungsten_plate_bob, amount = 64},
-        {type = item,  name = nitinol_plate_bob,         amount = 64},
-        {type = fluid, name = deuterium_angels,          amount = 120}
-    }
-    if mods [bobmodules] then
-        data_recipe[plasma_turret_4].ingredients =
+        data_recipe[plasma_turret_2].ingredients =
         {
-            {type = item,  name = battery_graphene,         amount = 64},
-            {type = item,  name = low_density_structure,    amount = 16},
-            {type = item,  name = heat_shielding_tile,      amount = 16},
-            {type = item,  name = advanced_processing_unit, amount = 64},
-            {type = item,  name = plasma_turret_3,          amount = 1},
-            {type = item,  name = efficiency_module_5,      amount = 1},
-            {type = item,  name = quality_module_5,         amount = 1},
-            {type = fluid, name = tritium_gas,              amount = 120}
+            {type = item,  name = battery_lithium_ion, amount = 64},
+            {type = item,  name = processing_unit,     amount = 32},
+            {type = item,  name = plasma_turret_1,     amount = 1},
+            {type = item,  name = titanium_plate_bob,  amount = 64},
+            {type = item,  name = tungsten_plate_bob,  amount = 64},
+            {type = fluid, name = hydrogen_angels,     amount = 960}
         }
-    else
-        data_recipe[plasma_turret_4].ingredients =
+        data_recipe[plasma_turret_3].ingredients =
         {
-            {type = item,  name = battery_graphene,         amount = 64},
-            {type = item,  name = low_density_structure,    amount = 16},
-            {type = item,  name = heat_shielding_tile,      amount = 16},
-            {type = item,  name = advanced_processing_unit, amount = 64},
-            {type = item,  name = plasma_turret_3,          amount = 1},
-            {type = item,  name = efficiency_module_3,      amount = 1},
-            {type = item,  name = quality_module_3,         amount = 1},
-            {type = fluid, name = tritium_gas,              amount = 120}
+            {type = item,  name = battery_silver_zinc,       amount = 64},
+            {type = item,  name = advanced_processing_unit,  amount = 32},
+            {type = item,  name = plasma_turret_2,           amount = 1},
+            {type = item,  name = copper_tungsten_plate_bob, amount = 64},
+            {type = item,  name = nitinol_plate_bob,         amount = 64},
+            {type = fluid, name = deuterium_angels,          amount = 120}
         }
+        if mods [bobmodules] then
+            data_recipe[plasma_turret_4].ingredients =
+            {
+                {type = item,  name = battery_graphene,         amount = 64},
+                {type = item,  name = low_density_structure,    amount = 16},
+                {type = item,  name = heat_shielding_tile,      amount = 16},
+                {type = item,  name = advanced_processing_unit, amount = 64},
+                {type = item,  name = plasma_turret_3,          amount = 1},
+                {type = item,  name = efficiency_module_5,      amount = 1},
+                {type = item,  name = quality_module_5,         amount = 1},
+                {type = fluid, name = tritium_gas,              amount = 120}
+            }
+        else
+            data_recipe[plasma_turret_4].ingredients =
+            {
+                {type = item,  name = battery_graphene,         amount = 64},
+                {type = item,  name = low_density_structure,    amount = 16},
+                {type = item,  name = heat_shielding_tile,      amount = 16},
+                {type = item,  name = advanced_processing_unit, amount = 64},
+                {type = item,  name = plasma_turret_3,          amount = 1},
+                {type = item,  name = efficiency_module_3,      amount = 1},
+                {type = item,  name = quality_module_3,         amount = 1},
+                {type = fluid, name = tritium_gas,              amount = 120}
+            }
+        end
     end
 end
 
@@ -1356,7 +1384,9 @@ bobmods.lib.recipe.update_recycling_recipe
     plasma_turret_4
 })
 
-data_radar[radar_1].next_upgrade = radar_2
-data_radar[radar_2].next_upgrade = radar_3
-data_radar[radar_3].next_upgrade = radar_4
-data_radar[radar_4].next_upgrade = radar_5
+if mods [bobwarfare] then
+    data_radar[radar_1].next_upgrade = radar_2
+    data_radar[radar_2].next_upgrade = radar_3
+    data_radar[radar_3].next_upgrade = radar_4
+    data_radar[radar_4].next_upgrade = radar_5
+end

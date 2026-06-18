@@ -353,6 +353,7 @@ bobores = "bobores"
 bobplates = "bobplates"
 bobtech = "bobtech"
 bobvehicleequipment = "bobvehicleequipment"
+bobwarfare = "bobwarfare"
 
 -- ANGELS
 angelspetrochem = "angelspetrochem"

@@ -169,9 +169,11 @@ data_fluid[hexachloroplatinic_acid].base_color = TIMSABA.functions.fluid_color("
 data_fluid[hexachloroplatinic_acid].flow_color = TIMSABA.functions.flow_color("H2PtCl6Wp")
 
 -- BOB
-data_fluid[nitroglycerin_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-nitroglycerin.png"
-data_fluid[nitroglycerin_bob].base_color = TIMSABA.functions.fluid_color("C3H5N3O9")
-data_fluid[nitroglycerin_bob].flow_color = TIMSABA.functions.flow_color("C3H5N3O9")
+if mods [bobwarfare] then
+    data_fluid[nitroglycerin_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-nitroglycerin.png"
+    data_fluid[nitroglycerin_bob].base_color = TIMSABA.functions.fluid_color("C3H5N3O9")
+    data_fluid[nitroglycerin_bob].flow_color = TIMSABA.functions.flow_color("C3H5N3O9")
+end
 
 data_fluid[liquid_fuel_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-liquid-fuel.png"
 data_fluid[liquid_fuel_bob].base_color = {r = 255 / 255, g = 220 / 255, b = 78 / 255}

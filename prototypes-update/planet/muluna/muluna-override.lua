@@ -1319,7 +1319,9 @@ if mods [muluna_mods] then
     data_technology[tech_regolith_digging].localised_description = {"technology-description.muluna-regolith-digging"}
     data_technology[tech_regolith_digging].research_trigger.entity = electric_mining_drill_5 .. "-ground-digger"
 
-    table.insert(data_technology[satellite_radar].prerequisites, radar_5)
+    if mods [bobwarfare] then
+        table.insert(data_technology[satellite_radar].prerequisites, radar_5)
+    end
 
     local tech_advanced_stone_processing = "muluna-advanced-stone-processing"
     table.insert(data_technology[tech_advanced_stone_processing].unit.ingredients, {production_science_pack, 1})

@@ -76,6 +76,12 @@ if mods [arig_mods] then
     data_recipe[plastic_arig].subgroup = is_cactus
     data_recipe[plastic_arig].icons = THREE_I(coal, methane_angels, plastic)
     data_recipe[plastic_arig].order = e_f
+    data_recipe[plastic_arig].ingredients =
+    {
+        {type = item, name = coal, amount = 1},
+        {type = fluid, name = methane_angels, amount = 30}
+    }
+    data_recipe[plastic_arig].results[1].amount = 2
     data_recipe[plastic_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     -- RECIPE

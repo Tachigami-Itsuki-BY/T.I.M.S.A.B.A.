@@ -682,13 +682,23 @@ if mods [hyarion_mods] then
     data_recipe[ruby_laser_turret].subgroup = is_hyarion_war
     data_recipe[ruby_laser_turret].order = b
     data_recipe[ruby_laser_turret].energy_required = 32
-    data_recipe[ruby_laser_turret].ingredients =
-    {
-        {type = item, name = laser_turret_5, amount = 1},
-        {type = item, name = simulating_unit, amount = 32},
-        {type = item, name = crystalization_motor, amount = 16},
-        {type = item, name = ruby_laser, amount = 8}
-    }
+    if mods [bobwarfare] then
+        data_recipe[ruby_laser_turret].ingredients =
+        {
+            {type = item, name = laser_turret_5, amount = 1},
+            {type = item, name = simulating_unit, amount = 32},
+            {type = item, name = crystalization_motor, amount = 16},
+            {type = item, name = ruby_laser, amount = 8}
+        }
+    else
+        data_recipe[ruby_laser_turret].ingredients =
+        {
+            {type = item, name = laser_turret_1, amount = 1},
+            {type = item, name = simulating_unit, amount = 32},
+            {type = item, name = crystalization_motor, amount = 16},
+            {type = item, name = ruby_laser, amount = 8}
+        }
+    end
     data_electric_turret[ruby_laser_turret].subgroup = is_hyarion_war
     data_electric_turret[ruby_laser_turret].order = b
     data_electric_turret[ruby_laser_turret].energy_source.buffer_capacity = (1920 * 2) .. kJ
@@ -703,7 +713,9 @@ if mods [hyarion_mods] then
         local delivery = ammo.action.action_delivery
         delivery.max_length = 44
         delivery.duration = 60
+        delivery.min_range = 8
     end
+    data_electric_turret[ruby_laser_turret].attack_parameters.min_range = 8
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
@@ -759,9 +771,6 @@ if mods [hyarion_mods] then
     table.insert(data_technology[tech_diamond_polishing].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[tech_diamond_polishing].unit.ingredients, {electromagnetic_science_pack, 1})
 
-    if mods [bobequipment] then
-        table.insert(data_technology[ruby_laser].prerequisites, laser_defense_eq_6)
-    end
     table.insert(data_technology[ruby_laser].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[ruby_laser].unit.ingredients, {electromagnetic_science_pack, 1})
 
@@ -804,6 +813,16 @@ if mods [hyarion_mods] then
 
     table.insert(data_technology[crystalization_motor].unit.ingredients, {utility_science_pack, 1})
 
+    if mods [bobequipment] then
+        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_6)
+    else
+        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_1)
+    end
+    if mods [bobwarfare] then
+        table.insert(data_technology[ruby_laser_turret].prerequisites, tech_laser_turret_5)
+    else
+        table.insert(data_technology[ruby_laser_turret].prerequisites, laser_turret_1)
+    end
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[ruby_laser_turret].unit.ingredients, {electromagnetic_science_pack, 1})
 

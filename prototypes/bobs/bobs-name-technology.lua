@@ -93,8 +93,19 @@ tech_modules_5 = "bob-modules-5"
 
 tech_exoskeleton_eq_2 = "bob-exoskeleton-equipment-2"
 
+tech_gun_turret_5 = "bob-turrets-5"
+
 tech_sniper_turret_2 = "bob-sniper-turrets-2"
 
+tech_laser_turret_4 = "bob-laser-turrets-4"
+tech_laser_turret_5 = "bob-laser-turrets-5"
+
 tech_plasma_turret_3 = "bob-plasma-turrets-3"
+tech_plasma_turret_4 = "bob-plasma-turrets-4"
 
 tech_fluid_handling_4 = "bob-fluid-handling-4"
+
+tech_artillery = "artillery"
+
+tech_tank_2 = "bob-tanks-2"
+tech_tank_3 = "bob-tanks-3"

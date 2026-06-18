@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.5.2",
+    "version": "1.5.3",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.",
     "author": "Tachugami_Istuki",
@@ -28,7 +28,7 @@
         "bobrevamp >= 2.0.0",
         "? bobtech >= 2.0.0",
         "? bobvehicleequipment >= 2.0.0",
-        "bobwarfare >= 2.0.0",
+        "? bobwarfare >= 2.0.0",
         "angelsaddons-storage >= 2.0.0",
         "angelsbioprocessing >= 2.0.0",
         "angelspetrochem >= 2.0.0",
@@ -111,7 +111,8 @@
         "? Rocket-Silo-Construction",
         "? prismatic-belts",
         "! NoTimedSpoilage",
-        "! modular-buildings-redux"
+        "! modular-buildings-redux",
+        "! electricboiler"
     ],
     "quality_required": true,
     "rail_bridges_required": true,
