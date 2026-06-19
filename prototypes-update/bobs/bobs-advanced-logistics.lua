@@ -10,10 +10,8 @@ for _, name in pairs(circuit_networks_1) do
     data_item[name].subgroup = is_circuit_networks
     data_item[name].stack_size = 50
     data_recipe[name].subgroup = is_circuit_networks
-    if name == small_lamp then
-        data_lamp[name].energy_usage_per_tick = (drain / 4) .. kW
-    end
 end
+data_lamp[small_lamp].energy_usage_per_tick = (drain / 8) .. kW
 data.raw[combinator_arithmetic][combinator_arithmetic].active_energy_usage = (drain / 8) .. kW
 data.raw[combinator_decider][combinator_decider].active_energy_usage = (drain / 8) .. kW
 data.raw[combinator_selector][combinator_selector].active_energy_usage = (drain / 8) .. kW

@@ -100,7 +100,7 @@ data:extend
         name = wolframite_chunks,
         category = angels_ore_refining_T2,
         subgroup = is_vulcanus_wolframite,
-        icons = THREE_D_I(wolframite_crushed, nil, water_purified_angels, wolframite_chunks, slag_angels, water_yellow_waste),
+        icons = THREE_D_I(wolframite_crushed, nil, water_purified_angels, wolframite_chunks, calcium_silicate, water_yellow_waste),
         order = c,
         enabled = false,
         auto_recycle = false,
@@ -116,7 +116,7 @@ data:extend
         results =
         {
             {type = item, name = wolframite_chunks, amount = 2},
-            {type = item, name = slag_angels, amount = 1, probability = 0.5}, -- calcium_silicate
+            {type = item, name = calcium_silicate, amount = 1, probability = 0.5},
             {type = fluid, name = water_yellow_waste, amount = 60}
         },
         main_product = wolframite_chunks

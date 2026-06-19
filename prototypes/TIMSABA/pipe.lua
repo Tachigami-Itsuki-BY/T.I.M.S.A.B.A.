@@ -131,19 +131,10 @@ local icons_pipe =
     {name = molybdenum_rhenium_pipe_to_ground, type = pipe_to_ground}
 }
 for _, info in ipairs(icons_pipe) do
-    local proto = data.raw[info.type][info.name]
-    if proto then
-        proto.icon = nil
-        proto.icons =
-        {
-            {
-                icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/" .. info.name .. ".png",
-                icon_size = 64
-            }
-        }
-        reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, info.name, info.type)
-        if info.type == pipe or info.type == pipe_to_ground then
-            reskins.lib.create_particle(info.name, info.type, reskins.lib.particle_index["medium"], 1, util.color("#6a57ab"))
-        end
+    data.raw[info.type][info.name].icon = nil
+    data.raw[info.type][info.name].icons = {{icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/" .. info.name .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, info.name, info.type)
+    if info.type == pipe or info.type == pipe_to_ground then
+        reskins.lib.create_particle(info.name, info.type, reskins.lib.particle_index["medium"], 1, util.color("#6a57ab"))
     end
 end

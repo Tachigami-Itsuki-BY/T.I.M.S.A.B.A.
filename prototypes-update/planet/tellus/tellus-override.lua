@@ -875,12 +875,6 @@ if mods [tellus_mods] then
         end
     end
 
-    local blue_pipe = "planetaris-blue-pipe"
-    local yellow_pipe = "planetaris-yellow-pipe"
-    local magenta_pipe = "planetaris-magenta-pipe"
-    local green_pipe = "planetaris-green-pipe"
-    local red_pipe = "planetaris-red-pipe"
-    local cyan_pipe = "planetaris-cyan-pipe"
     local colored_pipes =
     {
         --{name = orange_pipe,  order = a, dye = orange_dye},
@@ -914,12 +908,6 @@ if mods [tellus_mods] then
     end
 
     local simulations = require("prototypes.factoriopedia-simulations")
-    local blue_pipe_to_ground = "planetaris-blue-pipe-to-ground"
-    local yellow_pipe_to_ground = "planetaris-yellow-pipe-to-ground"
-    local magenta_pipe_to_ground = "planetaris-magenta-pipe-to-ground"
-    local green_pipe_to_ground = "planetaris-green-pipe-to-ground"
-    local red_pipe_to_ground = "planetaris-red-pipe-to-ground"
-    local cyan_pipe_to_ground = "planetaris-cyan-pipe-to-ground"
     local colored_pipes_to_ground =
     {
         --{name = orange_pipe_to_ground,  order = a, dye = orange_dye, simulation = simulations.factoriopedia_orange_pipe_to_ground},

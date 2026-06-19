@@ -1,19 +1,13 @@
 -- ANGELS PETROCHEM REFINING
 -- BASIC PETROCHEN FLUIDS
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = argon_gas,
         category = chemistry,
         subgroup = is_basic_fluids,
         icons = TWO_I(compressed_air, argon_gas),
         order = h,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8,
         ingredients = {{type = fluid, name = compressed_air, amount = 960}},
         results = {{type = fluid, name = argon_gas, amount_min = 0, amount_max = 15}},
@@ -21,61 +15,28 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- COAL
 raw_graphite_block_2 = "raw-graphite-block-2"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = coke_processed,
         category = angels_processed_pressing_1,
         subgroup = is_coal,
         icons = TWO_I(coke_angels, coke_processed),
         order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 1, -- C --> C
         ingredients = {{type = item, name = coke_angels, amount = 1}},
         results = {{type = item, name = coke_processed, amount = 1}},
         main_product = coke_processed
     },
     {
-        type = recipe,
         name = pitch,
         category = chemistry,
         subgroup = is_coal,
         icons = FOUR_THREE_R_I(coal_tar_liquid, nil, steam, pitch, phenol, benzene_angels, hydrogen_angels),
         order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- 2C₁₀H₈(l) + 2H₂O(g) --> 2C(s) + 2C₆H₅OH(s) + C₆H₆(l) + H₂(g)
+        -- 2C₁₀H₈(l) + 2H₂O(g) --> 2C(s) + 2C₆H₅OH(s) + C₆H₆(l) + H₂(g)
         ingredients =
         {
             {type = fluid, name = coal_tar_liquid, amount = 120},
@@ -91,18 +52,13 @@ data:extend
         main_product = pitch
     },
     {
-        type = recipe,
         name = raw_graphite_block,
         category = chemistry,
         subgroup = is_coal,
         icons = THREE_I(coke_angels, pitch, raw_graphite_block),
         order = h,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- Coke + Pitch --> Raw graphite block
+        -- Coke + Pitch --> Raw graphite block
         ingredients =
         {
             {type = item, name = coke_angels, amount = 4},
@@ -112,18 +68,13 @@ data:extend
         main_product = raw_graphite_block
     },
     {
-        type = recipe,
         name = raw_graphite_block_2,
         category = chemistry,
         subgroup = is_coal,
         icons = THREE_I(graphite_chips, pitch, raw_graphite_block),
         order = h_a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- Graphite chips + Pitch --> Raw graphite block
+        -- Graphite chips + Pitch --> Raw graphite block
         ingredients =
         {
             {type = item, name = graphite_chips, amount = 4},
@@ -133,35 +84,25 @@ data:extend
         main_product = raw_graphite_block
     },
     {
-        type = recipe,
         name = graphite_block,
         category = smelting,
         subgroup = is_coal,
         icons = TWO_I(raw_graphite_block, graphite_block),
         order = i,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- Raw graphite block --> Graphite block
+        -- Raw graphite block --> Graphite block
         ingredients = {{type = item, name = raw_graphite_block, amount = 4}},
         results = {{type = item, name = graphite_block, amount = 4}},
         main_product = graphite_block
     },
     {
-        type = recipe,
         name = graphite_plate,
         category = advanced_crafting,
         subgroup = is_coal,
         icons = THREE_R_I(graphite_block, graphite_plate, graphite_chips),
         order = j,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- Graphite block --> Graphite plate + Graphite chips
+        -- Graphite block --> Graphite plate + Graphite chips
         ingredients = {{type = item, name = graphite_block, amount = 1}},
         results =
         {
@@ -171,18 +112,13 @@ data:extend
         main_product = graphite_plate
     },
     {
-        type = recipe,
         name = graphite_electrode,
         category = smelting,
         subgroup = is_coal,
         icons = THREE_I(graphite_block, pitch, graphite_electrode),
         order = l,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- Graphite block + Pitch --> Graphite electrode
+        -- Graphite block + Pitch --> Graphite electrode
         ingredients =
         {
             {type = item, name = graphite_block, amount = 1},
@@ -192,17 +128,11 @@ data:extend
         main_product = graphite_electrode
     },
     {
-        type = recipe,
         name = carbon_nanotube,
         category = angels_petrochem_electrolyser,
         subgroup = is_coal,
         icons = THREE_R_I(graphite_electrode, carbon_nanotube, graphite_chips),
         order = m,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- Graphite electrode -electrolyser/cat(4)/Argon gas-> Carbon nanotube + Graphite chips
         ingredients =
         {
@@ -226,12 +156,8 @@ data:extend
         subgroup = is_coal,
         icons = THREE_D_I(graphite_plate, potassium_permanganate, sulfuric_acid, graphene_oxide, manganese_sulfate_II_solution, potassium_sulfate_solution),
         order = n,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4, -- 4Graphite plate + 2KMnO₄ + 3H₂SO₄ --> Graphene oxide + 2MnSO₄(aq) + K₂SO₄(aq)
+        -- 4Graphite plate + 2KMnO₄ + 3H₂SO₄ --> Graphene oxide + 2MnSO₄(aq) + K₂SO₄(aq)
         ingredients =
         {
             {type = item, name = graphite_plate, amount = 8},
@@ -253,12 +179,8 @@ data:extend
         subgroup = is_coal,
         icons = THREE_D_I(graphene_oxide, nil, dinitrogen_tetroxide_angels, graphene, steam, nitrogen_angels),
         order = o,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4, -- Graphene oxide + N₂H₄ --> Graphene + H₂O(g) + N₂
+        -- Graphene oxide + N₂H₄ --> Graphene + H₂O(g) + N₂
         ingredients =
         {
             {type = item, name = graphene_oxide, amount = 8},
@@ -274,18 +196,12 @@ data:extend
     },
     -- COAL FLUID
     {
-        type = recipe,
         name = coal_tar_liquid,
         category = chemistry,
         subgroup = is_carbon_fluids_1,
         icons = THREE_R_I(coal, coal_tar_liquid, coke_angels),
         order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- Coal crushed --> Coal tar liquid + Coke
+        -- Coal crushed --> Coal tar liquid + Coke
         ingredients = {{type = item, name = coal, amount = 4}},
         results =
         {
@@ -295,27 +211,6 @@ data:extend
         main_product = coal_tar_liquid
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
 
 -- CARBON FLUIDS 1
 carbonic_acid_reversed = "carbonic-acid-reversed"
@@ -720,27 +615,6 @@ data:extend
         main_product = imidazole_solution
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
 
 -- FLUORINE
 data:extend
@@ -1428,27 +1302,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- CALCIUM
 lime_from_calcium_hydroxide = "lime-from-calcium-hydroxide"
 calcium_hydroxide_from_calcium_cyanamide = "calcium-hydroxide-from-calcium-cyanamide"
@@ -1779,27 +1632,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- MULTI-PHASE OIL
 lubricant_from_naphtha = "lubricant-from-naphtha"
 data:extend
@@ -2040,27 +1872,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- METHANE
 methane_from_ethane = "methane-from-ethane"
 methane_and_propene_from_butane = "methane-and-propene-from-butane"
@@ -2144,27 +1955,6 @@ data:extend
         main_product = dimethyl_carbonate
     },
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
 
 -- ETHANE
 ethane_and_ethylene_from_butane = "ethane-and-ethylene-from-butane"
@@ -2348,27 +2138,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- BUTANE
 butene_gas_from_butane_gas = "butene-gas-from-butane-gas"
 data:extend
@@ -2530,27 +2299,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- PLASTIC
 liquid_plastic_4 = "liquid-plastic-4"
 liquid_plastic_5 = "liquid-plastic-5"
@@ -2610,27 +2358,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- RESINE
 data:extend
 ({
@@ -2663,27 +2390,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- EXPLOSIVES
 data:extend
 ({
@@ -2713,24 +2419,3 @@ data:extend
         main_product = glycerol_dichlorohydrin
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

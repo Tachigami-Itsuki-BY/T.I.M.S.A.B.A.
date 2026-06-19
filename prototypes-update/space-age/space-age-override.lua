@@ -41,7 +41,7 @@ if mods [muluna_mods] then
         {type = item, name = low_density_structure, amount = 1},
         {type = item, name = heat_shielding_tile, amount = 8},
         {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = molybdenum_rhenium_pipe, amount = 16},
+        {type = item, name = copper_tungsten_pipe, amount = 16},
         {type = item, name = rocket_fuel, amount = 1}
     }
 end
@@ -539,6 +539,7 @@ if mods [hyarion_mods] then
     data_item[raw_bismuth].localised_description = show_formula and {chemical_formula, "Bi"} or nil
     data_item[raw_bismuth].stack_size = 200
 
+    data_item[polished_bismuth].localised_description = show_formula and {chemical_formula, "Bi"} or nil
     data_item[polished_bismuth].stack_size = 200
     data_recipe[polished_bismuth].icons = THREE_I(raw_bismuth, polishing_compound_hyarion, polished_bismuth)
     data_recipe[polished_bismuth].energy_required = 4

@@ -388,3 +388,207 @@ function TIMSABA.functions.create_liquid_fluid_icon(molecule_icon, tints)
         molecule_icon
     }
 end
+
+-- CREATE PROTOTYPES
+function TIMSABA.functions.create_subgroups(group_var, list)
+    for _, subgroup in ipairs(list) do
+        data:extend
+        ({
+            {
+                type = item_subgroup,
+                name = subgroup.name,
+                group = group_var,
+                order = subgroup.order
+            }
+        })
+    end
+end
+
+function TIMSABA.functions.create_items(list)
+    for _, items in ipairs(list) do
+        data:extend
+        ({
+            {
+                localised_description = items.localised_description,
+                type = item,
+                name = items.name,
+                subgroup = items.subgroup,
+                icon = items.icon or error_png, -- if not sting "icon" then used "error_png"
+                icon_size = items.icon_size or 64,
+                order = items.order,
+                stack_size = items.stack_size or 200,
+                weight = items.weight or 5000
+            }
+        })
+    end
+end
+
+function TIMSABA.functions.create_fluids(list)
+    for _, fluids in ipairs(list) do
+        data:extend
+        ({
+            {
+                localised_description = fluids.localised_description,
+                type = fluid,
+                name = fluids.name,
+                subgroup = fluids.subgroup,
+                order = fluids.order,
+                icon = fluids.icon or error_png, -- if not sting "icon" then used "error_png"
+
+                default_temperature = fluids.default_temperature or 0,
+                max_temperature = fluids.max_temperature or 0,
+                heat_capacity = fluids.heat_capacity or "0.1kJ",
+
+                base_color = fluids.base_color,
+                flow_color = fluids.flow_color,
+
+                auto_barrel = false
+            }
+        })
+    end
+end
+
+function TIMSABA.functions.create_recipes(list)
+    for _, recipes in ipairs(list) do
+        data:extend
+        ({
+            {
+                localised_name = recipes.localised_name,
+                type = recipe,
+                name = recipes.name,
+                category = recipes.category,
+                additional_categories = recipes.additional_categories,
+                subgroup = recipes.subgroup,
+                icons = recipes.icons,
+                order = recipes.order,
+                enabled = recipes.enabled or false,
+                auto_recycle = recipes.auto_recycle or false,
+                allow_productivity = recipes.allow_productivity or false,
+                allow_quality = recipes.allow_quality or false,
+                allow_decomposition = recipes.allow_decomposition or false,
+                energy_required = recipes.energy_required or 4,
+                ingredients = recipes.ingredients,
+                results = recipes.results,
+                main_product = recipes.main_product
+            }
+        })
+    end
+end
+
+-- DELETE PROTOTYPES
+function TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    -- Ingredients and Results(main_product)
+    for _, recipe in pairs(data_recipe or {}) do
+        for _, ingredient in pairs(recipe.ingredients or {}) do
+            local name = ingredient.name or ingredient[1] or ingredient
+            local replace = replacements[name]
+            if replace then
+                if ingredient.name then ingredient.name = replace elseif ingredient[1] then ingredient[1] = replace end
+            end
+        end
+
+        for _, result in pairs(recipe.results or {}) do
+            local name = result.name or result[1] or result
+            local replace = replacements[name]
+            if replace then
+                if result.name then result.name = replace elseif result[1] then result[1] = replace end
+            end
+        end
+
+        if recipe.main_product then
+            local replace = replacements[recipe.main_product]
+            if replace then
+                recipe.main_product = replace
+            end
+        end
+    end
+    -- Tiles
+    for _, tile in pairs(data_tile or {}) do
+        if tile.fluid then
+            local replace = replacements[tile.fluid]
+            if replace then
+                tile.fluid = replace
+            end
+        end
+    end
+    -- Technology
+    for _, technology in pairs(data_technology or {}) do
+        if technology.research_trigger then
+            if technology.research_trigger.item then
+                local replace = replacements[technology.research_trigger.item]
+                if replace and (data.raw.item[replace] or data.raw.tool[replace]) then
+                    technology.research_trigger.item = replace
+                end
+            end
+            if technology.research_trigger.fluid then
+                local replace = replacements[technology.research_trigger.fluid]
+                if replace and data.raw.fluid[replace] then
+                    technology.research_trigger.fluid = replace
+                end
+            end
+        end
+    end
+    -- Resource
+    for _, resource in pairs(data_resource or {}) do
+        if resource.minable then
+            if resource.minable.result then
+                local replace = replacements[resource.minable.result]
+                if replace then
+                    resource.minable.result = replace
+                end
+            end
+            for _, results in pairs(resource.minable.results or {}) do
+                local name = results.name or results[1] or results
+                local replace = replacements[name]
+                if replace then
+                    if results.name then results.name = replace elseif results[1] then results[1] = replace end
+                end
+            end
+        end
+    end
+    -- Entity / Tree / Plant
+    local entities_to_check = {data_entity, data_tree, data_plant}
+    for _, entity_table in ipairs(entities_to_check) do
+        for _, entity in pairs(entity_table or {}) do
+            if entity.minable and entity.minable.results then
+                for _, results in pairs(entity.minable.results) do
+                    local name = results.name or results[1] or results
+                    local replace = replacements[name]
+                    if replace then
+                        if results.name then results.name = replace elseif results[1] then results[1] = replace end
+                    end
+                end
+            end
+        end
+    end
+    -- Spawner
+    for _, spawner in pairs(data.raw["unit-spawner"] or {}) do
+		if spawner.loot then
+    		for _, entry in pairs(spawner.loot) do
+				local new = replacements[entry.item]
+				if new then
+					entry.item = new
+				end
+    		end
+  		end
+	end
+    -- Fluid Turrets
+    for _, turret in pairs(data.raw["fluid-turret"] or {}) do
+        if turret.attack_parameters and turret.attack_parameters.fluids then
+            for i = #turret.attack_parameters.fluids, 1, -1 do
+                local fluid_entry = turret.attack_parameters.fluids[i]
+                local current_fluid = fluid_entry.type
+                local replace = replacements[current_fluid]
+                if replace then
+                    -- Если замена существует в игре, меняем имя на новое
+                    if data.raw.fluid[replace] then
+                        fluid_entry.type = replace
+                    else
+                        -- Если замена не существует, просто удаляем эту жидкость из списка разрешенных для турели
+                        table.remove(turret.attack_parameters.fluids, i)
+                    end
+                end
+            end
+        end
+    end
+end

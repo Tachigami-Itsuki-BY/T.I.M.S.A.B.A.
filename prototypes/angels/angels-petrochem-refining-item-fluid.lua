@@ -34,24 +34,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
-
 -- COAL
 coke_processed = "coke-processed"
 pitch = "pitch"
@@ -169,20 +151,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
-
 -- FLUID
 coal_tar_liquid = "coal-tar-liquid"
 data:extend
@@ -202,24 +170,6 @@ data:extend
         auto_barrel = false
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
 
 -- CARBON FLUIDS 1
 carbonic_acid = "carbonic-acid"
@@ -302,20 +252,6 @@ data:extend
         weight = 5000
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
 
 -- FLUID
 cyanamide_solution = "cyanamide-solution"
@@ -441,24 +377,6 @@ data:extend
         auto_barrel = false
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
 
 -- FLUORINE
 hydrogen_fluoride_liquefied = "hydrogen-fluoride-liquefied"
@@ -773,24 +691,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
-
 -- CALCIUM
 calcium = "calcium"
 calcium_carbide = "calcium-carbide"
@@ -887,20 +787,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
-
 -- FLUID
 hydrogen_peroxide = "hydrogen-peroxide-liquid"
 hydrocyanic_acid = "hydrocyanic-acid"
@@ -950,24 +836,6 @@ data:extend
         auto_barrel = false
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
 
 -- CARBON FLUIDS 2
 acetylene_gas = "acetylene-gas"
@@ -1085,20 +953,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
-
 -- FLUID
 ethylene_oxide = "ethylene-oxide-gas"
 ethylene_carbonate = "ethylene-carbonate-liquid"
@@ -1163,24 +1017,6 @@ data:extend
         auto_barrel = false
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
 
 -- BUTANE
 phenol = "phenol"
@@ -1249,24 +1085,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
-
 -- EXPLOSIVES
 glycerol_dichlorohydrin = "glycerol-dichlorohydrin-liquid"
 data:extend
@@ -1286,35 +1104,3 @@ data:extend
         auto_barrel = false
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]

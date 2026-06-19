@@ -10,16 +10,27 @@ large_equipment_grid = "large-equipment-grid"
 data_equipment_grid[large_equipment_grid].width = 8
 data_equipment_grid[large_equipment_grid].height = 8
 
-power_armor_equipment_grid_3 = "power-armor-equipment-grid-mk3"
-data_equipment_grid[power_armor_equipment_grid_3].width = 8
-data_equipment_grid[power_armor_equipment_grid_3].height = 12
+if mods [bobequipment] then
+    power_armor_equipment_grid_3 = "power-armor-equipment-grid-mk3"
+    data_equipment_grid[power_armor_equipment_grid_3].width = 8
+    data_equipment_grid[power_armor_equipment_grid_3].height = 12
 
-power_armor_equipment_grid_4 = "power-armor-equipment-grid-mk4"
-data_equipment_grid[power_armor_equipment_grid_4].width = 12
-data_equipment_grid[power_armor_equipment_grid_4].height = 12
+    power_armor_equipment_grid_4 = "power-armor-equipment-grid-mk4"
+    data_equipment_grid[power_armor_equipment_grid_4].width = 12
+    data_equipment_grid[power_armor_equipment_grid_4].height = 12
 
-power_armor_equipment_grid_5 = "power-armor-equipment-grid-mk5"
-data_equipment_grid[power_armor_equipment_grid_5].width = 12
-data_equipment_grid[power_armor_equipment_grid_5].height = 16
+    power_armor_equipment_grid_5 = "power-armor-equipment-grid-mk5"
+    data_equipment_grid[power_armor_equipment_grid_5].width = 12
+    data_equipment_grid[power_armor_equipment_grid_5].height = 16
+end
 
 mech_armor_equipment_grid = "mech-armor-equipment-grid"
+if mods [bobequipment] then
+    if not data_equipment_grid[mech_armor_equipment_grid] then
+        local new_equipment_grid = table.deepcopy(data_equipment_grid[power_armor_equipment_grid_5])
+        new_equipment_grid.name = mech_armor_equipment_grid
+        new_equipment_grid.width = 16
+        new_equipment_grid.height = 16
+        data:extend{new_equipment_grid}
+    end
+end

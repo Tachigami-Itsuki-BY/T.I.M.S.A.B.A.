@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.5.3",
+    "version": "1.5.4",
     "factorio_version": "2.0",
     "title": "○🌐T.I.M.S.A.B.A.",
     "author": "Tachugami_Istuki",
@@ -102,7 +102,6 @@
         "? VoidChestInstant",
         "? Unichest",
         "? Unipipe",
-        "? loaders-modernized",
         "? loaders-modernized-integrations",
         "? RPGsystem",
         "? graille-bob-hardened-bile-remover",

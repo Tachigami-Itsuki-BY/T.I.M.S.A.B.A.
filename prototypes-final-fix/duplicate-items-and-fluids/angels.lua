@@ -3,7 +3,7 @@ local replacements =
 {
 	[tree_seed_angels] = tree_seed
 }
-delete_duplicate_item_and_fluid(replacements)
+TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 local miscellaneous_items =
 {

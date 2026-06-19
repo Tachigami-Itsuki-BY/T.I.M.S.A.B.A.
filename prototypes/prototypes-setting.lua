@@ -26,6 +26,7 @@ end
 -- BOBS
 setting_bobmods_power_steam = "bobmods-power-steam"
 
+setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
 setting_bobmods_logistics_trains = "bobmods-logistics-trains"
 
@@ -42,3 +43,5 @@ setting_dye_concrete_brick = "setting-tellus-dye-concrete-brick"
 
 -- MODS
 setting_real_incineration = "setting-real-incineration"
+
+setting_mdrn_use_electricity = "mdrn-use-electricity"

@@ -14,7 +14,7 @@ data_autoplace_control["angels-fissure"].order = a_k
 
 data_autoplace_control["vulcanus_coal"].order = b
 local wolframite_ore_ac = "tungsten_ore"
-data_autoplace_control[wolframite_ore_ac].localised_name = {"", "[entity=tungsten-ore] ", {"entity-name.wolframite"}}
+data_autoplace_control[wolframite_ore_ac].localised_name = {"", "[item=tungsten-ore] ", {"entity-name.wolframite"}}
 data_autoplace_control[wolframite_ore_ac].order = b_a
 data_autoplace_control[calcite].order = b_b
 data_autoplace_control["sulfuric_acid_geyser"].order = b_c

@@ -1148,15 +1148,22 @@ data_recipe[clay_brick_raw].order = a
 
 data_item[clay_brick].subgroup = is_bricks_casting
 data_item[clay_brick].order = b
-data_recipe[clay_brick].additional_categories = {metallurgy}
+if settings.startup[setting_early_sintering_oven].value then
+    data_recipe[clay_brick].additional_categories = {angels_sintering_1, metallurgy}
+else
+    data_recipe[clay_brick].additional_categories = {angels_sintering_4, metallurgy}
+end
 data_recipe[clay_brick].subgroup = is_bricks_casting
 data_recipe[clay_brick].icons = TWO_I(clay_brick_raw, clay_brick)
 data_recipe[clay_brick].order = b
 
 data_item[stone_brick].subgroup = is_bricks_casting
 data_item[stone_brick].order = c
-data_recipe[stone_brick].additional_categories = {angels_sintering_4, metallurgy}
-if settings.startup[setting_early_sintering_oven].value then data_recipe[stone_brick].additional_categories = {angels_sintering_1, metallurgy} end
+if settings.startup[setting_early_sintering_oven].value then
+    data_recipe[stone_brick].additional_categories = {angels_sintering_1, metallurgy}
+else
+    data_recipe[stone_brick].additional_categories = {angels_sintering_4, metallurgy}
+end
 data_recipe[stone_brick].subgroup = is_bricks_casting
 data_recipe[stone_brick].icons = TWO_I(stone, stone_brick)
 data_recipe[stone_brick].order = c
@@ -1164,7 +1171,6 @@ data_recipe[stone_brick].energy_required = 4
 
 data_item[concrete_brick].subgroup = is_bricks_casting
 data_item[concrete_brick].order = d
-data_recipe[concrete_brick].additional_categories = {metallurgy}
 data_recipe[concrete_brick].subgroup = is_bricks_casting
 data_recipe[concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, nil, stone_brick, concrete_brick)
 data_recipe[concrete_brick].order = d
@@ -1172,7 +1178,6 @@ data_recipe[concrete_brick].ingredients[1].amount = 60
 
 data_item[reinforced_concrete_brick].subgroup = is_bricks_casting
 data_item[reinforced_concrete_brick].order = e
-data_recipe[reinforced_concrete_brick].additional_categories = {metallurgy}
 data_recipe[reinforced_concrete_brick].subgroup = is_bricks_casting
 data_recipe[reinforced_concrete_brick].icons = AR_FOUR_ALT_I(concrete_liquid, iron_rod, stone_brick, reinforced_concrete_brick)
 data_recipe[reinforced_concrete_brick].order = e

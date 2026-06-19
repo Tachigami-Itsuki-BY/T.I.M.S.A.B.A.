@@ -3,7 +3,7 @@ if mods [tellus_mods] then
     {
         [compost_tellus] = compost_angels
     }
-    delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
     data_item[compost_tellus] = nil
     data_recipe[compost_tellus .. _recycling] = nil

@@ -45,6 +45,7 @@ require("prototypes-update.planet.panglia.panglia-override")
 require("prototypes-update.planet.arig.arig-override")
 require("prototypes-update.planet.hyarion.hyarion-override")
 require("prototypes-update.planet.tellus.tellus-override")
+require("prototypes-update.planet.tellus.tellus-update-icon")
 
 require("prototypes-update.planet.castra.castra-override")
 require("prototypes-update.planet.corrundum.corrundum-override")
@@ -65,6 +66,6 @@ require("prototypes-update.mods.dynamic-pipe-to-ground")
 
 require("prototypes-update.update-horogon-balance")
 
-for _, fluid in pairs(data.raw.fluid) do
+for _, fluid in pairs(data_fluid) do
     fluid.auto_barrel = false
 end

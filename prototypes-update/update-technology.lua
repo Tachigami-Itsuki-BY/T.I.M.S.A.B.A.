@@ -548,6 +548,10 @@ if mods [bobwarfare] then
     table.insert(data_technology[tech_plasma_turret_4].prerequisites, tech_battery_4)
 end
 
+if mods [bobwarfare] then
+    data_technology[atomic_artillery_shell].localised_name = {"item-name.bob-atomic-artillery-shell"}
+end
+
 -- ANGELS RESOURCE REFINING
 table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = stone})
 table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = crushed_stone_sorting_1})

@@ -244,28 +244,34 @@ data_electric_turret[tesla_turret].energy_source.drain = nil
 data_electric_turret[tesla_turret].attack_parameters.range = 32
 data_electric_turret[tesla_turret].attack_parameters.ammo_type.energy_consumption = 4800 .. kJ
 
-local mech_armor_equipment_grid = "mech-armor-equipment-grid"
-local new_equipment_grid = table.deepcopy(data_equipment_grid["power-armor-equipment-grid-mk5"])
-new_equipment_grid.name = mech_armor_equipment_grid
-new_equipment_grid.width = 16
-new_equipment_grid.height = 16
-data:extend{new_equipment_grid}
-
 data_armor[mech_armor].subgroup = is_fulgora_war
 data_armor[mech_armor].order = d
-data_armor[mech_armor].equipment_grid = mech_armor_equipment_grid
-data_armor[mech_armor].inventory_size_bonus = 70
+if mods [bobequipment] then
+    data_armor[mech_armor].equipment_grid = mech_armor_equipment_grid
+    data_armor[mech_armor].inventory_size_bonus = 70
+end
 data_recipe[mech_armor].subgroup = is_fulgora_war
 data_recipe[mech_armor].order = d
 data_recipe[mech_armor].energy_required = 64
-data_recipe[mech_armor].ingredients =
-{
-    {type = item, name = advanced_processing_unit, amount = 128},
-    {type = item, name = power_armor_5, amount = 1},
-    {type = item, name = holmium_plate, amount = 64},
-    {type = item, name = superconductor, amount = 64},
-    {type = item, name = supercapacitor, amount = 64}
-}
+if mods [bobequipment] then
+    data_recipe[mech_armor].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 128},
+        {type = item, name = power_armor_5, amount = 1},
+        {type = item, name = holmium_plate, amount = 64},
+        {type = item, name = superconductor, amount = 64},
+        {type = item, name = supercapacitor, amount = 64}
+    }
+else
+    data_recipe[mech_armor].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 128},
+        {type = item, name = power_armor_2, amount = 1},
+        {type = item, name = holmium_plate, amount = 64},
+        {type = item, name = superconductor, amount = 64},
+        {type = item, name = supercapacitor, amount = 64}
+    }
+end
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

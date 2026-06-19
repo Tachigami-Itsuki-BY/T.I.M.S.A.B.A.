@@ -358,7 +358,6 @@ data_recipe[factorian_fish_breeding].allow_productivity = true
 data_recipe[factorian_fish_breeding].surface_conditions = nil
 
 -- LOGISTICS
-local RS_SI = 1800/21600
 data_item[stack_inserter].subgroup = is_gleba_logistics
 data_item[stack_inserter].order = a
 data_item[stack_inserter].stack_size = 32
@@ -374,10 +373,16 @@ data_recipe[stack_inserter].ingredients =
 }
 data_inserter[stack_inserter].subgroup = is_gleba_logistics
 data_inserter[stack_inserter].order = a
-data_inserter[stack_inserter].rotation_speed = RS_SI
+data_inserter[stack_inserter].rotation_speed = 1800/21600
 data_inserter[stack_inserter].extension_speed = 0.20
-data_inserter[stack_inserter].energy_per_rotation = (600 / 2) / (RS_SI * 60) .. kJ
-data_inserter[stack_inserter].energy_per_movement = (600 / 2) / (0.20 * 60) .. kJ
+if settings.startup[setting_bobmods_logistics_drainlessinserters].value then
+    data_inserter[stack_inserter].energy_per_rotation = (600 / 2) / (1800/21600 * 60) .. kJ
+    data_inserter[stack_inserter].energy_per_movement = (600 / 2) / (0.20 * 60) .. kJ
+else
+    data_inserter[stack_inserter].energy_per_rotation = ((600 - ((drain * 40) / 4)) / 2) / (1800/21600 * 60) .. kJ
+    data_inserter[stack_inserter].energy_per_movement = ((600 - ((drain * 40) / 4)) / 2) / (0.20 * 60) .. kJ
+    data_inserter[stack_inserter].energy_source.drain = ((drain * 40) / 4) .. kW
+end
 
 -- BUILDING
 data_item[agricultural_tower].subgroup = is_gleba_building

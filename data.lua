@@ -8,6 +8,8 @@ require("prototypes.prototypes-setting")
 require("prototypes.recipe-category")
 require("prototypes.fuel-category")
 
+require("lib.TIMSABA-functions")
+
 require("prototypes.base.base-groups")
 require("prototypes.bobs.bobs-groups")
 require("prototypes.angels.angels-groups")
@@ -23,48 +25,7 @@ require("prototypes.angels.angels-name-building")
 require("prototypes.bobs.bobs-name-technology")
 require("prototypes.angels.angels-name-technology")
 
-TWO_I = require("lib.generator-icons").double_icon
-TWO_D_I = require("lib.generator-icons").double_to_double_icon
-TWO_FIVE_I = require("lib.generator-icons").quintuple_double_icon
-TWO_SIX_I = require("lib.generator-icons").sextuple_double_icon
-THREE_I = require("lib.generator-icons").triple_icon
-THREE_R_I = require("lib.generator-icons").reversed_triple_icon
-THREE_D_I = require("lib.generator-icons").triple_to_triple_icon
-FOUR_I = require("lib.generator-icons").quadruple_icon
-FOUR_R_I = require("lib.generator-icons").reversed_quadruple_icon
-FOUR_THREE_I = require("lib.generator-icons").triple_quadruple_icon
-FOUR_THREE_R_I = require("lib.generator-icons").reversed_triple_quadruple_icon
-FOUR_D_I = require("lib.generator-icons").quadruple_to_quadruple_icon
-FIVE_I = require("lib.generator-icons").quintuple_icon
-FIVE_R_I = require("lib.generator-icons").reversed_quintuple_icon
-CORNER_I = require("lib.generator-icons").corner_icon
-AR_FOUR_I = require("lib.generator-icons").angels_refining_quadruple_icon
-AR_FOUR_ALT_I = require("lib.generator-icons").alt_angels_refining_quadruple_icon
-R_P_I = require("lib.generator-icons").recipe_planet_icon
-BUILDING_R_I = require("lib.generator-icons").building_recipe_icon
-RECYCLING_I = require("lib.generator-icons").recycling_recipe_icon
-GALAXY_I = require("lib.generator-icons").galaxy_icon
-STONKS_I = require("lib.generator-icons").stonks_icon
-B_F_L = require("lib.generator-icons").bearing_fluid_icon
-
-BUILDING_R_IS = require("lib.generator-icons-update").building_recipe_icons
-TWO_IS = require("lib.generator-icons-update").double_icons
-TWO_FIVE_IS = require("lib.generator-icons-update").quintuple_double_icons
-THREE_IS = require("lib.generator-icons-update").triple_icons
-THREE_R_IS = require("lib.generator-icons-update").reversed_triple_icons
-THREE_D_IS = require("lib.generator-icons-update").triple_to_triple_icons
-FOUR_D_IS = require("lib.generator-icons-update").quadruple_to_quadruple_icons
-AR_FOUR_ALT_IS = require("lib.generator-icons-update").alt_angels_refining_quadruple_icons
-RECYCLING_IS = require("lib.generator-icons-update").recycling_recipe_icons
-
-TWO_ITEM_I = require("lib.generator-icons-shattered").item_item_icon
-ITEM_FLUID_I = require("lib.generator-icons-shattered").item_fluid_icon
-FLUID_ITEM_I = require("lib.generator-icons-shattered").fluid_item_icon
-THREE_ITEM_I = require("lib.generator-icons-shattered").item_item_item_icon
-THREE_FFI_I = require("lib.generator-icons-shattered").fluid_fluid_item_icon
-AR_IIFI_ALT_I = require("lib.generator-icons-shattered").alt_AR_item_item_fluid_item_icon
-
-require("prototypes.TIMSABA-functions")
+require("lib.icons")
 
 require("compatibility.bobs-mods.bobores")
 require("compatibility.bobs-mods.boblogistics")
@@ -82,7 +43,7 @@ require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
 require("prototypes.angels.angels-metallurgy-smelting-item-fluid")
 require("prototypes.angels.angels-metallurgy-casting-item-fluid")
-require("prototypes.angels.angels-water-treatment-item-fluid")
+-- ngels-water-treatment-item-fluid
 require("prototypes.angels.angels-petrochem-refining-item-fluid")
 require("prototypes.angels.angels-bioprocessing-item-fluid")
 
@@ -103,6 +64,7 @@ require("prototypes.TIMSABA.arsenic")
 require("prototypes.TIMSABA.germanium")
 require("prototypes.TIMSABA.gallium")
 require("prototypes.TIMSABA.vanadium")
+
 require("prototypes.TIMSABA.pipe")
 
 require("prototypes.space-age.vulcanus.vulcanus-wolframite")
@@ -121,7 +83,7 @@ require("prototypes.bobs.bobs-recipe")
 require("prototypes.angels.angels-resource-refining-recipe")
 require("prototypes.angels.angels-metallurgy-smelting-recipe")
 require("prototypes.angels.angels-metallurgy-casting-recipe")
-require("prototypes.angels.angels-water-treatment-recipe")
+-- angels-water-treatment-recipe
 require("prototypes.angels.angels-petrochem-refining-recipe")
 require("prototypes.angels.angels-bioprocessing-recipe")
 require("prototypes.angels.angels-building")
@@ -133,7 +95,7 @@ require("prototypes.space-age.fulgora.fulgora-recipe")
 require("prototypes.space-age.aquilo.aquilo-recipe")
 
 require("prototypes.TIMSABA.technology")
-require("prototypes.base.base-technology")
+-- base-technology
 require("prototypes.bobs.bobs-technology")
 require("prototypes.angels.angels-technology")
 require("prototypes.bobs-angels-technology")
