@@ -253,8 +253,8 @@ local entities =
     {type_1 = data_transport_belt, name = T4_transport_belt, speed = 8/60,  ASC = 32},
     {type_1 = data_transport_belt, name = T5_transport_belt, speed = 10/60, ASC = 32},
 
-    {type_1 = data_underground_belt, name = T0_underground_belt, speed = 1/60,  ASC = 30,    simulation = simulations.factoriopedia_T0_underground_belt},
-    {type_1 = data_underground_belt, name = T1_underground_belt, speed = 2/60,  ASC = 30,    simulation = simulations.factoriopedia_T1_underground_belt},
+    {type_1 = data_underground_belt, name = T0_underground_belt, speed = 1/60,  ASC = 30,    simulation = simulations.factoriopedia_T0_underground_belt, max_distance = 4},
+    {type_1 = data_underground_belt, name = T1_underground_belt, speed = 2/60,  ASC = 30,    simulation = simulations.factoriopedia_T1_underground_belt, max_distance = 8},
     {type_1 = data_underground_belt, name = T2_underground_belt, speed = 4/60,  ASC = 32,    simulation = simulations.factoriopedia_T2_underground_belt, max_distance = 16},
     {type_1 = data_underground_belt, name = T3_underground_belt, speed = 6/60,  ASC = 31.25, simulation = simulations.factoriopedia_T3_underground_belt, max_distance = 24},
     {type_1 = data_underground_belt, name = T4_underground_belt, speed = 8/60,  ASC = 32,    simulation = simulations.factoriopedia_T4_underground_belt, max_distance = 32},
@@ -268,16 +268,16 @@ local entities =
     {type_1 = data_splitter, name = T5_splitter, speed = 10/60, ASC = 32},
 
     {type_1 = data_inserter, type_2 = data_item, name = T0_inserter,      stack = 64, weight = 15625, extension_speed = 0.02, rotation_speed = 180/21600},
-    {type_1 = data_inserter, type_2 = data_item, name = T1_inserter,      stack = 64, weight = 15625, extension_speed = 0.04, rotation_speed = 360/21600,  EPMR = 30},
+    {type_1 = data_inserter, type_2 = data_item, name = T1_inserter,      stack = 64, weight = 15625, extension_speed = 0.04, rotation_speed = 360/21600,  EPMR = 30,  tier = 2},
     {                        type_2 = data_item, name = L2_inserter,      stack = 64, weight = 15625},
-    {type_1 = data_inserter,                     name = T2_inserter,                                  extension_speed = 0.08, rotation_speed = 720/21600,  EPMR = 60},
-    {type_1 = data_inserter, type_2 = data_item, name = T2_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.08, rotation_speed = 720/21600,  EPMR = 120},
-    {type_1 = data_inserter, type_2 = data_item, name = T3_inserter,      stack = 64, weight = 15625, extension_speed = 0.12, rotation_speed = 1080/21600, EPMR = 90},
-    {type_1 = data_inserter, type_2 = data_item, name = T3_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.12, rotation_speed = 1080/21600, EPMR = 180},
-    {type_1 = data_inserter, type_2 = data_item, name = T4_inserter,      stack = 64, weight = 15625, extension_speed = 0.16, rotation_speed = 1440/21600, EPMR = 120},
-    {type_1 = data_inserter, type_2 = data_item, name = T4_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.16, rotation_speed = 1440/21600, EPMR = 240},
-    {type_1 = data_inserter, type_2 = data_item, name = T5_inserter,      stack = 64, weight = 15625, extension_speed = 0.20, rotation_speed = 1800/21600, EPMR = 150},
-    {type_1 = data_inserter, type_2 = data_item, name = T5_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.20, rotation_speed = 1800/21600, EPMR = 300},
+    {type_1 = data_inserter,                     name = T2_inserter,                                  extension_speed = 0.08, rotation_speed = 720/21600,  EPMR = 60,  tier = 4},
+    {type_1 = data_inserter, type_2 = data_item, name = T2_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.08, rotation_speed = 720/21600,  EPMR = 120, tier = 8},
+    {type_1 = data_inserter, type_2 = data_item, name = T3_inserter,      stack = 64, weight = 15625, extension_speed = 0.12, rotation_speed = 1080/21600, EPMR = 90,  tier = 6},
+    {type_1 = data_inserter, type_2 = data_item, name = T3_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.12, rotation_speed = 1080/21600, EPMR = 180, tier = 12},
+    {type_1 = data_inserter, type_2 = data_item, name = T4_inserter,      stack = 64, weight = 15625, extension_speed = 0.16, rotation_speed = 1440/21600, EPMR = 120, tier = 8},
+    {type_1 = data_inserter, type_2 = data_item, name = T4_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.16, rotation_speed = 1440/21600, EPMR = 240, tier = 16},
+    {type_1 = data_inserter, type_2 = data_item, name = T5_inserter,      stack = 64, weight = 15625, extension_speed = 0.20, rotation_speed = 1800/21600, EPMR = 150, tier = 10},
+    {type_1 = data_inserter, type_2 = data_item, name = T5_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.20, rotation_speed = 1800/21600, EPMR = 300, tier = 20},
 }
 for _, BUILD in pairs(entities) do
     if BUILD.name then
@@ -287,9 +287,6 @@ for _, BUILD in pairs(entities) do
             data_transport_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
         end
         if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
-            if BUILD.max_distance then
-                data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
-            end
             if data_item[BUILD.name] then
                 data_item[BUILD.name].stack_size = 32
                 data_item[BUILD.name].weight = 31250
@@ -299,6 +296,7 @@ for _, BUILD in pairs(entities) do
             data_underground_belt[BUILD.name].speed = BUILD.speed
             data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
             data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
+            data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
         end
         if BUILD.type_1 == data_splitter then
             if data_item[BUILD.name] then
@@ -315,8 +313,14 @@ for _, BUILD in pairs(entities) do
             data_inserter[BUILD.name].extension_speed = BUILD.extension_speed
         end
         if BUILD.type_1 == data_inserter and BUILD.name ~= T0_inserter and data_inserter[BUILD.name] and BUILD.EPMR then
-            data_inserter[BUILD.name].energy_per_rotation = ((BUILD.EPMR / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
-            data_inserter[BUILD.name].energy_per_movement = ((BUILD.EPMR / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
+            if settings.startup[setting_bobmods_logistics_drainlessinserters].value then
+                data_inserter[BUILD.name].energy_per_rotation = ((BUILD.EPMR / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
+                data_inserter[BUILD.name].energy_per_movement = ((BUILD.EPMR / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
+            else
+                data_inserter[BUILD.name].energy_per_rotation = (((BUILD.EPMR - ((drain * BUILD.tier) / 8)) / 2) / (BUILD.rotation_speed * 60)) .. kJ -- rotation_speed
+                data_inserter[BUILD.name].energy_per_movement = (((BUILD.EPMR - ((drain * BUILD.tier) / 8)) / 2) / (BUILD.extension_speed * 60)) .. kJ -- extension_speed
+                data_inserter[BUILD.name].energy_source.drain = ((drain * BUILD.tier) / 8) .. kW
+            end
         end
         if BUILD.type_2 == data_item and data_item[BUILD.name] then
             data_item[BUILD.name].stack_size = BUILD.stack
@@ -456,12 +460,12 @@ if mods ["loaders-modernized-integrations"] then
     local data_loader_1x1 = data.raw["loader-1x1"]
     local loaders =
     {
-        {name = T0_loader, speed = 1/60,  ASC = 30},
-        {name = T1_loader, speed = 2/60,  ASC = 30},
-        {name = T2_loader, speed = 4/60,  ASC = 32},
-        {name = T3_loader, speed = 6/60,  ASC = 31.25},
-        {name = T4_loader, speed = 8/60,  ASC = 32},
-        {name = T5_loader, speed = 10/60, ASC = 32}
+        {name = T0_loader, tier = 1,  ASC = 30},
+        {name = T1_loader, tier = 2,  ASC = 30},
+        {name = T2_loader, tier = 4,  ASC = 32},
+        {name = T3_loader, tier = 6,  ASC = 31.25},
+        {name = T4_loader, tier = 8,  ASC = 32},
+        {name = T5_loader, tier = 10, ASC = 32}
     }
     for _, BUILD in pairs(loaders) do
         if data_item[BUILD.name] then
@@ -491,8 +495,12 @@ if mods ["loaders-modernized-integrations"] then
                 data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
             end
             data_loader_1x1[BUILD.name].order = z
-            data_loader_1x1[BUILD.name].speed = BUILD.speed
+            data_loader_1x1[BUILD.name].speed = BUILD.tier/60
             data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            if settings.startup[setting_mdrn_use_electricity].value then
+                data_loader_1x1[BUILD.name].energy_per_item = ((60 * BUILD.tier) - (7.5 * BUILD.tier)) .. kW
+                data_loader_1x1[BUILD.name].energy_source.drain = (15 * BUILD.tier) .. kW
+            end
             bobmods.lib.recipe.update_recycling_recipe({BUILD.name})
         end
     end
@@ -532,6 +540,10 @@ if mods ["loaders-modernized-integrations"] then
         data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
         data_loader_1x1[stack_loader].order = b
         data_loader_1x1[stack_loader].minable.mining_time = 0.5
+        if settings.startup[setting_mdrn_use_electricity].value then
+            data_loader_1x1[stack_loader].energy_per_item = (((60 * 40) / 2) - (7.5 * 20)) .. kW
+            data_loader_1x1[stack_loader].energy_source.drain = (30 * 20) .. kW
+        end
         bobmods.lib.recipe.update_recycling_recipe({stack_loader})
     end
     local chute_loader = "mdrn-chute-loader"
@@ -739,18 +751,18 @@ data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
 
 local pipes_to_ground =
 {
-    {name = iron_pipe_to_ground,            order = a, simulations = simulations.factoriopedia_iron_pipe_to_ground},
-    {name = copper_pipe_to_ground,          order = b, simulations = simulations.factoriopedia_copper_pipe_to_ground},
-    {name = stone_pipe_to_ground,           order = c, simulations = simulations.factoriopedia_stone_pipe_to_ground},
-    {name = bronze_pipe_to_ground,          order = d, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
-    {name = steel_pipe_to_ground,           order = e, simulations = simulations.factoriopedia_steel_pipe_to_ground},
-    {name = plastic_pipe_to_ground,         order = f, simulations = simulations.factoriopedia_plastic_pipe_to_ground},
-    {name = brass_pipe_to_ground,           order = g, simulations = simulations.factoriopedia_brass_pipe_to_ground},
-    {name = titanium_pipe_to_ground,        order = h, simulations = simulations.factoriopedia_titanium_pipe_to_ground},
-    {name = ceramic_pipe_to_ground,         order = i, simulations = simulations.factoriopedia_ceramic_pipe_to_ground},
-    {name = tungsten_pipe_to_ground,        order = j, simulations = simulations.factoriopedia_tungsten_pipe_to_ground},
-    {name = nitinol_pipe_to_ground,         order = k, simulations = simulations.factoriopedia_nitinol_pipe_to_ground},
-    {name = copper_tungsten_pipe_to_ground, order = l, simulations = simulations.factoriopedia_copper_tungsten_pipe_to_ground}
+    {name = iron_pipe_to_ground,            order = a, max_underground_distance = 8, simulations = simulations.factoriopedia_iron_pipe_to_ground},
+    {name = copper_pipe_to_ground,          order = b, max_underground_distance = 8, simulations = simulations.factoriopedia_copper_pipe_to_ground},
+    {name = stone_pipe_to_ground,           order = c, max_underground_distance = 8, simulations = simulations.factoriopedia_stone_pipe_to_ground},
+    {name = bronze_pipe_to_ground,          order = d, max_underground_distance = 16, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
+    {name = steel_pipe_to_ground,           order = e, max_underground_distance = 16, simulations = simulations.factoriopedia_steel_pipe_to_ground},
+    {name = plastic_pipe_to_ground,         order = f, max_underground_distance = 24, simulations = simulations.factoriopedia_plastic_pipe_to_ground},
+    {name = brass_pipe_to_ground,           order = g, max_underground_distance = 24, simulations = simulations.factoriopedia_brass_pipe_to_ground},
+    {name = titanium_pipe_to_ground,        order = h, max_underground_distance = 32, simulations = simulations.factoriopedia_titanium_pipe_to_ground},
+    {name = ceramic_pipe_to_ground,         order = i, max_underground_distance = 32, simulations = simulations.factoriopedia_ceramic_pipe_to_ground},
+    {name = tungsten_pipe_to_ground,        order = j, max_underground_distance = 32, simulations = simulations.factoriopedia_tungsten_pipe_to_ground},
+    {name = nitinol_pipe_to_ground,         order = k, max_underground_distance = 40, simulations = simulations.factoriopedia_nitinol_pipe_to_ground},
+    {name = copper_tungsten_pipe_to_ground, order = l, max_underground_distance = 40, simulations = simulations.factoriopedia_copper_tungsten_pipe_to_ground}
 }
 for _, pipe in pairs(pipes_to_ground) do
     data_item[pipe.name].order = pipe.order
@@ -759,8 +771,10 @@ for _, pipe in pairs(pipes_to_ground) do
     data_recipe[pipe.name].order = pipe.order
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order
+    data_pipe_to_ground[pipe.name].fluid_box.pipe_connections[2].max_underground_distance = pipe.max_underground_distance
     data_pipe_to_ground[pipe.name].factoriopedia_simulation = pipe.simulations
 end
+data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48
 local function pipe_to_ground_recipe(name, pipe, plate, count)
     data_recipe[name].ingredients =
     {
@@ -780,19 +794,24 @@ pipe_to_ground_recipe(ceramic_pipe_to_ground,                 ceramic_pipe,    s
 pipe_to_ground_recipe(tungsten_pipe_to_ground,               tungsten_pipe,        tungsten_powder, 32)
 pipe_to_ground_recipe(nitinol_pipe_to_ground,                 nitinol_pipe,      nitinol_plate_bob, 40)
 pipe_to_ground_recipe(copper_tungsten_pipe_to_ground, copper_tungsten_pipe, copper_tungsten_powder, 40)
+
 data_recipe[stone_pipe_to_ground].category = smelting_filtering
 data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_4, metallurgy}
 if settings.startup[setting_early_sintering_oven].value then
     data_recipe[stone_pipe_to_ground].additional_categories = {angels_sintering_1, metallurgy}
 end
+
 data_recipe[plastic_pipe_to_ground].category = crafting_fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].type = fluid
 data_recipe[plastic_pipe_to_ground].ingredients[2].name = liquid_plastic_angels
 data_recipe[plastic_pipe_to_ground].ingredients[2].amount = 60
+
 if settings.startup[setting_early_sintering_oven].value then
     data_recipe[ceramic_pipe_to_ground].category = angels_sintering_2
 end
+
 data_recipe[tungsten_pipe_to_ground].category = angels_sintering_4
+
 data_recipe[copper_tungsten_pipe_to_ground].category = angels_sintering_4
 
 bobmods.lib.recipe.update_recycling_recipe
@@ -875,10 +894,12 @@ data_electric_pole[medium_electric_pole_1].next_upgrade = medium_electric_pole_2
 data_electric_pole[medium_electric_pole_2].next_upgrade = medium_electric_pole_3
 data_electric_pole[medium_electric_pole_3].next_upgrade = medium_electric_pole_4
 data_electric_pole[medium_electric_pole_4].next_upgrade = nil
+
 data_electric_pole[big_electric_pole_1].next_upgrade = big_electric_pole_2
 data_electric_pole[big_electric_pole_2].next_upgrade = big_electric_pole_3
 data_electric_pole[big_electric_pole_3].next_upgrade = big_electric_pole_4
 data_electric_pole[big_electric_pole_4].next_upgrade = nil
+
 data_electric_pole[substation_1].next_upgrade = substation_2
 data_electric_pole[substation_2].next_upgrade = substation_3
 data_electric_pole[substation_3].next_upgrade = substation_4

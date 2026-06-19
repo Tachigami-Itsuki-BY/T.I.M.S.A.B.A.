@@ -1,12 +1,1 @@
-data:extend
-({
-    {
-        type = item,
-        name = glass_fiber_board,
-        subgroup = is_boards,
-        icon = data_item["bob-fibreglass-board"].icon,
-        order = c,
-        stack_size = 200,
-        weight = 5000
-    }
-})
+TIMSABA.functions.create_items({{name = glass_fiber_board, subgroup = is_boards, icon = data_item["bob-fibreglass-board"].icon, order = c}})

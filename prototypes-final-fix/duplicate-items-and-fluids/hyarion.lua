@@ -11,7 +11,7 @@ if mods [hyarion_mods] then
         [polished_sapphire_hyarion] = polished_sapphire_bob,
 		[carbon_nanotube_hyarion] = carbon_nanotube
     }
-	delete_duplicate_item_and_fluid(replacements)
+	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 	data_fluid[aluminium_hyarion] = nil
 

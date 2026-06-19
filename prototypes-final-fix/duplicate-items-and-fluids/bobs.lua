@@ -29,7 +29,7 @@ local replacements =
 	[steam_mining_drill] = burner_mining_drill,
 	--[steam_assembling_machine] = burner_assembling_machine
 }
-delete_duplicate_item_and_fluid(replacements)
+TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 data_technology["steam-power"].effects =
 {

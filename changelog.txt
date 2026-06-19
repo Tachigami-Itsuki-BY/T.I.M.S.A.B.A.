@@ -1,5 +1,47 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.4
+Date: 19.06.2026
+  Bugfixes:
+    - [All] Исправлены ошибки совместимости с модами Bob's.
+
+    - [All] Fixed compatibility bugs with Bob's mods.
+
+  Balancing:
+    - [Mods] Для всех Погрузчиков скорректировано потребление энергии, если соответствующая настройка включена.
+    - [All] Для всех Манипуляторов скорректировано потребление энергии, если соответствующая настройка включена.
+    - [All] Для Подземных Конвейеров Т0 и Т1 намертво закреплена максимальная длина 4 и 8.
+    - [All] Для всех Подземных Труб намертво закреплена максимальная длина 8/16/24/32/40/48.
+    - [Vulcanus] Скрыт рецепт Расплавленого Хрома из-за своей ненадобности.
+    - [Vulcanus] В рецепте Кусков Вольфрамита произведена замена результата: Шлак → Силикат Кальция.
+    - [Muluna] В рецепте Детали Ракеты произведена замена ингердиента: Молибден-Рений → Медно-Вольфрам.
+
+    - [Mods] Adjusted energy consumption for all loaders, if the corresponding setting is enabled.
+    - [All] Adjusted energy consumption for all inserters, if the corresponding setting is enabled.
+    - [All] Maximum lengths for T0 and T1 Underground Belts are hardcoded to 4 and 8.
+    - [All] Maximum lengths for all Underground Pipes are hardcoded to 8/16/24/32/40/48.
+    - [Vulcanus] Hidden the recipe for Molten Chromium as they are no longer needed.
+    - [Vulcanus] Replaced a result in the Wolframite Chunks recipe: Slag → Calcium Silicate.
+    - [Muluna] Replaced an ingredient in the Rocket Part recipe: Molybdenum-Rhenium → Copper-Tungsten.
+
+  Graphics:
+    - [All] Исправлено некорректное отображение иконок.
+
+    - [All] Fixed incorrect display of icons.
+
+  Locale:
+    - [All] Исправлены ошибки локализации.
+    - [Rus] Обновлена русская локализация.
+
+    - [All] Fixed localization bugs.
+
+  Modding:
+    - [Mods] Модпак стал более дружелюбный к модам которые не указаны в списке опциональной зависимости.
+    - [Mods] Мод «Loaders Modernized» удалён из списка опциональной зависимости.
+
+    - [Mods] The modpack is now more mod-friendly towards mods not listed in optional dependencies.
+    - [Mods] Removed "Loaders Modernized" mod from the optional dependency.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.3
 Date: 18.06.2026
   Features:
@@ -19,18 +61,18 @@ Date: 18.06.2026
     - [Mods] Adjusted ingredients in the Skat Loader recipe.
     - [All] Added a new prerequisite for the Lamp technology: Mechanical refining.
 
+  Locale:
+    - [Mods] Обновлена локализация для мода Loaders Modernized.
+    - [Rus] Обновлена русская локализация.
+
+    - [Mods] Updated localization for the Loaders Modernized mod
+
   Modding:
     - [Mods] Мод «Bob's Warfare» переведён в опциональную зависимость.
     - [Mods] Мод «Electric Boiler» добавлен в список несовместимых.
 
     - [Mods] Moved "Bob's Warfare" mod to optional dependencies.
     - [Mods] Added "Electric Boiler" mod to incompatible.
-
-  Locale:
-    - [Mods] Обновлена локализация для мода Loaders Modernized.
-    - [Rus] Обновлена русская локализация.
-
-    - [Mods] Updated localization for the Loaders Modernized mod
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.2
 Date: 17.06.2026

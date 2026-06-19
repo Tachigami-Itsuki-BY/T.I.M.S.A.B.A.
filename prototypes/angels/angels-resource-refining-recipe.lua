@@ -5,20 +5,15 @@ crushed_stone_sorting_3 = "crushed-stone-sorting-3"
 manganese_ore_recipe = "ore-crushed-mix5-processing"
 chromium_ore_recipe = "ore-crystal-mix7-processing"
 molybdenum_ore_recipe = "molybdenum-ore-pure-mix-processing"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = crushed_stone_sorting_1,
         category = angels_ore_sorting_1,
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_1),
         order = f_a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> Ca + 2Fe + Mg + SiO₂
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
@@ -31,17 +26,12 @@ data:extend
         main_product = calcium
     },
     {
-        type = recipe,
         name = crushed_stone_sorting_2,
         category = angels_ore_sorting_3,
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_2),
         order = f_b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na + Ca + 2Fe + Mg + 2Al + SiO₂
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
@@ -56,17 +46,12 @@ data:extend
         main_product = sodium_angels
     },
     {
-        type = recipe,
         name = crushed_stone_sorting_3,
         category = angels_ore_sorting_4,
         subgroup = is_processing_crafting,
         icons = RECYCLING_I(recycling_png, stone_crushed_angels, number_3),
         order = f_c,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 1, -- (Na₂,K₂Ca)(Fe₂,Mg,Al₂)[SiO₄] --> 2Na + 2K + Ca + 2Fe + Mg + 2Al + SiO₂
         ingredients = {{type = item, name = stone_crushed_angels, amount = 4}},
         results =
@@ -82,34 +67,24 @@ data:extend
         main_product = sodium_angels
     },
     {
-        type = recipe,
         name = stone,
         category = angels_ore_sorting_1,
         subgroup = is_processing_crafting,
         icons = TWO_I(slag_angels, stone),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = item, name = slag_angels, amount = 4}},
         results = {{type = item, name = stone, amount = 8}},
         main_product = stone
     },
     {
-        type = recipe,
         name = manganese_ore_recipe,
         category = angels_ore_sorting_2,
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, crushed_ferrous, crushed_rubyte, manganese_ore_angels),
         order = a_e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients =
         {
@@ -121,17 +96,12 @@ data:extend
         main_product = manganese_ore_angels
     },
     {
-        type = recipe,
         name = chromium_ore_recipe,
         category = angels_ore_sorting_4,
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, crystal_ferrous, crystal_rubyte, chromium_ore_angels),
         order = a_g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients =
         {
@@ -149,11 +119,7 @@ data:extend
         subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, powellite_purified, molybdenum_ore),
         order = a_j,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients =
         {
@@ -165,24 +131,3 @@ data:extend
         main_product = molybdenum_ore
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = , -- 
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

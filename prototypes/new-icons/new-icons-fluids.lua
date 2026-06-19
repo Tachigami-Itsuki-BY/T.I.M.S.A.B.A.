@@ -680,11 +680,14 @@ if mods [tellus_mods] then
     data_fluid[seed_compound].icon = "__TIMSABA__/graphics/icons/tellus/seed-compound.png"
 end
 
-if mods [maraxsis_mods] or mods [muluna_mods] or mods [shchierbin_mods] then
-    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
+if mods [paracelsin_mods] then
+    data_fluid[zinc_concentrate_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-concentrate.png"
+    data_fluid[dirty_zinc_solution_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/dirty-zinc-solution.png"
+    data_fluid[zinc_solution_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-solution.png"
 end
 
 if mods [maraxsis_mods] then
+    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
     data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
     data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
     data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
@@ -696,12 +699,6 @@ if mods [corrundum_mods] then
     data_fluid[mixed_sulfate_solution_mods].icon = "__TIMSABA__/graphics/icons/corrundum/mixed-sulfate-solution.png"
     data_fluid[iron_sulfate_solution_mods].icon = "__TIMSABA__/graphics/icons/corrundum/iron-sulfate-solution.png"
     data_fluid[copper_sulfate_solution_mods].icon = "__TIMSABA__/graphics/icons/corrundum/copper-sulfate-solution.png"
-end
-
-if mods [paracelsin_mods] then
-    data_fluid[zinc_concentrate_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-concentrate.png"
-    data_fluid[dirty_zinc_solution_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/dirty-zinc-solution.png"
-    data_fluid[zinc_solution_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-solution.png"
 end
 
 if mods [shchierbin_mods] then
@@ -755,11 +752,3 @@ if mods [shattered_mods] then
     data_fluid[californium_251_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_251.png"
     data_fluid[californium_252_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_252.png"
 end
-
---[[
-data_fluid[].base_color = TIMSABA.functions.fluid_color("")
-data_fluid[].flow_color = TIMSABA.functions.flow_color("")
-or
-data_fluid[].base_color = {r =  / 255, g =  / 255, b =  / 255}
-data_fluid[].flow_color = {r =  / 255, g =  / 255, b =  / 255}
-]]

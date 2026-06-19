@@ -12,7 +12,7 @@ local replacements =
 	[heavy_oil] = multi_phase_oil_angels,
 	[sulfuric_acid] = sulfuric_acid_angels
 }
-delete_duplicate_item_and_fluid(replacements)
+TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 data_item[lithium] = nil
 data_recipe[lithium .. _recycling] = nil

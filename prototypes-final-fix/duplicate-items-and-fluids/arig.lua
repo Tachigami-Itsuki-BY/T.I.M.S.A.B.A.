@@ -4,7 +4,7 @@ if mods [arig_mods] then
         [glass_panel_arig] = glass_bob,
 		[raw_diamond_arig] = raw_diamond_bob
     }
-	delete_duplicate_item_and_fluid(replacements)
+	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 	data_item[glass_panel_arig] = nil
 	data_recipe[glass_panel_arig .. _recycling] = nil

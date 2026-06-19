@@ -1,5 +1,3 @@
--- BASE
-
 -- COMBAT
 if mods [bobwarfare] then
     data_recipe["bob-gun-cotton"].ingredients =
@@ -100,55 +98,20 @@ end
 -- SPACE AGE
 data_armor[mech_armor].resistances =
 {
-    {
-        type = "physical",
-        decrease = 20,
-        percent = 50,
-    },
-    {
-        type = "acid",
-        decrease = 16,
-        percent = 85,
-    },
-    {
-        type = "explosion",
-        decrease = 80,
-        percent = 50,
-    },
-    {
-        type = "impact",
-        decrease = 20,
-        percent = 50,
-    },
-    {
-        type = "poison",
-        decrease = 10,
-        percent = 70,
-    },
-    {
-        type = "fire",
-        decrease = 15,
-        percent = 90,
-    },
-    {
-        type = "laser",
-        decrease = 20,
-        percent = 50,
-    },
-    {
-        type = "electric",
-        decrease = 15,
-        percent = 50,
-    },
-    {
-        type = "bob-pierce",
-        percent = 45,
-    },
-    {
-        type = "bob-plasma",
-        percent = 100,
-    }
+    {type = "physical", decrease = 20, percent = 50 },
+    {type = "acid", decrease = 16, percent = 85},
+    {type = "explosion", decrease = 80, percent = 50},
+    {type = "impact", decrease = 20, percent = 50},
+    {type = "poison", decrease = 10, percent = 70},
+    {type = "fire", decrease = 15, percent = 90},
+    {type = "laser", decrease = 20, percent = 50},
+    {type = "electric", decrease = 15, percent = 50}
 }
+
+if mods [bobwarfare] then
+    table.insert(data_armor[mech_armor].resistances, {type = "bob-pierce", percent = 45})
+    table.insert(data_armor[mech_armor].resistances, {type = "bob-plasma", percent = 100})
+end
 
 tech_rocket_part_productivity = "rocket-part-productivity"
 data_technology[tech_rocket_part_productivity].effects =
@@ -317,12 +280,10 @@ if mods [muluna_mods] then
         data_assembling[BUILD.name].order = BUILD.order
         data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
         data_assembling[BUILD.name].energy_source.drain = (BUILD.tier * drain) .. kW
-        data_assembling[BUILD.name].fixed_recipe = lunar_regolith
     end
 
     data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
     data_assembling[big_mining_drill .. _ground_digger].energy_source.drain = 480 .. kW
-    data_assembling[big_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
 
     if data_item[area_mining_drill_1] then
         local muluna_large_area_mining_machine =

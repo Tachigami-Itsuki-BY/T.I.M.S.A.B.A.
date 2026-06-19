@@ -13,7 +13,7 @@ if mods [muluna_mods] then
         [carbon_dioxide_mods] = carbon_dioxide_angels,
 		[atmosphere_maraxsis] = compressed_air
     }
-    delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 	data_tile["muluna-gravel"] = nil
 
@@ -106,7 +106,7 @@ if mods [muluna_mods] then
 	for _, technology in pairs(data.raw.technology or {}) do
 		if technology.effects then
 			for _, effect in pairs(technology.effects) do
-				if effect.type == unlock_recipe then
+				if effect.type == unlock_recipe or (effect.type == change_recipe_productivity and effect.recipe == regolith_digging) then
 					local replace = replacements_2[effect.recipe]
 					if replace then
 						effect.recipe = replace
@@ -115,27 +115,16 @@ if mods [muluna_mods] then
 			end
 		end
 	end
+	for _, machine in pairs(data_assembling or {}) do
+        -- Если у автомата жестко задан старый рецепт, меняем его на новый
+        if machine.fixed_recipe == regolith_digging then
+            machine.fixed_recipe = lunar_regolith
+        end
+    end
 	data_recipe[regolith_digging] = nil
 	data_recipe[alumina_crushing] = nil
 	data_recipe[aluminum_crushing] = nil
 	data_recipe[vacuum_heating] = nil
-
-	local replacements_2_productivity =
-	{
-		[regolith_digging] = lunar_regolith
-	}
-	for _, technology in pairs(data.raw.technology or {}) do
-		if technology.effects then
-			for _, effect in pairs(technology.effects) do
-				if effect.type == "change-recipe-productivity" then
-					local replace = replacements_2_productivity[effect.recipe]
-					if replace then
-						effect.recipe = replace
-					end
-				end
-			end
-		end
-	end
 
 	data_recipe[copper_cable .. _recycling].surface_conditions = nil
 	data_recipe[copper_cable .. _recycling .. "-muluna"] = nil

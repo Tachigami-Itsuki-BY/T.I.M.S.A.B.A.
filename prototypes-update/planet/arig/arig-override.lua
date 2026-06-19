@@ -1,14 +1,15 @@
 if mods [arig_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     -- CACTUS
+    data_capsule[cactus_arig].subgroup = is_cactus
+    data_capsule[cactus_arig].order = a
+    data_capsule[cactus_arig].stack_size = 200
+
     local cactus_seeds = "planetaris-cactus-seeds"
     data_item[cactus_seeds].subgroup = is_cactus
-    data_item[cactus_seeds].order = a
+    data_item[cactus_seeds].order = b
     data_item[cactus_seeds].stack_size = 200
 
-    data_capsule[cactus_arig].subgroup = is_cactus
-    data_capsule[cactus_arig].order = b
-    data_capsule[cactus_arig].stack_size = 200
 
     if mods [tellus_mods] then
         local cactus_mash = "planetaris-cactus-mash"

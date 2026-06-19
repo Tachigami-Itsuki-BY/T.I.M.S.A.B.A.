@@ -329,7 +329,6 @@ data_recipe[artillery_shell].ingredients =
     {type = item, name = calcite, amount = 1}
 }
 
-local atomic_artillery_shell = "bob-atomic-artillery-shell"
 if mods [bobwarfare] then
     data_ammo[atomic_artillery_shell].stack_size = 32
     data_ammo[atomic_artillery_shell].weight = 31250
@@ -531,7 +530,7 @@ local ammo_magazines =
     {name = magazine_plasma,   order = h}
 }
 for _, AMMO in pairs(ammo_magazines) do
-    if data_item[AMMO.name] then
+    if data_ammo[AMMO.name] then
         data_ammo[AMMO.name].subgroup = is_ammo_magazine
         data_ammo[AMMO.name].order = AMMO.order
         data_ammo[AMMO.name].magazine_size = 60
@@ -563,7 +562,7 @@ local ammo_shotguns =
     {name = shotgun_shell_plasma,    order = h}
 }
 for _, AMMO in pairs(ammo_shotguns) do
-    if data_item[AMMO.name] then
+    if data_ammo[AMMO.name] then
         data_ammo[AMMO.name].subgroup = is_ammo_shotgun
         data_ammo[AMMO.name].order = AMMO.order
         data_ammo[AMMO.name].magazine_size = 60

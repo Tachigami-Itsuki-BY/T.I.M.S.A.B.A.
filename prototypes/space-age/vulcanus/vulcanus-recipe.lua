@@ -717,6 +717,9 @@ data:extend
     }
 })
 
+data_recipe[molten_chromium].hidden = true
+data_recipe[molten_chromium].hidden_in_factoriopedia = true
+
 --[[data:extend
 ({
     {
@@ -1838,6 +1841,7 @@ data:extend
         main_product = data_recipe[rocket_part].main_product
     }
 })
+
 --[[data:extend
 ({
     {

@@ -3,19 +3,17 @@ map_settings.pollution.enabled = true
 map_settings.enemy_evolution.enabled = true
 map_settings.enemy_expansion.enabled = true
 
-for name in pairs(data.raw.item) do
+for name in pairs(data_item) do
     if string.find(name, "barrel") and name ~= "barrel" and name ~= "angels-barreling-pump" then
-        data.raw.item[name] = nil
+        data_item[name] = nil
     end
 end
 
-for name in pairs(data.raw.recipe) do
+for name in pairs(data_recipe) do
     if string.find(name, "barrel") and name ~= "barrel" and name ~= "angels-barreling-pump" then
-        data.raw.recipe[name] = nil
+        data_recipe[name] = nil
     end
 end
-
-delete_duplicate_item_and_fluid = require("prototypes-final-fix.duplicate-items-and-fluids").delete_duplicate_item_and_fluid
 
 require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
@@ -41,14 +39,13 @@ require("prototypes-final-fix.duplicate-items-and-fluids.vesta")
 require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")
 
-require("prototypes-final-fix.final-fix-recipe-barreling")
-require("prototypes-final-fix.final-fix-recipe-voids")
-
-require("prototypes-final-fix.mods-final-fix.final-fix-mods")
 require("prototypes-final-fix.mods-final-fix.flare-stack")
 require("prototypes-final-fix.mods-final-fix.rocket-silo-construction")
 require("prototypes-final-fix.mods-final-fix.bobs-new")
 
+require("prototypes-final-fix.final-fix-recipe-barreling")
+require("prototypes-final-fix.final-fix-recipe-voids")
+require("prototypes-final-fix.final-fix-mods")
 require("prototypes-final-fix.final-fix-weights")
 require("prototypes-final-fix.final-fix-entities-yelds")
 require("prototypes-final-fix.final-fix-recycling")

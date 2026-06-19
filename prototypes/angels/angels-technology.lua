@@ -373,21 +373,3 @@ data:extend
 table.insert(data_technology[tech_advanced_ore_refining_5].prerequisites, tech_stone_smelting_5)
 table.insert(data_technology[tech_stone_smelting_6].prerequisites, tech_advanced_chemistry_6)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_stone_smelting_6)
-
---[[data:extend
-({
-    {
-        type = ,
-        name = ,
-        icon = ,
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})]]
