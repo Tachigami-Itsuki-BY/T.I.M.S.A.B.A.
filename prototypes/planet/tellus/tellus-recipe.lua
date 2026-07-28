@@ -1,18 +1,12 @@
 if mods [tellus_mods] then
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
-            type = recipe,
             name = magnesium_dust,
             category = powderizing_4,
             subgroup = is_tellus_magnesium,
             icons = TWO_I(magnesium_ore, magnesium_dust),
             order = b,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 2,
             ingredients =
             {
@@ -28,45 +22,19 @@ if mods [tellus_mods] then
         }
     })
 
-    --[[data:extend
-    ({
-        {
-            type = recipe,
-            name = ,
-            category = ,
-            subgroup = ,
-            icons = ,
-            order = ,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = ,
-            ingredients = {{type = , name = , amount = }},
-            results = {{type = , name = , amount = }},
-            main_product = 
-        }
-    })]]
-
     -- COLORED PROTOTYPES
     if settings.startup[setting_dye_secondary_color].value then
         if data_item[alien_artifact] then
-            data:extend
+            TIMSABA.functions.create_recipes
             ({
                 {
-                    type = recipe,
                     name = orange_dye,
                     category = centrifuging_4,
                     subgroup = is_dyes,
                     icons = THREE_D_I(alien_artifact_orange, nutrients, water, orange_dye),
                     order = a,
-                    enabled = false,
-                    auto_recycle = false,
                     allow_productivity = true,
                     allow_quality = true,
-                    allow_decomposition = false,
-                    energy_required = 4,
                     ingredients =
                     {
                         {type = item, name = alien_artifact_orange, amount = 1},
@@ -84,21 +52,16 @@ if mods [tellus_mods] then
                 }
             })
         else
-            data:extend
+            TIMSABA.functions.create_recipes
             ({
                 {
-                    type = recipe,
                     name = orange_dye,
                     category = centrifuging_4,
                     subgroup = is_dyes,
                     icons = THREE_D_I(crushed_cupric, nutrients, water, orange_dye),
                     order = a,
-                    enabled = false,
-                    auto_recycle = false,
                     allow_productivity = true,
                     allow_quality = true,
-                    allow_decomposition = false,
-                    energy_required = 4,
                     ingredients =
                     {
                         {type = item, name = crushed_cupric, amount = 1},
@@ -117,7 +80,7 @@ if mods [tellus_mods] then
             })
         end
 
-        data:extend
+        TIMSABA.functions.create_recipes
         ({
             {
                 type = recipe,
@@ -126,12 +89,8 @@ if mods [tellus_mods] then
                 subgroup = is_dyes,
                 icons = THREE_D_I(coal_crushed_angels, nutrients, water, black_dye),
                 order = h,
-                enabled = false,
-                auto_recycle = false,
                 allow_productivity = true,
                 allow_quality = true,
-                allow_decomposition = false,
-                energy_required = 4,
                 ingredients =
                 {
                     {type = item, name = coal_crushed_angels, amount = 1},
@@ -140,12 +99,12 @@ if mods [tellus_mods] then
                 },
                 results = {{type = item, name = black_dye, amount = 8}},
                 main_product = black_dye,
-                    surface_conditions =
-                    {
-                        {property = pressure, min = 2000, max = 2000},
-                        {property = gravity, min = 20, max = 20},
-                        {property = "magnetic-field", min = 25, max = 25}
-                    }
+                surface_conditions =
+                {
+                    {property = pressure, min = 2000, max = 2000},
+                    {property = gravity, min = 20, max = 20},
+                    {property = "magnetic-field", min = 25, max = 25}
+                }
             }
         })
     end

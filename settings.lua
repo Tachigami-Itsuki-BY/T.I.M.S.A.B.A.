@@ -39,6 +39,12 @@ data:extend
         setting_type = startup,
         default_value = false
     }]]
+    {
+        type = bool_setting,
+        name = "setting-rebalance-belts-and-pipes",
+        setting_type = startup,
+        default_value = true
+    }
 })
 
 if mods ["bobtech"] and mods ["sa-science-packs"] then

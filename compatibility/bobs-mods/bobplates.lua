@@ -1,93 +1,69 @@
 if mods [bobplates] >= "2.1.0" then
-    data:extend
+    TIMSABA.functions.create_items
     ({
         --[[{
-            type = item,
             name = cobalt_steel_gear_wheel,
             subgroup = is_gears,
             icon = "__reskins-angels__/graphics/icons/smelting/gears/bob-cobalt-steel-gear-wheel.png",
-            order = e,
-            stack_size = 200,
-            weight = 5000
+            order = e
         },]]
         -- BEARING BALL
         {
-            type = item,
             name = ceramic_bearing_ball,
             subgroup = is_bearing_ball,
             icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-ceramic-bearing-ball.png",
-            order = d,
-            stack_size = 200,
-            weight = 5000
+            order = d
         },
         --[[{
-            type = item,
             name = cobalt_steel_bearing_ball,
             subgroup = is_bearing_ball,
             icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-cobalt-steel-bearing-ball.png",
-            order = e,
-            stack_size = 200,
-            weight = 5000
+            order = e
         },]]
         -- BEARING
         {
-            type = item,
             name = ceramic_bearing,
             subgroup = is_bearing,
             icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-ceramic-bearing.png",
-            order = d,
-            stack_size = 200,
-            weight = 5000
+            order = d
         },
         --[[{
-            type = item,
             name = cobalt_steel_bearing,
             subgroup = is_bearing,
             icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-cobalt-steel-bearing.png",
-            order = e,
-            stack_size = 200,
-            weight = 5000
+            order = e
         },]]
         -- CASTING
         {
-            type = item,
             name = tungsten_plate_bob,
             subgroup = is_tungsten_casting,
             icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-tungsten.png",
-            order = a,
-            stack_size = 200,
-            weight = 5000
+            order = a
         },
         {
-            type = item,
             name = tungsten_carbide_plate_bob,
             subgroup = is_tungsten_casting,
             icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-tungsten-carbide.png",
-            order = b,
-            stack_size = 200,
-            weight = 5000
+            order = b
         },
         {
-            type = item,
             name = lithium_bob,
             subgroup = is_alloys,
             icon = "__reskins-bobs__/graphics/icons/plates/plates/bob-lithium-plate.png",
-            order = f,
-            stack_size = 200,
-            weight = 5000
-        },
-        -- RECIPE
+            order = f
+        }
+    })
+
+    TIMSABA.functions.create_recipes
+    ({
         --[[{
-            type = recipe,
             name = cobalt_steel_gear_wheel,
             category = crafting,
             subgroup = is_gears,
             order = e,
-            enabled = false,
             auto_recycle = true,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = cobalt_steel_plate_bob, amount = 1}},
             results = {{type = item, name = cobalt_steel_gear_wheel, amount = 1}},
@@ -95,32 +71,26 @@ if mods [bobplates] >= "2.1.0" then
         },]]
         -- BEARING BALL
         {
-            type = recipe,
             name = ceramic_bearing_ball,
             category = crafting,
             subgroup = is_bearing_ball,
             order = d,
-            enabled = false,
             auto_recycle = true,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = silicon_nitride_bob, amount = 1}},
             results = {{type = item, name = ceramic_bearing_ball, amount = 8}},
             main_product = ceramic_bearing_ball
         },
         --[[{
-            type = recipe,
             name = cobalt_steel_bearing_ball,
             category = crafting,
             subgroup = is_bearing_ball,
             order = e,
-            enabled = false,
             auto_recycle = true,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 1,
             ingredients = {{type = item, name = cobalt_steel_plate_bob, amount = 1}},
             results = {{type = item, name = cobalt_steel_bearing_ball, amount = 8}},
@@ -128,16 +98,13 @@ if mods [bobplates] >= "2.1.0" then
         },]]
         -- BEARING
         {
-            type = recipe,
             name = ceramic_bearing,
             category = crafting_fluid,
             subgroup = is_bearing,
             order = d,
-            enabled = false,
             auto_recycle = true,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 1,
             ingredients =
             {
@@ -149,16 +116,13 @@ if mods [bobplates] >= "2.1.0" then
             main_product = ceramic_bearing
         },
         --[[{
-            type = recipe,
             name = cobalt_steel_bearing,
             category = crafting_fluid,
             subgroup = is_bearing,
             order = e,
-            enabled = false,
             auto_recycle = true,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 1,
             ingredients =
             {
@@ -171,16 +135,11 @@ if mods [bobplates] >= "2.1.0" then
         },]]
         -- CASTING
         {
-            type = recipe,
             name = tungsten_carbide_plate_2,
             category = angels_sintering_4,
             subgroup = is_tungsten_casting,
             order = b_a,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 8,
             ingredients =
             {
@@ -191,16 +150,10 @@ if mods [bobplates] >= "2.1.0" then
             main_product = tungsten_carbide_plate_bob
         },
         {
-            type = recipe,
             name = lithium_bob,
             category = angels_petrochem_electrolyser,
             subgroup = is_alloys,
             order = f,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 8,
             ingredients =
             {
@@ -216,7 +169,7 @@ if mods [bobplates] >= "2.1.0" then
             main_product = lithium_bob
         }
     })
-    -- TECHNOLOGY
+
     if not data_technology[tech_tungsten_alloy_processing] then
         data:extend
         ({

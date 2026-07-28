@@ -165,6 +165,21 @@ green_concrete = "planetaris-green-concrete"
 red_concrete = "planetaris-red-concrete"
 cyan_concrete = "planetaris-cyan-concrete"
 
+-- PARACELSIN
+paracelsin_mods = "Paracelsin"
+planet_paracelsin = "paracelsin"
+sphalerite_ore = "sphalerite"
+tetrahedrite_ore = "tetrahedrite"
+vaterite = "vaterite"
+zinc_mods = "zinc"
+zinc_plate_mods = "zinc-plate"
+zinc_rivets = "zinc-rivets"
+zinc_cable = "zinc-solder"
+galvanized_steel_plate = "galvanized-steel-plate"
+nitrogen_mods = "nitrogen"
+nitric_acid_mods = "nitric-acid"
+galvanization_science_pack = "galvanization-science-pack"
+
 -- CASTRA
 castra_mods = "castra"
 planet_castra= "castra"
@@ -228,18 +243,6 @@ saturated_salt_filter_maraxsis = "maraxsis-saturated-salt-filter"
 -- NEXUS
 nexus_mods = "Nexus"
 planet_nexus= "nexus"
-
--- PARACELSIN
-paracelsin_mods = "Paracelsin"
-planet_paracelsin = "paracelsin"
-zinc_mods = "zinc"
-zinc_plate_mods = "zinc-plate"
-nitrogen_mods = "nitrogen"
-nitric_acid_mods = "nitric-acid"
-zinc_concentrate_mods = "zinc-concentrate"
-dirty_zinc_solution_mods = "dirty-zinc-solution"
-zinc_solution_mods = "zinc-solution"
-zinc_solder_mods = "zinc-solder"
 
 -- SHATTERED
 shattered_mods = "skewer_shattered_planet"
@@ -386,3 +389,6 @@ reskins_bobs = "reskins-bobs"
 
 -- SOLAR PRODUCTIVITY
 solar_productivity = "solar-productivity"
+
+-- Asteroid Belt
+asteroid_belt_mods = "AsteroidBelt"

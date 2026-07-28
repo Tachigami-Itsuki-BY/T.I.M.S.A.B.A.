@@ -15,7 +15,7 @@ data:extend
         weight = 5000,
         pictures =
         {
-            {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/jivolite-bacteria.png", scale = 0.5, mipmap_count = 4},
+            {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/jivolite-bacteria.png",   scale = 0.5, mipmap_count = 4},
             {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/jivolite-bacteria-1.png", scale = 0.5, mipmap_count = 4},
             {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/jivolite-bacteria-2.png", scale = 0.5, mipmap_count = 4},
             {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/jivolite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
@@ -37,7 +37,7 @@ data:extend
         weight = 5000,
         pictures =
         {
-            {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/crotinnium-bacteria.png", scale = 0.5, mipmap_count = 4},
+            {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/crotinnium-bacteria.png",   scale = 0.5, mipmap_count = 4},
             {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/crotinnium-bacteria-1.png", scale = 0.5, mipmap_count = 4},
             {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/crotinnium-bacteria-2.png", scale = 0.5, mipmap_count = 4},
             {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/crotinnium-bacteria-3.png", scale = 0.5, mipmap_count = 4}
@@ -94,33 +94,3 @@ data:extend
         spoil_result = ore_bobmonium
     }
 })
-
---[[
-data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/gleba/.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    },
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/gleba/.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = TIMSABA.functions.fluid_color(""),
-        flow_color = TIMSABA.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})
-]]

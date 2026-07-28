@@ -1,5 +1,16 @@
 if mods[moshine_mods] then
-    local moshine = "moshine"
+    local ig_moshine = "moshine"
+    data:extend
+    ({
+        {
+            type = item_group,
+            name = ig_moshine,
+            order = x_e,
+            icon = "__TIMSABA__/graphics/icons/moshine/moshine-planet.png",
+            icon_size = 128
+        }
+    })
+
     is_moshine_ore = "is-moshine-ore"
     is_moshine_recipe = "is-moshine-recipe"
     is_monazite = "is-monazite"
@@ -21,140 +32,28 @@ if mods[moshine_mods] then
     is_moshine_logistics_battery = "is-moshine-logistics-battery"
     is_moshine_building_energy = "is-moshine-building-energy"
     is_moshine_building = "is-moshine-building"
-    data:extend
-    ({
-        {
-            type = item_group,
-            name = moshine,
-            order = x_e,
-            icon = "__TIMSABA__/graphics/icons/moshine/moshine-planet.png",
-            icon_size = 128
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_ore,
-            group = moshine,
-            order = a
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_recipe,
-            group = moshine,
-            order = b
-        },
-        {
-            type = item_subgroup,
-            name = is_monazite,
-            group = moshine,
-            order = c
-        },
-        {
-            type = item_subgroup,
-            name = is_neodymium,
-            group = moshine,
-            order = d
-        },
-        {
-            type = item_subgroup,
-            name = is_neodymium_chemistry,
-            group = moshine,
-            order = d_a
-        },
-        {
-            type = item_subgroup,
-            name = is_neodymium_casting,
-            group = moshine,
-            order = d_b
-        },
-        {
-            type = item_subgroup,
-            name = is_cerium,
-            group = moshine,
-            order = e
-        },
-        {
-            type = item_subgroup,
-            name = is_cerium_chemistry,
-            group = moshine,
-            order = e_a
-        },
-        {
-            type = item_subgroup,
-            name = is_cerium_casting,
-            group = moshine,
-            order = e_b
-        },
-        {
-            type = item_subgroup,
-            name = is_promethium,
-            group = moshine,
-            order = f
-        },
-        {
-            type = item_subgroup,
-            name = is_promethium_chemistry,
-            group = moshine,
-            order = f_a
-        },
-        {
-            type = item_subgroup,
-            name = is_promethium_casting,
-            group = moshine,
-            order = f_b
-        },
-        {
-            type = item_subgroup,
-            name = is_barium,
-            group = moshine,
-            order = g
-        },
-        {
-            type = item_subgroup,
-            name = is_biotite_mica,
-            group = moshine,
-            order = h
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_datacell,
-            group = moshine,
-            order = i
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_core,
-            group = moshine,
-            order = i_a
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_ai_core,
-            group = moshine,
-            order = i_b
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_logistics,
-            group = moshine,
-            order = j
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_logistics_battery,
-            group = moshine,
-            order = j_a
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_building_energy,
-            group = moshine,
-            order = k
-        },
-        {
-            type = item_subgroup,
-            name = is_moshine_building,
-            group = moshine,
-            order = l
-        }
+    TIMSABA.functions.create_subgroups(ig_moshine,
+    {
+        {name = is_moshine_ore,               order = a},
+        {name = is_moshine_recipe,            order = b},
+        {name = is_monazite,                  order = c},
+        {name = is_neodymium,                 order = d},
+        {name = is_neodymium_chemistry,       order = d_a},
+        {name = is_neodymium_casting,         order = d_b},
+        {name = is_cerium,                    order = e},
+        {name = is_cerium_chemistry,          order = e_a},
+        {name = is_cerium_casting,            order = e_b},
+        {name = is_promethium,                order = f},
+        {name = is_promethium_chemistry,      order = f_a},
+        {name = is_promethium_casting,        order = f_b},
+        {name = is_barium,                    order = g},
+        {name = is_biotite_mica,              order = h},
+        {name = is_moshine_datacell,          order = i},
+        {name = is_moshine_core,              order = i_a},
+        {name = is_moshine_ai_core,           order = i_b},
+        {name = is_moshine_logistics,         order = j},
+        {name = is_moshine_logistics_battery, order = j_a},
+        {name = is_moshine_building_energy,   order = k},
+        {name = is_moshine_building,          order = l}
     })
 end

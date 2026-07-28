@@ -3,18 +3,6 @@ map_settings.pollution.enabled = true
 map_settings.enemy_evolution.enabled = true
 map_settings.enemy_expansion.enabled = true
 
-for name in pairs(data_item) do
-    if string.find(name, "barrel") and name ~= "barrel" and name ~= "angels-barreling-pump" then
-        data_item[name] = nil
-    end
-end
-
-for name in pairs(data_recipe) do
-    if string.find(name, "barrel") and name ~= "barrel" and name ~= "angels-barreling-pump" then
-        data_recipe[name] = nil
-    end
-end
-
 require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
 require("prototypes-final-fix.duplicate-items-and-fluids.angels")

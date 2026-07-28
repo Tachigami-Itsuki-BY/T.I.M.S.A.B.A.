@@ -4,8 +4,21 @@ data_technology[tech_logistics_5].prerequisites = {tech_logistics_4, tech_nitino
 local tech_logistic_system = "logistic-system"
 if mods [bobtech] then
     data_technology[tech_logistic_system].prerequisites = {transport_science_pack, tech_construction_robotics, tech_logistic_robotics}
+    data_technology[tech_logistic_system].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {transport_science_pack, 1}
+    }
 else
     data_technology[tech_logistic_system].prerequisites = {chemical_science_pack, tech_construction_robotics, tech_logistic_robotics}
+    data_technology[tech_logistic_system].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
 end
 
 -- ADVANCED LOGISTICS

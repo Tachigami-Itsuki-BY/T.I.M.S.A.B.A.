@@ -1,5 +1,15 @@
 if mods [muluna_mods] then
-    local muluna = "muluna"
+    local ig_muluna = "muluna"
+    data:extend
+    ({
+        {
+            type = item_group,
+            name = ig_muluna,
+            order = y_a,
+            icon = "__TIMSABA__/graphics/icons/muluna/muluna-planet.png",
+            icon_size = 128
+        }
+    })
     is_muluna_crushing = "is-muluna-crushing"
     is_muluna_recipe_anorthite = "is-muluna-recipe-anorthite"
     is_muluna_recipe_silicon = "is-muluna-recipe-silicon"
@@ -15,104 +25,22 @@ if mods [muluna_mods] then
     is_muluna_building = "is-muluna-building"
     is_muluna_astronomical = "is-muluna-astronomical"
     is_muluna_recipe_astronomical = "is-muluna-recipe-astronomical"
-    data:extend
-    ({
-        {
-            type = item_group,
-            name = muluna,
-            order = y_a,
-            icon = "__TIMSABA__/graphics/icons/muluna/muluna-planet.png",
-            icon_size = 128
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_crushing,
-            group = muluna,
-            order = a
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_anorthite,
-            group = muluna,
-            order = b
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_silicon,
-            group = muluna,
-            order = c
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_SPS_silicon,
-            group = muluna,
-            order = c_a
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_SPM_silicon,
-            group = muluna,
-            order = c_b
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_SPL_silicon,
-            group = muluna,
-            order = c_c
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_tree,
-            group = muluna,
-            order = d
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_cellulose,
-            group = muluna,
-            order = e
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe,
-            group = muluna,
-            order = f
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_boiler,
-            group = muluna,
-            order = g
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_heating,
-            group = muluna,
-            order = h
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_turbine,
-            group = muluna,
-            order = i
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_building,
-            group = muluna,
-            order = j
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_astronomical,
-            group = muluna,
-            order = y
-        },
-        {
-            type = item_subgroup,
-            name = is_muluna_recipe_astronomical,
-            group = muluna,
-            order = z
-        }
+    TIMSABA.functions.create_subgroups(ig_muluna,
+    {
+        {name = is_muluna_crushing, order = a},
+        {name = is_muluna_recipe_anorthite, order = b},
+        {name = is_muluna_recipe_silicon, order = c},
+        {name = is_muluna_SPS_silicon, order = c_a},
+        {name = is_muluna_SPM_silicon, order = c_b},
+        {name = is_muluna_SPL_silicon, order = c_c},
+        {name = is_muluna_recipe_tree, order = d},
+        {name = is_muluna_recipe_cellulose, order = e},
+        {name = is_muluna_recipe, order = f},
+        {name = is_muluna_boiler, order = g},
+        {name = is_muluna_heating, order = h},
+        {name = is_muluna_turbine, order = i},
+        {name = is_muluna_building, order = j},
+        {name = is_muluna_astronomical, order = y},
+        {name = is_muluna_recipe_astronomical, order = z}
     })
 end

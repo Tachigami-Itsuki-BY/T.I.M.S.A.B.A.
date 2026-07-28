@@ -1,6 +1,4 @@
 -- ANGELS RESOURCE REFINING
-local drain = 15
-local kW = "kW"
 data_item[burner_ore_crusher].subgroup = is_ore_crusher
 data_item[burner_ore_crusher].order = a
 data_item[burner_ore_crusher].stack_size = 32

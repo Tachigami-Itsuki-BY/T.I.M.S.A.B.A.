@@ -103,7 +103,7 @@ if mods [muluna_mods] then
 		[aluminum_crushing] = aluminium_plate_crushed,
 		[vacuum_heating] = heat
 	}
-	for _, technology in pairs(data.raw.technology or {}) do
+	for _, technology in pairs(data_technology or {}) do
 		if technology.effects then
 			for _, effect in pairs(technology.effects) do
 				if effect.type == unlock_recipe or (effect.type == change_recipe_productivity and effect.recipe == regolith_digging) then

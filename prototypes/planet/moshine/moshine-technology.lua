@@ -14,7 +14,7 @@ if mods[moshine_mods] then
     ({
         {
             localised_name = {"technology-name.monazite-processing-1"},
-            localised_description = {"technology-description.monazite-processing-1"},
+            localised_description = {"technology-description.angels-ore-crushing"},
             type = technology,
             name = tech_monazite_processing_1,
             icon = "__TIMSABA__/graphics/icons/moshine/technology/monazite-processing.png",
@@ -36,15 +36,15 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {metallurgic_science_pack, 1}
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
         },
         {
             localised_name = {"technology-name.monazite-processing-2"},
-            localised_description = {"technology-description.monazite-processing-2"},
+            localised_description = {"technology-description.angels-ore-floatation"},
             type = technology,
             name = tech_monazite_processing_2,
             icon = "__TIMSABA__/graphics/icons/moshine/technology/monazite-processing.png",
@@ -66,8 +66,8 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
                 time = 30
@@ -75,7 +75,7 @@ if mods[moshine_mods] then
         },
         {
             localised_name = {"technology-name.monazite-processing-3"},
-            localised_description = {"technology-description.monazite-processing-3"},
+            localised_description = {"technology-description.angels-ore-leaching"},
             type = technology,
             name = tech_monazite_processing_3,
             icon = "__TIMSABA__/graphics/icons/moshine/technology/monazite-processing.png",
@@ -97,8 +97,8 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1},
                     {promethium_science_pack, 1}
                 },
@@ -107,7 +107,7 @@ if mods[moshine_mods] then
         },
         {
             localised_name = {"technology-name.monazite-processing-4"},
-            localised_description = {"technology-description.monazite-processing-4"},
+            localised_description = {"technology-description.angels-ore-refining"},
             type = technology,
             name = tech_monazite_processing_4,
             icon = "__TIMSABA__/graphics/icons/moshine/technology/monazite-processing.png",
@@ -129,8 +129,8 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1},
                     {promethium_science_pack, 1}
                 },
@@ -193,8 +193,8 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
                 time = 30
@@ -224,8 +224,8 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1},
                     {promethium_science_pack, 1}
                 },
@@ -253,8 +253,8 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {metallurgic_science_pack, 1}
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -281,29 +281,12 @@ if mods[moshine_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
         }
     })
-    --[[data:extend
-    ({
-        {
-            type = technology,
-            name = ,
-            icon = "__TIMSABA__/graphics/icons/moshine/technology/.png",
-            icon_size = 256,
-            prerequisites = {},
-            effects = {{type = unlock_recipe, recipe = }},
-            unit =
-            {
-                count = 200,
-                ingredients = {{, }},
-                time = 30
-            }
-        }
-    })]]
 end

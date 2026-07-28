@@ -1,10 +1,9 @@
 -- ITEM
 local antimonite_asteroid_chunk = "antimonite-asteroid-chunk"
 local germanite_asteroid_chunk = "germanite-asteroid-chunk"
-data:extend
+TIMSABA.functions.create_items
 ({
     {
-        type = item,
         name = antimonite_asteroid_chunk,
         subgroup = is_space_environment_4,
         icon = "__TIMSABA__/graphics/entity/asteroid/antimonite-asteroid-chunk.png",
@@ -13,7 +12,6 @@ data:extend
         weight = 15625
     },
     {
-        type = item,
         name = germanite_asteroid_chunk,
         subgroup = is_space_environment_5,
         icon = "__TIMSABA__/graphics/entity/asteroid/germanite-asteroid-chunk.png",
@@ -23,80 +21,36 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/asteroid/.png",
-        order = ,
-        stack_size = 64,
-        weight = 15625
-    }
-})]]
-
 -- RECIPE
 antimonite_asteroid_crushing = "antimonite-asteroid-crushing"
 germanite_asteroid_crushing = "germanite-asteroid-crushing"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = antimonite_asteroid_crushing,
         category = crushing,
         subgroup = is_space_environment_4,
         icons = TWO_I(antimonite_asteroid_chunk, antimonite_ore),
         order = e_a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8,
         ingredients = {{type = item, name = antimonite_asteroid_chunk, amount = 1}},
         results = {{type = item, name = antimonite_ore, amount = 16}},
         main_product = antimonite_ore
     },
     {
-        type = recipe,
         name = germanite_asteroid_crushing,
         category = crushing,
         subgroup = is_space_environment_5,
         icons = TWO_I(germanite_asteroid_chunk, germanite_ore),
         order = e_a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8,
         ingredients = {{type = item, name = germanite_asteroid_chunk, amount = 1}},
         results = {{type = item, name = germanite_ore, amount = 16}},
         main_product = germanite_ore
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
 
 local particle_sounds = require("__base__.prototypes.entity.sounds")
 local particle_animations = require("__space-age__/prototypes/particle-animations")

@@ -1,117 +1,61 @@
 -- GROUPS
-local smelting = "angels-smelting"
 is_boron = "is-boron"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_boron,
-        group = smelting,
-        order = u
-    }
+TIMSABA.functions.create_subgroups(ig_smelting,
+{
+    {name = is_boron, order = u}
 })
 
 -- ITEM
 borax = "borax"
-data:extend
+TIMSABA.functions.create_items
 ({
     {
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]B[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]7[/font] * 10H[font=default-tiny-bold]2[/font]O"} or nil,
-        type = item,
         name = borax,
         subgroup = is_boron,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/borax.png",
-        order = a,
-        stack_size = 200,
-        weight = 500
+        order = a
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
 
 -- FLUID
 boric_acid_solution = "boric-acid-solution"
 diborane_gas = "diborane-gas"
-data:extend
+TIMSABA.functions.create_fluids
 ({
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]BO[font=default-tiny-bold]3(aq)[/font]"} or nil,
-        type = fluid,
         name = boric_acid_solution,
         subgroup = is_boron,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/boric-acid-solution.png",
         order = b,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("H3BO3Wp"),
-        flow_color = TIMSABA.functions.flow_color("H3BO3Wp"),
-        max_temperature = 0,
-        auto_barrel = false
+        flow_color = TIMSABA.functions.flow_color("H3BO3Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "B[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]6[/font]"} or nil,
-        type = fluid,
         name = diborane_gas,
         subgroup = is_boron,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/diborane-gas.png",
         order = c,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("B2H6"),
-        flow_color = TIMSABA.functions.flow_color("B2H6"),
-        max_temperature = 0,
-        auto_barrel = false
+        flow_color = TIMSABA.functions.flow_color("B2H6")
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
 
 -- RECIPE
 borax_recipe = "borax-ore-chunk-mix-processing"
 boric_acid_from_diborane_gas = "boric-acid-from-diborane-gas"
 boric_acid_from_hydrochloric_acid = "boric-acid-from-hydrochloric-acid"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = borax_recipe,
         category = angels_ore_sorting_3,
         subgroup = is_ore_sorting_advanced_2,
         icons = AR_FOUR_I(crystal_catalyst, chunk_saphirite, chunk_jivolite, borax),
         order = a_g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients =
         {
@@ -124,17 +68,11 @@ data:extend
     },
     -- SMELTING
     {
-        type = recipe,
         name = boric_acid_solution,
         category = chemistry,
         subgroup = is_boron,
         icons = TWO_D_I(borax, sulfuric_acid_angels, boric_acid_solution, sodium_sulfate_solution),
         order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- Na₂B₄O₇ * 10H₂O + H₂SO₄ --> 4H₃BO₃(aq) + Na₂SO₄(aq)
         ingredients =
         {
@@ -149,17 +87,11 @@ data:extend
         main_product = boric_acid_solution
     },
     {
-        type = recipe,
         name = boric_acid_from_hydrochloric_acid,
         category = angels_advanced_chemistry,
         subgroup = is_boron,
         icons = THREE_D_I(borax, nil, hydrochloric_acid_angels, boric_acid_solution, sodium_chloride_solution, water_purified_angels),
         order = b_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- Na₂B₄O₇ * 10H₂O + 2HCl(aq) --> 4H₃BO₃(aq) + 2NaCl(aq) + H₂O
         ingredients =
         {
@@ -174,18 +106,12 @@ data:extend
         }
     },
     {
-        type = recipe,
         name = boric_acid_from_diborane_gas,
         category = chemistry,
         subgroup = is_boron,
         icons = TWO_D_I(diborane_gas, water_purified_angels, boric_acid_solution, hydrogen_angels),
         order = b_b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- B₂H₆ + 8H₂O --> 2H₃BO₃(aq) + 6H₂
+        -- B₂H₆ + 8H₂O --> 2H₃BO₃(aq) + 6H₂
         ingredients =
         {
             {type = fluid, name = diborane_gas, amount = 120},
@@ -198,24 +124,3 @@ data:extend
         }
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

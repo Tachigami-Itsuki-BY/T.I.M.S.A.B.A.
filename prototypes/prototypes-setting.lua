@@ -5,6 +5,7 @@ setting_science_pack_nostalgia = "setting-science-pack-nostalgia"
 setting_multi_building = "setting-multi-building"
 setting_dynamic_underground_belts = "setting-dynamic-underground-belts"
 setting_dynamic_pipe_to_ground = "setting-dynamic-pipe-to-ground"
+setting_rebalance_belts_and_pipes = "setting-rebalance-belts-and-pipes"
 
 setting_horogon_extra_science_packs = "setting-za-horogon-extra-science-packs"
 setting_horogon_high_tier_recipes = "setting-zb-horogon-high-tier-recipes"
@@ -26,8 +27,10 @@ end
 -- BOBS
 setting_bobmods_power_steam = "bobmods-power-steam"
 
-setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
+setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"
+setting_bobmods_logistics_beltoverhaul = "bobmods-logistics-beltoverhaul"
+setting_bobmods_logistics_ugdistanceoverhaul = "bobmods-logistics-ugdistanceoverhaul"
 setting_bobmods_logistics_trains = "bobmods-logistics-trains"
 
 -- TELLUS

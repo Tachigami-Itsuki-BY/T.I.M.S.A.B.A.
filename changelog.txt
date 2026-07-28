@@ -1,5 +1,61 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.0
+Date: 28.07.2026
+  Features:
+    - [Mods] Добавлена поддержка Planet Paracelsin: реализовано бесшовное внедрение новой планеты в игровой процесс.
+
+    - [Mods] Added support for Planet Paracelsin: seamlessly integrated the new planet into the gameplay flow.
+
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой рецепт Каменных Блоков (из Дроблёного Камня) был недоступен.
+    - [Hyarion] Исправлена ошибка, из-за которой маршруты на Хайарион были недоступны.
+
+    - [All] Fixed a bug where the Stone Blocks (from Crushed Stone) recipe was not available.
+    - [Hyarion] Fixed a bug where routes to Hyarion were unavailable.
+
+  Balancing:
+    - [All] В технологии Логистические Системы удалён из стоимости Космический Научный Пакет. (Если модификация Bob's Tech не включена)
+    - [All] В рецептах Бетона, Железабетона и Жидкого Бетона скорректированы ингредиенты.
+    - [All] В рецептах Кусков и Кристаллов увеличено кол-во входящих и выходящих ключевых продуктов в 2 раза.
+
+    - [All] Removed Space Science Pack from Logistics Systems technology cost. (if Bob's Tech mod is not enabled)
+    - [All] Adjusted an ingredients in the Concrete, Reinforced Concrete, and Liquid Concrete recipes.
+    - [All] Doubled the number of input and output key items in the Chunks and Crystals recipes.
+
+  Graphics:
+    - [All] Обновлены иконки.
+
+    - [All] Updated icons.
+
+  Locale:
+    - [Rus] Обновлена русская локализация.
+
+    - [Eng] Updated english localization.
+
+  Scripting:
+    - [All] Рефакторизация инициализации данных с использованием функций API TIMSABA.
+
+    - [All] Refactor data initialization using TIMSABA API functions.
+
+  Modding:
+    - [Mods] Мод «Planet Paracelsin» переведён в опциональную зависимость.
+    - [All] Добавлены глобальные API «TIMSABA.barreling» и «TIMSABA.void», позволяющие другим модификациям регистрировать пользовательские жидкости.
+    - [All] Добавлены функции «TIMSABA.barreling.add_simple_fluid(name)», «TIMSABA.barreling.add_dangerous_fluid(name)», «TIMSABA.barreling.add_gas(name)», «TIMSABA.void.void_fluids(name)», «TIMSABA.void.void_gases(name)» и «TIMSABA.void.void_organics(name)».
+    - [All] Убраны почти все ограничители влияющие на настройку Конвейеров и Труб. (Чтобы настроить Конвейеры и Трубы через мод Bob's Logistics уберите галочку в настройках: Ребаланс Конвейеров и Труб)
+    - [All] Для моддеров: В файле «TIMSABA-functions», который лежит в папке «lib», вы можете найти глобальные функции которые можете использовать у себя если пишите аддоны для «TIMSABA».
+
+    - [Mods] Moved "Planet Paracelsin" mod to optional dependencies.
+    - [All] Added global API "TIMSABA.barreling" and "TIMSABA.void" to allow other mods to register custom fluids.
+    - [All] Added functions "TIMSABA.barreling.add_simple_fluid(name)", "TIMSABA.barreling.add_dangerous_fluid(name)", "TIMSABA.barreling.add_gas(name)", "TIMSABA.void.void_fluids(name)", "TIMSABA.void.void_gases(name)", and "TIMSABA.void.void_organics(name)".
+    - [All] Removed almost all limitations affecting the settings of Belts and Pipes. (To configure Belts and Pipes using the Bob's Logistics mod, uncheck the box in the settings: Rebalance Belts and Pipes)
+    - [All] For modders: In the "TIMSABA-functions" file, which is located in the "lib" folder, you can find global functions that you can use if you write add-ons for "TIMSABA".
+
+  Other:
+    - [All] Модпак переименован в Project T.I.M.S.A.B.A.
+
+    - [All] Modpack renamed to Project T.I.M.S.A.B.A.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.4
 Date: 19.06.2026
   Bugfixes:
@@ -12,12 +68,12 @@ Date: 19.06.2026
     - [All] Для всех Манипуляторов скорректировано потребление энергии, если соответствующая настройка включена.
     - [All] Для Подземных Конвейеров Т0 и Т1 намертво закреплена максимальная длина 4 и 8.
     - [All] Для всех Подземных Труб намертво закреплена максимальная длина 8/16/24/32/40/48.
-    - [Vulcanus] Скрыт рецепт Расплавленого Хрома из-за своей ненадобности.
+    - [Vulcanus] Скрыт рецепт Расплавленного Хрома из-за своей ненадобности.
     - [Vulcanus] В рецепте Кусков Вольфрамита произведена замена результата: Шлак → Силикат Кальция.
-    - [Muluna] В рецепте Детали Ракеты произведена замена ингердиента: Молибден-Рений → Медно-Вольфрам.
+    - [Muluna] В рецепте Детали Ракеты произведена замена ингредиента: Молибден-Рений → Медно-Вольфрам.
 
-    - [Mods] Adjusted energy consumption for all loaders, if the corresponding setting is enabled.
-    - [All] Adjusted energy consumption for all inserters, if the corresponding setting is enabled.
+    - [Mods] Adjusted energy consumption for all Loaders, if the corresponding setting is enabled.
+    - [All] Adjusted energy consumption for all Inserters, if the corresponding setting is enabled.
     - [All] Maximum lengths for T0 and T1 Underground Belts are hardcoded to 4 and 8.
     - [All] Maximum lengths for all Underground Pipes are hardcoded to 8/16/24/32/40/48.
     - [Vulcanus] Hidden the recipe for Molten Chromium as they are no longer needed.
@@ -1433,7 +1489,7 @@ Date: 10.05.2026
         6. Термоядерная Энергетическая Ячейка (8 ед.) → (4 ед.)
         7. Суперконденсатор (32 ед.) → (16 ед.)
         8. Углеродное Волокно (128 ед.) → (64 ед.)
-    - В рецепте Криогенного Научного Пакета произведена замена ингердиента: Хлорид Сурьмы(V) (240 ед.) → Сурьмяная Пластина (8 ед.) и Германиевая Пластина (8 ед.)
+    - В рецепте Криогенного Научного Пакета произведена замена ингредиента: Хлорид Сурьмы(V) (240 ед.) → Сурьмяная Пластина (8 ед.) и Германиевая Пластина (8 ед.)
     - Удалены все рецепты кремния для космической эры.
     - В некоторых технологиях изменены предварительные условия и стоимость исследования.
     - В рецептах Энергетические Щиты МК2 произведена замена ингредиента: Гольмиевая Пластина → Алюминиевая Пластина.

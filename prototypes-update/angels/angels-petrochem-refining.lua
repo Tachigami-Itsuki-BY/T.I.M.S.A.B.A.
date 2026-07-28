@@ -1,4 +1,3 @@
-local kJ = "kJ"
 -- BASIC PETROCHEN
 local is_basics = "angels-petrochem-basics"
 data_item_subgroup[is_basics].order = a

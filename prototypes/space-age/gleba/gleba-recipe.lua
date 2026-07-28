@@ -3,20 +3,16 @@ jivolite_bacteria_cultivation = "jivolite-bacteria-cultivation"
 crotinnium_bacteria_cultivation = "crotinnium-bacteria-cultivation"
 rubyte_bacteria_cultivation = "rubyte-bacteria-cultivation"
 bobmonium_bacteria_cultivation = "bobmonium-bacteria-cultivation"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = jivolite_bacteria,
         category = organic_hand_crafting,
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(jelly, nil, jivolite_bacteria, spoilage),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = item, name = jelly, amount = 8}},
         results =
@@ -28,17 +24,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = crotinnium_bacteria,
         category = organic_hand_crafting,
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(yumako_mash, nil, crotinnium_bacteria, spoilage),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = item, name = yumako_mash, amount = 8}},
         results =
@@ -50,17 +42,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = rubyte_bacteria,
         category = organic_hand_crafting,
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(jelly, yumako_mash, rubyte_bacteria, spoilage),
         order = e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -76,17 +64,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = bobmonium_bacteria,
         category = organic_hand_crafting,
         subgroup = is_bacteria_ore,
         icons = TWO_D_I(yumako_mash, jelly, bobmonium_bacteria, spoilage),
         order = f,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -102,18 +86,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = jivolite_bacteria_cultivation,
         category = organic,
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, jivolite_bacteria),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = jivolite_bacteria, amount = 2},
@@ -124,18 +103,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = crotinnium_bacteria_cultivation,
         category = organic,
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, crotinnium_bacteria),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = crotinnium_bacteria, amount = 2},
@@ -146,18 +120,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = rubyte_bacteria_cultivation,
         category = organic,
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, rubyte_bacteria),
         order = e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = rubyte_bacteria, amount = 2},
@@ -168,18 +137,13 @@ data:extend
         surface_conditions = {{property = pressure, min = 2000, max = 2000}}
     },
     {
-        type = recipe,
         name = bobmonium_bacteria_cultivation,
         category = organic,
         subgroup = is_bacteria_cultivation,
         icons = STONKS_I(stonks_png, bobmonium_bacteria),
         order = f,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = bobmonium_bacteria, amount = 2},
@@ -257,21 +221,14 @@ for _, RECIPE in ipairs(recipe_nutrients) do
 end
 
 nutrient_pulp_from_nutrients = "nutrient-pulp-from-nutrients"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = nutrient_pulp_from_nutrients,
         category = chemistry,
         subgroup = is_gleba_recipe,
         icons = THREE_I(nutrients, water, nutrient_pulp),
         order = f_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = nutrients, amount = 32},
@@ -412,24 +369,3 @@ for _, RECIPE in ipairs(recipe_breeding_biter) do
         }
     })
 end]]
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

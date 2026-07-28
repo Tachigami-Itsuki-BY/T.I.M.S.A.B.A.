@@ -283,8 +283,10 @@ for _, BUILD in pairs(entities) do
     if BUILD.name then
         if BUILD.type_1 == data_transport_belt and data_transport_belt[BUILD.name] then
             if data_item[BUILD.name] then data_item[BUILD.name].stack_size = 200 end
-            data_transport_belt[BUILD.name].speed = BUILD.speed
-            data_transport_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            if settings.startup[setting_rebalance_belts_and_pipes].value then
+                data_transport_belt[BUILD.name].speed = BUILD.speed
+                data_transport_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            end
         end
         if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
             if data_item[BUILD.name] then
@@ -293,20 +295,26 @@ for _, BUILD in pairs(entities) do
             end
             if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
             data_underground_belt[BUILD.name].localised_description = {"entity-description.underground-belt"}
-            data_underground_belt[BUILD.name].speed = BUILD.speed
-            data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            if settings.startup[setting_rebalance_belts_and_pipes].value then
+                data_underground_belt[BUILD.name].speed = BUILD.speed
+                data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            end
             data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
-            data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
+            if settings.startup[setting_rebalance_belts_and_pipes].value then
+                data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
+            end
         end
-        if BUILD.type_1 == data_splitter then
+        if BUILD.type_1 == data_splitter and data_splitter[BUILD.name] then
             if data_item[BUILD.name] then
                 data_item[BUILD.name].stack_size = 16
                 data_item[BUILD.name].weight = 62500
             end
             if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
             data_splitter[BUILD.name].localised_description = {"entity-description.splitter"}
-            data_splitter[BUILD.name].speed = BUILD.speed
-            data_splitter[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            if settings.startup[setting_rebalance_belts_and_pipes].value then
+                data_splitter[BUILD.name].speed = BUILD.speed
+                data_splitter[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            end
         end
         if BUILD.type_1 == data_inserter and data_inserter[BUILD.name] then
             data_inserter[BUILD.name].rotation_speed = BUILD.rotation_speed
@@ -495,8 +503,10 @@ if mods ["loaders-modernized-integrations"] then
                 data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
             end
             data_loader_1x1[BUILD.name].order = z
-            data_loader_1x1[BUILD.name].speed = BUILD.tier/60
-            data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            if settings.startup[setting_rebalance_belts_and_pipes].value then
+                data_loader_1x1[BUILD.name].speed = BUILD.tier/60
+                data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            end
             if settings.startup[setting_mdrn_use_electricity].value then
                 data_loader_1x1[BUILD.name].energy_per_item = ((60 * BUILD.tier) - (7.5 * BUILD.tier)) .. kW
                 data_loader_1x1[BUILD.name].energy_source.drain = (15 * BUILD.tier) .. kW
@@ -581,7 +591,7 @@ if mods ["loaders-modernized-integrations"] then
         end
         data_loader_1x1[chute_loader].next_upgrade = T0_loader
         data_loader_1x1[chute_loader].minable.mining_time = 0.5
-        data_loader_1x1[chute_loader].speed = 0.5/60
+        if settings.startup[setting_rebalance_belts_and_pipes].value then data_loader_1x1[chute_loader].speed = 0.5/60 end
         bobmods.lib.recipe.update_recycling_recipe({chute_loader})
     end
 end
@@ -751,9 +761,9 @@ data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
 
 local pipes_to_ground =
 {
-    {name = iron_pipe_to_ground,            order = a, max_underground_distance = 8, simulations = simulations.factoriopedia_iron_pipe_to_ground},
-    {name = copper_pipe_to_ground,          order = b, max_underground_distance = 8, simulations = simulations.factoriopedia_copper_pipe_to_ground},
-    {name = stone_pipe_to_ground,           order = c, max_underground_distance = 8, simulations = simulations.factoriopedia_stone_pipe_to_ground},
+    {name = iron_pipe_to_ground,            order = a, max_underground_distance = 8,  simulations = simulations.factoriopedia_iron_pipe_to_ground},
+    {name = copper_pipe_to_ground,          order = b, max_underground_distance = 8,  simulations = simulations.factoriopedia_copper_pipe_to_ground},
+    {name = stone_pipe_to_ground,           order = c, max_underground_distance = 8,  simulations = simulations.factoriopedia_stone_pipe_to_ground},
     {name = bronze_pipe_to_ground,          order = d, max_underground_distance = 16, simulations = simulations.factoriopedia_bronze_pipe_to_ground},
     {name = steel_pipe_to_ground,           order = e, max_underground_distance = 16, simulations = simulations.factoriopedia_steel_pipe_to_ground},
     {name = plastic_pipe_to_ground,         order = f, max_underground_distance = 24, simulations = simulations.factoriopedia_plastic_pipe_to_ground},
@@ -771,7 +781,9 @@ for _, pipe in pairs(pipes_to_ground) do
     data_recipe[pipe.name].order = pipe.order
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order
-    data_pipe_to_ground[pipe.name].fluid_box.pipe_connections[2].max_underground_distance = pipe.max_underground_distance
+    if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value == false then
+        data_pipe_to_ground[pipe.name].fluid_box.pipe_connections[2].max_underground_distance = pipe.max_underground_distance
+    end
     data_pipe_to_ground[pipe.name].factoriopedia_simulation = pipe.simulations
 end
 data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48

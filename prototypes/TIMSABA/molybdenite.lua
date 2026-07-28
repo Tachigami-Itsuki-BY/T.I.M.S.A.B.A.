@@ -4,137 +4,71 @@ molybdenite_crushed = "molybdenite-crushed"
 molybdenite_chunks = "molybdenite-chunks"
 molybdenite_crystals = "molybdenite-crystals"
 molybdenite_purified = "molybdenite-purified"
-data:extend
+TIMSABA.functions.create_items
 ({
     {
         localised_description = {"item-description.molybdenite-ore"},
-        type = item,
         name = molybdenite_ore,
         subgroup = is_ores,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore.png",
-        order = g,
-        stack_size = 200,
-        weight = 5000,
         pictures =
         {
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-1.png",
-                width = 64,
-                height = 64,
-                scale = 0.5
-            },
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-2.png",
-                width = 64,
-                height = 64,
-                scale = 0.5
-            },
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-3.png",
-                width = 64,
-                height = 64,
-                scale = 0.5
-            }
-        }
+            {filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-3.png", width = 64, height = 64, scale = 0.5}
+        },
+        order = g
     },
     {
         localised_description = {"item-description.molybdenite-crushed"},
-        type = item,
         name = molybdenite_crushed,
         subgroup = is_ore_processing_a,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-crushed.png",
         icon_size = 32,
-        order = g,
-        stack_size = 200,
-        weight = 5000
+        order = g
     },
     {
         localised_description = {"item-description.molybdenite-chunks"},
-        type = item,
         name = molybdenite_chunks,
         subgroup = is_ore_processing_b,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-chunks.png",
         icon_size = 32,
-        order = g,
-        stack_size = 200,
-        weight = 5000
+        order = g
     },
     {
         localised_description = {"item-description.molybdenite-crystals"},
-        type = item,
         name = molybdenite_crystals,
         subgroup = is_ore_processing_c,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-crystals.png",
         icon_size = 32,
-        order = g,
-        stack_size = 200,
-        weight = 5000
+        order = g
     },
     {
         localised_description = {"item-description.molybdenite-purified"},
-        type = item,
         name = molybdenite_purified,
         subgroup = is_ore_processing_d,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-purified.png",
         icon_size = 32,
-        order = g,
-        stack_size = 200,
-        weight = 5000
+        order = g
     }
 })
 
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/.png",
-        order = ,
-        stack_size = ,
-        weight = 
-    }
-})]]
-
 -- FLUID
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
+
 
 molybdenite_crushed_sorting = "molybdenite-crushed-sorting"
 molybdenite_chunks_sorting = "molybdenite-chunks-sorting"
 molybdenite_crystals_sorting = "molybdenite-crystals-sorting"
 molybdenite_purified_sorting = "molybdenite-purified-sorting"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     -- CRUSHED
     {
-        type = recipe,
         name = molybdenite_crushed,
         category = angels_ore_refining_T1,
         subgroup = is_ore_processing_a,
         icons = THREE_R_I(molybdenite_ore, molybdenite_crushed, stone_crushed_angels),
         order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite ore -crushing-> Molybdenite crushed + Stone crushed (crushing)
         ingredients = {{type = item, name = molybdenite_ore, amount = 2}},
         results =
@@ -146,26 +80,20 @@ data:extend
     },
     -- CHUNKS
     {
-        type = recipe,
         name = molybdenite_chunks,
         category = angels_ore_refining_T2,
         subgroup = is_ore_processing_b,
         icons = THREE_D_I(molybdenite_crushed, nil, water_purified_angels, molybdenite_chunks, sulfur, water_red_waste),
         order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite crushed + Purified water -flotation-> Molybdenite chunks + S + Nitric waste water
         ingredients =
         {
-            {type = item, name = molybdenite_crushed, amount = 2},
+            {type = item, name = molybdenite_crushed, amount = 4},
             {type = fluid, name = water_purified_angels, amount = 60}
         },
         results =
         {
-            {type = item, name = molybdenite_chunks, amount = 2},
+            {type = item, name = molybdenite_chunks, amount = 4},
             {type = item, name = sulfur, amount = 1, probability = 0.5},
             {type = fluid, name = water_red_waste, amount = 60}
         },
@@ -173,39 +101,27 @@ data:extend
     },
     -- CRYSTALS
     {
-        type = recipe,
         name = molybdenite_crystals,
         category = angels_ore_refining_T3,
         subgroup = is_ore_processing_c,
         icons = THREE_I(molybdenite_chunks, nitric_acid_angels, molybdenite_crystals),
         order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite chunks + HNO₃ -leaching-> Molybdenite crystals
         ingredients =
         {
-            {type = item, name = molybdenite_chunks, amount = 2},
+            {type = item, name = molybdenite_chunks, amount = 4},
             {type = fluid, name = nitric_acid_angels, amount = 15}
         },
-        results = {{type = item, name = molybdenite_crystals, amount = 2}},
+        results = {{type = item, name = molybdenite_crystals, amount = 4}},
         main_product = molybdenite_crystals
     },
     -- PURIFIED
     {
-        type = recipe,
         name = molybdenite_purified,
         category = angels_ore_refining_T4,
         subgroup = is_ore_processing_d,
         icons = TWO_I(molybdenite_crystals, molybdenite_purified),
         order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite crystals -refinery-> Molybdenite purified
         ingredients = {{type = item, name = molybdenite_crystals, amount = 4}},
         results = {{type = item, name = molybdenite_purified, amount = 4}},
@@ -213,17 +129,12 @@ data:extend
     },
     -- SORTING
     {
-        type = recipe,
         name = molybdenite_crushed_sorting,
         category = angels_ore_sorting_5,
         subgroup = is_ore_sorting_T1,
         icons = RECYCLING_I(recycling_png, molybdenite_crushed),
         order = g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 1, -- Molybdenite crushed (Sorting) / Mo + Re + S
         ingredients = {{type = item, name = molybdenite_crushed, amount = 4}},
         results =
@@ -235,17 +146,12 @@ data:extend
         main_product = molybdenum_ore
     },
     {
-        type = recipe,
         name = molybdenite_chunks_sorting,
         category = ore_sorting_6,
         subgroup = is_ore_sorting_T2,
         icons = RECYCLING_I(recycling_png, molybdenite_chunks),
         order = g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite chunks (Sorting) / Mo + Re + Ag + Au + S
         ingredients = {{type = item, name = molybdenite_chunks, amount = 8}},
         results =
@@ -259,17 +165,12 @@ data:extend
         main_product = molybdenum_ore
     },
     {
-        type = recipe,
         name = molybdenite_crystals_sorting,
         category = ore_sorting_6,
         subgroup = is_ore_sorting_T3,
         icons = RECYCLING_I(recycling_png, molybdenite_crystals),
         order = g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite crystals (Sorting) / Mo + Re + Ag + Au + W + S
         ingredients = {{type = item, name = molybdenite_crystals, amount = 8}},
         results =
@@ -284,17 +185,12 @@ data:extend
         main_product = molybdenum_ore
     },
     {
-        type = recipe,
         name = molybdenite_purified_sorting,
         category = ore_sorting_6,
         subgroup = is_ore_sorting_T4,
         icons = RECYCLING_I(recycling_png, molybdenite_purified),
         order = g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- Molybdenite purified (Sorting) / Mo + Re + Ag + Au + W + Se
         ingredients = {{type = item, name = molybdenite_purified, amount = 8}},
         results =
@@ -309,27 +205,6 @@ data:extend
         main_product = molybdenum_ore
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
 
 -- ORE
 local molybdenite_particle = table.deepcopy(data.raw["optimized-particle"]["iron-ore-particle"])

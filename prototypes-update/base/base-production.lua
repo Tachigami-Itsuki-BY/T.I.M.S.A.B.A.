@@ -11,6 +11,7 @@ for _, TOOL in pairs(repair_packs) do
     data_repair_tool[TOOL.name].durability = TOOL.durability
 end
 
+data_item_subgroup["bob-energy-boiler"].order = b
 local boilers =
 {
     {name = boiler_1, pollution = 4,  order = a, localised_name = {"entity-name.boiler-1"}},
@@ -43,6 +44,7 @@ boiler_recipe(boiler_3, ceramic_pipe,         boiler_2, invar_plate_bob)
 boiler_recipe(boiler_4, tungsten_pipe,        boiler_3, tungsten_plate_bob)
 boiler_recipe(boiler_5, copper_tungsten_pipe, boiler_4, copper_tungsten_plate_bob)
 
+data_item_subgroup["bob-energy-steam-engine"].order = b_a
 local steam_engines =
 {
     {name = steam_engine_1, order = a, localised_name = {"entity-name.steam-engine-1"}},
@@ -113,6 +115,7 @@ steam_turbine_recipe(steam_turbine_2, tungsten_gear_wheel, tungsten_bearing, pro
 steam_turbine_recipe(steam_turbine_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, nitinol_pipe,  steam_turbine_2, nitinol_plate_bob)
 
 if settings.startup["bobmods-power-fluidgenerator"].value then
+    data_item_subgroup["bob-energy-fluid-generator"].order = b_c
     local fluid_generators =
     {
         {name = fluid_generator_1,   max_power_output = 1800, pollution = 8,   fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-1"}},
@@ -217,6 +220,7 @@ solar_panel_s_recipe(solar_panel_small_1, electronic_circuit, steel_plate,      
 solar_panel_s_recipe(solar_panel_small_2, advanced_circuit,   aluminium_plate_bob, silver_cable, nil,       solar_panel_small_1, silicon_wafer, silver_plate_bob)
 solar_panel_s_recipe(solar_panel_small_3, processing_unit,    titanium_plate_bob,  gold_cable,   nil,       solar_panel_small_2, silicon_wafer, gold_plate_bob)
 
+data_item_subgroup["bob-energy-solar-panel"].order = b_e
 local solar_panels =
 {
     {name = solar_panel_1, production = 60,  order = a, localised_name = {"entity-name.solar-panel-1"}},
@@ -294,6 +298,7 @@ solar_panel_l_recipe(solar_panel_large_1, electronic_circuit, steel_plate,      
 solar_panel_l_recipe(solar_panel_large_2, advanced_circuit,   aluminium_plate_bob, silver_cable, nil,       solar_panel_large_1, silicon_wafer, silver_plate_bob)
 solar_panel_l_recipe(solar_panel_large_3, processing_unit,    titanium_plate_bob,  gold_cable,   nil,       solar_panel_large_2, silicon_wafer, gold_plate_bob)
 
+data_item_subgroup["bob-energy-accumulator"].order = b_g
 local accumulators =
 {
     {name = accumulator_1, buffer_capacity = 9600,  flow_limit = 600,  order = a, localised_name = {"entity-name.accumulator-1"}},
@@ -786,6 +791,9 @@ if mods [bobtech] then
         if mods [tellus_mods] then
             table.insert(data_lab[lab_alien].inputs, bioengineering_sciecne_pack)
             table.insert(data_lab[lab_alien].inputs, pathological_sciecne_pack)
+        end
+        if mods [paracelsin_mods] then
+            table.insert(data_lab[lab_alien].inputs, galvanization_science_pack)
         end
     end
 end

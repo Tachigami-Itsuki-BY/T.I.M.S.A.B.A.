@@ -121,6 +121,7 @@ tile = "tile"
 wall = "wall"
 minable = "minable"
 unlock_recipe = "unlock-recipe"
+unlock_space_location = "unlock-space-location"
 change_recipe_productivity = "change-recipe-productivity"
 input = "input"
 output = "output"
@@ -289,8 +290,11 @@ cooled_png = "__TIMSABA__/graphics/icons/cooled.png"
 cooling_png = "__TIMSABA__/graphics/icons/cooling.png"
 heating_png = "__TIMSABA__/graphics/icons/heating.png"
 stonks_png = "__TIMSABA__/graphics/icons/stonks.png"
+
 _C2H4_O2H2_ = "__TIMSABA__/graphics/icons/fluid/C2H4(OH)2.png"
 _C6F12O_ = "__TIMSABA__/graphics/icons/fluid/C6F12O.png"
+
+tech_error_png = "__TIMSABA__/graphics/icons/tech-error.png"
 
 -- SPACE
 planet_nauvis = "nauvis"

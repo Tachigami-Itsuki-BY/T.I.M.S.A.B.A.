@@ -415,9 +415,18 @@ function TIMSABA.functions.create_items(list)
                 subgroup = items.subgroup,
                 icon = items.icon or error_png, -- if not sting "icon" then used "error_png"
                 icon_size = items.icon_size or 64,
+
+                pictures = items.pictures,
+
                 order = items.order,
                 stack_size = items.stack_size or 200,
-                weight = items.weight or 5000
+                weight = items.weight or 5000,
+
+                fuel_category = items.fuel_category,
+                fuel_value = items.fuel_value,
+
+                consumption_glow_alternative_tint = items.consumption_glow_alternative_tint,
+                fuel_glow_color = items.fuel_glow_color
             }
         })
     end
@@ -428,6 +437,7 @@ function TIMSABA.functions.create_fluids(list)
         data:extend
         ({
             {
+                localised_name = fluids.localised_name,
                 localised_description = fluids.localised_description,
                 type = fluid,
                 name = fluids.name,
@@ -469,8 +479,69 @@ function TIMSABA.functions.create_recipes(list)
                 energy_required = recipes.energy_required or 4,
                 ingredients = recipes.ingredients,
                 results = recipes.results,
-                main_product = recipes.main_product
+                main_product = recipes.main_product,
+                surface_conditions = recipes.surface_conditions
             }
+        })
+    end
+end
+
+function TIMSABA.functions.create_buildings(list)
+    for _, buildings in ipairs(list) do
+        data:extend
+        ({
+            {
+                type = item,
+                name = buildings.name,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                place_result = buildings.name,
+                stack_size = buildings.stack_size or 32,
+                weight = buildings.weight or 31250
+            },
+            {
+                localised_name = buildings.localised_name,
+                type = recipe,
+                name = buildings.name,
+                category = crafting,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                enabled = false,
+                auto_recycle = true,
+                allow_productivity = false,
+                allow_quality = true,
+                allow_decomposition = true,
+                energy_required = buildings.energy_required or 4,
+                ingredients = buildings.ingredients,
+                results = {{type = item, name = buildings.name, amount = 1}},
+                main_product = buildings.name,
+                surface_conditions = buildings.surface_conditions
+            },
+            util.merge
+            ({
+                buildings.base_prototype,
+                {
+                    localised_description = buildings.localised_description,
+                    name = buildings.name,
+                    subgroup = buildings.subgroup,
+                    icons = buildings.icons,
+                    order = buildings.order or d,
+                    minable = {result = buildings.name},
+                    module_slots = buildings.module_slots or 4,
+                    crafting_speed = buildings.crafting_speed or 4,
+                    energy_source =
+                    {
+                        type = electric,
+                        usage_priority = secondary_input,
+                        emissions_per_minute = {pollution = buildings.pollution or 4},
+                        drain = buildings.drain or (60 .. kW)
+                    },
+                    energy_usage = buildings.energy_usage or (420 .. kW),
+                    max_health = buildings.max_health
+                }
+            })
         })
     end
 end

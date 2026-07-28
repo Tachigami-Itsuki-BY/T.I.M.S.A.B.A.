@@ -5,7 +5,9 @@ local function get_item_data(item_name)
         return nil, nil
     end
     local item_type = "item"
+
     local types = {"item", "fluid", "tool", "surface", "planet", "resource", "capsule", "module", "ammo", "item-with-entity-data"}
+
     for _, t in ipairs(types) do
         if data.raw[t] and data.raw[t][item_name] then
             item_type = t

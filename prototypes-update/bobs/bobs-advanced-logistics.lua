@@ -317,6 +317,7 @@ tank_recipe(tank_1, brass_gear_wheel,    brass_bearing,    advanced_circuit,    
 tank_recipe(tank_2, titanium_gear_wheel, titanium_bearing, processing_unit,          tank_1, titanium_plate_bob)
 tank_recipe(tank_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
 
+data_item_subgroup["bob-logistic-robots"].order = f_b
 local logistic_robots =
 {
     {name = logistic_robot_1, MPS = 1, max_energy = 900,  EPT = 25},
@@ -335,6 +336,7 @@ for _, DRONE in pairs(logistic_robots) do
     end
 end
 
+data_item_subgroup["bob-construction-robots"].order = f_c
 local construction_robot_1 = "construction-robot"
 local construction_robot_2 = "bob-construction-robot-2"
 local construction_robot_3 = "bob-construction-robot-3"
@@ -358,6 +360,7 @@ for _, DRONE in pairs(construction_robots) do
     end
 end
 
+data_item_subgroup["bob-logistic-roboport"].order = f_d
 local roboports =
 {
     {name = roboport_1, input_flow_limit = 3600,  charging_energy = 900,  charging_station_count = 4, tier = 1},
@@ -401,6 +404,7 @@ roboport_recipe(roboport_2, roboport_antenna_2, roboport_door_2, roboport_charge
 roboport_recipe(roboport_3, roboport_antenna_3, roboport_door_3, roboport_chargepad_3, titanium_plate_bob,  roboport_2)
 roboport_recipe(roboport_4, roboport_antenna_4, roboport_door_4, roboport_chargepad_4, nitinol_plate_bob,   roboport_3)
 
+data_item_subgroup["bob-logistic-roboport-zone"].order = f_e
 local logistic_zone =
 {
     {name = logistic_zone_expander_1, input_flow_limit = 600,  charging_energy = 1200, charging_station_count = 1},
@@ -441,6 +445,7 @@ logistic_zone_expander_recipe(logistic_zone_expander_2, roboport_antenna_2, alum
 logistic_zone_expander_recipe(logistic_zone_expander_3, roboport_antenna_3, titanium_plate_bob,  logistic_zone_expander_2)
 logistic_zone_expander_recipe(logistic_zone_expander_4, roboport_antenna_4, nitinol_plate_bob,   logistic_zone_expander_3)
 
+data_item_subgroup["bob-logistic-roboport-chest"].order = f_f
 local robochests =
 {
     {name = robochest_1, energy = 900},
@@ -470,6 +475,7 @@ if data_recipe[robochest_1] then
     }
 end
 
+data_item_subgroup["bob-logistic-roboport-charge"].order = f_g
 local robo_port =
 {
     {name = robo_charge_port_1, energy = 1800, energy_usage = 30},

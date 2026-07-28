@@ -136,6 +136,13 @@ require("prototypes.planet.tellus.tellus-item-fluid")
 require("prototypes.planet.tellus.tellus-recipe")
 require("prototypes.planet.tellus.tellus-colored-prototypes")
 
+require("prototypes.planet.paracelsin.paracelsin-groups")
+require("prototypes.planet.paracelsin.paracelsin-item-fluid")
+require("prototypes.planet.paracelsin.paracelsin-sphalerite")
+require("prototypes.planet.paracelsin.paracelsin-tetrahedrite")
+require("prototypes.planet.paracelsin.paracelsin-recipe")
+require("prototypes.planet.paracelsin.paracelsin-technology")
+
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
@@ -160,10 +167,6 @@ require("prototypes.planet.nexus.nexus-groups")
 require("prototypes.planet.nexus.nexus-recipe")
 require("prototypes.planet.nexus.nexus-technology")
 
-require("prototypes.planet.paracelsin.paracelsin-groups")
-require("prototypes.planet.paracelsin.paracelsin-recipe")
-require("prototypes.planet.paracelsin.paracelsin-technology")
-
 require("prototypes.planet.rubia.rubia-groups")
 require("prototypes.planet.rubia.rubia-recipe")
 require("prototypes.planet.rubia.rubia-technology")
@@ -183,5 +186,7 @@ require("prototypes.planet.terrapalus.terrapalus-technology")
 require("prototypes.planet.vesta.vesta-groups")
 require("prototypes.planet.vesta.vesta-recipe")
 require("prototypes.planet.vesta.vesta-technology")
+
+require("lib.barreling-and-void")
 
 require("prototypes.mods.space-science-pack")

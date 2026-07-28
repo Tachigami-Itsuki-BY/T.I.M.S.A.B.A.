@@ -113,7 +113,6 @@ TIMSABA.functions.create_recipes
         main_product = chromium_ore_angels
     },
     {
-        type = recipe,
         name = molybdenum_ore_recipe,
         category = ore_sorting_6,
         subgroup = is_ore_sorting_advanced_3,

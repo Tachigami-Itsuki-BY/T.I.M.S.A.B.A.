@@ -1,17 +1,11 @@
 if mods [arig_mods] then
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
-            type = recipe,
             name = sand_arig,
             category = angels_petrochem_air_filtering,
             subgroup = is_arig_recipe,
             order = a,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 8,
             ingredients = {},
             results = {{type = fluid, name = sand_arig, amount = 240}},
@@ -19,18 +13,11 @@ if mods [arig_mods] then
             surface_conditions = {{property = pressure, min = 600, max = 600}}
         },
         {
-            type = recipe,
             name = pure_sand_arig,
             category = angels_petrochem_air_filtering,
             subgroup = is_arig_recipe,
             icons = TWO_I(sand_arig, pure_sand_arig),
             order = b,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = 4,
             ingredients =
             {
                 {type = fluid, name = sand_arig, amount = 30},
@@ -46,30 +33,10 @@ if mods [arig_mods] then
         }
     })
 
-    --[[data:extend
-    ({
-        {
-            type = recipe,
-            name = ,
-            category = ,
-            subgroup = ,
-            icons = ,
-            order = ,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = ,
-            ingredients = {{type = , name = , amount = }},
-            results = {{type = , name = , amount = }},
-            main_product = 
-        }
-    })]]
-
     -- WATER HARVESTING CONFIG
     moshine_water_harvesting = "moshine-water-harvesting"
     panglia_water_harvesting = "panglia-water-harvesting"
+    paracelsin_water_harvesting = "paracelsin-water-harvesting"
     local water_planets =
     {
         [moshine_mods] =
@@ -81,6 +48,15 @@ if mods [arig_mods] then
             amount = 15,
             surface_conditions = {{property = pressure, min = 701, max = 701}}
         },
+        [paracelsin_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.paracelsin"}},
+            name = paracelsin_water_harvesting,
+            planet = planet_paracelsin,
+            order = a_i,
+            amount = 120,
+            surface_conditions = {{property = pressure, max = 5300, min = 5300}}
+        },
         [panglia_mods] =
         {
             localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.panglia"}},
@@ -89,7 +65,7 @@ if mods [arig_mods] then
             order = b_a,
             amount = 480,
             surface_conditions = {{property = pressure, max = 1401, min = 1401}}
-        }
+        },
     }
 
     -- RECIPE GENERATION

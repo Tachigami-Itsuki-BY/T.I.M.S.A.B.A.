@@ -1,21 +1,14 @@
 -- Воздух Хaйариона
 if mods [hyarion_mods] then
     hyarion_air_separation = "hyarion-air-separation"
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
-            type = recipe,
             name = hyarion_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_hyarion_air,
             icon = data_fluid[hyarion_air].icon,
             order = a,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            always_show_products = true,
             energy_required = 8,
             ingredients = {},
             results = {{type = fluid, name = hyarion_air, amount = 240}},
@@ -23,17 +16,11 @@ if mods [hyarion_mods] then
             surface_conditions = {{property = pressure, min = 8000, max = 8000}}
         },
         {
-            type = recipe,
             name = hyarion_air_separation,
             category = angels_advanced_chemistry,
             subgroup = is_hyarion_air,
             icons = FOUR_R_I(hyarion_air, nitrogen_angels, methane_angels, silane_gas),
             order = a_a,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
             energy_required = 2,
             ingredients = {{type = fluid, name = hyarion_air, amount = 120}},
             results =
@@ -45,27 +32,6 @@ if mods [hyarion_mods] then
             main_product = nitrogen_angels
         }
     })
-
-    --[[data:extend
-    ({
-        {
-            type = recipe,
-            name = ,
-            category = ,
-            subgroup = ,
-            icons = ,
-            order = ,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = ,
-            ingredients = {{type = , name = , amount = }},
-            results = {{type = , name = , amount = }},
-            main_product = 
-        }
-    })]]
 
     -- REMALTING OF METAL ORE
     remelting_of_metal_ore_3 = "remelting-of-metal-ore-lead"
@@ -85,7 +51,7 @@ if mods [hyarion_mods] then
     remelting_of_metal_ore_17 = "remelting-of-metal-ore-tungsten"
     remelting_of_metal_ore_18 = "remelting-of-metal-ore-platinum"
     local function remelting_of_metal_ore_recipe(parameters)
-        local recipe_data =
+        local info_recipe =
         {
             localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. parameters.local_name}},
             type = recipe,
@@ -108,7 +74,7 @@ if mods [hyarion_mods] then
             results = {{type = item, name = parameters.ore, amount = 8}},
             main_product = parameters.ore
         }
-        data:extend({recipe_data})
+        data:extend({info_recipe})
     end
     remelting_of_metal_ore_recipe({name = remelting_of_metal_ore_3,  order = a_c, ore = lead_ore_bob,         local_name = "angels-lead-ore"})
     remelting_of_metal_ore_recipe({name = remelting_of_metal_ore_4,  order = a_d, ore = tin_ore_bob,          local_name = "angels-tin-ore"})
@@ -128,21 +94,15 @@ if mods [hyarion_mods] then
     remelting_of_metal_ore_recipe({name = remelting_of_metal_ore_18, order = c_h, ore = platinum_ore_angels,  local_name = platinum_ore_angels})
 
     -- SPACE
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
-            type = recipe,
             name = bismuth_oxyselenide,
             category = chemistry,
             subgroup = is_space_environment_8,
             icons = THREE_D_I(raw_bismuth, selenium_powder, oxygen_angels, bismuth_oxyselenide),
             order = h,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = 4, -- 2Bi + Se + O₂ --> Bi₂O₂Se
+            -- 2Bi + Se + O₂ --> Bi₂O₂Se
             ingredients =
             {
                 {type = item, name = raw_bismuth, amount = 4},
@@ -153,27 +113,4 @@ if mods [hyarion_mods] then
             main_product = bismuth_oxyselenide
         }
     })
-
-    --[[data:extend
-    ({
-        {
-            type = recipe,
-            name = ,
-            category = ,
-            subgroup = ,
-            icons = ,
-            order = ,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = false,
-            allow_quality = false,
-            allow_decomposition = false,
-            energy_required = ,
-            ingredients = {{type = , name = , amount = }},
-            results = {{type = , name = , amount = }},
-            main_product = 
-        }
-    })]]
 end
-
--- Альтернативный рецепт Полировочной пасты (Жидкость)
