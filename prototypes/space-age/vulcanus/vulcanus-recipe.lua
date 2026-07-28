@@ -1,20 +1,13 @@
 -- VULCANUS AIR
 vulcanus_air_separation = "vulcanus-air-separation"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = vulcanus_air,
         category = angels_petrochem_air_filtering,
         subgroup = is_vulcanus_air,
         icon = data_fluid[vulcanus_air].icon,
         order = a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        always_show_products = true,
         energy_required = 8,
         ingredients = {},
         results = {{type = fluid, name = vulcanus_air, amount = 240}},
@@ -22,17 +15,11 @@ data:extend
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
-        type = recipe,
         name = vulcanus_air_separation,
         category = angels_advanced_chemistry,
         subgroup = is_vulcanus_air,
         icons = FOUR_R_I(vulcanus_air, nitrogen_angels, carbon_dioxide_angels, hydrogen_sulfide_angels),
         order = a_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients = {{type = fluid, name = vulcanus_air, amount = 120}},
         results =
@@ -45,46 +32,20 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- LAVA
 jivolite_from_lava = "jivolite-from-lava"
 crotinnium_from_lava = "crotinnium-from-lava"
 rubyte_from_lava = "rubyte-from-lava"
 bobmonium_from_lava = "bobmonium-from-lava"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = lava,
         category = metallurgy,
         subgroup = is_lava,
         icons = TWO_I(stone, lava),
         order = a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 32,
         ingredients = {{type = item, name = stone, amount = 64}},
         results = {{type = fluid, name = lava, amount = 480}},
@@ -92,17 +53,12 @@ data:extend
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
-        type = recipe,
         name = jivolite_from_lava,
         category = metallurgy,
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_jivolite, stone),
         order = a_b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 16,
         ingredients =
         {
@@ -118,17 +74,12 @@ data:extend
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
-        type = recipe,
         name = crotinnium_from_lava,
         category = metallurgy,
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_crotinnium, stone),
         order = a_d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 16,
         ingredients =
         {
@@ -144,17 +95,12 @@ data:extend
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
-        type = recipe,
         name = rubyte_from_lava,
         category = metallurgy,
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_rubyte, stone),
         order = a_e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 16,
         ingredients =
         {
@@ -170,17 +116,12 @@ data:extend
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}
     },
     {
-        type = recipe,
         name = bobmonium_from_lava,
         category = metallurgy,
         subgroup = is_lava,
         icons = TWO_D_I(lava, calcite, ore_bobmonium, stone),
         order = a_f,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 16,
         ingredients =
         {
@@ -197,42 +138,17 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- MOLTEN
-advanced_molten_iron = "advanced-molten-iron"
 molten_steel = "molten-steel"
-advanced_molten_steel = "advanced-molten-steel"
 molten_tin = "molten-tin"
 molten_lead = "molten-lead"
 molten_manganese = "molten-manganese"
 molten_magnesium = "molten-magnesium"
 molten_nickel = "molten-nickel"
 molten_aluminium = "molten-aluminium"
-advanced_molten_aluminium = "advanced-molten-aluminium"
 molten_zinc = "molten-zinc"
 molten_silver = "molten-silver"
 molten_titanium = "molten-titanium"
-advanced_molten_titanium = "advanced-molten-titanium"
 molten_gold = "molten-gold"
 molten_cobalt = "molten-cobalt"
 molten_chromium = "molten-chromium"
@@ -244,502 +160,112 @@ molten_brass = "molten-brass"
 molten_invar = "molten-invar"
 molten_cobalt_steel = "molten-cobalt-steel"
 molten_nitinol = "molten-nitinol"
-data:extend
-({
+local function molten_metal(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = advanced_molten_iron,
+        name = parameters.name,
         category = metallurgy,
         subgroup = is_vulcanus_molten,
-        icons = AR_FOUR_I(iron_ingot, manganese_molten_angels, magnesium_molten, iron_molten_angels),
-        order = a_a,
+        icons = TWO_I(parameters.ing, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
         allow_quality = false,
         allow_decomposition = false,
         energy_required = 8,
-        ingredients =
-        {
-            {type = item, name = iron_ingot, amount = 16},
-            {type = fluid, name = manganese_molten_angels, amount = 120},
-            {type = fluid, name = magnesium_molten, amount = 120}
-        },
-        results = {{type = fluid, name = iron_molten_angels, amount = 480}},
-        main_product = iron_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_steel,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(steel_ingot, steel_molten_angels),
-        order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = steel_ingot, amount = 16}},
-        results = {{type = fluid, name = steel_molten_angels, amount = 240}},
-        main_product = steel_molten_angels
-    },
-    {
-        type = recipe,
-        name = advanced_molten_steel,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = AR_FOUR_I(steel_ingot, manganese_molten_angels, magnesium_molten, steel_molten_angels),
-        order = b_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = item, name = steel_ingot, amount = 16},
-            {type = fluid, name = manganese_molten_angels, amount = 120},
-            {type = fluid, name = magnesium_molten, amount = 120}
-        },
-        results = {{type = fluid, name = steel_molten_angels, amount = 480}},
-        main_product = steel_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_lead,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(lead_ingot, lead_molten_angels),
-        order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = lead_ingot, amount = 16}},
-        results = {{type = fluid, name = lead_molten_angels, amount = 240}},
-        main_product = lead_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_tin,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(tin_ingot, tin_molten_angels),
-        order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = tin_ingot, amount = 16}},
-        results = {{type = fluid, name = tin_molten_angels, amount = 240}},
-        main_product = tin_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_manganese,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(manganese_ingot, manganese_molten_angels),
-        order = f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = manganese_ingot, amount = 16}},
-        results = {{type = fluid, name = manganese_molten_angels, amount = 240}},
-        main_product = manganese_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_magnesium,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(magnesium_ingot, magnesium_molten),
-        order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = magnesium_ingot, amount = 16}},
-        results = {{type = fluid, name = magnesium_molten, amount = 240}},
-        main_product = magnesium_molten
-    },
-    {
-        type = recipe,
-        name = molten_nickel,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(nickel_ingot, nickel_molten_angels),
-        order = i,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = nickel_ingot, amount = 16}},
-        results = {{type = fluid, name = nickel_molten_angels, amount = 240}},
-        main_product = nickel_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_aluminium,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(aluminium_ingot, aluminium_molten_angels),
-        order = j,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = aluminium_ingot, amount = 16}},
-        results = {{type = fluid, name = aluminium_molten_angels, amount = 240}},
-        main_product = aluminium_molten_angels
-    },
-    {
-        type = recipe,
-        name = advanced_molten_aluminium,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = AR_FOUR_I(aluminium_ingot, manganese_molten_angels, magnesium_molten, aluminium_molten_angels),
-        order = j_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = item, name = aluminium_ingot, amount = 16},
-            {type = fluid, name = manganese_molten_angels, amount = 120},
-            {type = fluid, name = magnesium_molten, amount = 120}
-        },
-        results = {{type = fluid, name = aluminium_molten_angels, amount = 480}},
-        main_product = aluminium_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_zinc,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(zinc_ingot, zinc_molten_angels),
-        order = k,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = zinc_ingot, amount = 16}},
-        results = {{type = fluid, name = zinc_molten_angels, amount = 240}},
-        main_product = zinc_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_silver,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(silver_ingot, silver_molten_angels),
-        order = l,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = silver_ingot, amount = 16}},
-        results = {{type = fluid, name = silver_molten_angels, amount = 240}},
-        main_product = silver_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_titanium,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(titanium_ingot, titanium_molten_angels),
-        order = m,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = titanium_ingot, amount = 16}},
-        results = {{type = fluid, name = titanium_molten_angels, amount = 240}},
-        main_product = titanium_molten_angels
-    },
-    {
-        type = recipe,
-        name = advanced_molten_titanium,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = AR_FOUR_I(titanium_ingot, manganese_molten_angels, magnesium_molten, titanium_molten_angels),
-        order = m_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = item, name = titanium_ingot, amount = 16},
-            {type = fluid, name = manganese_molten_angels, amount = 120},
-            {type = fluid, name = magnesium_molten, amount = 120}
-        },
-        results = {{type = fluid, name = titanium_molten_angels, amount = 480}},
-        main_product = titanium_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_gold,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(gold_ingot, gold_molten_angels),
-        order = n,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = gold_ingot, amount = 16}},
-        results = {{type = fluid, name = gold_molten_angels, amount = 240}},
-        main_product = gold_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_cobalt,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(cobalt_ingot, cobalt_molten_angels),
-        order = o,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = cobalt_ingot, amount = 16}},
-        results = {{type = fluid, name = cobalt_molten_angels, amount = 240}},
-        main_product = cobalt_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_chromium,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(chromium_ingot, chromium_molten_angels),
-        order = p,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = chromium_ingot, amount = 16}},
-        results = {{type = fluid, name = chromium_molten_angels, amount = 240}},
-        main_product = chromium_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_platinum,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(platinum_ingot, platinum_molten_angels),
-        order = q,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = platinum_ingot, amount = 16}},
-        results = {{type = fluid, name = platinum_molten_angels, amount = 24}},
-        main_product = platinum_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_glass,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = TWO_I(glass_mixture, glass_molten_angels),
-        order = r,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients = {{type = item, name = glass_mixture, amount = 16}},
-        results = {{type = fluid, name = glass_molten_angels, amount = 240}},
-        main_product = glass_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_solder,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = THREE_I(lead_molten_angels, tin_molten_angels, solder_molten_angels),
-        order = s,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = lead_molten_angels, amount = 240},
-            {type = fluid, name = tin_molten_angels, amount = 240}
-        },
-        results = {{type = fluid, name = solder_molten_angels, amount = 240}},
-        main_product = solder_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_bronze,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = THREE_I(copper_molten_angels, tin_molten_angels, bronze_molten_angels),
-        order = t,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = copper_molten_angels, amount = 240},
-            {type = fluid, name = tin_molten_angels, amount = 240}
-        },
-        results = {{type = fluid, name = bronze_molten_angels, amount = 240}},
-        main_product = bronze_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_brass,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = THREE_I(copper_molten_angels, zinc_molten_angels, brass_molten_angels),
-        order = u,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = copper_molten_angels, amount = 240},
-            {type = fluid, name = zinc_molten_angels, amount = 240}
-        },
-        results = {{type = fluid, name = brass_molten_angels, amount = 240}},
-        main_product = brass_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_invar,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = THREE_I(iron_molten_angels, nickel_molten_angels, invar_molten_angels),
-        order = v,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = iron_molten_angels, amount = 240},
-            {type = fluid, name = nickel_molten_angels, amount = 240}
-        },
-        results = {{type = fluid, name = invar_molten_angels, amount = 240}},
-        main_product = invar_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_cobalt_steel,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = THREE_I(cobalt_molten_angels, steel_molten_angels, cobalt_steel_molten_angels),
-        order = w,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = cobalt_molten_angels, amount = 240},
-            {type = fluid, name = steel_molten_angels, amount = 240}
-        },
-        results = {{type = fluid, name = cobalt_steel_molten_angels, amount = 240}},
-        main_product = cobalt_steel_molten_angels
-    },
-    {
-        type = recipe,
-        name = molten_nitinol,
-        category = metallurgy,
-        subgroup = is_vulcanus_molten,
-        icons = THREE_I(nickel_molten_angels, titanium_molten_angels, nitinol_molten_angels),
-        order = x,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 8,
-        ingredients =
-        {
-            {type = fluid, name = nickel_molten_angels, amount = 240},
-            {type = fluid, name = titanium_molten_angels, amount = 240}
-        },
-        results = {{type = fluid, name = nitinol_molten_angels, amount = 240}},
-        main_product = nitinol_molten_angels
+        ingredients = {{type = item, name = parameters.ing, amount = 16}},
+        results = {{type = fluid, name = parameters.res, amount = 480}},
+        main_product = parameters.res
     }
-})
+    data:extend({info_recipe})
+end
+molten_metal({name = molten_steel,     order = b, ing = steel_ingot,     res = steel_molten_angels})
+molten_metal({name = molten_lead,      order = d, ing = lead_ingot,      res = lead_molten_angels})
+molten_metal({name = molten_tin,       order = e, ing = tin_ingot,       res = tin_molten_angels})
+molten_metal({name = molten_manganese, order = f, ing = manganese_ingot, res = manganese_molten_angels})
+molten_metal({name = molten_magnesium, order = g, ing = magnesium_ingot, res = magnesium_molten})
+molten_metal({name = molten_nickel,    order = i, ing = nickel_ingot,    res = nickel_molten_angels})
+molten_metal({name = molten_aluminium, order = j, ing = aluminium_ingot, res = aluminium_molten_angels})
+molten_metal({name = molten_zinc,      order = k, ing = zinc_ingot,      res = zinc_molten_angels})
+molten_metal({name = molten_silver,    order = l, ing = silver_ingot,    res = silver_molten_angels})
+molten_metal({name = molten_titanium,  order = m, ing = titanium_ingot,  res = titanium_molten_angels})
+molten_metal({name = molten_gold,      order = n, ing = gold_ingot,      res = gold_molten_angels})
+molten_metal({name = molten_cobalt,    order = o, ing = cobalt_ingot,    res = cobalt_molten_angels})
+molten_metal({name = molten_chromium,  order = p, ing = chromium_ingot,  res = chromium_molten_angels})
+molten_metal({name = molten_platinum,  order = q, ing = platinum_ingot,  res = platinum_molten_angels})
+molten_metal({name = molten_glass,     order = r, ing = glass_mixture,   res = glass_molten_angels})
 
 data_recipe[molten_chromium].hidden = true
 data_recipe[molten_chromium].hidden_in_factoriopedia = true
 
---[[data:extend
-({
+advanced_molten_iron = "advanced-molten-iron"
+advanced_molten_steel = "advanced-molten-steel"
+advanced_molten_aluminium = "advanced-molten-aluminium"
+advanced_molten_titanium = "advanced-molten-titanium"
+local function advanced_molten_metal(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = ,
+        name = parameters.name,
         category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
+        subgroup = is_vulcanus_molten,
+        icons = AR_FOUR_I(parameters.ing, manganese_molten_angels, magnesium_molten, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
-        allow_productivity = false,
+        allow_productivity = true,
         allow_quality = false,
         allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
+        energy_required = 8,
+        ingredients =
+        {
+            {type = item, name = parameters.ing, amount = 16},
+            {type = fluid, name = manganese_molten_angels, amount = 120},
+            {type = fluid, name = magnesium_molten, amount = 120}
+        },
+        results = {{type = fluid, name = parameters.res, amount = 480}},
+        main_product = parameters.res
     }
-})]]
+    data:extend({info_recipe})
+end
+advanced_molten_metal({name = advanced_molten_iron,      order = a_a, ing = iron_ingot,      res = iron_molten_angels})
+advanced_molten_metal({name = advanced_molten_steel,     order = b_a, ing = steel_ingot,     res = steel_molten_angels})
+advanced_molten_metal({name = advanced_molten_aluminium, order = j_a, ing = aluminium_ingot, res = aluminium_molten_angels})
+advanced_molten_metal({name = advanced_molten_titanium,  order = m_a, ing = titanium_ingot,  res = titanium_molten_angels})
+
+local function molten_alloy(parameters)
+    local info_recipe =
+    {
+        type = recipe,
+        name = parameters.name,
+        category = metallurgy,
+        subgroup = is_vulcanus_molten,
+        icons = THREE_I(parameters.ing_1, parameters.ing_2, parameters.res),
+        order = parameters.order,
+        enabled = false,
+        auto_recycle = false,
+        allow_productivity = true,
+        allow_quality = false,
+        allow_decomposition = false,
+        energy_required = 8,
+        ingredients =
+        {
+            {type = fluid, name = parameters.ing_1, amount = 240},
+            {type = fluid, name = parameters.ing_2, amount = 240}
+        },
+        results = {{type = fluid, name = parameters.res, amount = 240}},
+        main_product = parameters.res
+    }
+    data:extend({info_recipe})
+end
+molten_alloy({name = molten_solder,       order = s, ing_1 = lead_molten_angels,   ing_2 = tin_molten_angels,      res = solder_molten_angels})
+molten_alloy({name = molten_bronze,       order = t, ing_1 = copper_molten_angels, ing_2 = tin_molten_angels,      res = bronze_molten_angels})
+molten_alloy({name = molten_brass,        order = u, ing_1 = copper_molten_angels, ing_2 = zinc_molten_angels,     res = brass_molten_angels})
+molten_alloy({name = molten_invar,        order = v, ing_1 = iron_molten_angels,   ing_2 = nickel_molten_angels,   res = invar_molten_angels})
+molten_alloy({name = molten_cobalt_steel, order = w, ing_1 = cobalt_molten_angels, ing_2 = steel_molten_angels,    res = cobalt_steel_molten_angels})
+molten_alloy({name = molten_nitinol,      order = x, ing_1 = nickel_molten_angels, ing_2 = titanium_molten_angels, res = nitinol_molten_angels})
 
 -- PLATE
 casting_lead = "casting-lead"
@@ -758,302 +284,43 @@ casting_brass = "casting-brass"
 casting_invar = "casting-invar"
 casting_cobalt_steel = "casting-cobalt-steel"
 casting_nitinol = "casting-nitinol"
-data:extend
-({
+local function casting_metal(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = casting_lead,
+        name = parameters.name,
         category = metallurgy,
         subgroup = is_vulcanus_plate,
-        icons = TWO_I(lead_molten_angels, lead_plate_bob),
-        order = d,
+        icons = TWO_I(parameters.ing, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
         allow_decomposition = false,
         energy_required = 4,
-        ingredients = {{type = fluid, name = lead_molten_angels, amount = 60}},
-        results = {{type = item, name = lead_plate_bob, amount = 4}},
-        main_product = lead_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_tin,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(tin_molten_angels, tin_plate_bob),
-        order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = tin_molten_angels, amount = 60}},
-        results = {{type = item, name = tin_plate_bob, amount = 4}},
-        main_product = tin_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_nickel,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(nickel_molten_angels, nickel_plate_bob),
-        order = i,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = nickel_molten_angels, amount = 60}},
-        results = {{type = item, name = nickel_plate_bob, amount = 4}},
-        main_product = nickel_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_aluminium,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(aluminium_molten_angels, aluminium_plate_bob),
-        order = j,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = aluminium_molten_angels, amount = 60}},
-        results = {{type = item, name = aluminium_plate_bob, amount = 4}},
-        main_product = aluminium_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_zinc,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(zinc_molten_angels, zinc_plate_bob),
-        order = k,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = zinc_molten_angels, amount = 60}},
-        results = {{type = item, name = zinc_plate_bob, amount = 4}},
-        main_product = zinc_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_silver,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(silver_molten_angels, silver_plate_bob),
-        order = l,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = silver_molten_angels, amount = 60}},
-        results = {{type = item, name = silver_plate_bob, amount = 4}},
-        main_product = silver_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_titanium,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(titanium_molten_angels, titanium_plate_bob),
-        order = m,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = titanium_molten_angels, amount = 60}},
-        results = {{type = item, name = titanium_plate_bob, amount = 4}},
-        main_product = titanium_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_gold,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(gold_molten_angels, gold_plate_bob),
-        order = n,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = gold_molten_angels, amount = 60}},
-        results = {{type = item, name = gold_plate_bob, amount = 4}},
-        main_product = gold_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_platinum,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(platinum_molten_angels, platinum_plate),
-        order = q,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = platinum_molten_angels, amount = 60}},
-        results = {{type = item, name = platinum_plate, amount = 4}},
-        main_product = platinum_plate
-    },
-    {
-        type = recipe,
-        name = casting_glass,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(glass_molten_angels, glass_bob),
-        order = r,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = glass_molten_angels, amount = 60}},
-        results = {{type = item, name = glass_bob, amount = 4}},
-        main_product = glass_bob
-    },
-    {
-        type = recipe,
-        name = casting_solder,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(solder_molten_angels, solder),
-        order = s,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = solder_molten_angels, amount = 60}},
-        results = {{type = item, name = solder, amount = 16}},
-        main_product = solder
-    },
-    {
-        type = recipe,
-        name = casting_bronze,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(bronze_molten_angels, bronze_plate_bob),
-        order = t,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = bronze_molten_angels, amount = 60}},
-        results = {{type = item, name = bronze_plate_bob, amount = 4}},
-        main_product = bronze_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_brass,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(brass_molten_angels, brass_plate_bob),
-        order = u,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = brass_molten_angels, amount = 60}},
-        results = {{type = item, name = brass_plate_bob, amount = 4}},
-        main_product = brass_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_invar,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(invar_molten_angels, invar_plate_bob),
-        order = v,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = invar_molten_angels, amount = 60}},
-        results = {{type = item, name = invar_plate_bob, amount = 4}},
-        main_product = invar_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_cobalt_steel,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(cobalt_steel_molten_angels, cobalt_steel_plate_bob),
-        order = w,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = cobalt_steel_molten_angels, amount = 60}},
-        results = {{type = item, name = cobalt_steel_plate_bob, amount = 4}},
-        main_product = cobalt_steel_plate_bob
-    },
-    {
-        type = recipe,
-        name = casting_nitinol,
-        category = metallurgy,
-        subgroup = is_vulcanus_plate,
-        icons = TWO_I(nitinol_molten_angels, nitinol_plate_bob),
-        order = x,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = fluid, name = nitinol_molten_angels, amount = 60}},
-        results = {{type = item, name = nitinol_plate_bob, amount = 4}},
-        main_product = nitinol_plate_bob
+        ingredients = {{type = fluid, name = parameters.ing, amount = 60}},
+        results = {{type = item, name = parameters.res, amount = 4}},
+        main_product = parameters.res
     }
-})
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
+    data:extend({info_recipe})
+end
+casting_metal({name = casting_lead,         order = d, ing = lead_molten_angels,         res = lead_plate_bob})
+casting_metal({name = casting_tin,          order = e, ing = tin_molten_angels,          res = tin_plate_bob})
+casting_metal({name = casting_nickel,       order = i, ing = nickel_molten_angels,       res = nickel_plate_bob})
+casting_metal({name = casting_aluminium,    order = j, ing = aluminium_molten_angels,    res = aluminium_plate_bob})
+casting_metal({name = casting_zinc,         order = k, ing = zinc_molten_angels,         res = zinc_plate_bob})
+casting_metal({name = casting_silver,       order = l, ing = silver_molten_angels,       res = silver_plate_bob})
+casting_metal({name = casting_titanium,     order = m, ing = titanium_molten_angels,     res = titanium_plate_bob})
+casting_metal({name = casting_gold,         order = n, ing = gold_molten_angels,         res = gold_plate_bob})
+casting_metal({name = casting_platinum,     order = q, ing = platinum_molten_angels,     res = platinum_plate})
+casting_metal({name = casting_glass,        order = r, ing = glass_molten_angels,        res = glass_bob})
+casting_metal({name = casting_solder,       order = s, ing = solder_molten_angels,       res = solder})
+casting_metal({name = casting_bronze,       order = t, ing = bronze_molten_angels,       res = bronze_plate_bob})
+casting_metal({name = casting_brass,        order = u, ing = brass_molten_angels,        res = brass_plate_bob})
+casting_metal({name = casting_invar,        order = v, ing = invar_molten_angels,        res = invar_plate_bob})
+casting_metal({name = casting_cobalt_steel, order = w, ing = cobalt_steel_molten_angels, res = cobalt_steel_plate_bob})
+casting_metal({name = casting_nitinol,      order = x, ing = nitinol_molten_angels,      res = nitinol_plate_bob})
 
 -- INTERMEDIATES
 casting_steel_rod = "casting-steel-rod"
@@ -1079,37 +346,29 @@ casting_tin_cable = "casting-tin-cable"
 casting_silver_cable = "casting-silver-cable"
 casting_gold_cable = "casting-gold-cable"
 casting_platinum_cable = "casting-platinum-cable"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = casting_steel_rod,
         category = metallurgy,
         subgroup = is_vulcanus_rod,
         icons = TWO_I(steel_molten_angels, steel_rod),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = steel_molten_angels, amount = 30}},
         results = {{type = item, name = steel_rod, amount = 4}},
         main_product = steel_rod
     },
     {
-        type = recipe,
         name = casting_titanium_rod,
         category = metallurgy,
         subgroup = is_vulcanus_rod,
         icons = TWO_I(titanium_molten_angels, titanium_rod),
         order = c,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = titanium_molten_angels, amount = 30}},
         results = {{type = item, name = titanium_rod, amount = 4}},
@@ -1117,85 +376,65 @@ data:extend
     },
     -- GEAR WHEEL
     {
-        type = recipe,
         name = casting_steel_gear_wheel,
         category = metallurgy,
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(steel_molten_angels, steel_gear_wheel),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = steel_molten_angels, amount = 15}},
         results = {{type = item, name = steel_gear_wheel, amount = 1}},
         main_product = steel_gear_wheel
     },
     {
-        type = recipe,
         name = casting_brass_gear_wheel,
         category = metallurgy,
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(brass_molten_angels, brass_gear_wheel),
         order = c,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = brass_molten_angels, amount = 15}},
         results = {{type = item, name = brass_gear_wheel, amount = 1}},
         main_product = brass_gear_wheel
     },
     {
-        type = recipe,
         name = casting_cobalt_steel_gear_wheel,
         category = metallurgy,
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(cobalt_steel_molten_angels, cobalt_steel_gear_wheel),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = cobalt_steel_molten_angels, amount = 15}},
         results = {{type = item, name = cobalt_steel_gear_wheel, amount = 1}},
         main_product = cobalt_steel_gear_wheel
     },
     {
-        type = recipe,
         name = casting_titanium_gear_wheel,
         category = metallurgy,
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(titanium_molten_angels, titanium_gear_wheel),
         order = e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = titanium_molten_angels, amount = 15}},
         results = {{type = item, name = titanium_gear_wheel, amount = 1}},
         main_product = titanium_gear_wheel
     },
     {
-        type = recipe,
         name = casting_nitinol_gear_wheel,
         category = metallurgy,
         subgroup = is_vulcanus_gear_wheel,
         icons = TWO_I(nitinol_molten_angels, nitinol_gear_wheel),
         order = f,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = nitinol_molten_angels, amount = 15}},
         results = {{type = item, name = nitinol_gear_wheel, amount = 1}},
@@ -1203,102 +442,78 @@ data:extend
     },
     -- BEARING BALL
     {
-        type = recipe,
         name = casting_iron_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(iron_molten_angels, iron_bearing_ball),
         order = a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = iron_molten_angels, amount = 15}},
         results = {{type = item, name = iron_bearing_ball, amount = 8}},
         main_product = iron_bearing_ball
     },
     {
-        type = recipe,
         name = casting_steel_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(steel_molten_angels, steel_bearing_ball),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = steel_molten_angels, amount = 15}},
         results = {{type = item, name = steel_bearing_ball, amount = 8}},
         main_product = steel_bearing_ball
     },
     {
-        type = recipe,
         name = casting_brass_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(brass_molten_angels, brass_bearing_ball),
         order = c,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = brass_molten_angels, amount = 15}},
         results = {{type = item, name = brass_bearing_ball, amount = 8}},
         main_product = brass_bearing_ball
     },
     {
-        type = recipe,
         name = casting_cobalt_steel_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(cobalt_steel_molten_angels, cobalt_steel_bearing_ball),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = cobalt_steel_molten_angels, amount = 15}},
         results = {{type = item, name = cobalt_steel_bearing_ball, amount = 8}},
         main_product = cobalt_steel_bearing_ball
     },
     {
-        type = recipe,
         name = casting_titanium_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(titanium_molten_angels, titanium_bearing_ball),
         order = e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = titanium_molten_angels, amount = 15}},
         results = {{type = item, name = titanium_bearing_ball, amount = 8}},
         main_product = titanium_bearing_ball
     },
     {
-        type = recipe,
         name = casting_nitinol_bearing_ball,
         category = metallurgy,
         subgroup = is_vulcanus_bearing_ball,
         icons = TWO_I(nitinol_molten_angels, nitinol_bearing_ball),
         order = f,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients = {{type = fluid, name = nitinol_molten_angels, amount = 15}},
         results = {{type = item, name = nitinol_bearing_ball, amount = 8}},
@@ -1306,17 +521,13 @@ data:extend
     },
     -- BEARING
     {
-        type = recipe,
         name = casting_iron_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(nil, iron_bearing_ball, iron_molten_angels, iron_bearing),
         order = a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -1327,17 +538,13 @@ data:extend
         main_product = iron_bearing
     },
     {
-        type = recipe,
         name = casting_steel_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(nil, steel_bearing_ball, steel_molten_angels, steel_bearing),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -1348,17 +555,13 @@ data:extend
         main_product = steel_bearing
     },
     {
-        type = recipe,
         name = casting_brass_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, brass_bearing_ball, brass_molten_angels, brass_bearing),
         order = c,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -1370,17 +573,13 @@ data:extend
         main_product = brass_bearing
     },
     {
-        type = recipe,
         name = casting_cobalt_steel_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, cobalt_steel_bearing_ball, cobalt_steel_molten_angels, cobalt_steel_bearing),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -1392,17 +591,13 @@ data:extend
         main_product = cobalt_steel_bearing
     },
     {
-        type = recipe,
         name = casting_titanium_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, titanium_bearing_ball, titanium_molten_angels, titanium_bearing),
         order = e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -1414,17 +609,13 @@ data:extend
         main_product = titanium_bearing
     },
     {
-        type = recipe,
         name = casting_nitinol_bearing,
         category = metallurgy,
         subgroup = is_vulcanus_bearing,
         icons = B_F_L(lubricant, nitinol_bearing_ball, nitinol_molten_angels, nitinol_bearing),
         order = f,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 1,
         ingredients =
         {
@@ -1437,17 +628,13 @@ data:extend
     },
     -- CABLE
     {
-        type = recipe,
         name = casting_tin_cable,
         category = metallurgy,
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, tin_molten_angels, tin_cable),
         order = b,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 4,
         ingredients =
         {
@@ -1458,17 +645,13 @@ data:extend
         main_product = tin_cable
     },
     {
-        type = recipe,
         name = casting_silver_cable,
         category = metallurgy,
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, silver_molten_angels, silver_cable),
         order = c,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 4,
         ingredients =
         {
@@ -1479,17 +662,13 @@ data:extend
         main_product = silver_cable
     },
     {
-        type = recipe,
         name = casting_gold_cable,
         category = metallurgy,
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, gold_molten_angels, gold_cable),
         order = d,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 4,
         ingredients =
         {
@@ -1500,17 +679,13 @@ data:extend
         main_product = gold_cable
     },
     {
-        type = recipe,
         name = casting_platinum_cable,
         category = metallurgy,
         subgroup = is_vulcanus_cable,
         icons = THREE_I(copper_molten_angels, platinum_molten_angels, platinum_cable),
         order = e,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 4,
         ingredients =
         {
@@ -1522,27 +697,6 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- PIPE
 casting_copper_pipe = "casting-copper-pipe"
 casting_bronze_pipe = "casting-bronze-pipe"
@@ -1550,132 +704,33 @@ casting_steel_pipe = "casting-steel-pipe"
 casting_brass_pipe = "casting-brass-pipe"
 casting_titanium_pipe = "casting-titanium-pipe"
 casting_nitinol_pipe = "casting-nitinol-pipe"
-data:extend
-({
+local function casting_pipes(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = casting_copper_pipe,
+        name = parameters.name,
         category = metallurgy,
         subgroup = is_vulcanus_pipe,
-        icons = TWO_I(copper_molten_angels, copper_pipe),
-        order = b,
+        icons = TWO_I(parameters.ing, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
         allow_decomposition = false,
         energy_required = 1,
-        ingredients = {{type = fluid, name = copper_molten_angels, amount = 15}},
-        results = {{type = item, name = copper_pipe, amount = 1}},
-        main_product = copper_pipe
-    },
-    {
-        type = recipe,
-        name = casting_bronze_pipe,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe,
-        icons = TWO_I(bronze_molten_angels, bronze_pipe),
-        order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = bronze_molten_angels, amount = 15}},
-        results = {{type = item, name = bronze_pipe, amount = 1}},
-        main_product = bronze_pipe
-    },
-    {
-        type = recipe,
-        name = casting_steel_pipe,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe,
-        icons = TWO_I(steel_molten_angels, steel_pipe),
-        order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = steel_molten_angels, amount = 15}},
-        results = {{type = item, name = steel_pipe, amount = 1}},
-        main_product = steel_pipe
-    },
-    {
-        type = recipe,
-        name = casting_brass_pipe,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe,
-        icons = TWO_I(brass_molten_angels, brass_pipe),
-        order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = brass_molten_angels, amount = 15}},
-        results = {{type = item, name = brass_pipe, amount = 1}},
-        main_product = brass_pipe
-    },
-    {
-        type = recipe,
-        name = casting_titanium_pipe,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe,
-        icons = TWO_I(titanium_molten_angels, titanium_pipe),
-        order = f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = titanium_molten_angels, amount = 15}},
-        results = {{type = item, name = titanium_pipe, amount = 1}},
-        main_product = titanium_pipe
-    },
-    {
-        type = recipe,
-        name = casting_nitinol_pipe,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe,
-        icons = TWO_I(nitinol_molten_angels, nitinol_pipe),
-        order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = nitinol_molten_angels, amount = 15}},
-        results = {{type = item, name = nitinol_pipe, amount = 1}},
-        main_product = nitinol_pipe
+        ingredients = {{type = fluid, name = parameters.ing, amount = 15}},
+        results = {{type = item, name = parameters.res, amount = 1}},
+        main_product = parameters.res
     }
-})
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
+    data:extend({info_recipe})
+end
+casting_pipes({name = casting_copper_pipe,   order = b, ing = copper_molten_angels,   res = copper_pipe})
+casting_pipes({name = casting_bronze_pipe,   order = c, ing = bronze_molten_angels,   res = bronze_pipe})
+casting_pipes({name = casting_steel_pipe,    order = d, ing = steel_molten_angels,    res = steel_pipe})
+casting_pipes({name = casting_brass_pipe,    order = e, ing = brass_molten_angels,    res = brass_pipe})
+casting_pipes({name = casting_titanium_pipe, order = f, ing = titanium_molten_angels, res = titanium_pipe})
+casting_pipes({name = casting_nitinol_pipe,  order = g, ing = nitinol_molten_angels,  res = nitinol_pipe})
 
 -- PIPE TO GROUND
 casting_copper_pipe_to_ground = "casting-copper-pipe-to-ground"
@@ -1684,151 +739,46 @@ casting_steel_pipe_to_ground = "casting-steel-pipe-to-ground"
 casting_brass_pipe_to_ground = "casting-brass-pipe-to-ground"
 casting_titanium_pipe_to_ground = "casting-titanium-pipe-to-ground"
 casting_nitinol_pipe_to_ground = "casting-nitinol-pipe-to-ground"
-data:extend
-({
+local function casting_pipes(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = casting_copper_pipe_to_ground,
+        name = parameters.name,
         category = metallurgy,
         subgroup = is_vulcanus_pipe_to_ground,
-        icons = TWO_I(copper_molten_angels, copper_pipe_to_ground),
-        order = b,
+        icons = TWO_I(parameters.ing, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
         allow_quality = true,
         allow_decomposition = false,
         energy_required = 1,
-        ingredients = {{type = fluid, name = copper_molten_angels, amount = 120}},
-        results = {{type = item, name = copper_pipe_to_ground, amount = 2}},
-        main_product = copper_pipe_to_ground
-    },
-    {
-        type = recipe,
-        name = casting_bronze_pipe_to_ground,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe_to_ground,
-        icons = TWO_I(bronze_molten_angels, bronze_pipe_to_ground),
-        order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = bronze_molten_angels, amount = 240}},
-        results = {{type = item, name = bronze_pipe_to_ground, amount = 2}},
-        main_product = bronze_pipe_to_ground
-    },
-    {
-        type = recipe,
-        name = casting_steel_pipe_to_ground,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe_to_ground,
-        icons = TWO_I(steel_molten_angels, steel_pipe_to_ground),
-        order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = steel_molten_angels, amount = 240}},
-        results = {{type = item, name = steel_pipe_to_ground, amount = 2}},
-        main_product = steel_pipe_to_ground
-    },
-    {
-        type = recipe,
-        name = casting_brass_pipe_to_ground,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe_to_ground,
-        icons = TWO_I(brass_molten_angels, brass_pipe_to_ground),
-        order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = brass_molten_angels, amount = 360}},
-        results = {{type = item, name = brass_pipe_to_ground, amount = 2}},
-        main_product = brass_pipe_to_ground
-    },
-    {
-        type = recipe,
-        name = casting_titanium_pipe_to_ground,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe_to_ground,
-        icons = TWO_I(titanium_molten_angels, titanium_pipe_to_ground),
-        order = f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = titanium_molten_angels, amount = 480}},
-        results = {{type = item, name = titanium_pipe_to_ground, amount = 2}},
-        main_product = titanium_pipe_to_ground
-    },
-    {
-        type = recipe,
-        name = casting_nitinol_pipe_to_ground,
-        category = metallurgy,
-        subgroup = is_vulcanus_pipe_to_ground,
-        icons = TWO_I(nitinol_molten_angels, nitinol_pipe_to_ground),
-        order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 1,
-        ingredients = {{type = fluid, name = nitinol_molten_angels, amount = 600}},
-        results = {{type = item, name = nitinol_pipe_to_ground, amount = 2}},
-        main_product = nitinol_pipe_to_ground
+        ingredients = {{type = fluid, name = parameters.ing, amount = parameters.amount_ing}},
+        results = {{type = item, name = parameters.res, amount = 2}},
+        main_product = parameters.res
     }
-})
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
+    data:extend({info_recipe})
+end
+casting_pipes({name = casting_copper_pipe_to_ground,   order = b, ing = copper_molten_angels,   amount_ing = 120, res = copper_pipe_to_ground})
+casting_pipes({name = casting_bronze_pipe_to_ground,   order = c, ing = bronze_molten_angels,   amount_ing = 240, res = bronze_pipe_to_ground})
+casting_pipes({name = casting_steel_pipe_to_ground,    order = d, ing = steel_molten_angels,    amount_ing = 240, res = steel_pipe_to_ground})
+casting_pipes({name = casting_brass_pipe_to_ground,    order = e, ing = brass_molten_angels,    amount_ing = 360, res = brass_pipe_to_ground})
+casting_pipes({name = casting_titanium_pipe_to_ground, order = f, ing = titanium_molten_angels, amount_ing = 480, res = titanium_pipe_to_ground})
+casting_pipes({name = casting_nitinol_pipe_to_ground,  order = g, ing = nitinol_molten_angels,  amount_ing = 600, res = nitinol_pipe_to_ground})
 
 -- ROCKET PART TUNGSTEN
 rocket_part_tungsten = "rocket-part-tungsten"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
         localised_name = {"item-name.rocket-part"},
-        type = recipe,
         name = rocket_part_tungsten,
         category = data_recipe[rocket_part].category,
         subgroup = data_recipe[rocket_part].subgroup,
         icons = R_P_I(rocket_part, nil, nil, number_2),
         order = b_a,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
         ingredients =
         {
             {type = item, name = low_density_structure, amount = 4},
@@ -1841,24 +791,3 @@ data:extend
         main_product = data_recipe[rocket_part].main_product
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = metallurgy,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

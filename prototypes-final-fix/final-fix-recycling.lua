@@ -38,7 +38,8 @@ local recycling_items =
 
     uranium_ore, uranium_235_fuel_cell,
     stone, stone_crushed_angels,
-    tungsten_ore_bob, wolframite_ore
+    tungsten_ore_bob, wolframite_ore,
+    concrete_brick, reinforced_concrete_brick
 }
 
 if mods [muluna_mods] or mods [moshine_mods] then

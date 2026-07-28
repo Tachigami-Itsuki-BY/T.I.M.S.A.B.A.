@@ -2,27 +2,21 @@ if mods [tellus_mods] then
     if settings.startup[setting_dye_secondary_color].value then
         orange_dye = "orange-dye"
         black_dye = "black-dye"
-        data:extend
+        TIMSABA.functions.create_items
         ({
             {
-                type = item,
                 name = orange_dye,
                 subgroup = is_dyes,
                 icon = "__TIMSABA__/graphics/icons/tellus/orange-dye.png",
                 order = a,
-                stack_size = 200,
-                weight = 5000,
                 fuel_category = base_fuel,
                 fuel_value = 1800 .. kJ
             },
             {
-                type = item,
                 name = black_dye,
                 subgroup = is_dyes,
                 icon = "__TIMSABA__/graphics/icons/tellus/black-dye.png",
                 order = z,
-                stack_size = 200,
-                weight = 5000,
                 fuel_category = base_fuel,
                 fuel_value = 1800 .. kJ
             }
@@ -36,61 +30,29 @@ if mods [tellus_mods] then
         orange_pipe_to_ground = "orange-pipe-to-ground"
         black_pipe_to_ground = "black-pipe-to-ground"
         if settings.startup[setting_dye_pipes].value then
-            data:extend
-            ({
-                {
-                    type = item,
-                    name = orange_pipe,
-                    subgroup = is_tellus_pipe,
-                    icon = "__TIMSABA__/graphics/icons/tellus/orange-pipe.png",
-                    order = a,
-                    stack_size = 200,
-                    weight = 5000,
-                    place_result = orange_pipe,
-                    drop_sound = pipe_drop_move,
-                    inventory_move_sound = pipe_drop_move,
-                    pick_sound = pipe_pick
-                },
-                {
-                    type = item,
-                    name = black_pipe,
-                    subgroup = is_tellus_pipe,
-                    icon = "__TIMSABA__/graphics/icons/tellus/black-pipe.png",
-                    order = z,
-                    stack_size = 200,
-                    weight = 5000,
-                    place_result = black_pipe,
-                    drop_sound = pipe_drop_move,
-                    inventory_move_sound = pipe_drop_move,
-                    pick_sound = pipe_pick
-                },
-                {
-                    type = item,
-                    name = orange_pipe_to_ground,
-                    subgroup = is_tellus_pipe_to_ground,
-                    icon = "__TIMSABA__/graphics/icons/tellus/orange-pipe-to-ground.png",
-                    order = a,
-                    stack_size = 32,
-                    weight = 31250,
-                    place_result = orange_pipe_to_ground,
-                    drop_sound = pipe_drop_move,
-                    inventory_move_sound = pipe_drop_move,
-                    pick_sound = pipe_pick
-                },
-                {
-                    type = item,
-                    name = black_pipe_to_ground,
-                    subgroup = is_tellus_pipe_to_ground,
-                    icon = "__TIMSABA__/graphics/icons/tellus/black-pipe-to-ground.png",
-                    order = z,
-                    stack_size = 32,
-                    weight = 31250,
-                    place_result = black_pipe_to_ground,
-                    drop_sound = pipe_drop_move,
-                    inventory_move_sound = pipe_drop_move,
-                    pick_sound = pipe_pick
-                }
-            })
+            local function colored_pipes(parameters)
+                data:extend
+                ({
+                    {
+                        type = item,
+                        name = parameters.name,
+                        subgroup = parameters.subgroup,
+                        icon = parameters.icon,
+                        order = parameters.order,
+                        stack_size = 200,
+                        weight = 5000,
+                        place_result = parameters.name,
+                        drop_sound = pipe_drop_move,
+                        inventory_move_sound = pipe_drop_move,
+                        pick_sound = pipe_pick
+                    }
+                })
+            end
+            colored_pipes({name = orange_pipe, subgroup = is_tellus_pipe, icon = "__TIMSABA__/graphics/icons/tellus/orange-pipe.png", order = a})
+            colored_pipes({name = black_pipe,  subgroup = is_tellus_pipe, icon = "__TIMSABA__/graphics/icons/tellus/black-pipe.png",  order = z})
+
+            colored_pipes({name = orange_pipe_to_ground, subgroup = is_tellus_pipe_to_ground, icon = "__TIMSABA__/graphics/icons/tellus/orange-pipe-to-ground.png", order = a})
+            colored_pipes({name = black_pipe_to_ground,  subgroup = is_tellus_pipe_to_ground, icon = "__TIMSABA__/graphics/icons/tellus/black-pipe-to-ground.png",  order = z})
         end
 
         local item_sounds = require("__base__.prototypes.item_sounds")
@@ -266,20 +228,6 @@ if mods [tellus_mods] then
                 }
             })
         end
-
-        --[[data:extend
-        ({
-            {
-                localised_description = show_formula and {chemical_formula, ""} or nil,
-                type = item,
-                name = ,
-                subgroup = ,
-                icon = "__TIMSABA__/graphics/icons/tellus/.png",
-                order = ,
-                stack_size = 200,
-                weight = 5000
-            }
-        })]]
     end
 
     orange_concrete_brick = "orange-concrete-brick"

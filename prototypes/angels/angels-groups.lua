@@ -36,6 +36,7 @@ TIMSABA.functions.create_subgroups("angels-resource-refining",
 })
 
 -- ANGELS METTALURGY SMELTING
+ig_smelting = "angels-smelting"
 is_iron_chemistry = "is-iron-chemistry"
 is_steel = "is-steel"
 is_copper_chemistry = "is-copper-chemistry"
@@ -59,7 +60,7 @@ is_platinum = "angels-platinum"
 is_platinum_chemistry = "is-platinum-chemistry"
 is_alloys = "angels-alloys"
 is_stone = "angels-stone"
-TIMSABA.functions.create_subgroups("angels-smelting",
+TIMSABA.functions.create_subgroups(ig_smelting,
 {
     {name = is_iron_chemistry,            order = a_a},
     {name = is_steel,                     order = a_b},
@@ -82,6 +83,7 @@ TIMSABA.functions.create_subgroups("angels-smelting",
 })
 
 -- ANGELS METTALURGY CASTING
+ig_casting = "angels-casting"
 is_titanium_casting = "angels-titanium-casting"
 is_tungsten_casting = "angels-tungsten-casting"
 is_stone_casting = "angels-stone-casting"
@@ -92,7 +94,7 @@ is_alloys_casting_4 = "is-alloys-casting-4"
 is_alloys_casting_5 = "is-alloys-casting-5"
 is_alloys_casting_6 = "is-alloys-casting-6"
 is_sintering_oven = "angels-sintering-oven"
-TIMSABA.functions.create_subgroups("angels-casting",
+TIMSABA.functions.create_subgroups(ig_casting,
 {
     {name = is_bricks_casting,   order = w_a},
     {name = is_alloys_casting_2, order = y_a},
@@ -119,9 +121,11 @@ TIMSABA.functions.create_subgroups("angels-water-treatment",
 })
 
 -- ANGELS PETROCHEM REFINING
+ig_petrochem_refining = "angels-petrochem-refining"
 is_basic_fluids = "angels-petrochem-basic-fluids"
 is_coal = "angels-petrochem-coal"
 is_carbon_fluids_1 = "is-carbon-fluids-1"
+is_nitrogen = "angels-petrochem-nitrogen"
 is_nitrogen_fluids = "angels-petrochem-nitrogen-fluids"
 is_fluorine_fluids = "is-fluorine-fluids"
 is_sodium = "angels-petrochem-sodium"
@@ -154,7 +158,7 @@ is_buildings_oil_refinery = "angels-petrochem-buildings-oil-refinery" -- z_g
 is_buildings_oil_gas_separator = "is-buildings-oil-gas-separator" -- z_h
 is_buildings_steam = "angels-petrochem-buildings-steam" -- z_i
 is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_j
-TIMSABA.functions.create_subgroups("angels-petrochem-refining",
+TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
     {name = is_carbon_fluids_1,                   order = b_a},
     {name = is_fluorine_fluids,                   order = d},

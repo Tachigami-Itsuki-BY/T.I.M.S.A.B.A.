@@ -79,7 +79,9 @@ data_technology[tech_holmium_smelting_1].research_trigger.count = 4096
 
 data_technology["steam-power"].research_trigger.count = 32
 data_technology["electronics"].research_trigger.count = 16
-data_technology["logistics-0"].research_trigger.count = 32
+
+local logistics_0 = "logistics-0"
+if data_technology[logistics_0] then data_technology[logistics_0].research_trigger.count = 32 end
 
 data_technology["steel-plate-productivity"].effects =
 {
@@ -167,7 +169,7 @@ if mods[muluna_mods] then
 end
 
 -- MOSHINE
-if mods [moshine_mods] then
+if mods[moshine_mods] then
     data_technology["moshine-tech-neural_computer"].research_trigger =
     {
         type = craft_item,
@@ -440,6 +442,82 @@ if mods[tellus_mods] then
                             table.insert(tech.unit.ingredients, {pack_name, pack_data[2]})
                         end
                     end
+                end
+            end
+        end
+    end
+end
+
+-- PARACELSIN
+if mods[paracelsin_mods] then
+    local memo = {}
+
+    local function leads_to_root(tech_name, visited)
+        if tech_name == tech_compression_science then return true end
+        if memo[tech_name] ~= nil then return memo[tech_name] end
+
+        -- Инициализируем список посещенных для текущей ветки, если его нет
+        visited = visited or {}
+        -- Если мы уже заходили в эту технологию на текущем пути — это петля! Прерываем.
+        if visited[tech_name] then
+            return false
+        end
+
+        local tech = data.raw.technology[tech_name]
+        if not tech or not tech.prerequisites then
+            memo[tech_name] = false
+            return false
+        end
+
+        -- Помечаем технологию как посещенную в текущем проходе
+        visited[tech_name] = true
+
+        for _, prereq in ipairs(tech.prerequisites) do
+            -- Передаем visited дальше по цепочке
+            if leads_to_root(prereq, visited) then
+                memo[tech_name] = true
+                visited[tech_name] = nil -- очищаем перед выходом
+                return true
+            end
+        end
+
+        visited[tech_name] = nil -- очищаем перед выходом
+        memo[tech_name] = false
+        return false
+    end
+
+    for tech_name, tech in pairs(data.raw.technology) do
+        -- Передаем пустую таблицу visited для каждого нового независимого поиска
+        if tech_name ~= galvanization_science_pack and leads_to_root(tech_name, {}) then
+            if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
+                local has_pack = false
+                local has_datacell = false
+                local has_science_pack = false
+
+                -- Проверяем все текущие ингредиенты технологии
+                for _, ingredient in ipairs(tech.unit.ingredients) do
+                    local name = ""
+                    if type(ingredient) == "table" then
+                        name = ingredient.name or ingredient[1] or ""
+                    else
+                        name = ingredient or ""
+                    end
+
+                    if name == galvanization_science_pack then
+                        has_pack = true
+                    end
+                    if string.find(name, "datacell%-") then
+                        has_datacell = true
+                    end
+                    if string.find(name, "%-science%-pack") then
+                        has_science_pack = true
+                    end
+                end
+
+                local should_exclude = has_datacell and not has_science_pack
+
+                if not has_pack and not should_exclude then
+                    table.insert(tech.unit.ingredients, {galvanization_science_pack, 1})
                 end
             end
         end

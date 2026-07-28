@@ -1,21 +1,10 @@
 -- GROUPS
-local smelting = "angels-smelting"
-local is_molybdenum = "is-molybdenum"
+is_molybdenum = "is-molybdenum"
 local is_molybdenum_chemistry = "is-molybdenum-chemistry"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_molybdenum,
-        group = smelting,
-        order = r
-    },
-    {
-        type = item_subgroup,
-        name = is_molybdenum_chemistry,
-        group = smelting,
-        order = r_a
-    }
+TIMSABA.functions.create_subgroups(ig_smelting,
+{
+    {name = is_molybdenum,           order = r},
+    {name = is_molybdenum_chemistry, order = r_a}
 })
 
 -- ITEM
@@ -26,222 +15,124 @@ molybdenum_powder = "molybdenum-powder"
 molybdenum_oxide_VI = "molybdenum-oxide-VI"
 potassium_molybdate = "potassium-molybdate"
 molybdic_acid = "molybdic-acid"
-data:extend
+TIMSABA.functions.create_items
 ({
     {
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
-        type = item,
         name = molybdenum_ore,
         subgroup = is_molybdenum,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore.png",
-        order = a,
-        stack_size = 200,
-        weight = 5000,
         pictures =
         {
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-1.png",
-                width = 64,
-                height = 64,
-                scale = 0.5
-            },
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-2.png",
-                width = 64,
-                height = 64,
-                scale = 0.5
-            },
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-3.png",
-                width = 64,
-                height = 64,
-                scale = 0.5
-            }
-        }
+            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-3.png", width = 64, height = 64, scale = 0.5}
+        },
+        order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
-        type = item,
         name = molybdenum_processed,
         subgroup = is_molybdenum,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-processed.png",
-        order = b,
-        stack_size = 200,
-        weight = 5000
+        order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
-        type = item,
         name = molybdenum_pellet,
         subgroup = is_molybdenum,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-pellet.png",
-        order = c,
-        stack_size = 200,
-        weight = 5000
+        order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
-        type = item,
         name = molybdenum_powder,
         subgroup = is_molybdenum,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-powder.png",
-        order = d,
-        stack_size = 200,
-        weight = 5000
+        order = d
     },
     -- CHEMISTRY
     {
         localised_description = show_formula and {chemical_formula, "MoO[font=default-tiny-bold]3[/font]"} or nil,
-        type = item,
         name = molybdenum_oxide_VI,
         subgroup = is_molybdenum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-oxide-VI.png",
-        icon_size = 64,
-        order = a,
-        stack_size = 200,
-        weight = 5000
+        order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]MoO[font=default-tiny-bold]4[/font]"} or nil,
-        type = item,
         name = potassium_molybdate,
         subgroup = is_molybdenum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/potassium-molybdate.png",
-        order = b,
-        stack_size = 200,
-        weight = 5000
+        order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]MoO[font=default-tiny-bold]4[/font]"} or nil,
-        type = item,
         name = molybdic_acid,
         subgroup = is_molybdenum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdic-acid.png",
-        icon_size = 64,
-        order = d,
-        stack_size = 200,
-        weight = 5000
+        order = d
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = item,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        stack_size = 200,
-        weight = 5000
-    }
-})]]
 
 -- FLUID
 molybdenum_chloride_III_solution = "molybdenum-chloride-III-solution"
 molybdenum_fluoride_IV = "molybdenum-fluoride-IV-liquid"
-data:extend
+TIMSABA.functions.create_fluids
 ({
     {
         localised_description = show_formula and {chemical_formula, "MoCl[font=default-tiny-bold]3(aq)[/font]"} or nil,
-        type = fluid,
         name = molybdenum_chloride_III_solution,
         subgroup = is_molybdenum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-chloride-III-solution.png",
         order = c,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("MoF6"),
-        flow_color = TIMSABA.functions.flow_color("MoF6"),
-        max_temperature = 0,
-        auto_barrel = false
+        flow_color = TIMSABA.functions.flow_color("MoF6")
     },
     {
         localised_description = show_formula and {chemical_formula, "MoF[font=default-tiny-bold]6[/font]"} or nil,
-        type = fluid,
         name = molybdenum_fluoride_IV,
         subgroup = is_molybdenum_chemistry,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-fluoride-IV-liquid.png",
         order = e,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
         base_color = TIMSABA.functions.fluid_color("MoF6"),
-        flow_color = TIMSABA.functions.flow_color("MoF6"),
-        max_temperature = 0,
-        auto_barrel = false
+        flow_color = TIMSABA.functions.flow_color("MoF6")
     }
 })
-
---[[data:extend
-({
-    {
-        localised_description = show_formula and {chemical_formula, ""} or nil,
-        type = fluid,
-        name = ,
-        subgroup = ,
-        icon = "__TIMSABA__/graphics/icons/angels///.png",
-        order = ,
-        default_temperature = 0,
-        heat_capacity = "0.1kJ",
-        base_color = angelsmods.functions.fluid_color(""),
-        flow_color = angelsmods.functions.flow_color(""),
-        max_temperature = 0,
-        auto_barrel = false
-    }
-})]]
 
 -- RECIPE
 molybdenum_powder_2 = "molybdenum-powder-2"
 molybdenum_oxide_VI_2 = "molybdenum-oxide-VI-2"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = molybdenum_processed,
         category = angels_processed_pressing_4,
         subgroup = is_molybdenum,
         icons = TWO_I(molybdenum_ore, molybdenum_processed),
         order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients = {{type = item, name = molybdenum_ore, amount = 4}},
         results = {{type = item, name = molybdenum_processed, amount = 4}},
         main_product = molybdenum_processed
     },
     {
-        type = recipe,
         name = molybdenum_pellet,
         category = angels_pellet_pressing_4,
         subgroup = is_molybdenum,
         icons = TWO_I(molybdenum_processed, molybdenum_pellet),
         order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients = {{type = item, name = molybdenum_processed, amount = 4}},
         results = {{type = item, name = molybdenum_pellet, amount = 4}},
         main_product = molybdenum_pellet
     },
     {
-        type = recipe,
         name = molybdenum_powder,
         category = angels_chemical_smelting_4,
         subgroup = is_molybdenum,
         icons = TWO_D_I(molybdenum_oxide_VI, hydrogen_angels, molybdenum_powder, steam),
         order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- MoO₃(s) + 3H₂(g) --> Mo(s) + 3H₂O(g)
         ingredients =
         {
@@ -256,17 +147,11 @@ data:extend
         main_product = molybdenum_powder
     },
     {
-        type = recipe,
         name = molybdenum_powder_2,
         category = angels_chemical_smelting_4,
         subgroup = is_molybdenum,
         icons = TWO_D_I(molybdenum_fluoride_IV, hydrogen_angels, molybdenum_powder, hydrogen_fluoride_angels),
         order = d_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- MoF₆(l) + 3H₂(g) --> Mo(s) + 6HF(g)
         ingredients =
         {
@@ -282,17 +167,11 @@ data:extend
     },
     -- CHEMISTRY
     {
-        type = recipe,
         name = molybdenum_oxide_VI,
         category = angels_blast_smelting_4,
         subgroup = is_molybdenum_chemistry,
         icons = THREE_I(molybdenum_ore, oxygen_angels, molybdenum_oxide_VI),
         order = a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- 2Mo(s) + 3O₂(g) --> 2MoO₃(s)
         ingredients =
         {
@@ -303,17 +182,11 @@ data:extend
         main_product = molybdenum_oxide_VI
     },
     {
-        type = recipe,
         name = molybdenum_oxide_VI_2,
         category = angels_blast_smelting_4,
         subgroup = is_molybdenum_chemistry,
         icons = THREE_R_I(molybdic_acid, molybdenum_oxide_VI, steam),
         order = a_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- H₂MoO₄(s) --> MoO₃(s) + H₂O(g)
         ingredients = {{type = item, name = molybdic_acid, amount = 16}},
         results =
@@ -324,17 +197,11 @@ data:extend
         main_product = molybdenum_oxide_VI
     },
     {
-        type = recipe,
         name = potassium_molybdate,
         category = angels_blast_smelting_4,
         subgroup = is_molybdenum_chemistry,
         icons = THREE_D_I(molybdenum_processed, potassium_hydroxide, potassium_chlorate, potassium_molybdate, potassium_chloride, steam),
         order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- Mo(s) + 2KOH(s) + KClO₃(s) --> K₂MoO₄(s) + KCl(s) + H₂O(g)
         ingredients =
         {
@@ -351,18 +218,12 @@ data:extend
         main_product = potassium_molybdate
     },
     {
-        type = recipe,
         name = molybdenum_chloride_III_solution,
         category = angels_advanced_chemistry,
         subgroup = is_molybdenum_chemistry,
         icons = FOUR_THREE_R_I(potassium_molybdate, zinc_ingot, hydrochloric_acid_angels, molybdenum_chloride_III_solution, potassium_chloride_solution, zinc_chloride, water_purified_angels),
         order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- 2K₂MoO₄(s) + 3Zn(s) + 16HCl(aq) --> 2MoCl₃(aq) + 3ZnCl₂(s) + 4KCl(aq) + 8H₂O(l) + 10H₂O(l)
+        -- 2K₂MoO₄(s) + 3Zn(s) + 16HCl(aq) --> 2MoCl₃(aq) + 3ZnCl₂(s) + 4KCl(aq) + 8H₂O(l) + 10H₂O(l)
         ingredients =
         {
             {type = item, name = potassium_molybdate, amount = 8},
@@ -379,18 +240,12 @@ data:extend
         main_product = molybdenum_chloride_III_solution
     },
     {
-        type = recipe,
         name = molybdic_acid,
         category = angels_advanced_chemistry,
         subgroup = is_molybdenum_chemistry,
         icons = THREE_D_I(molybdenum_chloride_III_solution, nitrogen_monoxide_angels, water_purified_angels, molybdic_acid, ammonium_chloride_solution_angels, hydrochloric_acid_angels),
         order = d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- 5MoCl₃(aq) + 3NO(g) + 17H₂O(l) + 10H₂O(l) --> 5H₂MoO₄(s) + 3NH₄Cl(aq) + 12HCl(aq)
+        -- 5MoCl₃(aq) + 3NO(g) + 17H₂O(l) + 10H₂O(l) --> 5H₂MoO₄(s) + 3NH₄Cl(aq) + 12HCl(aq)
         ingredients =
         {
             {type = fluid, name = molybdenum_chloride_III_solution, amount = 120}, -- 75
@@ -406,17 +261,11 @@ data:extend
         main_product = molybdic_acid
     },
     {
-        type = recipe,
         name = molybdenum_fluoride_IV,
         category = angels_chemical_smelting_4,
         subgroup = is_molybdenum_chemistry,
         icons = THREE_I(molybdenum_pellet, fluorine, molybdenum_fluoride_IV),
         order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- Mo(s) + 3F₂(g) --> MoF₆(l)
         ingredients =
         {
@@ -427,24 +276,3 @@ data:extend
         main_product = molybdenum_fluoride_IV
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

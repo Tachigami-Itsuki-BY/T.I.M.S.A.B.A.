@@ -2,20 +2,16 @@ if mods [panglia_mods] then
     electronic_circuit_from_panglite_fiber = "electronic-circuit-from-panglite-fiber"
     processing_unit_from_panglite_fiber = "processing-unit-from-panglite-fiber"
     advanced_processing_unit_from_panglite_fiber = "advanced-processing-unit-from-panglite-fiber"
-    data:extend
+    TIMSABA.functions.create_recipes
     ({
         {
-            type = recipe,
             name = electronic_circuit_from_panglite_fiber,
             category = electronics,
             subgroup = is_panglia_recipe,
             icons = BUILDING_R_I(electronic_circuit, panglite_fiber),
             order = g_a,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 32,
             ingredients =
             {
@@ -28,17 +24,13 @@ if mods [panglia_mods] then
             surface_conditions = {{property = pressure, max = 1401, min = 1401}}
         },
         {
-            type = recipe,
             name = processing_unit_from_panglite_fiber,
             category = electronics,
             subgroup = is_panglia_recipe,
             icons = BUILDING_R_I(processing_unit, panglite_fiber),
             order = g_c,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 32,
             ingredients =
             {
@@ -53,17 +45,13 @@ if mods [panglia_mods] then
             surface_conditions = {{property = pressure, max = 1401, min = 1401}}
         },
         {
-            type = recipe,
             name = advanced_processing_unit_from_panglite_fiber,
             category = electronics,
             subgroup = is_panglia_recipe,
             icons = BUILDING_R_I(advanced_processing_unit, panglite_fiber),
             order = g_d,
-            enabled = false,
-            auto_recycle = false,
             allow_productivity = true,
             allow_quality = true,
-            allow_decomposition = false,
             energy_required = 32,
             ingredients =
             {
@@ -79,25 +67,4 @@ if mods [panglia_mods] then
             surface_conditions = {{property = pressure, max = 1401, min = 1401}}
         }
     })
-
-    --[[data:extend
-    ({
-        {
-            type = recipe,
-            name = ,
-            category = ,
-            subgroup = ,
-            icons = ,
-            order = ,
-            enabled = false,
-            auto_recycle = false,
-            allow_productivity = true,
-            allow_quality = true,
-            allow_decomposition = false,
-            energy_required = ,
-            ingredients = {{type = , name = , amount = }},
-            results = {{type = , name = , amount = }},
-            main_product = 
-        }
-    })]]
 end

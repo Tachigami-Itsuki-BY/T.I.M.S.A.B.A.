@@ -119,32 +119,44 @@ data_recipe[crushed_cupric].results[1].amount = 4
 
 data_item[chunk_saphirite].localised_description = {"item-description.saphirite-chunk"}
 data_recipe[chunk_saphirite].icons = THREE_D_I(crushed_saphirite, nil, water_purified_angels, chunk_saphirite, geode_blue, water_yellow_waste)
+data_recipe[chunk_saphirite].ingredients[1].amount = 4
 data_recipe[chunk_saphirite].ingredients[2].amount = 60
+data_recipe[chunk_saphirite].results[1].amount = 4
 data_recipe[chunk_saphirite].results[2].amount = 60
 
 data_item[chunk_jivolite].localised_description = {"item-description.jivolite-chunk"}
 data_recipe[chunk_jivolite].icons = THREE_D_I(crushed_jivolite, nil, water_purified_angels, chunk_jivolite, geode_purple, water_greenyellow_waste)
+data_recipe[chunk_jivolite].ingredients[1].amount = 4
 data_recipe[chunk_jivolite].ingredients[2].amount = 60
+data_recipe[chunk_jivolite].results[1].amount = 4
 data_recipe[chunk_jivolite].results[3].amount = 60
 
 data_item[chunk_stiratite].localised_description = {"item-description.stiratite-chunk"}
 data_recipe[chunk_stiratite].icons = THREE_D_I(crushed_stiratite, nil, water_purified_angels, chunk_stiratite, geode_yellow, water_yellow_waste)
+data_recipe[chunk_stiratite].ingredients[1].amount = 4
 data_recipe[chunk_stiratite].ingredients[2].amount = 60
+data_recipe[chunk_stiratite].results[1].amount = 4
 data_recipe[chunk_stiratite].results[2].amount = 60
 
 data_item[chunk_crotinnium].localised_description = {"item-description.crotinnium-chunk"}
 data_recipe[chunk_crotinnium].icons = THREE_D_I(crushed_crotinnium, nil, water_purified_angels, chunk_crotinnium, geode_lightgreen, water_green_waste)
+data_recipe[chunk_crotinnium].ingredients[1].amount = 4
 data_recipe[chunk_crotinnium].ingredients[2].amount = 60
+data_recipe[chunk_crotinnium].results[1].amount = 4
 data_recipe[chunk_crotinnium].results[3].amount = 60
 
 data_item[chunk_rubyte].localised_description = {"item-description.rubyte-chunk"}
 data_recipe[chunk_rubyte].icons = THREE_D_I(crushed_rubyte, nil, water_purified_angels, chunk_rubyte, geode_cyan, water_red_waste)
+data_recipe[chunk_rubyte].ingredients[1].amount = 4
 data_recipe[chunk_rubyte].ingredients[2].amount = 60
+data_recipe[chunk_rubyte].results[1].amount = 4
 data_recipe[chunk_rubyte].results[3].amount = 60
 
 data_item[chunk_bobmonium].localised_description = {"item-description.bobmonium-chunk"}
 data_recipe[chunk_bobmonium].icons = THREE_D_I(crushed_bobmonium, nil, water_purified_angels, chunk_bobmonium, geode_red, water_yellow_waste)
+data_recipe[chunk_bobmonium].ingredients[1].amount = 4
 data_recipe[chunk_bobmonium].ingredients[2].amount = 60
+data_recipe[chunk_bobmonium].results[1].amount = 4
 data_recipe[chunk_bobmonium].results[2].amount = 60
 
 local is_ore_processing_b = "angels-ore-processing-b"
@@ -168,27 +180,39 @@ data_recipe[powder_cupric].results[1].amount = 4
 
 data_item[crystal_saphirite].localised_description = {"item-description.saphirite-crystal"}
 data_recipe[crystal_saphirite].icons = THREE_I(chunk_saphirite, sulfuric_acid_angels, crystal_saphirite)
+data_recipe[crystal_saphirite].ingredients[1].amount = 4
 data_recipe[crystal_saphirite].ingredients[2].amount = 15
+data_recipe[crystal_saphirite].results[1].amount = 4
 
 data_item[crystal_jivolite].localised_description = {"item-description.jivolite-crystal"}
 data_recipe[crystal_jivolite].icons = THREE_I(chunk_jivolite, hydrofluoric_acid_angels, crystal_jivolite)
+data_recipe[crystal_jivolite].ingredients[1].amount = 4
 data_recipe[crystal_jivolite].ingredients[2].amount = 15
+data_recipe[crystal_jivolite].results[1].amount = 4
 
 data_item[crystal_stiratite].localised_description = {"item-description.stiratite-crystal"}
 data_recipe[crystal_stiratite].icons = THREE_I(chunk_stiratite, sulfuric_acid_angels, crystal_stiratite)
+data_recipe[crystal_stiratite].ingredients[1].amount = 4
 data_recipe[crystal_stiratite].ingredients[2].amount = 15
+data_recipe[crystal_stiratite].results[1].amount = 4
 
 data_item[crystal_crotinnium].localised_description = {"item-description.crotinnium-crystal"}
 data_recipe[crystal_crotinnium].icons = THREE_I(chunk_crotinnium, hydrochloric_acid_angels, crystal_crotinnium)
+data_recipe[crystal_crotinnium].ingredients[1].amount = 4
 data_recipe[crystal_crotinnium].ingredients[2].amount = 15
+data_recipe[crystal_crotinnium].results[1].amount = 4
 
 data_item[crystal_rubyte].localised_description = {"item-description.rubyte-crystal"}
 data_recipe[crystal_rubyte].icons = THREE_I(chunk_rubyte, nitric_acid_angels, crystal_rubyte)
+data_recipe[crystal_rubyte].ingredients[1].amount = 4
 data_recipe[crystal_rubyte].ingredients[2].amount = 15
+data_recipe[crystal_rubyte].results[1].amount = 4
 
 data_item[crystal_bobmonium].localised_description = {"item-description.bobmonium-crystal"}
 data_recipe[crystal_bobmonium].icons = THREE_I(chunk_bobmonium, sulfuric_acid_angels, crystal_bobmonium)
+data_recipe[crystal_bobmonium].ingredients[1].amount = 4
 data_recipe[crystal_bobmonium].ingredients[2].amount = 15
+data_recipe[crystal_bobmonium].results[1].amount = 4
 
 data_item[dust_ferrous].localised_description = {"item-description.ferrous-dust"}
 data_item[dust_ferrous].subgroup = is_ore_processing_c

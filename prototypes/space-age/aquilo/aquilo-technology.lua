@@ -1,18 +1,18 @@
 planet_discovery_aquilo = "planet-discovery-aquilo"
-local tech_antimonite_prcoessing_1 = "antimonite-processing-1"
-local tech_antimonite_prcoessing_2 = "antimonite-processing-2"
-local tech_antimonite_prcoessing_3 = "antimonite-processing-3"
-local tech_antimonite_prcoessing_4 = "antimonite-processing-4"
+local tech_antimonite_processing_1 = "antimonite-processing-1"
+local tech_antimonite_processing_2 = "antimonite-processing-2"
+local tech_antimonite_processing_3 = "antimonite-processing-3"
+tech_antimonite_processing_4 = "antimonite-processing-4"
 tech_antimony_smelting_1 = "antimony-smelting-1"
 local tech_antimony_smelting_2 = "antimony-smelting-2"
-local tech_antimony_smelting_3 = "antimony-smelting-3"
-local tech_germanite_prcoessing_1 = "germanite-processing-1"
-local tech_germanite_prcoessing_2 = "germanite-processing-2"
-local tech_germanite_prcoessing_3 = "germanite-processing-3"
-local tech_germanite_prcoessing_4 = "germanite-processing-4"
+tech_antimony_smelting_3 = "antimony-smelting-3"
+local tech_germanite_processing_1 = "germanite-processing-1"
+local tech_germanite_processing_2 = "germanite-processing-2"
+local tech_germanite_processing_3 = "germanite-processing-3"
+tech_germanite_processing_4 = "germanite-processing-4"
 tech_germanium_smelting_1 = "germanium-smelting-1"
 local tech_germanium_smelting_2 = "germanium-smelting-2"
-local tech_germanium_smelting_3 = "germanium-smelting-3"
+tech_germanium_smelting_3 = "germanium-smelting-3"
 tech_galium_smelting_1 = "galium-smelting-1"
 local tech_galium_smelting_2 = "galium-smelting-2"
 local tech_galium_smelting_3 = "galium-smelting-3"
@@ -24,9 +24,9 @@ data:extend
     -- ANTIMONITE
     {
         localised_name = {"technology-name.antimonite-processing-1"},
-        localised_description = {"technology-description.antimonite-processing-1"},
+        localised_description = {"technology-description.angels-ore-crushing"},
         type = technology,
-        name = tech_antimonite_prcoessing_1,
+        name = tech_antimonite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
         icon_size = 256,
         prerequisites = {planet_discovery_aquilo},
@@ -50,12 +50,12 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimonite-processing-2"},
-        localised_description = {"technology-description.antimonite-processing-2"},
+        localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
-        name = tech_antimonite_prcoessing_2,
+        name = tech_antimonite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_antimonite_prcoessing_1, cryogenic_science_pack},
+        prerequisites = {tech_antimonite_processing_1, cryogenic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_chunks},
@@ -82,12 +82,12 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimonite-processing-3"},
-        localised_description = {"technology-description.antimonite-processing-3"},
+        localised_description = {"technology-description.angels-ore-leaching"},
         type = technology,
-        name = tech_antimonite_prcoessing_3,
+        name = tech_antimonite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_antimonite_prcoessing_2, promethium_science_pack},
+        prerequisites = {tech_antimonite_processing_2, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_crystals},
@@ -115,12 +115,12 @@ data:extend
     },
     {
         localised_name = {"technology-name.antimonite-processing-4"},
-        localised_description = {"technology-description.antimonite-processing-4"},
+        localised_description = {"technology-description.angels-ore-refining"},
         type = technology,
-        name = tech_antimonite_prcoessing_4, -- ???
+        name = tech_antimonite_processing_4, -- ???
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_antimonite_prcoessing_3},
+        prerequisites = {tech_antimonite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = antimonite_purified},
@@ -154,7 +154,7 @@ data:extend
         name = tech_antimony_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
         icon_size = 256,
-        prerequisites = {tech_antimonite_prcoessing_1, tech_vulcanus_metallurgic},
+        prerequisites = {tech_antimonite_processing_1, tech_vulcanus_metallurgic},
         effects =
         {
             {type = unlock_recipe, recipe = antimony_chloride_III},
@@ -189,7 +189,7 @@ data:extend
         name = tech_antimony_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
         icon_size = 256,
-        prerequisites = {tech_antimony_smelting_1, tech_antimonite_prcoessing_2},
+        prerequisites = {tech_antimony_smelting_1, tech_antimonite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = antimony_processed},
@@ -224,7 +224,7 @@ data:extend
         name = tech_antimony_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
         icon_size = 256,
-        prerequisites = {tech_antimony_smelting_2, tech_antimonite_prcoessing_3},
+        prerequisites = {tech_antimony_smelting_2, tech_antimonite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = antimony_pellet},
@@ -255,9 +255,9 @@ data:extend
     -- GERMANITE
     {
         localised_name = {"technology-name.germanite-processing-1"},
-        localised_description = {"technology-description.germanite-processing-1"},
+        localised_description = {"technology-description.angels-ore-crushing"},
         type = technology,
-        name = tech_germanite_prcoessing_1,
+        name = tech_germanite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
         icon_size = 256,
         prerequisites = {planet_discovery_aquilo},
@@ -272,21 +272,15 @@ data:extend
             item = germanite_ore,
             count = 256
         }
-        --[[unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }]]
     },
     {
         localised_name = {"technology-name.germanite-processing-2"},
-        localised_description = {"technology-description.germanite-processing-2"},
+        localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
-        name = tech_germanite_prcoessing_2,
+        name = tech_germanite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_1, cryogenic_science_pack},
+        prerequisites = {tech_germanite_processing_1, cryogenic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = germanite_chunks},
@@ -313,12 +307,12 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanite-processing-3"},
-        localised_description = {"technology-description.germanite-processing-3"},
+        localised_description = {"technology-description.angels-ore-leaching"},
         type = technology,
-        name = tech_germanite_prcoessing_3,
+        name = tech_germanite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_2, promethium_science_pack},
+        prerequisites = {tech_germanite_processing_2, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = germanite_crystals},
@@ -346,12 +340,12 @@ data:extend
     },
     {
         localised_name = {"technology-name.germanite-processing-4"},
-        localised_description = {"technology-description.germanite-processing-4"},
+        localised_description = {"technology-description.angels-ore-refining"},
         type = technology,
-        name = tech_germanite_prcoessing_4, -- ???
+        name = tech_germanite_processing_4, -- ???
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_3},
+        prerequisites = {tech_germanite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = germanite_purified},
@@ -385,7 +379,7 @@ data:extend
         name = tech_germanium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_1, tech_vulcanus_metallurgic},
+        prerequisites = {tech_germanite_processing_1, tech_vulcanus_metallurgic},
         effects =
         {
             {type = unlock_recipe, recipe = potassium_metagermanate_solution},
@@ -420,7 +414,7 @@ data:extend
         name = tech_germanium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_2, tech_germanium_smelting_1, cryogenic_science_pack},
+        prerequisites = {tech_germanite_processing_2, tech_germanium_smelting_1, cryogenic_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = germanium_processed},
@@ -453,7 +447,7 @@ data:extend
         name = tech_germanium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_3, tech_germanium_smelting_2, promethium_science_pack},
+        prerequisites = {tech_germanite_processing_3, tech_germanium_smelting_2, promethium_science_pack},
         effects =
         {
             {type = unlock_recipe, recipe = germanium_pellet},
@@ -487,7 +481,7 @@ data:extend
         name = tech_galium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_germanite_prcoessing_2},
+        prerequisites = {tech_germanite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = galium_hydroxide_III},
@@ -521,7 +515,7 @@ data:extend
         name = tech_galium_smelting_2,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_galium_smelting_1, tech_germanite_prcoessing_3},
+        prerequisites = {tech_galium_smelting_1, tech_germanite_processing_3},
         effects =
         {
             {type = unlock_recipe, recipe = galium_processed},
@@ -555,7 +549,7 @@ data:extend
         name = tech_galium_smelting_3,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png",
         icon_size = 256,
-        prerequisites = {tech_galium_smelting_2, tech_germanite_prcoessing_4},
+        prerequisites = {tech_galium_smelting_2, tech_germanite_processing_4},
         effects =
         {
             {type = unlock_recipe, recipe = galium_pellet},
@@ -588,7 +582,7 @@ data:extend
         name = tech_arsenic_processing,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/arsenic-processing.png",
         icon_size = 256,
-        prerequisites = {tech_antimonite_prcoessing_4, tech_germanite_prcoessing_4},
+        prerequisites = {tech_antimonite_processing_4, tech_germanite_processing_4},
         effects = {{type = unlock_recipe, recipe = arsenic_powder}},
         unit =
         {
@@ -615,7 +609,7 @@ data:extend
         name = tech_arsenic_synthesis,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/arsenic-synthesis.png",
         icon_size = 256,
-        prerequisites = {tech_antimonite_prcoessing_4, tech_germanite_prcoessing_4},
+        prerequisites = {tech_antimonite_processing_4, tech_germanite_processing_4},
         effects = {{type = unlock_recipe, recipe = arsenic_recipe}},
         unit =
         {
@@ -675,22 +669,4 @@ data:extend
 
 table.insert(data_technology[tech_molybdenum_smelting_3].prerequisites, planet_discovery_aquilo)
 
---[[data:extend
-({
-    {
-        type = technology,
-        name = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/.png",
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})]]
-
--- AQUILO CRYOGENIC CASTING 
+-- AQUILO CRYOGENIC CASTING

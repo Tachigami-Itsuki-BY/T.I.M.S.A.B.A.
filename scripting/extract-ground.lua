@@ -7,25 +7,17 @@ local surface_to_recipe =
     ["aquilo"] = "extract-ground-ammoniacal-solution"
 }
 
-if script.active_mods["Moshine"] then
-    surface_to_recipe["moshine"] = "extract-ground-lava"
-end
+if script.active_mods["Moshine"] then surface_to_recipe["moshine"] = "extract-ground-lava" end
 
-if script.active_mods["panglia_planet"] then
-    surface_to_recipe["panglia"] = "extract-ground-water"
-end
+if script.active_mods["panglia_planet"] then surface_to_recipe["panglia"] = "extract-ground-water" end
 
-if script.active_mods["planetaris-arig"] then
-    surface_to_recipe["arig"] = "extract-ground-planetaris-sand"
-end
+if script.active_mods["planetaris-arig"] then surface_to_recipe["arig"] = "extract-ground-planetaris-sand" end
 
-if script.active_mods["planetaris-hyarion"] then
-    surface_to_recipe["hyarion"] = "extract-ground-lava"
-end
+if script.active_mods["planetaris-hyarion"] then surface_to_recipe["hyarion"] = "extract-ground-lava" end
 
-if script.active_mods["planetaris-tellus"] then
-    surface_to_recipe["tellus"] = "extract-ground-planetaris-infected-water"
-end
+if script.active_mods["planetaris-tellus"] then surface_to_recipe["tellus"] = "extract-ground-planetaris-infected-water" end
+
+if script.active_mods["Paracelsin"] then surface_to_recipe["paracelsin"] = "extract-ground-nitrogen-liquid" end
 
 local function on_entity_built(event)
     local entity = event.created_entity or event.entity

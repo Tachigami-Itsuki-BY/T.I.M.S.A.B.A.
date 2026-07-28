@@ -1,5 +1,16 @@
 if mods [tellus_mods] then
-    local tellus = "tellus"
+    local ig_tellus = "tellus"
+    data:extend
+    ({
+        {
+            type = item_group,
+            name = ig_tellus,
+            order = x_h,
+            icon = "__TIMSABA__/graphics/icons/tellus/tellus-planet.png",
+            icon_size = 128
+        }
+    })
+
     is_chloroplast = "is-chloroplast"
     is_tellus_magnesium = "is-tellus-magnesium"
     is_mycelia = "is-mycelia"
@@ -19,128 +30,26 @@ if mods [tellus_mods] then
     is_tellus_reinforced_hazard_concrete = "is-tellus-reinforced-hazard-concrete"
     is_tellus_stone_wall = "is-tellus-stone-wall"
     is_tellus_concrete_brick = "is-tellus-concrete-brick"
-    data:extend
-    ({
-        {
-            type = item_group,
-            name = tellus,
-            order = x_h,
-            icon = "__TIMSABA__/graphics/icons/tellus/tellus-planet.png",
-            icon_size = 128
-        },
-        {
-            type = item_subgroup,
-            name = is_chloroplast,
-            group = tellus,
-            order = a
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_magnesium,
-            group = tellus,
-            order = b
-        },
-        {
-            type = item_subgroup,
-            name = is_mycelia,
-            group = tellus,
-            order = c
-        },
-        {
-            type = item_subgroup,
-            name = is_carbolyte,
-            group = tellus,
-            order = d
-        },
-        {
-            type = item_subgroup,
-            name = is_holmiumnite,
-            group = tellus,
-            order = e
-        },
-        {
-            type = item_subgroup,
-            name = is_parasite,
-            group = tellus,
-            order = f
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_recipe,
-            group = tellus,
-            order = g
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_logistics,
-            group = tellus,
-            order = h
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_building,
-            group = tellus,
-            order = i
-        },
-        {
-            type = item_subgroup,
-            name = is_dyes,
-            group = tellus,
-            order = j
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_pipe,
-            group = tellus,
-            order = j_a
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_pipe_to_ground,
-            group = tellus,
-            order = j_b
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_stone_brick,
-            group = tellus,
-            order = j_c
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_concrete,
-            group = tellus,
-            order = j_d
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_hazard_concrete,
-            group = tellus,
-            order = j_e
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_reinforced_concrete,
-            group = tellus,
-            order = j_f
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_reinforced_hazard_concrete,
-            group = tellus,
-            order = j_g
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_stone_wall,
-            group = tellus,
-            order = j_h
-        },
-        {
-            type = item_subgroup,
-            name = is_tellus_concrete_brick,
-            group = tellus,
-            order = j_i
-        }
+    TIMSABA.functions.create_subgroups(ig_tellus,
+    {
+        {name = is_chloroplast, order = a},
+        {name = is_tellus_magnesium, order = b},
+        {name = is_mycelia, order = c},
+        {name = is_carbolyte, order = d},
+        {name = is_holmiumnite, order = e},
+        {name = is_parasite, order = f},
+        {name = is_tellus_recipe, order = g},
+        {name = is_tellus_logistics, order = h},
+        {name = is_tellus_building, order = i},
+        {name = is_dyes, order = j},
+        {name = is_tellus_pipe, order = j_a},
+        {name = is_tellus_pipe_to_ground, order = j_b},
+        {name = is_tellus_stone_brick, order = j_c},
+        {name = is_tellus_concrete, order = j_d},
+        {name = is_tellus_hazard_concrete, order = j_e},
+        {name = is_tellus_reinforced_concrete, order = j_f},
+        {name = is_tellus_reinforced_hazard_concrete, order = j_g},
+        {name = is_tellus_stone_wall, order = j_h},
+        {name = is_tellus_concrete_brick, order = j_i}
     })
 end

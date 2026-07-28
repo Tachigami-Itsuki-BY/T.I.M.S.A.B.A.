@@ -18,7 +18,6 @@ local tech_rhenium_smelting_1 = "rhenium-smelting-1"
 local tech_rhenium_smelting_2 = "rhenium-smelting-2"
 tech_rhenium_smelting_3 = "rhenium-smelting-3"
 tech_rhenium_processing = "rhenium-processing"
-tech_rhenium_synthesis = "rhenium-synthesis"
 tech_molybdenum_rhenium_processing = "molybdenum-rhenium-processing"
 tech_potassium_processing = "potassium-processing"
 tech_boron_processing = "boron-processing"
@@ -561,33 +560,6 @@ data:extend
             type = craft_item,
             item = rhenium_plate,
             count = 256
-        }
-    },
-    {
-        type = technology,
-        name = tech_rhenium_synthesis,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/technology/rhenium-synthesis.png",
-        icon_size = 256,
-        prerequisites = {promethium_science_pack, tech_rhenium_smelting_3, tech_molybdenite_processing_4--[[, wolframite_processing_4]]},
-        effects = {{type = unlock_recipe, recipe = rhenium_ore_recipe}},
-        unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {agricultural_science_pack, 1},
-                {metallurgic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
-            },
-            time = 30
         }
     },
     -- MOLYBDENUM and RHENIUM

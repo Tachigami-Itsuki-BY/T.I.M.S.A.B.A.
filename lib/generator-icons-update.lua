@@ -1,25 +1,5 @@
 local Public = {}
 
---[[local function get_item_data(item_name)
-    if not item_name or item_name == "" then
-        return nil, nil
-    end
-    local item_type = "item"
-    local types = {"item", "fluid", "tool", "surface", "planet", "resource", "capsule", "module", "ammo", "item-with-entity-data"}
-    for _, t in ipairs(types) do
-        if data.raw[t] and data.raw[t][item_name] then
-            item_type = t
-            break
-        end
-    end
-    local prototype = data.raw[item_type] and data.raw[item_type][item_name]
-    if prototype then
-        return prototype, item_type
-    else
-        log("Item data not found for: " .. tostring(item_name))
-        return nil, nil
-    end
-end]]
 local function get_item_data(item_name)
     if not item_name or item_name == "" then
         return nil, nil
@@ -29,7 +9,7 @@ local function get_item_data(item_name)
     local types =
     {
         "item", "fluid", "tool", "surface", "planet", "resource", "capsule", "module", "ammo", "item-with-entity-data",
-        "gun", "armor", "repair-tool", "rail-planner", "blueprint-item", "deconstruction-item", "upgrade-item", 
+        "gun", "armor", "repair-tool", "rail-planner", "blueprint-item", "deconstruction-item", "upgrade-item",
         "selection-tool", "spidertron-remote"
     }
 
@@ -69,61 +49,6 @@ local function get_item_data(item_name)
     end
 end
 
---[[local function create_icon_entries(prototype_data_or_path, item_name, item_type, scale_base, shift_pos)
-    if not prototype_data_or_path then
-        return {}
-    end
-    local entries = {}
-    if type(prototype_data_or_path) == "string" and item_type == "path" then
-        table.insert(entries,
-        {
-            icon = prototype_data_or_path,
-            scale = scale_base,
-            shift = shift_pos
-        })
-        return entries
-    end
-    if prototype_data_or_path.icons then
-        for _, icon_data in ipairs(prototype_data_or_path.icons) do
-            local icon_properties = {
-                icon = icon_data.icon,
-                icon_size = icon_data.icon_size,
-                scale = scale_base,
-                draw_background = true,
-                tint = icon_data.tint,
-                shift = shift_pos
-            }
-            if icon_properties.icon_size then
-                icon_properties.scale = icon_properties.scale * 64 / icon_properties.icon_size
-            end
-            if not shift_pos then icon_properties.shift = nil end
-            if icon_properties.icon then
-                table.insert(entries, icon_properties)
-            else
-                log("ERROR in create_icon_entries: Missing icon property for: " .. (item_name or tostring(prototype_data_or_path)))
-            end
-        end
-    else
-        local icon_properties = {
-            icon = prototype_data_or_path.icon,
-            icon_size = prototype_data_or_path.icon_size,
-            scale = scale_base,
-            draw_background = true,
-            tint = prototype_data_or_path.tint,
-            shift = shift_pos
-        }
-        if icon_properties.icon_size then
-            icon_properties.scale = icon_properties.scale * 64 / icon_properties.icon_size
-        end
-        if not shift_pos then icon_properties.shift = nil end
-        if icon_properties.icon then
-            table.insert(entries, icon_properties)
-        else
-            log("ERROR in create_icon_entries: Missing icon property for: " .. (item_name or tostring(prototype_data_or_path)))
-        end
-    end
-    return entries
-end]]
 local function create_icon_entries(prototype_data_or_path, item_name, item_type, scale_base, shift_pos)
     if not prototype_data_or_path then
         return {}

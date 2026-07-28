@@ -14,7 +14,7 @@ data:extend
 ({
     {
         localised_name = {"technology-name.brannerite-processing-1"},
-        localised_description = {"technology-description.brannerite-processing-1"},
+        localised_description = {"technology-description.angels-ore-crushing"},
         type = technology,
         name = tech_brannerite_processing_1,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -31,24 +31,10 @@ data:extend
             item = brannerite_ore,
             count = 256
         }
-        --[[unit =
-        {
-            count = 200,
-            ingredients =
-            {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
-            },
-            time = 30
-        }]]
     },
     {
         localised_name = {"technology-name.brannerite-processing-2"},
-        localised_description = {"technology-description.brannerite-processing-2"},
+        localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
         name = tech_brannerite_processing_2,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -77,7 +63,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.brannerite-processing-3"},
-        localised_description = {"technology-description.brannerite-processing-3"},
+        localised_description = {"technology-description.angels-ore-leaching"},
         type = technology,
         name = tech_brannerite_processing_3,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -109,7 +95,7 @@ data:extend
     },
     {
         localised_name = {"technology-name.brannerite-processing-4"},
-        localised_description = {"technology-description.brannerite-processing-4"},
+        localised_description = {"technology-description.angels-ore-refining"},
         type = technology,
         name = tech_brannerite_processing_4,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/brannerite-processing.png",
@@ -275,23 +261,3 @@ data:extend
         }
     }
 })
-
---[[
-data:extend
-({
-    {
-        type = technology,
-        name = ,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/.png",
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})
-]]

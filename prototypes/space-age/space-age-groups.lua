@@ -11,66 +11,16 @@ is_space_environment_7 = "is-space-environment-7"
 is_space_environment_8 = "is-space-environment-8"
 is_space_environment_9 = "is-space-environment-9"
 is_space_processing_2 = "is-space-processing-2"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_space_platform_mods,
-        group = ig_space,
-        order = c
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_2,
-        group = ig_space,
-        order = f_a
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_3,
-        group = ig_space,
-        order = f_b
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_4,
-        group = ig_space,
-        order = f_c
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_5,
-        group = ig_space,
-        order = f_d
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_6,
-        group = ig_space,
-        order = f_e
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_7,
-        group = ig_space,
-        order = f_f
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_8,
-        group = ig_space,
-        order = f_g
-    },
-    {
-        type = item_subgroup,
-        name = is_space_environment_9,
-        group = ig_space,
-        order = f_h
-    },
-    {
-        type = item_subgroup,
-        name = is_space_processing_2,
-        group = ig_space,
-        order = i_a
-    }
+TIMSABA.functions.create_subgroups(ig_space,
+{
+    {name = is_space_platform_mods, order = c},
+    {name = is_space_environment_2, order = f_a},
+    {name = is_space_environment_3, order = f_b},
+    {name = is_space_environment_4, order = f_c},
+    {name = is_space_environment_5, order = f_d},
+    {name = is_space_environment_6, order = f_e},
+    {name = is_space_environment_7, order = f_f},
+    {name = is_space_environment_8, order = f_g},
+    {name = is_space_environment_9, order = f_h},
+    {name = is_space_processing_2,  order = i_a}
 })

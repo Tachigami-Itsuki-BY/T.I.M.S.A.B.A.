@@ -349,7 +349,7 @@ end
 
 local is_ammo_parts = "bob-ammo-parts"
 if mods [bobwarfare] then
-    data_item_subgroup[is_ammo_parts].group = ig_combat
+    data_item_subgroup[is_ammo_parts].group = "combat"
     data_item_subgroup[is_ammo_parts].order = b_a
 end
 

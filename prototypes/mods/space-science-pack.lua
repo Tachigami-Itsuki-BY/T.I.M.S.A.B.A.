@@ -3,22 +3,22 @@ if mods [bobtech] and mods [space_age_science_packs] then
     if settings.startup[setting_science_pack_nostalgia].value then
         list_base_or_space =
         {
-            "metallurgic-science-pack",
-            "electromagnetic-science-pack",
-            "cryogenic-science-pack",
-            "promethium-science-pack",
-            "agricultural-science-pack"
+            metallurgic_science_pack,
+            agricultural_science_pack,
+            electromagnetic_science_pack,
+            cryogenic_science_pack,
+            promethium_science_pack
         }
     else
         list_base_or_space =
         {
-            "military-science-pack",
-            "automation-science-pack",
-            "chemical-science-pack",
-            "space-science-pack",
-            "logistic-science-pack",
-            "utility-science-pack",
-            "production-science-pack"
+            automation_science_pack,
+            logistic_science_pack,
+            military_science_pack,
+            chemical_science_pack,
+            production_science_pack,
+            utility_science_pack,
+            space_science_pack
         }
     end
 

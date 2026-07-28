@@ -63,16 +63,17 @@ if mods [boblogistics] >= "2.1.0" then
             drop_sound = mechanical_drop_move,
             inventory_move_sound = mechanical_drop_move,
             pick_sound = mechanical_pick
-        },
-        -- RECIPE
+        }
+    })
+
+    TIMSABA.functions.create_recipes
+    ({
         {
             localised_name = {localised_name_T4_transport_belt},
-            type = recipe,
             name = T4_transport_belt,
             category = pressing,
             subgroup = is_logistic_T4,
             order = a,
-            enabled = false,
             energy_required = 0.5,
             ingredients =
             {
@@ -86,12 +87,10 @@ if mods [boblogistics] >= "2.1.0" then
         },
         {
             localised_name = {localised_name_T4_underground_belt},
-            type = recipe,
             name = T4_underground_belt,
             category = pressing,
             subgroup = is_logistic_T4,
             order = b,
-            enabled = false,
             energy_required = 1,
             ingredients =
             {
@@ -105,12 +104,10 @@ if mods [boblogistics] >= "2.1.0" then
         },
         {
             localised_name = {localised_name_T4_splitter},
-            type = recipe,
             name = T4_splitter,
             category = pressing,
             subgroup = is_logistic_T4,
             order = c,
-            enabled = false,
             energy_required = 1,
             ingredients =
             {
@@ -122,8 +119,11 @@ if mods [boblogistics] >= "2.1.0" then
             },
             results = {{type = item, name = T4_splitter, amount = 1}},
             main_product = T4_splitter
-        },
-        -- ENTITY
+        }
+    })
+
+    data:extend
+    ({
         {
             localised_name = {localised_name_T4_transport_belt},
             type = transport_belt,
@@ -427,27 +427,26 @@ if mods [boblogistics] >= "2.1.0" then
             drop_sound = pipe_drop_move,
             inventory_move_sound = pipe_drop_move,
             pick_sound = pipe_pick
-        },
-        -- RECIPE
+        }
+    })
+
+    TIMSABA.functions.create_recipes
+    ({
         {
-            type = recipe,
             name = stone_pipe,
             category = crafting,
             subgroup = is_pipe,
             order = c,
-            enabled = false,
             energy_required = 0.5,
             ingredients = {{type = item, name = stone_brick, amount = 1}},
             results = {{type = item, name = stone_pipe, amount = 1}},
             main_product = stone_pipe
         },
         {
-            type = recipe,
             name = stone_pipe_to_ground,
             category = crafting,
             subgroup = is_pipe_to_ground,
             order = c,
-            enabled = false,
             energy_required = 4,
             ingredients =
             {
@@ -458,24 +457,20 @@ if mods [boblogistics] >= "2.1.0" then
             main_product = stone_pipe_to_ground
         },
         --[[{
-            type = recipe,
             name = ceramic_pipe,
             category = crafting,
             subgroup = is_pipe,
             order = i,
-            enabled = false,
             energy_required = 0.5,
             ingredients = {{type = item, name = silicon_nitride_bob, amount = 1}},
             results = {{type = item, name = ceramic_pipe, amount = 1}},
             main_product = ceramic_pipe
         },
         {
-            type = recipe,
             name = ceramic_pipe_to_ground,
             category = crafting,
             subgroup = is_pipe_to_ground,
             order = i,
-            enabled = false,
             energy_required = 4,
             ingredients =
             {
@@ -486,24 +481,20 @@ if mods [boblogistics] >= "2.1.0" then
             main_product = ceramic_pipe_to_ground
         },]]
         {
-            type = recipe,
             name = nitinol_pipe,
             category = crafting,
             subgroup = is_pipe,
             order = k,
-            enabled = false,
             energy_required = 0.5,
             ingredients = {{type = item, name = nitinol_plate_bob, amount = 1}},
             results = {{type = item, name = nitinol_pipe, amount = 1}},
             main_product = nitinol_pipe
         },
         {
-            type = recipe,
             name = nitinol_pipe_to_ground,
             category = crafting,
             subgroup = is_pipe_to_ground,
             order = k,
-            enabled = false,
             energy_required = 4,
             ingredients =
             {
@@ -512,8 +503,11 @@ if mods [boblogistics] >= "2.1.0" then
             },
             results = {{type = item, name = nitinol_pipe_to_ground, amount = 2}},
             main_product = nitinol_pipe_to_ground
-        },
-        -- ENTITY
+        }
+    })
+
+    data:extend
+    ({
         {
             type = pipe,
             name = stone_pipe,

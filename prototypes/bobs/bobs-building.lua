@@ -1,3 +1,8 @@
+function TIMSABA.numeral_tier(icon_data, tier, tint)
+    local icons = angelsmods.functions.add_number_icon_layer({icon_data}, tier, tint)
+    return icons
+end
+
 -- STEAM POWER
 local is_boiler = "bob-energy-boiler"
 local is_steam_engine = "bob-energy-steam-engine"
@@ -24,7 +29,6 @@ if settings.startup[setting_bobmods_power_steam].value then
             order = f,
             enabled = false,
             auto_recycle = true,
-            allow_show = true,
             allow_productivity = false,
             allow_quality = true,
             allow_decomposition = true,
@@ -79,7 +83,6 @@ if settings.startup[setting_bobmods_power_steam].value then
             order = f,
             enabled = false,
             auto_recycle = true,
-            allow_show = true,
             allow_productivity = false,
             allow_quality = true,
             allow_decomposition = true,
@@ -130,7 +133,6 @@ if settings.startup[setting_bobmods_power_steam].value then
             order = d,
             enabled = false,
             auto_recycle = true,
-            allow_show = true,
             allow_productivity = false,
             allow_quality = true,
             allow_decomposition = true,
@@ -195,7 +197,6 @@ data:extend
         order = d,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -247,7 +248,6 @@ data:extend
         order = d,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -299,7 +299,6 @@ data:extend
         order = d,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -363,7 +362,6 @@ data:extend
         order = d,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -426,7 +424,6 @@ data:extend
         order = f,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -457,9 +454,9 @@ data:extend
             mining_speed = 6,
             energy_source =
             {
-                type = "electric",
-                usage_priority = "secondary-input",
-                emissions_per_minute = {pollution = 6},
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 6}
             }
         }
     })
@@ -491,7 +488,6 @@ data:extend
         order = f,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -523,9 +519,9 @@ data:extend
             mining_speed = 5,
             energy_source =
             {
-                type = "electric",
-                emissions_per_minute = {pollution = 5},
-                usage_priority = "secondary-input"
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 5}
             }
         }
     }),
@@ -548,7 +544,6 @@ data:extend
         order = g,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -580,9 +575,9 @@ data:extend
             mining_speed = 6,
             energy_source =
             {
-                type = "electric",
-                emissions_per_minute = {pollution = 6},
-                usage_priority = "secondary-input"
+                type = electric,
+                usage_priority = secondary_input,
+                emissions_per_minute = {pollution = 6}
             }
         }
     })
@@ -614,7 +609,6 @@ data:extend
         order = d,
         enabled = false,
         auto_recycle = true,
-        allow_show = true,
         allow_productivity = false,
         allow_quality = true,
         allow_decomposition = true,
@@ -659,33 +653,18 @@ data:extend
 data_reactor[deuterium_reactor].next_upgrade = tritium_reactor
 data_reactor[tritium_reactor].next_upgrade = nil
 
--- FURNACE
 local is_smelting_machine_1 = "smelting-machine"
-data:extend
+local is_smelting_machine_2 = "bob-smelting-machine"
+local is_production_machine = "production-machine"
+TIMSABA.functions.create_buildings
 ({
+    -- FURNACE
     {
-        type = item,
         name = electric_furnace_4,
         subgroup = is_smelting_machine_1,
         icon = "__base__/graphics/icons/electric-furnace.png",
         order = f,
-        place_result = electric_furnace_4,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = electric_furnace_4,
-        category = crafting,
-        subgroup = is_smelting_machine_1,
-        icon = "__base__/graphics/icons/electric-furnace.png",
-        order = f,
-        enabled = false,
-        auto_recycle = true,
-        allow_show = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
+
         energy_required = 1,
         ingredients =
         {
@@ -694,63 +673,23 @@ data:extend
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_furnace_3, amount = 1}
         },
-        results = {{type = item, name = electric_furnace_4, amount = 1}},
-        main_product = electric_furnace_4
-    },
-    util.merge
-    ({
-        data_furnace[electric_furnace_1],
-        {
-            name = electric_furnace_4,
-            subgroup = is_smelting_machine_1,
-            icon = "__base__/graphics/icons/electric-furnace.png",
-            icon_size = 64,
-            order = f,
-            minable = {mining_time = 0.5, result = electric_furnace_4},
-            max_health = 650,
-            crafting_speed = 6,
-            module_slots = 6,
-            energy_usage = 270 .. kW,
-            energy_source =
-            {
-                type = "electric",
-                usage_priority = "secondary-input",
-                emissions_per_minute = {pollution = 0},
-                drain = 90 .. kW
-            }
-        }
-    })
-})
-data_furnace[electric_furnace_3].next_upgrade = electric_furnace_4
-data_furnace[electric_furnace_4].next_upgrade = nil
 
--- FURNACE (ASSEMBLY)
-local is_smelting_machine_2 = "bob-smelting-machine"
-data:extend
-({
-    {
-        type = item,
-        name = electric_mixing_furnace_4,
-        subgroup = is_smelting_machine_2,
-        icon = "__bobplates__/graphics/icons/electric-mixing-furnace.png",
-        order = f,
-        place_result = electric_mixing_furnace_4,
-        stack_size = 32,
-        weight = 31250
+        base_prototype = data_furnace[electric_furnace_1],
+
+        crafting_speed = 6,
+        module_slots = 6,
+        pollution = 6,
+        drain = 90 .. kW,
+        energy_usage = 270 .. kW,
+        max_health = 650
     },
+    -- FURNACE (ASSEMBLY)
     {
-        type = recipe,
         name = electric_mixing_furnace_4,
-        category = crafting,
         subgroup = is_smelting_machine_2,
-        icon = "__bobplates__/graphics/icons/electric-mixing-furnace.png",
+        icons = TIMSABA.numeral_tier({"__bobplates__/graphics/icons/electric-mixing-furnace.png", icon_size = 64}, 4, angelsmods.refining.number_tint),
         order = f,
-        enabled = false,
-        auto_recycle = true,
-        allow_show = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
+
         energy_required = 1,
         ingredients =
         {
@@ -759,65 +698,23 @@ data:extend
             {type = item, name = rhenium_plate, amount = 4},
             {type = item, name = electric_mixing_furnace_3, amount = 1}
         },
-        results = {{type = item, name = electric_mixing_furnace_4, amount = 1}},
-        main_product = electric_mixing_furnace_4
-    },
-    util.merge
-    ({
-        data_assembling[electric_mixing_furnace_1],
-        {
-            name = electric_mixing_furnace_4,
-            subgroup = is_smelting_machine_2,
-            icon = "__bobplates__/graphics/icons/electric-mixing-furnace.png",
-            icon_size = 64,
-            order = f,
-            minable = {mining_time = 0.5, result = electric_mixing_furnace_4},
-            max_health = 650,
-            crafting_speed = 6,
-            module_slots = 6,
-            energy_usage = 270 .. kW,
-            energy_source =
-            {
-                type = "electric",
-                usage_priority = "secondary-input",
-                emissions_per_minute = {pollution = 0},
-                drain = 90 .. kW
-            },
-            crafting_categories = {smelting, smelting_filtering, smelting_chemical},
-            ingredient_count = 2
-        }
-    })
-})
-data_assembling[electric_mixing_furnace_3].next_upgrade = electric_mixing_furnace_4
-data_assembling[electric_mixing_furnace_4].next_upgrade = nil
 
--- CENTIFUGE
-local is_production_machine = "production-machine"
-data:extend
-({
-    {
-        type = item,
-        name = centrifuge_4,
-        subgroup = is_production_machine,
-        icon = "__base__/graphics/icons/centrifuge.png",
-        order = d,
-        place_result = centrifuge_4,
-        stack_size = 32,
-        weight = 31250
+        base_prototype = data_assembling[electric_mixing_furnace_1],
+
+        crafting_speed = 6,
+        module_slots = 6,
+        pollution = 6,
+        drain = 90 .. kW,
+        energy_usage = 270 .. kW,
+        max_health = 650
     },
+    -- CENTIFUGE
     {
-        type = recipe,
         name = centrifuge_4,
-        category = crafting,
         subgroup = is_production_machine,
-        icon = "__base__/graphics/icons/centrifuge.png",
+        icons = TIMSABA.numeral_tier({"__base__/graphics/icons/centrifuge.png", icon_size = 64}, 4, angelsmods.refining.number_tint),
         order = d,
-        enabled = false,
-        auto_recycle = true,
-        allow_show = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
+
         energy_required = 16,
         ingredients =
         {
@@ -828,33 +725,22 @@ data:extend
             {type = item, name = carbon_concrete_brick, amount = 128},
             {type = item, name = centrifuge_3, amount = 1}
         },
-        results = {{type = item, name = centrifuge_4, amount = 1}},
-        main_product = centrifuge_4
-    },
-    util.merge
-    ({
-        data_assembling[centrifuge_3],
-        {
-            name = centrifuge_4,
-            subgroup = is_production_machine,
-            icon = "__base__/graphics/icons/centrifuge.png",
-            icon_size = 64,
-            order = d,
-            minable = {result = centrifuge_4},
-            module_slots = 4,
-            crafting_speed = 4,
-            energy_source =
-            {
-                type = "electric",
-                usage_priority = "secondary-input",
-                emissions_per_minute = {pollution = 4},
-                drain = 60 .. kW
-            },
-            energy_usage = 900 .. kW,
-            max_health = 650,
-            crafting_categories = {centrifuging, angels_centrifuging_2, angels_centrifuging_3, centrifuging_4}
-        }
-    })
+
+        base_prototype = data_assembling[centrifuge_3],
+
+        energy_usage = 900 .. kW,
+        max_health = 650
+    }
 })
+
+data_furnace[electric_furnace_3].next_upgrade = electric_furnace_4
+data_furnace[electric_furnace_4].next_upgrade = nil
+
+data_assembling[electric_mixing_furnace_3].next_upgrade = electric_mixing_furnace_4
+data_assembling[electric_mixing_furnace_4].next_upgrade = nil
+data_assembling[electric_mixing_furnace_4].crafting_categories = {smelting, smelting_filtering, smelting_chemical}
+data_assembling[electric_mixing_furnace_4].ingredient_count = 2
+
 data_assembling[centrifuge_3].next_upgrade = centrifuge_4
 data_assembling[centrifuge_4].next_upgrade = nil
+table.insert(data_assembling[centrifuge_4].crafting_categories, centrifuging_4)

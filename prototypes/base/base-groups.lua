@@ -1,39 +1,17 @@
 -- LOGISTICS
-local logistics = "logistics"
 is_medium_electric_pole = "is-medium-electric-pole"
 is_big_electric_pole = "is-big-electric-pole"
 is_substation = "is-substation"
 is_pipe = "bob-pipe"
 is_pipe_to_ground = "bob-pipe-to-ground"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_medium_electric_pole,
-        group = logistics,
-        order = d_a
-    },
-    {
-        type = item_subgroup,
-        name = is_big_electric_pole,
-        group = logistics,
-        order = d_b
-    },
-    {
-        type = item_subgroup,
-        name = is_substation,
-        group = logistics,
-        order = d_c
-    }
+TIMSABA.functions.create_subgroups("logistics",
+{
+    {name = is_medium_electric_pole, order = d_a},
+    {name = is_big_electric_pole,    order = d_b},
+    {name = is_substation,           order = d_c}
 })
 
 -- PRODUCTION
-local production = "production"
-data_item_subgroup["bob-energy-boiler"].order = b
-data_item_subgroup["bob-energy-steam-engine"].order = b_a
-data_item_subgroup["bob-energy-fluid-generator"].order = b_c
-data_item_subgroup["bob-energy-solar-panel"].order = b_e
-data_item_subgroup["bob-energy-accumulator"].order = b_g
 is_energy_steam_turbine = "is-energy-steam-turbine"
 is_solar_panel_small = "solar-panel-small"
 is_solar_panel_large = "solar-panel-large"
@@ -42,72 +20,25 @@ is_extraction_machine_muluna = "is-extraction-machine-muluna"
 is_extraction_machine_maraxsis = "is-extraction-machine-maraxsis"
 is_extraction_machine_pumpjack = "is-extraction-machine-pumpjack"
 is_lab = "is-lab"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_energy_steam_turbine,
-        group = production,
-        order = b_b
-    },
-    {
-        type = item_subgroup,
-        name = is_solar_panel_small,
-        group = production,
-        order = b_d
-    },
-    {
-        type = item_subgroup,
-        name = is_solar_panel_large,
-        group = production,
-        order = b_f
-    },
-    {
-        type = item_subgroup,
-        name = is_extraction_machine_mining,
-        group = production,
-        order = c_a
-    },
-    {
-        type = item_subgroup,
-        name = is_extraction_machine_pumpjack,
-        group = production,
-        order = c_d
-    },
-    {
-        type = item_subgroup,
-        name = is_lab,
-        group = production,
-        order = e_b
-    }
+TIMSABA.functions.create_subgroups("production",
+{
+    {name = is_energy_steam_turbine,        order = b_b},
+    {name = is_solar_panel_small,           order = b_d},
+    {name = is_solar_panel_large,           order = b_f},
+    {name = is_extraction_machine_mining,   order = c_a},
+    {name = is_extraction_machine_pumpjack, order = c_d},
+    {name = is_lab,                         order = e_b}
 })
 
 if mods [muluna_mods] then
-    data:extend
-    ({
-        {
-            type = item_subgroup,
-            name = is_extraction_machine_muluna,
-            group = production,
-            order = c_b
-        }
-    })
+    TIMSABA.functions.create_subgroups("production", {{name = is_extraction_machine_muluna, order = c_b}})
 end
 
 if mods [maraxsis_mods] then
-    data:extend
-    ({
-        {
-            type = item_subgroup,
-            name = is_extraction_machine_maraxsis,
-            group = production,
-            order = c_c
-        }
-    })
+    TIMSABA.functions.create_subgroups("production", {{name = is_extraction_machine_maraxsis, order = c_c}})
 end
 
 -- INTERMEDIATE PRODUCTS
-local intermediate_products = "intermediate-products"
 is_alien_science_pack = "is-alien-science-pack"
 is_gears = "bob-gears"
 is_bearing_ball = "bob-bearings"
@@ -122,60 +53,19 @@ is_nuclear_recipe = "is-nuclear-recipe"
 is_uranium_235_item = "is-uranium-235-item"
 is_uranium_235_recipe = "is-uranium-235_recipe"
 is_nuclear_cell = "is-nuclear-cell"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_alien_science_pack,
-        group = intermediate_products,
-        order = a_a
-    },
-    {
-        type = item_subgroup,
-        name = is_bearing,
-        group = intermediate_products,
-        order = b_c
-    },
-    {
-        type = item_subgroup,
-        name = is_circuit_boards,
-        group = intermediate_products,
-        order = d_b
-    },
-    {
-        type = item_subgroup,
-        name = is_nuclear_item,
-        group = intermediate_products,
-        order = e
-    },
-    {
-        type = item_subgroup,
-        name = is_nuclear_recipe,
-        group = intermediate_products,
-        order = e_a
-    },
-    {
-        type = item_subgroup,
-        name = is_uranium_235_item,
-        group = intermediate_products,
-        order = e_b
-    },
-    {
-        type = item_subgroup,
-        name = is_uranium_235_recipe,
-        group = intermediate_products,
-        order = e_c
-    },
-    {
-        type = item_subgroup,
-        name = is_nuclear_cell,
-        group = intermediate_products,
-        order = e_d
-    }
+TIMSABA.functions.create_subgroups("intermediate-products",
+{
+    {name = is_alien_science_pack, order = a_a},
+    {name = is_bearing, order = b_c},
+    {name = is_circuit_boards, order = d_b},
+    {name = is_nuclear_item, order = e},
+    {name = is_nuclear_recipe, order = e_a},
+    {name = is_uranium_235_item, order = e_b},
+    {name = is_uranium_235_recipe, order = e_c},
+    {name = is_nuclear_cell, order = e_d}
 })
 
 -- COMBAT
-ig_combat = "combat"
 is_shotgun = "is-shotgun"
 is_laser = "is-laser"
 is_rocket = "is-rocket"
@@ -214,234 +104,44 @@ is_turret_2 = "is-turret-2"
 is_turret_3 = "is-turret-3"
 is_turret_4 = "is-turret-4"
 is_turret_5 = "is-turret-5"
-data:extend
-({
-    {
-        type = item_subgroup,
-        name = is_shotgun,
-        group = ig_combat,
-        order = a_a
-    },
-    {
-        type = item_subgroup,
-        name = is_laser,
-        group = ig_combat,
-        order = a_b
-    },
-    {
-        type = item_subgroup,
-        name = is_rocket,
-        group = ig_combat,
-        order = a_c
-    },
-    {
-        type = item_subgroup,
-        name = is_flame,
-        group = ig_combat,
-        order = a_d
-    },
-    {
-        type = item_subgroup,
-        name = is_bullet_projectile,
-        group = ig_combat,
-        order = b_b
-    },
-    {
-        type = item_subgroup,
-        name = is_bullet,
-        group = ig_combat,
-        order = b_c
-    },
-    {
-        type = item_subgroup,
-        name = is_ammo_magazine,
-        group = ig_combat,
-        order = b_d
-    },
-    {
-        type = item_subgroup,
-        name = is_ammo_shotgun,
-        group = ig_combat,
-        order = b_e
-    },
-    {
-        type = item_subgroup,
-        name = is_rocket_warhead,
-        group = ig_combat,
-        order = b_f
-    },
-    {
-        type = item_subgroup,
-        name = is_ammo_rocket,
-        group = ig_combat,
-        order = b_g
-    },
-    {
-        type = item_subgroup,
-        name = is_combat_robots_entites,
-        group = ig_combat,
-        order = c_a
-    },
-    {
-        type = item_subgroup,
-        name = is_combat_robots,
-        group = ig_combat,
-        order = c_c
-    },
-    {
-        type = item_subgroup,
-        name = is_combat_robot_brain,
-        group = ig_combat,
-        order = c_d
-    },
-    {
-        type = item_subgroup,
-        name = is_combat_robot_tool,
-        group = ig_combat,
-        order = c_e
-    },
-    {
-        type = item_subgroup,
-        name = is_equipment_2,
-        group = ig_combat,
-        order = e_a
-    },
-    {
-        type = item_subgroup,
-        name = is_equipment_3,
-        group = ig_combat,
-        order = e_b
-    },
-    {
-        type = item_subgroup,
-        name = is_equipment_4,
-        group = ig_combat,
-        order = e_c
-    },
-    {
-        type = item_subgroup,
-        name = is_equipment_5,
-        group = ig_combat,
-        order = e_d
-    },
-    {
-        type = item_subgroup,
-        name = is_utility_equipment_2,
-        group = ig_combat,
-        order = f_a
-    },
-    {
-        type = item_subgroup,
-        name = is_utility_equipment_3,
-        group = ig_combat,
-        order = f_b
-    },
-    {
-        type = item_subgroup,
-        name = is_utility_equipment_4,
-        group = ig_combat,
-        order = f_c
-    },
-    {
-        type = item_subgroup,
-        name = is_military_equipment_2,
-        group = ig_combat,
-        order = g_a
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_2,
-        group = ig_combat,
-        order = g_c
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_3,
-        group = ig_combat,
-        order = g_d
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_4,
-        group = ig_combat,
-        order = g_e
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_5,
-        group = ig_combat,
-        order = g_f
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_6,
-        group = ig_combat,
-        order = g_g
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_7,
-        group = ig_combat,
-        order = g_h
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_8,
-        group = ig_combat,
-        order = g_i
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_9,
-        group = ig_combat,
-        order = g_j
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_10,
-        group = ig_combat,
-        order = g_k
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_11,
-        group = ig_combat,
-        order = g_l
-    },
-    {
-        type = item_subgroup,
-        name = is_vehicle_equipment_12,
-        group = ig_combat,
-        order = g_m
-    },
-    {
-        type = item_subgroup,
-        name = is_defensive_structure_2,
-        group = ig_combat,
-        order = h_a
-    },
-    {
-        type = item_subgroup,
-        name = is_turret_2,
-        group = ig_combat,
-        order = i_a
-    },
-    {
-        type = item_subgroup,
-        name = is_turret_3,
-        group = ig_combat,
-        order = i_b
-    },
-    {
-        type = item_subgroup,
-        name = is_turret_4,
-        group = ig_combat,
-        order = i_c
-    },
-    {
-        type = item_subgroup,
-        name = is_turret_5,
-        group = ig_combat,
-        order = i_d
-    },
+TIMSABA.functions.create_subgroups("combat",
+{
+    {name = is_shotgun,                order = a_a},
+    {name = is_laser,                  order = a_b},
+    {name = is_rocket,                 order = a_c},
+    {name = is_flame,                  order = a_d},
+    {name = is_bullet_projectile,      order = b_b},
+    {name = is_bullet,                 order = b_c},
+    {name = is_ammo_magazine,          order = b_d},
+    {name = is_ammo_shotgun,           order = b_e},
+    {name = is_rocket_warhead,         order = b_f},
+    {name = is_ammo_rocket,            order = b_g},
+    {name = is_combat_robots_entites,  order = c_a},
+    {name = is_combat_robots,          order = c_c},
+    {name = is_combat_robot_brain,     order = c_d},
+    {name = is_combat_robot_tool,      order = c_e},
+    {name = is_equipment_2,            order = e_a},
+    {name = is_equipment_3,            order = e_b},
+    {name = is_equipment_4,            order = e_c},
+    {name = is_equipment_5,            order = e_d},
+    {name = is_utility_equipment_2,    order = f_a},
+    {name = is_utility_equipment_3,    order = f_b},
+    {name = is_utility_equipment_4,    order = f_c},
+    {name = is_military_equipment_2,   order = g_a},
+    {name = is_vehicle_equipment_2,    order = g_c},
+    {name = is_vehicle_equipment_3,    order = g_d},
+    {name = is_vehicle_equipment_4,    order = g_e},
+    {name = is_vehicle_equipment_5,    order = g_f},
+    {name = is_vehicle_equipment_6,    order = g_g},
+    {name = is_vehicle_equipment_7,    order = g_h},
+    {name = is_vehicle_equipment_8,    order = g_i},
+    {name = is_vehicle_equipment_9,    order = g_j},
+    {name = is_vehicle_equipment_10,   order = g_k},
+    {name = is_vehicle_equipment_11,   order = g_l},
+    {name = is_vehicle_equipment_12,   order = g_m},
+    {name = is_defensive_structure_2,  order = h_a},
+    {name = is_turret_2,               order = i_a},
+    {name = is_turret_3,               order = i_b},
+    {name = is_turret_4,               order = i_c},
+    {name = is_turret_5,               order = i_d}
 })

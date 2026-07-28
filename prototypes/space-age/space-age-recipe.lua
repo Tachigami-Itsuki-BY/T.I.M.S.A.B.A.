@@ -23,15 +23,15 @@ advanced_full_metallic_asteroid_crushing_5 = "advanced-full-metallic-asteroid-cr
 advanced_full_metallic_asteroid_crushing_6 = "advanced-full-metallic-asteroid-crushing-6" -- Germanium ore
 advanced_full_metallic_asteroid_crushing_7 = "advanced-full-metallic-asteroid-crushing-7" -- Galium ore
 advanced_full_metallic_asteroid_crushing_8 = "advanced-full-metallic-asteroid-crushing-8" -- Vanadium ore
-data:extend
-({
+local function metallic_asteroid_crushing(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = metallic_asteroid_crushing_2,
+        name = parameters.name,
         category = crushing,
         subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, copper_ore),
-        order = e_b,
+        icons = TWO_I(metallic_asteroid_chunk, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -39,422 +39,35 @@ data:extend
         allow_decomposition = false,
         energy_required = 4,
         ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = copper_ore, amount = 8}},
-        main_product = copper_ore
-    },
-    {
-        type = recipe,
-        name = metallic_asteroid_crushing_3,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, lead_ore_bob),
-        order = e_c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = lead_ore_bob, amount = 8}},
-        main_product = lead_ore_bob
-    },
-    {
-        type = recipe,
-        name = metallic_asteroid_crushing_4,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, tin_ore_bob),
-        order = e_d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = tin_ore_bob, amount = 8}},
-        main_product = tin_ore_bob
-    },
-    {
-        type = recipe,
-        name = metallic_asteroid_crushing_5,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, manganese_ore_angels),
-        order = e_e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = manganese_ore_angels, amount = 8}},
-        main_product = manganese_ore_angels
-    },
-    {
-        type = recipe,
-        name = metallic_asteroid_crushing_6,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, magnesium_ore),
-        order = e_f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = magnesium_ore, amount = 8}},
-        main_product = magnesium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_metallic_asteroid_crushing_2,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, aluminium_ore_bob),
-        order = f_b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = aluminium_ore_bob, amount = 8}},
-        main_product = aluminium_ore_bob
-    },
-    {
-        type = recipe,
-        name = advanced_metallic_asteroid_crushing_3,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, zinc_ore_bob),
-        order = f_c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = zinc_ore_bob, amount = 8}},
-        main_product = zinc_ore_bob
-    },
-    {
-        type = recipe,
-        name = advanced_metallic_asteroid_crushing_4,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, silver_ore_bob),
-        order = f_d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = silver_ore_bob, amount = 8}},
-        main_product = silver_ore_bob
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_1,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, titanium_ore_bob),
-        order = g_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = titanium_ore_bob, amount = 8}},
-        main_product = titanium_ore_bob
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_2,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, gold_ore_bob),
-        order = g_b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = gold_ore_bob, amount = 8}},
-        main_product = gold_ore_bob
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_3,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, cobalt_ore_bob),
-        order = g_c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = cobalt_ore_bob, amount = 8}},
-        main_product = cobalt_ore_bob
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_4,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, uranium_ore),
-        order = g_d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = uranium_ore, amount = 8}},
-        main_product = uranium_ore
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_5,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, thorium_ore_bob),
-        order = g_e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = thorium_ore_bob, amount = 8}},
-        main_product = thorium_ore_bob
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_6,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, chromium_ore_angels),
-        order = g_f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = chromium_ore_angels, amount = 8}},
-        main_product = chromium_ore_angels
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_7,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, tungsten_ore_bob),
-        order = g_g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = tungsten_ore_bob, amount = 8}},
-        main_product = tungsten_ore_bob
-    },
-    {
-        type = recipe,
-        name = full_metallic_asteroid_crushing_8,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, platinum_ore_angels),
-        order = g_h,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = platinum_ore_angels, amount = 8}},
-        main_product = platinum_ore_angels
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_1,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, molybdenum_ore),
-        order = h_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = molybdenum_ore, amount = 8}},
-        main_product = molybdenum_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_2,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, rhenium_ore),
-        order = h_b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = rhenium_ore, amount = 8}},
-        main_product = rhenium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_3,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, niobium_ore),
-        order = h_c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = niobium_ore, amount = 8}},
-        main_product = niobium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_4,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, holmium_ore),
-        order = h_d,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = holmium_ore, amount = 8}},
-        main_product = holmium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_5,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, antimony_ore),
-        order = h_e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = antimony_ore, amount = 8}},
-        main_product = antimony_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_6,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, germanium_ore),
-        order = h_f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = germanium_ore, amount = 8}},
-        main_product = germanium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_7,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, galium_ore),
-        order = h_g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = galium_ore, amount = 8}},
-        main_product = galium_ore
-    },
-    {
-        type = recipe,
-        name = advanced_full_metallic_asteroid_crushing_8,
-        category = crushing,
-        subgroup = is_space_environment_1,
-        icons = TWO_I(metallic_asteroid_chunk, vanadium_ore),
-        order = h_h,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = metallic_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = vanadium_ore, amount = 8}},
-        main_product = vanadium_ore
+        results = {{type = item, name = parameters.res, amount = 8}},
+        main_product = parameters.res
     }
-})
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
+    data:extend({info_recipe})
+end
+metallic_asteroid_crushing({name = metallic_asteroid_crushing_2,               order = e_b, res = copper_ore})
+metallic_asteroid_crushing({name = metallic_asteroid_crushing_3,               order = e_c, res = lead_ore_bob})
+metallic_asteroid_crushing({name = metallic_asteroid_crushing_4,               order = e_d, res = tin_ore_bob})
+metallic_asteroid_crushing({name = metallic_asteroid_crushing_5,               order = e_e, res = manganese_ore_angels})
+metallic_asteroid_crushing({name = metallic_asteroid_crushing_6,               order = e_f, res = magnesium_ore})
+metallic_asteroid_crushing({name = advanced_metallic_asteroid_crushing_2,      order = f_b, res = aluminium_ore_bob})
+metallic_asteroid_crushing({name = advanced_metallic_asteroid_crushing_3,      order = f_c, res = zinc_ore_bob})
+metallic_asteroid_crushing({name = advanced_metallic_asteroid_crushing_4,      order = f_d, res = silver_ore_bob})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_1,          order = g_a, res = titanium_ore_bob})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_2,          order = g_b, res = gold_ore_bob})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_3,          order = g_c, res = cobalt_ore_bob})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_4,          order = g_d, res = uranium_ore})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_5,          order = g_e, res = thorium_ore_bob})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_6,          order = g_f, res = chromium_ore_angels})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_7,          order = g_g, res = tungsten_ore_bob})
+metallic_asteroid_crushing({name = full_metallic_asteroid_crushing_8,          order = g_h, res = platinum_ore_angels})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_1, order = h_a, res = molybdenum_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_2, order = h_b, res = rhenium_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_3, order = h_c, res = niobium_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_4, order = h_d, res = holmium_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_5, order = h_e, res = antimony_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_6, order = h_f, res = germanium_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_7, order = h_g, res = galium_ore})
+metallic_asteroid_crushing({name = advanced_full_metallic_asteroid_crushing_8, order = h_h, res = vanadium_ore})
 
 -- CARBONIC
 advanced_carbonic_asteroid_crushing_2 = "advanced-carbonic-asteroid-crushing-2"
@@ -479,134 +92,21 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- OXIDE
 oxide_asteroid_crushing_2 = "oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
 advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
 full_oxide_asteroid_crushing_1 = "full-oxide-asteroid-crushing-1"
 full_oxide_asteroid_crushing_2 = "full-oxide-asteroid-crushing-2"
-data:extend
-({
+local function oxide_asteroid_crushing(parameters)
+    local info_recipe =
     {
         type = recipe,
-        name = oxide_asteroid_crushing_2,
-        category = chemistry,
+        name = parameters.name,
+        category = parameters.category,
         subgroup = is_space_environment_3,
-        icons = TWO_I(oxide_asteroid_chunk, nitrogen_oxide),
-        order = e_b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients =
-        {
-            {type = item, name = oxide_asteroid_chunk, amount = 1},
-            --{type = item, name = catalyst_red, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = nitrogen_oxide, amount = 120},
-            --{type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
-        },
-        main_product = nitrogen_oxide
-    },
-    {
-        type = recipe,
-        name = oxide_asteroid_crushing_3,
-        category = chemistry,
-        subgroup = is_space_environment_3,
-        icons = TWO_I(oxide_asteroid_chunk, chlorine_oxide_gas),
-        order = e_c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients =
-        {
-            {type = item, name = oxide_asteroid_chunk, amount = 1},
-            --{type = item, name = catalyst_red, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = chlorine_oxide_gas, amount = 120},
-            --{type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
-        },
-        main_product = chlorine_oxide_gas
-    },
-    {
-        type = recipe,
-        name = advanced_oxide_asteroid_crushing_2,
-        category = chemistry,
-        subgroup = is_space_environment_3,
-        icons = TWO_I(oxide_asteroid_chunk, nitrogen_dioxide_angels),
-        order = f_b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients =
-        {
-            {type = item, name = oxide_asteroid_chunk, amount = 1},
-            --{type = item, name = catalyst_green, amount = 1}
-        },
-        results =
-        {
-            {type = fluid, name = nitrogen_dioxide_angels, amount = 120},
-            --{type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
-        },
-        main_product = nitrogen_dioxide_angels
-    },
-    {
-        type = recipe,
-        name = full_oxide_asteroid_crushing_1,
-        category = crushing,
-        subgroup = is_space_environment_3,
-        icons = TWO_I(oxide_asteroid_chunk, lithium_oxide),
-        order = g_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4,
-        ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
-        results = {{type = item, name = lithium_oxide, amount = 8}},
-        main_product = lithium_oxide
-    },
-    {
-        type = recipe,
-        name = full_oxide_asteroid_crushing_2,
-        category = chemistry,
-        subgroup = is_space_environment_3,
-        icons = TWO_I(oxide_asteroid_chunk, oxygen_fluoride_gas),
-        order = g_a,
+        icons = TWO_I(oxide_asteroid_chunk, parameters.res),
+        order = parameters.order,
         enabled = false,
         auto_recycle = false,
         allow_productivity = true,
@@ -614,31 +114,16 @@ data:extend
         allow_decomposition = false,
         energy_required = 4,
         ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
-        results = {{type = fluid, name = oxygen_fluoride_gas, amount = 120}},
-        main_product = oxygen_fluoride_gas
+        results = {{type = parameters.type_res, name = parameters.res, amount = 120}},
+        main_product = parameters.res
     }
-})
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
+    data:extend({info_recipe})
+end
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_2,          category = chemistry, order = e_b, type_res = fluid, res = nitrogen_oxide})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_3,          category = chemistry, order = e_c, type_res = fluid, res = chlorine_oxide_gas})
+oxide_asteroid_crushing({name = advanced_oxide_asteroid_crushing_2, category = chemistry, order = f_b, type_res = fluid, res = nitrogen_dioxide_angels})
+oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_1,     category = crushing,  order = g_a, type_res = item,  res = lithium_oxide})
+oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_2,     category = chemistry, order = g_b, type_res = fluid, res = oxygen_fluoride_gas})
 
 -- SPACE PROCESSING
 nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
@@ -648,20 +133,14 @@ hydrazine_space = "hydrazine-liquid-space"
 dinitrogen_tetroxide_space = "dinitrogen-tetroxide-gas-space"
 oxygen_fluoride_space = "oxygen-fluoride-gas-space"
 fluoroketone_liquid = "fluoroketone-liquid"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = nitrogen_oxide_separation,
         category = chemistry,
         subgroup = is_space_processing,
         icons = THREE_R_I(nitrogen_oxide, nitrogen_angels, oxygen_angels),
         order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- 2N₂O --> 2N₂ + O₂
         ingredients =
         {
@@ -675,17 +154,11 @@ data:extend
         main_product = nitrogen_angels
     },
     {
-        type = recipe,
         name = chlorine_oxide_separation,
         category = chemistry,
         subgroup = is_space_processing,
         icons = THREE_R_I(chlorine_oxide_gas, chlorine_angels, oxygen_angels),
         order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- 2Cl₂O --> 2Cl₂ + O₂
         ingredients = {{type = fluid, name = chlorine_oxide_gas, amount = 60}},
         results =
@@ -696,17 +169,11 @@ data:extend
         main_product = chlorine_angels
     },
     {
-        type = recipe,
         name = nitrogen_monoxide_space,
         category = chemistry,
         subgroup = is_space_processing,
         icons = BUILDING_R_I(nitrogen_monoxide_angels, space_platform),
         order = e,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- 4NH₃ + 5O₂ -cat-> 4NO + 6H₂O
         ingredients =
         {
@@ -724,18 +191,12 @@ data:extend
         surface_conditions = {{property = gravity, min = 0, max = 0}}
     },
     {
-        type = recipe,
         name = hydrazine_space,
         category = chemistry,
         subgroup = is_space_processing,
         icons = BUILDING_R_I(hydrazine_angels, space_platform),
         order = f,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- NH₂Cl + NH₃ -cat-> N₂H₄ + HCl
+        -- NH₂Cl + NH₃ -cat-> N₂H₄ + HCl
         ingredients =
         {
             {type = fluid, name = monochloramine_angels, amount = 60},
@@ -752,17 +213,11 @@ data:extend
         surface_conditions = {{property = gravity, min = 0, max = 0}}
     },
     {
-        type = recipe,
         name = dinitrogen_tetroxide_space,
         category = chemistry,
         subgroup = is_space_processing,
         icons = BUILDING_R_I(nitrogen_dioxide_angels, space_platform),
         order = g,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2, -- 2NO₂ -cat-> N₂O₄
         ingredients =
         {
@@ -778,18 +233,12 @@ data:extend
         surface_conditions = {{property = gravity, min = 0, max = 0}}
     },
     {
-        type = recipe,
         name = oxygen_fluoride_space,
         category = cryogenics,
         subgroup = is_space_processing,
         icons = BUILDING_R_I(oxygen_fluoride_gas, space_platform),
         order = h,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- 2F₂ + O₂ --> OF₂
+        -- 2F₂ + O₂ --> OF₂
         ingredients =
         {
             {type = fluid, name = fluorine, amount = 120},
@@ -800,17 +249,11 @@ data:extend
         surface_conditions = {{property = pressure, min = 0, max = 0}}
     },
     {
-        type = recipe,
         name = fluoroketone_liquid,
         category = cryogenics,
         subgroup = is_space_processing,
         icons = BUILDING_R_I(fluoroketone_hot, space_platform),
         order = i,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- 2C₃F₆ + OF₂ --> C₆F₁₂O + F₂
         ingredients =
         {
@@ -827,45 +270,18 @@ data:extend
     }
 })
 
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]
-
 -- SPACE PROCESSING 2
 lime_space = "lime-space"
 sodium_hydroxide_space = "sodium-hydroxide-space"
 lithium_space = "lithium-space"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = lime_space,
         category = angels_blast_smelting_4,
         subgroup = is_space_processing_2,
         icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
         order = a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- CaCO₃ --> CaO + CO₂
         ingredients = {{type = item, name = calcite, amount = 16}},
         results =
@@ -876,18 +292,13 @@ data:extend
         main_product = lime_angels
     },
     {
-        type = recipe,
         name = sodium_hydroxide_space,
         category = chemistry,
         subgroup = is_space_processing_2,
         icons = THREE_I(sodium_oxide, water_purified_angels, sodium_hydroxide_angels),
         order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
         allow_quality = true,
-        allow_decomposition = false,
-        energy_required = 4, -- Na₂O + H₂O --> 2NaOH 
+        -- Na₂O + H₂O --> 2NaOH 
         ingredients =
         {
             {type = item, name = sodium_oxide, amount = 4},
@@ -897,17 +308,12 @@ data:extend
         main_product = sodium_hydroxide_angels
     },
     {
-        type = recipe,
         name = lithium_space,
         category = angels_chemical_smelting_4,
         subgroup = is_space_processing_2,
         icons = TWO_D_I(lithium_oxide, silicon_powder, lithium_bob, silicon_oxide_IV),
         order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 8, -- 2Li₂O + Si -electrolys-> 4Li + SiO₂
         ingredients =
         {
@@ -922,24 +328,3 @@ data:extend
         main_product = lithium_bob
     }
 })
-
---[[data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = true,
-        allow_quality = true,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})]]

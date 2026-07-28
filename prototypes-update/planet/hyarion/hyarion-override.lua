@@ -738,6 +738,7 @@ if mods [hyarion_mods] then
     local planet_discovery_hyarion = "planet-discovery-hyarion"
     data_technology[planet_discovery_hyarion].effects =
     {
+        {type = unlock_space_location, space_location = "hyarion", use_icon_overlay_constant = true},
         {type = unlock_recipe, recipe = hyarion_air},
         {type = unlock_recipe, recipe = hyarion_air_separation}
     }

@@ -1,4 +1,15 @@
-local gleba = "gleba"
+local ig_gleba = "gleba"
+data:extend
+({
+    {
+        type = item_group,
+        name = ig_gleba,
+        order = x_b,
+        icon = "__TIMSABA__/graphics/icons/space-age/gleba/gleba-planet.png",
+        icon_size = 128,
+    }
+})
+
 is_bacteria_ore = "is-bacteria-ore"
 is_bacteria_cultivation = "is-bacteria-cultivation"
 is_spoilage = "is-spoilage"
@@ -10,79 +21,17 @@ is_gleba_recipe = "is-gleba-recipe"
 is_gleba_logistics = "is-gleba-logistics"
 is_gleba_building = "is-gleba-building"
 is_gleba_war = "is-gleba-war"
-data:extend
-({
-    {
-        type = item_group,
-        name = gleba,
-        order = x_b,
-        icon = "__TIMSABA__/graphics/icons/space-age/gleba/gleba-planet.png",
-        icon_size = 128,
-    },
-    {
-        type = item_subgroup,
-        name = is_bacteria_ore,
-        group = gleba,
-        order = a
-    },
-    {
-        type = item_subgroup,
-        name = is_bacteria_cultivation,
-        group = gleba,
-        order = b
-    },
-    {
-        type = item_subgroup,
-        name = is_spoilage,
-        group = gleba,
-        order = c
-    },
-    {
-        type = item_subgroup,
-        name = is_nutrients,
-        group = gleba,
-        order = d
-    },
-    {
-        type = item_subgroup,
-        name = is_jellynut,
-        group = gleba,
-        order = e
-    },
-    {
-        type = item_subgroup,
-        name = is_yumako,
-        group = gleba,
-        order = f
-    },
-    {
-        type = item_subgroup,
-        name = is_pentapod_egg_and_bioflux,
-        group = gleba,
-        order = g
-    },
-    {
-        type = item_subgroup,
-        name = is_gleba_recipe,
-        group = gleba,
-        order = h
-    },
-    {
-        type = item_subgroup,
-        name = is_gleba_logistics,
-        group = gleba,
-        order = i
-    },
-    {
-        type = item_subgroup,
-        name = is_gleba_building,
-        group = gleba,
-        order = j
-    },
-    {
-        type = item_subgroup,
-        name = is_gleba_war,
-        group = gleba,
-        order = k
-    }
+TIMSABA.functions.create_subgroups(ig_gleba,
+{
+    {name = is_bacteria_ore,             order = a},
+    {name = is_bacteria_cultivation,     order = b},
+    {name = is_spoilage,                 order = c},
+    {name = is_nutrients,                order = d},
+    {name = is_jellynut,                 order = e},
+    {name = is_yumako,                   order = f},
+    {name = is_pentapod_egg_and_bioflux, order = g},
+    {name = is_gleba_recipe,             order = h},
+    {name = is_gleba_logistics,          order = i},
+    {name = is_gleba_building,           order = j},
+    {name = is_gleba_war,                order = k}
 })

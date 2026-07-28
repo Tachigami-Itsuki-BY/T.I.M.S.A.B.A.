@@ -100,20 +100,28 @@ data_item[lime_angels].icon = "__reskins-angels__/graphics/icons/smelting/interm
 data_item[lime_angels].icon_size = 64
 
 data_item[crystal_splinter_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-blue-cut.png"
+
 data_item[crystal_splinter_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-green-cut.png"
+
 data_item[crystal_splinter_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-red-cut.png"
+
 data_item[crystal_shard_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-blue-cut.png"
+
 data_item[crystal_shard_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-green-cut.png"
+
 data_item[crystal_shard_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-red-cut.png"
+
 data_item[crystal_full_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-blue-cut.png"
+
 data_item[crystal_full_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-green-cut.png"
+
 data_item[crystal_full_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-red-cut.png"
 
 -- GLEBA
 data_item[saphirite_bacteria].icon = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria.png"
 data_item[saphirite_bacteria].pictures =
 {
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria.png", scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria.png",   scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria-1.png", scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria-2.png", scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
@@ -122,7 +130,7 @@ data_item[saphirite_bacteria].pictures =
 data_item[stiratite_bacteria].icon = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria.png"
 data_item[stiratite_bacteria].pictures =
 {
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria.png", scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria.png",   scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-1.png", scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-2.png", scale = 0.5, mipmap_count = 4},
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
@@ -133,27 +141,29 @@ if mods [tellus_mods] then
     data_item[magnesium_bacteria].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria.png"
     data_item[magnesium_bacteria].pictures =
     {
-        {
-            filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-1.png",
-            width = 64,
-            height = 64,
-            scale = 0.5
-        },
-        {
-            filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-2.png",
-            width = 64,
-            height = 64,
-            scale = 0.5
-        },
-        {
-            filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-3.png",
-            width = 64,
-            height = 64,
-            scale = 0.5
-        }
+        {filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-1.png", width = 64, height = 64, scale = 0.5},
+        {filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-2.png", width = 64, height = 64, scale = 0.5},
+        {filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-3.png", width = 64, height = 64, scale = 0.5}
     }
+
     data_item[magnesium_dust].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-dust.png"
+
     data_item[magnesium_sheet].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-sheet.png"
+end
+
+-- PARACELSIN
+if mods [paracelsin_mods] then
+    data_item[zinc_rivets].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets.png"
+    data_item[zinc_rivets].pictures =
+    {
+        {filename = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets-1.png", width = 64, height = 64, scale = 0.5},
+        {filename = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets-2.png", width = 64, height = 64, scale = 0.5},
+        --[[{filename = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets-3.png", width = 64, height = 64, scale = 0.5}]]
+    }
+
+    data_item[zinc_cable].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-cable.png"
+
+    data_item[galvanized_steel_plate].icon = "__TIMSABA__/graphics/icons/paracelsin/galvanized-steel-plate.png"
 end
 
 -- TERRAPALUS

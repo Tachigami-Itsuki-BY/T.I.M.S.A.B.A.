@@ -15,8 +15,5 @@ data:extend
 
 if mods [muluna_mods] then
     lumber_mill_recipe_category = "lumber-mill-recipe-category"
-    data:extend
-    ({
-        {type = recipe_category, name = lumber_mill_recipe_category}
-    })
+    data:extend({{type = recipe_category, name = lumber_mill_recipe_category}})
 end

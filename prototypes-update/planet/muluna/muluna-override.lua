@@ -855,7 +855,6 @@ if mods [muluna_mods] then
     data_item[basic_hard_drive].order = a -- Data tape
     data_item[basic_hard_drive].stack_size = 200
     data_recipe[basic_hard_drive].subgroup = is_muluna_astronomical
-    data_recipe[basic_hard_drive].icons = FOUR_I(iron_plate, plastic, lubricant, basic_hard_drive)
     data_recipe[basic_hard_drive].order = a -- Data tape
     data_recipe[basic_hard_drive].energy_required = 1
     data_recipe[basic_hard_drive].ingredients =
@@ -1046,6 +1045,15 @@ if mods [muluna_mods] then
         data_recipe[telescope_observation_tellus].results[1].amount = 30
     end
 
+    if mods [paracelsin_mods] then
+        local telescope_observation_paracelsin = "muluna-telescope-observation-paracelsin"
+        data_recipe[telescope_observation_paracelsin].subgroup = is_muluna_recipe_astronomical
+        data_recipe[telescope_observation_paracelsin].icons = BUILDING_R_I(astronomical_data_muluna, planet_paracelsin)
+        data_recipe[telescope_observation_paracelsin].order = a_j
+        data_recipe[telescope_observation_paracelsin].energy_required = 4
+        data_recipe[telescope_observation_paracelsin].results[1].amount = 60
+    end
+
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_muluna].icons = BUILDING_R_I(astronomical_data_muluna, planet_muluna)
@@ -1090,12 +1098,6 @@ if mods [muluna_mods] then
         local telescope_observation_shattered = "muluna-telescope-observation-skewer_shattered_planet"
         data_recipe[telescope_observation_shattered].icons = BUILDING_R_I(astronomical_data_muluna, planet_shattered)
         data_recipe[telescope_observation_shattered].energy_required = 4
-    end
-
-    if mods [paracelsin_mods] then
-        local telescope_observation_paracelsin = "muluna-telescope-observation-paracelsin"
-        data_recipe[telescope_observation_paracelsin].icons = BUILDING_R_I(astronomical_data_muluna, planet_paracelsin)
-        data_recipe[telescope_observation_paracelsin].energy_required = 4
     end
 
     if mods [secretas_frozeta_mods] then

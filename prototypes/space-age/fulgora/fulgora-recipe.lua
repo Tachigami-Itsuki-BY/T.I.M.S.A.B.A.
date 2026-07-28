@@ -1,20 +1,13 @@
 -- FULGORA AIR
 fulgora_air_separation = "fulgora-air-separation"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = fulgora_air,
         category = angels_petrochem_air_filtering,
         subgroup = is_fulgora_air,
         icon = data_fluid[fulgora_air].icon,
         order = a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        always_show_products = true,
         energy_required = 8,
         ingredients = {},
         results = {{type = fluid, name = fulgora_air, amount = 240}},
@@ -22,17 +15,11 @@ data:extend
         surface_conditions = {{property = pressure, min = 800, max = 800}}
     },
     {
-        type = recipe,
         name = fulgora_air_separation,
         category = angels_advanced_chemistry,
         subgroup = is_fulgora_air,
         icons = FOUR_R_I(fulgora_air, nitrogen_angels, condensates_angels, hydrogen_sulfide_angels),
         order = a_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients = {{type = fluid, name = fulgora_air, amount = 120}},
         results =
@@ -48,20 +35,15 @@ data:extend
 -- SCRAP
 construction_scrap_recycling = "construction-scrap-recycling"
 machinery_scrap_recycling = "machinery-scrap-recycling"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = construction_scrap_recycling,
         category = recycling_hand_crafting,
         subgroup = is_scrap,
         icons = RECYCLING_I(recycling_png, construction_scrap),
         order = b,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 0.25, -- Construction Scrap = Plate / Material / Ore
         ingredients = {{type = item, name = construction_scrap, amount = 1}},
         results =
@@ -108,17 +90,12 @@ data:extend
         }
     },
     {
-        type = recipe,
         name = machinery_scrap_recycling,
         category = recycling_hand_crafting,
         subgroup = is_scrap,
         icons = RECYCLING_I(recycling_png, machinery_scrap),
         order = c,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
         allow_quality = true,
-        allow_decomposition = false,
         energy_required = 0.25, -- Machinery Scrap = Geaw Wheel / Bearing / Wire / Circuit / Battery
         ingredients = {{type = item, name = machinery_scrap, amount = 1}},
         results =
@@ -215,20 +192,15 @@ end
 -- CALCIUM
 calcium_recipe = "calcium-ore-crushed-mix-processing"
 calcium_chloride_solution_from_lime = "calcium-chloride-solution-from-lime"
-data:extend
+TIMSABA.functions.create_recipes
 ({
     {
-        type = recipe,
         name = calcium_recipe,
         category = ore_sorting_6,
         subgroup = is_ore_sorting_advanced_1,
         icons = AR_FOUR_I(mineral_catalyst, powellite_crushed, brannerite_crushed, calcium),
         order = a_g,
-        enabled = false,
-        auto_recycle = false,
         allow_productivity = true,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 2,
         ingredients =
         {
@@ -240,17 +212,11 @@ data:extend
         main_product = calcium
     },
     {
-        type = recipe,
         name = calcium,
         category = angels_petrochem_electrolyser,
         subgroup = is_calcium,
         icons = FOUR_R_I(calcium_chloride_solution, hydrogen_chloride_angels, calcium, oxygen_angels),
         order = a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
         energy_required = 8, -- (CaCl₂ + H₂O) -electrode/electrolyser-> Ca + 2HCl + O₂
         ingredients =
         {
@@ -267,18 +233,12 @@ data:extend
         main_product = calcium
     },
     {
-        type = recipe,
         name = calcium_chloride_solution_from_lime,
         category = chemistry,
         subgroup = is_calcium_fluids,
         icons = TWO_D_I(lime_angels, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
         order = b_a,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = 4, -- CaO + 2HCl(aq) --> CaCl₂(aq) + 2H₂O
+        -- CaO + 2HCl(aq) --> CaCl₂(aq) + 2H₂O
         ingredients =
         {
             {type = item, name = lime_angels, amount = 4},
@@ -292,26 +252,3 @@ data:extend
         main_product = calcium_chloride_solution
     }
 })
-
---[[
-data:extend
-({
-    {
-        type = recipe,
-        name = ,
-        category = ,
-        subgroup = ,
-        icons = ,
-        order = ,
-        enabled = false,
-        auto_recycle = false,
-        allow_productivity = false,
-        allow_quality = false,
-        allow_decomposition = false,
-        energy_required = ,
-        ingredients = {{type = , name = , amount = }},
-        results = {{type = , name = , amount = }},
-        main_product = 
-    }
-})
-]]

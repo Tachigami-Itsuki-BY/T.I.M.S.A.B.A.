@@ -1,5 +1,16 @@
 if mods [hyarion_mods] then
-    local hyarion = "hyarion"
+    local ig_hyarion = "hyarion"
+    data:extend
+    ({
+        {
+            type = item_group,
+            name = ig_hyarion,
+            order = x_g,
+            icon = "__TIMSABA__/graphics/icons/hyarion/hyarion-planet.png",
+            icon_size = 128
+        }
+    })
+
     is_hyarion_air = "is-hyarion-air"
     is_hyarion_recipe_ore = "is-hyarion-recipe-ore"
     is_hyarion_recipe_polished = "is-hyarion-recipe-polished"
@@ -9,68 +20,16 @@ if mods [hyarion_mods] then
     is_hyarion_mining = "is-hyarion-mining"
     is_hyarion_building = "is-hyarion-building"
     is_hyarion_war = "is-hyarion-war"
-    data:extend
-    ({
-        {
-            type = item_group,
-            name = hyarion,
-            order = x_g,
-            icon = "__TIMSABA__/graphics/icons/hyarion/hyarion-planet.png",
-            icon_size = 128
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_air,
-            group = hyarion,
-            order = a
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_ore,
-            group = hyarion,
-            order = b
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_polished,
-            group = hyarion,
-            order = b_a
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_other,
-            group = hyarion,
-            order = b_b
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_recipe_particle,
-            group = hyarion,
-            order = b_c
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_logistics,
-            group = hyarion,
-            order = c
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_mining,
-            group = hyarion,
-            order = d
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_building,
-            group = hyarion,
-            order = e
-        },
-        {
-            type = item_subgroup,
-            name = is_hyarion_war,
-            group = hyarion,
-            order = f
-        }
+    TIMSABA.functions.create_subgroups(ig_hyarion,
+    {
+        {name = is_hyarion_air,                order = a},
+        {name = is_hyarion_recipe_ore,         order = b},
+        {name = is_hyarion_recipe_polished,    order = b_a},
+        {name = is_hyarion_recipe_other,       order = b_b},
+        {name = is_hyarion_recipe_particle,    order = b_c},
+        {name = is_hyarion_logistics,          order = c},
+        {name = is_hyarion_mining,             order = d},
+        {name = is_hyarion_building,           order = e},
+        {name = is_hyarion_war,                order = f}
     })
 end

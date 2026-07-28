@@ -653,26 +653,30 @@ data_fluid[alien_goo].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/an
 data_fluid[alien_goo].base_color = {r = 207 / 255, g = 44 / 255, b = 214 / 255}
 data_fluid[alien_goo].flow_color = {r = 209 / 255, g = 55 / 255, b = 216 / 255}
 
--- MODS
+-- MULUNA
 if mods [muluna_mods] then
     data_fluid[tar_mods].icon = "__TIMSABA__/graphics/icons/muluna/tar.png"
     data_fluid[cooled_steam_mods].icons = nil
     data_fluid[cooled_steam_mods].icon = "__TIMSABA__/graphics/icons/muluna/cooled-steam.png"
 end
 
+-- PANGLIA
 if mods [panglia_mods] then
     data_fluid[branbalite_slurry].icon = "__TIMSABA__/graphics/icons/panglia/panglia_branbalite_slurry.png"
 end
 
+-- ARIG
 if mods [arig_mods] then
     data_fluid[sand_arig].icon = "__TIMSABA__/graphics/icons/arig/sand.png"
     data_fluid[pure_sand_arig].icon = "__TIMSABA__/graphics/icons/arig/pure-sand.png"
 end
 
+-- HYARION
 if mods [hyarion_mods] then
     data_fluid[polishing_compound_hyarion].icon = "__TIMSABA__/graphics/icons/hyarion/polishing-compound.png"
 end
 
+-- TELLUS
 if mods [tellus_mods] then
     data_fluid[bacteriochlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/bacteriochlorophyll.png"
     data_fluid[chlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/chlorophyll.png"
@@ -680,11 +684,7 @@ if mods [tellus_mods] then
     data_fluid[seed_compound].icon = "__TIMSABA__/graphics/icons/tellus/seed-compound.png"
 end
 
-if mods [paracelsin_mods] then
-    data_fluid[zinc_concentrate_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-concentrate.png"
-    data_fluid[dirty_zinc_solution_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/dirty-zinc-solution.png"
-    data_fluid[zinc_solution_mods].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-solution.png"
-end
+-- PARACELSIN
 
 if mods [maraxsis_mods] then
     data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"

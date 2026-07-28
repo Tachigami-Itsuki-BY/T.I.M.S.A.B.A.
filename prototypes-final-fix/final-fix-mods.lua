@@ -505,6 +505,43 @@ if mods [hyarion_mods] then
     }
 end
 
+-- PARACELSIN
+if mods[paracelsin_mods] then
+    local tech_concrete_productivity = "concrete-productivity"
+    data_technology[tech_concrete_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = concrete, change = 0.1},
+        {type = change_recipe_productivity, recipe = concrete_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = reinforced_concrete, change = 0.1},
+        {type = change_recipe_productivity, recipe = reinforced_concrete_2, change = 0.1}
+    }
+    data_technology[tech_concrete_productivity].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {galvanization_science_pack, 1},
+        {interstellar_science_pack, 1}
+    }
+    data_technology[tech_concrete_productivity].PlanetsLib_recipe_productivity_effects.effects =
+    {
+        {type = item, name = concrete, change = 0.1},
+        {type = item, name = reinforced_concrete, change = 0.1}
+    }
+
+    data_technology[processing_unit .. _productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = processing_unit, change = 0.1},
+        {type = change_recipe_productivity, recipe = processing_unit_from_panglite_fiber, change = 0.1}
+    }
+end
+
 -- MODS
 local tech_stack_loader = "mdrn-stack-loader"
 if mods [loaders_modernized_integrations] and data_technology[tech_stack_loader] then

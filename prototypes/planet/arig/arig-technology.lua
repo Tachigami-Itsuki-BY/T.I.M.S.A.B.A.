@@ -31,22 +31,4 @@ if mods [arig_mods] then
             }
         }
     })
-
-    --[[data:extend
-    ({
-        {
-            type = technology,
-            name = ,
-            icon = "__TIMSABA__/graphics/icons/moshine/technology/.png",
-            icon_size = 256,
-            prerequisites = {},
-            effects = {{type = unlock_recipe, recipe = }},
-            unit =
-            {
-                count = 200,
-                ingredients = {{, }},
-                time = 30
-            }
-        }
-    })]]
 end
