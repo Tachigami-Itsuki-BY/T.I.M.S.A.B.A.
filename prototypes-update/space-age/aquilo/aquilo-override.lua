@@ -278,6 +278,7 @@ data_ammo[railgun_ammo].subgroup = is_aquilo_war
 data_ammo[railgun_ammo].order = c
 data_ammo[railgun_ammo].stack_size = 16
 data_ammo[railgun_ammo].weight = 62500
+data_ammo[railgun_ammo].ammo_type.action.range = 60.4
 data_recipe[railgun_ammo].subgroup = is_aquilo_war
 data_recipe[railgun_ammo].order = c
 data_recipe[railgun_ammo].energy_required = 16

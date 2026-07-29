@@ -789,8 +789,8 @@ if mods [bobtech] then
             table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
         end
         if mods [tellus_mods] then
-            table.insert(data_lab[lab_alien].inputs, bioengineering_sciecne_pack)
-            table.insert(data_lab[lab_alien].inputs, pathological_sciecne_pack)
+            table.insert(data_lab[lab_alien].inputs, bioengineering_science_pack)
+            table.insert(data_lab[lab_alien].inputs, pathological_science_pack)
         end
         if mods [paracelsin_mods] then
             table.insert(data_lab[lab_alien].inputs, galvanization_science_pack)

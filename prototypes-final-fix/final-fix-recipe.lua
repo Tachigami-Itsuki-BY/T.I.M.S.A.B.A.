@@ -1,5 +1,4 @@
-for _, recipe in pairs(data.raw.recipe) do
-    recipe.always_show_products = true
+for _, recipe in pairs(data_recipe) do
     recipe.always_show_made_in = true
 end
 
@@ -17,7 +16,7 @@ local function get_item_subgroup(name)
 end
 
 -- Проходим по всем рецептам Space Age
-for recipe_name, recipe in pairs(data.raw.recipe) do
+for recipe_name, recipe in pairs(data_recipe) do
     -- Ищем подгруппу у предмета с точно таким же именем, как у рецепта
     local subgroup = get_item_subgroup(recipe_name)
 
