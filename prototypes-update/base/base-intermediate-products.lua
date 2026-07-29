@@ -128,7 +128,6 @@ if mods [bobtech] and mods [bobenemies] then
     data_recipe[alien_science_pack].energy_required = 8
     data_recipe[alien_science_pack].results[1].amount = 8
 
-    local gold_science_pack_bob = "bob-science-pack-gold"
     data_tool[gold_science_pack_bob].subgroup = is_alien_science_pack
     data_tool[gold_science_pack_bob].order = h
     data_recipe[gold_science_pack_bob].subgroup = is_alien_science_pack

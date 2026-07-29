@@ -37,8 +37,6 @@ require("prototypes.new-icons.new-icons")
 require("prototypes.new-icons.new-icons-items")
 require("prototypes.new-icons.new-icons-fluids")
 
-require("prototypes.angels-ground-water-pump-recipe")
-
 require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
 require("prototypes.angels.angels-metallurgy-smelting-item-fluid")
@@ -186,6 +184,8 @@ require("prototypes.planet.terrapalus.terrapalus-technology")
 require("prototypes.planet.vesta.vesta-groups")
 require("prototypes.planet.vesta.vesta-recipe")
 require("prototypes.planet.vesta.vesta-technology")
+
+require("prototypes.angels-ground-water-pump-recipe")
 
 require("lib.barreling-and-void")
 

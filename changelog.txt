@@ -1,5 +1,25 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+Date: 29.07.2026
+  Bugfixes:
+    - [All] Исправлена критическая ошибка инициализации: теперь эффекты открытия рецептов «unlock-recipe» автоматически очищаются в технологиях, если сам рецепт был удален.
+    - [All] Исправлена ошибка, из-за которой нельзя было поставить скважину на планетах с высокой гравитацией.
+
+    - [All] Fixed a critical initialization error: now the effects of opening recipes "unlock-recipe" are automatically cleared in technologies if the recipe itself was deleted.
+    - [All] Fixed a bug that prevented the well from being placed on planets with high gravity.
+
+  Balancing:
+    - [All] Для зданий из мода Angel's добавлен эффект замерзания на холодных планетах.
+    - [All] Логистика Т4 также получила эффект замерзания на холодных планетах.
+    - [Space] Добавлена возможность наполнять и опустошать Канистры Топливом и Окислителем для Ускорителя.
+    - [Aquilo] Скорректирован дальность полёта снарядов Рельсотрона.
+
+    - [All] Added freezing effect on cold planets to buildings from Angel's mod.
+    - [All] T4 logistics also received a freezing effect on cold planets.
+    - [Space] Added the ability to fill and empty Сanisters with Fuel and Oxidizer for the Thruster.
+    - [Aquilo] Adjusted the flight range of the Railgun projectiles.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.0
 Date: 28.07.2026
   Features:
@@ -17,7 +37,7 @@ Date: 28.07.2026
   Balancing:
     - [All] В технологии Логистические Системы удалён из стоимости Космический Научный Пакет. (Если модификация Bob's Tech не включена)
     - [All] В рецептах Бетона, Железабетона и Жидкого Бетона скорректированы ингредиенты.
-    - [All] В рецептах Кусков и Кристаллов увеличено кол-во входящих и выходящих ключевых продуктов в 2 раза.
+    - [All] В рецептах Кусков и Кристаллов увеличено кол-во входящих и выходящих ключевых предметов в 2 раза.
 
     - [All] Removed Space Science Pack from Logistics Systems technology cost. (if Bob's Tech mod is not enabled)
     - [All] Adjusted an ingredients in the Concrete, Reinforced Concrete, and Liquid Concrete recipes.

@@ -274,6 +274,7 @@ for _, BUILD in pairs(algae_farms) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = -(BUILD.crafting_speed * 16)
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function algae_farm_recipe(name, circuit, pipe, plate, brick, algae_farm)
     local ingredients =
@@ -311,6 +312,7 @@ for _, name in pairs(bio_generators) do
     data_assembling[name].energy_usage = 105 .. kW
     data_assembling[name].energy_source.emissions_per_minute.pollution = -64
     data_assembling[name].energy_source.drain = 15 .. kW
+    data_assembling[name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function bio_generator_recipe(name, circuit, pipe, plate, brick, tree)
     data_recipe[name].ingredients =
@@ -342,6 +344,7 @@ data_assembling[bio_arboretum].module_slots = 4
 data_assembling[bio_arboretum].energy_usage = 105 .. kW
 data_assembling[bio_arboretum].energy_source.emissions_per_minute.pollution = -64
 data_assembling[bio_arboretum].energy_source.drain = 15 .. kW
+data_assembling[bio_arboretum].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 -- ANGELS BIOPROCESSING VEGETABILIS
 local basic_farm = "angels-crop-farm"
@@ -359,6 +362,7 @@ data_assembling[basic_farm].module_slots = 4
 data_assembling[basic_farm].energy_usage = 105 .. kW
 data_assembling[basic_farm].energy_source.emissions_per_minute.pollution = -32
 data_assembling[basic_farm].energy_source.drain = 15 .. kW
+data_assembling[basic_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local temperate_farm = "angels-temperate-farm"
 data_item[temperate_farm].stack_size = 32
@@ -378,6 +382,7 @@ data_assembling[temperate_farm].module_slots = 4
 data_assembling[temperate_farm].energy_usage = 210 .. kW
 data_assembling[temperate_farm].energy_source.emissions_per_minute.pollution = -64
 data_assembling[temperate_farm].energy_source.drain = 30 .. kW
+data_assembling[temperate_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local swamp_farm = "angels-swamp-farm"
 data_item[swamp_farm].stack_size = 32
@@ -397,6 +402,7 @@ data_assembling[swamp_farm].module_slots = 4
 data_assembling[swamp_farm].energy_usage = 210 .. kW
 data_assembling[swamp_farm].energy_source.emissions_per_minute.pollution = -64
 data_assembling[swamp_farm].energy_source.drain = 30 .. kW
+data_assembling[swamp_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local desert_farm = "angels-desert-farm"
 data_item[desert_farm].stack_size = 32
@@ -416,6 +422,7 @@ data_assembling[desert_farm].module_slots = 4
 data_assembling[desert_farm].energy_usage = 210 .. kW
 data_assembling[desert_farm].energy_source.emissions_per_minute.pollution = -64
 data_assembling[desert_farm].energy_source.drain = 30 .. kW
+data_assembling[desert_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local seed_extractor = "angels-seed-extractor"
 data_item[seed_extractor].stack_size = 32
@@ -433,6 +440,7 @@ data_assembling[seed_extractor].module_slots = 4
 data_assembling[seed_extractor].energy_usage = 105 .. kW
 data_assembling[seed_extractor].energy_source.emissions_per_minute.pollution = 0
 data_assembling[seed_extractor].energy_source.drain = 15 .. kW
+data_assembling[seed_extractor].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local composter = "angels-composter"
 data_item[composter].stack_size = 32
@@ -451,6 +459,7 @@ data_furnace[composter].module_slots = 4
 data_furnace[composter].energy_usage = 22.5 .. kW
 data_furnace[composter].energy_source.emissions_per_minute.pollution = 0
 data_furnace[composter].energy_source.drain = 7.5 .. kW
+data_furnace[composter].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local bio_processor = "angels-bio-processor"
 data_item[bio_processor].stack_size = 32
@@ -468,6 +477,7 @@ data_assembling[bio_processor].module_slots = 4
 data_assembling[bio_processor].energy_usage = 105 .. kW
 data_assembling[bio_processor].energy_source.emissions_per_minute.pollution = 0
 data_assembling[bio_processor].energy_source.drain = 15 .. kW
+data_assembling[bio_processor].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local bio_press = "angels-bio-press"
 data_item[bio_press].stack_size = 32
@@ -486,6 +496,7 @@ data_assembling[bio_press].module_slots = 4
 data_assembling[bio_press].energy_usage = 105 .. kW
 data_assembling[bio_press].energy_source.emissions_per_minute.pollution = 0
 data_assembling[bio_press].energy_source.drain = 15 .. kW
+data_assembling[bio_press].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local nutrient_extractor = "angels-nutrient-extractor"
 data_item[nutrient_extractor].stack_size = 32
@@ -504,6 +515,7 @@ data_assembling[nutrient_extractor].module_slots = 4
 data_assembling[nutrient_extractor].energy_usage = 105 .. kW
 data_assembling[nutrient_extractor].energy_source.emissions_per_minute.pollution = 0
 data_assembling[nutrient_extractor].energy_source.drain = 15 .. kW
+data_assembling[nutrient_extractor].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 -- ANGELS BIOPROCESSING ANIMALIS
 local fish_refugium = "angels-bio-refugium-fish"
@@ -523,6 +535,7 @@ data_assembling[fish_refugium].module_slots = 4
 data_assembling[fish_refugium].energy_usage = 105 .. kW
 data_assembling[fish_refugium].energy_source.emissions_per_minute.pollution = -32
 data_assembling[fish_refugium].energy_source.drain = 15 .. kW
+data_assembling[fish_refugium].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local butchery = "angels-bio-butchery"
 data_item[butchery].stack_size = 32
@@ -540,6 +553,7 @@ data_furnace[butchery].module_slots = 4
 data_furnace[butchery].energy_usage = 105 .. kW
 data_furnace[butchery].energy_source.emissions_per_minute.pollution = 0
 data_furnace[butchery].energy_source.drain = 15 .. kW
+data_furnace[butchery].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local hatchery = "angels-bio-hatchery"
 data_item[hatchery].stack_size = 32
@@ -557,6 +571,7 @@ data_furnace[hatchery].module_slots = 4
 data_furnace[hatchery].energy_usage = 105 .. kW
 data_furnace[hatchery].energy_source.emissions_per_minute.pollution = 0
 data_furnace[hatchery].energy_source.drain = 15 .. kW
+data_furnace[hatchery].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local puffer_refugium = "angels-bio-refugium-puffer"
 data_item[puffer_refugium].stack_size = 32
@@ -575,6 +590,7 @@ data_assembling[puffer_refugium].module_slots = 4
 data_assembling[puffer_refugium].energy_usage = 105 .. kW
 data_assembling[puffer_refugium].energy_source.emissions_per_minute.pollution = -32
 data_assembling[puffer_refugium].energy_source.drain = 15 .. kW
+data_assembling[puffer_refugium].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local biter_refugium = "angels-bio-refugium-biter"
 data_item[biter_refugium].stack_size = 32
@@ -593,6 +609,7 @@ data_assembling[biter_refugium].module_slots = 4
 data_assembling[biter_refugium].energy_usage = 105 .. kW
 data_assembling[biter_refugium].energy_source.emissions_per_minute.pollution = -32
 data_assembling[biter_refugium].energy_source.drain = 15 .. kW
+data_assembling[biter_refugium].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

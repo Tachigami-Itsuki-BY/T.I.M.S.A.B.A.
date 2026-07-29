@@ -66,3 +66,11 @@ end
 if mods [tellus_mods] then
     data_autoplace_control["tellus_stone"].order = c_n
 end
+
+-- PARACELSIN
+if mods [paracelsin_mods] then
+    data_autoplace_control[vaterite].order = c_o
+    data_autoplace_control[sphalerite_ore].order = c_p
+    data_autoplace_control[tetrahedrite_ore].order = c_q
+    data_autoplace_control["water_cryovolcano"].order = c_r
+end

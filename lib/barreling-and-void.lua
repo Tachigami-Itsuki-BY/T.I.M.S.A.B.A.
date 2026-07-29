@@ -112,6 +112,8 @@ TIMSABA.barreling.dangerous_fluids =
     glycerol_dichlorohydrin, glycerol_angels, nitroglycerin_bob, toluene_angels,
     -- BIOPROCESSING
     acetic_acid, acetic_anhydride, ethanol_angels, propionic_acid,
+    -- SPACE
+    thruster_fuel, thruster_oxidizer,
     -- VULCANUS
     -- NIOBIUM
     heptafluoroniobic_acid,
@@ -257,6 +259,8 @@ TIMSABA.void.fluids =
     nutrient_pulp, raw_vegetable_oil, vegetable_oil,
     acetic_acid, acetic_anhydride, ethanol_angels, propionic_acid,
     water_for_fish, polluted_water_for_fish, raw_fish_oil, fish_oil,
+    -- SPACE
+    thruster_fuel, thruster_oxidizer,
     -- VULCANUS
     -- NIOBIUM
     heptafluoroniobic_acid,

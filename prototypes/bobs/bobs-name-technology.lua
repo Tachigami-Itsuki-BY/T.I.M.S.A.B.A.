@@ -1,3 +1,7 @@
+tech_electronics_0 = "electronics"
+tech_steam_power = "steam-power"
+
+
 tech_electric_substation_4 = "bob-electric-substation-4"
 
 tech_robotics_1 = "robotics"
@@ -43,6 +47,7 @@ tech_automation_3 = "automation-3"
 tech_automation_4 = "automation-4"
 tech_automation_5 = "automation-5"
 tech_automation_6 = "automation-6"
+tech_logistics_0 = "logistics-0"
 tech_logistics_1 = "logistics"
 tech_logistics_2 = "logistics-2"
 tech_logistics_3 = "logistics-3"
@@ -109,3 +114,5 @@ tech_artillery = "artillery"
 
 tech_tank_2 = "bob-tanks-2"
 tech_tank_3 = "bob-tanks-3"
+
+tech_alien_research = "bob-alien-research"

@@ -22,7 +22,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[ore_crusher_3],
 
-        localised_description = {"entity-description.angels-ore-crusher"}
+        localised_description = {"entity-description.angels-ore-crusher"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ORE FLOATATION CELL
     {
@@ -41,7 +42,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[ore_floatation_cell_3],
 
-        localised_description = {"entity-description.angels-ore-floatation-cell"}
+        localised_description = {"entity-description.angels-ore-floatation-cell"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ORE LEACHING PLANT
     {
@@ -60,7 +62,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[ore_leaching_plant_3],
 
-        localised_description = {"entity-description.angels-ore-leaching-plant"}
+        localised_description = {"entity-description.angels-ore-leaching-plant"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ORE REFINERY
     {
@@ -84,7 +87,8 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 3,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW
+        energy_usage = 315 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
         name = ore_refinery_4,
@@ -101,7 +105,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[ore_refinery_2],
 
-        localised_description = {"entity-description.angels-ore-refinery"}
+        localised_description = {"entity-description.angels-ore-refinery"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ORE SORTING FACILITY
     {
@@ -126,7 +131,8 @@ TIMSABA.functions.create_buildings
         crafting_speed = 6,
         pollution = 6,
         drain = 90 .. kW,
-        energy_usage = 630 .. kW
+        energy_usage = 630 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- POWDERIZER
     {
@@ -144,7 +150,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[powderizer_3],
 
-        localised_description = {"entity-description.angels-powderizer"}
+        localised_description = {"entity-description.angels-powderizer"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ELECTROWINNING CELL
     {
@@ -169,7 +176,8 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 3,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW
+        energy_usage = 315 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
         name = electro_whinning_cell_4,
@@ -187,7 +195,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[electro_whinning_cell_2],
 
-        localised_description = {"entity-description.angels-electro-whinning-cell"}
+        localised_description = {"entity-description.angels-electro-whinning-cell"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- FILTRATION UNIT
     {
@@ -206,7 +215,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[filtration_unit_3],
 
-        localised_description = {"entity-description.angels-filtration-unit"}
+        localised_description = {"entity-description.angels-filtration-unit"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- CRYSTALLIZER
     {
@@ -225,7 +235,8 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[crystallizer_3],
 
-        localised_description = {"entity-description.angels-crystallizer"}
+        localised_description = {"entity-description.angels-crystallizer"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     }
 })
 
@@ -255,7 +266,8 @@ if settings.startup[setting_early_sintering_oven].value then
             crafting_speed = 6,
             pollution = 6,
             drain = 90 .. kW,
-            energy_usage = 630 .. kW
+            energy_usage = 630 .. kW,
+            heating_energy = data_assembling[assembling_machine_1].heating_energy
         }
     })
 else
@@ -283,7 +295,8 @@ else
             crafting_speed = 3,
             pollution = 3,
             drain = 90 .. kW,
-            energy_usage = 630 .. kW
+            energy_usage = 630 .. kW,
+            heating_energy = data_assembling[assembling_machine_1].heating_energy
         },
         {
             localised_name = {"entity-name.sintering-oven-7-4"},
@@ -303,7 +316,8 @@ else
 
             localised_description = {"entity-description.angels-sintering-oven"},
             drain = 120 .. kW,
-            energy_usage = 840 .. kW
+            energy_usage = 840 .. kW,
+            heating_energy = data_assembling[assembling_machine_1].heating_energy
         }
     })
 end
@@ -329,7 +343,8 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling["angels-hydro-plant"],
 
         localised_description = {"entity-description.angels-hydro-plant"},
-        pollution = 0
+        pollution = 0,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- WASHING PLANT
     {
@@ -354,7 +369,8 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 0,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW
+        energy_usage = 315 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
         name = washing_plant_4,
@@ -373,7 +389,8 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[washing_plant_1],
 
         localised_description = {"entity-description.angels-washing-plant"},
-        pollution = 0
+        pollution = 0,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- SALINATION PLANT
     {
@@ -398,7 +415,8 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 0,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW
+        energy_usage = 315 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
         name = salination_plant_4,
@@ -417,7 +435,8 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[salination_plant_1],
 
         localised_description = {"entity-description.angels-salination-plant"},
-        pollution = 0
+        pollution = 0,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ELECTRIC BOILER
     {
@@ -439,7 +458,8 @@ TIMSABA.functions.create_buildings
         localised_description = {"entity-description.angels-electric-boiler"},
         pollution = 0,
         energy_usage = 4740 .. kW,
-        max_health = 800
+        max_health = 800,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     }
 })
 
@@ -464,7 +484,8 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[air_filter_1],
 
         localised_description = {"entity-description.angels-air-filter"},
-        pollution = 0
+        pollution = 0,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ADVANCED CHEMICAL PLANT
     {
@@ -489,7 +510,8 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 3,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW
+        energy_usage = 315 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
         name = advanced_chemical_plant_4,
@@ -508,6 +530,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[advanced_chemical_plant_1],
 
         localised_description = {"entity-description.angels-advanced-chemical-plant"},
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
     }
 })
 

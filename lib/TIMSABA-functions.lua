@@ -539,7 +539,8 @@ function TIMSABA.functions.create_buildings(list)
                         drain = buildings.drain or (60 .. kW)
                     },
                     energy_usage = buildings.energy_usage or (420 .. kW),
-                    max_health = buildings.max_health
+                    max_health = buildings.max_health,
+                    heating_energy = buildings.heating_energy
                 }
             })
         })

@@ -34,6 +34,7 @@ for _, BUILD in pairs(ore_crushers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function ore_crusher_recipe(name, gear_wheel, brick, plate, ore_crusher)
     data_recipe[name].ingredients =
@@ -68,6 +69,7 @@ for _, BUILD in pairs(ore_floatation_cells) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function ore_floatation_cell_recipe(name, pipe, circuit, brick, plate, ore_floatation_cell)
     local ingredients =
@@ -106,6 +108,7 @@ for _, BUILD in pairs(ore_leaching_plants) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function ore_leaching_plant_recipe(name, pipe, circuit, brick, plate, ore_leaching_plant)
     local ingredients =
@@ -143,6 +146,7 @@ for _, BUILD in pairs(ore_refinerys) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function ore_refinery_recipe(name, circuit, brick, plate, ore_refinery)
     local ingredients =
@@ -181,6 +185,7 @@ for _, BUILD in pairs(ore_sorting_facilitys) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 data_assembling[ore_sorting_facility_5].localised_description = {"entity-description.angels-ore-sorting-facility"}
 local function ore_sorting_facility_recipe(name, gear_wheel, circuit, brick, plate, ore_sorting_facility)
@@ -222,6 +227,7 @@ for _, BUILD in pairs(powderizers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function powderizer_recipe(name, gear_wheel, plate, brick, powderizer)
     local ingredients =
@@ -258,6 +264,7 @@ for _, BUILD in pairs(electro_whinning_cells) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function electro_whinning_cell_recipe(name, pipe, circuit, brick, plate, electro_whinning_cell)
     local ingredients =
@@ -330,6 +337,7 @@ for _, BUILD in pairs(filtration_units) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function filtration_unit_recipe(name, pipe, circuit, brick, plate, filtration_unit)
     local ingredients =
@@ -369,6 +377,7 @@ for _, BUILD in pairs(crystallizers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function crystallizer_recipe(name, pipe, circuit, brick, plate, crystallizer)
     local ingredients =
@@ -404,6 +413,7 @@ for _, BUILD in pairs(ore_processing_machines) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function ore_processing_machine_recipe(name, gear_wheel, brick, plate, ore_processing_machine)
     local ingredients =
@@ -438,6 +448,7 @@ for _, BUILD in pairs(pellet_pressed) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function pellet_press_recipe(name, gear_wheel, brick, plate, pellet_press)
     local ingredients =
@@ -472,6 +483,7 @@ for _, BUILD in pairs(powder_mixers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function powder_mixer_recipe(name, gear_wheel, brick, plate, powder_mixer)
     local ingredients =
@@ -540,6 +552,7 @@ for _, BUILD in pairs(chemical_furnaces) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function chemical_furnace_recipe(name, circuit, pipe, brick, plate, chemical_furnace)
     local ingredients =
@@ -576,6 +589,7 @@ for _, BUILD in pairs(induction_furnaces) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function induction_furnace_recipe(name, gear_wheel, circuit, pipe, brick, plate, induction_furnace)
     local ingredients =
@@ -612,6 +626,7 @@ for _, BUILD in pairs(casting_machines) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function casting_machine_recipe(name, gear_wheel, circuit, pipe, brick, plate, casting_machine)
     local ingredients =
@@ -648,6 +663,7 @@ for _, BUILD in pairs(strand_casting_machines) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function strand_casting_machine_recipe(name, gear_wheel, circuit, pipe, brick, plate, strand_casting_machine)
     local ingredients =
@@ -690,6 +706,7 @@ if settings.startup[setting_early_sintering_oven].value then
         data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
         data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
         data_assembling[BUILD.name].allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"}
+        data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
     end
     local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
         local ingredients =
@@ -727,6 +744,7 @@ else
         data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 2))) .. kW
         data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
         data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 2)) .. kW
+        data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
     end
     local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
         local ingredients =
@@ -795,22 +813,21 @@ data_recipe[heavy_offshore_pump].ingredients =
 
 data_pump_offshore[seafloor_pump].surface_conditions =
 {
-    {property = "gravity", min = 10, max = 20},
-    {property = "pressure", min = 1000, max = 2000}
+    {property = gravity, min = 10, max = 20},
+    {property = pressure, min = 1000, max = 2000}
 }
 
-local assembling_machine = "assembling-machine"
 local pump_1 = data_pump_offshore[ground_water_pump]
 if pump_1 then
     pump_1.type = assembling_machine
     pump_1.crafting_speed = 1
     pump_1.fixed_recipe = nil
     pump_1.show_recipe_icon = false
-    pump_1.crafting_categories = {"extract-ground"}
+    pump_1.crafting_categories = {extract_ground}
     pump_1.fluid_boxes =
     {
         {
-            production_type = "output",
+            production_type = output,
             pipe_covers = pipecoverspictures(),
             volume = 100,
             base_area = 1,
@@ -822,7 +839,7 @@ if pump_1 then
     pump_1.graphics_set = {animation = pump_1.graphics_set.animation}
     pump_1.energy_source = {type = "void"}
     pump_1.energy_usage = 15 .. kW
-    pump_1.surface_conditions = {{property = gravity, min = 1, max = 40}}
+    pump_1.surface_conditions = {{property = gravity, min = 1, max = 100}}
     pump_1.active_components_only = true
     data_assembling[ground_water_pump] = pump_1
     data_pump_offshore[ground_water_pump] = nil
@@ -837,7 +854,7 @@ if pump_2 then
     pump_2.fluid_box = pump_2.output_fluid_box
     if pump_2.fluid_box then
         pump_2.fluid_box.filter = nil
-        pump_2.fluid_box.production_type = "output"
+        pump_2.fluid_box.production_type = output
     end
     pump_2.output_fluid_box = nil
     pump_2.pumping_speed = 40
@@ -887,6 +904,7 @@ for _, BUILD in pairs(hydro_plants) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function hydro_plant_recipe(name, circuit, pipe, plate, brick, hydro_plant)
     local ingredients =
@@ -922,6 +940,7 @@ for _, BUILD in pairs(washing_plants) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function washing_plant_recipe(name, circuit, pipe, plate, brick, washing_plant)
     local ingredients =
@@ -959,6 +978,7 @@ for _, BUILD in pairs(salination_plants) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function salination_plant_recipe(name, circuit, pipe, plate, brick, salination_plant)
     local ingredients =
@@ -997,6 +1017,7 @@ for _, BUILD in pairs(electric_boilers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 10))) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 10)) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 data_assembling[electric_boiler_3].max_health = 600
 local function electric_boiler_recipe(name, circuit, pipe, plate, brick, electric_boiler)
@@ -1038,6 +1059,7 @@ data_assembling[cooling_tower].module_slots = 4
 data_assembling[cooling_tower].energy_usage = 22.5 .. kW
 data_assembling[cooling_tower].energy_source.emissions_per_minute.pollution = 0
 data_assembling[cooling_tower].energy_source.drain = 7.5 .. kW
+data_assembling[cooling_tower].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 local clarifier = "angels-clarifier"
 data_item[clarifier].subgroup = is_others_WT_building
@@ -1061,6 +1083,7 @@ data_furnace[clarifier].module_slots = 4
 data_furnace[clarifier].energy_usage = 22.5 .. kW
 data_furnace[clarifier].energy_source.emissions_per_minute.pollution = 16
 data_furnace[clarifier].energy_source.drain = 7.5 .. kW
+data_furnace[clarifier].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 -- ANGELS PETROCHEM REFINING
 data_item_subgroup[is_buildings_electrolyser].order = z
@@ -1087,6 +1110,7 @@ for _, BUILD in pairs(electrolysers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 10))) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 10)) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function electrolyser_recipe(name, circuit, pipe, plate, brick, electrolyser)
     local ingredients =
@@ -1127,6 +1151,7 @@ for _, BUILD in pairs(air_filters) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function air_filter_recipe(name, circuit, pipe, plate, brick, air_filter)
     local ingredients =
@@ -1167,6 +1192,7 @@ for _, BUILD in pairs(liquifiers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = 0
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function liquifier_recipe(name, circuit, pipe, plate, brick, liquifier)
     local ingredients =
@@ -1211,6 +1237,7 @@ for _, BUILD in pairs(chemical_plants) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function chemical_plant_recipe(name, circuit, pipe, plate, gear, chemical_plant)
     local ingredients =
@@ -1250,6 +1277,7 @@ for _, BUILD in pairs(advanced_chemical_plants) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function advanced_chemical_plant_recipe(name, circuit, pipe, plate, brick, advanced_chemical_plant)
     local ingredients =
@@ -1291,6 +1319,7 @@ for _, BUILD in pairs(gas_refinerys) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 2
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function gas_refinery_recipe(name, circuit, pipe, plate, brick, gas_refinery)
     local ingredients =
@@ -1332,6 +1361,7 @@ for _, BUILD in pairs(advanced_gas_refinerys) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 2
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function advanced_gas_refinery_recipe(name, circuit, pipe, plate, brick, advanced_gas_refinery)
     local ingredients =
@@ -1375,6 +1405,7 @@ for _, BUILD in pairs(oil_refinerys) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 2
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function oil_refinery_recipe(name, circuit, pipe, plate, gear, oil_refinery)
     local ingredients =
@@ -1416,6 +1447,7 @@ for _, BUILD in pairs(separators) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed * 2
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function separator_recipe(name, circuit, pipe, plate, brick, separator)
     local ingredients =
@@ -1459,6 +1491,7 @@ for _, BUILD in pairs(steam_crackers) do
     data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
+    data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function steam_cracker_recipe(name, circuit, pipe, plate, brick, steam_cracker)
     local ingredients =
@@ -1497,6 +1530,7 @@ data_furnace[flare_stack].module_slots = 4
 data_furnace[flare_stack].energy_usage = 22.5 .. kW
 data_furnace[flare_stack].energy_source.emissions_per_minute.pollution = 16
 data_furnace[flare_stack].energy_source.drain = 7.5 .. kW
+data_furnace[flare_stack].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 bobmods.lib.recipe.update_recycling_recipe
 ({

@@ -577,11 +577,11 @@ if mods [tellus_mods] then
         {type = item, name = magnesium_bacteria, amount = 4},
     }
 
-    data_tool[bioengineering_sciecne_pack].subgroup = is_tellus_recipe
-    data_tool[bioengineering_sciecne_pack].order = h
-    data_recipe[bioengineering_sciecne_pack].subgroup = is_tellus_recipe
-    data_recipe[bioengineering_sciecne_pack].order = h
-    data_recipe[bioengineering_sciecne_pack].ingredients =
+    data_tool[bioengineering_science_pack].subgroup = is_tellus_recipe
+    data_tool[bioengineering_science_pack].order = h
+    data_recipe[bioengineering_science_pack].subgroup = is_tellus_recipe
+    data_recipe[bioengineering_science_pack].order = h
+    data_recipe[bioengineering_science_pack].ingredients =
     {
         {type = item, name = nutrients, amount = 4},
         {type = item, name = magnesium_sheet, amount = 2},
@@ -589,11 +589,11 @@ if mods [tellus_mods] then
         {type = fluid, name = nutrients, amount = 15}
     }
 
-    data_tool[pathological_sciecne_pack].subgroup = is_tellus_recipe
-    data_tool[pathological_sciecne_pack].order = i
-    data_recipe[pathological_sciecne_pack].subgroup = is_tellus_recipe
-    data_recipe[pathological_sciecne_pack].order = i
-    data_recipe[pathological_sciecne_pack].ingredients =
+    data_tool[pathological_science_pack].subgroup = is_tellus_recipe
+    data_tool[pathological_science_pack].order = i
+    data_recipe[pathological_science_pack].subgroup = is_tellus_recipe
+    data_recipe[pathological_science_pack].order = i
+    data_recipe[pathological_science_pack].ingredients =
     {
         {type = item, name = nutrients, amount = 4},
         {type = item, name = arigian_bacteria, amount = 2},

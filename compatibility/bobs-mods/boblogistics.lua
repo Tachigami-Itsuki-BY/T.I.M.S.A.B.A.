@@ -149,7 +149,8 @@ if mods [boblogistics] >= "2.1.0" then
             speed = 0.125,
             connector_frame_sprites = transport_belt_connector_frame_sprites,
             circuit_connector = circuit_connector_definitions["belt"],
-            circuit_wire_max_distance = transport_belt_circuit_wire_max_distance
+            circuit_wire_max_distance = transport_belt_circuit_wire_max_distance,
+            heating_energy = data_transport_belt[T1_transport_belt].heating_energy
         },
         {
             localised_name = {localised_name_T4_underground_belt},
@@ -263,7 +264,8 @@ if mods [boblogistics] >= "2.1.0" then
                         scale = 0.5
                     }
                 }
-            }
+            },
+            heating_energy = data_underground_belt[T1_underground_belt].heating_energy
         },
         {
             localised_name = {localised_name_T4_splitter},
@@ -341,7 +343,8 @@ if mods [boblogistics] >= "2.1.0" then
             default_input_left_condition = {first = {type = "virtual", name = "signal-I"}, comparator = "<", second = 0},
             default_input_right_condition = {first = {type = "virtual", name = "signal-I"}, comparator = ">", second = 0},
             default_output_left_condition = {first = {type = "virtual", name = "signal-O"}, comparator = "<", second = 0},
-            default_output_right_condition = {first = {type = "virtual", name = "signal-O"}, comparator = ">", second = 0}
+            default_output_right_condition = {first = {type = "virtual", name = "signal-O"}, comparator = ">", second = 0},
+            heating_energy = data_splitter[T1_splitter].heating_energy
         }
     })
 
@@ -767,14 +770,14 @@ if mods [boblogistics] >= "2.1.0" then
         data_pipe_to_ground[nitinol_pipe_to_ground].heating_energy = 300 .. kW
         if mods[space_age] then
             local function frozenpatch()
-                local result = util.table.deepcopy(data.raw["pipe-to-ground"]["pipe-to-ground"].frozen_patch)
+                local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
                 return result
             end
             data_pipe_to_ground[stone_pipe_to_ground].frozen_patch = frozenpatch()
             --data_pipe_to_ground[ceramic_pipe_to_ground].frozen_patch = frozenpatch()
             data_pipe_to_ground[nitinol_pipe_to_ground].frozen_patch = frozenpatch()
             local function frozenpatch2()
-                local result = util.table.deepcopy(data.raw.pipe.pipe.fluid_box.pipe_covers_frozen)
+                local result = util.table.deepcopy(data_pipe.pipe.fluid_box.pipe_covers_frozen)
                 return result
             end
             data_pipe[stone_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
@@ -875,53 +878,4 @@ if mods [boblogistics] >= "2.1.0" then
     data_pipe_to_ground[ceramic_pipe_to_ground].pictures = TIMSABA_pipetogroundpictures("ceramic")
     data_pipe_to_ground[ceramic_pipe_to_ground].visualization = TIMSABA_pipetoground_visualization()
     data_pipe_to_ground[ceramic_pipe_to_ground].disabled_visualization = TIMSABA_pipetoground_disabled_visualizaton()
-    --[[-- TECHNOLOGY
-    if not data_technology[tech_logistics_4] then
-        data:extend
-        ({
-            {
-                localised_name = {"technology-name.logistics-4"},
-                localised_description = {"technology-description.logistics"},
-                type = technology,
-                name = tech_logistics_4,
-                icon = "__boblogistics__/graphics/icons/technology/logistics-4.png",
-                icon_size = 128,
-                prerequisites = {tech_logistics_3, tech_titanium_processing, processing_unit},
-                effects =
-                {
-                    {type = unlock_recipe, recipe = T4_transport_belt},
-                    {type = unlock_recipe, recipe = T4_underground_belt},
-                    {type = unlock_recipe, recipe = T4_splitter}
-                },
-                unit =
-                {
-                    count = 64,
-                    ingredients =
-                    {
-                        {automation_science_pack, 1},
-                        {logistic_science_pack, 1},
-                        {chemical_science_pack, 1}
-                    },
-                    time = 16
-                }
-            }
-        })
-        if mods [bobtech] then
-            table.insert(data_technology[tech_logistics_4].prerequisites, transport_science_pack)
-            table.insert(data_technology[tech_logistics_4].unit.ingredients, {transport_science_pack, 1})
-        end
-        if mods [loaders_modernized_integrations] then
-            table.insert(data_technology[tech_logistics_4].effects, {type = unlock_recipe, recipe = T4_loader})
-        end
-    else
-        data_technology[tech_logistics_4].effects =
-        {
-            {type = unlock_recipe, recipe = T4_transport_belt},
-            {type = unlock_recipe, recipe = T4_underground_belt},
-            {type = unlock_recipe, recipe = T4_splitter}
-        }
-        if mods [loaders_modernized_integrations] then
-            table.insert(data_technology[tech_logistics_4].effects, {type = unlock_recipe, recipe = T4_loader})
-        end
-    end]]
 end
