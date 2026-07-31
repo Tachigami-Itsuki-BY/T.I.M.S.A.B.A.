@@ -19,6 +19,8 @@ if script.active_mods["planetaris-tellus"] then surface_to_recipe["tellus"] = "e
 
 if script.active_mods["Paracelsin"] then surface_to_recipe["paracelsin"] = "extract-ground-nitrogen-liquid" end
 
+if script.active_mods["corrundum"] then surface_to_recipe["corrundum"] = "extract-ground-angels-liquid-multi-phase-oil" end
+
 local function on_entity_built(event)
     local entity = event.created_entity or event.entity
     if not (entity and entity.valid and (entity.name == "angels-ground-water-pump" or (entity.type == "entity-ghost" and entity.ghost_name == "angels-ground-water-pump"))) then

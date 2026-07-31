@@ -267,7 +267,7 @@ t = "t" t_a = "t-a" t_b = "t-b" t_c = "t-c" t_d = "t-d" t_e = "t-e" t_f = "t-f" 
 u = "u" u_a = "u-a" u_b = "u-b" u_c = "u-c" u_d = "u-d" u_e = "u-e" u_f = "u-f" u_g = "u-g"
 v = "v" v_a = "v-a" v_b = "v-b" v_c = "v-c" v_d = "v-d" v_e = "v-e" v_f = "v-f" v_g = "v-g"
 w = "w" w_a = "w-a" w_b = "w-b" w_c = "w-c" w_d = "w-d" w_e = "w-e" w_f = "w-f" w_g = "w-g"
-x = "x" x_a = "x-a" x_b = "x-b" x_c = "x-c" x_d = "x-d" x_e = "x-e" x_f = "x-f" x_g = "x-g" x_h = "x-h"
+x = "x" x_a = "x-a" x_b = "x-b" x_c = "x-c" x_d = "x-d" x_e = "x-e" x_f = "x-f" x_g = "x-g" x_h = "x-h" x_i = "x-i" x_j = "x-j"
 y = "y" y_a = "y-a" y_b = "y-b" y_c = "y-c" y_d = "y-d" y_e = "y-e" y_f = "y-f" y_g = "y-g"
 z = "z" z_a = "z-a" z_b = "z-b" z_c = "z-c" z_d = "z-d" z_e = "z-e" z_f = "z-f" z_g = "z-g" z_h = "z-h" z_i = "z-i" z_j = "z-j" z_k = "z-k" z_l = "z-l" z_m = "z-m" z_y = "z-y" z_z = "z-z"
 

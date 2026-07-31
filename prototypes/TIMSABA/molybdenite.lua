@@ -7,7 +7,6 @@ molybdenite_purified = "molybdenite-purified"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = {"item-description.molybdenite-ore"},
         name = molybdenite_ore,
         subgroup = is_ores,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore.png",
@@ -20,7 +19,6 @@ TIMSABA.functions.create_items
         order = g
     },
     {
-        localised_description = {"item-description.molybdenite-crushed"},
         name = molybdenite_crushed,
         subgroup = is_ore_processing_a,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-crushed.png",
@@ -28,7 +26,6 @@ TIMSABA.functions.create_items
         order = g
     },
     {
-        localised_description = {"item-description.molybdenite-chunks"},
         name = molybdenite_chunks,
         subgroup = is_ore_processing_b,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-chunks.png",
@@ -36,7 +33,6 @@ TIMSABA.functions.create_items
         order = g
     },
     {
-        localised_description = {"item-description.molybdenite-crystals"},
         name = molybdenite_crystals,
         subgroup = is_ore_processing_c,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-crystals.png",
@@ -44,7 +40,6 @@ TIMSABA.functions.create_items
         order = g
     },
     {
-        localised_description = {"item-description.molybdenite-purified"},
         name = molybdenite_purified,
         subgroup = is_ore_processing_d,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-purified.png",

@@ -19,6 +19,7 @@ molten_iron = "molten-iron"
 molten_copper = "molten-copper"
 sulfuric_acid = "sulfuric-acid"
 lava = "lava"
+carbon = "carbon"
 fusion_plasma = "fusion-plasma"
 petroleum_gas = "petroleum-gas"
 

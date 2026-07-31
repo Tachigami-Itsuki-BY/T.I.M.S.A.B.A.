@@ -7,7 +7,6 @@ powellite_purified = "powellite-purified"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = {"item-description.powellite-ore"},
         name = powellite_ore,
         subgroup = is_ores,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-ore.png",
@@ -20,7 +19,6 @@ TIMSABA.functions.create_items
         order = h
     },
     {
-        localised_description = {"item-description.powellite-crushed"},
         name = powellite_crushed,
         subgroup = is_ore_processing_a,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-crushed.png",
@@ -28,7 +26,6 @@ TIMSABA.functions.create_items
         order = h
     },
     {
-        localised_description = {"item-description.powellite-chunks"},
         name = powellite_chunks,
         subgroup = is_ore_processing_b,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-chunks.png",
@@ -36,7 +33,6 @@ TIMSABA.functions.create_items
         order = h
     },
     {
-        localised_description = {"item-description.powellite-crystals"},
         name = powellite_crystals,
         subgroup = is_ore_processing_c,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-crystals.png",
@@ -44,7 +40,6 @@ TIMSABA.functions.create_items
         order = h
     },
     {
-        localised_description = {"item-description.powellite-purified"},
         name = powellite_purified,
         subgroup = is_ore_processing_d,
         icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-purified.png",

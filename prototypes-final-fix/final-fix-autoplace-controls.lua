@@ -74,3 +74,10 @@ if mods [paracelsin_mods] then
     data_autoplace_control[tetrahedrite_ore].order = c_q
     data_autoplace_control["water_cryovolcano"].order = c_r
 end
+
+-- CORRUNDUM
+if mods [corrundum_mods] then
+    data_autoplace_control["platinum_ore"].order = c_s
+    data_autoplace_control["chalcopyrite_ore"].order = c_t
+    data_autoplace_control["sulfur_ore"].order = c_u
+end

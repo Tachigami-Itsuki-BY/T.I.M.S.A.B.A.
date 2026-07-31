@@ -361,3 +361,10 @@ end
 if mods[paracelsin_mods] then
     auto_added_science_pack(galvanization_science_pack, galvanization_science_pack)
 end
+
+-- CORRUNDUM
+if mods[corrundum_mods] then
+    data_technology[electrochemical_science_pack].research_trigger.count = 1
+
+    auto_added_science_pack(electrochemical_science_pack, electrochemical_science_pack)
+end

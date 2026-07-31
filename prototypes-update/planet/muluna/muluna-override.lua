@@ -1054,6 +1054,15 @@ if mods [muluna_mods] then
         data_recipe[telescope_observation_paracelsin].results[1].amount = 60
     end
 
+    if mods [corrundum_mods] then
+        local telescope_observation_corrundum = "muluna-telescope-observation-corrundum"
+        data_recipe[telescope_observation_corrundum].subgroup = is_muluna_recipe_astronomical
+        data_recipe[telescope_observation_corrundum].icons = BUILDING_R_I(astronomical_data_muluna, planet_corrundum)
+        data_recipe[telescope_observation_corrundum].order = a_k
+        data_recipe[telescope_observation_corrundum].energy_required = 4
+        data_recipe[telescope_observation_corrundum].results[1].amount = 30
+    end
+
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical
     data_recipe[telescope_observation_muluna].icons = BUILDING_R_I(astronomical_data_muluna, planet_muluna)
@@ -1110,12 +1119,6 @@ if mods [muluna_mods] then
         local telescope_observation_vesta = "muluna-telescope-observation-vesta"
         data_recipe[telescope_observation_vesta].icons = BUILDING_R_I(astronomical_data_muluna, planet_vesta)
         data_recipe[telescope_observation_vesta].energy_required = 4
-    end
-
-    if mods [corrundum_mods] then
-        local telescope_observation_corrundum = "muluna-telescope-observation-corrundum"
-        data_recipe[telescope_observation_corrundum].icons = BUILDING_R_I(astronomical_data_muluna, planet_corrundum)
-        data_recipe[telescope_observation_corrundum].energy_required = 4
     end]]
 
     local telescope_observation_space_platform = "muluna-telescope-observation-space-platform"

@@ -7,7 +7,6 @@ if mods [paracelsin_mods] then
     TIMSABA.functions.create_items
     ({
         {
-            localised_description = {"item-description.sphalerite-crushed"},
             name = sphalerite_crushed,
             subgroup = is_sphalerite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/sphalerite-crushed.png",
@@ -15,7 +14,6 @@ if mods [paracelsin_mods] then
             order = b
         },
         {
-            localised_description = {"item-description.sphalerite-chunks"},
             name = sphalerite_chunks,
             subgroup = is_sphalerite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/sphalerite-chunks.png",
@@ -23,7 +21,6 @@ if mods [paracelsin_mods] then
             order = c
         },
         {
-            localised_description = {"item-description.sphalerite-crystals"},
             name = sphalerite_crystals,
             subgroup = is_sphalerite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/sphalerite-crystals.png",
@@ -31,7 +28,6 @@ if mods [paracelsin_mods] then
             order = d
         },
         {
-            localised_description = {"item-description.sphalerite-purified"},
             name = sphalerite_purified,
             subgroup = is_sphalerite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/sphalerite-purified.png",

@@ -1,6 +1,374 @@
--- [font=default-tiny-bold][/font]
-
 if mods [corrundum_mods] then
+    -- PLATINUM
+    data_resource[platinum_ore_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
+    data_resource[platinum_ore_mods].subgroup = is_corrundum_platinum
+    data_resource[platinum_ore_mods].icon = data_item[platinum_ore_angels].icon
+    data_resource[platinum_ore_mods].icon_size = data_item[platinum_ore_angels].icon_size
+    data_resource[platinum_ore_mods].order = a
+    data_resource[platinum_ore_mods].minable.mining_time = 4
+
+    data_recipe[platinum_plate_mods].localised_name = data_item[platinum_plate].localised_name
+    data_recipe[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
+    data_recipe[platinum_plate_mods].category = sintering_6
+    data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
+    data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
+    data_recipe[platinum_plate_mods].order = c
+    data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 1}}
+    data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 1}}
+    data_recipe[platinum_plate_mods].main_product = platinum_plate
+    data_recipe[platinum_plate_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    -- CHALCOPYRITE
+    data_item[chalcopyrite_ore].subgroup = is_chalcopyrite
+    data_item[chalcopyrite_ore].order = a
+    data_item[chalcopyrite_ore].stack_size = 200
+    data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
+    data_resource[chalcopyrite_ore].order = a
+    data_resource[chalcopyrite_ore].minable.mining_time = 1
+
+    -- SUFUR
+    data_resource[sulfur_ore_mods].subgroup = is_corrundum_sulfur
+    data_resource[sulfur_ore_mods].icon = data_item[sulfur].icon
+    data_resource[sulfur_ore_mods].order = a
+    data_resource[sulfur_ore_mods].minable.mining_time = 1
+
+    local catalytic_chemistry = "catalytic-chemistry"
+    local sulfur_combustion = "sulfur-combustion"
+    data_recipe[sulfur_combustion].category = catalytic_chemistry
+    data_recipe[sulfur_combustion].subgroup = is_corrundum_sulfur
+    data_recipe[sulfur_combustion].icons = TWO_D_I(sulfur, carbon_dioxide_angels, sulfur_dioxide_angels, carbon_angels)
+    data_recipe[sulfur_combustion].order = a_a
+    -- S + CO₂ --> SO₂ + C
+    data_recipe[sulfur_combustion].ingredients =
+    {
+        {type = item, name = sulfur, amount = 1},
+        {type = fluid, name = carbon_dioxide_angels, amount = 15}
+    }
+    data_recipe[sulfur_combustion].results =
+    {
+        {type = fluid, name = sulfur_dioxide_angels, amount = 15},
+        {type = item, name = carbon_angels, amount = 1}
+    }
+    data_recipe[sulfur_combustion].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    data_recipe[hydrogen_sulfide_mods].subgroup = is_corrundum_sulfur
+    data_recipe[hydrogen_sulfide_mods].icons = THREE_R_I(sulfur, hydrogen_sulfide_angels, carbon_angels)
+    data_recipe[hydrogen_sulfide_mods].order = a_b
+    data_recipe[hydrogen_sulfide_mods].energy_required = 16 -- 2S + 2CH₄ --> 2H₂S + CH₄ + C
+    data_recipe[hydrogen_sulfide_mods].ingredients =
+    {
+        {type = item, name = sulfur, amount = 4},
+        {type = fluid, name = methane_angels, amount = 60}
+    }
+    data_recipe[hydrogen_sulfide_mods].results =
+    {
+        {type = fluid, name = hydrogen_sulfide_angels, amount = 60},
+        {type = item, name = carbon_angels, amount = 2},
+        {type = fluid, name = methane_angels, amount = 30}
+    }
+    data_recipe[hydrogen_sulfide_mods].main_product = hydrogen_sulfide_angels
+    data_recipe[hydrogen_sulfide_mods].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local sulfur_reduction = "sulfur-reduction"
+    data_recipe[sulfur_reduction].category = catalytic_chemistry
+    data_recipe[sulfur_reduction].subgroup = is_corrundum_sulfur
+    data_recipe[sulfur_reduction].icons = THREE_D_I(hydrogen_sulfide_angels, nil, sulfur_dioxide_angels, sulfur, water_purified_angels, oxygen_angels)
+    data_recipe[sulfur_reduction].order = a_c
+    data_recipe[sulfur_reduction].energy_required = 16 -- 2H₂S + 2SO₂ --> 2S + 2H₂O + O₂
+    data_recipe[sulfur_reduction].ingredients =
+    {
+        {type = fluid, name = hydrogen_sulfide_angels, amount = 60},
+        {type = fluid, name = sulfur_dioxide_angels, amount = 60}
+    }
+    data_recipe[sulfur_reduction].results =
+    {
+        {type = item, name = sulfur, amount = 4},
+        {type = fluid, name = water_purified_angels, amount = 60},
+        {type = fluid, name = oxygen_angels, amount = 30}
+    }
+    data_recipe[sulfur_reduction].main_product = sulfur
+    data_recipe[sulfur_reduction].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local sulfurous_oxidation = "sulfurous-oxidation"
+    data_recipe[sulfurous_oxidation].subgroup = is_corrundum_sulfur
+    data_recipe[sulfurous_oxidation].icons = TWO_D_I(sulfur_dioxide_angels, water_purified_angels, sulfuric_acid_angels, hydrogen_angels)
+    data_recipe[sulfurous_oxidation].order = a_d
+    data_recipe[sulfurous_oxidation].energy_required = 8 -- SO₂ + 2H₂O --> H₂SO₄ + H₂
+    data_recipe[sulfurous_oxidation].ingredients =
+    {
+        {type = fluid, name = sulfur_dioxide_angels, amount = 60},
+        {type = fluid, name = water_purified_angels, amount = 120}
+    }
+    data_recipe[sulfurous_oxidation].results =
+    {
+        {type = item, name = sulfuric_acid_angels, amount = 60},
+        {type = fluid, name = hydrogen_angels, amount = 60}
+    }
+    data_recipe[sulfurous_oxidation].main_product = sulfuric_acid_angels
+    data_recipe[sulfurous_oxidation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local hydrogen_sulfide_combustion = "hydrogen-sulfide-combustion"
+    data_recipe[hydrogen_sulfide_combustion].category = catalytic_chemistry
+    data_recipe[hydrogen_sulfide_combustion].subgroup = is_corrundum_sulfur
+    data_recipe[hydrogen_sulfide_combustion].icons = TWO_D_I(hydrogen_sulfide_angels, oxygen_angels, sulfur_dioxide_angels, hydrogen_angels)
+    data_recipe[hydrogen_sulfide_combustion].order = a_e
+    data_recipe[hydrogen_sulfide_combustion].energy_required = 8 -- H₂S + O₂ --> SO₂ + H₂
+    data_recipe[hydrogen_sulfide_combustion].ingredients =
+    {
+        {type = fluid, name = hydrogen_sulfide_angels, amount = 60},
+        {type = fluid, name = oxygen_angels, amount = 120}
+    }
+    data_recipe[hydrogen_sulfide_combustion].results =
+    {
+        {type = fluid, name = sulfur_dioxide_angels, amount = 60},
+        {type = fluid, name = hydrogen_angels, amount = 60}
+    }
+    data_recipe[hydrogen_sulfide_combustion].main_product = sulfur_dioxide_angels
+    data_recipe[hydrogen_sulfide_combustion].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    data_tool[electrochemical_science_pack].subgroup = is_corrundum_sulfur
+    data_tool[electrochemical_science_pack].order = b
+    data_recipe[electrochemical_science_pack].subgroup = is_corrundum_sulfur
+    data_recipe[electrochemical_science_pack].order = b
+    data_recipe[electrochemical_science_pack].energy_required = 16
+    data_recipe[electrochemical_science_pack].ingredients =
+    {
+        {type = item, name = sulfur, amount = 2},
+        {type = item, name = platinum_plate, amount = 1},
+        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+    }
+
+    -- CALCIUM SULFATE
+    data_recipe[calcium_sulfate_mods].category = catalytic_chemistry
+    data_recipe[calcium_sulfate_mods].subgroup = is_corrundum_calcium
+    data_recipe[calcium_sulfate_mods].icons = THREE_D_I(calcite, nil, sulfuric_acid_angels, calcium_sulfate_angels, water_purified_angels, carbon_dioxide_angels)
+    data_recipe[calcium_sulfate_mods].order = c
+    data_recipe[calcium_sulfate_mods].energy_required = 8 -- CaCO₃ + H₂SO₄ --> CaSO₄ + H₂O + CO₂
+    data_recipe[calcium_sulfate_mods].ingredients =
+    {
+        {type = item, name = calcite, amount = 4},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+    }
+    data_recipe[calcium_sulfate_mods].results =
+    {
+        {type = item, name = calcium_sulfate_angels, amount = 4},
+        {type = fluid, name = water_purified_angels, amount = 60},
+        {type = fluid, name = carbon_dioxide_angels, amount = 60}
+    }
+    data_recipe[calcium_sulfate_mods].main_product = calcium_sulfate_angels
+
+    local calcium_sulfate_fish = "calcium-sulfate-fish"
+    data_recipe[calcium_sulfate_fish].category = organic
+    data_recipe[calcium_sulfate_fish].subgroup = is_corrundum_calcium
+    data_recipe[calcium_sulfate_fish].icons = THREE_D_I(factorian_fish, carbon_angels, calcium_sulfate_angels, nutrients)
+    data_recipe[calcium_sulfate_fish].order = c_a
+    data_recipe[calcium_sulfate_fish].results[1].amount = 32
+
+    local calcium_sulfate_bioflux = "calcium-sulfate-bioflux"
+    data_recipe[calcium_sulfate_bioflux].category = organic
+    data_recipe[calcium_sulfate_bioflux].subgroup = is_corrundum_calcium
+    data_recipe[calcium_sulfate_bioflux].icons = THREE_D_I(bioflux, carbon_angels, calcium_sulfate_angels, nutrients)
+    data_recipe[calcium_sulfate_bioflux].order = c_b
+    data_recipe[calcium_sulfate_bioflux].ingredients =
+    {
+        {type = item, name = bioflux, amount = 4},
+        {type = item, name = carbon_angels, amount = 4},
+        {type = item, name = calcium_sulfate_angels, amount = 4}
+    }
+    data_recipe[calcium_sulfate_bioflux].results[1].amount = 64
+
+    local calcium_sulfate_egg = "calcium-sulfate-egg"
+    data_recipe[calcium_sulfate_egg].category = organic
+    data_recipe[calcium_sulfate_egg].subgroup = is_corrundum_calcium
+    data_recipe[calcium_sulfate_egg].icons = THREE_D_I(biter_egg, carbon_angels, calcium_sulfate_angels, nutrients)
+    data_recipe[calcium_sulfate_egg].order = c_c
+    data_recipe[calcium_sulfate_egg].results[1].amount = 32
+
+    -- RECIPE
+    local sulfonated_plastic = "sulfonated-plastic"
+    data_recipe[sulfonated_plastic].subgroup = is_corrundum_recipe
+    data_recipe[sulfonated_plastic].icons = FOUR_D_I(solid_fuel, sulfuric_acid_angels, sulfur_dioxide_angels, fuel_oil_angels, plastic)
+    data_recipe[sulfonated_plastic].order = a_a
+    data_recipe[sulfonated_plastic].energy_required = 4
+    data_recipe[sulfonated_plastic].ingredients =
+    {
+        {type = item, name = solid_fuel, amount = 4},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60},
+        {type = fluid, name = sulfur_dioxide_angels, amount = 120},
+        {type = fluid, name = fuel_oil_angels, amount = 30}
+    }
+    data_recipe[sulfonated_plastic].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local petroleum_alkylation = "petroleum-alkylation"
+    data_recipe[petroleum_alkylation].subgroup = is_corrundum_recipe
+    data_recipe[petroleum_alkylation].icons = TWO_D_I(condensates_angels, hydrogen_angels, fuel_oil_angels, methane_angels)
+    data_recipe[petroleum_alkylation].order = a_b
+    data_recipe[petroleum_alkylation].energy_required = 8 -- 4C₇H₁₆ + 5H₂ -H₂SO₄-> C₂₀H₄₂ + 8CH₄
+    data_recipe[petroleum_alkylation].ingredients =
+    {
+        {type = fluid, name = condensates_angels, amount = 120},
+        {type = fluid, name = hydrogen_angels, amount = 150},
+        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+    }
+    data_recipe[petroleum_alkylation].results =
+    {
+        {type = fluid, name = fuel_oil_angels, amount = 30},
+        {type = fluid, name = methane_angels, amount = 240},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+    }
+    data_recipe[petroleum_alkylation].main_product = fuel_oil_angels
+    data_recipe[petroleum_alkylation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local sulfonated_plastic_production_alt = "sulfonated-plastic-production-alt"
+    data_recipe[sulfonated_plastic_production_alt].subgroup = is_corrundum_recipe
+    data_recipe[sulfonated_plastic_production_alt].icons = FOUR_D_I(solid_fuel, sulfuric_acid_angels, sulfur_dioxide_angels, naphtha_angels, plastic)
+    data_recipe[sulfonated_plastic_production_alt].order = a_c
+    data_recipe[sulfonated_plastic_production_alt].energy_required = 8
+    data_recipe[sulfonated_plastic_production_alt].ingredients =
+    {
+        {type = item, name = solid_fuel, amount = 2},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60},
+        {type = fluid, name = sulfur_dioxide_angels, amount = 120},
+        {type = fluid, name = naphtha_angels, amount = 15}
+    }
+    data_recipe[sulfonated_plastic_production_alt].results[1].amount = 4
+    data_recipe[sulfonated_plastic_production_alt].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local rocket_fuel_catalytic_chemistry = "rocket-fuel-catalytic-chemistry"
+    data_recipe[rocket_fuel_catalytic_chemistry].hidden = false
+    data_recipe[rocket_fuel_catalytic_chemistry].hidden_in_factoriopedia = false
+    data_recipe[rocket_fuel_catalytic_chemistry].subgroup = is_corrundum_recipe
+    data_recipe[rocket_fuel_catalytic_chemistry].icons = BUILDING_R_I(rocket_fuel, planet_corrundum)
+    data_recipe[rocket_fuel_catalytic_chemistry].order = a_d
+    data_recipe[rocket_fuel_catalytic_chemistry].energy_required = 16
+    data_recipe[rocket_fuel_catalytic_chemistry].ingredients =
+    {
+        {type = item, name = solid_fuel, amount = 8},
+        {type = fluid, name = fuel_oil_angels, amount = 15}
+    }
+    data_recipe[rocket_fuel_catalytic_chemistry].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local asphalt_c = "asphalt-c"
+    data_item[asphalt_c].subgroup = is_corrundum_recipe
+    data_item[asphalt_c].order = b
+    data_item[asphalt_c].stack_size = 200
+    data_recipe[asphalt_c].subgroup = is_corrundum_recipe
+    data_recipe[asphalt_c].icons = THREE_I(naphtha_angels, sulfuric_acid_angels, asphalt_c)
+    data_recipe[asphalt_c].order = b
+    data_recipe[asphalt_c].energy_required = 16
+    data_recipe[asphalt_c].ingredients =
+    {
+        {type = fluid, name = naphtha_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+    }
+
+    local asphalt_c_alt = "asphalt-c-alt"
+    data_recipe[asphalt_c_alt].subgroup = is_corrundum_recipe
+    data_recipe[asphalt_c_alt].icons = THREE_I(fuel_oil_angels, sulfuric_acid_angels, asphalt_c)
+    data_recipe[asphalt_c_alt].order = b_a
+    data_recipe[asphalt_c_alt].energy_required = 8
+    data_recipe[asphalt_c_alt].ingredients =
+    {
+        {type = fluid, name = fuel_oil_angels, amount = 120},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+    }
+
+    local concrete_production_from_asphalt = "concrete-production-from-asphalt"
+    data_recipe[concrete_production_from_asphalt].subgroup = is_corrundum_recipe
+    data_recipe[concrete_production_from_asphalt].icons = BUILDING_R_I(concrete, asphalt_c)
+    data_recipe[concrete_production_from_asphalt].order = b_b
+    data_recipe[concrete_production_from_asphalt].ingredients =
+    {
+        {type = item, name = asphalt_c, amount = 4},
+        {type = item, name = stone, amount = 4},
+        {type = fluid, name = fuel_oil_angels, amount = 60}
+    }
+    data_recipe[concrete_production_from_asphalt].results[1].amount = 8
+
+    local light_oil_alkylation = "light-oil-alkylation"
+    data_recipe[light_oil_alkylation].subgroup = is_corrundum_recipe
+    data_recipe[light_oil_alkylation].icons = THREE_I(sulfuric_acid_angels, fuel_oil_angels, naphtha_angels)
+    data_recipe[light_oil_alkylation].order = b_c
+    data_recipe[light_oil_alkylation].energy_required = 8 -- 2C₇H₁₆ + H₂ -H₂SO₄-> C₈H₁₈ + 3CH₄
+    data_recipe[light_oil_alkylation].ingredients =
+    {
+        {type = fluid, name = condensates_angels, amount = 60},
+        {type = fluid, name = hydrogen_angels, amount = 30},
+        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+    }
+    data_recipe[light_oil_alkylation].results =
+    {
+        {type = fluid, name = naphtha_angels, amount = 30},
+        {type = fluid, name = methane_angels, amount = 90},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
+    }
+    data_recipe[light_oil_alkylation].main_product = naphtha_angels
+    data_recipe[light_oil_alkylation].surface_conditions = {{property = pressure, min = 6000, max = 6000}}
+
+    local dry_ice = "dry-ice"
+    data_item[dry_ice].localised_description = show_formula and {chemical_formula, "CO[font=default-tiny-bold]2[/font]"} or nil
+    data_item[dry_ice].subgroup = is_corrundum_recipe
+    data_item[dry_ice].order = c
+    data_item[dry_ice].stack_size = 200
+    data_recipe[dry_ice].subgroup = is_corrundum_recipe
+    data_recipe[dry_ice].icons = TWO_I(carbon_dioxide_angels, dry_ice, number_1)
+    data_recipe[dry_ice].order = c
+    data_recipe[dry_ice].energy_required = 128
+    data_recipe[dry_ice].ingredients =
+    {
+        {type = fluid, name = carbon_dioxide_angels, amount = 480},
+        {type = item, name = ice, amount = 32}
+    }
+    data_recipe[dry_ice].results =
+    {
+        {type = item, name = dry_ice, amount = 32},
+        {type = fluid, name = steam, amount = 480, temperature = 915}
+    }
+
+    local dry_ice_alt = "dry-ice-alt"
+    data_recipe[dry_ice_alt].subgroup = is_corrundum_recipe
+    data_recipe[dry_ice_alt].icons = TWO_I(carbon_dioxide_angels, dry_ice, number_2)
+    data_recipe[dry_ice_alt].order = c_a
+    data_recipe[dry_ice_alt].energy_required = 8
+    data_recipe[dry_ice_alt].ingredients =
+    {
+        {type = fluid, name = carbon_dioxide_angels, amount = 480},
+        {type = fluid, name = fluoroketone_cold, amount = 60}
+    }
+    data_recipe[dry_ice_alt].results =
+    {
+        {type = item, name = dry_ice, amount = 32},
+        {type = fluid, name = fluoroketone_hot, amount = 30}
+    }
+
+    local sulfuric_oxidizer = "sulfuric-oxidizer"
+    data_item[sulfuric_oxidizer].subgroup = is_corrundum_recipe
+    data_item[sulfuric_oxidizer].order = d
+    data_item[sulfuric_oxidizer].stack_size = 200
+    data_recipe[sulfuric_oxidizer].subgroup = is_corrundum_recipe
+    data_recipe[sulfuric_oxidizer].icons = THREE_I(solid_fuel, sulfuric_acid_angels, sulfuric_oxidizer)
+    data_recipe[sulfuric_oxidizer].order = d
+    data_recipe[sulfuric_oxidizer].energy_required = 32
+    data_recipe[sulfuric_oxidizer].ingredients =
+    {
+        {type = item, name = solid_fuel, amount = 2},
+        {type = fluid, name = sulfuric_acid_angels, amount = 120}
+    }
+
+    local explosives_from_sulfuric_oxidizer = "explosives-from-sulfuric-oxidizer"
+    data_recipe[explosives_from_sulfuric_oxidizer].hidden = false
+    data_recipe[explosives_from_sulfuric_oxidizer].hidden_in_factoriopedia = false
+    data_recipe[explosives_from_sulfuric_oxidizer].subgroup = is_corrundum_recipe
+    data_recipe[explosives_from_sulfuric_oxidizer].icons = THREE_I(carbon_angels, sulfuric_oxidizer, explosives)
+    data_recipe[explosives_from_sulfuric_oxidizer].order = d_a
+    data_recipe[explosives_from_sulfuric_oxidizer].ingredients =
+    {
+        {type = item, name = carbon_angels, amount = 4},
+        {type = item, name = sulfuric_oxidizer, amount = 1}
+    }
+    data_recipe[explosives_from_sulfuric_oxidizer].results[1].amount = 4
+
+    -- BUILDING
     local ice_box = "ice-box"
     data_item[ice_box].subgroup = is_corrundum_building
     data_item[ice_box].order = a
@@ -8,6 +376,12 @@ if mods [corrundum_mods] then
     data_item[ice_box].weight = 31250
     data_recipe[ice_box].subgroup = is_corrundum_building
     data_recipe[ice_box].order = a
+    data_recipe[ice_box].ingredients =
+    {
+        {type = item, name = plastic, amount = 16},
+        {type = item, name = wood, amount = 4},
+        {type = item, name = dry_ice, amount = 32}
+    }
     data_container[ice_box].subgroup = is_corrundum_building
     data_container[ice_box].order = a
 
@@ -18,8 +392,19 @@ if mods [corrundum_mods] then
     data_item[red_boiler].weight = 31250
     data_recipe[red_boiler].subgroup = is_corrundum_building
     data_recipe[red_boiler].order = b
+    data_recipe[red_boiler].energy_required = 8
+    data_recipe[red_boiler].ingredients =
+    {
+        {type = item, name = boiler_1, amount = 1},
+        {type = item, name = copper_plate, amount = 8}
+    }
     data_boiler[red_boiler].subgroup = is_corrundum_building
     data_boiler[red_boiler].order = b
+    data_boiler[red_boiler].energy_source.emissions_per_minute.pollution = 32
+    data_boiler[red_boiler].target_temperature = 915
+    data_boiler[red_boiler].energy_consumption = 21600 .. kW
+    data_boiler[red_boiler].fluid_box.filter = multi_phase_oil_angels
+    data_boiler[red_boiler].output_fluid_box.filter = carbon_dioxide_angels
 
     local red_steam_engine = "red-steam-engine"
     data_item[red_steam_engine].subgroup = is_corrundum_building
@@ -28,8 +413,19 @@ if mods [corrundum_mods] then
     data_item[red_steam_engine].weight = 31250
     data_recipe[red_steam_engine].subgroup = is_corrundum_building
     data_recipe[red_steam_engine].order = c
+    data_recipe[red_steam_engine].energy_required = 8
+    data_recipe[red_steam_engine].ingredients =
+    {
+        {type = item, name = steam_engine_1, amount = 1},
+        {type = item, name = copper_plate, amount = 32}
+    }
     data_generator[red_steam_engine].subgroup = is_corrundum_building
     data_generator[red_steam_engine].order = c
+    data_generator[red_steam_engine].energy_source.emissions_per_minute.pollution = 16
+    data_generator[red_steam_engine].maximum_temperature = 915
+    data_generator[red_steam_engine].max_power_output = 480 .. kW
+    data_generator[red_steam_engine].effectivity = nil
+    data_generator[red_steam_engine].fluid_box.filter = carbon_dioxide_angels
 
     local catalytic_chemical_plant = "catalytic-chemical-plant"
     data_item[catalytic_chemical_plant].subgroup = is_corrundum_building
@@ -38,8 +434,19 @@ if mods [corrundum_mods] then
     data_item[catalytic_chemical_plant].weight = 31250
     data_recipe[catalytic_chemical_plant].subgroup = is_corrundum_building
     data_recipe[catalytic_chemical_plant].order = d
+    data_recipe[catalytic_chemical_plant].energy_required = 16
+    data_recipe[catalytic_chemical_plant].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 2},
+        {type = item, name = platinum_cable, amount = 4},
+        {type = item, name = chemical_plant_4, amount = 1},
+        {type = item, name = platinum_plate, amount = 8}
+    }
     data_assembling[catalytic_chemical_plant].subgroup = is_corrundum_building
     data_assembling[catalytic_chemical_plant].order = d
+    data_assembling[catalytic_chemical_plant].crafting_speed = 4
+    data_assembling[catalytic_chemical_plant].energy_usage = 420 .. kW
+    data_assembling[catalytic_chemical_plant].energy_source.drain = 60 .. kW
 
     local pressure_lab = "pressure-lab"
     data_item[pressure_lab].subgroup = is_corrundum_building
@@ -48,352 +455,148 @@ if mods [corrundum_mods] then
     data_item[pressure_lab].weight = 31250
     data_recipe[pressure_lab].subgroup = is_corrundum_building
     data_recipe[pressure_lab].order = e
+    data_recipe[pressure_lab].energy_required = 32
+    data_recipe[pressure_lab].ingredients =
+    {
+        {type = item, name = steam_turbine_4, amount = 1},
+        {type = item, name = lab, amount = 1},
+        {type = item, name = platinum_cable, amount = 8},
+        {type = item, name = chemical_plant_4, amount = 1},
+        {type = item, name = platinum_plate, amount = 4}
+    }
+    data_lab[pressure_lab].subgroup = is_corrundum_building
+    data_lab[pressure_lab].order = e
+    data_lab[pressure_lab].researching_speed = 4
+    data_lab[pressure_lab].module_slots = 4
+    data_lab[pressure_lab].energy_usage = 480 .. kW
 
     local platinum_thruster = "platinum-thruster"
     data_item[platinum_thruster].subgroup = is_corrundum_building
     data_item[platinum_thruster].order = f
     data_item[platinum_thruster].stack_size = 8
     data_item[platinum_thruster].weight = 125000
+    data_recipe[platinum_thruster].subgroup = is_corrundum_building
+    data_recipe[platinum_thruster].order = f
+    data_recipe[platinum_thruster].energy_required = 8
+    data_recipe[platinum_thruster].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 4},
+        {type = item, name = niobium_iron_bearing, amount = 8},
+        {type = item, name = heat_shielding_tile, amount = 16},
+        {type = item, name = advanced_processing_unit, amount = 8},
+        {type = item, name = platinum_plate, amount = 8}
+    }
 
-    data_item[platinum_ore_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-    data_item[platinum_ore_mods].subgroup = is_corrundum_recipe
-    data_item[platinum_ore_mods].order = a
-    data_item[platinum_ore_mods].stack_size = 200
-    data_item[platinum_ore_mods].weight = 5000
-
-    data_item[platinum_plate_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-    data_item[platinum_plate_mods].subgroup = is_corrundum_recipe
-    data_item[platinum_plate_mods].order = b
-    data_item[platinum_plate_mods].stack_size = 200
-    data_item[platinum_plate_mods].weight = 5000
-    data_recipe[platinum_plate_mods].subgroup = is_corrundum_recipe
-    data_recipe[platinum_plate_mods].icons = TWO_I(platinum_ore_mods, platinum_plate_mods)
-    data_recipe[platinum_plate_mods].order = b
-
-    local platinum_plate_production_alt = "platinum-plate-production-alt"
-    data_recipe[platinum_plate_production_alt].subgroup = is_corrundum_recipe
-    data_recipe[platinum_plate_production_alt].icons = TWO_I(platinum_ore_mods, platinum_plate_mods)
-    data_recipe[platinum_plate_production_alt].order = b_a
-
-    local pressurized_acid_neutralization = "pressurized-acid-neutralization"
-    data_recipe[pressurized_acid_neutralization].subgroup = is_corrundum_recipe
-    data_recipe[pressurized_acid_neutralization].icons = THREE_R_I(sulfuric_acid_angels, water, steam)
-    data_recipe[pressurized_acid_neutralization].order = c_a
-
-    local pressurized_acid_neutralization_alt = "pressurized-acid-neutralization-alt"
-    data_recipe[pressurized_acid_neutralization_alt].subgroup = is_corrundum_recipe
-    data_recipe[pressurized_acid_neutralization_alt].icons = TWO_I(sulfuric_acid_angels, steam)
-    data_recipe[pressurized_acid_neutralization_alt].order = c_b
-
-    local electrochemical_science_pack = "electrochemical-science-pack"
-    data_tool[electrochemical_science_pack].subgroup = is_corrundum_recipe
-    data_tool[electrochemical_science_pack].order = d
-    data_recipe[electrochemical_science_pack].subgroup = is_corrundum_recipe
-    data_recipe[electrochemical_science_pack].order = d
-
-    local hot_water_to_steam ="hot-water-to-steam"
-    data_recipe[hot_water_to_steam].subgroup = is_corrundum_recipe
-    data_recipe[hot_water_to_steam].icons = THREE_I(solid_fuel, water, steam)
-    data_recipe[hot_water_to_steam].order = e
-
-    local dry_ice = "dry-ice"
-    data_item[dry_ice].localised_description = show_formula and {chemical_formula, "CO[font=default-tiny-bold]2[/font]"} or nil
-    data_item[dry_ice].subgroup = is_corrundum_recipe
-    data_item[dry_ice].order = f
-    data_item[dry_ice].stack_size = 200
-    data_item[dry_ice].weight = 5000
-    data_recipe[dry_ice].subgroup = is_corrundum_recipe
-    data_recipe[dry_ice].icons = CORNER_I(dry_ice, carbon_dioxide_angels, fluoroketone_cold, nil, fluoroketone_hot)
-    data_recipe[dry_ice].order = f
-
-    local dry_ice_alt = "dry-ice-alt"
-    data_recipe[dry_ice_alt].subgroup = is_corrundum_recipe
-    data_recipe[dry_ice_alt].icons = CORNER_I(dry_ice, carbon_dioxide_angels, water, nil, water)
-    data_recipe[dry_ice_alt].order = f_a
-
-    local controlled_petrol_combustion = "controlled-petrol-combustion"
-    data_recipe[controlled_petrol_combustion].subgroup = is_corrundum_recipe
-    data_recipe[controlled_petrol_combustion].icons = TWO_I(methane_angels, carbon_dioxide_angels)
-    data_recipe[controlled_petrol_combustion].order = f_b
-
-    local rocket_fuel_catalytic_chemistry = "rocket-fuel-catalytic-chemistry"
-    data_recipe[rocket_fuel_catalytic_chemistry].subgroup = is_corrundum_recipe
-    data_recipe[rocket_fuel_catalytic_chemistry].icons = THREE_I(solid_fuel, fuel_oil_angels, rocket_fuel)
-    data_recipe[rocket_fuel_catalytic_chemistry].order = f_c
-
-    local carbon_dioxide_to_carbon = "carbon-dioxide-to-carbon"
-    data_recipe[carbon_dioxide_to_carbon].subgroup = is_corrundum_recipe
-    data_recipe[carbon_dioxide_to_carbon].icons = THREE_D_I(iron_plate, sulfuric_acid_angels, carbon_dioxide_angels, carbon_angels, nil, iron_sulfate_solution_mods)
-    data_recipe[carbon_dioxide_to_carbon].order = f_d
-
-    local stone_production = "stone-production"
-    data_recipe[stone_production].subgroup = is_corrundum_recipe
-    data_recipe[stone_production].icons = THREE_D_I(stone, carbon_angels, calcium_sulfate_angels, stone, nil, sulfur_dioxide_angels)
-    data_recipe[stone_production].order = f_e
-
-    local thruster_fuel_oxidizer_to_steam = "thruster-fuel-oxidizer-to-steam"
-    data_recipe[thruster_fuel_oxidizer_to_steam].subgroup = is_corrundum_recipe
-    data_recipe[thruster_fuel_oxidizer_to_steam].icons = FOUR_I(thruster_fuel, water, thruster_oxidizer, steam)
-    data_recipe[thruster_fuel_oxidizer_to_steam].order = f_f
-
-    if mods [maraxsis_mods] then
-        local petrol_dehydrogenation_and_combustion = "petrol-dehydrogenation-and-combustion"
-        data_recipe[petrol_dehydrogenation_and_combustion].subgroup = is_corrundum_recipe
-        data_recipe[petrol_dehydrogenation_and_combustion].icons = CORNER_I(methane_angels, nil, nil, carbon_dioxide_angels, hydrogen_angels)
-        data_recipe[petrol_dehydrogenation_and_combustion].order = g
-
-        local petrol_dehydrogenation_and_combustion_maraxsis = "petrol-dehydrogenation-and-combustion-maraxsis"
-        data_recipe[petrol_dehydrogenation_and_combustion_maraxsis].subgroup = is_corrundum_recipe
-        data_recipe[petrol_dehydrogenation_and_combustion_maraxsis].icons = CORNER_I(methane_angels, nil, oxygen_angels, carbon_dioxide_angels, hydrogen_angels)
-        data_recipe[petrol_dehydrogenation_and_combustion_maraxsis].order = g_a
-    end
-
-    data_resource[sulfur_ore_mods].subgroup = is_corrundum_sulfur_recipe
-    data_resource[sulfur_ore_mods].order = a
-
-    local sulfur_combustion = "sulfur-combustion"
-    data_recipe[sulfur_combustion].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfur_combustion].icons = TWO_I(sulfur, sulfur_dioxide_angels)
-    data_recipe[sulfur_combustion].order = a_a
-
-    data_recipe[hydrogen_sulfide_mods].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[hydrogen_sulfide_mods].icons = CORNER_I(methane_angels, nil, sulfur, nil, hydrogen_sulfide_angels)
-    data_recipe[hydrogen_sulfide_mods].order = a_b
-
-    local sulfur_reduction = "sulfur-reduction"
-    data_recipe[sulfur_reduction].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfur_reduction].icons = THREE_P_TWO_I(hydrogen_sulfide_angels, sulfur_dioxide_angels, sulfur, nil, water)
-    data_recipe[sulfur_reduction].order = a_c
-
-    local sulfurous_oxidation = "sulfurous-oxidation"
-    data_recipe[sulfurous_oxidation].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfurous_oxidation].icons = THREE_I(water, sulfur_dioxide_angels, sulfuric_acid_angels)
-    data_recipe[sulfurous_oxidation].order = a_d
-
-    local hydrogen_sulfide_combustion = "hydrogen-sulfide-combustion"
-    data_recipe[hydrogen_sulfide_combustion].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[hydrogen_sulfide_combustion].icons = THREE_R_I(hydrogen_sulfide_angels, sulfur_dioxide_angels, water)
-    data_recipe[hydrogen_sulfide_combustion].order = a_e
-
-    data_fluid[sulfuric_acid_dilute_mods].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SO[font=default-tiny-bold]4(aq)[/font]"} or nil
-    data_fluid[sulfuric_acid_dilute_mods].subgroup = is_corrundum_sulfur_recipe
-    data_fluid[sulfuric_acid_dilute_mods].order = b
-
-    local sulfuric_acid_dilution = "sulfuric-acid-dilution"
-    data_recipe[sulfuric_acid_dilution].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfuric_acid_dilution].icons = THREE_I(sulfuric_acid_angels, water, sulfuric_acid_dilute_mods)
-    data_recipe[sulfuric_acid_dilution].order = b_a
-
-    local sulfuric_acid_concentration = "sulfuric-acid-concentration"
-    data_recipe[sulfuric_acid_concentration].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfuric_acid_concentration].icons = THREE_R_I(sulfuric_acid_dilute_mods, sulfuric_acid_angels, steam)
-    data_recipe[sulfuric_acid_concentration].order = b_b
-
-    local sulfuric_acid_concentration_alt = "sulfuric-acid-concentration-alt"
-    data_recipe[sulfuric_acid_concentration_alt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfuric_acid_concentration_alt].icons = TWO_I(sulfuric_acid_dilute_mods, sulfuric_acid_angels)
-    data_recipe[sulfuric_acid_concentration_alt].order = b_c
-
-    local dilute_acid_neutralization = "dilute-acid-neutralization"
-    data_recipe[dilute_acid_neutralization].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[dilute_acid_neutralization].icons = THREE_I(calcite, sulfuric_acid_dilute_mods, water)
-    data_recipe[dilute_acid_neutralization].order = b_d
-
-    data_recipe[calcium_sulfate_mods].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[calcium_sulfate_mods].icons = THREE_P_TWO_I(calcite, sulfuric_acid_dilute_mods, calcium_sulfate_angels, nil, water)
-    data_recipe[calcium_sulfate_mods].order = c
-
-    local calcium_sulfate_production_alt = "calcium-sulfate-production-alt"
-    data_recipe[calcium_sulfate_production_alt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[calcium_sulfate_production_alt].icons = THREE_I(calcite, sulfur_dioxide_angels, calcium_sulfate_angels)
-    data_recipe[calcium_sulfate_production_alt].order = c_a
-
-    local calcium_sulfate_recovery = "calcium-sulfate-recovery"
-    data_recipe[calcium_sulfate_recovery].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[calcium_sulfate_recovery].icons = FOUR_D_I(nutrients, sulfuric_acid_angels, water, fuel_oil_angels, calcium_sulfate_angels)
-    data_recipe[calcium_sulfate_recovery].order = c_b
-
-    local petroleum_alkylation = "petroleum-alkylation"
-    data_recipe[petroleum_alkylation].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[petroleum_alkylation].icons = THREE_I(sulfuric_acid_angels, methane_angels, fuel_oil_angels)
-    data_recipe[petroleum_alkylation].order = c_c
-
-    local sulfonated_plastic = "sulfonated-plastic"
-    data_recipe[sulfonated_plastic].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfonated_plastic].icons = FOUR_D_I(solid_fuel, sulfuric_acid_angels, sulfur_dioxide_angels, fuel_oil_angels, plastic)
-    data_recipe[sulfonated_plastic].order = c_d
-
-    local light_oil_alkylation = "light-oil-alkylation"
-    data_recipe[light_oil_alkylation].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[light_oil_alkylation].icons = THREE_I(sulfuric_acid_angels, fuel_oil_angels, naphtha_angels)
-    data_recipe[light_oil_alkylation].order = c_e
-
-    local sulfonated_plastic_production_alt = "sulfonated-plastic-production-alt"
-    data_recipe[sulfonated_plastic_production_alt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[sulfonated_plastic_production_alt].icons = FOUR_D_I(solid_fuel, sulfuric_acid_angels, sulfur_dioxide_angels, naphtha_angels, plastic)
-    data_recipe[sulfonated_plastic_production_alt].order = c_f
-
-    local chalcopyrite_ore = "chalcopyrite-ore"
-    data_item[chalcopyrite_ore].localised_description = show_formula and {chemical_formula, "CuFeS[font=default-tiny-bold]2[/font]"} or nil
-    data_item[chalcopyrite_ore].subgroup = is_corrundum_sulfur_recipe
-    data_item[chalcopyrite_ore].order = d
-    data_item[chalcopyrite_ore].stack_size = 200
-    data_item[chalcopyrite_ore].weight = 5000
-
-    data_fluid[mixed_sulfate_solution_mods].localised_description = show_formula and {chemical_formula, "FeCu(SO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]2(aq)[/font]"} or nil
-    data_fluid[mixed_sulfate_solution_mods].subgroup = is_corrundum_sulfur_recipe
-    data_fluid[mixed_sulfate_solution_mods].order = e
-
-    local chalcopyrite_refining = "chalcopyrite-refining"
-    data_recipe[chalcopyrite_refining].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[chalcopyrite_refining].icons = THREE_I(chalcopyrite_ore, sulfuric_acid_angels, mixed_sulfate_solution_mods)
-    data_recipe[chalcopyrite_refining].order = e_a
-
-    data_fluid[iron_sulfate_solution_mods].localised_description = show_formula and {chemical_formula, "FeSO[font=default-tiny-bold]4(aq)[/font]"} or nil
-    data_fluid[iron_sulfate_solution_mods].subgroup = is_corrundum_sulfur_recipe
-    data_fluid[iron_sulfate_solution_mods].order = f
-
-    local reactive_displacement = "reactive-displacement"
-    data_recipe[reactive_displacement].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[reactive_displacement].icons = TWO_D_I(iron_plate, mixed_sulfate_solution_mods, copper_ore, iron_sulfate_solution_mods, number_1)
-    data_recipe[reactive_displacement].order = f_a
-
-    local kinetic_reactive_displacement = "kinetic-reactive-displacement"
-    data_recipe[kinetic_reactive_displacement].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[kinetic_reactive_displacement].icons = TWO_D_I(iron_plate, mixed_sulfate_solution_mods, copper_ore, iron_sulfate_solution_mods, number_2)
-    data_recipe[kinetic_reactive_displacement].order = f_b
-
-    local force_reduction_iron = "force-reduction-iron"
-    data_recipe[force_reduction_iron].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[force_reduction_iron].icons = THREE_P_TWO_I(iron_sulfate_solution_mods, water, iron_ore, nil, sulfuric_acid_dilute_mods)
-    data_recipe[force_reduction_iron].order = f_c
-
-    local iron_recrystalization = "iron-recrystalization"
-    data_recipe[iron_recrystalization].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[iron_recrystalization].icons = THREE_I(iron_plate, sulfuric_acid_angels, iron_sulfate_solution_mods)
-    data_recipe[iron_recrystalization].order = f_d
-
-    local iron_recrystalization_alt = "iron-recrystalization-alt"
-    data_recipe[iron_recrystalization_alt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[iron_recrystalization_alt].icons = THREE_I(iron_gear_wheel, sulfuric_acid_angels, iron_sulfate_solution_mods)
-    data_recipe[iron_recrystalization_alt].order = f_e
-
-    local iron_stick_recrystalization = "iron-stick-recrystalization"
-    data_recipe[iron_stick_recrystalization].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[iron_stick_recrystalization].icons = THREE_I(iron_rod, sulfuric_acid_angels, iron_sulfate_solution_mods)
-    data_recipe[iron_stick_recrystalization].order = f_f
-
-    data_fluid[copper_sulfate_solution_mods].localised_description = show_formula and {chemical_formula, "CuSO[font=default-tiny-bold]4(aq)[/font]"} or nil
-    data_fluid[copper_sulfate_solution_mods].subgroup = is_corrundum_sulfur_recipe
-    data_fluid[copper_sulfate_solution_mods].order = g
-
-    local force_reduction_copper = "force-reduction-copper"
-    data_recipe[force_reduction_copper].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[force_reduction_copper].icons = THREE_P_TWO_I(copper_sulfate_solution_mods, water, copper_ore, nil, sulfuric_acid_dilute_mods)
-    data_recipe[force_reduction_copper].order = g_a
-
-    local copper_recrystalization = "copper-recrystalization"
-    data_recipe[copper_recrystalization].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[copper_recrystalization].icons = THREE_I(copper_plate, sulfuric_acid_angels, copper_sulfate_solution_mods)
-    data_recipe[copper_recrystalization].order = g_b
-
-    local copper_recrystalization_alt = "copper-recrystalization-alt"
-    data_recipe[copper_recrystalization_alt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[copper_recrystalization_alt].icons = THREE_I(copper_cable, sulfuric_acid_angels, copper_sulfate_solution_mods)
-    data_recipe[copper_recrystalization_alt].order = g_c
-
-    local super_saturated_displacement = "super-saturated-displacement"
-    data_recipe[super_saturated_displacement].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[super_saturated_displacement].icons = FOUR_THREE_I(copper_plate, mixed_sulfate_solution_mods, water, sulfuric_acid_angels, copper_ore, iron_sulfate_solution_mods, copper_sulfate_solution_mods)
-    data_recipe[super_saturated_displacement].order = h
-
-    local destructive_dilute_acid_neutralization = "destructive-dilute-acid-neutralization"
-    data_recipe[destructive_dilute_acid_neutralization].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[destructive_dilute_acid_neutralization].icons = RECYCLING_I(deleted_png, sulfuric_acid_dilute_mods)
-    data_recipe[destructive_dilute_acid_neutralization].order = h_a
-
-    local asphalt_c = "asphalt-c"
-    data_item[asphalt_c].subgroup = is_corrundum_sulfur_recipe
-    data_item[asphalt_c].order = i
-    data_item[asphalt_c].stack_size = 200
-    data_item[asphalt_c].weight = 5000
-    data_recipe[asphalt_c].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[asphalt_c].icons = THREE_I(naphtha_angels, sulfuric_acid_angels, asphalt_c)
-    data_recipe[asphalt_c].order = i
-
-    local asphalt_c_alt = "asphalt-c-alt"
-    data_recipe[asphalt_c_alt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[asphalt_c_alt].icons = THREE_I(fuel_oil_angels, sulfuric_acid_angels, asphalt_c)
-    data_recipe[asphalt_c_alt].order = i_a
-
-    local concrete_production_from_asphalt = "concrete-production-from-asphalt"
-    data_recipe[concrete_production_from_asphalt].subgroup = is_corrundum_sulfur_recipe
-    data_recipe[concrete_production_from_asphalt].icons = THREE_D_I(asphalt_c, stone, water, concrete)
-    data_recipe[concrete_production_from_asphalt].order = i_b
-
-    local sulfuric_oxidizer = "sulfuric-oxidizer"
-    data_item[sulfuric_oxidizer].subgroup = is_corrundum_war
-    data_item[sulfuric_oxidizer].order = a
-    data_item[sulfuric_oxidizer].stack_size = 200
-    data_item[sulfuric_oxidizer].weight = 5000
-    data_recipe[sulfuric_oxidizer].subgroup = is_corrundum_war
-    data_recipe[sulfuric_oxidizer].icons = THREE_I(solid_fuel, sulfuric_acid_angels, sulfuric_oxidizer)
-    data_recipe[sulfuric_oxidizer].order = a
-
-    local explosives_from_sulfuric_oxidizer = "explosives-from-sulfuric-oxidizer"
-    data_recipe[explosives_from_sulfuric_oxidizer].subgroup = is_corrundum_war
-    data_recipe[explosives_from_sulfuric_oxidizer].icons = THREE_I(carbon_angels, sulfuric_oxidizer, explosives)
-    data_recipe[explosives_from_sulfuric_oxidizer].order = b
-
+    -- WAR
     local blue_rocket = "blue-rocket"
     data_ammo[blue_rocket].subgroup = is_corrundum_war
     data_ammo[blue_rocket].order = c
     data_ammo[blue_rocket].stack_size = 200
-    data_ammo[blue_rocket].weight = 5000
     data_recipe[blue_rocket].subgroup = is_corrundum_war
-    data_recipe[blue_rocket].icons = THREE_D_I(rocket, carbon_angels, sulfuric_oxidizer, blue_rocket)
     data_recipe[blue_rocket].order = c
 
     local sulfur_poison_capsule = "sulfur-poison-capsule"
     data_capsule[sulfur_poison_capsule].subgroup = is_corrundum_war
     data_capsule[sulfur_poison_capsule].order = d
     data_capsule[sulfur_poison_capsule].stack_size = 200
-    data_capsule[sulfur_poison_capsule].weight = 5000
     data_recipe[sulfur_poison_capsule].subgroup = is_corrundum_war
-    data_recipe[sulfur_poison_capsule].icons = TWO_FIVE_I(electronic_circuit, steel_plate, nil, sulfur, plastic, sulfuric_acid_angels, sulfur_poison_capsule)
     data_recipe[sulfur_poison_capsule].order = d
-
-    data_boiler[red_boiler].fluid_box =
+    data_recipe[sulfur_poison_capsule].ingredients =
     {
-        volume = 200,
-        pipe_connections =
-        {
-            {flow_direction = input_output, direction = defines.direction.west, position = {-1, 0.5}},
-            {flow_direction = input_output, direction = defines.direction.east, position = {1, 0.5}}
-        },
-        production_type = input,
-        filter = methane_angels
-    }
-    data_boiler[red_boiler].output_fluid_box =
-    {
-        volume = 200,
-        pipe_connections =
-        {
-            {flow_direction = output, direction = defines.direction.north, position = {0, -0.5}}
-        },
-        production_type = output,
-        filter = carbon_dioxide_angels
+        {type = item, name = electronic_circuit, amount = 4},
+        {type = item, name = steel_plate, amount = 4},
+        {type = item, name = sulfur, amount = 8},
+        {type = item, name = plastic, amount = 2},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60}
     }
 
-    data_generator[red_steam_engine].fluid_box =
+    bobmods.lib.recipe.update_recycling_recipe
+    ({
+        ice_box,
+        red_boiler,
+        red_steam_engine,
+        catalytic_chemical_plant,
+        pressure_lab,
+        platinum_thruster,
+        sulfur_poison_capsule
+    })
+
+    -- TECHNOLOGY
+    table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation})
+    table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation_2})
+    data_technology[planet_discovery_corrundum].unit.ingredients =
     {
-        volume = 200,
-        pipe_connections =
-        {
-            {flow_direction = input_output, direction = defines.direction.south, position = {0, 2}},
-            {flow_direction = input_output, direction = defines.direction.north, position = {0, -2}}
-        },
-        production_type = input,
-        filter = carbon_dioxide_angels
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology["rocket-fuel-catalysis-productivity-infinite"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology["platinum-processing"].effects =
+    {
+        {type = unlock_recipe, recipe = platinum_powder_corrundum},
+        {type = unlock_recipe, recipe = platinum_plate_mods}
+    }
+
+    data_technology["sulfate-processing-2"].effects = {}
+
+    data_technology[calcium_sulfate_mods].effects = {{type = unlock_recipe, recipe = calcium_sulfate_mods}}
+    data_technology[calcium_sulfate_mods].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[sulfonated_plastic].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    local tech_asphalt_and_concrete = "asphalt-and-concrete"
+    data_technology[tech_asphalt_and_concrete].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[dry_ice].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
     }
 end

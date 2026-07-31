@@ -106,23 +106,6 @@ data_recipe[nutrients_from_factorian_fish].results[1].amount = 16
 data_recipe[nutrients_from_factorian_fish].allow_productivity = true
 data_recipe[nutrients_from_factorian_fish].allow_quality = true
 
-if mods [corrundum_mods] then
-    local calcium_sulfate_bioflux = "calcium-sulfate-bioflux"
-    data_recipe[calcium_sulfate_bioflux].subgroup = is_nutrients
-    data_recipe[calcium_sulfate_bioflux].icons = THREE_D_I(bioflux, carbon_angels, calcium_sulfate_angels, nutrients)
-    data_recipe[calcium_sulfate_bioflux].order = "a-d-a"
-
-    local calcium_sulfate_egg = "calcium-sulfate-egg"
-    data_recipe[calcium_sulfate_egg].subgroup = is_nutrients
-    data_recipe[calcium_sulfate_egg].icons = THREE_D_I(biter_egg, carbon_angels, calcium_sulfate_angels, nutrients)
-    data_recipe[calcium_sulfate_egg].order = "a-e-a"
-
-    local calcium_sulfate_fish = "calcium-sulfate-fish"
-    data_recipe[calcium_sulfate_fish].subgroup = is_nutrients
-    data_recipe[calcium_sulfate_fish].icons = THREE_D_I(factorian_fish, carbon_angels, calcium_sulfate_angels, nutrients)
-    data_recipe[calcium_sulfate_fish].order = "a-f-a"
-end
-
 -- JELLYNUT
 data_capsule[jellynut].subgroup = is_jellynut
 data_capsule[jellynut].order = a

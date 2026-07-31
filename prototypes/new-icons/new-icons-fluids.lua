@@ -1,17 +1,17 @@
 -- BASE and SPACE AGE
 data_fluid[water].icon = "__TIMSABA__/graphics/icons/base/water.png"
-data_fluid[water].default_temperature = 15
-data_fluid[water].heat_capacity = "200J"
 data_fluid[water].base_color = {r = 076 / 255, g = 177 / 255, b = 205 / 255}
 data_fluid[water].flow_color = {r = 100 / 255, g = 192 / 255, b = 218 / 255}
+data_fluid[water].default_temperature = 15
 data_fluid[water].max_temperature = 100
+data_fluid[water].heat_capacity = "200J"
 
 data_fluid[steam].icon = "__TIMSABA__/graphics/icons/base/steam.png"
-data_fluid[steam].default_temperature = 15
-data_fluid[steam].heat_capacity = "200J"
 data_fluid[steam].base_color = {r = 097 / 255, g = 097 / 255, b = 097 / 255}
 data_fluid[steam].flow_color = {r = 128 / 255, g = 128 / 255, b = 128 / 255}
+data_fluid[steam].default_temperature = 15
 data_fluid[steam].max_temperature = 5000
+data_fluid[steam].heat_capacity = "200J"
 
 data_fluid[crude_oil].icons = nil
 data_fluid[crude_oil].icon = "__TIMSABA__/graphics/icons/base/crude-oil.png"
@@ -278,11 +278,11 @@ data_fluid[compressed_air].flow_color = {r = 155 / 255, g = 155 / 255, b = 200 /
 
 data_fluid[oxygen_angels].icons = nil
 data_fluid[oxygen_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-oxygen.png"
-data_fluid[oxygen_angels].default_temperature = 15
-data_fluid[oxygen_angels].heat_capacity = "200J"
 data_fluid[oxygen_angels].base_color = TIMSABA.functions.fluid_color("OOO")
 data_fluid[oxygen_angels].flow_color = TIMSABA.functions.flow_color("OOO")
+data_fluid[oxygen_angels].default_temperature = 15
 data_fluid[oxygen_angels].max_temperature = 100
+data_fluid[oxygen_angels].heat_capacity = "200J"
 
 data_fluid[carbon_monoxide_angels].icons = nil
 data_fluid[carbon_monoxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-carbon-monoxide.png"
@@ -291,11 +291,11 @@ data_fluid[carbon_monoxide_angels].flow_color = TIMSABA.functions.flow_color("CO
 
 data_fluid[carbon_dioxide_angels].icons = nil
 data_fluid[carbon_dioxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-carbon-dioxide.png"
-data_fluid[carbon_dioxide_angels].default_temperature = 15
-data_fluid[carbon_dioxide_angels].heat_capacity = "200J"
 data_fluid[carbon_dioxide_angels].base_color = TIMSABA.functions.fluid_color("CO2")
 data_fluid[carbon_dioxide_angels].flow_color = TIMSABA.functions.flow_color("CO2")
+data_fluid[carbon_dioxide_angels].default_temperature = 15
 data_fluid[carbon_dioxide_angels].max_temperature = 5000
+data_fluid[carbon_dioxide_angels].heat_capacity = "200J"
 
 data_fluid[hydrogen_angels].icons = nil
 data_fluid[hydrogen_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-hydrogen.png"
@@ -466,6 +466,11 @@ data_fluid[multi_phase_oil_angels].icons = nil
 data_fluid[multi_phase_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-liquid-multi-phase-oil.png"
 data_fluid[multi_phase_oil_angels].base_color = {r = 133 / 255, g = 141 / 255, b = 88 / 255}
 data_fluid[multi_phase_oil_angels].flow_color = {r = 139 / 255, g = 147 / 255, b = 96 / 255}
+if mods [corrundum_mods] then
+    data_fluid[multi_phase_oil_angels].default_temperature = 15
+    data_fluid[multi_phase_oil_angels].max_temperature = 100
+    data_fluid[multi_phase_oil_angels].heat_capacity = "200J"
+end
 
 data_fluid[condensates_angels].icons = nil
 data_fluid[condensates_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-condensates.png"
@@ -686,19 +691,14 @@ end
 
 -- PARACELSIN
 
+-- CORRUNDUM
+
 if mods [maraxsis_mods] then
     data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
     data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
     data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
     data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
     data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
-end
-
-if mods [corrundum_mods] then
-    data_fluid[sulfuric_acid_dilute_mods].icon = "__TIMSABA__/graphics/icons/corrundum/sulfuric-acid-dilute.png"
-    data_fluid[mixed_sulfate_solution_mods].icon = "__TIMSABA__/graphics/icons/corrundum/mixed-sulfate-solution.png"
-    data_fluid[iron_sulfate_solution_mods].icon = "__TIMSABA__/graphics/icons/corrundum/iron-sulfate-solution.png"
-    data_fluid[copper_sulfate_solution_mods].icon = "__TIMSABA__/graphics/icons/corrundum/copper-sulfate-solution.png"
 end
 
 if mods [shchierbin_mods] then

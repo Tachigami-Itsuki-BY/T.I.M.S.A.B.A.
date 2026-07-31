@@ -1,4 +1,6 @@
 if mods [corrundum_mods] then
+	local iron_sulfate_solution = "iron-sulfate-solution"
+	local copper_sulfate_solution = "copper-sulfate-solution"
     local replacements =
     {
 		[sulfur_ore_mods] = sulfur,
@@ -6,87 +8,75 @@ if mods [corrundum_mods] then
         [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
         [sulfur_dioxide_mods] = sulfur_dioxide_angels,
         [carbon_dioxide_mods] = carbon_dioxide_angels,
-        [calcium_sulfate_mods] = calcium_sulfate_angels
+        [calcium_sulfate_mods] = calcium_sulfate_angels,
+		[platinum_ore_mods] = platinum_ore_angels,
+		[platinum_plate_mods] = platinum_plate,
+		[iron_sulfate_solution] = iron_sulfate_II_solution,
+		[copper_sulfate_solution] = copper_sulfate_II_solution
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
-        end
+	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
+	local mod_items =
+	{
+		sulfur_ore_mods,
+		calcium_sulfate_mods,
+		platinum_ore_mods,
+		platinum_plate_mods
+	}
+	for _, name in ipairs(mod_items) do
+		data_item[name] = nil
+		data_recipe[name .. _recycling] = nil
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+	end
+	data_recipe[platinum_plate_mods .. "-production-alt"] = nil
 
-        if recipe.main_product then
-	    	local replace = replacements[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
-        end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
+	data_fluid["iron-sulfate-solution"] = nil
+	data_fluid["copper-sulfate-solution"] = nil
+	data_fluid["mixed-sulfate-solution"] = nil
+	data_recipe["chalcopyrite-refining"] = nil
+	data_recipe["reactive-displacement"] = nil
+	data_recipe["kinetic-reactive-displacement"] = nil
+	data_recipe["force-reduction-iron"] = nil
+	data_recipe["iron-recrystalization"] = nil
+	data_recipe["iron-recrystalization-alt"] = nil
+	data_recipe["iron-stick-recrystalization"] = nil
+	data_recipe["force-reduction-copper"] = nil
+	data_recipe["copper-recrystalization"] = nil
+	data_recipe["copper-recrystalization-alt"] = nil
+	data_recipe["super-saturated-displacement"] = nil
+	data_recipe["destructive-dilute-acid-neutralization"] = nil
 
-	data_item[sulfur_ore_mods] = nil
-    data_item[calcium_sulfate_mods] = nil
+	data_recipe["pressurized-acid-neutralization"] = nil
+	data_recipe["pressurized-acid-neutralization-alt"] = nil
+	data_recipe["hot-water-to-steam"] = nil
+
+	data_fluid[sulfuric_acid .. "-dilute"] = nil
+	data_recipe[sulfuric_acid .. "-dilution"] = nil
+	data_recipe[sulfuric_acid .. "-concentration"] = nil
+	data_recipe[sulfuric_acid .. "-concentration-alt"] = nil
+
+	data_recipe["dilute-acid-neutralization"] = nil
+	data_recipe["calcium-sulfate-production-alt"] = nil
+	local calcium_sulfate_recovery = "calcium-sulfate-recovery"
+	data_recipe[calcium_sulfate_recovery] = nil
+	data_technology[calcium_sulfate_recovery] = nil
+
+	data_recipe["controlled-petrol-combustion"] = nil
+	local stone_production = "stone-production"
+	data_recipe[stone_production] = nil
+	data_technology[stone_production] = nil
+	data_recipe["thruster-fuel-oxidizer-to-steam"] = nil
+	data_recipe["carbon-dioxide-to-carbon"] = nil
+
+	data_recipe["petrol-dehydrogenation-and-combustion"] = nil
+	data_recipe["petrol-dehydrogenation-and-combustion-maraxsis"] = nil
+
+	data_technology["chalcopyrite-processing"] = nil
+	data_technology[pipe .. _productivity .. "-infinite"] = nil
+	data_technology[steam_turbine_1 .. _productivity .. "-infinite"] = nil
+	data_technology[sulfuric_acid .. _productivity .. "-infinite"] = nil
+	data_technology["recrystalization"] = nil
+	data_technology["space-steam-production"] = nil
 end

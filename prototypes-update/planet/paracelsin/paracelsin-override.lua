@@ -6,11 +6,12 @@ if mods [paracelsin_mods] then
     data_item[vaterite].stack_size = 200
     data_resource[vaterite].subgroup = is_vaterite_zinc
     data_resource[vaterite].order = a
+    data_resource[vaterite].minable.mining_time = 1
 
     local vaterite_formation = "vaterite-formation"
     data_recipe[vaterite_formation].subgroup = is_vaterite_zinc
     data_recipe[vaterite_formation].icons = STONKS_I(stonks_png, vaterite)
-    data_recipe[vaterite_formation].order = b_a
+    data_recipe[vaterite_formation].order = a_a
     data_recipe[vaterite_formation].energy_required = 4
     data_recipe[vaterite_formation].ingredients =
     {
@@ -24,7 +25,7 @@ if mods [paracelsin_mods] then
     data_recipe[vaterite_processing].category = chemistry
     data_recipe[vaterite_processing].subgroup = is_vaterite_zinc
     data_recipe[vaterite_processing].icons = RECYCLING_I(recycling_png, vaterite)
-    data_recipe[vaterite_processing].order = b_b
+    data_recipe[vaterite_processing].order = a_b
     data_recipe[vaterite_processing].energy_required = 2 -- 4CaCO₃ + 2H₂O --> 2CaCO₃ + 2CaO + 2C + 2H₂ + 4O₂
     data_recipe[vaterite_processing].ingredients =
     {
@@ -41,19 +42,29 @@ if mods [paracelsin_mods] then
     }
     data_recipe[vaterite_processing].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
 
+    data_recipe[zinc_plate_mods].localised_name = data_item[zinc_plate_bob].localised_name
+    data_recipe[zinc_plate_mods].category = sintering_6
+    data_recipe[zinc_plate_mods].subgroup = is_vaterite_zinc
+    data_recipe[zinc_plate_mods].order = c
+    data_recipe[zinc_plate_mods].energy_required = 8
+    data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
+    data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
+    data_recipe[zinc_plate_mods].main_product = zinc_plate_bob
+    data_recipe[zinc_plate_mods].surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+
     data_item[zinc_rivets].subgroup = is_vaterite_zinc
-    data_item[zinc_rivets].order = c
+    data_item[zinc_rivets].order = d
     data_recipe[zinc_rivets].subgroup = is_vaterite_zinc
     data_recipe[zinc_rivets].icons = TWO_I(zinc_plate_bob, zinc_rivets)
-    data_recipe[zinc_rivets].order = c
+    data_recipe[zinc_rivets].order = d
     data_recipe[zinc_rivets].ingredients = {{type = item, name = zinc_plate_bob, amount = 4}}
     data_recipe[zinc_rivets].results[1].amount = 8
 
     data_item[zinc_cable].subgroup = is_vaterite_zinc
-    data_item[zinc_cable].order = d
+    data_item[zinc_cable].order = e
     data_recipe[zinc_cable].subgroup = is_vaterite_zinc
     data_recipe[zinc_cable].icons = THREE_I(copper_cable, zinc_plate_bob, zinc_cable)
-    data_recipe[zinc_cable].order = d
+    data_recipe[zinc_cable].order = e
     data_recipe[zinc_cable].ingredients =
     {
         {type = item, name = copper_cable, amount = 2},
@@ -376,6 +387,8 @@ if mods [paracelsin_mods] then
     data_technology[tech_zinc_extraction].prerequisites = {tech_sphalerite_processing_1, tech_tetrahedrite_processing_1}
     data_technology[tech_zinc_extraction].effects =
     {
+        {type = unlock_recipe, recipe = zinc_powder_paracelsin},
+        {type = unlock_recipe, recipe = zinc_plate_mods},
         {type = unlock_recipe, recipe = zinc_cable},
         {type = unlock_recipe, recipe = zinc_rivets}
     }

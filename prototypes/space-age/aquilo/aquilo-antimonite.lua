@@ -7,7 +7,6 @@ antimonite_purified = "antimonite-purified"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = {"item-description.antimonite-ore"},
         name = antimonite_ore,
         subgroup = is_antimonite,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-ore.png",
@@ -20,7 +19,6 @@ TIMSABA.functions.create_items
         order = a
     },
     {
-        localised_description = {"item-description.antimonite-crushed"},
         name = antimonite_crushed,
         subgroup = is_antimonite,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-crushed.png",
@@ -28,7 +26,6 @@ TIMSABA.functions.create_items
         order = b
     },
     {
-        localised_description = {"item-description.antimonite-chunks"},
         name = antimonite_chunks,
         subgroup = is_antimonite,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-chunks.png",
@@ -36,7 +33,6 @@ TIMSABA.functions.create_items
         order = c
     },
     {
-        localised_description = {"item-description.antimonite-crystals"},
         name = antimonite_crystals,
         subgroup = is_antimonite,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-crystals.png",
@@ -44,7 +40,6 @@ TIMSABA.functions.create_items
         order = d
     },
     {
-        localised_description = {"item-description.antimonite-purified"},
         name = antimonite_purified,
         subgroup = is_antimonite,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-purified.png",

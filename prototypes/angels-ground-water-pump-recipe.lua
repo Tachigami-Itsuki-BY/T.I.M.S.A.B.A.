@@ -11,6 +11,7 @@ local recipes =
     {planet = planet_hyarion, fluid = lava},
     {planet = planet_tellus, fluid = water_infected},
     {planet = planet_paracelsin, fluid = nitrogen_liquid},
+    {planet = planet_corrundum, fluid = multi_phase_oil_angels},
     -- {planet = planet_, fluid = },
 }
 for _, RECIPE in ipairs(recipes) do

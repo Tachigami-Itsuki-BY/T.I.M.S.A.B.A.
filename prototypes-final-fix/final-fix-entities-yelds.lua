@@ -649,6 +649,25 @@ if mods [paracelsin_mods] then
     }
 end
 
+-- CORRUNDUM
+if mods [corrundum_mods] then
+    data_tile["petroleum-tile"].fluid = multi_phase_oil_angels
+
+    data_entity["huge-corrundum-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 16, amount_max = 64},
+        {type = item, name = carbon_angels, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_saphirite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_jivolite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_stiratite, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_crotinnium, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_rubyte, amount_min = 16, amount_max = 32},
+        {type = item, name = ore_bobmonium, amount_min = 16, amount_max = 32},
+        {type = item, name = chalcopyrite_ore, amount_min = 4, amount_max = 16},
+        {type = item, name = sulfur, amount_min = 8, amount_max = 32}
+    }
+end
+
 -- MODS
 if mods [vulcanus_sulfuric_bacteria_mods] then
     data_entity["sulfuric-stromatolite"].minable.results =

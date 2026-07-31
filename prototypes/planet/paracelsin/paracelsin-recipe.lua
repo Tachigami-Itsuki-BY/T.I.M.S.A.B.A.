@@ -1,5 +1,6 @@
 if mods [paracelsin_mods] then
     nitrogen_from_paracelsin_air = "nitrogen-from-paracelsin-air"
+    zinc_powder_paracelsin = "zinc-powder-paracelsin"
     TIMSABA.functions.create_recipes
     ({
         -- AIR
@@ -16,6 +17,18 @@ if mods [paracelsin_mods] then
             surface_conditions = {{property = pressure, min = 5300, max = 5300}}
         },
         -- ZINC
+        {
+            localised_name = data_item[zinc_powder].localised_name,
+            name = zinc_powder_paracelsin,
+            category = powderizing_4,
+            subgroup = is_vaterite_zinc,
+            icons = TWO_I(zinc_ore_bob, zinc_powder),
+            order = b,
+            ingredients = {{type = item, name = zinc_ore_bob, amount = 4}},
+            results = {{type = item, name = zinc_powder, amount = 1}},
+            main_product = zinc_powder,
+            surface_conditions = {{property = pressure, min = 5300, max = 5300}}
+        },
         {
             name = galvanized_steel_plate,
             category = metallurgy,

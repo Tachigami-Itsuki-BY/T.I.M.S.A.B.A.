@@ -6,7 +6,6 @@ wolframite_purified = "wolframite-purified"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = {"item-description.wolframite-crushed"},
         name = wolframite_crushed,
         subgroup = is_vulcanus_wolframite,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-crushed.png",
@@ -14,7 +13,6 @@ TIMSABA.functions.create_items
         order = b
     },
     {
-        localised_description = {"item-description.wolframite-chunks"},
         name = wolframite_chunks,
         subgroup = is_vulcanus_wolframite,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-chunks.png",
@@ -22,7 +20,6 @@ TIMSABA.functions.create_items
         order = c
     },
     {
-        localised_description = {"item-description.wolframite-crystals"},
         name = wolframite_crystals,
         subgroup = is_vulcanus_wolframite,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-crystals.png",
@@ -30,7 +27,6 @@ TIMSABA.functions.create_items
         order = d
     },
     {
-        localised_description = {"item-description.wolframite-purified"},
         name = wolframite_purified,
         subgroup = is_vulcanus_wolframite,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-purified.png",
