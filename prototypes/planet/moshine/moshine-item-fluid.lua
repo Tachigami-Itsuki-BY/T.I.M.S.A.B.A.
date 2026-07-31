@@ -8,8 +8,8 @@ if mods[moshine_mods] then
             subgroup = is_moshine_ore,
             icon = "__TIMSABA__/graphics/icons/moshine/moshine-air.png",
             order = a,
-            base_color = {r = 140 / 255, g = 115 / 255, b = 30 / 255},
-            flow_color = {r = 150 / 255, g = 120 / 255, b = 40 / 255}
+            base_color = {r = 168 / 255, g = 109 / 255, b = 061 / 255},
+            flow_color = {r = 180 / 255, g = 120 / 255, b = 070 / 255}
         }
     })
 

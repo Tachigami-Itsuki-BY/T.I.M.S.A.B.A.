@@ -1,55 +1,33 @@
 if mods [corrundum_mods] then
-    local corrundum = "corrundum"
-    is_corrundum_ore = "corrundum-ore"
-    is_corrundum_new_recipe = "corrundum-new-recipe"
-    is_corrundum_building = "corrundum-building"
-    is_corrundum_recipe = "corrundum-recipe"
-    is_corrundum_sulfur_recipe = "corrundum-sulfur-recipe"
-    is_corrundum_war = "corrundum-war"
+    local ig_corrundum = "corrundum"
     data:extend
     ({
         {
             type = item_group,
-            name = corrundum,
-            order = y,
+            name = ig_corrundum,
+            order = x_j,
             icon = "__TIMSABA__/graphics/icons/corrundum/corrundum-planet.png",
-            icon_size = 128,
-        },
-        {
-            type = item_subgroup,
-            name = is_corrundum_ore,
-            group = corrundum,
-            order = a
-        },
-        {
-            type = item_subgroup,
-            name = is_corrundum_new_recipe,
-            group = corrundum,
-            order = b
-        },
-        {
-            type = item_subgroup,
-            name = is_corrundum_building,
-            group = corrundum,
-            order = c
-        },
-        {
-            type = item_subgroup,
-            name = is_corrundum_recipe,
-            group = corrundum,
-            order = d
-        },
-        {
-            type = item_subgroup,
-            name = is_corrundum_sulfur_recipe,
-            group = corrundum,
-            order = d_a
-        },
-        {
-            type = item_subgroup,
-            name = is_corrundum_war,
-            group = corrundum,
-            order = e
+            icon_size = 128
         }
+    })
+
+    is_corrundum_air = "is-corrundum-air"
+    is_corrundum_platinum = "is-corrundum-platinum"
+    is_chalcopyrite = "is-chalcopyrite"
+    is_corrundum_sulfur = "is-corrundum-sulfur"
+    is_corrundum_calcium = "is-corrundum-calcium"
+    is_corrundum_recipe = "is-corrundum-recipe"
+    is_corrundum_building = "is-corrundum-building"
+    is_corrundum_war = "is-corrundum-war"
+    TIMSABA.functions.create_subgroups(ig_corrundum,
+    {
+        {name = is_corrundum_air,      order = a},
+        {name = is_corrundum_platinum, order = b},
+        {name = is_chalcopyrite,       order = c},
+        {name = is_corrundum_sulfur,   order = d},
+        {name = is_corrundum_calcium,  order = e},
+        {name = is_corrundum_recipe,   order = f},
+        {name = is_corrundum_building, order = g},
+        {name = is_corrundum_war,      order = h}
     })
 end

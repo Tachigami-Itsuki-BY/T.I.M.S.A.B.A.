@@ -635,7 +635,6 @@ TIMSABA.functions.create_recipes
         order = b,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 4,
         ingredients =
         {
             {type = fluid, name = copper_molten_angels, amount = 60},
@@ -652,7 +651,6 @@ TIMSABA.functions.create_recipes
         order = c,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 4,
         ingredients =
         {
             {type = fluid, name = copper_molten_angels, amount = 60},
@@ -669,7 +667,6 @@ TIMSABA.functions.create_recipes
         order = d,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 4,
         ingredients =
         {
             {type = fluid, name = copper_molten_angels, amount = 60},
@@ -686,7 +683,6 @@ TIMSABA.functions.create_recipes
         order = e,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 4,
         ingredients =
         {
             {type = fluid, name = copper_molten_angels, amount = 60},
@@ -766,6 +762,24 @@ casting_pipes({name = casting_steel_pipe_to_ground,    order = d, ing = steel_mo
 casting_pipes({name = casting_brass_pipe_to_ground,    order = e, ing = brass_molten_angels,    amount_ing = 360, res = brass_pipe_to_ground})
 casting_pipes({name = casting_titanium_pipe_to_ground, order = f, ing = titanium_molten_angels, amount_ing = 480, res = titanium_pipe_to_ground})
 casting_pipes({name = casting_nitinol_pipe_to_ground,  order = g, ing = nitinol_molten_angels,  amount_ing = 600, res = nitinol_pipe_to_ground})
+
+-- TUNGSTEN
+tungsten_powder_vulcanus = "tungsten-powder-vulcanus"
+TIMSABA.functions.create_recipes
+({
+    {
+        localised_name = data_item[tungsten_powder].localised_name,
+        name = tungsten_powder_vulcanus,
+        category = powderizing_4,
+        subgroup = is_vulcanus_tungsten,
+        icons = TWO_I(tungsten_ore_bob, tungsten_powder),
+        order = a,
+        ingredients = {{type = item, name = tungsten_ore_bob, amount = 4}},
+        results = {{type = item, name = tungsten_powder, amount = 1}},
+        main_product = tungsten_powder,
+        surface_conditions = {{property = pressure, min = 4000, max = 4000}}
+    }
+})
 
 -- ROCKET PART TUNGSTEN
 rocket_part_tungsten = "rocket-part-tungsten"

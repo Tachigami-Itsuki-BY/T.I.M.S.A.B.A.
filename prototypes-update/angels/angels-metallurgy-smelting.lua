@@ -1780,6 +1780,11 @@ data_item[platinum_pellet].order = c
 data_item[platinum_ingot].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_item[platinum_ingot].order = d
 
+data_item[platinum_powder].hidden = false
+data_item[platinum_powder].hidden_in_factoriopedia = false
+data_item[platinum_powder].localised_description = show_formula and {chemical_formula, "Pt"} or nil
+data_item[platinum_powder].order = c
+
 -- PLATINUM CHEMISTRY
 data_fluid[hexachloroplatinic_acid].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6(aq)[/font]"} or nil
 data_fluid[hexachloroplatinic_acid].subgroup = is_platinum_chemistry

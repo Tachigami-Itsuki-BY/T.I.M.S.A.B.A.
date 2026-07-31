@@ -686,25 +686,6 @@ if mods [arig_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    data_technology[sand_sifting].effects =
-    {
-        {type = unlock_recipe, recipe = sifter},
-        {type = unlock_recipe, recipe = sand_sifting}
-    }
-
-    data_technology["planetaris-compression"].effects =
-    {
-        {type = unlock_recipe, recipe = press},
-        {type = unlock_recipe, recipe = compression_cactus_wood},
-        {type = unlock_recipe, recipe = compression_wood_coal},
-        {type = unlock_recipe, recipe = carbon_arig},
-        {type = unlock_recipe, recipe = plastic_arig},
-        {type = unlock_recipe, recipe = sandstone_brick},
-        {type = unlock_recipe, recipe = compression_rocket_fuel},
-        {type = unlock_recipe, recipe = raw_quartz_arig},
-        {type = unlock_recipe, recipe = compression_landfill}
-    }
-
     tech_compression_science = "planetaris-compression-science"
 
     table.insert(data_technology[arig_roboport].prerequisites, "bob-robo-modular-4")
@@ -818,6 +799,12 @@ if mods [arig_mods] then
     end
     if mods [tellus_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = tellus_water_harvesting})
+    end
+    if mods [paracelsin_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = paracelsin_water_harvesting})
+    end
+    if mods [corrundum_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = corrundum_water_harvesting})
     end
     if mods [panglia_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = panglia_water_harvesting})

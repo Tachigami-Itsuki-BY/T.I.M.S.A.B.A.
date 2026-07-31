@@ -8,7 +8,6 @@ if mods[moshine_mods] then
     TIMSABA.functions.create_items
     ({
         {
-            localised_description = {"item-description.monazite-ore"},
             name = monazite_ore,
             subgroup = is_monazite,
             icon = "__TIMSABA__/graphics/icons/moshine/monazite-ore.png",
@@ -21,7 +20,6 @@ if mods[moshine_mods] then
             order = a
         },
         {
-            localised_description = {"item-description.monazite-crushed"},
             name = monazite_crushed,
             subgroup = is_monazite,
             icon = "__TIMSABA__/graphics/icons/moshine/monazite-crushed.png",
@@ -29,7 +27,6 @@ if mods[moshine_mods] then
             order = b
         },
         {
-            localised_description = {"item-description.monazite-chunks"},
             name = monazite_chunks,
             subgroup = is_monazite,
             icon = "__TIMSABA__/graphics/icons/moshine/monazite-chunks.png",
@@ -37,7 +34,6 @@ if mods[moshine_mods] then
             order = c
         },
         {
-            localised_description = {"item-description.monazite-crystals"},
             name = monazite_crystals,
             subgroup = is_monazite,
             icon = "__TIMSABA__/graphics/icons/moshine/monazite-crystals.png",
@@ -45,7 +41,6 @@ if mods[moshine_mods] then
             order = d
         },
         {
-            localised_description = {"item-description.monazite-purified"},
             name = monazite_purified,
             subgroup = is_monazite,
             icon = "__TIMSABA__/graphics/icons/moshine/monazite-purified.png",

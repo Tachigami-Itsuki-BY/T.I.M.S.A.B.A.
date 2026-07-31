@@ -141,13 +141,15 @@ require("prototypes.planet.paracelsin.paracelsin-tetrahedrite")
 require("prototypes.planet.paracelsin.paracelsin-recipe")
 require("prototypes.planet.paracelsin.paracelsin-technology")
 
+require("prototypes.planet.corrundum.corrundum-groups")
+require("prototypes.planet.corrundum.corrundum-item-fluid")
+require("prototypes.planet.corrundum.corrundum-chalcopyrite")
+require("prototypes.planet.corrundum.corrundum-recipe")
+require("prototypes.planet.corrundum.corrundum-technology")
+
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
-
-require("prototypes.planet.corrundum.corrundum-groups")
-require("prototypes.planet.corrundum.corrundum-recipe")
-require("prototypes.planet.corrundum.corrundum-technology")
 
 require("prototypes.planet.cubium.cubium-groups")
 require("prototypes.planet.cubium.cubium-recipe")

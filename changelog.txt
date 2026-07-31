@@ -1,5 +1,48 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+Date: 31.07.2026
+  Features:
+    - [Mods] Добавлена поддержка Corrundum: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [Vulcanus] Добавлен рецепт Вольфрамового Порошка из Вольфрамовой Руды.
+    - [Paracelsin] Добавлен рецепт Цинкового Порошка из Цинковой Руды.
+
+    - [Mods] Added support for Corrundum: seamlessly integrated the new planet into the gameplay flow.
+    - [Vulcanus] Added recipe for Tungsten Powder from Tungsten Ore.
+    - [Paracelsin] Added recipe for Zinc Powder from Zinc Ore.
+
+  Bugfixes:
+    - [Mods] Исправлены незначительные ошибки.
+
+    - [Mods] Fixed minor bugs.
+
+  Balancing:
+    - [Vulcanus] В рецептах Карбида Вольфрама и Вольфровой Пластины произведена замена ингредиента: Вольфрамовая Руда (4 ед.) → Вольфрамовый Порошок (1 ед.)
+    - [Paracelsin] Восстановлен рецепт Цинковой Пластины.
+
+    - [Vulcanus] Replaced an ingredient in the Tungsten Carbide and Tungsten Plate recipe: Tungsten Ore (4 units) → Tungsten Powder (1 unit)
+    - [Paracelsin] Restored recipe for Zinc Plate
+
+  Graphics:
+    - [All] Обновлены иконки.
+
+    - [All] Updated icons.
+
+  Locale:
+    - [Rus] Обновлена русская локализация.
+
+    - [Eng] Updated english localization.
+
+  Scripting:
+    - [All] Улучшен скрипт, который удаляет рецепты из технологий, если в них используются несуществующие предметы или жидкости.
+
+    - [All] Improved the script that removes recipes from technologis if they use non-existent items or fluids.
+
+  Modding:
+    - [Mods] Мод «Corrundum» переведён в опциональную зависимость.
+
+    - [Mods] Moved "Corrundum" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.1
 Date: 29.07.2026
   Bugfixes:

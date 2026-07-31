@@ -1,11 +1,11 @@
 {
     "name": "TIMSABA",
-    "version": "1.6.1",
+    "version": "1.7.0",
     "factorio_version": "2.0",
     "title": "○🌐Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
     "description": "Tachigami Itsuki Modpack for Space Age, Bob's and Angel's. \nSeamless integration of Space Age with Angel's & Bob's mods. \nUnified balance, new entities, items, fluids, recipes, and technologies, plus updated icons.",
-    "contact": "https://discord.gg/ntApw9H6D8 or https://t.me/+fbP66l3k50U0NDIy", 
+    "contact": "https://discord.gg/ntApw9H6D8",
     "homepage": "https://github.com/Tachigami-Itsuki-BY/T.I.M.S.A.B.A.",
     "dependencies":
     [
@@ -87,9 +87,9 @@
         "? planetaris-hyarion",
         "? planetaris-tellus",
         "? Paracelsin",
+        "? corrundum",
         "! maraxsis",
         "! castra",
-        "! corrundum",
         "! cubium",
         "! Nexus",
         "! rubia",

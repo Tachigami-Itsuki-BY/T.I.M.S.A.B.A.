@@ -35,8 +35,9 @@ if mods [arig_mods] then
 
     -- WATER HARVESTING CONFIG
     moshine_water_harvesting = "moshine-water-harvesting"
-    panglia_water_harvesting = "panglia-water-harvesting"
     paracelsin_water_harvesting = "paracelsin-water-harvesting"
+    corrundum_water_harvesting = "corrundum-water-harvesting"
+    panglia_water_harvesting = "panglia-water-harvesting"
     local water_planets =
     {
         [moshine_mods] =
@@ -56,6 +57,15 @@ if mods [arig_mods] then
             order = a_i,
             amount = 120,
             surface_conditions = {{property = pressure, max = 5300, min = 5300}}
+        },
+        [corrundum_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.corrundum"}},
+            name = corrundum_water_harvesting,
+            planet = planet_panglia,
+            order = a_j,
+            amount = 15,
+            surface_conditions = {{property = pressure, max = 6000, min = 6000}}
         },
         [panglia_mods] =
         {

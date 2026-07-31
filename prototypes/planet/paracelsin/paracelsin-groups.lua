@@ -5,7 +5,7 @@ if mods [paracelsin_mods] then
         {
             type = item_group,
             name = ig_paracelsin,
-            order = y,
+            order = x_i,
             icon = "__TIMSABA__/graphics/icons/paracelsin/paracelsin-planet.png",
             icon_size = 128,
         }

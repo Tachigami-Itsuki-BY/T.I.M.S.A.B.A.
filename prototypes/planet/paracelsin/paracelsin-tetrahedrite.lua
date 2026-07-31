@@ -7,7 +7,6 @@ if mods [paracelsin_mods] then
     TIMSABA.functions.create_items
     ({
         {
-            localised_description = {"item-description.tetrahedrite-crushed"},
             name = tetrahedrite_crushed,
             subgroup = is_tetrahedrite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/tetrahedrite-crushed.png",
@@ -15,7 +14,6 @@ if mods [paracelsin_mods] then
             order = b
         },
         {
-            localised_description = {"item-description.tetrahedrite-chunks"},
             name = tetrahedrite_chunks,
             subgroup = is_tetrahedrite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/tetrahedrite-chunks.png",
@@ -23,7 +21,6 @@ if mods [paracelsin_mods] then
             order = c
         },
         {
-            localised_description = {"item-description.tetrahedrite-crystals"},
             name = tetrahedrite_crystals,
             subgroup = is_tetrahedrite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/tetrahedrite-crystals.png",
@@ -31,7 +28,6 @@ if mods [paracelsin_mods] then
             order = d
         },
         {
-            localised_description = {"item-description.tetrahedrite-purified"},
             name = tetrahedrite_purified,
             subgroup = is_tetrahedrite,
             icon = "__TIMSABA__/graphics/icons/paracelsin/tetrahedrite-purified.png",

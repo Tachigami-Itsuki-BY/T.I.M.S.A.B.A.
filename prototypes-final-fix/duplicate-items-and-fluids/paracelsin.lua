@@ -17,13 +17,13 @@ if mods [paracelsin_mods] then
 	}
 	for _, name in ipairs(mod_items) do
 		data_item[name] = nil
-		data_recipe[name] = nil
 		data_recipe[name .. _recycling] = nil
 		if mods[panglia_mods] then
 			data_recipe[item_ .. name .. _panglia_crushing] = nil
 		end
 	end
 
+	data_recipe[macerator] = nil
 	data_furnace[macerator] = nil
 
 	for _, name in ipairs({"accumulator-v2", "solar-matrix"}) do

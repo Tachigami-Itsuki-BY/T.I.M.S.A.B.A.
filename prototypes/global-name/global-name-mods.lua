@@ -200,10 +200,8 @@ calcium_sulfate_mods = "calcium-sulfate"
 sulfur_ore_mods = "sulfur-ore"
 platinum_ore_mods = "platinum-ore"
 platinum_plate_mods = "platinum-plate"
-sulfuric_acid_dilute_mods = "sulfuric-acid-dilute"
-mixed_sulfate_solution_mods = "mixed-sulfate-solution"
-iron_sulfate_solution_mods = "iron-sulfate-solution"
-copper_sulfate_solution_mods = "copper-sulfate-solution"
+chalcopyrite_ore = "chalcopyrite-ore"
+electrochemical_science_pack = "electrochemical-science-pack"
 
 -- CUBIUM
 cubium_mods = "cubium"

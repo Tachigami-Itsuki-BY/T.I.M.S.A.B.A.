@@ -7,6 +7,8 @@ if mods [hyarion_mods] then
     data_resource[metallic_ore].order = a
 
     data_resource[carbon_ore].subgroup = is_hyarion_recipe_ore
+    data_resource[carbon_ore].icon = data_item[carbon_angels].icon
+    data_resource[carbon_ore].icon_size = data_item[carbon_angels].icon_size
     data_resource[carbon_ore].order = d
 
     data_resource[quartz_ore].subgroup = is_hyarion_recipe_ore

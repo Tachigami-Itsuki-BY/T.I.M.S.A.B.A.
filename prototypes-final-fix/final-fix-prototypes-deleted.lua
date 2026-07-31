@@ -78,6 +78,34 @@ for _, tier in ipairs(rail_suffixes) do
     end
 end
 
+-- Универсальная очистка битых ссылок в списках копирования настроек
+local train_types = {"locomotive", "cargo-wagon", "fluid-wagon"}
+
+for _, t_type in ipairs(train_types) do
+    if data.raw[t_type] then
+        for _, entity in pairs(data.raw[t_type]) do
+            if entity.additional_pastable_entities then
+                for i = #entity.additional_pastable_entities, 1, -1 do
+                    local target_name = entity.additional_pastable_entities[i]
+
+                    -- Ищем, к какому типу относится цель. Если её вообще нет в игре — удаляем ссылку
+                    local exists = false
+                    for _, check_type in ipairs(train_types) do
+                        if data.raw[check_type] and data.raw[check_type][target_name] then
+                            exists = true
+                            break
+                        end
+                    end
+
+                    if not exists then
+                        table.remove(entity.additional_pastable_entities, i)
+                    end
+                end
+            end
+        end
+    end
+end
+
 local shells =
 {
     "bob-distractor-artillery-shell",
@@ -376,6 +404,27 @@ local function prototype_exists(product)
     or data_SP_starter_pack[p_name] ~= nil
 end
 
+-- Он найдет все "сломанные" ссылки в технологиях, которые остались от удаленных рецептов
+for tech_name, technology in pairs(data_technology) do
+    if technology.effects then
+        for i = #technology.effects, 1, -1 do
+            local effect = technology.effects[i]
+            -- Проверяем эффекты открытия рецептов
+            if effect.type == unlock_recipe then
+                -- Если рецепта с таким именем больше НЕТ в игре, удаляем этот эффект из технологии
+                if not data_recipe[effect.recipe] then
+                    table.remove(technology.effects, i)
+                end
+            -- Проверяем эффекты продуктивности рецептов
+            elseif effect.type == change_recipe_productivity then
+                if not data_recipe[effect.recipe] then
+                    table.remove(technology.effects, i)
+                end
+            end
+        end
+    end
+end
+
 -- Очередь на удаление (хеш-таблица для мгновенного поиска O(1))
 local to_delete = {}
 
@@ -433,7 +482,21 @@ if next(to_delete) then
                 if effect.type == unlock_recipe and to_delete[effect.recipe] then
                     remove(technology.effects, i)
                 end
+                if effect.type == change_recipe_productivity and to_delete[effect.recipe] then
+                    remove(technology.effects, i)
+                end
             end
         end
     end
+end
+
+-- !!!!!!!!!!!!!!!!!
+if mods ["metal-and-stars"] then
+    data_technology["space-fuel-productivity"].effects =
+    {
+        {type = change_recipe_productivity, recipe = thruster_fuel, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_thruster_fuel, change = 0.1},
+        {type = change_recipe_productivity, recipe = thruster_oxidizer, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_thruster_oxidizer, change = 0.1}
+    }
 end

@@ -121,6 +121,7 @@ data_technology[tech_rocket_part_productivity].effects =
 }
 table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
 
+-- MULUNA
 if mods [muluna_mods] then
     -- ROCKET PART
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
@@ -264,7 +265,6 @@ if not mods [muluna_mods] and mods [tellus_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
 end
 
--- MODS
 if mods [muluna_mods] then
     local muluna_mining_machine =
     {
@@ -330,73 +330,12 @@ if mods [muluna_mods] then
     data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
 end
 
-if mods [shchierbin_mods] and mods [maraxsis_mods] then
-    local salt_v = "salt-v"
-    data_recipe[salt_v].subgroup = is_shchierbin_recipe
-    data_recipe[salt_v].icons = THREE_R_I(water_saline_angels, salt_angels, water)
-    data_recipe[salt_v].order = g
-
-    data_recipe[salt_mods] = nil
-end
-
-if mods ["RPGsystem"] then
-    data_capsule["rpg_amnesia_potion"].subgroup = nil
-    data_capsule["rpg_big_healing_potion"].subgroup = nil
-    data_capsule["rpg_big_xp_potion"].subgroup = nil
-    data_capsule["rpg_crafting_potion"].subgroup = nil
-    data_capsule["rpg_level_up_potion"].subgroup = nil
-    data_capsule["rpg_small_healing_potion"].subgroup = nil
-    data_capsule["rpg_small_xp_potion"].subgroup = nil
-    data_capsule["rpg_speed_potion"].subgroup = nil
-end
-
-if mods [bobtech] and mods [space_age_science_packs] then
-    local list_base_or_space = {}
-    if settings.startup[setting_science_pack_nostalgia].value then
-        list_base_or_space =
-        {
-            "metallurgic-science-pack",
-            "electromagnetic-science-pack",
-            "cryogenic-science-pack",
-            "promethium-science-pack",
-            "agricultural-science-pack"
-        }
-    else
-        list_base_or_space =
-        {
-            "military-science-pack",
-            "automation-science-pack",
-            "chemical-science-pack",
-            "space-science-pack",
-            "logistic-science-pack",
-            "utility-science-pack",
-            "production-science-pack"
-        }
-    end
-
-    for _, pack in pairs(list_base_or_space) do
-        data_technology[pack].icon = "__sa-science-packs__/graphics/techs/sasp-" .. pack .. ".png"
-        data_technology[pack].icon_size = 256
-        data_technology[pack].icons = nil
-    end
-
-    local tech_transport_science_pack = "bob-advanced-logistic-science-pack"
-    data_technology[tech_transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
-    data_technology[tech_transport_science_pack].icon_size = 256
-    data_technology[tech_transport_science_pack].icons = nil
-
-    local tech_alien_research = "bob-alien-research"
-    if data_technology[tech_alien_research] then
-        data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
-        data_technology[tech_alien_research].icon_size = 256
-        data_technology[tech_alien_research].icons = nil
-    end
-end
-
+-- MOSHINE
 if mods [moshine_mods] then
     data_recipe[boron].category = smelting_filtering
 end
 
+-- HYARION
 if mods [hyarion_mods] then
     data_item[raw_quartz_arig].subgroup = is_arig_recipe
     data_recipe[raw_quartz_arig].subgroup = is_arig_recipe
@@ -543,6 +482,69 @@ if mods[paracelsin_mods] then
 end
 
 -- MODS
+if mods [shchierbin_mods] and mods [maraxsis_mods] then
+    local salt_v = "salt-v"
+    data_recipe[salt_v].subgroup = is_shchierbin_recipe
+    data_recipe[salt_v].icons = THREE_R_I(water_saline_angels, salt_angels, water)
+    data_recipe[salt_v].order = g
+
+    data_recipe[salt_mods] = nil
+end
+
+if mods ["RPGsystem"] then
+    data_capsule["rpg_amnesia_potion"].subgroup = nil
+    data_capsule["rpg_big_healing_potion"].subgroup = nil
+    data_capsule["rpg_big_xp_potion"].subgroup = nil
+    data_capsule["rpg_crafting_potion"].subgroup = nil
+    data_capsule["rpg_level_up_potion"].subgroup = nil
+    data_capsule["rpg_small_healing_potion"].subgroup = nil
+    data_capsule["rpg_small_xp_potion"].subgroup = nil
+    data_capsule["rpg_speed_potion"].subgroup = nil
+end
+
+if mods [bobtech] and mods [space_age_science_packs] then
+    local list_base_or_space = {}
+    if settings.startup[setting_science_pack_nostalgia].value then
+        list_base_or_space =
+        {
+            "metallurgic-science-pack",
+            "electromagnetic-science-pack",
+            "cryogenic-science-pack",
+            "promethium-science-pack",
+            "agricultural-science-pack"
+        }
+    else
+        list_base_or_space =
+        {
+            "military-science-pack",
+            "automation-science-pack",
+            "chemical-science-pack",
+            "space-science-pack",
+            "logistic-science-pack",
+            "utility-science-pack",
+            "production-science-pack"
+        }
+    end
+
+    for _, pack in pairs(list_base_or_space) do
+        data_technology[pack].icon = "__sa-science-packs__/graphics/techs/sasp-" .. pack .. ".png"
+        data_technology[pack].icon_size = 256
+        data_technology[pack].icons = nil
+    end
+
+    local tech_transport_science_pack = "bob-advanced-logistic-science-pack"
+    data_technology[tech_transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
+    data_technology[tech_transport_science_pack].icon_size = 256
+    data_technology[tech_transport_science_pack].icons = nil
+
+    local tech_alien_research = "bob-alien-research"
+    if data_technology[tech_alien_research] then
+        data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
+        data_technology[tech_alien_research].icon_size = 256
+        data_technology[tech_alien_research].icons = nil
+    end
+end
+
 local tech_stack_loader = "mdrn-stack-loader"
 if mods [loaders_modernized_integrations] and data_technology[tech_stack_loader] then
     data_technology[tech_stack_loader].prerequisites = {stack_inserter, "mdrn-ultimate-loader"}

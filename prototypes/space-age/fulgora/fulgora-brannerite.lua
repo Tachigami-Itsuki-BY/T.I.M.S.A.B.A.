@@ -7,7 +7,6 @@ brannerite_purified = "brannerite-purified"
 TIMSABA.functions.create_items
 ({
     {
-        localised_description = {"item-description.brannerite-ore"},
         name = brannerite_ore,
         subgroup = is_brannerite,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-ore.png",
@@ -20,7 +19,6 @@ TIMSABA.functions.create_items
         order = a
     },
     {
-        localised_description = {"item-description.brannerite-crushed"},
         name = brannerite_crushed,
         subgroup = is_brannerite,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-crushed.png",
@@ -28,7 +26,6 @@ TIMSABA.functions.create_items
         order = b
     },
     {
-        localised_description = {"item-description.brannerite-chunks"},
         name = brannerite_chunks,
         subgroup = is_brannerite,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-chunks.png",
@@ -36,7 +33,6 @@ TIMSABA.functions.create_items
         order = c
     },
     {
-        localised_description = {"item-description.brannerite-crystals"},
         name = brannerite_crystals,
         subgroup = is_brannerite,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-crystals.png",
@@ -44,7 +40,6 @@ TIMSABA.functions.create_items
         order = d
     },
     {
-        localised_description = {"item-description.brannerite-purified"},
         name = brannerite_purified,
         subgroup = is_brannerite,
         icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-purified.png",
