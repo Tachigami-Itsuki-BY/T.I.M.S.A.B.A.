@@ -23,18 +23,6 @@ if mods[secretas_frozeta_mods] or mods[nexus_mods] then
 	if mods[panglia_mods] then
 		data_recipe[item_ .. gold_plate_mods.. _panglia_crushing] = nil
 	end
-
-    if mods[muluna_mods] then
-        if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
-            for i = #Muluna.constants.cargo_drop_spawn_imports, 1, -1 do
-                local path = Muluna.constants.cargo_drop_spawn_imports[i]
-
-                if path and string.find(path, "gold%-plate") then
-                    table.remove(Muluna.constants.cargo_drop_spawn_imports, i)
-                end
-            end
-        end
-    end
 end
 
 if mods[maraxsis_mods] or mods[moshine_mods] then

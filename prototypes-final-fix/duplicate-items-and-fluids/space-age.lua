@@ -65,15 +65,3 @@ for _, technology in pairs(data_technology or {}) do
 end
 data_recipe[fluoroketone] = nil
 data_recipe[fluoroketone_cooling] = nil
-
-if mods[muluna_mods] then
-	if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
-		for i = #Muluna.constants.cargo_drop_spawn_imports, 1, -1 do
-			local path = Muluna.constants.cargo_drop_spawn_imports[i]
-
-			if path and string.find(path, "tungsten%-plate") then
-				table.remove(Muluna.constants.cargo_drop_spawn_imports, i)
-			end
-		end
-	end
-end

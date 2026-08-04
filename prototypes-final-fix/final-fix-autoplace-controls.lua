@@ -93,7 +93,7 @@ end
 -- TERRAPALUS
 if mods[terrapalus_mods] then
     local vanilla_resources = {iron_ore, copper_ore, stone}
-    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium, natural_gas}
+    local angels_resources = {natural_gas}
 
     -- Ссылка на карту генерации для удобства
     local map_gen = data_planet[planet_terrapalus].map_gen_settings

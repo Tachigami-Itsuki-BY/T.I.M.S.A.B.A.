@@ -51,13 +51,14 @@ script.on_event(defines.events.script_raised_built, function(event)
     end
 end)
 
-if script.active_mods["planet-muluna"] then
-    script.on_event(defines.events.on_surface_created, function(event)
+
+script.on_event(defines.events.on_surface_created, function(event)
+    if script.active_mods["planet-muluna"] then
         if muluna_loot and muluna_loot.on_surface_created then
             muluna_loot.on_surface_created(event)
         end
-    end)
-end
+    end
+end)
 
 script.on_event(defines.events.on_player_changed_surface, function(event)
     if planet_messages and planet_messages.on_player_changed_surface then

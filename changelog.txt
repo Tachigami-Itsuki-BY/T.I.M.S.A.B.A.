@@ -1,5 +1,12 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.8.1
+Date: 04.08.2026
+  Bugfixes:
+    - [Mods] Исправлена ​​критическая ошибка, возникающая при использовании следующих модов вместе: «Muluna, Moon of Nauvis», «Planet Paracelsin» и «Secretas&Frozeta».
+
+    - [Mods] Fixed a critical bug that occurred when using the following mods together: "Muluna, Moon of Nauvis", "Planet Paracelsin" and "Secretas&Frozeta".
+---------------------------------------------------------------------------------------------------
 Version: 1.8.0
 Date: 04.08.2026
   Features:
@@ -11,10 +18,8 @@ Date: 04.08.2026
 
   Bugfixes:
     - [All] Исправлена ошибка в рецепте Платиновых Слитков, из-за вместо Фторводорода производился Хлороводород.
-    - [Mods] Исправлена ​​критическая ошибка, возникавшая при использовании следующих модов: «Muluna, Moon of Nauvis», «Planet Paracelsin» и «Secretas&Frozeta». (Со своей стороны)
 
     - [All] Fixed a bug in the Platinum Ingots recipe that caused Hydrogen Chloride to be produced instead of Hydrogen Fluoride.
-    - [Mods] Fixed a critical error that occurred when playing with the following mods: "Muluna, Moon of Nauvis", "Planet Paracelsin" and "Secretas&Frozeta". ()
 
   Locale:
     - [All] Исправлены ошибки локализации.

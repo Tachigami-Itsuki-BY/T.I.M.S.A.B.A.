@@ -32,18 +32,6 @@ if mods[corrundum_mods] then
 	end
 	data_recipe[platinum_plate_mods.. "-production-alt"] = nil
 
-	if mods[muluna_mods] then
-        if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
-            for i = #Muluna.constants.cargo_drop_spawn_imports, 1, -1 do
-                local path = Muluna.constants.cargo_drop_spawn_imports[i]
-
-                if path and string.find(path, "platinum%-plate") then
-                    table.remove(Muluna.constants.cargo_drop_spawn_imports, i)
-                end
-            end
-        end
-    end
-
 	data_fluid["iron-sulfate-solution"] = nil
 	data_fluid["copper-sulfate-solution"] = nil
 	data_fluid["mixed-sulfate-solution"] = nil
