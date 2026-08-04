@@ -1,4 +1,4 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     -- CORRUNDUM AIR
     corrundum_air_separation = "corrundum-air-separation"
     corrundum_air_separation_2 = "corrundum-air-separation-2"
@@ -55,7 +55,7 @@ if mods [corrundum_mods] then
     TIMSABA.functions.create_recipes
     ({
         {
-            localised_name = data_item[platinum_powder].localised_name,
+            localised_name = {"item-name." .. platinum_powder},
             name = platinum_powder_corrundum,
             category = powderizing_4,
             subgroup = is_corrundum_platinum,

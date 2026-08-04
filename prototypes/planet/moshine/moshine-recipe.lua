@@ -7,7 +7,7 @@ if mods[moshine_mods] then
         {
             name = moshine_air,
             category = angels_petrochem_air_filtering,
-            subgroup = is_moshine_ore,
+            subgroup = is_moshine_air,
             icon = data_fluid[moshine_air].icon,
             order = a,
             energy_required = 8,
@@ -19,7 +19,7 @@ if mods[moshine_mods] then
         {
             name = moshine_air_separation,
             category = angels_advanced_chemistry,
-            subgroup = is_moshine_ore,
+            subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, nitrogen_angels, carbon_dioxide_angels, steam),
             order = a_a,
             energy_required = 2,
@@ -35,7 +35,7 @@ if mods[moshine_mods] then
         {
             name = moshine_air_separation_2,
             category = angels_advanced_chemistry,
-            subgroup = is_moshine_ore,
+            subgroup = is_moshine_air,
             icons = FOUR_R_I(moshine_air, hydrogen_sulfide_angels, hydrogen_fluoride_angels, sulfur_dioxide_angels),
             order = a_a,
             energy_required = 2,

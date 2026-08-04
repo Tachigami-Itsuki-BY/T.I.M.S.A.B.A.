@@ -111,10 +111,6 @@ data_recipe[pressure_tank_A1].ingredients =
 data_storage_tank[pressure_tank_A1].order = f
 data_storage_tank[pressure_tank_A1].fluid_box.volume = 360000
 
-local pump_1 = "pump"
-local pump_2 = "bob-pump-2"
-local pump_3 = "bob-pump-3"
-local pump_4 = "bob-pump-4"
 local pumps =
 {
     {name = pump_1, energy_usage = 30,  order = a, tier = 1},

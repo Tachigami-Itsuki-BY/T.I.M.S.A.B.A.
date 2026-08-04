@@ -33,6 +33,7 @@ local recycling_items =
     molybdenum_rhenium_pipe, molybdenum_rhenium_pipe_to_ground,
 
     ceramic_gear_wheel, ceramic_bearing_ball, ceramic_bearing,
+    tungsten_gear_wheel, tungsten_bearing_ball, tungsten_bearing,
     copper_tungsten_gear_wheel, copper_tungsten_bearing_ball, copper_tungsten_bearing,
     molybdenum_gear_wheel, rhenium_bearing_ball, rhenium_bearing,
 
@@ -42,27 +43,27 @@ local recycling_items =
     concrete_brick, reinforced_concrete_brick
 }
 
-if mods [muluna_mods] or mods [moshine_mods] then
+if mods[muluna_mods] or mods[moshine_mods] then
     table.insert(recycling_items, silicon_cell_mods)
 end
 
-if mods [moshine_mods] then
+if mods[moshine_mods] then
     table.insert(recycling_items, neodymium_magnet)
 end
 
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     table.insert(recycling_items, universe_precursor)
 end
 
-if mods [arig_mods] then
+if mods[arig_mods] then
     table.insert(recycling_items, silica_arig)
 end
 
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     table.insert(recycling_items, polished_bismuth)
 end
 
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     table.insert(recycling_items, blue_dye)
     table.insert(recycling_items, yellow_dye)
     table.insert(recycling_items, magenta_dye)

@@ -199,7 +199,7 @@ data_recipe[wood_3].results =
 }
 
 local cellulose_fiber_raw_wood = "angels-cellulose-fiber-raw-wood"
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels, number_1)
 else
     data_recipe[cellulose_fiber_raw_wood].icons = TWO_I(wood, cellulose_fiber_angels)

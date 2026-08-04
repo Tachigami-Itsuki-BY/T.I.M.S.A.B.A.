@@ -1,4 +1,4 @@
-if mods [bobmodules] then
+if mods[bobmodules] then
     -- SPEED
     data_module[speed_module_1].effect =
     {
@@ -125,7 +125,7 @@ end
 --data_module[agricultural_module_5].effect = {}
 
 -- MOSHINE
-if mods [moshine_mods] then
+if mods[moshine_mods] then
     data_module["ai-tier-1"].effect = {speed = 0.25}
     data_module["ai-tier-2"].effect = {speed = 0.50}
     data_module["ai-tier-3"].effect = {speed = 0.75}

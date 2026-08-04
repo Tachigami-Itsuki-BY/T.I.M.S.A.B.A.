@@ -27,7 +27,7 @@ if mods["Flare Stack"] then
             --[] = true,
         }
 
-        if mods [panglia_mods] then
+        if mods[panglia_mods] then
             deleted_fuels[space_train_battery_pack] = true
         end
 
@@ -66,7 +66,7 @@ if mods["Flare Stack"] then
     data_item[flare_stack] = nil
     data_recipe[flare_stack] = nil
     data_recipe[flare_stack .. _recycling] = nil
-    if mods [panglia_mods] then
+    if mods[panglia_mods] then
         data_recipe[item_ .. flare_stack .. _panglia_crushing] = nil
     end
     data_furnace[flare_stack] = nil

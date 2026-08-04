@@ -1,4 +1,4 @@
-if mods [arig_mods] then
+if mods[arig_mods] then
     TIMSABA.functions.create_recipes
     ({
         {
@@ -38,14 +38,17 @@ if mods [arig_mods] then
     paracelsin_water_harvesting = "paracelsin-water-harvesting"
     corrundum_water_harvesting = "corrundum-water-harvesting"
     panglia_water_harvesting = "panglia-water-harvesting"
+    frozeta_water_harvesting = "frozeta-water-harvesting"
     local water_planets =
     {
+        -- PLANETS
         [moshine_mods] =
         {
             localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.moshine"}},
             name = moshine_water_harvesting,
+            subgroup = is_arig_water_planets,
             planet = planet_moshine,
-            order = a_e,
+            order = a_f,
             amount = 15,
             surface_conditions = {{property = pressure, min = 701, max = 701}}
         },
@@ -53,8 +56,9 @@ if mods [arig_mods] then
         {
             localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.paracelsin"}},
             name = paracelsin_water_harvesting,
+            subgroup = is_arig_water_planets,
             planet = planet_paracelsin,
-            order = a_i,
+            order = a_j,
             amount = 120,
             surface_conditions = {{property = pressure, max = 5300, min = 5300}}
         },
@@ -62,19 +66,32 @@ if mods [arig_mods] then
         {
             localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.corrundum"}},
             name = corrundum_water_harvesting,
-            planet = planet_panglia,
+            subgroup = is_arig_water_planets,
+            planet = planet_corrundum,
             order = a_j,
-            amount = 15,
+            amount = 120,
             surface_conditions = {{property = pressure, max = 6000, min = 6000}}
         },
+        -- MOONS
         [panglia_mods] =
         {
             localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.panglia"}},
             name = panglia_water_harvesting,
+            subgroup = is_arig_water_moons,
             planet = planet_panglia,
-            order = b_a,
+            order = a_b,
             amount = 480,
             surface_conditions = {{property = pressure, max = 1401, min = 1401}}
+        },
+        [secretas_frozeta_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.frozeta"}},
+            name = frozeta_water_harvesting,
+            subgroup = is_arig_water_moons,
+            planet = planet_frozeta,
+            order = a_c,
+            amount = 120,
+            surface_conditions = {{property = pressure, max = 200, min = 280}}
         },
     }
 
@@ -88,7 +105,7 @@ if mods [arig_mods] then
                     type = recipe,
                     name = config.name,
                     category = water_production,
-                    subgroup = is_arig_water,
+                    subgroup = config.subgroup,
                     icons = BUILDING_R_I(water, config.planet),
                     order = config.order,
                     enabled = false,

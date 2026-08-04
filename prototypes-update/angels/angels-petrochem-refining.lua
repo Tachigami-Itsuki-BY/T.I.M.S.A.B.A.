@@ -120,8 +120,8 @@ data_recipe[compressed_air].energy_required = 8
 data_recipe[compressed_air].results[1].amount = 240
 data_recipe[compressed_air].surface_conditions =
 {
-    {property = "gravity", min = 10, max = 20},
-    {property = "pressure", min = 1000, max = 2000}
+    {property = gravity, min = 10, max = 25},
+    {property = pressure, min = 1000, max = 2000}
 }
 
 data_fluid[hydrogen_angels].order = b
@@ -1512,7 +1512,7 @@ data_item[plutonium_fuel_angels].stack_size = 50
 data_item[plutonium_fuel_angels].fuel_category = transport_fuel
 data_item[plutonium_fuel_angels].fuel_value = 1843200 .. kJ
 data_item[plutonium_fuel_angels].fuel_top_speed_multiplier = 1.25
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[plutonium_fuel_angels].icons = THREE_I(rocket_fuel, plutonium_239_shattered, plutonium_fuel_angels)
 else
     data_recipe[plutonium_fuel_angels].icons = THREE_I(rocket_fuel, plutonium_239_bob, plutonium_fuel_angels)
@@ -1900,7 +1900,7 @@ data_recipe[glycerol_angels].results =
 }
 data_recipe[glycerol_angels].main_product = glycerol_angels
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_fluid[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}
     data_fluid[nitroglycerin_bob].localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]5[/font](ONO[font=default-tiny-bold]2[/font])[font=default-tiny-bold]3[/font]"} or nil
     data_recipe[nitroglycerin_bob].localised_name = {"fluid-name.nitroglycerin-liquid"}

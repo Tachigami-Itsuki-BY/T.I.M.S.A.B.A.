@@ -162,7 +162,7 @@ if settings.startup[setting_early_sintering_oven].value == false then
         data_item[BUILD] = nil
         data_recipe[BUILD] = nil
         data_recipe[BUILD .. _recycling] = nil
-        if mods [panglia_mods] then
+        if mods[panglia_mods] then
             data_recipe[item_ .. BUILD .. _panglia_crushing] = nil
         end
         data_assembling[BUILD] = nil
@@ -355,7 +355,7 @@ data_recipe[processed_platinum_smelting] = nil
 data_recipe[solid_ammonium_chloroplatinate_smelting] = nil
 --data_recipe[] = nil
 
---[[if mods [boblogistics] >= "2.1.0" then
+--[[if mods[boblogistics] >= "2.1.0" then
     local ceramic_pipe = "bob-ceramic-pipe"
     data_item[ceramic_pipe] = nil
     data_recipe[ceramic_pipe] = nil

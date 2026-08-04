@@ -24,7 +24,7 @@ local replacements =
 	[tungsten_oxide_bob] = tungsten_oxide_VI,
 	[tin_cable_bob] = tin_cable,
 	[gold_cable_bob] = gold_cable,
-	-- FOR MODS 
+	-- FOR mods
 	[steam_inserter] = T0_inserter,
 	[steam_mining_drill] = burner_mining_drill,
 	--[steam_assembling_machine] = burner_assembling_machine
@@ -48,7 +48,7 @@ data_item[steam_inserter] = nil
 data_recipe[steam_inserter] = nil
 data_inserter[steam_inserter] = nil
 data_recipe[steam_inserter .. _recycling] = nil
-if mods [panglia_mods] then
+if mods[panglia_mods] then
 	data_recipe[item_ .. steam_inserter .. _panglia_crushing] = nil
 	data_inserter[steam_inserter .. _panglia_fast_version] = nil
 end
@@ -57,7 +57,7 @@ data_item[steam_mining_drill] = nil
 data_recipe[steam_mining_drill] = nil
 data_mining_drill[steam_mining_drill] = nil
 data_recipe[steam_mining_drill .. _recycling] = nil
-if mods [panglia_mods] then
+if mods[panglia_mods] then
 	data_recipe[item_ .. steam_mining_drill .. _panglia_crushing] = nil
 end
 
@@ -65,7 +65,7 @@ data_item[steam_assembling_machine] = nil
 data_recipe[steam_assembling_machine] = nil
 data_assembling[steam_assembling_machine] = nil
 data_recipe[steam_assembling_machine .. _recycling] = nil
-if mods [panglia_mods] then
+if mods[panglia_mods] then
 	data_recipe[item_ .. steam_assembling_machine .. _panglia_crushing] = nil
 end
 
@@ -175,7 +175,7 @@ end
 
 data_item[fibreglass_board] = nil
 data_recipe[fibreglass_board .. _recycling] = nil
-if mods [panglia_mods] then
+if mods[panglia_mods] then
 	data_recipe[item_ .. fibreglass_board .. _panglia_crushing] = nil
 end
 

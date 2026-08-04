@@ -41,7 +41,7 @@ if settings.startup[setting_no_spoilage].value then
 
     spoil_recipe({ore = spoilage, bacteria = compost_angels, order = a, subgroup = is_spoilage})
 
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         spoil_recipe({ore = magnesium_ore, bacteria = magnesium_bacteria, order = a, subgroup = is_magnesium})
     end
 end

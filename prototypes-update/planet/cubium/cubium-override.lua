@@ -1,4 +1,4 @@
-if mods [cubium_mods] then
+if mods[cubium_mods] then
     data.raw["recipe"]["express-transport-belt-dream"].subgroup = "cubium-logistics"
     data.raw["recipe"]["express-underground-belt-dream"].subgroup = "cubium-logistics"
     data.raw["recipe"]["express-splitter-dream"].subgroup = "cubium-logistics"

@@ -1,4 +1,4 @@
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     -- RECIPE ORE
     data_item[metallic_ore].subgroup = is_hyarion_recipe_ore
     data_item[metallic_ore].order = a
@@ -180,7 +180,7 @@ if mods [hyarion_mods] then
         {type = fluid, name = pure_light, amount = 30}
     }
 
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         data_item[unstable_crystal].subgroup = is_hyarion_recipe_polished
         data_item[unstable_crystal].order = m
         data_item[unstable_crystal].stack_size = 200
@@ -643,7 +643,7 @@ if mods [hyarion_mods] then
     data_recipe[personal_ruby_laser_defense_eq].subgroup = is_hyarion_war
     data_recipe[personal_ruby_laser_defense_eq].order = a
     data_recipe[personal_ruby_laser_defense_eq].energy_required = 32
-    if mods [bobequipment] then
+    if mods[bobequipment] then
         data_recipe[personal_ruby_laser_defense_eq].ingredients =
         {
             {type = item, name = laser_defense_eq_6, amount = 1},
@@ -684,7 +684,7 @@ if mods [hyarion_mods] then
     data_recipe[ruby_laser_turret].subgroup = is_hyarion_war
     data_recipe[ruby_laser_turret].order = b
     data_recipe[ruby_laser_turret].energy_required = 32
-    if mods [bobwarfare] then
+    if mods[bobwarfare] then
         data_recipe[ruby_laser_turret].ingredients =
         {
             {type = item, name = laser_turret_5, amount = 1},
@@ -740,7 +740,7 @@ if mods [hyarion_mods] then
     local planet_discovery_hyarion = "planet-discovery-hyarion"
     data_technology[planet_discovery_hyarion].effects =
     {
-        {type = unlock_space_location, space_location = "hyarion", use_icon_overlay_constant = true},
+        {type = unlock_space_location, space_location = planet_hyarion, use_icon_overlay_constant = true},
         {type = unlock_recipe, recipe = hyarion_air},
         {type = unlock_recipe, recipe = hyarion_air_separation}
     }
@@ -816,12 +816,12 @@ if mods [hyarion_mods] then
 
     table.insert(data_technology[crystalization_motor].unit.ingredients, {utility_science_pack, 1})
 
-    if mods [bobequipment] then
+    if mods[bobequipment] then
         table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_6)
     else
         table.insert(data_technology[ruby_laser_turret].prerequisites, laser_defense_eq_1)
     end
-    if mods [bobwarfare] then
+    if mods[bobwarfare] then
         table.insert(data_technology[ruby_laser_turret].prerequisites, tech_laser_turret_5)
     else
         table.insert(data_technology[ruby_laser_turret].prerequisites, laser_turret_1)

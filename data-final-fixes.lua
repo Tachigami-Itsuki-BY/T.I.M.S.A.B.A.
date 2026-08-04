@@ -15,15 +15,17 @@ require("prototypes-final-fix.duplicate-items-and-fluids.hyarion")
 require("prototypes-final-fix.duplicate-items-and-fluids.tellus")
 require("prototypes-final-fix.duplicate-items-and-fluids.paracelsin")
 require("prototypes-final-fix.duplicate-items-and-fluids.corrundum")
-
-require("prototypes-final-fix.duplicate-items-and-fluids.castra")
--- cubium
 require("prototypes-final-fix.duplicate-items-and-fluids.frozeta")
-require("prototypes-final-fix.duplicate-items-and-fluids.maraxsis")
-require("prototypes-final-fix.duplicate-items-and-fluids.nexus")
-require("prototypes-final-fix.duplicate-items-and-fluids.shattered")
+require("prototypes-final-fix.duplicate-items-and-fluids.terrapalus")
+require("prototypes-final-fix.duplicate-items-and-fluids.castra")
 require("prototypes-final-fix.duplicate-items-and-fluids.shchierbin")
+require("prototypes-final-fix.duplicate-items-and-fluids.maraxsis")
 require("prototypes-final-fix.duplicate-items-and-fluids.vesta")
+require("prototypes-final-fix.duplicate-items-and-fluids.shattered")
+-- rubia
+-- cubium
+--require("prototypes-final-fix.duplicate-items-and-fluids.nexus")
+
 require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")
 

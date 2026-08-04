@@ -297,7 +297,7 @@ for _, TRANSPORT in pairs(tanks) do
         data_car[TRANSPORT.name].equipment_grid = TRANSPORT.equipment_grid
     end
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_car[tank_2].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower"}
     data_car[tank_3].guns = {"tank-cannon", "bob-gatling-gun", "tank-flamethrower", "bob-tank-laser"}
 end
@@ -639,7 +639,7 @@ flying_robot_frame_recipe(flying_robot_frame_4, battery_graphene,    nitinol_pla
 local function robot_brain_recipe(name, circuit_1, circuit_2)
     if not data_recipe[name] or not data_item[circuit_1] or not data_item[circuit_2] then return end
 
-    if mods [bobmodules] then
+    if mods[bobmodules] then
         data_recipe[name].ingredients =
         {
             {type = item, name = circuit_1,   amount = 2},
@@ -728,7 +728,7 @@ for _, materials in pairs(roboport_materials) do
     end
 end
 
-if mods [maraxsis_mods] then
+if mods[maraxsis_mods] then
     local spiderling = "sp-spiderling"
     data_item_entity[spiderling].subgroup = is_spidertron
     data_item_entity[spiderling].weight = 1000000
@@ -769,7 +769,7 @@ if data_recipe[spidertron_cannon] then
         {type = item, name = tungsten_carbide_plate_bob, amount = 2}
     }
 
-    if mods [bobmodules] then
+    if mods[bobmodules] then
         data_recipe[mech_brain].ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 16},

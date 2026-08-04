@@ -1,4 +1,4 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     -- tetrahedrite ore / Cu + Fe + Ag + Au + Sb + As
     tetrahedrite_crushed = "tetrahedrite-crushed"
     tetrahedrite_chunks = "tetrahedrite-chunks"

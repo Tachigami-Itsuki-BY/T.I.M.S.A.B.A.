@@ -13,7 +13,7 @@ data:extend
     {type = recipe_category, name = extract_ground}
 })
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     lumber_mill_recipe_category = "lumber-mill-recipe-category"
     data:extend({{type = recipe_category, name = lumber_mill_recipe_category}})
 end

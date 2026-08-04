@@ -2,7 +2,7 @@
 data_technology[tech_logistics_5].prerequisites = {tech_logistics_4, tech_nitinol_processing, advanced_processing_unit, utility_science_pack}
 
 local tech_logistic_system = "logistic-system"
-if mods [bobtech] then
+if mods[bobtech] then
     data_technology[tech_logistic_system].prerequisites = {transport_science_pack, tech_construction_robotics, tech_logistic_robotics}
     data_technology[tech_logistic_system].unit.ingredients =
     {
@@ -27,7 +27,7 @@ table.insert(data_technology[tech_lamp].prerequisites, tech_ore_crushing)
 table.insert(data_technology[tech_lamp].effects, {type = unlock_recipe, recipe = glass_bob})
 
 if data_technology[tech_robotics_1] then
-    if mods [bobmodules] then
+    if mods[bobmodules] then
         data_technology[tech_robotics_1].effects =
         {
             {type = unlock_recipe, recipe = flying_robot_frame_1},
@@ -84,7 +84,7 @@ end
 
 if data_technology[tech_robotics_4] then
     table.insert(data_technology[tech_robotics_4].prerequisites, tech_battery_4)
-    if mods [bobtech] then
+    if mods[bobtech] then
         -- Создаем список технологий, в которые нужно добавить пакет
         local target_technologies = {tech_robotics_4, tech_robots_3}
         for _, tech_name in ipairs(target_technologies) do
@@ -120,7 +120,7 @@ if data_technology[tech_robo_modular_1] then
         {type = unlock_recipe, recipe = roboport_door_1}
     }
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_technology[artillery_wagon_2].localised_name = {"entity-name.artillery-wagon-2"}
     data_technology[artillery_wagon_2].prerequisites = {tech_artillery, cryogenic_science_pack}
     data_technology[artillery_wagon_2].unit.ingredients =
@@ -253,7 +253,7 @@ data_technology[tech_titanium_processing].effects =
 }
 
 data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
-if mods [bobplates] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" then
     data_technology[tech_tungsten_processing].effects =
     {
         {type = unlock_recipe, recipe = tungsten_gear_wheel},
@@ -284,7 +284,7 @@ data_technology[tech_nitinol_processing].effects =
 }
 
 data_technology[tech_tungsten_alloy_processing].prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack}
-if mods [bobplates] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" then
     data_technology[tech_tungsten_alloy_processing].effects =
     {
         {type = unlock_recipe, recipe = copper_tungsten_powder},
@@ -384,7 +384,7 @@ data_technology[tech_deuterium_power].effects =
 
 -- COMBAT
 data_technology[tech_uranium_ammo].prerequisites = {tank_1, tech_military_4, tech_uranium_processing}
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_technology[tech_uranium_ammo].effects =
     {
         {type = unlock_recipe, recipe = uranium_rounds_magazine},
@@ -411,7 +411,7 @@ data_technology[energy_shield_eq_2].unit.ingredients =
 }
 data_technology[energy_shield_eq_2].unit.count = 200
 
-if mods [bobequipment] then
+if mods[bobequipment] then
     table.insert(data_technology[fission_reactor_4].prerequisites, tech_deuterium_power)
 
     data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
@@ -426,7 +426,7 @@ if mods [bobequipment] then
     table.insert(data_technology[roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[roboport_eq_4].prerequisites, tech_battery_4)
-    if mods [bobtech] then
+    if mods[bobtech] then
         table.insert(data_technology[roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
     end
 
@@ -435,14 +435,14 @@ if mods [bobequipment] then
     table.insert(data_technology[laser_defense_eq_6].prerequisites, tech_battery_4)
 end
 
-if mods [bobvehicleequipment] then
+if mods[bobvehicleequipment] then
     data_technology[vehicle_roboport_eq_2].prerequisites = {vehicle_roboport_eq_1, tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
 
     table.insert(data_technology[vehicle_roboport_eq_3].prerequisites, tech_battery_3)
     table.insert(data_technology[vehicle_roboport_eq_3].unit.ingredients, {production_science_pack, 1})
 
     table.insert(data_technology[vehicle_roboport_eq_4].prerequisites, tech_battery_4)
-    if mods [bobtech] then
+    if mods[bobtech] then
         table.insert(data_technology[vehicle_roboport_eq_4].unit.ingredients, {utility_science_pack, 1})
     end
 
@@ -453,7 +453,7 @@ if mods [bobvehicleequipment] then
     table.insert(data_technology[vehicle_plasma_cannon_eq_4].prerequisites, tech_battery_4)
 end
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     table.insert(data_technology[tech_laser_turret_4].prerequisites, tech_battery_3)
     table.insert(data_technology[tech_laser_turret_5].prerequisites, tech_battery_4)
 end
@@ -471,7 +471,7 @@ data_technology[tech_artillery].unit.ingredients =
     {metallurgic_science_pack, 1},
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_technology[artillery_turret_2].localised_name = {"entity-name.artillery-turret-2"}
     data_technology[artillery_turret_2].prerequisites = {tech_artillery, cryogenic_science_pack}
     data_technology[artillery_turret_2].unit.ingredients =
@@ -515,7 +515,7 @@ data_technology[atomic_rocket].unit.ingredients =
     {utility_science_pack, 1}
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_technology["bob-atomic-artillery-shell"].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -537,7 +537,7 @@ data_technology[tank_1].unit.ingredients =
     {military_science_pack, 1}
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_technology[tech_tank_2].prerequisites = {tank_1, tech_titanium_processing, processing_unit, tech_military_3}
     data_technology[tech_tank_2].unit.ingredients =
     {
@@ -561,7 +561,7 @@ if mods [bobwarfare] then
     table.insert(data_technology[tech_plasma_turret_4].prerequisites, tech_battery_4)
 end
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_technology[atomic_artillery_shell].localised_name = {"item-name.bob-atomic-artillery-shell"}
 end
 
@@ -1614,7 +1614,7 @@ data_technology[tech_bio_processing_crystal_full].effects =
 }
 
 -- MODULE
-if mods [bobmodules] then
+if mods[bobmodules] then
     -- SPEED
     data_technology[speed_module_2].prerequisites = {speed_module_1, tech_modules_2}
     data_technology[speed_module_2].unit.ingredients =

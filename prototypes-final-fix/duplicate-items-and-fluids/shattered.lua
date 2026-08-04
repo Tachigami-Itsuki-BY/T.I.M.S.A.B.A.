@@ -1,4 +1,4 @@
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     local replacements_2 =
     {
 		[americium_241_angels] = americium_241_shattered,

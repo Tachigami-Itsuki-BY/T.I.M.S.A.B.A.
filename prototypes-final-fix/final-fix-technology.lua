@@ -111,32 +111,32 @@ data_technology["bob-infinite-character-logistic-trash-slots-1"].effects = {{typ
     [promethium_science_pack]      = {weight = 7, prefix = i},
 }
 
-if mods [bobtech] then
+if mods[bobtech] then
     pack_priorities[transport_science_pack] = {weight = 4.3, prefix = d_c}
-    if mods [bobenemies] then
+    if mods[bobenemies] then
         pack_priorities[gold_science_pack_bob] = {weight = 4.4, prefix = d_d}
     end
 end
 
-if mods [arig_mods] then
+if mods[arig_mods] then
     pack_priorities[compression_science_pack] = {weight = 5.11, prefix = g_a .. "-" .. a}
 end
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     pack_priorities[interstellar_science_pack] = {weight = 5.9, prefix = g_z}
 end
 
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     pack_priorities[polishing_science_pack] = {weight = 5.91, prefix = g_z .. "-" .. a}
     pack_priorities[refraction_science_pack] = {weight = 5.92, prefix = g_z .. "-" .. b}
 end
 
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     pack_priorities[bioengineering_science_pack] = {weight = 5.93, prefix = g_z .. "-" .. c}
     pack_priorities[pathological_science_pack] = {weight = 5.94, prefix = g_z .. "-" .. d}
 end
 
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     pack_priorities[galvanization_science_pack] = {weight = 6.1, prefix = h .. "-" .. a}
 end
 
@@ -165,11 +165,11 @@ for tech_name, tech in pairs(data_technology) do
 
         local tech_to_pack_exceptions = {}
 
-        if mods [bobtech] and mods [bobenemies] then
+        if mods[bobtech] and mods[bobenemies] then
             tech_to_pack_exceptions[tech_alien_research] = gold_science_pack_bob
         end
 
-        if mods [arig_mods] then
+        if mods[arig_mods] then
             tech_to_pack_exceptions[tech_compression_science] = compression_science_pack
         end
 
@@ -220,7 +220,7 @@ data_technology[space_science_pack].order = g
 
 data_technology[metallurgic_science_pack].order = g_a
 
-if mods [arig_mods] then
+if mods[arig_mods] then
     data_technology[tech_compression_science].order = g_a .. "-" .. a
 end
 
@@ -228,95 +228,93 @@ data_technology[agricultural_science_pack].order = g_b
 
 data_technology[electromagnetic_science_pack].order = g_c
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     data_technology[interstellar_science_pack].order = g_z
 end
 
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     data_technology[polishing_science_pack].order = g_z .. "-" .. a
     data_technology[refraction_science_pack].order = g_z .. "-" .. b
 end
 
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     data_technology[bioengineering_science_pack].order = g_z .. "-" .. c
     data_technology[pathological_science_pack].order = g_z .. "-" .. d
 end
 
 data_technology[cryogenic_science_pack].order = h
 
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     data_technology[galvanization_science_pack].order = h .. "-" .. a
 end
 
 data_technology[promethium_science_pack].order = i]]
 
 local function auto_added_science_pack(science_pack_name, technology_name)
-    local memo = {}
+    local memo = {} -- Хранит глобальный результат: true (ведет к цели) или false (не ведет)
 
-    local function leads_to_root(tech_name, visited)
-        if tech_name == technology_name then return true end
-        if memo[tech_name] ~= nil then return memo[tech_name] end
+    local function leads_to_root(tech_name, current_path)
+        -- Если мы пришли в целевую технологию — путь найден
+        if tech_name == technology_name then
+            return true
+        end
 
-        -- Инициализируем список посещенных для текущей ветки, если его нет
-        visited = visited or {}
-        -- Если мы уже заходили в эту технологию на текущем пути — это петля! Прерываем.
-        if visited[tech_name] then
+        -- Возвращаем уже посчитанный ранее результат
+        if memo[tech_name] ~= nil then
+            return memo[tech_name]
+        end
+
+        -- Проверка на циклы: если tech_name уже есть в текущей ветке поиска
+        if current_path[tech_name] then
             return false
         end
 
-        local tech = data.raw.technology[tech_name]
+        local tech = data.raw.technology[tech_name] -- В Factorio данные лежат в data.raw.technology
         if not tech or not tech.prerequisites then
             memo[tech_name] = false
             return false
         end
-
-        -- Помечаем технологию как посещенную в текущем проходе
-        visited[tech_name] = true
-
+        -- Шаг вперед: добавляем технологию в текущий путь исследования
+        current_path[tech_name] = true
+        -- Проверяем все требования технологии
         for _, prereq in ipairs(tech.prerequisites) do
-            -- Передаем visited дальше по цепочке
-            if leads_to_root(prereq, visited) then
+            if leads_to_root(prereq, current_path) then
                 memo[tech_name] = true
-                visited[tech_name] = nil -- очищаем перед выходом
+                current_path[tech_name] = nil -- Убираем из пути перед выходом
                 return true
             end
         end
-
-        visited[tech_name] = nil -- очищаем перед выходом
+        -- Шаг назад: убираем технологию из пути, так как ветка не привела к цели
+        current_path[tech_name] = nil
         memo[tech_name] = false
         return false
     end
 
+    -- Перебираем все технологии в игре
     for tech_name, tech in pairs(data_technology) do
-        -- Передаем пустую таблицу visited для каждого нового независимого поиска
+        -- Не проверяем целевую технологию саму на себя
         if tech_name ~= technology_name and leads_to_root(tech_name, {}) then
             if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
                 local has_pack = false
                 local has_datacell = false
                 local has_science_pack = false
-
-                -- Проверяем все текущие ингредиенты технологии
+                -- Проверяем текущие ингредиенты
                 for _, ingredient in ipairs(tech.unit.ingredients) do
                     local name = ""
+
                     if type(ingredient) == "table" then
                         name = ingredient.name or ingredient[1] or ""
                     else
                         name = ingredient or ""
                     end
 
-                    if name == science_pack_name then
-                        has_pack = true
-                    end
-                    if string.find(name, "datacell%-") then
-                        has_datacell = true
-                    end
-                    if string.find(name, "%-science%-pack") then
-                        has_science_pack = true
-                    end
+                    if name == science_pack_name then has_pack = true end
+                    if string.find(name, "datacell%-") then has_datacell = true end
+                    if string.find(name, "%-science%-pack") then has_science_pack = true end
                 end
-
+                -- Логика исключения (для Space Age / дата-ячеек)
                 local should_exclude = has_datacell and not has_science_pack
-
+                -- Добавляем пак, если его нет и технология не подпадает под исключение
                 if not has_pack and not should_exclude then
                     table.insert(tech.unit.ingredients, {science_pack_name, 1})
                 end

@@ -1,4 +1,4 @@
-if mods [castra_mods] then
+if mods[castra_mods] then
     local replacements =
     {
         [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,

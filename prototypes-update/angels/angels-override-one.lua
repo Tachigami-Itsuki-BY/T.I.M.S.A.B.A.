@@ -813,7 +813,7 @@ data_recipe[heavy_offshore_pump].ingredients =
 
 data_pump_offshore[seafloor_pump].surface_conditions =
 {
-    {property = gravity, min = 10, max = 20},
+    {property = gravity, min = 10, max = 25},
     {property = pressure, min = 1000, max = 2000}
 }
 

@@ -1,4 +1,4 @@
-if mods ["Rocket-Silo-Construction"] then
+if mods["Rocket-Silo-Construction"] then
     local is_construction_stage = "is-construction-stage"
     local is_silo_stage = "is-silo-stage"
     data:extend

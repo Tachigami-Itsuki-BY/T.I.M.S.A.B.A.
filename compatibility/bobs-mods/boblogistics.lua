@@ -1,4 +1,4 @@
-if mods [boblogistics] >= "2.1.0" then
+if mods[boblogistics] >= "2.1.0" then
     local TIMSABA_pipepictures = require("lib.pipes").TIMSABA_pipepictures
     local TIMSABA_pipecoverspictures = require("lib.pipes").TIMSABA_pipecoverspictures
     local TIMSABA_pipetogroundpictures = require("lib.pipes").TIMSABA_pipetogroundpictures

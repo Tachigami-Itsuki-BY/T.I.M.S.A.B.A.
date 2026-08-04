@@ -1,4 +1,4 @@
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     -- RECIPE
     data_item[igneous_rock].subgroup = is_panglia_recipe
     data_item[igneous_rock].order = a
@@ -189,10 +189,10 @@ if mods [panglia_mods] then
     }
 
     -- UNIVERSE
-    data_item[universe_precursor].subgroup = is_panglia_universe
+    data_item[universe_precursor].subgroup = is_panglia_universe_planets
     data_item[universe_precursor].order = a
     data_item[universe_precursor].stack_size = 200
-    data_recipe[universe_precursor].subgroup = is_panglia_universe
+    data_recipe[universe_precursor].subgroup = is_panglia_universe_planets
     data_recipe[universe_precursor].order = a
     data_recipe[universe_precursor].ingredients =
     {
@@ -205,9 +205,9 @@ if mods [panglia_mods] then
     }
 
     local panglia_universe_precursor = "panglia_universe_precursor"
-    data_recipe[panglia_universe_precursor].subgroup = is_panglia_universe
+    data_recipe[panglia_universe_precursor].subgroup = is_panglia_universe_planets
     data_recipe[panglia_universe_precursor].icons = BUILDING_R_I(universe_precursor, planet_panglia)
-    data_recipe[panglia_universe_precursor].order = a_a
+    data_recipe[panglia_universe_precursor].order = a
     data_recipe[panglia_universe_precursor].energy_required = 32
     data_recipe[panglia_universe_precursor].ingredients =
     {
@@ -216,11 +216,12 @@ if mods [panglia_mods] then
         {type = fluid, name = branbalite_slurry, amount = 15}
     }
 
+    -- PLANETS
     local cosmic_incubator_recipe_nauvis = "cosmic_incubator_recipe_nauvis"
     data_recipe[cosmic_incubator_recipe_nauvis].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.nauvis"}}
-    data_recipe[cosmic_incubator_recipe_nauvis].subgroup = is_panglia_universe
+    data_recipe[cosmic_incubator_recipe_nauvis].subgroup = is_panglia_universe_planets
     data_recipe[cosmic_incubator_recipe_nauvis].icons = GALAXY_I(galaxy_png, planet_nauvis)
-    data_recipe[cosmic_incubator_recipe_nauvis].order = b_a
+    data_recipe[cosmic_incubator_recipe_nauvis].order = data_planet[planet_nauvis].order
     data_recipe[cosmic_incubator_recipe_nauvis].energy_required = 32
     data_recipe[cosmic_incubator_recipe_nauvis].results =
     {
@@ -238,9 +239,9 @@ if mods [panglia_mods] then
 
     local cosmic_incubator_recipe_vulcanus = "cosmic_incubator_recipe_vulcanus"
     data_recipe[cosmic_incubator_recipe_vulcanus].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.vulcanus"}}
-    data_recipe[cosmic_incubator_recipe_vulcanus].subgroup = is_panglia_universe
+    data_recipe[cosmic_incubator_recipe_vulcanus].subgroup = is_panglia_universe_planets
     data_recipe[cosmic_incubator_recipe_vulcanus].icons = GALAXY_I(galaxy_png, planet_vulcanus)
-    data_recipe[cosmic_incubator_recipe_vulcanus].order = b_b
+    data_recipe[cosmic_incubator_recipe_vulcanus].order = data_planet[planet_vulcanus].order
     data_recipe[cosmic_incubator_recipe_vulcanus].energy_required = 32
     data_recipe[cosmic_incubator_recipe_vulcanus].results =
     {
@@ -258,9 +259,9 @@ if mods [panglia_mods] then
 
     local cosmic_incubator_recipe_gleba = "cosmic_incubator_recipe_gleba"
     data_recipe[cosmic_incubator_recipe_gleba].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.gleba"}}
-    data_recipe[cosmic_incubator_recipe_gleba].subgroup = is_panglia_universe
+    data_recipe[cosmic_incubator_recipe_gleba].subgroup = is_panglia_universe_planets
     data_recipe[cosmic_incubator_recipe_gleba].icons = GALAXY_I(galaxy_png, planet_gleba)
-    data_recipe[cosmic_incubator_recipe_gleba].order = b_c
+    data_recipe[cosmic_incubator_recipe_gleba].order = data_planet[planet_gleba].order
     data_recipe[cosmic_incubator_recipe_gleba].energy_required = 32
     data_recipe[cosmic_incubator_recipe_gleba].results =
     {
@@ -276,9 +277,9 @@ if mods [panglia_mods] then
 
     local cosmic_incubator_recipe_fulgora = "cosmic_incubator_recipe_fulgora"
     data_recipe[cosmic_incubator_recipe_fulgora].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.fulgora"}}
-    data_recipe[cosmic_incubator_recipe_fulgora].subgroup = is_panglia_universe
+    data_recipe[cosmic_incubator_recipe_fulgora].subgroup = is_panglia_universe_planets
     data_recipe[cosmic_incubator_recipe_fulgora].icons = GALAXY_I(galaxy_png, planet_fulgora)
-    data_recipe[cosmic_incubator_recipe_fulgora].order = b_d
+    data_recipe[cosmic_incubator_recipe_fulgora].order = data_planet[planet_fulgora].order
     data_recipe[cosmic_incubator_recipe_fulgora].energy_required = 32
     data_recipe[cosmic_incubator_recipe_fulgora].results =
     {
@@ -295,9 +296,9 @@ if mods [panglia_mods] then
 
     local cosmic_incubator_recipe_aquilo = "cosmic_incubator_recipe_aquilo"
     data_recipe[cosmic_incubator_recipe_aquilo].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.aquilo"}}
-    data_recipe[cosmic_incubator_recipe_aquilo].subgroup = is_panglia_universe
+    data_recipe[cosmic_incubator_recipe_aquilo].subgroup = is_panglia_universe_planets
     data_recipe[cosmic_incubator_recipe_aquilo].icons = GALAXY_I(galaxy_png, planet_aquilo)
-    data_recipe[cosmic_incubator_recipe_aquilo].order = b_e
+    data_recipe[cosmic_incubator_recipe_aquilo].order = data_planet[planet_aquilo].order
     data_recipe[cosmic_incubator_recipe_aquilo].energy_required = 32
     data_recipe[cosmic_incubator_recipe_aquilo].results =
     {
@@ -315,9 +316,9 @@ if mods [panglia_mods] then
 
     local cosmic_incubator_recipe_moshine = "cosmic_incubator_recipe_moshine"
     data_recipe[cosmic_incubator_recipe_moshine].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.moshine"}}
-    data_recipe[cosmic_incubator_recipe_moshine].subgroup = is_panglia_universe
+    data_recipe[cosmic_incubator_recipe_moshine].subgroup = is_panglia_universe_planets
     data_recipe[cosmic_incubator_recipe_moshine].icons = GALAXY_I(galaxy_png, planet_moshine)
-    data_recipe[cosmic_incubator_recipe_moshine].order = b_f
+    data_recipe[cosmic_incubator_recipe_moshine].order = data_planet[planet_moshine].order
     data_recipe[cosmic_incubator_recipe_moshine].energy_required = 32
     data_recipe[cosmic_incubator_recipe_moshine].results =
     {
@@ -334,12 +335,12 @@ if mods [panglia_mods] then
         {type = item, name = biotite_mica, amount_min = 0, amount_max = 64, probability = 0.5}
     }
 
-    if mods [arig_mods] then
+    if mods[arig_mods] then
         local cosmic_incubator_recipe_arig = "cosmic_incubator_recipe_arig"
         data_recipe[cosmic_incubator_recipe_arig].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.arig"}}
-        data_recipe[cosmic_incubator_recipe_arig].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_arig].subgroup = is_panglia_universe_planets
         data_recipe[cosmic_incubator_recipe_arig].icons = GALAXY_I(galaxy_png, planet_arig)
-        data_recipe[cosmic_incubator_recipe_arig].order = b_g
+        data_recipe[cosmic_incubator_recipe_arig].order = data_planet[planet_arig].order
         data_recipe[cosmic_incubator_recipe_arig].energy_required = 32
         data_recipe[cosmic_incubator_recipe_arig].results =
         {
@@ -354,12 +355,12 @@ if mods [panglia_mods] then
         }
     end
 
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         local cosmic_incubator_recipe_hyarion = "cosmic_incubator_recipe_hyarion"
         data_recipe[cosmic_incubator_recipe_hyarion].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.hyarion"}}
-        data_recipe[cosmic_incubator_recipe_hyarion].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_hyarion].subgroup = is_panglia_universe_planets
         data_recipe[cosmic_incubator_recipe_hyarion].icons = GALAXY_I(galaxy_png, planet_hyarion)
-        data_recipe[cosmic_incubator_recipe_hyarion].order = b_h
+        data_recipe[cosmic_incubator_recipe_hyarion].order = data_planet[planet_hyarion].order
         data_recipe[cosmic_incubator_recipe_hyarion].energy_required = 32
         data_recipe[cosmic_incubator_recipe_hyarion].results =
         {
@@ -377,12 +378,12 @@ if mods [panglia_mods] then
         }
     end
 
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         local cosmic_incubator_recipe_tellus = "cosmic_incubator_recipe_tellus"
         data_recipe[cosmic_incubator_recipe_tellus].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.tellus"}}
-        data_recipe[cosmic_incubator_recipe_tellus].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_tellus].subgroup = is_panglia_universe_planets
         data_recipe[cosmic_incubator_recipe_tellus].icons = GALAXY_I(galaxy_png, planet_tellus)
-        data_recipe[cosmic_incubator_recipe_tellus].order = b_i
+        data_recipe[cosmic_incubator_recipe_tellus].order = data_planet[planet_tellus].order
         data_recipe[cosmic_incubator_recipe_tellus].energy_required = 32
         data_recipe[cosmic_incubator_recipe_tellus].results =
         {
@@ -397,12 +398,12 @@ if mods [panglia_mods] then
         }
     end
 
-    if mods [paracelsin_mods] then
+    if mods[paracelsin_mods] then
         local cosmic_incubator_recipe_paracelsin = "cosmic_incubator_recipe_paracelsin"
-        data_recipe[cosmic_incubator_recipe_paracelsin].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.tellus"}}
-        data_recipe[cosmic_incubator_recipe_paracelsin].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_paracelsin].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.paracelsin"}}
+        data_recipe[cosmic_incubator_recipe_paracelsin].subgroup = is_panglia_universe_planets
         data_recipe[cosmic_incubator_recipe_paracelsin].icons = GALAXY_I(galaxy_png, planet_paracelsin)
-        data_recipe[cosmic_incubator_recipe_paracelsin].order = b_j
+        data_recipe[cosmic_incubator_recipe_paracelsin].order = data_planet[planet_paracelsin].order
         data_recipe[cosmic_incubator_recipe_paracelsin].energy_required = 32
         data_recipe[cosmic_incubator_recipe_paracelsin].results =
         {
@@ -420,12 +421,12 @@ if mods [panglia_mods] then
         }
     end
 
-    if mods [corrundum_mods] then
+    if mods[corrundum_mods] then
         local cosmic_incubator_recipe_corrundum = "cosmic_incubator_recipe_corrundum"
         data_recipe[cosmic_incubator_recipe_corrundum].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.corrundum"}}
-        data_recipe[cosmic_incubator_recipe_corrundum].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_corrundum].subgroup = is_panglia_universe_planets
         data_recipe[cosmic_incubator_recipe_corrundum].icons = GALAXY_I(galaxy_png, planet_corrundum)
-        data_recipe[cosmic_incubator_recipe_corrundum].order = b_k
+        data_recipe[cosmic_incubator_recipe_corrundum].order = data_planet[planet_corrundum].order
         data_recipe[cosmic_incubator_recipe_corrundum].energy_required = 32
         data_recipe[cosmic_incubator_recipe_corrundum].results =
         {
@@ -444,12 +445,13 @@ if mods [panglia_mods] then
         }
     end
 
-    if mods [muluna_mods] then
+    -- MOONS
+    if mods[muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
         data_recipe[cosmic_incubator_recipe_muluna].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.muluna"}}
-        data_recipe[cosmic_incubator_recipe_muluna].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_muluna].subgroup = is_panglia_universe_moons
         data_recipe[cosmic_incubator_recipe_muluna].icons = GALAXY_I(galaxy_png, planet_muluna)
-        data_recipe[cosmic_incubator_recipe_muluna].order = c_a
+        data_recipe[cosmic_incubator_recipe_muluna].order = data_planet[planet_muluna].order
         data_recipe[cosmic_incubator_recipe_muluna].energy_required = 32
         data_recipe[cosmic_incubator_recipe_muluna].results =
         {
@@ -466,9 +468,9 @@ if mods [panglia_mods] then
     end
 
     local universe_precursor_2_result = "panglia_universe_precursor_2_result"
-    data_recipe[universe_precursor_2_result].subgroup = is_panglia_universe
+    data_recipe[universe_precursor_2_result].subgroup = is_panglia_universe_moons
     data_recipe[universe_precursor_2_result].icons = GALAXY_I(galaxy_png, planet_panglia)
-    data_recipe[universe_precursor_2_result].order = c_b
+    data_recipe[universe_precursor_2_result].order = data_planet[planet_panglia].order
     data_recipe[universe_precursor_2_result].energy_required = 32
     data_recipe[universe_precursor_2_result].results =
     {
@@ -484,19 +486,54 @@ if mods [panglia_mods] then
         {type = item, name = branbalite, amount_min = 0, amount_max = 64, probability = 0.5}
     }
 
-    --[[if mods [terrapalus_mods] then
-        local cosmic_incubator_recipe_terrapalus = "cosmic_incubator_recipe_terrapalus"
-        data_recipe[cosmic_incubator_recipe_terrapalus].subgroup = is_panglia_universe
-        data_recipe[cosmic_incubator_recipe_terrapalus].icons = GALAXY_I(galaxy_png, planet_terrapalus)
+    if mods[secretas_frozeta_mods] then
+        local cosmic_incubator_recipe_frozeta = "cosmic_incubator_recipe_frozeta"
+        data_recipe[cosmic_incubator_recipe_frozeta].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.frozeta"}}
+        data_recipe[cosmic_incubator_recipe_frozeta].subgroup = is_panglia_universe_moons
+        data_recipe[cosmic_incubator_recipe_frozeta].icons = GALAXY_I(galaxy_png, planet_frozeta)
+        data_recipe[cosmic_incubator_recipe_frozeta].order = data_planet[planet_frozeta].order
+        data_recipe[cosmic_incubator_recipe_frozeta].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_frozeta].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
     end
 
-    if mods [vesta_mods] then
+    if mods[terrapalus_mods] then
+        local cosmic_incubator_recipe_terrapalus = "cosmic_incubator_recipe_terrapalus"
+        data_recipe[cosmic_incubator_recipe_terrapalus].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.terrapalus"}}
+        data_recipe[cosmic_incubator_recipe_terrapalus].subgroup = is_panglia_universe_moons
+        data_recipe[cosmic_incubator_recipe_terrapalus].icons = GALAXY_I(galaxy_png, planet_terrapalus)
+        data_recipe[cosmic_incubator_recipe_terrapalus].order = data_planet[planet_terrapalus].order
+        data_recipe[cosmic_incubator_recipe_terrapalus].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_terrapalus].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = palusium_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
+    --[[if mods[vesta_mods] then
         local cosmic_incubator_recipe_vesta = "cosmic_incubator_recipe_vesta"
         data_recipe[cosmic_incubator_recipe_vesta].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_vesta].icons = GALAXY_I(galaxy_png, planet_vesta)
     end
 
-    if mods [maraxsis_mods] then
+    if mods[maraxsis_mods] then
         local cosmic_incubator_recipe_maraxsis = "cosmic_incubator_recipe_maraxsis"
         data_recipe[cosmic_incubator_recipe_maraxsis].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_maraxsis].icons = GALAXY_I(galaxy_png, planet_maraxsis)
@@ -506,28 +543,22 @@ if mods [panglia_mods] then
         data_recipe[cosmic_incubator_recipe_maraxsis_trench].icons = GALAXY_I(galaxy_png, planet_trench_maraxsis)
     end
 
-    if mods [castra_mods] then
+    if mods[castra_mods] then
         local cosmic_incubator_recipe_castra = "cosmic_incubator_recipe_castra"
         data_recipe[cosmic_incubator_recipe_castra].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_castra].icons = GALAXY_I(galaxy_png, planet_castra)
     end
 
-    if mods [shchierbin_mods] then
+    if mods[shchierbin_mods] then
         local cosmic_incubator_recipe_shchierbin = "cosmic_incubator_recipe_shchierbin"
         data_recipe[cosmic_incubator_recipe_shchierbin].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_shchierbin].icons = GALAXY_I(galaxy_png, planet_shchierbin)
     end
 
-    if mods [shattered_mods] then
+    if mods[shattered_mods] then
         local cosmic_incubator_recipe_shattered = "cosmic_incubator_recipe_skewer_shattered_planet"
         data_recipe[cosmic_incubator_recipe_shattered].subgroup = is_panglia_universe
         data_recipe[cosmic_incubator_recipe_shattered].icons = GALAXY_I(galaxy_png, planet_shattered)
-    end
-
-    if mods [secretas_frozeta_mods] then
-        local cosmic_incubator_recipe_frozeta = "cosmic_incubator_recipe_frozeta"
-        data_recipe[cosmic_incubator_recipe_frozeta].subgroup = is_panglia_universe
-        data_recipe[cosmic_incubator_recipe_frozeta].icons = GALAXY_I(galaxy_png, planet_frozeta)
     end]]
 
     -- BUILDING
@@ -627,7 +658,7 @@ if mods [panglia_mods] then
     data_item[snouz_long_electric_gun_turret].stack_size = 32
     data_item[snouz_long_electric_gun_turret].weight = 31250
     data_recipe[snouz_long_electric_gun_turret].subgroup = is_panglia_war
-    if mods [bobwarfare] then
+    if mods[bobwarfare] then
         data_recipe[snouz_long_electric_gun_turret].ingredients =
         {
             {type = item, name = radar_5, amount = 1},
@@ -661,6 +692,7 @@ if mods [panglia_mods] then
     })
 
     -- TECHNOLOGY
+    local planet_discovery_panglia = "panglia_planet_discovery_panglia"
     data_technology[planet_discovery_panglia].prerequisites = {metallurgic_science_pack, agricultural_science_pack}
     data_technology[planet_discovery_panglia].unit.ingredients =
     {
@@ -699,7 +731,7 @@ if mods [panglia_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    if mods [bobwarfare] then
+    if mods[bobwarfare] then
         data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack, tech_gun_turret_5, radar_5}
     else
         data_technology[snouz_long_electric_gun_turret].prerequisites = {panglite_fiber, electromagnetic_science_pack, gun_turret_1, radar_1}

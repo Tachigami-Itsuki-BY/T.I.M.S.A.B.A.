@@ -1,4 +1,4 @@
-if mods [castra_mods] then
+if mods[castra_mods] then
     local castra = "castra"
     is_castra_ore = "castra-ore"
     is_castra_new_recipe = "castra-new-recipe"

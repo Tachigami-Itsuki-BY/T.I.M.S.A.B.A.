@@ -1,4 +1,4 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     local replacements =
     {
 		[zinc_mods] = zinc_ore_bob,
@@ -41,7 +41,7 @@ if mods [paracelsin_mods] then
 		end
 		data_technology[name] = nil
 
-        if mods [solar_productivity] then
+        if mods[solar_productivity] then
             for i = 1, 99 do
                 local sp_prefix = "sp-" .. i .. "-"
                 if sp_prefix then

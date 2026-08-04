@@ -1,4 +1,4 @@
-if mods [bobplates] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" then
     TIMSABA.functions.create_items
     ({
         --[[{

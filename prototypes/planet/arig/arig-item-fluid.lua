@@ -1,4 +1,4 @@
-if mods [arig_mods] then
+if mods[arig_mods] then
     heavy_oil_timsaba = "timsaba-heavy-oil"
     TIMSABA.functions.create_fluids
     ({

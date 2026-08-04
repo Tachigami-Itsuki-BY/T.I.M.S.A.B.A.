@@ -5,7 +5,7 @@ if mods[moshine_mods] then
     ({
         {
             name = moshine_air,
-            subgroup = is_moshine_ore,
+            subgroup = is_moshine_air,
             icon = "__TIMSABA__/graphics/icons/moshine/moshine-air.png",
             order = a,
             base_color = {r = 168 / 255, g = 109 / 255, b = 061 / 255},

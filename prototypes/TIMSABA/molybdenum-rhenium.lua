@@ -1,9 +1,6 @@
 -- GROUPS
 local is_molybdenum_rhenium = "is-molybdenum-rhenium"
-TIMSABA.functions.create_subgroups(ig_casting,
-{
-    {name = is_molybdenum_rhenium, order = r}
-})
+TIMSABA.functions.create_subgroups(ig_casting, {{name = is_molybdenum_rhenium, order = r}})
 
 -- ITEM
 molybdenum_plate = "molybdenum-plate"

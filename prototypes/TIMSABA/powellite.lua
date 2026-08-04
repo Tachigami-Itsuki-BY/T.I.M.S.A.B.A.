@@ -311,13 +311,12 @@ data:extend
     )
 })
 
-local nauvis = "nauvis"
-if data_planet[nauvis] then
-    data_planet[nauvis].map_gen_settings.autoplace_controls[powellite_ore] = {}
-    if not data_planet[nauvis].map_gen_settings then
-        data_planet[nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
+if data_planet[planet_nauvis] then
+    data_planet[planet_nauvis].map_gen_settings.autoplace_controls[powellite_ore] = {}
+    if not data_planet[planet_nauvis].map_gen_settings then
+        data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
     end
-    data_planet[nauvis].map_gen_settings.autoplace_settings.entity.settings[powellite_ore] = {}
+    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[powellite_ore] = {}
 end
 
-data_resource[powellite_ore].location = nauvis
+data_resource[powellite_ore].location = planet_nauvis

@@ -1,4 +1,4 @@
-if mods [secretas_frozeta_mods] then
+if mods[secretas_frozeta_mods] then
     local replacements =
     {
         [gold_ore_mods] = gold_ore_bob,
@@ -8,136 +8,62 @@ if mods [secretas_frozeta_mods] then
         [productivity_module_4_S] = productivity_module_5,
         [quality_module_4_S] = quality_module_5
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
-        end
+    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
-
-        if recipe.main_product then
-	    	local replace = replacements[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
-        end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, achievement in pairs(data.raw["produce-per-hour-achievement"] or {}) do
-        if achievement.item_product then
-            local replace = replacements[achievement.item_product]
-            if replace then
-                achievement.item_product = replace
-            end
-        end
-    end
-    for _, achievement in pairs(data.raw["produce-achievement"] or {}) do
-        if achievement.item_product then
-            local replace = replacements[achievement.item_product]
-            if replace then
-                achievement.item_product = replace
-            end
-        end
-    end
+    local mod_items =
+	{
+		speed_module_4_S,
+		efficiency_module_4_S,
+		productivity_module_4_S,
+		quality_module_4_S
+	}
+	for _, name in ipairs(mod_items) do
+		data_module[name] = nil
+        data_recipe[name] = nil
+		data_recipe[name .. _recycling] = nil
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+	end
+    data_technology["module-finale"] = nil
 
     data_tile["gold-path"] = nil
 
-    data_technology["module-finale"] = nil
-
-    data_recipe["speed-module-4-S-recycling"] = nil
-    data_module[speed_module_4_S] = nil
-    data_recipe[speed_module_4_S] = nil
-
-    data_recipe["efficiency-module-4-S-recycling"] = nil
-    data_module[efficiency_module_4_S] = nil
-    data_recipe[efficiency_module_4_S] = nil
-
-    data_recipe["productivity-module-4-S-recycling"] = nil
-    data_module[productivity_module_4_S] = nil
-    data_recipe[productivity_module_4_S] = nil
-
-    data_recipe["quality-module-4-S-recycling"] = nil
-    data_module[quality_module_4_S] = nil
-    data_recipe[quality_module_4_S] = nil
-
-    data_technology["gold-plate-productivity"] = nil
+    data_technology[gold_plate_mods.. _productivity] = nil
 
     local hyper_inserter = "hyper-inserter"
     data_item[hyper_inserter] = nil
     data_recipe[hyper_inserter] = nil
     data_recipe[hyper_inserter .. _recycling] = nil
-    if mods [panglia_mods] then data_recipe[item_ .. hyper_inserter .. _panglia_crushing] = nil end
+    if mods[panglia_mods] then
+        data_recipe[item_ .. hyper_inserter .. _panglia_crushing] = nil
+    end
     data_inserter[hyper_inserter] = nil
+    if mods[panglia_mods] then
+        data_inserter[hyper_inserter .. _panglia_fast_version] = nil
+    end
     data_technology[hyper_inserter] = nil
 
     local gold_heat_pipe = "gold-heat-pipe"
     data_item[gold_heat_pipe] = nil
     data_recipe[gold_heat_pipe] = nil
     data_recipe[gold_heat_pipe .. _recycling] = nil
-    if mods [panglia_mods] then data_recipe[item_ .. gold_heat_pipe .. _panglia_crushing] = nil end
+    if mods[panglia_mods] then
+        data_recipe[item_ .. gold_heat_pipe .. _panglia_crushing] = nil
+    end
     data_heat_pipe[gold_heat_pipe] = nil
     data_technology[gold_heat_pipe] = nil
+
+    local pentapod_egg_unrestricted = "pentapod-egg-unrestricted"
+    data_recipe[pentapod_egg_unrestricted] = nil
+    data_technology[pentapod_egg_unrestricted] = nil
+
+    local gold_railgun_turret = "gold-railgun-turret"
+    data_item[gold_railgun_turret] = nil
+    data_recipe[gold_railgun_turret] = nil
+    data_ammo_turret[gold_railgun_turret] = nil
+    data_technology[gold_railgun_turret] = nil
+
+    data_recipe["gold-plate-alt"] = nil
+	data_recipe["golden-egg"] = nil
 end

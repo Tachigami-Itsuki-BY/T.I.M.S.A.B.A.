@@ -1,4 +1,4 @@
-if mods [arig_mods] then
+if mods[arig_mods] then
     local replacements =
     {
         [glass_panel_arig] = glass_bob,

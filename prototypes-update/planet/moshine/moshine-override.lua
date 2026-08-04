@@ -1,60 +1,24 @@
 if mods[moshine_mods] then
-    -- ORE
+    -- RECIPE
     local multi_ore = "multi-ore"
-    data_resource[multi_ore].subgroup = is_moshine_ore
-    data_resource[multi_ore].order = b
+    data_resource[multi_ore].subgroup = is_moshine_recipe
+    data_resource[multi_ore].order = a
     data_resource[multi_ore].minable =
     {
         mining_particle = "iron-ore-particle",
         mining_time = 2,
         results =
         {
-            {
-                type = item,
-                name = monazite_ore, -- Nd + Ho + U + Th + Сe + Pm (PO₄)
-                amount = 1,
-                probability = 0.5
-            },
-            {
-                type = item,
-                name = calcite, -- CaCO₃
-                amount = 1,
-                probability = 0.06125
-            },
-            {
-                type = item,
-                name = limestone_angels, -- CaCO₃
-                amount = 1,
-                probability = 0.06125
-            },
-            {
-                type = item,
-                name = barite, -- (Ba,Ca,Pb)SO₄
-                amount = 1,
-                probability = 0.125
-            },
-            {
-                type = item,
-                name = fluorite_angels, -- CaF₂
-                amount = 1,
-                probability = 0.06125
-            },
-            {
-                type = item,
-                name = sand_angels, -- SiO₂
-                amount = 1,
-                probability = 0.06125
-            },
-            {
-                type = item,
-                name = biotite_mica, -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂
-                amount = 1,
-                probability = 0.125
-            }
+            {type = item, name = monazite_ore,     amount = 1, probability = 0.5}, -- Nd + Ho + U + Th + Сe + Pm (PO₄)
+            {type = item, name = calcite,          amount = 1, probability = 0.06125}, -- CaCO₃
+            {type = item, name = limestone_angels, amount = 1, probability = 0.06125}, -- CaCO₃
+            {type = item, name = barite,           amount = 1, probability = 0.125}, -- (Ba,Ca,Pb)SO₄
+            {type = item, name = fluorite_angels,  amount = 1, probability = 0.06125}, -- CaF₂
+            {type = item, name = sand_angels,      amount = 1, probability = 0.06125}, -- SiO₂
+            {type = item, name = biotite_mica,     amount = 1, probability = 0.125} -- K(Mg₃,Fe₃,Al₂)[Si₄O₁₀](OH,F)₂
         }
     }
 
-    -- RECIPE
     -- data_item[silicon_boule_mods] --> "mods-update/mods/mods-override"
     data_recipe[silicon_boule_mods].category = angels_chemical_smelting_4
     data_recipe[silicon_boule_mods].subgroup = is_moshine_recipe
@@ -168,7 +132,7 @@ if mods[moshine_mods] then
     data_tool[datacell_solved_equation].order = g
     data_tool[datacell_solved_equation].stack_size = 200
 
-    if mods [panglia_mods] then
+    if mods[panglia_mods] then
         data_tool[datacell_dna_raw].subgroup = is_moshine_datacell
         data_tool[datacell_dna_raw].order = h
         data_tool[datacell_dna_raw].stack_size = 200
@@ -591,7 +555,7 @@ if mods[moshine_mods] then
     data_recipe[data_processor].subgroup = is_moshine_building
     data_recipe[data_processor].order = a
     data_recipe[data_processor].energy_required = 8
-    if mods [bobmodules] then
+    if mods[bobmodules] then
         data_recipe[data_processor].ingredients =
         {
             {type = item, name = assembling_machine_6, amount = 1},
@@ -845,7 +809,7 @@ if mods[moshine_mods] then
     }
 
     local tech_data_processor_building = "moshine-tech-data-processor-building"
-    if mods [bobmodules] then
+    if mods[bobmodules] then
        table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_5)
     end
     data_technology[tech_data_processor_building].unit.ingredients =

@@ -1,11 +1,11 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     local ig_paracelsin = "paracelsin"
     data:extend
     ({
         {
             type = item_group,
             name = ig_paracelsin,
-            order = x_i,
+            order = x_j,
             icon = "__TIMSABA__/graphics/icons/paracelsin/paracelsin-planet.png",
             icon_size = 128,
         }

@@ -1,4 +1,4 @@
-if mods [shchierbin_mods] then
+if mods[shchierbin_mods] then
     local replacements =
     {
         [salt_mods] = salt_angels,

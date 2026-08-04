@@ -228,7 +228,7 @@ for _, suffix in ipairs(suffixes) do
             data_recipe[item_ .. name .. _panglia_crushing] = nil
         end
 
-        if mods [solar_productivity] then
+        if mods[solar_productivity] then
             for i = 1, 99 do
                 local sp_prefix = "sp-" .. i .. "-"
                 if sp_prefix then
@@ -340,7 +340,7 @@ data_recipe["angels-liquid-molten-titanium-5"] = nil
 data_recipe["angels-thermal-water-filtering-1"] = nil
 data_recipe["angels-thermal-water-filtering-2"] = nil
 
-if mods [clowns_nuclear] then
+if mods[clowns_nuclear] then
     local bombs =
     {
         "thermonuclear-bomb",
@@ -488,15 +488,4 @@ if next(to_delete) then
             end
         end
     end
-end
-
--- !!!!!!!!!!!!!!!!!
-if mods ["metal-and-stars"] then
-    data_technology["space-fuel-productivity"].effects =
-    {
-        {type = change_recipe_productivity, recipe = thruster_fuel, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_thruster_fuel, change = 0.1},
-        {type = change_recipe_productivity, recipe = thruster_oxidizer, change = 0.1},
-        {type = change_recipe_productivity, recipe = advanced_thruster_oxidizer, change = 0.1}
-    }
 end

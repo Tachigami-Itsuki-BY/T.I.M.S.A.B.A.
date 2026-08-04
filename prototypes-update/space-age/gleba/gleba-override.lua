@@ -31,6 +31,7 @@ data_recipe[stiratite_bacteria].results =
     {type = item, name = spoilage, amount = 4}
 }
 
+local saphirite_bacteria_cultivation = "iron-bacteria-cultivation"
 data_recipe[saphirite_bacteria_cultivation].localised_name = {"recipe-name.saphirite-bacteria-cultivation"}
 data_recipe[saphirite_bacteria_cultivation].subgroup = is_bacteria_cultivation
 data_recipe[saphirite_bacteria_cultivation].icons = STONKS_I(stonks_png, saphirite_bacteria)
@@ -41,6 +42,7 @@ data_recipe[saphirite_bacteria_cultivation].ingredients =
     {type = item, name = bioflux, amount = 1}
 }
 
+local stiratite_bacteria_cultivation = "copper-bacteria-cultivation"
 data_recipe[stiratite_bacteria_cultivation].localised_name = {"recipe-name.stiratite-bacteria-cultivation"}
 data_recipe[stiratite_bacteria_cultivation].subgroup = is_bacteria_cultivation
 data_recipe[stiratite_bacteria_cultivation].icons = STONKS_I(stonks_png, stiratite_bacteria)
@@ -57,6 +59,7 @@ data_item[spoilage].order = a
 data_item[spoilage].fuel_category = base_fuel
 data_item[spoilage].fuel_value = 225 .. kJ
 
+local burnt_spoilage = "burnt-spoilage"
 data_recipe[burnt_spoilage].subgroup = is_spoilage
 data_recipe[burnt_spoilage].icons = TWO_I(spoilage, carbon_angels)
 data_recipe[burnt_spoilage].order = b
@@ -75,6 +78,7 @@ data_recipe[nutrients_from_spoilage].icons = TWO_I(spoilage, nutrients)
 data_recipe[nutrients_from_spoilage].order = a_a
 data_recipe[nutrients_from_spoilage].ingredients[1].amount = 8
 
+local nutrients_from_yumako_mash = "nutrients-from-yumako-mash"
 data_recipe[nutrients_from_yumako_mash].localised_name = {"recipe-name.nutrients-from-yumako-mash"}
 data_recipe[nutrients_from_yumako_mash].subgroup = is_nutrients
 data_recipe[nutrients_from_yumako_mash].icons = TWO_I(yumako_mash, nutrients)
@@ -97,6 +101,7 @@ data_recipe[nutrients_from_biter_egg].icons = TWO_I(biter_egg, nutrients)
 data_recipe[nutrients_from_biter_egg].order = a_e
 data_recipe[nutrients_from_biter_egg].results[1].amount = 16
 
+local nutrients_from_factorian_fish = "nutrients-from-fish"
 data_recipe[nutrients_from_factorian_fish].localised_name = {"recipe-name.nutrients-from-factorian-fish"}
 data_recipe[nutrients_from_factorian_fish].category = organic
 data_recipe[nutrients_from_factorian_fish].subgroup = is_nutrients
@@ -222,13 +227,6 @@ data_recipe[pentapod_egg].order = a
 data_recipe[pentapod_egg].energy_required = 16
 data_recipe[pentapod_egg].ingredients[2].amount = 32
 
-if mods [secretas_frozeta_mods] then
-    local pentapod_egg_unrestricted = "pentapod-egg-unrestricted"
-    data_recipe[pentapod_egg_unrestricted].subgroup = is_pentapod_egg_and_bioflux
-    data_recipe[pentapod_egg_unrestricted].icons = THREE_D_I(pentapod_egg, nutrients, water, pentapod_egg, nil, nil, number_2)
-    data_recipe[pentapod_egg_unrestricted].order = a_a
-end
-
 data_capsule[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_capsule[bioflux].order = b
 data_capsule[bioflux].stack_size = 200
@@ -292,7 +290,7 @@ data_recipe[biter_egg].order = a
 data_recipe[biter_egg].energy_required = 8
 data_recipe[biter_egg].results[1].amount = 4
 
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     local cloning_biter_egg = "cloning-biter-egg"
     data_recipe[cloning_biter_egg].subgroup = is_gleba_recipe
     data_recipe[cloning_biter_egg].icons = STONKS_I(stonks_png, biter_egg)
@@ -319,6 +317,7 @@ data_recipe[wood_processing].subgroup = is_gleba_recipe
 data_recipe[wood_processing].order = c_a
 data_recipe[wood_processing].surface_conditions = nil
 
+local factorian_fish_breeding = "fish-breeding"
 data_recipe[factorian_fish_breeding].category = "angels-bio-refugium-fish"
 data_recipe[factorian_fish_breeding].localised_name = {"recipe-name.breeding-factorian-fish"}
 data_recipe[factorian_fish_breeding].subgroup = is_gleba_recipe
@@ -430,7 +429,7 @@ data_item[biolab].weight = 62500
 data_recipe[biolab].subgroup = is_gleba_building
 data_recipe[biolab].order = d
 data_recipe[biolab].energy_required = 8
-if mods [bobtech] then
+if mods[bobtech] then
     data_recipe[biolab].ingredients[1].name = lab_2
 end
 data_recipe[biolab].ingredients[2].amount = 8
@@ -481,6 +480,7 @@ data_ammo_turret[rocket_turret].order = b
 data_ammo_turret[rocket_turret].attack_parameters.min_range = 16
 data_ammo_turret[rocket_turret].attack_parameters.range = 40
 
+local toolbelt_eq = "toolbelt-equipment"
 data_item[toolbelt_eq].subgroup = is_gleba_war
 data_item[toolbelt_eq].order = c
 data_item[toolbelt_eq].stack_size = 8
@@ -501,3 +501,210 @@ bobmods.lib.recipe.update_recycling_recipe
     rocket_turret,
     toolbelt_eq
 })
+
+-- TECHNOLOGY
+data_technology[planet_discovery_gleba].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1}
+}
+
+table.insert(data_technology[jellynut].effects, {type = unlock_recipe, recipe = jivolite_bacteria})
+
+table.insert(data_technology[yumako].effects, {type = unlock_recipe, recipe = crotinnium_bacteria})
+
+data_technology[biochamber].effects =
+{
+    {type = unlock_recipe, recipe = biochamber},
+    {type = unlock_recipe, recipe = rubyte_bacteria},
+    {type = unlock_recipe, recipe = bobmonium_bacteria},
+    {type = unlock_recipe, recipe = burnt_spoilage},
+    {type = unlock_recipe, recipe = "nutrients-from-jelly"},
+    {type = unlock_recipe, recipe = nutrients_from_yumako_mash},
+    {type = unlock_recipe, recipe = pentapod_egg}
+}
+
+local tech_bacteria_cultivation = "bacteria-cultivation"
+data_technology[tech_bacteria_cultivation].effects =
+{
+    {type = unlock_recipe, recipe = saphirite_bacteria_cultivation},
+    {type = unlock_recipe, recipe = jivolite_bacteria_cultivation},
+    {type = unlock_recipe, recipe = stiratite_bacteria_cultivation},
+    {type = unlock_recipe, recipe = crotinnium_bacteria_cultivation},
+    {type = unlock_recipe, recipe = rubyte_bacteria_cultivation},
+    {type = unlock_recipe, recipe = bobmonium_bacteria_cultivation}
+}
+data_technology[tech_bacteria_cultivation].research_trigger =
+{
+    type = craft_item,
+    item = bioflux,
+    count = 256
+}
+
+data_technology[toolbelt_eq].prerequisites = {carbon_fiber}
+
+data_technology[factorian_fish_breeding].effects =
+{
+    {type = unlock_recipe, recipe = factorian_fish_breeding},
+    {type = unlock_recipe, recipe = nutrients_from_factorian_fish},
+    {type = unlock_recipe, recipe = "breeding-angels-alien-fish-1-raw"},
+    {type = unlock_recipe, recipe = "nutrients-from-angels-alien-fish-1-raw"},
+    {type = unlock_recipe, recipe = "breeding-angels-alien-fish-2-raw"},
+    {type = unlock_recipe, recipe = "nutrients-from-angels-alien-fish-2-raw"},
+    {type = unlock_recipe, recipe = "breeding-angels-alien-fish-3-raw"},
+    {type = unlock_recipe, recipe = "nutrients-from-angels-alien-fish-3-raw"}
+}
+
+data_technology[carbon_fiber].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[toolbelt_eq].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[rocket_turret].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {military_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology["health"].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {military_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[plastic .. _productivity].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[rocket_fuel .. _productivity].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology["tree-seeding"].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+data_technology[factorian_fish_breeding].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}
+
+tech_transport_belt_capacity_1 = "transport-belt-capacity-1"
+tech_transport_belt_capacity_2 = "transport-belt-capacity-2"
+if mods[loaders_modernized] then
+    data_technology[stack_inserter].prerequisites = {carbon_fiber, "bob-bulk-inserter-4", vulcanus_transport_belt}
+    data_technology[stack_inserter].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[tech_transport_belt_capacity_1].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[tech_transport_belt_capacity_2].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+else
+    data_technology[stack_inserter].prerequisites = {carbon_fiber, "bob-bulk-inserter-4"}
+end
+
+if mods[bobtech] then
+    table.insert(data_technology[stack_inserter].unit.ingredients, {transport_science_pack, 1})
+    table.insert(data_technology[tech_transport_belt_capacity_1].unit.ingredients, {transport_science_pack, 1})
+    table.insert(data_technology[tech_transport_belt_capacity_2].unit.ingredients, {transport_science_pack, 1})
+end
+
+data_technology["captivity"].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {agricultural_science_pack, 1}
+}

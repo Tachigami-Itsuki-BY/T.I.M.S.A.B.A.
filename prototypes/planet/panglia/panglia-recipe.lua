@@ -1,4 +1,4 @@
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     electronic_circuit_from_panglite_fiber = "electronic-circuit-from-panglite-fiber"
     processing_unit_from_panglite_fiber = "processing-unit-from-panglite-fiber"
     advanced_processing_unit_from_panglite_fiber = "advanced-processing-unit-from-panglite-fiber"

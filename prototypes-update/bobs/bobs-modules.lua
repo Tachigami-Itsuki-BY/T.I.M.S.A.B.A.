@@ -1,4 +1,4 @@
-if mods [bobmodules] then
+if mods[bobmodules] then
     data_recipe[module_case].energy_required = 8
 
     local module_contact = "bob-module-contact"

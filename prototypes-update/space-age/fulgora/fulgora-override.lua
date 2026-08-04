@@ -246,14 +246,14 @@ data_electric_turret[tesla_turret].attack_parameters.ammo_type.energy_consumptio
 
 data_armor[mech_armor].subgroup = is_fulgora_war
 data_armor[mech_armor].order = d
-if mods [bobequipment] then
+if mods[bobequipment] then
     data_armor[mech_armor].equipment_grid = mech_armor_equipment_grid
     data_armor[mech_armor].inventory_size_bonus = 70
 end
 data_recipe[mech_armor].subgroup = is_fulgora_war
 data_recipe[mech_armor].order = d
 data_recipe[mech_armor].energy_required = 64
-if mods [bobequipment] then
+if mods[bobequipment] then
     data_recipe[mech_armor].ingredients =
     {
         {type = item, name = advanced_processing_unit, amount = 128},
@@ -285,3 +285,53 @@ bobmods.lib.recipe.update_recycling_recipe
     tesla_turret,
     mech_armor
 })
+
+-- TECHNOLOGY
+table.insert(data_technology[planet_discovery_fulgora].prerequisites, tech_electric_energy_accumulators_4)
+table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = steel_rod})
+table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = fulgora_air})
+table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = fulgora_air_separation})
+data_technology[planet_discovery_fulgora].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1}
+}
+
+table.insert(data_technology[recycling].effects, {type = unlock_recipe, recipe = construction_scrap_recycling})
+table.insert(data_technology[recycling].effects, {type = unlock_recipe, recipe = machinery_scrap_recycling})
+
+data_technology[tech_holmium_processing].prerequisites = {tech_brannerite_processing_1}
+data_technology[tech_holmium_processing].effects =
+{
+    {type = unlock_recipe, recipe = calcium_chloride_solution_from_lime},
+    {type = unlock_recipe, recipe = calcium},
+    {type = unlock_recipe, recipe = holmium_chloride_III_solution},
+    {type = unlock_recipe, recipe = holmium_fluoride_III},
+    {type = unlock_recipe, recipe = holmium_cathode},
+    {type = unlock_recipe, recipe = holmium_ingot},
+    {type = unlock_recipe, recipe = holmium_powder},
+    {type = unlock_recipe, recipe = holmium_molten},
+    {type = unlock_recipe, recipe = holmium_plate}
+}
+data_technology[tech_holmium_processing].research_trigger =
+{
+    type = craft_item,
+    item = holmium_ore,
+    count = 256
+}
+
+data_technology[electromagnetic_science_pack].research_trigger =
+{
+    type = craft_item,
+    item = supercapacitor,
+    count = 256
+}
+
+if mods[bobequipment] then
+    data_technology[mech_armor].prerequisites = {electromagnetic_science_pack, "bob-power-armor-5"}
+end
+table.insert(data_technology[mech_armor].unit.ingredients, {production_science_pack, 1})

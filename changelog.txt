@@ -1,15 +1,53 @@
 
 ---------------------------------------------------------------------------------------------------
+Version: 1.8.0
+Date: 04.08.2026
+  Features:
+    - [Mods] Добавлена поддержка Secretas&Frozeta: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [Mods] Добавлена поддержка Terra Palus: реализовано бесшовное внедрение новой планеты в игровой процесс.
+
+    - [Mods] Added support for Secretas&Frozeta: seamlessly integrated the new planet into the gameplay flow.
+    - [Mods] Added support for Terra Palus: seamlessly integrated the new planet into the gameplay flow.
+
+  Bugfixes:
+    - [All] Исправлена ошибка в рецепте Платиновых Слитков, из-за вместо Фторводорода производился Хлороводород.
+    - [Mods] Исправлена ​​критическая ошибка, возникавшая при использовании следующих модов: «Muluna, Moon of Nauvis», «Planet Paracelsin» и «Secretas&Frozeta». (Со своей стороны)
+
+    - [All] Fixed a bug in the Platinum Ingots recipe that caused Hydrogen Chloride to be produced instead of Hydrogen Fluoride.
+    - [Mods] Fixed a critical error that occurred when playing with the following mods: "Muluna, Moon of Nauvis", "Planet Paracelsin" and "Secretas&Frozeta". ()
+
+  Locale:
+    - [All] Исправлены ошибки локализации.
+
+    - [All] Fixed localization bugs.
+
+  Modding:
+    - [Mods] Мод «Secretas&Frozeta» переведён в опциональную зависимость.
+    - [Mods] Мод «Terra Palus» переведён в опциональную зависимость.
+    - [Mods] Мод «Planet Rubia» удалён из списка несовместимых.
+    - [Mods] Мод «Cubium» удалён из списка несовместимых.
+    - [Mods] Мод «Nexus Extended Promethium Endgame» удалён из списка несовместимых.
+    - [Mods] Мод «Castra» заменён на мод «Castra Prime».
+    - [Mods] Мод «Cargo bay inserters» удалён из списка опциональной зависимости.
+
+    - [Mods] Moved "Secretas&Frozeta" mod to optional dependencies.
+    - [Mods] Moved "Terra Palus" mod to optional dependencies.
+    - [Mods] Removed "Planet Rubia" mod from the incompatible.
+    - [Mods] Removed "Cubium" mod from the incompatible.
+    - [Mods] Removed "Nexus Extended Promethium Endgame" mod from the incompatible.
+    - [Mods] Replaced «Castra» mod by the «Castra Prime» mod.
+    - [Mods] Removed «Cargo bay inserters» mod from the optional dependency.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.0
 Date: 31.07.2026
   Features:
     - [Mods] Добавлена поддержка Corrundum: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Vulcanus] Добавлен рецепт Вольфрамового Порошка из Вольфрамовой Руды.
-    - [Paracelsin] Добавлен рецепт Цинкового Порошка из Цинковой Руды.
+    - [Vulcanus] Добавлен новый рецепт Вольфрамового Порошка из Вольфрамовой Руды.
+    - [Paracelsin] Добавлен новый рецепт Цинкового Порошка из Цинковой Руды.
 
     - [Mods] Added support for Corrundum: seamlessly integrated the new planet into the gameplay flow.
-    - [Vulcanus] Added recipe for Tungsten Powder from Tungsten Ore.
-    - [Paracelsin] Added recipe for Zinc Powder from Zinc Ore.
+    - [Vulcanus] Added new recipe for Tungsten Powder from Tungsten Ore.
+    - [Paracelsin] Added new recipe for Zinc Powder from Zinc Ore.
 
   Bugfixes:
     - [Mods] Исправлены незначительные ошибки.
@@ -21,7 +59,7 @@ Date: 31.07.2026
     - [Paracelsin] Восстановлен рецепт Цинковой Пластины.
 
     - [Vulcanus] Replaced an ingredient in the Tungsten Carbide and Tungsten Plate recipe: Tungsten Ore (4 units) → Tungsten Powder (1 unit)
-    - [Paracelsin] Restored recipe for Zinc Plate
+    - [Paracelsin] Restored recipe for Zinc Plate.
 
   Graphics:
     - [All] Обновлены иконки.
@@ -49,7 +87,7 @@ Date: 29.07.2026
     - [All] Исправлена критическая ошибка инициализации: теперь эффекты открытия рецептов «unlock-recipe» автоматически очищаются в технологиях, если сам рецепт был удален.
     - [All] Исправлена ошибка, из-за которой нельзя было поставить скважину на планетах с высокой гравитацией.
 
-    - [All] Fixed a critical initialization error: now the effects of opening recipes "unlock-recipe" are automatically cleared in technologies if the recipe itself was deleted.
+    - [All] Fixed a critical initialization bug: now the effects of opening recipes "unlock-recipe" are automatically cleared in technologies if the recipe itself was deleted.
     - [All] Fixed a bug that prevented the well from being placed on planets with high gravity.
 
   Balancing:
@@ -233,7 +271,7 @@ Date: 16.06.2026
   Bugfixes:
     - [All] Исправлена ​​критическая ошибка, которая могла привести к удалению рецептов, которые не должны были быть удалены.
 
-    - [All] Fixed a critical error that could cause recipes to be deleted that should not have been deleted.
+    - [All] Fixed a critical bug that could cause recipes to be deleted that should not have been deleted.
 
   Locale:
     - [All] Для упрощения поиска все файлы локализации разделены на подгруппы.
@@ -472,7 +510,7 @@ Date: 07.06.2026
     - [All] The modpack works on both new and old versions of BA!
     - [All] If you have updated "Bob's" mods to 2.1.0 or higher: It is RECOMMENDED to start a new game. Unfortunately, I can't influence the migration of prototypes from "Bob's" mods.
     - [All] For those who stayed on older mods versions, nothing will change for you.
-    - [All] If you notice any minor errors, please let me know on Discord (Server/PM) or on the Factorio Mod Portal.
+    - [All] If you notice any minor bugs, please let me know on Discord (Server/PM) or on the Factorio Mod Portal.
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
@@ -2454,7 +2492,7 @@ Date: 08.04.2026
   Other:
     - Убедитесь, что у вас не установлены старые версии модпака - это может вызвать ошибки.
 
-    - Make sure you do not have any older versions of the modpack installed, as this may cause errors.
+    - Make sure you do not have any older versions of the modpack installed, as this may cause bugs.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.16
 Date: 07.04.2026

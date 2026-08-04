@@ -1,4 +1,4 @@
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     local shattered = "shattered"
     is_shattered_ore = "shattered-ore"
     is_shattered_new_recipe = "shattered-new-recipe"

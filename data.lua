@@ -106,7 +106,6 @@ require("prototypes.space-age.aquilo.aquilo-technology")
 require("prototypes.planet.muluna.muluna-groups")
 require("prototypes.planet.muluna.muluna-item-fluid")
 require("prototypes.planet.muluna.muluna-recipe")
-require("prototypes.planet.muluna.muluna-technology")
 require("prototypes.planet.muluna.muluna-building")
 
 require("prototypes.planet.moshine.moshine-groups")
@@ -117,7 +116,6 @@ require("prototypes.planet.moshine.moshine-technology")
 
 require("prototypes.planet.panglia.panglia-groups")
 require("prototypes.planet.panglia.panglia-recipe")
-require("prototypes.planet.panglia.panglia-technology")
 
 require("prototypes.planet.arig.arig-groups")
 require("prototypes.planet.arig.arig-item-fluid")
@@ -127,7 +125,6 @@ require("prototypes.planet.arig.arig-technology")
 require("prototypes.planet.hyarion.hyarion-groups")
 require("prototypes.planet.hyarion.hyarion-item-fluid")
 require("prototypes.planet.hyarion.hyarion-recipe")
-require("prototypes.planet.hyarion.hyarion-technology")
 
 require("prototypes.planet.tellus.tellus-groups")
 require("prototypes.planet.tellus.tellus-item-fluid")
@@ -135,7 +132,6 @@ require("prototypes.planet.tellus.tellus-recipe")
 require("prototypes.planet.tellus.tellus-colored-prototypes")
 
 require("prototypes.planet.paracelsin.paracelsin-groups")
-require("prototypes.planet.paracelsin.paracelsin-item-fluid")
 require("prototypes.planet.paracelsin.paracelsin-sphalerite")
 require("prototypes.planet.paracelsin.paracelsin-tetrahedrite")
 require("prototypes.planet.paracelsin.paracelsin-recipe")
@@ -147,45 +143,43 @@ require("prototypes.planet.corrundum.corrundum-chalcopyrite")
 require("prototypes.planet.corrundum.corrundum-recipe")
 require("prototypes.planet.corrundum.corrundum-technology")
 
+require("prototypes.planet.frozeta.frozeta-groups")
+require("prototypes.planet.frozeta.frozeta-recipe")
+
+require("prototypes.planet.terrapalus.terrapalus-groups")
+require("prototypes.planet.terrapalus.terrapalus-recipe")
+
 require("prototypes.planet.castra.castra-groups")
 require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
-
-require("prototypes.planet.cubium.cubium-groups")
-require("prototypes.planet.cubium.cubium-recipe")
-require("prototypes.planet.cubium.cubium-technology")
-
-require("prototypes.planet.frozeta.frozeta-groups")
-require("prototypes.planet.frozeta.frozeta-recipe")
-require("prototypes.planet.frozeta.frozeta-technology")
-
-require("prototypes.planet.maraxsis.maraxsis-groups")
-require("prototypes.planet.maraxsis.maraxsis-recipe")
-require("prototypes.planet.maraxsis.maraxsis-technology")
-
-require("prototypes.planet.nexus.nexus-groups")
-require("prototypes.planet.nexus.nexus-recipe")
-require("prototypes.planet.nexus.nexus-technology")
-
-require("prototypes.planet.rubia.rubia-groups")
-require("prototypes.planet.rubia.rubia-recipe")
-require("prototypes.planet.rubia.rubia-technology")
-
-require("prototypes.planet.shattered.shattered-groups")
-require("prototypes.planet.shattered.shattered-recipe")
-require("prototypes.planet.shattered.shattered-technology")
 
 require("prototypes.planet.shchierbin.shchierbin-groups")
 require("prototypes.planet.shchierbin.shchierbin-recipe")
 require("prototypes.planet.shchierbin.shchierbin-technology")
 
-require("prototypes.planet.terrapalus.terrapalus-groups")
-require("prototypes.planet.terrapalus.terrapalus-recipe")
-require("prototypes.planet.terrapalus.terrapalus-technology")
+require("prototypes.planet.maraxsis.maraxsis-groups")
+require("prototypes.planet.maraxsis.maraxsis-recipe")
+require("prototypes.planet.maraxsis.maraxsis-technology")
 
 require("prototypes.planet.vesta.vesta-groups")
 require("prototypes.planet.vesta.vesta-recipe")
 require("prototypes.planet.vesta.vesta-technology")
+
+require("prototypes.planet.shattered.shattered-groups")
+require("prototypes.planet.shattered.shattered-recipe")
+require("prototypes.planet.shattered.shattered-technology")
+
+--require("prototypes.planet.rubia.rubia-groups")
+--require("prototypes.planet.rubia.rubia-recipe")
+--require("prototypes.planet.rubia.rubia-technology")
+
+--require("prototypes.planet.cubium.cubium-groups")
+--require("prototypes.planet.cubium.cubium-recipe")
+--require("prototypes.planet.cubium.cubium-technology")
+
+--require("prototypes.planet.nexus.nexus-groups")
+--require("prototypes.planet.nexus.nexus-recipe")
+--require("prototypes.planet.nexus.nexus-technology")
 
 require("prototypes.angels-ground-water-pump-recipe")
 

@@ -1,4 +1,4 @@
-if mods [arig_mods] then
+if mods[arig_mods] then
     advanced_sand_sifting = "planetaris-advanced-sand-sifting"
     data:extend
     ({

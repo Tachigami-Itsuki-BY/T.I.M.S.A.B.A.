@@ -1,4 +1,4 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     -- CORRUNDUM AIR
     corrundum_air = "corrundum-air"
     TIMSABA.functions.create_fluids

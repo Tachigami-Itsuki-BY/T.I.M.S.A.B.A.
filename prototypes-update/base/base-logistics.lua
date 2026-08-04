@@ -58,7 +58,7 @@ chset_recipe(passive_provider_chest, electronic_circuit, steel_chest)
 chset_recipe(requester_chest, advanced_circuit, steel_chest)
 chset_recipe(storage_chest, electronic_circuit, steel_chest)
 
-if mods ["VoidChestInstant"] then
+if mods["VoidChestInstant"] then
     local void_chest = "void-chest"
     data_item[void_chest].stack_size = 32
     data_item[void_chest].weight = 31250
@@ -71,7 +71,7 @@ if mods ["VoidChestInstant"] then
     bobmods.lib.recipe.update_recycling_recipe({void_chest})
 end
 
-if mods ["Unichest"] then
+if mods["Unichest"] then
     local unichest = "zy-unichest"
     data_item[unichest].stack_size = 32
     data_item[unichest].weight = 31250
@@ -102,7 +102,7 @@ if mods ["Unichest"] then
     bobmods.lib.recipe.update_recycling_recipe({unichest})
 end
 
-if mods ["Unipipe"] then
+if mods["Unipipe"] then
     local unipipe_extract = "zy-unipipe-extract"
     local unipipe_fill = "zy-unipipe-fill"
     data_item[unipipe_extract].stack_size = 32
@@ -464,7 +464,7 @@ bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter
 bulk_inserter_recipe(T4_bulk_inserter, titanium_gear_wheel, T3_bulk_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
 bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 
-if mods ["loaders-modernized-integrations"] then
+if mods["loaders-modernized-integrations"] then
     local data_loader_1x1 = data.raw["loader-1x1"]
     local loaders =
     {
@@ -499,7 +499,7 @@ if mods ["loaders-modernized-integrations"] then
                     end
                 end
             end
-            if mods [loaders_modernized_integrations] >= "2.0.7" and mods [boblogistics] >= "2.1.0" then
+            if mods[loaders_modernized_integrations] >= "2.0.7" and mods[boblogistics] >= "2.1.0" then
                 data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
             end
             data_loader_1x1[BUILD.name].order = z
@@ -523,7 +523,7 @@ if mods ["loaders-modernized-integrations"] then
         data_item[stack_loader].weight = 31250
         data_recipe[stack_loader].subgroup = is_gleba_logistics
         data_recipe[stack_loader].order = b
-        if mods [arig_mods] then
+        if mods[arig_mods] then
             data_recipe[stack_loader].ingredients[1].name = hyper_underground_belt_arig
         else
             data_recipe[stack_loader].ingredients[1].name = vulcanus_underground_belt

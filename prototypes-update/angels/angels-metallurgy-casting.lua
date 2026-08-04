@@ -899,8 +899,8 @@ data_recipe[cobalt_molten_angels].results[1].amount = 240
 -- CHROMIUM
 data_item_subgroup["angels-chrome-casting"].order = o
 
-data_fluid[chromium_molten_angels].hidden = false
-data_fluid[chromium_molten_angels].hidden_in_factoriopedia = false
+--data_fluid[chromium_molten_angels].hidden = false
+--data_fluid[chromium_molten_angels].hidden_in_factoriopedia = false
 data_fluid[chromium_molten_angels].localised_name = {"fluid-name.angels-liquid-molten-chrome"}
 data_fluid[chromium_molten_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_fluid[chromium_molten_angels].order = a

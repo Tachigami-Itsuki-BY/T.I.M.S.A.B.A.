@@ -1,4 +1,4 @@
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     local ig_panglia = "panglia"
     data:extend
     ({
@@ -13,15 +13,17 @@ if mods [panglia_mods] then
 
     is_panglia_recipe = "is-panglia-recipe"
     is_panglia_universe_volcanic = "is-panglia-universe-volcanic"
-    is_panglia_universe = "is-panglia-universe"
+    is_panglia_universe_planets = "is-panglia-universe-planets"
+    is_panglia_universe_moons = "is-panglia-universe-moons"
     is_panglia_building = "is-panglia-building"
     is_panglia_war = "is-panglia-war"
     TIMSABA.functions.create_subgroups(ig_panglia,
     {
-        {name = is_panglia_recipe, order = a},
+        {name = is_panglia_recipe,            order = a},
         {name = is_panglia_universe_volcanic, order = b},
-        {name = is_panglia_universe, order = b_a},
-        {name = is_panglia_building, order = c},
-        {name = is_panglia_war, order = d}
+        {name = is_panglia_universe_planets,  order = b_a},
+        {name = is_panglia_universe_moons,    order = b_b},
+        {name = is_panglia_building,          order = c},
+        {name = is_panglia_war,               order = d}
     })
 end

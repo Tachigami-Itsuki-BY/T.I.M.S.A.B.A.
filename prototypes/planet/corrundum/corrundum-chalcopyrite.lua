@@ -1,4 +1,4 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     -- Chalcopyrite ore / Fe + Cu + Mn + Ag + Au + Se
     chalcopyrite_crushed = "chalcopyrite-crushed"
     chalcopyrite_chunks = "chalcopyrite-chunks"

@@ -110,7 +110,7 @@ data_entity[vulcanus_chimney_truncated].minable.results[1].amount_min = 8
 data_entity[vulcanus_chimney_truncated].minable.results[1].amount_max = 16
 
 local vulcanus_chimney = "vulcanus-chimney"
-if mods [vulcanus_sulfuric_bacteria_mods] then
+if mods[vulcanus_sulfuric_bacteria_mods] then
     data_entity[vulcanus_chimney].minable.results =
     {
         {type = item, name = stone, amount_min = 8, amount_max = 16},
@@ -140,7 +140,7 @@ data_entity[vulcanus_chimney_faded].minable.results[2].amount_max = 4
 local small_demolisher_corpse = "small-demolisher-corpse"
 local medium_demolisher_corpse = "medium-demolisher-corpse"
 local big_demolisher_corpse = "big-demolisher-corpse"
-if mods [vulcanus_sulfuric_bacteria_mods] then
+if mods[vulcanus_sulfuric_bacteria_mods] then
     data_entity[small_demolisher_corpse].minable.results =
     {
         {type = item, name = wolframite_ore, amount_min = 0, amount_max = 32},
@@ -324,8 +324,8 @@ data_resource[fluorine_vent].minable.results[1].amount_max = 30
 
 -- BOB
 local hardened_bile = "bob-hardened-bile"
-if mods [bobenemies] then
-    if mods ["graille-bob-hardened-bile-remover"] then
+if mods[bobenemies] then
+    if mods["graille-bob-hardened-bile-remover"] then
         data_entity[hardened_bile].minable = data_entity[hardened_bile].minable or {mining_time = 1}
         data_entity[hardened_bile].minable.results = {{type = item, name = resin_bob, amount_min = 8, amount_max = 16}}
     else
@@ -390,7 +390,7 @@ data_entity["angels-crystal-rock"].minable.results =
 }
 
 -- MULUNA
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     data_entity["lunar-rock"].minable.results =
     {
         {type = item, name = sulfur, amount = 2},
@@ -404,7 +404,7 @@ if mods [muluna_mods] then
 end
 
 -- MOSHINE
-if mods [moshine_mods] then
+if mods[moshine_mods] then
     data_entity["moshine-" .. huge_volcanic_rock].minable.results =
     {
         {type = item, name = stone, amount_min = 4, amount_max = 8},
@@ -433,7 +433,7 @@ if mods [moshine_mods] then
 end
 
 -- PANGLIA
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     data_entity["panglia-huge-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 16, amount_max = 32}}
 
     data_entity["panglia-big-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 4, amount_max = 16}}
@@ -453,7 +453,7 @@ if mods [panglia_mods] then
 end
 
 -- ARIG
-if mods [arig_mods] then
+if mods[arig_mods] then
     data_entity["arig-medium-sand-rock"].minable.results =
     {
         {type = item, name = stone, amount_min = 4, amount_max = 16},
@@ -508,7 +508,7 @@ if mods [arig_mods] then
 end
 
 -- HYARION
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     local pointy_crystal = "hyarion-pointy-crystal"
     data_tree[pointy_crystal].minable.results[1].amount_min = 16
     data_tree[pointy_crystal].minable.results[1].amount_max = 32
@@ -553,7 +553,7 @@ if mods [hyarion_mods] then
 end
 
 -- TELLUS
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     data_plant["mushell"].minable.results =
     {
         {type = item, name = wood, amount = 8},
@@ -584,7 +584,7 @@ if mods [tellus_mods] then
         {type = fluid, name = multi_phase_oil_angels, amount = 480}
     }
 
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         data_plant["planetaris-big-charged-crystal"].minable.results =
         {
             {type = item, name = unstable_crystal, amount = 64},
@@ -617,7 +617,7 @@ if mods [tellus_mods] then
 end
 
 -- PARACELSIN
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     data_tile["nitrogen-lake"].fluid = nitrogen_liquid
 
     data_entity["big-metallic-rock"].minable.results =
@@ -650,7 +650,7 @@ if mods [paracelsin_mods] then
 end
 
 -- CORRUNDUM
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     data_tile["petroleum-tile"].fluid = multi_phase_oil_angels
 
     data_entity["huge-corrundum-rock"].minable.results =
@@ -669,7 +669,7 @@ if mods [corrundum_mods] then
 end
 
 -- MODS
-if mods [vulcanus_sulfuric_bacteria_mods] then
+if mods[vulcanus_sulfuric_bacteria_mods] then
     data_entity["sulfuric-stromatolite"].minable.results =
     {
         {type = item, name = stone, amount_min = 4, amount_max = 16},

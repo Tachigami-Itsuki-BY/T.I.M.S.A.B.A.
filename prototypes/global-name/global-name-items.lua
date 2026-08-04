@@ -20,7 +20,7 @@ T3_underground_belt = "express-underground-belt"
 T3_splitter = "express-splitter"
 T3_inserter = "fast-inserter"
 T3_bulk_inserter = "bulk-inserter"
-if mods ["boblogistics"] >= "2.1.0" then
+if mods["boblogistics"] >= "2.1.0" then
     T4_transport_belt = "timsaba-turbo-transport-belt"
     T4_underground_belt = "timsaba-turbo-underground-belt"
     T4_splitter = "timsaba-turbo-splitter"
@@ -59,7 +59,7 @@ iron_pipe = "pipe"
 iron_pipe_to_ground = "pipe-to-ground"
 copper_pipe = "bob-copper-pipe"
 copper_pipe_to_ground = "bob-copper-pipe-to-ground"
-if mods ["boblogistics"] >= "2.1.0" then
+if mods["boblogistics"] >= "2.1.0" then
     stone_pipe = "timsaba-stone-pipe"
     stone_pipe_to_ground = "timsaba-stone-pipe-to-ground"
 else
@@ -76,7 +76,7 @@ brass_pipe = "bob-brass-pipe"
 brass_pipe_to_ground = "bob-brass-pipe-to-ground"
 titanium_pipe = "bob-titanium-pipe"
 titanium_pipe_to_ground = "bob-titanium-pipe-to-ground"
---[[if mods ["boblogistics"] >= "2.1.0" then
+--[[if mods["boblogistics"] >= "2.1.0" then
     ceramic_pipe = "timsaba-ceramic-pipe"
     ceramic_pipe_to_ground = "timsaba-ceramic-pipe-to-ground"
 else
@@ -87,7 +87,7 @@ ceramic_pipe = "bob-ceramic-pipe"
 ceramic_pipe_to_ground = "bob-ceramic-pipe-to-ground"
 tungsten_pipe = "bob-tungsten-pipe"
 tungsten_pipe_to_ground = "bob-tungsten-pipe-to-ground"
-if mods ["boblogistics"] >= "2.1.0" then
+if mods["boblogistics"] >= "2.1.0" then
     nitinol_pipe = "timsaba-nitinol-pipe"
     nitinol_pipe_to_ground = "timsaba-nitinol-pipe-to-ground"
 else
@@ -191,7 +191,7 @@ steel_gear_wheel = "bob-steel-gear-wheel"
 steel_bearing_ball = "bob-steel-bearing-ball"
 steel_bearing = "bob-steel-bearing"
 brass_gear_wheel = "bob-brass-gear-wheel"
---[[if mods ["bobplates"] >= "2.1.0" then
+--[[if mods["bobplates"] >= "2.1.0" then
     cobalt_steel_gear_wheel = "timsaba-cobalt-steel-gear-wheel"
     cobalt_steel_bearing_ball = "timsaba-cobalt-steel-bearing-ball"
     cobalt_steel_bearing = "timsaba-cobalt-steel-bearing"
@@ -207,7 +207,7 @@ titanium_gear_wheel = "bob-titanium-gear-wheel"
 titanium_bearing_ball = "bob-titanium-bearing-ball"
 titanium_bearing = "bob-titanium-bearing"
 tungsten_gear_wheel = "bob-tungsten-gear-wheel"
-if mods ["bobplates"] >= "2.1.0" then
+if mods["bobplates"] >= "2.1.0" then
     ceramic_bearing_ball = "timsaba-ceramic-bearing-ball"
     ceramic_bearing = "timsaba-ceramic-bearing"
 else
@@ -218,7 +218,7 @@ nitinol_gear_wheel = "bob-nitinol-gear-wheel"
 nitinol_bearing_ball = "bob-nitinol-bearing-ball"
 nitinol_bearing = "bob-nitinol-bearing"
 battery_lead_acid = "battery"
-if mods ["bobplates"] >= "2.1.0" then
+if mods["bobplates"] >= "2.1.0" then
     battery_lithium_ion = "bob-battery-2"
     battery_silver_zinc = "bob-battery-3"
 else
@@ -350,9 +350,9 @@ fission_reactor_3 = "bob-fission-reactor-equipment-3"
 fission_reactor_4 = "bob-fission-reactor-equipment-4"
 battery_eq_1 = "battery-equipment"
 battery_eq_2 = "battery-mk2-equipment"
-if mods ["bobequipment"] and mods ["bobequipment"] >= "2.1.0" then
+if mods["bobequipment"] and mods["bobequipment"] >= "2.1.0" then
     battery_eq_3 = "battery-mk3-equipment"
-elseif mods ["bobequipment"] and mods ["bobequipment"] < "2.1.0" then
+elseif mods["bobequipment"] and mods["bobequipment"] < "2.1.0" then
     battery_eq_3 = "bob-battery-mk3-equipment"
 else
     battery_eq_3 = "battery-mk3-equipment"
@@ -559,7 +559,7 @@ chromium_sulfate_III = "angels-solid-chromate"
 chromium_hydroxide_III = "angels-solid-dichromate"
 chromium_oxide_III = "angels-solid-chrome-oxide"
 chromium_ingot = "angels-ingot-chrome"
-if mods ["bobores"] >= "2.1.0" then
+if mods["bobores"] >= "2.1.0" then
     tungsten_ore_bob = "timsaba-tungsten-ore"
 else
     tungsten_ore_bob = "bob-tungsten-ore"
@@ -578,7 +578,7 @@ platinum_powder = "angels-powder-platinum"
 glass_mixture = "angels-solid-glass-mixture"
 lime_angels = "angels-solid-lime"
 cement = "angels-solid-cement"
-if mods ["bobplates"] >= "2.1.0" then
+if mods["bobplates"] >= "2.1.0" then
     lithium_bob = "timsaba-lithium"
 else
     lithium_bob = "bob-lithium"
@@ -623,7 +623,7 @@ gold_roll = "angels-roll-gold"
 gold_wire_coil = "angels-wire-coil-gold"
 gold_plate_bob = "bob-gold-plate"
 gold_cable = "angels-wire-gold"
-if mods ["bobplates"] >= "2.1.0" then
+if mods["bobplates"] >= "2.1.0" then
     tungsten_plate_bob = "timsaba-tungsten-plate"
     tungsten_carbide_plate_bob = "timsaba-tungsten-carbide"
 else
@@ -713,6 +713,10 @@ catalyst_blue = "angels-catalyst-metal-blue"
 catalyst_yellow = "angels-catalyst-metal-yellow"
 
 -- BARRELING AND FLUID CONTROL
+pump_1 = "pump"
+pump_2 = "bob-pump-2"
+pump_3 = "bob-pump-3"
+pump_4 = "bob-pump-4"
 storage_tank_1 = "storage-tank"
 storage_tank_2 = "bob-storage-tank-2"
 storage_tank_3 = "bob-storage-tank-3"

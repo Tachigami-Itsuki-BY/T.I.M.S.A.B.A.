@@ -1,4 +1,4 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     -- Sphalerite ore / Zn + Fe + Mn + Co + Ge + Sb
     sphalerite_crushed = "sphalerite-crushed"
     sphalerite_chunks = "sphalerite-chunks"

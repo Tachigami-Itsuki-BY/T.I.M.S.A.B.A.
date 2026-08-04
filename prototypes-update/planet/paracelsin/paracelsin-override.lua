@@ -1,4 +1,4 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     -- VATERITE and ZINC
     data_item[vaterite].localised_description = show_formula and {chemical_formula, "CaCO[font=default-tiny-bold]3[/font]"} or nil
     data_item[vaterite].subgroup = is_vaterite_zinc
@@ -45,8 +45,9 @@ if mods [paracelsin_mods] then
     data_recipe[zinc_plate_mods].localised_name = data_item[zinc_plate_bob].localised_name
     data_recipe[zinc_plate_mods].category = sintering_6
     data_recipe[zinc_plate_mods].subgroup = is_vaterite_zinc
+    data_recipe[zinc_plate_mods].icons = TWO_I(zinc_powder, zinc_plate_bob)
     data_recipe[zinc_plate_mods].order = c
-    data_recipe[zinc_plate_mods].energy_required = 8
+    data_recipe[zinc_plate_mods].energy_required = 1
     data_recipe[zinc_plate_mods].ingredients = {{type = item, name = zinc_powder, amount = 1}}
     data_recipe[zinc_plate_mods].results = {{type = item, name = zinc_plate_bob, amount = 1}}
     data_recipe[zinc_plate_mods].main_product = zinc_plate_bob
@@ -96,6 +97,7 @@ if mods [paracelsin_mods] then
     data_item[sphalerite_ore].stack_size = 200
     data_resource[sphalerite_ore].subgroup = is_sphalerite
     data_resource[sphalerite_ore].order = a
+    data_resource[sphalerite_ore].minable.mining_time = 4
 
     -- TETRAHEDRITE
     data_item[tetrahedrite_ore].subgroup = is_tetrahedrite
@@ -103,6 +105,7 @@ if mods [paracelsin_mods] then
     data_item[tetrahedrite_ore].stack_size = 200
     data_resource[tetrahedrite_ore].subgroup = is_tetrahedrite
     data_resource[tetrahedrite_ore].order = a
+    data_resource[tetrahedrite_ore].minable.mining_time = 4
 
     -- RECIPE
     local nitrogen_nitric_acid = "nitrogen-nitric-acid"
@@ -370,7 +373,7 @@ if mods [paracelsin_mods] then
     })
 
     -- TECHNOLOGY
-    if mods [asteroid_belt_mods] then
+    if mods[asteroid_belt_mods] then
         table.insert(data_technology[planet_discovery_paracelsin].prerequisites, "space-discovery-asteroid-belt")
     end
     table.insert(data_technology[planet_discovery_paracelsin].effects, {type = unlock_recipe, recipe = nitrogen_from_paracelsin_air})

@@ -1,4 +1,4 @@
-if mods [bobvehicleequipment] then
+if mods[bobvehicleequipment] then
     data_item_subgroup["vehicle-equipment"].order = g_b
 
     local vehicle_belt_immunity_eq = "bob-vehicle-belt-immunity-equipment"
@@ -138,7 +138,7 @@ if mods [bobvehicleequipment] then
     end
     local function vehicle_robot_control_eq_recipe(name, circuit, robot_control_eq)
         local ingredients = {}
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             ingredients =
             {
                 {type = item, name = circuit, amount = 16},
@@ -310,7 +310,7 @@ if mods [bobvehicleequipment] then
             {type = item, name = alien_artifact_green, amount = 16},
             {type = item, name = speed_module_3, amount = 1}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[vehicle_fission_cell_eq_5].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 64},
@@ -349,7 +349,7 @@ if mods [bobvehicleequipment] then
             {type = item, name = tungsten_carbide_plate_bob, amount = 32},
             {type = item, name = speed_module_3, amount = 1}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[vehicle_fission_cell_eq_5].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 64},
@@ -368,7 +368,7 @@ if mods [bobvehicleequipment] then
         end
     end
 
-    if mods [bobmodules] then
+    if mods[bobmodules] then
         data_recipe[vehicle_fission_cell_eq_6].ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 64},
@@ -453,7 +453,7 @@ if mods [bobvehicleequipment] then
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[vehicle_fission_reactor_eq_5].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
@@ -495,7 +495,7 @@ if mods [bobvehicleequipment] then
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[vehicle_fission_reactor_eq_5].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
@@ -516,7 +516,7 @@ if mods [bobvehicleequipment] then
         end
     end
 
-    if mods [bobmodules] then
+    if mods[bobmodules] then
         data_recipe[vehicle_fission_reactor_eq_6].ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 128},
@@ -591,7 +591,7 @@ if mods [bobvehicleequipment] then
     if data_item[alien_artifact] then
         vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_3, processing_unit, alien_artifact, vehicle_energy_shield_eq_2, productivity_module_2)
         vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_4, advanced_processing_unit, nil, vehicle_energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_5, advanced_processing_unit, nil, vehicle_energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_magenta)
             vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_6, advanced_processing_unit, nil, vehicle_energy_shield_eq_5, productivity_module_5, alien_artifact_red, alien_artifact_green)
         else
@@ -601,7 +601,7 @@ if mods [bobvehicleequipment] then
     else
         vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_3, processing_unit, nil, vehicle_energy_shield_eq_2, productivity_module_2)
         vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_4, advanced_processing_unit, nil, vehicle_energy_shield_eq_3, productivity_module_3)
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_5, advanced_processing_unit, nil, vehicle_energy_shield_eq_4, productivity_module_4)
             vehicle_energy_shield_eq_recipe(vehicle_energy_shield_eq_6, advanced_processing_unit, nil, vehicle_energy_shield_eq_5, productivity_module_5)
         else
@@ -721,7 +721,7 @@ if mods [bobvehicleequipment] then
             {type = item,  name = alien_artifact_yellow,      amount = 32},
             {type = fluid, name = deuterium_angels,           amount = 15}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[vehicle_plasma_cannon_eq_4].ingredients =
             {
                 {type = item,  name = battery_graphene,           amount = 32},
@@ -775,7 +775,7 @@ if mods [bobvehicleequipment] then
             {type = item,  name = nitinol_plate_bob,          amount = 64},
             {type = fluid, name = deuterium_angels,           amount = 60}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[vehicle_plasma_cannon_eq_4].ingredients =
             {
                 {type = item,  name = battery_graphene,           amount = 32},
@@ -1239,7 +1239,7 @@ for _, BUILD in pairs(plasma_turrets) do
         end
     end
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     if data_item[alien_artifact] then
         data_recipe[plasma_turret_1].ingredients =
         {
@@ -1271,7 +1271,7 @@ if mods [bobwarfare] then
             {type = item,  name = alien_artifact_yellow,     amount = 64},
             {type = fluid, name = deuterium_angels,          amount = 120}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[plasma_turret_4].ingredients =
             {
                 {type = item,  name = battery_graphene,         amount = 64},
@@ -1325,7 +1325,7 @@ if mods [bobwarfare] then
             {type = item,  name = nitinol_plate_bob,         amount = 64},
             {type = fluid, name = deuterium_angels,          amount = 120}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[plasma_turret_4].ingredients =
             {
                 {type = item,  name = battery_graphene,         amount = 64},
@@ -1384,7 +1384,7 @@ bobmods.lib.recipe.update_recycling_recipe
     plasma_turret_4
 })
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_radar[radar_1].next_upgrade = radar_2
     data_radar[radar_2].next_upgrade = radar_3
     data_radar[radar_3].next_upgrade = radar_4
