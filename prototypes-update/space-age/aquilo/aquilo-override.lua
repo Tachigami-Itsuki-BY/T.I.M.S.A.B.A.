@@ -296,7 +296,7 @@ data_item[fusion_reactor_eq].weight = 125000
 data_recipe[fusion_reactor_eq].subgroup = is_aquilo_war
 data_recipe[fusion_reactor_eq].order = d
 data_recipe[fusion_reactor_eq].energy_required = 32
-if mods [bobequipment] then
+if mods[bobequipment] then
     data_recipe[fusion_reactor_eq].ingredients =
     {
         {type = item, name = fission_reactor_4, amount = 1},
@@ -338,3 +338,72 @@ bobmods.lib.recipe.update_recycling_recipe
     railgun_ammo,
     fusion_reactor_eq
 })
+
+-- TECHNOLOGY
+table.insert(data_technology[planet_discovery_aquilo].prerequisites, tech_advanced_ore_refining_6)
+table.insert(data_technology[planet_discovery_aquilo].prerequisites, tech_water_treatment_6)
+data_technology[planet_discovery_aquilo].effects =
+{
+    {type = unlock_space_location, space_location = planet_aquilo, use_icon_overlay_constant = true},
+    {type = unlock_recipe, recipe = antimonite_asteroid_crushing},
+    {type = unlock_recipe, recipe = germanite_asteroid_crushing},
+    {type = unlock_recipe, recipe = aquilo_air},
+    {type = unlock_recipe, recipe = aquilo_air_separation},
+    {type = unlock_recipe, recipe = nitrogen_trifluoride_gas},
+    {type = unlock_recipe, recipe = nitrogen_trifluoride_liquefied},
+    {type = unlock_recipe, recipe = nitrogen_trifluoride_liquefied_elecrolysis},
+    {type = unlock_recipe, recipe = ammonia_solution_separation},
+    {type = unlock_recipe, recipe = solid_fuel_from_ammonia},
+    {type = unlock_recipe, recipe = ammonia_rocket_fuel},
+    {type = unlock_recipe, recipe = ice_platform}
+}
+
+data_technology[heating_tower].effects = {{type = unlock_recipe, recipe = heating_tower}}
+
+local tech_lithium_processing = "lithium-processing"
+data_technology[tech_lithium_processing].effects =
+{
+    {type = unlock_recipe, recipe = lithium},
+    {type = unlock_recipe, recipe = lithium_plate}
+}
+
+table.insert(data_technology[cryogenic_plant].prerequisites, tech_antimony_smelting_1)
+table.insert(data_technology[cryogenic_plant].prerequisites, tech_germanium_smelting_1)
+data_technology[cryogenic_plant].effects =
+{
+    {type = unlock_recipe, recipe = nitrobenzene_liquid},
+    {type = unlock_recipe, recipe = aniline_liquid},
+    {type = unlock_recipe, recipe = sodium_nitrite},
+    {type = unlock_recipe, recipe = benzenediazonium_chloride_solution},
+    {type = unlock_recipe, recipe = hydrocyanic_acid},
+    {type = unlock_recipe, recipe = lactic_acid},
+    {type = unlock_recipe, recipe = ethanol_from_chloroethane_gas},
+    {type = unlock_recipe, recipe = ethyl_lactate_liquid},
+    {type = unlock_recipe, recipe = photoresist_liquid},
+    {type = unlock_recipe, recipe = semiconductor},
+    {type = unlock_recipe, recipe = cryogenic_plant},
+    {type = unlock_recipe, recipe = hydogen_fluoride_gas},
+    {type = unlock_recipe, recipe = chloroform_liquid},
+    {type = unlock_recipe, recipe = difluorochloromethane_gas},
+    {type = unlock_recipe, recipe = tetrafluoroethylene_gas},
+    {type = unlock_recipe, recipe = hexafluoropropylene_gas},
+    {type = unlock_recipe, recipe = hexafluoropropylene_oxide_gas},
+    {type = unlock_recipe, recipe = fluoroketone_hot},
+    {type = unlock_recipe, recipe = fluoroketone_cold},
+    {type = unlock_recipe, recipe = nitrogen_liquid}
+}
+data_technology[cryogenic_plant].research_trigger =
+{
+    type = craft_item,
+    item = lithium_bob,
+    count = 256
+}
+
+table.insert(data_technology[fusion_reactor].prerequisites, tech_tritium_power)
+table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, recipe = advanced_tritium_fuel_cell_reprocessing})
+
+if mods[bobequipment] then
+    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_4}
+else
+    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_1}
+end

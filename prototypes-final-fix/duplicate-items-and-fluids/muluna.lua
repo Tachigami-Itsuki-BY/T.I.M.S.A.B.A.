@@ -1,4 +1,4 @@
-if mods [muluna_mods] then
+if mods[muluna_mods] then
 	local sapling_muluna = "muluna-sapling"
     local replacements =
     {

@@ -1,4 +1,4 @@
-if mods [bobores] >= "2.1.0" then
+if mods[bobores] >= "2.1.0" then
 	data_item[wolframite_ore].icon = "__space-age__/graphics/icons/tungsten-ore.png"
 	data_item[wolframite_ore].icon_size = 64
 	data_item[wolframite_ore].pictures =
@@ -14,51 +14,9 @@ if mods [bobores] >= "2.1.0" then
 	data_resource[wolframite_ore].stages.sheet.filename = "__space-age__/graphics/entity/tungsten-ore/tungsten-ore.png"
 
     data_recipe[wolframite_crushed].icons = THREE_R_I(wolframite_ore, wolframite_crushed, stone_crushed_angels)
-
-    data_item[ore_saphirite].localised_description = {"item-description.saphirite-ore-new"}
-    data_resource[ore_saphirite].localised_description = {"entity-description.saphirite-ore-new"}
-    data_item[crushed_saphirite].localised_description = {"item-description.saphirite-crushed-new"}
-    data_item[chunk_saphirite].localised_description = {"item-description.saphirite-chunk-new"}
-    data_item[crystal_saphirite].localised_description = {"item-description.saphirite-crystal-new"}
-    data_item[pure_saphirite].localised_description = {"item-description.saphirite-pure-new"}
-
-    data_item[ore_jivolite].localised_description = {"item-description.jivolite-ore-new"}
-    data_resource[ore_jivolite].localised_description = {"entity-description.jivolite-ore-new"}
-    data_item[crushed_jivolite].localised_description = {"item-description.jivolite-crushed-new"}
-    data_item[chunk_jivolite].localised_description = {"item-description.jivolite-chunk-new"}
-    data_item[crystal_jivolite].localised_description = {"item-description.jivolite-crystal-new"}
-    data_item[pure_jivolite].localised_description = {"item-description.jivolite-pure-new"}
-
-    data_item[ore_stiratite].localised_description = {"item-description.stiratite-ore-new"}
-    data_resource[ore_stiratite].localised_description = {"entity-description.stiratite-ore-new"}
-    data_item[crushed_stiratite].localised_description = {"item-description.stiratite-crushed-new"}
-    data_item[chunk_stiratite].localised_description = {"item-description.stiratite-chunk-new"}
-    data_item[crystal_stiratite].localised_description = {"item-description.stiratite-crystal-new"}
-    data_item[pure_stiratite].localised_description = {"item-description.stiratite-pure-new"}
-
-    data_item[molybdenite_ore].localised_description = {"item-description.molybdenite-ore-new"}
-    data_resource[molybdenite_ore].localised_description = {"entity-description.molybdenite-ore-new"}
-    data_item[molybdenite_crushed].localised_description = {"item-description.molybdenite-crushed-new"}
-    data_item[molybdenite_chunks].localised_description = {"item-description.molybdenite-chunks-new"}
-    data_item[molybdenite_crystals].localised_description = {"item-description.molybdenite-crystals-new"}
-    data_item[molybdenite_purified].localised_description = {"item-description.molybdenite-purified-new"}
-
-    data_item[powellite_ore].localised_description = {"item-description.powellite-ore-new"}
-    data_resource[powellite_ore].localised_description = {"entity-description.powellite-ore-new"}
-    data_item[powellite_crushed].localised_description = {"item-description.powellite-crushed-new"}
-    data_item[powellite_chunks].localised_description = {"item-description.powellite-chunks-new"}
-    data_item[powellite_crystals].localised_description = {"item-description.powellite-crystals-new"}
-    data_item[powellite_purified].localised_description = {"item-description.powellite-purified-new"}
-
-    data_item[wolframite_ore].localised_description = {"item-description.wolframite-ore-new"}
-    data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore-new"}
-    data_item[wolframite_crushed].localised_description = {"item-description.wolframite-crushed-new"}
-    data_item[wolframite_chunks].localised_description = {"item-description.wolframite-chunk-new"}
-    data_item[wolframite_crystals].localised_description = {"item-description.wolframite-crystal-new"}
-    data_item[wolframite_purified].localised_description = {"item-description.wolframite-pure-new"}
 end
 
-if mods [bobplates] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" then
     data_item[cobalt_steel_gear_wheel].hidden = false
     data_item[cobalt_steel_gear_wheel].hidden_in_factoriopedia = false
     data_item[cobalt_steel_gear_wheel].localised_name = {"item-name.bob-cobalt-steel-gear-wheel"}
@@ -123,7 +81,7 @@ if mods [bobplates] >= "2.1.0" then
     data_item[brass_bearing_ball] = nil
     data_recipe[brass_bearing_ball] = nil
     data_recipe[brass_bearing_ball .. _recycling] = nil
-    if mods [panglia_mods] then
+    if mods[panglia_mods] then
         data_recipe[item_ .. brass_bearing_ball .. _panglia_crushing] = nil
     end
 
@@ -199,14 +157,14 @@ if mods [bobplates] >= "2.1.0" then
     data_recipe[lithium_plate].category = smelting
 end
 
-if mods [boblogistics] >= "2.1.0" then
+if mods[boblogistics] >= "2.1.0" then
     data_technology[tech_logistics_4].effects =
     {
         {type = unlock_recipe, recipe = T4_transport_belt},
         {type = unlock_recipe, recipe = T4_underground_belt},
         {type = unlock_recipe, recipe = T4_splitter}
     }
-    if mods [loaders_modernized_integrations] and settings.startup["mdrn-unlock-technology"].allowed_values == "belt" then
+    if mods[loaders_modernized_integrations] and settings.startup["mdrn-unlock-technology"].allowed_values == "belt" then
         table.insert(data_technology[tech_logistics_4].effects, {type = unlock_recipe, recipe = T4_loader})
     end
 
@@ -242,7 +200,7 @@ if mods [boblogistics] >= "2.1.0" then
         {type = unlock_recipe, recipe = vulcanus_splitter}
     }
 
-    if mods [reskins_bobs] then
+    if mods[reskins_bobs] then
         local reskin_vanilla_entity = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
         local make_tier_labels = reskins.lib.settings.get_value("reskins-bobs-do-belt-entity-tier-labeling") and true or false
         -- TRANSPORT BELTS
@@ -276,7 +234,7 @@ if mods [boblogistics] >= "2.1.0" then
         end
     end
 
-    if mods [prismatic_belts] then
+    if mods[prismatic_belts] then
         local api_timsaba = require("lib.api")
         local sprite_utils =
         {
@@ -357,7 +315,7 @@ if mods [boblogistics] >= "2.1.0" then
     data_item[aluminium_pipe] = nil
     data_recipe[aluminium_pipe] = nil
     data_recipe[aluminium_pipe .. _recycling] = nil
-    if mods [panglia_mods] then
+    if mods[panglia_mods] then
         data_recipe[item_ .. aluminium_pipe .. _panglia_crushing] = nil
     end
     data_pipe[aluminium_pipe] = nil
@@ -366,7 +324,7 @@ if mods [boblogistics] >= "2.1.0" then
     data_item[aluminium_pipe_to_ground] = nil
     data_recipe[aluminium_pipe_to_ground] = nil
     data_recipe[aluminium_pipe_to_ground .. _recycling] = nil
-    if mods [panglia_mods] then
+    if mods[panglia_mods] then
         data_recipe[item_ .. aluminium_pipe_to_ground .. _panglia_crushing] = nil
     end
     data_pipe_to_ground[aluminium_pipe_to_ground] = nil
@@ -385,7 +343,7 @@ if mods [boblogistics] >= "2.1.0" then
 end
 
 -- FIXED ALL TECHNOLOGIES
-if mods [bobplates] >= "2.1.0" and mods [boblogistics] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" and mods[boblogistics] >= "2.1.0" then
     -- === ТОЧЕЧНЫЙ ФИКС ДЛЯ bob-battery-3 ===
     local target_tech = data_technology[tech_battery_3]
     if target_tech then

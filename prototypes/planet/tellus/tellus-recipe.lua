@@ -1,4 +1,4 @@
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     TIMSABA.functions.create_recipes
     ({
         {

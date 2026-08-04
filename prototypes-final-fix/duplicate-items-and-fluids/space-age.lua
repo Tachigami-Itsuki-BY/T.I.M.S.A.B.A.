@@ -14,25 +14,26 @@ local replacements =
 }
 TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
-data_item[lithium] = nil
-data_recipe[lithium .. _recycling] = nil
-
-data_item[lithium_plate] = nil
-data_recipe[lithium_plate .. _recycling] = nil
+local mod_items =
+{
+	lithium,
+	lithium_plate,
+	carbon,
+	tungsten_plate,
+	tungsten_carbide
+}
+for _, name in ipairs(mod_items) do
+	data_item[name] = nil
+	data_recipe[name .. _recycling] = nil
+	if mods[panglia_mods] then
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
+	end
+end
 
 data_fluid[ammonia] = nil
 data_fluid[lithium_brine] = nil
 data_fluid[heavy_oil] = nil
 data_fluid[sulfuric_acid] = nil
-
-data_item[carbon] = nil
-data_recipe[carbon .. _recycling] = nil
-
-data_item[tungsten_plate] = nil
-data_recipe[tungsten_plate .. _recycling] = nil
-
-data_item[tungsten_carbide] = nil
-data_recipe[tungsten_carbide .. _recycling] = nil
 
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil
@@ -50,7 +51,7 @@ local replacements_2 =
 	[fluoroketone] = fluoroketone_hot,
 	[fluoroketone_cooling] = fluoroketone_cold
 }
-for _, technology in pairs(data.raw.technology or {}) do
+for _, technology in pairs(data_technology or {}) do
 	if technology.effects then
 		for _, effect in pairs(technology.effects) do
 			if effect.type == unlock_recipe then
@@ -65,7 +66,7 @@ end
 data_recipe[fluoroketone] = nil
 data_recipe[fluoroketone_cooling] = nil
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
 	if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
 		for i = #Muluna.constants.cargo_drop_spawn_imports, 1, -1 do
 			local path = Muluna.constants.cargo_drop_spawn_imports[i]

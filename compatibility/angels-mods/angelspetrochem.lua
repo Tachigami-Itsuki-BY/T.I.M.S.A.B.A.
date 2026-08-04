@@ -1,4 +1,4 @@
-if mods [angelspetrochem] >= "2.0.2" then
+if mods[angelspetrochem] >= "2.0.2" then
     TIMSABA.functions.create_fluids
     ({
         {

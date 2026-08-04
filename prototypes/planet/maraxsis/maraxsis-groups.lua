@@ -1,4 +1,4 @@
-if mods [maraxsis_mods] then
+if mods[maraxsis_mods] then
     local maraxsis = "maraxsis"
     is_maraxsis_ore = "maraxsis-ore"
     is_maraxsis_new_recipe = "maraxsis-new-recipe"

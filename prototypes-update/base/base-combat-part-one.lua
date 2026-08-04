@@ -14,7 +14,7 @@ data_recipe[submachine_gun].ingredients =
 
 local rifle = "bob-rifle"
 local sniper_rifel = "bob-sniper-rifle"
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_gun[rifle].stack_size = 1
     data_gun[rifle].weight = 1000000
     data_recipe[rifle].energy_required = 1
@@ -133,7 +133,7 @@ data_recipe[piercing_shotgun_shell].ingredients =
 }
 data_recipe[piercing_shotgun_shell].results[1].amount = 2
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_recipe[uranium_shotgun_shell].energy_required = 2
     data_recipe[uranium_shotgun_shell].ingredients =
     {
@@ -145,7 +145,7 @@ if mods [bobwarfare] then
 end
 
 local laser = "bob-laser-rifle"
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_gun[laser].subgroup = is_laser
     data_gun[laser].order = a
     data_gun[laser].stack_size = 1
@@ -237,7 +237,7 @@ data_recipe[atomic_rocket].ingredients =
 
 data_recipe[atomic_rocket_2].order = d_a
 data_recipe[atomic_rocket_2].energy_required = 32
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[atomic_rocket_2].icons = R_P_I(atomic_rocket, plutonium_239_shattered, nil, number_2)
     data_recipe[atomic_rocket_2].ingredients =
     {
@@ -329,10 +329,10 @@ data_recipe[artillery_shell].ingredients =
     {type = item, name = calcite, amount = 1}
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_ammo[atomic_artillery_shell].stack_size = 32
     data_ammo[atomic_artillery_shell].weight = 31250
-    if mods [shattered_mods] then
+    if mods[shattered_mods] then
         data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_shattered)
     else
         data_recipe[atomic_artillery_shell].icons = R_P_I(atomic_artillery_shell, nil, plutonium_239_bob)
@@ -348,7 +348,7 @@ if mods [bobwarfare] then
 end
 
 local is_ammo_parts = "bob-ammo-parts"
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_item_subgroup[is_ammo_parts].group = "combat"
     data_item_subgroup[is_ammo_parts].order = b_a
 end
@@ -383,7 +383,7 @@ for _, ITEM in pairs(ammo_parts) do
         data_recipe[ITEM.name].order = ITEM.order
     end
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_item[petroleum_jelly].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]32[/font]H[font=default-tiny-bold]66[/font]"} or nil
     data_recipe[petroleum_jelly].icons = TWO_D_I(hydrogen_angels, carbon_monoxide_angels, petroleum_jelly, steam)
     data_recipe[petroleum_jelly].energy_required = 8 -- (2n+1)H₂ + nCO --> CₙH₍₂ₙ₊₂₎ + nH₂O (n = 32) petroleum_jelly (18-35)
@@ -472,7 +472,7 @@ for _, ITEM in pairs(bullet_projectiles) do
         data_recipe[ITEM.name].results[1].amount = 2
     end
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_recipe[bullet_plasma_projectile].ingredients =
     {
         {type = item, name = copper_plate, amount = 1},
@@ -581,7 +581,7 @@ for _, AMMO in pairs(ammo_shotguns) do
         data_recipe[AMMO.name].results[1].amount = 1
     end
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_recipe[shotgun_shell_plasma].ingredients =
     {
         {type = item, name = cordite, amount = 32},
@@ -626,7 +626,7 @@ for _, ITEM in pairs(rocket_warheads) do
         data_recipe[ITEM.name].results[1].amount = 1
     end
 end
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_recipe[rocket_plasma_warhead].ingredients =
     {
         {type = item, name = steel_plate, amount = 1},
@@ -693,7 +693,7 @@ data_recipe[cluster_grenade].ingredients =
     {type = item, name = explosives, amount = 4}
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_capsule[fire_capsule].capsule_action.attack_parameters.range = 24
     data_projectile[fire_capsule].action[1].cluster_count = 8
     data_recipe[fire_capsule].ingredients =
@@ -730,7 +730,7 @@ data_combat_robot[distractor].subgroup = is_combat_robots_entites
 data_combat_robot[distractor].order = b
 data_combat_robot[destroyer].subgroup = is_combat_robots_entites
 data_combat_robot[destroyer].order = c
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_combat_robot[laser_robot].subgroup = is_combat_robots_entites
     data_combat_robot[laser_robot].order = d
 end
@@ -777,7 +777,7 @@ data_capsule[destroyer_capsule].capsule_action.attack_parameters.range = 24
 --[destroyer_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
 data_recipe[destroyer_capsule].ingredients[1].amount = 4
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_capsule[laser_robot_capsule].capsule_action.attack_parameters.range = 24
     --[laser_robot_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
     data_recipe[laser_robot_capsule].ingredients[1].amount = 4
@@ -894,7 +894,7 @@ data_recipe[power_armor_2].ingredients =
     {type = item, name = efficiency_module_1, amount = 128}
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_recipe[power_armor_3].energy_required = 32
     if data_item[alien_artifact] then
         data_recipe[power_armor_3].ingredients =
@@ -922,7 +922,7 @@ if mods [bobwarfare] then
 
     data_recipe[power_armor_4].energy_required = 32
     if data_item[alien_artifact] then
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[power_armor_4].ingredients =
             {
                 {type = item, name = low_density_structure, amount = 4},
@@ -948,7 +948,7 @@ if mods [bobwarfare] then
             }
         end
     else
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[power_armor_4].ingredients =
             {
                 {type = item, name = low_density_structure, amount = 4},
@@ -973,7 +973,7 @@ if mods [bobwarfare] then
 
     data_recipe[power_armor_5].energy_required = 32
     if data_item[alien_artifact] then
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[power_armor_5].ingredients =
             {
                 {type = item, name = mech_armor_plate, amount = 4},
@@ -999,7 +999,7 @@ if mods [bobwarfare] then
             }
         end
     else
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[power_armor_5].ingredients =
             {
                 {type = item, name = mech_armor_plate, amount = 4},
@@ -1060,7 +1060,7 @@ local function solar_panel_eq_recipe(name, circuit, plate_1, plate_2, cable, sol
     data_recipe[name].ingredients = ingredients
 end
 solar_panel_eq_recipe(solar_panel_eq_1, electronic_circuit, copper_plate, steel_plate, copper_cable, nil, glass_bob)
-if mods [bobequipment] then
+if mods[bobequipment] then
     solar_panel_eq_recipe(solar_panel_eq_2, advanced_circuit, aluminium_plate_bob, silver_plate_bob, tin_cable, solar_panel_eq_1)
     solar_panel_eq_recipe(solar_panel_eq_3, processing_unit, gold_plate_bob, titanium_plate_bob, gold_cable, solar_panel_eq_2)
     if data_item[alien_artifact] then
@@ -1096,7 +1096,7 @@ data_recipe[fission_reactor_1].ingredients =
     {type = item, name = steel_plate, amount = 256},
     {type = fluid, name = water_semiheavy_3, amount = 60, maximum_temperature = 30}
 }
-if mods [bobequipment] then
+if mods[bobequipment] then
     if data_item[alien_artifact] then
         data_recipe[fission_reactor_2].ingredients =
         {
@@ -1108,7 +1108,7 @@ if mods [bobequipment] then
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[fission_reactor_3].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
@@ -1165,7 +1165,7 @@ if mods [bobequipment] then
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             data_recipe[fission_reactor_3].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
@@ -1243,7 +1243,7 @@ end
 battery_eq_recipe(battery_eq_1, battery_lead_acid, electronic_circuit)
 battery_eq_recipe(battery_eq_2, battery_eq_1, advanced_circuit)
 battery_eq_recipe(battery_eq_3, battery_eq_2, battery_lithium_ion)
-if mods [bobequipment] then
+if mods[bobequipment] then
     if data_item[alien_artifact] then
         battery_eq_recipe(battery_eq_4, battery_eq_3, processing_unit, alien_artifact_orange, alien_artifact_blue)
         battery_eq_recipe(battery_eq_5, battery_eq_4, battery_silver_zinc, alien_artifact_yellow, alien_artifact_magenta)
@@ -1302,7 +1302,7 @@ local function exoskeleton_eq_recipe(name, gear_wheel, bearing, circuit, exoskel
     data_recipe[name].ingredients = ingredients
 end
 exoskeleton_eq_recipe(exoskeleton_eq_1, steel_gear_wheel, steel_bearing, advanced_circuit, electric_engine_unit, steel_plate)
-if mods [bobequipment] then
+if mods[bobequipment] then
     if data_item[alien_artifact] then
         exoskeleton_eq_recipe(exoskeleton_eq_2, cobalt_steel_gear_wheel, cobalt_steel_bearing, processing_unit, exoskeleton_eq_1, invar_plate_bob, alien_artifact, speed_module_2)
         exoskeleton_eq_recipe(exoskeleton_eq_3, titanium_gear_wheel, titanium_bearing, advanced_processing_unit, exoskeleton_eq_2, titanium_plate_bob, blue_alloy, speed_module_3)
@@ -1357,7 +1357,7 @@ local function nightvision_eq_recipe(name, circuit, plate, glass, nightvision, a
     data_recipe[name].ingredients = ingredients
 end
 nightvision_eq_recipe(nightvision_eq_1, electronic_circuit, steel_plate, glass_bob)
-if mods [bobequipment] then
+if mods[bobequipment] then
     nightvision_eq_recipe(nightvision_eq_2, processing_unit, silver_plate_bob, glass_bob, nightvision_eq_1)
     if data_item[alien_artifact] then
         nightvision_eq_recipe(nightvision_eq_3, advanced_processing_unit, titanium_plate_bob, polished_diamond_bob, nightvision_eq_2, alien_artifact)
@@ -1366,7 +1366,7 @@ if mods [bobequipment] then
     end
 end
 
-if mods [bobequipment] then
+if mods[bobequipment] then
     local roboport_area_eq_1 = "bob-personal-roboport-antenna-equipment"
     local roboport_area_eq_2 = "bob-personal-roboport-antenna-equipment-2"
     local roboport_area_eq_3 = "bob-personal-roboport-antenna-equipment-3"
@@ -1456,7 +1456,7 @@ if mods [bobequipment] then
     end
     local function robot_control_eq_recipe(name, circuit, robot_control_eq)
         local ingredients = {}
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             ingredients =
             {
                 {type = item, name = circuit, amount = 8},
@@ -1532,7 +1532,7 @@ local function roboport_eq_recipe(name, antenna, door, chargepad, plate, robopor
     end
     data_recipe[name].ingredients = ingredients
 end
-if mods [bobequipment] then
+if mods[bobequipment] then
     roboport_eq_recipe(roboport_eq_1, roboport_antenna_1, roboport_door_1, roboport_chargepad_1, steel_plate)
     roboport_eq_recipe(roboport_eq_2, roboport_antenna_2, roboport_door_2, roboport_chargepad_2, aluminium_plate_bob, roboport_eq_1)
     roboport_eq_recipe(roboport_eq_3, roboport_antenna_3, roboport_door_3, roboport_chargepad_3, titanium_plate_bob, roboport_eq_2)
@@ -1592,11 +1592,11 @@ local function energy_shield_eq_recipe(name, circuit, plate, energy_shield_eq, m
 end
 energy_shield_eq_recipe(energy_shield_eq_1, electronic_circuit, steel_plate)
 energy_shield_eq_recipe(energy_shield_eq_2, advanced_circuit, aluminium_plate_bob, energy_shield_eq_1, productivity_module_1)
-if mods [bobequipment] then
+if mods[bobequipment] then
     if data_item[alien_artifact] then
         energy_shield_eq_recipe(energy_shield_eq_3, processing_unit, alien_artifact, energy_shield_eq_2, productivity_module_2)
         energy_shield_eq_recipe(energy_shield_eq_4, advanced_processing_unit, nil, energy_shield_eq_3, productivity_module_3, alien_artifact_orange, alien_artifact_blue)
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_4, alien_artifact_yellow, alien_artifact_magenta)
             energy_shield_eq_recipe(energy_shield_eq_6, advanced_processing_unit, nil, energy_shield_eq_5, productivity_module_5, alien_artifact_red, alien_artifact_green)
         else
@@ -1606,7 +1606,7 @@ if mods [bobequipment] then
     else
         energy_shield_eq_recipe(energy_shield_eq_3, processing_unit, nil, energy_shield_eq_2, productivity_module_2)
         energy_shield_eq_recipe(energy_shield_eq_4, advanced_processing_unit, nil, energy_shield_eq_3, productivity_module_3)
-        if mods [bobmodules] then
+        if mods[bobmodules] then
             energy_shield_eq_recipe(energy_shield_eq_5, advanced_processing_unit, nil, energy_shield_eq_4, productivity_module_4)
             energy_shield_eq_recipe(energy_shield_eq_6, advanced_processing_unit, nil, energy_shield_eq_5, productivity_module_5)
         else
@@ -1665,7 +1665,7 @@ local function laser_defense_eq_recipe(name, battery, circuit, plate, laser_defe
     data_recipe[name].ingredients = ingredients
 end
 laser_defense_eq_recipe(laser_defense_eq_1, battery_lead_acid, electronic_circuit, steel_plate)
-if mods [bobequipment] then
+if mods[bobequipment] then
     laser_defense_eq_recipe(laser_defense_eq_2, battery_lead_acid, advanced_circuit, plastic, laser_defense_eq_1, polished_sapphire_bob)
     laser_defense_eq_recipe(laser_defense_eq_3, battery_lithium_ion, advanced_circuit, invar_plate_bob, laser_defense_eq_2, polished_emerald_bob)
     laser_defense_eq_recipe(laser_defense_eq_4, battery_silver_zinc, processing_unit, titanium_plate_bob, laser_defense_eq_3, polished_amethyst_bob)

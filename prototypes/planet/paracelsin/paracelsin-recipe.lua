@@ -1,10 +1,10 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
+    -- AIR
     nitrogen_from_paracelsin_air = "nitrogen-from-paracelsin-air"
-    zinc_powder_paracelsin = "zinc-powder-paracelsin"
     TIMSABA.functions.create_recipes
     ({
-        -- AIR
         {
+            localised_name = {"fluid-name." .. nitrogen_angels},
             name = nitrogen_from_paracelsin_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_paracelsin_air,
@@ -15,10 +15,15 @@ if mods [paracelsin_mods] then
             results = {{type = fluid, name = nitrogen_angels, amount = 240}},
             main_product = nitrogen_angels,
             surface_conditions = {{property = pressure, min = 5300, max = 5300}}
-        },
-        -- ZINC
+        }
+    })
+
+    -- ZINC
+    zinc_powder_paracelsin = "zinc-powder-paracelsin"
+    TIMSABA.functions.create_recipes
+    ({
         {
-            localised_name = data_item[zinc_powder].localised_name,
+            localised_name = {"item-name." .. zinc_powder},
             name = zinc_powder_paracelsin,
             category = powderizing_4,
             subgroup = is_vaterite_zinc,

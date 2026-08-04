@@ -1,4 +1,4 @@
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     local icons_pipe =
     {
         {name = orange_pipe, icon = "__TIMSABA__/graphics/icons/tellus/orange-pipe.png"},

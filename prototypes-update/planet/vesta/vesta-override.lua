@@ -1,6 +1,6 @@
 -- [font=default-tiny-bold][/font]
 
-if mods [vesta_mods] then
+if mods[vesta_mods] then
     local vesta_magnetic_pipe = "ske_magnetic_pipe"
     data_item[vesta_magnetic_pipe].subgroup = is_vesta_logistics
     data_item[vesta_magnetic_pipe].order = a

@@ -1,4 +1,4 @@
-if mods [vesta_mods] then
+if mods[vesta_mods] then
     local replacements =
     {
         [hydrogen_vesta] = hydrogen_angels,

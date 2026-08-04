@@ -1,4 +1,4 @@
-if mods [cubium_mods] then
+if mods[cubium_mods] then
     data:extend
     ({
         {

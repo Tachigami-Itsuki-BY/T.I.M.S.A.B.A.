@@ -1,4 +1,4 @@
-if mods [nexus_mods] then
+if mods[nexus_mods] then
     local nexus = "nexus"
     is_nexus_science_pack = "nexus-science-pack"
     data:extend

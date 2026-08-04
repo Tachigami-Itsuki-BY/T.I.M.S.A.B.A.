@@ -1,11 +1,11 @@
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     local ig_tellus = "tellus"
     data:extend
     ({
         {
             type = item_group,
             name = ig_tellus,
-            order = x_h,
+            order = x_i,
             icon = "__TIMSABA__/graphics/icons/tellus/tellus-planet.png",
             icon_size = 128
         }

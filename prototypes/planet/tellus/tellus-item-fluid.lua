@@ -1,4 +1,4 @@
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     if settings.startup[setting_dye_secondary_color].value then
         orange_dye = "orange-dye"
         black_dye = "black-dye"

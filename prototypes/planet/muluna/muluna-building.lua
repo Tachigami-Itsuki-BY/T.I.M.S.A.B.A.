@@ -1,4 +1,4 @@
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     lumber_mill = "lumber-mill-muluna"
     data:extend
     ({

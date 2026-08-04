@@ -1,4 +1,4 @@
-if mods [bobores] >= "2.1.0" then
+if mods[bobores] >= "2.1.0" then
     local icon_tungsten_ore = "__TIMSABA__/graphics/icons/angels/metallurgy/tungsten/bob-tungsten-ore"
     TIMSABA.functions.create_items
     ({

@@ -1,4 +1,4 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     -- PLATINUM
     data_resource[platinum_ore_mods].localised_description = show_formula and {chemical_formula, "Pt"} or nil
     data_resource[platinum_ore_mods].subgroup = is_corrundum_platinum
@@ -13,6 +13,7 @@ if mods [corrundum_mods] then
     data_recipe[platinum_plate_mods].subgroup = is_corrundum_platinum
     data_recipe[platinum_plate_mods].icons = TWO_I(platinum_powder, platinum_plate)
     data_recipe[platinum_plate_mods].order = c
+    data_recipe[platinum_plate_mods].energy_required = 1
     data_recipe[platinum_plate_mods].ingredients = {{type = item, name = platinum_powder, amount = 1}}
     data_recipe[platinum_plate_mods].results = {{type = item, name = platinum_plate, amount = 1}}
     data_recipe[platinum_plate_mods].main_product = platinum_plate
@@ -566,6 +567,40 @@ if mods [corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
+    data_technology["asphalt-and-concrete"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[calcium_sulfate_mods.. "-" .. nutrients].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1}
+    }
+
+    data_technology[pressure_lab].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
     data_technology[sulfonated_plastic].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -577,8 +612,7 @@ if mods [corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
-    local tech_asphalt_and_concrete = "asphalt-and-concrete"
-    data_technology[tech_asphalt_and_concrete].unit.ingredients =
+    data_technology[blue_rocket].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -590,6 +624,28 @@ if mods [corrundum_mods] then
     }
 
     data_technology[dry_ice].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[platinum_thruster].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1}
+    }
+
+    data_technology[sulfur_poison_capsule].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},

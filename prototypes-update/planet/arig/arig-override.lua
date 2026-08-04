@@ -1,4 +1,4 @@
-if mods [arig_mods] then
+if mods[arig_mods] then
     local simulations = require("prototypes.factoriopedia-simulations")
     -- CACTUS
     data_capsule[cactus_arig].subgroup = is_cactus
@@ -11,7 +11,7 @@ if mods [arig_mods] then
     data_item[cactus_seeds].stack_size = 200
 
 
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         local cactus_mash = "planetaris-cactus-mash"
         data_item[cactus_mash].subgroup = is_cactus
         data_item[cactus_mash].order = c
@@ -221,7 +221,7 @@ if mods [arig_mods] then
     }
     data_recipe[raw_quartz_arig].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         advanced_raw_quartz = "planetaris-advanced-raw-quartz"
         data_recipe[advanced_raw_quartz].subgroup = is_arig_recipe
         data_recipe[advanced_raw_quartz].icons = TWO_I(sandstone_brick, raw_quartz_arig, number_2)
@@ -414,7 +414,7 @@ if mods [arig_mods] then
     }
     data_splitter[hyper_splitter_arig].speed = 16/60
 
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         data_item[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
         data_item[hyper_transport_belt_arig].order = b
         data_recipe[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
@@ -599,78 +599,74 @@ if mods [arig_mods] then
         condensing_agricultural_tower
     })
 
-    -- WATER RECIPE
+    -- PLANETS
     local nauvis_water_harvesting = "planetaris-nauvis-water-harvesting"
     data_recipe[nauvis_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.nauvis"}}
-    data_recipe[nauvis_water_harvesting].subgroup = is_arig_water
+    data_recipe[nauvis_water_harvesting].subgroup = is_arig_water_planets
     data_recipe[nauvis_water_harvesting].icons = BUILDING_R_I(water, planet_nauvis)
-    data_recipe[nauvis_water_harvesting].order = a
+    data_recipe[nauvis_water_harvesting].order = data_planet[planet_nauvis].order
     data_recipe[nauvis_water_harvesting].energy_required = 16
     data_recipe[nauvis_water_harvesting].results[1].amount = 240
 
     local vulcanus_water_harvesting = "planetaris-vulcanus-water-harvesting"
     data_recipe[vulcanus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.vulcanus"}}
-    data_recipe[vulcanus_water_harvesting].subgroup = is_arig_water
+    data_recipe[vulcanus_water_harvesting].subgroup = is_arig_water_planets
     data_recipe[vulcanus_water_harvesting].icons = BUILDING_R_I(water, planet_vulcanus)
-    data_recipe[vulcanus_water_harvesting].order = a_a
+    data_recipe[vulcanus_water_harvesting].order = data_planet[planet_vulcanus].order
     data_recipe[vulcanus_water_harvesting].energy_required = 16
     data_recipe[vulcanus_water_harvesting].results[1].amount = 15
 
     local gleba_water_harvesting = "planetaris-gleba-water-harvesting"
     data_recipe[gleba_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.gleba"}}
-    data_recipe[gleba_water_harvesting].subgroup = is_arig_water
+    data_recipe[gleba_water_harvesting].subgroup = is_arig_water_planets
     data_recipe[gleba_water_harvesting].icons = BUILDING_R_I(water, planet_gleba)
-    data_recipe[gleba_water_harvesting].order = a_b
+    data_recipe[gleba_water_harvesting].order = data_planet[planet_gleba].order
     data_recipe[gleba_water_harvesting].energy_required = 16
     data_recipe[gleba_water_harvesting].results[1].amount = 480
 
     local fulgora_water_harvesting = "planetaris-fulgora-water-harvesting"
     data_recipe[fulgora_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.fulgora"}}
-    data_recipe[fulgora_water_harvesting].subgroup = is_arig_water
+    data_recipe[fulgora_water_harvesting].subgroup = is_arig_water_planets
     data_recipe[fulgora_water_harvesting].icons = BUILDING_R_I(water, planet_fulgora)
-    data_recipe[fulgora_water_harvesting].order = a_c
+    data_recipe[fulgora_water_harvesting].order = data_planet[planet_fulgora].order
     data_recipe[fulgora_water_harvesting].energy_required = 16
     data_recipe[fulgora_water_harvesting].results[1].amount = 120
 
     local aquilo_water_harvesting = "planetaris-aquilo-water-harvesting"
     data_recipe[aquilo_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.aquilo"}}
-    data_recipe[aquilo_water_harvesting].subgroup = is_arig_water
+    data_recipe[aquilo_water_harvesting].subgroup = is_arig_water_planets
     data_recipe[aquilo_water_harvesting].icons = BUILDING_R_I(water, planet_aquilo)
-    data_recipe[aquilo_water_harvesting].order = a_d
+    data_recipe[aquilo_water_harvesting].order = data_planet[planet_aquilo].order
     data_recipe[aquilo_water_harvesting].energy_required = 16
     data_recipe[aquilo_water_harvesting].results[1].amount = 120
 
-    -- a_e moshine_water_harvesting
-
     local arig_water_harvesting = "planetaris-water-harvesting"
     data_recipe[arig_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.arig"}}
-    data_recipe[arig_water_harvesting].subgroup = is_arig_water
+    data_recipe[arig_water_harvesting].subgroup = is_arig_water_planets
     data_recipe[arig_water_harvesting].icons = BUILDING_R_I(water, planet_arig)
-    data_recipe[arig_water_harvesting].order = a_f
+    data_recipe[arig_water_harvesting].order = data_planet[planet_arig].order
     data_recipe[arig_water_harvesting].energy_required = 16
     data_recipe[arig_water_harvesting].results[1].amount = 30
 
     local hyarion_water_harvesting = "planetaris-hyarion-water-harvesting"
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         data_recipe[hyarion_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.hyarion"}}
-        data_recipe[hyarion_water_harvesting].subgroup = is_arig_water
+        data_recipe[hyarion_water_harvesting].subgroup = is_arig_water_planets
         data_recipe[hyarion_water_harvesting].icons = BUILDING_R_I(water, planet_hyarion)
-        data_recipe[hyarion_water_harvesting].order = a_g
+        data_recipe[hyarion_water_harvesting].order = data_planet[planet_hyarion].order
         data_recipe[hyarion_water_harvesting].energy_required = 16
         data_recipe[hyarion_water_harvesting].results[1].amount = 15
     end
 
     local tellus_water_harvesting = "planetaris-tellus-water-harvesting"
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         data_recipe[tellus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.tellus"}}
-        data_recipe[tellus_water_harvesting].subgroup = is_arig_water
+        data_recipe[tellus_water_harvesting].subgroup = is_arig_water_planets
         data_recipe[tellus_water_harvesting].icons = BUILDING_R_I(water_infected, planet_tellus)
-        data_recipe[tellus_water_harvesting].order = a_h
+        data_recipe[tellus_water_harvesting].order = data_planet[planet_tellus].order
         data_recipe[tellus_water_harvesting].energy_required = 16
         data_recipe[tellus_water_harvesting].results[1].amount = 480
     end
-
-    -- b_a panglia_water_harvesting
 
     -- TECHNOLOGY
     local planet_discovery_arig = "planet-discovery-arig"
@@ -700,7 +696,7 @@ if mods [arig_mods] then
         {metallurgic_science_pack, 1},
         {compression_science_pack, 1}
     }
-    if mods [bobtech] then
+    if mods[bobtech] then
         table.insert(data_technology[arig_roboport].unit.ingredients, {transport_science_pack, 1})
     end
 
@@ -716,7 +712,7 @@ if mods [arig_mods] then
         {metallurgic_science_pack, 1},
         {compression_science_pack, 1}
     }
-    if mods [bobtech] then
+    if mods[bobtech] then
         table.insert(data_technology[hyper_transport_belt_arig].unit.ingredients, {transport_science_pack, 1})
     end
 
@@ -790,24 +786,27 @@ if mods [arig_mods] then
         {type = unlock_recipe, recipe = fulgora_water_harvesting},
         {type = unlock_recipe, recipe = aquilo_water_harvesting}
     }
-    if mods [moshine_mods] then
+    if mods[moshine_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = moshine_water_harvesting})
     end
     table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = arig_water_harvesting})
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = hyarion_water_harvesting})
     end
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = tellus_water_harvesting})
     end
-    if mods [paracelsin_mods] then
+    if mods[paracelsin_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = paracelsin_water_harvesting})
     end
-    if mods [corrundum_mods] then
+    if mods[corrundum_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = corrundum_water_harvesting})
     end
-    if mods [panglia_mods] then
+    if mods[panglia_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = panglia_water_harvesting})
+    end
+    if mods[secretas_frozeta_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = frozeta_water_harvesting})
     end
     data_technology[arig_water_harvesting].unit.ingredients =
     {

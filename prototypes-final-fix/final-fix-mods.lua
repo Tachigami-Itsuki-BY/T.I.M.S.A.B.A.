@@ -1,5 +1,5 @@
 -- COMBAT
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_recipe["bob-gun-cotton"].ingredients =
     {
         {type = item, name = cellulose_fiber_angels, amount = 4},
@@ -44,7 +44,7 @@ for recipe_name, _ in pairs(data_recipe) do
     end
 end
 
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     for recipe_name, _ in pairs(data_recipe) do
         if string.find(recipe_name, "dormant%-panglia_crushing") then
             data_recipe[recipe_name] = nil
@@ -74,7 +74,7 @@ data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
 data_resource[ore_saphirite].icon_size = data_item[ore_saphirite].icon_size
 
 -- BOBS FIX
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_fluid[nitroglycerin_bob].subgroup = is_explosives
     data_fluid[nitroglycerin_bob].order = d
     data_recipe[nitroglycerin_bob].subgroup = is_explosives
@@ -90,7 +90,7 @@ end
 data_recipe[lithium_perchlorate_bob].category = angels_liquifying
 
 -- NUCLEAR FIX
-if not mods [shattered_mods] then
+if not mods[shattered_mods] then
     data_recipe["angels-plutonium-239-recycling"] = nil
     data_recipe["angels-thorium-232-recycling"] = nil
 end
@@ -108,7 +108,7 @@ data_armor[mech_armor].resistances =
     {type = "electric", decrease = 15, percent = 50}
 }
 
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     table.insert(data_armor[mech_armor].resistances, {type = "bob-pierce", percent = 45})
     table.insert(data_armor[mech_armor].resistances, {type = "bob-plasma", percent = 100})
 end
@@ -122,7 +122,7 @@ data_technology[tech_rocket_part_productivity].effects =
 table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
 
 -- MULUNA
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     -- ROCKET PART
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
 
@@ -219,7 +219,7 @@ if mods [muluna_mods] then
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {agricultural_science_pack, 1})
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {electromagnetic_science_pack, 1})
 
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         data_recipe[rocket_part_tungsten].ingredients =
         {
             {type = item, name = low_density_structure, amount = 4},
@@ -242,7 +242,7 @@ if mods [muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
     end
 
-    if mods [tellus_mods] then
+    if mods[tellus_mods] then
         table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
@@ -257,15 +257,15 @@ if mods [muluna_mods] then
     end
 end
 
-if not mods [muluna_mods] and mods [hyarion_mods] then
+if not mods[muluna_mods] and mods[hyarion_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_hyarion, change = 0.1})
 end
 
-if not mods [muluna_mods] and mods [tellus_mods] then
+if not mods[muluna_mods] and mods[tellus_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
 end
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     local muluna_mining_machine =
     {
         {name = electric_mining_drill_1 .. _ground_digger, order = a, tier = 1, energy_usage = 120},
@@ -302,7 +302,7 @@ if mods [muluna_mods] then
         end
     end
 
-    if mods [hyarion_mods] then
+    if mods[hyarion_mods] then
         data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
         data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
         data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
@@ -331,12 +331,12 @@ if mods [muluna_mods] then
 end
 
 -- MOSHINE
-if mods [moshine_mods] then
+if mods[moshine_mods] then
     data_recipe[boron].category = smelting_filtering
 end
 
 -- HYARION
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     data_item[raw_quartz_arig].subgroup = is_arig_recipe
     data_recipe[raw_quartz_arig].subgroup = is_arig_recipe
     data_recipe[raw_quartz_arig].icons = TWO_I(sandstone_brick, raw_quartz_arig, number_1)
@@ -410,7 +410,7 @@ if mods [hyarion_mods] then
     table.insert(data_technology[hyper_transport_belt_arig].prerequisites, simulating_unit)
     table.insert(data_technology[hyper_transport_belt_arig].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[hyper_transport_belt_arig].unit.ingredients, {electromagnetic_science_pack, 1})
-    if mods [bobtech] then
+    if mods[bobtech] then
         table.insert(data_technology[hyper_transport_belt_arig].unit.ingredients, {transport_science_pack, 1})
     end
 
@@ -482,7 +482,7 @@ if mods[paracelsin_mods] then
 end
 
 -- MODS
-if mods [shchierbin_mods] and mods [maraxsis_mods] then
+if mods[shchierbin_mods] and mods[maraxsis_mods] then
     local salt_v = "salt-v"
     data_recipe[salt_v].subgroup = is_shchierbin_recipe
     data_recipe[salt_v].icons = THREE_R_I(water_saline_angels, salt_angels, water)
@@ -491,7 +491,7 @@ if mods [shchierbin_mods] and mods [maraxsis_mods] then
     data_recipe[salt_mods] = nil
 end
 
-if mods ["RPGsystem"] then
+if mods["RPGsystem"] then
     data_capsule["rpg_amnesia_potion"].subgroup = nil
     data_capsule["rpg_big_healing_potion"].subgroup = nil
     data_capsule["rpg_big_xp_potion"].subgroup = nil
@@ -502,7 +502,7 @@ if mods ["RPGsystem"] then
     data_capsule["rpg_speed_potion"].subgroup = nil
 end
 
-if mods [bobtech] and mods [space_age_science_packs] then
+if mods[bobtech] and mods[space_age_science_packs] then
     local list_base_or_space = {}
     if settings.startup[setting_science_pack_nostalgia].value then
         list_base_or_space =
@@ -546,6 +546,6 @@ if mods [bobtech] and mods [space_age_science_packs] then
 end
 
 local tech_stack_loader = "mdrn-stack-loader"
-if mods [loaders_modernized_integrations] and data_technology[tech_stack_loader] then
+if mods[loaders_modernized_integrations] and data_technology[tech_stack_loader] then
     data_technology[tech_stack_loader].prerequisites = {stack_inserter, "mdrn-ultimate-loader"}
 end

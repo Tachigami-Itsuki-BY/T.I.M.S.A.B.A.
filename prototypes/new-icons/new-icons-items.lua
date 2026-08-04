@@ -137,7 +137,7 @@ data_item[stiratite_bacteria].pictures =
 }
 
 -- TELLUS
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     data_item[magnesium_bacteria].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria.png"
     data_item[magnesium_bacteria].pictures =
     {
@@ -152,7 +152,7 @@ if mods [tellus_mods] then
 end
 
 -- PARACELSIN
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     data_item[zinc_rivets].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets.png"
     data_item[zinc_rivets].pictures =
     {
@@ -167,12 +167,12 @@ if mods [paracelsin_mods] then
 end
 
 -- TERRAPALUS
-if mods [terrapalus_mods] then
+if mods[terrapalus_mods] then
     data_item[palusium_powder].icon = "__TIMSABA__/graphics/icons/terrapalus/palusium-powder.png"
 end
 
 -- MODS
-if mods [clowns_nuclear] then
+if mods[clowns_nuclear] then
     data_item[uranium_235].icons = nil
     data_item[uranium_235].icon = "__base__/graphics/icons/uranium-235.png"
 

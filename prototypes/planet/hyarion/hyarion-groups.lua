@@ -1,11 +1,11 @@
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     local ig_hyarion = "hyarion"
     data:extend
     ({
         {
             type = item_group,
             name = ig_hyarion,
-            order = x_g,
+            order = x_h,
             icon = "__TIMSABA__/graphics/icons/hyarion/hyarion-planet.png",
             icon_size = 128
         }

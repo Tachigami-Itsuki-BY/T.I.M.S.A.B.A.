@@ -1,4 +1,4 @@
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     local replacements =
     {
         [aluminium_hyarion] = aluminium_molten_angels,
@@ -31,7 +31,7 @@ if mods [hyarion_mods] then
 	for _, name in ipairs(hyarion_items) do
 		data_item[name] = nil
 		data_recipe[name .. _recycling] = nil
-		if mods [panglia_mods] then
+		if mods[panglia_mods] then
 			data_recipe[item_ .. name .. _panglia_crushing] = nil
 		end
 		if name == beryllium_wall then

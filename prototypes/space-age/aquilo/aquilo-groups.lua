@@ -4,7 +4,7 @@ data:extend
     {
         type = item_group,
         name = ig_aquilo,
-        order = x_d,
+        order = x_e,
         icon = "__TIMSABA__/graphics/icons/space-age/aquilo/aquilo-planet.png",
         icon_size = 128,
     }

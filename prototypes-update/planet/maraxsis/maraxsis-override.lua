@@ -1,6 +1,6 @@
 -- [font=default-tiny-bold][/font]
 
-if mods [maraxsis_mods] then
+if mods[maraxsis_mods] then
     local duct_small = "duct-small"
     data_item[duct_small].subgroup = is_maraxsis_logistics
     data_item[duct_small].order = a

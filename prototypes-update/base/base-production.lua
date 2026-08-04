@@ -732,7 +732,7 @@ data_recipe[lab].ingredients[2].amount = 8
 data_lab[lab].subgroup = is_lab
 data_lab[lab].order = a
 
-if mods [bobtech] then
+if mods[bobtech] then
     data_item[lab_2].subgroup = is_lab
     data_item[lab_2].order = b
     data_item[lab_2].stack_size = 32
@@ -747,7 +747,7 @@ if mods [bobtech] then
 
     bobmods.lib.recipe.update_recycling_recipe({lab_alien})
 
-    if mods [bobenemies] then
+    if mods[bobenemies] then
         data_item[lab_alien].subgroup = is_lab
         data_item[lab_alien].order = c
         data_item[lab_alien].stack_size = 32
@@ -781,18 +781,18 @@ if mods [bobtech] then
             table.insert(data_lab[lab_alien].inputs, cryogenic_science_pack)
             table.insert(data_lab[lab_alien].inputs, promethium_science_pack)
         end
-        if mods [arig_mods] then
+        if mods[arig_mods] then
             table.insert(data_lab[lab_alien].inputs, compression_science_pack)
         end
-        if mods [hyarion_mods] then
+        if mods[hyarion_mods] then
             table.insert(data_lab[lab_alien].inputs, polishing_science_pack)
             table.insert(data_lab[lab_alien].inputs, refraction_science_pack)
         end
-        if mods [tellus_mods] then
+        if mods[tellus_mods] then
             table.insert(data_lab[lab_alien].inputs, bioengineering_science_pack)
             table.insert(data_lab[lab_alien].inputs, pathological_science_pack)
         end
-        if mods [paracelsin_mods] then
+        if mods[paracelsin_mods] then
             table.insert(data_lab[lab_alien].inputs, galvanization_science_pack)
         end
     end

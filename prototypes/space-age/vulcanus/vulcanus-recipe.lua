@@ -768,7 +768,7 @@ tungsten_powder_vulcanus = "tungsten-powder-vulcanus"
 TIMSABA.functions.create_recipes
 ({
     {
-        localised_name = data_item[tungsten_powder].localised_name,
+        localised_name = {"item-name." .. tungsten_powder},
         name = tungsten_powder_vulcanus,
         category = powderizing_4,
         subgroup = is_vulcanus_tungsten,

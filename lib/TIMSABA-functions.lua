@@ -663,4 +663,21 @@ function TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
             end
         end
     end
+    -- Achievement
+    for _, achievement in pairs(data.raw["produce-per-hour-achievement"] or {}) do
+        if achievement.item_product then
+            local replace = replacements[achievement.item_product]
+            if replace then
+                achievement.item_product = replace
+            end
+        end
+    end
+    for _, achievement in pairs(data.raw["produce-achievement"] or {}) do
+        if achievement.item_product then
+            local replace = replacements[achievement.item_product]
+            if replace then
+                achievement.item_product = replace
+            end
+        end
+    end
 end

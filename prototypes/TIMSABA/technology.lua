@@ -284,9 +284,9 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
+                {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {metallurgic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -316,9 +316,9 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {agricultural_science_pack, 1},
                 {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1},
                 {cryogenic_science_pack, 1}
             },
             time = 30
@@ -406,9 +406,9 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
+                {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {metallurgic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -445,9 +445,9 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {agricultural_science_pack, 1},
                 {metallurgic_science_pack, 1},
+                {agricultural_science_pack, 1},
+                {electromagnetic_science_pack, 1},
                 {cryogenic_science_pack, 1}
             },
             time = 30
@@ -537,9 +537,9 @@ data:extend
                 {production_science_pack, 1},
                 {utility_science_pack, 1},
                 {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
+                {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
-                {metallurgic_science_pack, 1}
+                {electromagnetic_science_pack, 1}
             },
             time = 30
         }
@@ -680,21 +680,3 @@ data:extend
 })
 
 data_technology[tech_magnesium_smelting_1].prerequisites = {tech_metallurgy_1, tech_coal_processing_1, tech_ore_advanced_crushing, tech_powellite_processing_1}
-
---[[data:extend
-({
-    {
-        type = technology,
-        name = ,
-        icon = "__TIMSABA__/graphics/icons/angels////.png",
-        icon_size = 256,
-        prerequisites = {},
-        effects = {{type = unlock_recipe, recipe = }},
-        unit =
-        {
-            count = ,
-            ingredients = {{, }},
-            time = 
-        }
-    }
-})]]

@@ -180,18 +180,6 @@ nitrogen_mods = "nitrogen"
 nitric_acid_mods = "nitric-acid"
 galvanization_science_pack = "galvanization-science-pack"
 
--- CASTRA
-castra_mods = "castra"
-planet_castra= "castra"
-hydrogen_sulfide_mods = "hydrogen-sulfide"
-castra_data = "castra-data"
-nickel_plate_mods = "nickel-plate"
-military_transport_belt_mods = "military-transport-belt"
-military_underground_belt_mods = "military-underground-belt"
-military_splitter_mods = "military-splitter"
-millerite_mods = "millerite"
-gunpowder_mods = "gunpowder"
-
 -- CORRUNDUM
 corrundum_mods = "corrundum"
 planet_corrundum = "corrundum"
@@ -203,19 +191,53 @@ platinum_plate_mods = "platinum-plate"
 chalcopyrite_ore = "chalcopyrite-ore"
 electrochemical_science_pack = "electrochemical-science-pack"
 
--- CUBIUM
-cubium_mods = "cubium"
-planet_cubium = "cubium"
-
 -- SECRETAS / FROZETA
 secretas_frozeta_mods = "secretas"
+planet_secretas = "secretas"
 planet_frozeta = "frozeta"
 gold_ore_mods = "gold-ore"
 gold_plate_mods = "gold-plate"
+golden_biter_egg = "golden-biter-egg"
 speed_module_4_S = "speed-module-4-S"
 efficiency_module_4_S = "efficiency-module-4-S"
 productivity_module_4_S = "productivity-module-4-S"
 quality_module_4_S = "quality-module-4-S"
+
+-- TERRAPALUS
+terrapalus_mods = "terrapalus"
+planet_terrapalus = "terrapalus"
+palusium_ore = "palusium-ore"
+palusium_powder = "palusium-powder"
+palusium_crystal = "palusium-crystal"
+palusium_plate = "palusium-plate"
+ultravium = "ultravium"
+
+-- CASTRA
+castra_mods = "castra-prime"
+planet_castra = "castra"
+hydrogen_sulfide_mods = "hydrogen-sulfide"
+castra_data = "castra-data"
+nickel_plate_mods = "nickel-plate"
+military_transport_belt_mods = "military-transport-belt"
+military_underground_belt_mods = "military-underground-belt"
+military_splitter_mods = "military-splitter"
+millerite_mods = "millerite"
+gunpowder_mods = "gunpowder"
+
+-- SHCHIERBIN
+shchierbin_mods = "shchierbin"
+planet_shchierbin = "shchierbin"
+quicklime_mods = "quicklime"
+natural_gas_mods = "natural-gas"
+methane_mods = "methane"
+chloromethane_mods = "chloromethane"
+ethylene_mods = "ethylene"
+sea_water_mods = "sea-water"
+sodium_hydroxide_mods = "sodium-hydroxide"
+ferric_chloride_mods = "ferric-chloride"
+chlorine_mods = "chlorine"
+vinylchloride_mods = "vinylchloride"
+calcium_mods = "calcium"
 
 -- MARAXSIS
 maraxsis_mods = "maraxsis"
@@ -238,9 +260,25 @@ coral_maraxsis = "maraxsis-coral"
 salt_filter_maraxsis = "maraxsis-salt-filter"
 saturated_salt_filter_maraxsis = "maraxsis-saturated-salt-filter"
 
--- NEXUS
-nexus_mods = "Nexus"
-planet_nexus= "nexus"
+-- VESTA
+vesta_mods = "skewer_planet_vesta"
+planet_vesta = "vesta"
+algea_water_vesta = "ske_algea_water"
+dt_fuel = "ske_dt_fuel"
+helium_vesta = "vesta_helium"
+hydrogen_vesta = "vesta_hydrogen"
+oxygen_vesta = "vesta_oxygen"
+nitrogen_vesta = "vesta_nitrogen"
+carbon_dioxide_vesta = "vesta_carbon_dioxide"
+carbon_monoxide_vesta = "vesta_carbon"
+hydrogen_sulfide_vesta = "vesta_hydrogen_sulfide"
+methane_vesta = "vesta_methane"
+tritium_mods = "tritium"
+deuterium_mods = "deuterium"
+iridium_plate_mods = "iridium-plate"
+supermagnetic_vesta = "ske_supermagnetic"
+fluoro_fuel = "fluorofuel"
+plasma_fuel = "plasmafuel"
 
 -- SHATTERED
 shattered_mods = "skewer_shattered_planet"
@@ -308,46 +346,13 @@ hec_science_pack = "ske_hec_science_pack"
 hef_science_pack = "ske_hef_science_pack"
 antimatter_cell = "ske_antimatter_cell"
 
--- SHCHIERBIN
-shchierbin_mods = "shchierbin"
-planet_shchierbin = "shchierbin"
-quicklime_mods = "quicklime"
-natural_gas_mods = "natural-gas"
-methane_mods = "methane"
-chloromethane_mods = "chloromethane"
-ethylene_mods = "ethylene"
-sea_water_mods = "sea-water"
-sodium_hydroxide_mods = "sodium-hydroxide"
-ferric_chloride_mods = "ferric-chloride"
-chlorine_mods = "chlorine"
-vinylchloride_mods = "vinylchloride"
-calcium_mods = "calcium"
+-- CUBIUM
+cubium_mods = "cubium"
+planet_cubium = "cubium"
 
--- TERRAPALUS
-terrapalus_mods = "terrapalus"
-planet_terrapalus = "terrapalus"
-ultravium = "ultravium"
-palusium_powder = "palusium-powder"
-
--- VESTA
-vesta_mods = "skewer_planet_vesta"
-planet_vesta = "vesta"
-algea_water_vesta = "ske_algea_water"
-dt_fuel = "ske_dt_fuel"
-helium_vesta = "vesta_helium"
-hydrogen_vesta = "vesta_hydrogen"
-oxygen_vesta = "vesta_oxygen"
-nitrogen_vesta = "vesta_nitrogen"
-carbon_dioxide_vesta = "vesta_carbon_dioxide"
-carbon_monoxide_vesta = "vesta_carbon"
-hydrogen_sulfide_vesta = "vesta_hydrogen_sulfide"
-methane_vesta = "vesta_methane"
-tritium_mods = "tritium"
-deuterium_mods = "deuterium"
-iridium_plate_mods = "iridium-plate"
-supermagnetic_vesta = "ske_supermagnetic"
-fluoro_fuel = "fluorofuel"
-plasma_fuel = "plasmafuel"
+-- NEXUS
+nexus_mods = "Nexus"
+planet_nexus= "nexus"
 
 -- VUCLANUS SULFURIC BACTERIA
 vulcanus_sulfuric_bacteria_mods = "vulcanus-sulfuric-bacteria"

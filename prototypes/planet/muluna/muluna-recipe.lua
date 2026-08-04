@@ -1,4 +1,4 @@
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     space_science_pack_muluna = "space-science-pack-muluna"
     -- LUNAR REGOLITH
     data:extend

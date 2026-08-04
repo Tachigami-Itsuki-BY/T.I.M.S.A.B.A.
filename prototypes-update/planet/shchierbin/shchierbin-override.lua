@@ -1,6 +1,6 @@
 -- [font=default-tiny-bold][/font]
 
-if mods [shchierbin_mods] then
+if mods[shchierbin_mods] then
     local accumulator_vanad = "accumulator-vanad"
     data_item[accumulator_vanad].subgroup = is_shchierbin_building_energy
     data_item[accumulator_vanad].order = a

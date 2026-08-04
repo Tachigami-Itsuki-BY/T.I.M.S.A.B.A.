@@ -30,11 +30,11 @@ TIMSABA.functions.create_subgroups("production",
     {name = is_lab,                         order = e_b}
 })
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     TIMSABA.functions.create_subgroups("production", {{name = is_extraction_machine_muluna, order = c_b}})
 end
 
-if mods [maraxsis_mods] then
+if mods[maraxsis_mods] then
     TIMSABA.functions.create_subgroups("production", {{name = is_extraction_machine_maraxsis, order = c_c}})
 end
 

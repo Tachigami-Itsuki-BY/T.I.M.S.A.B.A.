@@ -5,13 +5,13 @@ if mods[moshine_mods] then
         {
             type = item_group,
             name = ig_moshine,
-            order = x_e,
+            order = x_f,
             icon = "__TIMSABA__/graphics/icons/moshine/moshine-planet.png",
             icon_size = 128
         }
     })
 
-    is_moshine_ore = "is-moshine-ore"
+    is_moshine_air = "is-moshine-air"
     is_moshine_recipe = "is-moshine-recipe"
     is_monazite = "is-monazite"
     is_neodymium = "is-neodymium"
@@ -34,7 +34,7 @@ if mods[moshine_mods] then
     is_moshine_building = "is-moshine-building"
     TIMSABA.functions.create_subgroups(ig_moshine,
     {
-        {name = is_moshine_ore,               order = a},
+        {name = is_moshine_air,               order = a},
         {name = is_moshine_recipe,            order = b},
         {name = is_monazite,                  order = c},
         {name = is_neodymium,                 order = d},

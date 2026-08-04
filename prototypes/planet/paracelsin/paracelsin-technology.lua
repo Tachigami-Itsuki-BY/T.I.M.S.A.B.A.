@@ -1,4 +1,4 @@
-if mods [paracelsin_mods] then
+if mods[paracelsin_mods] then
     planet_discovery_paracelsin = "planet-discovery-paracelsin"
     tech_sphalerite_processing_1 = "sphalerite-processing-1"
     local tech_sphalerite_processing_2 = "sphalerite-processing-2"
@@ -286,9 +286,9 @@ if mods [paracelsin_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {agricultural_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1},
                     {promethium_science_pack, 1}
                 },
@@ -313,9 +313,9 @@ if mods [paracelsin_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {agricultural_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1},
                     {promethium_science_pack, 1}
                 },

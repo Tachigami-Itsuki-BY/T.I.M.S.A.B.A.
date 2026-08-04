@@ -1229,7 +1229,7 @@ TIMSABA.functions.create_recipes
         name = platinum_ingot,
         category = angels_chemical_smelting_3,
         subgroup = is_platinum,
-        icons = TWO_D_I(platinum_fluoride_IV, hydrogen_angels, platinum_ingot, hydrogen_chloride_angels),
+        icons = TWO_D_I(platinum_fluoride_IV, hydrogen_angels, platinum_ingot, hydrogen_fluoride_angels),
         order = d,
         energy_required = 8, -- PtF₄ + 2H₂ --> Pt + 4HF
         ingredients =
@@ -1240,7 +1240,7 @@ TIMSABA.functions.create_recipes
         results =
         {
             {type = item, name = platinum_ingot, amount = 16},
-            {type = fluid, name = hydrogen_chloride_angels, amount = 480} -- 960
+            {type = fluid, name = hydrogen_fluoride_angels, amount = 480} -- 960
         },
         main_product = platinum_ingot
     },

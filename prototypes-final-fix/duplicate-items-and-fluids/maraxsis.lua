@@ -1,4 +1,4 @@
-if mods [maraxsis_mods] then
+if mods[maraxsis_mods] then
     local replacements =
     {
         [salt_mods] = salt_angels,
@@ -88,7 +88,7 @@ if mods [maraxsis_mods] then
 	    end
     end
 
-	if mods [panglia_mods] then
+	if mods[panglia_mods] then
 		data_recipe["item-maraxsis-conduit-panglia_crushing"] = nil
 	end
 

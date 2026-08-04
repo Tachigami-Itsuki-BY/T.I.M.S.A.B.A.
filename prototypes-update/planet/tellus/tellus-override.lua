@@ -1,4 +1,4 @@
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     -- CHLOROPLAST
     data_capsule[chloroplast_fruit].subgroup = is_chloroplast
     data_capsule[chloroplast_fruit].order = a

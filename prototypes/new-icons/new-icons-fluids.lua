@@ -169,7 +169,7 @@ data_fluid[hexachloroplatinic_acid].base_color = TIMSABA.functions.fluid_color("
 data_fluid[hexachloroplatinic_acid].flow_color = TIMSABA.functions.flow_color("H2PtCl6Wp")
 
 -- BOB
-if mods [bobwarfare] then
+if mods[bobwarfare] then
     data_fluid[nitroglycerin_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-nitroglycerin.png"
     data_fluid[nitroglycerin_bob].base_color = TIMSABA.functions.fluid_color("C3H5N3O9")
     data_fluid[nitroglycerin_bob].flow_color = TIMSABA.functions.flow_color("C3H5N3O9")
@@ -466,7 +466,7 @@ data_fluid[multi_phase_oil_angels].icons = nil
 data_fluid[multi_phase_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-liquid-multi-phase-oil.png"
 data_fluid[multi_phase_oil_angels].base_color = {r = 133 / 255, g = 141 / 255, b = 88 / 255}
 data_fluid[multi_phase_oil_angels].flow_color = {r = 139 / 255, g = 147 / 255, b = 96 / 255}
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     data_fluid[multi_phase_oil_angels].default_temperature = 15
     data_fluid[multi_phase_oil_angels].max_temperature = 100
     data_fluid[multi_phase_oil_angels].heat_capacity = "200J"
@@ -659,30 +659,30 @@ data_fluid[alien_goo].base_color = {r = 207 / 255, g = 44 / 255, b = 214 / 255}
 data_fluid[alien_goo].flow_color = {r = 209 / 255, g = 55 / 255, b = 216 / 255}
 
 -- MULUNA
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     data_fluid[tar_mods].icon = "__TIMSABA__/graphics/icons/muluna/tar.png"
     data_fluid[cooled_steam_mods].icons = nil
     data_fluid[cooled_steam_mods].icon = "__TIMSABA__/graphics/icons/muluna/cooled-steam.png"
 end
 
 -- PANGLIA
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     data_fluid[branbalite_slurry].icon = "__TIMSABA__/graphics/icons/panglia/panglia_branbalite_slurry.png"
 end
 
 -- ARIG
-if mods [arig_mods] then
+if mods[arig_mods] then
     data_fluid[sand_arig].icon = "__TIMSABA__/graphics/icons/arig/sand.png"
     data_fluid[pure_sand_arig].icon = "__TIMSABA__/graphics/icons/arig/pure-sand.png"
 end
 
 -- HYARION
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     data_fluid[polishing_compound_hyarion].icon = "__TIMSABA__/graphics/icons/hyarion/polishing-compound.png"
 end
 
 -- TELLUS
-if mods [tellus_mods] then
+if mods[tellus_mods] then
     data_fluid[bacteriochlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/bacteriochlorophyll.png"
     data_fluid[chlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/chlorophyll.png"
     data_fluid[water_infected].icon = "__TIMSABA__/graphics/icons/tellus/infected-water.png"
@@ -693,7 +693,7 @@ end
 
 -- CORRUNDUM
 
-if mods [maraxsis_mods] then
+if mods[maraxsis_mods] then
     data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
     data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
     data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
@@ -701,15 +701,15 @@ if mods [maraxsis_mods] then
     data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
 end
 
-if mods [shchierbin_mods] then
+if mods[shchierbin_mods] then
     data_fluid[vinylchloride_mods].icon = "__TIMSABA__/graphics/icons/shchierbin/vinylchloride.png"
 end
 
-if mods [terrapalus_mods] then
+if mods[terrapalus_mods] then
     data_fluid[ultravium].icon = "__TIMSABA__/graphics/icons/terrapalus/ultravium.png"
 end
 
-if mods [vesta_mods] then
+if mods[vesta_mods] then
     data_fluid[algea_water_vesta].icon = "__TIMSABA__/graphics/icons/vesta/fluid_algea_water.png"
     data_fluid[dt_fuel].icon = "__TIMSABA__/graphics/icons/vesta/dt_fuel.png"
     data_fluid[helium_vesta].icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png"
@@ -719,7 +719,7 @@ if mods [vesta_mods] then
     data_fluid[plasma_fuel].icon = "__TIMSABA__/graphics/icons/vesta/plasmafuel.png"
 end
 
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_fluid[slurry_promethium_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_promethium.png"
     data_fluid[slurry_carbonic_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_carbonic.png"
     data_fluid[slurry_metallic_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_metallic.png"

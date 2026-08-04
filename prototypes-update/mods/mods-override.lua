@@ -1,4 +1,4 @@
-if mods [vulcanus_sulfuric_bacteria_mods] then
+if mods[vulcanus_sulfuric_bacteria_mods] then
     is_vulcanus_sulfuric = "vulcanus-sulfuric"
     data:extend
     ({
@@ -63,7 +63,7 @@ if mods [vulcanus_sulfuric_bacteria_mods] then
     }
 end
 
-if mods [moshine_mods] or mods [muluna_mods] then
+if mods[moshine_mods] or mods[muluna_mods] then
     data_item[silicon_boule_mods].localised_description = show_formula and {chemical_formula, "Si"} or nil
     data_item[silicon_boule_mods].stack_size = 200
 
@@ -82,7 +82,7 @@ if mods [moshine_mods] or mods [muluna_mods] then
 end
 
 
-if mods [moshine_mods] and mods [muluna_mods] then -- MOSHINE
+if mods[moshine_mods] and mods[muluna_mods] then -- MOSHINE
     data_item[silicon_boule_mods].subgroup = is_moshine_recipe
     data_item[silicon_boule_mods].order = g
 
@@ -93,7 +93,7 @@ if mods [moshine_mods] and mods [muluna_mods] then -- MOSHINE
 
     data_recipe[silicon_carbide_mods].subgroup = is_moshine_recipe
     data_recipe[silicon_carbide_mods].order = i
-elseif mods [muluna_mods] then -- MULUNA
+elseif mods[muluna_mods] then -- MULUNA
     data_item[silicon_boule_mods].subgroup = is_muluna_recipe_silicon
     data_item[silicon_boule_mods].order = a
 
@@ -104,7 +104,7 @@ elseif mods [muluna_mods] then -- MULUNA
 
     data_recipe[silicon_carbide_mods].subgroup = is_muluna_recipe_silicon
     data_recipe[silicon_carbide_mods].order = c
-elseif mods [moshine_mods] then -- MOSHINE
+elseif mods[moshine_mods] then -- MOSHINE
     data_item[silicon_boule_mods].subgroup = is_moshine_recipe
     data_item[silicon_boule_mods].order = g
 
@@ -117,7 +117,7 @@ elseif mods [moshine_mods] then -- MOSHINE
     data_recipe[silicon_carbide_mods].order = i
 end
 
-if mods ["AsteroidBelt"] then
+if mods["AsteroidBelt"] then
     local satellites = "satellites"
     local asteroid_belt_inner_edge = "asteroid-belt-inner-edge"
     data_space_location[asteroid_belt_inner_edge].subgroup = satellites
@@ -128,7 +128,7 @@ if mods ["AsteroidBelt"] then
     data_space_location[asteroid_belt_outer_edge].order = z_z
 end
 
-if mods [clowns_nuclear] then
+if mods[clowns_nuclear] then
     data_technology[atomic_rocket].effects =
     {
         {type = unlock_recipe, recipe = atomic_rocket},

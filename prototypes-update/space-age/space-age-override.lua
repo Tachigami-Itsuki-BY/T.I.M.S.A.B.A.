@@ -31,7 +31,7 @@ data_recipe[rocket_part].ingredients =
     {type = item, name = rocket_fuel, amount = 2}
 }
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     rocket_part_muluna = "rocket-part-muluna"
     data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
     data_recipe[rocket_part_muluna].order = b_b
@@ -156,7 +156,7 @@ data_recipe[thruster].ingredients =
 data_thruster[thruster].order = f
 
 
-if mods [panglia_mods] then
+if mods[panglia_mods] then
     data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_recipe[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
     data_asteroid_collector[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
@@ -224,14 +224,14 @@ if mods [panglia_mods] then
     }
 end
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     data_item[satellite_radar].subgroup = is_space_platform_mods
     data_item[satellite_radar].order = b
     data_item[satellite_radar].stack_size = 1
     data_recipe[satellite_radar].subgroup = is_space_platform_mods
     data_recipe[satellite_radar].order = b
     data_recipe[satellite_radar].energy_required = 8
-    if mods [bobwarfare] then
+    if mods[bobwarfare] then
         data_recipe[satellite_radar].ingredients =
         {
             {type = item, name = advanced_processing_unit, amount = 512},
@@ -259,7 +259,7 @@ if mods [muluna_mods] then
     bobmods.lib.recipe.update_recycling_recipe({satellite_radar})
 end
 
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     data_item[space_manufactorer].subgroup = is_space_platform_mods
     data_item[space_manufactorer].order = c
     data_item[space_manufactorer].stack_size = 32
@@ -466,7 +466,7 @@ end
 data_item[promethium_asteroid_chunk].localised_description = show_formula and {chemical_formula, "Pm"} or nil
 data_item[promethium_asteroid_chunk].stack_size = 50
 
-if mods [muluna_mods] then
+if mods[muluna_mods] then
     anorthite_crushing_1 = "anorthite-crushing"
     advanced_anorthite_crushing_1 = "advanced-anorthite-crushing"
     local anorthite_asteroids =
@@ -504,7 +504,7 @@ if mods [muluna_mods] then
     data_resource[oxide_asteroid_chunk].factoriopedia_simulation = nil
 end
 
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     local bismuth_asteroid_chunk = "bismuth-asteroid-chunk"
     bismuth_asteroid_crushing = "bismuth-asteroid-crushing"
     local bismuth_asteroids =
@@ -562,9 +562,9 @@ if mods [hyarion_mods] then
     bobmods.lib.recipe.update_recycling_recipe({bismuth_transistor})
 end
 
-if mods [secretas_frozeta_mods] then
+if mods[secretas_frozeta_mods] then
     local auric_asteroid_chunk = "auric-asteroid-chunk"
-    local auric_asteroid_crushing = "auric-asteroid-crushing"
+    auric_asteroid_crushing = "auric-asteroid-crushing"
     local auric_asteroids =
     {
         {type = data_asteroid, name = "small-auric-asteroid",     order = a},
@@ -599,7 +599,7 @@ bobmods.lib.recipe.update_recycling_recipe
     thruster,
 })
 
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     local is_space_facilities = "space-facilities"
     data_tool[space_science_pack].subgroup = is_space_facilities
     data_tool[space_science_pack].order = a
@@ -655,7 +655,7 @@ if mods [hyarion_mods] then
     }
     data_recipe[promethium_science_pack_hyarion].results[1].amount = 32
 
-    if mods [moshine_mods] then
+    if mods[moshine_mods] then
         data_recipe[promethium_science_pack_hyarion].ingredients[1].name = promethium_ore
         data_recipe[promethium_science_pack_hyarion].ingredients[1].amount = 256
     end
@@ -744,7 +744,4 @@ data_recipe[advanced_thruster_oxidizer].results =
     {type = item, name = catalyst_carrier, amount = 1, ignored_by_productivity = 1}
 }
 
-bobmods.lib.recipe.update_recycling_recipe
-({
-    crusher
-})
+bobmods.lib.recipe.update_recycling_recipe({crusher})

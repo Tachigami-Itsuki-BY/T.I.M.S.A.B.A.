@@ -1,4 +1,3 @@
-local simulations = require("prototypes.factoriopedia-simulations")
 -- LAVA
 data_fluid[lava].subgroup = is_lava
 data_fluid[lava].order = a
@@ -294,6 +293,7 @@ data_transport_belt[vulcanus_transport_belt].localised_name = {"entity-name.vulc
 data_transport_belt[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
 data_transport_belt[vulcanus_transport_belt].speed = 12/60
 
+local simulations = require("prototypes.factoriopedia-simulations")
 data_item[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_item[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
 data_item[vulcanus_underground_belt].stack_size = 32
@@ -331,7 +331,7 @@ data_splitter[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitte
 data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_splitter[vulcanus_splitter].speed = 12/60
 
-if mods [arig_mods] then
+if mods[arig_mods] then
     data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
     data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
     data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
@@ -547,7 +547,7 @@ data_technology[vulcanus_transport_belt].effects =
     {type = unlock_recipe, recipe = vulcanus_splitter}
 }
 
-if mods [bobtech] then
+if mods[bobtech] then
     data_technology[vulcanus_transport_belt].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -572,7 +572,7 @@ else
     }
 end
 
-if mods [vulcanus_sulfuric_bacteria_mods] then
+if mods[vulcanus_sulfuric_bacteria_mods] then
     data_technology["sulfuric-bacteria-melting"].unit.ingredients =
     {
         {automation_science_pack, 1},

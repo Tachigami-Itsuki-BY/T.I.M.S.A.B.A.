@@ -1,4 +1,4 @@
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     hyarion_air = "hyarion-air"
     TIMSABA.functions.create_fluids
     ({

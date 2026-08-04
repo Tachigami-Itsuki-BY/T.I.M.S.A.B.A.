@@ -21,7 +21,7 @@ data_recipe[chemical_science_pack].ingredients =
     {type = item, name = sodium_hydroxide_angels, amount = 1}
 }
 
-if mods [bobtech] then
+if mods[bobtech] then
     data_recipe[transport_science_pack].energy_required = 16
     data_recipe[transport_science_pack].ingredients =
     {
@@ -71,7 +71,7 @@ data_recipe[promethium_science_pack].ingredients =
 }
 data_recipe[promethium_science_pack].results[1].amount = 8
 
-if mods [bobtech] and mods [bobenemies] then
+if mods[bobtech] and mods[bobenemies] then
     local alien_science_pack_orange = "bob-alien-science-pack-orange"
     data_tool[alien_science_pack_orange].subgroup = is_alien_science_pack
     data_tool[alien_science_pack_orange].order = a
@@ -290,7 +290,7 @@ data_recipe[battery_lead_acid].ingredients =
     {type = fluid, name = water_purified_angels, amount = 30}
 }
 
-if mods [bobplates] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" then
     data_item[battery_lithium_ion].localised_name = {"item-name.bob-lithium-ion-battery"}
     data_recipe[battery_lithium_ion].localised_name = {"item-name.bob-lithium-ion-battery"}
 end
@@ -307,7 +307,7 @@ data_recipe[battery_lithium_ion].ingredients =
     {type = fluid, name = dimethyl_carbonate, amount = 30}
 }
 
-if mods [bobplates] >= "2.1.0" then
+if mods[bobplates] >= "2.1.0" then
     data_item[battery_silver_zinc].localised_name = {"item-name.bob-silver-zinc-battery"}
     data_recipe[battery_silver_zinc].localised_name = {"item-name.bob-silver-zinc-battery"}
 end
@@ -528,7 +528,7 @@ data_item[neptunium_240].localised_description = show_formula and {chemical_form
 data_item[neptunium_240].subgroup = is_nuclear_item
 data_item[neptunium_240].order = c
 
-if not mods [shattered_mods] then
+if not mods[shattered_mods] then
     data_item[americium_241_angels].localised_description = show_formula and {chemical_formula, "Am-241"} or nil
     data_item[americium_241_angels].subgroup = is_nuclear_item
     data_item[americium_241_angels].order = d
@@ -544,14 +544,14 @@ data_item[thorium_ore_bob].localised_description = show_formula and {chemical_fo
 data_item[thorium_ore_bob].subgroup = is_nuclear_item
 data_item[thorium_ore_bob].order = f
 
-if not mods [shattered_mods] then
+if not mods[shattered_mods] then
     data_item[thorium_232_bob].localised_description = show_formula and {chemical_formula, "Th-232"} or nil
     data_item[thorium_232_bob].subgroup = is_nuclear_item
     data_item[thorium_232_bob].order = g
     data_item[thorium_232_bob].stack_size = 200
 end
 
-if not mods [shattered_mods] then
+if not mods[shattered_mods] then
     data_item[plutonium_239_bob].localised_description = show_formula and {chemical_formula, "Pu-239"} or nil
     data_item[plutonium_239_bob].subgroup = is_nuclear_item
     data_item[plutonium_239_bob].order = h
@@ -576,7 +576,7 @@ data_recipe[uranium_processing].results =
 
 local plutonium_synthesis = "angels-plutonium-synthesis"
 data_recipe[plutonium_synthesis].subgroup = is_nuclear_recipe
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[plutonium_synthesis].icons = TWO_I(neptunium_240, plutonium_239_shattered)
 else
     data_recipe[plutonium_synthesis].icons = TWO_I(neptunium_240, plutonium_239_bob)
@@ -587,7 +587,7 @@ data_recipe[plutonium_synthesis].results[1].amount = 4
 
 local plutonium_recovery = "angels-americium-regeneration"
 data_recipe[plutonium_recovery].subgroup = is_nuclear_recipe
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[plutonium_recovery].icons = THREE_I(plutonium_239_shattered, americium_241_shattered, plutonium_239_shattered)
 else
     data_recipe[plutonium_recovery].icons = THREE_I(plutonium_239_bob, americium_241_angels, plutonium_239_bob)
@@ -608,7 +608,7 @@ data_recipe[plutonium_recovery].results =
 
 local enrichment_process = "bobingabout-enrichment-process"
 data_recipe[enrichment_process].subgroup = is_nuclear_recipe
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[enrichment_process].icons = TWO_D_I(plutonium_239_shattered, uranium_238, plutonium_239_shattered, uranium_238)
 else
     data_recipe[enrichment_process].icons = TWO_D_I(plutonium_239_bob, uranium_238, plutonium_239_bob, uranium_238)
@@ -628,7 +628,7 @@ data_recipe[enrichment_process].results =
 
 local plutonium_nucleosynthesis = "bob-plutonium-nucleosynthesis"
 data_recipe[plutonium_nucleosynthesis].subgroup = is_nuclear_recipe
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[plutonium_nucleosynthesis].icons = THREE_R_I(uranium_235, plutonium_239_shattered, uranium_235)
 else
     data_recipe[plutonium_nucleosynthesis].icons = THREE_R_I(uranium_235, plutonium_239_bob, uranium_235)
@@ -648,7 +648,7 @@ data_recipe[plutonium_nucleosynthesis].results =
 }
 
 data_recipe[thorium_processing].subgroup = is_nuclear_recipe
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[thorium_processing].icons = THREE_R_I(thorium_ore_bob, thorium_shattered, plutonium_239_shattered)
 else
     data_recipe[thorium_processing].icons = THREE_R_I(thorium_ore_bob, thorium_232_bob, plutonium_239_bob)
@@ -663,7 +663,7 @@ data_recipe[thorium_processing].results =
 }
 
 data_recipe[plutonium_breeding].subgroup = is_nuclear_recipe
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[plutonium_breeding].icons = THREE_R_I(neptunium_240, plutonium_239_shattered, uranium_235)
 else
     data_recipe[plutonium_breeding].icons = THREE_R_I(neptunium_240, plutonium_239_bob, uranium_235)
@@ -682,7 +682,7 @@ data_recipe[plutonium_breeding].results =
     {type = item, name = uranium_238, amount = 32}
 }
 
-if mods [clowns_nuclear] then
+if mods[clowns_nuclear] then
     data_item[uranium_238].localised_name = {"item-name.uranium-238"}
     data_item[uranium_238].subgroup = is_uranium_235_item
     data_item[uranium_238].order = a
@@ -904,7 +904,7 @@ data_recipe[uranium_235_fuel_cell].ingredients =
 data_recipe[uranium_235_fuel_cell].results[1].amount = 16
 data_recipe[uranium_235_fuel_cell].allow_productivity = true
 
-if mods [clowns_nuclear] then
+if mods[clowns_nuclear] then
     local alt_uranium_235_fuel_cell = "mixed-oxide"
     data_recipe[alt_uranium_235_fuel_cell].localised_name = {"recipe-name.uranium-plutonium-mixed-fuel-cell"}
     data_recipe[alt_uranium_235_fuel_cell].category = angels_centrifuging_2
@@ -972,7 +972,7 @@ data_item[depleted_mixed_oxide_fuel_cell].order = e
 
 local mixed_oxide_reprocessing = "angels-mixed-oxide-reprocessing"
 data_recipe[mixed_oxide_reprocessing].subgroup = is_nuclear_cell
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, nil, americium_241_shattered, curium_245_shattered, uranium_238)
 else
     data_recipe[mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, nil, americium_241_angels, curium_245_angels, uranium_238)
@@ -993,7 +993,7 @@ data_recipe[mixed_oxide_reprocessing].allow_productivity = true
 data_recipe[advanced_mixed_oxide_reprocessing].category = angels_advanced_chemistry
 data_recipe[advanced_mixed_oxide_reprocessing].additional_categories = {cryogenics}
 data_recipe[advanced_mixed_oxide_reprocessing].subgroup = is_nuclear_cell
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[advanced_mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, hydrofluoric_acid_angels, plutonium_239_shattered, curium_245_shattered, water_greenyellow_waste)
 else
     data_recipe[advanced_mixed_oxide_reprocessing].icons = THREE_D_I(depleted_mixed_oxide_fuel_cell, nil, hydrofluoric_acid_angels, plutonium_239_bob, curium_245_angels, water_greenyellow_waste)
@@ -1032,7 +1032,7 @@ data_item[depleted_thorium_fuel_cell].order = g
 data_recipe[thorium_fuel_cell_reprocessing].category = angels_advanced_chemistry
 data_recipe[thorium_fuel_cell_reprocessing].additional_categories = {cryogenics}
 data_recipe[thorium_fuel_cell_reprocessing].subgroup = is_nuclear_cell
-if mods [shattered_mods] then
+if mods[shattered_mods] then
     data_recipe[thorium_fuel_cell_reprocessing].icons = FOUR_D_I(depleted_thorium_fuel_cell, nil, nil, nil, neptunium_240, thorium_shattered, uranium_234, curium_245_shattered)
 else
     data_recipe[thorium_fuel_cell_reprocessing].icons = FOUR_D_I(depleted_thorium_fuel_cell, nil, nil, nil, neptunium_240, thorium_232_bob, uranium_234, curium_245_angels)

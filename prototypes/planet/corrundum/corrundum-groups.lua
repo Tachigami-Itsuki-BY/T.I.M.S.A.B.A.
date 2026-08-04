@@ -1,11 +1,11 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     local ig_corrundum = "corrundum"
     data:extend
     ({
         {
             type = item_group,
             name = ig_corrundum,
-            order = x_j,
+            order = x_k,
             icon = "__TIMSABA__/graphics/icons/corrundum/corrundum-planet.png",
             icon_size = 128
         }

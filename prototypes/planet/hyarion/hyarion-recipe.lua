@@ -1,5 +1,5 @@
 -- Воздух Хaйариона
-if mods [hyarion_mods] then
+if mods[hyarion_mods] then
     hyarion_air_separation = "hyarion-air-separation"
     TIMSABA.functions.create_recipes
     ({

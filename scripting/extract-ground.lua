@@ -8,18 +8,15 @@ local surface_to_recipe =
 }
 
 if script.active_mods["Moshine"] then surface_to_recipe["moshine"] = "extract-ground-lava" end
+if script.active_mods["planetaris-arig"] then surface_to_recipe["arig"] = "extract-ground-planetaris-sand" end
+if script.active_mods["planetaris-hyarion"] then surface_to_recipe["hyarion"] = "extract-ground-lava" end
+if script.active_mods["planetaris-tellus"] then surface_to_recipe["tellus"] = "extract-ground-planetaris-infected-water" end
+if script.active_mods["Paracelsin"] then surface_to_recipe["paracelsin"] = "extract-ground-nitrogen-liquid" end
+if script.active_mods["corrundum"] then surface_to_recipe["corrundum"] = "extract-ground-angels-liquid-multi-phase-oil" end
 
 if script.active_mods["panglia_planet"] then surface_to_recipe["panglia"] = "extract-ground-water" end
-
-if script.active_mods["planetaris-arig"] then surface_to_recipe["arig"] = "extract-ground-planetaris-sand" end
-
-if script.active_mods["planetaris-hyarion"] then surface_to_recipe["hyarion"] = "extract-ground-lava" end
-
-if script.active_mods["planetaris-tellus"] then surface_to_recipe["tellus"] = "extract-ground-planetaris-infected-water" end
-
-if script.active_mods["Paracelsin"] then surface_to_recipe["paracelsin"] = "extract-ground-nitrogen-liquid" end
-
-if script.active_mods["corrundum"] then surface_to_recipe["corrundum"] = "extract-ground-angels-liquid-multi-phase-oil" end
+if script.active_mods["secretas"] then surface_to_recipe["panglia"] = "extract-ground-ammoniacal-solution" end
+if script.active_mods["terrapalus"] then surface_to_recipe["panglia"] = "extract-ground-water" end
 
 local function on_entity_built(event)
     local entity = event.created_entity or event.entity

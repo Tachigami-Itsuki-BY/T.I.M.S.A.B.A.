@@ -1,4 +1,4 @@
-if mods [shchierbin_mods] then
+if mods[shchierbin_mods] then
     local shchierbin = "shchierbin"
     is_shchierbin_ore = "shchierbin-ore"
     is_shchierbin_new_recipe = "shchierbin-new-recipe"

@@ -1,4 +1,4 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
 	local iron_sulfate_solution = "iron-sulfate-solution"
 	local copper_sulfate_solution = "copper-sulfate-solution"
     local replacements =
@@ -30,7 +30,19 @@ if mods [corrundum_mods] then
 			data_recipe[item_ .. name .. _panglia_crushing] = nil
 		end
 	end
-	data_recipe[platinum_plate_mods .. "-production-alt"] = nil
+	data_recipe[platinum_plate_mods.. "-production-alt"] = nil
+
+	if mods[muluna_mods] then
+        if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
+            for i = #Muluna.constants.cargo_drop_spawn_imports, 1, -1 do
+                local path = Muluna.constants.cargo_drop_spawn_imports[i]
+
+                if path and string.find(path, "platinum%-plate") then
+                    table.remove(Muluna.constants.cargo_drop_spawn_imports, i)
+                end
+            end
+        end
+    end
 
 	data_fluid["iron-sulfate-solution"] = nil
 	data_fluid["copper-sulfate-solution"] = nil

@@ -1,6 +1,6 @@
 -- [font=default-tiny-bold][/font]
 
-if mods [castra_mods] then
+if mods[castra_mods] then
     data_item[military_transport_belt_mods].subgroup = is_castra_logistics
     data_item[military_transport_belt_mods].stack_size = 200
     data_item[military_transport_belt_mods].weight = 5000

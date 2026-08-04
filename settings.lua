@@ -47,7 +47,7 @@ data:extend
     }
 })
 
-if mods ["bobtech"] and mods ["sa-science-packs"] then
+if mods["bobtech"] and mods["sa-science-packs"] then
     data:extend
     ({
         {
@@ -59,7 +59,7 @@ if mods ["bobtech"] and mods ["sa-science-packs"] then
     })
 end
 
-if mods ["planetaris-tellus"] then
+if mods["planetaris-tellus"] then
     data:extend
     ({
         {
@@ -71,7 +71,7 @@ if mods ["planetaris-tellus"] then
     })
 end
 
-if mods ["Flare Stack"] then
+if mods["Flare Stack"] then
     data:extend
     ({
         {

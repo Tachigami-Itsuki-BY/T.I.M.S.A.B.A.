@@ -1,17 +1,21 @@
 local recipes =
 {
+    -- PLANETS
     {planet = planet_nauvis, fluid = water},
     {planet = planet_vulcanus, fluid = lava},
     {planet = planet_gleba, fluid = water},
     {planet = planet_fulgora, fluid = multi_phase_oil_angels},
     {planet = planet_aquilo, fluid = ammonia_solution},
     {planet = planet_moshine, fluid = lava},
-    {planet = planet_panglia, fluid = water},
     {planet = planet_arig, fluid = sand_arig},
     {planet = planet_hyarion, fluid = lava},
     {planet = planet_tellus, fluid = water_infected},
     {planet = planet_paracelsin, fluid = nitrogen_liquid},
     {planet = planet_corrundum, fluid = multi_phase_oil_angels},
+    -- MOONS
+    {planet = planet_panglia, fluid = water},
+    {planet = planet_frozeta, fluid = ammonia_solution},
+    {planet = planet_terrapalus, fluid = water},
     -- {planet = planet_, fluid = },
 }
 for _, RECIPE in ipairs(recipes) do

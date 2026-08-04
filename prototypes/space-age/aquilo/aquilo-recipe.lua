@@ -92,6 +92,7 @@ hydogen_fluoride_gas = "hydogen-fluoride-gas"
 TIMSABA.functions.create_recipes
 ({
     {
+        localised_name = {"fluid-name." .. hydrogen_fluoride_angels},
         name = hydogen_fluoride_gas,
         category = chemistry,
         subgroup = is_aquilo_fluorine,

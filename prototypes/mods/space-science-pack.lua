@@ -1,4 +1,4 @@
-if mods [bobtech] and mods [space_age_science_packs] then
+if mods[bobtech] and mods[space_age_science_packs] then
     local list_base_or_space = {}
     if settings.startup[setting_science_pack_nostalgia].value then
         list_base_or_space =
@@ -29,7 +29,7 @@ if mods [bobtech] and mods [space_age_science_packs] then
 
     data_recipe[space_science_pack].icon = nil
 
-    if mods [bobenemies] then
+    if mods[bobenemies] then
         if settings.startup[setting_science_pack_nostalgia].value == false then
             local list_bob_tech =
             {

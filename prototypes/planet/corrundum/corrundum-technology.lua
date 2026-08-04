@@ -1,4 +1,4 @@
-if mods [corrundum_mods] then
+if mods[corrundum_mods] then
     planet_discovery_corrundum = "planet-discovery-corrundum"
     tech_chalcopyrite_processing_1 = "chalcopyrite-processing-1"
     local tech_chalcopyrite_processing_2 = "chalcopyrite-processing-2"
@@ -112,7 +112,8 @@ if mods [corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_purified},
-                {type = unlock_recipe, recipe = chalcopyrite_purified_sorting}
+                {type = unlock_recipe, recipe = chalcopyrite_purified_sorting},
+                {type = unlock_recipe, recipe = selenium_powder}
             },
             unit =
             {

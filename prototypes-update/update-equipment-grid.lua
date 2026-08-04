@@ -10,7 +10,7 @@ large_equipment_grid = "large-equipment-grid"
 data_equipment_grid[large_equipment_grid].width = 8
 data_equipment_grid[large_equipment_grid].height = 8
 
-if mods [bobequipment] then
+if mods[bobequipment] then
     power_armor_equipment_grid_3 = "power-armor-equipment-grid-mk3"
     data_equipment_grid[power_armor_equipment_grid_3].width = 8
     data_equipment_grid[power_armor_equipment_grid_3].height = 12
@@ -25,7 +25,7 @@ if mods [bobequipment] then
 end
 
 mech_armor_equipment_grid = "mech-armor-equipment-grid"
-if mods [bobequipment] then
+if mods[bobequipment] then
     if not data_equipment_grid[mech_armor_equipment_grid] then
         local new_equipment_grid = table.deepcopy(data_equipment_grid[power_armor_equipment_grid_5])
         new_equipment_grid.name = mech_armor_equipment_grid
