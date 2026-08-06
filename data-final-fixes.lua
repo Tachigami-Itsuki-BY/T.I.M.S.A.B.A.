@@ -71,7 +71,7 @@ if mods[muluna_mods] then
     -- 2. Перенаправляем золото и платину на аналоги Боба/Ангела
     if Muluna and Muluna.constants and Muluna.constants.names then
         Muluna.constants.names[platinum_plate_mods] = platinum_plate
-
         Muluna.constants.names[gold_plate_mods] = gold_plate_bob
+        Muluna.constants.names[nickel_plate_mods] = nickel_plate_bob
     end
 end

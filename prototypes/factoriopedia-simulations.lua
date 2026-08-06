@@ -428,6 +428,21 @@ simulations.factoriopedia_black_pipe_to_ground =
     ]]
 }
 
+-- CASTRA
+simulations.military_underground_belt_arig =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqdkM8KgzAMh98l5042sW76KmMM/wQJ1FRqO1ak776ohx12EHZp6a/J96VdoDUBJ0fsoV6AOssz1PcFZhq4MWvGzYhQw0iGfOPiKXCPbnBW9lOLxkNSQJK9ob6khwJkT55wx2yH+OQwtuikQB3jFEx2FoLl1S7Uc6YVRGnOtKh6ctjtt4UCH6eVRjyFdZAfYf6PUB8LbfCbUd5LHkdJvv+o4IVu3hp0mVdFVelbUV5lSekD6CF8DA==",
+            position = {0, 0}
+        }
+    ]]
+}
+
 local make_asteroid_simulation = function(name, wait)
     return
     [[

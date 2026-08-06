@@ -41,7 +41,7 @@ if mods[paracelsin_mods] then
     sphalerite_chunks_sorting = "sphalerite-chunks-sorting"
     sphalerite_crystals_sorting = "sphalerite-crystals-sorting"
     sphalerite_purified_sorting = "sphalerite-purified-sorting"
-    germanium_ore_recipe = "germanium-pure-mix-processing"
+    germanium_ore_recipe = "germanium-ore-pure-mix-processing"
     TIMSABA.functions.create_recipes
     ({
         -- CRUSHED

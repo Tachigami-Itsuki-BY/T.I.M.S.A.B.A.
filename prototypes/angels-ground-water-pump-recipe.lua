@@ -12,6 +12,7 @@ local recipes =
     {planet = planet_tellus, fluid = water_infected},
     {planet = planet_paracelsin, fluid = nitrogen_liquid},
     {planet = planet_corrundum, fluid = multi_phase_oil_angels},
+    {planet = planet_castra, fluid = fuel_oil_angels},
     -- MOONS
     {planet = planet_panglia, fluid = water},
     {planet = planet_frozeta, fluid = ammonia_solution},

@@ -13,6 +13,7 @@ if script.active_mods["planetaris-hyarion"] then surface_to_recipe["hyarion"] = 
 if script.active_mods["planetaris-tellus"] then surface_to_recipe["tellus"] = "extract-ground-planetaris-infected-water" end
 if script.active_mods["Paracelsin"] then surface_to_recipe["paracelsin"] = "extract-ground-nitrogen-liquid" end
 if script.active_mods["corrundum"] then surface_to_recipe["corrundum"] = "extract-ground-angels-liquid-multi-phase-oil" end
+if script.active_mods["castra-prime"] then surface_to_recipe["castra"] = "extract-ground-angels-liquid-fuel-oil" end
 
 if script.active_mods["panglia_planet"] then surface_to_recipe["panglia"] = "extract-ground-water" end
 if script.active_mods["secretas"] then surface_to_recipe["panglia"] = "extract-ground-ammoniacal-solution" end

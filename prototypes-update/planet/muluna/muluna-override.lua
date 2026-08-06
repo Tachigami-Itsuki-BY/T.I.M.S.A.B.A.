@@ -104,7 +104,7 @@ if mods[muluna_mods] then
     data_recipe[low_density_structure_muluna].energy_required = data_recipe[low_density_structure].energy_required
     data_recipe[low_density_structure_muluna].ingredients = data_recipe[low_density_structure].ingredients
     data_recipe[low_density_structure_muluna].results[1].amount = 2
-    data_recipe[low_density_structure_muluna].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[low_density_structure_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     local casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
     data_recipe[casting_low_density_structure_muluna].localised_name = {"recipe-name.casting-low-density-structure-muluna"}
@@ -114,7 +114,7 @@ if mods[muluna_mods] then
     data_recipe[casting_low_density_structure_muluna].energy_required = data_recipe[casting_low_density_structure].energy_required
     data_recipe[casting_low_density_structure_muluna].ingredients = data_recipe[casting_low_density_structure].ingredients
     data_recipe[casting_low_density_structure_muluna].results[1].amount = 2
-    data_recipe[casting_low_density_structure_muluna].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[casting_low_density_structure_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     -- SILICON
     -- data_item[silicon_boule_mods] --> "prototypes-update/mods/mods-override"
@@ -139,7 +139,7 @@ if mods[muluna_mods] then
         {type = item, name = silicon_cell_mods, amount = 8},
         {type = item, name = copper_plate, amount = 8}
     }
-    data_recipe[silicon_solar_panel_1].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[silicon_solar_panel_1].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     -- TREES
     local tree_growth_greenhouse = "muluna-tree-growth-greenhouse"
@@ -331,7 +331,7 @@ if mods[muluna_mods] then
         {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[wood_gasification].main_product = tar_mods
-    data_recipe[wood_gasification].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     local advanced_wood_gasification = "advanced-wood-gasification"
     data_recipe[advanced_wood_gasification].subgroup = is_muluna_recipe_cellulose
@@ -352,7 +352,7 @@ if mods[muluna_mods] then
         {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
     }
     data_recipe[advanced_wood_gasification].main_product = tar_mods
-    data_recipe[advanced_wood_gasification].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[advanced_wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     local plastic_from_wood = "plastic-from-wood"
     data_recipe[plastic_from_wood].subgroup = is_muluna_recipe_cellulose
@@ -363,7 +363,7 @@ if mods[muluna_mods] then
         {type = item, name = cellulose_fiber_angels, amount = 4},
         {type = fluid, name = tar_mods, amount = 30}
     }
-    data_recipe[plastic_from_wood].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[plastic_from_wood].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     data_fluid[tar_mods].subgroup = is_muluna_recipe_cellulose
     data_fluid[tar_mods].order = b
@@ -374,7 +374,7 @@ if mods[muluna_mods] then
     data_recipe[solid_fuel_from_tar].order = b_a
     data_recipe[solid_fuel_from_tar].energy_required = 4
     data_recipe[solid_fuel_from_tar].ingredients[1].amount = 30
-    data_recipe[solid_fuel_from_tar].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[solid_fuel_from_tar].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     local crude_oil_from_tar = "crude-oil-from-tar"
     data_recipe[crude_oil_from_tar].subgroup = is_muluna_recipe_cellulose
@@ -387,7 +387,7 @@ if mods[muluna_mods] then
         {type = fluid, name = water, amount = 120}
     }
     data_recipe[crude_oil_from_tar].results[1].amount = 30
-    data_recipe[crude_oil_from_tar].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[crude_oil_from_tar].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     -- RECIPE
     local electric_engine_unit_from_carbon = "electric-engine-unit-from-carbon"
@@ -420,7 +420,7 @@ if mods[muluna_mods] then
         {type = item, name = aluminium_plate_crushed, amount = 16},
         {type = fluid, name = water, amount = 120}
     }
-    data_recipe[rocket_fuel_aluminum].surface_conditions = data_recipe[space_science_pack_muluna].surface_conditions
+    data_recipe[rocket_fuel_aluminum].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     data_item[diffused_plastic_muluna].subgroup = is_muluna_recipe
     data_item[diffused_plastic_muluna].order = d
@@ -468,6 +468,7 @@ if mods[muluna_mods] then
         {type = item, name = diffused_plastic_muluna, amount = 4}
     }
 
+    local space_science_pack_muluna = "space-science-pack-muluna"
     data_recipe[space_science_pack_muluna].subgroup = is_muluna_recipe
     data_recipe[space_science_pack_muluna].icons = R_P_I(space_science_pack, planet_muluna)
     data_recipe[space_science_pack_muluna].order = g
@@ -1065,6 +1066,15 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_corrundum].results[1].amount = 30
     end
 
+    if mods[castra_mods] then
+        local telescope_observation_castra = "muluna-telescope-observation-castra"
+        data_recipe[telescope_observation_castra].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_castra].icons = BUILDING_R_I(astronomical_data_muluna, planet_castra)
+        data_recipe[telescope_observation_castra].order = data_planet[planet_castra].order
+        data_recipe[telescope_observation_castra].energy_required = 4
+        data_recipe[telescope_observation_castra].results[1].amount = 30
+    end
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons
@@ -1104,12 +1114,6 @@ if mods[muluna_mods] then
         local telescope_observation_maraxsis = "muluna-telescope-observation-maraxsis"
         data_recipe[telescope_observation_maraxsis].icons = BUILDING_R_I(astronomical_data_muluna, planet_maraxsis)
         data_recipe[telescope_observation_maraxsis].energy_required = 4
-    end
-
-    if mods[castra_mods] then
-        local telescope_observation_castra = "muluna-telescope-observation-castra"
-        data_recipe[telescope_observation_castra].icons = BUILDING_R_I(astronomical_data_muluna, planet_castra)
-        data_recipe[telescope_observation_castra].energy_required = 4
     end
 
     if mods[shchierbin_mods] then

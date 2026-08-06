@@ -66,6 +66,7 @@ TIMSABA.functions.create_subgroups("intermediate-products",
 })
 
 -- COMBAT
+is_gun = "gun"
 is_shotgun = "is-shotgun"
 is_laser = "is-laser"
 is_rocket = "is-rocket"

@@ -130,6 +130,9 @@ if mods[paracelsin_mods] then
     table.insert(data_technology[tech_advanced_full_asteroid_processing].prerequisites, tech_germanium_synthesis)
     table.insert(data_technology[tech_advanced_full_asteroid_processing].prerequisites, tech_antimony_synthesis)
 end
+if mods[castra_mods] then
+    table.insert(data_technology[tech_advanced_full_asteroid_processing].prerequisites, tech_vanadium_synthesis)
+end
 
 if mods["CargoBayLimitResearch"] then
     data_technology["cargo-bay-limit-1"].unit.ingredients =

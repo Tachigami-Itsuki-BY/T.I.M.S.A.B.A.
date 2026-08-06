@@ -1,3 +1,4 @@
+local holmium_solution = "holmium-solution"
 local replacements =
 {
 	[carbon] = carbon_angels,
@@ -10,7 +11,8 @@ local replacements =
 	[molten_copper] = copper_molten_angels,
 	[lithium_brine] = water_thermal_angels,
 	[heavy_oil] = multi_phase_oil_angels,
-	[sulfuric_acid] = sulfuric_acid_angels
+	[sulfuric_acid] = sulfuric_acid_angels,
+	[holmium_solution] = holmium_chloride_III_solution
 }
 TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
@@ -38,7 +40,7 @@ data_fluid[sulfuric_acid] = nil
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil
 
-local holmium_solution = "holmium-solution"
+
 data_fluid[holmium_solution] = nil
 data_recipe[holmium_solution] = nil
 

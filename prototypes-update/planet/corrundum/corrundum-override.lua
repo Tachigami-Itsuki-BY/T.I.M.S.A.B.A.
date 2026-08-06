@@ -23,6 +23,7 @@ if mods[corrundum_mods] then
     data_item[chalcopyrite_ore].subgroup = is_chalcopyrite
     data_item[chalcopyrite_ore].order = a
     data_item[chalcopyrite_ore].stack_size = 200
+    data_resource[chalcopyrite_ore].factoriopedia_description = ""
     data_resource[chalcopyrite_ore].subgroup = is_chalcopyrite
     data_resource[chalcopyrite_ore].order = a
     data_resource[chalcopyrite_ore].minable.mining_time = 1
@@ -288,7 +289,7 @@ if mods[corrundum_mods] then
 
     local light_oil_alkylation = "light-oil-alkylation"
     data_recipe[light_oil_alkylation].subgroup = is_corrundum_recipe
-    data_recipe[light_oil_alkylation].icons = THREE_I(sulfuric_acid_angels, fuel_oil_angels, naphtha_angels)
+    data_recipe[light_oil_alkylation].icons = TWO_D_I(condensates_angels, hydrogen_angels, naphtha_angels, methane_angels)
     data_recipe[light_oil_alkylation].order = b_c
     data_recipe[light_oil_alkylation].energy_required = 8 -- 2C₇H₁₆ + H₂ -H₂SO₄-> C₈H₁₈ + 3CH₄
     data_recipe[light_oil_alkylation].ingredients =

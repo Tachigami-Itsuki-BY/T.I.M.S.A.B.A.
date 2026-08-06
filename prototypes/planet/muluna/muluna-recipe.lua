@@ -1,5 +1,4 @@
 if mods[muluna_mods] then
-    space_science_pack_muluna = "space-science-pack-muluna"
     -- LUNAR REGOLITH
     data:extend
     ({
@@ -80,7 +79,7 @@ if mods[muluna_mods] then
                 {type = item, name = copper_plate, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_1, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-2"},
@@ -101,7 +100,7 @@ if mods[muluna_mods] then
                 {type = item, name = silver_plate_bob, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_2, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-3"},
@@ -122,7 +121,7 @@ if mods[muluna_mods] then
                 {type = item, name = gold_plate_bob, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_3, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-small-4"},
@@ -143,7 +142,7 @@ if mods[muluna_mods] then
                 {type = item, name = platinum_plate, amount = 4}
             },
             results = {{type = item, name = solar_panel_small_4, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         -- MEDIUM
         {
@@ -165,7 +164,7 @@ if mods[muluna_mods] then
                 {type = item, name = silver_plate_bob, amount = 8}
             },
             results = {{type = item, name = solar_panel_2, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-3"},
@@ -186,7 +185,7 @@ if mods[muluna_mods] then
                 {type = item, name = gold_plate_bob, amount = 8}
             },
             results = {{type = item, name = solar_panel_3, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-4"},
@@ -207,7 +206,7 @@ if mods[muluna_mods] then
                 {type = item, name = platinum_plate, amount = 8}
             },
             results = {{type = item, name = solar_panel_4, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         -- LARGE
         {
@@ -228,7 +227,7 @@ if mods[muluna_mods] then
                 {type = item, name = copper_plate, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_1, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-2"},
@@ -248,7 +247,7 @@ if mods[muluna_mods] then
                 {type = item, name = silver_plate_bob, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_2, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-3"},
@@ -268,7 +267,7 @@ if mods[muluna_mods] then
                 {type = item, name = gold_plate_bob, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_3, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         {
             localised_name = {"recipe-name.muluna-silicon-solar-panel-large-4"},
@@ -288,7 +287,7 @@ if mods[muluna_mods] then
                 {type = item, name = platinum_plate, amount = 16}
             },
             results = {{type = item, name = solar_panel_large_4, amount = 1}},
-            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = pressure, max = 0}}
+            surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
         },
         -- HEAT
         {

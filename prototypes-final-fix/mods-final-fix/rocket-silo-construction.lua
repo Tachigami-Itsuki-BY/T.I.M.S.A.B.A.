@@ -1,20 +1,10 @@
 if mods["Rocket-Silo-Construction"] then
     local is_construction_stage = "is-construction-stage"
     local is_silo_stage = "is-silo-stage"
-    data:extend
-    ({
-        {
-            type = item_subgroup,
-            name = is_construction_stage,
-            group = ig_space,
-            order = a_a
-        },
-        {
-            type = item_subgroup,
-            name = is_silo_stage,
-            group = ig_space,
-            order = a_b
-        }
+    TIMSABA.functions.create_subgroups(ig_space,
+    {
+        {name = is_construction_stage, order = a_a},
+        {name = is_silo_stage,         order = a_b}
     })
 
     local entity_name = "entity-name."

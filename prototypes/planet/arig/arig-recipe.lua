@@ -37,6 +37,7 @@ if mods[arig_mods] then
     moshine_water_harvesting = "moshine-water-harvesting"
     paracelsin_water_harvesting = "paracelsin-water-harvesting"
     corrundum_water_harvesting = "corrundum-water-harvesting"
+    castra_water_harvesting = "castra-water-harvesting"
     panglia_water_harvesting = "panglia-water-harvesting"
     frozeta_water_harvesting = "frozeta-water-harvesting"
     local water_planets =
@@ -68,9 +69,19 @@ if mods[arig_mods] then
             name = corrundum_water_harvesting,
             subgroup = is_arig_water_planets,
             planet = planet_corrundum,
-            order = a_j,
+            order = a_l,
             amount = 120,
             surface_conditions = {{property = pressure, max = 6000, min = 6000}}
+        },
+        [castra_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.castra"}},
+            name = castra_water_harvesting,
+            subgroup = is_arig_water_planets,
+            planet = planet_castra,
+            order = a_m,
+            amount = 120,
+            surface_conditions = {{property = pressure, max = 1254, min = 1254}}
         },
         -- MOONS
         [panglia_mods] =

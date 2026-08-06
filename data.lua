@@ -65,14 +65,14 @@ require("prototypes.TIMSABA.vanadium")
 
 require("prototypes.TIMSABA.pipe")
 
-require("prototypes.space-age.vulcanus.vulcanus-wolframite")
 require("prototypes.space-age.vulcanus.vulcanus-item-fluid")
+require("prototypes.space-age.vulcanus.vulcanus-wolframite")
 require("prototypes.space-age.gleba.gleba-item-fluid")
-require("prototypes.space-age.fulgora.fulgora-brannerite")
 require("prototypes.space-age.fulgora.fulgora-item-fluid")
+require("prototypes.space-age.fulgora.fulgora-brannerite")
+require("prototypes.space-age.aquilo.aquilo-item-fluid")
 require("prototypes.space-age.aquilo.aquilo-antimonite")
 require("prototypes.space-age.aquilo.aquilo-germanite")
-require("prototypes.space-age.aquilo.aquilo-item-fluid")
 require("prototypes.space-age.aquilo.aquilo-asteroid")
 
 require("prototypes.base.base-recipe")
@@ -150,6 +150,8 @@ require("prototypes.planet.terrapalus.terrapalus-groups")
 require("prototypes.planet.terrapalus.terrapalus-recipe")
 
 require("prototypes.planet.castra.castra-groups")
+require("prototypes.planet.castra.castra-item-fluid")
+require("prototypes.planet.castra.castra-millerite")
 require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
 

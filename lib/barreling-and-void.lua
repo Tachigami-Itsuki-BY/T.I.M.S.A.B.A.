@@ -41,6 +41,8 @@ TIMSABA.barreling.simple_fluids =
     polishing_compound_hyarion,
     -- TELLUS
     chlorophyll, water_infected, seed_compound, bacteriochlorophyll,
+    -- TERRAPALUS
+    ultravium,
 }
 TIMSABA.barreling.add_simple_fluid = function(name)
     add_to_list(TIMSABA.barreling.simple_fluids, name)
@@ -93,7 +95,7 @@ TIMSABA.barreling.dangerous_fluids =
     -- BORON
     boric_acid_solution,
     -- POTASSIUM
-    potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution,
+    potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution, potassium_nitrate_solution,
     -- PHOSPORUS
     phosphorus_chloride_III_liquid, hexafluorophosphoric_acid, ionic_liquid,
     -- WATER TREATMENT
@@ -103,7 +105,7 @@ TIMSABA.barreling.dangerous_fluids =
     urea_solution_angels, nitric_acid_angels, melamine_solution_angels, hydrazine_angels, dimethylhydrazine_angels, ammonium_chloride_solution_angels, cyanamide_solution, dicyandiamide_solution, ammonium_sulfate_solution, acrylonitrile, acetone_cyanohydrin, ammonium_fluoride_solution, adiponitrile_liquid, imidazole_solution,
     hydrofluoric_acid_angels,
     sodium_hydroxide_solution_angels, sodium_chloride_solution, sodium_sulfate_solution, sodium_carbonate_solution, sodium_nitrate_solution, sodium_hypochlorite_solution, sodium_chlorate_solution, sodium_perchlorate_solution, sodium_bicarbonate_solution, sodium_cyanide_solution,
-    sulfuric_acid_angels, peroxydisulfuric_acid,
+    sulfuric_acid_angels, peroxydisulfuric_acid, toluene_sulfur_solution,
     hydrochloric_acid_angels, allyl_chloride_angels, epichlorohydrin_angels, perchloric_acid_angels, hypochlorous_acid, chlorobutane_liquid,
     calcium_hydroxide_solution, calcium_chloride_solution,
     hydrogen_peroxide, hydrocyanic_acid,
@@ -153,7 +155,7 @@ TIMSABA.barreling.gases =
     -- PETROCHEM
     compressed_air, hydrogen_angels, deuterium_angels, tritium_gas, nitrogen_angels, oxygen_angels, chlorine_angels, argon_gas,
     carbon_monoxide_angels, carbon_dioxide_angels,
-    ammonia_angels, nitrogen_monoxide_angels, nitrogen_dioxide_angels, monochloramine_angels, dinitrogen_tetroxide_angels, methylamine_angels, dimethylamine_angels, nitrogen_oxide, nitrogen_liquid,
+    ammonia_angels, nitrogen_monoxide_angels, nitrogen_dioxide_angels, monochloramine_angels, dinitrogen_tetroxide_angels, methylamine_angels, dimethylamine_angels, nitrogen_oxide, nitrogen_liquid, nitrosyl_chloride_gas,
     hydrogen_fluoride_angels, oxygen_fluoride_gas,
     acid_angels, hydrogen_sulfide_angels, sulfur_dioxide_angels, sulfur_trioxide_gas,
     hydrogen_chloride_angels, chloromethane_angels, phosgene_gas, chlorine_oxide_gas, chloroethane_gas,
@@ -175,6 +177,10 @@ TIMSABA.barreling.gases =
     moshine_air,
     -- HYARION
     hyarion_air,
+    -- CORRUNDUM
+    corrundum_air,
+    -- CASTRA
+    castra_air,
 }
 TIMSABA.barreling.add_gas = function(name)
     add_to_list(TIMSABA.barreling.gases, name)
@@ -237,7 +243,7 @@ TIMSABA.void.fluids =
     -- BORON
     boric_acid_solution,
     -- POTASSIUM
-    potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution,
+    potassium_chloride_solution, potassium_hydroxide_solution, potassium_hypochlorite_solution, potassium_chlorate_solution, potassium_sulfate_solution, potassium_nitrate_solution,
     -- PHOSPORUS
     phosphorus_chloride_III_liquid, hexafluorophosphoric_acid, ionic_liquid,
     -- PETROCHEM
@@ -245,7 +251,7 @@ TIMSABA.void.fluids =
     urea_solution_angels, nitric_acid_angels, melamine_solution_angels, hydrazine_angels, dimethylhydrazine_angels, ammonium_chloride_solution_angels, cyanamide_solution, dicyandiamide_solution, ammonium_sulfate_solution, acrylonitrile, acetone_cyanohydrin, ammonium_fluoride_solution, adiponitrile_liquid, imidazole_solution,
     hydrofluoric_acid_angels,
     sodium_hydroxide_solution_angels, sodium_chloride_solution, sodium_sulfate_solution, sodium_carbonate_solution, sodium_nitrate_solution, sodium_hypochlorite_solution, sodium_chlorate_solution, sodium_perchlorate_solution, sodium_bicarbonate_solution, sodium_cyanide_solution,
-    sulfuric_acid_angels, peroxydisulfuric_acid,
+    sulfuric_acid_angels, peroxydisulfuric_acid, toluene_sulfur_solution,
     hydrochloric_acid_angels, allyl_chloride_angels, epichlorohydrin_angels, perchloric_acid_angels, hypochlorous_acid, chlorobutane_liquid,
     calcium_hydroxide_solution, calcium_chloride_solution,
     hydrogen_peroxide, hydrocyanic_acid,
@@ -290,6 +296,8 @@ TIMSABA.void.fluids =
     polishing_compound_hyarion,
     -- TELLUS
     chlorophyll, water_infected, seed_compound, bacteriochlorophyll,
+    -- TERRAPALUS
+    ultravium,
 }
 TIMSABA.void.void_fluids = function(name)
     add_to_list(TIMSABA.void.fluids, name)

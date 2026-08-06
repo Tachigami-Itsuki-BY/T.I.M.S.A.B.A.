@@ -1,4 +1,32 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.9.0
+Date: 06.08.2026
+  Features:
+    - [Mods] Добавлена поддержка Сastra Prime: реализовано бесшовное внедрение новой планеты в игровой процесс.
 
+    - [Mods] Added support for Сastra Prime: seamlessly integrated the new planet into the gameplay flow.
+
+  Changes:
+    - [All] Начиная с версии 1.9.0, модпак требует Bob's Mods 2.1.0+ и Angel's Mods 2.0.0+. Это необходимо для подготовки модпака к переходу на Factorio 2.1.
+
+    - [All] Starting with version 1.9.0, the modpack requires Bob's Mods 2.1.0+ and Angel's Mods 2.0.0+. This is necessary to prepare the modpack for the transition to Factorio 2.1.
+
+  Balancing:
+    - [Vulcanus] В рецептах Карбида Вольфрама и Вольфрамовой Пластины скорректированы ингредиенты и результат.
+    - [All] В рецептах Боевых Дронов скорректированы ингредиенты.
+
+    - [Vulcanus] Adjusted ingredients and results in the Tungsten Carbide and Tungsten Plate recipes.
+    - [All] Adjusted ingredients in the Battle Drones recipes.
+
+  Locale:
+    - [All] Исправлены ошибки локализации.
+
+    - [All] Fixed localization bugs.
+
+  Modding:
+    - [Mods] Мод «Сastra Prime» переведён в опциональную зависимость.
+
+    - [Mods] Moved "Сastra Prime" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.8.1
 Date: 04.08.2026
@@ -40,8 +68,8 @@ Date: 04.08.2026
     - [Mods] Removed "Planet Rubia" mod from the incompatible.
     - [Mods] Removed "Cubium" mod from the incompatible.
     - [Mods] Removed "Nexus Extended Promethium Endgame" mod from the incompatible.
-    - [Mods] Replaced «Castra» mod by the «Castra Prime» mod.
-    - [Mods] Removed «Cargo bay inserters» mod from the optional dependency.
+    - [Mods] Replaced "Castra" mod by the "Castra Prime" mod.
+    - [Mods] Removed "Cargo bay inserters" mod from the optional dependency.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.0
 Date: 31.07.2026
@@ -60,10 +88,10 @@ Date: 31.07.2026
     - [Mods] Fixed minor bugs.
 
   Balancing:
-    - [Vulcanus] В рецептах Карбида Вольфрама и Вольфровой Пластины произведена замена ингредиента: Вольфрамовая Руда (4 ед.) → Вольфрамовый Порошок (1 ед.)
+    - [Vulcanus] В рецептах Карбида Вольфрама и Вольфрамовой Пластины произведена замена ингредиента: Вольфрамовая Руда (4 ед.) → Вольфрамовый Порошок (1 ед.)
     - [Paracelsin] Восстановлен рецепт Цинковой Пластины.
 
-    - [Vulcanus] Replaced an ingredient in the Tungsten Carbide and Tungsten Plate recipe: Tungsten Ore (4 units) → Tungsten Powder (1 unit)
+    - [Vulcanus] Replaced an ingredient in the Tungsten Carbide and Tungsten Plate recipes: Tungsten Ore (4 units) → Tungsten Powder (1 unit)
     - [Paracelsin] Restored recipe for Zinc Plate.
 
   Graphics:

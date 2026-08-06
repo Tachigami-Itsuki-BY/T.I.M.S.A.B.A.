@@ -65,29 +65,3 @@ script.on_event(defines.events.on_player_changed_surface, function(event)
         planet_messages.on_player_changed_surface(event)
     end
 end)
-
-script.on_configuration_changed(function(data)
-    local changes = data.mod_changes["TIMSABA"]
-    if changes then
-        -- Regenerated Ores
-        local old = changes.old_version
-        if old and old < "0.1.0" then
-            local nauvis = game.surfaces["nauvis"]
-            if nauvis then
-                local mgs = nauvis.map_gen_settings
-                mgs.autoplace_controls["molybdenite-ore"] = {}
-                mgs.autoplace_controls["powellite-ore"] = {}
-                if not mgs.autoplace_settings.entity then
-                    mgs.autoplace_settings.entity = {settings = {}}
-                end
-                mgs.autoplace_settings.entity.settings["molybdenite-ore"] = {}
-                mgs.autoplace_settings.entity.settings["powellite-ore"] = {}
-                nauvis.map_gen_settings = mgs
-                nauvis.regenerate_entity("molybdenite-ore")
-                nauvis.regenerate_entity("powellite-ore")
-
-                game.print({"mod-messages.ores-regenerated"})
-            end
-        end
-    end
-end)

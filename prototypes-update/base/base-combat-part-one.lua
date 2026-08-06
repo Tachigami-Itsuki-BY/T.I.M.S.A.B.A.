@@ -38,7 +38,6 @@ if mods[bobwarfare] then
     }
 end
 
-local is_gun = "gun"
 local firearm_magazines =
 {
     {name = firearm_magazine,         order = b},
@@ -55,6 +54,9 @@ for _, AMMO in pairs(firearm_magazines) do
         data_recipe[AMMO.name].order = AMMO.order
     end
 end
+data_recipe[firearm_magazine].icons = BUILDING_R_I(firearm_magazine, iron_plate)
+
+data_recipe[piercing_rounds_magazine].icons = R_P_I(piercing_rounds_magazine, nil, nil, number_1)
 data_recipe[piercing_rounds_magazine].energy_required = 1
 data_recipe[piercing_rounds_magazine].ingredients =
 {
@@ -108,17 +110,17 @@ local shotgun_shell = "shotgun-shell"
 local piercing_shotgun_shell = "piercing-shotgun-shell"
 local shotgun_shells =
 {
-    {name = shotgun_shell,          order = b},
-    {name = piercing_shotgun_shell, order = c},
-    {name = uranium_shotgun_shell,  order = d}
+    {name = shotgun_shell,          order = c},
+    {name = piercing_shotgun_shell, order = d},
+    {name = uranium_shotgun_shell,  order = e}
 }
 for _, AMMO in pairs(shotgun_shells) do
     if data_ammo[AMMO.name] then
-        data_ammo[AMMO.name].subgroup = is_gun
+        data_ammo[AMMO.name].subgroup = is_shotgun
         data_ammo[AMMO.name].order = AMMO.order
         data_ammo[AMMO.name].magazine_size = 30
         data_ammo[AMMO.name].stack_size = 200
-        data_recipe[AMMO.name].subgroup = is_gun
+        data_recipe[AMMO.name].subgroup = is_shotgun
         data_recipe[AMMO.name].order = AMMO.order
     end
 end
@@ -162,16 +164,10 @@ if mods[bobwarfare] then
     }
 end
 
-local laser_battery = "bob-laser-rifle-battery"
-local laser_battery_2 = "bob-laser-rifle-battery-ruby"
-local laser_battery_3 = "bob-laser-rifle-battery-sapphire"
-local laser_battery_4 = "bob-laser-rifle-battery-emerald"
-local laser_battery_5 = "bob-laser-rifle-battery-amethyst"
-local laser_battery_6 = "bob-laser-rifle-battery-topaz"
-local laser_battery_7 = "bob-laser-rifle-battery-diamond"
+
 local laser_batterys =
 {
-    {name = laser_battery,   order = b},
+    {name = laser_battery_1, order = b},
     {name = laser_battery_2, order = c},
     {name = laser_battery_3, order = d},
     {name = laser_battery_4, order = e},
@@ -205,9 +201,6 @@ data_recipe[rocket_launcher].ingredients =
     {type = item, name = steel_plate, amount = 8}
 }
 
-local explosive_rocket = "explosive-rocket"
-local atomic_rocket_2 = "angels-atomic-bomb"
-local atomic_rocket_3 = "angels-atomic-bomb-2"
 local rockets =
 {
     {name = rocket,           order = b},
@@ -235,6 +228,7 @@ data_recipe[atomic_rocket].ingredients =
     {type = item, name = explosives, amount = 8}
 }
 
+atomic_rocket_2 = "angels-atomic-bomb"
 data_recipe[atomic_rocket_2].order = d_a
 data_recipe[atomic_rocket_2].energy_required = 32
 if mods[shattered_mods] then
@@ -257,6 +251,7 @@ else
     }
 end
 
+atomic_rocket_3 = "angels-atomic-bomb-2"
 data_recipe[atomic_rocket_3].order = d_b
 data_recipe[atomic_rocket_3].energy_required = 32
 data_recipe[atomic_rocket_3].icons = R_P_I(atomic_rocket, muon_fusion_catalyst, nil, number_3)
@@ -283,7 +278,6 @@ data_recipe[flamethrower].ingredients =
     {type = item, name = steel_plate, amount = 4}
 }
 
-local flamethrower_ammo = "flamethrower-ammo"
 data_ammo[flamethrower_ammo].subgroup = is_flame
 data_ammo[flamethrower_ammo].order = b
 data_ammo[flamethrower_ammo].magazine_size = 120
@@ -299,7 +293,6 @@ data_recipe[flamethrower_ammo].ingredients =
     {type = fluid, name = naphtha_angels, amount = 60}
 }
 
-local cannon_shell = "cannon-shell"
 local cannon_shells =
 {
     cannon_shell,
@@ -679,6 +672,7 @@ for _, name in pairs(grenade_capsules) do
 end
 
 data_capsule[grenade].capsule_action.attack_parameters.range = 16
+data_recipe[grenade].icons = BUILDING_R_I(grenade, coal)
 data_recipe[grenade].ingredients =
 {
     {type = item, name = iron_plate, amount = 4},
@@ -705,6 +699,7 @@ if mods[bobwarfare] then
 end
 
 data_capsule[poison_capsule].capsule_action.attack_parameters.range = 24
+data_recipe[poison_capsule].icons = R_P_I(poison_capsule, nil, nil, number_1)
 data_recipe[poison_capsule].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
@@ -713,6 +708,7 @@ data_recipe[poison_capsule].ingredients =
 }
 
 data_capsule[slowdown_capsule].capsule_action.attack_parameters.range = 24
+data_recipe[slowdown_capsule].icons = R_P_I(slowdown_capsule, nil, nil, number_1)
 data_recipe[slowdown_capsule].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 2},
@@ -720,41 +716,50 @@ data_recipe[slowdown_capsule].ingredients =
     {type = item, name = coal, amount = 4}
 }
 
-local defender = "defender"
-local distractor = "distractor"
-local destroyer = "destroyer"
-local laser_robot = "bob-laser-robot-entity"
-data_combat_robot[defender].subgroup = is_combat_robots_entites
-data_combat_robot[defender].order = a
-data_combat_robot[distractor].subgroup = is_combat_robots_entites
-data_combat_robot[distractor].order = b
-data_combat_robot[destroyer].subgroup = is_combat_robots_entites
-data_combat_robot[destroyer].order = c
+local defender_entity = "defender"
+local distractor_entity = "distractor"
+local destroyer_entity = "destroyer"
+local laser_entity = "bob-laser-robot-entity"
+data_combat_robot[defender_entity].subgroup = is_combat_robots_entites
+data_combat_robot[defender_entity].order = a
+data_combat_robot[distractor_entity].subgroup = is_combat_robots_entites
+data_combat_robot[distractor_entity].order = b
+data_combat_robot[destroyer_entity].subgroup = is_combat_robots_entites
+data_combat_robot[destroyer_entity].order = c
 if mods[bobwarfare] then
-    data_combat_robot[laser_robot].subgroup = is_combat_robots_entites
-    data_combat_robot[laser_robot].order = d
+    data_combat_robot[laser_entity].subgroup = is_combat_robots_entites
+    data_combat_robot[laser_entity].order = d
 end
 
 local combat_robots_2 =
 {
-    "bob-defender-robot",
-    "bob-distractor-robot",
-    "bob-destroyer-robot",
-    "bob-laser-robot"
+    {name = defender_robot,   item_1 = flying_robot_frame_1, item_2 = combat_robot_brain_1, item_3 = combat_robot_tool_1},
+    {name = distractor_robot, item_1 = flying_robot_frame_2, item_2 = combat_robot_brain_2, item_3 = combat_robot_tool_2},
+    {name = destroyer_robot,  item_1 = flying_robot_frame_3, item_2 = combat_robot_brain_3, item_3 = combat_robot_tool_3},
+    {name = laser_robot,      item_1 = flying_robot_frame_4, item_2 = combat_robot_brain_4, item_3 = combat_robot_tool_4}
 }
-for _, name in pairs(combat_robots_2) do
-    if data_item[name] then
-        data_item[name].stack_size = 200
-        data_recipe[name].energy_required = 1
+for _, ITEM in pairs(combat_robots_2) do
+    if data_item[ITEM.name] then
+        data_item[ITEM.name].stack_size = 200
+        data_recipe[ITEM.name].energy_required = 1
+        if settings.startup[setting_bobmods_logistics_robotparts].value then
+            data_recipe[ITEM.name].ingredients =
+            {
+                {type = item, name = ITEM.item_1, amount = 1},
+                {type = item, name = ITEM.item_2, amount = 1},
+                {type = item, name = ITEM.item_3, amount = 1}
+            }
+            bobmods.lib.recipe.update_recycling_recipe({ITEM.name})
+        end
     end
 end
 
 local combat_robots =
 {
-    {name = defender_capsule,    order = a},
-    {name = distractor_capsule,  order = b},
-    {name = destroyer_capsule,   order = c},
-    {name = laser_robot_capsule, order = d}
+    {name = defender_capsule,   order = a},
+    {name = distractor_capsule, order = b},
+    {name = destroyer_capsule,  order = c},
+    {name = laser_capsule,      order = d}
 }
 for _, CAPSULE in pairs(combat_robots) do
     if data_capsule[CAPSULE.name] then
@@ -778,16 +783,12 @@ data_capsule[destroyer_capsule].capsule_action.attack_parameters.range = 24
 data_recipe[destroyer_capsule].ingredients[1].amount = 4
 
 if mods[bobwarfare] then
-    data_capsule[laser_robot_capsule].capsule_action.attack_parameters.range = 24
+    data_capsule[laser_capsule].capsule_action.attack_parameters.range = 24
     --[laser_robot_capsule].capsule_action.attack_parameters.ammo_type.action[2].action_delivery.target_effects[1].repeat_count = 4
-    data_recipe[laser_robot_capsule].ingredients[1].amount = 4
+    data_recipe[laser_capsule].ingredients[1].amount = 4
 end
 
 if settings.startup[setting_bobmods_logistics_robotparts].value then
-    local combat_robot_brain_1 = "bob-robot-brain-combat"
-    local combat_robot_brain_2 = "bob-robot-brain-combat-2"
-    local combat_robot_brain_3 = "bob-robot-brain-combat-3"
-    local combat_robot_brain_4 = "bob-robot-brain-combat-4"
     local combat_robot_brains =
     {
         {name = combat_robot_brain_1},
@@ -819,10 +820,6 @@ if settings.startup[setting_bobmods_logistics_robotparts].value then
     combat_robot_brain_recipe(combat_robot_brain_4, processing_unit,     advanced_processing_unit)
     bobmods.lib.recipe.update_recycling_recipe({combat_robot_brain_1, combat_robot_brain_2, combat_robot_brain_3, combat_robot_brain_4})
 
-    local combat_robot_tool_1 = "bob-robot-tool-combat"
-    local combat_robot_tool_2 = "bob-robot-tool-combat-2"
-    local combat_robot_tool_3 = "bob-robot-tool-combat-3"
-    local combat_robot_tool_4 = "bob-robot-tool-combat-4"
     local combat_robot_tools =
     {
         {name = combat_robot_tool_1},
@@ -1765,7 +1762,7 @@ bobmods.lib.recipe.update_recycling_recipe
     defender_capsule,
     distractor_capsule,
     destroyer_capsule,
-    laser_robot_capsule,
+    laser_capsule,
     light_armor,
     heavy_armor,
     modular_armor,
