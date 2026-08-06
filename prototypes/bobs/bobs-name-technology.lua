@@ -56,21 +56,13 @@ tech_logistics_5 = "logistics-5"
 tech_T3_inserter = "bob-express-inserter"
 
 tech_steel_processing = "steel-processing"
-if mods[bobplates] >= "2.1.0" then
-    tech_brass_processing = "bob-brass-processing"
-else
-    tech_brass_processing = "bob-zinc-processing"
-end
+tech_brass_processing = "bob-brass-processing"
 tech_cobalt_processing = "bob-cobalt-processing"
 tech_ceramics = "bob-ceramics"
 tech_titanium_processing = "bob-titanium-processing"
 tech_nitinol_processing = "bob-nitinol-processing"
 tech_tungsten_processing = "bob-tungsten-processing"
-if mods[bobplates] >= "2.1.0" then
-    tech_tungsten_alloy_processing = "timsaba-tungsten-alloy-processing"
-else
-    tech_tungsten_alloy_processing = "bob-tungsten-alloy-processing"
-end
+tech_tungsten_alloy_processing = "timsaba-tungsten-alloy-processing"
 tech_lithium_processing = "bob-lithium-processing"
 tech_battery_2 = "bob-battery-2"
 tech_battery_3 = "bob-battery-3"

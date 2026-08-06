@@ -489,3 +489,18 @@ if next(to_delete) then
         end
     end
 end
+
+-- Он найдет все "сломанные" ссылки на технологии в prerequisites (предварительные требования), которые остались от удаленных технологий
+for tech_name, technology in pairs(data_technology) do
+    if technology.prerequisites then
+        -- Перебираем массив с конца, чтобы корректно удалять элементы через table.remove
+        for i = #technology.prerequisites, 1, -1 do
+            local prereq_name = technology.prerequisites[i]
+
+            -- Если технологии с таким именем больше НЕТ в игре, удаляем её из списка требований этой технологии
+            if not data_technology[prereq_name] then
+                table.remove(technology.prerequisites, i)
+            end
+        end
+    end
+end

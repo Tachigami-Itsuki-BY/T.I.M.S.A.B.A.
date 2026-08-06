@@ -219,6 +219,7 @@ data_item[wolframite_ore].stack_size = 200
 data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
 data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
 data_resource[wolframite_ore].factoriopedia_simulation = simulations.factoriopedia_tungsten_ore
+data_resource[wolframite_ore].factoriopedia_description = ""
 data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
 data_resource[wolframite_ore].order = a
 data_resource[wolframite_ore].minable.mining_time = 4
@@ -231,9 +232,10 @@ data_recipe[tungsten_carbide].order = b
 data_recipe[tungsten_carbide].energy_required = 4
 data_recipe[tungsten_carbide].ingredients =
 {
-    {type = item, name = tungsten_powder, amount = 1},
-    {type = item, name = carbon_angels, amount = 1}
+    {type = item, name = tungsten_powder, amount = 16},
+    {type = item, name = carbon_angels, amount = 16}
 }
+data_recipe[tungsten_carbide].results[1].amount = 16
 data_recipe[tungsten_carbide].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_recipe[tungsten_plate].localised_name = data_item[tungsten_plate_bob].localised_name
@@ -241,8 +243,9 @@ data_recipe[tungsten_plate].category = sintering_6
 data_recipe[tungsten_plate].subgroup = is_vulcanus_tungsten
 data_recipe[tungsten_plate].icons = TWO_I(tungsten_powder, tungsten_plate_bob)
 data_recipe[tungsten_plate].order = c
-data_recipe[tungsten_plate].energy_required = 8
-data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder, amount = 1}}
+data_recipe[tungsten_plate].energy_required = 4
+data_recipe[tungsten_plate].ingredients = {{type = item, name = tungsten_powder, amount = 16}}
+data_recipe[tungsten_plate].results[1].amount = 16
 data_recipe[tungsten_plate].surface_conditions = {{property = pressure, min = 4000, max = 4000}}
 
 data_tool[metallurgic_science_pack].subgroup = is_vulcanus_tungsten

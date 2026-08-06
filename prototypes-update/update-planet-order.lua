@@ -33,6 +33,10 @@ if mods[secretas_frozeta_mods] then
     data_space_location[planet_secretas].order = a_l
 end
 
+if mods[castra_mods] then
+    data_planet[planet_castra].order = a_m
+end
+
 -- MOONS
 if mods[muluna_mods] then
     data_planet[planet_muluna].order = a_a

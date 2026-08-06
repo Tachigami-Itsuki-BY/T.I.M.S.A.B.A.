@@ -191,5 +191,5 @@ puffer_atmosphere = "angels-gas-puffer-atmosphere"
 alien_spores = "angels-alien-spores"
 alien_goo = "angels-alien-goo"
 
--- ???
+-- BOBS
 sour_gas_bob = "bob-sour-gas"

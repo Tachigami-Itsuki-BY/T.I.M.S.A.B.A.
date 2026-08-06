@@ -1,5 +1,4 @@
 if mods[arig_mods] then
-    local simulations = require("prototypes.factoriopedia-simulations")
     -- CACTUS
     data_capsule[cactus_arig].subgroup = is_cactus
     data_capsule[cactus_arig].order = a
@@ -386,6 +385,7 @@ if mods[arig_mods] then
     data_recipe[hyper_transport_belt_arig].results[1].amount = 2
     data_transport_belt[hyper_transport_belt_arig].speed = 16/60
 
+    local simulations = require("prototypes.factoriopedia-simulations")
     data_item[hyper_underground_belt_arig].stack_size = 32
     data_item[hyper_underground_belt_arig].weight = 31250
     data_recipe[hyper_underground_belt_arig].energy_required = 1

@@ -79,6 +79,13 @@ if mods[tellus_mods] then
     data_recipe[rocket_fuel_from_chloroplast_mash].subgroup = is_chloroplast
     data_recipe[rocket_fuel_from_chloroplast_mash].icons = BUILDING_R_I(rocket_fuel, planet_tellus)
     data_recipe[rocket_fuel_from_chloroplast_mash].order = f_a
+    data_recipe[rocket_fuel_from_chloroplast_mash].ingredients =
+    {
+        {type = item, name = nutrients, amount = 1},
+        {type = item, name = bioflux, amount = 2},
+        {type = item, name = chloroplast_mash, amount = 32},
+        {type = fluid, name = water, amount = 30}
+    }
     data_recipe[rocket_fuel_from_chloroplast_mash].surface_conditions = data_recipe[chloroplast_processing].surface_conditions
 
     data_fluid[seed_compound].subgroup = is_chloroplast

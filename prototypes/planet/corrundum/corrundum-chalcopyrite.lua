@@ -67,7 +67,7 @@ if mods[corrundum_mods] then
             subgroup = is_chalcopyrite,
             icons = THREE_D_I(chalcopyrite_crushed, nil, water_purified_angels, chalcopyrite_chunks, sulfur, water_yellow_waste),
             order = c,
-            energy_required = 2, -- Chalcopyrite crushed + Purified water -flotation-> Chalcopyrite chunks + S + Phosphoric waste water
+            energy_required = 2, -- Chalcopyrite crushed + Purified water -flotation-> Chalcopyrite chunks + S + Sulfuric waste water
             ingredients =
             {
                 {type = item, name = chalcopyrite_crushed, amount = 4},

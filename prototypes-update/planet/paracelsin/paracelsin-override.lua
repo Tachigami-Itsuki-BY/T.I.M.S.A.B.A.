@@ -95,6 +95,7 @@ if mods[paracelsin_mods] then
     data_item[sphalerite_ore].subgroup = is_sphalerite
     data_item[sphalerite_ore].order = a
     data_item[sphalerite_ore].stack_size = 200
+    data_resource[sphalerite_ore].factoriopedia_description = ""
     data_resource[sphalerite_ore].subgroup = is_sphalerite
     data_resource[sphalerite_ore].order = a
     data_resource[sphalerite_ore].minable.mining_time = 4
@@ -103,6 +104,7 @@ if mods[paracelsin_mods] then
     data_item[tetrahedrite_ore].subgroup = is_tetrahedrite
     data_item[tetrahedrite_ore].order = a
     data_item[tetrahedrite_ore].stack_size = 200
+    data_resource[tetrahedrite_ore].factoriopedia_description = ""
     data_resource[tetrahedrite_ore].subgroup = is_tetrahedrite
     data_resource[tetrahedrite_ore].order = a
     data_resource[tetrahedrite_ore].minable.mining_time = 4

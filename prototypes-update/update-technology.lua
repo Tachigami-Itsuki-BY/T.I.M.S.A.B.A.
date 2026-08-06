@@ -253,26 +253,15 @@ data_technology[tech_titanium_processing].effects =
 }
 
 data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
-if mods[bobplates] >= "2.1.0" then
-    data_technology[tech_tungsten_processing].effects =
-    {
-        {type = unlock_recipe, recipe = tungsten_gear_wheel},
-        {type = unlock_recipe, recipe = tungsten_bearing_ball},
-        {type = unlock_recipe, recipe = tungsten_bearing},
-        {type = unlock_recipe, recipe = tungsten_pipe},
-        {type = unlock_recipe, recipe = tungsten_pipe_to_ground},
-        {type = unlock_recipe, recipe = tungsten_carbide_plate_2}
-    }
-else
-    data_technology[tech_tungsten_processing].effects =
-    {
-        {type = unlock_recipe, recipe = tungsten_gear_wheel},
-        {type = unlock_recipe, recipe = tungsten_bearing_ball},
-        {type = unlock_recipe, recipe = tungsten_bearing},
-        {type = unlock_recipe, recipe = tungsten_pipe},
-        {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
-    }
-end
+data_technology[tech_tungsten_processing].effects =
+{
+    {type = unlock_recipe, recipe = tungsten_gear_wheel},
+    {type = unlock_recipe, recipe = tungsten_bearing_ball},
+    {type = unlock_recipe, recipe = tungsten_bearing},
+    {type = unlock_recipe, recipe = tungsten_pipe},
+    {type = unlock_recipe, recipe = tungsten_pipe_to_ground},
+    {type = unlock_recipe, recipe = tungsten_carbide_plate_2}
+}
 
 data_technology[tech_nitinol_processing].effects =
 {
@@ -284,30 +273,16 @@ data_technology[tech_nitinol_processing].effects =
 }
 
 data_technology[tech_tungsten_alloy_processing].prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack}
-if mods[bobplates] >= "2.1.0" then
-    data_technology[tech_tungsten_alloy_processing].effects =
-    {
-        {type = unlock_recipe, recipe = copper_tungsten_powder},
-        {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
-        {type = unlock_recipe, recipe = copper_tungsten_gear_wheel},
-        {type = unlock_recipe, recipe = copper_tungsten_bearing_ball},
-        {type = unlock_recipe, recipe = copper_tungsten_bearing},
-        {type = unlock_recipe, recipe = copper_tungsten_pipe},
-        {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
-    }
-else
-    data_technology[tech_tungsten_alloy_processing].effects =
-    {
-        {type = unlock_recipe, recipe = copper_tungsten_powder},
-        {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
-        {type = unlock_recipe, recipe = tungsten_carbide_plate_2},
-        {type = unlock_recipe, recipe = copper_tungsten_gear_wheel},
-        {type = unlock_recipe, recipe = copper_tungsten_bearing_ball},
-        {type = unlock_recipe, recipe = copper_tungsten_bearing},
-        {type = unlock_recipe, recipe = copper_tungsten_pipe},
-        {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
-    }
-end
+data_technology[tech_tungsten_alloy_processing].effects =
+{
+    {type = unlock_recipe, recipe = copper_tungsten_powder},
+    {type = unlock_recipe, recipe = copper_tungsten_plate_bob},
+    {type = unlock_recipe, recipe = copper_tungsten_gear_wheel},
+    {type = unlock_recipe, recipe = copper_tungsten_bearing_ball},
+    {type = unlock_recipe, recipe = copper_tungsten_bearing},
+    {type = unlock_recipe, recipe = copper_tungsten_pipe},
+    {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
+}
 data_technology[tech_tungsten_alloy_processing].unit.ingredients =
 {
     {automation_science_pack, 1},

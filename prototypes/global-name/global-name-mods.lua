@@ -221,8 +221,9 @@ nickel_plate_mods = "nickel-plate"
 military_transport_belt_mods = "military-transport-belt"
 military_underground_belt_mods = "military-underground-belt"
 military_splitter_mods = "military-splitter"
-millerite_mods = "millerite"
-gunpowder_mods = "gunpowder"
+millerite_ore = "millerite"
+gunpowder = "gunpowder"
+battlefield_science_pack = "battlefield-science-pack"
 
 -- SHCHIERBIN
 shchierbin_mods = "shchierbin"

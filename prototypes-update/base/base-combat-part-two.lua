@@ -949,9 +949,6 @@ data_item[gate].stack_size = 32
 data_item[gate].weight = 31250
 data_recipe[gate].energy_required = 1
 
-local land_mine = "land-mine"
-local poison_mine = "bob-poison-mine"
-local slowdown_mine = "bob-slowdown-mine"
 local mines =
 {
     land_mine,

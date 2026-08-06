@@ -499,9 +499,7 @@ if mods["loaders-modernized-integrations"] then
                     end
                 end
             end
-            if mods[loaders_modernized_integrations] >= "2.0.7" and mods[boblogistics] >= "2.1.0" then
-                data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
-            end
+            data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
             data_loader_1x1[BUILD.name].order = z
             if settings.startup[setting_rebalance_belts_and_pipes].value then
                 data_loader_1x1[BUILD.name].speed = BUILD.tier/60

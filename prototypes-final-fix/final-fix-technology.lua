@@ -366,3 +366,7 @@ if mods[corrundum_mods] then
 
     auto_added_science_pack(electrochemical_science_pack, electrochemical_science_pack)
 end
+
+if mods[castra_mods] then
+    auto_added_science_pack(battlefield_science_pack, battlefield_science_pack)
+end

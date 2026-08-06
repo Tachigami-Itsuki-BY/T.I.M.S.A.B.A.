@@ -389,20 +389,7 @@ data_entity["angels-crystal-rock"].minable.results =
     {type = item, name = geode_yellow, amount = 2}
 }
 
--- MULUNA
-if mods[muluna_mods] then
-    data_entity["lunar-rock"].minable.results =
-    {
-        {type = item, name = sulfur, amount = 2},
-        {type = item, name = stone, amount = 16}
-    }
-    data_entity["lunar-huge-rock"].minable.results =
-    {
-        {type = item, name = sulfur, amount = 4},
-        {type = item, name = stone, amount = 32}
-    }
-end
-
+-- PLANETS
 -- MOSHINE
 if mods[moshine_mods] then
     data_entity["moshine-" .. huge_volcanic_rock].minable.results =
@@ -430,26 +417,6 @@ if mods[moshine_mods] then
     data_resource[steam_geyser].stages.layers[1].filename = "__TIMSABA__/graphics/icons/moshine/steam-geyser-entity.png"
     data_resource[steam_geyser].order = g
     data_resource[steam_geyser].minable.results[1] = {type = fluid, name = steam, amount_min = 30, amount_max = 30, temperature = 915}
-end
-
--- PANGLIA
-if mods[panglia_mods] then
-    data_entity["panglia-huge-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 16, amount_max = 32}}
-
-    data_entity["panglia-big-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 4, amount_max = 16}}
-
-    data_entity["panglia-huge-igneous-rock"].minable.results = {{type = item, name = igneous_rock, amount_min = 32, amount_max = 128}}
-
-    data_entity["panglia-big-rock"].minable.results =
-    {
-        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 32},
-        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 32},
-        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 32},
-        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 32},
-        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 32},
-        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 32},
-        {type = item, name = stone, amount_min = 0, amount_max = 16}
-    }
 end
 
 -- ARIG
@@ -665,6 +632,46 @@ if mods[corrundum_mods] then
         {type = item, name = ore_bobmonium, amount_min = 16, amount_max = 32},
         {type = item, name = chalcopyrite_ore, amount_min = 4, amount_max = 16},
         {type = item, name = sulfur, amount_min = 8, amount_max = 32}
+    }
+end
+
+-- CASTRA
+if mods[castra_mods] then
+    data_tile["light-oil-ocean-deep"].fluid = fuel_oil_angels
+end
+
+-- MOONS
+-- MULUNA
+if mods[muluna_mods] then
+    data_entity["lunar-rock"].minable.results =
+    {
+        {type = item, name = sulfur, amount = 2},
+        {type = item, name = stone, amount = 16}
+    }
+    data_entity["lunar-huge-rock"].minable.results =
+    {
+        {type = item, name = sulfur, amount = 4},
+        {type = item, name = stone, amount = 32}
+    }
+end
+
+-- PANGLIA
+if mods[panglia_mods] then
+    data_entity["panglia-huge-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 16, amount_max = 32}}
+
+    data_entity["panglia-big-panglite-rock"].minable.results = {{type = item, name = panglite, amount_min = 4, amount_max = 16}}
+
+    data_entity["panglia-huge-igneous-rock"].minable.results = {{type = item, name = igneous_rock, amount_min = 32, amount_max = 128}}
+
+    data_entity["panglia-big-rock"].minable.results =
+    {
+        {type = item, name = ore_saphirite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_jivolite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_stiratite, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_rubyte, amount_min = 0, amount_max = 32},
+        {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 32},
+        {type = item, name = stone, amount_min = 0, amount_max = 16}
     }
 end
 

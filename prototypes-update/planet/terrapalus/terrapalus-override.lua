@@ -3,6 +3,7 @@ if mods[terrapalus_mods] then
     data_item[palusium_ore].subgroup = is_terrapalus_recipe
     data_item[palusium_ore].order = a
     data_item[palusium_ore].stack_size = 200
+    data_item[palusium_ore].fuel_category = base_fuel
     data_item[palusium_ore].fuel_value = (225/8) .. kJ
     data_resource[palusium_ore].subgroup = is_terrapalus_recipe
     data_resource[palusium_ore].order = a

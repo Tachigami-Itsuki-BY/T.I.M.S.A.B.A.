@@ -228,7 +228,6 @@ data_recipe[fusion_power_cell].ingredients =
 data_recipe[fusion_power_cell].results[1].amount = 1
 
 -- WAR
-local railgun = "railgun"
 data_gun[railgun].subgroup = is_aquilo_war
 data_gun[railgun].order = a
 data_gun[railgun].stack_size = 1
@@ -246,7 +245,6 @@ data_recipe[railgun].ingredients =
     {type = fluid, name = fluoroketone_cold, amount = 15}
 }
 
-local railgun_turret = "railgun-turret"
 data_item[railgun_turret].subgroup = is_aquilo_war
 data_item[railgun_turret].order = b
 data_item[railgun_turret].stack_size = 16

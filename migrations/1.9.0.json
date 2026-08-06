@@ -1,0 +1,8 @@
+{
+
+    "recipe":
+    [
+        ["germanium-pure-mix-processing", "germanium-ore-pure-mix-processing"],
+        ["antimony-pure-mix-processing", "antimony-ore-pure-mix-processing"]
+    ]
+}

@@ -1,5 +1,4 @@
 local data_autoplace_control = data.raw["autoplace-control"]
--- PLANETS
 data_autoplace_control[coal].order = a
 data_autoplace_control[ore_saphirite].order = a_a
 data_autoplace_control[ore_jivolite].order = a_b
@@ -31,6 +30,7 @@ data_autoplace_control[thermal_water_geyser_ac].localised_name = {"", "[entity=l
 data_autoplace_control[thermal_water_geyser_ac].order = b_g
 data_autoplace_control["fluorine_vent"].order = b_h
 
+-- PLANETS
 -- MOSHINE
 if mods[moshine_mods] then
     data_autoplace_control["multi_ore"].order = c
@@ -73,6 +73,44 @@ if mods[corrundum_mods] then
     data_autoplace_control["sulfur_ore"].order = c_q
 end
 
+-- CASTRA
+if mods[castra_mods] then
+    local vanilla_resources = {copper_ore, stone, uranium_ore}
+    local angels_resources = {ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}
+
+    local map_gen = data_planet[planet_castra].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_castra
+        end
+    end
+
+    data_autoplace_control[millerite_ore].order = c_r
+    data_autoplace_control[gunpowder].order = c_s
+    data_autoplace_control["hydrogen-sulfide-vent"].order = c_t
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then
@@ -93,12 +131,10 @@ end
 -- TERRAPALUS
 if mods[terrapalus_mods] then
     local vanilla_resources = {iron_ore, copper_ore, stone}
-    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium, natural_gas}
+    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}
 
-    -- Ссылка на карту генерации для удобства
     local map_gen = data_planet[planet_terrapalus].map_gen_settings
 
-    -- ИСПРАВЛЕНИЕ: Инициализируем autoplace_settings, если оригинальный мод этого не сделал
     if not map_gen.autoplace_settings then
         map_gen.autoplace_settings = {entity = {settings = {}}}
     end
@@ -114,17 +150,13 @@ if mods[terrapalus_mods] then
         end
     end
 
-    -- 2. Внедряем руды Ангела (ИСПРАВЛЕНО на ipairs)
+    -- 2. Внедряем руды Ангела
     for _, res_name in ipairs(angels_resources) do
-        -- Добавляем ползунок (строка, которая вас смущала - она верна!)
         map_gen.autoplace_controls[res_name] = {}
 
-        -- Прописываем саму сущность в настройки генерации планеты
         map_gen.autoplace_settings.entity.settings[res_name] = {}
 
-        -- Намертво привязываем отображение к Факторопедии Террапалуса
         if data_resource[res_name] then
-            -- Убедитесь, что planet_terrapalus здесь - это строка, например "terrapalus"
             data_resource[res_name].location = planet_terrapalus
         end
     end

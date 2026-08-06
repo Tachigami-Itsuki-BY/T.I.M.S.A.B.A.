@@ -291,7 +291,7 @@ local function replace_fluid_in_table(item_table)
 end
 
 -- Шаг 1. Проходим по всем рецептам
-for _, recipe in pairs(data_recipe or data.raw["recipe"] or {}) do
+for _, recipe in pairs(data_recipe or {}) do
     replace_fluid_in_table(recipe.ingredients)
     replace_fluid_in_table(recipe.results)
 end
@@ -334,7 +334,7 @@ local replacements_3 =
 	[solid_ammonium_chloroplatinate_smelting] = platinum_ingot_3,
 	--[] = platinum_powder
 }
-for _, technology in pairs(data.raw.technology or {}) do
+for _, technology in pairs(data_technology or {}) do
 	if technology.effects then
 		for _, effect in pairs(technology.effects) do
 			if effect.type == unlock_recipe then
@@ -354,23 +354,3 @@ data_recipe[platinum_ore_smelting] = nil
 data_recipe[processed_platinum_smelting] = nil
 data_recipe[solid_ammonium_chloroplatinate_smelting] = nil
 --data_recipe[] = nil
-
---[[if mods[boblogistics] >= "2.1.0" then
-    local ceramic_pipe = "bob-ceramic-pipe"
-    data_item[ceramic_pipe] = nil
-    data_recipe[ceramic_pipe] = nil
-    data_recipe[ceramic_pipe .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. ceramic_pipe .. _panglia_crushing] = nil
-    end
-    data_pipe[ceramic_pipe] = nil
-
-    local ceramic_pipe_to_ground = "bob-ceramic-pipe-to-ground"
-    data_item[ceramic_pipe_to_ground] = nil
-    data_recipe[ceramic_pipe_to_ground] = nil
-    data_recipe[ceramic_pipe_to_ground .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. ceramic_pipe_to_ground .. _panglia_crushing] = nil
-    end
-    data_pipe_to_ground[ceramic_pipe_to_ground] = nil
-end]]

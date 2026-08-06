@@ -4,94 +4,85 @@ if mods[castra_mods] then
         [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
         [nickel_plate_mods] = nickel_plate_bob
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
-        end
+    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
-
-        if recipe.main_product then
-	    	local replace = replacements[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
-        end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-	for _, spawner in pairs(data.raw["unit-spawner"] or {}) do
-		if spawner.loot then
-    		for _, entry in pairs(spawner.loot) do
-				local new = replacements[entry.item]
-				if new then
-					entry.item = new
-				end
-    		end
-  		end
+	local lithium_battery = "lithium-battery"
+	local carbon_fiber_wall = "carbon-fiber-wall"
+	local energy_shield_mk3_equipment = "energy-shield-mk3-equipment"
+	local mod_items =
+	{
+		nickel_plate_mods,
+		lithium_battery,
+		carbon_fiber_wall,
+		energy_shield_mk3_equipment
+	}
+	for _, name in ipairs(mod_items) do
+		data_item[name] = nil
+		data_recipe[name .. _recycling] = nil
+		if name ~= nickel_plate_mods then
+			data_recipe[name] = nil
+			data_technology[name] = nil
+		end
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+		if name == carbon_fiber_wall then
+			data_wall[name] = nil
+		end
+		if name == energy_shield_mk3_equipment then
+			data_energy_shield_eq[name] = nil
+		end
 	end
 
-	data_item[nickel_plate_mods] = nil
+	bobmods.lib.recipe.update_recycling_recipe
+	({
+		railgun,
+    	railgun_turret
+	})
+
+	data_recipe["hydrogen-sulfide-carbon-extraction"] = nil
+
+	data_recipe["nickel-extraction"] = nil
+	data_recipe["battery-nickel"] = nil
+	data_recipe["tank-nickel"] = nil
+	data_recipe["nickel-sulfide-reduction"] = nil
+	data_technology["millerite-processing"] = nil
+
+	local advanced_nickel_processing = "advanced-nickel-processing"
+	data_recipe[advanced_nickel_processing] = nil
+	data_technology[advanced_nickel_processing] = nil
+
+	local reverse_cracking = "reverse-cracking"
+	data_recipe[reverse_cracking] = nil
+	data_technology[reverse_cracking] = nil
+
+	local holmium_catalyzing = "holmium-catalyzing"
+	data_recipe[holmium_catalyzing] = nil
+	data_technology[holmium_catalyzing] = nil
+
+	local jammed_data_collector_process = "jammed-data-collector-process"
+	local replacements_2 =
+	{
+		[jammed_data_collector_process] = castra_data
+	}
+	for _, technology in pairs(data_technology or {}) do
+		if technology.effects then
+			for _, effect in pairs(technology.effects) do
+				if effect.type == unlock_recipe then
+					local replace = replacements_2[effect.recipe]
+					if replace then
+						effect.recipe = replace
+					end
+				end
+			end
+		end
+	end
+	for _, machine in pairs(data_assembling or {}) do
+        -- Если у автомата жестко задан старый рецепт, меняем его на новый
+        if machine.fixed_recipe == jammed_data_collector_process then
+            machine.fixed_recipe = castra_data
+        end
+    end
+
+	data_recipe[jammed_data_collector_process] = nil
 end

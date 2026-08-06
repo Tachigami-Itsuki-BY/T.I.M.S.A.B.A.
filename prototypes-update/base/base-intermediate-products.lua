@@ -290,10 +290,7 @@ data_recipe[battery_lead_acid].ingredients =
     {type = fluid, name = water_purified_angels, amount = 30}
 }
 
-if mods[bobplates] >= "2.1.0" then
-    data_item[battery_lithium_ion].localised_name = {"item-name.bob-lithium-ion-battery"}
-    data_recipe[battery_lithium_ion].localised_name = {"item-name.bob-lithium-ion-battery"}
-end
+data_item[battery_lithium_ion].localised_name = {"item-name.bob-lithium-ion-battery"}
 data_item[battery_lithium_ion].order = b
 data_recipe[battery_lithium_ion].order = b
 data_recipe[battery_lithium_ion].energy_required = 4
@@ -307,10 +304,7 @@ data_recipe[battery_lithium_ion].ingredients =
     {type = fluid, name = dimethyl_carbonate, amount = 30}
 }
 
-if mods[bobplates] >= "2.1.0" then
-    data_item[battery_silver_zinc].localised_name = {"item-name.bob-silver-zinc-battery"}
-    data_recipe[battery_silver_zinc].localised_name = {"item-name.bob-silver-zinc-battery"}
-end
+data_item[battery_silver_zinc].localised_name = {"item-name.bob-silver-zinc-battery"}
 data_item[battery_silver_zinc].order = c
 data_recipe[battery_silver_zinc].order = c
 data_recipe[battery_silver_zinc].energy_required = 4

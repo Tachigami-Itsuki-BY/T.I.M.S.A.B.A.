@@ -206,7 +206,6 @@ data_recipe[teslagun].ingredients =
     {type = fluid, name = electrolyte, amount = 120}
 }
 
-local tesla_ammo = "tesla-ammo"
 data_ammo[tesla_ammo].subgroup = is_fulgora_war
 data_ammo[tesla_ammo].order = b
 data_ammo[tesla_ammo].stack_size = 64

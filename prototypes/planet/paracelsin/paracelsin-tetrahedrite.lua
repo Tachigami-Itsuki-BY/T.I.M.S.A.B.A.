@@ -41,7 +41,7 @@ if mods[paracelsin_mods] then
     tetrahedrite_chunks_sorting = "tetrahedrite-chunks-sorting"
     tetrahedrite_crystals_sorting = "tetrahedrite-crystals-sorting"
     tetrahedrite_purified_sorting = "tetrahedrite-purified-sorting"
-    antimony_ore_recipe = "antimony-pure-mix-processing"
+    antimony_ore_recipe = "antimony-ore-pure-mix-processing"
     TIMSABA.functions.create_recipes
     ({
         -- CRUSHED
