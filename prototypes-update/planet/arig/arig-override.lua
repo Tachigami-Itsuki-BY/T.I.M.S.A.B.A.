@@ -383,7 +383,7 @@ if mods[arig_mods] then
         {type = item, name = niobium_titanium_plate, amount = 2}
     }
     data_recipe[hyper_transport_belt_arig].results[1].amount = 2
-    data_transport_belt[hyper_transport_belt_arig].speed = 16/60
+    data_transport_belt[hyper_transport_belt_arig].speed = 15/60
 
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[hyper_underground_belt_arig].stack_size = 32
@@ -397,8 +397,12 @@ if mods[arig_mods] then
         {type = item, name = niobium_titanium_plate, amount = 8}
     }
     data_recipe[hyper_underground_belt_arig].results[1].amount = 2
-    data_underground_belt[hyper_underground_belt_arig].max_distance = 64
-    data_underground_belt[hyper_underground_belt_arig].speed = 16/60
+    data_underground_belt[hyper_underground_belt_arig].speed = 15/60
+    if settings.startup[setting_rebalance_belts_and_pipes].value then
+        data_underground_belt[hyper_underground_belt_arig].max_distance = 64
+    else
+        data_underground_belt[hyper_underground_belt_arig].max_distance = 31
+    end
     data_underground_belt[hyper_underground_belt_arig].factoriopedia_simulation = simulations.hyper_underground_belt_arig
 
     data_item[hyper_splitter_arig].stack_size = 16
@@ -412,7 +416,7 @@ if mods[arig_mods] then
         {type = item, name = vulcanus_splitter, amount = 1},
         {type = item, name = niobium_titanium_plate, amount = 4}
     }
-    data_splitter[hyper_splitter_arig].speed = 16/60
+    data_splitter[hyper_splitter_arig].speed = 15/60
 
     if mods[hyarion_mods] then
         data_item[hyper_transport_belt_arig].subgroup = is_hyarion_logistics

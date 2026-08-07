@@ -117,6 +117,7 @@ data_capsule[jellynut].order = a
 data_capsule[jellynut].stack_size = 200
 data_capsule[jellynut].fuel_category = base_fuel
 data_capsule[jellynut].fuel_value = 7200 .. kJ
+TIMSABA.void.void_organics(jellynut)
 
 local jellynut_seed = "jellynut-seed"
 data_item[jellynut_seed].subgroup = is_jellynut
@@ -131,6 +132,7 @@ data_capsule[jelly].stack_size = 200
 data_capsule[jelly].fuel_category = base_fuel
 data_capsule[jelly].fuel_value = 900 .. kJ
 data_capsule[jelly].spoil_ticks = 5 * minute
+TIMSABA.void.void_organics(jelly)
 
 local jellynut_processing = "jellynut-processing"
 data_recipe[jellynut_processing].subgroup = is_jellynut
@@ -169,6 +171,7 @@ data_capsule[yumako].order = a
 data_capsule[yumako].stack_size = 200
 data_capsule[yumako].fuel_category = base_fuel
 data_capsule[yumako].fuel_value = 1800 .. kJ
+TIMSABA.void.void_organics(yumako)
 
 local yumako_seed = "yumako-seed"
 data_item[yumako_seed].subgroup = is_yumako
@@ -183,6 +186,7 @@ data_capsule[yumako_mash].stack_size = 200
 data_capsule[yumako_mash].fuel_category = base_fuel
 data_capsule[yumako_mash].fuel_value = 900 .. kJ
 data_capsule[yumako_mash].spoil_ticks = 5 * minute
+TIMSABA.void.void_organics(yumako_mash)
 
 local yumako_processing = "yumako-processing"
 data_recipe[yumako_processing].subgroup = is_yumako
@@ -231,6 +235,7 @@ data_capsule[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_capsule[bioflux].order = b
 data_capsule[bioflux].stack_size = 200
 data_capsule[bioflux].fuel_value = 3600 .. kJ
+TIMSABA.void.void_organics(bioflux)
 data_recipe[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[bioflux].icons = THREE_I(jelly, yumako_mash, bioflux)
 data_recipe[bioflux].order = b

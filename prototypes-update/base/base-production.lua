@@ -798,6 +798,9 @@ if mods[bobtech] then
         if mods[castra_mods] then
             table.insert(data_lab[lab_alien].inputs, battlefield_science_pack)
         end
+        if mods[shchierbin_mods] then
+            table.insert(data_lab[lab_alien].inputs, vanadium_science_pack)
+        end
     end
 end
 

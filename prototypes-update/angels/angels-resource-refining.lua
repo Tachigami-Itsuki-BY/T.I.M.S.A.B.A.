@@ -1174,6 +1174,7 @@ data_recipe[filter_lime_used_cleaning].results[1].amount = 30
 
 data_fluid[sludge_ferrous].subgroup = is_iron_fluid
 data_fluid[sludge_ferrous].order = a
+TIMSABA.barreling.add_simple_fluid(sludge_ferrous)
 data_recipe[sludge_ferrous].subgroup = is_iron_fluid
 data_recipe[sludge_ferrous].icons = THREE_D_I(powder_ferrous, water_thermal_angels, sulfuric_acid_angels, sludge_ferrous)
 data_recipe[sludge_ferrous].order = a
@@ -1187,6 +1188,7 @@ data_recipe[sludge_ferrous].results[1].amount = 60
 
 data_fluid[slurry_ferrous].subgroup = is_iron_fluid
 data_fluid[slurry_ferrous].order = b
+TIMSABA.barreling.add_simple_fluid(slurry_ferrous)
 data_recipe[slurry_ferrous].subgroup = is_iron_fluid
 data_recipe[slurry_ferrous].icons = THREE_I(dust_ferrous, sulfuric_acid_angels, slurry_ferrous)
 data_recipe[slurry_ferrous].order = b
@@ -1199,6 +1201,7 @@ data_recipe[slurry_ferrous].results[1].amount = 30
 
 data_fluid[concentrate_ferrous].subgroup = is_iron_fluid
 data_fluid[concentrate_ferrous].order = c
+TIMSABA.barreling.add_simple_fluid(concentrate_ferrous)
 data_recipe[concentrate_ferrous].subgroup = is_iron_fluid
 data_recipe[concentrate_ferrous].icons = TWO_D_I(slurry_ferrous, water_purified_angels, concentrate_ferrous, water_yellow_waste)
 data_recipe[concentrate_ferrous].order = c
@@ -1207,6 +1210,7 @@ data_recipe[concentrate_ferrous].results[2].amount = 15
 
 data_fluid[concentrate_anodized_ferrous].subgroup = is_iron_fluid
 data_fluid[concentrate_anodized_ferrous].order = d
+TIMSABA.barreling.add_simple_fluid(concentrate_anodized_ferrous)
 data_recipe[concentrate_anodized_ferrous].subgroup = is_iron_fluid
 data_recipe[concentrate_anodized_ferrous].icons = THREE_D_I(concentrate_ferrous, nil, water_purified_angels, concentrate_anodized_ferrous, slag_angels, water_yellow_waste)
 data_recipe[concentrate_anodized_ferrous].order = d
@@ -1218,6 +1222,7 @@ data_fluid[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron
 data_fluid[iron_chloride_III_solution_angels].localised_description = show_formula and {chemical_formula, "FeCl[font=default-tiny-bold]3(aq)[/font]"} or nil
 data_fluid[iron_chloride_III_solution_angels].subgroup = is_iron_fluid
 data_fluid[iron_chloride_III_solution_angels].order = e
+TIMSABA.barreling.add_dangerous_fluid(iron_chloride_III_solution_angels)
 data_recipe[iron_chloride_III_solution_angels].localised_name = {"fluid-name.iron-chloride-III-solution"}
 data_recipe[iron_chloride_III_solution_angels].category = chemistry
 data_recipe[iron_chloride_III_solution_angels].subgroup = is_iron_fluid
@@ -1238,6 +1243,7 @@ data_recipe[iron_chloride_III_solution_angels].main_product = iron_chloride_III_
 
 data_fluid[sludge_cupric].subgroup = is_copper_fluid
 data_fluid[sludge_cupric].order = a
+TIMSABA.barreling.add_simple_fluid(sludge_cupric)
 data_recipe[sludge_cupric].subgroup = is_copper_fluid
 data_recipe[sludge_cupric].icons = THREE_D_I(powder_cupric, water_thermal_angels, sulfuric_acid_angels, sludge_cupric)
 data_recipe[sludge_cupric].order = a
@@ -1251,6 +1257,7 @@ data_recipe[sludge_cupric].results[1].amount = 60
 
 data_fluid[slurry_cupric].subgroup = is_copper_fluid
 data_fluid[slurry_cupric].order = b
+TIMSABA.barreling.add_simple_fluid(slurry_cupric)
 data_recipe[slurry_cupric].subgroup = is_copper_fluid
 data_recipe[slurry_cupric].icons = THREE_I(dust_cupric, sulfuric_acid_angels, slurry_cupric)
 data_recipe[slurry_cupric].order = b
@@ -1263,6 +1270,7 @@ data_recipe[slurry_cupric].results[1].amount = 30
 
 data_fluid[concentrate_cupric].subgroup = is_copper_fluid
 data_fluid[concentrate_cupric].order = c
+TIMSABA.barreling.add_simple_fluid(concentrate_cupric)
 data_recipe[concentrate_cupric].subgroup = is_copper_fluid
 data_recipe[concentrate_cupric].icons = TWO_D_I(slurry_cupric, water_purified_angels, concentrate_cupric, water_yellow_waste)
 data_recipe[concentrate_cupric].order = c
@@ -1271,6 +1279,7 @@ data_recipe[concentrate_cupric].results[2].amount = 15
 
 data_fluid[concentrate_anodized_cupric].subgroup = is_copper_fluid
 data_fluid[concentrate_anodized_cupric].order = d
+TIMSABA.barreling.add_simple_fluid(concentrate_anodized_cupric)
 data_recipe[concentrate_anodized_cupric].subgroup = is_copper_fluid
 data_recipe[concentrate_anodized_cupric].icons = THREE_D_I(concentrate_cupric, nil, water_purified_angels, concentrate_anodized_cupric, slag_angels, water_yellow_waste)
 data_recipe[concentrate_anodized_cupric].order = d
@@ -1282,6 +1291,7 @@ data_fluid[copper_chloride_II_solution_angels].localised_name = {"fluid-name.cop
 data_fluid[copper_chloride_II_solution_angels].localised_description = show_formula and {chemical_formula, "CuCl[font=default-tiny-bold]2(aq)[/font]"} or nil
 data_fluid[copper_chloride_II_solution_angels].subgroup = is_copper_fluid
 data_fluid[copper_chloride_II_solution_angels].order = e
+TIMSABA.barreling.add_dangerous_fluid(copper_chloride_II_solution_angels)
 data_recipe[copper_chloride_II_solution_angels].localised_name = {"fluid-name.copper-chloride-II-solution"}
 data_recipe[copper_chloride_II_solution_angels].category = chemistry
 data_recipe[copper_chloride_II_solution_angels].subgroup = is_copper_fluid
@@ -1301,6 +1311,14 @@ data_recipe[copper_chloride_II_solution_angels].results =
 data_recipe[copper_chloride_II_solution_angels].main_product = copper_chloride_II_solution_angels
 
 data_item_subgroup["angels-ore-sorting-fluid"].order = h_c
+
+TIMSABA.barreling.add_simple_fluid(slurry_slag)
+
+TIMSABA.barreling.add_simple_fluid(sludge_mineral)
+
+TIMSABA.barreling.add_simple_fluid(slurry_crystal)
+
+TIMSABA.barreling.add_simple_fluid(seedling_crystal)
 
 -- BUILDING
 data_recipe[milling_drum].icons = TWO_I(steel_plate, milling_drum)

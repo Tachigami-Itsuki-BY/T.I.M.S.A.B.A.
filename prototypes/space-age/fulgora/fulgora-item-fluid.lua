@@ -11,6 +11,7 @@ TIMSABA.functions.create_fluids
         flow_color = {r = 96 / 255, g = 42 / 255, b = 66 / 255}
     }
 })
+TIMSABA.barreling.add_gas(fulgora_air)
 
 -- SCRAP
 construction_scrap = "construction-scrap"

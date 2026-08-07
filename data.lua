@@ -9,6 +9,7 @@ require("prototypes.recipe-category")
 require("prototypes.fuel-category")
 
 require("lib.TIMSABA-functions")
+require("lib.barreling-and-void")
 
 require("prototypes.base.base-groups")
 require("prototypes.bobs.bobs-groups")
@@ -156,6 +157,7 @@ require("prototypes.planet.castra.castra-recipe")
 require("prototypes.planet.castra.castra-technology")
 
 require("prototypes.planet.shchierbin.shchierbin-groups")
+require("prototypes.planet.shchierbin.shchierbin-item-fluid")
 require("prototypes.planet.shchierbin.shchierbin-recipe")
 require("prototypes.planet.shchierbin.shchierbin-technology")
 
@@ -184,7 +186,5 @@ require("prototypes.planet.shattered.shattered-technology")
 --require("prototypes.planet.nexus.nexus-technology")
 
 require("prototypes.angels-ground-water-pump-recipe")
-
-require("lib.barreling-and-void")
 
 require("prototypes.mods.space-science-pack")

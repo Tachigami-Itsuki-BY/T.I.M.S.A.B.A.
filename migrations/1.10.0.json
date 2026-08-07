@@ -1,0 +1,12 @@
+{
+    "item":
+    [
+        ["calcium", "timasaba-calcium"]
+    ],
+    "recipe":
+    [
+        ["calcium", "timasaba-calcium"],
+        ["metallic-asteroid-crushing-2", "timasaba-metallic-asteroid-crushing-2"],
+        ["oxide-asteroid-crushing-2", "timasaba-oxide-asteroid-crushing-2"]
+    ]
+}

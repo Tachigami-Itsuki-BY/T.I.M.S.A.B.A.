@@ -45,6 +45,10 @@ TIMSABA.functions.create_fluids
         max_temperature = -129
     }
 })
+TIMSABA.barreling.add_gas(aquilo_air)
+TIMSABA.barreling.add_gas(tetrafluorohydrazine_gas)
+TIMSABA.barreling.add_gas(nitrogen_trifluoride_gas)
+TIMSABA.barreling.add_gas(nitrogen_trifluoride_liquefied)
 
 -- FLUORINE
 chloroform_liquid = "chloroform-liquid"
@@ -100,6 +104,11 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C3F6O")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(chloroform_liquid)
+TIMSABA.barreling.add_gas(difluorochloromethane_gas)
+TIMSABA.barreling.add_gas(tetrafluoroethylene_gas)
+TIMSABA.barreling.add_gas(hexafluoropropylene_gas)
+TIMSABA.barreling.add_gas(hexafluoropropylene_oxide_gas)
 
 -- SEMICONDUCTOR ITEM
 sodium_nitrite = "sodium-nitrite"
@@ -184,3 +193,9 @@ TIMSABA.functions.create_fluids
         flow_color = {r = 1.0, g = 0.95, b = 0.70}
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(nitrobenzene_liquid)
+TIMSABA.barreling.add_dangerous_fluid(aniline_liquid)
+TIMSABA.barreling.add_dangerous_fluid(benzenediazonium_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(lactic_acid)
+TIMSABA.barreling.add_dangerous_fluid(ethyl_lactate_liquid)
+TIMSABA.barreling.add_dangerous_fluid(photoresist_liquid)

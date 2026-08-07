@@ -4,6 +4,7 @@ data_item_subgroup[is_bio_fish_breeding].order = a
 
 data_fluid[water_for_fish].subgroup = is_bio_fish_breeding
 data_fluid[water_for_fish].order = a
+TIMSABA.barreling.add_simple_fluid(water_for_fish)
 data_recipe[water_for_fish].subgroup = is_bio_fish_breeding
 data_recipe[water_for_fish].icons = THREE_I(water, water_saline_angels, water_for_fish)
 data_recipe[water_for_fish].order = a
@@ -13,6 +14,7 @@ data_recipe[water_for_fish].results[1].amount = 120
 
 data_fluid[polluted_water_for_fish].subgroup = is_bio_fish_breeding
 data_fluid[polluted_water_for_fish].order = b
+TIMSABA.barreling.add_simple_fluid(polluted_water_for_fish)
 
 data_item[raw_meat].subgroup = is_bio_fish_breeding
 data_item[raw_meat].order = c
@@ -26,9 +28,11 @@ data_item[fish_pulp].spoil_result = spoilage
 
 data_fluid[raw_fish_oil].subgroup = is_bio_fish_breeding
 data_fluid[raw_fish_oil].order = e
+TIMSABA.barreling.add_simple_fluid(raw_fish_oil)
 
 data_fluid[fish_oil].subgroup = is_bio_fish_breeding
 data_fluid[fish_oil].order = f
+TIMSABA.barreling.add_simple_fluid(fish_oil)
 
 -- FISH
 local is_bio_fish = "angels-bio-fish"

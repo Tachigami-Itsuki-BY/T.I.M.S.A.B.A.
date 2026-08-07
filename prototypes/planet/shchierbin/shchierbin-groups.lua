@@ -1,83 +1,31 @@
 if mods[shchierbin_mods] then
-    local shchierbin = "shchierbin"
-    is_shchierbin_ore = "shchierbin-ore"
-    is_shchierbin_new_recipe = "shchierbin-new-recipe"
-    is_shchierbin_building_energy = "shchierbin-building-energy"
-    is_shchierbin_building = "shchierbin-building"
-    is_shchierbin_recipe = "shchierbin-recipe"
-    is_shchierbin_recipe_vanadium = "shchierbin-recipe-vanadium"
-    is_shchierbin_recipe_sulfur = "shchierbin-recipe-sulfur"
-    is_shchierbin_gas_ballon = "shchierbin-gas-ballon"
-    is_shchierbin_recipe_space = "shchierbin-recipe-space"
-    is_shchierbin_unsorted = "shchierbin-unsorted"
+    local ig_shchierbin = "shchierbin"
     data:extend
     ({
         {
             type = item_group,
-            name = shchierbin,
-            order = y,
+            name = ig_shchierbin,
+            order = x_m,
             icon = "__TIMSABA__/graphics/icons/shchierbin/shchierbin-planet.png",
-            icon_size = 128,
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_ore,
-            group = shchierbin,
-            order = a
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_new_recipe,
-            group = shchierbin,
-            order = b
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_building_energy,
-            group = shchierbin,
-            order = c
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_building,
-            group = shchierbin,
-            order = d
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_recipe,
-            group = shchierbin,
-            order = e
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_recipe_vanadium,
-            group = shchierbin,
-            order = e_a
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_recipe_sulfur,
-            group = shchierbin,
-            order = e_b
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_gas_ballon,
-            group = shchierbin,
-            order = f
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_recipe_space,
-            group = shchierbin,
-            order = g
-        },
-        {
-            type = item_subgroup,
-            name = is_shchierbin_unsorted,
-            group = shchierbin,
-            order = z
-        },
+            icon_size = 128
+        }
+    })
+
+    is_shchierbin_ore = "is-shchierbin-ore"
+    is_shchierbin_vanadium = "is-shchierbin-vanadium"
+    is_shchierbin_vanadium_chemistry = "is-shchierbin-vanadium-chemistry"
+    is_shchierbin_vanadium_casting = "is-shchierbin-vanadium-casting"
+    is_shchierbin_vanadium_steel = "is-shchierbin-vanadium-steel"
+    is_shchierbin_titanium_aluminium_vanadium = "is_shchierbin_titanium_aluminium_vanadium"
+    is_shchierbin_recipe = "is-shchierbin-recipe"
+    TIMSABA.functions.create_subgroups(ig_shchierbin,
+    {
+        {name = is_shchierbin_ore,                         order = a},
+        {name = is_shchierbin_vanadium,                    order = b},
+        {name = is_shchierbin_vanadium_chemistry,          order = c},
+        {name = is_shchierbin_vanadium_casting,            order = d},
+        {name = is_shchierbin_vanadium_steel,              order = d_b},
+        {name = is_shchierbin_titanium_aluminium_vanadium, order = d_c},
+        {name = is_shchierbin_recipe,                      order = e}
     })
 end

@@ -54,7 +54,7 @@ for _, AMMO in pairs(firearm_magazines) do
         data_recipe[AMMO.name].order = AMMO.order
     end
 end
-data_recipe[firearm_magazine].icons = BUILDING_R_I(firearm_magazine, iron_plate)
+data_recipe[firearm_magazine].icons = R_P_I(firearm_magazine, nil, nil, number_1)
 
 data_recipe[piercing_rounds_magazine].icons = R_P_I(piercing_rounds_magazine, nil, nil, number_1)
 data_recipe[piercing_rounds_magazine].energy_required = 1

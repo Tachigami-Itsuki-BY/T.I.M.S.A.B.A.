@@ -188,4 +188,6 @@ if mods[secretas_frozeta_mods] then
     table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = golden_science_pack, change = 0.1})
 
     data_technology["worker-robots-storage-4"].prerequisites = {golden_science_pack, "worker-robots-storage-3"}
+
+    table.insert(data_technology[promethium_science_pack].prerequisites, golden_science_pack)
 end

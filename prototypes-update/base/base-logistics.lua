@@ -246,26 +246,26 @@ warehouses_recipe(warehouse_storage, electronic_circuit, steel_plate)
 local simulations = require("prototypes.factoriopedia-simulations")
 local entities =
 {
-    {type_1 = data_transport_belt, name = T0_transport_belt, speed = 1/60,  ASC = 30},
-    {type_1 = data_transport_belt, name = T1_transport_belt, speed = 2/60,  ASC = 30},
-    {type_1 = data_transport_belt, name = T2_transport_belt, speed = 4/60,  ASC = 32},
-    {type_1 = data_transport_belt, name = T3_transport_belt, speed = 6/60,  ASC = 31.25},
-    {type_1 = data_transport_belt, name = T4_transport_belt, speed = 8/60,  ASC = 32},
-    {type_1 = data_transport_belt, name = T5_transport_belt, speed = 10/60, ASC = 32},
+    {type_1 = data_transport_belt, name = T0_transport_belt},
+    {type_1 = data_transport_belt, name = T1_transport_belt},
+    {type_1 = data_transport_belt, name = T2_transport_belt},
+    {type_1 = data_transport_belt, name = T3_transport_belt},
+    {type_1 = data_transport_belt, name = T4_transport_belt},
+    {type_1 = data_transport_belt, name = T5_transport_belt},
 
-    {type_1 = data_underground_belt, name = T0_underground_belt, speed = 1/60,  ASC = 30,    simulation = simulations.factoriopedia_T0_underground_belt, max_distance = 4},
-    {type_1 = data_underground_belt, name = T1_underground_belt, speed = 2/60,  ASC = 30,    simulation = simulations.factoriopedia_T1_underground_belt, max_distance = 8},
-    {type_1 = data_underground_belt, name = T2_underground_belt, speed = 4/60,  ASC = 32,    simulation = simulations.factoriopedia_T2_underground_belt, max_distance = 16},
-    {type_1 = data_underground_belt, name = T3_underground_belt, speed = 6/60,  ASC = 31.25, simulation = simulations.factoriopedia_T3_underground_belt, max_distance = 24},
-    {type_1 = data_underground_belt, name = T4_underground_belt, speed = 8/60,  ASC = 32,    simulation = simulations.factoriopedia_T4_underground_belt, max_distance = 32},
-    {type_1 = data_underground_belt, name = T5_underground_belt, speed = 10/60, ASC = 32,    simulation = simulations.factoriopedia_T5_underground_belt, max_distance = 40},
+    {type_1 = data_underground_belt, name = T0_underground_belt, simulation = simulations.factoriopedia_T0_underground_belt, max_distance = 4},
+    {type_1 = data_underground_belt, name = T1_underground_belt, simulation = simulations.factoriopedia_T1_underground_belt, max_distance = 8},
+    {type_1 = data_underground_belt, name = T2_underground_belt, simulation = simulations.factoriopedia_T2_underground_belt, max_distance = 16},
+    {type_1 = data_underground_belt, name = T3_underground_belt, simulation = simulations.factoriopedia_T3_underground_belt, max_distance = 24},
+    {type_1 = data_underground_belt, name = T4_underground_belt, simulation = simulations.factoriopedia_T4_underground_belt, max_distance = 32},
+    {type_1 = data_underground_belt, name = T5_underground_belt, simulation = simulations.factoriopedia_T5_underground_belt, max_distance = 40},
 
-    {type_1 = data_splitter, name = T0_splitter, speed = 1/60,  ASC = 30},
-    {type_1 = data_splitter, name = T1_splitter, speed = 2/60,  ASC = 30},
-    {type_1 = data_splitter, name = T2_splitter, speed = 4/60,  ASC = 32},
-    {type_1 = data_splitter, name = T3_splitter, speed = 6/60,  ASC = 31.25},
-    {type_1 = data_splitter, name = T4_splitter, speed = 8/60,  ASC = 32},
-    {type_1 = data_splitter, name = T5_splitter, speed = 10/60, ASC = 32},
+    {type_1 = data_splitter, name = T0_splitter},
+    {type_1 = data_splitter, name = T1_splitter},
+    {type_1 = data_splitter, name = T2_splitter},
+    {type_1 = data_splitter, name = T3_splitter},
+    {type_1 = data_splitter, name = T4_splitter},
+    {type_1 = data_splitter, name = T5_splitter},
 
     {type_1 = data_inserter, type_2 = data_item, name = T0_inserter,      stack = 64, weight = 15625, extension_speed = 0.02, rotation_speed = 180/21600},
     {type_1 = data_inserter, type_2 = data_item, name = T1_inserter,      stack = 64, weight = 15625, extension_speed = 0.04, rotation_speed = 360/21600,  EPMR = 30,  tier = 2},
@@ -282,10 +282,8 @@ local entities =
 for _, BUILD in pairs(entities) do
     if BUILD.name then
         if BUILD.type_1 == data_transport_belt and data_transport_belt[BUILD.name] then
-            if data_item[BUILD.name] then data_item[BUILD.name].stack_size = 200 end
-            if settings.startup[setting_rebalance_belts_and_pipes].value then
-                data_transport_belt[BUILD.name].speed = BUILD.speed
-                data_transport_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
+            if data_item[BUILD.name] then
+                data_item[BUILD.name].stack_size = 200
             end
         end
         if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
@@ -296,13 +294,9 @@ for _, BUILD in pairs(entities) do
             if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
             data_underground_belt[BUILD.name].localised_description = {"entity-description.underground-belt"}
             if settings.startup[setting_rebalance_belts_and_pipes].value then
-                data_underground_belt[BUILD.name].speed = BUILD.speed
-                data_underground_belt[BUILD.name].animation_speed_coefficient = BUILD.ASC
-            end
-            data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
-            if settings.startup[setting_rebalance_belts_and_pipes].value then
                 data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
             end
+            data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
         end
         if BUILD.type_1 == data_splitter and data_splitter[BUILD.name] then
             if data_item[BUILD.name] then
@@ -311,10 +305,6 @@ for _, BUILD in pairs(entities) do
             end
             if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
             data_splitter[BUILD.name].localised_description = {"entity-description.splitter"}
-            if settings.startup[setting_rebalance_belts_and_pipes].value then
-                data_splitter[BUILD.name].speed = BUILD.speed
-                data_splitter[BUILD.name].animation_speed_coefficient = BUILD.ASC
-            end
         end
         if BUILD.type_1 == data_inserter and data_inserter[BUILD.name] then
             data_inserter[BUILD.name].rotation_speed = BUILD.rotation_speed
@@ -468,18 +458,20 @@ if mods["loaders-modernized-integrations"] then
     local data_loader_1x1 = data.raw["loader-1x1"]
     local loaders =
     {
-        {name = T0_loader, tier = 1,  ASC = 30},
-        {name = T1_loader, tier = 2,  ASC = 30},
-        {name = T2_loader, tier = 4,  ASC = 32},
-        {name = T3_loader, tier = 6,  ASC = 31.25},
-        {name = T4_loader, tier = 8,  ASC = 32},
-        {name = T5_loader, tier = 10, ASC = 32}
+        {name = T0_loader, tier = 1,  subgroup = data_item[T0_transport_belt].subgroup, ASC = 30},
+        {name = T1_loader, tier = 2,  subgroup = data_item[T1_transport_belt].subgroup, ASC = 30},
+        {name = T2_loader, tier = 4,  subgroup = data_item[T2_transport_belt].subgroup, ASC = 32},
+        {name = T3_loader, tier = 6,  subgroup = data_item[T3_transport_belt].subgroup, ASC = 31.25},
+        {name = T4_loader, tier = 8,  subgroup = data_item[T4_transport_belt].subgroup, ASC = 32},
+        {name = T5_loader, tier = 10, subgroup = data_item[T5_transport_belt].subgroup, ASC = 32}
     }
     for _, BUILD in pairs(loaders) do
         if data_item[BUILD.name] then
+            data_item[BUILD.name].subgroup = BUILD.subgroup
             data_item[BUILD.name].order = z
             data_item[BUILD.name].stack_size = 32
             data_item[BUILD.name].weight = 31250
+            data_recipe[BUILD.name].subgroup = BUILD.subgroup
             data_recipe[BUILD.name].order = z
             local recipe_variants = {BUILD.name, "stack-" .. BUILD.name}
             for _, recipe_name in ipairs(recipe_variants) do
@@ -500,11 +492,8 @@ if mods["loaders-modernized-integrations"] then
                 end
             end
             data_recipe[T4_loader].ingredients[1].name = T4_underground_belt
+            data_loader_1x1[BUILD.name].subgroup = BUILD.subgroup
             data_loader_1x1[BUILD.name].order = z
-            if settings.startup[setting_rebalance_belts_and_pipes].value then
-                data_loader_1x1[BUILD.name].speed = BUILD.tier/60
-                data_loader_1x1[BUILD.name].animation_speed_coefficient = BUILD.ASC
-            end
             if settings.startup[setting_mdrn_use_electricity].value then
                 data_loader_1x1[BUILD.name].energy_per_item = ((60 * BUILD.tier) - (7.5 * BUILD.tier)) .. kW
                 data_loader_1x1[BUILD.name].energy_source.drain = (15 * BUILD.tier) .. kW
@@ -548,6 +537,11 @@ if mods["loaders-modernized-integrations"] then
         data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
         data_loader_1x1[stack_loader].order = b
         data_loader_1x1[stack_loader].minable.mining_time = 0.5
+        if mods[arig_mods] then
+            data_loader_1x1[stack_loader].speed = 15/60
+        else
+            data_loader_1x1[stack_loader].speed = 11.25/60
+        end
         if settings.startup[setting_mdrn_use_electricity].value then
             data_loader_1x1[stack_loader].energy_per_item = (((60 * 40) / 2) - (7.5 * 20)) .. kW
             data_loader_1x1[stack_loader].energy_source.drain = (30 * 20) .. kW
@@ -589,7 +583,6 @@ if mods["loaders-modernized-integrations"] then
         end
         data_loader_1x1[chute_loader].next_upgrade = T0_loader
         data_loader_1x1[chute_loader].minable.mining_time = 0.5
-        if settings.startup[setting_rebalance_belts_and_pipes].value then data_loader_1x1[chute_loader].speed = 0.5/60 end
         bobmods.lib.recipe.update_recycling_recipe({chute_loader})
     end
 end
@@ -779,12 +772,18 @@ for _, pipe in pairs(pipes_to_ground) do
     data_recipe[pipe.name].order = pipe.order
     data_recipe[pipe.name].energy_required = 4
     data_pipe_to_ground[pipe.name].order = pipe.order
-    if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value == false then
+    if settings.startup[setting_rebalance_belts_and_pipes].value then
         data_pipe_to_ground[pipe.name].fluid_box.pipe_connections[2].max_underground_distance = pipe.max_underground_distance
     end
     data_pipe_to_ground[pipe.name].factoriopedia_simulation = pipe.simulations
 end
-data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48
+if settings.startup[setting_rebalance_belts_and_pipes].value then
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48
+else
+    data_pipe_to_ground[brass_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 19
+    data_pipe_to_ground[tungsten_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 23
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 31
+end
 local function pipe_to_ground_recipe(name, pipe, plate, count)
     data_recipe[name].ingredients =
     {

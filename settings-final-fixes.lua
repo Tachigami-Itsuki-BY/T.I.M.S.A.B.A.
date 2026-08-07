@@ -4,6 +4,8 @@ if mods["bobtech"] and mods["sa-science-packs"] then
     data_bool_setting["sasp-nostalgia-mode"] = nil
 end
 
+data_bool_setting["bobmods-logistics-ugdistanceoverhaul"].default_value = false
+
 local data_double_setting = data.raw["double-setting"]
 if mods["Accumulator-V2"] then
     data_double_setting["accumulator-power-capacity"].hidden = true

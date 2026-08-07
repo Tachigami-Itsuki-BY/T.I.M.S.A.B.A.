@@ -121,4 +121,8 @@ if mods[paracelsin_mods] then
 			data_recipe[recipe_name] = nil
 		end
 	end
+
+	local data_corpse = data.raw["corpse"]
+	data_corpse["accumulatorv2-remnants"] = nil
+	data_corpse["solar-matrix-remnants"] = nil
 end

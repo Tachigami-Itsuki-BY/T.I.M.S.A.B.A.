@@ -101,6 +101,9 @@ TIMSABA.functions.create_fluids
         flow_color = angelsmods.functions.flow_color("HPF6Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(phosphorus_chloride_III_liquid)
+TIMSABA.barreling.add_gas(phosphorus_fluoride_V_gas)
+TIMSABA.barreling.add_dangerous_fluid(hexafluorophosphoric_acid)
 
 -- RECIPE
 fluorapatite_recipe = "phosphate-ore-crystal-mix-processing"

@@ -142,6 +142,9 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("SbSbSb")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(antimony_chloride_V_liquid)
+TIMSABA.barreling.add_dangerous_fluid(antimony_acid)
+TIMSABA.barreling.add_dangerous_fluid(hexachloroantimonic_acid)
 
 -- RECIPE
 antimony_ingot_2 = "antimony-ingot-2"

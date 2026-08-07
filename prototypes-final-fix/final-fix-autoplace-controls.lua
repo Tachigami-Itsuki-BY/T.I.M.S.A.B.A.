@@ -9,8 +9,7 @@ data_autoplace_control[ore_bobmonium].order = a_f
 -- a_g
 -- a_h
 data_autoplace_control[crude_oil].order = a_i
-local natural_gas = "angels-natural-gas"
-data_autoplace_control[natural_gas].order = a_j
+data_autoplace_control["angels-natural-gas"].order = a_j
 data_autoplace_control["angels-fissure"].order = a_k
 
 data_autoplace_control["vulcanus_coal"].order = b
@@ -75,91 +74,36 @@ end
 
 -- CASTRA
 if mods[castra_mods] then
-    local vanilla_resources = {copper_ore, stone, uranium_ore}
-    local angels_resources = {ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}
-
-    local map_gen = data_planet[planet_castra].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_castra
-        end
-    end
-
     data_autoplace_control[millerite_ore].order = c_r
     data_autoplace_control[gunpowder].order = c_s
     data_autoplace_control["hydrogen-sulfide-vent"].order = c_t
+end
+
+-- SHCHIERBIN
+if mods[shchierbin_mods] then
+    data_autoplace_control["vanadium_ore"].order = c_u
+    data_autoplace_control["natural_gas"].order = c_v
+    data_autoplace_control["carbon-ore"].order = c_w
 end
 
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then
     data_autoplace_control[metallic_asteroid_chunk].localised_name = {"", "[entity=metallic-asteroid-chunk] ", {"entity-name.metallic-chunk"}}
-    data_autoplace_control[metallic_asteroid_chunk].order = d
+    data_autoplace_control[metallic_asteroid_chunk].order = e
     data_autoplace_control[carbonic_asteroid_chunk].localised_name = {"", "[entity=carbonic-asteroid-chunk] ", {"entity-name.carbonic-chunk"}}
-    data_autoplace_control[carbonic_asteroid_chunk].order = d_a
+    data_autoplace_control[carbonic_asteroid_chunk].order = e_a
     data_autoplace_control[oxide_asteroid_chunk].localised_name = {"", "[entity=oxide-asteroid-chunk] ", {"entity-name.oxide-chunk"}}
-    data_autoplace_control[oxide_asteroid_chunk].order = d_b
-    data_autoplace_control[anorthite_chunk].order = d_c
+    data_autoplace_control[oxide_asteroid_chunk].order = e_b
+    data_autoplace_control[anorthite_chunk].order = e_c
 end
 
 -- FROZETA
 if mods[secretas_frozeta_mods] then
-    data_autoplace_control["spaceship_scrap"].order = d_d
+    data_autoplace_control["spaceship_scrap"].order = e_d
 end
 
 -- TERRAPALUS
 if mods[terrapalus_mods] then
-    local vanilla_resources = {iron_ore, copper_ore, stone}
-    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}
-
-    local map_gen = data_planet[planet_terrapalus].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_terrapalus
-        end
-    end
-
-    data_autoplace_control[palusium_ore].order = d_e
+    data_autoplace_control[palusium_ore].order = e_e
 end

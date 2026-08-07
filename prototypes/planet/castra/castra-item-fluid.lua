@@ -12,6 +12,7 @@ if mods[castra_mods] then
             flow_color = {r = 110 / 255, g = 080 / 255, b = 045 / 255}
         }
     })
+    TIMSABA.barreling.add_gas(castra_air)
 
     -- CASTRA CHEMYSTRY
     -- ITEM
@@ -64,4 +65,7 @@ if mods[castra_mods] then
             flow_color = TIMSABA.functions.flow_color("SSSTo")
         }
     })
+    TIMSABA.barreling.add_dangerous_fluid(potassium_nitrate_solution)
+    TIMSABA.barreling.add_gas(nitrosyl_chloride_gas)
+    TIMSABA.barreling.add_dangerous_fluid(toluene_sulfur_solution)
 end

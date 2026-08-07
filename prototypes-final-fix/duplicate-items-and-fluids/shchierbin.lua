@@ -3,6 +3,8 @@ if mods[shchierbin_mods] then
     {
         [salt_mods] = salt_angels,
         [quicklime_mods] = lime_angels,
+        [slaked_lime_mods] = calcium_hydroxide,
+        [calcium_mods] = calcium,
         [natural_gas_mods] = natural_gas_angels,
         [hydrogen_sulfide_mods] = hydrogen_sulfide_angels,
         [sulfur_dioxide_mods] = sulfur_dioxide_angels,
@@ -18,96 +20,97 @@ if mods[shchierbin_mods] then
         [oxygen_mods] = oxygen_angels,
         [carbon_dioxide_mods] = carbon_dioxide_angels
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
+    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+
+    local vanadium_concetrate = "vanadium-concetrate"
+    local vanadium_dust = "vanadium-dust"
+    local ferrovanadium = "ferrovanadium"
+    local vanadium_oxide_catalyst = "vanadium-oxide-catalyst"
+    local vanadium_lithium_battery = "vanadium-lithium-battery"
+    local accumulator_vanad = "accumulator-vanad"
+	local mod_items =
+	{
+        quicklime_mods,
+        slaked_lime_mods,
+        calcium_mods,
+        vanadium_concetrate,
+        vanadium_dust,
+        ferrovanadium,
+        vanadium_oxide_catalyst,
+        vanadium_lithium_battery,
+        accumulator_vanad
+	}
+	for _, name in ipairs(mod_items) do
+		data_item[name] = nil
+        if name ~= slaked_lime_mods and name ~= calcium_mods then
+            data_recipe[name] = nil
         end
-
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
-
-        if recipe.main_product then
-	    	local replace = replacements[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
+		data_recipe[name .. _recycling] = nil
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+        if name == accumulator_vanad then
+            data_accumulator[name] = nil
         end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
+        if data_technology[name] then
+            data_technology[name] = nil
+        end
+	end
 
-	data_item[quicklime_mods] = nil
 	data_fluid[natural_gas_mods] = nil
+
 	data_fluid[methane_mods] = nil
+
 	data_fluid[chloromethane_mods] = nil
+
 	data_fluid[ethylene_mods] = nil
+
 	data_fluid[sea_water_mods] = nil
+
 	data_fluid[sodium_hydroxide_mods] = nil
+
 	data_fluid[ferric_chloride_mods] = nil
+    data_recipe[ferric_chloride_mods] = nil
+    data_technology[ferric_chloride_mods] = nil
+
 	data_fluid[chlorine_mods] = nil
 
-	local vanadium_bones = "vanadium-bones"
-	data_technology[vanadium_bones].effects = nil
-	data_technology[vanadium_bones] = nil
+    data_recipe["natural-gas-processing"] = nil
+    data_recipe["fecl-advanced-circuit"] = nil
+    data_recipe["water-electrolysis-shchierbin"] = nil
+    local atmosphere = "atmosphere"
+    data_recipe[atmosphere] = nil
+    data_recipe[atmosphere .. "-goj"] = nil
+    local tech_ammonia_syntes = "ammonia-syntes"
+    data_recipe[tech_ammonia_syntes] = nil
+    data_technology[tech_ammonia_syntes] = nil
+    data_recipe["sulfur-dioxide-from-hydrogen-sulfide"] = nil
+    data_recipe["sulfur-dioxide-from-sulfur"] = nil
+    data_recipe["sulfur-from-sulfuric-gases"] = nil
+    data_recipe["sulfuric-acid-vanadium"] = nil
+
+    -- Проходим по всем типам прототипов в data.raw
+    for proto_type, prototypes in pairs(data.raw) do
+        if type(prototypes) == "table" then
+            for name, _ in pairs(prototypes) do
+                -- Проверяем, содержит ли имя строки "gas-ballon"
+                if string.find(name, "gas-ballon", 1, true) then
+                    -- Удаляем предмет, рецепт или другой прототип
+                    data.raw[proto_type][name] = nil
+                end
+            end
+        end
+    end
+
+    data_recipe["metallic-asteroid-crushing-2"] = nil
+    data_recipe["carbonic-asteroid-crushing-2"] = nil
+    data_recipe["oxide-asteroid-crushing-2"] = nil
+
+    data_technology[vanadium_oxide_V] = nil
+    data_technology[vanadium_plate] = nil
+
+    data_technology["water-electrolysis"] = nil
+    data_technology[atmosphere .. _processing] = nil
+    data_technology["sulfur-acid" .. _processing] = nil
+	data_technology["vanadium-bones"] = nil
 end

@@ -1,5 +1,5 @@
 -- METALLIC
-metallic_asteroid_crushing_2 = "metallic-asteroid-crushing-2" -- Copper ore
+metallic_asteroid_crushing_2 = "timasaba-metallic-asteroid-crushing-2" -- Copper ore
 metallic_asteroid_crushing_3 = "metallic-asteroid-crushing-3" -- Lead ore
 metallic_asteroid_crushing_4 = "metallic-asteroid-crushing-4" -- Tin ore
 metallic_asteroid_crushing_5 = "metallic-asteroid-crushing-5" -- Manganese ore
@@ -93,7 +93,7 @@ data:extend
 })
 
 -- OXIDE
-oxide_asteroid_crushing_2 = "oxide-asteroid-crushing-2"
+oxide_asteroid_crushing_2 = "timasaba-oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
 advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
 full_oxide_asteroid_crushing_1 = "full-oxide-asteroid-crushing-1"

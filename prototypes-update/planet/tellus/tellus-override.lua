@@ -18,6 +18,7 @@ if mods[tellus_mods] then
     data_capsule[chloroplast_mash].stack_size = 200
     data_capsule[chloroplast_mash].fuel_category = base_fuel
     data_capsule[chloroplast_mash].fuel_value = 900 .. kJ
+    TIMSABA.void.void_organics(chloroplast_mash)
 
     local chloroplast_processing = "planetaris-chloroplast-processing"
     data_recipe[chloroplast_processing].subgroup = is_chloroplast
@@ -90,6 +91,7 @@ if mods[tellus_mods] then
 
     data_fluid[seed_compound].subgroup = is_chloroplast
     data_fluid[seed_compound].order = g
+    TIMSABA.barreling.add_simple_fluid(seed_compound)
     data_recipe[seed_compound].subgroup = is_chloroplast
     data_recipe[seed_compound].icons = FOUR_D_I(chloroplast_mash, compost_angels, water, nutrients, seed_compound)
     data_recipe[seed_compound].order = g
@@ -104,6 +106,7 @@ if mods[tellus_mods] then
 
     data_fluid[chlorophyll].subgroup = is_chloroplast
     data_fluid[chlorophyll].order = h
+    TIMSABA.barreling.add_simple_fluid(chlorophyll)
 
     local chlorophyll_mashing = "planetaris-chlorophyll-mashing"
     data_recipe[chlorophyll_mashing].subgroup = is_chloroplast
@@ -167,6 +170,7 @@ if mods[tellus_mods] then
 
     data_fluid[bacteriochlorophyll].subgroup = is_tellus_magnesium
     data_fluid[bacteriochlorophyll].order = e
+    TIMSABA.barreling.add_simple_fluid(bacteriochlorophyll)
     data_recipe[bacteriochlorophyll].subgroup = is_tellus_magnesium
     data_recipe[bacteriochlorophyll].icons = FOUR_D_I(wasp_egg, magnesium_bacteria, water, nutrients, bacteriochlorophyll)
     data_recipe[bacteriochlorophyll].order = e
@@ -198,6 +202,7 @@ if mods[tellus_mods] then
     data_item[mycelia].stack_size = 200
     data_item[mycelia].fuel_category = base_fuel
     data_item[mycelia].fuel_value = 1800 .. kJ
+    TIMSABA.void.void_organics(mycelia)
 
     local mycelia_processing = "planetaris-mycelia-processing"
     data_recipe[mycelia_processing].subgroup = is_mycelia
@@ -521,6 +526,7 @@ if mods[tellus_mods] then
 
     data_fluid[water_infected].subgroup = is_tellus_recipe
     data_fluid[water_infected].order = b
+    TIMSABA.barreling.add_simple_fluid(water_infected)
 
     local air_cleaning = "planetaris-air-cleaning"
     data_recipe[air_cleaning].subgroup = is_tellus_recipe
@@ -943,7 +949,11 @@ if mods[tellus_mods] then
             data_recipe[prototypes.name].results[1].amount = 8
             data_pipe_to_ground[prototypes.name].subgroup = is_tellus_pipe_to_ground
             data_pipe_to_ground[prototypes.name].order = prototypes.order
-            data_pipe_to_ground[prototypes.name].fluid_box.pipe_connections[2].max_underground_distance = 8
+            if settings.startup[setting_rebalance_belts_and_pipes].value then
+                data_pipe_to_ground[prototypes.name].fluid_box.pipe_connections[2].max_underground_distance = 8
+            else
+                data_pipe_to_ground[prototypes.name].fluid_box.pipe_connections[2].max_underground_distance = 11
+            end
             data_pipe_to_ground[prototypes.name].factoriopedia_simulation = prototypes.simulation
 
             bobmods.lib.recipe.update_recycling_recipe({prototypes.name})

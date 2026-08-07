@@ -3,14 +3,17 @@ data_fluid[fluorine].localised_name = {"fluid-name.fluorine-gas"}
 data_fluid[fluorine].localised_description = show_formula and {chemical_formula, "F[font=default-tiny-bold]2[/font]"} or nil
 data_fluid[fluorine].subgroup = is_aquilo_fluorine
 data_fluid[fluorine].order = a
+TIMSABA.barreling.add_gas(fluorine)
 
 data_fluid[fluoroketone_hot].localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]6[/font]F[font=default-tiny-bold]12[/font]O"} or nil
 data_fluid[fluoroketone_hot].subgroup = is_aquilo_fluorine
 data_fluid[fluoroketone_hot].order = h
+TIMSABA.barreling.add_dangerous_fluid(fluoroketone_hot)
 
 data_fluid[fluoroketone_cold].localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]6[/font]F[font=default-tiny-bold]12[/font]O"} or nil
 data_fluid[fluoroketone_cold].subgroup = is_aquilo_fluorine
 data_fluid[fluoroketone_cold].order = i
+TIMSABA.barreling.add_dangerous_fluid(fluoroketone_cold)
 
 -- RECIPE
 data_item[ice].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
@@ -22,6 +25,7 @@ data_fluid[ammonia_solution].localised_name = {"fluid-name.ammonia-solution"}
 data_fluid[ammonia_solution].localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]3(aq)[/font]"} or nil
 data_fluid[ammonia_solution].subgroup = is_aquilo_recipe
 data_fluid[ammonia_solution].order = b
+TIMSABA.barreling.add_dangerous_fluid(ammonia_solution)
 
 local ammonia_solution_separation = "ammoniacal-solution-separation"
 data_recipe[ammonia_solution_separation].localised_name = {"recipe-name.ammonia-solution-separation"}

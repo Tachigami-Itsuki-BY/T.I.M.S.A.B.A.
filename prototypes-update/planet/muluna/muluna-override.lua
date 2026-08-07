@@ -367,6 +367,7 @@ if mods[muluna_mods] then
 
     data_fluid[tar_mods].subgroup = is_muluna_recipe_cellulose
     data_fluid[tar_mods].order = b
+    TIMSABA.barreling.add_simple_fluid(tar_mods)
 
     local solid_fuel_from_tar = "solid-fuel-from-tar"
     data_recipe[solid_fuel_from_tar].subgroup = is_muluna_recipe_cellulose
@@ -781,7 +782,6 @@ if mods[muluna_mods] then
     data_assembling[crusher].subgroup = is_muluna_building
     data_assembling[crusher].order = d
 
-    local crusher_2 = "crusher-2"
     data_item[crusher_2].subgroup = is_muluna_building
     data_item[crusher_2].order = e
     data_item[crusher_2].stack_size = 32
@@ -814,11 +814,11 @@ if mods[muluna_mods] then
 
     local cryolab = "cryolab"
     data_item[cryolab].subgroup = is_muluna_building
-    data_item[cryolab].order = f
+    data_item[cryolab].order = g
     data_item[cryolab].stack_size = 32
     data_item[cryolab].weight = 31250
     data_recipe[cryolab].subgroup = is_muluna_building
-    data_recipe[cryolab].order = f
+    data_recipe[cryolab].order = g
     data_recipe[cryolab].energy_required = 8
     if mods[bobmodules] then
         data_recipe[cryolab].ingredients =
@@ -846,7 +846,7 @@ if mods[muluna_mods] then
         }
     end
     data_lab[cryolab].subgroup = is_muluna_building
-    data_lab[cryolab].order = f
+    data_lab[cryolab].order = g
     data_lab[cryolab].researching_speed = 8
     data_lab[cryolab].module_slots = 8
     data_lab[cryolab].energy_usage = 960 .. kW
@@ -1075,6 +1075,15 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_castra].results[1].amount = 30
     end
 
+    if mods[shchierbin_mods] then
+        local telescope_observation_shchierbin = "muluna-telescope-observation-shchierbin"
+        data_recipe[telescope_observation_shchierbin].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_shchierbin].icons = BUILDING_R_I(astronomical_data_muluna, planet_shchierbin)
+        data_recipe[telescope_observation_shchierbin].order = data_planet[planet_shchierbin].order
+        data_recipe[telescope_observation_shchierbin].energy_required = 4
+        data_recipe[telescope_observation_shchierbin].results[1].amount = 30
+    end
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons
@@ -1114,12 +1123,6 @@ if mods[muluna_mods] then
         local telescope_observation_maraxsis = "muluna-telescope-observation-maraxsis"
         data_recipe[telescope_observation_maraxsis].icons = BUILDING_R_I(astronomical_data_muluna, planet_maraxsis)
         data_recipe[telescope_observation_maraxsis].energy_required = 4
-    end
-
-    if mods[shchierbin_mods] then
-        local telescope_observation_shchierbin = "muluna-telescope-observation-shchierbin"
-        data_recipe[telescope_observation_shchierbin].icons = BUILDING_R_I(astronomical_data_muluna, planet_shchierbin)
-        data_recipe[telescope_observation_shchierbin].energy_required = 4
     end
 
     if mods[shattered_mods] then

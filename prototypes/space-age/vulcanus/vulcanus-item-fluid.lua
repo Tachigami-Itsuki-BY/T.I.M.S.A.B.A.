@@ -10,3 +10,4 @@ TIMSABA.functions.create_fluids
         flow_color = {r = 150 / 255, g = 65 / 255, b = 40 / 255}
     }
 })
+TIMSABA.barreling.add_gas(vulcanus_air)

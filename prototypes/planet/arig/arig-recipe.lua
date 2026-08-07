@@ -38,6 +38,7 @@ if mods[arig_mods] then
     paracelsin_water_harvesting = "paracelsin-water-harvesting"
     corrundum_water_harvesting = "corrundum-water-harvesting"
     castra_water_harvesting = "castra-water-harvesting"
+    shchierbin_water_harvesting = "shchierbin-water-harvesting"
     panglia_water_harvesting = "panglia-water-harvesting"
     frozeta_water_harvesting = "frozeta-water-harvesting"
     local water_planets =
@@ -82,6 +83,16 @@ if mods[arig_mods] then
             order = a_m,
             amount = 120,
             surface_conditions = {{property = pressure, max = 1254, min = 1254}}
+        },
+        [shchierbin_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.shchierbin"}},
+            name = shchierbin_water_harvesting,
+            subgroup = is_arig_water_planets,
+            planet = planet_shchierbin,
+            order = a_n,
+            amount = 240,
+            surface_conditions = {{property = pressure, max = 1500, min = 1500}}
         },
         -- MOONS
         [panglia_mods] =

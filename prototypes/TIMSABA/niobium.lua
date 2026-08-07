@@ -209,6 +209,9 @@ TIMSABA.functions.create_fluids
         max_temperature = -196
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(heptafluoroniobic_acid)
+TIMSABA.barreling.add_dangerous_fluid(ammonium_fluoride_solution)
+TIMSABA.barreling.add_gas(nitrogen_liquid)
 
 niobium_oxide_V_2 = "niobium-oxide-V-2"
 niobium_oxide_V_3 = "niobium-oxide-V-3"

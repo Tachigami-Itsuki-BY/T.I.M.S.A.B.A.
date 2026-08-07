@@ -39,6 +39,7 @@ end
 
 if mods[maraxsis_mods] or mods[shchierbin_mods] then
     data_item[salt_mods] = nil
+    data_recipe[salt_mods] = nil
     data_recipe[salt_mods.. _recycling] = nil
 	if mods[panglia_mods] then
 		data_recipe[item_ .. salt_mods.. _panglia_crushing] = nil
@@ -63,4 +64,30 @@ end
 
 if mods[paracelsin_mods] or mods[shchierbin_mods] then
     data_fluid[nitrogen_mods] = nil
+end
+
+if mods[muluna_mods] then
+    -- 1. Полностью вырезаем вольфрам из импорта (как и раньше)
+    if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
+        local spawn_imports = Muluna.constants.cargo_drop_spawn_imports
+        for i = #spawn_imports, 1, -1 do
+            local path = spawn_imports[i]
+            if path and string.find(path, "tungsten%-plate") then
+                table.remove(spawn_imports, i)
+            end
+        end
+    end
+
+    -- 2. Перенаправляем золото и платину на аналоги Боба/Ангела
+    if Muluna and Muluna.constants and Muluna.constants.names then
+        if mods[corrundum_mods] then
+            Muluna.constants.names[platinum_plate_mods] = platinum_plate
+        end
+        if mods[secretas_frozeta_mods] then
+            Muluna.constants.names[gold_plate_mods] = gold_plate_bob
+        end
+        if mods[castra_mods] then
+            Muluna.constants.names[nickel_plate_mods] = nickel_plate_bob
+        end
+    end
 end

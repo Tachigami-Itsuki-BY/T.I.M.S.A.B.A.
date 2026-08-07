@@ -13,6 +13,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("III")
     }
 })
+TIMSABA.barreling.add_gas(iodine_gas)
 
 -- ANGELS BIOPROCESSING VEGETABLES
 -- ITEM

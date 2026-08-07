@@ -127,6 +127,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("HoHoHo")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(holmium_chloride_III_solution)
+TIMSABA.barreling.add_dangerous_fluid(holmium_nitrate_III_solution)
 
 -- RECIPE
 holmium_fluoride_III_2 = "holmium-fluoride-III-2"
@@ -270,7 +272,7 @@ TIMSABA.functions.create_recipes
         name = holmium_cathode,
         category = angels_petrochem_electrolyser,
         subgroup = is_holmium_chemistry,
-        icons = TWO_D_I(holmium_fluoride_III, calcium, holmium_cathode, fluorite_angels),
+        icons = FOUR_R_I(holmium_fluoride_III, holmium_cathode, nil, fluorite_angels),
         order = c,
         energy_required = 8, -- 2HoF₃ + 3Ca -electrode/electrolyser-> 2Ho + 3CaF₂
         ingredients =

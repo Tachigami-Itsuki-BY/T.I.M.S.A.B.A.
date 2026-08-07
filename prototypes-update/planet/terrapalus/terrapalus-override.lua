@@ -24,6 +24,7 @@ if mods[terrapalus_mods] then
 
     data_fluid[ultravium].subgroup = is_terrapalus_recipe
     data_fluid[ultravium].order = e
+    TIMSABA.barreling.add_simple_fluid(ultravium)
 
     -- BATTERIES
     local ultravium_battery = "ultravium-battery"

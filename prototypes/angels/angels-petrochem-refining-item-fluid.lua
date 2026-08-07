@@ -23,6 +23,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("ArArAr")
     }
 })
+TIMSABA.barreling.add_gas(tritium_gas)
+TIMSABA.barreling.add_gas(argon_gas)
 
 -- COAL ITEM
 coke_processed = "coke-processed"
@@ -125,6 +127,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("CCC")
     }
 })
+TIMSABA.barreling.add_simple_fluid(coal_tar_liquid)
 
 -- CARBON FLUIDS 1
 carbonic_acid = "carbonic-acid"
@@ -140,6 +143,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("H2CO3Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(carbonic_acid)
 
 -- NITROGEN ITEM
 local is_nitrogen = "angels-petrochem-nitrogen"
@@ -272,6 +276,14 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C3H4O2Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(cyanamide_solution)
+TIMSABA.barreling.add_dangerous_fluid(dicyandiamide_solution)
+TIMSABA.barreling.add_dangerous_fluid(ammonium_sulfate_solution)
+TIMSABA.barreling.add_dangerous_fluid(acrylonitrile)
+TIMSABA.barreling.add_dangerous_fluid(acetone_cyanohydrin)
+TIMSABA.barreling.add_gas(nitrogen_oxide)
+TIMSABA.barreling.add_dangerous_fluid(adiponitrile_liquid)
+TIMSABA.barreling.add_dangerous_fluid(imidazole_solution)
 
 -- FLUORINE FLUID
 hydrogen_fluoride_liquefied = "hydrogen-fluoride-liquefied"
@@ -297,6 +309,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("OF2")
     }
 })
+TIMSABA.barreling.add_gas(hydrogen_fluoride_liquefied)
+TIMSABA.barreling.add_gas(oxygen_fluoride_gas)
 
 -- SODIUM ITEM
 sodium_peroxide = "sodium-peroxide"
@@ -413,6 +427,15 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("NaCNWp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(sodium_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_sulfate_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_carbonate_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_nitrate_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_hypochlorite_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_chlorate_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_perchlorate_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_bicarbonate_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_cyanide_solution)
 
 -- SULFUR ITEM
 peroxydisulfuric_acid = "peroxydisulfuric-acid"
@@ -441,6 +464,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("SO3")
     }
 })
+TIMSABA.barreling.add_gas(sulfur_trioxide_gas)
 
 -- CHLORINE FLUID
 phosgene_gas = "phosgene-gas"
@@ -496,9 +520,14 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C4H9Cl")
     }
 })
+TIMSABA.barreling.add_gas(phosgene_gas)
+TIMSABA.barreling.add_gas(chlorine_oxide_gas)
+TIMSABA.barreling.add_dangerous_fluid(hypochlorous_acid)
+TIMSABA.barreling.add_gas(chloroethane_gas)
+TIMSABA.barreling.add_dangerous_fluid(chlorobutane_liquid)
 
 -- CALCIUM ITEM
-calcium = "calcium"
+calcium = "timasaba-calcium"
 calcium_carbide = "calcium-carbide"
 calcium_cyanamide = "calcium-cyanamide"
 calcium_hydroxide = "calcium-hydroxide"
@@ -536,8 +565,8 @@ TIMSABA.functions.create_items
 })
 
 -- CALCIUM FLUID
-calcium_hydroxide_solution = "calcium-hydroxide-solution"
 calcium_chloride_solution = "calcium-chloride-solution"
+calcium_hydroxide_solution = "calcium-hydroxide-solution"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -559,6 +588,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("CaOH2Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(calcium_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(calcium_hydroxide_solution)
 
 -- OTHERS ITEM
 imidazolium_salt = "imidazolium-salt"
@@ -607,6 +638,9 @@ TIMSABA.functions.create_fluids
         flow_color = {r = 0.537, g = 0.675, b = 0.706}
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(hydrogen_peroxide)
+TIMSABA.barreling.add_dangerous_fluid(hydrocyanic_acid)
+TIMSABA.barreling.add_dangerous_fluid(ionic_liquid)
 
 -- CARBON FLUIDS 2
 acetylene_gas = "acetylene-gas"
@@ -662,6 +696,11 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("CH2O2")
     }
 })
+TIMSABA.barreling.add_gas(acetylene_gas)
+TIMSABA.barreling.add_dangerous_fluid(diethyl_ether)
+TIMSABA.barreling.add_dangerous_fluid(methyl_methacrylate)
+TIMSABA.barreling.add_dangerous_fluid(acetaldehyde)
+TIMSABA.barreling.add_dangerous_fluid(formic_acid)
 
 -- METHANE FLUID
 dimethyl_carbonate = "dimethyl-carbonate-liquid"
@@ -677,6 +716,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C3H6O3")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(dimethyl_carbonate)
 
 -- ETHANE ITEM
 polyethylene = "polyethylene"
@@ -735,6 +775,10 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C2H2O2")
     }
 })
+TIMSABA.barreling.add_gas(ethylene_oxide)
+TIMSABA.barreling.add_dangerous_fluid(ethylene_carbonate)
+TIMSABA.barreling.add_dangerous_fluid(ethylene_glycol_liquid)
+TIMSABA.barreling.add_dangerous_fluid(glyoxal_liquid)
 
 -- BUTANE ITEM
 phenol = "phenol"
@@ -771,6 +815,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C4H8")
     }
 })
+TIMSABA.barreling.add_gas(butene_gas)
 
 -- RESINE FLUID
 epoxy_resin_liquid = "epoxy-resin-liquid"
@@ -786,6 +831,7 @@ TIMSABA.functions.create_fluids
         flow_color = {r = 0.812, g = 0.686, b = 0.635, a = 0.500}
     }
 })
+TIMSABA.barreling.add_simple_fluid(epoxy_resin_liquid)
 
 -- EXPLOSIVES FLUID
 glycerol_dichlorohydrin = "glycerol-dichlorohydrin-liquid"
@@ -801,3 +847,4 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("C3H6Cl2O")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(glycerol_dichlorohydrin)

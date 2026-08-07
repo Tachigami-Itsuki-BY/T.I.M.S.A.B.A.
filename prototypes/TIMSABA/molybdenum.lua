@@ -99,6 +99,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("MoF6")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(molybdenum_chloride_III_solution)
+TIMSABA.barreling.add_dangerous_fluid(molybdenum_fluoride_IV)
 
 -- RECIPE
 molybdenum_powder_2 = "molybdenum-powder-2"

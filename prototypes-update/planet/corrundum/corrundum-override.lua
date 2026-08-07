@@ -656,4 +656,6 @@ if mods[corrundum_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1}
     }
+
+    table.insert(data_technology[planet_discovery_aquilo].prerequisites, electrochemical_science_pack)
 end

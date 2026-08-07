@@ -17,6 +17,7 @@ if mods[hyarion_mods] then
     -- RECIPE POLISHED
     data_fluid[polishing_compound_hyarion].subgroup = is_hyarion_recipe_polished
     data_fluid[polishing_compound_hyarion].order = a
+    TIMSABA.barreling.add_simple_fluid(polishing_compound_hyarion)
     data_recipe[polishing_compound_hyarion].subgroup = is_hyarion_recipe_polished
     data_recipe[polishing_compound_hyarion].icons = THREE_I(aluminium_oxide, mineral_oil_angels, polishing_compound_hyarion)
     data_recipe[polishing_compound_hyarion].order = a
@@ -908,4 +909,9 @@ if mods[hyarion_mods] then
 
     table.insert(data_technology[zero_grav_accumulator].unit.ingredients, {utility_science_pack, 1})
     table.insert(data_technology[zero_grav_accumulator].unit.ingredients, {cryogenic_science_pack, 1})
+
+    data_assembling[assembling_machine_3].next_upgrade = assembling_machine_4
+    data_assembling[assembling_machine_4].next_upgrade = assembling_machine_5
+    data_assembling[assembling_machine_5].next_upgrade = assembling_machine_6
+    data_assembling[assembling_machine_6].next_upgrade = hyper_assembling_machine
 end
