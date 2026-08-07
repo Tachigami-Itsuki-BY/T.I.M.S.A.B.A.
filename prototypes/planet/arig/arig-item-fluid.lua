@@ -11,4 +11,5 @@ if mods[arig_mods] then
             flow_color = {r = 115 / 255, g = 047 / 255, b = 020 / 255}
         }
     })
+    TIMSABA.barreling.add_simple_fluid(heavy_oil_timsaba)
 end

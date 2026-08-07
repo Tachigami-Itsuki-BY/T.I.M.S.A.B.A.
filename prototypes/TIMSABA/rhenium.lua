@@ -117,6 +117,8 @@ TIMSABA.functions.create_fluids
         flow_color = angelsmods.functions.flow_color("HReO4Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(potassium_perrhenate_solution)
+TIMSABA.barreling.add_dangerous_fluid(rhenium_acid)
 
 -- RECIPE
 rhenium_powder_2 = "rhenium-powder-2"

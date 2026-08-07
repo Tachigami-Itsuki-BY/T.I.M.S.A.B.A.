@@ -125,6 +125,7 @@ data_item_subgroup["angels-farming-temperate"].order = b_b
 
 data_item[wheaton].spoil_ticks = 60 * minute
 data_item[wheaton].spoil_result = spoilage
+TIMSABA.void.void_organics(wheaton)
 data_recipe[wheaton].icons = THREE_D_I(seed_wheaton, soil_angels, water, wheaton)
 data_recipe[wheaton].energy_required = 32
 data_recipe[wheaton].ingredients[1].amount = 4
@@ -134,6 +135,7 @@ data_recipe[wheaton].results = {{type = item, name = wheaton, amount = 64}}
 
 data_item[tianaton].spoil_ticks = 60 * minute
 data_item[tianaton].spoil_result = spoilage
+TIMSABA.void.void_organics(tianaton)
 data_recipe[tianaton].icons = THREE_D_I(seed_tianaton, soil_angels, water, tianaton)
 data_recipe[tianaton].energy_required = 32
 data_recipe[tianaton].ingredients[1].amount = 4
@@ -143,6 +145,7 @@ data_recipe[tianaton].results = {{type = item, name = tianaton, amount = 64}}
 
 data_item[okarinome].spoil_ticks = 120 * minute
 data_item[okarinome].spoil_result = spoilage
+TIMSABA.void.void_organics(okarinome)
 data_recipe[okarinome].icons = THREE_D_I(seed_okarinome, soil_angels, water, okarinome)
 data_recipe[okarinome].energy_required = 32
 data_recipe[okarinome].ingredients[1].amount = 4
@@ -152,6 +155,7 @@ data_recipe[okarinome].results = {{type = item, name = okarinome, amount = 32}}
 
 data_item[quillnoa].spoil_ticks = 240 * minute
 data_item[quillnoa].spoil_result = spoilage
+TIMSABA.void.void_organics(quillnoa)
 data_recipe[quillnoa].icons = FOUR_D_I(seed_quillnoa, soil_angels, fertilizer_angels, water, quillnoa)
 data_recipe[quillnoa].energy_required = 32
 data_recipe[quillnoa].ingredients[1].amount = 4
@@ -162,6 +166,7 @@ data_recipe[quillnoa].results = {{type = item, name = quillnoa, amount = 16}}
 
 data_item[kendallion].spoil_ticks = 240 * minute
 data_item[kendallion].spoil_result = spoilage
+TIMSABA.void.void_organics(kendallion)
 data_recipe[kendallion].icons = FOUR_D_I(seed_kendallion, soil_angels, fertilizer_angels, water, kendallion)
 data_recipe[kendallion].energy_required = 32
 data_recipe[kendallion].ingredients[1].amount = 4
@@ -266,6 +271,7 @@ data_item_subgroup["angels-farming-swamp"].order = c_b
 
 data_item[elendilomone].spoil_ticks = 60 * minute
 data_item[elendilomone].spoil_result = spoilage
+TIMSABA.void.void_organics(elendilomone)
 data_recipe[elendilomone].icons = THREE_D_I(seed_elendilomone, mud_angels, water_viscous_mud, elendilomone)
 data_recipe[elendilomone].energy_required = 32
 data_recipe[elendilomone].ingredients[1].amount = 4
@@ -275,6 +281,7 @@ data_recipe[elendilomone].results = {{type = item, name = elendilomone, amount =
 
 data_item[zombieecalyptus].spoil_ticks = 60 * minute
 data_item[zombieecalyptus].spoil_result = spoilage
+TIMSABA.void.void_organics(zombieecalyptus)
 data_recipe[zombieecalyptus].icons = THREE_D_I(seed_zombieecalyptus, mud_angels, water_heavy_mud, zombieecalyptus)
 data_recipe[zombieecalyptus].energy_required = 32
 data_recipe[zombieecalyptus].ingredients[1].amount = 4
@@ -284,6 +291,7 @@ data_recipe[zombieecalyptus].results = {{type = item, name = zombieecalyptus, am
 
 data_item[saundsrcress].spoil_ticks = 120 * minute
 data_item[saundsrcress].spoil_result = spoilage
+TIMSABA.void.void_organics(saundsrcress)
 data_recipe[saundsrcress].icons = THREE_D_I(seed_saundsrcress, mud_angels, water_concentrated_mud, saundsrcress)
 data_recipe[saundsrcress].energy_required = 32
 data_recipe[saundsrcress].ingredients[1].amount = 4
@@ -293,6 +301,7 @@ data_recipe[saundsrcress].results = {{type = item, name = saundsrcress, amount =
 
 data_item[nexeflax].spoil_ticks = 240 * minute
 data_item[nexeflax].spoil_result = spoilage
+TIMSABA.void.void_organics(nexeflax)
 data_recipe[nexeflax].icons = FOUR_D_I(seed_nexeflax, mud_angels, fertilizer_angels, water_light_mud, nexeflax)
 data_recipe[nexeflax].energy_required = 32
 data_recipe[nexeflax].ingredients[1].amount = 4
@@ -303,6 +312,7 @@ data_recipe[nexeflax].results = {{type = item, name = nexeflax, amount = 16}}
 
 data_item[mushredtato].spoil_ticks = 240 * minute
 data_item[mushredtato].spoil_result = spoilage
+TIMSABA.void.void_organics(mushredtato)
 data_recipe[mushredtato].icons = FOUR_D_I(seed_mushredtato, mud_angels, fertilizer_angels, water_thin_mud, mushredtato)
 data_recipe[mushredtato].energy_required = 32
 data_recipe[mushredtato].ingredients[1].amount = 4
@@ -407,6 +417,7 @@ data_item_subgroup["angels-farming-desert"].order = d_b
 
 data_item[binafran].spoil_ticks = 60 * minute
 data_item[binafran].spoil_result = spoilage
+TIMSABA.void.void_organics(binafran)
 data_recipe[binafran].icons = THREE_D_I(seed_binafran, sand_angels, water_saline_angels, binafran)
 data_recipe[binafran].energy_required = 32
 data_recipe[binafran].ingredients[1].amount = 4
@@ -416,6 +427,7 @@ data_recipe[binafran].results = {{type = item, name = binafran, amount = 64}}
 
 data_item[primedeadelion].spoil_ticks = 60 * minute
 data_item[primedeadelion].spoil_result = spoilage
+TIMSABA.void.void_organics(primedeadelion)
 data_recipe[primedeadelion].icons = THREE_D_I(seed_primedeadelion, sand_angels, water_saline_angels, primedeadelion)
 data_recipe[primedeadelion].energy_required = 32
 data_recipe[primedeadelion].ingredients[1].amount = 4
@@ -425,6 +437,7 @@ data_recipe[primedeadelion].results = {{type = item, name = primedeadelion, amou
 
 data_item[nilaubergine].spoil_ticks = 120 * minute
 data_item[nilaubergine].spoil_result = spoilage
+TIMSABA.void.void_organics(nilaubergine)
 data_recipe[nilaubergine].icons = THREE_D_I(seed_nilaubergine, sand_angels, water_saline_angels, nilaubergine)
 data_recipe[nilaubergine].energy_required = 32
 data_recipe[nilaubergine].ingredients[1].amount = 4
@@ -434,6 +447,7 @@ data_recipe[nilaubergine].results = {{type = item, name = nilaubergine, amount =
 
 data_item[zelosquash].spoil_ticks = 240 * minute
 data_item[zelosquash].spoil_result = spoilage
+TIMSABA.void.void_organics(zelosquash)
 data_recipe[zelosquash].icons = FOUR_D_I(seed_zelosquash, sand_angels, fertilizer_angels, water_saline_angels, zelosquash)
 data_recipe[zelosquash].energy_required = 32
 data_recipe[zelosquash].ingredients[1].amount = 4
@@ -444,6 +458,7 @@ data_recipe[zelosquash].results = {{type = item, name = zelosquash, amount = 16}
 
 data_item[arumbiphila].spoil_ticks = 240 * minute
 data_item[arumbiphila].spoil_result = spoilage
+TIMSABA.void.void_organics(arumbiphila)
 data_recipe[arumbiphila].icons = FOUR_D_I(seed_arumbiphila, sand_angels, fertilizer_angels, water_saline_angels, arumbiphila)
 data_recipe[arumbiphila].energy_required = 32
 data_recipe[arumbiphila].ingredients[1].amount = 4
@@ -492,30 +507,37 @@ data_recipe[sorting_arumbiphila].reset_freshness_on_craft = true
 data_item[beans].spoil_ticks = 15 * minute
 data_item[beans].spoil_result = spoilage
 data_item[beans].subgroup = is_vegetables_results
+TIMSABA.void.void_organics(beans)
 
 data_item[corn].spoil_ticks = 10 * minute
 data_item[corn].spoil_result = spoilage
 data_item[corn].subgroup = is_vegetables_results
+TIMSABA.void.void_organics(corn)
 
 data_item[leaves].spoil_ticks = 2 * minute
 data_item[leaves].spoil_result = spoilage
 data_item[leaves].subgroup = is_vegetables_results
+TIMSABA.void.void_organics(leaves)
 
 data_item[nuts].spoil_ticks = 30 * minute
 data_item[nuts].spoil_result = spoilage
 data_item[nuts].subgroup = is_vegetables_results
+TIMSABA.void.void_organics(nuts)
 
 data_item[pips].spoil_ticks = 20 * minute
 data_item[pips].spoil_result = spoilage
 data_item[pips].subgroup = is_vegetables_results
+TIMSABA.void.void_organics(pips)
 
 data_item[fruits].spoil_ticks = 5 * minute
 data_item[fruits].spoil_result = spoilage
 data_item[fruits].subgroup = is_vegetables_results
+TIMSABA.void.void_organics(fruits)
 
 data_item_subgroup["angels-bio-processor-nutrient"].order = e_a
 
 data_fluid[nutrient_pulp].order = a
+TIMSABA.barreling.add_simple_fluid(nutrient_pulp)
 
 local nutrients_from_beans = "angels-solid-beans-nutrients"
 data_recipe[nutrients_from_beans].icons = TWO_I(beans, nutrient_pulp)
@@ -578,6 +600,7 @@ data_recipe[nutrients_refining_3].results[3].amount = 30
 data_item_subgroup["angels-bio-processor-press-vegetables"].order = e_b
 
 data_fluid[raw_vegetable_oil].order = a
+TIMSABA.barreling.add_simple_fluid(raw_vegetable_oil)
 
 local raw_vegetable_oil_from_beans = "angels-liquid-raw-vegetable-oil-beans"
 data_recipe[raw_vegetable_oil_from_beans].icons = TWO_I(beans, raw_vegetable_oil)
@@ -597,6 +620,7 @@ data_recipe[raw_vegetable_oil_from_pips].ingredients[1].amount = 8
 data_recipe[raw_vegetable_oil_from_pips].results[1].amount = 30
 
 data_fluid[vegetable_oil].order = b
+TIMSABA.barreling.add_simple_fluid(vegetable_oil)
 
 local vegetable_oil_filtering_1 = "angels-liquid-raw-vegetable-oil-filtering-1"
 data_recipe[vegetable_oil_filtering_1].icons = TWO_D_I(raw_vegetable_oil, water_purified_angels, vegetable_oil, nutrient_pulp, number_1)
@@ -645,6 +669,7 @@ data_recipe[acetic_acid].icons = TWO_D_I(fermentation_fluid, nil, acetic_acid, c
 data_recipe[acetic_acid].order = b
 data_recipe[acetic_acid].ingredients[1].amount = 120
 data_recipe[acetic_acid].results[1].amount = 60
+TIMSABA.barreling.add_dangerous_fluid(acetic_acid)
 
 local acetic_acid_from_catalyst = "angels-liquid-acetic-acid-catalyst"
 data_recipe[acetic_acid_from_catalyst].subgroup = is_bio_processor_fermentation
@@ -662,6 +687,7 @@ data_recipe[acetic_acid_from_catalyst].results =
 }
 
 data_fluid[acetic_anhydride].order = c
+TIMSABA.barreling.add_dangerous_fluid(acetic_anhydride)
 data_recipe[acetic_anhydride].icons = FOUR_I(acetic_acid, methanol_angels, carbon_monoxide_angels, acetic_anhydride)
 data_recipe[acetic_anhydride].order = c
 -- C₂H₄O₂ + CH₄O + CO -cat-> C₄H₆O₃ + H₂O
@@ -683,6 +709,7 @@ data_recipe[acetic_anhydride].main_product = acetic_anhydride
 data_fluid[ethanol_angels].localised_name = {"fluid-name.ethanol-liquid"}
 data_fluid[ethanol_angels].localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]5[/font]OH"} or nil
 data_fluid[ethanol_angels].order = d
+TIMSABA.barreling.add_dangerous_fluid(ethanol_angels)
 data_recipe[ethanol_angels].icons = TWO_D_I(fermentation_fluid, nil, ethanol_angels, compost_angels)
 data_recipe[ethanol_angels].order = d
 data_recipe[ethanol_angels].ingredients[1].amount = 120
@@ -705,6 +732,7 @@ data_recipe[ethylene_from_ethanol].results =
 data_item_subgroup["angels-bio-plastic"].order = e_d
 
 data_fluid[propionic_acid].order = c
+TIMSABA.barreling.add_dangerous_fluid(propionic_acid)
 data_recipe[propionic_acid].icons = FOUR_I(ethylene_angels, carbon_monoxide_angels, water_purified_angels, propionic_acid)
 data_recipe[propionic_acid].order = c
 data_recipe[propionic_acid].ingredients[1].amount = 60

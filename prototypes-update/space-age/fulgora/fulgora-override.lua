@@ -76,6 +76,7 @@ data_recipe[supercapacitor].ingredients =
 
 data_fluid[electrolyte].subgroup = is_fulgora_recipe
 data_fluid[electrolyte].order = c
+TIMSABA.barreling.add_dangerous_fluid(electrolyte)
 data_recipe[electrolyte].category = angels_advanced_chemistry
 data_recipe[electrolyte].subgroup = is_fulgora_recipe
 data_recipe[electrolyte].icons = FOUR_I(nitric_acid_angels, sulfuric_acid_angels, hydrochloric_acid_angels, electrolyte)

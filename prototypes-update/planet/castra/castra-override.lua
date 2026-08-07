@@ -61,7 +61,7 @@ if mods[castra_mods] then
         {type = fluid, name = toluene_sulfur_solution, amount = 480}
     }
     data_recipe[gunpowder_carbon].main_product = carbon_angels
-    data_recipe[gunpowder_carbon].surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+    data_recipe[gunpowder_carbon].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     -- MILLERITE
     data_item[millerite_ore].subgroup = is_millerite
@@ -83,7 +83,7 @@ if mods[castra_mods] then
         {type = item, name = solder, amount = 4},
         {type = item, name = castra_data, amount = 1}
     }
-    data_recipe[electronic_circuit_battlefield_data].surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+    data_recipe[electronic_circuit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local advanced_circuit_battlefield_data = "advanced-circuit-battlefield-data"
     data_recipe[advanced_circuit_battlefield_data].subgroup = is_castra_recipe
@@ -97,7 +97,7 @@ if mods[castra_mods] then
         {type = item, name = solder, amount = 4},
         {type = item, name = castra_data, amount = 1}
     }
-    data_recipe[advanced_circuit_battlefield_data].surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+    data_recipe[advanced_circuit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local processing_unit_battlefield_data = "processing-unit-battlefield-data"
     data_recipe[processing_unit_battlefield_data].subgroup = is_castra_recipe
@@ -112,7 +112,7 @@ if mods[castra_mods] then
         {type = item, name = solder, amount = 8},
         {type = item, name = castra_data, amount = 1}
     }
-    data_recipe[processing_unit_battlefield_data].surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+    data_recipe[processing_unit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local hydrogen_sulfide_electrolysis = "hydrogen-sulfide-electrolysis"
     data_recipe[hydrogen_sulfide_electrolysis].category = angels_petrochem_electrolyser
@@ -146,7 +146,7 @@ if mods[castra_mods] then
         {type = fluid, name = methane_angels, amount = 30}
     }
     data_recipe[plastic_hydrogen_sulfide].results[1].amount = 4
-    data_recipe[plastic_hydrogen_sulfide].surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+    data_recipe[plastic_hydrogen_sulfide].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     local rocket_fuel_sulfur = "rocket-fuel-sulfur"
     data_recipe[rocket_fuel_sulfur].subgroup = is_castra_recipe
@@ -158,7 +158,7 @@ if mods[castra_mods] then
         {type = item, name = sulfur, amount = 16},
         {type = fluid, name = fuel_oil_angels, amount = 120}
     }
-    data_recipe[rocket_fuel_sulfur].surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+    data_recipe[rocket_fuel_sulfur].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
     data_item[castra_data].subgroup = is_castra_recipe
     data_item[castra_data].order = c
@@ -195,8 +195,10 @@ if mods[castra_mods] then
     }
     data_transport_belt[military_transport_belt_mods].subgroup = is_castra_logistics
     data_transport_belt[military_transport_belt_mods].order = a
-    data_transport_belt[military_transport_belt_mods].speed = 6/60
-    data_transport_belt[military_transport_belt_mods].animation_speed_coefficient = 31.25
+    if settings.startup[setting_rebalance_belts_and_pipes].value then
+        data_transport_belt[military_transport_belt_mods].speed = 6/60
+        data_transport_belt[military_transport_belt_mods].animation_speed_coefficient = 31.25
+    end
 
     local simulations = require("prototypes.factoriopedia-simulations")
     data_item[military_underground_belt_mods].subgroup = is_castra_logistics
@@ -215,8 +217,10 @@ if mods[castra_mods] then
     data_underground_belt[military_underground_belt_mods].subgroup = is_castra_logistics
     data_underground_belt[military_underground_belt_mods].order = b
     data_underground_belt[military_underground_belt_mods].max_distance = 24
-    data_underground_belt[military_underground_belt_mods].speed = 6/60
-    data_underground_belt[military_underground_belt_mods].animation_speed_coefficient = 31.25
+    if settings.startup[setting_rebalance_belts_and_pipes].value then
+        data_underground_belt[military_underground_belt_mods].speed = 6/60
+        data_underground_belt[military_underground_belt_mods].animation_speed_coefficient = 31.25
+    end
     data_underground_belt[military_underground_belt_mods].factoriopedia_simulation = simulations.military_underground_belt_arig
 
     data_item[military_splitter_mods].subgroup = is_castra_logistics
@@ -235,8 +239,10 @@ if mods[castra_mods] then
     }
     data_splitter[military_splitter_mods].subgroup = is_castra_logistics
     data_splitter[military_splitter_mods].order = c
-    data_splitter[military_splitter_mods].speed = 6/60
-    data_splitter[military_splitter_mods].animation_speed_coefficient = 31.25
+    if settings.startup[setting_rebalance_belts_and_pipes].value then
+        data_splitter[military_splitter_mods].speed = 6/60
+        data_splitter[military_splitter_mods].animation_speed_coefficient = 31.25
+    end
 
     -- BUILDING
     local forge = "forge"
@@ -313,7 +319,7 @@ if mods[castra_mods] then
     -- WAR
     local firearm_magazine_nickel = "firearm-magazine-nickel"
     data_recipe[firearm_magazine_nickel].subgroup = is_castra_war
-    data_recipe[firearm_magazine_nickel].icons = BUILDING_R_I(firearm_magazine, nickel_plate_bob)
+    data_recipe[firearm_magazine_nickel].icons = R_P_I(firearm_magazine, nil, nil, number_2)
     data_recipe[firearm_magazine_nickel].order = a
     data_recipe[firearm_magazine_nickel].ingredients =
     {
@@ -591,8 +597,6 @@ if mods[castra_mods] then
 
     data_technology[military_transport_belt_mods].prerequisites = {battlefield_science_pack}
 
-    table.insert(data_technology[planet_discovery_aquilo].prerequisites, battlefield_science_pack)
-
     data_technology[jammed_data_collector].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -607,4 +611,6 @@ if mods[castra_mods] then
         {electromagnetic_science_pack, 1},
         {cryogenic_science_pack, 1}
     }
+
+    table.insert(data_technology[planet_discovery_aquilo].prerequisites, battlefield_science_pack)
 end

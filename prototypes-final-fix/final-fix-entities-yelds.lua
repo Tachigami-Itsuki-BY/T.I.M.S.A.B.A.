@@ -296,15 +296,16 @@ data_resource[crude_oil].order = a
 data_resource[crude_oil].minable.results[1].amount_min = 30
 data_resource[crude_oil].minable.results[1].amount_max = 30
 
-local natural_gas_vent = "angels-natural-gas"
-data_resource[natural_gas_vent].order = b
-data_resource[natural_gas_vent].minable.results[1].amount_min = 30
-data_resource[natural_gas_vent].minable.results[1].amount_max = 30
+local natural_gas = "angels-natural-gas"
+data_resource[natural_gas].order = b
+data_resource[natural_gas].minable.results[1].amount_min = 30
+data_resource[natural_gas].minable.results[1].amount_max = 30
 
 local fissure = "angels-fissure"
 data_resource[fissure].order = c
 data_resource[fissure].minable.results[1].amount_min = 30
 data_resource[fissure].minable.results[1].amount_max = 30
+data_resource[fissure].minable.mining_time = 2
 
 local sulfuric_acid_geyser = "sulfuric-acid-geyser"
 data_resource[sulfuric_acid_geyser].order = d
@@ -587,6 +588,10 @@ end
 if mods[paracelsin_mods] then
     data_tile["nitrogen-lake"].fluid = nitrogen_liquid
 
+    local water_cryovolcan = "water-cryovolcano"
+    data_resource[water_cryovolcan].minable.results[1].amount_min = 30
+    data_resource[water_cryovolcan].minable.results[1].amount_max = 30
+
     data_entity["big-metallic-rock"].minable.results =
     {
         {type = item, name = stone, amount_min = 0, amount_max = 4},
@@ -638,6 +643,83 @@ end
 -- CASTRA
 if mods[castra_mods] then
     data_tile["light-oil-ocean-deep"].fluid = fuel_oil_angels
+
+    data_resource[uranium_ore] = nil
+
+    local hydrogen_sulfide_vent = "hydrogen-sulfide-vent"
+    data_resource[hydrogen_sulfide_vent].minable.results[1].amount_min = 30
+    data_resource[hydrogen_sulfide_vent].minable.results[1].amount_max = 30
+
+    local vanilla_resources = {copper_ore, stone, uranium_ore}
+    local angels_resources = {ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}
+
+    local map_gen = data_planet[planet_castra].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_castra
+        end
+    end
+end
+
+-- SHCHIERBIN
+if mods[shchierbin_mods] then
+    local natural_gas_geyser = "natural-gas-geyser"
+    data_resource[natural_gas_geyser].icon = "__TIMSABA__/graphics/icons/shchierbin/natural-gas-geyser.png"
+    data_resource[natural_gas_geyser].stages.layers[1].filename = "__TIMSABA__/graphics/icons/shchierbin/natural-gas-geyser-entity.png"
+    data_resource[natural_gas_geyser].minable.results[1].amount_min = 30
+    data_resource[natural_gas_geyser].minable.results[1].amount_max = 30
+
+    local vanilla_resources = {iron_ore, stone}
+    local angels_resources = {ore_saphirite, ore_jivolite}
+
+    local map_gen = data_planet[planet_shchierbin].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_shchierbin
+        end
+    end
 end
 
 -- MOONS
@@ -673,6 +755,39 @@ if mods[panglia_mods] then
         {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 32},
         {type = item, name = stone, amount_min = 0, amount_max = 16}
     }
+end
+
+if mods[terrapalus_mods] then
+    local vanilla_resources = {iron_ore, copper_ore, stone}
+    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}
+
+    local map_gen = data_planet[planet_terrapalus].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_terrapalus
+        end
+    end
 end
 
 -- MODS

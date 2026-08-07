@@ -130,6 +130,11 @@ if mods[tellus_mods] then
             make_pipe_and_to_ground("black", z, simulations.factoriopedia_black_pipe_to_ground)
         end
 
+        if settings.startup[setting_rebalance_belts_and_pipes].value == false then
+            data_pipe_to_ground[orange_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 11
+            data_pipe_to_ground[black_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 11
+        end
+
         -- STONE PATH
         if settings.startup[setting_dye_stone_path].value then
             local sounds = require("__base__/prototypes/entity/sounds")

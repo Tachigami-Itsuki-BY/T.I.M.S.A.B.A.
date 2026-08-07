@@ -131,7 +131,7 @@ TIMSABA.functions.create_recipes
         name = carbon_nanotube,
         category = angels_petrochem_electrolyser,
         subgroup = is_coal,
-        icons = THREE_R_I(graphite_electrode, carbon_nanotube, graphite_chips),
+        icons = FOUR_R_I(graphite_electrode, carbon_nanotube, nil, graphite_chips),
         order = m,
         energy_required = 8, -- Graphite electrode -electrolyser/cat(4)/Argon gas-> Carbon nanotube + Graphite chips
         ingredients =

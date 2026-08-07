@@ -42,6 +42,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("B2H6")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(boric_acid_solution)
+TIMSABA.barreling.add_gas(diborane_gas)
 
 -- RECIPE
 borax_recipe = "borax-ore-chunk-mix-processing"

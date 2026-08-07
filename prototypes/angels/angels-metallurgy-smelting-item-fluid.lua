@@ -51,6 +51,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("FeSO4Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(iron_sulfate_II_solution)
 
 -- COPPER ITEM
 copper_hydroxide_II = "copper-hydroxide-II"
@@ -123,6 +124,9 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("CuN2O6Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(copper_sulfate_II_solution)
+TIMSABA.barreling.add_dangerous_fluid(ammonium_dichlorocuprate_I_solution)
+TIMSABA.barreling.add_dangerous_fluid(copper_nitrate_II_solution)
 
 -- LEAD ITEM
 lead_oxide_IV = "lead-oxide-IV"
@@ -160,6 +164,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("PbSiF6Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(hexafluorosilicate_lead_II_solution)
 
 -- TIN ITEM
 tin_cathode = "tin-cathode"
@@ -199,6 +204,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("SnSiF6Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(tin_chloride_IV)
+TIMSABA.barreling.add_dangerous_fluid(hexafluorosilicate_tin_II_solution)
 
 -- MANGANESE ITEM
 manganese_oxide_IV = "manganese-oxide-IV"
@@ -243,6 +250,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("MnSO4Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(manganese_sulfate_II_solution)
 
 -- SILICON ITEM
 silicon_oxide_IV = "silicon-oxide-IV"
@@ -281,6 +289,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("SiF4")
     }
 })
+TIMSABA.barreling.add_gas(silicon_chloride_IV_gas)
+TIMSABA.barreling.add_gas(silicon_fluoride_IV_gas)
 
 -- NICKEL FLUID
 nickel_sulfate_II_solution = "nickel-sulfate-II-solution"
@@ -306,6 +316,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("NiC4O4")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(nickel_sulfate_II_solution)
+TIMSABA.barreling.add_dangerous_fluid(tetracarbonyl_nickel)
 
 -- ALUMINIUM ITEM
 aluminium_chloride = "aluminium-chloride"
@@ -364,6 +376,10 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("LiAlC8H20O4De")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(aluminium_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(aluminium_chloride_solution_ether)
+TIMSABA.barreling.add_dangerous_fluid(lithium_aluminium_hydride_solution_ether)
+TIMSABA.barreling.add_dangerous_fluid(lithium_tetraethoxy_aluminate_solution_ether)
 
 -- ZINC ITEM
 zinc_chloride = "zinc-chloride"
@@ -412,6 +428,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("ZnSO4Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(zinc_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(zinc_sulfate_solution)
 
 -- SILVER FLUID
 sodium_dicyanoargentate_I_solution = "sodium-dicyanoargentate-I-solution"
@@ -432,8 +450,9 @@ TIMSABA.functions.create_fluids
         auto_barrel = false
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(sodium_dicyanoargentate_I_solution)
 
--- TITANIUM
+-- TITANIUM ITEM
 titanium_oxide_IV = "titanium-oxide-IV"
 TIMSABA.functions.create_items
 ({
@@ -460,6 +479,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("TiI4")
     }
 })
+TIMSABA.barreling.add_gas(titanium_iodide_IV_gas)
 
 -- GOLD FLUID
 sodium_dicyanoaurate_I_solution = "sodium-dicyanoaurate-I-solution"
@@ -475,6 +495,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("NaAuC2N2Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(sodium_dicyanoaurate_I_solution)
 
 -- COBALT FLUID
 cobalt_chloride_II_solution = "cobalt-chloride-II-solution"
@@ -490,6 +511,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("CoCl2Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(cobalt_chloride_II_solution)
 
 -- CHROMIUM ITEM
 chromium_oxide_VI = "chromium-oxide-VI"
@@ -557,6 +579,10 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("K2Cr2O7Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(chromic_acid)
+TIMSABA.barreling.add_dangerous_fluid(chromium_sulfate_II_solution)
+TIMSABA.barreling.add_dangerous_fluid(potassium_chromate_solution)
+TIMSABA.barreling.add_dangerous_fluid(potassium_dichromate_solution)
 
 -- TUNGSTEN ITEM
 copper_tungsten_powder = "copper-tungsten-powder"
@@ -593,6 +619,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("H2WO6Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(peroxo_tungstic_acid)
 
 -- PLATINUM ITEM
 platinum_chloride_II = "platinum-chloride-II"
@@ -647,6 +674,8 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("Na2PtO6H6Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(sodium_hexachloroplatinate_IV_solution)
+TIMSABA.barreling.add_dangerous_fluid(sodium_hexahydroxoplatinate_IV_solution)
 
 -- LITHIUM ITEM
 lithium_hydride = "lithium-hydride"
@@ -727,3 +756,6 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("LiPF6Ec")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(lithium_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(lithium_perchlorate_solution)
+TIMSABA.barreling.add_dangerous_fluid(lithium_hexafluorophosphate_solution_carbonate)

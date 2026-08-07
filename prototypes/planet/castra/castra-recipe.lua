@@ -1,4 +1,6 @@
 if mods[castra_mods] then
+    data_planet[planet_castra].surface_properties[pressure] = 2254
+
     -- CASTRA AIR
     castra_air_separation = "castra-air-separation"
     TIMSABA.functions.create_recipes
@@ -13,7 +15,7 @@ if mods[castra_mods] then
             ingredients = {},
             results = {{type = fluid, name = castra_air, amount = 240}},
             main_product = castra_air,
-            surface_conditions = {{property = pressure, min = 1254, max = 1254}}
+            surface_conditions = {{property = pressure, min = 2254, max = 2254}}
         },
         {
             name = castra_air_separation,
@@ -58,7 +60,7 @@ if mods[castra_mods] then
             },
             results = {{type = item, name = advanced_processing_unit, amount = 4}},
             main_product = advanced_processing_unit,
-            surface_conditions = {{property = pressure, max = 1254, min = 1254}}
+            surface_conditions = {{property = pressure, max = 2254, min = 2254}}
         },
         {
             name = castra_data,

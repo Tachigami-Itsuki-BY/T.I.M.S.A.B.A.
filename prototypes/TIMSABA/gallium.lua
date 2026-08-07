@@ -154,6 +154,9 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("LiGaH4De")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(sodium_tetrahydroxogallate_III_solution)
+TIMSABA.barreling.add_dangerous_fluid(galium_chloride_III_solution_ether)
+TIMSABA.barreling.add_dangerous_fluid(lithium_gallium_hydride_solution_ether)
 
 -- RECIPE
 galium_hydroxide_III_2 = "galium-hydroxide-III-2"

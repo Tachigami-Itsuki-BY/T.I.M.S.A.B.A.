@@ -11,6 +11,7 @@ if mods[hyarion_mods] then
             flow_color = {r = 217 / 255, g = 217 / 255, b = 217 / 255}
         }
     })
+    TIMSABA.barreling.add_gas(hyarion_air)
 
     -- SPACE
     bismuth_oxyselenide = "bismuth-oxyselenide"

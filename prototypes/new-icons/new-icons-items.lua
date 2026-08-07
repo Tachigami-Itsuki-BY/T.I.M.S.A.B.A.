@@ -12,6 +12,9 @@ data_item[titanium_ore_bob].icon = "__reskins-angels__/graphics/icons/smelting/o
 data_item[thorium_ore_bob].icons = nil
 data_item[thorium_ore_bob].icon = "__reskins-angels__/graphics/icons/smelting/ores/bob-thorium-ore/bob-thorium-ore.png"
 
+data_item[iron_plate].icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png"
+data_item[iron_plate].icon_size = 64
+
 data_item[iron_rod].icon = "__base__/graphics/icons/iron-stick.png"
 data_item[iron_rod].icon_size = 64
 
@@ -66,8 +69,17 @@ data_item[cobalt_steel_plate_bob].icon_size = 64
 data_item[nitinol_plate_bob].icon = "__reskins-angels__/graphics/icons/smelting/plates/bob-nitinol-alloy.png"
 data_item[nitinol_plate_bob].icon_size = 64
 
+data_item[iron_gear_wheel].icons = nil
+data_item[iron_gear_wheel].icon = "__TIMSABA__/graphics/icons/bobs/iron-gear-wheel.png"
+data_item[iron_gear_wheel].pictures = nil
+
+data_item[steel_gear_wheel].icons = nil
+data_item[steel_gear_wheel].icon = "__TIMSABA__/graphics/icons/bobs/steel-gear-wheel.png"
+data_item[steel_gear_wheel].pictures = nil
+
 data_item[cobalt_steel_gear_wheel].icons = nil
 data_item[cobalt_steel_gear_wheel].icon = "__reskins-angels__/graphics/icons/smelting/gears/bob-cobalt-steel-gear-wheel.png"
+data_item[cobalt_steel_gear_wheel].pictures = nil
 
 data_item[titanium_gear_wheel].icons = nil
 data_item[titanium_gear_wheel].icon = "__reskins-angels__/graphics/icons/smelting/gears/bob-titanium-gear-wheel.png"
@@ -75,8 +87,13 @@ data_item[titanium_gear_wheel].icon = "__reskins-angels__/graphics/icons/smeltin
 data_item[nitinol_gear_wheel].icons = nil
 data_item[nitinol_gear_wheel].icon = "__reskins-angels__/graphics/icons/smelting/gears/bob-nitinol-gear-wheel.png"
 
+data_item[steel_bearing_ball].icons = nil
+data_item[steel_bearing_ball].icon = "__TIMSABA__/graphics/icons/bobs/steel-bearing-ball.png"
+data_item[steel_bearing_ball].pictures = nil
+
 data_item[cobalt_steel_bearing_ball].icons = nil
 data_item[cobalt_steel_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-cobalt-steel-bearing-ball.png"
+data_item[cobalt_steel_bearing_ball].pictures = nil
 
 data_item[titanium_bearing_ball].icons = nil
 data_item[titanium_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-titanium-bearing-ball.png"
@@ -84,8 +101,13 @@ data_item[titanium_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelt
 data_item[nitinol_bearing_ball].icons = nil
 data_item[nitinol_bearing_ball].icon = "__reskins-angels__/graphics/icons/smelting/bearing-balls/bob-nitinol-bearing-ball.png"
 
+data_item[steel_bearing].icons = nil
+data_item[steel_bearing].icon = "__TIMSABA__/graphics/icons/bobs/steel-bearing.png"
+data_item[steel_bearing].pictures = nil
+
 data_item[cobalt_steel_bearing].icons = nil
 data_item[cobalt_steel_bearing].icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-cobalt-steel-bearing.png"
+data_item[cobalt_steel_bearing].pictures = nil
 
 data_item[titanium_bearing].icons = nil
 data_item[titanium_bearing].icon = "__reskins-angels__/graphics/icons/smelting/bearings/bob-titanium-bearing.png"
@@ -169,6 +191,21 @@ end
 -- TERRAPALUS
 if mods[terrapalus_mods] then
     data_item[palusium_powder].icon = "__TIMSABA__/graphics/icons/terrapalus/palusium-powder.png"
+end
+
+-- SHCHIERBIN
+if mods[shchierbin_mods] then
+    data_item[vanadium_ore].icon = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore.png"
+    data_item[vanadium_ore].icon_size = 64
+    data_item[vanadium_ore].pictures =
+    {
+        {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore-1.png", width = 64, height = 64, scale = 0.5},
+        {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore-2.png", width = 64, height = 64, scale = 0.5},
+        {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore-3.png", width = 64, height = 64, scale = 0.5}
+    }
+
+    data_item[vanadium_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/vanadium-plate.png"
+    data_item[vanadium_plate].icon_size = 64
 end
 
 -- MODS

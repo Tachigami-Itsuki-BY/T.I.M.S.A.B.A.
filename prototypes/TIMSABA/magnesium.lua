@@ -144,6 +144,7 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("MgMgMg")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(magnesium_chloride_solution)
 
 -- RECIPE
 magnesium_ore_recipe = "magnesium-ore-crushed-mix-processing"

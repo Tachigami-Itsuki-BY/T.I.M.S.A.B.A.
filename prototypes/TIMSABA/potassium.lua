@@ -116,6 +116,11 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("K2SO4Wp")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(potassium_chloride_solution)
+TIMSABA.barreling.add_dangerous_fluid(potassium_hydroxide_solution)
+TIMSABA.barreling.add_dangerous_fluid(potassium_hypochlorite_solution)
+TIMSABA.barreling.add_dangerous_fluid(potassium_chlorate_solution)
+TIMSABA.barreling.add_dangerous_fluid(potassium_sulfate_solution)
 
 -- RECIPE
 carnallite_reprocessing = "carnallite-reprocessing"
@@ -241,7 +246,7 @@ TIMSABA.functions.create_recipes
         name = potassium_hydroxide_solution_from_potassium_sulfate_solution,
         category = angels_petrochem_electrolyser,
         subgroup = is_potassium_fluid,
-        icons = TWO_D_I(potassium_sulfate_solution, water_purified_angels, potassium_hydroxide_solution, sulfuric_acid_angels),
+        icons = FOUR_R_I(potassium_sulfate_solution, potassium_hydroxide_solution, nil, sulfuric_acid_angels),
         order = c_a,
         energy_required = 8, -- K₂SO₄(aq) + 2H₂O -electrode/electrolys-> 2KOH(aq) + H₂SO₄
         ingredients =

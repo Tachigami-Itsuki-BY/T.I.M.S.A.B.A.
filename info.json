@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.9.0",
+    "version": "1.10.0",
     "factorio_version": "2.0",
     "title": "○🌐Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -90,7 +90,7 @@
         "? secretas",
         "? terrapalus",
         "? castra-prime",
-        "! shchierbin",
+        "? shchierbin",
         "! maraxsis",
         "! skewer_planet_vesta",
         "! skewer_shattered_planet",

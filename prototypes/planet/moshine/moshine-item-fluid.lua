@@ -12,6 +12,7 @@ if mods[moshine_mods] then
             flow_color = {r = 180 / 255, g = 120 / 255, b = 070 / 255}
         }
     })
+    TIMSABA.barreling.add_gas(moshine_air)
 
     -- NEODYMIUM
     neodymium_ore = "neodymium-ore"
@@ -190,6 +191,7 @@ if mods[moshine_mods] then
             flow_color = TIMSABA.functions.flow_color("H3PO4Wp")
         }
     })
+    TIMSABA.barreling.add_dangerous_fluid(orthophosphoric_acid)
 
     -- WATER TREATMENT (Phosphoric Waste Water)
     water_orange_waste = "water-orange-waste"
@@ -197,7 +199,6 @@ if mods[moshine_mods] then
     ({
         {
             localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(Ca[font=default-tiny-bold]3[/font](PO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]2[/font])"} or nil,
-
             name = water_orange_waste,
             subgroup = is_water_cleaning_fluid,
             icon = "__TIMSABA__/graphics/icons/moshine/water-orange-waste.png",
@@ -206,6 +207,7 @@ if mods[moshine_mods] then
             flow_color = TIMSABA.functions.flow_color("WpPOWp")
         }
     })
+    TIMSABA.barreling.add_simple_fluid(water_orange_waste)
 
     -- PETROCHEM
     calcium_phosphate = "calcium-phosphate"

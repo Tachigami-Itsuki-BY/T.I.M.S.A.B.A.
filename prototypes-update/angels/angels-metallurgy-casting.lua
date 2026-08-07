@@ -69,7 +69,7 @@ data_recipe[iron_rod].energy_required = 1
 
 data_item_subgroup["angels-steel-casting"].order = a_a
 
-data_fluid[steel_molten_angels].localised_description = show_formula and {chemical_formula, "Fe"} or nil
+data_fluid[steel_molten_angels].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_fluid[steel_molten_angels].order = a
 data_recipe[steel_molten_angels].icons = TWO_I(steel_ingot, steel_molten_angels, number_1)
 data_recipe[steel_molten_angels].order = a

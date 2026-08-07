@@ -294,7 +294,7 @@ data_recipe[vulcanus_transport_belt].ingredients =
 data_recipe[vulcanus_transport_belt].results[1].amount = 2
 data_transport_belt[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
 data_transport_belt[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
-data_transport_belt[vulcanus_transport_belt].speed = 12/60
+data_transport_belt[vulcanus_transport_belt].speed = 11.25/60
 
 local simulations = require("prototypes.factoriopedia-simulations")
 data_item[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
@@ -312,8 +312,12 @@ data_recipe[vulcanus_underground_belt].ingredients =
 }
 data_underground_belt[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
-data_underground_belt[vulcanus_underground_belt].speed = 12/60
-data_underground_belt[vulcanus_underground_belt].max_distance = 48
+data_underground_belt[vulcanus_underground_belt].speed = 11.25/60
+if settings.startup[setting_rebalance_belts_and_pipes].value then
+    data_underground_belt[vulcanus_underground_belt].max_distance = 48
+else
+    data_underground_belt[vulcanus_underground_belt].max_distance = 27
+end
 data_underground_belt[vulcanus_underground_belt].factoriopedia_simulation = simulations.factoriopedia_vulcanus_underground_belt
 
 data_item[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
@@ -332,7 +336,7 @@ data_recipe[vulcanus_splitter].ingredients =
 }
 data_splitter[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistics
-data_splitter[vulcanus_splitter].speed = 12/60
+data_splitter[vulcanus_splitter].speed = 11.25/60
 
 if mods[arig_mods] then
     data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig

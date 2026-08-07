@@ -2,8 +2,10 @@ local is_water_treatment_fluid = "angels-water-treatment-fluid"
 data_item_subgroup[is_water_treatment_fluid].order = a
 
 data_fluid[water].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
+TIMSABA.barreling.add_simple_fluid(water)
 
 data_fluid[water_purified_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
+TIMSABA.barreling.add_simple_fluid(water_purified_angels)
 data_recipe[water_purified_angels].icons = FOUR_R_I(water, water_saline_angels, nil, water_purified_angels)
 data_recipe[water_purified_angels].ingredients[1].amount = 120
 data_recipe[water_purified_angels].results[1].amount = 30
@@ -35,6 +37,7 @@ data_recipe[coolant_cool_steam].ingredients[1].amount = 30
 data_recipe[coolant_cool_steam].results[1].amount = 30
 
 data_fluid[water_mineralized_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O"} or nil
+TIMSABA.barreling.add_simple_fluid(water_mineralized_angels)
 data_recipe[water_mineralized_angels].icons = THREE_I(stone_crushed_angels, water_purified_angels, water_mineralized_angels)
 data_recipe[water_mineralized_angels].ingredients[1].name = water_purified_angels
 data_recipe[water_mineralized_angels].ingredients[1].amount = 120
@@ -59,6 +62,7 @@ local is_water_washing_fluid = "angels-water-washing-fluid"
 data_item_subgroup[is_water_washing_fluid].order = b
 
 data_fluid[water_viscous_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(mud)"} or nil
+TIMSABA.barreling.add_simple_fluid(water_viscous_mud)
 data_recipe[water_viscous_mud].icons = THREE_I(mud_angels, water, water_viscous_mud)
 data_recipe[water_viscous_mud].energy_required = 4
 data_recipe[water_viscous_mud].ingredients[1].amount = 8
@@ -66,6 +70,7 @@ data_recipe[water_viscous_mud].ingredients[2].amount = 120
 data_recipe[water_viscous_mud].results[1].amount = 120
 
 data_fluid[water_heavy_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(geode)"} or nil
+TIMSABA.barreling.add_simple_fluid(water_heavy_mud)
 data_recipe[water_heavy_mud].icons = THREE_I(water_viscous_mud, water, water_heavy_mud)
 data_recipe[water_heavy_mud].energy_required = 4
 data_recipe[water_heavy_mud].ingredients[1].amount = 240
@@ -74,6 +79,7 @@ data_recipe[water_heavy_mud].results[1].amount = 240
 data_recipe[water_heavy_mud].results[2].amount_max = 4
 
 data_fluid[water_concentrated_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(Al[font=default-tiny-bold]2[/font]Si[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]9[/font])"} or nil
+TIMSABA.barreling.add_simple_fluid(water_concentrated_mud)
 data_recipe[water_concentrated_mud].icons = THREE_I(water_heavy_mud, water, water_concentrated_mud)
 data_recipe[water_concentrated_mud].energy_required = 4
 data_recipe[water_concentrated_mud].ingredients[1].amount = 240
@@ -82,6 +88,7 @@ data_recipe[water_concentrated_mud].results[1].amount = 240
 data_recipe[water_concentrated_mud].results[2].amount_max = 4
 
 data_fluid[water_light_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(CaCO[font=default-tiny-bold]3[/font])"} or nil
+TIMSABA.barreling.add_simple_fluid(water_light_mud)
 data_recipe[water_light_mud].icons = THREE_I(water_concentrated_mud, water, water_light_mud)
 data_recipe[water_light_mud].energy_required = 4
 data_recipe[water_light_mud].ingredients[1].amount = 240
@@ -90,6 +97,7 @@ data_recipe[water_light_mud].results[1].amount = 240
 data_recipe[water_light_mud].results[2].amount_max = 4
 
 data_fluid[water_thin_mud].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(SiO[font=default-tiny-bold]2[/font])"} or nil
+TIMSABA.barreling.add_simple_fluid(water_thin_mud)
 data_recipe[water_thin_mud].icons = THREE_I(water_light_mud, water, water_thin_mud)
 data_recipe[water_thin_mud].energy_required = 4
 data_recipe[water_thin_mud].ingredients[1].amount = 240
@@ -98,6 +106,7 @@ data_recipe[water_thin_mud].results[1].amount = 240
 data_recipe[water_thin_mud].results[2].amount_max = 4
 
 data_fluid[water_saline_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(NaCl/KCl*MgCl[font=default-tiny-bold]2[/font]*6H[font=default-tiny-bold]2[/font]O)"} or nil
+TIMSABA.barreling.add_simple_fluid(water_saline_angels)
 data_recipe[water_saline_angels].icons = THREE_I(water_thin_mud, water, water_saline_angels)
 data_recipe[water_saline_angels].energy_required = 4
 data_recipe[water_saline_angels].ingredients[1].amount = 240
@@ -108,6 +117,7 @@ data_recipe[water_saline_angels].results[2].amount_max = 4
 data_fluid[water_thermal_angels].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(LiCl/Hg)"} or nil
 data_fluid[water_thermal_angels].subgroup = is_water_washing_fluid
 data_fluid[water_thermal_angels].order = g
+TIMSABA.barreling.add_simple_fluid(water_thermal_angels)
 
 local is_water_salination = "angels-water-salination"
 data_item_subgroup[is_water_salination].order = c
@@ -178,12 +188,16 @@ data_recipe[lithium_chloride_angels].surface_conditions = {{property = "pressure
 data_item_subgroup["angels-water-cleaning-fluid"].order = d
 
 data_fluid[water_yellow_waste].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(S)"} or nil
+TIMSABA.barreling.add_simple_fluid(water_yellow_waste)
 
 data_fluid[water_greenyellow_waste].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(CaF[font=default-tiny-bold]2[/font])"} or nil
+TIMSABA.barreling.add_simple_fluid(water_greenyellow_waste)
 
 data_fluid[water_green_waste].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(NaCl)"} or nil
+TIMSABA.barreling.add_simple_fluid(water_green_waste)
 
 data_fluid[water_red_waste].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O(NaNO[font=default-tiny-bold]3[/font])"} or nil
+TIMSABA.barreling.add_simple_fluid(water_red_waste)
 
 data_item_subgroup["angels-water-cleaning"].order = e
 
@@ -234,6 +248,7 @@ data_item_subgroup[is_coolant].order = f
 data_fluid[coolant].localised_description = show_formula and {chemical_formula, "С[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]4[/font](OH)[font=default-tiny-bold]2[/font]"} or nil
 data_fluid[coolant].subgroup = is_coolant
 data_fluid[coolant].order = a
+TIMSABA.barreling.add_dangerous_fluid(coolant)
 data_recipe[coolant].category = angels_advanced_chemistry
 data_recipe[coolant].subgroup = is_coolant
 data_recipe[coolant].icons = THREE_I(water_purified_angels, ethylene_oxide, coolant)

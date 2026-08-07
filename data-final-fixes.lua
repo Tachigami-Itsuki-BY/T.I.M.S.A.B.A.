@@ -55,23 +55,3 @@ require("prototypes-final-fix.multi-building.entities")
 
 require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
-
-if mods[muluna_mods] then
-    -- 1. Полностью вырезаем вольфрам из импорта (как и раньше)
-    if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
-        local spawn_imports = Muluna.constants.cargo_drop_spawn_imports
-        for i = #spawn_imports, 1, -1 do
-            local path = spawn_imports[i]
-            if path and string.find(path, "tungsten%-plate") then
-                table.remove(spawn_imports, i)
-            end
-        end
-    end
-
-    -- 2. Перенаправляем золото и платину на аналоги Боба/Ангела
-    if Muluna and Muluna.constants and Muluna.constants.names then
-        Muluna.constants.names[platinum_plate_mods] = platinum_plate
-        Muluna.constants.names[gold_plate_mods] = gold_plate_bob
-        Muluna.constants.names[nickel_plate_mods] = nickel_plate_bob
-    end
-end

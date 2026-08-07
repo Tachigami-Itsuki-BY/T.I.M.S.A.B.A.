@@ -29,7 +29,13 @@ setting_bobmods_power_steam = "bobmods-power-steam"
 
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
 setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"
+setting_bobmods_logistics_beltspeedperlevel = "bobmods-logistics-beltspeedperlevel"
+setting_bobmods_logistics_beltoverhaulspeed = "bobmods-logistics-beltoverhaulspeed"
+setting_bobmods_logistics_beltperlevel = "bobmods-logistics-beltperlevel"
+setting_bobmods_logistics_beltstarting = "bobmods-logistics-beltstarting"
 setting_bobmods_logistics_beltoverhaul = "bobmods-logistics-beltoverhaul"
+setting_bobmods_logistics_pipeperlevel = "bobmods-logistics-pipeperlevel"
+setting_bobmods_logistics_pipestarting = "bobmods-logistics-pipestarting"
 setting_bobmods_logistics_ugdistanceoverhaul = "bobmods-logistics-ugdistanceoverhaul"
 setting_bobmods_logistics_trains = "bobmods-logistics-trains"
 

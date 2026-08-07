@@ -367,6 +367,12 @@ if mods[corrundum_mods] then
     auto_added_science_pack(electrochemical_science_pack, electrochemical_science_pack)
 end
 
+-- CASTRA
 if mods[castra_mods] then
     auto_added_science_pack(battlefield_science_pack, battlefield_science_pack)
+end
+
+-- SHCHIERBIN
+if mods[shchierbin_mods] then
+    auto_added_science_pack(vanadium_science_pack, vanadium_science_pack)
 end

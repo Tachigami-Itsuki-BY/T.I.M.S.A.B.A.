@@ -533,6 +533,7 @@ data_recipe[silicon_powder].order = e
 data_fluid[trichlorosilane].localised_description = show_formula and {chemical_formula, "HSiCl[font=default-tiny-bold]3[/font]"} or nil
 data_fluid[trichlorosilane].subgroup = is_silicon_chemistry
 data_fluid[trichlorosilane].order = b
+TIMSABA.barreling.add_dangerous_fluid(trichlorosilane)
 data_recipe[trichlorosilane].subgroup = is_silicon_chemistry
 data_recipe[trichlorosilane].icons = THREE_I(silicon_processed, hydrogen_chloride_angels, trichlorosilane)
 data_recipe[trichlorosilane].order = b
@@ -551,6 +552,7 @@ data_recipe[trichlorosilane].results =
 data_fluid[silane_gas].localised_description = show_formula and {chemical_formula, "SiH[font=default-tiny-bold]4[/font]"} or nil
 data_fluid[silane_gas].subgroup = is_silicon_chemistry
 data_fluid[silane_gas].order = d
+TIMSABA.barreling.add_gas(silane_gas)
 data_recipe[silane_gas].subgroup = is_silicon_chemistry
 data_recipe[silane_gas].icons = THREE_D_I(silicon_pellet, chlorine_angels, lithium_aluminium_hydride_solution_ether, silane_gas, aluminium_chloride_solution_ether, lithium_chloride_angels)
 data_recipe[silane_gas].order = d
@@ -596,6 +598,7 @@ data_recipe[silicon_nitride_bob].results[1].amount = 4
 data_fluid[hexafluorosilicic_acid].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiF[font=default-tiny-bold]6(aq)[/font]"} or nil
 data_fluid[hexafluorosilicic_acid].subgroup = is_silicon_chemistry
 data_fluid[hexafluorosilicic_acid].order = h
+TIMSABA.barreling.add_dangerous_fluid(hexafluorosilicic_acid)
 data_recipe[hexafluorosilicic_acid].category = angels_chemical_smelting_2
 data_recipe[hexafluorosilicic_acid].subgroup = is_silicon_chemistry
 data_recipe[hexafluorosilicic_acid].icons = THREE_D_I(silicon_ingot, hydrogen_fluoride_angels, water_purified_angels, hexafluorosilicic_acid, nil, hydrogen_angels)
@@ -1174,6 +1177,7 @@ data_recipe[titanium_powder].order = e
 -- TITANIUM CHEMISTRY
 data_fluid[titanium_chloride_IV].subgroup = is_titanium_chemistry
 data_fluid[titanium_chloride_IV].order = a
+TIMSABA.barreling.add_dangerous_fluid(titanium_chloride_IV)
 data_recipe[titanium_chloride_IV].subgroup = is_titanium_chemistry
 data_recipe[titanium_chloride_IV].icons = THREE_I(titanium_ore_bob, chlorine_angels, titanium_chloride_IV)
 data_recipe[titanium_chloride_IV].order = a
@@ -1274,6 +1278,7 @@ data_recipe[gold_powder].order = e
 data_fluid[chlorauric_acid].localised_description = show_formula and {chemical_formula, "HAuCl[font=default-tiny-bold]4(aq)[/font]"} or nil
 data_fluid[chlorauric_acid].subgroup = is_gold_chemistry
 data_fluid[chlorauric_acid].order = a
+TIMSABA.barreling.add_dangerous_fluid(chlorauric_acid)
 data_recipe[chlorauric_acid].category = angels_advanced_chemistry
 data_recipe[chlorauric_acid].subgroup = is_gold_chemistry
 data_recipe[chlorauric_acid].icons = THREE_D_I(gold_processed, nitric_acid_angels, hydrochloric_acid_angels, chlorauric_acid, nitrogen_dioxide_angels, water_purified_angels)
@@ -1700,6 +1705,7 @@ data_recipe[tungsten_oxide_VI_2].results =
 
 data_fluid[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
 data_fluid[tungsten_fluoride_VI_gas].order = b
+TIMSABA.barreling.add_gas(tungsten_fluoride_VI_gas)
 data_recipe[tungsten_fluoride_VI_gas].category = angels_chemical_smelting_3
 data_recipe[tungsten_fluoride_VI_gas].subgroup = is_tungsten_chemistry
 data_recipe[tungsten_fluoride_VI_gas].icons = TWO_D_I(tungsten_oxide_VI, hydrogen_fluoride_angels, tungsten_fluoride_VI_gas, water_purified_angels)
@@ -1751,6 +1757,7 @@ data_recipe[ammonium_paratungstate_2].main_product = ammonium_paratungstate
 data_fluid[ammonium_tungstate_solution].localised_description = show_formula and {chemical_formula, "(NH[font=default-tiny-bold]4[/font])[font=default-tiny-bold]2[/font]WO[font=default-tiny-bold]4(aq)[/font]"} or nil
 data_fluid[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_fluid[ammonium_tungstate_solution].order = f
+TIMSABA.barreling.add_dangerous_fluid(ammonium_tungstate_solution)
 data_recipe[ammonium_tungstate_solution].category =  angels_chemical_smelting_4
 data_recipe[ammonium_tungstate_solution].subgroup = is_tungsten_chemistry
 data_recipe[ammonium_tungstate_solution].icons = THREE_D_I(tungstic_acid, ammonia_angels, water_purified_angels, ammonium_tungstate_solution)
@@ -1789,6 +1796,7 @@ data_item[platinum_powder].order = c
 data_fluid[hexachloroplatinic_acid].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6(aq)[/font]"} or nil
 data_fluid[hexachloroplatinic_acid].subgroup = is_platinum_chemistry
 data_fluid[hexachloroplatinic_acid].order = c
+TIMSABA.barreling.add_dangerous_fluid(hexachloroplatinic_acid)
 
 data_item[ammonium_hexachloroplatinate_IV].localised_name = {"item-name.ammonium-hexachloroplatinate-IV"}
 data_item[ammonium_hexachloroplatinate_IV].localised_description = show_formula and {chemical_formula, "(NH[font=default-tiny-bold]4[/font])[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6[/font]"} or nil

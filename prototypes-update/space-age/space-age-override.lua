@@ -140,10 +140,10 @@ data_assembling[crusher].energy_usage = 465 .. kW
 data_assembling[crusher].energy_source.drain = drain .. kW
 
 local thruster = "thruster"
-data_item[thruster].order = f
+data_item[thruster].order = g
 data_item[thruster].stack_size = 8
 data_item[thruster].weight = 125000
-data_recipe[thruster].order = f
+data_recipe[thruster].order = g
 data_recipe[thruster].energy_required = 8
 data_recipe[thruster].ingredients =
 {
@@ -153,7 +153,7 @@ data_recipe[thruster].ingredients =
     {type = item, name = rhenium_bearing, amount = 8},
     {type = item, name = molybdenum_rhenium_pipe, amount = 8}
 }
-data_thruster[thruster].order = f
+data_thruster[thruster].order = g
 
 
 if mods[panglia_mods] then
@@ -686,6 +686,7 @@ data_recipe[hydrogen_chloride_separation].results =
 
 data_fluid[thruster_fuel].subgroup = is_space_processing
 data_fluid[thruster_fuel].order = y
+
 data_recipe[thruster_fuel].subgroup = is_space_processing
 data_recipe[thruster_fuel].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, thruster_fuel, number_1)
 data_recipe[thruster_fuel].order = y
@@ -697,7 +698,7 @@ data_recipe[thruster_fuel].ingredients =
 }
 data_recipe[thruster_fuel].results = {{type = fluid, name = thruster_fuel, amount = 120}}
 data_recipe[thruster_fuel].main_product = thruster_fuel
-
+TIMSABA.barreling.add_dangerous_fluid(thruster_fuel)
 data_recipe[advanced_thruster_fuel].subgroup = is_space_processing
 data_recipe[advanced_thruster_fuel].icons = THREE_I(dimethylhydrazine_angels, hydrazine_angels, thruster_fuel, number_2)
 data_recipe[advanced_thruster_fuel].order = y_a
@@ -716,6 +717,7 @@ data_recipe[advanced_thruster_fuel].results =
 
 data_fluid[thruster_oxidizer].subgroup = is_space_processing
 data_fluid[thruster_oxidizer].order = z
+TIMSABA.barreling.add_dangerous_fluid(thruster_oxidizer)
 data_recipe[thruster_oxidizer].subgroup = is_space_processing
 data_recipe[thruster_oxidizer].icons = THREE_I(nitric_acid_angels, dinitrogen_tetroxide_angels, thruster_oxidizer, number_1)
 data_recipe[thruster_oxidizer].order = z

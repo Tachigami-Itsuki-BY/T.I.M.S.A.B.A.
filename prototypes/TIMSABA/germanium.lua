@@ -142,6 +142,9 @@ TIMSABA.functions.create_fluids
         flow_color = TIMSABA.functions.flow_color("GeGeGe")
     }
 })
+TIMSABA.barreling.add_dangerous_fluid(potassium_metagermanate_solution)
+TIMSABA.barreling.add_dangerous_fluid(germanium_chloride_IV)
+TIMSABA.barreling.add_dangerous_fluid(sodium_metagermanate_solution)
 
 -- RECIPE
 germanium_oxide_IV_2 = "germanium-oxide-IV-2"

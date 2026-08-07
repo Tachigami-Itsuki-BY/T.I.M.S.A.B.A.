@@ -126,7 +126,9 @@ tech_water_treatment_5 = "water-treatment-5"
 tech_water_treatment_6 = "water-treatment-6"
 
 -- ANGELS PETROCHEM REFINING
+tech_basic_chemistry_1 = "angels-basic-chemistry"
 tech_basic_chemistry_2 = "angels-basic-chemistry-2"
+tech_basic_chemistry_3 = "angels-basic-chemistry-3"
 tech_coal_processing_1 = "angels-coal-processing"
 tech_coal_processing_2 = "angels-coal-processing-2"
 tech_coal_processing_3 = "angels-coal-processing-3"

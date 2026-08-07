@@ -71,3 +71,14 @@ require("prototypes-update.update-horogon-balance")
 for _, fluid in pairs(data_fluid) do
     fluid.auto_barrel = false
 end
+
+local function merge_lists(target, source)
+    if source then
+        for _, value in ipairs(source) do
+            table.insert(target, value)
+        end
+    end
+end
+
+merge_lists(TIMSABA.void.fluids, TIMSABA.barreling.dangerous_fluids)
+merge_lists(TIMSABA.void.fluids, TIMSABA.barreling.simple_fluids)

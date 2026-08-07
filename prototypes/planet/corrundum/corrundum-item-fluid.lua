@@ -12,4 +12,5 @@ if mods[corrundum_mods] then
             flow_color = {r = 125 / 255, g = 125 / 255, b = 100 / 255}
         }
     })
+    TIMSABA.barreling.add_gas(corrundum_air)
 end
