@@ -87,10 +87,20 @@ if mods[secretas_frozeta_mods] then
     }
     data_recipe[golden_science_pack].results = {{type = item, name = golden_science_pack, amount = 8}}
 
-    table.insert(data_recipe[speed_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
-    table.insert(data_recipe[efficiency_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
-    table.insert(data_recipe[productivity_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
-    table.insert(data_recipe[quality_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
+    if mods[bobmodules] then
+        table.insert(data_recipe[speed_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
+        table.insert(data_recipe[efficiency_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
+        table.insert(data_recipe[productivity_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
+        table.insert(data_recipe[quality_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
+
+        bobmods.lib.recipe.update_recycling_recipe
+        ({
+            speed_module_5,
+            efficiency_module_5,
+            productivity_module_5,
+            quality_module_5
+        })
+    end
 
     -- BUILDING
     local steam_recycler = "steam-recycler"
@@ -115,14 +125,7 @@ if mods[secretas_frozeta_mods] then
     data_furnace[steam_recycler].energy_usage = 450 .. kW
     data_furnace[steam_recycler].result_inventory_size = 80
 
-    bobmods.lib.recipe.update_recycling_recipe
-    ({
-        speed_module_5,
-        efficiency_module_5,
-        productivity_module_5,
-        quality_module_5,
-        steam_recycler
-    })
+    bobmods.lib.recipe.update_recycling_recipe({steam_recycler})
 
     -- TECHNOLOGY
     local planet_discovery_secretas = "planet-discovery-secretas"

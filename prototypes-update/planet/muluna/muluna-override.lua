@@ -316,7 +316,7 @@ if mods[muluna_mods] then
 
     local wood_gasification = "wood-gasification"
     data_recipe[wood_gasification].subgroup = is_muluna_recipe_cellulose
-    data_recipe[wood_gasification].icons = FOUR_R_I(cellulose_fiber_angels, methane_angels, nil, tar_mods)
+    data_recipe[wood_gasification].icons = TWO_D_I(cellulose_fiber_angels, nil, methane_angels, tar_mods)
     data_recipe[wood_gasification].order = a_a
     data_recipe[wood_gasification].energy_required = 4
     data_recipe[wood_gasification].ingredients =
@@ -330,12 +330,12 @@ if mods[muluna_mods] then
         {type = fluid, name = tar_mods, amount = 15},
         {type = item, name = alumina_crushed, amount = 1, probability = 0.5, ignored_by_productivity = 1}
     }
-    data_recipe[wood_gasification].main_product = tar_mods
+    data_recipe[wood_gasification].main_product = methane_angels
     data_recipe[wood_gasification].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     local advanced_wood_gasification = "advanced-wood-gasification"
     data_recipe[advanced_wood_gasification].subgroup = is_muluna_recipe_cellulose
-    data_recipe[advanced_wood_gasification].icons = FOUR_R_I(cellulose_fiber_angels, naphtha_angels, tar_mods, fuel_oil_angels)
+    data_recipe[advanced_wood_gasification].icons = THREE_D_I(cellulose_fiber_angels, nil, nil, tar_mods, naphtha_angels, fuel_oil_angels)
     data_recipe[advanced_wood_gasification].order = a_b
     data_recipe[advanced_wood_gasification].energy_required = 8
     data_recipe[advanced_wood_gasification].ingredients =
@@ -1361,9 +1361,11 @@ if mods[muluna_mods] then
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_4},
         {type = unlock_recipe, recipe = ice_melting},
         {type = unlock_recipe, recipe = nitrogen_oxide_separation},
         {type = unlock_recipe, recipe = chlorine_oxide_separation},
+        {type = unlock_recipe, recipe = sodium_hydroxide_space},
         {type = unlock_recipe, recipe = hydrogen_chloride_separation},
         {type = unlock_recipe, recipe = nitrogen_monoxide_space},
         {type = unlock_recipe, recipe = hydrazine_space},
@@ -1385,6 +1387,7 @@ if mods[muluna_mods] then
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
         {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
         {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},

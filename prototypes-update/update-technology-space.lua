@@ -50,12 +50,14 @@ if not mods[muluna_mods] then
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_1},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_2},
         {type = unlock_recipe, recipe = oxide_asteroid_crushing_3},
+        {type = unlock_recipe, recipe = oxide_asteroid_crushing_4},
         {type = unlock_recipe, recipe = nitrogen_oxide_separation},
         {type = unlock_recipe, recipe = chlorine_oxide_separation},
+        {type = unlock_recipe, recipe = sodium_hydroxide_space},
         {type = unlock_recipe, recipe = hydrogen_chloride_separation},
         {type = unlock_recipe, recipe = nitrogen_monoxide_space},
         {type = unlock_recipe, recipe = hydrazine_space},
-        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space},
+        {type = unlock_recipe, recipe = dinitrogen_tetroxide_space}
     }
 end
 
@@ -73,7 +75,7 @@ data_technology[tech_advanced_asteroid_processing].effects =
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_1},
     {type = unlock_recipe, recipe = advanced_oxide_asteroid_crushing_2},
     {type = unlock_recipe, recipe = lime_space},
-    {type = unlock_recipe, recipe = sodium_hydroxide_space}
+    --{type = unlock_recipe, recipe = sodium_hydroxide_space}
 }
 data_technology[tech_advanced_asteroid_processing].prerequisites = {electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack}
 data_technology[tech_advanced_asteroid_processing].unit.ingredients =
@@ -102,6 +104,7 @@ data_technology[tech_asteroid_productivity].effects =
     {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
     {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
     {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+    {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
     {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
     {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
     {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
