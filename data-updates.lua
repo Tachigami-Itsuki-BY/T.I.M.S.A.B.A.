@@ -63,6 +63,8 @@ require("prototypes-update.planet.shattered.shattered-override")
 
 require("prototypes-update.mods.mods-override")
 
+require("prototypes-update.update-settings")
+
 require("prototypes-update.mods.dynamic-underground-belts")
 require("prototypes-update.mods.dynamic-pipe-to-ground")
 

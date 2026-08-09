@@ -37,6 +37,10 @@ if mods[castra_mods] then
     data_planet[planet_castra].order = a_m
 end
 
+if mods[shchierbin_mods] then
+    data_planet[planet_shchierbin].order = a_n
+end
+
 -- MOONS
 if mods[muluna_mods] then
     data_planet[planet_muluna].order = a_a

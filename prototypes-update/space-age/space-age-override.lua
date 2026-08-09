@@ -439,6 +439,8 @@ data_recipe[advanced_oxide_asteroid_crushing_1].localised_name = {"recipe-name.a
 data_recipe[advanced_oxide_asteroid_crushing_1].icons = TWO_I(oxide_asteroid_chunk, sodium_oxide)
 data_recipe[advanced_oxide_asteroid_crushing_1].energy_required = 4
 data_recipe[advanced_oxide_asteroid_crushing_1].results = {{type = item, name = sodium_oxide, amount = 8}}
+data_recipe[advanced_oxide_asteroid_crushing_1].hidden = true
+data_recipe[advanced_oxide_asteroid_crushing_1].hidden_in_factoriopedia = true
 
 data_recipe[oxide_asteroid_reprocessing].icons = THREE_R_I(oxide_asteroid_chunk, carbonic_asteroid_chunk, metallic_asteroid_chunk)
 data_recipe[oxide_asteroid_reprocessing].results =
@@ -665,7 +667,7 @@ ice_melting = "ice-melting"
 data_recipe[ice_melting].subgroup = is_space_processing
 data_recipe[ice_melting].icons = TWO_I(ice, water)
 data_recipe[ice_melting].order = a
-data_recipe[ice_melting].results[1].amount = 30
+data_recipe[ice_melting].results[1].amount = 15
 
 data_recipe[hydrogen_chloride_separation].category = angels_petrochem_electrolyser
 data_recipe[hydrogen_chloride_separation].subgroup = is_space_processing

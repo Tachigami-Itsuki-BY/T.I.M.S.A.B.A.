@@ -680,6 +680,16 @@ if mods[castra_mods] then
             data_resource[res_name].location = planet_castra
         end
     end
+
+    local data_collector = "data-collector"
+    data_unit_spawner[data_collector].loot =
+    {
+        {item = advanced_circuit,      probability = 1, count_min = 4, count_max = 8},
+        {item = nickel_plate_bob,      probability = 1, count_min = 4, count_max = 16},
+        {item = electronic_circuit,    probability = 1, count_min = 8, count_max = 32},
+        {item = low_density_structure, probability = 1, count_min = 4, count_max = 12},
+        {item = electric_engine_unit,  probability = 1, count_min = 4, count_max = 8}
+    }
 end
 
 -- SHCHIERBIN

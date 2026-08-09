@@ -95,6 +95,7 @@ data:extend
 -- OXIDE
 oxide_asteroid_crushing_2 = "timasaba-oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
+oxide_asteroid_crushing_4 = "oxide-asteroid-crushing-4"
 advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
 full_oxide_asteroid_crushing_1 = "full-oxide-asteroid-crushing-1"
 full_oxide_asteroid_crushing_2 = "full-oxide-asteroid-crushing-2"
@@ -114,16 +115,17 @@ local function oxide_asteroid_crushing(parameters)
         allow_decomposition = false,
         energy_required = 4,
         ingredients = {{type = item, name = oxide_asteroid_chunk, amount = 1}},
-        results = {{type = parameters.type_res, name = parameters.res, amount = 120}},
+        results = {{type = parameters.type_res, name = parameters.res, amount = parameters.amount}},
         main_product = parameters.res
     }
     data:extend({info_recipe})
 end
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_2,          category = chemistry, order = e_b, type_res = fluid, res = nitrogen_oxide})
-oxide_asteroid_crushing({name = oxide_asteroid_crushing_3,          category = chemistry, order = e_c, type_res = fluid, res = chlorine_oxide_gas})
-oxide_asteroid_crushing({name = advanced_oxide_asteroid_crushing_2, category = chemistry, order = f_b, type_res = fluid, res = nitrogen_dioxide_angels})
-oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_1,     category = crushing,  order = g_a, type_res = item,  res = lithium_oxide})
-oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_2,     category = chemistry, order = g_b, type_res = fluid, res = oxygen_fluoride_gas})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_2,          category = chemistry, order = e_b, type_res = fluid, amount = 120, res = nitrogen_oxide})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_3,          category = chemistry, order = e_c, type_res = fluid, amount = 120, res = chlorine_oxide_gas})
+oxide_asteroid_crushing({name = oxide_asteroid_crushing_4,          category = crushing,  order = e_d, type_res = item,  amount = 8,   res = sodium_oxide})
+oxide_asteroid_crushing({name = advanced_oxide_asteroid_crushing_2, category = chemistry, order = f_b, type_res = fluid, amount = 120, res = nitrogen_dioxide_angels})
+oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_1,     category = crushing,  order = g_a, type_res = item,  amount = 8,   res = lithium_oxide})
+oxide_asteroid_crushing({name = full_oxide_asteroid_crushing_2,     category = chemistry, order = g_b, type_res = fluid, amount = 120, res = oxygen_fluoride_gas})
 
 -- SPACE PROCESSING
 nitrogen_oxide_separation = "nitrogen-oxide-gas-separation"
@@ -266,7 +268,7 @@ TIMSABA.functions.create_recipes
             {type = fluid, name = fluorine, amount = 30} -- 60
         },
         main_product = fluoroketone_hot,
-        surface_conditions = {{property = "pressure", min = 0, max = 0}}
+        surface_conditions = {{property = pressure, min = 0, max = 0}}
     }
 })
 
