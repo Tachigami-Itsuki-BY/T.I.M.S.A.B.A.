@@ -527,7 +527,7 @@ TIMSABA.barreling.add_gas(chloroethane_gas)
 TIMSABA.barreling.add_dangerous_fluid(chlorobutane_liquid)
 
 -- CALCIUM ITEM
-calcium = "timasaba-calcium"
+calcium = "timsaba-calcium"
 calcium_carbide = "calcium-carbide"
 calcium_cyanamide = "calcium-cyanamide"
 calcium_hydroxide = "calcium-hydroxide"

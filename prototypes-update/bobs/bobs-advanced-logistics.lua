@@ -192,9 +192,9 @@ end
 
 local fluid_wagons =
 {
-    {name = fluid_wagon_1, order = a, capacity = 24000, equipment_grid = small_equipment_grid},
-    {name = fluid_wagon_2, order = b, capacity = 48000, equipment_grid = medium_equipment_grid},
-    {name = fluid_wagon_3, order = c, capacity = 72000, equipment_grid = large_equipment_grid}
+    {name = fluid_wagon_1, order = a, capacity = 28800, equipment_grid = small_equipment_grid},
+    {name = fluid_wagon_2, order = b, capacity = 57600, equipment_grid = medium_equipment_grid},
+    {name = fluid_wagon_3, order = c, capacity = 86400, equipment_grid = large_equipment_grid}
 }
 for _, TRANSPORT in pairs(fluid_wagons) do
     if data_item_entity[TRANSPORT.name] then
@@ -728,13 +728,6 @@ for _, materials in pairs(roboport_materials) do
     end
 end
 
-if mods[maraxsis_mods] then
-    local spiderling = "sp-spiderling"
-    data_item_entity[spiderling].subgroup = is_spidertron
-    data_item_entity[spiderling].weight = 1000000
-    data_recipe[spiderling].subgroup = is_spidertron
-end
-
 local materials =
 {
     spidertron_cannon,
@@ -814,11 +807,6 @@ if data_recipe[spidertron_cannon] then
         {type = item, name = nitinol_plate_bob, amount = 2}
     }
 
-    local antron = "bob-antron"
-    local tankotron = "bob-tankotron"
-    local logitron = "bob-logistic-spidertron"
-    local spidertron = "spidertron"
-    local heavy_spidertron = "bob-heavy-spidertron"
     local spidertrons =
     {
         {name = antron, order = a},
@@ -894,6 +882,32 @@ if data_recipe[spidertron_cannon] then
         spidertron,
         heavy_spidertron
     })
+end
+
+if mods[maraxsis_mods] then
+    local spiderling = "sp-spiderling"
+    data_item_entity[spiderling].subgroup = is_spidertron
+    data_item_entity[spiderling].weight = 1000000
+    data_recipe[spiderling].subgroup = is_spidertron
+    data_recipe[spiderling].energy_required = 4
+    data_recipe[spiderling].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 32},
+        {type = item, name = rocket_launcher, amount = 1},
+        {type = item, name = exoskeleton_eq_1, amount = 4},
+        {type = item, name = radar_1, amount = 1},
+        {type = item, name = factorian_fish, amount = 1}
+    }
+
+    bobmods.lib.recipe.update_recycling_recipe({spiderling})
+
+    data_technology[spiderling].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {military_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
 end
 
 bobmods.lib.recipe.update_recycling_recipe

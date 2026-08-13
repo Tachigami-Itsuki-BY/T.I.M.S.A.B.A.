@@ -96,11 +96,56 @@ if mods[muluna_mods] then
     data_recipe[casting_aluminium_cable].results = {{type = item, name = aluminium_cable, amount = 16}}
     data_recipe[casting_aluminium_cable].main_product = aluminium_cable
 
+    data_item[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
+    data_item[aluminium_pipe].order = e
+    data_item[aluminium_pipe].hidden = false
+    data_item[aluminium_pipe].hidden_in_factoriopedia = false
+    data_recipe[aluminium_pipe].localised_name = {"entity-name." .. aluminium_pipe}
+    data_recipe[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
+    data_recipe[aluminium_pipe].order = e
+    data_recipe[aluminium_pipe].auto_recycle = true
+    data_recipe[aluminium_pipe].results[1].name = aluminium_pipe
+    data_recipe[aluminium_pipe].hidden = false
+    data_recipe[aluminium_pipe].hidden_in_factoriopedia = false
+    data_pipe[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
+    data_pipe[aluminium_pipe].order = e
+    data_pipe[aluminium_pipe].hidden = false
+    data_pipe[aluminium_pipe].hidden_in_factoriopedia = false
+
+    data_item[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
+    data_item[aluminium_pipe_to_ground].order = f
+    data_item[aluminium_pipe_to_ground].hidden = false
+    data_item[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+    data_recipe[aluminium_pipe_to_ground].localised_name = {"entity-name." .. aluminium_pipe_to_ground}
+    data_recipe[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
+    data_recipe[aluminium_pipe_to_ground].order = f
+    data_recipe[aluminium_pipe_to_ground].auto_recycle = true
+    data_recipe[aluminium_pipe_to_ground].ingredients =
+    {
+        {type = item, name = aluminium_pipe, amount = 24},
+        {type = item, name = aluminium_plate_bob, amount = 4}
+    }
+    data_recipe[aluminium_pipe_to_ground].results[1].name = aluminium_pipe_to_ground
+    data_recipe[aluminium_pipe_to_ground].main_product = aluminium_pipe_to_ground
+    data_recipe[aluminium_pipe_to_ground].hidden = false
+    data_recipe[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+    data_pipe_to_ground[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
+    data_pipe_to_ground[aluminium_pipe_to_ground].order = f
+    data_pipe_to_ground[aluminium_pipe_to_ground].hidden = false
+    data_pipe_to_ground[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+    if settings.startup[setting_rebalance_belts_and_pipes].value then
+        data_pipe_to_ground[aluminium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 24
+    end
+
+    data_recipe[aluminium_pipe .. _straight].ingredients[1].name = aluminium_pipe
+    data_recipe[aluminium_pipe .. _elbow].ingredients[1].name = aluminium_pipe
+    data_recipe[aluminium_pipe .. _junction].ingredients[1].name = aluminium_pipe
+
     local low_density_structure_muluna = "low-density-structure-from-aluminum"
     data_recipe[low_density_structure_muluna].localised_name = {"recipe-name.low-density-structure-muluna"}
     data_recipe[low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_1)
-    data_recipe[low_density_structure_muluna].order = e
+    data_recipe[low_density_structure_muluna].order = z
     data_recipe[low_density_structure_muluna].energy_required = data_recipe[low_density_structure].energy_required
     data_recipe[low_density_structure_muluna].ingredients = data_recipe[low_density_structure].ingredients
     data_recipe[low_density_structure_muluna].results[1].amount = 2
@@ -110,7 +155,7 @@ if mods[muluna_mods] then
     data_recipe[casting_low_density_structure_muluna].localised_name = {"recipe-name.casting-low-density-structure-muluna"}
     data_recipe[casting_low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[casting_low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_2)
-    data_recipe[casting_low_density_structure_muluna].order = e_a
+    data_recipe[casting_low_density_structure_muluna].order = z_a
     data_recipe[casting_low_density_structure_muluna].energy_required = data_recipe[casting_low_density_structure].energy_required
     data_recipe[casting_low_density_structure_muluna].ingredients = data_recipe[casting_low_density_structure].ingredients
     data_recipe[casting_low_density_structure_muluna].results[1].amount = 2
@@ -957,6 +1002,9 @@ if mods[muluna_mods] then
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
+        aluminium_pipe .. _straight,
+        aluminium_pipe .. _elbow,
+        aluminium_pipe .. _junction,
         greenhouse_wood,
         LDSPF,
         advanced_boiler,
@@ -1084,6 +1132,15 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_shchierbin].results[1].amount = 30
     end
 
+    if mods[maraxsis_mods] then
+        local telescope_observation_maraxsis = "muluna-telescope-observation-maraxsis"
+        data_recipe[telescope_observation_maraxsis].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_maraxsis].icons = BUILDING_R_I(astronomical_data_muluna, planet_maraxsis)
+        data_recipe[telescope_observation_maraxsis].order = data_planet[planet_maraxsis].order
+        data_recipe[telescope_observation_maraxsis].energy_required = 4
+        data_recipe[telescope_observation_maraxsis].results[1].amount = 30
+    end
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons
@@ -1119,13 +1176,7 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_terrapalus].results[1].amount = 30
     end
 
-    --[[if mods[maraxsis_mods] then
-        local telescope_observation_maraxsis = "muluna-telescope-observation-maraxsis"
-        data_recipe[telescope_observation_maraxsis].icons = BUILDING_R_I(astronomical_data_muluna, planet_maraxsis)
-        data_recipe[telescope_observation_maraxsis].energy_required = 4
-    end
-
-    if mods[shattered_mods] then
+    --[[if mods[shattered_mods] then
         local telescope_observation_shattered = "muluna-telescope-observation-skewer_shattered_planet"
         data_recipe[telescope_observation_shattered].icons = BUILDING_R_I(astronomical_data_muluna, planet_shattered)
         data_recipe[telescope_observation_shattered].energy_required = 4
@@ -1137,8 +1188,9 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_vesta].energy_required = 4
     end]]
 
+    -- OTHERS SPACE
     local telescope_observation_space_platform = "muluna-telescope-observation-space-platform"
-    data_recipe[telescope_observation_space_platform].subgroup = is_muluna_recipe_astronomical_planets
+    data_recipe[telescope_observation_space_platform].subgroup = is_muluna_recipe_astronomical_others_space
     data_recipe[telescope_observation_space_platform].icons = BUILDING_R_I(astronomical_data_muluna, space_platform)
     data_recipe[telescope_observation_space_platform].order = data_surface[space_platform].order
     data_recipe[telescope_observation_space_platform].energy_required = 4
@@ -1214,6 +1266,19 @@ if mods[muluna_mods] then
     local tech_anorthite_processing = "muluna-anorthite-processing"
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_2})
     table.insert(data_technology[tech_anorthite_processing].effects, {type = unlock_recipe, recipe = anorthite_crushing_3})
+
+    local tech_aluminium_processing = "muluna-aluminum-processing"
+    data_technology[tech_aluminium_processing].effects =
+    {
+        {type = unlock_recipe, recipe = aluminium_plate_crushed},
+        {type = unlock_recipe, recipe = aluminium_cable},
+        {type = unlock_recipe, recipe = aluminium_pipe},
+        {type = unlock_recipe, recipe = aluminium_pipe_to_ground},
+        {type = unlock_recipe, recipe = aluminium_pipe .. _straight},
+        {type = unlock_recipe, recipe = aluminium_pipe .. _elbow},
+        {type = unlock_recipe, recipe = aluminium_pipe .. _junction},
+        {type = unlock_recipe, recipe = low_density_structure_muluna}
+    }
 
     local tech_greenhouses = "muluna-greenhouses"
     table.insert(data_technology[tech_greenhouses].effects, {type = unlock_recipe, recipe = lumber_mill})

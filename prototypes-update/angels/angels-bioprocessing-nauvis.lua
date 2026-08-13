@@ -1,7 +1,7 @@
 local _C6H10O5n_ = "(C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]10[/font]O[font=default-tiny-bold]5[/font])[font=default-tiny-bold]n[/font]"
 -- GREEN
 data_item[algae_green].order = a
-data_item[algae_green].spoil_ticks = 180 * minute
+data_item[algae_green].spoil_ticks = 3 * hour
 data_item[algae_green].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_green)
 data_recipe[algae_green].category = angels_bio_processing_1
@@ -55,7 +55,7 @@ data_recipe[paste_cellulose].results[1].amount = 8
 
 -- BROWN
 data_item[algae_brown].stack_size = 200
-data_item[algae_brown].spoil_ticks = 360 * minute
+data_item[algae_brown].spoil_ticks = 6 * hour
 data_item[algae_brown].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_brown)
 data_recipe[algae_brown].icons = TWO_I(water_saline_angels, algae_brown)
@@ -83,7 +83,7 @@ data_recipe[alginic_acid].energy_required = 8
 data_recipe[alginic_acid].ingredients[1].amount = 8
 
 -- RED
-data_item[algae_red].spoil_ticks = 540 * minute
+data_item[algae_red].spoil_ticks = 9 * hour
 data_item[algae_red].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_red)
 data_recipe[algae_red].icons = THREE_I(water_thermal_angels, ammonia_angels, algae_red)
@@ -105,7 +105,7 @@ data_recipe[calcium_carbonate].ingredients[1].amount = 8
 data_recipe[calcium_carbonate].results[1].amount = 4
 
 -- BLUE
-data_item[algae_blue].spoil_ticks = 720 * minute
+data_item[algae_blue].spoil_ticks = 12 * hour
 data_item[algae_blue].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_blue)
 data_recipe[algae_blue].icons = THREE_I(water_yellow_waste, carbon_dioxide_angels, algae_blue)

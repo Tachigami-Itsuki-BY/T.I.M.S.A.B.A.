@@ -5,7 +5,7 @@ if mods[secretas_frozeta_mods] then
         {
             type = item_group,
             name = ig_frozeta,
-            order = y_c,
+            order = data_planet[planet_frozeta].order,
             icon = "__TIMSABA__/graphics/icons/frozeta/frozeta-planet.png",
             icon_size = 128
         }

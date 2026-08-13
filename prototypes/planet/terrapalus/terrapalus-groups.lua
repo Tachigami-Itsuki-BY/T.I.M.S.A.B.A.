@@ -5,7 +5,7 @@ if mods[terrapalus_mods] then
         {
             type = item_group,
             name = ig_terrapalus,
-            order = y_d,
+            order = data_planet[planet_terrapalus].order,
             icon = "__TIMSABA__/graphics/icons/terrapalus/terrapalus-planet.png",
             icon_size = 128
         }

@@ -14,13 +14,13 @@ data:extend
         type = pipe,
         name = molybdenum_rhenium_pipe,
         subgroup = is_pipe,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/" .. molybdenum_rhenium_pipe .. ".png",
         icon_size = 64,
         order = m,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.5, result = molybdenum_rhenium_pipe},
         max_health = 350,
-        corpse = "pipe-remnants",
+        corpse = molybdenum_rhenium_pipe .. _remnants,
         dying_explosion = "pipe-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 90}},
@@ -52,13 +52,13 @@ data:extend
         type = pipe_to_ground,
         name = molybdenum_rhenium_pipe_to_ground,
         subgroup = is_pipe_to_ground,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe-to-ground.png",
+        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/" .. molybdenum_rhenium_pipe_to_ground .. ".png",
         icon_size = 64,
         order = m,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.5, result = molybdenum_rhenium_pipe_to_ground},
         max_health = 400,
-        corpse = "pipe-to-ground-remnants",
+        corpse = molybdenum_rhenium_pipe_to_ground .. _remnants,
         dying_explosion = "pipe-to-ground-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 80}},
@@ -96,16 +96,16 @@ data:extend
 })
 
 if feature_flags["freezing"] then
-    data_pipe[molybdenum_rhenium_pipe].heating_energy = "1kW"
-    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].heating_energy = "350kW"
+    data_pipe[molybdenum_rhenium_pipe].heating_energy = 1 .. kW
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].heating_energy = 350 .. kW
     if mods["space-age"] then
         local function frozenpatch()
-            local result = util.table.deepcopy(data.raw["pipe-to-ground"]["pipe-to-ground"].frozen_patch)
+            local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
             return result
         end
         data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].frozen_patch = frozenpatch()
         local function frozenpatch2()
-            local result = util.table.deepcopy(data.raw.pipe.pipe.fluid_box.pipe_covers_frozen)
+            local result = util.table.deepcopy(data_pipe[iron_pipe].fluid_box.pipe_covers_frozen)
             return result
         end
         data_pipe[molybdenum_rhenium_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
@@ -113,7 +113,7 @@ if feature_flags["freezing"] then
     end
 end
 
-if settings.startup["bobmods-logistics-ugdistanceoverhaul"].value == true then
+if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value then
     bobmods.logistics.set_pipe_distance(molybdenum_rhenium_pipe_to_ground, 6)
 end
 
@@ -135,6 +135,6 @@ for _, info in ipairs(icons_pipe) do
     data.raw[info.type][info.name].icons = {{icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/" .. info.name .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, info.name, info.type)
     if info.type == pipe or info.type == pipe_to_ground then
-        reskins.lib.create_particle(info.name, info.type, reskins.lib.particle_index["medium"], 1, util.color("#6a57ab"))
+        reskins.lib.create_particle(info.name, info.type, reskins.lib.particle_index[medium], 1, util.color("#6a57ab"))
     end
 end

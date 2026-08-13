@@ -13,33 +13,27 @@ if mods[tellus_mods] then
 
             local simulations = require("prototypes.factoriopedia-simulations")
 
-            local function make_pipe_and_to_ground(color, order, simulation)
+            local function make_pipes(color, order, simulation)
                 return
                 data.extend
                 ({
                     {
                         type = pipe,
-                        name = color .. "-pipe",
+                        name = color .. "-" .. pipe,
                         subgroup = is_tellus_pipe,
-                        icon = "__TIMSABA__/graphics/icons/tellus/" .. color .. "-pipe.png",
+                        icon = "__TIMSABA__/graphics/icons/tellus/" .. color .. "-" .. pipe .. ".png",
                         icon_size = 64,
                         order = order,
-                        flags = {"placeable-neutral", "player-creation"},
-                        minable = {mining_time = 0.1, result = color .. "-pipe"},
+                        flags = {flag_placeable_neutral, flag_player_creation},
+                        minable = {mining_time = 0.1, result = color .. "-" .. pipe},
                         max_health = 100,
-                        corpse = "pipe-remnants",
+                        corpse = color .. "-" .. pipe .. _remnants,
                         dying_explosion = "pipe-explosion",
                         icon_draw_specification = {scale = 0.5},
                         resistances =
                         {
-                            {
-                                type = "fire",
-                                percent = 80
-                            },
-                            {
-                                type = "impact",
-                                percent = 30
-                            }
+                            {type = "fire", percent = 80},
+                            {type = "impact", percent = 30}
                         },
                         fast_replaceable_group = pipe,
                         collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
@@ -68,27 +62,21 @@ if mods[tellus_mods] then
                     },
                     {
                         type = pipe_to_ground,
-                        name = color .. "-pipe-to-ground",
+                        name = color .. "-" .. pipe_to_ground,
                         subgroup = is_tellus_pipe_to_ground,
-                        icon = "__TIMSABA__/graphics/icons/tellus/" .. color .. "-pipe-to-ground.png",
+                        icon = "__TIMSABA__/graphics/icons/tellus/" .. color .. "-" .. pipe_to_ground .. ".png",
                         icon_size = 64,
                         order = order,
                         flags = {"placeable-neutral", "player-creation"},
-                        minable = {mining_time = 0.1, result = color .. "-pipe-to-ground"},
+                        minable = {mining_time = 0.1, result = color .. "-" .. pipe_to_ground},
                         max_health = 150,
-                        corpse = "pipe-to-ground-remnants",
+                        corpse = color .. "-" .. pipe_to_ground .. _remnants,
                         dying_explosion = "pipe-to-ground-explosion",
                         icon_draw_specification = {scale = 0.5},
                         resistances =
                         {
-                            {
-                                type = "fire",
-                                percent = 80
-                            },
-                            {
-                                type = "impact",
-                                percent = 40
-                            }
+                            {type = "fire", percent = 80},
+                            {type = "impact", percent = 40}
                         },
                         fast_replaceable_group = pipe,
                         collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
@@ -126,8 +114,8 @@ if mods[tellus_mods] then
                     }
                 })
             end
-            make_pipe_and_to_ground("orange", a, simulations.factoriopedia_orange_pipe_to_ground)
-            make_pipe_and_to_ground("black", z, simulations.factoriopedia_black_pipe_to_ground)
+            make_pipes("orange", a, simulations.factoriopedia_orange_pipe_to_ground)
+            make_pipes("black", z, simulations.factoriopedia_black_pipe_to_ground)
         end
 
         if settings.startup[setting_rebalance_belts_and_pipes].value == false then

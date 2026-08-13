@@ -649,6 +649,9 @@ if mods[tellus_mods] then
     data_recipe[root_pump].order = c
     data_pump[root_pump].subgroup = is_tellus_logistics
     data_pump[root_pump].order = c
+    data_pump[root_pump].pumping_speed = 8
+    data_pump[root_pump].energy_usage = 30 .. kW
+    data_pump[root_pump].energy_source.drain = nil
 
     local root_storage_tank = "planetaris-root-storage-tank"
     data_item[root_storage_tank].subgroup = is_tellus_logistics
@@ -665,7 +668,7 @@ if mods[tellus_mods] then
     }
     data_storage_tank[root_storage_tank].subgroup = is_tellus_logistics
     data_storage_tank[root_storage_tank].order = d
-    data_storage_tank[root_storage_tank].fluid_box.volume = 32000
+    data_storage_tank[root_storage_tank].fluid_box.volume = 28800
 
     local root_filler = "planetaris-root-filler"
     data_item[root_filler].subgroup = is_tellus_logistics
@@ -682,7 +685,7 @@ if mods[tellus_mods] then
     }
     data_storage_tank[root_filler].subgroup = is_tellus_logistics
     data_storage_tank[root_filler].order = e
-    data_storage_tank[root_filler].fluid_box.volume = 2400
+    data_storage_tank[root_filler].fluid_box.volume = 3600
 
     local logistic_robowasp = "planetaris-logistic-robowasp"
     data_item[logistic_robowasp].subgroup = is_tellus_logistics

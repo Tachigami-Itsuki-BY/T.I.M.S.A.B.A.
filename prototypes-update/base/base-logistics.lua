@@ -148,6 +148,7 @@ data_item[silo].order = a
 data_item[silo].stack_size = 32
 data_item[silo].weight = 31250
 data_recipe[silo].order = a
+data_recipe[silo].energy_required = 4
 data_recipe[silo].ingredients =
 {
     {type = item, name = iron_plate, amount = 16},
@@ -165,39 +166,95 @@ local silo_requester = "angels-silo-requester"
 local silo_storage = "angels-silo-storage"
 local silos =
 {
-    {name = silo_active_provider, order = b},
-    {name = silo_buffer, order = c},
+    {name = silo_active_provider,  order = b},
+    {name = silo_buffer,           order = c},
     {name = silo_passive_provider, order = d},
-    {name = silo_requester, order = e},
-    {name = silo_storage, order = f}
+    {name = silo_requester,        order = e},
+    {name = silo_storage,          order = f}
 }
 for _, BUILD in pairs(silos) do
     data_item[BUILD.name].order = BUILD.order
     data_item[BUILD.name].stack_size = 32
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].order = BUILD.order
+    data_recipe[BUILD.name].energy_required = 4
     data_logistic_container[BUILD.name].order = BUILD.order
     data_logistic_container[BUILD.name].inventory_size = 240
 end
-local function silos_recipe(name, circuit, plate)
+local function silos_recipe(name, circuit)
     data_recipe[name].ingredients =
     {
         {type = item, name = circuit, amount = 8},
         {type = item, name = silo, amount = 1},
-        {type = item, name = plate, amount = 8},
+        {type = item, name = steel_plate, amount = 8}
     }
 end
-silos_recipe(silo_active_provider, advanced_circuit, steel_plate)
-silos_recipe(silo_buffer, advanced_circuit, steel_plate)
-silos_recipe(silo_passive_provider, electronic_circuit, steel_plate)
-silos_recipe(silo_requester, advanced_circuit, steel_plate)
-silos_recipe(silo_storage, electronic_circuit, steel_plate)
+silos_recipe(silo_active_provider,  advanced_circuit)
+silos_recipe(silo_buffer,           advanced_circuit)
+silos_recipe(silo_passive_provider, electronic_circuit)
+silos_recipe(silo_requester,        advanced_circuit)
+silos_recipe(silo_storage,          electronic_circuit)
+
+local silo_ore_saphirite  = "angels-silo-ore1"
+local silo_ore_jivolite  = "angels-silo-ore2"
+local silo_ore_stiratite  = "angels-silo-ore3"
+local silo_ore_crotinnium  = "angels-silo-ore4"
+local silo_ore_rubyte  = "angels-silo-ore5"
+local silo_ore_bobmonium  = "angels-silo-ore6"
+local silo_coal  = "angels-silo-coal"
+if settings.startup["angels-enable-oresilos"].value then
+    local silos =
+    {
+        {name = silo_ore_saphirite,  order = a},
+        {name = silo_ore_jivolite,   order = b},
+        {name = silo_ore_stiratite,  order = c},
+        {name = silo_ore_crotinnium, order = d},
+        {name = silo_ore_rubyte,     order = e},
+        {name = silo_ore_bobmonium,  order = f},
+        {name = silo_coal,           order = g}
+    }
+    for _, BUILD in pairs(silos) do
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 4
+        data_container[BUILD.name].order = BUILD.order
+        data_container[BUILD.name].inventory_size = 240
+    end
+    local function silos_ore_recipe(name, ore)
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = silo, amount = 1},
+            {type = item, name = ore, amount = 8},
+        }
+    end
+    silos_ore_recipe(silo_ore_saphirite,  ore_saphirite)
+    silos_ore_recipe(silo_ore_jivolite,   ore_jivolite)
+    silos_ore_recipe(silo_ore_stiratite,  ore_stiratite)
+    silos_ore_recipe(silo_ore_crotinnium, ore_crotinnium)
+    silos_ore_recipe(silo_ore_rubyte,     ore_rubyte)
+    silos_ore_recipe(silo_ore_bobmonium,  ore_bobmonium)
+    silos_ore_recipe(silo_coal,           coal)
+
+    bobmods.lib.recipe.update_recycling_recipe
+    ({
+        silo_ore_saphirite,
+        silo_ore_jivolite,
+        silo_ore_stiratite,
+        silo_ore_crotinnium,
+        silo_ore_rubyte,
+        silo_ore_bobmonium,
+        silo_coal
+    })
+end
 
 local warehouse = "angels-warehouse"
 data_item[warehouse].order = a
 data_item[warehouse].stack_size = 32
 data_item[warehouse].weight = 31250
 data_recipe[warehouse].order = a
+data_recipe[warehouse].energy_required = 8
 data_recipe[warehouse].ingredients =
 {
     {type = item, name = iron_plate, amount = 128},
@@ -226,6 +283,7 @@ for _, BUILD in pairs(warehouses) do
     data_item[BUILD.name].stack_size = 32
     data_item[BUILD.name].weight = 31250
     data_recipe[BUILD.name].order = BUILD.order
+    data_recipe[BUILD.name].energy_required = 8
     data_logistic_container[BUILD.name].order = BUILD.order
     data_logistic_container[BUILD.name].inventory_size = 960
 end
@@ -713,6 +771,7 @@ if data_recipe[substation_2] then
     substation_recipe(substation_4, advanced_processing_unit, substation_3, gold_cable, nitinol_plate_bob)
 end
 
+data_item_subgroup[is_pipe].order = e
 local pipes =
 {
     {name = iron_pipe,            order = a},
@@ -750,6 +809,7 @@ data_recipe[tungsten_pipe].ingredients[1].name = tungsten_powder
 data_recipe[copper_tungsten_pipe].category = angels_sintering_4
 data_recipe[copper_tungsten_pipe].ingredients[1].name = copper_tungsten_powder
 
+data_item_subgroup[is_pipe_to_ground].order = e_a
 local pipes_to_ground =
 {
     {name = iron_pipe_to_ground,            order = a, max_underground_distance = 8,  simulations = simulations.factoriopedia_iron_pipe_to_ground},

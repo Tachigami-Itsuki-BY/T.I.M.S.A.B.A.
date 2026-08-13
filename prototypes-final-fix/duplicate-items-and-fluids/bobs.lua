@@ -10,6 +10,7 @@ local tin_cable_bob = "bob-tinned-copper-cable"
 local gold_cable_bob = "bob-gilded-copper-cable"
 local steam_inserter = "bob-steam-inserter"
 local steam_mining_drill = "bob-steam-mining-drill"
+local burner_assembling_machine = "bob-burner-assembling-machine"
 local steam_assembling_machine = "bob-steam-assembling-machine"
 local replacements =
 {
@@ -27,22 +28,10 @@ local replacements =
 	-- FOR mods
 	[steam_inserter] = T0_inserter,
 	[steam_mining_drill] = burner_mining_drill,
-	--[steam_assembling_machine] = burner_assembling_machine
+	[steam_assembling_machine] = assembling_machine_1,
+    [burner_assembling_machine] = assembling_machine_1
 }
 TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
-
-data_technology["steam-power"].effects =
-{
-	{type = unlock_recipe, recipe = iron_pipe},
-	{type = unlock_recipe, recipe = iron_pipe_to_ground},
-	{type = unlock_recipe, recipe = offshore_pump},
-	{type = unlock_recipe, recipe = boiler_1},
-	{type = unlock_recipe, recipe = steam_engine_1},
-	{type = unlock_recipe, recipe = copper_pipe},
-	{type = unlock_recipe, recipe = copper_pipe_to_ground},
-	{type = unlock_recipe, recipe = stone_pipe},
-	{type = unlock_recipe, recipe = stone_pipe_to_ground}
-}
 
 data_item[steam_inserter] = nil
 data_recipe[steam_inserter] = nil
@@ -61,6 +50,14 @@ if mods[panglia_mods] then
 	data_recipe[item_ .. steam_mining_drill .. _panglia_crushing] = nil
 end
 
+data_item[burner_assembling_machine] = nil
+data_recipe[burner_assembling_machine] = nil
+data_assembling[burner_assembling_machine] = nil
+data_recipe[burner_assembling_machine .. _recycling] = nil
+if mods[panglia_mods] then
+	data_recipe[item_ .. burner_assembling_machine .. _panglia_crushing] = nil
+end
+
 data_item[steam_assembling_machine] = nil
 data_recipe[steam_assembling_machine] = nil
 data_assembling[steam_assembling_machine] = nil
@@ -71,22 +68,19 @@ end
 
 local chemical_structures =
 {
-    {name = "bob-stone-chemical-furnace",    tbl = data_assembling},
-    {name = "bob-steel-chemical-furnace",    tbl = data_assembling},
-    {name = "bob-electric-chemical-furnace", tbl = data_assembling},
-    {name = "bob-electrolyser",              tbl = data_assembling},
-    {name = "bob-distillery",                tbl = data_furnace}
+    {name = "bob-stone-chemical-furnace",    data_type = data_assembling},
+    {name = "bob-steel-chemical-furnace",    data_type = data_assembling},
+    {name = "bob-electric-chemical-furnace", data_type = data_assembling},
+    {name = "bob-electrolyser",              data_type = data_assembling},
+    {name = "bob-distillery",                data_type = data_furnace}
 }
 for _, struct in ipairs(chemical_structures) do
-    local name = struct.name
-
-    data_item[name] = nil
-    data_recipe[name] = nil
-    data_recipe[name .. _recycling] = nil
-    struct.tbl[name] = nil
-
+    data_item[struct.name] = nil
+    data_recipe[struct.name] = nil
+    data_recipe[struct.name .. _recycling] = nil
+    struct.data_type[struct.name] = nil
     if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
+        data_recipe[item_ .. struct.name .. _panglia_crushing] = nil
     end
 end
 
@@ -106,11 +100,9 @@ for _, cell in ipairs(nuclear_cells) do
 
     data_item[name] = nil
     data_recipe[name .. _recycling] = nil
-
     if cell.has_recipe then
         data_recipe[name] = nil
     end
-
     if mods[panglia_mods] then
         data_recipe[item_ .. name .. _panglia_crushing] = nil
     end
@@ -138,9 +130,8 @@ for _, name in ipairs(bob_materials) do
     data_item[name] = nil
     data_recipe[name] = nil
     data_recipe[name .. _recycling] = nil
-
     if mods[panglia_mods] then 
-        data_recipe[item_ .. name .. _panglia_crushing] = nil 
+        data_recipe[item_ .. name .. _panglia_crushing] = nil
     end
 end
 
@@ -162,14 +153,12 @@ local plates_and_powders =
     tin_cable_bob,
     gold_cable_bob
 }
-
 for _, name in ipairs(plates_and_powders) do
 	data_item[name] = nil
 	data_recipe[name] = nil
 	data_recipe[name .. _recycling] = nil
-
 	if mods[panglia_mods] then 
-		data_recipe[item_ .. name .. _panglia_crushing] = nil 
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
 	end
 end
 
@@ -192,15 +181,81 @@ data_logistic_container[passive_provider_chest].next_upgrade = nil
 data_logistic_container[requester_chest].next_upgrade = nil
 data_logistic_container[storage_chest].next_upgrade = nil
 
+-- PRODUCTION
+local fluid_furnace = "bob-fluid-furnace"
+local fluid_chemical_furnace = "bob-fluid-chemical-furnace"
+local fluid_filtering_furnace = "bob-fluid-mixing-furnace"
+local modules_removed =
+{
+    fluid_furnace,
+    fluid_chemical_furnace,
+    fluid_filtering_furnace
+}
+for _, name in ipairs(modules_removed) do
+	data_item[name] = nil
+	data_recipe[name] = nil
+	data_recipe[name .. _recycling] = nil
+	if mods[panglia_mods] then 
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
+	end
+end
+data_furnace[fluid_furnace] = nil
+data_assembling[fluid_chemical_furnace] = nil
+data_assembling[fluid_filtering_furnace] = nil
+
+local modules_removed =
+{
+    "bob-water-miner-1",
+    "bob-water-miner-2",
+    "bob-water-miner-3",
+    "bob-water-miner-4"
+}
+for _, name in ipairs(modules_removed) do
+	data_item[name] = nil
+	data_recipe[name] = nil
+	data_recipe[name .. _recycling] = nil
+	if mods[panglia_mods] then 
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
+	end
+    data_mining_drill[name] = nil
+    data_technology[name] = nil
+end
+
+local modules_removed =
+{
+    "bob-electronics-machine-1",
+    "bob-electronics-machine-2",
+    "bob-electronics-machine-3"
+}
+for _, name in ipairs(modules_removed) do
+	data_item[name] = nil
+	data_recipe[name] = nil
+	data_recipe[name .. _recycling] = nil
+	if mods[panglia_mods] then 
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
+	end
+    data_assembling[name] = nil
+    data_technology[name] = nil
+end
+
+-- MODULES
+local god_module = "bob-god-module"
+local modules_removed =
+{
+    god_module,
+    god_module .. _productivity,
+    god_module .. "-quality"
+}
+for _, name in ipairs(modules_removed) do
+	data_module[name] = nil
+	data_recipe[name] = nil
+	data_recipe[name .. _recycling] = nil
+	if mods[panglia_mods] then 
+		data_recipe[item_ .. name .. _panglia_crushing] = nil
+	end
+end
+data_technology[god_module] = nil
+
 -- TECHNOLOGY
 data_technology["bob-lead-processing"].effects = {}
 data_technology["bob-aluminium-processing"].effects = {}
-
---[[local delete_technology =
-{
-    "bob-lead-processing",
-    "bob-aluminium-processing",
-}
-for _, TECH in pairs(delete_technology) do
-    data_technology[TECH] = nil
-end]]

@@ -70,8 +70,12 @@ if mods[corrundum_mods] then
 	data_recipe["thruster-fuel-oxidizer-to-steam"] = nil
 	data_recipe["carbon-dioxide-to-carbon"] = nil
 
-	data_recipe["petrol-dehydrogenation-and-combustion"] = nil
-	data_recipe["petrol-dehydrogenation-and-combustion-maraxsis"] = nil
+	local petrol_dehydrogenation_and_combustion = "petrol-dehydrogenation-and-combustion"
+	if mods[maraxsis_mods] then
+		data_recipe[petrol_dehydrogenation_and_combustion] = nil
+		data_recipe[petrol_dehydrogenation_and_combustion .. "-maraxsis"] = nil
+		data_technology[petrol_dehydrogenation_and_combustion] = nil
+	end
 
 	data_technology["chalcopyrite-processing"] = nil
 	data_technology[pipe .. _productivity .. "-infinite"] = nil

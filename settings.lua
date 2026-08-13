@@ -44,6 +44,12 @@ data:extend
         name = "setting-rebalance-belts-and-pipes",
         setting_type = startup,
         default_value = true
+    },
+    {
+        type = bool_setting,
+        name = "setting-flow-control-new",
+        setting_type = startup,
+        default_value = false
     }
 })
 

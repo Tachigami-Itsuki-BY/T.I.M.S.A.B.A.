@@ -47,7 +47,7 @@ if settings.startup[setting_no_spoilage].value then
 end
 
 -- BUILDING SPEEDS
-local speed_types = {data_mining_drill, data_assembling, data_furnace, data_lab}
+local speed_types = {data_mining_drill, data_assembling, data_furnace, data_lab, data_rocket_silo}
 for _, type_name in pairs(speed_types) do
     if type_name then
         for _, building in pairs(type_name) do

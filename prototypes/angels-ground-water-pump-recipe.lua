@@ -14,6 +14,7 @@ local recipes =
     {planet = planet_corrundum, fluid = multi_phase_oil_angels},
     {planet = planet_castra, fluid = fuel_oil_angels},
     {planet = planet_shchierbin, fluid = water_saline_angels},
+    {planet = planet_maraxsis, fluid = water_saline_angels},
     -- MOONS
     {planet = planet_panglia, fluid = water},
     {planet = planet_frozeta, fluid = ammonia_solution},

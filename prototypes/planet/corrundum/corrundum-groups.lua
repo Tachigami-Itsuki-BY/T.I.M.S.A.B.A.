@@ -5,7 +5,7 @@ if mods[corrundum_mods] then
         {
             type = item_group,
             name = ig_corrundum,
-            order = x_k,
+            order = data_planet[planet_corrundum].order,
             icon = "__TIMSABA__/graphics/icons/corrundum/corrundum-planet.png",
             icon_size = 128
         }

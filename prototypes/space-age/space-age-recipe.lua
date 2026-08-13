@@ -1,5 +1,5 @@
 -- METALLIC
-metallic_asteroid_crushing_2 = "timasaba-metallic-asteroid-crushing-2" -- Copper ore
+metallic_asteroid_crushing_2 = "timsaba-metallic-asteroid-crushing-2" -- Copper ore
 metallic_asteroid_crushing_3 = "metallic-asteroid-crushing-3" -- Lead ore
 metallic_asteroid_crushing_4 = "metallic-asteroid-crushing-4" -- Tin ore
 metallic_asteroid_crushing_5 = "metallic-asteroid-crushing-5" -- Manganese ore
@@ -93,7 +93,7 @@ data:extend
 })
 
 -- OXIDE
-oxide_asteroid_crushing_2 = "timasaba-oxide-asteroid-crushing-2"
+oxide_asteroid_crushing_2 = "timsaba-oxide-asteroid-crushing-2"
 oxide_asteroid_crushing_3 = "oxide-asteroid-crushing-3"
 oxide_asteroid_crushing_4 = "oxide-asteroid-crushing-4"
 advanced_oxide_asteroid_crushing_2 = "advanced-oxide-asteroid-crushing-2"
@@ -273,32 +273,17 @@ TIMSABA.functions.create_recipes
 })
 
 -- SPACE PROCESSING 2
-lime_space = "lime-space"
 sodium_hydroxide_space = "sodium-hydroxide-space"
+lime_space = "lime-space"
 lithium_space = "lithium-space"
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = lime_space,
-        category = angels_blast_smelting_4,
-        subgroup = is_space_processing_2,
-        icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
-        order = a,
-        energy_required = 8, -- CaCO₃ --> CaO + CO₂
-        ingredients = {{type = item, name = calcite, amount = 16}},
-        results =
-        {
-            {type = item, name = lime_angels, amount = 16},
-            {type = fluid, name = carbon_dioxide_angels, amount = 120} -- 240
-        },
-        main_product = lime_angels
-    },
     {
         name = sodium_hydroxide_space,
         category = chemistry,
         subgroup = is_space_processing_2,
         icons = THREE_I(sodium_oxide, water_purified_angels, sodium_hydroxide_angels),
-        order = b,
+        order = a,
         allow_quality = true,
         -- Na₂O + H₂O --> 2NaOH 
         ingredients =
@@ -308,6 +293,21 @@ TIMSABA.functions.create_recipes
         },
         results = {{type = item, name = sodium_hydroxide_angels, amount = 8}},
         main_product = sodium_hydroxide_angels
+    },
+    {
+        name = lime_space,
+        category = angels_blast_smelting_4,
+        subgroup = is_space_processing_2,
+        icons = THREE_R_I(calcite, lime_angels, carbon_dioxide_angels),
+        order = b,
+        energy_required = 8, -- CaCO₃ --> CaO + CO₂
+        ingredients = {{type = item, name = calcite, amount = 16}},
+        results =
+        {
+            {type = item, name = lime_angels, amount = 16},
+            {type = fluid, name = carbon_dioxide_angels, amount = 120} -- 240
+        },
+        main_product = lime_angels
     },
     {
         name = lithium_space,

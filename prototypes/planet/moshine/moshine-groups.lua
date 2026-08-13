@@ -5,7 +5,7 @@ if mods[moshine_mods] then
         {
             type = item_group,
             name = ig_moshine,
-            order = x_f,
+            order = data_planet[planet_moshine].order,
             icon = "__TIMSABA__/graphics/icons/moshine/moshine-planet.png",
             icon_size = 128
         }

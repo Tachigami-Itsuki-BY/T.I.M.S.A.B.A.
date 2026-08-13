@@ -158,6 +158,15 @@ data_item[stiratite_bacteria].pictures =
     {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
 }
 
+-- MULUNA
+if mods[muluna_mods] then
+    data_item[aluminium_pipe].icons = {{icon = "__TIMSABA__/graphics/icons/muluna/".. aluminium_pipe .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe, item)
+
+    data_item[aluminium_pipe_to_ground].icons = {{icon = "__TIMSABA__/graphics/icons/muluna/" .. aluminium_pipe_to_ground .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe_to_ground, item)
+end
+
 -- TELLUS
 if mods[tellus_mods] then
     data_item[magnesium_bacteria].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria.png"
@@ -186,6 +195,18 @@ if mods[paracelsin_mods] then
     data_item[zinc_cable].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-cable.png"
 
     data_item[galvanized_steel_plate].icon = "__TIMSABA__/graphics/icons/paracelsin/galvanized-steel-plate.png"
+
+    data_item[galvanized_pipe].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_pipe .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pipe, item)
+
+    data_item[galvanized_pipe_to_ground].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_pipe_to_ground .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pipe_to_ground, item)
+
+    data_item[galvanized_storage_tank].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_storage_tank .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_storage_tank, item)
+
+    data_item[galvanized_pump].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_pump .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pump, item)
 end
 
 -- TERRAPALUS

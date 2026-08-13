@@ -129,6 +129,9 @@ if mods[secretas_frozeta_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_secretas = "planet-discovery-secretas"
+    if mods[asteroid_belt_mods] then
+        data_technology[planet_discovery_secretas].prerequisites = {"space-discovery-asteroid-belt"}
+    end
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = auric_asteroid_crushing})
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = ammonia_from_frozeta_air})
 
@@ -192,5 +195,5 @@ if mods[secretas_frozeta_mods] then
 
     data_technology["worker-robots-storage-4"].prerequisites = {golden_science_pack, "worker-robots-storage-3"}
 
-    table.insert(data_technology[promethium_science_pack].prerequisites, golden_science_pack)
+    table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
 end

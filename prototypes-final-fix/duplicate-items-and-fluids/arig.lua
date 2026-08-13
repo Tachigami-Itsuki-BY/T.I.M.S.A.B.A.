@@ -1,15 +1,15 @@
 if mods[arig_mods] then
     local replacements =
     {
-        [glass_panel_arig] = glass_bob,
+        [glass_arig] = glass_bob,
 		[raw_diamond_arig] = raw_diamond_bob
     }
 	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
-	data_item[glass_panel_arig] = nil
-	data_recipe[glass_panel_arig .. _recycling] = nil
+	data_item[glass_arig] = nil
+	data_recipe[glass_arig .. _recycling] = nil
 	if mods[panglia_mods] then
-		data_recipe[item_ .. glass_panel_arig .. _panglia_crushing] = nil
+		data_recipe[item_ .. glass_arig .. _panglia_crushing] = nil
 	end
 
     data_item[raw_diamond_arig] = nil

@@ -27,10 +27,6 @@ local building_exceptions =
     [burner_ore_crusher] = true
 }
 
-if data_assembling[burner_assembling_machine] then
-    building_exceptions[burner_assembling_machine] = true
-end
-
 if mods[hyarion_mods] then
     building_exceptions[quartz_furnace] = true
 end

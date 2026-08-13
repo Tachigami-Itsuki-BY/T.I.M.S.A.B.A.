@@ -428,6 +428,21 @@ simulations.factoriopedia_black_pipe_to_ground =
     ]]
 }
 
+-- PARACELSIN
+simulations.factoriopedia_galvanized_pipe_to_ground =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqVkNsKgzAMht8l13WgqNO+yhjDQ5CApqWHMSd997V6sYuxwW4Skvz5fpIN+tmjNsQO5AY0KLYgLxtYmribU4+7BUHCk3jINGnMnMomozyPEAQQj/gAmYerAGRHjvAA7MV6Y7/0aKJA/AIJ0MrGXcXJMfFOlYB1z9FkJIPDMc2LID7gxX/w5hu8TFeQwyWS3n8RcEdjd0FVF23ZtlVT1ucYQngBPQJpxA==",
+            position = {0, 0}
+        }
+    ]]
+}
+
 -- CASTRA
 simulations.military_underground_belt_arig =
 {

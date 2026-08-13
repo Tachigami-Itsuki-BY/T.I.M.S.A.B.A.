@@ -437,11 +437,6 @@ data_fluid[sulfur_dioxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petr
 data_fluid[sulfur_dioxide_angels].base_color = TIMSABA.functions.fluid_color("SO2")
 data_fluid[sulfur_dioxide_angels].flow_color = TIMSABA.functions.flow_color("SO2")
 
-data_fluid[sulfuric_acid_angels].icons = nil
-data_fluid[sulfuric_acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/sulfur/angels-liquid-sulfuric-acid.png"
-data_fluid[sulfuric_acid_angels].base_color = TIMSABA.functions.fluid_color("H2SO4")
-data_fluid[sulfuric_acid_angels].flow_color = TIMSABA.functions.flow_color("H2SO4")
-
 data_fluid[acid_angels].icons = nil
 data_fluid[acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-acid.png"
 data_fluid[acid_angels].base_color = TIMSABA.functions.fluid_color("SSF")
@@ -707,11 +702,11 @@ if mods[shchierbin_mods] then
     data_fluid[vinylchloride_mods].flow_color = TIMSABA.functions.flow_color("C2H3Cl")
 end
 
+-- MARAXSIS
 if mods[maraxsis_mods] then
-    data_fluid[atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
+    data_fluid[maraxsis_air].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
     data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
     data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
-    data_fluid[liquid_atmosphere_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/liquid-atmosphere.png"
     data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
 end
 

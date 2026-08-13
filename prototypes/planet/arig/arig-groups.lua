@@ -5,7 +5,7 @@ if mods[arig_mods] then
         {
             type = item_group,
             name = ig_arig,
-            order = x_g,
+            order = data_planet[planet_arig].order,
             icon = "__TIMSABA__/graphics/icons/arig/arig-planet.png",
             icon_size = 128
         }

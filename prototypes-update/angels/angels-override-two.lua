@@ -22,54 +22,55 @@ for _, BUILD in pairs(valves) do
         {type = item, name = basic_circuit_board, amount = 1},
         {type = item, name = iron_pipe, amount = 2}
     }
-    if BUILD.name == valve_inspector then
-        data_storage_tank[BUILD.name].order = BUILD.order
-    else
+    if data_valve[BUILD.name] then
         data_valve[BUILD.name].order = BUILD.order
+        data_valve[BUILD.name].flow_rate = 16
     end
 end
+data_storage_tank[valve_inspector].order = a
+data_storage_tank[valve_inspector].fluid_box.volume = 1800
 
 data_item_subgroup["angels-fluid-tanks"].order = b
 
-local storage_tank_A3 = "angels-storage-tank-3"
-data_item[storage_tank_A3].order = a
-data_item[storage_tank_A3].stack_size = 32
-data_item[storage_tank_A3].weight = 31250
-data_recipe[storage_tank_A3].order = a
-data_recipe[storage_tank_A3].ingredients =
-{
-    {type = item, name = iron_pipe, amount = 4},
-    {type = item, name = iron_plate, amount = 4},
-    {type = item, name = stone_brick, amount = 4}
-}
-data_storage_tank[storage_tank_A3].order = a
-data_storage_tank[storage_tank_A3].fluid_box.volume = 16000
-
 local small_storage_tank_inline = "bob-small-inline-storage-tank"
-data_item[small_storage_tank_inline].order = b
+data_item[small_storage_tank_inline].order = a
 data_item[small_storage_tank_inline].stack_size = 32
 data_item[small_storage_tank_inline].weight = 31250
-data_recipe[small_storage_tank_inline].order = b
+data_recipe[small_storage_tank_inline].order = a
 data_recipe[small_storage_tank_inline].ingredients =
 {
     {type = item, name = iron_pipe, amount = 2},
     {type = item, name = iron_plate, amount = 2}
 }
-data_storage_tank[small_storage_tank_inline].order = b
-data_storage_tank[small_storage_tank_inline].fluid_box.volume = 4000
+data_storage_tank[small_storage_tank_inline].order = a
+data_storage_tank[small_storage_tank_inline].fluid_box.volume = 3600
 
 local small_storage_tank = "bob-small-storage-tank"
-data_item[small_storage_tank].order = c
+data_item[small_storage_tank].order = b
 data_item[small_storage_tank].stack_size = 32
 data_item[small_storage_tank].weight = 31250
-data_recipe[small_storage_tank].order = c
+data_recipe[small_storage_tank].order = b
 data_recipe[small_storage_tank].ingredients =
 {
     {type = item, name = iron_pipe, amount = 4},
     {type = item, name = iron_plate, amount = 2}
 }
-data_storage_tank[small_storage_tank].order = c
-data_storage_tank[small_storage_tank].fluid_box.volume = 4000
+data_storage_tank[small_storage_tank].order = b
+data_storage_tank[small_storage_tank].fluid_box.volume = 3600
+
+local storage_tank_A1 = "angels-storage-tank-1"
+data_item[storage_tank_A1].order = c
+data_item[storage_tank_A1].stack_size = 32
+data_item[storage_tank_A1].weight = 31250
+data_recipe[storage_tank_A1].order = c
+data_recipe[storage_tank_A1].ingredients =
+{
+    {type = item, name = steel_pipe, amount = 32},
+    {type = item, name = steel_plate, amount = 16},
+    {type = item, name = clay_brick, amount = 32}
+}
+data_storage_tank[storage_tank_A1].order = c
+data_storage_tank[storage_tank_A1].fluid_box.volume = 115200
 
 local storage_tank_A2 = "angels-storage-tank-2"
 data_item[storage_tank_A2].order = d
@@ -83,19 +84,21 @@ data_recipe[storage_tank_A2].ingredients =
     {type = item, name = clay_brick, amount = 32}
 }
 data_storage_tank[storage_tank_A2].order = d
+data_storage_tank[storage_tank_A2].fluid_box.volume = 115200
 
-local storage_tank_A1 = "angels-storage-tank-1"
-data_item[storage_tank_A1].order = e
-data_item[storage_tank_A1].stack_size = 32
-data_item[storage_tank_A1].weight = 31250
-data_recipe[storage_tank_A1].order = e
-data_recipe[storage_tank_A1].ingredients =
+local storage_tank_A3 = "angels-storage-tank-3"
+data_item[storage_tank_A3].order = e
+data_item[storage_tank_A3].stack_size = 32
+data_item[storage_tank_A3].weight = 31250
+data_recipe[storage_tank_A3].order = e
+data_recipe[storage_tank_A3].ingredients =
 {
-    {type = item, name = steel_pipe, amount = 32},
-    {type = item, name = steel_plate, amount = 16},
-    {type = item, name = clay_brick, amount = 32}
+    {type = item, name = iron_pipe, amount = 4},
+    {type = item, name = iron_plate, amount = 4},
+    {type = item, name = stone_brick, amount = 4}
 }
-data_storage_tank[storage_tank_A1].order = e
+data_storage_tank[storage_tank_A3].order = e
+data_storage_tank[storage_tank_A3].fluid_box.volume = 14400
 
 local pressure_tank_A1 = "angels-pressure-tank-1"
 data_item[pressure_tank_A1].order = f
@@ -109,14 +112,14 @@ data_recipe[pressure_tank_A1].ingredients =
     {type = item, name = stone_brick, amount = 16}
 }
 data_storage_tank[pressure_tank_A1].order = f
-data_storage_tank[pressure_tank_A1].fluid_box.volume = 360000
+data_storage_tank[pressure_tank_A1].fluid_box.volume = 230400
 
 local pumps =
 {
-    {name = pump_1, energy_usage = 30,  order = a, tier = 1},
-    {name = pump_2, energy_usage = 60,  order = b, tier = 2},
-    {name = pump_3, energy_usage = 90,  order = c, tier = 3},
-    {name = pump_4, energy_usage = 120, order = d, tier = 4}
+    {name = pump_1, energy_usage = 30,  order = a, pumping_speed = 8},
+    {name = pump_2, energy_usage = 60,  order = b, pumping_speed = 16},
+    {name = pump_3, energy_usage = 90,  order = c, pumping_speed = 24},
+    {name = pump_4, energy_usage = 120, order = d, pumping_speed = 32}
 }
 for _, BUILD in pairs(pumps) do
     data_item[BUILD.name].subgroup = is_pump
@@ -127,16 +130,17 @@ for _, BUILD in pairs(pumps) do
     data_recipe[BUILD.name].order = BUILD.order
     data_pump[BUILD.name].subgroup = is_pump
     data_pump[BUILD.name].order = BUILD.order
+    data_pump[BUILD.name].pumping_speed = BUILD.pumping_speed
     data_pump[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_pump[BUILD.name].energy_source.drain = nil
 end
 
 local storage_tanks_2x =
 {
-    {name = storage_tank_1, order = a, volume = 24000},
-    {name = storage_tank_2, order = b, volume = 48000},
-    {name = storage_tank_3, order = c, volume = 72000},
-    {name = storage_tank_4, order = d, volume = 96000}
+    {name = storage_tank_1, order = a, volume = 28800},
+    {name = storage_tank_2, order = b, volume = 57600},
+    {name = storage_tank_3, order = c, volume = 86400},
+    {name = storage_tank_4, order = d, volume = 115200}
 }
 for _, BUILD in pairs(storage_tanks_2x) do
     data_item[BUILD.name].subgroup = is_storage_tanks_2x
@@ -166,10 +170,10 @@ storage_tanks_2x_recipe(storage_tank_4, nitinol_plate_bob, nil, storage_tank_3)
 
 local storage_tanks_4x =
 {
-    {name = storage_tank_1_alt, order = a, volume = 24000},
-    {name = storage_tank_2_alt, order = b, volume = 48000},
-    {name = storage_tank_3_alt, order = c, volume = 72000},
-    {name = storage_tank_4_alt, order = d, volume = 96000}
+    {name = storage_tank_1_alt, order = a, volume = 28800},
+    {name = storage_tank_2_alt, order = b, volume = 57600},
+    {name = storage_tank_3_alt, order = c, volume = 86400},
+    {name = storage_tank_4_alt, order = d, volume = 115200}
 }
 for _, BUILD in pairs(storage_tanks_4x) do
     data_item[BUILD.name].subgroup = is_storage_tanks_4x
@@ -215,11 +219,19 @@ data_recipe[barreling_pump].ingredients =
     {type = item, name = steel_pipe, amount = 4},
     {type = item, name = steel_plate, amount = 8}
 }
-data_assembling[barreling_pump].crafting_speed = 1
-data_assembling[barreling_pump].module_slots = 4
-data_assembling[barreling_pump].energy_usage = (60 - drain) .. kW
-data_assembling[barreling_pump].energy_source.emissions_per_minute.pollution = 1
-data_assembling[barreling_pump].energy_source.drain = drain .. kW
+if data_assembling[barreling_pump] then
+    data_assembling[barreling_pump].crafting_speed = 1
+    data_assembling[barreling_pump].module_slots = 4
+    data_assembling[barreling_pump].energy_usage = (60 - drain) .. kW
+    data_assembling[barreling_pump].energy_source.emissions_per_minute.pollution = 0
+    data_assembling[barreling_pump].energy_source.drain = drain .. kW
+elseif data_furnace[barreling_pump] then
+    data_furnace[barreling_pump].crafting_speed = 1
+    data_furnace[barreling_pump].module_slots = 4
+    data_furnace[barreling_pump].energy_usage = (60 - drain) .. kW
+    data_furnace[barreling_pump].energy_source.emissions_per_minute.pollution = 0
+    data_furnace[barreling_pump].energy_source.drain = drain .. kW
+end
 
 data_item[barrel].subgroup = is_barreling
 data_item[barrel].order = b
@@ -616,8 +628,8 @@ bobmods.lib.recipe.update_recycling_recipe
     storage_tank_A3,
     small_storage_tank_inline,
     small_storage_tank,
-    storage_tank_A2,
     storage_tank_A1,
+    storage_tank_A2,
     pressure_tank_A1,
     storage_tank_1,
     storage_tank_2,
