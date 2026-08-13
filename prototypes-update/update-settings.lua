@@ -183,11 +183,17 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
         bobmods.logistics.set_pipe_distance(steel_pipe_to_ground,              2)
         bobmods.logistics.set_pipe_distance(plastic_pipe_to_ground,            3)
         bobmods.logistics.set_pipe_distance(brass_pipe_to_ground,              3)
+        if mods[muluna_mods] then
+            bobmods.logistics.set_pipe_distance(aluminium_pipe_to_ground, 3)
+        end
         bobmods.logistics.set_pipe_distance(titanium_pipe_to_ground,           4)
         bobmods.logistics.set_pipe_distance(ceramic_pipe_to_ground,            4)
         bobmods.logistics.set_pipe_distance(tungsten_pipe_to_ground,           4)
         bobmods.logistics.set_pipe_distance(nitinol_pipe_to_ground,            5)
         bobmods.logistics.set_pipe_distance(copper_tungsten_pipe_to_ground,    5)
         bobmods.logistics.set_pipe_distance(molybdenum_rhenium_pipe_to_ground, 6)
+        if mods[paracelsin_mods] then
+            bobmods.logistics.set_pipe_distance(galvanized_pipe_to_ground, 6)
+        end
     end
 end

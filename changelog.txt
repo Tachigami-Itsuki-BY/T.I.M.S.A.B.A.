@@ -1,13 +1,89 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.11.0
+Date: 13.08.2026
+  Features:
+    - [Mods] Добавлена поддержка Maraxsis: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [Addons] Весь функционал мода «Flow Control New» теперь встроен напрямую в модпак. Добавлена поддержка всех труб Наувиса. Этот Аддон может быть включен/отключен в настройках мода.
+    - [Muluna] Добавлены Алюминиевые Трубы.
+
+    - [Mods] Added support for Maraxsis: seamlessly integrated the new planet into the gameplay flow.
+    - [Addons] All the functionality of the "Flow Control New" mod is now integrated directly into the modpack. Added support for all Nauvis pipes. This Addon can be enabled/disabled in the mod settings.
+    - [Muluna] Added Aluminium Pipes.
+
+  Changes:
+    - [All] Некоторые настройки модов были скрыты т.к. они не работают.
+
+    - [All] Some mod settings have been hidden because they don't work.
+
+  Bugfixes:
+    - [All] Исправлена ошибка в рецептах Солнечной Панели Т4 и Большой Солнечной Панели Т4, из-за которой вместо Солнечной Панели Т3 и Большой Солнечной Панели Т3 требовалась Маленькая Солнечная Панель Т3.
+    - [All] Исправлены незначительные ошибки.
+
+    - [All] Fixed a bug in the recipes for the T4 Solar Panel and T4 Large Solar Panel, due to which a T3 Small Solar Panel was required instead of T3 Solar Panel and T3 Large Solar Panel.
+    - [All] Fixed minor bugs.
+
+  Balancing:
+    - [Paracelsin] Объём Оцинкованной Цистерны увеличен: (64000 ед.) → (96000 ед.)
+    - [Moshine] В рецепте Оптоволокна произведена замена ингредиента: Стекло → Стекловолокно
+    - [Bob's Assembling machines] Удалены Автоматы для Сборки Электроники.
+    - [Bob's Assembling machines] Удалён Твёрдотопливный Сборочный Автомат.
+    - [Bob's Assembling machines] Удалены Жидкотопливные Печи.
+    - [Bob's Mining] Удалены Насосы для Добычи Воды.
+    - [Bob's Mining] Удалены Паровые Буровые Установки.
+    - [Bob's Modules] Удалены Божественные Модули.
+    - [All] Скорректирована cкорость Насосов, Помп и Клапанов на +/-20%.
+    - [All] Скорректированы объёмы всех Резервуаров на +/-20%
+
+    - [Paracelsin] Increased capacity in the Galvanized Storage Tank: (64000 units) → (96000 units)
+    - [Moshine] Replaced an ingredient in the Optical Cable recipe: Glass → Fiberglass
+    - [Bob's Assembling machines] Removed Electronics Machine.
+    - [Bob's Assembling machines] Removed Burner Assembling Machine.
+    - [Bob's Assembling machines] Removed Fluid Furnaces.
+    - [Bob's Mining] Removed Water Pumpjacks.
+    - [Bob's Mining] Removed Steam Mining Drills.
+    - [Bob's Modules] Removed God Modules.
+    - [All] Adjusted speed from Offshore Pumps, Pumps and Valves by +/-20%.
+    - [All] Adjusted volumes of all Storage Tanks by +/-20%.
+
+  Graphics:
+    - [Paracelsin] Обновлена графика для Оцинкованной Логистики.
+    - [All] Добавлены и обновлены остатки для сущностей.
+
+    - [Paracelsin] Updated graphics for Galvanized Logistics.
+    - [All] Added and updated remnants for entities.
+
+  Sounds:
+    - [All] Добавлены звуки для Шестерен, Шариков для Подшипников, Подшипников, Топливных Ячеек, Пластин и Проволок, а также для некоторых других предметов. (Инвентарь)
+
+    - [All] Added sounds for Gear Wheels, Bearing Balls, Bearings, Fuel Cells, Plates and Wires, and also for some other items. (Inventory)
+
+  Locale:
+    - [Rus] Обновлена русская локализация для мода «Helmod».
+    - [All] Обновлены название для двух жидкостей:
+        1. Раствор алюмогидрида лития в диэтиловом эфире → Раствор тетрагидридоалюминат(III) лития в диэтиловом эфире
+        2. Раствор алюмогидрида лития-галлия в диэтиловом эфире → Раствор тетрагидридогаллат(III) лития в диэтиловом эфире
+    - [Rus] Добавлена русская локализация в описание некоторых модов.
+
+    - [All] Updated names for two fluids:
+        1. Lithium aluminium hydride solution in diethyl ether → Lithium tetrahydridoaluminate(III) solution in diethyl ether
+        2. Lithium gallium hydride solution in diethyl ether → Lithium tetrahydridogallate(III) solution in diethyl ether
+
+  Modding:
+    - [Mods] Мод «Maraxsis» переведён в опциональную зависимость.
+    - [Mods] Мод «Flow Control» добавлен в список несовместимых.
+    - [Mods] Мод «Telogistics» добавлен в опциональную зависимость.
+
+    - [Mods] Moved "Maraxsis" mod to optional dependencies.
+    - [Mods] Added "Flow Control" mod to incompatible.
+    - [Mods] Added "Telogistics" mod to optional dependencies.
+
+  Other:
+    - [All] Спасибо игроку Vesper Wayfarer за предоставленные иконки для аддона Flow Control New.
+
+    - [All] Thanks to Vesper Wayfarer for providing icons for the Flow Control New addon.
+---------------------------------------------------------------------------------------------------
 Version: 1.10.1
 Date: 09.08.2026
-  Balancing:
-    - [Space Age] В рецепте Плавки Льда уменьшено кол-во результата: Вода (30 ед.) → (15 ед.)
-    - [Space Age] Рецепты Оксида Натрия из Оксидного астероида и Гидроксид Натрия (из Оксида Натрия) теперь доступны до посещения Вулкана, Глебы и Фульгоры.
-
-    - [Space Age] Decreased results in the Ice Melting recipe: Water (30 units) → (15 units)
-    - [Space Age] The recipes for Sodium Oxide from Oxide Asteroid and Sodium Hydroxide (from Sodium Oxide) are now available before visiting Vulcanus, Gleba, and Fulgora.
-
   Changes:
     - [All] Изменено соотношения предмета к жидкости с (1 к 15) на (1 к 16).
 
@@ -17,6 +93,13 @@ Date: 09.08.2026
     - [Secretas&Frozeta] Добавлена проверка на наличие мода Bob's Modules.
 
     - [Secretas&Frozeta] Added check for the presence of the Bob's Modules mod.
+
+  Balancing:
+    - [Space Age] В рецепте Плавки Льда уменьшено кол-во результата: Вода (30 ед.) → (15 ед.)
+    - [Space Age] Рецепты Оксида Натрия из Оксидного астероида и Гидроксид Натрия (из Оксида Натрия) теперь доступны до посещения Вулкана, Глебы и Фульгоры.
+
+    - [Space Age] Decreased results in the Ice Melting recipe: Water (30 units) → (15 units)
+    - [Space Age] The recipes for Sodium Oxide from Oxide Asteroid and Sodium Hydroxide (from Sodium Oxide) are now available before visiting Vulcanus, Gleba, and Fulgora.
 ---------------------------------------------------------------------------------------------------
 Version: 1.10.0
 Date: 08.08.2026
@@ -95,7 +178,7 @@ Date: 04.08.2026
     - [Mods] Added support for Terra Palus: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлена ошибка в рецепте Платиновых Слитков, из-за вместо Фторводорода производился Хлороводород.
+    - [All] Исправлена ошибка в рецепте Платиновых Слитков, из-за которой вместо Фторводорода производился Хлороводород.
 
     - [All] Fixed a bug in the Platinum Ingots recipe that caused Hydrogen Chloride to be produced instead of Hydrogen Fluoride.
 
@@ -170,7 +253,7 @@ Date: 29.07.2026
     - [All] Исправлена критическая ошибка инициализации: теперь эффекты открытия рецептов «unlock-recipe» автоматически очищаются в технологиях, если сам рецепт был удален.
     - [All] Исправлена ошибка, из-за которой нельзя было поставить скважину на планетах с высокой гравитацией.
 
-    - [All] Fixed a critical initialization bug: now the effects of opening recipes "unlock-recipe" are automatically cleared in technologies if the recipe itself was deleted.
+    - [All] Fixed a critical initialization bug: now the effects of opening recipes "unlock-recipe" are automatically cleared in technologies if the recipe itself was removed.
     - [All] Fixed a bug that prevented the well from being placed on planets with high gravity.
 
   Balancing:
@@ -354,7 +437,7 @@ Date: 16.06.2026
   Bugfixes:
     - [All] Исправлена ​​критическая ошибка, которая могла привести к удалению рецептов, которые не должны были быть удалены.
 
-    - [All] Fixed a critical bug that could cause recipes to be deleted that should not have been deleted.
+    - [All] Fixed a critical bug that could cause recipes to be removed that should not have been removed.
 
   Locale:
     - [All] Для упрощения поиска все файлы локализации разделены на подгруппы.
@@ -426,7 +509,7 @@ Date: 11.06.2026
     - [All] Добавлен код для автоматического Удаления каких либо Рецептов если они ссылаются на ранее Удалённые Прототипы в модпаке.
 
     - [All] Added code to automatically add new Fuel Categories to Buildings and Vehicles.
-    - [All] Added code to automatically Delete any Recipes if they refer to a previously Deleted Prototype in the modpack.
+    - [All] Added code to automatically Delete any Recipes if they refer to a previously Removed Prototype in the modpack.
 
   Modding:
     - [Mods] Мод «Bob's Personal Equipment mod» переведён в опциональную зависимость.
@@ -951,7 +1034,7 @@ Date: 17.05.2026
 Version: 1.0.3
 Date: 17.05.2026
   Features:
-    - [Mods/Addons] Мод «Modular Buildings Redux» добавлен в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Эта функция является Аддоном и может быть включена/отключена в настройках мода.
+    - [Mods/Addons] Мод «Modular Buildings Redux» добавлен в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. This Addon can be enabled/disabled in the mod settings.
 
     - [Mods/Addons] Added "Modular Buildings Redux" mod to incompatible, and all of its generator optimization functionality (with Space Age, Quality, and Bob's support) is now built directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. This function is an Addon and can be enabled/disabled in the mod settings.
 

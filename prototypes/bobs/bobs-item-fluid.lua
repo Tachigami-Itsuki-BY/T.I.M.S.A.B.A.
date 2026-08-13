@@ -18,14 +18,20 @@ TIMSABA.functions.create_items
         name = ceramic_gear_wheel,
         subgroup = is_gears,
         icon = "__TIMSABA__/graphics/icons/bobs/ceramic-gear-wheel.png",
-        order = d
+        order = d,
+        drop_sound = data_item[stone_brick].drop_sound,
+        inventory_move_sound = data_item[stone_brick].inventory_move_sound,
+        pick_sound = data_item[stone_brick].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "WCu"} or nil,
         name = copper_tungsten_gear_wheel,
         subgroup = is_gears,
         icon = "__TIMSABA__/graphics/icons/bobs/copper-tungsten-gear-wheel.png",
-        order = i
+        order = i,
+        drop_sound = data_item[iron_gear_wheel].drop_sound,
+        inventory_move_sound = data_item[iron_gear_wheel].inventory_move_sound,
+        pick_sound = data_item[iron_gear_wheel].pick_sound
     },
     -- BEARING BALL
     {
@@ -33,28 +39,40 @@ TIMSABA.functions.create_items
         name = iron_bearing_ball,
         subgroup = is_bearing_ball,
         icon = "__TIMSABA__/graphics/icons/bobs/iron-bearing-ball.png",
-        order = a
+        order = a,
+        drop_sound = data_item[steel_bearing_ball].drop_sound,
+        inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
+        pick_sound = data_item[steel_bearing_ball].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "CuZn"} or nil,
         name = brass_bearing_ball,
         subgroup = is_bearing_ball,
         icon = "__TIMSABA__/graphics/icons/bobs/brass-bearing-ball.png",
-        order = c
+        order = c,
+        drop_sound = data_item[steel_bearing_ball].drop_sound,
+        inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
+        pick_sound = data_item[steel_bearing_ball].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "W"} or nil,
         name = tungsten_bearing_ball,
         subgroup = is_bearing_ball,
         icon = "__TIMSABA__/graphics/icons/bobs/tungsten-bearing-ball.png",
-        order = g
+        order = g,
+        drop_sound = data_item[steel_bearing_ball].drop_sound,
+        inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
+        pick_sound = data_item[steel_bearing_ball].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "WCu"} or nil,
         name = copper_tungsten_bearing_ball,
         subgroup = is_bearing_ball,
         icon = "__TIMSABA__/graphics/icons/bobs/copper-tungsten-bearing-ball.png",
-        order = i
+        order = i,
+        drop_sound = data_item[steel_bearing_ball].drop_sound,
+        inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
+        pick_sound = data_item[steel_bearing_ball].pick_sound
     },
     -- BEARING
     {
@@ -62,35 +80,50 @@ TIMSABA.functions.create_items
         name = iron_bearing,
         subgroup = is_bearing,
         icon = "__TIMSABA__/graphics/icons/bobs/iron-bearing.png",
-        order = a
+        order = a,
+        drop_sound = data_item[steel_bearing].drop_sound,
+        inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
+        pick_sound = data_item[steel_bearing].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "CuZn"} or nil,
         name = brass_bearing,
         subgroup = is_bearing,
         icon = "__TIMSABA__/graphics/icons/bobs/brass-bearing.png",
-        order = c
+        order = c,
+        drop_sound = data_item[steel_bearing].drop_sound,
+        inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
+        pick_sound = data_item[steel_bearing].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "W"} or nil,
         name = tungsten_bearing,
         subgroup = is_bearing,
         icon = "__TIMSABA__/graphics/icons/bobs/tungsten-bearing.png",
-        order = g
+        order = g,
+        drop_sound = data_item[steel_bearing].drop_sound,
+        inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
+        pick_sound = data_item[steel_bearing].pick_sound
     },
     {
         localised_description = show_formula and {chemical_formula, "WCu"} or nil,
         name = copper_tungsten_bearing,
         subgroup = is_bearing,
         icon = "__TIMSABA__/graphics/icons/bobs/copper-tungsten-bearing.png",
-        order = i
+        order = i,
+        drop_sound = data_item[steel_bearing].drop_sound,
+        inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
+        pick_sound = data_item[steel_bearing].pick_sound
     },
     -- BATTERY
     {
         name = battery_graphene,
         subgroup = "intermediate-product",
         icon = "__TIMSABA__/graphics/icons/bobs/graphene-battery.png",
-        order = d
+        order = d,
+        drop_sound = data_item[battery_lead_acid].drop_sound,
+        inventory_move_sound = data_item[battery_lead_acid].inventory_move_sound,
+        pick_sound = data_item[battery_lead_acid].pick_sound
     },
     -- FUEL CELL
     {
@@ -100,6 +133,9 @@ TIMSABA.functions.create_items
         order = j,
         stack_size = 64,
         weight = 15625,
+        drop_sound = data_item[uranium_235_fuel_cell].drop_sound,
+        inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound,
+        pick_sound = data_item[uranium_235_fuel_cell].pick_sound,
         fuel_category = nuclear_fuel_T4,
         fuel_value = (1382400 * 4 * 2) .. kJ,
         consumption_glow_alternative_tint = {r = 0.72, g = 0.05, b = 1.0, a = 1.0},
@@ -111,7 +147,10 @@ TIMSABA.functions.create_items
         icon = "__TIMSABA__/graphics/icons/bobs/used-up-tritium-fuel-cell.png",
         order = k,
         stack_size = 64,
-        weight = 15625
+        weight = 15625,
+        drop_sound = data_item[uranium_235_fuel_cell].drop_sound,
+        inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound,
+        pick_sound = data_item[uranium_235_fuel_cell].pick_sound
     }
 })
 

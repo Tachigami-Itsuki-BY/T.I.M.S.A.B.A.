@@ -1,14 +1,6 @@
 if mods[vulcanus_sulfuric_bacteria_mods] then
     is_vulcanus_sulfuric = "vulcanus-sulfuric"
-    data:extend
-    ({
-        {
-            type = item_subgroup,
-            name = is_vulcanus_sulfuric,
-            group = "vulcanus",
-            order = e_a
-        }
-    })
+    TIMSABA.functions.create_subgroups("vulcanus", {{name = is_vulcanus_sulfuric, order = e_a}})
 
     data_item[sulfuric_bacteria].subgroup = is_vulcanus_sulfuric
     data_item[sulfuric_bacteria].order = a
@@ -81,7 +73,6 @@ if mods[moshine_mods] or mods[muluna_mods] then
     data_recipe[silicon_carbide_mods].results[1].amount = 16
 end
 
-
 if mods[moshine_mods] and mods[muluna_mods] then -- MOSHINE
     data_item[silicon_boule_mods].subgroup = is_moshine_recipe
     data_item[silicon_boule_mods].order = g
@@ -117,17 +108,6 @@ elseif mods[moshine_mods] then -- MOSHINE
     data_recipe[silicon_carbide_mods].order = i
 end
 
-if mods["AsteroidBelt"] then
-    local satellites = "satellites"
-    local asteroid_belt_inner_edge = "asteroid-belt-inner-edge"
-    data_space_location[asteroid_belt_inner_edge].subgroup = satellites
-    data_space_location[asteroid_belt_inner_edge].order = z_y
-
-    local asteroid_belt_outer_edge = "asteroid-belt-outer-edge"
-    data_space_location[asteroid_belt_outer_edge].subgroup = satellites
-    data_space_location[asteroid_belt_outer_edge].order = z_z
-end
-
 if mods[clowns_nuclear] then
     data_technology[atomic_rocket].effects =
     {
@@ -135,4 +115,83 @@ if mods[clowns_nuclear] then
         {type = unlock_recipe, recipe = "angels-atomic-bomb"},
         {type = unlock_recipe, recipe = "angels-atomic-bomb-2"}
     }
+end
+
+if mods[telogistics_mods] then
+    local logistic_teleporter = "s6x-logistic-teleporter"
+
+    table.insert(data_technology[logistic_teleporter].prerequisites, tech_electric_energy_accumulators_4)
+
+    if settings.startup["s6x-telo-science"].value == "space" then
+        data_recipe[logistic_teleporter].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 64},
+            {type = item, name = battery_graphene, amount = 64},
+            {type = item, name = accumulator_4, amount = 16},
+            {type = item, name = molybdenum_rhenium_plate, amount = 128}
+        }
+        data_technology[logistic_teleporter].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1}
+        }
+        if mods[bobtech] then
+            table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
+        end
+    elseif settings.startup["s6x-telo-science"].value == "cryo" then
+        data_recipe[logistic_teleporter].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 64},
+            {type = item, name = battery_graphene, amount = 64},
+            {type = item, name = accumulator_4, amount = 16},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 128}
+        }
+        data_technology[logistic_teleporter].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+        if mods[bobtech] then
+            table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
+        end
+    elseif settings.startup["s6x-telo-science"].value == "prom" then
+        data_recipe[logistic_teleporter].ingredients =
+        {
+            {type = item, name = quantum_processor, amount = 64},
+            {type = item, name = battery_graphene, amount = 64},
+            {type = item, name = accumulator_4, amount = 16},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 128}
+        }
+        data_technology[logistic_teleporter].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1},
+            {promethium_science_pack, 1}
+        }
+        if mods[bobtech] then
+            table.insert(data_technology[logistic_teleporter].unit.ingredients, {transport_science_pack, 1})
+        end
+    end
+
+    bobmods.lib.recipe.update_recycling_recipe({logistic_teleporter})
 end

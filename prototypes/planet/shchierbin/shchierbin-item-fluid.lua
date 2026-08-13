@@ -73,21 +73,30 @@ if mods[shchierbin_mods] then
             name = vanadium_steel_gear_wheel,
             subgroup = is_shchierbin_vanadium_steel,
             icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/vanadium-steel-gear-wheel.png",
-            order = c
+            order = c,
+            drop_sound = data_item[iron_gear_wheel].drop_sound,
+            inventory_move_sound = data_item[iron_gear_wheel].inventory_move_sound,
+            pick_sound = data_item[iron_gear_wheel].pick_sound
         },
         {
             localised_description = show_formula and {chemical_formula, "FeCV"} or nil,
             name = vanadium_steel_bearing_ball,
             subgroup = is_shchierbin_vanadium_steel,
             icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/vanadium-steel-bearing-ball.png",
-            order = d
+            order = d,
+            drop_sound = data_item[steel_bearing_ball].drop_sound,
+            inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
+            pick_sound = data_item[steel_bearing_ball].pick_sound
         },
         {
             localised_description = show_formula and {chemical_formula, "FeCV"} or nil,
             name = vanadium_steel_bearing,
             subgroup = is_shchierbin_vanadium_steel,
             icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/vanadium-steel-bearing.png",
-            order = e
+            order = e,
+            drop_sound = data_item[steel_bearing].drop_sound,
+            inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
+            pick_sound = data_item[steel_bearing].pick_sound
         },
         -- CASTING Ti-Al-V
         {
@@ -95,7 +104,10 @@ if mods[shchierbin_mods] then
             name = titanium_aluminium_vanadium_plate,
             subgroup = is_shchierbin_titanium_aluminium_vanadium,
             icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/titanium-aluminium-vanadium-plate.png",
-            order = b
+            order = b,
+            drop_sound = data_item[iron_plate].drop_sound,
+            inventory_move_sound = data_item[iron_plate].inventory_move_sound,
+            pick_sound = data_item[iron_plate].pick_sound
         },
         -- CASTING Fe-Co-V
         -- CASTING V-Cr-Ti

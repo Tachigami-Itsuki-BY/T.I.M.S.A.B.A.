@@ -5,7 +5,7 @@ if mods[panglia_mods] then
         {
             type = item_group,
             name = ig_panglia,
-            order = y_b,
+            order = data_planet[planet_panglia].order,
             icon = "__TIMSABA__/graphics/icons/panglia/panglia-planet.png",
             icon_size = 128
         }

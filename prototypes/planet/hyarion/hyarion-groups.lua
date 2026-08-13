@@ -5,7 +5,7 @@ if mods[hyarion_mods] then
         {
             type = item_group,
             name = ig_hyarion,
-            order = x_h,
+            order = data_planet[planet_hyarion].order,
             icon = "__TIMSABA__/graphics/icons/hyarion/hyarion-planet.png",
             icon_size = 128
         }

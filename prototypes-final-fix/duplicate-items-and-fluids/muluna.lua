@@ -10,8 +10,7 @@ if mods[muluna_mods] then
         [sapling_muluna] = tree_angels,
         [molten_aluminium_mods] = aluminium_molten_angels,
         [oxygen_mods] = oxygen_angels,
-        [carbon_dioxide_mods] = carbon_dioxide_angels,
-		[atmosphere_maraxsis] = compressed_air
+        [carbon_dioxide_mods] = carbon_dioxide_angels
     }
     TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 

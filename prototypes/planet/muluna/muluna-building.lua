@@ -10,7 +10,10 @@ if mods[muluna_mods] then
             order = z_a,
             place_result = lumber_mill,
             stack_size = 32,
-            weight = 31250
+            weight = 31250,
+            drop_sound = data_item[assembling_machine_1].drop_sound,
+            inventory_move_sound = data_item[assembling_machine_1].inventory_move_sound,
+            pick_sound = data_item[assembling_machine_1].pick_sound
         },
         {
             type = recipe,

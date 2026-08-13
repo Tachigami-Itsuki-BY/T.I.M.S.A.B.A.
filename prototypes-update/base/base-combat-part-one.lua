@@ -106,8 +106,6 @@ data_recipe[combat_shotgun].ingredients =
     {type = item, name = copper_plate, amount = 8}
 }
 
-local shotgun_shell = "shotgun-shell"
-local piercing_shotgun_shell = "piercing-shotgun-shell"
 local shotgun_shells =
 {
     {name = shotgun_shell,          order = c},
@@ -216,8 +214,8 @@ for _, AMMO in pairs(rockets) do
         data_recipe[AMMO.name].order = AMMO.order
     end
 end
-data_ammo[atomic_rocket].stack_size = 10
-data_ammo[atomic_rocket].weight = 1000000
+data_ammo[atomic_rocket].stack_size = 32
+data_ammo[atomic_rocket].weight = 31250
 data_recipe[atomic_rocket].energy_required = 64
 data_recipe[atomic_rocket].icons = R_P_I(atomic_rocket, uranium_235, nil, number_1)
 data_recipe[atomic_rocket].ingredients =
@@ -503,14 +501,6 @@ for _, ITEM in pairs(bullets) do
     end
 end
 
-local magazine_ammo = "bob-bullet-magazine"
-local magazine_flame = "bob-flame-bullet-magazine"
-local magazine_he = "bob-he-bullet-magazine"
-local magazine_electric = "bob-electric-bullet-magazine"
-local magazine_ap = "bob-ap-bullet-magazine"
-local magazine_acid = "bob-acid-bullet-magazine"
-local magazine_poison = "bob-poison-bullet-magazine"
-local magazine_plasma = "bob-plasma-bullet-magazine"
 local ammo_magazines =
 {
     {name = magazine_ammo,     order = a},
@@ -535,14 +525,6 @@ for _, AMMO in pairs(ammo_magazines) do
     end
 end
 
-local shotgun_shell_better = "bob-better-shotgun-shell"
-local shotgun_shell_flame = "bob-shotgun-flame-shell"
-local shotgun_shell_explosive = "bob-shotgun-explosive-shell"
-local shotgun_shell_electric = "bob-shotgun-electric-shell"
-local shotgun_shell_ap = "bob-shotgun-ap-shell"
-local shotgun_shell_acid = "bob-shotgun-acid-shell"
-local shotgun_shell_poison = "bob-shotgun-poison-shell"
-local shotgun_shell_plasma = "bob-shotgun-plasma-shell"
 local ammo_shotguns =
 {
     {name = shotgun_shell_better,    order = a},
@@ -627,14 +609,6 @@ if mods[bobwarfare] then
     }
 end
 
-local rocket_bob = "bob-rocket"
-local rocket_flame = "bob-flame-rocket"
-local rocket_explosive = "bob-explosive-rocket"
-local rocket_electric = "bob-electric-rocket"
-local rocket_piercing = "bob-piercing-rocket"
-local rocket_acid = "bob-acid-rocket"
-local rocket_poison = "bob-poison-rocket"
-local rocket_plasma = "bob-plasma-rocket"
 local ammo_rockets =
 {
     {name = rocket_bob,       order = a},
@@ -1252,9 +1226,6 @@ if mods[bobequipment] then
     end
 end
 
-local exoskeleton_eq_1 = "exoskeleton-equipment"
-local exoskeleton_eq_2 = "bob-exoskeleton-equipment-2"
-local exoskeleton_eq_3 = "bob-exoskeleton-equipment-3"
 local exoskeletons_eq =
 {
     {name = exoskeleton_eq_1, order = a, energy_consumption = 240, movement_bonus = 0.25},

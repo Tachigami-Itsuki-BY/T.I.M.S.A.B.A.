@@ -868,6 +868,9 @@ end
 
 data_item[uranium_234_fuel_cell].subgroup = is_nuclear_cell
 data_item[uranium_234_fuel_cell].order = a
+data_item[uranium_234_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[uranium_234_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[uranium_234_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[uranium_234_fuel_cell].fuel_value = (172800 * 4 * 2) .. kJ
 data_item[uranium_234_fuel_cell].fuel_category = nuclear_fuel_T1
 data_recipe[uranium_234_fuel_cell].subgroup = is_nuclear_cell
@@ -947,6 +950,9 @@ data_recipe[advanced_nuclear_fuel_cell_reprocessing].allow_productivity = true
 
 data_item[mixed_oxide_fuel_cell].subgroup = is_nuclear_cell
 data_item[mixed_oxide_fuel_cell].order = d
+data_item[mixed_oxide_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[mixed_oxide_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[mixed_oxide_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[mixed_oxide_fuel_cell].fuel_value = (691200 * 4 * 2) .. kJ
 data_item[mixed_oxide_fuel_cell].fuel_category = nuclear_fuel_T1
 data_recipe[mixed_oxide_fuel_cell].subgroup = is_nuclear_cell
@@ -963,6 +969,9 @@ data_recipe[mixed_oxide_fuel_cell].results[1].amount = 16
 local depleted_mixed_oxide_fuel_cell = "angels-depleted-mixed-oxide-cell"
 data_item[depleted_mixed_oxide_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_mixed_oxide_fuel_cell].order = e
+data_item[depleted_mixed_oxide_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[depleted_mixed_oxide_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[depleted_mixed_oxide_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 
 local mixed_oxide_reprocessing = "angels-mixed-oxide-reprocessing"
 data_recipe[mixed_oxide_reprocessing].subgroup = is_nuclear_cell
@@ -1005,6 +1014,9 @@ data_recipe[advanced_mixed_oxide_reprocessing].allow_productivity = true
 
 data_item[thorium_fuel_cell].subgroup = is_nuclear_cell
 data_item[thorium_fuel_cell].order = f
+data_item[thorium_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[thorium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[thorium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[thorium_fuel_cell].fuel_value = (921600 * 4 * 2) .. kJ
 data_item[thorium_fuel_cell].fuel_category = nuclear_fuel_T2
 data_recipe[thorium_fuel_cell].subgroup = is_nuclear_cell
@@ -1022,6 +1034,9 @@ data_recipe[thorium_fuel_cell].results[1].amount = 16
 local depleted_thorium_fuel_cell = "angels-depleted-thorium-fuel-cell"
 data_item[depleted_thorium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_thorium_fuel_cell].order = g
+data_item[depleted_thorium_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[depleted_thorium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[depleted_thorium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 
 data_recipe[thorium_fuel_cell_reprocessing].category = angels_advanced_chemistry
 data_recipe[thorium_fuel_cell_reprocessing].additional_categories = {cryogenics}
@@ -1061,6 +1076,9 @@ data_recipe[advanced_thorium_fuel_cell_reprocessing].allow_productivity = true
 
 data_item[deuterium_fuel_cell].subgroup = is_nuclear_cell
 data_item[deuterium_fuel_cell].order = h
+data_item[deuterium_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[deuterium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[deuterium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 data_item[deuterium_fuel_cell].fuel_value = (1152000 * 4 * 2) .. kJ
 data_item[deuterium_fuel_cell].fuel_category = nuclear_fuel_T3
 data_recipe[deuterium_fuel_cell].subgroup = is_nuclear_cell
@@ -1076,6 +1094,9 @@ data_recipe[deuterium_fuel_cell].allow_productivity = true
 
 data_item[depleted_deuterium_fuel_cell].subgroup = is_nuclear_cell
 data_item[depleted_deuterium_fuel_cell].order = i
+data_item[depleted_deuterium_fuel_cell].drop_sound = data_item[uranium_235_fuel_cell].drop_sound
+data_item[depleted_deuterium_fuel_cell].inventory_move_sound = data_item[uranium_235_fuel_cell].inventory_move_sound
+data_item[depleted_deuterium_fuel_cell].pick_sound = data_item[uranium_235_fuel_cell].pick_sound
 
 data_recipe[deuterium_fuel_cell_reprocessing].category = angels_advanced_chemistry
 data_recipe[deuterium_fuel_cell_reprocessing].additional_categories = {cryogenics}

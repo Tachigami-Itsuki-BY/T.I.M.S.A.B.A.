@@ -39,8 +39,10 @@ if mods[arig_mods] then
     corrundum_water_harvesting = "corrundum-water-harvesting"
     castra_water_harvesting = "castra-water-harvesting"
     shchierbin_water_harvesting = "shchierbin-water-harvesting"
+    maraxsis_water_harvesting = "maraxsis-water-harvesting"
     panglia_water_harvesting = "panglia-water-harvesting"
     frozeta_water_harvesting = "frozeta-water-harvesting"
+    terrapalus_water_harvesting = "terrapalus-water-harvesting"
     local water_planets =
     {
         -- PLANETS
@@ -50,7 +52,7 @@ if mods[arig_mods] then
             name = moshine_water_harvesting,
             subgroup = is_arig_water_planets,
             planet = planet_moshine,
-            order = a_f,
+            order = data_planet[planet_moshine].order,
             amount = 15,
             surface_conditions = {{property = pressure, min = 701, max = 701}}
         },
@@ -60,7 +62,7 @@ if mods[arig_mods] then
             name = paracelsin_water_harvesting,
             subgroup = is_arig_water_planets,
             planet = planet_paracelsin,
-            order = a_j,
+            order = data_planet[planet_paracelsin].order,
             amount = 120,
             surface_conditions = {{property = pressure, max = 5300, min = 5300}}
         },
@@ -70,7 +72,7 @@ if mods[arig_mods] then
             name = corrundum_water_harvesting,
             subgroup = is_arig_water_planets,
             planet = planet_corrundum,
-            order = a_l,
+            order = data_planet[planet_corrundum].order,
             amount = 120,
             surface_conditions = {{property = pressure, max = 6000, min = 6000}}
         },
@@ -80,9 +82,9 @@ if mods[arig_mods] then
             name = castra_water_harvesting,
             subgroup = is_arig_water_planets,
             planet = planet_castra,
-            order = a_m,
+            order = data_planet[planet_castra].order,
             amount = 120,
-            surface_conditions = {{property = pressure, max = 1254, min = 1254}}
+            surface_conditions = {{property = pressure, max = 2254, min = 2254}}
         },
         [shchierbin_mods] =
         {
@@ -90,9 +92,19 @@ if mods[arig_mods] then
             name = shchierbin_water_harvesting,
             subgroup = is_arig_water_planets,
             planet = planet_shchierbin,
-            order = a_n,
+            order = data_planet[planet_shchierbin].order,
             amount = 240,
             surface_conditions = {{property = pressure, max = 1500, min = 1500}}
+        },
+        [maraxsis_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.maraxsis"}},
+            name = maraxsis_water_harvesting,
+            subgroup = is_arig_water_planets,
+            planet = planet_maraxsis,
+            order = data_planet[planet_maraxsis].order,
+            amount = 960,
+            surface_conditions = {{property = pressure, max = 200000, min = 200000}}
         },
         -- MOONS
         [panglia_mods] =
@@ -101,7 +113,7 @@ if mods[arig_mods] then
             name = panglia_water_harvesting,
             subgroup = is_arig_water_moons,
             planet = planet_panglia,
-            order = a_b,
+            order = data_planet[planet_panglia].order,
             amount = 480,
             surface_conditions = {{property = pressure, max = 1401, min = 1401}}
         },
@@ -111,9 +123,25 @@ if mods[arig_mods] then
             name = frozeta_water_harvesting,
             subgroup = is_arig_water_moons,
             planet = planet_frozeta,
-            order = a_c,
+            order = data_planet[planet_frozeta].order,
             amount = 120,
             surface_conditions = {{property = pressure, max = 200, min = 280}}
+        },
+        [terrapalus_mods] =
+        {
+            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.terrapalus"}},
+            name = terrapalus_water_harvesting,
+            subgroup = is_arig_water_moons,
+            planet = planet_terrapalus,
+            order = data_planet[planet_terrapalus].order,
+            amount = 480,
+            surface_conditions =
+            {
+                {property = pressure, max = 2000, min = 2800},
+                {property = gravity, max = 25, min = 25},
+                {property = temperature, max = 288, min = 288},
+                {property = magnetic_field, max = 40, min = 40}
+            }
         },
     }
 

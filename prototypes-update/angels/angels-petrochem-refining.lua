@@ -1815,7 +1815,6 @@ data_item[plastic].subgroup = is_plastic
 data_item[plastic].order = b
 data_item[plastic].stack_size = 200
 
-local plastic_angels = "angels-solid-plastic"
 data_recipe[plastic_angels].category = angels_liquifying
 data_recipe[plastic_angels].subgroup = is_plastic
 data_recipe[plastic_angels].icons = TWO_I(liquid_plastic_angels, plastic)
@@ -1997,6 +1996,7 @@ data_recipe[toluene_from_benzene].results[2].amount = 120
 
 data_capsule[cliff_explosives].subgroup = is_explosives
 data_capsule[cliff_explosives].order = f
+data_capsule[cliff_explosives].stack_size = 200
 data_recipe[cliff_explosives].subgroup = is_explosives
 data_recipe[cliff_explosives].order = f
 if settings.startup[setting_early_cliff_explosives].value then

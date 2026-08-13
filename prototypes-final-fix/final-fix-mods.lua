@@ -255,6 +255,20 @@ if mods[muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
     end
+
+    if mods[maraxsis_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+    end
 end
 
 if not mods[muluna_mods] and mods[hyarion_mods] then
@@ -265,44 +279,52 @@ if not mods[muluna_mods] and mods[tellus_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_tellus, change = 0.1})
 end
 
+if not mods[muluna_mods] and mods[maraxsis_mods] then
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
+end
+
 if mods[muluna_mods] then
     local muluna_mining_machine =
     {
-        {name = electric_mining_drill_1 .. _ground_digger, order = a, tier = 1, energy_usage = 120},
-        {name = electric_mining_drill_2 .. _ground_digger, order = b, tier = 2, energy_usage = 240},
-        {name = electric_mining_drill_3 .. _ground_digger, order = c, tier = 3, energy_usage = 360},
-        {name = electric_mining_drill_4 .. _ground_digger, order = d, tier = 4, energy_usage = 480},
-        {name = electric_mining_drill_5 .. _ground_digger, order = e, tier = 5, energy_usage = 600},
-        {name = electric_mining_drill_6 .. _ground_digger, order = f, tier = 6, energy_usage = 720}
+        {name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120},
+        {name = electric_mining_drill_2, order = b, tier = 2, energy_usage = 240},
+        {name = electric_mining_drill_3, order = c, tier = 3, energy_usage = 360},
+        {name = electric_mining_drill_4, order = d, tier = 4, energy_usage = 480},
+        {name = electric_mining_drill_5, order = e, tier = 5, energy_usage = 600},
+        {name = electric_mining_drill_6, order = f, tier = 6, energy_usage = 720}
     }
     for _, BUILD in pairs(muluna_mining_machine) do
-        data_assembling[BUILD.name].subgroup = is_extraction_machine_muluna
-        data_assembling[BUILD.name].order = BUILD.order
-        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
-        data_assembling[BUILD.name].energy_source.drain = (BUILD.tier * drain) .. kW
+        data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
+        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+        data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+        data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * drain) .. kW
     end
 
+    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith)
     data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
     data_assembling[big_mining_drill .. _ground_digger].energy_source.drain = 480 .. kW
 
     if data_item[area_mining_drill_1] then
         local muluna_large_area_mining_machine =
         {
-            {name = area_mining_drill_1 .. _ground_digger, order = g, tier = 1, energy_usage = 240},
-            {name = area_mining_drill_2 .. _ground_digger, order = h, tier = 2, energy_usage = 480},
-            {name = area_mining_drill_3 .. _ground_digger, order = i, tier = 3, energy_usage = 720},
-            {name = area_mining_drill_4 .. _ground_digger, order = j, tier = 4, energy_usage = 960}
+            {name = area_mining_drill_1, order = g, tier = 1, energy_usage = 240},
+            {name = area_mining_drill_2, order = h, tier = 2, energy_usage = 480},
+            {name = area_mining_drill_3, order = i, tier = 3, energy_usage = 720},
+            {name = area_mining_drill_4, order = j, tier = 4, energy_usage = 960}
         }
         for _, BUILD in pairs(muluna_large_area_mining_machine) do
-            data_assembling[BUILD.name].subgroup = is_extraction_machine_muluna
-            data_assembling[BUILD.name].order = BUILD.order
-            data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
-            data_assembling[BUILD.name].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
-            data_assembling[BUILD.name].fixed_recipe = lunar_regolith
+            data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
+            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+            data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+            data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
+            data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
+            data_assembling[BUILD.name .. _ground_digger].fixed_recipe = lunar_regolith
         end
     end
 
     if mods[hyarion_mods] then
+        data_assembling[geode_mining_drill .. _ground_digger].icons = R_P_I(geode_mining_drill, lunar_regolith)
         data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
         data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
         data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
@@ -481,16 +503,46 @@ if mods[paracelsin_mods] then
     }
 end
 
--- MODS
-if mods[shchierbin_mods] and mods[maraxsis_mods] then
-    local salt_v = "salt-v"
-    data_recipe[salt_v].subgroup = is_shchierbin_recipe
-    data_recipe[salt_v].icons = THREE_R_I(water_saline_angels, salt_angels, water)
-    data_recipe[salt_v].order = g
+-- MARAXSIS
+if mods[maraxsis_mods] then
+    local maraxsis_mining_machine = {{name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120}}
+    for _, BUILD in pairs(maraxsis_mining_machine) do
+        data_assembling[BUILD.name .. _sand_extractor].subgroup = is_extraction_machine_maraxsis
+        data_assembling[BUILD.name .. _sand_extractor].icons = R_P_IS(BUILD.name, sand_angels)
+        data_assembling[BUILD.name .. _sand_extractor].order = BUILD.order
+        data_assembling[BUILD.name .. _sand_extractor].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name .. _sand_extractor].energy_source.drain = (BUILD.tier * drain) .. kW
+    end
 
-    data_recipe[salt_mods] = nil
+    data_assembling[big_mining_drill .. _sand_extractor].icons = R_P_I(big_mining_drill, sand_angels)
+    data_assembling[big_mining_drill .. _sand_extractor].crafting_speed = 8
+    data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
+    data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
+
+    -- ПРОВЕРИТЬ РЕЦЕПТЫ
+    if not mods.pystellarexpedition then
+        local electricity_description = {""}
+
+        for _, quality in pairs(data.raw.quality) do
+            if quality.hidden then goto continue end
+            local quality_name = quality.localised_name or {"quality-name." .. quality.name}
+
+            local quality_level = quality.level
+            local fluid_amount = 16 * quality_level * quality_level + 16
+
+            table.insert(electricity_description, {"recipe-description.maraxsis-molten-salt-quality-description", quality.name, quality_name, tostring(fluid_amount)})
+            table.insert(electricity_description, "\n")
+            ::continue::
+        end
+        electricity_description[#electricity_description] = nil
+
+        electricity_description = maraxsis.shorten_localised_string(electricity_description)
+
+        data_recipe[molten_salt_mods].localised_description = {"recipe-description.molten-salt", electricity_description}
+    end
 end
 
+-- MODS
 if mods["RPGsystem"] then
     data_capsule["rpg_amnesia_potion"].subgroup = nil
     data_capsule["rpg_big_healing_potion"].subgroup = nil

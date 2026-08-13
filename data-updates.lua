@@ -9,7 +9,6 @@ require("prototypes-update.update-technology-space")
 require("prototypes-update.update-name-recipe")
 require("prototypes-update.update-icons")
 require("prototypes-update.update-equipment-grid")
-require("prototypes-update.update-planet-order")
 
 require("prototypes-update.base.base-override")
 require("prototypes-update.base.base-logistics")
@@ -60,6 +59,8 @@ require("prototypes-update.planet.shattered.shattered-override")
 --require("prototypes-update.planet.rubia.rubia-override")
 --require("prototypes-update.planet.cubium.cubium-override")
 --require("prototypes-update.planet.nexus.nexus-override")
+
+require("prototypes-update.planet.asteroid-belt")
 
 require("prototypes-update.mods.mods-override")
 

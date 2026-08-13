@@ -1,6 +1,8 @@
 if (mods[muluna_mods] or mods[shchierbin_mods]) and not mods[maraxsis_mods] then
-    data_fluid[atmosphere_maraxsis] = nil
-    data_recipe[atmosphere_maraxsis] = nil
+    local replacements = {[maraxsis_air] = compressed_air}
+    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    data_fluid[maraxsis_air] = nil
+    data_recipe[maraxsis_air] = nil
 end
 
 if mods[castra_mods] or mods[corrundum_mods] or mods[shchierbin_mods] then

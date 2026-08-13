@@ -423,6 +423,12 @@ function TIMSABA.functions.create_items(list)
                 stack_size = items.stack_size or 200,
                 weight = items.weight or 5000,
 
+                place_result = items.place_result,
+
+                drop_sound = items.drop_sound,
+                inventory_move_sound = items.inventory_move_sound,
+                pick_sound = items.pick_sound,
+
                 fuel_category = items.fuel_category,
                 fuel_value = items.fuel_value,
 

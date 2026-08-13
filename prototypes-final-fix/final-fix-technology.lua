@@ -376,3 +376,8 @@ end
 if mods[shchierbin_mods] then
     auto_added_science_pack(vanadium_science_pack, vanadium_science_pack)
 end
+
+-- MARAXSIS
+if mods[shchierbin_mods] then
+    auto_added_science_pack(hydraulic_science_pack, hydraulic_science_pack)
+end

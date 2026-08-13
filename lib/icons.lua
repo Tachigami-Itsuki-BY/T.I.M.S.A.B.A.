@@ -31,6 +31,7 @@ THREE_D_IS = require("lib.generator-icons-update").triple_to_triple_icons
 FOUR_D_IS = require("lib.generator-icons-update").quadruple_to_quadruple_icons
 AR_FOUR_ALT_IS = require("lib.generator-icons-update").alt_angels_refining_quadruple_icons
 RECYCLING_IS = require("lib.generator-icons-update").recycling_recipe_icons
+R_P_IS = require("lib.generator-icons-update").recipe_planet_icons
 
 TWO_ITEM_I = require("lib.generator-icons-shattered").item_item_icon
 ITEM_FLUID_I = require("lib.generator-icons-shattered").item_fluid_icon

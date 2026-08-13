@@ -5,7 +5,7 @@ if mods[shchierbin_mods] then
         {
             type = item_group,
             name = ig_shchierbin,
-            order = x_m,
+            order = data_planet[planet_shchierbin].order,
             icon = "__TIMSABA__/graphics/icons/shchierbin/shchierbin-planet.png",
             icon_size = 128
         }

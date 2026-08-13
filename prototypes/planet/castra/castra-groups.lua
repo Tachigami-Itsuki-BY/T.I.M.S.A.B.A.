@@ -5,7 +5,7 @@ if mods[castra_mods] then
         {
             type = item_group,
             name = ig_castra,
-            order = x_l,
+            order = data_planet[planet_castra].order,
             icon = "__TIMSABA__/graphics/icons/castra/castra-planet.png",
             icon_size = 128
         }

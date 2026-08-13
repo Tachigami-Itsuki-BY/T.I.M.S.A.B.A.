@@ -767,10 +767,10 @@ end
 local water_treatments =
 {
     {name = seafloor_pump,               pumping_speed = 4},
-    {name = offshore_pump,               pumping_speed = 10},
+    {name = offshore_pump,               pumping_speed = 8},
     {name = ground_water_pump,           pumping_speed = 1},
     {name = heavy_offshore_pump},
-    {name = "angels-sea-pump-placeable", pumping_speed = 40}
+    {name = "angels-sea-pump-placeable", pumping_speed = 32}
 }
 for _, BUILD in pairs(water_treatments) do
     if data_item[BUILD.name] then
@@ -857,7 +857,7 @@ if pump_2 then
         pump_2.fluid_box.production_type = output
     end
     pump_2.output_fluid_box = nil
-    pump_2.pumping_speed = 40
+    pump_2.pumping_speed = 32
     pump_2.always_draw_fluid = true
     pump_2.graphics_set = {base_pictures = pump_2.base_picture}
     pump_2.base_picture = nil

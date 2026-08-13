@@ -129,7 +129,7 @@ data:extend
         name = T4_transport_belt,
         icon = "__boblogistics__/graphics/icons/purple-transport-belt.png",
         icon_size = 32,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.1, result = T4_transport_belt},
         max_health = 180,
         corpse = "small-remnants",
@@ -157,7 +157,7 @@ data:extend
         name = T4_underground_belt,
         icon = "__boblogistics__/graphics/icons/purple-transport-belt-to-ground.png",
         icon_size = 32,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.1, result = T4_underground_belt},
         max_health = 180,
         corpse = "small-remnants",
@@ -272,7 +272,7 @@ data:extend
         name = T4_splitter,
         icon = "__boblogistics__/graphics/icons/purple-splitter.png",
         icon_size = 32,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.1, result = T4_splitter},
         max_health = 200,
         corpse = "medium-remnants",
@@ -347,8 +347,7 @@ data:extend
     }
 })
 
-local pipe_drop_move = {filename = "__base__/sound/item/metal-small-inventory-move.ogg", volume = 0.8}
-local pipe_pick = {filename = "__base__/sound/item/metal-small-inventory-pickup.ogg", volume = 0.8}
+local item_sounds = require("__base__.prototypes.item_sounds")
 -- PIPE
 data:extend
 ({
@@ -361,9 +360,9 @@ data:extend
         stack_size = 200,
         weight = 5000,
         place_result = stone_pipe,
-        drop_sound = pipe_drop_move,
-        inventory_move_sound = pipe_drop_move,
-        pick_sound = pipe_pick
+        drop_sound = item_sounds.brick_inventory_move,
+        inventory_move_sound = item_sounds.brick_inventory_pickup,
+        pick_sound = item_sounds.brick_inventory_move
     },
     {
         type = item,
@@ -374,36 +373,10 @@ data:extend
         stack_size = 32,
         weight = 31250,
         place_result = stone_pipe_to_ground,
-        drop_sound = pipe_drop_move,
-        inventory_move_sound = pipe_drop_move,
-        pick_sound = pipe_pick
+        drop_sound = item_sounds.brick_inventory_move,
+        inventory_move_sound = item_sounds.brick_inventory_pickup,
+        pick_sound = item_sounds.brick_inventory_move
     },
-    --[[{
-        type = item,
-        name = ceramic_pipe,
-        subgroup = is_pipe,
-        icon = "__boblogistics__/graphics/icons/pipe/ceramic-pipe.png",
-        order = i,
-        stack_size = 200,
-        weight = 5000,
-        place_result = ceramic_pipe,
-        drop_sound = pipe_drop_move,
-        inventory_move_sound = pipe_drop_move,
-        pick_sound = pipe_pick
-    },
-    {
-        type = item,
-        name = ceramic_pipe_to_ground,
-        subgroup = is_pipe_to_ground,
-        icon = "__boblogistics__/graphics/icons/pipe/ceramic-pipe-to-ground.png",
-        order = i,
-        stack_size = 32,
-        weight = 31250,
-        place_result = ceramic_pipe_to_ground,
-        drop_sound = pipe_drop_move,
-        inventory_move_sound = pipe_drop_move,
-        pick_sound = pipe_pick
-    },]]
     {
         type = item,
         name = nitinol_pipe,
@@ -413,9 +386,9 @@ data:extend
         stack_size = 200,
         weight = 5000,
         place_result = nitinol_pipe,
-        drop_sound = pipe_drop_move,
-        inventory_move_sound = pipe_drop_move,
-        pick_sound = pipe_pick
+        drop_sound = item_sounds.metal_small_inventory_move,
+        inventory_move_sound = item_sounds.metal_small_inventory_pickup,
+        pick_sound = item_sounds.metal_small_inventory_move
     },
     {
         type = item,
@@ -426,9 +399,9 @@ data:extend
         stack_size = 32,
         weight = 31250,
         place_result = nitinol_pipe_to_ground,
-        drop_sound = pipe_drop_move,
-        inventory_move_sound = pipe_drop_move,
-        pick_sound = pipe_pick
+        drop_sound = item_sounds.metal_small_inventory_move,
+        inventory_move_sound = item_sounds.metal_small_inventory_pickup,
+        pick_sound = item_sounds.metal_small_inventory_move
     }
 })
 
@@ -458,30 +431,6 @@ TIMSABA.functions.create_recipes
         results = {{type = item, name = stone_pipe_to_ground, amount = 2}},
         main_product = stone_pipe_to_ground
     },
-    --[[{
-        name = ceramic_pipe,
-        category = crafting,
-        subgroup = is_pipe,
-        order = i,
-        energy_required = 0.5,
-        ingredients = {{type = item, name = silicon_nitride_bob, amount = 1}},
-        results = {{type = item, name = ceramic_pipe, amount = 1}},
-        main_product = ceramic_pipe
-    },
-    {
-        name = ceramic_pipe_to_ground,
-        category = crafting,
-        subgroup = is_pipe_to_ground,
-        order = i,
-        energy_required = 4,
-        ingredients =
-        {
-            {type = item, name = ceramic_pipe, amount = 32},
-            {type = item, name = silicon_nitride_bob, amount = 4}
-        },
-        results = {{type = item, name = ceramic_pipe_to_ground, amount = 2}},
-        main_product = ceramic_pipe_to_ground
-    },]]
     {
         name = nitinol_pipe,
         category = crafting,
@@ -517,10 +466,10 @@ data:extend
         icon = "__boblogistics__/graphics/icons/pipe/stone-pipe.png",
         icon_size = 64,
         order = c,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.5, result = stone_pipe},
         max_health = 100,
-        corpse = "pipe-remnants",
+        corpse = stone_pipe .. _remnants,
         dying_explosion = "pipe-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 90}},
@@ -555,10 +504,10 @@ data:extend
         icon = "__boblogistics__/graphics/icons/pipe/stone-pipe-to-ground.png",
         icon_size = 64,
         order = c,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.5, result = stone_pipe_to_ground},
         max_health = 150,
-        corpse = "pipe-to-ground-remnants",
+        corpse = stone_pipe_to_ground .. _remnants,
         dying_explosion = "pipe-to-ground-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 80}},
@@ -593,89 +542,6 @@ data:extend
         impact_category = "metal",
         factoriopedia_simulation = {}
     },
-    --[[{
-        type = pipe,
-        name = ceramic_pipe,
-        subgroup = is_pipe,
-        icon = "__boblogistics__/graphics/icons/pipe/ceramic-pipe.png",
-        icon_size = 64,
-        order = i,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 0.5, result = ceramic_pipe},
-        max_health = 250,
-        corpse = "pipe-remnants",
-        dying_explosion = "pipe-explosion",
-        icon_draw_specification = {scale = 0.5},
-        resistances = {{type = "fire", percent = 90}},
-        fast_replaceable_group = pipe,
-        collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        damaged_trigger_effect = hit_effects.entity(),
-        fluid_box =
-        {
-            volume = 100,
-            pipe_connections =
-            {
-                {position = {0, 0}, direction = defines.direction.north},
-                {position = {0, 0}, direction = defines.direction.east},
-                {position = {0, 0}, direction = defines.direction.south},
-                {position = {0, 0}, direction = defines.direction.west}
-            },
-            hide_connection_info = true
-        },
-        pictures = TIMSABA_pipepictures("ceramic"),
-        impact_category = "metal",
-        working_sound = sounds.pipe,
-        open_sound = sounds.metal_small_open,
-        close_sound = sounds.metal_small_close,
-        horizontal_window_bounding_box = {{-0.25, -0.28125}, {0.25, 0.15625}},
-        vertical_window_bounding_box = {{-0.28125, -0.5}, {0.03125, 0.125}}
-    },
-    {
-        type = pipe_to_ground,
-        name = ceramic_pipe_to_ground,
-        subgroup = is_pipe_to_ground,
-        icon = ".png",
-        icon_size = 64,
-        order = i,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 0.5, result = ceramic_pipe_to_ground},
-        max_health = 300,
-        corpse = "pipe-to-ground-remnants",
-        dying_explosion = "pipe-to-ground-explosion",
-        icon_draw_specification = {scale = 0.5},
-        resistances = {{type = "fire", percent = 80}},
-        fast_replaceable_group = pipe,
-        collision_box = {{-0.29, -0.29}, {0.29, 0.2}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        fluid_box =
-        {
-            volume = 100,
-            pipe_covers = TIMSABA_pipecoverspictures("ceramic"),
-            pipe_connections =
-            {
-                {
-                    position = {0, 0},
-                    direction = defines.direction.north
-                },
-                {
-                    position = {0, 0},
-                    direction = defines.direction.south,
-                    connection_type = "underground",
-                    max_underground_distance = 32
-                }
-            },
-            hide_connection_info = true
-        },
-        working_sound = sounds.pipe,
-        open_sound = sounds.metal_small_open,
-        close_sound = sounds.metal_small_close,
-        pictures = TIMSABA_pipetogroundpictures("ceramic"),
-        visualization = TIMSABA_pipetoground_visualization(),
-        disabled_visualization = TIMSABA_pipetoground_disabled_visualizaton(),
-        impact_category = "metal",
-        factoriopedia_simulation = {}
-    },]]
     {
         type = pipe,
         name = nitinol_pipe,
@@ -683,10 +549,10 @@ data:extend
         icon = "__boblogistics__/graphics/icons/pipe/nitinol-pipe.png",
         icon_size = 64,
         order = k,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.5, result = nitinol_pipe},
         max_health = 300,
-        corpse = "pipe-remnants",
+        corpse = nitinol_pipe .. _remnants,
         dying_explosion = "pipe-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 90}},
@@ -721,10 +587,10 @@ data:extend
         icon = "__boblogistics__/graphics/icons/pipe/nitinol-pipe-to-ground.png",
         icon_size = 64,
         order = k,
-        flags = {"placeable-neutral", "player-creation"},
+        flags = {flag_placeable_neutral, flag_player_creation},
         minable = {mining_time = 0.5, result = nitinol_pipe_to_ground},
         max_health = 350,
-        corpse = "pipe-to-ground-remnants",
+        corpse = nitinol_pipe_to_ground .. _remnants,
         dying_explosion = "pipe-to-ground-explosion",
         icon_draw_specification = {scale = 0.5},
         resistances = {{type = "fire", percent = 80}},
@@ -762,10 +628,8 @@ data:extend
 })
 if feature_flags["freezing"] then
     data_pipe[stone_pipe].heating_energy = 1 .. kW
-    --data_pipe[ceramic_pipe].heating_energy = 1 .. kW
     data_pipe[nitinol_pipe].heating_energy = 1 .. kW
     data_pipe_to_ground[stone_pipe_to_ground].heating_energy = 100 .. kW
-    --data_pipe_to_ground[ceramic_pipe_to_ground].heating_energy = 250 .. kW
     data_pipe_to_ground[nitinol_pipe_to_ground].heating_energy = 300 .. kW
     if mods[space_age] then
         local function frozenpatch()
@@ -773,24 +637,20 @@ if feature_flags["freezing"] then
             return result
         end
         data_pipe_to_ground[stone_pipe_to_ground].frozen_patch = frozenpatch()
-        --data_pipe_to_ground[ceramic_pipe_to_ground].frozen_patch = frozenpatch()
         data_pipe_to_ground[nitinol_pipe_to_ground].frozen_patch = frozenpatch()
         local function frozenpatch2()
-            local result = util.table.deepcopy(data_pipe.pipe.fluid_box.pipe_covers_frozen)
+            local result = util.table.deepcopy(data_pipe[iron_pipe].fluid_box.pipe_covers_frozen)
             return result
         end
         data_pipe[stone_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
-        --data_pipe[ceramic_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
         data_pipe[nitinol_pipe].fluid_box.pipe_covers_frozen = frozenpatch2()
         data_pipe_to_ground[stone_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
-        --data_pipe_to_ground[ceramic_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
         data_pipe_to_ground[nitinol_pipe_to_ground].fluid_box.pipe_covers_frozen = frozenpatch2()
     end
 end
 
-if settings.startup["bobmods-logistics-ugdistanceoverhaul"].value == true then
+if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value == true then
     bobmods.logistics.set_pipe_distance(stone_pipe_to_ground, 1)
-    --bobmods.logistics.set_pipe_distance(ceramic_pipe_to_ground, 4)
     bobmods.logistics.set_pipe_distance(nitinol_pipe_to_ground, 5)
 end
 
@@ -848,13 +708,7 @@ for _, info in ipairs(icons_pipe) do
 
         -- Сбрасываем старую иконку и ставим новую
         prototype.icon = nil
-        prototype.icons =
-        {
-            {
-                icon = "__reskins-bobs__/graphics/icons/logistics/" .. folder .. "/" .. clean_name .. "-icon.png",
-                icon_size = 64
-            }
-        }
+        prototype.icons = {{icon = "__reskins-bobs__/graphics/icons/logistics/" .. folder .. "/" .. clean_name .. "-icon.png", icon_size = 64}}
 
         reskins.lib.tiers.add_tier_labels_to_prototype_by_name(info.number, info.name, info.type)
 
@@ -865,14 +719,14 @@ for _, info in ipairs(icons_pipe) do
     end
 end
 
-data_item[ceramic_pipe].drop_sound = pipe_drop_move
-data_item[ceramic_pipe].inventory_move_sound = pipe_drop_move
-data_item[ceramic_pipe].pick_sound = pipe_pick
+data_item[ceramic_pipe].drop_sound = item_sounds.brick_inventory_move
+data_item[ceramic_pipe].inventory_move_sound = item_sounds.brick_inventory_pickup
+data_item[ceramic_pipe].pick_sound = item_sounds.brick_inventory_move
 data_pipe[ceramic_pipe].pictures = TIMSABA_pipepictures("ceramic")
 
-data_item[ceramic_pipe_to_ground].drop_sound = pipe_drop_move
-data_item[ceramic_pipe_to_ground].inventory_move_sound = pipe_drop_move
-data_item[ceramic_pipe_to_ground].pick_sound = pipe_pick
+data_item[ceramic_pipe_to_ground].drop_sound = item_sounds.brick_inventory_move
+data_item[ceramic_pipe_to_ground].inventory_move_sound = item_sounds.brick_inventory_pickup
+data_item[ceramic_pipe_to_ground].pick_sound = item_sounds.brick_inventory_move
 data_pipe_to_ground[ceramic_pipe_to_ground].fluid_box.pipe_covers = TIMSABA_pipecoverspictures("ceramic")
 data_pipe_to_ground[ceramic_pipe_to_ground].pictures = TIMSABA_pipetogroundpictures("ceramic")
 data_pipe_to_ground[ceramic_pipe_to_ground].visualization = TIMSABA_pipetoground_visualization()

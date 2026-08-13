@@ -12,6 +12,7 @@ TIMSABA.functions.create_subgroups("logistics",
 })
 
 -- PRODUCTION
+ig_production = "production"
 is_energy_steam_turbine = "is-energy-steam-turbine"
 is_solar_panel_small = "solar-panel-small"
 is_solar_panel_large = "solar-panel-large"
@@ -20,7 +21,7 @@ is_extraction_machine_muluna = "is-extraction-machine-muluna"
 is_extraction_machine_maraxsis = "is-extraction-machine-maraxsis"
 is_extraction_machine_pumpjack = "is-extraction-machine-pumpjack"
 is_lab = "is-lab"
-TIMSABA.functions.create_subgroups("production",
+TIMSABA.functions.create_subgroups(ig_production,
 {
     {name = is_energy_steam_turbine,        order = b_b},
     {name = is_solar_panel_small,           order = b_d},
@@ -31,11 +32,11 @@ TIMSABA.functions.create_subgroups("production",
 })
 
 if mods[muluna_mods] then
-    TIMSABA.functions.create_subgroups("production", {{name = is_extraction_machine_muluna, order = c_b}})
+    TIMSABA.functions.create_subgroups(ig_production, {{name = is_extraction_machine_muluna, order = c_b}})
 end
 
 if mods[maraxsis_mods] then
-    TIMSABA.functions.create_subgroups("production", {{name = is_extraction_machine_maraxsis, order = c_c}})
+    TIMSABA.functions.create_subgroups(ig_production, {{name = is_extraction_machine_maraxsis, order = c_c}})
 end
 
 -- INTERMEDIATE PRODUCTS

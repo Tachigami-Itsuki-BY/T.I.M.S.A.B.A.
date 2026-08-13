@@ -275,7 +275,6 @@ data_ammo_turret[railgun_turret].energy_source.buffer_capacity = 43200 .. kJ
 data_ammo_turret[railgun_turret].energy_source.input_flow_limit = 43200 .. kW
 data_ammo_turret[railgun_turret].energy_per_shot = 43200 .. kJ
 
-local railgun_ammo = "railgun-ammo"
 data_ammo[railgun_ammo].subgroup = is_aquilo_war
 data_ammo[railgun_ammo].order = c
 data_ammo[railgun_ammo].stack_size = 16

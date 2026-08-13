@@ -327,18 +327,18 @@ if mods[castra_mods] then
         {type = item, name = gunpowder, amount = 1}
     }
 
-    local piercing_rounds_catalyzing = "piercing-rounds-catalyzing"
-    data_recipe[piercing_rounds_catalyzing].subgroup = is_castra_war
-    data_recipe[piercing_rounds_catalyzing].icons = R_P_I(piercing_rounds_magazine, nil, nil, number_2)
-    data_recipe[piercing_rounds_catalyzing].order = b
-    data_recipe[piercing_rounds_catalyzing].energy_required = 1
-    data_recipe[piercing_rounds_catalyzing].ingredients =
+    local piercing_rounds_magazine_nickel = "piercing-rounds-catalyzing"
+    data_recipe[piercing_rounds_magazine_nickel].subgroup = is_castra_war
+    data_recipe[piercing_rounds_magazine_nickel].icons = R_P_I(piercing_rounds_magazine, nil, nil, number_2)
+    data_recipe[piercing_rounds_magazine_nickel].order = b
+    data_recipe[piercing_rounds_magazine_nickel].energy_required = 1
+    data_recipe[piercing_rounds_magazine_nickel].ingredients =
     {
         {type = item, name = firearm_magazine, amount = 1},
         {type = item, name = nickel_plate_bob, amount = 2},
         {type = item, name = copper_plate, amount = 2}
     }
-    data_recipe[piercing_rounds_catalyzing].results[1].amount = 2
+    data_recipe[piercing_rounds_magazine_nickel].results[1].amount = 2
 
     local poison_capsule_sulfur = "poison-capsule-sulfur"
     data_recipe[poison_capsule_sulfur].subgroup = is_castra_war
@@ -460,7 +460,7 @@ if mods[castra_mods] then
     {
         {type = unlock_recipe, recipe = forge},
         {type = unlock_recipe, recipe = firearm_magazine_nickel},
-        {type = unlock_recipe, recipe = piercing_rounds_catalyzing},
+        {type = unlock_recipe, recipe = piercing_rounds_magazine_nickel},
         {type = unlock_recipe, recipe = slowdown_capsule_sulfur},
         {type = unlock_recipe, recipe = poison_capsule_sulfur}
     }
@@ -526,6 +526,16 @@ if mods[castra_mods] then
     add_recipe_for_explosive_ammo_productivity(atomic_rocket)
     add_recipe_for_explosive_ammo_productivity(atomic_rocket_2)
     add_recipe_for_explosive_ammo_productivity(atomic_rocket_3)
+    if mods[bobwarfare] then
+        add_recipe_for_explosive_ammo_productivity(rocket_bob)
+        add_recipe_for_explosive_ammo_productivity(rocket_flame)
+        add_recipe_for_explosive_ammo_productivity(rocket_explosive)
+        add_recipe_for_explosive_ammo_productivity(rocket_electric)
+        add_recipe_for_explosive_ammo_productivity(rocket_piercing)
+        add_recipe_for_explosive_ammo_productivity(rocket_acid)
+        add_recipe_for_explosive_ammo_productivity(rocket_poison)
+        add_recipe_for_explosive_ammo_productivity(rocket_plasma)
+    end
     add_recipe_for_explosive_ammo_productivity(cannon_shell)
     add_recipe_for_explosive_ammo_productivity(explosive_cannon_shell)
     add_recipe_for_explosive_ammo_productivity(uranium_cannon_shell)
@@ -536,8 +546,14 @@ if mods[castra_mods] then
     end
     add_recipe_for_explosive_ammo_productivity(grenade)
     add_recipe_for_explosive_ammo_productivity(grenade_gunpowder)
+    if mods[maraxsis_mods] then
+        add_recipe_for_explosive_ammo_productivity("maraxsis-pipe-bomb")
+    end
     add_recipe_for_explosive_ammo_productivity(cluster_grenade)
     add_recipe_for_explosive_ammo_productivity(land_mine)
+    if mods[maraxsis_mods] then
+        add_recipe_for_explosive_ammo_productivity("maraxsis-fat-man")
+    end
     data_technology[tech_explosive_ammo .. _productivity].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -611,6 +627,41 @@ if mods[castra_mods] then
         {electromagnetic_science_pack, 1},
         {cryogenic_science_pack, 1}
     }
+
+    local tech_physical_ammo = "physical-ammo"
+    data_technology[tech_physical_ammo .. _productivity].effects = {}
+    local function add_recipe_for_physical_ammo_productivity(recipe)
+        table.insert(data_technology[tech_physical_ammo .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
+    end
+    add_recipe_for_physical_ammo_productivity(firearm_magazine)
+    add_recipe_for_physical_ammo_productivity(firearm_magazine_nickel)
+    add_recipe_for_physical_ammo_productivity(piercing_rounds_magazine)
+    add_recipe_for_physical_ammo_productivity(piercing_rounds_magazine_nickel)
+    add_recipe_for_physical_ammo_productivity(uranium_rounds_magazine)
+    if mods[bobwarfare] then
+        add_recipe_for_physical_ammo_productivity(magazine_ammo)
+        add_recipe_for_physical_ammo_productivity(magazine_flame)
+        add_recipe_for_physical_ammo_productivity(magazine_he)
+        add_recipe_for_physical_ammo_productivity(magazine_electric)
+        add_recipe_for_physical_ammo_productivity(magazine_ap)
+        add_recipe_for_physical_ammo_productivity(magazine_acid)
+        add_recipe_for_physical_ammo_productivity(magazine_poison)
+        add_recipe_for_physical_ammo_productivity(magazine_plasma)
+    end
+    add_recipe_for_physical_ammo_productivity(shotgun_shell)
+    add_recipe_for_physical_ammo_productivity(piercing_shotgun_shell)
+    if mods[bobwarfare] then
+        add_recipe_for_physical_ammo_productivity(uranium_shotgun_shell)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_better)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_flame)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_explosive)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_electric)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_ap)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_acid)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_poison)
+        add_recipe_for_physical_ammo_productivity(shotgun_shell_plasma)
+    end
+    add_recipe_for_physical_ammo_productivity(railgun_ammo)
 
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, battlefield_science_pack)
 end

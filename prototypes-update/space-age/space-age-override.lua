@@ -61,6 +61,19 @@ if mods[tellus_mods] then
     }
 end
 
+if mods[maraxsis_mods] then
+    rocket_part_maraxsis = "maraxsis-rocket-part"
+    data_recipe[rocket_part_maraxsis].icons = R_P_I(rocket_part, planet_maraxsis)
+    data_recipe[rocket_part_maraxsis].order = b_d
+    data_recipe[rocket_part_maraxsis].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 2},
+        {type = item, name = advanced_processing_unit, amount = 2},
+        {type = item, name = rocket_fuel, amount = 2},
+        {type = item, name = super_sealant_substance_maraxsis, amount = 2}
+    }
+end
+
 data_recipe[cargo_landing_pad].energy_required = 32
 data_recipe[cargo_landing_pad].ingredients =
 {
@@ -644,7 +657,7 @@ if mods[hyarion_mods] then
     }
     data_recipe[promethium_science_pack].results[1].amount = 8
 
-    local promethium_science_pack_hyarion = "planetaris-promethium-science-pack"
+    promethium_science_pack_hyarion = "planetaris-promethium-science-pack"
     data_recipe[promethium_science_pack_hyarion].subgroup = is_space_facilities
     data_recipe[promethium_science_pack_hyarion].icons = R_P_I(promethium_science_pack, space_platform, nil, number_2)
     data_recipe[promethium_science_pack_hyarion].order = b_a

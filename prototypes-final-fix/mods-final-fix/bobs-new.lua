@@ -306,23 +306,23 @@ data_underground_belt[T4_underground_belt].factoriopedia_simulation = simulation
 data_pipe_to_ground[stone_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_stone_pipe_to_ground_2_1_0
 data_pipe_to_ground[nitinol_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_nitinol_pipe_to_ground_2_1_0
 
-local aluminium_pipe = "bob-aluminium-pipe"
-data_item[aluminium_pipe] = nil
-data_recipe[aluminium_pipe] = nil
-data_recipe[aluminium_pipe .. _recycling] = nil
-if mods[panglia_mods] then
-    data_recipe[item_ .. aluminium_pipe .. _panglia_crushing] = nil
-end
-data_pipe[aluminium_pipe] = nil
+if not mods[muluna_mods] then
+    data_item[aluminium_pipe] = nil
+    data_recipe[aluminium_pipe] = nil
+    data_recipe[aluminium_pipe .. _recycling] = nil
+    if mods[panglia_mods] then
+        data_recipe[item_ .. aluminium_pipe .. _panglia_crushing] = nil
+    end
+    data_pipe[aluminium_pipe] = nil
 
-local aluminium_pipe_to_ground = "bob-aluminium-pipe-to-ground"
-data_item[aluminium_pipe_to_ground] = nil
-data_recipe[aluminium_pipe_to_ground] = nil
-data_recipe[aluminium_pipe_to_ground .. _recycling] = nil
-if mods[panglia_mods] then
-    data_recipe[item_ .. aluminium_pipe_to_ground .. _panglia_crushing] = nil
+    data_item[aluminium_pipe_to_ground] = nil
+    data_recipe[aluminium_pipe_to_ground] = nil
+    data_recipe[aluminium_pipe_to_ground .. _recycling] = nil
+    if mods[panglia_mods] then
+        data_recipe[item_ .. aluminium_pipe_to_ground .. _panglia_crushing] = nil
+    end
+    data_pipe_to_ground[aluminium_pipe_to_ground] = nil
 end
-data_pipe_to_ground[aluminium_pipe_to_ground] = nil
 
 data_transport_belt[T3_transport_belt].next_upgrade = T4_transport_belt
 data_transport_belt[T4_transport_belt].next_upgrade = T5_transport_belt

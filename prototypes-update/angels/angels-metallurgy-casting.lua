@@ -1069,7 +1069,7 @@ data_recipe[glass_bob].energy_required = 4
 data_recipe[glass_bob].ingredients[1].name = sand_angels
 data_recipe[glass_bob].ingredients[1].amount = 8
 
-local glass_angels = "angels-plate-glass"
+glass_angels = "angels-plate-glass"
 data_recipe[glass_angels].icons = TWO_I(glass_molten_angels, glass_bob)
 data_recipe[glass_angels].ingredients[1].amount = 60
 data_recipe[glass_angels].results[1].amount = 4

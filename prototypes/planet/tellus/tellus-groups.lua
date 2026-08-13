@@ -5,7 +5,7 @@ if mods[tellus_mods] then
         {
             type = item_group,
             name = ig_tellus,
-            order = x_i,
+            order = data_planet[planet_tellus].order,
             icon = "__TIMSABA__/graphics/icons/tellus/tellus-planet.png",
             icon_size = 128
         }

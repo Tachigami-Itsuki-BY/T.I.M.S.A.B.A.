@@ -44,12 +44,11 @@ if mods[moshine_mods] then
 
     -- data_recipe[silicon_carbide_mods] --> "mods-update/mods/mods-override"
 
-    local glass = "glass"
-    data_recipe[glass].localised_name = {"item-name.angels-plate-glass"}
-    data_recipe[glass].category = smelting_filtering
-    data_recipe[glass].subgroup = is_moshine_recipe
-    data_recipe[glass].icons = TWO_I(sand_angels, glass_bob)
-    data_recipe[glass].order = j
+    data_recipe[glass_mods].localised_name = {"item-name.angels-plate-glass"}
+    data_recipe[glass_mods].category = smelting_filtering
+    data_recipe[glass_mods].subgroup = is_moshine_recipe
+    data_recipe[glass_mods].icons = TWO_I(sand_angels, glass_bob)
+    data_recipe[glass_mods].order = j
 
     -- NEODYM CASTING
     data_item[neodymium_magnet].localised_name = {"item-name.neodymium-magnet"}
@@ -423,7 +422,7 @@ if mods[moshine_mods] then
     }
     data_assembling[space_train_battery_battery_station].subgroup = is_moshine_logistics
     data_assembling[space_train_battery_battery_station].order = d
-    data_assembling[space_train_battery_battery_station].energy_usage = (2000 - 240) .. kW
+    data_assembling[space_train_battery_battery_station].energy_usage = (2400 - 240) .. kW
     data_assembling[space_train_battery_battery_station].energy_source.drain = 240 .. kW
 
     local straight_rail_minimal = "straight-rail-minimal"
@@ -617,10 +616,15 @@ if mods[moshine_mods] then
     data_item[optical_cable].subgroup = is_moshine_building
     data_item[optical_cable].order = d
     data_item[optical_cable].stack_size = 200
-    data_item[optical_cable].weight = 5000
     data_recipe[optical_cable].subgroup = is_moshine_building
     data_recipe[optical_cable].order = d
     data_recipe[optical_cable].energy_required = 2
+    data_recipe[optical_cable].ingredients =
+    {
+        {type = item, name = silicon_carbide_bob, amount = 1},
+        {type = item, name = glass_coil_fiber, amount = 1},
+        {type = item, name = silicon_boule_mods, amount = 1}
+    }
     data_pipe[optical_cable].subgroup = is_moshine_building
     data_pipe[optical_cable].order = d
 
@@ -695,6 +699,7 @@ if mods[moshine_mods] then
         data_processor,
         neural_computer,
         data_extractor,
+        optical_cable,
         ai_trainer,
         processing_grid,
         webbed_processor_tile

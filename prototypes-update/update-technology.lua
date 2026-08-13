@@ -1,4 +1,41 @@
 -- LOGISTICS
+if settings.startup[setting_flow_control_new].value then
+    data_technology[tech_steam_power].effects =
+    {
+        {type = unlock_recipe, recipe = iron_pipe},
+        {type = unlock_recipe, recipe = iron_pipe_to_ground},
+        {type = unlock_recipe, recipe = iron_pipe .. _straight},
+        {type = unlock_recipe, recipe = iron_pipe .. _elbow},
+        {type = unlock_recipe, recipe = iron_pipe .. _junction},
+        {type = unlock_recipe, recipe = copper_pipe},
+        {type = unlock_recipe, recipe = copper_pipe_to_ground},
+        {type = unlock_recipe, recipe = copper_pipe .. _straight},
+        {type = unlock_recipe, recipe = copper_pipe .. _elbow},
+        {type = unlock_recipe, recipe = copper_pipe .. _junction},
+        {type = unlock_recipe, recipe = stone_pipe},
+        {type = unlock_recipe, recipe = stone_pipe_to_ground},
+        {type = unlock_recipe, recipe = stone_pipe .. _straight},
+        {type = unlock_recipe, recipe = stone_pipe .. _elbow},
+        {type = unlock_recipe, recipe = stone_pipe .. _junction},
+        {type = unlock_recipe, recipe = offshore_pump},
+        {type = unlock_recipe, recipe = boiler_1},
+        {type = unlock_recipe, recipe = steam_engine_1}
+    }
+else
+    data_technology[tech_steam_power].effects =
+    {
+        {type = unlock_recipe, recipe = iron_pipe},
+        {type = unlock_recipe, recipe = iron_pipe_to_ground},
+        {type = unlock_recipe, recipe = copper_pipe},
+        {type = unlock_recipe, recipe = copper_pipe_to_ground},
+        {type = unlock_recipe, recipe = stone_pipe},
+        {type = unlock_recipe, recipe = stone_pipe_to_ground},
+        {type = unlock_recipe, recipe = offshore_pump},
+        {type = unlock_recipe, recipe = boiler_1},
+        {type = unlock_recipe, recipe = steam_engine_1}
+    }
+end
+
 data_technology[tech_logistics_5].prerequisites = {tech_logistics_4, tech_nitinol_processing, advanced_processing_unit, utility_science_pack}
 
 local tech_logistic_system = "logistic-system"
@@ -120,6 +157,7 @@ if data_technology[tech_robo_modular_1] then
         {type = unlock_recipe, recipe = roboport_door_1}
     }
 end
+
 if mods[bobwarfare] then
     data_technology[artillery_wagon_2].localised_name = {"entity-name.artillery-wagon-2"}
     data_technology[artillery_wagon_2].prerequisites = {tech_artillery, cryogenic_science_pack}
@@ -151,6 +189,11 @@ if mods[bobwarfare] then
         {cryogenic_science_pack, 1},
         {promethium_science_pack, 1}
     }
+end
+
+if data_technology[heavy_spidertron] then
+    table.insert(data_technology[heavy_spidertron].unit.ingredients, {space_science_pack, 1})
+    table.insert(data_technology[heavy_spidertron].unit.ingredients, {agricultural_science_pack, 1})
 end
 
 -- PRODUCTION
@@ -216,6 +259,31 @@ replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_
 table.insert(data_technology[centrifuge_3].prerequisites, tech_stone_smelting_4)
 
 -- INTERMEDIATE PRODUCTS
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_bronze_processing].effects, {type = unlock_recipe, recipe = bronze_pipe .. _straight})
+    table.insert(data_technology[tech_bronze_processing].effects, {type = unlock_recipe, recipe = bronze_pipe .. _elbow})
+    table.insert(data_technology[tech_bronze_processing].effects, {type = unlock_recipe, recipe = bronze_pipe .. _junction})
+end
+
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_pipe .. _straight})
+    table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_pipe .. _elbow})
+    table.insert(data_technology[tech_steel_processing].effects, {type = unlock_recipe, recipe = steel_pipe .. _junction})
+end
+
+plastic_angels = "angels-solid-plastic"
+data_technology[tech_plastic_processing].effects =
+{
+    {type = unlock_recipe, recipe = plastic_angels},
+    {type = unlock_recipe, recipe = plastic_pipe},
+    {type = unlock_recipe, recipe = plastic_pipe_to_ground}
+}
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_plastic_processing].effects, {type = unlock_recipe, recipe = plastic_pipe .. _straight})
+    table.insert(data_technology[tech_plastic_processing].effects, {type = unlock_recipe, recipe = plastic_pipe .. _elbow})
+    table.insert(data_technology[tech_plastic_processing].effects, {type = unlock_recipe, recipe = plastic_pipe .. _junction})
+end
+
 data_technology[tech_brass_processing].prerequisites = {tech_brass_smelting_1, lubricant}
 data_technology[tech_brass_processing].effects =
 {
@@ -225,6 +293,11 @@ data_technology[tech_brass_processing].effects =
     {type = unlock_recipe, recipe = brass_pipe},
     {type = unlock_recipe, recipe = brass_pipe_to_ground}
 }
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_brass_processing].effects, {type = unlock_recipe, recipe = brass_pipe .. _straight})
+    table.insert(data_technology[tech_brass_processing].effects, {type = unlock_recipe, recipe = brass_pipe .. _elbow})
+    table.insert(data_technology[tech_brass_processing].effects, {type = unlock_recipe, recipe = brass_pipe .. _junction})
+end
 
 data_technology[tech_ceramics].prerequisites = {chemical_science_pack, lubricant}
 data_technology[tech_ceramics].effects =
@@ -236,6 +309,11 @@ data_technology[tech_ceramics].effects =
     {type = unlock_recipe, recipe = ceramic_pipe},
     {type = unlock_recipe, recipe = ceramic_pipe_to_ground}
 }
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_ceramics].effects, {type = unlock_recipe, recipe = ceramic_pipe .. _straight})
+    table.insert(data_technology[tech_ceramics].effects, {type = unlock_recipe, recipe = ceramic_pipe .. _elbow})
+    table.insert(data_technology[tech_ceramics].effects, {type = unlock_recipe, recipe = ceramic_pipe .. _junction})
+end
 data_technology[tech_ceramics].unit.ingredients =
 {
     {automation_science_pack, 1},
@@ -251,6 +329,11 @@ data_technology[tech_titanium_processing].effects =
     {type = unlock_recipe, recipe = titanium_pipe},
     {type = unlock_recipe, recipe = titanium_pipe_to_ground}
 }
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_titanium_processing].effects, {type = unlock_recipe, recipe = titanium_pipe .. _straight})
+    table.insert(data_technology[tech_titanium_processing].effects, {type = unlock_recipe, recipe = titanium_pipe .. _elbow})
+    table.insert(data_technology[tech_titanium_processing].effects, {type = unlock_recipe, recipe = titanium_pipe .. _junction})
+end
 
 data_technology[tech_tungsten_processing].prerequisites = {tech_tungsten_smelting_1}
 data_technology[tech_tungsten_processing].effects =
@@ -259,9 +342,14 @@ data_technology[tech_tungsten_processing].effects =
     {type = unlock_recipe, recipe = tungsten_bearing_ball},
     {type = unlock_recipe, recipe = tungsten_bearing},
     {type = unlock_recipe, recipe = tungsten_pipe},
-    {type = unlock_recipe, recipe = tungsten_pipe_to_ground},
-    {type = unlock_recipe, recipe = tungsten_carbide_plate_2}
+    {type = unlock_recipe, recipe = tungsten_pipe_to_ground}
 }
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_pipe .. _straight})
+    table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_pipe .. _elbow})
+    table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_pipe .. _junction})
+end
+table.insert(data_technology[tech_tungsten_processing].effects, {type = unlock_recipe, recipe = tungsten_carbide_plate_2})
 
 data_technology[tech_nitinol_processing].effects =
 {
@@ -271,6 +359,11 @@ data_technology[tech_nitinol_processing].effects =
     {type = unlock_recipe, recipe = nitinol_pipe},
     {type = unlock_recipe, recipe = nitinol_pipe_to_ground}
 }
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_nitinol_processing].effects, {type = unlock_recipe, recipe = nitinol_pipe .. _straight})
+    table.insert(data_technology[tech_nitinol_processing].effects, {type = unlock_recipe, recipe = nitinol_pipe .. _elbow})
+    table.insert(data_technology[tech_nitinol_processing].effects, {type = unlock_recipe, recipe = nitinol_pipe .. _junction})
+end
 
 data_technology[tech_tungsten_alloy_processing].prerequisites = {tech_tungsten_processing, tech_copper_smelting_2, utility_science_pack}
 data_technology[tech_tungsten_alloy_processing].effects =
@@ -283,6 +376,11 @@ data_technology[tech_tungsten_alloy_processing].effects =
     {type = unlock_recipe, recipe = copper_tungsten_pipe},
     {type = unlock_recipe, recipe = copper_tungsten_pipe_to_ground}
 }
+if settings.startup[setting_flow_control_new].value then
+    table.insert(data_technology[tech_tungsten_alloy_processing].effects, {type = unlock_recipe, recipe = copper_tungsten_pipe .. _straight})
+    table.insert(data_technology[tech_tungsten_alloy_processing].effects, {type = unlock_recipe, recipe = copper_tungsten_pipe .. _elbow})
+    table.insert(data_technology[tech_tungsten_alloy_processing].effects, {type = unlock_recipe, recipe = copper_tungsten_pipe .. _junction})
+end
 data_technology[tech_tungsten_alloy_processing].unit.ingredients =
 {
     {automation_science_pack, 1},

@@ -266,4 +266,15 @@ function Public.recycling_recipe_icons(name_1, name_2)
     }
 end
 
+function Public.recipe_planet_icons(name_1, name_2, name_3, number, name_4)
+    return build_icons
+    {
+        {name_1, 0.500000, {0,0}},
+        {name_2, 0.187500, {10,-10}},
+        {name_3, 0.187500, {-10,-10}},
+        {number, 0.500000, {0,0}},
+        {name_4, 0.187500, {10,10}},
+    }
+end
+
 return Public

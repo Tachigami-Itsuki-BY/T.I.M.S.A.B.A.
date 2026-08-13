@@ -182,14 +182,14 @@ if mods[arig_mods] then
     data_recipe[compression_rocket_fuel].order = f_b
     data_recipe[compression_rocket_fuel].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
-    data_recipe[glass_panel_arig].category = metallurgy
-    data_recipe[glass_panel_arig].subgroup = is_arig_recipe
-    data_recipe[glass_panel_arig].icons = TWO_I(pure_sand_arig, glass_bob)
-    data_recipe[glass_panel_arig].order = g
-    data_recipe[glass_panel_arig].energy_required = 4
-    data_recipe[glass_panel_arig].ingredients = {{type = fluid, name = pure_sand_arig, amount = 120}}
-    data_recipe[glass_panel_arig].results = {{type = item, name = glass_bob, amount = 4}}
-    data_recipe[glass_panel_arig].main_product = glass_bob
+    data_recipe[glass_arig].category = metallurgy
+    data_recipe[glass_arig].subgroup = is_arig_recipe
+    data_recipe[glass_arig].icons = TWO_I(pure_sand_arig, glass_bob)
+    data_recipe[glass_arig].order = g
+    data_recipe[glass_arig].energy_required = 4
+    data_recipe[glass_arig].ingredients = {{type = fluid, name = pure_sand_arig, amount = 120}}
+    data_recipe[glass_arig].results = {{type = item, name = glass_bob, amount = 4}}
+    data_recipe[glass_arig].main_product = glass_bob
 
     data_item[heavy_glass_arig].subgroup = is_arig_recipe
     data_item[heavy_glass_arig].order = h
@@ -806,11 +806,23 @@ if mods[arig_mods] then
     if mods[corrundum_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = corrundum_water_harvesting})
     end
+    if mods[castra_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = castra_water_harvesting})
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = shchierbin_water_harvesting})
+    end
+    if mods[maraxsis_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = maraxsis_water_harvesting})
+    end
     if mods[panglia_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = panglia_water_harvesting})
     end
     if mods[secretas_frozeta_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = frozeta_water_harvesting})
+    end
+    if mods[terrapalus_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = terrapalus_water_harvesting})
     end
     data_technology[arig_water_harvesting].unit.ingredients =
     {

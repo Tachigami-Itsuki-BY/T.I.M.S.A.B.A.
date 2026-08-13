@@ -661,21 +661,6 @@ centrifuge_recipe(centrifuge_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_
 
 data_item_subgroup["bob-assembly-machine"].order = e_a
 
-if data_item[burner_assembling_machine] then
-    data_item[burner_assembling_machine].stack_size = 32
-    data_item[burner_assembling_machine].weight = 31250
-    data_recipe[burner_assembling_machine].energy_required = 1
-    data_recipe[burner_assembling_machine].ingredients =
-    {
-        {type = item, name = iron_gear_wheel, amount = 4},
-        {type = item, name = iron_plate,      amount = 8}
-    }
-    data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
-    bobmods.lib.recipe.update_recycling_recipe({burner_assembling_machine})
-
-    table.insert(data_recipe[assembling_machine_1].ingredients, {type = item, name = burner_assembling_machine, amount = 1})
-end
-
 local assembling_machines =
 {
     {name = assembling_machine_1, crafting_speed = 1, energy_usage = 60},
@@ -709,11 +694,7 @@ local function assembling_recipe(name, gear_wheel, circuit, pipe, assembling, pl
     end
     data_recipe[name].ingredients = ingredients
 end
-if data_item[burner_assembling_machine] then
-    assembling_recipe(assembling_machine_1, iron_gear_wheel,        basic_circuit_board,      iron_pipe,          burner_assembling_machine, iron_plate,                iron_bearing)
-else
-    assembling_recipe(assembling_machine_1, iron_gear_wheel,        basic_circuit_board,      iron_pipe,                                nil, iron_plate,                iron_bearing)
-end
+assembling_recipe(assembling_machine_1, iron_gear_wheel,            basic_circuit_board,      iron_pipe,                                nil, iron_plate,                iron_bearing)
 assembling_recipe(assembling_machine_2, steel_gear_wheel,           electronic_circuit,       steel_pipe,              assembling_machine_1, steel_plate,               steel_bearing)
 assembling_recipe(assembling_machine_3, brass_gear_wheel,           advanced_circuit,         brass_pipe,              assembling_machine_2, brass_plate_bob,           brass_bearing)
 assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_unit,          titanium_pipe,           assembling_machine_3, titanium_plate_bob,        titanium_bearing)
