@@ -886,28 +886,30 @@ end
 
 if mods[maraxsis_mods] then
     local spiderling = "sp-spiderling"
-    data_item_entity[spiderling].subgroup = is_spidertron
-    data_item_entity[spiderling].weight = 1000000
-    data_recipe[spiderling].subgroup = is_spidertron
-    data_recipe[spiderling].energy_required = 4
-    data_recipe[spiderling].ingredients =
-    {
-        {type = item, name = low_density_structure, amount = 32},
-        {type = item, name = rocket_launcher, amount = 1},
-        {type = item, name = exoskeleton_eq_1, amount = 4},
-        {type = item, name = radar_1, amount = 1},
-        {type = item, name = factorian_fish, amount = 1}
-    }
+    if data_item_entity[spiderling] then
+        data_item_entity[spiderling].subgroup = is_spidertron
+        data_item_entity[spiderling].weight = 1000000
+        data_recipe[spiderling].subgroup = is_spidertron
+        data_recipe[spiderling].energy_required = 4
+        data_recipe[spiderling].ingredients =
+        {
+            {type = item, name = low_density_structure, amount = 32},
+            {type = item, name = rocket_launcher, amount = 1},
+            {type = item, name = exoskeleton_eq_1, amount = 4},
+            {type = item, name = radar_1, amount = 1},
+            {type = item, name = factorian_fish, amount = 1}
+        }
 
-    bobmods.lib.recipe.update_recycling_recipe({spiderling})
+        bobmods.lib.recipe.update_recycling_recipe({spiderling})
 
-    data_technology[spiderling].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {military_science_pack, 1},
-        {chemical_science_pack, 1}
-    }
+        data_technology[spiderling].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {military_science_pack, 1},
+            {chemical_science_pack, 1}
+        }
+    end
 end
 
 bobmods.lib.recipe.update_recycling_recipe
