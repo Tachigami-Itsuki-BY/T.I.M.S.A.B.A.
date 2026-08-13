@@ -1,13 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.11.1
+Date: 13.08.2026
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой мод не загружался если Паучок из мода Spidertron Patrols был отключен.
+
+    - [All] Fixed a bug where the mod would not load if Spiderling from the Spidertron Patrols mod was disabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.11.0
 Date: 13.08.2026
   Features:
     - [Mods] Добавлена поддержка Maraxsis: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Addons] Весь функционал мода «Flow Control New» теперь встроен напрямую в модпак. Добавлена поддержка всех труб Наувиса. Этот Аддон может быть включен/отключен в настройках мода.
+    - [Addons] Весь функционал мода «Flow Control New» теперь встроен напрямую в модпак. Добавлена поддержка всех труб. Этот Аддон может быть включен/отключен в настройках мода.
     - [Muluna] Добавлены Алюминиевые Трубы.
 
     - [Mods] Added support for Maraxsis: seamlessly integrated the new planet into the gameplay flow.
-    - [Addons] All the functionality of the "Flow Control New" mod is now integrated directly into the modpack. Added support for all Nauvis pipes. This Addon can be enabled/disabled in the mod settings.
+    - [Addons] All the functionality of the "Flow Control New" mod is now integrated directly into the modpack. Added support for all pipes. This Addon can be enabled/disabled in the mod settings.
     - [Muluna] Added Aluminium Pipes.
 
   Changes:
