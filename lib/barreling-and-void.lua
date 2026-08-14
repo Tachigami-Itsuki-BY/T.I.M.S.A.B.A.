@@ -49,3 +49,10 @@ TIMSABA.void.organics = {}
 TIMSABA.void.void_organics = function(name)
     add_to_list(TIMSABA.void.organics, name)
 end
+
+-- FREEZING
+TIMSABA.void.freezing = {}
+
+TIMSABA.void.freezing_organics = function(name)
+    add_to_list(TIMSABA.void.freezing, name)
+end

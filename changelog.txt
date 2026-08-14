@@ -1,20 +1,52 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.11.3
+Date: 14.08.2026
+  Features:
+    - [All] Добавлена рецепты заморозки и разморозки портящихся предметы. Множитель времени за которое они разморозятся можно настроить в настройках модов.
+
+    - [All] Added freezing and defrosting recipes for perishable items. The defrost time multiplier can be adjusted in the mod settings.
+
+  Changes:
+    - [Arig] Добавлена поддержка новой версии.
+
+    - [Arig] Added support for the new version.
+
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Bob's Modules» был отключен.
+
+    - [All] Fixed a bug where game with mod would not load if the "Bob's Modules" mod was disabled.
+
+  Balancing:
+    - [Secretas&Frozeta] Скорректировано древо исследований модулей.
+
+    - [Secretas&Frozeta] Adjusted the module research tree.
+
+  Locale:
+    - [Rus] Обновлена русская локализация.
+---------------------------------------------------------------------------------------------------
+Version: 1.11.2
+Date: 13.08.2026
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если аддон «Контроль Потоков (Новый)» был отключен.
+
+    - [All] Fixed a bug where game with mod would not load if the "Flow Control (New)" addon was disabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.11.1
 Date: 13.08.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой мод не загружался если Паучок из мода Spidertron Patrols был отключен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если Паучок из мода «Spidertron Patrols» был отключен.
 
-    - [All] Fixed a bug where the mod would not load if Spiderling from the Spidertron Patrols mod was disabled.
+    - [All] Fixed a bug where game with mod would not load if Spiderling from the "Spidertron Patrols" mod was disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.0
 Date: 13.08.2026
   Features:
     - [Mods] Добавлена поддержка Maraxsis: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Addons] Весь функционал мода «Flow Control New» теперь встроен напрямую в модпак. Добавлена поддержка всех труб. Этот Аддон может быть включен/отключен в настройках мода.
+    - [Addons] Весь функционал мода «Flow Control» теперь встроен напрямую в модпак. Добавлена поддержка всех труб. Аддон «Контроль Потоков (Новый)» может быть включен/отключен в настройках мода.
     - [Muluna] Добавлены Алюминиевые Трубы.
 
     - [Mods] Added support for Maraxsis: seamlessly integrated the new planet into the gameplay flow.
-    - [Addons] All the functionality of the "Flow Control New" mod is now integrated directly into the modpack. Added support for all pipes. This Addon can be enabled/disabled in the mod settings.
+    - [Addons] All the functionality of the "Flow Control" mod is now integrated directly into the modpack. Added support for all pipes. Addon "Flow Control (New)" can be enabled/disabled in the mod settings.
     - [Muluna] Added Aluminium Pipes.
 
   Changes:
@@ -116,11 +148,11 @@ Date: 08.08.2026
     - [Mods] Added support for Shchierbin: seamlessly integrated the new planet into the gameplay flow.
 
   Changes:
-    - [All] Обновлена настройка «Ребаланс конвейеров и труб»: теперь она влияет только на фиксацию дальности подземных конвейеров и труб.
+    - [Addons] Обновлена настройка «Ребаланс конвейеров и труб»: теперь она влияет только на фиксацию дальности подземных конвейеров и труб.
     - [All] Теперь все конвейеры и трубы корректно настраиваются с помощью мода Bob's Logistics.
     - [All] Базовые скорости логистики переведены со степеней двойки (8/16/32...) на ванильные значения (7.5/15/30...). Скорость крафта всех производственных зданий и теплотворность топлива также пропорционально скорректированы. Это полностью устраняет «дребезг» счетчиков и микро-зазоры на лентах, вызванные ограничениями игрового движка, сохраняя при этом все идеальные пропорции фабрик.
 
-    - [All] Updated the "Rebalance Belts and Pipes" setting: it now only affects the maximum range lock for underground belts and pipes.
+    - [Addons] Updated the "Rebalance Belts and Pipes" setting: it now only affects the maximum range lock for underground belts and pipes.
     - [All] All Belts and Pipes are now properly configurable through the Bob's Logistics mod.
     - [All] Logistic base speeds have been shifted from powers of two (8/16/32...) to tick-accurate values (7.5/15/30...). Processing speeds for all production buildings and fuel values have been proportionally adjusted. This completely eliminates fluctuating throughput counters and micro-gaps on belts caused by engine limitations, while fully preserving all perfect factory ratios.
 
@@ -489,7 +521,7 @@ Date: 15.06.2026
 Version: 1.4.3
 Date: 11.06.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой модпак не загружался, если мод «Muluna, Moon of Nauvis» был отключен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Muluna, Moon of Nauvis» был отключен.
 
     - [All] Fixed a bug where the modpack would not load if the "Muluna, Moon of Nauvis" mod was disabled.
 ---------------------------------------------------------------------------------------------------
@@ -513,10 +545,10 @@ Date: 11.06.2026
 
   Scripting:
     - [All] Добавлен код для автоматического добавления новых Топливных Категорий в Здания и Транспорт.
-    - [All] Добавлен код для автоматического Удаления каких либо Рецептов если они ссылаются на ранее Удалённые Прототипы в модпаке.
+    - [All] Добавлен код для автоматического Удаления каких либо Рецептов, если они ссылаются на ранее Удалённые Прототипы.
 
     - [All] Added code to automatically add new Fuel Categories to Buildings and Vehicles.
-    - [All] Added code to automatically Delete any Recipes if they refer to a previously Removed Prototype in the modpack.
+    - [All] Added code to automatically Delete any Recipes if they refer to a previously Removed Prototype.
 
   Modding:
     - [Mods] Мод «Bob's Personal Equipment mod» переведён в опциональную зависимость.
@@ -549,11 +581,11 @@ Date: 10.06.2026
     - [All] Added new item and recipe: Selenium powder.
 
   Bugfixes:
-    - [Addons] Исправлена ошибка, из-за которой модпак не загружался, если дополнение «Ранняя Печь для Спекания» было отключено.
-    - [Mods] Исправлена ошибка, из-за которой модпак не загружался, если мод «Panglia Planet» был отключено, а мод «Solar Productivity» был включен.
+    - [Addons] Исправлена ошибка, из-за которой игра с модом не загружался, если аддон «Ранняя Печь для Спекания» было отключено.
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Panglia Planet» был отключено, а мод «Solar Productivity» был включен.
 
-    - [Addons] Fixed a bug where the modpack would not load if the "Early Sintering Oven" addon was disabled.
-    - [Mods] Fixed a bug where the modpack would not load if the "Panglia Planet" mod was disabled and the "Solar Productivity" mod was enabled.
+    - [Addons] Fixed a bug where game with mod would not load if the "Early Sintering Oven" addon was disabled.
+    - [Mods] Fixed a bug where game with mod would not load if the "Panglia Planet" mod was disabled and the "Solar Productivity" mod was enabled.
 
   Balancing:
     - [Moshine] У Солнечный Панелей на Гипер Ячейках и Аккумуляторов на Гипер Ячейках скорректированы энергетические параметры.
@@ -582,9 +614,9 @@ Date: 10.06.2026
 Version: 1.3.2
 Date: 08.06.2026
   Bugfixes:
-    - [All] Исправлена ​​ошибка, из-за которой модпак не загружался, если дополнение «Ранняя Печь для Спекания» было отключено, а мод «Panglia Planet» был включен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если аддон «Ранняя Печь для Спекания» было отключено, а мод «Panglia Planet» был включен.
 
-    - [All] Fixed a bug where the modpack would not load if the "Early Sintering Oven" addon was disabled and the "Panglia Planet" mod was enabled.
+    - [All] Fixed a bug where game with mod would not load if the "Early Sintering Oven" addon was disabled and the "Panglia Planet" mod was enabled.
 
   Balancing:
     - [Moshine] AI Модули теперь имеют линейную прогрессию скорости, а не геометрическую.
@@ -1025,13 +1057,13 @@ Date: 18.05.2026
 Version: 1.0.4
 Date: 17.05.2026
   Bugfixes:
-    - [Bob's Logistics] Исправлена ошибка, из-за которой модпак не запускался, если Конвейеры Т0 из мода «Bob's Logistics» были отключены.
-    - [Bob's Logistics] Исправлена ошибка, из-за которой модпак не запускался, если Компонеты для Дронов из мода «Bob's Logistics» были отключены.
-    - [Bob's Power] Исправлена ошибка, из-за которой модпак не запускался, если Электрические Столбы Т2-Т4 из мода «Bob's Power» были отключены.
+    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружался, если Конвейеры Т0 из мода «Bob's Logistics» были отключены.
+    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружался, если Компонеты для Дронов из мода «Bob's Logistics» были отключены.
+    - [Bob's Power] Исправлена ошибка, из-за которой игра с модом не загружался, если Электрические Столбы Т2-Т4 из мода «Bob's Power» были отключены.
 
-    - [Bob's Logistics] Fixed a bug where the modpack would not launch if T0 Belts from "Bob's Logistics" mod were disabled.
-    - [Bob's Logistics] Fixed a bug where the modpack would not launch if Drone Components from "Bob's Logistics" mod were disabled.
-    - [Bob's Power] Fixed a bug where the modpack would not launch if T2-T4 Electric Poles from "Bob's Power" mod were disabled.
+    - [Bob's Logistics] Fixed a bug where game with mod would not load if the T0 Belts from "Bob's Logistics" mod were disabled.
+    - [Bob's Logistics] Fixed a bug where game with mod would not load if the Drone Components from "Bob's Logistics" mod were disabled.
+    - [Bob's Power] Fixed a bug where game with mod would not load if the T2-T4 Electric Poles from "Bob's Power" mod were disabled.
 
   Graphics:
     - [Addons] Исправлено некорректное отображение остатков после уничтожения зданий х2 и х4. (Частично. Нужна помощь в решение проблем)
@@ -1041,23 +1073,29 @@ Date: 17.05.2026
 Version: 1.0.3
 Date: 17.05.2026
   Features:
-    - [Mods/Addons] Мод «Modular Buildings Redux» добавлен в список несовместимых, а весь его функционал по оптимизации генераторов (с поддержкой Space Age, Quality и Bob's) теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. This Addon can be enabled/disabled in the mod settings.
+    - [Addons] Весь функционал мода «Modular Buildings Redux» теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Аддон «Мульти Здания» может быть включен/отключен в настройках мода.
 
-    - [Mods/Addons] Added "Modular Buildings Redux" mod to incompatible, and all of its generator optimization functionality (with Space Age, Quality, and Bob's support) is now built directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. This function is an Addon and can be enabled/disabled in the mod settings.
+    - [Addons] All the functionality of the "Modular Buildings Redux" mod is now integrated directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. Addon «Multi Building» can be enabled/disabled in the mod settings.
 
   Bugfixes:
-    - [Bob's Tech] Исправлена ошибка, из-за которой модпак не запускался, если мод «Bob's Tech» был отключен.
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Bob's Tech» был отключен.
     - [All] Исправлена ошибка, из-за которой в Бойлер Т6 отсутствовала возможно загружать топливо.
 
-    - [Bob's Tech] Fixed a bug where the modpack would not launch if the "Bob's Tech" mod was disabled.
+    - [Mods] Fixed a bug where game with mod would not load if the "Bob's Tech" mod was disabled.
     - [All] Fixed a bug where it was not possible to load fuel into the T6 Boiler.
+
+  Modding:
+    - [Mods] Мод «Modular Buildings Redux» добавлен в список несовместимых.
+
+    - [Mods] Added "Modular Buildings Redux" mod to incompatible.
+
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 16.05.2026
   Bugfixes:
-    - [Muluna] Исправлена ошибка, из-за которой модпак не запускался, если мод «Muluna, Moon of Nauvis» был отключен.
+    - [Muluna] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Muluna, Moon of Nauvis» был отключен.
 
-    - [Muluna] Fixed a bug where the modpack would not launch if "Muluna, Moon of Nauvis" mod were disabled.
+    - [Muluna] Fixed a bug where game with mod would not load if the "Muluna, Moon of Nauvis" mod were disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 16.05.2026
@@ -1106,7 +1144,7 @@ Date: 15.05.2026
           4. Графитовый Блок.
           5. Графитовая Пластина.
           6. Графитовый Электрод.
-          7. Графитовые Крошка.
+          7. Графитовая Крошка.
           8. Углеродная Нанотрубка.
           9. Оксид Графена.
           10. Графен.
@@ -1213,7 +1251,6 @@ Date: 15.05.2026
     - Added new technologies.
 
   Balancing:
-    - Переработка рецептов: стоимость крафта и характеристики строений Muluna синхронизированы с экономикой сборки.
     - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
     - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
     - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно-Цинковый Аккумулятор → Графеновый Аккумулятор.
@@ -1227,7 +1264,6 @@ Date: 15.05.2026
     - В некоторых технологиях изменены предварительные условия и стоимость исследования.
     - Возвращена Вольфрамовая Шестерня.
 
-    - Recipe Overhaul: Muluna crafting costs and building stats are now synchronized with the modpack's economy.
     - Replaced an ingredient in the Electromagnetic Science Pack recipe: T3 High Capacity Accumulator → T4 High Capacity Accumulator.
     - Replaced an ingredient in the Big Mining Drill: T5 Electric Mining Drill → T6 Electric Mining Drill.
     - Replaced an ingredient in the Supercapacitor recip: Silver Zinc Battery → Graphene Battery.
@@ -1259,9 +1295,9 @@ Date: 15.05.2026
 Version: 0.1.3
 Date: 13.05.2026
   Bugfixes:
-    - Исправлена ​​ошибка, из-за которой модпак не запускался, если Жидкотопливные Генераторы из мода «Bob's Power» были отключены.
+    - Исправлена ошибка, из-за которой игра с модом не загружался, если Жидкотопливные Генераторы из мода «Bob's Power» были отключены.
 
-    - Fixed a bug where the modpack would not launch if Fluid Burning Generators from "Bob's Power" were disabled.
+    - Fixed a bug where game with mod would not load if the Fluid Burning Generators from "Bob's Power" were disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 12.05.2026

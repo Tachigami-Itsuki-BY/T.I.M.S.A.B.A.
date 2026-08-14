@@ -7,6 +7,7 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     data_item[sulfuric_bacteria].stack_size = 200
     data_item[sulfuric_bacteria].spoil_ticks = 5 * minute
     data_item[sulfuric_bacteria].spoil_result = spoilage
+    TIMSABA.void.freezing_organics(sulfuric_bacteria)
 
     local sulfuric_bacteria_pruning = "sulfuric-bacteria-pruning"
     data_recipe[sulfuric_bacteria_pruning].subgroup = is_vulcanus_sulfuric

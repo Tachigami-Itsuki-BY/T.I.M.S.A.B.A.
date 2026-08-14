@@ -18,7 +18,7 @@ local tech_galium_smelting_2 = "galium-smelting-2"
 local tech_galium_smelting_3 = "galium-smelting-3"
 local tech_arsenic_processing = "arsenic-processing"
 tech_arsenic_synthesis = "arsenic-synthesis"
-local tech_aquilo_cryogenics = "aquilo-cryogenics"
+tech_aquilo_cryogenics = "aquilo-cryogenics"
 data:extend
 ({
     -- ANTIMONITE
@@ -664,3 +664,38 @@ data:extend
 table.insert(data_technology[tech_molybdenum_smelting_3].prerequisites, planet_discovery_aquilo)
 
 -- AQUILO CRYOGENIC CASTING
+
+
+-- AQUILO
+if settings.startup[setting_no_spoilage].value == false then
+    tech_aquilo_freezing = "aquilo-freezing"
+    data:extend
+    ({
+        {
+            type = technology,
+            name = tech_aquilo_freezing,
+            icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/aquilo-freezing.png",
+            icon_size = 256,
+            prerequisites = {cryogenic_science_pack},
+            effects = {},
+            unit =
+            {
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {cryogenic_science_pack, 1}
+                },
+                time = 30
+            }
+        }
+    })
+end

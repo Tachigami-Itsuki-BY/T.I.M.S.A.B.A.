@@ -7,6 +7,7 @@ setting_dynamic_underground_belts = "setting-dynamic-underground-belts"
 setting_dynamic_pipe_to_ground = "setting-dynamic-pipe-to-ground"
 setting_rebalance_belts_and_pipes = "setting-rebalance-belts-and-pipes"
 setting_flow_control_new = "setting-flow-control-new"
+setting_defrost_multiplier = "setting-defrost-multiplier"
 
 setting_horogon_extra_science_packs = "setting-za-horogon-extra-science-packs"
 setting_horogon_high_tier_recipes = "setting-zb-horogon-high-tier-recipes"

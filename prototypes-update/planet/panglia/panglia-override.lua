@@ -115,6 +115,7 @@ if mods[panglia_mods] then
     data_item[cloned_specimen_body_0].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_0].order = i
     data_item[cloned_specimen_body_0].stack_size = 200
+    TIMSABA.void.freezing_organics(cloned_specimen_body_0)
     data_recipe[cloned_specimen_body_0].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_0].icons = THREE_D_I(bioflux, uranium_235, datacell_dna_sequenced, cloned_specimen_body_0, uranium_238, datacell_dna_raw)
     data_recipe[cloned_specimen_body_0].order = i
@@ -123,6 +124,7 @@ if mods[panglia_mods] then
     data_item[cloned_specimen_body_1].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_1].order = j
     data_item[cloned_specimen_body_1].stack_size = 200
+    TIMSABA.void.freezing_organics(cloned_specimen_body_1)
     data_recipe[cloned_specimen_body_1].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_1].icons = THREE_R_I(cloned_specimen_body_0, cloned_specimen_body_1, spoilage)
     data_recipe[cloned_specimen_body_1].order = j
@@ -131,6 +133,7 @@ if mods[panglia_mods] then
     data_item[cloned_specimen_body_2].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_2].order = k
     data_item[cloned_specimen_body_2].stack_size = 200
+    TIMSABA.void.freezing_organics(cloned_specimen_body_2)
     data_recipe[cloned_specimen_body_2].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_2].icons = THREE_R_I(cloned_specimen_body_1, cloned_specimen_body_2, spoilage)
     data_recipe[cloned_specimen_body_2].order = k
@@ -139,10 +142,12 @@ if mods[panglia_mods] then
     data_item[cloned_specimen_body_3_genius].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_3_genius].order = l
     data_item[cloned_specimen_body_3_genius].stack_size = 200
+    TIMSABA.void.freezing_organics(cloned_specimen_body_3_genius)
 
     data_item[cloned_specimen_body_3].subgroup = is_panglia_recipe
     data_item[cloned_specimen_body_3].stack_size = 200
     data_item[cloned_specimen_body_3].order = m
+    TIMSABA.void.freezing_organics(cloned_specimen_body_3)
     data_recipe[cloned_specimen_body_3].subgroup = is_panglia_recipe
     data_recipe[cloned_specimen_body_3].icons = THREE_R_I(cloned_specimen_body_2, cloned_specimen_body_3_genius, cloned_specimen_body_3)
     data_recipe[cloned_specimen_body_3].order = m

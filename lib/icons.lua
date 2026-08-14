@@ -19,8 +19,10 @@ R_P_I = require("lib.generator-icons").recipe_planet_icon
 BUILDING_R_I = require("lib.generator-icons").building_recipe_icon
 RECYCLING_I = require("lib.generator-icons").recycling_recipe_icon
 GALAXY_I = require("lib.generator-icons").galaxy_icon
-STONKS_I = require("lib.generator-icons").stonks_icon
 B_F_L = require("lib.generator-icons").bearing_fluid_icon
+STONKS_I = require("lib.generator-icons").stonks_icon
+Freezed_I = require("lib.generator-icons").freezed_icon
+Defrosting_I = require("lib.generator-icons").defrosting_icon
 
 BUILDING_R_IS = require("lib.generator-icons-update").building_recipe_icons
 TWO_IS = require("lib.generator-icons-update").double_icons

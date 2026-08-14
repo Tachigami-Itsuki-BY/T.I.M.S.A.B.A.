@@ -20,11 +20,13 @@ data_item[raw_meat].subgroup = is_bio_fish_breeding
 data_item[raw_meat].order = c
 data_item[raw_meat].spoil_ticks = 90 * minute
 data_item[raw_meat].spoil_result = spoilage
+TIMSABA.void.freezing_organics(raw_meat)
 
 data_item[fish_pulp].subgroup = is_bio_fish_breeding
 data_item[fish_pulp].order = d
 data_item[fish_pulp].spoil_ticks = 90 * minute
 data_item[fish_pulp].spoil_result = spoilage
+TIMSABA.void.freezing_organics(fish_pulp)
 
 data_fluid[raw_fish_oil].subgroup = is_bio_fish_breeding
 data_fluid[raw_fish_oil].order = e
@@ -42,6 +44,7 @@ data_capsule[factorian_fish].subgroup = is_bio_fish
 data_capsule[factorian_fish].order = a
 data_capsule[factorian_fish].stack_size = 200
 data_capsule[factorian_fish].spoil_ticks = 3 * hour
+TIMSABA.void.freezing_organics(factorian_fish)
 data_recipe[factorian_fish].subgroup = is_bio_fish
 data_recipe[factorian_fish].order = a
 data_recipe[factorian_fish].energy_required = 64
@@ -52,6 +55,7 @@ data_capsule[levac_fish].order = b
 data_capsule[levac_fish].stack_size = 200
 data_capsule[levac_fish].spoil_ticks = 3 * hour
 data_capsule[levac_fish].spoil_result = spoilage
+TIMSABA.void.freezing_organics(levac_fish)
 data_recipe[levac_fish].subgroup = is_bio_fish
 data_recipe[levac_fish].order = b
 data_recipe[levac_fish].energy_required = 64
@@ -67,6 +71,7 @@ data_capsule[dorflurp_jellyfish].order = c
 data_capsule[dorflurp_jellyfish].stack_size = 200
 data_capsule[dorflurp_jellyfish].spoil_ticks = 3 * hour
 data_capsule[dorflurp_jellyfish].spoil_result = spoilage
+TIMSABA.void.freezing_organics(dorflurp_jellyfish)
 data_recipe[dorflurp_jellyfish].subgroup = is_bio_fish
 data_recipe[dorflurp_jellyfish].order = c
 data_recipe[dorflurp_jellyfish].energy_required = 64
@@ -82,6 +87,7 @@ data_capsule[santa_ray].order = d
 data_capsule[santa_ray].stack_size = 200
 data_capsule[santa_ray].spoil_ticks = 3 * hour
 data_capsule[santa_ray].spoil_result = spoilage
+TIMSABA.void.freezing_organics(santa_ray)
 data_recipe[santa_ray].subgroup = is_bio_fish
 data_recipe[santa_ray].order = d
 data_recipe[santa_ray].energy_required = 64
@@ -247,6 +253,7 @@ data_item_subgroup["angels-bio-puffer-egg"].order = d
 
 data_item[gaseous_puffer_egg].spoil_ticks = 3 * hour
 data_item[gaseous_puffer_egg].spoil_result = spoilage
+TIMSABA.void.freezing_organics(gaseous_puffer_egg)
 data_recipe[gaseous_puffer_egg].energy_required = 64
 data_recipe[gaseous_puffer_egg].ingredients[2].amount = 4
 data_recipe[gaseous_puffer_egg].ingredients[3].amount = 30
@@ -256,6 +263,7 @@ data_recipe[gaseous_puffer_egg].reset_freshness_on_craft = true
 
 data_item[rancid_puffer_egg].spoil_ticks = 3 * hour
 data_item[rancid_puffer_egg].spoil_result = spoilage
+TIMSABA.void.freezing_organics(rancid_puffer_egg)
 data_recipe[rancid_puffer_egg].energy_required = 64
 data_recipe[rancid_puffer_egg].ingredients[2].amount = 4
 data_recipe[rancid_puffer_egg].ingredients[3].amount = 30
@@ -265,6 +273,7 @@ data_recipe[rancid_puffer_egg].reset_freshness_on_craft = true
 
 data_item[blazing_puffer_egg].spoil_ticks = 3 * hour
 data_item[blazing_puffer_egg].spoil_result = spoilage
+TIMSABA.void.freezing_organics(blazing_puffer_egg)
 data_recipe[blazing_puffer_egg].energy_required = 64
 data_recipe[blazing_puffer_egg].ingredients[2].amount = 4
 data_recipe[blazing_puffer_egg].ingredients[3].amount = 30
@@ -274,6 +283,7 @@ data_recipe[blazing_puffer_egg].reset_freshness_on_craft = true
 
 data_item[acidic_puffer_egg].spoil_ticks = 3 * hour
 data_item[acidic_puffer_egg].spoil_result = spoilage
+TIMSABA.void.freezing_organics(acidic_puffer_egg)
 data_recipe[acidic_puffer_egg].energy_required = 64
 data_recipe[acidic_puffer_egg].ingredients[2].amount = 4
 data_recipe[acidic_puffer_egg].ingredients[3].amount = 30
@@ -283,6 +293,7 @@ data_recipe[acidic_puffer_egg].reset_freshness_on_craft = true
 
 data_item[corrosive_puffer_egg].spoil_ticks = 3 * hour
 data_item[corrosive_puffer_egg].spoil_result = spoilage
+TIMSABA.void.freezing_organics(corrosive_puffer_egg)
 data_recipe[corrosive_puffer_egg].energy_required = 64
 data_recipe[corrosive_puffer_egg].ingredients[2].amount = 4
 data_recipe[corrosive_puffer_egg].ingredients[3].amount = 30
@@ -296,30 +307,35 @@ data_item_subgroup[is_puffer_1].order = d_a
 
 data_item[gaseous_puffer].spoil_ticks = 6 * hour
 data_item[gaseous_puffer].spoil_result = spoilage
+TIMSABA.void.freezing_organics(gaseous_puffer)
 data_recipe[gaseous_puffer].icons = THREE_D_I(gaseous_puffer_egg, nil, nil, puffer_egg_shell, gaseous_puffer, rancid_puffer)
 data_recipe[gaseous_puffer].energy_required = 8
 data_recipe[gaseous_puffer].reset_freshness_on_craft = true
 
 data_item[rancid_puffer].spoil_ticks = 6 * hour
 data_item[rancid_puffer].spoil_result = spoilage
+TIMSABA.void.freezing_organics(rancid_puffer)
 data_recipe[rancid_puffer].icons = THREE_D_I(rancid_puffer_egg, nil, nil, puffer_egg_shell, rancid_puffer, gaseous_puffer)
 data_recipe[rancid_puffer].energy_required = 8
 data_recipe[rancid_puffer].reset_freshness_on_craft = true
 
 data_item[blazing_puffer].spoil_ticks = 6 * hour
 data_item[blazing_puffer].spoil_result = spoilage
+TIMSABA.void.freezing_organics(blazing_puffer)
 data_recipe[blazing_puffer].icons = THREE_D_I(blazing_puffer_egg, nil, nil, puffer_egg_shell, blazing_puffer, gaseous_puffer)
 data_recipe[blazing_puffer].energy_required = 8
 data_recipe[blazing_puffer].reset_freshness_on_craft = true
 
 data_item[acidic_puffer].spoil_ticks = 6 * hour
 data_item[acidic_puffer].spoil_result = spoilage
+TIMSABA.void.freezing_organics(acidic_puffer)
 data_recipe[acidic_puffer].icons = THREE_D_I(acidic_puffer_egg, nil, nil, puffer_egg_shell, acidic_puffer, gaseous_puffer)
 data_recipe[acidic_puffer].energy_required = 8
 data_recipe[acidic_puffer].reset_freshness_on_craft = true
 
 data_item[corrosive_puffer].spoil_ticks = 6 * hour
 data_item[corrosive_puffer].spoil_result = spoilage
+TIMSABA.void.freezing_organics(corrosive_puffer)
 data_recipe[corrosive_puffer].icons = THREE_D_I(corrosive_puffer_egg, nil, nil, puffer_egg_shell, corrosive_puffer, gaseous_puffer)
 data_recipe[corrosive_puffer].energy_required = 8
 data_recipe[corrosive_puffer].reset_freshness_on_craft = true
@@ -594,6 +610,7 @@ data_item[biter_small_egg].spoil_to_trigger_result =
         }
     }
 }
+TIMSABA.void.freezing_organics(biter_small_egg)
 data_recipe[biter_small_egg].category = organic_assembling
 data_recipe[biter_small_egg].subgroup = is_biter_1
 data_recipe[biter_small_egg].icons = TWO_I(blazing_puffer_egg, biter_small_egg)
@@ -604,6 +621,7 @@ data_recipe[biter_small_egg].reset_freshness_on_craft = true
 data_item[biter_small].order = b
 data_item[biter_small].spoil_ticks = 3 * hour
 data_item[biter_small].spoil_result = spoilage
+TIMSABA.void.freezing_organics(biter_small)
 data_recipe[biter_small].icons = TWO_I(biter_small_egg, biter_small)
 data_recipe[biter_small].order = b
 data_recipe[biter_small].energy_required = 64
@@ -620,6 +638,7 @@ data_recipe[biter_small_keeping].reset_freshness_on_craft = true
 data_item[biter_queen_small].order = c
 data_item[biter_queen_small].spoil_ticks = 3 * hour
 data_item[biter_queen_small].spoil_result = spoilage
+TIMSABA.void.freezing_organics(biter_queen_small)
 
 local biter_small_breeding = "angels-biter-small-breeding"
 data_recipe[biter_small_breeding].order = c_a
@@ -699,6 +718,7 @@ data_item[biter_medium_egg].spoil_to_trigger_result =
         }
     }
 }
+TIMSABA.void.freezing_organics(biter_medium_egg)
 data_recipe[biter_medium_egg].category = organic_assembling
 data_recipe[biter_medium_egg].subgroup = is_biter_2
 data_recipe[biter_medium_egg].icons = TWO_D_I(acidic_puffer_egg, crystal_splinter, biter_medium_egg)
@@ -710,6 +730,7 @@ data_item[biter_medium].subgroup = is_biter_2
 data_item[biter_medium].order = b
 data_item[biter_medium].spoil_ticks = 6 * hour
 data_item[biter_medium].spoil_result = spoilage
+TIMSABA.void.freezing_organics(biter_medium)
 data_recipe[biter_medium].subgroup = is_biter_2
 data_recipe[biter_medium].icons = TWO_I(biter_medium_egg, biter_medium)
 data_recipe[biter_medium].order = b
@@ -729,6 +750,7 @@ data_item[biter_queen_medium].subgroup = is_biter_2
 data_item[biter_queen_medium].order = c
 data_item[biter_queen_medium].spoil_ticks = 6 * hour
 data_item[biter_queen_medium].spoil_result = spoilage
+TIMSABA.void.freezing_organics(biter_queen_medium)
 
 local biter_medium_breeding = "angels-biter-medium-breeding"
 data_recipe[biter_medium_breeding].subgroup = is_biter_2
@@ -764,7 +786,7 @@ data_recipe[biter_queen_medium_butchering].reset_freshness_on_craft = true
 -- BIG BITER
 data_item[biter_big_egg].subgroup = is_biter_3
 data_item[biter_big_egg].order = a
-data_item[biter_big_egg].spoil_ticks = 60 * minute
+data_item[biter_big_egg].spoil_ticks = 1 * hour
 data_item[biter_big_egg].spoil_to_trigger_result =
 {
     items_per_trigger = 1,
@@ -809,6 +831,7 @@ data_item[biter_big_egg].spoil_to_trigger_result =
         }
     }
 }
+TIMSABA.void.freezing_organics(biter_big_egg)
 data_recipe[biter_big_egg].category = organic_assembling
 data_recipe[biter_big_egg].subgroup = is_biter_3
 data_recipe[biter_big_egg].icons = TWO_D_I(corrosive_puffer_egg, crystal_shard, biter_big_egg)
@@ -818,8 +841,9 @@ data_recipe[biter_big_egg].reset_freshness_on_craft = true
 
 data_item[biter_big].subgroup = is_biter_3
 data_item[biter_big].order = b
-data_item[biter_big].spoil_ticks = 540 * minute
+data_item[biter_big].spoil_ticks = 9 * hour
 data_item[biter_big].spoil_result = spoilage
+TIMSABA.void.freezing_organics(biter_big)
 data_recipe[biter_big].subgroup = is_biter_3
 data_recipe[biter_big].icons = TWO_I(biter_big_egg, biter_big)
 data_recipe[biter_big].order = b
@@ -837,8 +861,9 @@ data_recipe[biter_big_keeping].reset_freshness_on_craft = true
 
 data_item[biter_queen_big].subgroup = is_biter_3
 data_item[biter_queen_big].order = c
-data_item[biter_queen_big].spoil_ticks = 540 * minute
+data_item[biter_queen_big].spoil_ticks = 9 * hour
 data_item[biter_queen_big].spoil_result = spoilage
+TIMSABA.void.freezing_organics(biter_queen_big)
 
 local biter_big_breeding = "angels-biter-big-breeding"
 data_recipe[biter_big_breeding].subgroup = is_biter_3
@@ -892,8 +917,9 @@ data_recipe[alien_goo].icons = TWO_I(alien_bacteria, alien_goo)
 data_recipe[alien_goo].energy_required = 4
 data_recipe[alien_goo].results = {{type = fluid, name = alien_goo, amount = 15}}
 
-data_item[alien_meat].spoil_ticks = 60 * minute
+data_item[alien_meat].spoil_ticks = 1 * hour
 data_item[alien_meat].spoil_result = alien_bacteria
+TIMSABA.void.freezing_organics(alien_meat)
 data_recipe[alien_meat].category = angels_liquifying
 data_recipe[alien_meat].icons = THREE_I(raw_meat, alien_goo, alien_meat)
 data_recipe[alien_meat].ingredients[1].amount = 15

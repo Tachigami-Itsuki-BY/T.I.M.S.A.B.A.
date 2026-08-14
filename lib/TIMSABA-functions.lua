@@ -410,7 +410,8 @@ function TIMSABA.functions.create_items(list)
         data:extend
         ({
             {
-                localised_description = items.localised_description,
+                localised_name = items.localised_name,
+                localised_description = items.localised_description, -- localised_description = show_formula and {chemical_formula, ""} or nil,
                 type = item,
                 name = items.name,
                 subgroup = items.subgroup,
@@ -445,12 +446,13 @@ function TIMSABA.functions.create_fluids(list)
         ({
             {
                 localised_name = fluids.localised_name,
-                localised_description = fluids.localised_description,
+                localised_description = fluids.localised_description, -- localised_description = show_formula and {chemical_formula, ""} or nil,
                 type = fluid,
                 name = fluids.name,
                 subgroup = fluids.subgroup,
                 order = fluids.order,
                 icon = fluids.icon or error_png, -- if not sting "icon" then used "error_png"
+                icon_size = fluids.icon_size or 64,
 
                 default_temperature = fluids.default_temperature or 0,
                 max_temperature = fluids.max_temperature or 0,
@@ -471,6 +473,7 @@ function TIMSABA.functions.create_recipes(list)
         ({
             {
                 localised_name = recipes.localised_name,
+                localised_description = recipes.localised_description,
                 type = recipe,
                 name = recipes.name,
                 category = recipes.category,
@@ -498,6 +501,8 @@ function TIMSABA.functions.create_buildings(list)
         data:extend
         ({
             {
+                localised_name = buildings.localised_name,
+                localised_description = buildings.localised_description,
                 type = item,
                 name = buildings.name,
                 subgroup = buildings.subgroup,
@@ -509,6 +514,7 @@ function TIMSABA.functions.create_buildings(list)
             },
             {
                 localised_name = buildings.localised_name,
+                localised_description = buildings.localised_description,
                 type = recipe,
                 name = buildings.name,
                 category = crafting,
@@ -530,6 +536,7 @@ function TIMSABA.functions.create_buildings(list)
             ({
                 buildings.base_prototype,
                 {
+                    localised_name = buildings.localised_name,
                     localised_description = buildings.localised_description,
                     name = buildings.name,
                     subgroup = buildings.subgroup,

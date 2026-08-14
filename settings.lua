@@ -50,6 +50,14 @@ data:extend
         name = "setting-flow-control-new",
         setting_type = startup,
         default_value = false
+    },
+    {
+        type = double_setting,
+        name = "setting-defrost-multiplier",
+        setting_type = startup,
+        default_value = 2,
+        minimum_value = 1,
+        maximum_value = 720 -- if 12 hour then 1 year
     }
 })
 

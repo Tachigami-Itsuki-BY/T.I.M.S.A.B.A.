@@ -114,6 +114,7 @@ if mods[maraxsis_mods] then
     data_capsule[tropical_fish_maraxsis].order = e
     data_capsule[tropical_fish_maraxsis].stack_size = 200
     data_capsule[tropical_fish_maraxsis].spoil_ticks = 3 * hour
+    TIMSABA.void.freezing_organics(tropical_fish_maraxsis)
 
     local fish_food = "maraxsis-fish-food"
     data_item[fish_food].subgroup = is_maraxsis_recipe
@@ -747,4 +748,6 @@ if mods[maraxsis_mods] then
     if mods[moshine_mods] then
         add_recipe_for_promethium_productivity(promethium_ore)
     end
+
+    table.insert(data_technology[quantum_processor].prerequisites, hydraulic_science_pack)
 end

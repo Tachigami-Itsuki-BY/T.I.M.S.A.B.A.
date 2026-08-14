@@ -216,9 +216,11 @@ if mods[paracelsin_mods] then
     data_pipe_to_ground[galvanized_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48
     data_pipe_to_ground[galvanized_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_galvanized_pipe_to_ground
 
-    data_storage_tank[galvanized_pipe .. _straight].localised_description = {"entity-description." .. galvanized_storage_tank}
-    data_storage_tank[galvanized_pipe .. _elbow].localised_description = {"entity-description." .. galvanized_storage_tank}
-    data_storage_tank[galvanized_pipe .. _junction].localised_description = {"entity-description." .. galvanized_storage_tank}
+    if settings.startup[setting_flow_control_new].value then
+        data_storage_tank[galvanized_pipe .. _straight].localised_description = {"entity-description." .. galvanized_storage_tank}
+        data_storage_tank[galvanized_pipe .. _elbow].localised_description = {"entity-description." .. galvanized_storage_tank}
+        data_storage_tank[galvanized_pipe .. _junction].localised_description = {"entity-description." .. galvanized_storage_tank}
+    end
 
     data_item[galvanized_storage_tank].subgroup = is_paracelsin_logistics
     data_item[galvanized_storage_tank].order = x
@@ -432,16 +434,26 @@ if mods[paracelsin_mods] then
         {interstellar_science_pack, 1}
     }
 
-    data_technology[tech_galvanized_piping].effects =
-    {
-        {type = unlock_recipe, recipe = galvanized_pipe},
-        {type = unlock_recipe, recipe = galvanized_pipe_to_ground},
-        {type = unlock_recipe, recipe = galvanized_pipe .. _elbow},
-        {type = unlock_recipe, recipe = galvanized_pipe .. _junction},
-        {type = unlock_recipe, recipe = galvanized_pipe .. _straight},
-        {type = unlock_recipe, recipe = galvanized_storage_tank},
-        {type = unlock_recipe, recipe = galvanized_pump}
-    }
+    if settings.startup[setting_flow_control_new].value then
+        data_technology[tech_galvanized_piping].effects =
+        {
+            {type = unlock_recipe, recipe = galvanized_pipe},
+            {type = unlock_recipe, recipe = galvanized_pipe_to_ground},
+            {type = unlock_recipe, recipe = galvanized_pipe .. _elbow},
+            {type = unlock_recipe, recipe = galvanized_pipe .. _junction},
+            {type = unlock_recipe, recipe = galvanized_pipe .. _straight},
+            {type = unlock_recipe, recipe = galvanized_storage_tank},
+            {type = unlock_recipe, recipe = galvanized_pump}
+        }
+    else
+        data_technology[tech_galvanized_piping].effects =
+        {
+            {type = unlock_recipe, recipe = galvanized_pipe},
+            {type = unlock_recipe, recipe = galvanized_pipe_to_ground},
+            {type = unlock_recipe, recipe = galvanized_storage_tank},
+            {type = unlock_recipe, recipe = galvanized_pump}
+        }
+    end
 
     data_technology[vaterite_formation].unit.ingredients =
     {
