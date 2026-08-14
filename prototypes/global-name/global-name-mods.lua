@@ -78,6 +78,8 @@ hyper_underground_belt_arig = "planetaris-hyper-underground-belt"
 hyper_splitter_arig = "planetaris-hyper-splitter"
 sandstone_brick = "planetaris-sandstone-brick"
 compression_science_pack = "planetaris-compression-science-pack"
+rocket_biofuel = "planetaris-rocket-biofuel"
+cactus_plastic = "planetaris-cactus-plastic-bar"
 
 -- HYARION
 hyarion_mods = "planetaris-hyarion"

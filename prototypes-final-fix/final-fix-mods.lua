@@ -73,6 +73,8 @@ data_resource[ore_saphirite].icons = nil
 data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
 data_resource[ore_saphirite].icon_size = data_item[ore_saphirite].icon_size
 
+data_item[nuclear_fuel].fuel_category = transport_fuel
+
 -- BOBS FIX
 if mods[bobwarfare] then
     data_fluid[nitroglycerin_bob].subgroup = is_explosives
@@ -357,6 +359,11 @@ if mods[moshine_mods] then
     data_recipe[boron].category = smelting_filtering
 end
 
+-- ARIG
+if mods[arig_mods] then
+    data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
+end
+
 -- HYARION
 if mods[hyarion_mods] then
     data_item[raw_quartz_arig].subgroup = is_arig_recipe
@@ -417,7 +424,7 @@ if mods[hyarion_mods] then
 
     -- SPACE
     data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, planet_hyarion)
-    data_recipe[rocket_part_hyarion].order = b_c
+    data_recipe[rocket_part_hyarion].order = b_h
     data_recipe[rocket_part_hyarion].energy_required = 4
     data_recipe[rocket_part_hyarion].ingredients =
     {

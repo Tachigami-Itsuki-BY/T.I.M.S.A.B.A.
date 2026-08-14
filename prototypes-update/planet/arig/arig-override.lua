@@ -3,12 +3,12 @@ if mods[arig_mods] then
     data_capsule[cactus_arig].subgroup = is_cactus
     data_capsule[cactus_arig].order = a
     data_capsule[cactus_arig].stack_size = 200
+    TIMSABA.void.freezing_organics(cactus_arig)
 
     local cactus_seeds = "planetaris-cactus-seeds"
     data_item[cactus_seeds].subgroup = is_cactus
     data_item[cactus_seeds].order = b
     data_item[cactus_seeds].stack_size = 200
-
 
     if mods[tellus_mods] then
         local cactus_mash = "planetaris-cactus-mash"
@@ -17,6 +17,7 @@ if mods[arig_mods] then
         data_item[cactus_mash].stack_size = 200
         data_item[cactus_mash].fuel_category = base_fuel
         data_item[cactus_mash].fuel_value = 900 .. kJ
+        TIMSABA.void.freezing_organics(cactus_mash)
         data_recipe[cactus_mash].subgroup = is_cactus
         data_recipe[cactus_mash].icons = TWO_D_I(cactus_arig, water, cactus_mash, cactus_seeds)
         data_recipe[cactus_mash].order = c
@@ -35,6 +36,7 @@ if mods[arig_mods] then
         data_item[arigian_bacteria].subgroup = is_cactus
         data_item[arigian_bacteria].order = d
         data_item[arigian_bacteria].stack_size = 200
+        TIMSABA.void.freezing_organics(arigian_bacteria)
     end
 
     local cactus_wood = "planetaris-cactus-wood"
@@ -180,6 +182,14 @@ if mods[arig_mods] then
     data_recipe[compression_rocket_fuel].subgroup = is_arig_recipe
     data_recipe[compression_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_arig)
     data_recipe[compression_rocket_fuel].order = f_b
+    data_recipe[compression_rocket_fuel].energy_required = 4
+    data_recipe[compression_rocket_fuel].ingredients =
+    {
+        {type = item, name = sulfur, amount = 2},
+        {type = item, name = solid_fuel, amount = 8},
+        {type = item, name = fuel_oil_angels, amount = 15}
+    }
+    data_recipe[compression_rocket_fuel].results[1].amount = 2
     data_recipe[compression_rocket_fuel].surface_conditions = {{property = pressure, min = 600, max = 600}}
 
     data_recipe[glass_arig].category = metallurgy
@@ -295,6 +305,53 @@ if mods[arig_mods] then
     data_recipe[compression_landfill].icons = TWO_I(stone, landfill)
     data_recipe[compression_landfill].order = k_a
     data_recipe[compression_landfill].ingredients[1].amount = 32
+
+    data_item[rocket_biofuel].subgroup = is_arig_recipe
+    data_item[rocket_biofuel].order = l
+    data_item[rocket_biofuel].stack_size = 50
+    data_item[rocket_biofuel].fuel_category = transport_fuel
+    data_item[rocket_biofuel].fuel_value = 460800 .. kJ
+    data_item[rocket_biofuel].fuel_acceleration_multiplier = 2.5
+    data_item[rocket_biofuel].fuel_top_speed_multiplier = 1.25
+    data_recipe[rocket_biofuel].subgroup = is_arig_recipe
+    data_recipe[rocket_biofuel].order = l
+    data_recipe[rocket_biofuel].ingredients =
+    {
+        {type = item, name = coal, amount = 1},
+        {type = item, name = sulfur, amount = 1},
+        {type = item, name = wood, amount = 8},
+        {type = fluid, name = fuel_oil_angels, amount = 30}
+    }
+
+    data_item[cactus_plastic].subgroup = is_arig_recipe
+    data_item[cactus_plastic].order = m
+    data_recipe[cactus_plastic].subgroup = is_arig_recipe
+    data_recipe[cactus_plastic].icons = THREE_D_I(wood, cactus_arig, methane_angels, cactus_plastic)
+    data_recipe[cactus_plastic].order = m
+    data_recipe[cactus_plastic].energy_required = 2
+    data_recipe[cactus_plastic].ingredients =
+    {
+        {type = item, name = wood, amount = 1},
+        {type = item, name = cactus_arig, amount = 4},
+        {type = fluid, name = methane_angels, amount = 30}
+    }
+    data_recipe[cactus_plastic].results[1].amount = 4
+
+    local cactus_plastic_washing = "planetaris-cactus-plastic-washing"
+    data_recipe[cactus_plastic_washing].subgroup = is_arig_recipe
+    data_recipe[cactus_plastic_washing].icons = TWO_D_I(cactus_plastic, water_purified_angels, plastic, water)
+    data_recipe[cactus_plastic_washing].order = m_a
+    data_recipe[cactus_plastic_washing].ingredients =
+    {
+        {type = item, name = cactus_plastic, amount = 2},
+        {type = fluid, name = water_purified_angels, amount = 15}
+    }
+    data_recipe[cactus_plastic_washing].results =
+    {
+        {type = item, name = plastic, amount = 2},
+        {type = fluid, name = water, amount = 15}
+    }
+    data_recipe[cactus_plastic_washing].main_product = plastic
 
     -- LOGISTICS
     local big_chest = "planetaris-big-chest"
@@ -697,8 +754,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
     if mods[bobtech] then
         table.insert(data_technology[arig_roboport].unit.ingredients, {transport_science_pack, 1})
@@ -713,8 +769,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
     if mods[bobtech] then
         table.insert(data_technology[hyper_transport_belt_arig].unit.ingredients, {transport_science_pack, 1})
@@ -729,8 +784,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[sandstone_foundation].unit.ingredients =
@@ -741,8 +795,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[heavy_glass_arig].unit.ingredients =
@@ -753,8 +806,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[silica_arig .. _processing].unit.ingredients =
@@ -765,8 +817,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[heavy_glass_arig .. _productivity].unit.ingredients =
@@ -777,8 +828,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[arig_water_harvesting].effects =
@@ -832,8 +882,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[big_chest].unit.ingredients =
@@ -844,8 +893,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[advanced_solar_panel].unit.ingredients =
@@ -856,8 +904,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[raw_quartz_arig .. _productivity].unit.ingredients =
@@ -868,8 +915,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     data_technology[supported_solar_panel].unit.ingredients =
@@ -880,8 +926,7 @@ if mods[arig_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {compression_science_pack, 1}
+        {metallurgic_science_pack, 1}
     }
 
     table.insert(data_technology[stack_inserter].prerequisites, hyper_transport_belt_arig)

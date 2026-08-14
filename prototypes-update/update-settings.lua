@@ -197,3 +197,19 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
         end
     end
 end
+
+-- FLUID
+for _, fluid in pairs(data_fluid) do
+    fluid.auto_barrel = false
+end
+
+-- TWO LISTS TO ONE LIST
+local function merge_lists(target, source)
+    if source then
+        for _, value in ipairs(source) do
+            table.insert(target, value)
+        end
+    end
+end
+merge_lists(TIMSABA.void.fluids, TIMSABA.barreling.dangerous_fluids)
+merge_lists(TIMSABA.void.fluids, TIMSABA.barreling.simple_fluids)

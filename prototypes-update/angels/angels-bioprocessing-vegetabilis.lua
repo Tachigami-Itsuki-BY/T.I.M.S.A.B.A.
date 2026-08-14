@@ -126,6 +126,7 @@ data_item_subgroup["angels-farming-temperate"].order = b_b
 data_item[wheaton].spoil_ticks = 1 * hour
 data_item[wheaton].spoil_result = spoilage
 TIMSABA.void.void_organics(wheaton)
+TIMSABA.void.freezing_organics(wheaton)
 data_recipe[wheaton].icons = THREE_D_I(seed_wheaton, soil_angels, water, wheaton)
 data_recipe[wheaton].energy_required = 32
 data_recipe[wheaton].ingredients[1].amount = 4
@@ -136,6 +137,7 @@ data_recipe[wheaton].results = {{type = item, name = wheaton, amount = 64}}
 data_item[tianaton].spoil_ticks = 1 * hour
 data_item[tianaton].spoil_result = spoilage
 TIMSABA.void.void_organics(tianaton)
+TIMSABA.void.freezing_organics(tianaton)
 data_recipe[tianaton].icons = THREE_D_I(seed_tianaton, soil_angels, water, tianaton)
 data_recipe[tianaton].energy_required = 32
 data_recipe[tianaton].ingredients[1].amount = 4
@@ -146,6 +148,7 @@ data_recipe[tianaton].results = {{type = item, name = tianaton, amount = 64}}
 data_item[okarinome].spoil_ticks = 2 * hour
 data_item[okarinome].spoil_result = spoilage
 TIMSABA.void.void_organics(okarinome)
+TIMSABA.void.freezing_organics(okarinome)
 data_recipe[okarinome].icons = THREE_D_I(seed_okarinome, soil_angels, water, okarinome)
 data_recipe[okarinome].energy_required = 32
 data_recipe[okarinome].ingredients[1].amount = 4
@@ -156,6 +159,7 @@ data_recipe[okarinome].results = {{type = item, name = okarinome, amount = 32}}
 data_item[quillnoa].spoil_ticks = 4 * hour
 data_item[quillnoa].spoil_result = spoilage
 TIMSABA.void.void_organics(quillnoa)
+TIMSABA.void.freezing_organics(quillnoa)
 data_recipe[quillnoa].icons = FOUR_D_I(seed_quillnoa, soil_angels, fertilizer_angels, water, quillnoa)
 data_recipe[quillnoa].energy_required = 32
 data_recipe[quillnoa].ingredients[1].amount = 4
@@ -167,6 +171,7 @@ data_recipe[quillnoa].results = {{type = item, name = quillnoa, amount = 16}}
 data_item[kendallion].spoil_ticks = 4 * hour
 data_item[kendallion].spoil_result = spoilage
 TIMSABA.void.void_organics(kendallion)
+TIMSABA.void.freezing_organics(kendallion)
 data_recipe[kendallion].icons = FOUR_D_I(seed_kendallion, soil_angels, fertilizer_angels, water, kendallion)
 data_recipe[kendallion].energy_required = 32
 data_recipe[kendallion].ingredients[1].amount = 4
@@ -272,6 +277,7 @@ data_item_subgroup["angels-farming-swamp"].order = c_b
 data_item[elendilomone].spoil_ticks = 1 * hour
 data_item[elendilomone].spoil_result = spoilage
 TIMSABA.void.void_organics(elendilomone)
+TIMSABA.void.freezing_organics(elendilomone)
 data_recipe[elendilomone].icons = THREE_D_I(seed_elendilomone, mud_angels, water_viscous_mud, elendilomone)
 data_recipe[elendilomone].energy_required = 32
 data_recipe[elendilomone].ingredients[1].amount = 4
@@ -282,6 +288,7 @@ data_recipe[elendilomone].results = {{type = item, name = elendilomone, amount =
 data_item[zombieecalyptus].spoil_ticks = 1 * hour
 data_item[zombieecalyptus].spoil_result = spoilage
 TIMSABA.void.void_organics(zombieecalyptus)
+TIMSABA.void.freezing_organics(zombieecalyptus)
 data_recipe[zombieecalyptus].icons = THREE_D_I(seed_zombieecalyptus, mud_angels, water_heavy_mud, zombieecalyptus)
 data_recipe[zombieecalyptus].energy_required = 32
 data_recipe[zombieecalyptus].ingredients[1].amount = 4
@@ -292,6 +299,7 @@ data_recipe[zombieecalyptus].results = {{type = item, name = zombieecalyptus, am
 data_item[saundsrcress].spoil_ticks = 2 * hour
 data_item[saundsrcress].spoil_result = spoilage
 TIMSABA.void.void_organics(saundsrcress)
+TIMSABA.void.freezing_organics(saundsrcress)
 data_recipe[saundsrcress].icons = THREE_D_I(seed_saundsrcress, mud_angels, water_concentrated_mud, saundsrcress)
 data_recipe[saundsrcress].energy_required = 32
 data_recipe[saundsrcress].ingredients[1].amount = 4
@@ -302,6 +310,7 @@ data_recipe[saundsrcress].results = {{type = item, name = saundsrcress, amount =
 data_item[nexeflax].spoil_ticks = 4 * hour
 data_item[nexeflax].spoil_result = spoilage
 TIMSABA.void.void_organics(nexeflax)
+TIMSABA.void.freezing_organics(nexeflax)
 data_recipe[nexeflax].icons = FOUR_D_I(seed_nexeflax, mud_angels, fertilizer_angels, water_light_mud, nexeflax)
 data_recipe[nexeflax].energy_required = 32
 data_recipe[nexeflax].ingredients[1].amount = 4
@@ -313,6 +322,7 @@ data_recipe[nexeflax].results = {{type = item, name = nexeflax, amount = 16}}
 data_item[mushredtato].spoil_ticks = 4 * hour
 data_item[mushredtato].spoil_result = spoilage
 TIMSABA.void.void_organics(mushredtato)
+TIMSABA.void.freezing_organics(mushredtato)
 data_recipe[mushredtato].icons = FOUR_D_I(seed_mushredtato, mud_angels, fertilizer_angels, water_thin_mud, mushredtato)
 data_recipe[mushredtato].energy_required = 32
 data_recipe[mushredtato].ingredients[1].amount = 4
@@ -418,6 +428,7 @@ data_item_subgroup["angels-farming-desert"].order = d_b
 data_item[binafran].spoil_ticks = 1 * hour
 data_item[binafran].spoil_result = spoilage
 TIMSABA.void.void_organics(binafran)
+TIMSABA.void.freezing_organics(binafran)
 data_recipe[binafran].icons = THREE_D_I(seed_binafran, sand_angels, water_saline_angels, binafran)
 data_recipe[binafran].energy_required = 32
 data_recipe[binafran].ingredients[1].amount = 4
@@ -428,6 +439,7 @@ data_recipe[binafran].results = {{type = item, name = binafran, amount = 64}}
 data_item[primedeadelion].spoil_ticks = 1 * hour
 data_item[primedeadelion].spoil_result = spoilage
 TIMSABA.void.void_organics(primedeadelion)
+TIMSABA.void.freezing_organics(primedeadelion)
 data_recipe[primedeadelion].icons = THREE_D_I(seed_primedeadelion, sand_angels, water_saline_angels, primedeadelion)
 data_recipe[primedeadelion].energy_required = 32
 data_recipe[primedeadelion].ingredients[1].amount = 4
@@ -438,6 +450,7 @@ data_recipe[primedeadelion].results = {{type = item, name = primedeadelion, amou
 data_item[nilaubergine].spoil_ticks = 2 * hour
 data_item[nilaubergine].spoil_result = spoilage
 TIMSABA.void.void_organics(nilaubergine)
+TIMSABA.void.freezing_organics(nilaubergine)
 data_recipe[nilaubergine].icons = THREE_D_I(seed_nilaubergine, sand_angels, water_saline_angels, nilaubergine)
 data_recipe[nilaubergine].energy_required = 32
 data_recipe[nilaubergine].ingredients[1].amount = 4
@@ -448,6 +461,7 @@ data_recipe[nilaubergine].results = {{type = item, name = nilaubergine, amount =
 data_item[zelosquash].spoil_ticks = 4 * hour
 data_item[zelosquash].spoil_result = spoilage
 TIMSABA.void.void_organics(zelosquash)
+TIMSABA.void.freezing_organics(zelosquash)
 data_recipe[zelosquash].icons = FOUR_D_I(seed_zelosquash, sand_angels, fertilizer_angels, water_saline_angels, zelosquash)
 data_recipe[zelosquash].energy_required = 32
 data_recipe[zelosquash].ingredients[1].amount = 4
@@ -459,6 +473,7 @@ data_recipe[zelosquash].results = {{type = item, name = zelosquash, amount = 16}
 data_item[arumbiphila].spoil_ticks = 4 * hour
 data_item[arumbiphila].spoil_result = spoilage
 TIMSABA.void.void_organics(arumbiphila)
+TIMSABA.void.freezing_organics(arumbiphila)
 data_recipe[arumbiphila].icons = FOUR_D_I(seed_arumbiphila, sand_angels, fertilizer_angels, water_saline_angels, arumbiphila)
 data_recipe[arumbiphila].energy_required = 32
 data_recipe[arumbiphila].ingredients[1].amount = 4
@@ -508,31 +523,37 @@ data_item[beans].spoil_ticks = 15 * minute
 data_item[beans].spoil_result = spoilage
 data_item[beans].subgroup = is_vegetables_results
 TIMSABA.void.void_organics(beans)
+TIMSABA.void.freezing_organics(beans)
 
 data_item[corn].spoil_ticks = 10 * minute
 data_item[corn].spoil_result = spoilage
 data_item[corn].subgroup = is_vegetables_results
 TIMSABA.void.void_organics(corn)
+TIMSABA.void.freezing_organics(corn)
 
 data_item[leaves].spoil_ticks = 2 * minute
 data_item[leaves].spoil_result = spoilage
 data_item[leaves].subgroup = is_vegetables_results
 TIMSABA.void.void_organics(leaves)
+TIMSABA.void.freezing_organics(leaves)
 
 data_item[nuts].spoil_ticks = 30 * minute
 data_item[nuts].spoil_result = spoilage
 data_item[nuts].subgroup = is_vegetables_results
 TIMSABA.void.void_organics(nuts)
+TIMSABA.void.freezing_organics(nuts)
 
 data_item[pips].spoil_ticks = 20 * minute
 data_item[pips].spoil_result = spoilage
 data_item[pips].subgroup = is_vegetables_results
 TIMSABA.void.void_organics(pips)
+TIMSABA.void.freezing_organics(pips)
 
 data_item[fruits].spoil_ticks = 5 * minute
 data_item[fruits].spoil_result = spoilage
 data_item[fruits].subgroup = is_vegetables_results
 TIMSABA.void.void_organics(fruits)
+TIMSABA.void.freezing_organics(fruits)
 
 data_item_subgroup["angels-bio-processor-nutrient"].order = e_a
 

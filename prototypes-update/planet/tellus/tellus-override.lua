@@ -5,6 +5,8 @@ if mods[tellus_mods] then
     data_capsule[chloroplast_fruit].stack_size = 200
     data_capsule[chloroplast_fruit].fuel_category = base_fuel
     data_capsule[chloroplast_fruit].fuel_value = 1800 .. kJ
+    TIMSABA.void.void_organics(chloroplast_fruit)
+    TIMSABA.void.freezing_organics(chloroplast_fruit)
 
     local chloroplast_seed = "planetaris-chloroplast-seed"
     data_item[chloroplast_seed].subgroup = is_chloroplast
@@ -19,6 +21,7 @@ if mods[tellus_mods] then
     data_capsule[chloroplast_mash].fuel_category = base_fuel
     data_capsule[chloroplast_mash].fuel_value = 900 .. kJ
     TIMSABA.void.void_organics(chloroplast_mash)
+    TIMSABA.void.freezing_organics(chloroplast_mash)
 
     local chloroplast_processing = "planetaris-chloroplast-processing"
     data_recipe[chloroplast_processing].subgroup = is_chloroplast
@@ -122,6 +125,7 @@ if mods[tellus_mods] then
     data_item[wasp_egg].subgroup = is_tellus_magnesium
     data_item[wasp_egg].order = a
     data_item[wasp_egg].stack_size = 200
+    TIMSABA.void.freezing_organics(wasp_egg)
     data_recipe[wasp_egg].subgroup = is_tellus_magnesium
     data_recipe[wasp_egg].icons = STONKS_I(stonks_png, wasp_egg)
     data_recipe[wasp_egg].order = a
@@ -136,6 +140,7 @@ if mods[tellus_mods] then
     data_item[magnesium_bacteria].subgroup = is_tellus_magnesium
     data_item[magnesium_bacteria].order = b
     data_item[magnesium_bacteria].spoil_result = magnesium_ore
+    TIMSABA.void.freezing_organics(magnesium_bacteria)
 
     local magnesium_bacteria_cultivation = "planetaris-magnesium-bacteria-cultivation"
     data_recipe[magnesium_bacteria_cultivation].subgroup = is_tellus_magnesium
@@ -189,6 +194,8 @@ if mods[tellus_mods] then
     data_item[mushroom_cap].stack_size = 200
     data_item[mushroom_cap].fuel_category = base_fuel
     data_item[mushroom_cap].fuel_value = 1800 .. kJ
+    TIMSABA.void.void_organics(mushroom_cap)
+    TIMSABA.void.freezing_organics(mushroom_cap)
 
     local mycelia_seed = "planetaris-myceliae-seed"
     data_item[mycelia_seed].subgroup = is_mycelia
@@ -203,6 +210,7 @@ if mods[tellus_mods] then
     data_item[mycelia].fuel_category = base_fuel
     data_item[mycelia].fuel_value = 1800 .. kJ
     TIMSABA.void.void_organics(mycelia)
+    TIMSABA.void.freezing_organics(mycelia)
 
     local mycelia_processing = "planetaris-mycelia-processing"
     data_recipe[mycelia_processing].subgroup = is_mycelia
@@ -283,6 +291,7 @@ if mods[tellus_mods] then
     data_item[carbolyte_crust].subgroup = is_carbolyte
     data_item[carbolyte_crust].order = a
     data_item[carbolyte_crust].stack_size = 200
+    TIMSABA.void.freezing_organics(carbolyte_crust)
 
     local carbolyte_pod = "planetaris-carbolyte-pod"
     data_item[carbolyte_pod].subgroup = is_carbolyte
@@ -295,6 +304,7 @@ if mods[tellus_mods] then
     data_item[carbolyte_bacteria].subgroup = is_carbolyte
     data_item[carbolyte_bacteria].order = c
     data_item[carbolyte_bacteria].stack_size = 200
+    TIMSABA.void.freezing_organics(carbolyte_bacteria)
 
     local carbolyte_melting = "planetaris-carbolyte-melting"
     data_recipe[carbolyte_melting].subgroup = is_carbolyte
@@ -336,6 +346,7 @@ if mods[tellus_mods] then
     data_item[holmiumnite_bulb].subgroup = is_holmiumnite
     data_item[holmiumnite_bulb].order = a
     data_item[holmiumnite_bulb].stack_size = 200
+    TIMSABA.void.freezing_organics(holmiumnite_bulb)
 
     local holmiumnite_pod = "planetaris-holmiumnite-pod"
     data_item[holmiumnite_pod].subgroup = is_holmiumnite
@@ -356,6 +367,7 @@ if mods[tellus_mods] then
     data_item[holmium_bacteria].subgroup = is_holmiumnite
     data_item[holmium_bacteria].order = c
     data_item[holmium_bacteria].stack_size = 200
+    TIMSABA.void.freezing_organics(holmium_bacteria)
 
     local holmiumnite_electrolysis = "planetaris-holmiumnite-electrolysis"
     data_recipe[holmiumnite_electrolysis].subgroup = is_holmiumnite
@@ -397,6 +409,7 @@ if mods[tellus_mods] then
     data_item[nauvis_parasite].subgroup = is_parasite
     data_item[nauvis_parasite].order = a
     data_item[nauvis_parasite].stack_size = 200
+    TIMSABA.void.freezing_organics(nauvis_parasite)
     data_recipe[nauvis_parasite].subgroup = is_parasite
     data_recipe[nauvis_parasite].order = a
     data_recipe[nauvis_parasite].ingredients =
@@ -422,6 +435,7 @@ if mods[tellus_mods] then
     data_item[nauvis_parasite_quarantined].subgroup = is_parasite
     data_item[nauvis_parasite_quarantined].order = b
     data_item[nauvis_parasite_quarantined].stack_size = 200
+    TIMSABA.void.freezing_organics(nauvis_parasite_quarantined)
     data_recipe[nauvis_parasite_quarantined].subgroup = is_parasite
     data_recipe[nauvis_parasite_quarantined].icons = THREE_I(nauvis_parasite, barrel, nauvis_parasite_quarantined)
     data_recipe[nauvis_parasite_quarantined].order = b
@@ -435,6 +449,7 @@ if mods[tellus_mods] then
     data_item[gleba_parasite].subgroup = is_parasite
     data_item[gleba_parasite].order = c
     data_item[gleba_parasite].stack_size = 200
+    TIMSABA.void.freezing_organics(gleba_parasite)
     data_recipe[gleba_parasite].subgroup = is_parasite
     data_recipe[gleba_parasite].order = c
     data_recipe[gleba_parasite].ingredients =
@@ -460,6 +475,7 @@ if mods[tellus_mods] then
     data_item[gleba_parasite_quarantined].subgroup = is_parasite
     data_item[gleba_parasite_quarantined].order = d
     data_item[gleba_parasite_quarantined].stack_size = 200
+    TIMSABA.void.freezing_organics(gleba_parasite_quarantined)
     data_recipe[gleba_parasite_quarantined].subgroup = is_parasite
     data_recipe[gleba_parasite_quarantined].icons = THREE_I(gleba_parasite, barrel, gleba_parasite_quarantined)
     data_recipe[gleba_parasite_quarantined].order = d
@@ -469,25 +485,20 @@ if mods[tellus_mods] then
     data_recipe[gleba_parasite_dequarantined].icons = THREE_R_I(gleba_parasite_quarantined, gleba_parasite, barrel)
     data_recipe[gleba_parasite_dequarantined].order = d_a
 
-    local gleba_parasite = "planetaris-glebian-parasite"
-    data_item[gleba_parasite].subgroup = is_parasite
-    data_item[gleba_parasite].order = f
-    data_item[gleba_parasite].stack_size = 200
-    data_recipe[gleba_parasite].subgroup = is_parasite
-    data_recipe[gleba_parasite].order = f
-
     local tellus_parasite = "planetaris-tellurian-parasite"
     data_item[tellus_parasite].subgroup = is_parasite
-    data_item[tellus_parasite].order = g
+    data_item[tellus_parasite].order = e
+    TIMSABA.void.freezing_organics(tellus_parasite)
     data_recipe[tellus_parasite].subgroup = is_parasite
-    data_recipe[tellus_parasite].order = g
+    data_recipe[tellus_parasite].order = e
 
     local parasite_nest = "planetaris-parasite-nest"
     data_item[parasite_nest].subgroup = is_parasite
-    data_item[parasite_nest].order = h
+    data_item[parasite_nest].order = f
     data_item[parasite_nest].stack_size = 200
+    TIMSABA.void.freezing_organics(parasite_nest)
     data_recipe[parasite_nest].subgroup = is_parasite
-    data_recipe[parasite_nest].order = h
+    data_recipe[parasite_nest].order = f
     data_recipe[parasite_nest].ingredients =
     {
         {type = item, name = tellus_parasite, amount = 1},
@@ -592,6 +603,7 @@ if mods[tellus_mods] then
 
     data_tool[bioengineering_science_pack].subgroup = is_tellus_recipe
     data_tool[bioengineering_science_pack].order = h
+    TIMSABA.void.freezing_organics(bioengineering_science_pack)
     data_recipe[bioengineering_science_pack].subgroup = is_tellus_recipe
     data_recipe[bioengineering_science_pack].order = h
     data_recipe[bioengineering_science_pack].ingredients =
@@ -604,6 +616,7 @@ if mods[tellus_mods] then
 
     data_tool[pathological_science_pack].subgroup = is_tellus_recipe
     data_tool[pathological_science_pack].order = i
+    TIMSABA.void.freezing_organics(pathological_science_pack)
     data_recipe[pathological_science_pack].subgroup = is_tellus_recipe
     data_recipe[pathological_science_pack].order = i
     data_recipe[pathological_science_pack].ingredients =

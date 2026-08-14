@@ -72,9 +72,9 @@ require("compatibility.bobs-mods.bobores")
 require("compatibility.bobs-mods.boblogistics")
 require("compatibility.bobs-mods.bobplates")
 
-require("prototypes.mods.flow-control.flow-control-base")
-require("prototypes.mods.flow-control.flow-control-bobs")
-require("prototypes.mods.flow-control.flow-control-TIMSABA")
+require("prototypes.mods.flow-control-new.flow-control-base")
+require("prototypes.mods.flow-control-new.flow-control-bobs")
+require("prototypes.mods.flow-control-new.flow-control-TIMSABA")
 
 require("prototypes.space-age.vulcanus.vulcanus-item-fluid")
 require("prototypes.space-age.vulcanus.vulcanus-wolframite")
@@ -194,7 +194,7 @@ require("prototypes.planet.shattered.shattered-technology")
 --require("prototypes.planet.nexus.nexus-recipe")
 --require("prototypes.planet.nexus.nexus-technology")
 
-require("prototypes.mods.flow-control.flow-control-mods")
+require("prototypes.mods.flow-control-new.flow-control-mods")
 
 require("prototypes.angels-ground-water-pump-recipe")
 

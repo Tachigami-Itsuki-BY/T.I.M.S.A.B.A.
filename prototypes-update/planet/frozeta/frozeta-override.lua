@@ -134,7 +134,20 @@ if mods[secretas_frozeta_mods] then
     end
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = auric_asteroid_crushing})
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = ammonia_from_frozeta_air})
+    data_technology[planet_discovery_secretas].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
+    }
 
+    table.insert(data_technology[steam_recycler].prerequisites, "captivity")
     data_technology[steam_recycler].effects =
     {
         {type = unlock_recipe, recipe = steam_recycler},
@@ -152,25 +165,26 @@ if mods[secretas_frozeta_mods] then
     data_technology["transport-belt-capacity-3-Secretas"].prerequisites = {golden_science_pack, tech_transport_belt_capacity_2}
 
     local tech_science_pack = "science-pack"
-    data_technology[tech_science_pack .. _productivity].prerequisites = {golden_science_pack, promethium_science_pack}
-    if mods[corrundum_mods] then
-        table.insert(data_technology[tech_science_pack .. _productivity].prerequisites, electrochemical_science_pack)
+    data_technology[tech_science_pack .. _productivity].prerequisites = {promethium_science_pack}
+    data_technology[tech_science_pack .. _productivity].effects = {}
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = automation_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = logistic_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = military_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = chemical_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = production_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = utility_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = space_science_pack, change = 0.1})
+    if mods[hyarion_mods] then
+        table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = space_science_pack_hyarion, change = 0.1})
     end
-    data_technology[tech_science_pack .. _productivity].effects =
-    {
-        {type = change_recipe_productivity, recipe = automation_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = logistic_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = military_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = chemical_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = production_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = utility_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = space_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = metallurgic_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = agricultural_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = electromagnetic_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = cryogenic_science_pack, change = 0.1},
-        {type = change_recipe_productivity, recipe = promethium_science_pack, change = 0.1}
-    }
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = metallurgic_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = agricultural_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = electromagnetic_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = cryogenic_science_pack, change = 0.1})
+    table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = promethium_science_pack, change = 0.1})
+    if mods[hyarion_mods] then
+        table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = promethium_science_pack_hyarion, change = 0.1})
+    end
     if mods[arig_mods] then
         table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = compression_science_pack, change = 0.1})
     end
@@ -188,7 +202,16 @@ if mods[secretas_frozeta_mods] then
     if mods[corrundum_mods] then
         table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = electrochemical_science_pack, change = 0.1})
     end
-    if mods[muluna_mods] then
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = battlefield_science_pack, change = 0.1})
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = vanadium_science_pack, change = 0.1})
+    end
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = hydraulic_science_pack, change = 0.1})
+    end
+    if mods[maraxsis_mods] then
         table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = interstellar_science_pack, change = 0.1})
     end
     table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = golden_science_pack, change = 0.1})
@@ -196,4 +219,31 @@ if mods[secretas_frozeta_mods] then
     data_technology["worker-robots-storage-4"].prerequisites = {golden_science_pack, "worker-robots-storage-3"}
 
     table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
+
+    if mods[bobmodules] then
+        table.insert(data_technology[speed_module_5].prerequisites, steam_recycler)
+        table.insert(data_technology[speed_module_5].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[speed_module_5].unit.ingredients, {agricultural_science_pack, 1})
+        table.insert(data_technology[speed_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+
+        table.insert(data_technology[efficiency_module_5].prerequisites, steam_recycler)
+        table.insert(data_technology[efficiency_module_5].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[efficiency_module_5].unit.ingredients, {agricultural_science_pack, 1})
+        table.insert(data_technology[efficiency_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+
+        table.insert(data_technology[productivity_module_5].prerequisites, steam_recycler)
+        table.insert(data_technology[productivity_module_5].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[productivity_module_5].unit.ingredients, {agricultural_science_pack, 1})
+        table.insert(data_technology[productivity_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+
+        table.insert(data_technology[quality_module_5].prerequisites, steam_recycler)
+        table.insert(data_technology[quality_module_5].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[quality_module_5].unit.ingredients, {agricultural_science_pack, 1})
+        table.insert(data_technology[quality_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+
+        table.insert(data_technology[agricultural_module_5].prerequisites, steam_recycler)
+        table.insert(data_technology[agricultural_module_5].unit.ingredients, {metallurgic_science_pack, 1})
+        table.insert(data_technology[agricultural_module_5].unit.ingredients, {agricultural_science_pack, 1})
+        table.insert(data_technology[agricultural_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+    end
 end

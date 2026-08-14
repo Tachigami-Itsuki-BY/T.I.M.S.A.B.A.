@@ -67,7 +67,7 @@ for _, organic_name in pairs(TIMSABA.void.organics) do
         ({
             {
                 localised_name = {"recipe-name.compost", {"item-name." .. organic_name}},
-                type = "recipe",
+                type = recipe,
                 name = organic_name .. "-compost",
                 category = "angels-bio-void",
                 subgroup = "angels-bio-void",

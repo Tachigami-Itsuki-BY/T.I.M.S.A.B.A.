@@ -1,48 +1,48 @@
 -- PLANETS
-data_planet[planet_nauvis].order = x .. "-" .. planet_nauvis
-data_planet[planet_vulcanus].order = x .. "-" .. planet_vulcanus
-data_planet[planet_gleba].order = x .. "-" .. planet_gleba
-data_planet[planet_fulgora].order = x .. "-" .. planet_fulgora
-data_planet[planet_aquilo].order = x .. "-" .. planet_aquilo
+data_planet[planet_nauvis].order = x .. "-" .. planet_nauvis -- a
+data_planet[planet_vulcanus].order = x .. "-" .. planet_vulcanus -- b
+data_planet[planet_gleba].order = x .. "-" .. planet_gleba -- c
+data_planet[planet_fulgora].order = x .. "-" .. planet_fulgora -- d
+data_planet[planet_aquilo].order = x .. "-" .. planet_aquilo -- e
 
 if mods[moshine_mods] then
-    data_planet[planet_moshine].order = x .. "-" .. planet_moshine
+    data_planet[planet_moshine].order = x .. "-" .. planet_moshine -- f
 end
 
 if mods[arig_mods] then
-    data_planet[planet_arig].order = x .. "-" .. planet_arig
+    data_planet[planet_arig].order = x .. "-" .. planet_arig -- g
 end
 
 if mods[hyarion_mods] then
-    data_planet[planet_hyarion].order = x .. "-" .. planet_hyarion
+    data_planet[planet_hyarion].order = x .. "-" .. planet_hyarion -- h
 end
 
 if mods[tellus_mods] then
-    data_planet[planet_tellus].order = x .. "-" .. planet_tellus
+    data_planet[planet_tellus].order = x .. "-" .. planet_tellus -- i
 end
 
 if mods[paracelsin_mods] then
-    data_planet[planet_paracelsin].order = x .. "-" .. planet_paracelsin
+    data_planet[planet_paracelsin].order = x .. "-" .. planet_paracelsin -- j
 end
 
 if mods[corrundum_mods] then
-    data_planet[planet_corrundum].order = x .. "-" .. planet_corrundum
+    data_planet[planet_corrundum].order = x .. "-" .. planet_corrundum -- k
 end
 
 if mods[secretas_frozeta_mods] then
-    data_space_location[planet_secretas].order = x .. "-" .. planet_secretas
+    data_space_location[planet_secretas].order = x .. "-" .. planet_secretas -- l
 end
 
 if mods[castra_mods] then
-    data_planet[planet_castra].order = x .. "-" .. planet_castra
+    data_planet[planet_castra].order = x .. "-" .. planet_castra -- m
 end
 
 if mods[shchierbin_mods] then
-    data_planet[planet_shchierbin].order = x .. "-" .. planet_shchierbin
+    data_planet[planet_shchierbin].order = x .. "-" .. planet_shchierbin -- n
 end
 
 if mods[maraxsis_mods] then
-    data_planet[planet_maraxsis].order = x .. "-" .. planet_maraxsis
+    data_planet[planet_maraxsis].order = x .. "-" .. planet_maraxsis -- o
 end
 
 --vesta
@@ -51,19 +51,19 @@ end
 
 -- MOONS
 if mods[muluna_mods] then
-    data_planet[planet_muluna].order = y .. "-" .. planet_muluna
+    data_planet[planet_muluna].order = y .. "-" .. planet_muluna -- a
 end
 
 if mods[panglia_mods] then
-    data_planet[planet_panglia].order = y .. "-" .. planet_panglia
+    data_planet[planet_panglia].order = y .. "-" .. planet_panglia -- b
 end
 
 if mods[secretas_frozeta_mods] then
-    data_planet[planet_frozeta].order = y .. "-" .. planet_frozeta
+    data_planet[planet_frozeta].order = y .. "-" .. planet_frozeta -- c
 end
 
 if mods[terrapalus_mods] then
-    data_planet[planet_terrapalus].order = y .. "-" .. planet_terrapalus
+    data_planet[planet_terrapalus].order = y .. "-" .. planet_terrapalus -- d
 end
 
 -- OTHERS

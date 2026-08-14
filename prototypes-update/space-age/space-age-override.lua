@@ -30,26 +30,24 @@ data_recipe[rocket_part].ingredients =
     {type = item, name = molybdenum_rhenium_pipe, amount = 32},
     {type = item, name = rocket_fuel, amount = 2}
 }
-
-if mods[muluna_mods] then
-    rocket_part_muluna = "rocket-part-muluna"
-    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
-    data_recipe[rocket_part_muluna].order = b_b
-    data_recipe[rocket_part_muluna].energy_required = 4
-    data_recipe[rocket_part_muluna].ingredients =
+if mods[arig_mods] then
+    rocket_part_arig = "planetaris-arig-rocket-part"
+    data_recipe[rocket_part_arig].icons = R_P_I(rocket_part, planet_arig)
+    data_recipe[rocket_part_arig].order = b_g
+    data_recipe[rocket_part_arig].energy_required = 4
+    data_recipe[rocket_part_arig].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 1},
-        {type = item, name = heat_shielding_tile, amount = 8},
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = copper_tungsten_pipe, amount = 16},
-        {type = item, name = rocket_fuel, amount = 1}
+        {type = item, name = rocket_biofuel, amount = 2},
+        {type = item, name = advanced_processing_unit, amount = 2},
+        {type = item, name = cactus_plastic, amount = 2},
+        {type = item, name = glass_bob, amount = 2}
     }
 end
 
 if mods[tellus_mods] then
     rocket_part_tellus = "planetaris-tellus-rocket-part"
     data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
-    data_recipe[rocket_part_tellus].order = b_c
+    data_recipe[rocket_part_tellus].order = b_i
     data_recipe[rocket_part_tellus].energy_required = 4
     data_recipe[rocket_part_tellus].ingredients =
     {
@@ -64,7 +62,8 @@ end
 if mods[maraxsis_mods] then
     rocket_part_maraxsis = "maraxsis-rocket-part"
     data_recipe[rocket_part_maraxsis].icons = R_P_I(rocket_part, planet_maraxsis)
-    data_recipe[rocket_part_maraxsis].order = b_d
+    data_recipe[rocket_part_maraxsis].order = b_o
+    data_recipe[rocket_part_maraxsis].energy_required = 4
     data_recipe[rocket_part_maraxsis].ingredients =
     {
         {type = item, name = low_density_structure, amount = 2},
@@ -74,6 +73,23 @@ if mods[maraxsis_mods] then
     }
 end
 
+if mods[muluna_mods] then
+    rocket_part_muluna = "rocket-part-muluna"
+    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
+    data_recipe[rocket_part_muluna].order = c_a
+    data_recipe[rocket_part_muluna].energy_required = 4
+    data_recipe[rocket_part_muluna].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 1},
+        {type = item, name = heat_shielding_tile, amount = 8},
+        {type = item, name = advanced_processing_unit, amount = 1},
+        {type = item, name = copper_tungsten_pipe, amount = 16},
+        {type = item, name = rocket_fuel, amount = 1}
+    }
+end
+
+data_item[cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
+data_recipe[cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
 data_recipe[cargo_landing_pad].energy_required = 32
 data_recipe[cargo_landing_pad].ingredients =
 {
@@ -83,6 +99,10 @@ data_recipe[cargo_landing_pad].ingredients =
     {type = item, name = reinforced_concrete, amount = 128},
     {type = item, name = molybdenum_rhenium_plate, amount = 32}
 }
+data.raw[cargo_landing_pad][cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
+
+local cargo_pod = "cargo-pod"
+data.raw[cargo_pod][cargo_pod].order =  e .. "[" .. cargo_pod .. "]"
 
 data_item_subgroup[space_platform].order = b
 

@@ -12,14 +12,18 @@ data_bool_setting["bobmods-assembly-oilfurnaces"].hidden = true
 data_bool_setting["bobmods-mining-steamminingdrills"].hidden = true
 data_bool_setting["bobmods-mining-waterminers"].hidden = true
 
-data_bool_setting["bobmods-modules-enablegodmodules"].hidden = true
+if mods["bobmodules"] then
+    data_bool_setting["bobmods-modules-enablegodmodules"].hidden = true
+end
 
 data_bool_setting["bobmods-power-heatsources"].hidden = true
 
-data_bool_setting["bobmods-warfare-drainlesslaserturrets"].hidden = true
-data_bool_setting["bobmods-warfare-spidertron-overhaul"].hidden = true
-local data_string_setting = data.raw["string-setting"]
-data_string_setting["bobmods-warfare-spidertron-needsfuel"].hidden = true
+if mods["bobwarfare"] then
+    data_bool_setting["bobmods-warfare-drainlesslaserturrets"].hidden = true
+    data_bool_setting["bobmods-warfare-spidertron-overhaul"].hidden = true
+    local data_string_setting = data.raw["string-setting"]
+    data_string_setting["bobmods-warfare-spidertron-needsfuel"].hidden = true
+end
 
 -- FROZETA
 if mods["secretas"] then

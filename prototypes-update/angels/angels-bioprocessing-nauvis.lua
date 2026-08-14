@@ -4,6 +4,7 @@ data_item[algae_green].order = a
 data_item[algae_green].spoil_ticks = 3 * hour
 data_item[algae_green].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_green)
+TIMSABA.void.freezing_organics(algae_green)
 data_recipe[algae_green].category = angels_bio_processing_1
 data_recipe[algae_green].icons = THREE_R_I(water, algae_green, algae_brown)
 data_recipe[algae_green].order = a
@@ -58,6 +59,7 @@ data_item[algae_brown].stack_size = 200
 data_item[algae_brown].spoil_ticks = 6 * hour
 data_item[algae_brown].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_brown)
+TIMSABA.void.freezing_organics(algae_brown)
 data_recipe[algae_brown].icons = TWO_I(water_saline_angels, algae_brown)
 data_recipe[algae_brown].energy_required = 32
 data_recipe[algae_brown].ingredients[1].amount = 120
@@ -86,6 +88,7 @@ data_recipe[alginic_acid].ingredients[1].amount = 8
 data_item[algae_red].spoil_ticks = 9 * hour
 data_item[algae_red].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_red)
+TIMSABA.void.freezing_organics(algae_red)
 data_recipe[algae_red].icons = THREE_I(water_thermal_angels, ammonia_angels, algae_red)
 data_recipe[algae_red].energy_required = 32
 data_recipe[algae_red].ingredients[1].amount = 120
@@ -108,6 +111,7 @@ data_recipe[calcium_carbonate].results[1].amount = 4
 data_item[algae_blue].spoil_ticks = 12 * hour
 data_item[algae_blue].spoil_result = spoilage
 TIMSABA.void.void_organics(algae_blue)
+TIMSABA.void.freezing_organics(algae_blue)
 data_recipe[algae_blue].icons = THREE_I(water_yellow_waste, carbon_dioxide_angels, algae_blue)
 data_recipe[algae_blue].energy_required = 32
 data_recipe[algae_blue].ingredients[1].amount = 120

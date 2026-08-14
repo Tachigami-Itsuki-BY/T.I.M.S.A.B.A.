@@ -4,6 +4,7 @@ data_item[saphirite_bacteria].subgroup = is_bacteria_ore
 data_item[saphirite_bacteria].order = a
 data_item[saphirite_bacteria].stack_size = 200
 data_item[saphirite_bacteria].spoil_result = ore_saphirite
+TIMSABA.void.freezing_organics(saphirite_bacteria)
 data_recipe[saphirite_bacteria].localised_name = {"item-name.saphirite-bacteria"}
 data_recipe[saphirite_bacteria].subgroup = is_bacteria_ore
 data_recipe[saphirite_bacteria].icons = TWO_D_I(jelly, nil, saphirite_bacteria, spoilage)
@@ -20,6 +21,7 @@ data_item[stiratite_bacteria].subgroup = is_bacteria_ore
 data_item[stiratite_bacteria].order = c
 data_item[stiratite_bacteria].stack_size = 200
 data_item[stiratite_bacteria].spoil_result = ore_stiratite
+TIMSABA.void.freezing_organics(stiratite_bacteria)
 data_recipe[stiratite_bacteria].localised_name = {"item-name.stiratite-bacteria"}
 data_recipe[stiratite_bacteria].subgroup = is_bacteria_ore
 data_recipe[stiratite_bacteria].icons = TWO_D_I(yumako, nil, stiratite_bacteria, spoilage)
@@ -70,6 +72,7 @@ data_recipe[burnt_spoilage].ingredients[1].amount = 8
 data_item[nutrients].subgroup = is_nutrients
 data_item[nutrients].order = a
 data_item[nutrients].stack_size = 200
+TIMSABA.void.freezing_organics(nutrients)
 
 local nutrients_from_spoilage = "nutrients-from-spoilage"
 data_recipe[nutrients_from_spoilage].localised_name = {"recipe-name.nutrients-from-spoilage"}
@@ -118,6 +121,7 @@ data_capsule[jellynut].stack_size = 200
 data_capsule[jellynut].fuel_category = base_fuel
 data_capsule[jellynut].fuel_value = 7200 .. kJ
 TIMSABA.void.void_organics(jellynut)
+TIMSABA.void.freezing_organics(jellynut)
 
 local jellynut_seed = "jellynut-seed"
 data_item[jellynut_seed].subgroup = is_jellynut
@@ -133,6 +137,7 @@ data_capsule[jelly].fuel_category = base_fuel
 data_capsule[jelly].fuel_value = 900 .. kJ
 data_capsule[jelly].spoil_ticks = 5 * minute
 TIMSABA.void.void_organics(jelly)
+TIMSABA.void.freezing_organics(jelly)
 
 local jellynut_processing = "jellynut-processing"
 data_recipe[jellynut_processing].subgroup = is_jellynut
@@ -172,6 +177,7 @@ data_capsule[yumako].stack_size = 200
 data_capsule[yumako].fuel_category = base_fuel
 data_capsule[yumako].fuel_value = 1800 .. kJ
 TIMSABA.void.void_organics(yumako)
+TIMSABA.void.freezing_organics(yumako)
 
 local yumako_seed = "yumako-seed"
 data_item[yumako_seed].subgroup = is_yumako
@@ -187,6 +193,7 @@ data_capsule[yumako_mash].fuel_category = base_fuel
 data_capsule[yumako_mash].fuel_value = 900 .. kJ
 data_capsule[yumako_mash].spoil_ticks = 5 * minute
 TIMSABA.void.void_organics(yumako_mash)
+TIMSABA.void.freezing_organics(yumako_mash)
 
 local yumako_processing = "yumako-processing"
 data_recipe[yumako_processing].subgroup = is_yumako
@@ -225,6 +232,7 @@ data_item[pentapod_egg].order = a
 data_item[pentapod_egg].stack_size = 200
 data_item[pentapod_egg].fuel_category = base_fuel
 data_item[pentapod_egg].fuel_value = 7200 .. kJ
+TIMSABA.void.freezing_organics(pentapod_egg)
 data_recipe[pentapod_egg].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[pentapod_egg].icons = STONKS_I(stonks_png, pentapod_egg)
 data_recipe[pentapod_egg].order = a
@@ -236,6 +244,7 @@ data_capsule[bioflux].order = b
 data_capsule[bioflux].stack_size = 200
 data_capsule[bioflux].fuel_value = 3600 .. kJ
 TIMSABA.void.void_organics(bioflux)
+TIMSABA.void.freezing_organics(bioflux)
 data_recipe[bioflux].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[bioflux].icons = THREE_I(jelly, yumako_mash, bioflux)
 data_recipe[bioflux].order = b
@@ -272,6 +281,7 @@ data_recipe[biolubricant].results[1].amount = 30
 
 data_tool[agricultural_science_pack].subgroup = is_pentapod_egg_and_bioflux
 data_tool[agricultural_science_pack].order = c
+TIMSABA.void.freezing_organics(agricultural_science_pack)
 data_recipe[agricultural_science_pack].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[agricultural_science_pack].order = c
 
@@ -290,6 +300,7 @@ data_item[biter_egg].order = a
 data_item[biter_egg].stack_size = 200
 data_item[biter_egg].fuel_category = base_fuel
 data_item[biter_egg].fuel_value = 7200 .. kJ
+TIMSABA.void.freezing_organics(biter_egg)
 data_recipe[biter_egg].subgroup = is_gleba_recipe
 data_recipe[biter_egg].order = a
 data_recipe[biter_egg].energy_required = 8

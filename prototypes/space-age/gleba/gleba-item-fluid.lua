@@ -94,3 +94,7 @@ data:extend
         spoil_result = ore_bobmonium
     }
 })
+TIMSABA.void.freezing_organics(jivolite_bacteria)
+TIMSABA.void.freezing_organics(crotinnium_bacteria)
+TIMSABA.void.freezing_organics(rubyte_bacteria)
+TIMSABA.void.freezing_organics(bobmonium_bacteria)

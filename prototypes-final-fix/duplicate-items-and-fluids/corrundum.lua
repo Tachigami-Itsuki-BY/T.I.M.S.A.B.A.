@@ -59,11 +59,13 @@ if mods[corrundum_mods] then
 
 	data_recipe["dilute-acid-neutralization"] = nil
 	data_recipe["calcium-sulfate-production-alt"] = nil
+
 	local calcium_sulfate_recovery = "calcium-sulfate-recovery"
 	data_recipe[calcium_sulfate_recovery] = nil
 	data_technology[calcium_sulfate_recovery] = nil
 
 	data_recipe["controlled-petrol-combustion"] = nil
+
 	local stone_production = "stone-production"
 	data_recipe[stone_production] = nil
 	data_technology[stone_production] = nil
@@ -78,9 +80,9 @@ if mods[corrundum_mods] then
 	end
 
 	data_technology["chalcopyrite-processing"] = nil
-	data_technology[pipe .. _productivity .. "-infinite"] = nil
-	data_technology[steam_turbine_1 .. _productivity .. "-infinite"] = nil
-	data_technology[sulfuric_acid .. _productivity .. "-infinite"] = nil
+	data_technology[pipe .. _productivity .. _infinite] = nil
+	data_technology[steam_turbine_1 .. _productivity .. _infinite] = nil
+	data_technology[sulfuric_acid .. _productivity .. _infinite] = nil
 	data_technology["recrystalization"] = nil
 	data_technology["space-steam-production"] = nil
 end
