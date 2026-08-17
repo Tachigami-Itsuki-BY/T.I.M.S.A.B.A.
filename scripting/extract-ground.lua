@@ -16,6 +16,7 @@ if script.active_mods["corrundum"] then surface_to_recipe["corrundum"] = "extrac
 if script.active_mods["castra-prime"] then surface_to_recipe["castra"] = "extract-ground-angels-liquid-fuel-oil" end
 if script.active_mods["shchierbin"] then surface_to_recipe["shchierbin"] = "extract-ground-angels-water-saline" end
 if script.active_mods["maraxsis"] then surface_to_recipe["maraxsis"] = "extract-ground-angels-water-saline" end
+if script.active_mods["skewer_planet_vesta"] then surface_to_recipe["vesta"] = "extract-ground-vesta_helium" end
 
 if script.active_mods["panglia_planet"] then surface_to_recipe["panglia"] = "extract-ground-water" end
 if script.active_mods["secretas"] then surface_to_recipe["panglia"] = "extract-ground-ammoniacal-solution" end

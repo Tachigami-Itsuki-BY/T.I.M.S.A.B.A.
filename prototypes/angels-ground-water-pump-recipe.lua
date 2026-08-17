@@ -15,6 +15,7 @@ local recipes =
     {planet = planet_castra, fluid = fuel_oil_angels},
     {planet = planet_shchierbin, fluid = water_saline_angels},
     {planet = planet_maraxsis, fluid = water_saline_angels},
+    {planet = planet_vesta, fluid = helium_vesta},
     -- MOONS
     {planet = planet_panglia, fluid = water},
     {planet = planet_frozeta, fluid = ammonia_solution},

@@ -1,4 +1,3 @@
--- Воздух Хaйариона
 if mods[hyarion_mods] then
     hyarion_air_separation = "hyarion-air-separation"
     TIMSABA.functions.create_recipes
@@ -93,9 +92,21 @@ if mods[hyarion_mods] then
     remelting_of_metal_ore_recipe({name = remelting_of_metal_ore_17, order = c_g, ore = tungsten_ore_bob,     local_name = tungsten_ore_bob})
     remelting_of_metal_ore_recipe({name = remelting_of_metal_ore_18, order = c_h, ore = platinum_ore_angels,  local_name = platinum_ore_angels})
 
-    -- SPACE
     TIMSABA.functions.create_recipes
     ({
+        -- SELENIUM
+        {
+            name = selenium_powder,
+            category = powderizing_4,
+            subgroup = is_selenium,
+            icons = TWO_I(selenium, selenium_powder),
+            order = b,
+            energy_required = 0.5,
+            ingredients = {{type = item, name = selenium, amount = 1}},
+            results = {{type = item, name = selenium_powder, amount = 1}},
+            main_product = selenium_powder
+        },
+        -- SPACE
         {
             name = bismuth_oxyselenide,
             category = chemistry,

@@ -16,7 +16,6 @@ if mods[vesta_mods] then
             prerequisites = {tech_deuterium},
             effects =
             {
-                {type = unlock_recipe, recipe = iridium_ore},
                 {type = unlock_recipe, recipe = sodium_hexachloroiridate_IV},
                 {type = unlock_recipe, recipe = ammonium_hexachloroiridate_IV},
                 {type = unlock_recipe, recipe = iridium_powder},
@@ -24,25 +23,12 @@ if mods[vesta_mods] then
                 {type = unlock_recipe, recipe = electrolyzer_vesta},
                 {type = unlock_recipe, recipe = ammonium_chloride}
             },
-            unit =
-            {
-                count = 200,
-                ingredients =
-                {
-                    {automation_science_pack, 1},
-                    {logistic_science_pack, 1},
-                    {military_science_pack, 1},
-                    {chemical_science_pack, 1},
-                    {production_science_pack, 1},
-                    {utility_science_pack, 1},
-                    {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1}
-                },
-                time = 30
-            }
+            research_trigger =
+        {
+            type = craft_item,
+            item = iridium_ore,
+            count = 256
+        }
         },
         {
             localised_name = {"technology-name.iridium-smelting-2"},

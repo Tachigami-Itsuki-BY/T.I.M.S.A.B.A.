@@ -657,6 +657,8 @@ if mods[corrundum_mods] then
         {metallurgic_science_pack, 1}
     }
 
+    table.insert(data_technology[selenium_processing].prerequisites, tech_chalcopyrite_processing_4)
+
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, electrochemical_science_pack)
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = sulfonated_plastic, change = 0.1})

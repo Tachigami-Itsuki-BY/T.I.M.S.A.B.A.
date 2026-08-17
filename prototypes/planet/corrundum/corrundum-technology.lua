@@ -108,8 +108,7 @@ if mods[corrundum_mods] then
             effects =
             {
                 {type = unlock_recipe, recipe = chalcopyrite_purified},
-                {type = unlock_recipe, recipe = chalcopyrite_purified_sorting},
-                {type = unlock_recipe, recipe = selenium_powder}
+                {type = unlock_recipe, recipe = chalcopyrite_purified_sorting}
             },
             unit =
             {
