@@ -464,7 +464,8 @@ if mods[vesta_mods] then
     data_technology[tech_deuterium].effects =
     {
         {type = unlock_recipe, recipe = deuterium_mods},
-        {type = unlock_recipe, recipe = tritium_mods}
+        {type = unlock_recipe, recipe = tritium_mods},
+        {type = unlock_recipe, recipe = iridium_ore}
     }
 
     local tech_algea_culturing = "s1_algea_culturing"
@@ -524,6 +525,7 @@ if mods[vesta_mods] then
     data_technology["worker-robots-storage-vesta"].localised_description = {"technplogy-description.worker-robots-storage"}
 
     data_technology[tech_wolframite_processing_4].prerequisites = {tech_wolframite_processing_3, tech_gas_manipulation_science_pack}
+    data_technology[tech_rhenium_synthesis].prerequisites = {tech_rhenium_smelting_3, tech_molybdenite_processing_4, tech_wolframite_processing_4}
 
     data_technology[tech_brannerite_processing_4].prerequisites = {tech_brannerite_processing_3, tech_gas_manipulation_science_pack}
 
@@ -553,16 +555,24 @@ if mods[vesta_mods] then
 
     if mods[corrundum_mods] then
         data_technology[tech_chalcopyrite_processing_4].prerequisites = {tech_chalcopyrite_processing_3, tech_gas_manipulation_science_pack}
-        data_technology[tech_selenium_synthesis].prerequisites = {tech_chalcopyrite_processing_4, tech_molybdenite_processing_4}
+        data_technology[tech_selenium_synthesis].prerequisites = {tech_molybdenite_processing_4, tech_chalcopyrite_processing_4}
     end
 
     if mods[castra_mods] then
         data_technology[tech_millerite_processing_4].prerequisites = {tech_millerite_processing_3, tech_gas_manipulation_science_pack}
     end
 
-    data_technology[promethium_science_pack].prerequisites = {tech_rhenium_synthesis, tech_wolframite_processing_4, tech_galium_smelting_3}
+    data_technology[promethium_science_pack].prerequisites =
+    {
+        tech_molybdenite_processing_4,
+        tech_wolframite_processing_4,
+        tech_antimonite_processing_3,
+        tech_germanite_processing_3,
+        tech_galium_smelting_3
+    }
     if mods[moshine_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_brannerite_processing_4)
+        table.insert(data_technology[promethium_science_pack].prerequisites, tech_monazite_processing_3)
     else
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_holmium_synthesis)
     end
@@ -571,7 +581,7 @@ if mods[vesta_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_tetrahedrite_processing_3)
     end
     if mods[corrundum_mods] then
-        table.insert(data_technology[promethium_science_pack].prerequisites, tech_selenium_synthesis)
+        table.insert(data_technology[promethium_science_pack].prerequisites, tech_chalcopyrite_processing_4)
     end
     if mods[castra_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_millerite_processing_4)

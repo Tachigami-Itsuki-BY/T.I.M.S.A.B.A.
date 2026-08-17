@@ -15,7 +15,7 @@ if mods[asteroid_belt_mods] then
     if mods[maraxsis_mods] then
         table.insert(data_technology[planet_discovery_maraxsis].prerequisites, space_discovery_asteroid_belt)
     end
-    if mods[asteroid_belt_mods] then
+    if mods[secretas_frozeta_mods] then
         table.insert(data_technology[planet_discovery_secretas].prerequisites, space_discovery_asteroid_belt)
     end
 end

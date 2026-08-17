@@ -934,10 +934,6 @@ if mods[arig_mods] then
 
     table.insert(data_technology[stack_inserter].prerequisites, hyper_transport_belt_arig)
 
-    data_technology[rocket_part_arig].enabled = true
-    data_technology[rocket_part_arig].essential = false
-    data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
-
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_arig, change = 0.1})
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = cactus_plastic, change = 0.1})
 

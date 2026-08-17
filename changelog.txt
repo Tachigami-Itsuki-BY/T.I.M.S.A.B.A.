@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.12.1
+Date: 17.08.2026
+  Features:
+    - [Mods] Добавлена новая технология: Обработка Селена.
+
+    - [Mods] Added new technology: Selenium Processing.
+
+  Changes:
+    - [Hyarion] Рецепт Селениевого Порошка перенесён в технологию Обработка Селена. Теперь он связан с модом «Planetaris: Hyarion».
+
+    - [Hyarion] Moved Selenium Powder recipe to Selenium Processing technology. It is now linked to the "Planetaris: Hyarion" mod.
+
+  Bugfixes:
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Asteroid Belt» был включён без мода «Secretas&Frozeta».
+
+    - [Mods] Fixed a bug where the game with the mod would not load if the "Asteroid Belt" mod was enabled without the "Secretas&Frozeta" mod.
+
+  Balancing:
+    - [All] Небольшие правки в дереве технологий.
+
+    - [All] Minor tweaks to the technology tree.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.0
 Date: 17.08.2026
   Features:
@@ -30,7 +52,7 @@ Date: 17.08.2026
   Modding:
     - [Mods] Мод «Planet Vesta» переведён в опциональную зависимость.
 
-    - [Mods] Moved "Maraxsis" mod to optional dependencies.
+    - [Mods] Moved "Planet Vesta" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.3
 Date: 14.08.2026

@@ -1,17 +1,14 @@
-if mods[arig_mods] then
-    advanced_sand_sifting = "planetaris-advanced-sand-sifting"
+if mods[hyarion_mods] then
+    selenium_processing = "selenium-processing"
     data:extend
     ({
         {
             type = technology,
-            name = pure_sand_arig,
-            icons = TIMSABA.functions.create_gas_tech_icon("SaSaSa"),
-            prerequisites = {advanced_sand_sifting, cryogenic_science_pack},
-            effects =
-            {
-                {type = unlock_recipe, recipe = sand_arig},
-                {type = unlock_recipe, recipe = pure_sand_arig}
-            },
+            name = selenium_processing,
+            icon = "__TIMSABA__/graphics/icons/hyarion/technology/selenium-processing.png",
+            icon_size = 256,
+            prerequisites = {tech_molybdenite_processing_4},
+            effects = {{type = unlock_recipe, recipe = selenium_powder}},
             unit =
             {
                 count = 200,
@@ -24,6 +21,8 @@ if mods[arig_mods] then
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
                     {cryogenic_science_pack, 1}
                 },
                 time = 30

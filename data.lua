@@ -136,6 +136,7 @@ require("prototypes.planet.arig.arig-technology")
 require("prototypes.planet.hyarion.hyarion-groups")
 require("prototypes.planet.hyarion.hyarion-item-fluid")
 require("prototypes.planet.hyarion.hyarion-recipe")
+require("prototypes.planet.hyarion.hyarion-technology")
 
 require("prototypes.planet.tellus.tellus-groups")
 require("prototypes.planet.tellus.tellus-item-fluid")

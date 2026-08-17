@@ -13,10 +13,19 @@ if mods[hyarion_mods] then
     })
     TIMSABA.barreling.add_gas(hyarion_air)
 
-    -- SPACE
+    selenium_powder = "selenium-powder"
     bismuth_oxyselenide = "bismuth-oxyselenide"
     TIMSABA.functions.create_items
     ({
+        -- SELENIUM
+        {
+            localised_description = show_formula and {chemical_formula, "Se"} or nil,
+            name = selenium_powder,
+            subgroup = is_selenium,
+            icon = "__TIMSABA__/graphics/icons/hyarion/selenium-powder.png",
+            order = b
+        },
+        -- SPACE
         {
             localised_description = show_formula and {chemical_formula, "Bi[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]2[/font]Se"} or nil,
             name = bismuth_oxyselenide,
