@@ -2,7 +2,7 @@ planet_discovery_fulgora = "planet-discovery-fulgora"
 recycling = "recycling"
 tech_brannerite_processing_1 = "brannerite-processing-1"
 local tech_brannerite_processing_2 = "brannerite-processing-2"
-local tech_brannerite_processing_3 = "brannerite-processing-3"
+tech_brannerite_processing_3 = "brannerite-processing-3"
 tech_brannerite_processing_4 = "brannerite-processing-4"
 local tech_calcium_synthesis = "calcium-synthesis"
 tech_holmium_processing = "holmium-processing"
@@ -10,6 +10,7 @@ tech_holmium_smelting_1 = "holmium-smelting-1"
 local tech_holmium_smelting_2 = "holmium-smelting-2"
 tech_holmium_smelting_3 = "holmium-smelting-3"
 tech_holmium_synthesis = "holmium-synthesis"
+tech_advanced_processing_unit = "advanced-processing-unit"
 data:extend
 ({
     {
@@ -120,8 +121,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -254,10 +254,85 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
+    },
+    -- PRODUCTIVITY
+    {
+        type = technology,
+        name = electronic_circuit .. _productivity,
+        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/" .. electronic_circuit .. _productivity .. ".png",
+        icon_size = 256,
+        prerequisites = {electromagnetic_science_pack},
+        effects = {{type = change_recipe_productivity, recipe = electronic_circuit, change = 0.1}},
+        unit =
+        {
+            count_formula = "1.5^L*1000",
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {electromagnetic_science_pack, 1}
+            },
+            time = 60
+        },
+        max_level = 30,
+        upgrade = true
+    },
+    {
+        type = technology,
+        name = advanced_circuit .. _productivity,
+        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/" .. advanced_circuit .. _productivity .. ".png",
+        icon_size = 256,
+        prerequisites = {electromagnetic_science_pack},
+        effects = {{type = change_recipe_productivity, recipe = advanced_circuit, change = 0.1}},
+        unit =
+        {
+            count_formula = "1.5^L*1000",
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {electromagnetic_science_pack, 1}
+            },
+            time = 60
+        },
+        max_level = 30,
+        upgrade = true
+    },
+    {
+        type = technology,
+        name = tech_advanced_processing_unit .. _productivity,
+        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/technology/" .. tech_advanced_processing_unit .. _productivity .. ".png",
+        icon_size = 256,
+        prerequisites = {electromagnetic_science_pack},
+        effects = {{type = change_recipe_productivity, recipe = advanced_processing_unit, change = 0.1}},
+        unit =
+        {
+            count_formula = "1.5^L*1000",
+            ingredients =
+            {
+                {automation_science_pack, 1},
+                {logistic_science_pack, 1},
+                {chemical_science_pack, 1},
+                {production_science_pack, 1},
+                {utility_science_pack, 1},
+                {space_science_pack, 1},
+                {electromagnetic_science_pack, 1}
+            },
+            time = 60
+        },
+        max_level = 30,
+        upgrade = true
     }
 })

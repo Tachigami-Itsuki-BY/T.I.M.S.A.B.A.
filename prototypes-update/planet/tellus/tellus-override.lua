@@ -1379,4 +1379,6 @@ if mods[tellus_mods] then
     end
 
     data_technology["planetaris-tellus-rocket-silo"].effects = {{type = unlock_recipe, recipe = rocket_part_tellus}}
+
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = mycelia_plastic, change = 0.1})
 end

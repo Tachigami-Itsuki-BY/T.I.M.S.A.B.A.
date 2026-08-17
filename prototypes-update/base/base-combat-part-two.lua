@@ -248,12 +248,6 @@ if mods[bobvehicleequipment] then
         vehicle_solar_panel_eq_recipe(vehicle_solar_panel_eq_5, advanced_processing_unit, tungsten_carbide_plate_bob, orange_alloy, platinum_cable, vehicle_solar_panel_eq_4)
     end
 
-    local vehicle_fission_cell_eq_1 = "bob-vehicle-fission-cell-equipment-1"
-    local vehicle_fission_cell_eq_2 = "bob-vehicle-fission-cell-equipment-2"
-    local vehicle_fission_cell_eq_3 = "bob-vehicle-fission-cell-equipment-3"
-    local vehicle_fission_cell_eq_4 = "bob-vehicle-fission-cell-equipment-4"
-    local vehicle_fission_cell_eq_5 = "bob-vehicle-fission-cell-equipment-5"
-    local vehicle_fission_cell_eq_6 = "bob-vehicle-fission-cell-equipment-6"
     local vehicle_fission_cells_eq =
     {
         {name = vehicle_fission_cell_eq_1, power = 300},
@@ -390,12 +384,6 @@ if mods[bobvehicleequipment] then
         }
     end
 
-    local vehicle_fission_reactor_eq_1 = "bob-vehicle-fission-reactor-equipment-1"
-    local vehicle_fission_reactor_eq_2 = "bob-vehicle-fission-reactor-equipment-2"
-    local vehicle_fission_reactor_eq_3 = "bob-vehicle-fission-reactor-equipment-3"
-    local vehicle_fission_reactor_eq_4 = "bob-vehicle-fission-reactor-equipment-4"
-    local vehicle_fission_reactor_eq_5 = "bob-vehicle-fission-reactor-equipment-5"
-    local vehicle_fission_reactor_eq_6 = "bob-vehicle-fission-reactor-equipment-6"
     local vehicle_fission_reactors =
     {
         {name = vehicle_fission_reactor_eq_1, power = 600},

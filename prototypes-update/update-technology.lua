@@ -175,7 +175,11 @@ if mods[bobwarfare] then
     }
 
     data_technology[artillery_wagon_3].localised_name = {"entity-name.artillery-wagon-3"}
-    data_technology[artillery_wagon_3].prerequisites = {artillery_wagon_2, promethium_science_pack}
+    if mods[vesta_mods] then
+        data_technology[artillery_wagon_3].prerequisites = {artillery_wagon_2, gas_manipulation_science_pack}
+    else
+        data_technology[artillery_wagon_3].prerequisites = {artillery_wagon_2, promethium_science_pack}
+    end
     data_technology[artillery_wagon_3].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -485,7 +489,7 @@ data_technology[energy_shield_eq_2].unit.ingredients =
 data_technology[energy_shield_eq_2].unit.count = 200
 
 if mods[bobequipment] then
-    table.insert(data_technology[fission_reactor_4].prerequisites, tech_deuterium_power)
+    table.insert(data_technology[fission_reactor_eq_4].prerequisites, tech_deuterium_power)
 
     data_technology[roboport_eq_2].prerequisites = {roboport_eq_1, tech_invar_smelting_1, tech_aluminium_smelting_1, tech_battery_2}
     data_technology[roboport_eq_2].unit.ingredients =
@@ -561,7 +565,11 @@ if mods[bobwarfare] then
     }
 
     data_technology[artillery_turret_3].localised_name = {"entity-name.artillery-turret-3"}
-    data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, promethium_science_pack}
+    if mods[vesta_mods] then
+        data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, gas_manipulation_science_pack}
+    else
+        data_technology[artillery_turret_3].prerequisites = {artillery_turret_2, promethium_science_pack}
+    end
     data_technology[artillery_turret_3].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -636,6 +644,20 @@ end
 
 if mods[bobwarfare] then
     data_technology[atomic_artillery_shell].localised_name = {"item-name.bob-atomic-artillery-shell"}
+end
+
+-- Список технологий, которые нужно изменить
+local technologies = {vehicle_fission_cell_eq_6, vehicle_fission_reactor_eq_6, fission_reactor_eq_4}
+
+-- Проходимся по списку наших целевых технологий
+for _, tech_name in ipairs(technologies) do
+    local tech = data_technology[tech_name]
+    -- Проходимся с конца массива к началу, чтобы безопасно удалять элементы
+    for i = #tech.prerequisites, 1, -1 do
+        if tech.prerequisites[i] == cryogenic_science_pack then
+            table.remove(tech.prerequisites, i)
+        end
+    end
 end
 
 -- ANGELS RESOURCE REFINING

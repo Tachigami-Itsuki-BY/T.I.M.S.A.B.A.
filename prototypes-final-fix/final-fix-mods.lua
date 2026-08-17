@@ -123,6 +123,13 @@ data_technology[tech_rocket_part_productivity].effects =
 }
 table.insert(data_technology[tech_rocket_part_productivity].unit.ingredients, {utility_science_pack, 1})
 
+data_recipe[casting_low_density_structure].ingredients =
+{
+    {type = item, name = plastic, amount = 4},
+    {type = fluid, name = aluminium_molten_angels, amount = 240},
+    {type = fluid, name = titanium_molten_angels, amount = 30}
+}
+
 -- MULUNA
 if mods[muluna_mods] then
     -- ROCKET PART
@@ -221,6 +228,20 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {agricultural_science_pack, 1})
     table.insert(data_technology[tech_rocket_part_productivity_aquilo].unit.ingredients, {electromagnetic_science_pack, 1})
 
+    if mods[arig_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
+    end
+
     if mods[hyarion_mods] then
         data_recipe[rocket_part_tungsten].ingredients =
         {
@@ -271,6 +292,17 @@ if mods[muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_maraxsis, change = 0.1})
     end
+
+    data_recipe[casting_low_density_structure_muluna].ingredients =
+    {
+        {type = item, name = plastic, amount = 4},
+        {type = fluid, name = aluminium_molten_angels, amount = 240},
+        {type = fluid, name = titanium_molten_angels, amount = 30}
+    }
+end
+
+if not mods[muluna_mods] and mods[arig_mods] then
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_arig, change = 0.1})
 end
 
 if not mods[muluna_mods] and mods[hyarion_mods] then
@@ -357,11 +389,6 @@ end
 -- MOSHINE
 if mods[moshine_mods] then
     data_recipe[boron].category = smelting_filtering
-end
-
--- ARIG
-if mods[arig_mods] then
-    data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
 end
 
 -- HYARION
@@ -508,6 +535,11 @@ if mods[paracelsin_mods] then
         {type = change_recipe_productivity, recipe = processing_unit, change = 0.1},
         {type = change_recipe_productivity, recipe = processing_unit_from_panglite_fiber, change = 0.1}
     }
+end
+
+-- CASTRA
+if mods[castra_mods] then
+    table.insert(data_technology[processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = processing_unit_battlefield_data, change = 0.1})
 end
 
 -- MARAXSIS

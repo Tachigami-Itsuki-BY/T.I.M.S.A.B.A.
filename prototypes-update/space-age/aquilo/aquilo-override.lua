@@ -176,7 +176,7 @@ data_recipe[fusion_reactor].ingredients =
     {type = item, name = quantum_processor, amount = 256},
     {type = item, name = superconductor, amount = 256},
     {type = item, name = semiconductor, amount = 256},
-    {type = item, name = reinforced_concrete, amount = 256}
+    {type = item, name = reinforced_graphene_concrete_brick, amount = 256}
 }
 data_reactor_fusion[fusion_reactor].subgroup = is_aquilo_power
 data_reactor_fusion[fusion_reactor].order = a
@@ -201,7 +201,7 @@ data_recipe[fusion_generator].ingredients =
     {type = item, name = quantum_processor, amount = 64},
     {type = item, name = superconductor, amount = 128},
     {type = item, name = semiconductor, amount = 128},
-    {type = item, name = reinforced_concrete, amount = 128}
+    {type = item, name = reinforced_graphene_concrete_brick, amount = 128}
 }
 data_generator_fusion[fusion_generator].subgroup = is_aquilo_power
 data_generator_fusion[fusion_generator].order = b
@@ -300,7 +300,7 @@ data_recipe[fusion_reactor_eq].energy_required = 32
 if mods[bobequipment] then
     data_recipe[fusion_reactor_eq].ingredients =
     {
-        {type = item, name = fission_reactor_4, amount = 1},
+        {type = item, name = fission_reactor_eq_4, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
         {type = item, name = niobium_titanium_cable, amount = 128},
         {type = item, name = quantum_processor, amount = 64},
@@ -313,7 +313,7 @@ if mods[bobequipment] then
 else
     data_recipe[fusion_reactor_eq].ingredients =
     {
-        {type = item, name = fission_reactor_1, amount = 1},
+        {type = item, name = fission_reactor_eq_1, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 64},
         {type = item, name = niobium_titanium_cable, amount = 128},
         {type = item, name = quantum_processor, amount = 64},
@@ -404,7 +404,7 @@ table.insert(data_technology[fusion_reactor].prerequisites, tech_tritium_power)
 table.insert(data_technology[fusion_reactor].effects, {type = unlock_recipe, recipe = advanced_tritium_fuel_cell_reprocessing})
 
 if mods[bobequipment] then
-    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_4}
+    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_eq_4}
 else
-    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_1}
+    data_technology[fusion_reactor_eq].prerequisites = {fusion_reactor, fission_reactor_eq_1}
 end

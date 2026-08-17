@@ -724,3 +724,9 @@ data_technology["captivity"].unit.ingredients =
     {space_science_pack, 1},
     {agricultural_science_pack, 1}
 }
+
+data_technology[plastic .. _productivity].effects =
+{
+    {type = change_recipe_productivity, recipe = plastic_angels, change = 0.1},
+    {type = change_recipe_productivity, recipe = bioplastic, change = 0.1}
+}

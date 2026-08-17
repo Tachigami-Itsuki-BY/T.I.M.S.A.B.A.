@@ -8,86 +8,10 @@ if mods[vesta_mods] then
         [carbon_monoxide_vesta] = carbon_monoxide_angels,
         [hydrogen_sulfide_vesta] = hydrogen_sulfide_angels,
         [methane_vesta] = methane_angels,
-        [deuterium_mods] = deuterium_angels
+        [deuterium_mods] = deuterium_angels,
+		[tritium_mods] = tritium_gas
     }
-    for _, recipe in pairs(data.raw.recipe or {}) do
-        for _, ingredient in pairs(recipe.ingredients or {}) do
-            local replace = replacements[ingredient.name]
-		    if replace then
-                ingredient.name = replace
-            end
-        end
-
-    	for _, result in pairs(recipe.results or {}) do
-	    	local replace = replacements[result.name]
-		    if replace then
-	    		result.name = replace
-	    	end
-	    end
-
-        if recipe.main_product then
-	    	local replace = replacements[recipe.main_product]
-		    if replace then
-	    		recipe.main_product = replace
-	    	end
-        end
-    end
-    for _, tile in pairs(data.raw.tile or {}) do
-	    if tile.fluid then
-		    local replace = replacements[tile.fluid]
-		    if replace then
-		    	tile.fluid = replace
-		    end
-	    end
-    end
-    for _, technology in pairs(data.raw.technology or {}) do
-	    if technology.research_trigger then
-		    local replace = replacements[technology.research_trigger.item]
-		    if replace then
-		    	technology.research_trigger.item = replace
-		    end
-	    end
-	    if technology.research_trigger then
-	    	local replace = replacements[technology.research_trigger.fluid]
-	    	if replace then
-	    		technology.research_trigger.fluid = replace
-	    	end
-	    end
-    end
-    for _, resource in pairs(data.raw.resource or {}) do
-	    if resource.minable.result then
-		    local replace = replacements[resource.minable.result]
-		    if replace then
-			    resource.minable.result = replace
-		    end
-	    end
-	    for _, results in pairs(resource.minable.results or {}) do
-		    local replace = replacements[results.name]
-		    if replace then
-			    results.name = replace
-		    end
-	    end
-    end
-    for _, entity in pairs(data.raw["simple-entity"] or {}) do
-	    if entity.minable then
-		    for _, results in pairs(entity.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
-    for _, tree in pairs(data.raw.tree or {}) do
-	    if tree.minable then
-		    for _, results in pairs(tree.minable.results or {}) do
-			    local replace = replacements[results.name]
-			    if replace then
-				    results.name = replace
-			    end
-		    end
-	    end
-    end
+	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 
 	data_fluid[hydrogen_vesta] = nil
     data_fluid[oxygen_vesta] = nil
@@ -97,4 +21,82 @@ if mods[vesta_mods] then
     data_fluid[hydrogen_sulfide_vesta] = nil
     data_fluid[methane_vesta] = nil
 	data_fluid[deuterium_mods] = nil
+	data_fluid[tritium_mods] = nil
+
+	data_recipe["ske-h2o"] = nil
+	data_recipe["ske-water-electrolysis"] = nil
+	data_recipe["ske_co2_filter_oxygen"] = nil
+	data_recipe["nutrients-from-co2"] = nil
+	data_recipe["steel-from-iron-algea"] = nil
+	data_recipe["ske_crude_solution"] = nil
+	data_recipe["ske-processors-from-lithium"] = nil
+
+	local dt_fuel = "ske_dt_fuel"
+	data_fluid[dt_fuel] = nil
+	data_recipe[dt_fuel] = nil
+
+	local fusion_construction_robot = "fusion-construction-robot"
+	local fusion_logistic_robot = "fusion-logistic-robot"
+	local mod_items =
+	{
+		"calcized-iron-plate",
+		"calcized-copper-plate",
+        "ske_dt_fuel_container",
+        "ske_fusion_framework",
+        fusion_construction_robot,
+        fusion_logistic_robot
+	}
+	for _, name in ipairs(mod_items) do
+		data_item[name] = nil
+        data_recipe[name] = nil
+		data_recipe[name .. _recycling] = nil
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
+	end
+	data_construction_robot[fusion_construction_robot] = nil
+	data_logistic_robot[fusion_logistic_robot] = nil
+
+	data_recipe["ske_cf_copper_hyd"] = nil
+	data_recipe["ske_cf_copper_oxy"] = nil
+	data_recipe["ske_cf_iron_hyd"] = nil
+	data_recipe["ske_cf_iron_oxy"] = nil
+	data_recipe["ske_cf_steel_hyd"] = nil
+	data_recipe["ske_cf_steel_oxy"] = nil
+	data_recipe["ske_methane_petro"] = nil
+
+	local magnetic_pipe = "magnetic-pipe"
+	local replacements_2 =
+	{
+        [magnetic_pipe] = magnetic_pipe_vesta
+	}
+	for _, technology in pairs(data_technology or {}) do
+		if technology.effects then
+			for _, effect in pairs(technology.effects) do
+				if effect.type == unlock_recipe then
+					local replace = replacements_2[effect.recipe]
+					if replace then
+						effect.recipe = replace
+					end
+				end
+			end
+		end
+	end
+	data_recipe[magnetic_pipe] = nil
+
+	local fusion_missile = "fusion-missile"
+	data_ammo[fusion_missile] = nil
+	data_recipe[fusion_missile] = nil
+	data_recipe[fusion_missile .. _recycling] = nil
+	if mods[panglia_mods] then
+		data_recipe[item_ .. fusion_missile .. _panglia_crushing] = nil
+	end
+	data_technology[fusion_missile] = nil
+
+	data_technology["s1_algea_discovery"] = nil
+	data_technology["s1_iridium"] = nil
+	data_technology["s1_cluster_processing"] = nil
+
+	data_technology["s2_fusion_robots"] = nil
+	data_technology["s2_intermediate_productivity"] = nil
 end

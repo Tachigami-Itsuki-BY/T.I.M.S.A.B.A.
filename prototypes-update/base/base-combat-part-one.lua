@@ -1043,10 +1043,10 @@ end
 
 local fission_reactors =
 {
-    {name = fission_reactor_1, power = 600},
-    {name = fission_reactor_2, power = 1200},
-    {name = fission_reactor_3, power = 1800},
-    {name = fission_reactor_4, power = 2400}
+    {name = fission_reactor_eq_1, power = 600},
+    {name = fission_reactor_eq_2, power = 1200},
+    {name = fission_reactor_eq_3, power = 1800},
+    {name = fission_reactor_eq_4, power = 2400}
 }
 for _, EQUIPMENT in pairs(fission_reactors) do
     if data_item[EQUIPMENT.name] then
@@ -1058,8 +1058,8 @@ for _, EQUIPMENT in pairs(fission_reactors) do
         data_generator_eq[EQUIPMENT.name].power = EQUIPMENT.power .. kW
     end
 end
-data_recipe[fission_reactor_1].category = crafting_fluid
-data_recipe[fission_reactor_1].ingredients =
+data_recipe[fission_reactor_eq_1].category = crafting_fluid
+data_recipe[fission_reactor_eq_1].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 128},
     {type = item, name = uranium_235_fuel_cell, amount = 16},
@@ -1069,22 +1069,22 @@ data_recipe[fission_reactor_1].ingredients =
 }
 if mods[bobequipment] then
     if data_item[alien_artifact] then
-        data_recipe[fission_reactor_2].ingredients =
+        data_recipe[fission_reactor_eq_2].ingredients =
         {
             {type = item, name = processing_unit, amount = 128},
             {type = item, name = mixed_oxide_fuel_cell, amount = 16},
-            {type = item, name = fission_reactor_1, amount = 1},
+            {type = item, name = fission_reactor_eq_1, amount = 1},
             {type = item, name = alien_artifact, amount = 64},
             {type = item, name = tungsten_plate_bob, amount = 256},
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
         if mods[bobmodules] then
-            data_recipe[fission_reactor_3].ingredients =
+            data_recipe[fission_reactor_eq_3].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = thorium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_2, amount = 1},
+                {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
                 {type = item, name = alien_artifact_yellow, amount = 64},
@@ -1092,22 +1092,22 @@ if mods[bobequipment] then
                 {type = item, name = speed_module_4, amount = 1},
                 {type = item, name = efficiency_module_4, amount = 1}
             }
-            data_recipe[fission_reactor_4].ingredients =
+            data_recipe[fission_reactor_eq_4].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = deuterium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_3, amount = 1},
+                {type = item, name = fission_reactor_eq_3, amount = 1},
                 {type = item, name = blue_alloy, amount = 64},
                 {type = item, name = speed_module_5, amount = 1},
                 {type = item, name = efficiency_module_5, amount = 1},
                 {type = fluid, name = red_fluid, amount = 960}
             }
         else
-            data_recipe[fission_reactor_3].ingredients =
+            data_recipe[fission_reactor_eq_3].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = thorium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_2, amount = 1},
+                {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
                 {type = item, name = alien_artifact_yellow, amount = 64},
@@ -1115,11 +1115,11 @@ if mods[bobequipment] then
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1}
             }
-            data_recipe[fission_reactor_4].ingredients =
+            data_recipe[fission_reactor_eq_4].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = deuterium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_3, amount = 1},
+                {type = item, name = fission_reactor_eq_3, amount = 1},
                 {type = item, name = blue_alloy, amount = 64},
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1},
@@ -1127,50 +1127,50 @@ if mods[bobequipment] then
             }
         end
     else
-        data_recipe[fission_reactor_2].ingredients =
+        data_recipe[fission_reactor_eq_2].ingredients =
         {
             {type = item, name = processing_unit, amount = 128},
             {type = item, name = mixed_oxide_fuel_cell, amount = 16},
-            {type = item, name = fission_reactor_1, amount = 1},
+            {type = item, name = fission_reactor_eq_1, amount = 1},
             {type = item, name = tungsten_plate_bob, amount = 256},
             {type = item, name = speed_module_3, amount = 1},
             {type = item, name = efficiency_module_3, amount = 1}
         }
         if mods[bobmodules] then
-            data_recipe[fission_reactor_3].ingredients =
+            data_recipe[fission_reactor_eq_3].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = thorium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_2, amount = 1},
+                {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
                 {type = item, name = speed_module_4, amount = 1},
                 {type = item, name = efficiency_module_4, amount = 1}
             }
-            data_recipe[fission_reactor_4].ingredients =
+            data_recipe[fission_reactor_eq_4].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = deuterium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_3, amount = 1},
+                {type = item, name = fission_reactor_eq_3, amount = 1},
                 {type = item, name = speed_module_5, amount = 1},
                 {type = item, name = efficiency_module_5, amount = 1}
             }
         else
-            data_recipe[fission_reactor_3].ingredients =
+            data_recipe[fission_reactor_eq_3].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = thorium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_2, amount = 1},
+                {type = item, name = fission_reactor_eq_2, amount = 1},
                 {type = item, name = lithium_bob, amount = 32},
                 {type = item, name = tungsten_carbide_plate_bob, amount = 64},
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1}
             }
-            data_recipe[fission_reactor_4].ingredients =
+            data_recipe[fission_reactor_eq_4].ingredients =
             {
                 {type = item, name = advanced_processing_unit, amount = 128},
                 {type = item, name = deuterium_fuel_cell, amount = 16},
-                {type = item, name = fission_reactor_3, amount = 1},
+                {type = item, name = fission_reactor_eq_3, amount = 1},
                 {type = item, name = speed_module_3, amount = 1},
                 {type = item, name = efficiency_module_3, amount = 1}
             }
@@ -1746,10 +1746,10 @@ bobmods.lib.recipe.update_recycling_recipe
     solar_panel_eq_2,
     solar_panel_eq_3,
     solar_panel_eq_4,
-    fission_reactor_1,
-    fission_reactor_2,
-    fission_reactor_3,
-    fission_reactor_4,
+    fission_reactor_eq_1,
+    fission_reactor_eq_2,
+    fission_reactor_eq_3,
+    fission_reactor_eq_4,
     battery_eq_1,
     battery_eq_2,
     battery_eq_3,

@@ -7,7 +7,7 @@ local tech_powellite_processing_3 = "powellite-processing-3"
 tech_powellite_processing_4 = "powellite-processing-4"
 local tech_molybdenite_processing_1 = "molybdenite-processing-1"
 local tech_molybdenite_processing_2 = "molybdenite-processing-2"
-local tech_molybdenite_processing_3 = "molybdenite-processing-3"
+tech_molybdenite_processing_3 = "molybdenite-processing-3"
 tech_molybdenite_processing_4 = "molybdenite-processing-4"
 local tech_molybdenum_smelting_1 = "molybdenum-smelting-1"
 local tech_molybdenum_smelting_2 = "molybdenum-smelting-2"
@@ -267,7 +267,7 @@ data:extend
         name = tech_molybdenite_processing_3,
         icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/technology/molybdenite-processing.png",
         icon_size = 256,
-        prerequisites = {tech_advanced_ore_refining_6, tech_molybdenite_processing_2},
+        prerequisites = {metallurgic_science_pack, agricultural_science_pack, electromagnetic_science_pack, tech_molybdenite_processing_2},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenite_crystals},

@@ -841,7 +841,7 @@ if mods[arig_mods] then
         {type = unlock_recipe, recipe = aquilo_water_harvesting}
     }
     if mods[moshine_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = moshine_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_moshine .. _water_harvesting})
     end
     table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = arig_water_harvesting})
     if mods[hyarion_mods] then
@@ -851,28 +851,31 @@ if mods[arig_mods] then
         table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = tellus_water_harvesting})
     end
     if mods[paracelsin_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = paracelsin_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_paracelsin .. _water_harvesting})
     end
     if mods[corrundum_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = corrundum_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_corrundum .. _water_harvesting})
     end
     if mods[castra_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = castra_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_castra .. _water_harvesting})
     end
     if mods[shchierbin_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = shchierbin_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_shchierbin .. _water_harvesting})
     end
     if mods[maraxsis_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = maraxsis_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_maraxsis .. _water_harvesting})
+    end
+    if mods[vesta_mods] then
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_vesta .. _water_harvesting})
     end
     if mods[panglia_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = panglia_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_panglia .. _water_harvesting})
     end
     if mods[secretas_frozeta_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = frozeta_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_frozeta .. _water_harvesting})
     end
     if mods[terrapalus_mods] then
-        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = terrapalus_water_harvesting})
+        table.insert(data_technology[arig_water_harvesting].effects, {type = unlock_recipe, recipe = planet_terrapalus .. _water_harvesting})
     end
     data_technology[arig_water_harvesting].unit.ingredients =
     {
@@ -930,4 +933,13 @@ if mods[arig_mods] then
     }
 
     table.insert(data_technology[stack_inserter].prerequisites, hyper_transport_belt_arig)
+
+    data_technology[rocket_part_arig].enabled = true
+    data_technology[rocket_part_arig].essential = false
+    data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
+
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_arig, change = 0.1})
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = cactus_plastic, change = 0.1})
+
+    table.insert(data_technology["planetaris-cactus-plastic" .. _productivity].unit.ingredients, {utility_science_pack, 1})
 end

@@ -155,18 +155,23 @@ if mods[muluna_mods] then
     data_recipe[low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_1)
     data_recipe[low_density_structure_muluna].order = z
-    data_recipe[low_density_structure_muluna].energy_required = data_recipe[low_density_structure].energy_required
-    data_recipe[low_density_structure_muluna].ingredients = data_recipe[low_density_structure].ingredients
+    data_recipe[low_density_structure_muluna].energy_required = 16
+    data_recipe[low_density_structure_muluna].ingredients = util.table.deepcopy(data_recipe[low_density_structure].ingredients)
     data_recipe[low_density_structure_muluna].results[1].amount = 2
     data_recipe[low_density_structure_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
-    local casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
+    casting_low_density_structure_muluna = "casting-low-density-structure-aluminum"
     data_recipe[casting_low_density_structure_muluna].localised_name = {"recipe-name.casting-low-density-structure-muluna"}
     data_recipe[casting_low_density_structure_muluna].subgroup = is_muluna_recipe_anorthite
     data_recipe[casting_low_density_structure_muluna].icons = R_P_I(low_density_structure, planet_muluna, nil, number_2)
     data_recipe[casting_low_density_structure_muluna].order = z_a
-    data_recipe[casting_low_density_structure_muluna].energy_required = data_recipe[casting_low_density_structure].energy_required
-    data_recipe[casting_low_density_structure_muluna].ingredients = data_recipe[casting_low_density_structure].ingredients
+    data_recipe[casting_low_density_structure_muluna].energy_required = 16
+    data_recipe[casting_low_density_structure_muluna].ingredients =
+    {
+        {type = item, name = plastic, amount = 4},
+        {type = fluid, name = aluminium_molten_angels, amount = 240},
+        {type = fluid, name = titanium_molten_angels, amount = 30}
+    }
     data_recipe[casting_low_density_structure_muluna].results[1].amount = 2
     data_recipe[casting_low_density_structure_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
@@ -1196,6 +1201,21 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_maraxsis].results[1].amount = 30
     end
 
+    if mods[vesta_mods] then
+        local telescope_observation_vesta = "muluna-telescope-observation-vesta"
+        data_recipe[telescope_observation_vesta].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_vesta].icons = BUILDING_R_I(astronomical_data_muluna, planet_vesta)
+        data_recipe[telescope_observation_vesta].order = data_planet[planet_vesta].order
+        data_recipe[telescope_observation_vesta].energy_required = 4
+        data_recipe[telescope_observation_vesta].results[1].amount = 30
+    end
+
+    --[[if mods[shattered_mods] then
+        local telescope_observation_shattered = "muluna-telescope-observation-skewer_shattered_planet"
+        data_recipe[telescope_observation_shattered].icons = BUILDING_R_I(astronomical_data_muluna, planet_shattered)
+        data_recipe[telescope_observation_shattered].energy_required = 4
+    end]]
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons
@@ -1230,18 +1250,6 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_terrapalus].energy_required = 4
         data_recipe[telescope_observation_terrapalus].results[1].amount = 30
     end
-
-    --[[if mods[shattered_mods] then
-        local telescope_observation_shattered = "muluna-telescope-observation-skewer_shattered_planet"
-        data_recipe[telescope_observation_shattered].icons = BUILDING_R_I(astronomical_data_muluna, planet_shattered)
-        data_recipe[telescope_observation_shattered].energy_required = 4
-    end
-
-    if mods[vesta_mods] then
-        local telescope_observation_vesta = "muluna-telescope-observation-vesta"
-        data_recipe[telescope_observation_vesta].icons = BUILDING_R_I(astronomical_data_muluna, planet_vesta)
-        data_recipe[telescope_observation_vesta].energy_required = 4
-    end]]
 
     -- OTHERS SPACE
     local telescope_observation_space_platform = "muluna-telescope-observation-space-platform"
@@ -1542,4 +1550,6 @@ if mods[muluna_mods] then
 
     table.insert(data_technology[tech_vulcanus_metallurgic].effects, {type = unlock_recipe, recipe = casting_aluminium_cable})
     table.insert(data_technology[tech_vulcanus_metallurgic].effects, {type = unlock_recipe, recipe = casting_low_density_structure_muluna})
+
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_from_wood, change = 0.1})
 end

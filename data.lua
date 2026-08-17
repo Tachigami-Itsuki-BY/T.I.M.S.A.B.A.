@@ -175,6 +175,7 @@ require("prototypes.planet.maraxsis.maraxsis-groups")
 require("prototypes.planet.maraxsis.maraxsis-recipe")
 
 require("prototypes.planet.vesta.vesta-groups")
+require("prototypes.planet.vesta.vesta-item-fluid")
 require("prototypes.planet.vesta.vesta-recipe")
 require("prototypes.planet.vesta.vesta-technology")
 

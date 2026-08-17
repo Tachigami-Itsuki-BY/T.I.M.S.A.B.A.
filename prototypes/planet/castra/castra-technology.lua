@@ -2,8 +2,8 @@ if mods[castra_mods] then
     planet_discovery_castra = "planet-discovery-castra"
     tech_millerite_processing_1 = "millerite-processing-1"
     local tech_millerite_processing_2 = "millerite-processing-2"
-    local tech_millerite_processing_3 = "millerite-processing-3"
-    local tech_millerite_processing_4 = "millerite-processing-4"
+    tech_millerite_processing_3 = "millerite-processing-3"
+    tech_millerite_processing_4 = "millerite-processing-4"
     tech_vanadium_synthesis = "vanadium-synthesis"
     data:extend
     ({
@@ -126,8 +126,7 @@ if mods[castra_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -154,8 +153,7 @@ if mods[castra_mods] then
                     {electromagnetic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }

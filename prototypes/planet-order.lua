@@ -45,9 +45,11 @@ if mods[maraxsis_mods] then
     data_planet[planet_maraxsis].order = x .. "-" .. planet_maraxsis -- o
 end
 
---vesta
+if mods[vesta_mods] then
+    data_planet[planet_vesta].order = x .. "-" .. planet_vesta -- p
+end
 
---shattered planet
+--shattered planet -- q
 
 -- MOONS
 if mods[muluna_mods] then

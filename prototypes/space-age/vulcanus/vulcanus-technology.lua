@@ -2,8 +2,8 @@ planet_discovery_vulcanus = "planet-discovery-vulcanus"
 tech_vulcanus_metallurgic = "vulcanus-metallurgic"
 tech_wolframite_processing_1 = "wolframite-processing-1"
 local tech_wolframite_processing_2 = "wolframite-processing-2"
-local tech_wolframite_processing_3 = "wolframite-processing-3"
-local tech_wolframite_processing_4 = "wolframite-processing-4"
+tech_wolframite_processing_3 = "wolframite-processing-3"
+tech_wolframite_processing_4 = "wolframite-processing-4"
 local tech_niobium_smelting_1 = "niobium-smelting-1"
 local tech_niobium_smelting_2 = "niobium-smelting-2"
 local tech_niobium_smelting_3 = "niobium-smelting-3"
@@ -150,8 +150,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -269,8 +268,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }

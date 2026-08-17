@@ -1,21 +1,21 @@
 planet_discovery_aquilo = "planet-discovery-aquilo"
 local tech_antimonite_processing_1 = "antimonite-processing-1"
-local tech_antimonite_processing_2 = "antimonite-processing-2"
-local tech_antimonite_processing_3 = "antimonite-processing-3"
+tech_antimonite_processing_2 = "antimonite-processing-2"
+tech_antimonite_processing_3 = "antimonite-processing-3"
 tech_antimonite_processing_4 = "antimonite-processing-4"
 tech_antimony_smelting_1 = "antimony-smelting-1"
-local tech_antimony_smelting_2 = "antimony-smelting-2"
+tech_antimony_smelting_2 = "antimony-smelting-2"
 tech_antimony_smelting_3 = "antimony-smelting-3"
 local tech_germanite_processing_1 = "germanite-processing-1"
-local tech_germanite_processing_2 = "germanite-processing-2"
-local tech_germanite_processing_3 = "germanite-processing-3"
+tech_germanite_processing_2 = "germanite-processing-2"
+tech_germanite_processing_3 = "germanite-processing-3"
 tech_germanite_processing_4 = "germanite-processing-4"
 tech_germanium_smelting_1 = "germanium-smelting-1"
-local tech_germanium_smelting_2 = "germanium-smelting-2"
+tech_germanium_smelting_2 = "germanium-smelting-2"
 tech_germanium_smelting_3 = "germanium-smelting-3"
 tech_galium_smelting_1 = "galium-smelting-1"
-local tech_galium_smelting_2 = "galium-smelting-2"
-local tech_galium_smelting_3 = "galium-smelting-3"
+tech_galium_smelting_2 = "galium-smelting-2"
+tech_galium_smelting_3 = "galium-smelting-3"
 local tech_arsenic_processing = "arsenic-processing"
 tech_arsenic_synthesis = "arsenic-synthesis"
 tech_aquilo_cryogenics = "aquilo-cryogenics"
@@ -101,8 +101,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -134,8 +133,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -240,8 +238,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -326,8 +323,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -359,8 +355,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -463,8 +458,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -532,8 +526,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -563,8 +556,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -592,8 +584,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -619,8 +610,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }
@@ -653,8 +643,7 @@ data:extend
                 {metallurgic_science_pack, 1},
                 {agricultural_science_pack, 1},
                 {electromagnetic_science_pack, 1},
-                {cryogenic_science_pack, 1},
-                {promethium_science_pack, 1}
+                {cryogenic_science_pack, 1}
             },
             time = 30
         }

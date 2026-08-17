@@ -220,11 +220,11 @@ if mods[moshine_mods] then
             subgroup = is_neodymium_casting,
             icons = THREE_D_I(neodymium_ingot, iron_ingot, boron, neodymium_iron_boron_molten),
             order = a,
-            energy_required = 8, -- 2Nd(s) + 14Fe(s) + B(s) -Ar-> Nd₂Fe₁₄B(molten)
+            energy_required = 8, -- Nd(s) + Fe(s) + B(s) -Ar-> NdFeB(molten)
             ingredients =
             {
-                {type = item, name = neodymium_ingot, amount = 32},
-                {type = item, name = iron_ingot, amount = 56},
+                {type = item, name = neodymium_ingot, amount = 16},
+                {type = item, name = iron_ingot, amount = 16},
                 {type = item, name = boron, amount = 16}
             },
             results = {{type = fluid, name = neodymium_iron_boron_molten, amount = 240}},

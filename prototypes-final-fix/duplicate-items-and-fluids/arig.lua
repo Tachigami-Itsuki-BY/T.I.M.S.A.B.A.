@@ -23,4 +23,7 @@ if mods[arig_mods] then
 	data_recipe["planetaris-sulfur"] = nil
 	data_recipe["planetaris-lithium-brine-sifting"] = nil
 	data_recipe["planetaris-lithium-plate"] = nil
+
+	data_technology[rocket_part_arig].enabled = false
+	data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
 end

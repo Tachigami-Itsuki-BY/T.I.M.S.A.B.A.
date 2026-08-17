@@ -533,6 +533,33 @@ if mods[panglia_mods] then
         }
     end
 
+    if mods[vesta_mods] then
+        local cosmic_incubator_recipe_vesta = "cosmic_incubator_recipe_vesta"
+        data_recipe[cosmic_incubator_recipe_vesta].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.vesta"}}
+        data_recipe[cosmic_incubator_recipe_vesta].subgroup = is_panglia_universe_planets
+        data_recipe[cosmic_incubator_recipe_vesta].icons = GALAXY_I(galaxy_png, planet_vesta)
+        data_recipe[cosmic_incubator_recipe_vesta].order = data_planet[planet_vesta].order
+        data_recipe[cosmic_incubator_recipe_vesta].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_vesta].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = iridium_ore, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
+    --[[if mods[shattered_mods] then
+        local cosmic_incubator_recipe_shattered = "cosmic_incubator_recipe_skewer_shattered_planet"
+        data_recipe[cosmic_incubator_recipe_shattered].subgroup = is_panglia_universe
+        data_recipe[cosmic_incubator_recipe_shattered].icons = GALAXY_I(galaxy_png, planet_shattered)
+    end]]
+
     -- MOONS
     if mods[muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
@@ -614,18 +641,6 @@ if mods[panglia_mods] then
             {type = item, name = palusium_ore, amount_min = 0, amount_max = 64, probability = 0.5}
         }
     end
-
-    --[[if mods[vesta_mods] then
-        local cosmic_incubator_recipe_vesta = "cosmic_incubator_recipe_vesta"
-        data_recipe[cosmic_incubator_recipe_vesta].subgroup = is_panglia_universe
-        data_recipe[cosmic_incubator_recipe_vesta].icons = GALAXY_I(galaxy_png, planet_vesta)
-    end
-
-    if mods[shattered_mods] then
-        local cosmic_incubator_recipe_shattered = "cosmic_incubator_recipe_skewer_shattered_planet"
-        data_recipe[cosmic_incubator_recipe_shattered].subgroup = is_panglia_universe
-        data_recipe[cosmic_incubator_recipe_shattered].icons = GALAXY_I(galaxy_png, planet_shattered)
-    end]]
 
     -- BUILDING
     local matter_printer = "matter_printer"
@@ -849,6 +864,10 @@ if mods[panglia_mods] then
         {type = unlock_recipe, recipe = processing_unit_from_panglite_fiber},
         {type = unlock_recipe, recipe = advanced_processing_unit_from_panglite_fiber}
     }
+
+    table.insert(data_technology[electronic_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = electronic_circuit_from_panglite_fiber, change = 0.1})
+    table.insert(data_technology[advanced_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_circuit_from_panglite_fiber, change = 0.1})
+    table.insert(data_technology[tech_advanced_processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_processing_unit_from_panglite_fiber, change = 0.1})
 
     -- ENERGY ROOTS
     data_generator["panglia_energy_roots"].fluid_usage_per_tick = 7.5/60

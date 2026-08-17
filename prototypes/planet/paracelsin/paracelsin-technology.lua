@@ -1,13 +1,13 @@
 if mods[paracelsin_mods] then
     planet_discovery_paracelsin = "planet-discovery-paracelsin"
     tech_sphalerite_processing_1 = "sphalerite-processing-1"
-    local tech_sphalerite_processing_2 = "sphalerite-processing-2"
-    local tech_sphalerite_processing_3 = "sphalerite-processing-3"
-    local tech_sphalerite_processing_4 = "sphalerite-processing-4"
+    tech_sphalerite_processing_2 = "sphalerite-processing-2"
+    tech_sphalerite_processing_3 = "sphalerite-processing-3"
+    tech_sphalerite_processing_4 = "sphalerite-processing-4"
     tech_tetrahedrite_processing_1 = "tetrahedrite-processing-1"
-    local tech_tetrahedrite_processing_2 = "tetrahedrite-processing-2"
-    local tech_tetrahedrite_processing_3 = "tetrahedrite-processing-3"
-    local tech_tetrahedrite_processing_4 = "tetrahedrite-processing-4"
+    tech_tetrahedrite_processing_2 = "tetrahedrite-processing-2"
+    tech_tetrahedrite_processing_3 = "tetrahedrite-processing-3"
+    tech_tetrahedrite_processing_4 = "tetrahedrite-processing-4"
     tech_germanium_synthesis = "germanium-synthesis"
     tech_antimony_synthesis = "antimony-synthesis"
     data:extend
@@ -101,8 +101,7 @@ if mods[paracelsin_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -134,8 +133,7 @@ if mods[paracelsin_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -229,8 +227,7 @@ if mods[paracelsin_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -262,8 +259,7 @@ if mods[paracelsin_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -289,8 +285,7 @@ if mods[paracelsin_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -316,8 +311,7 @@ if mods[paracelsin_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
