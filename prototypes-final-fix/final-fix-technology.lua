@@ -323,6 +323,8 @@ local function auto_added_science_pack(science_pack_name, technology_name)
     end
 end
 
+auto_added_science_pack(promethium_science_pack, promethium_science_pack)
+
 -- MULUNA
 if mods[muluna_mods] then
     auto_added_science_pack(interstellar_science_pack, interstellar_science_pack)
@@ -367,6 +369,11 @@ if mods[corrundum_mods] then
     auto_added_science_pack(electrochemical_science_pack, electrochemical_science_pack)
 end
 
+-- FROZETA
+if mods[secretas_frozeta_mods] then
+    auto_added_science_pack(golden_science_pack, golden_science_pack)
+end
+
 -- CASTRA
 if mods[castra_mods] then
     auto_added_science_pack(battlefield_science_pack, battlefield_science_pack)
@@ -380,4 +387,12 @@ end
 -- MARAXSIS
 if mods[shchierbin_mods] then
     auto_added_science_pack(hydraulic_science_pack, hydraulic_science_pack)
+end
+
+-- VESTA
+if mods[vesta_mods] then
+    data_technology[tech_algea_extracting].research_trigger.count = 1
+    data_technology[tech_gas_manipulation_science_pack].research_trigger.count = 1
+
+    auto_added_science_pack(gas_manipulation_science_pack, tech_gas_manipulation_science_pack)
 end

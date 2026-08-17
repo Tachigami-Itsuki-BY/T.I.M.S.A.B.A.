@@ -1,8 +1,41 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.12.0
+Date: 17.08.2026
+  Features:
+    - [Mods] Добавлена поддержка Planet Vesta: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [All] Добавлены новые технологии продуктиваности для Электросхем, Продвинутых Электросхем и Продвинутых Процессоров.
+
+    - [Mods] Added support for Planet Vesta: seamlessly integrated the new planet into the gameplay flow.
+    - [All] Added new productivity technology for Electronic Circuit, Advanced Electronic Circuit, and Advanced Processing Unit.
+
+  Balancing:
+    - [Aquilo] В рецептах Термоядерного Реактора и Генератора произведена замена ингердиента: Железобетон → Укреплённый графено-бетонный кирпич.
+    - [All] Скорректировано древо технологий.
+    - [Moshine] В рецепте Расплавленого Nd-Fe-B скорректированы ингредиенты.
+
+    - [Aquilo] Replaced an ingredient in the Fusion Reactor and Generator recipes: Reinforced concrete → Reinforced graphene concrete brick.
+    - [All] Adjusted technology tree.
+    - [Moshine] Adjusted ingredients in the Nd-Fe-B molten recipe.
+
+  Bugfixes:
+    - [Arig] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Planetaris: Arig» был включён без других модов на планеты.
+
+    - [Arig] Fixed a bug where the game with the mod would not load if the "Planetaris: Arig" mod was enabled without other planet mods.
+
+  Locale:
+    - [All] Обновлена локализация.
+
+    - [All] Updated localization.
+
+  Modding:
+    - [Mods] Мод «Planet Vesta» переведён в опциональную зависимость.
+
+    - [Mods] Moved "Maraxsis" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.11.3
 Date: 14.08.2026
   Features:
-    - [All] Добавлена рецепты заморозки и разморозки портящихся предметы. Множитель времени за которое они разморозятся можно настроить в настройках модов.
+    - [All] Добавлены рецепты заморозки и разморозки портящихся предметы. Множитель времени за которое они разморозятся можно настроить в настройках модов.
 
     - [All] Added freezing and defrosting recipes for perishable items. The defrost time multiplier can be adjusted in the mod settings.
 

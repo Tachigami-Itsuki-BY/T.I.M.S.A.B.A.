@@ -2,8 +2,8 @@ if mods[corrundum_mods] then
     planet_discovery_corrundum = "planet-discovery-corrundum"
     tech_chalcopyrite_processing_1 = "chalcopyrite-processing-1"
     local tech_chalcopyrite_processing_2 = "chalcopyrite-processing-2"
-    local tech_chalcopyrite_processing_3 = "chalcopyrite-processing-3"
-    local tech_chalcopyrite_processing_4 = "chalcopyrite-processing-4"
+    tech_chalcopyrite_processing_3 = "chalcopyrite-processing-3"
+    tech_chalcopyrite_processing_4 = "chalcopyrite-processing-4"
     tech_selenium_synthesis = "selenium-synthesis"
     data:extend
     ({
@@ -31,9 +31,7 @@ if mods[corrundum_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
+                    {metallurgic_science_pack, 1}
                 },
                 time = 30
             }
@@ -62,9 +60,7 @@ if mods[corrundum_mods] then
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
                     {space_science_pack, 1},
-                    {metallurgic_science_pack, 1},
-                    {agricultural_science_pack, 1},
-                    {electromagnetic_science_pack, 1}
+                    {metallurgic_science_pack, 1}
                 },
                 time = 30
             }
@@ -129,8 +125,7 @@ if mods[corrundum_mods] then
                     {metallurgic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -156,8 +151,7 @@ if mods[corrundum_mods] then
                     {electromagnetic_science_pack, 1},
                     {agricultural_science_pack, 1},
                     {metallurgic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }

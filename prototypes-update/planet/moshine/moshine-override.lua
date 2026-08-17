@@ -52,7 +52,7 @@ if mods[moshine_mods] then
 
     -- NEODYM CASTING
     data_item[neodymium_magnet].localised_name = {"item-name.neodymium-magnet"}
-    data_item[neodymium_magnet].localised_description = show_formula and {chemical_formula, "Nd[font=default-tiny-bold]2[/font]Fe[font=default-tiny-bold]14[/font]B"} or nil
+    data_item[neodymium_magnet].localised_description = show_formula and {chemical_formula, "NdFeB"} or nil
     data_item[neodymium_magnet].subgroup = is_neodymium_casting
     data_item[neodymium_magnet].order = b
     data_item[neodymium_magnet].stack_size = 200

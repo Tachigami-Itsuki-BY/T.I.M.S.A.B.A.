@@ -99,7 +99,7 @@ if mods[castra_mods] then
     }
     data_recipe[advanced_circuit_battlefield_data].surface_conditions = {{property = pressure, min = 2254, max = 2254}}
 
-    local processing_unit_battlefield_data = "processing-unit-battlefield-data"
+    processing_unit_battlefield_data = "processing-unit-battlefield-data"
     data_recipe[processing_unit_battlefield_data].subgroup = is_castra_recipe
     data_recipe[processing_unit_battlefield_data].icons = BUILDING_R_I(processing_unit, castra_data)
     data_recipe[processing_unit_battlefield_data].order = a_c
@@ -663,5 +663,11 @@ if mods[castra_mods] then
     end
     add_recipe_for_physical_ammo_productivity(railgun_ammo)
 
-    table.insert(data_technology[planet_discovery_aquilo].prerequisites, battlefield_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_3].prerequisites, interstellar_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_3].prerequisites, battlefield_science_pack)
+
+    table.insert(data_technology[electronic_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = electronic_circuit_battlefield_data, change = 0.1})
+    table.insert(data_technology[advanced_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_circuit_battlefield_data, change = 0.1})
+
+    table.insert(data_technology[tech_advanced_processing_unit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_processing_unit_battlefield_data, change = 0.1})
 end

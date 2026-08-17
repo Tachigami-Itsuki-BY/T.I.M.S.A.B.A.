@@ -33,143 +33,60 @@ if mods[arig_mods] then
         }
     })
 
-    -- WATER HARVESTING CONFIG
-    moshine_water_harvesting = "moshine-water-harvesting"
-    paracelsin_water_harvesting = "paracelsin-water-harvesting"
-    corrundum_water_harvesting = "corrundum-water-harvesting"
-    castra_water_harvesting = "castra-water-harvesting"
-    shchierbin_water_harvesting = "shchierbin-water-harvesting"
-    maraxsis_water_harvesting = "maraxsis-water-harvesting"
-    panglia_water_harvesting = "panglia-water-harvesting"
-    frozeta_water_harvesting = "frozeta-water-harvesting"
-    terrapalus_water_harvesting = "terrapalus-water-harvesting"
-    local water_planets =
-    {
-        -- PLANETS
-        [moshine_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.moshine"}},
-            name = moshine_water_harvesting,
-            subgroup = is_arig_water_planets,
-            planet = planet_moshine,
-            order = data_planet[planet_moshine].order,
-            amount = 15,
-            surface_conditions = {{property = pressure, min = 701, max = 701}}
-        },
-        [paracelsin_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.paracelsin"}},
-            name = paracelsin_water_harvesting,
-            subgroup = is_arig_water_planets,
-            planet = planet_paracelsin,
-            order = data_planet[planet_paracelsin].order,
-            amount = 120,
-            surface_conditions = {{property = pressure, max = 5300, min = 5300}}
-        },
-        [corrundum_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.corrundum"}},
-            name = corrundum_water_harvesting,
-            subgroup = is_arig_water_planets,
-            planet = planet_corrundum,
-            order = data_planet[planet_corrundum].order,
-            amount = 120,
-            surface_conditions = {{property = pressure, max = 6000, min = 6000}}
-        },
-        [castra_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.castra"}},
-            name = castra_water_harvesting,
-            subgroup = is_arig_water_planets,
-            planet = planet_castra,
-            order = data_planet[planet_castra].order,
-            amount = 120,
-            surface_conditions = {{property = pressure, max = 2254, min = 2254}}
-        },
-        [shchierbin_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.shchierbin"}},
-            name = shchierbin_water_harvesting,
-            subgroup = is_arig_water_planets,
-            planet = planet_shchierbin,
-            order = data_planet[planet_shchierbin].order,
-            amount = 240,
-            surface_conditions = {{property = pressure, max = 1500, min = 1500}}
-        },
-        [maraxsis_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.maraxsis"}},
-            name = maraxsis_water_harvesting,
-            subgroup = is_arig_water_planets,
-            planet = planet_maraxsis,
-            order = data_planet[planet_maraxsis].order,
-            amount = 960,
-            surface_conditions = {{property = pressure, max = 200000, min = 200000}}
-        },
-        -- MOONS
-        [panglia_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.panglia"}},
-            name = panglia_water_harvesting,
-            subgroup = is_arig_water_moons,
-            planet = planet_panglia,
-            order = data_planet[planet_panglia].order,
-            amount = 480,
-            surface_conditions = {{property = pressure, max = 1401, min = 1401}}
-        },
-        [secretas_frozeta_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.frozeta"}},
-            name = frozeta_water_harvesting,
-            subgroup = is_arig_water_moons,
-            planet = planet_frozeta,
-            order = data_planet[planet_frozeta].order,
-            amount = 120,
-            surface_conditions = {{property = pressure, max = 200, min = 280}}
-        },
-        [terrapalus_mods] =
-        {
-            localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.terrapalus"}},
-            name = terrapalus_water_harvesting,
-            subgroup = is_arig_water_moons,
-            planet = planet_terrapalus,
-            order = data_planet[planet_terrapalus].order,
-            amount = 480,
-            surface_conditions =
+    local function create_recipe_water_harvesting(planet_name, subgroup, amount, surface_conditions)
+        data:extend
+        ({
             {
-                {property = pressure, max = 2000, min = 2800},
-                {property = gravity, max = 25, min = 25},
-                {property = temperature, max = 288, min = 288},
-                {property = magnetic_field, max = 40, min = 40}
+                localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name." .. planet_name}},
+                type = recipe,
+                name = planet_name .. _water_harvesting,
+                category = arig_water_production,
+                subgroup = subgroup,
+                icons = BUILDING_R_I(water, planet_name),
+                order = data_planet[planet_name].order,
+                enabled = false,
+                auto_recycle = false,
+                allow_productivity = true,
+                allow_quality = false,
+                allow_decomposition = false,
+                energy_required = 16,
+                ingredients = {},
+                results = {{type = fluid, name = water, amount = amount}},
+                main_product = water,
+                surface_conditions = surface_conditions
             }
-        },
-    }
-
-    -- RECIPE GENERATION
-    for mod_name, config in pairs(water_planets) do
-        if mods[mod_name] then
-            data:extend
-            ({
-                {
-                    localised_name = config.localised_name,
-                    type = recipe,
-                    name = config.name,
-                    category = water_production,
-                    subgroup = config.subgroup,
-                    icons = BUILDING_R_I(water, config.planet),
-                    order = config.order,
-                    enabled = false,
-                    auto_recycle = false,
-                    allow_productivity = true,
-                    allow_quality = false,
-                    allow_decomposition = false,
-                    energy_required = 16,
-                    ingredients = {},
-                    results = {{type = fluid, name = water, amount = config.amount}},
-                    main_product = water,
-                    surface_conditions = config.surface_conditions
-                }
-            })
-        end
+        })
+    end
+    -- PLANETS
+    if mods[moshine_mods] then
+        create_recipe_water_harvesting(planet_moshine, is_arig_water_planets, 15, {{property = pressure, min = 701, max = 701}})
+    end
+    if mods[paracelsin_mods] then
+        create_recipe_water_harvesting(planet_paracelsin, is_arig_water_planets, 120, {{property = pressure, max = 5300, min = 5300}})
+    end
+    if mods[corrundum_mods] then
+        create_recipe_water_harvesting(planet_corrundum, is_arig_water_planets, 120, {{property = pressure, max = 6000, min = 6000}})
+    end
+    if mods[castra_mods] then
+        create_recipe_water_harvesting(planet_castra, is_arig_water_planets, 120, {{property = pressure, max = 2254, min = 2254}})
+    end
+    if mods[shchierbin_mods] then
+        create_recipe_water_harvesting(planet_shchierbin, is_arig_water_planets, 240, {{property = pressure, max = 1500, min = 1500}})
+    end
+    if mods[maraxsis_mods] then
+        create_recipe_water_harvesting(planet_maraxsis, is_arig_water_planets, 960, {{property = pressure, max = 200000, min = 200000}})
+    end
+    if mods[vesta_mods] then
+        create_recipe_water_harvesting(planet_vesta, is_arig_water_planets, 15, {{property = pressure, max = 500, min = 500}})
+    end
+    -- MOONS
+    if mods[panglia_mods] then
+        create_recipe_water_harvesting(planet_panglia, is_arig_water_moons, 480, {{property = pressure, max = 1401, min = 1401}})
+    end
+    if mods[secretas_frozeta_mods] then
+        create_recipe_water_harvesting(planet_frozeta, is_arig_water_moons, 120, {{property = pressure, max = 200, min = 280}})
+    end
+    if mods[terrapalus_mods] then
+        create_recipe_water_harvesting(planet_terrapalus, is_arig_water_moons, 480, {{property = pressure, max = 2111, min = 2111}})
     end
 end

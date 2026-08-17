@@ -1,4 +1,6 @@
 if mods[terrapalus_mods] then
+    data_planet[planet_terrapalus].surface_properties[pressure] = 2111
+
     TIMSABA.functions.create_recipes
     ({
         {

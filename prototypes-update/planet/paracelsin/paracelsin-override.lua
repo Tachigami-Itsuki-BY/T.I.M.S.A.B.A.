@@ -429,9 +429,7 @@ if mods[paracelsin_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {galvanization_science_pack, 1},
-        {interstellar_science_pack, 1}
+        {electromagnetic_science_pack, 1}
     }
 
     if settings.startup[setting_flow_control_new].value then
@@ -465,9 +463,7 @@ if mods[paracelsin_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {galvanization_science_pack, 1},
-        {interstellar_science_pack, 1}
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["axe-mining-speed"].unit.ingredients =
@@ -480,9 +476,7 @@ if mods[paracelsin_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {galvanization_science_pack, 1},
-        {interstellar_science_pack, 1}
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology[elevated_pipe].unit.ingredients =
@@ -495,9 +489,7 @@ if mods[paracelsin_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {galvanization_science_pack, 1},
-        {interstellar_science_pack, 1}
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["zinc-piping"].unit.ingredients =
@@ -510,8 +502,31 @@ if mods[paracelsin_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {galvanization_science_pack, 1},
-        {interstellar_science_pack, 1}
+        {electromagnetic_science_pack, 1}
     }
+
+    if mods[bobwarfare] then
+        table.insert(data_technology[artillery_turret_2].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[artillery_wagon_2].prerequisites, galvanization_science_pack)
+    end
+    table.insert(data_technology[tech_full_asteroid_processing].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_germanite_processing_2].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, galvanization_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, galvanization_science_pack)
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_millerite_processing_3].prerequisites, galvanization_science_pack)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, galvanization_science_pack)
+    end
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_monazite_processing_2].prerequisites, galvanization_science_pack)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, galvanization_science_pack)
+    end
+
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = nitric_acid_plastic, change = 0.1})
 end

@@ -10,7 +10,7 @@ TIMSABA.functions.create_recipes
         order = h,
         energy_required = 8,
         ingredients = {{type = fluid, name = compressed_air, amount = 960}},
-        results = {{type = fluid, name = argon_gas, amount_min = 0, amount_max = 15}},
+        results = {{type = fluid, name = argon_gas, amount = (15 / 2)}},
         main_product = argon_gas
     }
 })

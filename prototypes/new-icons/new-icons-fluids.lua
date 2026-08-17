@@ -54,8 +54,8 @@ data_fluid[lava].icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/lava.png"
 -- ANGELS RESOURCE REFINING
 data_fluid[sludge_ferrous].icons = nil
 data_fluid[sludge_ferrous].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore8-sludge.png"
-data_fluid[sludge_ferrous].base_color = {r = 92 / 255, g = 127 / 255, b = 72 / 255}
-data_fluid[sludge_ferrous].flow_color = {r = 100 / 255, g = 133 / 255, b = 81 / 255}
+data_fluid[sludge_ferrous].base_color = {r = 092 / 255, g = 127 / 255, b = 072 / 255}
+data_fluid[sludge_ferrous].flow_color = {r = 100 / 255, g = 133 / 255, b = 081 / 255}
 
 data_fluid[slurry_ferrous].icons = nil
 data_fluid[slurry_ferrous].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore8-solution.png"
@@ -74,8 +74,8 @@ data_fluid[concentrate_ferrous].flow_color = {r = 117 / 255, g = 133 / 255, b = 
 
 data_fluid[sludge_cupric].icons = nil
 data_fluid[sludge_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-sludge.png"
-data_fluid[sludge_cupric].base_color = {r = 160 / 255, g = 81 / 255, b = 34 / 255}
-data_fluid[sludge_cupric].flow_color = {r = 165 / 255, g = 90 / 255, b = 45 / 255}
+data_fluid[sludge_cupric].base_color = {r = 160 / 255, g = 081 / 255, b = 034 / 255}
+data_fluid[sludge_cupric].flow_color = {r = 165 / 255, g = 090 / 255, b = 045 / 255}
 
 data_fluid[slurry_cupric].icons = nil
 data_fluid[slurry_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-solution.png"
@@ -84,13 +84,13 @@ data_fluid[slurry_cupric].flow_color = {r = 145 / 255, g = 91 / 255, b = 65 / 25
 
 data_fluid[concentrate_anodized_cupric].icons = nil
 data_fluid[concentrate_anodized_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-anode-sludge.png"
-data_fluid[concentrate_anodized_cupric].base_color = {r = 134 / 255, g = 78 / 255, b = 59 / 255}
-data_fluid[concentrate_anodized_cupric].flow_color = {r = 140 / 255, g = 87 / 255, b = 69 / 255}
+data_fluid[concentrate_anodized_cupric].base_color = {r = 134 / 255, g = 078 / 255, b = 059 / 255}
+data_fluid[concentrate_anodized_cupric].flow_color = {r = 140 / 255, g = 087 / 255, b = 069 / 255}
 
 data_fluid[concentrate_cupric].icons = nil
 data_fluid[concentrate_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-slime.png"
-data_fluid[concentrate_cupric].base_color = {r = 128 / 255, g = 83 / 255, b = 70 / 255}
-data_fluid[concentrate_cupric].flow_color = {r = 134 / 255, g = 92 / 255, b = 79 / 255}
+data_fluid[concentrate_cupric].base_color = {r = 128 / 255, g = 083 / 255, b = 070 / 255}
+data_fluid[concentrate_cupric].flow_color = {r = 134 / 255, g = 092 / 255, b = 079 / 255}
 
 data_fluid[water_thermal_angels].icons = nil
 data_fluid[water_thermal_angels].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-thermal-water.png"
@@ -176,8 +176,8 @@ if mods[bobwarfare] then
 end
 
 data_fluid[liquid_fuel_bob].icon = "__TIMSABA__/graphics/icons/bobs/bob-liquid-fuel.png"
-data_fluid[liquid_fuel_bob].base_color = {r = 255 / 255, g = 220 / 255, b = 78 / 255}
-data_fluid[liquid_fuel_bob].flow_color = {r = 255 / 255, g = 222 / 255, b = 87 / 255}
+data_fluid[liquid_fuel_bob].base_color = {r = 255 / 255, g = 220 / 255, b = 078 / 255}
+data_fluid[liquid_fuel_bob].flow_color = {r = 255 / 255, g = 222 / 255, b = 087 / 255}
 
 -- ANGELS WATER TREATMENT
 data_fluid[water_semiheavy_1].icons = nil
@@ -444,23 +444,23 @@ data_fluid[acid_angels].flow_color = TIMSABA.functions.flow_color("SSF")
 
 data_fluid[natural_gas_angels].icons = nil
 data_fluid[natural_gas_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-natural-1.png"
-data_fluid[natural_gas_angels].base_color = {r = 96 / 255, g = 123 / 255, b = 82 / 255}
-data_fluid[natural_gas_angels].flow_color = {r = 104 / 255, g = 130 / 255, b = 91 / 255}
+data_fluid[natural_gas_angels].base_color = {r = 096 / 255, g = 123 / 255, b = 082 / 255}
+data_fluid[natural_gas_angels].flow_color = {r = 104 / 255, g = 130 / 255, b = 091 / 255}
 
 data_fluid[raw_gas_angels].icons = nil
 data_fluid[raw_gas_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-raw-1.png"
-data_fluid[raw_gas_angels].base_color = {r = 137 / 255, g = 148 / 255, b = 67 / 255}
-data_fluid[raw_gas_angels].flow_color = {r = 143 / 255, g = 153 / 255, b = 76 / 255}
+data_fluid[raw_gas_angels].base_color = {r = 137 / 255, g = 148 / 255, b = 067 / 255}
+data_fluid[raw_gas_angels].flow_color = {r = 143 / 255, g = 153 / 255, b = 076 / 255}
 
 data_fluid[NGL_angels].icons = nil
 data_fluid[NGL_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-liquid-ngl.png"
-data_fluid[NGL_angels].base_color = {r = 89 / 255, g = 107 / 255, b = 79 / 255}
-data_fluid[NGL_angels].flow_color = {r = 97 / 255, g = 114 / 255, b = 88 / 255}
+data_fluid[NGL_angels].base_color = {r = 089 / 255, g = 107 / 255, b = 079 / 255}
+data_fluid[NGL_angels].flow_color = {r = 097 / 255, g = 114 / 255, b = 088 / 255}
 
 data_fluid[multi_phase_oil_angels].icons = nil
 data_fluid[multi_phase_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-liquid-multi-phase-oil.png"
-data_fluid[multi_phase_oil_angels].base_color = {r = 133 / 255, g = 141 / 255, b = 88 / 255}
-data_fluid[multi_phase_oil_angels].flow_color = {r = 139 / 255, g = 147 / 255, b = 96 / 255}
+data_fluid[multi_phase_oil_angels].base_color = {r = 133 / 255, g = 141 / 255, b = 088 / 255}
+data_fluid[multi_phase_oil_angels].flow_color = {r = 139 / 255, g = 147 / 255, b = 096 / 255}
 if mods[corrundum_mods] then
     data_fluid[multi_phase_oil_angels].default_temperature = 15
     data_fluid[multi_phase_oil_angels].max_temperature = 100
@@ -469,13 +469,13 @@ end
 
 data_fluid[condensates_angels].icons = nil
 data_fluid[condensates_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-condensates.png"
-data_fluid[condensates_angels].base_color = {r = 90 / 255, g = 90 / 255, b = 90 / 255}
-data_fluid[condensates_angels].flow_color = {r = 98 / 255, g = 98 / 255, b = 98 / 255}
+data_fluid[condensates_angels].base_color = {r = 090 / 255, g = 090 / 255, b = 090 / 255}
+data_fluid[condensates_angels].flow_color = {r = 098 / 255, g = 098 / 255, b = 098 / 255}
 
 data_fluid[residual_angels].icons = nil
 data_fluid[residual_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-residual.png"
-data_fluid[residual_angels].base_color = {r = 128 / 255, g = 0 / 255, b = 128 / 255}
-data_fluid[residual_angels].flow_color = {r = 134 / 255, g = 13 / 255, b = 134 / 255}
+data_fluid[residual_angels].base_color = {r = 128 / 255, g = 000 / 255, b = 128 / 255}
+data_fluid[residual_angels].flow_color = {r = 134 / 255, g = 013 / 255, b = 134 / 255}
 
 data_fluid[methane_angels].icons = nil
 data_fluid[methane_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-methane.png"
@@ -514,18 +514,18 @@ data_fluid[benzene_angels].flow_color = TIMSABA.functions.flow_color("C6H6")
 
 data_fluid[fuel_oil_angels].icons = nil
 data_fluid[fuel_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-fuel-oil.png"
-data_fluid[fuel_oil_angels].base_color = {r = 238 / 255, g = 210 / 255, b = 89 / 255}
-data_fluid[fuel_oil_angels].flow_color = {r = 239 / 255, g = 212 / 255, b = 97 / 255}
+data_fluid[fuel_oil_angels].base_color = {r = 238 / 255, g = 210 / 255, b = 089 / 255}
+data_fluid[fuel_oil_angels].flow_color = {r = 239 / 255, g = 212 / 255, b = 097 / 255}
 
 data_fluid[naphtha_angels].icons = nil
 data_fluid[naphtha_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-naphtha.png"
-data_fluid[naphtha_angels].base_color = {r = 172 / 255, g = 72 / 255, b = 81 / 255}
-data_fluid[naphtha_angels].flow_color = {r = 176 / 255, g = 81 / 255, b = 90 / 255}
+data_fluid[naphtha_angels].base_color = {r = 172 / 255, g = 072 / 255, b = 081 / 255}
+data_fluid[naphtha_angels].flow_color = {r = 176 / 255, g = 081 / 255, b = 090 / 255}
 
 data_fluid[mineral_oil_angels].icons = nil
 data_fluid[mineral_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-mineral-oil.png"
-data_fluid[mineral_oil_angels].base_color = {r = 61 / 255, g = 173 / 255, b = 61 / 255}
-data_fluid[mineral_oil_angels].flow_color = {r = 71 / 255, g = 177 / 255, b = 71 / 255}
+data_fluid[mineral_oil_angels].base_color = {r = 061 / 255, g = 173 / 255, b = 061 / 255}
+data_fluid[mineral_oil_angels].flow_color = {r = 071 / 255, g = 177 / 255, b = 071 / 255}
 
 data_fluid[synthesis_angels].icons = nil
 data_fluid[synthesis_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-synthesis.png"
@@ -590,18 +590,18 @@ data_fluid[sodium_hydroxide_solution_angels].flow_color = TIMSABA.functions.flow
 -- ANGELS BIOPROCESSING
 data_fluid[nutrient_pulp].icons = nil
 data_fluid[nutrient_pulp].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-nutrient-pulp.png"
-data_fluid[nutrient_pulp].base_color = {r = 226 / 255, g = 151 / 255, b = 28 / 255}
-data_fluid[nutrient_pulp].flow_color = {r = 227 / 255, g = 156 / 255, b = 39 / 255}
+data_fluid[nutrient_pulp].base_color = {r = 226 / 255, g = 151 / 255, b = 028 / 255}
+data_fluid[nutrient_pulp].flow_color = {r = 227 / 255, g = 156 / 255, b = 039 / 255}
 
 data_fluid[raw_vegetable_oil].icons = nil
 data_fluid[raw_vegetable_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-raw-vegetable-oil.png"
-data_fluid[raw_vegetable_oil].base_color = {r = 255 / 255, g = 203 / 255, b = 62 / 255}
-data_fluid[raw_vegetable_oil].flow_color = {r = 255 / 255, g = 206 / 255, b = 72 / 255}
+data_fluid[raw_vegetable_oil].base_color = {r = 255 / 255, g = 203 / 255, b = 062 / 255}
+data_fluid[raw_vegetable_oil].flow_color = {r = 255 / 255, g = 206 / 255, b = 072 / 255}
 
 data_fluid[vegetable_oil].icons = nil
 data_fluid[vegetable_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-vegetable-oil.png"
-data_fluid[vegetable_oil].base_color = {r = 231 / 255, g = 231 / 255, b = 29 / 255}
-data_fluid[vegetable_oil].flow_color = {r = 232 / 255, g = 232 / 255, b = 40 / 255}
+data_fluid[vegetable_oil].base_color = {r = 231 / 255, g = 231 / 255, b = 029 / 255}
+data_fluid[vegetable_oil].flow_color = {r = 232 / 255, g = 232 / 255, b = 040 / 255}
 
 data_fluid[acetic_acid].icons = nil
 data_fluid[acetic_acid].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-acetic-acid.png"
@@ -625,8 +625,8 @@ data_fluid[propionic_acid].flow_color = TIMSABA.functions.flow_color("C3H6O2")
 
 data_fluid[water_for_fish].icons = nil
 data_fluid[water_for_fish].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-fish-atmosphere.png"
-data_fluid[water_for_fish].base_color = {r = 178 / 255, g = 224 / 255, b = 30 / 255}
-data_fluid[water_for_fish].flow_color = {r = 182 / 255, g = 226 / 255, b = 41 / 255}
+data_fluid[water_for_fish].base_color = {r = 178 / 255, g = 224 / 255, b = 030 / 255}
+data_fluid[water_for_fish].flow_color = {r = 182 / 255, g = 226 / 255, b = 041 / 255}
 
 data_fluid[polluted_water_for_fish].icons = nil
 data_fluid[polluted_water_for_fish].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-polluted-fish-atmosphere.png"
@@ -635,23 +635,23 @@ data_fluid[polluted_water_for_fish].flow_color = {r = 194 / 255, g = 111 / 255, 
 
 data_fluid[raw_fish_oil].icons = nil
 data_fluid[raw_fish_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-raw-fish-oil.png"
-data_fluid[raw_fish_oil].base_color = {r = 220 / 255, g = 136 / 255, b = 52 / 255}
-data_fluid[raw_fish_oil].flow_color = {r = 222 / 255, g = 142 / 255, b = 62 / 255}
+data_fluid[raw_fish_oil].base_color = {r = 220 / 255, g = 136 / 255, b = 052 / 255}
+data_fluid[raw_fish_oil].flow_color = {r = 222 / 255, g = 142 / 255, b = 062 / 255}
 
 data_fluid[fish_oil].icons = nil
 data_fluid[fish_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-fish-oil.png"
-data_fluid[fish_oil].base_color = {r = 216 / 255, g = 172 / 255, b = 27 / 255}
-data_fluid[fish_oil].flow_color = {r = 218 / 255, g = 176 / 255, b = 38 / 255}
+data_fluid[fish_oil].base_color = {r = 216 / 255, g = 172 / 255, b = 027 / 255}
+data_fluid[fish_oil].flow_color = {r = 218 / 255, g = 176 / 255, b = 038 / 255}
 
 data_fluid[puffer_atmosphere].icons = nil
 data_fluid[puffer_atmosphere].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-gas-puffer-atmosphere.png"
-data_fluid[puffer_atmosphere].base_color = {r = 178 / 255, g = 224 / 255, b = 30 / 255}
-data_fluid[puffer_atmosphere].flow_color = {r = 182 / 255, g = 226 / 255, b = 41 / 255}
+data_fluid[puffer_atmosphere].base_color = {r = 178 / 255, g = 224 / 255, b = 030 / 255}
+data_fluid[puffer_atmosphere].flow_color = {r = 182 / 255, g = 226 / 255, b = 041 / 255}
 
 data_fluid[alien_goo].icons = nil
 data_fluid[alien_goo].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-alien-goo.png"
-data_fluid[alien_goo].base_color = {r = 207 / 255, g = 44 / 255, b = 214 / 255}
-data_fluid[alien_goo].flow_color = {r = 209 / 255, g = 55 / 255, b = 216 / 255}
+data_fluid[alien_goo].base_color = {r = 207 / 255, g = 044 / 255, b = 214 / 255}
+data_fluid[alien_goo].flow_color = {r = 209 / 255, g = 055 / 255, b = 216 / 255}
 
 -- MULUNA
 if mods[muluna_mods] then
@@ -710,14 +710,31 @@ if mods[maraxsis_mods] then
     data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
 end
 
+-- VESTA
 if mods[vesta_mods] then
-    data_fluid[algea_water_vesta].icon = "__TIMSABA__/graphics/icons/vesta/fluid_algea_water.png"
-    data_fluid[dt_fuel].icon = "__TIMSABA__/graphics/icons/vesta/dt_fuel.png"
     data_fluid[helium_vesta].icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png"
-    data_fluid[tritium_mods].icon = "__TIMSABA__/graphics/icons/vesta/gas_tritium.png"
+    data_fluid[helium_vesta].base_color = TIMSABA.functions.fluid_color("HeHeHe")
+    data_fluid[helium_vesta].flow_color = TIMSABA.functions.flow_color("HeHeHe")
+
+    data_fluid[algea_water_vesta].icon = "__TIMSABA__/graphics/icons/vesta/fluid_algea_water.png"
+    data_fluid[algea_water_vesta].base_color = {r = 056 / 255, g = 075 / 255, b = 014 / 255}
+    data_fluid[algea_water_vesta].flow_color = {r = 065 / 255, g = 085 / 255, b = 025 / 255}
+
     data_fluid[supermagnetic_vesta].icon = "__TIMSABA__/graphics/icons/vesta/fluid_super_magnetic.png"
-    data_fluid[fluoro_fuel].icon = "__TIMSABA__/graphics/icons/vesta/fluoroketonefuel.png"
-    data_fluid[plasma_fuel].icon = "__TIMSABA__/graphics/icons/vesta/plasmafuel.png"
+    data_fluid[supermagnetic_vesta].base_color = {r = 024 / 255, g = 077 / 255, b = 046 / 255}
+    data_fluid[supermagnetic_vesta].flow_color = {r = 035 / 255, g = 085 / 255, b = 055 / 255}
+
+    data_fluid[fusion_thruster_fuel].icon = "__TIMSABA__/graphics/icons/vesta/fluoroketonefuel.png"
+    if data_fluid[fusion_thruster_fuel].base_color then
+        data_fluid[fusion_thruster_fuel].base_color = {r = 022 / 255, g = 076 / 255, b = 069 / 255}
+        data_fluid[fusion_thruster_fuel].flow_color = {r = 030 / 255, g = 085 / 255, b = 075 / 255}
+    end
+
+    data_fluid[fusion_thruster_oxidizer].icon = "__TIMSABA__/graphics/icons/vesta/plasmafuel.png"
+    if data_fluid[fusion_thruster_oxidizer].base_color then
+        data_fluid[fusion_thruster_oxidizer].base_color = {r = 093 / 255, g = 148 / 255, b = 179 / 255}
+        data_fluid[fusion_thruster_oxidizer].flow_color = {r = 100 / 255, g = 155 / 255, b = 185 / 255}
+    end
 end
 
 if mods[shattered_mods] then

@@ -66,11 +66,11 @@ TIMSABA.functions.create_items
         order = d
     },
     {
-        localised_description = show_formula and {chemical_formula, "NbWFe"} or nil,
+        localised_description = show_formula and {chemical_formula, "NbWMo"} or nil,
         name = niobium_tungsten_molybdenum_powder_mixture,
         subgroup = is_niobium,
         icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-tungsten-molybdenum-powder-mixture.png",
-        order = f
+        order = e
     },
     -- CHEMISTRY
     {
@@ -285,7 +285,7 @@ TIMSABA.functions.create_recipes
         category = angels_powder_mixing_4,
         subgroup = is_niobium,
         icons = THREE_D_I(niobium_powder, tungsten_powder, molybdenum_powder, niobium_tungsten_molybdenum_powder_mixture),
-        order = f,
+        order = e,
         energy_required = 8, -- Niobium powder + Tungsten powder + Molybdenum powder --> Niobium-tungsten-molybdenum powder mixture
         ingredients =
         {

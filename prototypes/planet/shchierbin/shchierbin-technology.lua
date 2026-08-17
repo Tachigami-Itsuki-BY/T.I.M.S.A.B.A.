@@ -1,9 +1,9 @@
 if mods[shchierbin_mods] then
     planet_discovery_shchierbin = "planet-discovery-shchierbin"
     tech_calcium_processing = "calcium-processing"
-    tech_vanadium_smelting_1 = "tech-vanadium-smelting-1"
-    local tech_vanadium_smelting_2 = "tech-vanadium-smelting-2"
-    tech_vanadium_smelting_3 = "tech-vanadium-smelting-3"
+    tech_vanadium_smelting_1 = "vanadium-smelting-1"
+    local tech_vanadium_smelting_2 = "vanadium-smelting-2"
+    tech_vanadium_smelting_3 = "vanadium-smelting-3"
     tech_titanium_aluminium_vanadium_processing = "titanium-aluminium-vanadium-processing"
     data:extend
     ({

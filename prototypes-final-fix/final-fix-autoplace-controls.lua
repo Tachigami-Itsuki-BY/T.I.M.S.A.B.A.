@@ -86,6 +86,11 @@ if mods[shchierbin_mods] then
     data_autoplace_control["carbon-ore"].order = c_w
 end
 
+-- MARAXSIS
+if mods[maraxsis_mods] then
+    data_autoplace_control["maraxsis-coral"].order = c_x
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then

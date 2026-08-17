@@ -93,9 +93,11 @@ end
 local function scale_fluids(list)
     if not list then return end
     for _, entry in pairs(list) do
-        -- Строгая проверка по вашему формату 2.0
         if entry.type == fluid and entry.amount then
             entry.amount = entry.amount / 0.9375
+        elseif entry.type == fluid and (entry.amount_min or entry.amount_max) then
+            if entry.amount_min then entry.amount_min = entry.amount_min / 0.9375 end
+            if entry.amount_max then entry.amount_max = entry.amount_max / 0.9375 end
         end
     end
 end

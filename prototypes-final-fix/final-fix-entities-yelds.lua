@@ -732,6 +732,43 @@ if mods[shchierbin_mods] then
     end
 end
 
+-- MARAXSIS
+if mods[maraxsis_mods] then
+    for i = 1, 15 do
+        data_unit[tropical_fish_maraxsis .. "-" .. i].minable.results[1].amount = 4
+    end
+
+    data_tree["maraxsis-polylplast"].minable.results =
+    {
+        {type = item, name = coral_maraxsis, amount_min = 16, amount_max = 32},
+        {type = item, name = stone, amount_min = 4, amount_max = 8}
+    }
+
+    data_entity["maraxsis-mollusk-husk"].minable.results =
+    {
+        {type = item, name = limestone_angels, amount_min = 16, amount_max = 32}
+    }
+end
+
+-- VESTA
+if mods[vesta_mods] then
+    data_entity["vesta_rock_huge"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 2, amount_max = 4},
+        {type = item, name = algea_nutrient_clump, amount_min = 0, amount_max = 2},
+        {type = item, name = algea_clump_iron, amount_min = 4, amount_max = 16},
+        {type = item, name = algea_clump_copper, amount_min = 2, amount_max = 8}
+    }
+
+    data_entity["vesta-petrite"].minable.results =
+    {
+        {type = item, name = algea_petrite_clump, amount_min = 2, amount_max = 4},
+        {type = item, name = algea_nutrient_clump, amount_min = 0, amount_max = 2},
+        {type = item, name = algea_clump_iron, amount_min = 2, amount_max = 4},
+        {type = item, name = algea_clump_copper, amount_min = 2, amount_max = 4}
+    }
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then
@@ -740,6 +777,7 @@ if mods[muluna_mods] then
         {type = item, name = sulfur, amount = 2},
         {type = item, name = stone, amount = 16}
     }
+
     data_entity["lunar-huge-rock"].minable.results =
     {
         {type = item, name = sulfur, amount = 4},

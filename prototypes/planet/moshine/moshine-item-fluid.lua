@@ -99,13 +99,13 @@ if mods[moshine_mods] then
     ({
         -- CASTING
         {
-            localised_description = show_formula and {chemical_formula, "Nd[font=default-tiny-bold]2[/font]Fe[font=default-tiny-bold]14[/font]B"} or nil,
+            localised_description = show_formula and {chemical_formula, "NdFeB"} or nil,
             name = neodymium_iron_boron_molten,
             subgroup = is_neodymium_casting,
             icon = "__TIMSABA__/graphics/icons/moshine/neodymium-iron-boron-molten.png",
             order = a,
-            base_color = TIMSABA.functions.fluid_color("Nd2Fe14B"),
-            flow_color = TIMSABA.functions.flow_color("Nd2Fe14B")
+            base_color = TIMSABA.functions.fluid_color("NdFeB"),
+            flow_color = TIMSABA.functions.flow_color("NdFeB")
         }
     })
 

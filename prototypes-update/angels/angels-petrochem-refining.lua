@@ -122,7 +122,7 @@ data_recipe[compressed_air].results[1].amount = 240
 data_recipe[compressed_air].surface_conditions =
 {
     {property = gravity, min = 10, max = 25},
-    {property = pressure, min = 1000, max = 2000}
+    {property = pressure, min = 1000, max = 2111}
 }
 
 data_fluid[hydrogen_angels].order = b

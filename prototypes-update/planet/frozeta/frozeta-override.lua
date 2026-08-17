@@ -71,7 +71,6 @@ if mods[secretas_frozeta_mods] then
     data_item[golden_biter_egg].order = e
     data_item[golden_biter_egg].stack_size = 200
 
-    local golden_science_pack = "golden-science-pack"
     data_tool[golden_science_pack].subgroup = is_frozeta_recipe
     data_tool[golden_science_pack].order = f
     data_recipe[golden_science_pack].subgroup = is_frozeta_recipe
@@ -128,10 +127,8 @@ if mods[secretas_frozeta_mods] then
     bobmods.lib.recipe.update_recycling_recipe({steam_recycler})
 
     -- TECHNOLOGY
-    local planet_discovery_secretas = "planet-discovery-secretas"
-    if mods[asteroid_belt_mods] then
-        data_technology[planet_discovery_secretas].prerequisites = {"space-discovery-asteroid-belt"}
-    end
+    planet_discovery_secretas = "planet-discovery-secretas"
+    data_technology[planet_discovery_secretas].prerequisites = {tech_advanced_asteroid_processing}
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = auric_asteroid_crushing})
     table.insert(data_technology[planet_discovery_secretas].effects, {type = unlock_recipe, recipe = ammonia_from_frozeta_air})
     data_technology[planet_discovery_secretas].unit.ingredients =
@@ -208,17 +205,18 @@ if mods[secretas_frozeta_mods] then
     if mods[shchierbin_mods] then
         table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = vanadium_science_pack, change = 0.1})
     end
-    if mods[castra_mods] then
+    if mods[maraxsis_mods] then
         table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = hydraulic_science_pack, change = 0.1})
     end
-    if mods[maraxsis_mods] then
+    if mods[vesta_mods] then
+        table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = gas_manipulation_science_pack, change = 0.1})
+    end
+    if mods[muluna_mods] then
         table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = interstellar_science_pack, change = 0.1})
     end
     table.insert(data_technology[tech_science_pack .. _productivity].effects, {type = change_recipe_productivity, recipe = golden_science_pack, change = 0.1})
 
     data_technology["worker-robots-storage-4"].prerequisites = {golden_science_pack, "worker-robots-storage-3"}
-
-    table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
 
     if mods[bobmodules] then
         table.insert(data_technology[speed_module_5].prerequisites, steam_recycler)
@@ -245,5 +243,29 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[agricultural_module_5].unit.ingredients, {metallurgic_science_pack, 1})
         table.insert(data_technology[agricultural_module_5].unit.ingredients, {agricultural_science_pack, 1})
         table.insert(data_technology[agricultural_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+    end
+
+    table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
+    if mods[bobwarfare] then
+        table.insert(data_technology[artillery_turret_2].prerequisites, golden_science_pack)
+        table.insert(data_technology[artillery_wagon_2].prerequisites, golden_science_pack)
+    end
+    table.insert(data_technology[tech_full_asteroid_processing].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_germanite_processing_2].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, golden_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, golden_science_pack)
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_millerite_processing_3].prerequisites, golden_science_pack)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, golden_science_pack)
+    end
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_monazite_processing_2].prerequisites, golden_science_pack)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, golden_science_pack)
     end
 end

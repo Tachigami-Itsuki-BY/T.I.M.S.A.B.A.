@@ -335,3 +335,9 @@ if mods[bobequipment] then
     data_technology[mech_armor].prerequisites = {electromagnetic_science_pack, "bob-power-armor-5"}
 end
 table.insert(data_technology[mech_armor].unit.ingredients, {production_science_pack, 1})
+
+table.insert(data_technology[processing_unit .. _productivity].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[processing_unit .. _productivity].unit.ingredients, {space_science_pack, 1})
+
+table.insert(data_technology[scrap_recycling .. _productivity].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[scrap_recycling .. _productivity].unit.ingredients, {space_science_pack, 1})

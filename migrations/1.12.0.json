@@ -1,0 +1,8 @@
+{
+    "technology":
+    [
+        ["tech-vanadium-smelting-1", "vanadium-smelting-1"],
+        ["tech-vanadium-smelting-2", "vanadium-smelting-2"],
+        ["tech-vanadium-smelting-3", "vanadium-smelting-3"]
+    ]
+}

@@ -613,3 +613,6 @@ else
         {metallurgic_science_pack, 1}
     }
 end
+
+table.insert(data_technology[low_density_structure .. _productivity].unit.ingredients, {utility_science_pack, 1})
+table.insert(data_technology[low_density_structure .. _productivity].unit.ingredients, {space_science_pack, 1})

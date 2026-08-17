@@ -2,12 +2,12 @@ if mods[moshine_mods] then
     planet_discovery_moshine = "planet-discovery-moshine"
     tech_magnet_moshine = "moshine-tech-magnet"
     local tech_monazite_processing_1 = "monazite-processing-1"
-    local tech_monazite_processing_2 = "monazite-processing-2"
-    local tech_monazite_processing_3 = "monazite-processing-3"
+    tech_monazite_processing_2 = "monazite-processing-2"
+    tech_monazite_processing_3 = "monazite-processing-3"
     tech_monazite_processing_4 = "monazite-processing-4"
     tech_neodymium_smelting_1 = "neodymium-smelting-1"
     local tech_neodymium_smelting_2 = "neodymium-smelting-2"
-    local tech_neodymium_smelting_3 = "neodymium-smelting-3"
+    tech_neodymium_smelting_3 = "neodymium-smelting-3"
     tech_boron_processing_2 = "boron-processing-2"
     local tech_phosphorus_processing_2 = "phosphorus-processing-2"
     data:extend
@@ -99,8 +99,7 @@ if mods[moshine_mods] then
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -131,8 +130,7 @@ if mods[moshine_mods] then
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }
@@ -226,8 +224,7 @@ if mods[moshine_mods] then
                     {space_science_pack, 1},
                     {metallurgic_science_pack, 1},
                     {electromagnetic_science_pack, 1},
-                    {cryogenic_science_pack, 1},
-                    {promethium_science_pack, 1}
+                    {cryogenic_science_pack, 1}
                 },
                 time = 30
             }

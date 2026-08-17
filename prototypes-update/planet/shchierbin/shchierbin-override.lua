@@ -192,7 +192,6 @@ if mods[shchierbin_mods] then
         {type = fluid, name = sodium_hydroxide_solution_angels, amount = 30}
     }
 
-    local vanadium_electro_engine_unit = "vanadium-electro-engine-unit"
     data_item[vanadium_electro_engine_unit].subgroup = is_shchierbin_recipe
     data_item[vanadium_electro_engine_unit].order = i
     data_item[vanadium_electro_engine_unit].stack_size = 200
@@ -220,45 +219,44 @@ if mods[shchierbin_mods] then
         {type = item, name = calcite, amount = 1}
     }
 
-    local crusher_vanad = "crusher-vanad"
     if mods[muluna_mods] then
-        data_item[crusher_vanad].subgroup = is_muluna_building
-        data_recipe[crusher_vanad].subgroup = is_muluna_building
-        data_recipe[crusher_vanad].ingredients =
+        data_item[vanadium_crusher].subgroup = is_muluna_building
+        data_recipe[vanadium_crusher].subgroup = is_muluna_building
+        data_recipe[vanadium_crusher].ingredients =
         {
             {type = item, name = vanadium_electro_engine_unit, amount = 8},
             {type = item, name = vanadium_steel_plate, amount = 16},
             {type = item, name = titanium_aluminium_vanadium_plate, amount = 16},
             {type = item, name = crusher_2, amount = 1}
         }
-        data_assembling[crusher_vanad].subgroup = is_muluna_building
+        data_assembling[vanadium_crusher].subgroup = is_muluna_building
     else
-        data_item[crusher_vanad].subgroup = space_platform
-        data_recipe[crusher_vanad].subgroup = space_platform
-        data_recipe[crusher_vanad].ingredients =
+        data_item[vanadium_crusher].subgroup = space_platform
+        data_recipe[vanadium_crusher].subgroup = space_platform
+        data_recipe[vanadium_crusher].ingredients =
         {
             {type = item, name = vanadium_electro_engine_unit, amount = 8},
             {type = item, name = vanadium_steel_plate, amount = 16},
             {type = item, name = titanium_aluminium_vanadium_plate, amount = 16},
             {type = item, name = crusher, amount = 1}
         }
-        data_assembling[crusher_vanad].subgroup = space_platform
+        data_assembling[vanadium_crusher].subgroup = space_platform
     end
-    data_item[crusher_vanad].order = f
-    data_item[crusher_vanad].stack_size = 32
-    data_item[crusher_vanad].weight = 31250
-    data_recipe[crusher_vanad].order = f
-    data_recipe[crusher_vanad].energy_required = 8
-    data_assembling[crusher_vanad].order = f
-    data_assembling[crusher_vanad].crafting_speed = 2
-    data_assembling[crusher_vanad].energy_usage = 960 .. kW
-    data_assembling[crusher_vanad].energy_source.drain = 30 .. kW
-    data_assembling[crusher_vanad].effect_receiver.base_effect.productivity = 0.5
+    data_item[vanadium_crusher].order = f
+    data_item[vanadium_crusher].stack_size = 32
+    data_item[vanadium_crusher].weight = 31250
+    data_recipe[vanadium_crusher].order = f
+    data_recipe[vanadium_crusher].energy_required = 8
+    data_assembling[vanadium_crusher].order = f
+    data_assembling[vanadium_crusher].crafting_speed = 2
+    data_assembling[vanadium_crusher].energy_usage = 960 .. kW
+    data_assembling[vanadium_crusher].energy_source.drain = 30 .. kW
+    data_assembling[vanadium_crusher].effect_receiver.base_effect.productivity = 0.5
 
     bobmods.lib.recipe.update_recycling_recipe
     ({
         vanadium_electro_engine_unit,
-        crusher_vanad
+        vanadium_crusher
     })
 
     -- TECHNOLOGY
@@ -311,17 +309,17 @@ if mods[shchierbin_mods] then
         {agricultural_science_pack, 1}
     }
 
-    table.insert(data_technology[crusher_vanad].prerequisites, tech_niobium_titanium_processing)
-    table.insert(data_technology[crusher_vanad].prerequisites, tech_titanium_aluminium_vanadium_processing)
+    table.insert(data_technology[vanadium_crusher].prerequisites, tech_niobium_titanium_processing)
+    table.insert(data_technology[vanadium_crusher].prerequisites, tech_titanium_aluminium_vanadium_processing)
     if mods[muluna_mods] then
-        table.insert(data_technology[crusher_vanad].prerequisites, crusher_2)
+        table.insert(data_technology[vanadium_crusher].prerequisites, crusher_2)
     end
-    data_technology[crusher_vanad].effects =
+    data_technology[vanadium_crusher].effects =
     {
         {type = unlock_recipe, recipe = vanadium_electro_engine_unit},
-        {type = unlock_recipe, recipe = crusher_vanad}
+        {type = unlock_recipe, recipe = vanadium_crusher}
     }
-    data_technology[crusher_vanad].unit.ingredients =
+    data_technology[vanadium_crusher].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
@@ -352,4 +350,6 @@ if mods[shchierbin_mods] then
     end
 
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, vanadium_science_pack)
+
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_vinylchloride, change = 0.1})
 end

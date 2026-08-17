@@ -90,7 +90,7 @@ if mods[maraxsis_mods] then
 
     local hydrolox_rocket_fuel = "maraxsis-hydrolox-rocket-fuel"
     data_recipe[hydrolox_rocket_fuel].subgroup = is_maraxsis_recipe
-    data_recipe[hydrolox_rocket_fuel].icons = THREE_I(hydrogen_angels, oxygen_angels, rocket_fuel)
+    data_recipe[hydrolox_rocket_fuel].icons = BUILDING_R_I(rocket_fuel, planet_maraxsis)
     data_recipe[hydrolox_rocket_fuel].order = c_c
     data_recipe[hydrolox_rocket_fuel].energy_required = 8
     data_recipe[hydrolox_rocket_fuel].ingredients =
@@ -696,6 +696,7 @@ if mods[maraxsis_mods] then
 
     -- TECHNOLOGY
     planet_discovery_maraxsis = "planet-discovery-maraxsis"
+    data_technology[planet_discovery_maraxsis].prerequisites = {tech_advanced_asteroid_processing}
     table.insert(data_technology[planet_discovery_maraxsis].effects, {type = unlock_recipe, recipe = spidertron_dock})
 
     data_technology[hydro_plant].effects =
@@ -732,22 +733,42 @@ if mods[maraxsis_mods] then
     if mods[moshine_mods] then
         add_recipe_for_glass_productivity(glass_mods)
     end
-    if mods[arig_mods] then
+    --[[if mods[arig_mods] then
         add_recipe_for_glass_productivity(glass_arig)
-    end
+    end]]
 
     local tech_promethium = "maraxsis-promethium"
     data_technology[tech_promethium .. _productivity].effects = {}
     local function add_recipe_for_promethium_productivity(recipe)
         table.insert(data_technology[tech_promethium .. _productivity].effects, {type = change_recipe_productivity, recipe = recipe, change = 0.1})
     end
-    add_recipe_for_promethium_productivity(promethium_science_pack)
-    if mods[hyarion_mods]then
-        add_recipe_for_promethium_productivity(promethium_science_pack_hyarion)
-    end
     if mods[moshine_mods] then
-        add_recipe_for_promethium_productivity(promethium_ore)
+        add_recipe_for_promethium_productivity(promethium_asteroid_crushing_1)
     end
 
     table.insert(data_technology[quantum_processor].prerequisites, hydraulic_science_pack)
+    if mods[bobwarfare] then
+        table.insert(data_technology[artillery_turret_2].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[artillery_wagon_2].prerequisites, hydraulic_science_pack)
+    end
+    table.insert(data_technology[tech_full_asteroid_processing].prerequisites, hydraulic_science_pack)
+    table.insert(data_technology[tech_antimonite_processing_2].prerequisites, hydraulic_science_pack)
+    table.insert(data_technology[tech_germanite_processing_2].prerequisites, hydraulic_science_pack)
+    table.insert(data_technology[tech_brannerite_processing_3].prerequisites, hydraulic_science_pack)
+    table.insert(data_technology[tech_wolframite_processing_3].prerequisites, hydraulic_science_pack)
+    table.insert(data_technology[tech_molybdenite_processing_4].prerequisites, hydraulic_science_pack)
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_millerite_processing_3].prerequisites, hydraulic_science_pack)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[tech_chalcopyrite_processing_3].prerequisites, hydraulic_science_pack)
+    end
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_monazite_processing_2].prerequisites, hydraulic_science_pack)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_technology[tech_vanadium_smelting_3].prerequisites, hydraulic_science_pack)
+    end
+
+    table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = smelt_microplastics, change = 0.1})
 end

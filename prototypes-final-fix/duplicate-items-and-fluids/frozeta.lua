@@ -1,4 +1,8 @@
 if mods[secretas_frozeta_mods] then
+    local speed_module_4_S = "speed-module-4-S"
+    local efficiency_module_4_S = "efficiency-module-4-S"
+    local productivity_module_4_S = "productivity-module-4-S"
+    local quality_module_4_S = "quality-module-4-S"
     local replacements =
     {
         [gold_ore_mods] = gold_ore_bob,
