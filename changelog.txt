@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.12.3
+Date: 18.08.2026
+  Bugfixes:
+    - [All] Исправлена ошибка, из-за которой рецепты Электродоменных Печей Т1-Т4 отсутствовали в соответствующих технологий.
+
+    - [All] Fixed a bug where the recipes for Electric Blast Furnaces T1-T4 were missing from the corresponding technologies.
+
+  Locale:
+    - [All] Исправлено некорректное отображение описаний зданий, добавленных TIMSABA.
+
+    - [All] Fixed incorrect display of descriptions for buildings added by TIMSABA.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.2
 Date: 18.08.2026
   Features:
@@ -45,13 +57,13 @@ Date: 18.08.2026
           2. Powder Mixers: decreased by 2x.
           3. Chemical Furnaces: increased by 2x.
           4. Induction Furnaces: increased by 4x.
-          5. Strand Casting Machine: increased by 2x.
+          5. Strand Casting Machines: increased by 2x.
           6. Sintering Ovens: increased by 4x.
         Petrochemical Processing:
           1. Advanced Chemical Plants: increased by 2x.
     - [All] Increased pollution for Blast Furnaces by 4x.
-    - [All] Decreased an ingredient count in T5 Module recipes: Module Mainframe (8 units) → (4 units).
-    - [All] Normalized crafting time for all Module recipes to a uniform: (32 sec).
+    - [All] Decreased an ingredient count in T5 Module recipes: Module Mainframe (8 units) → (4 units)
+    - [All] Normalized crafting time for all Module recipes to a uniform: (32 sec)
     - [All] Adjusted ingredients in Agricultural Module recipes.
 
   Graphics:

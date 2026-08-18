@@ -502,7 +502,6 @@ function TIMSABA.functions.create_buildings(list)
         ({
             {
                 localised_name = buildings.localised_name,
-                localised_description = buildings.localised_description,
                 type = item,
                 name = buildings.name,
                 subgroup = buildings.subgroup,
@@ -514,7 +513,6 @@ function TIMSABA.functions.create_buildings(list)
             },
             {
                 localised_name = buildings.localised_name,
-                localised_description = buildings.localised_description,
                 type = recipe,
                 name = buildings.name,
                 category = crafting,
