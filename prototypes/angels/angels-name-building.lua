@@ -63,6 +63,10 @@ chemical_furnace_1 = "angels-chemical-furnace"
 chemical_furnace_2 = "angels-chemical-furnace-2"
 chemical_furnace_3 = "angels-chemical-furnace-3"
 chemical_furnace_4 = "angels-chemical-furnace-4"
+electric_blast_furnace_1 = "electric-blast-furnace"
+electric_blast_furnace_2 = "electric-blast-furnace-2"
+electric_blast_furnace_3 = "electric-blast-furnace-3"
+electric_blast_furnace_4 = "electric-blast-furnace-4"
 
 -- ANGELS METALLURGY CASTING
 induction_furnace_1 = "angels-induction-furnace"

@@ -1,4 +1,69 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.12.2
+Date: 18.08.2026
+  Features:
+    - [All] Добавлены новые сущности: Электродоменные Печи Т1-Т4.
+    - [All] Добавлены новые модули: Т6-Т8
+
+    - [All] Added new entity: T1-T4 Electric Blast Furnace.
+    - [All] Added new modules: T6-T8
+
+  Changes:
+    - [Angel's Bioprocessing] Сельскохозяйственные Модули теперь настраиваются через Bob's Modules.
+
+    - [Angel's Bioprocessing] Agricultural Modules are now configured via Bob's Modules.
+
+  Balancing:
+    - [All] Скорректировано энергопотребление у следующих зданий:
+        Производство:
+          1. Центрифуги: увеличено в 2 раза.
+        Очистка ресурсов:
+          1. Рудо-очистительные Заводы: увеличено в 2 раза.
+          2. Электролитические Ячейки: увеличено в 2 раза.
+        Металлургия:
+          1. Прессы для Гранул: увеличено в 2 раза.
+          2. Смесители Порошков: уменьшено в 2 раза.
+          3. Химические печи: увеличено в 2 раза.
+          4. Индукционные Печи: увеличено в 4 раза.
+          5. Машины Непрерывного Литья: увеличено в 2 раза.
+          6. Печи для Спекания: увеличено в 4 раза.
+        Нефтехимическая очистка:
+          1. Продвинутые Химические Заводы: увеличено в 2 раза
+    - [All] У Доменных Печей увеличено загрязнение в 4 раза.
+    - [All] В рецептах Модулей Т5 уменьшено кол-во ингредиента: Схема модуля (8 ед.) → (4 ед.)
+    - [All] В рецептах Модулей время крафта стало общим: (32 сек.)
+    - [All] В рецептах Сельскохозяйственных Модулей скорректированы ингредиенты.
+
+    - [All] Adjusted energy consumption for the following buildings:
+        Production:
+          1. Centrifuges: increased by 2x.
+        Resource Processing:
+          1. Ore Refinery: increased by 2x.
+          2. Electrowinning Cells: increased by 2x.
+        Metallurgy:
+          1. Pellet Presses: increased by 2x.
+          2. Powder Mixers: decreased by 2x.
+          3. Chemical Furnaces: increased by 2x.
+          4. Induction Furnaces: increased by 4x.
+          5. Strand Casting Machine: increased by 2x.
+          6. Sintering Ovens: increased by 4x.
+        Petrochemical Processing:
+          1. Advanced Chemical Plants: increased by 2x.
+    - [All] Increased pollution for Blast Furnaces by 4x.
+    - [All] Decreased an ingredient count in T5 Module recipes: Module Mainframe (8 units) → (4 units).
+    - [All] Normalized crafting time for all Module recipes to a uniform: (32 sec).
+    - [All] Adjusted ingredients in Agricultural Module recipes.
+
+  Graphics:
+    - [All] Обновлены иконки модулям и их технологиям.
+
+    - [All] Updated icons for modules and their respective technologies.
+
+  Modding:
+    - [Mods] Мод «Flow Configuration» добавлен в опциональную зависимость.
+
+    - [Mods] Added "Flow Configuration" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.1
 Date: 17.08.2026
   Features:
@@ -2070,7 +2135,7 @@ Date: 10.05.2026
 
     - Global code optimization performed (O(N) search replaced with O(1) lookup).
     - Recipe processing speed increased tenfold.
-    - Reduced RAM consumption during mod loading.
+    - Decreased RAM consumption during mod loading.
 
   Scripting:
     - Добавлена однократная регенерация ресурсов для совместимости со старыми сохранениями. Новая руда появится в уже открытых чанках автоматически.
@@ -2844,7 +2909,7 @@ Date: 05.04.2026
   Balancing:
     - У Насосной Установки Т1 уменьшено кол-во ОЗ: (200 ед.) → (100 ед.)
 
-    - Reduced HP for T1 Pumpjacks: (200 units) → (100 units)
+    - Decreased HP for T1 Pumpjacks: (200 units) → (100 units)
 
   Modding:
     - Добавлена обязательная зависимость для мода «Bob's Enemies».
@@ -2891,7 +2956,7 @@ Date: 04.04.2026
     - В рецепте Перекиси Водорода заменено производственное здание: Электролизер → Химический Завод.
 
     - T2 Heat Exchanger recipe: reverted to original ingredients.
-    - Reduced crafting time for the Small Solar Panel recipes: (2 sec.) → (1 sec.)
+    - Decreased crafting time for the Small Solar Panel recipes: (2 sec.) → (1 sec.)
     - Changed stack sizes for the following items:
         Aquilo:
           1. Ice Platform (100 units) → (256 units)
@@ -3008,20 +3073,20 @@ Date: 03.04.2026
         2. Pipe (4 units) → (8 units)
         3. For Steam Turbines only: Plate (16 units) → (32 units)
     - Replaced an ingredient in the T1 Fluid Burning Generator recipe: Steel Pipe (8 units) → Bronze Pipe (8 units)
-    - Reduced ingredients in the T1 Electric Mining Drill recipe:
+    - Decreased ingredients in the T1 Electric Mining Drill recipe:
         1. Iron Gear Wheel (8 units) → (4 units)
         2. Iron Plate (8 units) → (4 units)
-    - Reduced an ingredient in the Pumpjack recipes: Pipe (8 units) → (4 units)
-    - Reduced an ingredient in the Assembling Machine recipes: Plate (16 units) → (8 units)
+    - Decreased an ingredient in the Pumpjack recipes: Pipe (8 units) → (4 units)
+    - Decreased an ingredient in the Assembling Machine recipes: Plate (16 units) → (8 units)
     - Adjusted ingredients in the Logistic Science Pack recipe:
         1. Transport Belt (2 units) → (1 unit)
         2. Removed Splitter.
-    - Reduced ingredients and results in the Wire recipes: Wire (4 units) → (2 units)
-    - Reduced an ingredient in the Centrifuge recipes: Bearing (64 units) → (32 units)
+    - Decreased ingredients and results in the Wire recipes: Wire (4 units) → (2 units)
+    - Decreased an ingredient in the Centrifuge recipes: Bearing (64 units) → (32 units)
     - Changed ingredients in the T4 Centrifuge recipe:
         1. Copper-Tungsten Plate (128 units) → (64 units)
         2. Tungsten Plate (64 units) → (128 units)
-    - Reduced an ingredient in the Solar Panel recipes by 2х: Wire.
+    - Decreased an ingredient in the Solar Panel recipes by 2х: Wire.
     - Adjusted ingredients in the T1 Solar Panel recipes:
         1. Doubled Copper Plate.
         2. Halved Steel Plate.
@@ -3034,7 +3099,7 @@ Date: 03.04.2026
         1. (480 units) → (512 units)
         2. (240 units) → (256 units)
         3. (60 sec.) → (64 sec.)
-    - Reduced ingredients in the Heat Pipe recipes by 4х.
+    - Decreased ingredients in the Heat Pipe recipes by 4х.
     - Adjusted ingredients in the T2 Heat Exchanger recipe:
         1. Invar Plate (8 units) → (4 units)
         2. Added Brass Plate (4 units)
@@ -3063,7 +3128,7 @@ Date: 03.04.2026
   Balancing:
     - В рецептах Шестерен уменьшено кол-во ингредиента: Пластина (2 ед.) → (1 ед.)
 
-    - Reduced an ingredient in the Gear Wheel recipes: Plate (2 units) → (1 unit)
+    - Decreased an ingredient in the Gear Wheel recipes: Plate (2 units) → (1 unit)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.6
 Date: 03.04.2026

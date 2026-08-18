@@ -674,27 +674,15 @@ if mods[muluna_mods] then
     data_recipe[vacuum_heating_tower].order = z
     data_recipe[vacuum_heating_tower].energy_required = 8
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            data_recipe[vacuum_heating_tower].ingredients =
-            {
-                {type = item, name = molybdenum_rhenium_plate, amount = 16},
-                {type = item, name = heat_pipe_4, amount = 8},
-                {type = item, name = reinforced_concrete, amount = 32},
-                {type = item, name = efficiency_module_4, amount = 1},
-                {type = item, name = heating_tower, amount = 1},
-                {type = item, name = heat_exchanger_4, amount = 2}
-            }
-        else
-            data_recipe[vacuum_heating_tower].ingredients =
-            {
-                {type = item, name = molybdenum_rhenium_plate, amount = 16},
-                {type = item, name = heat_pipe_4, amount = 8},
-                {type = item, name = reinforced_concrete, amount = 32},
-                {type = item, name = efficiency_module_5, amount = 1},
-                {type = item, name = heating_tower, amount = 1},
-                {type = item, name = heat_exchanger_4, amount = 2}
-            }
-        end
+        data_recipe[vacuum_heating_tower].ingredients =
+        {
+            {type = item, name = molybdenum_rhenium_plate, amount = 16},
+            {type = item, name = heat_pipe_4, amount = 8},
+            {type = item, name = reinforced_concrete, amount = 32},
+            {type = item, name = efficiency_module_5, amount = 1},
+            {type = item, name = heating_tower, amount = 1},
+            {type = item, name = heat_exchanger_4, amount = 2}
+        }
     else
         data_recipe[vacuum_heating_tower].ingredients =
         {
@@ -732,29 +720,16 @@ if mods[muluna_mods] then
     data_recipe[cycling_steam_turbine].order = z
     data_recipe[cycling_steam_turbine].energy_required = 8
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            data_recipe[cycling_steam_turbine].ingredients =
-            {
-                {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-                {type = item, name = niobium_iron_bearing, amount = 16},
-                {type = item, name = steam_turbine_4, amount = 1},
-                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-                {type = item, name = niobium_titanium_plate, amount = 8},
-                {type = item, name = superconductor, amount = 8},
-                {type = item, name = quality_module_4, amount = 1}
-            }
-        else
-            data_recipe[cycling_steam_turbine].ingredients =
-            {
-                {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-                {type = item, name = niobium_iron_bearing, amount = 16},
-                {type = item, name = steam_turbine_4, amount = 1},
-                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-                {type = item, name = niobium_titanium_plate, amount = 8},
-                {type = item, name = superconductor, amount = 8},
-                {type = item, name = quality_module_5, amount = 1}
-            }
-        end
+        data_recipe[cycling_steam_turbine].ingredients =
+        {
+            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
+            {type = item, name = niobium_iron_bearing, amount = 16},
+            {type = item, name = steam_turbine_4, amount = 1},
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+            {type = item, name = niobium_titanium_plate, amount = 8},
+            {type = item, name = superconductor, amount = 8},
+            {type = item, name = quality_module_5, amount = 1}
+        }
     else
         data_recipe[cycling_steam_turbine].ingredients =
         {
@@ -874,23 +849,13 @@ if mods[muluna_mods] then
     data_recipe[crusher_2].order = e
     data_recipe[crusher_2].energy_required = 8
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            data_recipe[crusher_2].ingredients =
-            {
-                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-                {type = item, name = niobium_iron_plate, amount = 8},
-                {type = item, name = speed_module_4, amount = 1},
-                {type = item, name = crusher, amount = 1}
-            }
-        else
-            data_recipe[crusher_2].ingredients =
-            {
-                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-                {type = item, name = niobium_iron_plate, amount = 8},
-                {type = item, name = speed_module_5, amount = 1},
-                {type = item, name = crusher, amount = 1}
-            }
-        end
+        data_recipe[crusher_2].ingredients =
+        {
+            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+            {type = item, name = niobium_iron_plate, amount = 8},
+            {type = item, name = speed_module_5, amount = 1},
+            {type = item, name = crusher, amount = 1}
+        }
     else
         data_recipe[crusher_2].ingredients =
         {
@@ -915,31 +880,17 @@ if mods[muluna_mods] then
     data_recipe[cryolab].order = g
     data_recipe[cryolab].energy_required = 8
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            data_recipe[cryolab].ingredients =
-            {
-                {type = item, name = productivity_module_4, amount = 1},
-                {type = item, name = quantum_processor, amount = 32},
-                {type = item, name = pentapod_egg, amount = 4},
-                {type = item, name = biter_egg, amount = 4},
-                {type = item, name = biolab, amount = 4},
-                {type = item, name = antimony_plate, amount = 32},
-                {type = item, name = germanium_plate, amount = 32},
-                {type = fluid, name = fluoroketone_cold, amount = 480}
-            }
-        else
-            data_recipe[cryolab].ingredients =
-            {
-                {type = item, name = productivity_module_5, amount = 1},
-                {type = item, name = quantum_processor, amount = 32},
-                {type = item, name = pentapod_egg, amount = 4},
-                {type = item, name = biter_egg, amount = 4},
-                {type = item, name = biolab, amount = 4},
-                {type = item, name = antimony_plate, amount = 32},
-                {type = item, name = germanium_plate, amount = 32},
-                {type = fluid, name = fluoroketone_cold, amount = 480}
-            }
-        end
+        data_recipe[cryolab].ingredients =
+        {
+            {type = item, name = productivity_module_5, amount = 1},
+            {type = item, name = quantum_processor, amount = 32},
+            {type = item, name = pentapod_egg, amount = 4},
+            {type = item, name = biter_egg, amount = 4},
+            {type = item, name = biolab, amount = 4},
+            {type = item, name = antimony_plate, amount = 32},
+            {type = item, name = germanium_plate, amount = 32},
+            {type = fluid, name = fluoroketone_cold, amount = 480}
+        }
     else
         data_recipe[cryolab].ingredients =
         {
@@ -1469,17 +1420,10 @@ if mods[muluna_mods] then
     table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_iron_processing)
 
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            table.insert(data_technology[crusher_2].prerequisites, speed_module_4)
-            table.insert(data_technology[vacuum_heating_tower].prerequisites, efficiency_module_4)
-            table.insert(data_technology[cryolab].prerequisites, productivity_module_4)
-            table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_4)
-        else
-            table.insert(data_technology[crusher_2].prerequisites, speed_module_5)
-            table.insert(data_technology[vacuum_heating_tower].prerequisites, efficiency_module_5)
-            table.insert(data_technology[cryolab].prerequisites, productivity_module_5)
-            table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_5)
-        end
+        table.insert(data_technology[crusher_2].prerequisites, speed_module_5)
+        table.insert(data_technology[vacuum_heating_tower].prerequisites, efficiency_module_5)
+        table.insert(data_technology[cryolab].prerequisites, productivity_module_5)
+        table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_5)
     end
 
     local tech_regolith_digging = "muluna-regolith-digging"

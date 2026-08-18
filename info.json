@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.12.1",
+    "version": "1.12.2",
     "factorio_version": "2.0",
     "title": "○🌐Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -106,10 +106,11 @@
         "? Rocket-Silo-Construction",
         "? prismatic-belts",
         "? Telogistics",
-        "! Flow Control",
+        "? flow-config",
         "! NoTimedSpoilage",
         "! modular-buildings-redux",
-        "! electricboiler"
+        "! electricboiler",
+        "! Flow Control"
     ],
     "quality_required": true,
     "rail_bridges_required": true,

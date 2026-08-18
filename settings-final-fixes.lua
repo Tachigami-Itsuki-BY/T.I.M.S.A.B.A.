@@ -18,10 +18,10 @@ end
 
 data_bool_setting["bobmods-power-heatsources"].hidden = true
 
+local data_string_setting = data.raw["string-setting"]
 if mods["bobwarfare"] then
     data_bool_setting["bobmods-warfare-drainlesslaserturrets"].hidden = true
     data_bool_setting["bobmods-warfare-spidertron-overhaul"].hidden = true
-    local data_string_setting = data.raw["string-setting"]
     data_string_setting["bobmods-warfare-spidertron-needsfuel"].hidden = true
 end
 
@@ -29,6 +29,13 @@ end
 if mods["secretas"] then
     data_bool_setting["condense-level-4-modules-into-one-technology"].hidden = true
 end
+
+-- VESTA
+if mods["skewer_planet_vesta"] then
+    data_bool_setting["ske_vesta_gases"].default_value = true
+    data_bool_setting["ske_vesta_gases"].hidden = true
+end
+
 
 -- MODS
 local data_double_setting = data.raw["double-setting"]

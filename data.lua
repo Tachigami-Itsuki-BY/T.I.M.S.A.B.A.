@@ -114,6 +114,8 @@ require("prototypes.space-age.gleba.gleba-technology")
 require("prototypes.space-age.fulgora.fulgora-technology")
 require("prototypes.space-age.aquilo.aquilo-technology")
 
+require("prototypes.TIMSABA.new-modules")
+
 require("prototypes.planet.muluna.muluna-groups")
 require("prototypes.planet.muluna.muluna-item-fluid")
 require("prototypes.planet.muluna.muluna-recipe")

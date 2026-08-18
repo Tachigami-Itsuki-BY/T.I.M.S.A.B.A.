@@ -485,7 +485,7 @@ function TIMSABA.functions.create_recipes(list)
                 auto_recycle = recipes.auto_recycle or false,
                 allow_productivity = recipes.allow_productivity or false,
                 allow_quality = recipes.allow_quality or false,
-                allow_decomposition = recipes.allow_decomposition or false,
+                allow_decomposition = recipes.allow_decomposition or true,
                 energy_required = recipes.energy_required or 4,
                 ingredients = recipes.ingredients,
                 results = recipes.results,

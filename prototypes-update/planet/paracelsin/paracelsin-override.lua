@@ -379,6 +379,25 @@ if mods[paracelsin_mods] then
         mechanical_plant
     })
 
+    if mods[bobmodules] then
+        table.insert(data_recipe[speed_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        table.insert(data_recipe[efficiency_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+        table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = galvanized_steel_plate, amount = 16})
+
+        bobmods.lib.recipe.update_recycling_recipe
+        ({
+            speed_module_7,
+            efficiency_module_7,
+            productivity_module_7,
+            pollution_clean_module_7,
+            pollution_create_module_7,
+            quality_module_7
+        })
+    end
+
     -- TECHNOLOGY
     if mods[asteroid_belt_mods] then
         table.insert(data_technology[planet_discovery_paracelsin].prerequisites, "space-discovery-asteroid-belt")
@@ -504,6 +523,15 @@ if mods[paracelsin_mods] then
         {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1}
     }
+
+    if mods[bobmodules] then
+        table.insert(data_technology[speed_module_7].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[efficiency_module_7].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[productivity_module_7].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[pollution_clean_module_7].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[pollution_create_module_7].prerequisites, galvanization_science_pack)
+        table.insert(data_technology[quality_module_7].prerequisites, galvanization_science_pack)
+    end
 
     if mods[bobwarfare] then
         table.insert(data_technology[artillery_turret_2].prerequisites, galvanization_science_pack)

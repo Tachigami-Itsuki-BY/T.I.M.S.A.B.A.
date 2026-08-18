@@ -7,10 +7,10 @@ if mods[secretas_frozeta_mods] then
     {
         [gold_ore_mods] = gold_ore_bob,
         [gold_plate_mods] = gold_plate_bob,
-        [speed_module_4_S] = speed_module_5,
-        [efficiency_module_4_S] = efficiency_module_5,
-        [productivity_module_4_S] = productivity_module_5,
-        [quality_module_4_S] = quality_module_5
+        [speed_module_4_S] = speed_module_8,
+        [efficiency_module_4_S] = efficiency_module_8,
+        [productivity_module_4_S] = productivity_module_8,
+        [quality_module_4_S] = quality_module_8
     }
     TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
 

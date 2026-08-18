@@ -122,22 +122,67 @@ data_item[lime_angels].icon = "__reskins-angels__/graphics/icons/smelting/interm
 data_item[lime_angels].icon_size = 64
 
 data_item[crystal_splinter_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-blue-cut.png"
-
 data_item[crystal_splinter_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-green-cut.png"
-
 data_item[crystal_splinter_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-red-cut.png"
 
 data_item[crystal_shard_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-blue-cut.png"
-
 data_item[crystal_shard_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-green-cut.png"
-
 data_item[crystal_shard_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-shard-red-cut.png"
 
 data_item[crystal_full_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-blue-cut.png"
-
 data_item[crystal_full_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-green-cut.png"
-
 data_item[crystal_full_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-red-cut.png"
+
+if mods[bobmodules] then
+    -- SPEED
+    data_module[speed_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-1.png"
+    data_module[speed_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-2.png"
+    data_module[speed_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-3.png"
+    data_module[speed_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-4.png"
+    data_module[speed_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-5.png"
+
+    -- EFFICIENCY
+    data_module[efficiency_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-1.png"
+    data_module[efficiency_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-2.png"
+    data_module[efficiency_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-3.png"
+    data_module[efficiency_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-4.png"
+    data_module[efficiency_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-5.png"
+
+    -- PRODUCTIVITY
+    data_module[productivity_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-1.png"
+    data_module[productivity_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-2.png"
+    data_module[productivity_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-3.png"
+    data_module[productivity_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-4.png"
+    data_module[productivity_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-5.png"
+
+    -- POLLUTION CLEANING
+    data_module[pollution_clean_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-1.png"
+    data_module[pollution_clean_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-2.png"
+    data_module[pollution_clean_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-3.png"
+    data_module[pollution_clean_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-4.png"
+    data_module[pollution_clean_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-5.png"
+
+    -- POLLUTION PRODUCING
+    data_module[pollution_create_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-1.png"
+    data_module[pollution_create_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-2.png"
+    data_module[pollution_create_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-3.png"
+    data_module[pollution_create_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-4.png"
+    data_module[pollution_create_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-5.png"
+
+    -- QUALITY
+    data_module[quality_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-1.png"
+    data_module[quality_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-2.png"
+    data_module[quality_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-3.png"
+    data_module[quality_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-4.png"
+    data_module[quality_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-5.png"
+
+    -- AGRICULTURAL
+    data_module[agricultural_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-1.png"
+    data_module[agricultural_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-2.png"
+    data_module[agricultural_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-3.png"
+    data_module[agricultural_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-4.png"
+    data_module[agricultural_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-5.png"
+end
 
 -- GLEBA
 data_item[saphirite_bacteria].icon = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria.png"

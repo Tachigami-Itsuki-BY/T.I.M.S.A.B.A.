@@ -637,7 +637,7 @@ for _, BUILD in pairs(centrifuges) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
 end

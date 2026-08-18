@@ -27,3 +27,11 @@ TIMSABA.functions.create_subgroups("bob-logistics",
     {name = is_spidertron,                     order = g_g},
     {name = is_spidertron_material,            order = g_h}
 })
+
+is_speed_module = speed_module_1
+is_efficiency_module = efficiency_module_1
+is_productivity_module = productivity_module_1
+is_pollution_clean_module = "pollution-clean-module"
+is_pollution_create_module = "pollution-create-module"
+is_quality_module = quality_module_1
+is_agricultural_module = agricultural_module_1

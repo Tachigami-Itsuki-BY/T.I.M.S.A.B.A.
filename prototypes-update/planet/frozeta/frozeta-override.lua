@@ -70,6 +70,8 @@ if mods[secretas_frozeta_mods] then
     data_item[golden_biter_egg].subgroup = is_frozeta_recipe
     data_item[golden_biter_egg].order = e
     data_item[golden_biter_egg].stack_size = 200
+    data_item[golden_biter_egg].fuel_category = base_fuel
+    data_item[golden_biter_egg].fuel_value = 14400 .. kJ
 
     data_tool[golden_science_pack].subgroup = is_frozeta_recipe
     data_tool[golden_science_pack].order = f
@@ -87,17 +89,21 @@ if mods[secretas_frozeta_mods] then
     data_recipe[golden_science_pack].results = {{type = item, name = golden_science_pack, amount = 8}}
 
     if mods[bobmodules] then
-        table.insert(data_recipe[speed_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
-        table.insert(data_recipe[efficiency_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
-        table.insert(data_recipe[productivity_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
-        table.insert(data_recipe[quality_module_5].ingredients, {type = item, name = golden_biter_egg, amount = 4})
+        table.insert(data_recipe[speed_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        table.insert(data_recipe[efficiency_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
+        table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = golden_biter_egg, amount = 16})
 
         bobmods.lib.recipe.update_recycling_recipe
         ({
-            speed_module_5,
-            efficiency_module_5,
-            productivity_module_5,
-            quality_module_5
+            speed_module_7,
+            efficiency_module_7,
+            productivity_module_7,
+            pollution_clean_module_7,
+            pollution_create_module_7,
+            quality_module_7
         })
     end
 
@@ -219,30 +225,12 @@ if mods[secretas_frozeta_mods] then
     data_technology["worker-robots-storage-4"].prerequisites = {golden_science_pack, "worker-robots-storage-3"}
 
     if mods[bobmodules] then
-        table.insert(data_technology[speed_module_5].prerequisites, steam_recycler)
-        table.insert(data_technology[speed_module_5].unit.ingredients, {metallurgic_science_pack, 1})
-        table.insert(data_technology[speed_module_5].unit.ingredients, {agricultural_science_pack, 1})
-        table.insert(data_technology[speed_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
-
-        table.insert(data_technology[efficiency_module_5].prerequisites, steam_recycler)
-        table.insert(data_technology[efficiency_module_5].unit.ingredients, {metallurgic_science_pack, 1})
-        table.insert(data_technology[efficiency_module_5].unit.ingredients, {agricultural_science_pack, 1})
-        table.insert(data_technology[efficiency_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
-
-        table.insert(data_technology[productivity_module_5].prerequisites, steam_recycler)
-        table.insert(data_technology[productivity_module_5].unit.ingredients, {metallurgic_science_pack, 1})
-        table.insert(data_technology[productivity_module_5].unit.ingredients, {agricultural_science_pack, 1})
-        table.insert(data_technology[productivity_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
-
-        table.insert(data_technology[quality_module_5].prerequisites, steam_recycler)
-        table.insert(data_technology[quality_module_5].unit.ingredients, {metallurgic_science_pack, 1})
-        table.insert(data_technology[quality_module_5].unit.ingredients, {agricultural_science_pack, 1})
-        table.insert(data_technology[quality_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
-
-        table.insert(data_technology[agricultural_module_5].prerequisites, steam_recycler)
-        table.insert(data_technology[agricultural_module_5].unit.ingredients, {metallurgic_science_pack, 1})
-        table.insert(data_technology[agricultural_module_5].unit.ingredients, {agricultural_science_pack, 1})
-        table.insert(data_technology[agricultural_module_5].unit.ingredients, {electromagnetic_science_pack, 1})
+        table.insert(data_technology[speed_module_7].prerequisites, golden_science_pack)
+        table.insert(data_technology[efficiency_module_7].prerequisites, golden_science_pack)
+        table.insert(data_technology[productivity_module_7].prerequisites, golden_science_pack)
+        table.insert(data_technology[pollution_clean_module_7].prerequisites, golden_science_pack)
+        table.insert(data_technology[pollution_create_module_7].prerequisites, golden_science_pack)
+        table.insert(data_technology[quality_module_7].prerequisites, golden_science_pack)
     end
 
     table.insert(data_technology[quantum_processor].prerequisites, golden_science_pack)
