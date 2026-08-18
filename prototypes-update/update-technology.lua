@@ -1380,6 +1380,10 @@ data_technology[tech_ore_processing_2].effects =
 
 table.insert(data_technology[tech_ore_processing_5].prerequisites, tech_stone_smelting_5)
 
+table.insert(data_technology[tech_metallurgy_1].effects, {type = unlock_recipe, recipe = electric_blast_furnace_1})
+table.insert(data_technology[tech_metallurgy_2].effects, {type = unlock_recipe, recipe = electric_blast_furnace_2})
+table.insert(data_technology[tech_metallurgy_3].effects, {type = unlock_recipe, recipe = electric_blast_furnace_3})
+table.insert(data_technology[tech_metallurgy_4].effects, {type = unlock_recipe, recipe = electric_blast_furnace_4})
 data_technology[tech_metallurgy_5].prerequisites =
 {
     advanced_processing_unit,
@@ -1393,7 +1397,7 @@ data_technology[tech_metallurgy_5].prerequisites =
 }
 data_technology[tech_metallurgy_5].effects =
 {
-    {type = unlock_recipe, recipe = "angels-chemical-furnace-4"},
+    {type = unlock_recipe, recipe = chemical_furnace_4},
     {type = unlock_recipe, recipe = iron_oxide_III_from_iron_sulfate_II},
     {type = unlock_recipe, recipe = iron_hydroxide_II_from_iron_sulfate_II_solution},
     {type = unlock_recipe, recipe = copper_hydroxide_II_from_copper_sulfate_II_solution},
