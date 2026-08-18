@@ -60,6 +60,7 @@ is_platinum = "angels-platinum"
 is_platinum_chemistry = "is-platinum-chemistry"
 is_alloys = "angels-alloys"
 is_stone = "angels-stone"
+is_electric_blast_furnace = "is-electric-blast-furnace"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
     {name = is_iron_chemistry,            order = a_a},
@@ -79,7 +80,8 @@ TIMSABA.functions.create_subgroups(ig_smelting,
     {name = is_cobalt_chemistry,          order = n_a},
     {name = is_chromium_chemistry,        order = o_a},
     {name = is_tungsten_chemistry,        order = p_a},
-    {name = is_platinum_chemistry,        order = q_a}
+    {name = is_platinum_chemistry,        order = q_a},
+    {name = is_electric_blast_furnace,    order = z_f}
 })
 
 -- ANGELS METTALURGY CASTING

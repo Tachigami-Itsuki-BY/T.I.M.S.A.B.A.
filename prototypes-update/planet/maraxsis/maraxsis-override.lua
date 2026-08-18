@@ -694,6 +694,25 @@ if mods[maraxsis_mods] then
         abyssal_diving_gear
     })
 
+    if mods[bobmodules] then
+        table.insert(data_recipe[speed_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        table.insert(data_recipe[efficiency_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        table.insert(data_recipe[productivity_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        table.insert(data_recipe[pollution_clean_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        table.insert(data_recipe[pollution_create_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+        table.insert(data_recipe[quality_module_7].ingredients, {type = item, name = super_sealant_substance_maraxsis, amount = 16})
+
+        bobmods.lib.recipe.update_recycling_recipe
+        ({
+            speed_module_7,
+            efficiency_module_7,
+            productivity_module_7,
+            pollution_clean_module_7,
+            pollution_create_module_7,
+            quality_module_7
+        })
+    end
+
     -- TECHNOLOGY
     planet_discovery_maraxsis = "planet-discovery-maraxsis"
     data_technology[planet_discovery_maraxsis].prerequisites = {tech_advanced_asteroid_processing}
@@ -718,7 +737,20 @@ if mods[maraxsis_mods] then
         {type = unlock_recipe, recipe = sand_extraction}
     }
 
-    data_technology["maraxsis-project-seadragon"].prerequisites = {hydraulic_science_pack}
+    local tech_project_seadragon = "maraxsis-project-seadragon"
+    data_technology[tech_project_seadragon].prerequisites = {hydraulic_science_pack}
+    data_technology[tech_project_seadragon].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
+    }
 
     data_technology["maraxsis-deepsea-research"].prerequisites = {"maraxsis-research-vessel"}
 
@@ -744,6 +776,15 @@ if mods[maraxsis_mods] then
     end
     if mods[moshine_mods] then
         add_recipe_for_promethium_productivity(promethium_asteroid_crushing_1)
+    end
+
+    if mods[bobmodules] then
+        table.insert(data_technology[speed_module_7].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[efficiency_module_7].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[productivity_module_7].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[pollution_clean_module_7].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[pollution_create_module_7].prerequisites, hydraulic_science_pack)
+        table.insert(data_technology[quality_module_7].prerequisites, hydraulic_science_pack)
     end
 
     table.insert(data_technology[quantum_processor].prerequisites, hydraulic_science_pack)

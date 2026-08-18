@@ -143,7 +143,7 @@ for _, BUILD in pairs(ore_refinerys) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -261,7 +261,7 @@ for _, BUILD in pairs(electro_whinning_cells) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -397,6 +397,7 @@ crystallizer_recipe(crystallizer_2, brass_pipe, advanced_circuit, concrete_brick
 crystallizer_recipe(crystallizer_3, titanium_pipe, processing_unit, reinforced_concrete_brick, titanium_plate_bob, crystallizer_2)
 
 -- ANGELS METTALURGY SMELTING
+data_item_subgroup["angels-processing-machine"].order = z_a
 local ore_processing_machines =
 {
     {name = ore_processing_machine_1, crafting_speed = 1, energy_usage = 120},
@@ -432,6 +433,7 @@ ore_processing_machine_recipe(ore_processing_machine_2, brass_gear_wheel, concre
 ore_processing_machine_recipe(ore_processing_machine_3, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, ore_processing_machine_2)
 ore_processing_machine_recipe(ore_processing_machine_4, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, ore_processing_machine_3)
 
+data_item_subgroup["angels-pellet-press"].order = z_b
 local pellet_pressed =
 {
     {name = pellet_press_1, crafting_speed = 1, energy_usage = 120},
@@ -445,7 +447,7 @@ for _, BUILD in pairs(pellet_pressed) do
     data_recipe[BUILD.name].energy_required = 4
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -467,6 +469,7 @@ pellet_press_recipe(pellet_press_2, titanium_gear_wheel, reinforced_concrete_bri
 pellet_press_recipe(pellet_press_3, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, pellet_press_2)
 pellet_press_recipe(pellet_press_4, nitinol_gear_wheel, carbon_concrete_brick, nitinol_plate_bob, pellet_press_3)
 
+data_item_subgroup["angels-powder-mixer"].order = z_c
 local powder_mixers =
 {
     {name = powder_mixer_1, crafting_speed = 1, energy_usage = 120},
@@ -480,7 +483,7 @@ for _, BUILD in pairs(powder_mixers) do
     data_recipe[BUILD.name].energy_required = 4
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage / 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -502,6 +505,7 @@ powder_mixer_recipe(powder_mixer_2, brass_gear_wheel, concrete_brick, aluminium_
 powder_mixer_recipe(powder_mixer_3, titanium_gear_wheel, reinforced_concrete_brick, titanium_plate_bob, powder_mixer_2)
 powder_mixer_recipe(powder_mixer_4, copper_tungsten_gear_wheel, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, powder_mixer_3)
 
+data_item_subgroup["angels-blast-furnace"].order = z_d
 local blast_furnaces =
 {
     {name = blast_furnace_1, crafting_speed = 1, energy_usage = 450},
@@ -536,6 +540,7 @@ blast_furnace_recipe(blast_furnace_2, electronic_circuit, steel_pipe, clay_brick
 blast_furnace_recipe(blast_furnace_3, advanced_circuit, brass_pipe, concrete_brick, aluminium_plate_bob, blast_furnace_2)
 blast_furnace_recipe(blast_furnace_4, processing_unit, titanium_pipe, reinforced_concrete_brick, titanium_plate_bob, blast_furnace_3)
 
+data_item_subgroup["angels-chemical-furnace"].order = z_e
 local chemical_furnaces =
 {
     {name = chemical_furnace_1, crafting_speed = 1, energy_usage = 120},
@@ -549,7 +554,7 @@ for _, BUILD in pairs(chemical_furnaces) do
     data_recipe[BUILD.name].energy_required = 4
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -586,7 +591,7 @@ for _, BUILD in pairs(induction_furnaces) do
     data_recipe[BUILD.name].energy_required = 4
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 4) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -660,7 +665,7 @@ for _, BUILD in pairs(strand_casting_machines) do
     data_recipe[BUILD.name].energy_required = 4
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
@@ -702,7 +707,7 @@ if settings.startup[setting_early_sintering_oven].value then
         data_assembling[BUILD.name].order = BUILD.order
         data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
         data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+        data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 4) - (BUILD.crafting_speed * drain)) .. kW
         data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
         data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
         data_assembling[BUILD.name].allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"}
@@ -729,8 +734,8 @@ if settings.startup[setting_early_sintering_oven].value then
 else
     local sintering_ovens =
     {
-        {name = sintering_oven_4, crafting_speed = 1, energy_usage = 240, order = a},
-        {name = sintering_oven_5, crafting_speed = 2, energy_usage = 480, order = b}
+        {name = sintering_oven_4, crafting_speed = 1, energy_usage = 120, order = a},
+        {name = sintering_oven_5, crafting_speed = 2, energy_usage = 240, order = b}
     }
     for _, BUILD in pairs(sintering_ovens) do
         data_item[BUILD.name].order = BUILD.order
@@ -741,9 +746,9 @@ else
         data_assembling[BUILD.name].order = BUILD.order
         data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
         data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-        data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * (drain * 2))) .. kW
+        data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 4) - (BUILD.crafting_speed * drain)) .. kW
         data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
-        data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * (drain * 2)) .. kW
+        data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
         data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
     end
     local function sintering_oven_recipe(name, circuit, brick, plate, sintering_oven)
@@ -1274,7 +1279,7 @@ for _, BUILD in pairs(advanced_chemical_plants) do
     data_assembling[BUILD.name].order = BUILD.order
     data_assembling[BUILD.name].crafting_speed = BUILD.crafting_speed
     data_assembling[BUILD.name].module_slots = BUILD.crafting_speed
-    data_assembling[BUILD.name].energy_usage = (BUILD.energy_usage - (BUILD.crafting_speed * drain)) .. kW
+    data_assembling[BUILD.name].energy_usage = ((BUILD.energy_usage * 2) - (BUILD.crafting_speed * drain)) .. kW
     data_assembling[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.crafting_speed
     data_assembling[BUILD.name].energy_source.drain = (BUILD.crafting_speed * drain) .. kW
     data_assembling[BUILD.name].heating_energy = data_assembling[assembling_machine_1].heating_energy

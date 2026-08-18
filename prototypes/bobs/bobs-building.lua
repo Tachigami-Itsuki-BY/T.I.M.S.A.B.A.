@@ -728,7 +728,7 @@ TIMSABA.functions.create_buildings
 
         base_prototype = data_assembling[centrifuge_3],
 
-        energy_usage = 900 .. kW,
+        energy_usage = 1860 .. kW,
         max_health = 650
     }
 })

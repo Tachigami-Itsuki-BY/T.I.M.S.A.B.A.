@@ -95,12 +95,6 @@ if mods[bobmodules] then
         {type = fluid, name = iron_chloride_III_solution_angels, amount = 60}
     }
 
-    local processor_speed_circuit_board = "bob-speed-processor-3"
-    local processor_efficiency_circuit_board = "bob-efficiency-processor-3"
-    local processor_productivity_circuit_board = "bob-productivity-processor-3"
-    local processor_pollution_clean_circuit_board = "bob-pollution-clean-processor-3"
-    local processor_pollution_create_circuit_board = "bob-pollution-create-processor-3"
-    local processor_quality_circuit_board = "bob-quality-processor-3"
     local function processor_module_boards(name, polished_1, polished_2)
         data_recipe[name].energy_required = 8
         data_recipe[name].ingredients =
@@ -121,7 +115,7 @@ if mods[bobmodules] then
     processor_module_boards(processor_quality_circuit_board,          polished_diamond_bob,  crystal_full_harmonic)
 
     local function module_tier_1(name)
-        data_recipe[name].energy_required = 8
+        data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
             {type = item, name = electronic_circuit,   amount = 8},
@@ -138,7 +132,7 @@ if mods[bobmodules] then
     module_tier_1(quality_module_1)
 
     local function module_tier_2(name, circuit_board, module)
-        data_recipe[name].energy_required = 8
+        data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
             {type = item, name = advanced_circuit, amount = 8},
@@ -154,7 +148,7 @@ if mods[bobmodules] then
     module_tier_2(quality_module_2,          quality_circuit_board,          quality_module_1)
 
     local function module_tier_3(name, circuit_board, module)
-        data_recipe[name].energy_required = 16
+        data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
             {type = item, name = processing_unit, amount = 8},
@@ -186,14 +180,14 @@ if mods[bobmodules] then
     module_tier_4(quality_module_4,          processor_quality_circuit_board,          quality_module_3)
 
     local function module_tier_5(name, circuit_board, module)
-        data_recipe[name].energy_required = 64
+        data_recipe[name].energy_required = 32
         data_recipe[name].ingredients =
         {
             {type = item, name = electronic_circuit,       amount = 8},
             {type = item, name = advanced_circuit,         amount = 8},
             {type = item, name = processing_unit,          amount = 8},
             {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = circuit_board,            amount = 8},
+            {type = item, name = circuit_board,            amount = 4},
             {type = item, name = module,                   amount = 1}
         }
     end
@@ -204,7 +198,7 @@ if mods[bobmodules] then
     module_tier_5(pollution_create_module_5, processor_pollution_create_circuit_board, pollution_create_module_4)
     module_tier_5(quality_module_5,          processor_quality_circuit_board,          quality_module_4)
 
-    data_recipe[agricultural_module_1].energy_required = 8
+    data_recipe[agricultural_module_1].energy_required = 32
     data_recipe[agricultural_module_1].ingredients =
     {
         {type = item, name = solder,                    amount = 4},
@@ -213,45 +207,132 @@ if mods[bobmodules] then
         {type = item, name = pollution_create_module_1, amount = 1}
     }
 
-    data_recipe[agricultural_module_2].energy_required = 8
+    data_recipe[agricultural_module_2].energy_required = 32
     data_recipe[agricultural_module_2].ingredients =
     {
-        {type = item, name = solder,                    amount = 8},
-        {type = item, name = bio_token,                 amount = 8},
+        {type = item, name = solder,                    amount = 4},
+        {type = item, name = bio_token,                 amount = 4},
         {type = item, name = productivity_module_2,     amount = 1},
         {type = item, name = pollution_create_module_2, amount = 1},
         {type = item, name = agricultural_module_1,     amount = 1}
     }
 
-    data_recipe[agricultural_module_3].energy_required = 16
+    data_recipe[agricultural_module_3].energy_required = 32
     data_recipe[agricultural_module_3].ingredients =
     {
-        {type = item, name = solder,                    amount = 16},
-        {type = item, name = bio_token,                 amount = 16},
+        {type = item, name = solder,                    amount = 4},
+        {type = item, name = bio_token,                 amount = 4},
         {type = item, name = productivity_module_3,     amount = 1},
         {type = item, name = pollution_create_module_3, amount = 1},
         {type = item, name = agricultural_module_2,     amount = 1}
     }
 
+    data_module[agricultural_module_4].localised_description = {"item-description." .. agricultural_module_1}
     data_recipe[agricultural_module_4].energy_required = 32
     data_recipe[agricultural_module_4].ingredients =
     {
-        {type = item, name = solder,                    amount = 32},
-        {type = item, name = bio_token,                 amount = 32},
+        {type = item, name = solder,                    amount = 4},
+        {type = item, name = bio_token,                 amount = 4},
         {type = item, name = productivity_module_4,     amount = 1},
         {type = item, name = pollution_create_module_4, amount = 1},
         {type = item, name = agricultural_module_3,     amount = 1}
     }
 
-    data_recipe[agricultural_module_5].energy_required = 64
+    data_module[agricultural_module_5].localised_description = {"item-description." .. agricultural_module_1}
+    data_recipe[agricultural_module_5].energy_required = 32
     data_recipe[agricultural_module_5].ingredients =
     {
-        {type = item, name = solder,                    amount = 64},
-        {type = item, name = bio_token,                 amount = 64},
+        {type = item, name = solder,                    amount = 8},
+        {type = item, name = bio_token,                 amount = 8},
         {type = item, name = productivity_module_5,     amount = 1},
         {type = item, name = pollution_create_module_5, amount = 1},
         {type = item, name = agricultural_module_4,     amount = 1}
     }
+
+    local module_tier_1 =
+    {
+        {name = speed_module_1,            subgroup = is_speed_module},
+        {name = efficiency_module_1,       subgroup = is_efficiency_module},
+        {name = productivity_module_1,     subgroup = is_productivity_module},
+        {name = pollution_clean_module_1,  subgroup = is_pollution_clean_module},
+        {name = pollution_create_module_1, subgroup = is_pollution_create_module},
+        {name = quality_module_1,          subgroup = is_quality_module},
+        {name = agricultural_module_1,     subgroup = is_agricultural_module}
+    }
+    for _, modules in pairs(module_tier_1) do
+        data_module[modules.name].subgroup = modules.subgroup
+        data_module[modules.name].order = a
+        data_recipe[modules.name].subgroup = modules.subgroup
+        data_recipe[modules.name].order = a
+    end
+
+    local module_tier_2 =
+    {
+        {name = speed_module_2,            subgroup = is_speed_module},
+        {name = efficiency_module_2,       subgroup = is_efficiency_module},
+        {name = productivity_module_2,     subgroup = is_productivity_module},
+        {name = pollution_clean_module_2,  subgroup = is_pollution_clean_module},
+        {name = pollution_create_module_2, subgroup = is_pollution_create_module},
+        {name = quality_module_2,          subgroup = is_quality_module},
+        {name = agricultural_module_2,     subgroup = is_agricultural_module}
+    }
+    for _, modules in pairs(module_tier_2) do
+        data_module[modules.name].subgroup = modules.subgroup
+        data_module[modules.name].order = b
+        data_recipe[modules.name].subgroup = modules.subgroup
+        data_recipe[modules.name].order = b
+    end
+
+    local module_tier_3 =
+    {
+        {name = speed_module_3,            subgroup = is_speed_module},
+        {name = efficiency_module_3,       subgroup = is_efficiency_module},
+        {name = productivity_module_3,     subgroup = is_productivity_module},
+        {name = pollution_clean_module_3,  subgroup = is_pollution_clean_module},
+        {name = pollution_create_module_3, subgroup = is_pollution_create_module},
+        {name = quality_module_3,          subgroup = is_quality_module},
+        {name = agricultural_module_3,     subgroup = is_agricultural_module}
+    }
+    for _, modules in pairs(module_tier_3) do
+        data_module[modules.name].subgroup = modules.subgroup
+        data_module[modules.name].order = c
+        data_recipe[modules.name].subgroup = modules.subgroup
+        data_recipe[modules.name].order = c
+    end
+
+    local module_tier_4 =
+    {
+        {name = speed_module_4,            subgroup = is_speed_module},
+        {name = efficiency_module_4,       subgroup = is_efficiency_module},
+        {name = productivity_module_4,     subgroup = is_productivity_module},
+        {name = pollution_clean_module_4,  subgroup = is_pollution_clean_module},
+        {name = pollution_create_module_4, subgroup = is_pollution_create_module},
+        {name = quality_module_4,          subgroup = is_quality_module},
+        {name = agricultural_module_4,     subgroup = is_agricultural_module}
+    }
+    for _, modules in pairs(module_tier_4) do
+        data_module[modules.name].subgroup = modules.subgroup
+        data_module[modules.name].order = d
+        data_recipe[modules.name].subgroup = modules.subgroup
+        data_recipe[modules.name].order = d
+    end
+
+    local module_tier_5 =
+    {
+        {name = speed_module_5,            subgroup = is_speed_module},
+        {name = efficiency_module_5,       subgroup = is_efficiency_module},
+        {name = productivity_module_5,     subgroup = is_productivity_module},
+        {name = pollution_clean_module_5,  subgroup = is_pollution_clean_module},
+        {name = pollution_create_module_5, subgroup = is_pollution_create_module},
+        {name = quality_module_5,          subgroup = is_quality_module},
+        {name = agricultural_module_5,     subgroup = is_agricultural_module}
+    }
+    for _, modules in pairs(module_tier_5) do
+        data_module[modules.name].subgroup = modules.subgroup
+        data_module[modules.name].order = e
+        data_recipe[modules.name].subgroup = modules.subgroup
+        data_recipe[modules.name].order = e
+    end
 
     data_item[beacon_2].stack_size = 32
     data_item[beacon_2].weight = 31250

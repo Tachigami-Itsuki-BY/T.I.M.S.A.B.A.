@@ -440,6 +440,25 @@ if mods[vesta_mods] then
         fusion_thruster
     })
 
+    if mods[bobmodules] then
+        table.insert(data_recipe[speed_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        table.insert(data_recipe[efficiency_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        table.insert(data_recipe[productivity_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        table.insert(data_recipe[pollution_clean_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        table.insert(data_recipe[pollution_create_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+        table.insert(data_recipe[quality_module_8].ingredients, {type = item, name = iridium_plate_mods, amount = 16})
+
+        bobmods.lib.recipe.update_recycling_recipe
+        ({
+            speed_module_8,
+            efficiency_module_8,
+            productivity_module_8,
+            pollution_clean_module_8,
+            pollution_create_module_8,
+            quality_module_8
+        })
+    end
+
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
     data_technology[planet_discovery_vesta].effects =
@@ -585,5 +604,14 @@ if mods[vesta_mods] then
     end
     if mods[castra_mods] then
         table.insert(data_technology[promethium_science_pack].prerequisites, tech_millerite_processing_4)
+    end
+
+    if mods[bobmodules] then
+        table.insert(data_technology[speed_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        table.insert(data_technology[efficiency_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        table.insert(data_technology[productivity_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        table.insert(data_technology[pollution_clean_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        table.insert(data_technology[pollution_create_module_8].prerequisites, tech_gas_manipulation_science_pack)
+        table.insert(data_technology[quality_module_8].prerequisites, tech_gas_manipulation_science_pack)
     end
 end

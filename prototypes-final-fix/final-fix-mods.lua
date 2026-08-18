@@ -391,13 +391,6 @@ if mods[moshine_mods] then
     data_recipe[boron].category = smelting_filtering
 end
 
--- ARIG
-if mods[arig_mods] then
-    data_technology[rocket_part_arig].enabled = true
-    data_technology[rocket_part_arig].essential = true
-    data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
-end
-
 -- HYARION
 if mods[hyarion_mods] then
     data_item[raw_quartz_arig].subgroup = is_arig_recipe

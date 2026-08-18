@@ -87,7 +87,7 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 3,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW,
+        energy_usage = 675 .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
@@ -106,6 +106,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[ore_refinery_2],
 
         localised_description = {"entity-description.angels-ore-refinery"},
+        energy_usage = 900 .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- ORE SORTING FACILITY
@@ -176,7 +177,7 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 3,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW,
+        energy_usage = 675 .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
@@ -196,6 +197,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[electro_whinning_cell_2],
 
         localised_description = {"entity-description.angels-electro-whinning-cell"},
+        energy_usage = 900 .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     -- FILTRATION UNIT
@@ -240,6 +242,106 @@ TIMSABA.functions.create_buildings
     }
 })
 
+-- ANGELS METALLURGY SMELTING
+TIMSABA.functions.create_buildings
+({
+    -- NEW ELECTRIC BLAST FURNACE
+    {
+        name = electric_blast_furnace_1,
+        subgroup = is_electric_blast_furnace,
+        icons = util.table.deepcopy(data_item[blast_furnace_1].icons),
+        order = a,
+
+        ingredients =
+        {
+            {type = item, name = basic_circuit_board, amount = 4},
+            {type = item, name = iron_pipe, amount = 16},
+            {type = item, name = iron_plate, amount = 8},
+            {type = item, name = stone_brick, amount = 64}
+        },
+
+        base_prototype = data_assembling[blast_furnace_1],
+
+        localised_description = {"entity-description.angels-blast-furnace"},
+        module_slots = 1,
+        crafting_speed = 1,
+        pollution = 1,
+        drain = 15 .. kW,
+        energy_usage = 225 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
+    },
+    {
+        name = electric_blast_furnace_2,
+        subgroup = is_electric_blast_furnace,
+        icons = util.table.deepcopy(data_item[blast_furnace_2].icons),
+        order = b,
+
+        ingredients =
+        {
+            {type = item, name = electronic_circuit, amount = 4},
+            {type = item, name = steel_pipe, amount = 16},
+            {type = item, name = steel_plate, amount = 8},
+            {type = item, name = clay_brick, amount = 64},
+            {type = item, name = electric_blast_furnace_1, amount = 1}
+        },
+
+        base_prototype = data_assembling[blast_furnace_2],
+
+        localised_description = {"entity-description.angels-blast-furnace"},
+        module_slots = 2,
+        crafting_speed = 2,
+        pollution = 2,
+        drain = 30 .. kW,
+        energy_usage = 450 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
+    },
+    {
+        name = electric_blast_furnace_3,
+        subgroup = is_electric_blast_furnace,
+        icons = util.table.deepcopy(data_item[blast_furnace_3].icons),
+        order = c,
+
+        ingredients =
+        {
+            {type = item, name = advanced_circuit, amount = 4},
+            {type = item, name = brass_pipe, amount = 16},
+            {type = item, name = aluminium_plate_bob, amount = 8},
+            {type = item, name = concrete_brick, amount = 64},
+            {type = item, name = electric_blast_furnace_2, amount = 1}
+        },
+
+        base_prototype = data_assembling[blast_furnace_3],
+
+        localised_description = {"entity-description.angels-blast-furnace"},
+        module_slots = 3,
+        crafting_speed = 3,
+        pollution = 3,
+        drain = 45 .. kW,
+        energy_usage = 675 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
+    },
+    {
+        name = electric_blast_furnace_4,
+        subgroup = is_electric_blast_furnace,
+        icons = util.table.deepcopy(data_item[blast_furnace_4].icons),
+
+        ingredients =
+        {
+            {type = item, name = processing_unit, amount = 4},
+            {type = item, name = titanium_pipe, amount = 16},
+            {type = item, name = titanium_plate_bob, amount = 8},
+            {type = item, name = reinforced_concrete_brick, amount = 64},
+            {type = item, name = electric_blast_furnace_3, amount = 1}
+        },
+
+        base_prototype = data_assembling[blast_furnace_4],
+
+        localised_description = {"entity-description.angels-blast-furnace"},
+        energy_usage = 900 .. kW,
+        heating_energy = data_assembling[assembling_machine_1].heating_energy
+    }
+})
+
 -- ANGELS METALLURGY CASTING
 if settings.startup[setting_early_sintering_oven].value then
     TIMSABA.functions.create_buildings
@@ -266,7 +368,7 @@ if settings.startup[setting_early_sintering_oven].value then
             crafting_speed = 6,
             pollution = 6,
             drain = 90 .. kW,
-            energy_usage = 630 .. kW,
+            energy_usage = 2790 .. kW,
             heating_energy = data_assembling[assembling_machine_1].heating_energy
         }
     })
@@ -294,8 +396,8 @@ else
             module_slots = 3,
             crafting_speed = 3,
             pollution = 3,
-            drain = 90 .. kW,
-            energy_usage = 630 .. kW,
+            drain = 45 .. kW,
+            energy_usage = 1395 .. kW,
             heating_energy = data_assembling[assembling_machine_1].heating_energy
         },
         {
@@ -315,8 +417,7 @@ else
             base_prototype = data_assembling[sintering_oven_5],
 
             localised_description = {"entity-description.angels-sintering-oven"},
-            drain = 120 .. kW,
-            energy_usage = 840 .. kW,
+            energy_usage = 1860 .. kW,
             heating_energy = data_assembling[assembling_machine_1].heating_energy
         }
     })
@@ -510,7 +611,7 @@ TIMSABA.functions.create_buildings
         crafting_speed = 3,
         pollution = 3,
         drain = 45 .. kW,
-        energy_usage = 315 .. kW,
+        energy_usage = 675 .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy
     },
     {
@@ -530,6 +631,7 @@ TIMSABA.functions.create_buildings
         base_prototype = data_assembling[advanced_chemical_plant_1],
 
         localised_description = {"entity-description.angels-advanced-chemical-plant"},
+        energy_usage = 900 .. kW,
         heating_energy = data_assembling[assembling_machine_1].heating_energy
     }
 })

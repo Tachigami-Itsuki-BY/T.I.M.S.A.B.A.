@@ -74,3 +74,7 @@ for _, t_type in pairs(transport_types) do
         end
     end
 end
+
+if mods[moshine_mods] then
+    data_locomotive[space_locomotive].energy_source.fuel_categories = {"electrical"}
+end

@@ -101,6 +101,7 @@ data_proxy_container = data.raw["proxy-container"]
 
 -- GLOBAL NAME
 item = "item"
+item_module = "module"
 fluid = "fluid"
 recipe = "recipe"
 technology = "technology"

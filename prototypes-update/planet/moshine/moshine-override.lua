@@ -338,7 +338,7 @@ if mods[moshine_mods] then
     }
 
     -- LOGISTICS
-    local space_locomotive = "space-locomotive"
+    space_locomotive = "space-locomotive"
     data_item_entity[space_locomotive].subgroup = is_moshine_logistics
     data_item_entity[space_locomotive].order = a
     data_item_entity[space_locomotive].stack_size = 4
@@ -555,21 +555,12 @@ if mods[moshine_mods] then
     data_recipe[data_processor].order = a
     data_recipe[data_processor].energy_required = 8
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            data_recipe[data_processor].ingredients =
-            {
-                {type = item, name = assembling_machine_6, amount = 1},
-                {type = item, name = silicon_carbide_bob, amount = 4},
-                {type = item, name = productivity_module_4, amount = 4}
-            }
-        else
-            data_recipe[data_processor].ingredients =
-            {
-                {type = item, name = assembling_machine_6, amount = 1},
-                {type = item, name = silicon_carbide_bob, amount = 4},
-                {type = item, name = productivity_module_5, amount = 4}
-            }
-        end
+        data_recipe[data_processor].ingredients =
+        {
+            {type = item, name = assembling_machine_6, amount = 1},
+            {type = item, name = silicon_carbide_bob, amount = 4},
+            {type = item, name = productivity_module_5, amount = 4}
+        }
     else
         data_recipe[data_processor].ingredients =
         {
@@ -824,11 +815,7 @@ if mods[moshine_mods] then
 
     local tech_data_processor_building = "moshine-tech-data-processor-building"
     if mods[bobmodules] then
-        if mods[secretas_frozeta_mods] then
-            table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_4)
-        else
-            table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_5)
-        end
+        table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_5)
     end
     data_technology[tech_data_processor_building].unit.ingredients =
     {

@@ -1,18 +1,18 @@
-for _, prototype in pairs(data.raw.item) do
+for _, prototype in pairs(data_item) do
     if prototype.stack_size == 50 then
         prototype.stack_size = 64
         prototype.weight = 15625
     end
 end
 
-for _, prototype in pairs(data.raw.module) do
+for _, prototype in pairs(data_module) do
     if prototype.stack_size == 50 then
         prototype.stack_size = 64
         prototype.weight = 15625
     end
 end
 
-for item_name, item_data in pairs(data.raw.item) do
+for item_name, item_data in pairs(data_item) do
     if item_name:find("asteroid") then
         item_data.stack_size = 64
         item_data.weight = 15625
@@ -31,7 +31,7 @@ for _, type_name in pairs(name_types_stack_size_and_weight) do
     end
 end
 
-local name_type_weight = {"item", "tool", "repair-tool", "capsule", "item-with-entity-data", "rail-planner", "ammo"}
+local name_type_weight = {"item", "tool", "repair-tool", "capsule", "item-with-entity-data", "rail-planner", "ammo", "module"}
 for _, type_name in pairs(name_type_weight) do
     if data.raw[type_name] then
         for _, prototype in pairs(data.raw[type_name]) do
