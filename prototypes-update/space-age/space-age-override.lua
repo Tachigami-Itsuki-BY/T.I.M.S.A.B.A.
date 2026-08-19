@@ -187,6 +187,8 @@ data_recipe[thruster].ingredients =
     {type = item, name = molybdenum_rhenium_pipe, amount = 8}
 }
 data_thruster[thruster].order = g
+data_thruster[thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.125, effectivity = 1}
+data_thruster[thruster].max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.51}
 
 
 if mods[panglia_mods] then

@@ -32,6 +32,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.mods")
 require("prototypes-final-fix.mods-final-fix.flare-stack")
 require("prototypes-final-fix.mods-final-fix.rocket-silo-construction")
 require("prototypes-final-fix.mods-final-fix.bobs-new")
+require("prototypes-final-fix.mods-final-fix.mods-update-icons")
 
 require("prototypes-final-fix.final-fix-recipe-barreling")
 require("prototypes-final-fix.final-fix-recipe-voids")
@@ -55,7 +56,3 @@ require("prototypes-final-fix.multi-building.entities")
 
 require("prototypes-final-fix.tips-and-tricks.tips-and-tricks")
 require("prototypes-final-fix.tips-and-tricks.final-fix-tips-and-tricks")
-
-if mods[vesta_mods] then
-    settings.startup["ske_vesta_gases"].value = true
-end

@@ -391,6 +391,59 @@ if mods[moshine_mods] then
     data_recipe[boron].category = smelting_filtering
 end
 
+-- ARIG
+if mods[arig_mods] then
+    if mods[loaders_modernized_integrations] then
+        data_item[stack_loader].subgroup = is_gleba_logistics
+        data_item[stack_loader].order = b
+        data_recipe[stack_loader].subgroup = is_gleba_logistics
+        data_recipe[stack_loader].order = b
+        data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
+        data_loader_1x1[stack_loader].order = b
+
+        data_item[hyper_loader_arig].stack_size = 32
+        data_item[hyper_loader_arig].weight = 31250
+        data_recipe[hyper_loader_arig].ingredients =
+        {
+            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
+            {type = item, name = niobium_iron_bearing, amount = 8},
+            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = niobium_titanium_plate, amount = 8},
+            {type = item, name = vulcanus_loader, amount = 2},
+            {type = item, name = hyper_underground_belt_arig, amount = 2}
+        }
+        data_recipe[hyper_loader_arig].results[1].amount = 2
+        if settings.startup[setting_mdrn_use_electricity].value then
+            data_loader_1x1[hyper_loader_arig].energy_per_item = ((60 * 16) - (7.5 * 16)) .. kW
+            data_loader_1x1[hyper_loader_arig].energy_source.drain = (15 * 16) .. kW
+        end
+        data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
+
+        bobmods.lib.recipe.update_recycling_recipe({hyper_loader_arig})
+    end
+
+    if mods[hyarion_mods] then
+        if mods[loaders_modernized_integrations] then
+            data_item[hyper_loader_arig].subgroup = is_hyarion_logistics
+            data_item[hyper_loader_arig].order = e
+            data_recipe[hyper_loader_arig].subgroup = is_hyarion_logistics
+            data_recipe[hyper_loader_arig].order = e
+            data_recipe[hyper_loader_arig].ingredients[3].name = simulating_unit
+            data_loader_1x1[hyper_loader_arig].subgroup = is_hyarion_logistics
+            data_loader_1x1[hyper_loader_arig].order = e
+        end
+    else
+        if mods[loaders_modernized_integrations] then
+            data_item[hyper_loader_arig].subgroup = is_arig_logistics
+            data_item[hyper_loader_arig].order = k
+            data_recipe[hyper_loader_arig].subgroup = is_arig_logistics
+            data_recipe[hyper_loader_arig].order = k
+            data_loader_1x1[hyper_loader_arig].subgroup = is_arig_logistics
+            data_loader_1x1[hyper_loader_arig].order = k
+        end
+    end
+end
+
 -- HYARION
 if mods[hyarion_mods] then
     data_item[raw_quartz_arig].subgroup = is_arig_recipe
@@ -638,5 +691,5 @@ end
 
 local tech_stack_loader = "mdrn-stack-loader"
 if mods[loaders_modernized_integrations] and data_technology[tech_stack_loader] then
-    data_technology[tech_stack_loader].prerequisites = {stack_inserter, "mdrn-ultimate-loader"}
+    data_technology[tech_stack_loader].prerequisites = {stack_inserter, T5_loader}
 end

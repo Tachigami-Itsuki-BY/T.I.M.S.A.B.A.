@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.12.3",
+    "version": "1.12.4",
     "factorio_version": "2.0",
     "title": "○🌐Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -107,6 +107,8 @@
         "? prismatic-belts",
         "? Telogistics",
         "? flow-config",
+        "? Transport_Drones_Continued_Fixed",
+        "? AsphaltRoadsPatched",
         "! NoTimedSpoilage",
         "! modular-buildings-redux",
         "! electricboiler",

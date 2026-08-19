@@ -1,5 +1,5 @@
 if mods[corrundum_mods] then
-    local ig_corrundum = "corrundum"
+    ig_corrundum = "corrundum"
     data:extend
     ({
         {

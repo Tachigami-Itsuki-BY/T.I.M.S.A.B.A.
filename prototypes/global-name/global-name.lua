@@ -98,6 +98,7 @@ data_SP_starter_pack = data.raw["space-platform-starter-pack"]
 data_spidertron_remote = data.raw["spidertron-remote"]
 data_corpse = data.raw["corpse"]
 data_proxy_container = data.raw["proxy-container"]
+data_loader_1x1 = data.raw["loader-1x1"]
 
 -- GLOBAL NAME
 item = "item"

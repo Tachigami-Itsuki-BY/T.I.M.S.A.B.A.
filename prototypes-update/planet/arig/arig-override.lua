@@ -731,7 +731,7 @@ if mods[arig_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_arig = "planet-discovery-arig"
-    data_technology[planet_discovery_arig].prerequisites = {tech_niobium_iron_processing, tech_niobium_titanium_processing, tech_niobium_tungsten_molybdenum_processing}
+    data_technology[planet_discovery_arig].prerequisites = {metallurgic_science_pack}
     data_technology[planet_discovery_arig].unit.ingredients =
     {
         {automation_science_pack, 1},

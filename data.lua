@@ -78,6 +78,7 @@ require("prototypes.mods.flow-control-new.flow-control-TIMSABA")
 
 require("prototypes.space-age.vulcanus.vulcanus-item-fluid")
 require("prototypes.space-age.vulcanus.vulcanus-wolframite")
+require("prototypes.space-age.vulcanus.vulcanus-loader")
 require("prototypes.space-age.gleba.gleba-item-fluid")
 require("prototypes.space-age.fulgora.fulgora-item-fluid")
 require("prototypes.space-age.fulgora.fulgora-brannerite")

@@ -347,11 +347,11 @@ if mods[maraxsis_mods] then
     {
         {type = item, name = molybdenum_rhenium_plate, amount = 4},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
-        {type = item, name = duct_small, amount = 48}
+        {type = item, name = duct_small, amount = 64}
     }
     data_pipe_to_ground[duct_underground].subgroup = is_maraxsis_logistics
     data_pipe_to_ground[duct_underground].order = e
-    data_pipe_to_ground[duct_underground].fluid_box.pipe_connections[2].max_underground_distance = 48
+    data_pipe_to_ground[duct_underground].fluid_box.pipe_connections[2].max_underground_distance = 64
 
     local non_return_duct = "non-return-duct"
     data_item[non_return_duct].subgroup = is_maraxsis_logistics
@@ -368,7 +368,8 @@ if mods[maraxsis_mods] then
     }
     data_pump[non_return_duct].subgroup = is_maraxsis_logistics
     data_pump[non_return_duct].order = f
-    data_pump[non_return_duct].pumping_speed = 64
+    data_pump[non_return_duct].pumping_speed = 128
+    data_pump[non_return_duct].fluid_box.volume = 960
 
     local duct_intake = "duct-intake"
     data_item[duct_intake].subgroup = is_maraxsis_logistics
@@ -385,7 +386,8 @@ if mods[maraxsis_mods] then
     }
     data_pump[duct_intake].subgroup = is_maraxsis_logistics
     data_pump[duct_intake].order = g
-    data_pump[duct_intake].pumping_speed = 64
+    data_pump[duct_intake].pumping_speed = 128
+    data_pump[duct_intake].fluid_box.volume = 960
 
     local duct_exhaust = "duct-exhaust"
     data_item[duct_exhaust].subgroup = is_maraxsis_logistics
@@ -402,7 +404,8 @@ if mods[maraxsis_mods] then
     }
     data_pump[duct_exhaust].subgroup = is_maraxsis_logistics
     data_pump[duct_exhaust].order = h
-    data_pump[duct_exhaust].pumping_speed = 64
+    data_pump[duct_exhaust].pumping_speed = 128
+    data_pump[duct_exhaust].fluid_box.volume = 960
 
     local trench_duct = "maraxsis-trench-duct"
     data_item[trench_duct].subgroup = is_maraxsis_logistics

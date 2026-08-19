@@ -667,7 +667,7 @@ data_technology[factorian_fish_breeding].unit.ingredients =
 
 tech_transport_belt_capacity_1 = "transport-belt-capacity-1"
 tech_transport_belt_capacity_2 = "transport-belt-capacity-2"
-if mods[loaders_modernized] then
+if mods[loaders_modernized_integrations] then
     data_technology[stack_inserter].prerequisites = {carbon_fiber, "bob-bulk-inserter-4", vulcanus_transport_belt}
     data_technology[stack_inserter].unit.ingredients =
     {

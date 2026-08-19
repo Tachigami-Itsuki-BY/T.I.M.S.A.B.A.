@@ -76,6 +76,7 @@ heavy_glass_arig = "planetaris-heavy-glass"
 hyper_transport_belt_arig = "planetaris-hyper-transport-belt"
 hyper_underground_belt_arig = "planetaris-hyper-underground-belt"
 hyper_splitter_arig = "planetaris-hyper-splitter"
+hyper_loader_arig = "mdrn-hyper-loader"
 sandstone_brick = "planetaris-sandstone-brick"
 compression_science_pack = "planetaris-compression-science-pack"
 rocket_biofuel = "planetaris-rocket-biofuel"
@@ -398,7 +399,6 @@ bobwarfare = "bobwarfare"
 angelspetrochem = "angelspetrochem"
 
 -- LOADERS MODERNIZED
-loaders_modernized = "loaders-modernized"
 loaders_modernized_integrations = "loaders-modernized-integrations"
 
 -- SPACE AGE SCIENCE PACK

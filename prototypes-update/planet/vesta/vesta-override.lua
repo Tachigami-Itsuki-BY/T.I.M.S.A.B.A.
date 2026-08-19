@@ -375,6 +375,8 @@ if mods[vesta_mods] then
     local fusion_thruster = "ske_fusion_thruster"
     data_item[fusion_thruster].subgroup = is_vesta_recipe_space
     data_item[fusion_thruster].order = a
+    data_item[fusion_thruster].stack_size = 8
+    data_item[fusion_thruster].weight = 125000
     data_recipe[fusion_thruster].subgroup = is_vesta_recipe_space
     data_recipe[fusion_thruster].order = a
     data_recipe[fusion_thruster].energy_required = 4
@@ -403,6 +405,8 @@ if mods[vesta_mods] then
     data_recipe[fusion_thruster].main_product = fusion_thruster
     data_thruster[fusion_thruster].subgroup = is_vesta_recipe_space
     data_thruster[fusion_thruster].order = a
+    data_thruster[fusion_thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.125, effectivity = 1}
+    data_thruster[fusion_thruster].max_performance = {fluid_volume = 0.8, fluid_usage = 1, effectivity = 0.5}
 
     data_fluid[fusion_thruster_fuel].subgroup = is_vesta_recipe_space
     data_fluid[fusion_thruster_fuel].order = b
