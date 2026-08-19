@@ -338,10 +338,28 @@ data_splitter[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitte
 data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistics
 data_splitter[vulcanus_splitter].speed = 11.25/60
 
+if mods[loaders_modernized_integrations] then
+    data_item[vulcanus_loader].subgroup = is_vulcanus_logistics
+    data_item[vulcanus_loader].order = d
+    data_recipe[vulcanus_loader].subgroup = is_vulcanus_logistics
+    data_recipe[vulcanus_loader].order = d
+    data_loader_1x1[vulcanus_loader].subgroup = is_vulcanus_logistics
+    data_loader_1x1[vulcanus_loader].order = d
+    data_loader_1x1[vulcanus_loader].minable.mining_time = 0.5
+    data_loader_1x1[vulcanus_loader].speed = 11.25/60
+    if settings.startup[setting_mdrn_use_electricity].value then
+        data_loader_1x1[vulcanus_loader].energy_per_item = ((60 * 12) - (7.5 * 12)) .. kW
+        data_loader_1x1[vulcanus_loader].energy_source.drain = (15 * 12) .. kW
+    end
+end
+
 if mods[arig_mods] then
     data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
     data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
     data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
+    if mods[loaders_modernized_integrations] then
+        data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
+    end
 end
 
 -- BUILDING
@@ -547,13 +565,6 @@ data_technology[metallurgic_science_pack].research_trigger =
 
 data_technology[vulcanus_transport_belt].localised_name = {"technology-name.vulcanus-transport-belt"}
 data_technology[vulcanus_transport_belt].prerequisites = {metallurgic_science_pack, tech_logistics_5}
-data_technology[vulcanus_transport_belt].effects =
-{
-    {type = unlock_recipe, recipe = vulcanus_transport_belt},
-    {type = unlock_recipe, recipe = vulcanus_underground_belt},
-    {type = unlock_recipe, recipe = vulcanus_splitter}
-}
-
 if mods[bobtech] then
     data_technology[vulcanus_transport_belt].unit.ingredients =
     {

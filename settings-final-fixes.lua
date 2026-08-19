@@ -33,7 +33,6 @@ end
 -- VESTA
 if mods["skewer_planet_vesta"] then
     data_bool_setting["ske_vesta_gases"].default_value = true
-    data_bool_setting["ske_vesta_gases"].hidden = true
 end
 
 
@@ -53,4 +52,8 @@ end
 
 if mods["Flow Control"] then
     data_bool_setting["flow-control-new-group"].hidden = true
+end
+
+if mods["AsphaltRoadsPatched"] and mods["corrundum"] then
+    data_bool_setting["AR-use-items-from-corrundum"].default_value = true
 end

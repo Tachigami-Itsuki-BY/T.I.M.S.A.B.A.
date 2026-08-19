@@ -133,6 +133,7 @@ for _, BUILD in pairs(pumps) do
     data_pump[BUILD.name].pumping_speed = BUILD.pumping_speed
     data_pump[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_pump[BUILD.name].energy_source.drain = nil
+    data_pump[BUILD.name].fluid_box.volume = 120
 end
 
 local storage_tanks_2x =

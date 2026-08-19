@@ -1,3 +1,4 @@
+ig_advanced_logistics = "bob-logistics"
 is_circuit_networks = "is-circuit-networks"
 is_artillery_wagon = "is-artillery-wagon"
 is_transport_tanks = "is-transport-tanks"
@@ -11,7 +12,7 @@ is_robot_tool_c = "is-robot-tool-c"
 is_robot_tool_l = "is-robot-tool-l"
 is_spidertron = "is-spidertron"
 is_spidertron_material = "is-spidertron-nmaterial"
-TIMSABA.functions.create_subgroups("bob-logistics",
+TIMSABA.functions.create_subgroups(ig_advanced_logistics,
 {
     {name = is_circuit_networks,               order = a},
     {name = is_artillery_wagon,                order = e_b},

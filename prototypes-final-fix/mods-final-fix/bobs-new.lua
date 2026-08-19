@@ -159,7 +159,7 @@ data_technology[tech_logistics_4].effects =
     {type = unlock_recipe, recipe = T4_underground_belt},
     {type = unlock_recipe, recipe = T4_splitter}
 }
-if mods[loaders_modernized_integrations] and settings.startup["mdrn-unlock-technology"].allowed_values == "belt" then
+if mods[loaders_modernized_integrations] and settings.startup["mdrn-unlock-technology"].value == "belt" then
     table.insert(data_technology[tech_logistics_4].effects, {type = unlock_recipe, recipe = T4_loader})
 end
 
@@ -194,6 +194,9 @@ data_technology[vulcanus_transport_belt].effects =
     {type = unlock_recipe, recipe = vulcanus_underground_belt},
     {type = unlock_recipe, recipe = vulcanus_splitter}
 }
+if mods[loaders_modernized_integrations] then
+    table.insert(data_technology[vulcanus_transport_belt].effects, {type = unlock_recipe, recipe = vulcanus_loader})
+end
 
 if mods[reskins_bobs] then
     local reskin_vanilla_entity = reskins.lib.settings.get_value("reskins-lib-customize-tier-colors")
@@ -278,6 +281,7 @@ if mods[prismatic_belts] then
             mask_tint = options.mask_tint,
             belt_sprites = api_timsaba.defines.belt_sprites.turbo,
         })
+        ---@cast entity any
         api_timsaba.apply_belt_animation_set_and_update_related_connectables(entity, animation_set)
 
         api_timsaba.create_or_update_remnants(entity.name, {mask_tint = options.mask_tint})
@@ -293,11 +297,6 @@ if mods[prismatic_belts] then
 
         ::continue::
     end
-
-    --[[---@type TIMSABA.TransportBeltInputsMapping
-    local transport_belts = {[vulcanus_transport_belt] = {preset = api_timsaba.defines.belt_presets.turbo, logistics_technology_name = vulcanus_transport_belt}}
-
-    api_timsaba.transform_belts_and_related_connectables(transport_belts)]]
 end
 
 local simulations = require("prototypes.factoriopedia-simulations")
@@ -306,7 +305,7 @@ data_underground_belt[T4_underground_belt].factoriopedia_simulation = simulation
 data_pipe_to_ground[stone_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_stone_pipe_to_ground_2_1_0
 data_pipe_to_ground[nitinol_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_nitinol_pipe_to_ground_2_1_0
 
-if not mods[muluna_mods] then
+if not mods[muluna_mods] and not mods["flow-config"] then
     data_item[aluminium_pipe] = nil
     data_recipe[aluminium_pipe] = nil
     data_recipe[aluminium_pipe .. _recycling] = nil
@@ -322,6 +321,20 @@ if not mods[muluna_mods] then
         data_recipe[item_ .. aluminium_pipe_to_ground .. _panglia_crushing] = nil
     end
     data_pipe_to_ground[aluminium_pipe_to_ground] = nil
+elseif not mods[muluna_mods] and mods["flow-config"] then
+    data_item[aluminium_pipe].hidden = true
+    data_item[aluminium_pipe].hidden_in_factoriopedia = true
+    data_recipe[aluminium_pipe].hidden = true
+    data_recipe[aluminium_pipe].hidden_in_factoriopedia = true
+    data_pipe[aluminium_pipe].hidden = true
+    data_pipe[aluminium_pipe].hidden_in_factoriopedia = true
+
+    data_item[aluminium_pipe_to_ground].hidden = true
+    data_item[aluminium_pipe_to_ground].hidden_in_factoriopedia = true
+    data_recipe[aluminium_pipe_to_ground].hidden = true
+    data_recipe[aluminium_pipe_to_ground].hidden_in_factoriopedia = true
+    data_pipe_to_ground[aluminium_pipe_to_ground].hidden = true
+    data_pipe_to_ground[aluminium_pipe_to_ground].hidden_in_factoriopedia = true
 end
 
 data_transport_belt[T3_transport_belt].next_upgrade = T4_transport_belt

@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.12.4
+Date: 19.08.2026
+  Bugfixes:
+    - [All] Исправлены незначительные ошибки.
+
+    - [All] Fixed minor bugs.
+
+  Balancing:
+    - [All] Скорректировано Минимальное и Максимальное потребление жидкости Ускорителей.
+
+    - [All] Adjusted the Minimum and Maximum fluid consumption of Thrusters.
+
+  Modding:
+    - [Mods] Мод «Asphalt Roads Patched» добавлен в опциональную зависимость.
+
+    - [Mods] Added "Asphalt Roads Patched" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.3
 Date: 18.08.2026
   Bugfixes:
@@ -42,7 +59,7 @@ Date: 18.08.2026
         Нефтехимическая очистка:
           1. Продвинутые Химические Заводы: увеличено в 2 раза
     - [All] У Доменных Печей увеличено загрязнение в 4 раза.
-    - [All] В рецептах Модулей Т5 уменьшено кол-во ингредиента: Схема модуля (8 ед.) → (4 ед.)
+    - [All] В рецептах Модулей Т5 уменьшено кол-во ингредиента: Схемы Модулей (8 ед.) → (4 ед.)
     - [All] В рецептах Модулей время крафта стало общим: (32 сек.)
     - [All] В рецептах Сельскохозяйственных Модулей скорректированы ингредиенты.
 
@@ -62,9 +79,9 @@ Date: 18.08.2026
         Petrochemical Processing:
           1. Advanced Chemical Plants: increased by 2x.
     - [All] Increased pollution for Blast Furnaces by 4x.
-    - [All] Decreased an ingredient count in T5 Module recipes: Module Mainframe (8 units) → (4 units)
+    - [All] Decreased an ingredient in the T5 Module recipes: Circuit Modules (8 units) → (4 units)
     - [All] Normalized crafting time for all Module recipes to a uniform: (32 sec)
-    - [All] Adjusted ingredients in Agricultural Module recipes.
+    - [All] Adjusted ingredients in the Agricultural Module recipes.
 
   Graphics:
     - [All] Обновлены иконки модулям и их технологиям.

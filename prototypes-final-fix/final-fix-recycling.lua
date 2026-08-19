@@ -62,6 +62,9 @@ if mods[muluna_mods] then
     generate_self_recycling_recipe({name = aluminium_pipe})
     generate_self_recycling_recipe({name = aluminium_pipe_to_ground})
 end
+if mods[arig_mods] then
+    generate_self_recycling_recipe({name = hyper_loader_arig})
+end
 
 for name, recipe_name in pairs(data_recipe) do
     if name:find("recycling") then
@@ -148,5 +151,17 @@ if mods[muluna_mods] then
     {
         {type = item, name = aluminium_pipe, amount = 3},
         {type = item, name = aluminium_plate_bob, amount_min = 0, amount_max = 1}
+    }
+end
+
+if mods[arig_mods] then
+    data_recipe[hyper_loader_arig .. _recycling].results =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 1},
+        {type = item, name = niobium_iron_bearing, amount = 1},
+        {type = item, name = advanced_processing_unit, amount = 1},
+        {type = item, name = niobium_titanium_plate, amount = 1},
+        {type = item, name = vulcanus_loader, amount_min = 0, amount_max = 1},
+        {type = item, name = hyper_underground_belt_arig, amount_min = 0, amount_max = 1}
     }
 end

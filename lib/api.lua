@@ -107,6 +107,8 @@ local function get_corpse_animation(filename)
 	})
 end
 
+---@type data.FileName
+local path = "__TIMSABA__/graphics/entity/space-age/turbo-transport-belt/remnants/turbo-transport-belt-remnants.png"
 ---@type { [TIMSABA.Api.Defines.BeltPresets] : TIMSABA.BeltSpritePreset}
 local presets =
 {
@@ -127,7 +129,7 @@ local presets =
 			},
 			frozen_patch = api_timsaba.get_transport_belt_frozen_patch(api_timsaba.defines.belt_sprites.turbo),
 		},
-		remnants_animation = get_corpse_animation("__TIMSABA__/graphics/entity/space-age/turbo-transport-belt/remnants/turbo-transport-belt-remnants.png"),
+		remnants_animation = get_corpse_animation(path),
 		icon =
         {
 			icon = "__TIMSABA__/graphics/icons/space-age/turbo-transport-belt.png",
@@ -634,7 +636,12 @@ local supported_types =
 ---@param icon_inputs TIMSABA.TransportBeltIconInputs?
 function api_timsaba.apply_belt_animation_set_and_update_related_connectables(transport_belt, animation_set, icon_inputs)
 	-- The hashed identifier of the belt animation set to be replaced
-	local set_id_to_replace = get_animation_set_identity(transport_belt)
+	---@type any
+	local belt_any = transport_belt
+	---@type data.TransportBeltConnectablePrototype
+	local connectable_belt = belt_any
+
+	local set_id_to_replace = get_animation_set_identity(connectable_belt)
 	if not set_id_to_replace then
 		error("Unable to resolve transport belt animation set identity for belt '" .. transport_belt.name .. "'.")
 	end

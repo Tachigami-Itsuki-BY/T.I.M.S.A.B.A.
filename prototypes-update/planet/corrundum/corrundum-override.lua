@@ -488,6 +488,10 @@ if mods[corrundum_mods] then
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = platinum_plate, amount = 8}
     }
+    data_thruster[platinum_thruster].subgroup = is_corrundum_building
+    data_thruster[platinum_thruster].order = f
+    data_thruster[platinum_thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.5, effectivity = 0.2}
+    data_thruster[platinum_thruster].max_performance = {fluid_volume = 0.9, fluid_usage = 4, effectivity = 0.65}
 
     -- WAR
     local blue_rocket = "blue-rocket"
@@ -665,4 +669,76 @@ if mods[corrundum_mods] then
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = sulfonated_plastic_production_alt, change = 0.1})
 
     table.insert(data_technology[concrete .. _productivity].effects, {type = change_recipe_productivity, recipe = concrete_production_from_asphalt, change = 0.1})
+
+    -- MODS
+    if mods["AsphaltRoadsPatched"] then
+        local is_asphalt_1 = "Arci-asphalt-1"
+        data_item_subgroup[is_asphalt_1].group = ig_corrundum
+        data_item_subgroup[is_asphalt_1].order = z_a
+
+        local asphalt = "Arci-asphalt"
+        data_recipe[asphalt].energy_required = 8
+        data_recipe[asphalt].ingredients =
+        {
+            {type = item, name = stone_brick, amount = 4},
+            {type = item, name = asphalt_c, amount = 4},
+            {type = fluid, name = crude_oil, amount = 60}
+        }
+        data_recipe[asphalt].results[1].amount = 16
+
+        local asphalt_recipes =
+        {
+            "Arci-asphalt-zebra-crossing",
+            "Arci-asphalt-triangle-white",
+            "Arci-asphalt-hazard-white",
+            "Arci-asphalt-hazard-yellow",
+            "Arci-asphalt-hazard-red",
+            "Arci-asphalt-hazard-blue",
+            "Arci-asphalt-hazard-green"
+        }
+        for _, recipe in ipairs(asphalt_recipes) do
+            data_recipe[recipe].ingredients[1].amount = 16
+            data_recipe[recipe].results[1].amount = 16
+        end
+
+        local is_asphalt_2 = "Arci-asphalt-2"
+        data_item_subgroup[is_asphalt_2].group = ig_corrundum
+        data_item_subgroup[is_asphalt_2].order = z_b
+
+        local asphalt_recipes =
+        {
+            "Arci-marking-white-straight",
+            "Arci-marking-white-diagonal",
+            "Arci-marking-white-right-turn",
+            "Arci-marking-white-left-turn",
+            "Arci-marking-white-dl-straight",
+            "Arci-marking-white-dl-diagonal",
+            "Arci-marking-white-dl-right-turn",
+            "Arci-marking-white-dl-left-turn"
+        }
+        for _, recipe in ipairs(asphalt_recipes) do
+            data_recipe[recipe].ingredients[1].amount = 16
+            data_recipe[recipe].results[1].amount = 16
+        end
+
+        local is_asphalt_3 = "Arci-asphalt-3"
+        data_item_subgroup[is_asphalt_3].group = ig_corrundum
+        data_item_subgroup[is_asphalt_3].order = z_c
+
+        local asphalt_recipes =
+        {
+            "Arci-marking-yellow-straight",
+            "Arci-marking-yellow-diagonal",
+            "Arci-marking-yellow-right-turn",
+            "Arci-marking-yellow-left-turn",
+            "Arci-marking-yellow-dl-straight",
+            "Arci-marking-yellow-dl-diagonal",
+            "Arci-marking-yellow-dl-right-turn",
+            "Arci-marking-yellow-dl-left-turn"
+        }
+        for _, recipe in ipairs(asphalt_recipes) do
+            data_recipe[recipe].ingredients[1].amount = 16
+            data_recipe[recipe].results[1].amount = 16
+        end
+    end
 end

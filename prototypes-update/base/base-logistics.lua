@@ -512,16 +512,15 @@ bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter
 bulk_inserter_recipe(T4_bulk_inserter, titanium_gear_wheel, T3_bulk_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
 bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 
-if mods["loaders-modernized-integrations"] then
-    local data_loader_1x1 = data.raw["loader-1x1"]
+if mods[loaders_modernized_integrations] then
     local loaders =
     {
-        {name = T0_loader, tier = 1,  subgroup = data_item[T0_transport_belt].subgroup, ASC = 30},
-        {name = T1_loader, tier = 2,  subgroup = data_item[T1_transport_belt].subgroup, ASC = 30},
-        {name = T2_loader, tier = 4,  subgroup = data_item[T2_transport_belt].subgroup, ASC = 32},
-        {name = T3_loader, tier = 6,  subgroup = data_item[T3_transport_belt].subgroup, ASC = 31.25},
-        {name = T4_loader, tier = 8,  subgroup = data_item[T4_transport_belt].subgroup, ASC = 32},
-        {name = T5_loader, tier = 10, subgroup = data_item[T5_transport_belt].subgroup, ASC = 32}
+        {name = T0_loader, tier = 1,  subgroup = data_item[T0_transport_belt].subgroup},
+        {name = T1_loader, tier = 2,  subgroup = data_item[T1_transport_belt].subgroup},
+        {name = T2_loader, tier = 4,  subgroup = data_item[T2_transport_belt].subgroup},
+        {name = T3_loader, tier = 6,  subgroup = data_item[T3_transport_belt].subgroup},
+        {name = T4_loader, tier = 8,  subgroup = data_item[T4_transport_belt].subgroup},
+        {name = T5_loader, tier = 10, subgroup = data_item[T5_transport_belt].subgroup}
     }
     for _, BUILD in pairs(loaders) do
         if data_item[BUILD.name] then
@@ -538,7 +537,7 @@ if mods["loaders-modernized-integrations"] then
                     if recipe.ingredients then
                         for _, ingredient in pairs(recipe.ingredients) do
                             local name = ingredient.name or ingredient[1]
-                            if name and name:find("inserter") then
+                            if type(name) == "string" and name:find("inserter") then
                                 if ingredient.name then
                                     ingredient.amount = 8
                                 else
@@ -559,20 +558,15 @@ if mods["loaders-modernized-integrations"] then
             bobmods.lib.recipe.update_recycling_recipe({BUILD.name})
         end
     end
-    local stack_loader = "mdrn-stack-loader"
     if data_loader_1x1[stack_loader] then
-        data_loader_1x1[T5_loader].next_upgrade = stack_loader
+        data_loader_1x1[T5_loader].next_upgrade = vulcanus_loader
         data_item[stack_loader].subgroup = is_gleba_logistics
         data_item[stack_loader].order = b
         data_item[stack_loader].stack_size = 32
         data_item[stack_loader].weight = 31250
         data_recipe[stack_loader].subgroup = is_gleba_logistics
         data_recipe[stack_loader].order = b
-        if mods[arig_mods] then
-            data_recipe[stack_loader].ingredients[1].name = hyper_underground_belt_arig
-        else
-            data_recipe[stack_loader].ingredients[1].name = vulcanus_underground_belt
-        end
+        data_recipe[stack_loader].ingredients[1].name = carbon_fiber
         local recipe_variants = {stack_loader, "stack-" .. stack_loader}
         for _, recipe_name in ipairs(recipe_variants) do
             if data_recipe[recipe_name] then
@@ -580,7 +574,7 @@ if mods["loaders-modernized-integrations"] then
                 if recipe.ingredients then
                     for _, ingredient in pairs(recipe.ingredients) do
                         local name = ingredient.name or ingredient[1]
-                        if name and name:find("inserter") then
+                        if type(name) == "string" and name:find("inserter") then
                             if ingredient.name then
                                 ingredient.amount = 8
                             else
@@ -591,7 +585,11 @@ if mods["loaders-modernized-integrations"] then
                 end
             end
         end
-        data_recipe[stack_loader].ingredients[3].name = T5_loader
+        if mods[arig_mods] then
+            data_recipe[stack_loader].ingredients[3].name = hyper_loader_arig
+        else
+            data_recipe[stack_loader].ingredients[3].name = vulcanus_loader
+        end
         data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
         data_loader_1x1[stack_loader].order = b
         data_loader_1x1[stack_loader].minable.mining_time = 0.5
@@ -601,8 +599,8 @@ if mods["loaders-modernized-integrations"] then
             data_loader_1x1[stack_loader].speed = 11.25/60
         end
         if settings.startup[setting_mdrn_use_electricity].value then
-            data_loader_1x1[stack_loader].energy_per_item = (((60 * 40) / 2) - (7.5 * 20)) .. kW
-            data_loader_1x1[stack_loader].energy_source.drain = (30 * 20) .. kW
+            data_loader_1x1[stack_loader].energy_per_item = ((60 * 32) - (7.5 * 32)) .. kW
+            data_loader_1x1[stack_loader].energy_source.drain = (15 * 32) .. kW
         end
         bobmods.lib.recipe.update_recycling_recipe({stack_loader})
     end
