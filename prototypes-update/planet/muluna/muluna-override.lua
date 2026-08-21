@@ -679,7 +679,7 @@ if mods[muluna_mods] then
             {type = item, name = molybdenum_rhenium_plate, amount = 16},
             {type = item, name = heat_pipe_4, amount = 8},
             {type = item, name = reinforced_concrete, amount = 32},
-            {type = item, name = efficiency_module_5, amount = 1},
+            {type = item, name = efficiency_module_6, amount = 1},
             {type = item, name = heating_tower, amount = 1},
             {type = item, name = heat_exchanger_4, amount = 2}
         }
@@ -728,7 +728,7 @@ if mods[muluna_mods] then
             {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
             {type = item, name = niobium_titanium_plate, amount = 8},
             {type = item, name = superconductor, amount = 8},
-            {type = item, name = quality_module_5, amount = 1}
+            {type = item, name = quality_module_6, amount = 1}
         }
     else
         data_recipe[cycling_steam_turbine].ingredients =
@@ -853,7 +853,7 @@ if mods[muluna_mods] then
         {
             {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
             {type = item, name = niobium_iron_plate, amount = 8},
-            {type = item, name = speed_module_5, amount = 1},
+            {type = item, name = speed_module_6, amount = 1},
             {type = item, name = crusher, amount = 1}
         }
     else
@@ -882,7 +882,7 @@ if mods[muluna_mods] then
     if mods[bobmodules] then
         data_recipe[cryolab].ingredients =
         {
-            {type = item, name = productivity_module_5, amount = 1},
+            {type = item, name = productivity_module_7, amount = 1},
             {type = item, name = quantum_processor, amount = 32},
             {type = item, name = pentapod_egg, amount = 4},
             {type = item, name = biter_egg, amount = 4},
@@ -1167,6 +1167,15 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_shattered].energy_required = 4
     end]]
 
+    if mods[muria_mods] then
+        local telescope_observation_muria = "muluna-telescope-observation-muria"
+        data_recipe[telescope_observation_muria].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_muria].icons = BUILDING_R_I(astronomical_data_muluna, planet_muria)
+        data_recipe[telescope_observation_muria].order = data_planet[planet_muria].order
+        data_recipe[telescope_observation_muria].energy_required = 4
+        data_recipe[telescope_observation_muria].results[1].amount = 30
+    end
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons
@@ -1414,16 +1423,18 @@ if mods[muluna_mods] then
     data_technology[vacuum_heating_tower].icons = nil
     data_technology[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower-technology.png"
     data_technology[vacuum_heating_tower].icon_size = 256
+    table.insert(data_technology[vacuum_heating_tower].unit.ingredients, {utility_science_pack, 1})
 
     table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_titanium_processing)
     table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_tungsten_molybdenum_processing)
     table.insert(data_technology[cycling_steam_turbine].prerequisites, tech_niobium_iron_processing)
+    table.insert(data_technology[cycling_steam_turbine].unit.ingredients, {utility_science_pack, 1})
 
     if mods[bobmodules] then
-        table.insert(data_technology[crusher_2].prerequisites, speed_module_5)
-        table.insert(data_technology[vacuum_heating_tower].prerequisites, efficiency_module_5)
-        table.insert(data_technology[cryolab].prerequisites, productivity_module_5)
-        table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_5)
+        table.insert(data_technology[crusher_2].prerequisites, speed_module_6)
+        table.insert(data_technology[vacuum_heating_tower].prerequisites, efficiency_module_6)
+        table.insert(data_technology[cryolab].prerequisites, productivity_module_7)
+        table.insert(data_technology[cycling_steam_turbine].prerequisites, quality_module_6)
     end
 
     local tech_regolith_digging = "muluna-regolith-digging"
@@ -1496,4 +1507,6 @@ if mods[muluna_mods] then
     table.insert(data_technology[tech_vulcanus_metallurgic].effects, {type = unlock_recipe, recipe = casting_low_density_structure_muluna})
 
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = plastic_from_wood, change = 0.1})
+
+    table.insert(data_technology[water .. _recycling .. _productivity].unit.ingredients, {production_science_pack, 1})
 end

@@ -33,27 +33,41 @@ require("prototypes-update.angels.angels-bioprocessing-vegetabilis")
 require("prototypes-update.angels.angels-bioprocessing-animalis")
 
 require("prototypes-update.space-age.space-age-override")
-require("prototypes-update.space-age.aquilo.aquilo-override")
-require("prototypes-update.space-age.aquilo.aquilo-asteroid-spawn")
-require("prototypes-update.space-age.fulgora.fulgora-override")
-require("prototypes-update.space-age.gleba.gleba-override")
-require("prototypes-update.space-age.vulcanus.vulcanus-override")
 
-require("prototypes-update.planet.muluna.muluna-override")
+-- FIRST CIRCLE PLANETS
+require("prototypes-update.space-age.vulcanus.vulcanus-override")
+require("prototypes-update.space-age.gleba.gleba-override")
+require("prototypes-update.space-age.fulgora.fulgora-override")
+
+require("prototypes-update.planet.castra.castra-override")
+
+-- SECOND CIRCLE PLANETS
 require("prototypes-update.planet.moshine.moshine-override")
-require("prototypes-update.planet.panglia.panglia-override")
 require("prototypes-update.planet.arig.arig-override")
 require("prototypes-update.planet.hyarion.hyarion-override")
 require("prototypes-update.planet.tellus.tellus-override")
 require("prototypes-update.planet.tellus.tellus-update-icon")
-require("prototypes-update.planet.paracelsin.paracelsin-override")
 require("prototypes-update.planet.corrundum.corrundum-override")
+require("prototypes-update.planet.shchierbin.shchierbin-override")
+require("prototypes-update.planet.muria.muria-override")
+
+-- THIRD CIRCLE PLANETS
+require("prototypes-update.space-age.aquilo.aquilo-override")
+require("prototypes-update.space-age.aquilo.aquilo-asteroid-spawn")
+
+require("prototypes-update.planet.paracelsin.paracelsin-override")
+require("prototypes-update.planet.maraxsis.maraxsis-override")
+
+-- FOURTH CIRCLE PLANETS
+require("prototypes-update.planet.vesta.vesta-override")
+
+-- MOONS
+require("prototypes-update.planet.muluna.muluna-override")
+require("prototypes-update.planet.panglia.panglia-override")
 require("prototypes-update.planet.frozeta.frozeta-override")
 require("prototypes-update.planet.terrapalus.terrapalus-override")
-require("prototypes-update.planet.castra.castra-override")
-require("prototypes-update.planet.shchierbin.shchierbin-override")
-require("prototypes-update.planet.maraxsis.maraxsis-override")
-require("prototypes-update.planet.vesta.vesta-override")
+
+-- FINAL CIRCLE PLANETS
 require("prototypes-update.planet.shattered.shattered-override")
 
 --require("prototypes-update.planet.rubia.rubia-override")

@@ -64,7 +64,7 @@ if mods[muluna_mods] or mods[maraxsis_mods] or mods[shchierbin_mods] then
     data_fluid[oxygen_mods] = nil
 end
 
-if mods[paracelsin_mods] or mods[shchierbin_mods] then
+if mods[paracelsin_mods] or mods[shchierbin_mods] or mods[shattered_mods] then
     data_fluid[nitrogen_mods] = nil
 end
 

@@ -12,7 +12,7 @@ do
 	local inputs =
 	{
 		mod = angels_mod,
-		group = "refining",
+		group = refining,
 		type = technology,
 		technology_icon_size = 256
 	}
@@ -47,7 +47,7 @@ do
 		---@type CreateIconsFromListOverrides
 		local override =
 		{
-			subgroup = "smelting",
+			subgroup = smelting,
 			flat_icon = true,
 			image = "smelting-" .. material .. "-technology-icon",
 		}

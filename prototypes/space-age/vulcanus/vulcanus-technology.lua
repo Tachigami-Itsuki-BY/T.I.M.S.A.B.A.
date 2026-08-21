@@ -24,8 +24,7 @@ data:extend
             {type = unlock_recipe, recipe = advanced_molten_iron},
             {type = unlock_recipe, recipe = advanced_molten_steel},
             {type = unlock_recipe, recipe = advanced_molten_aluminium},
-            {type = unlock_recipe, recipe = advanced_molten_titanium},
-            {type = unlock_recipe, recipe = rocket_part_tungsten}
+            {type = unlock_recipe, recipe = advanced_molten_titanium}
         },
         unit =
         {
@@ -363,3 +362,6 @@ data:extend
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_niobium_titanium_processing)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_niobium_iron_processing)
 table.insert(data_technology[tech_advanced_ore_refining_6].prerequisites, tech_niobium_tungsten_molybdenum_processing)
+
+table.insert(data_technology[tech_bio_refugium_biter_6].prerequisites, tech_niobium_iron_processing)
+table.insert(data_technology[tech_bio_refugium_biter_6].prerequisites, tech_niobium_tungsten_molybdenum_processing)

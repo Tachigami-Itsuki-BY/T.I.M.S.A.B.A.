@@ -412,7 +412,6 @@ data_recipe[liquid_resin_from_bio_resin].order = d_a
 data_recipe[liquid_resin_from_bio_resin].ingredients[1].amount = 60
 data_recipe[liquid_resin_from_bio_resin].results[1].amount = 15
 
-local resin_from_wood = "angels-bio-resin-wood-reprocessing"
 data_recipe[resin_from_wood].icons = TWO_I(wood, resin_bob)
 data_recipe[resin_from_wood].order = e_a
 data_recipe[resin_from_wood].energy_required = 4

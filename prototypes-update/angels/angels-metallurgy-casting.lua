@@ -123,12 +123,8 @@ data_recipe[steel_plate_2].icons = TWO_I(steel_roll, steel_plate)
 data_recipe[steel_plate_2].order = c_b
 data_recipe[steel_plate_2].energy_required = 4
 
-data_item[steel_rod].hidden = false
-data_item[steel_rod].hidden_in_factoriopedia = false
 data_item[steel_rod].localised_description = show_formula and {chemical_formula, "FeC"} or nil
 data_item[steel_rod].order = d
-data_recipe[steel_rod].hidden = false
-data_recipe[steel_rod].hidden_in_factoriopedia = false
 data_recipe[steel_rod].localised_name = data_item[steel_rod].localised_name
 data_recipe[steel_rod].icons = TWO_I(steel_plate, steel_rod)
 data_recipe[steel_rod].order = d
@@ -264,8 +260,6 @@ data_recipe[lead_roll_2].results[2].amount = 60
 
 data_item[lead_plate_bob].localised_description = show_formula and {chemical_formula, "Pb"} or nil
 data_item[lead_plate_bob].order = c
-data_recipe[lead_plate_bob].hidden = false
-data_recipe[lead_plate_bob].hidden_in_factoriopedia = false
 data_recipe[lead_plate_bob].localised_name = data_item[lead_plate_bob].localised_name
 data_recipe[lead_plate_bob].category = smelting
 data_recipe[lead_plate_bob].subgroup = "angels-lead-casting"
@@ -325,8 +319,6 @@ data_recipe[tin_roll_2].results[2].amount = 60
 
 data_item[tin_plate_bob].localised_description = show_formula and {chemical_formula, "Sn"} or nil
 data_item[tin_plate_bob].order = c
-data_recipe[tin_plate_bob].hidden = false
-data_recipe[tin_plate_bob].hidden_in_factoriopedia = false
 data_recipe[tin_plate_bob].localised_name = data_item[tin_plate_bob].localised_name
 data_recipe[tin_plate_bob].category = smelting
 data_recipe[tin_plate_bob].subgroup = "angels-tin-casting"
@@ -375,12 +367,8 @@ data_recipe[tin_wire_coil_2].ingredients[3].amount = 120
 data_recipe[tin_wire_coil_2].results[1].amount = 16
 data_recipe[tin_wire_coil_2].results[2].amount = 60
 
-data_item[tin_cable].hidden = false
-data_item[tin_cable].hidden_in_factoriopedia = false
 data_item[tin_cable].localised_description = show_formula and {chemical_formula, "CuSn"} or nil
 data_item[tin_cable].order = e
-data_recipe[tin_cable].hidden = false
-data_recipe[tin_cable].hidden_in_factoriopedia = false
 data_recipe[tin_cable].icons = THREE_I(copper_cable, tin_plate_bob, tin_cable)
 data_recipe[tin_cable].order = e
 data_recipe[tin_cable].energy_required = 2
@@ -396,12 +384,8 @@ data_recipe[tin_wire_2].energy_required = 8
 -- MANGANESE
 data_item_subgroup["angels-manganese-casting"].order = e
 
-data_fluid[manganese_molten_angels].hidden = false
-data_fluid[manganese_molten_angels].hidden_in_factoriopedia = false
 data_fluid[manganese_molten_angels].localised_description = show_formula and {chemical_formula, "Mn"} or nil
 data_fluid[manganese_molten_angels].order = a
---data_recipe[manganese_molten_angels].hidden = false
---data_recipe[manganese_molten_angels].hidden_in_factoriopedia = false
 data_recipe[manganese_molten_angels].localised_name = data_fluid[manganese_molten_angels].localised_name
 data_recipe[manganese_molten_angels].icons = TWO_I(manganese_ingot, manganese_molten_angels)
 data_recipe[manganese_molten_angels].order = a
@@ -862,12 +846,8 @@ data_recipe[gold_wire_coil_2].ingredients[3].amount = 120
 data_recipe[gold_wire_coil_2].results[1].amount = 16
 data_recipe[gold_wire_coil_2].results[2].amount = 60
 
-data_item[gold_cable].hidden = false
-data_item[gold_cable].hidden_in_factoriopedia = false
 data_item[gold_cable].localised_description = show_formula and {chemical_formula, "CuAu"} or nil
 data_item[gold_cable].order = e
-data_recipe[gold_cable].hidden = false
-data_recipe[gold_cable].hidden_in_factoriopedia = false
 data_recipe[gold_cable].icons = THREE_I(copper_cable, gold_plate_bob, gold_cable)
 data_recipe[gold_cable].order = e
 data_recipe[gold_cable].energy_required = 2
@@ -883,12 +863,8 @@ data_recipe[gold_wire_2].energy_required = 8
 -- COBALT
 data_item_subgroup["angels-cobalt-casting"].order = n
 
-data_fluid[cobalt_molten_angels].hidden = false
-data_fluid[cobalt_molten_angels].hidden_in_factoriopedia = false
 data_fluid[cobalt_molten_angels].localised_description = show_formula and {chemical_formula, "Co"} or nil
 data_fluid[cobalt_molten_angels].order = a
---data_recipe[cobalt_molten_angels].hidden = false
---data_recipe[cobalt_molten_angels].hidden_in_factoriopedia = false
 data_recipe[cobalt_molten_angels].localised_name = data_fluid[cobalt_molten_angels].localised_name
 data_recipe[cobalt_molten_angels].icons = TWO_I(cobalt_ingot, cobalt_molten_angels)
 data_recipe[cobalt_molten_angels].order = a
@@ -899,13 +875,9 @@ data_recipe[cobalt_molten_angels].results[1].amount = 240
 -- CHROMIUM
 data_item_subgroup["angels-chrome-casting"].order = o
 
---data_fluid[chromium_molten_angels].hidden = false
---data_fluid[chromium_molten_angels].hidden_in_factoriopedia = false
 data_fluid[chromium_molten_angels].localised_name = {"fluid-name.angels-liquid-molten-chrome"}
 data_fluid[chromium_molten_angels].localised_description = show_formula and {chemical_formula, "Cr"} or nil
 data_fluid[chromium_molten_angels].order = a
---data_recipe[chromium_molten_angels].hidden = false
---data_recipe[chromium_molten_angels].hidden_in_factoriopedia = false
 data_recipe[chromium_molten_angels].localised_name = data_fluid[chromium_molten_angels].localised_name
 data_recipe[chromium_molten_angels].icons = TWO_I(chromium_ingot, chromium_molten_angels)
 data_recipe[chromium_molten_angels].order = a
@@ -1061,8 +1033,6 @@ data_recipe[glass_coil_fiber_2].results[1].amount = 16
 data_recipe[glass_coil_fiber_2].results[2].amount = 60
 
 data_item[glass_bob].stack_size = 200
-data_recipe[glass_bob].hidden = false
-data_recipe[glass_bob].hidden_in_factoriopedia = false
 data_recipe[glass_bob].localised_name = {"item-name.angels-plate-glass"}
 data_recipe[glass_bob].icons = TWO_I(sand_angels, glass_bob)
 data_recipe[glass_bob].energy_required = 4
@@ -1199,8 +1169,6 @@ data_item_subgroup["angels-solder-casting"].order = x
 
 data_fluid[solder_molten_angels].localised_description = show_formula and {chemical_formula, "PbSn"} or nil
 data_fluid[solder_molten_angels].order = a
-data_recipe[solder_molten_angels].hidden = false
-data_recipe[solder_molten_angels].hidden_in_factoriopedia = false
 data_recipe[solder_molten_angels].localised_name = data_fluid[solder_molten_angels].localised_name
 data_recipe[solder_molten_angels].category = angels_induction_smelting_1
 data_recipe[solder_molten_angels].icons = THREE_I(lead_ingot, tin_ingot, solder_molten_angels, number_1)

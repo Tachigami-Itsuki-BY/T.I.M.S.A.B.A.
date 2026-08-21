@@ -778,6 +778,8 @@ data_recipe[bio_liquid_plastic_2].ingredients[3].amount = 30
 data_recipe[bio_liquid_plastic_2].results[1].amount = 30
 
 -- BUILD PARTS
+data_item_subgroup["angels-bio-processing-blocks"].order = z
+
 data_recipe[temperate_upgrade].ingredients =
 {
     {type = item, name = bio_token, amount = 16},

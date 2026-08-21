@@ -242,9 +242,12 @@ data_recipe[lead_ingot_3].results =
     {type = item, name = limestone_angels, amount = 4} -- 8
 }
 
+data_item[lead_powder].localised_description = show_formula and {chemical_formula, "Pb"} or nil
+data_item[lead_powder].order = e
+data_recipe[lead_powder].icons = TWO_I(lead_ingot, lead_powder)
+data_recipe[lead_powder].order = e
+
 -- LEAD CHEMISTRY
-data_item[lead_oxide_II].hidden = false
-data_item[lead_oxide_II].hidden_in_factoriopedia = false
 data_item[lead_oxide_II].localised_name = {"item-name.lead-oxide-II"}
 data_item[lead_oxide_II].localised_description = show_formula and {chemical_formula, "PbO"} or nil
 data_item[lead_oxide_II].subgroup = is_lead_chemistry
@@ -518,13 +521,9 @@ data_recipe[silicon_ingot_3].results =
     {type = fluid, name = hydrogen_angels, amount = 240}
 }
 
-data_item[silicon_powder].hidden = false
-data_item[silicon_powder].hidden_in_factoriopedia = false
 data_item[silicon_powder].localised_name = {"item-name.silicon-powder"}
 data_item[silicon_powder].localised_description = show_formula and {chemical_formula, "Si"} or nil
 data_item[silicon_powder].order = e
-data_recipe[silicon_powder].hidden = false
-data_recipe[silicon_powder].hidden_in_factoriopedia = false
 data_recipe[silicon_powder].localised_name = {"item-name.silicon-powder"}
 data_recipe[silicon_powder].icons = TWO_I(silicon_ingot, silicon_powder)
 data_recipe[silicon_powder].order = e
@@ -821,8 +820,6 @@ data_recipe[sodium_aluminate].results =
 }
 data_recipe[sodium_aluminate].main_product = sodium_aluminate
 
-data_item[aluminium_oxide].hidden = false
-data_item[aluminium_oxide].hidden_in_factoriopedia = false
 data_item[aluminium_oxide].localised_description = show_formula and {chemical_formula, "Al[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil
 data_item[aluminium_oxide].subgroup = is_aluminium_chemistry
 data_item[aluminium_oxide].order = e
@@ -932,8 +929,6 @@ data_recipe[zinc_powder].order = e
 data_item[zinc_oxide].localised_description = show_formula and {chemical_formula, "ZnO"} or nil
 data_item[zinc_oxide].subgroup = is_zinc_chemistry
 data_item[zinc_oxide].order = c
-data_recipe[zinc_oxide].hidden = false
-data_recipe[zinc_oxide].hidden_in_factoriopedia = false
 data_recipe[zinc_oxide].localised_name = {"item-name.angels-solid-zinc-oxide"}
 data_recipe[zinc_oxide].category = angels_blast_smelting_3
 data_recipe[zinc_oxide].subgroup = is_zinc_chemistry
@@ -1040,8 +1035,6 @@ data_recipe[silver_ingot_3].results =
 data_recipe[silver_ingot_3].main_product = silver_ingot
 
 -- SILVER CHEMISTRY
-data_item[silver_nitrate_I].hidden = false
-data_item[silver_nitrate_I].hidden_in_factoriopedia = false
 data_item[silver_nitrate_I].localised_name = {"item-name.silver-nitrate-I"}
 data_item[silver_nitrate_I].localised_description = show_formula and {chemical_formula, "AgNO[font=default-tiny-bold]3[/font]"} or nil
 data_item[silver_nitrate_I].subgroup = is_silver_chemistry
@@ -1413,8 +1406,6 @@ data_recipe[cobalt_powder].icons = TWO_I(cobalt_ingot, cobalt_powder)
 data_recipe[cobalt_powder].order = e
 
 -- COBALT CHEMISTRY
-data_item[cobalt_oxide_II_III].hidden = false
-data_item[cobalt_oxide_II_III].hidden_in_factoriopedia = false
 data_item[cobalt_oxide_II_III].localised_name = {"item-name.cobalt-oxide-II-III"}
 data_item[cobalt_oxide_II_III].localised_description = show_formula and {chemical_formula, "Co[font=default-tiny-bold]3[/font]O[font=default-tiny-bold]4[/font]"} or nil
 data_item[cobalt_oxide_II_III].subgroup = is_cobalt_chemistry
@@ -1646,8 +1637,6 @@ data_recipe[tungsten_pellet].icons = TWO_I(tungsten_processed, tungsten_pellet)
 data_recipe[tungsten_pellet].order = c
 data_recipe[tungsten_pellet].ingredients[1].amount = 4
 
-data_item[tungsten_powder].hidden = false
-data_item[tungsten_powder].hidden_in_factoriopedia = false
 data_item[tungsten_powder].localised_description = show_formula and {chemical_formula, "W"} or nil
 data_item[tungsten_powder].stack_size = 200
 data_item[tungsten_powder].order = d
@@ -1669,8 +1658,6 @@ data_recipe[tungsten_powder].results =
 data_recipe[tungsten_powder].main_product = tungsten_powder
 
 -- TUNGSTEN CHEMISTRY
-data_item[tungsten_oxide_VI].hidden = false
-data_item[tungsten_oxide_VI].hidden_in_factoriopedia = false
 data_item[tungsten_oxide_VI].localised_name = {"item-name.tungsten-oxide-VI"}
 data_item[tungsten_oxide_VI].localised_description = show_formula and {chemical_formula, "WO[font=default-tiny-bold]3[/font]"} or nil
 data_item[tungsten_oxide_VI].stack_size = 200
@@ -1787,10 +1774,8 @@ data_item[platinum_pellet].order = c
 data_item[platinum_ingot].localised_description = show_formula and {chemical_formula, "Pt"} or nil
 data_item[platinum_ingot].order = d
 
-data_item[platinum_powder].hidden = false
-data_item[platinum_powder].hidden_in_factoriopedia = false
 data_item[platinum_powder].localised_description = show_formula and {chemical_formula, "Pt"} or nil
-data_item[platinum_powder].order = c
+data_item[platinum_powder].order = e
 
 -- PLATINUM CHEMISTRY
 data_fluid[hexachloroplatinic_acid].localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]PtCl[font=default-tiny-bold]6(aq)[/font]"} or nil

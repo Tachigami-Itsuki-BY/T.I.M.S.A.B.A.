@@ -737,36 +737,83 @@ if mods[vesta_mods] then
     end
 end
 
+-- 
 if mods[shattered_mods] then
-    data_fluid[slurry_promethium_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_promethium.png"
-    data_fluid[slurry_carbonic_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_carbonic.png"
     data_fluid[slurry_metallic_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_metallic.png"
+
+    data_fluid[slurry_carbonic_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_carbonic.png"
+
     data_fluid[slurry_oxide_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_oxide.png"
+
+    data_fluid[slurry_promethium_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_promethium.png"
+    data_fluid[slurry_promethium_shattered].base_color = TIMSABA.functions.fluid_color("PmPmPm")
+    data_fluid[slurry_promethium_shattered].flow_color = TIMSABA.functions.flow_color("PmPmPm")
+
     data_fluid[neon_mods].icon = "__TIMSABA__/graphics/icons/shattered/gas_neon.png"
-    data_fluid[argon_mods].icon = "__TIMSABA__/graphics/icons/shattered/gas_argon.png"
+    data_fluid[neon_mods].base_color = TIMSABA.functions.fluid_color("NeNeNe")
+    data_fluid[neon_mods].flow_color = TIMSABA.functions.flow_color("NeNeNe")
+
     data_fluid[krypton_mods].icon = "__TIMSABA__/graphics/icons/shattered/gas_krypton.png"
+    data_fluid[krypton_mods].base_color = TIMSABA.functions.fluid_color("KrKrKr")
+    data_fluid[krypton_mods].flow_color = TIMSABA.functions.flow_color("KrKrKr")
+
     data_fluid[xenon_mods].icon = "__TIMSABA__/graphics/icons/shattered/gas_xenon.png"
-    data_fluid[liquid_nitrogen_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_liquid_nitrogen.png"
+    data_fluid[xenon_mods].base_color = TIMSABA.functions.fluid_color("XeXeXe")
+    data_fluid[xenon_mods].flow_color = TIMSABA.functions.flow_color("XeXeXe")
+
     data_fluid[brine_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_brine.png"
-    data_fluid[plutonium_238_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_238.png"
-    data_fluid[plutonium_239_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_239.png"
-    data_fluid[plutonium_241_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_241.png"
-    data_fluid[plutonium_242_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_242.png"
-    data_fluid[neptunium_236_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_neptunium_236.png"
-    data_fluid[neptunium_237_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_neptunium_237.png"
+
     data_fluid[uranium_233_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_uranium_233.png"
+
     data_fluid[uranium_235_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_uranium_235.png"
+
     data_fluid[uranium_238_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_uranium_238.png"
+
+    data_fluid[neptunium_236_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_neptunium_236.png"
+
+    data_fluid[neptunium_237_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_neptunium_237.png"
+
+    data_fluid[plutonium_238_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_238.png"
+
+    data_fluid[plutonium_239_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_239.png"
+
+    data_fluid[plutonium_241_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_241.png"
+
+    data_fluid[plutonium_242_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_plutonium_242.png"
+
     data_fluid[americium_241_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_americium_241.png"
+
     data_fluid[americium_242_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_americium_242.png"
+
     data_fluid[americium_243_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_americium_243.png"
+
     data_fluid[curium_245_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_curium_245.png"
+
     data_fluid[curium_246_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_curium_246.png"
+
     data_fluid[curium_247_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_curium_247.png"
+
     data_fluid[berkelium_247_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_berkelium_247.png"
+
     data_fluid[berkelium_248_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_berkelium_248.png"
+
     data_fluid[californium_249_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_249.png"
+
     data_fluid[californium_250_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_250.png"
+
     data_fluid[californium_251_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_251.png"
+
     data_fluid[californium_252_shattered].icon = "__TIMSABA__/graphics/icons/shattered/fluid_californium_252.png"
+
+end
+
+-- MURIA
+if mods[muria_mods] then
+    data_fluid[muriatic_solution].icon = "__TIMSABA__/graphics/icons/muria/muriatic-solution.png"
+    data_fluid[muriatic_solution].base_color = {r = 081 / 255, g = 179 / 255, b = 055 / 255}
+    data_fluid[muriatic_solution].flow_color = {r = 090 / 255, g = 190 / 255, b = 065 / 255}
+
+    data_fluid[hydronium_solution].icon = "__TIMSABA__/graphics/icons/muria/hydronium.png"
+    data_fluid[hydronium_solution].base_color = TIMSABA.functions.fluid_color("H3OOH")
+    data_fluid[hydronium_solution].flow_color = TIMSABA.functions.flow_color("H3OOH")
 end

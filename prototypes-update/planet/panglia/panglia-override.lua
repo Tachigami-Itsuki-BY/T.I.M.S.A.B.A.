@@ -103,7 +103,7 @@ if mods[panglia_mods] then
 
     local low_density_structure_from_panglite_fiber = "panglia_low_density_structure_from_panglite_fiber"
     data_recipe[low_density_structure_from_panglite_fiber].subgroup = is_panglia_recipe
-    data_recipe[low_density_structure_from_panglite_fiber].icons = BUILDING_R_I(low_density_structure, panglite_fiber)
+    data_recipe[low_density_structure_from_panglite_fiber].icons = BUILDING_R_I(low_density_structure, planet_panglia)
     data_recipe[low_density_structure_from_panglite_fiber].order = h_a
     data_recipe[low_density_structure_from_panglite_fiber].energy_required = 4
     data_recipe[low_density_structure_from_panglite_fiber].ingredients =
@@ -560,6 +560,27 @@ if mods[panglia_mods] then
         data_recipe[cosmic_incubator_recipe_shattered].icons = GALAXY_I(galaxy_png, planet_shattered)
     end]]
 
+    if mods[muria_mods] then
+        local cosmic_incubator_recipe_muria = "cosmic_incubator_recipe_muria"
+        data_recipe[cosmic_incubator_recipe_muria].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.muria"}}
+        data_recipe[cosmic_incubator_recipe_muria].subgroup = is_panglia_universe_planets
+        data_recipe[cosmic_incubator_recipe_muria].icons = GALAXY_I(galaxy_png, planet_muria)
+        data_recipe[cosmic_incubator_recipe_muria].order = data_planet[planet_muria].order
+        data_recipe[cosmic_incubator_recipe_muria].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_muria].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = lead_ore_bob, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
     -- MOONS
     if mods[muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
@@ -617,7 +638,8 @@ if mods[panglia_mods] then
             {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
-            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, probability = 0.5}
         }
     end
 

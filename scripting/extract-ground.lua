@@ -18,6 +18,8 @@ if script.active_mods["shchierbin"] then surface_to_recipe["shchierbin"] = "extr
 if script.active_mods["maraxsis"] then surface_to_recipe["maraxsis"] = "extract-ground-angels-water-saline" end
 if script.active_mods["skewer_planet_vesta"] then surface_to_recipe["vesta"] = "extract-ground-vesta_helium" end
 
+if script.active_mods["Muria"] then surface_to_recipe["muria"] = "extract-ground-muriatic-solution" end
+
 if script.active_mods["panglia_planet"] then surface_to_recipe["panglia"] = "extract-ground-water" end
 if script.active_mods["secretas"] then surface_to_recipe["panglia"] = "extract-ground-ammoniacal-solution" end
 if script.active_mods["terrapalus"] then surface_to_recipe["panglia"] = "extract-ground-water" end

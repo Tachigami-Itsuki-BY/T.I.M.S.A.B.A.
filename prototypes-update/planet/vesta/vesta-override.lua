@@ -229,7 +229,7 @@ if mods[vesta_mods] then
 
     local lds_from_vesta = "ske-lds-from-vesta"
     data_recipe[lds_from_vesta].subgroup = is_vesta_recipe
-    data_recipe[lds_from_vesta].icons = BUILDING_R_I(low_density_structure, iridium_plate_mods)
+    data_recipe[lds_from_vesta].icons = BUILDING_R_I(low_density_structure, planet_vesta)
     data_recipe[lds_from_vesta].order = h_b
     data_recipe[lds_from_vesta].energy_required = 2
     data_recipe[lds_from_vesta].ingredients =
@@ -482,6 +482,19 @@ if mods[vesta_mods] then
         {type = unlock_recipe, recipe = carbon_super_cooling},
         {type = unlock_recipe, recipe = vesta_foundation}
     }
+    data_technology[planet_discovery_vesta].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+
 
     data_technology[tech_deuterium].prerequisites = {planet_discovery_vesta}
     data_technology[tech_deuterium].effects =
@@ -540,12 +553,74 @@ if mods[vesta_mods] then
     if mods[shchierbin_mods] then
         add_recipe_for_ore_to_plate(vanadium_plate .. _burning)
     end
+    data_technology[tech_ore_to_plate].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+
+    data_technology["s2_fusion_enhancements"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
 
     if mods[shchierbin_mods] then
         table.insert(data_technology[fusion_thruster].prerequisites, vanadium_crusher)
     end
+    data_technology[fusion_thruster].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+
+    data_technology["transport-belt-capacity-vesta"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
 
     data_technology["worker-robots-storage-vesta"].localised_description = {"technplogy-description.worker-robots-storage"}
+    data_technology["worker-robots-storage-vesta"].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
 
     data_technology[tech_wolframite_processing_4].prerequisites = {tech_wolframite_processing_3, tech_gas_manipulation_science_pack}
     data_technology[tech_rhenium_synthesis].prerequisites = {tech_rhenium_smelting_3, tech_molybdenite_processing_4, tech_wolframite_processing_4}
@@ -617,5 +692,12 @@ if mods[vesta_mods] then
         table.insert(data_technology[pollution_clean_module_8].prerequisites, tech_gas_manipulation_science_pack)
         table.insert(data_technology[pollution_create_module_8].prerequisites, tech_gas_manipulation_science_pack)
         table.insert(data_technology[quality_module_8].prerequisites, tech_gas_manipulation_science_pack)
+    end
+
+    table.insert(data_technology[tech_monazite_processing_3].unit.ingredients, {agricultural_science_pack, 1})
+    table.insert(data_technology[tech_monazite_processing_4].unit.ingredients, {agricultural_science_pack, 1})
+
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_neodymium_smelting_3].unit.ingredients, {agricultural_science_pack, 1})
     end
 end

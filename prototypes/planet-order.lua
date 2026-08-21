@@ -1,71 +1,83 @@
--- PLANETS
-data_planet[planet_nauvis].order = x .. "-" .. planet_nauvis -- a
-data_planet[planet_vulcanus].order = x .. "-" .. planet_vulcanus -- b
-data_planet[planet_gleba].order = x .. "-" .. planet_gleba -- c
-data_planet[planet_fulgora].order = x .. "-" .. planet_fulgora -- d
-data_planet[planet_aquilo].order = x .. "-" .. planet_aquilo -- e
+-- FIRST CIRCLE PLANETS
+data_planet[planet_nauvis].order = x .. "-" .. planet_nauvis
+data_planet[planet_vulcanus].order = x .. "-" .. planet_vulcanus
+data_planet[planet_gleba].order = x .. "-" .. planet_gleba
+data_planet[planet_fulgora].order = x .. "-" .. planet_fulgora
 
+if mods[castra_mods] then
+    data_planet[planet_castra].order = x .. "-" .. planet_castra
+end
+
+-- SECOND CIRCLE PLANETS
 if mods[moshine_mods] then
-    data_planet[planet_moshine].order = x .. "-" .. planet_moshine -- f
+    data_planet[planet_moshine].order = x .. "-" .. planet_moshine
 end
 
 if mods[arig_mods] then
-    data_planet[planet_arig].order = x .. "-" .. planet_arig -- g
+    data_planet[planet_arig].order = x .. "-" .. planet_arig
 end
 
 if mods[hyarion_mods] then
-    data_planet[planet_hyarion].order = x .. "-" .. planet_hyarion -- h
+    data_planet[planet_hyarion].order = x .. "-" .. planet_hyarion
 end
 
 if mods[tellus_mods] then
-    data_planet[planet_tellus].order = x .. "-" .. planet_tellus -- i
-end
-
-if mods[paracelsin_mods] then
-    data_planet[planet_paracelsin].order = x .. "-" .. planet_paracelsin -- j
+    data_planet[planet_tellus].order = x .. "-" .. planet_tellus
 end
 
 if mods[corrundum_mods] then
-    data_planet[planet_corrundum].order = x .. "-" .. planet_corrundum -- k
-end
-
-if mods[secretas_frozeta_mods] then
-    data_space_location[planet_secretas].order = x .. "-" .. planet_secretas -- l
-end
-
-if mods[castra_mods] then
-    data_planet[planet_castra].order = x .. "-" .. planet_castra -- m
+    data_planet[planet_corrundum].order = x .. "-" .. planet_corrundum
 end
 
 if mods[shchierbin_mods] then
-    data_planet[planet_shchierbin].order = x .. "-" .. planet_shchierbin -- n
+    data_planet[planet_shchierbin].order = x .. "-" .. planet_shchierbin
 end
 
-if mods[maraxsis_mods] then
-    data_planet[planet_maraxsis].order = x .. "-" .. planet_maraxsis -- o
+if mods[muria_mods] then
+    data_planet[planet_muria].order = x .. "-" .. planet_muria
 end
 
-if mods[vesta_mods] then
-    data_planet[planet_vesta].order = x .. "-" .. planet_vesta -- p
-end
+-- THIRD CIRCLE PLANETS
+data_planet[planet_aquilo].order = x .. "-" .. planet_aquilo
 
---shattered planet -- q
-
--- MOONS
-if mods[muluna_mods] then
-    data_planet[planet_muluna].order = y .. "-" .. planet_muluna -- a
-end
-
-if mods[panglia_mods] then
-    data_planet[planet_panglia].order = y .. "-" .. planet_panglia -- b
+if mods[paracelsin_mods] then
+    data_planet[planet_paracelsin].order = x .. "-" .. planet_paracelsin
 end
 
 if mods[secretas_frozeta_mods] then
-    data_planet[planet_frozeta].order = y .. "-" .. planet_frozeta -- c
+    data_space_location[planet_secretas].order = x .. "-" .. planet_secretas
+end
+
+if mods[maraxsis_mods] then
+    data_planet[planet_maraxsis].order = x .. "-" .. planet_maraxsis
+end
+
+-- FOURTH CIRCLE PLANETS
+if mods[vesta_mods] then
+    data_planet[planet_vesta].order = x .. "-" .. planet_vesta
+end
+
+-- MOONS
+if mods[muluna_mods] then
+    data_planet[planet_muluna].order = y .. "-" .. planet_muluna
+end
+
+if mods[panglia_mods] then
+    data_planet[planet_panglia].order = y .. "-" .. planet_panglia
+end
+
+if mods[secretas_frozeta_mods] then
+    data_planet[planet_frozeta].order = y .. "-" .. planet_frozeta
 end
 
 if mods[terrapalus_mods] then
-    data_planet[planet_terrapalus].order = y .. "-" .. planet_terrapalus -- d
+    data_planet[planet_terrapalus].order = y .. "-" .. planet_terrapalus
+end
+
+-- FINAL CIRCLE PLANET
+local shattered = "shattered"
+if mods[shattered_mods] then
+    data_planet[planet_shattered].order = x .. "-" .. shattered -- 
 end
 
 -- OTHERS

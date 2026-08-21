@@ -79,7 +79,7 @@ steam_engine_recipe(steam_engine_1, iron_gear_wheel,     iron_bearing,     iron_
 steam_engine_recipe(steam_engine_2, steel_gear_wheel,    steel_bearing,    steel_pipe,    steam_engine_1, steel_plate)
 steam_engine_recipe(steam_engine_3, brass_gear_wheel,    brass_bearing,    brass_pipe,    steam_engine_2, brass_plate_bob)
 steam_engine_recipe(steam_engine_4, tungsten_gear_wheel, tungsten_bearing, tungsten_pipe, steam_engine_3, tungsten_plate_bob)
-steam_engine_recipe(steam_engine_5, nitinol_gear_wheel,  nitinol_bearing,  nitinol_pipe,  steam_engine_4, nitinol_plate_bob)
+steam_engine_recipe(steam_engine_5, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  copper_tungsten_pipe,  steam_engine_4, copper_tungsten_plate_bob)
 
 local steam_turbines =
 {
@@ -112,7 +112,7 @@ local function steam_turbine_recipe(name, gear_wheel, bearing, circuit, pipe, tu
 end
 steam_turbine_recipe(steam_turbine_1, ceramic_gear_wheel,  ceramic_bearing,  advanced_circuit,         ceramic_pipe,  steam_engine_3,  aluminium_plate_bob)
 steam_turbine_recipe(steam_turbine_2, tungsten_gear_wheel, tungsten_bearing, processing_unit,          tungsten_pipe, steam_turbine_1, tungsten_plate_bob)
-steam_turbine_recipe(steam_turbine_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, nitinol_pipe,  steam_turbine_2, nitinol_plate_bob)
+steam_turbine_recipe(steam_turbine_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe,  steam_turbine_2, copper_tungsten_plate_bob)
 
 if settings.startup["bobmods-power-fluidgenerator"].value then
     data_item_subgroup["bob-energy-fluid-generator"].order = b_c
@@ -153,8 +153,8 @@ if settings.startup["bobmods-power-fluidgenerator"].value then
     end
     fluid_generator_recipe(fluid_generator_1,   steel_gear_wheel,    steel_bearing,    electronic_circuit,       bronze_pipe,          nil,               steel_plate,         bronze_plate_bob)
     fluid_generator_recipe(fluid_generator_2,   ceramic_gear_wheel,  ceramic_bearing,  advanced_circuit,         ceramic_pipe,         fluid_generator_1, aluminium_plate_bob, invar_plate_bob)
-    fluid_generator_recipe(fluid_generator_3,   titanium_gear_wheel, titanium_bearing, processing_unit,          tungsten_pipe,        fluid_generator_2, titanium_plate_bob,  tungsten_plate_bob)
-    fluid_generator_recipe(hydrazine_generator, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, copper_tungsten_pipe, fluid_generator_3, nitinol_plate_bob,   copper_tungsten_plate_bob)
+    fluid_generator_recipe(fluid_generator_3,   tungsten_gear_wheel, tungsten_bearing, processing_unit,          tungsten_pipe,        fluid_generator_2, titanium_plate_bob,  tungsten_plate_bob)
+    fluid_generator_recipe(hydrazine_generator, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe, fluid_generator_3, nitinol_plate_bob,   copper_tungsten_plate_bob)
 
     bobmods.lib.recipe.update_recycling_recipe({fluid_generator_1, fluid_generator_2, fluid_generator_3, hydrazine_generator})
 end
@@ -390,7 +390,7 @@ mining_drill_recipe(electric_mining_drill_1, iron_gear_wheel,     basic_circuit_
 mining_drill_recipe(electric_mining_drill_2, steel_gear_wheel,    electronic_circuit,       electric_mining_drill_1, steel_plate)
 mining_drill_recipe(electric_mining_drill_3, brass_gear_wheel,    advanced_circuit,         electric_mining_drill_2, brass_plate_bob)
 mining_drill_recipe(electric_mining_drill_4, tungsten_gear_wheel, processing_unit,          electric_mining_drill_3, tungsten_plate_bob)
-mining_drill_recipe(electric_mining_drill_5, nitinol_gear_wheel,  advanced_processing_unit, electric_mining_drill_4, nitinol_plate_bob)
+mining_drill_recipe(electric_mining_drill_5, copper_tungsten_gear_wheel,  advanced_processing_unit, electric_mining_drill_4, copper_tungsten_plate_bob)
 data_recipe[electric_mining_drill_1].ingredients[1].amount = 4
 data_recipe[electric_mining_drill_1].ingredients[4].amount = 4
 local function pumpjack_recipe(name, gear_wheel, circuit, pipe, pumpjack, plate)
@@ -444,8 +444,8 @@ if data_item[area_mining_drill_1] then
     end
     area_mining_drill_recipe(area_mining_drill_1, steel_gear_wheel,    electronic_circuit,       electric_mining_drill_1, steel_plate)
     area_mining_drill_recipe(area_mining_drill_2, brass_gear_wheel,    advanced_circuit,         area_mining_drill_1,     brass_plate_bob)
-    area_mining_drill_recipe(area_mining_drill_3, titanium_gear_wheel, processing_unit,          area_mining_drill_2,     titanium_plate_bob)
-    area_mining_drill_recipe(area_mining_drill_4, nitinol_gear_wheel,  advanced_processing_unit, area_mining_drill_3,     nitinol_plate_bob)
+    area_mining_drill_recipe(area_mining_drill_3, tungsten_gear_wheel, processing_unit,          area_mining_drill_2,     tungsten_plate_bob)
+    area_mining_drill_recipe(area_mining_drill_4, copper_tungsten_gear_wheel,  advanced_processing_unit, area_mining_drill_3,     copper_tungsten_plate_bob)
     bobmods.lib.recipe.update_recycling_recipe({area_mining_drill_1, area_mining_drill_2, area_mining_drill_3, area_mining_drill_4})
 end
 
@@ -656,8 +656,8 @@ local function centrifuge_recipe(name, gear_wheel, bearing, circuit, material, p
     data_recipe[name].ingredients = ingredients
 end
 centrifuge_recipe(centrifuge_1, steel_gear_wheel,    steel_bearing,    advanced_circuit,         concrete_brick,            steel_plate)
-centrifuge_recipe(centrifuge_2, titanium_gear_wheel, titanium_bearing, processing_unit,          reinforced_concrete_brick, titanium_plate_bob, centrifuge_1)
-centrifuge_recipe(centrifuge_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, reinforced_titanium_concrete_brick, nitinol_plate_bob, centrifuge_2)
+centrifuge_recipe(centrifuge_2, tungsten_gear_wheel, tungsten_bearing, processing_unit,          reinforced_concrete_brick, tungsten_plate_bob, centrifuge_1)
+centrifuge_recipe(centrifuge_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, reinforced_titanium_concrete_brick, copper_tungsten_plate_bob, centrifuge_2)
 
 data_item_subgroup["bob-assembly-machine"].order = e_a
 
@@ -698,7 +698,7 @@ assembling_recipe(assembling_machine_1, iron_gear_wheel,            basic_circui
 assembling_recipe(assembling_machine_2, steel_gear_wheel,           electronic_circuit,       steel_pipe,              assembling_machine_1, steel_plate,               steel_bearing)
 assembling_recipe(assembling_machine_3, brass_gear_wheel,           advanced_circuit,         brass_pipe,              assembling_machine_2, brass_plate_bob,           brass_bearing)
 assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_unit,          titanium_pipe,           assembling_machine_3, titanium_plate_bob,        titanium_bearing)
-assembling_recipe(assembling_machine_5, copper_tungsten_gear_wheel, advanced_processing_unit, copper_tungsten_pipe,    assembling_machine_4, copper_tungsten_plate_bob, copper_tungsten_bearing)
+assembling_recipe(assembling_machine_5, nitinol_gear_wheel,         advanced_processing_unit, nitinol_pipe,            assembling_machine_4, nitinol_plate_bob,         nitinol_bearing)
 assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
 
 data_item[lab].subgroup = is_lab
@@ -781,6 +781,9 @@ if mods[bobtech] then
         end
         if mods[shchierbin_mods] then
             table.insert(data_lab[lab_alien].inputs, vanadium_science_pack)
+        end
+        if mods[muria_mods] then
+            table.insert(data_lab[lab_alien].inputs, muriatic_science_pack)
         end
     end
 end

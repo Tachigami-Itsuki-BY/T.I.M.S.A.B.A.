@@ -263,10 +263,6 @@ data_recipe[gas_bottle].ingredients = {{type = item, name = steel_plate, amount 
 data_recipe[gas_bottle].results[1].amount = 1
 
 -- ANGELS BIOPROCESSING NAUVIS
-local algae_farm_1 = "angels-algae-farm"
-local algae_farm_2 = "angels-algae-farm-2"
-local algae_farm_3 = "angels-algae-farm-3"
-local algae_farm_4 = "angels-algae-farm-4"
 local algae_farms =
 {
     {name = algae_farm_1, crafting_speed = 1, energy_usage = 120},
@@ -303,25 +299,28 @@ algae_farm_recipe(algae_farm_2, electronic_circuit, copper_pipe, copper_plate, s
 algae_farm_recipe(algae_farm_3, advanced_circuit, bronze_pipe, bronze_plate_bob, clay_brick, algae_farm_2)
 algae_farm_recipe(algae_farm_4, processing_unit, brass_pipe, aluminium_plate_bob, concrete_brick, algae_farm_3)
 
-local bio_generator_t = "angels-bio-generator-temperate-1"
-local bio_generator_s = "angels-bio-generator-swamp-1"
-local bio_generator_d = "angels-bio-generator-desert-1"
 local bio_generators =
 {
-    bio_generator_t,
-    bio_generator_s,
-    bio_generator_d
+    {name = bio_generator_t_1, subgroup = is_bio_generator_temperate},
+    {name = bio_generator_s_1, subgroup = is_bio_generator_swamp},
+    {name = bio_generator_d_1, subgroup = is_bio_generator_desert}
 }
-for _, name in pairs(bio_generators) do
-    data_item[name].stack_size = 32
-    data_item[name].weight = 31250
-    data_recipe[name].energy_required = 4
-    data_assembling[name].crafting_speed = 1
-    data_assembling[name].module_slots = 4
-    data_assembling[name].energy_usage = 105 .. kW
-    data_assembling[name].energy_source.emissions_per_minute.pollution = -64
-    data_assembling[name].energy_source.drain = 15 .. kW
-    data_assembling[name].heating_energy = data_assembling[assembling_machine_1].heating_energy
+for _, BUILDING in pairs(bio_generators) do
+    data_item[BUILDING.name].subgroup = BUILDING.subgroup
+    data_item[BUILDING.name].order = a
+    data_item[BUILDING.name].stack_size = 32
+    data_item[BUILDING.name].weight = 31250
+    data_recipe[BUILDING.name].subgroup = BUILDING.subgroup
+    data_recipe[BUILDING.name].order = a
+    data_recipe[BUILDING.name].energy_required = 4
+    data_assembling[BUILDING.name].subgroup = BUILDING.subgroup
+    data_assembling[BUILDING.name].order = a
+    data_assembling[BUILDING.name].crafting_speed = 1
+    data_assembling[BUILDING.name].module_slots = 1
+    data_assembling[BUILDING.name].energy_usage = 105 .. kW
+    data_assembling[BUILDING.name].energy_source.emissions_per_minute.pollution = -16
+    data_assembling[BUILDING.name].energy_source.drain = 15 .. kW
+    data_assembling[BUILDING.name].heating_energy = data_assembling[assembling_machine_1].heating_energy
 end
 local function bio_generator_recipe(name, circuit, pipe, plate, brick, tree)
     data_recipe[name].ingredients =
@@ -333,129 +332,163 @@ local function bio_generator_recipe(name, circuit, pipe, plate, brick, tree)
         {type = item, name = tree, amount = 1}
     }
 end
-bio_generator_recipe(bio_generator_t, basic_circuit_board, iron_pipe, iron_plate, stone_brick, tree_temperate)
-bio_generator_recipe(bio_generator_s, basic_circuit_board, iron_pipe, iron_plate, stone_brick, tree_swamp)
-bio_generator_recipe(bio_generator_d, basic_circuit_board, iron_pipe, iron_plate, stone_brick, tree_desert)
+bio_generator_recipe(bio_generator_t_1, basic_circuit_board, iron_pipe, iron_plate, stone_brick, tree_temperate)
+bio_generator_recipe(bio_generator_s_1, basic_circuit_board, iron_pipe, iron_plate, stone_brick, tree_swamp)
+bio_generator_recipe(bio_generator_d_1, basic_circuit_board, iron_pipe, iron_plate, stone_brick, tree_desert)
 
-local bio_arboretum = "angels-bio-arboretum-1"
-data_item[bio_arboretum].stack_size = 32
-data_item[bio_arboretum].weight = 31250
-data_recipe[bio_arboretum].energy_required = 4
-data_recipe[bio_arboretum].ingredients =
+data_item[bio_arboretum_1].subgroup = is_bio_arboretum
+data_item[bio_arboretum_1].order = a
+data_item[bio_arboretum_1].stack_size = 32
+data_item[bio_arboretum_1].weight = 31250
+data_recipe[bio_arboretum_1].subgroup = is_bio_arboretum
+data_recipe[bio_arboretum_1].order = a
+data_recipe[bio_arboretum_1].energy_required = 4
+data_recipe[bio_arboretum_1].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 4},
     {type = item, name = iron_pipe, amount = 16},
     {type = item, name = iron_plate, amount = 16},
     {type = item, name = stone_brick, amount = 32},
 }
-data_assembling[bio_arboretum].crafting_speed = 1
-data_assembling[bio_arboretum].module_slots = 4
-data_assembling[bio_arboretum].energy_usage = 105 .. kW
-data_assembling[bio_arboretum].energy_source.emissions_per_minute.pollution = -64
-data_assembling[bio_arboretum].energy_source.drain = 15 .. kW
-data_assembling[bio_arboretum].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[bio_arboretum_1].subgroup = is_bio_arboretum
+data_assembling[bio_arboretum_1].order = a
+data_assembling[bio_arboretum_1].crafting_speed = 1
+data_assembling[bio_arboretum_1].module_slots = 1
+data_assembling[bio_arboretum_1].energy_usage = 105 .. kW
+data_assembling[bio_arboretum_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[bio_arboretum_1].energy_source.drain = 15 .. kW
+data_assembling[bio_arboretum_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
--- ANGELS BIOPROCESSING VEGETABILIS
-local basic_farm = "angels-crop-farm"
-data_item[basic_farm].stack_size = 32
-data_item[basic_farm].weight = 31250
-data_recipe[basic_farm].energy_required = 4
-data_recipe[basic_farm].ingredients =
+-- ANGELS BIOPROCESSING VEGETABLES
+data_item[basic_farm_1].subgroup = is_basic_farm
+data_item[basic_farm_1].order = a
+data_item[basic_farm_1].stack_size = 32
+data_item[basic_farm_1].weight = 31250
+data_recipe[basic_farm_1].subgroup = is_basic_farm
+data_recipe[basic_farm_1].order = a
+data_recipe[basic_farm_1].energy_required = 4
+data_recipe[basic_farm_1].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
     {type = item, name = steel_pipe, amount = 8},
     {type = item, name = steel_plate, amount = 16},
     {type = item, name = clay_brick, amount = 32}
 }
-data_assembling[basic_farm].module_slots = 4
-data_assembling[basic_farm].energy_usage = 105 .. kW
-data_assembling[basic_farm].energy_source.emissions_per_minute.pollution = -32
-data_assembling[basic_farm].energy_source.drain = 15 .. kW
-data_assembling[basic_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[basic_farm_1].subgroup = is_basic_farm
+data_assembling[basic_farm_1].order = a
+data_assembling[basic_farm_1].crafting_speed = 0.5
+data_assembling[basic_farm_1].module_slots = 1
+data_assembling[basic_farm_1].energy_usage = 45 .. kW
+data_assembling[basic_farm_1].energy_source.emissions_per_minute.pollution = -8
+data_assembling[basic_farm_1].energy_source.drain = 15 .. kW
+data_assembling[basic_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local temperate_farm = "angels-temperate-farm"
-data_item[temperate_farm].stack_size = 32
-data_item[temperate_farm].weight = 31250
-data_recipe[temperate_farm].energy_required = 4
-data_recipe[temperate_farm].ingredients =
+data_item[temperate_farm_1].subgroup = is_temperate_farm
+data_item[temperate_farm_1].order = a
+data_item[temperate_farm_1].stack_size = 32
+data_item[temperate_farm_1].weight = 31250
+data_recipe[temperate_farm_1].subgroup = is_temperate_farm
+data_recipe[temperate_farm_1].order = a
+data_recipe[temperate_farm_1].energy_required = 4
+data_recipe[temperate_farm_1].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
     {type = item, name = brass_pipe, amount = 8},
     {type = item, name = aluminium_plate_bob, amount = 16},
     {type = item, name = concrete_brick, amount = 32},
     {type = item, name = temperate_upgrade, amount = 1},
-    {type = item, name = soil_angels, amount = 16},
-    {type = item, name = basic_farm, amount = 1}
+    {type = item, name = soil_angels, amount = 16}
 }
-data_assembling[temperate_farm].module_slots = 4
-data_assembling[temperate_farm].energy_usage = 210 .. kW
-data_assembling[temperate_farm].energy_source.emissions_per_minute.pollution = -64
-data_assembling[temperate_farm].energy_source.drain = 30 .. kW
-data_assembling[temperate_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[temperate_farm_1].subgroup = is_temperate_farm
+data_assembling[temperate_farm_1].order = a
+data_assembling[temperate_farm_1].crafting_speed = 1
+data_assembling[temperate_farm_1].module_slots = 1
+data_assembling[temperate_farm_1].energy_usage = 105 .. kW
+data_assembling[temperate_farm_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[temperate_farm_1].energy_source.drain = 15 .. kW
+data_assembling[temperate_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local swamp_farm = "angels-swamp-farm"
-data_item[swamp_farm].stack_size = 32
-data_item[swamp_farm].weight = 31250
-data_recipe[swamp_farm].energy_required = 4
-data_recipe[swamp_farm].ingredients =
+data_item[swamp_farm_1].subgroup = is_swamp_farm
+data_item[swamp_farm_1].order = a
+data_item[swamp_farm_1].stack_size = 32
+data_item[swamp_farm_1].weight = 31250
+data_recipe[swamp_farm_1].subgroup = is_swamp_farm
+data_recipe[swamp_farm_1].order = a
+data_recipe[swamp_farm_1].energy_required = 4
+data_recipe[swamp_farm_1].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
     {type = item, name = brass_pipe, amount = 8},
     {type = item, name = aluminium_plate_bob, amount = 16},
     {type = item, name = concrete_brick, amount = 32},
     {type = item, name = swamp_upgrade, amount = 1},
-    {type = item, name = mud_angels, amount = 16},
-    {type = item, name = basic_farm, amount = 1}
+    {type = item, name = mud_angels, amount = 16}
 }
-data_assembling[swamp_farm].module_slots = 4
-data_assembling[swamp_farm].energy_usage = 210 .. kW
-data_assembling[swamp_farm].energy_source.emissions_per_minute.pollution = -64
-data_assembling[swamp_farm].energy_source.drain = 30 .. kW
-data_assembling[swamp_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[swamp_farm_1].subgroup = is_swamp_farm
+data_assembling[swamp_farm_1].order = a
+data_assembling[swamp_farm_1].crafting_speed = 1
+data_assembling[swamp_farm_1].module_slots = 1
+data_assembling[swamp_farm_1].energy_usage = 105 .. kW
+data_assembling[swamp_farm_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[swamp_farm_1].energy_source.drain = 15 .. kW
+data_assembling[swamp_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local desert_farm = "angels-desert-farm"
-data_item[desert_farm].stack_size = 32
-data_item[desert_farm].weight = 31250
-data_recipe[desert_farm].energy_required = 4
-data_recipe[desert_farm].ingredients =
+data_item[desert_farm_1].subgroup = is_desert_farm
+data_item[desert_farm_1].order = a
+data_item[desert_farm_1].stack_size = 32
+data_item[desert_farm_1].weight = 31250
+data_recipe[desert_farm_1].subgroup = is_desert_farm
+data_recipe[desert_farm_1].order = a
+data_recipe[desert_farm_1].energy_required = 4
+data_recipe[desert_farm_1].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
     {type = item, name = brass_pipe, amount = 8},
     {type = item, name = aluminium_plate_bob, amount = 16},
     {type = item, name = concrete_brick, amount = 32},
     {type = item, name = desert_upgrade, amount = 1},
-    {type = item, name = sand_angels, amount = 16},
-    {type = item, name = basic_farm, amount = 1}
+    {type = item, name = sand_angels, amount = 16}
 }
-data_assembling[desert_farm].module_slots = 4
-data_assembling[desert_farm].energy_usage = 210 .. kW
-data_assembling[desert_farm].energy_source.emissions_per_minute.pollution = -64
-data_assembling[desert_farm].energy_source.drain = 30 .. kW
-data_assembling[desert_farm].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[desert_farm_1].subgroup = is_desert_farm
+data_assembling[desert_farm_1].order = a
+data_assembling[desert_farm_1].crafting_speed = 1
+data_assembling[desert_farm_1].module_slots = 1
+data_assembling[desert_farm_1].energy_usage = 105 .. kW
+data_assembling[desert_farm_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[desert_farm_1].energy_source.drain = 15 .. kW
+data_assembling[desert_farm_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local seed_extractor = "angels-seed-extractor"
-data_item[seed_extractor].stack_size = 32
-data_item[seed_extractor].weight = 31250
-data_recipe[seed_extractor].energy_required = 4
-data_recipe[seed_extractor].ingredients =
+data_item[seed_extractor_1].subgroup = is_seed_extractor
+data_item[seed_extractor_1].order = a
+data_item[seed_extractor_1].stack_size = 32
+data_item[seed_extractor_1].weight = 31250
+data_recipe[seed_extractor_1].subgroup = is_seed_extractor
+data_recipe[seed_extractor_1].order = a
+data_recipe[seed_extractor_1].energy_required = 4
+data_recipe[seed_extractor_1].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
     {type = item, name = steel_gear_wheel, amount = 8},
     {type = item, name = steel_plate, amount = 4},
     {type = item, name = clay_brick, amount = 4}
 }
-data_assembling[seed_extractor].crafting_speed = 1
-data_assembling[seed_extractor].module_slots = 4
-data_assembling[seed_extractor].energy_usage = 105 .. kW
-data_assembling[seed_extractor].energy_source.emissions_per_minute.pollution = 0
-data_assembling[seed_extractor].energy_source.drain = 15 .. kW
-data_assembling[seed_extractor].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[seed_extractor_1].subgroup = is_seed_extractor
+data_assembling[seed_extractor_1].order = a
+data_assembling[seed_extractor_1].crafting_speed = 1
+data_assembling[seed_extractor_1].module_slots = 1
+data_assembling[seed_extractor_1].energy_usage = 105 .. kW
+data_assembling[seed_extractor_1].energy_source.emissions_per_minute.pollution = -1
+data_assembling[seed_extractor_1].energy_source.drain = 15 .. kW
+data_assembling[seed_extractor_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local composter = "angels-composter"
-data_item[composter].stack_size = 32
-data_item[composter].weight = 31250
-data_recipe[composter].energy_required = 4
-data_recipe[composter].ingredients =
+data_item[composter_1].subgroup = is_composter
+data_item[composter_1].order = a
+data_item[composter_1].stack_size = 32
+data_item[composter_1].weight = 31250
+data_recipe[composter_1].subgroup = is_composter
+data_recipe[composter_1].order = a
+data_recipe[composter_1].energy_required = 4
+data_recipe[composter_1].ingredients =
 {
     {type = item, name = basic_circuit_board, amount = 4},
     {type = item, name = iron_gear_wheel, amount = 8},
@@ -463,75 +496,95 @@ data_recipe[composter].ingredients =
     {type = item, name = stone_brick, amount = 8},
     {type = item, name = wooden_chest, amount = 1}
 }
-data_furnace[composter].crafting_speed = 1
-data_furnace[composter].module_slots = 4
-data_furnace[composter].energy_usage = 22.5 .. kW
-data_furnace[composter].energy_source.emissions_per_minute.pollution = 0
-data_furnace[composter].energy_source.drain = 7.5 .. kW
-data_furnace[composter].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_furnace[composter_1].subgroup = is_composter
+data_furnace[composter_1].order = a
+data_furnace[composter_1].crafting_speed = 1
+data_furnace[composter_1].module_slots = 1
+data_furnace[composter_1].energy_usage = 22.5 .. kW
+data_furnace[composter_1].energy_source.emissions_per_minute.pollution = -1
+data_furnace[composter_1].energy_source.drain = 7.5 .. kW
+data_furnace[composter_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local bio_processor = "angels-bio-processor"
-data_item[bio_processor].stack_size = 32
-data_item[bio_processor].weight = 31250
-data_recipe[bio_processor].energy_required = 4
-data_recipe[bio_processor].ingredients =
+data_item[bio_processor_1].subgroup = is_bio_processor
+data_item[bio_processor_1].order = a
+data_item[bio_processor_1].stack_size = 32
+data_item[bio_processor_1].weight = 31250
+data_recipe[bio_processor_1].subgroup = is_bio_processor
+data_recipe[bio_processor_1].order = a
+data_recipe[bio_processor_1].energy_required = 4
+data_recipe[bio_processor_1].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 8},
     {type = item, name = steel_gear_wheel, amount = 16},
     {type = item, name = steel_plate, amount = 16},
     {type = item, name = clay_brick, amount = 16}
 }
-data_assembling[bio_processor].crafting_speed = 1
-data_assembling[bio_processor].module_slots = 4
-data_assembling[bio_processor].energy_usage = 105 .. kW
-data_assembling[bio_processor].energy_source.emissions_per_minute.pollution = 0
-data_assembling[bio_processor].energy_source.drain = 15 .. kW
-data_assembling[bio_processor].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[bio_processor_1].subgroup = is_bio_processor
+data_assembling[bio_processor_1].order = a
+data_assembling[bio_processor_1].crafting_speed = 1
+data_assembling[bio_processor_1].module_slots = 1
+data_assembling[bio_processor_1].energy_usage = 105 .. kW
+data_assembling[bio_processor_1].energy_source.emissions_per_minute.pollution = -1
+data_assembling[bio_processor_1].energy_source.drain = 15 .. kW
+data_assembling[bio_processor_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local bio_press = "angels-bio-press"
-data_item[bio_press].stack_size = 32
-data_item[bio_press].weight = 31250
-data_recipe[bio_press].energy_required = 4
-data_recipe[bio_press].ingredients =
+data_item[bio_press_1].subgroup = is_bio_press
+data_item[bio_press_1].order = a
+data_item[bio_press_1].stack_size = 32
+data_item[bio_press_1].weight = 31250
+data_recipe[bio_press_1].subgroup = is_bio_press
+data_recipe[bio_press_1].order = a
+data_recipe[bio_press_1].energy_required = 4
+data_recipe[bio_press_1].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
     {type = item, name = steel_gear_wheel, amount = 8},
-    {type = item, name = bronze_pipe, amount = 4},
-    {type = item, name = bronze_plate_bob, amount = 8},
+    {type = item, name = steel_pipe, amount = 4},
+    {type = item, name = steel_plate, amount = 8},
     {type = item, name = clay_brick, amount = 8}
 }
-data_assembling[bio_press].crafting_speed = 1
-data_assembling[bio_press].module_slots = 4
-data_assembling[bio_press].energy_usage = 105 .. kW
-data_assembling[bio_press].energy_source.emissions_per_minute.pollution = 0
-data_assembling[bio_press].energy_source.drain = 15 .. kW
-data_assembling[bio_press].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[bio_press_1].subgroup = is_bio_press
+data_assembling[bio_press_1].order = a
+data_assembling[bio_press_1].crafting_speed = 1
+data_assembling[bio_press_1].module_slots = 1
+data_assembling[bio_press_1].energy_usage = 105 .. kW
+data_assembling[bio_press_1].energy_source.emissions_per_minute.pollution = -1
+data_assembling[bio_press_1].energy_source.drain = 15 .. kW
+data_assembling[bio_press_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local nutrient_extractor = "angels-nutrient-extractor"
-data_item[nutrient_extractor].stack_size = 32
-data_item[nutrient_extractor].weight = 31250
-data_recipe[nutrient_extractor].energy_required = 4
-data_recipe[nutrient_extractor].ingredients =
+data_item[nutrient_extractor_1].subgroup = is_nutrient_extractor
+data_item[nutrient_extractor_1].order = a
+data_item[nutrient_extractor_1].stack_size = 32
+data_item[nutrient_extractor_1].weight = 31250
+data_recipe[nutrient_extractor_1].subgroup = is_nutrient_extractor
+data_recipe[nutrient_extractor_1].order = a
+data_recipe[nutrient_extractor_1].energy_required = 4
+data_recipe[nutrient_extractor_1].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
     {type = item, name = steel_gear_wheel, amount = 8},
-    {type = item, name = bronze_pipe, amount = 8},
-    {type = item, name = bronze_plate_bob, amount = 4},
+    {type = item, name = steel_pipe, amount = 8},
+    {type = item, name = steel_plate, amount = 4},
     {type = item, name = clay_brick, amount = 8}
 }
-data_assembling[nutrient_extractor].crafting_speed = 1
-data_assembling[nutrient_extractor].module_slots = 4
-data_assembling[nutrient_extractor].energy_usage = 105 .. kW
-data_assembling[nutrient_extractor].energy_source.emissions_per_minute.pollution = 0
-data_assembling[nutrient_extractor].energy_source.drain = 15 .. kW
-data_assembling[nutrient_extractor].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[nutrient_extractor_1].subgroup = is_nutrient_extractor
+data_assembling[nutrient_extractor_1].order = a
+data_assembling[nutrient_extractor_1].crafting_speed = 1
+data_assembling[nutrient_extractor_1].module_slots = 1
+data_assembling[nutrient_extractor_1].energy_usage = 105 .. kW
+data_assembling[nutrient_extractor_1].energy_source.emissions_per_minute.pollution = -1
+data_assembling[nutrient_extractor_1].energy_source.drain = 15 .. kW
+data_assembling[nutrient_extractor_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 -- ANGELS BIOPROCESSING ANIMALIS
-local fish_refugium = "angels-bio-refugium-fish"
-data_item[fish_refugium].stack_size = 32
-data_item[fish_refugium].weight = 31250
-data_recipe[fish_refugium].energy_required = 4
-data_recipe[fish_refugium].ingredients =
+data_item[fish_refugium_1].subgroup = is_fish_refugium
+data_item[fish_refugium_1].order = a
+data_item[fish_refugium_1].stack_size = 32
+data_item[fish_refugium_1].weight = 31250
+data_recipe[fish_refugium_1].subgroup = is_fish_refugium
+data_recipe[fish_refugium_1].order = a
+data_recipe[fish_refugium_1].energy_required = 4
+data_recipe[fish_refugium_1].ingredients =
 {
     {type = item, name = electronic_circuit, amount = 4},
     {type = item, name = bronze_pipe, amount = 64},
@@ -539,54 +592,70 @@ data_recipe[fish_refugium].ingredients =
     {type = item, name = clay_brick, amount = 16},
     {type = item, name = bronze_plate_bob, amount = 4}
 }
-data_assembling[fish_refugium].crafting_speed = 1
-data_assembling[fish_refugium].module_slots = 4
-data_assembling[fish_refugium].energy_usage = 105 .. kW
-data_assembling[fish_refugium].energy_source.emissions_per_minute.pollution = -32
-data_assembling[fish_refugium].energy_source.drain = 15 .. kW
-data_assembling[fish_refugium].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[fish_refugium_1].subgroup = is_fish_refugium
+data_assembling[fish_refugium_1].order = a
+data_assembling[fish_refugium_1].crafting_speed = 1
+data_assembling[fish_refugium_1].module_slots = 1
+data_assembling[fish_refugium_1].energy_usage = 105 .. kW
+data_assembling[fish_refugium_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[fish_refugium_1].energy_source.drain = 15 .. kW
+data_assembling[fish_refugium_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local butchery = "angels-bio-butchery"
-data_item[butchery].stack_size = 32
-data_item[butchery].weight = 31250
-data_recipe[butchery].energy_required = 4
-data_recipe[butchery].ingredients =
+data_item[butchery_1].subgroup = is_butchery
+data_item[butchery_1].order = a
+data_item[butchery_1].stack_size = 32
+data_item[butchery_1].weight = 31250
+data_recipe[butchery_1].subgroup = is_butchery
+data_recipe[butchery_1].order = a
+data_recipe[butchery_1].energy_required = 4
+data_recipe[butchery_1].ingredients =
 {
     {type = item, name = steel_gear_wheel, amount = 4},
     {type = item, name = electronic_circuit, amount = 1},
     {type = item, name = clay_brick, amount = 8},
     {type = item, name = bronze_plate_bob, amount = 8}
 }
-data_furnace[butchery].crafting_speed = 1
-data_furnace[butchery].module_slots = 4
-data_furnace[butchery].energy_usage = 105 .. kW
-data_furnace[butchery].energy_source.emissions_per_minute.pollution = 0
-data_furnace[butchery].energy_source.drain = 15 .. kW
-data_furnace[butchery].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_furnace[butchery_1].subgroup = is_butchery
+data_furnace[butchery_1].order = a
+data_furnace[butchery_1].crafting_speed = 1
+data_furnace[butchery_1].module_slots = 1
+data_furnace[butchery_1].energy_usage = 105 .. kW
+data_furnace[butchery_1].energy_source.emissions_per_minute.pollution = -1
+data_furnace[butchery_1].energy_source.drain = 15 .. kW
+data_furnace[butchery_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local hatchery = "angels-bio-hatchery"
-data_item[hatchery].stack_size = 32
-data_item[hatchery].weight = 31250
-data_recipe[hatchery].energy_required = 4
-data_recipe[hatchery].ingredients =
+data_item[hatchery_1].subgroup = is_hatchery
+data_item[hatchery_1].order = a
+data_item[hatchery_1].stack_size = 32
+data_item[hatchery_1].weight = 31250
+data_recipe[hatchery_1].subgroup = is_hatchery
+data_recipe[hatchery_1].order = a
+data_recipe[hatchery_1].energy_required = 4
+data_recipe[hatchery_1].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
     {type = item, name = "small-lamp", amount = 4},
     {type = item, name = aluminium_plate_bob, amount = 8},
     {type = item, name = concrete_brick, amount = 8}
 }
-data_furnace[hatchery].crafting_speed = 1
-data_furnace[hatchery].module_slots = 4
-data_furnace[hatchery].energy_usage = 105 .. kW
-data_furnace[hatchery].energy_source.emissions_per_minute.pollution = 0
-data_furnace[hatchery].energy_source.drain = 15 .. kW
-data_furnace[hatchery].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_furnace[hatchery_1].subgroup = is_hatchery
+data_furnace[hatchery_1].order = a
+data_furnace[hatchery_1].crafting_speed = 1
+data_furnace[hatchery_1].module_slots = 1
+data_furnace[hatchery_1].energy_usage = 105 .. kW
+data_furnace[hatchery_1].energy_source.emissions_per_minute.pollution = -1
+data_furnace[hatchery_1].energy_source.drain = 15 .. kW
+data_furnace[hatchery_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local puffer_refugium = "angels-bio-refugium-puffer"
-data_item[puffer_refugium].stack_size = 32
-data_item[puffer_refugium].weight = 31250
-data_recipe[puffer_refugium].energy_required = 4
-data_recipe[puffer_refugium].ingredients =
+
+data_item[puffer_refugium_1].subgroup = is_puffer_refugium
+data_item[puffer_refugium_1].order = a
+data_item[puffer_refugium_1].stack_size = 32
+data_item[puffer_refugium_1].weight = 31250
+data_recipe[puffer_refugium_1].subgroup = is_puffer_refugium
+data_recipe[puffer_refugium_1].order = a
+data_recipe[puffer_refugium_1].energy_required = 4
+data_recipe[puffer_refugium_1].ingredients =
 {
     {type = item, name = advanced_circuit, amount = 4},
     {type = item, name = brass_pipe, amount = 32},
@@ -594,18 +663,23 @@ data_recipe[puffer_refugium].ingredients =
     {type = item, name = glass_bob, amount = 4},
     {type = item, name = concrete_brick, amount = 16}
 }
-data_assembling[puffer_refugium].crafting_speed = 1
-data_assembling[puffer_refugium].module_slots = 4
-data_assembling[puffer_refugium].energy_usage = 105 .. kW
-data_assembling[puffer_refugium].energy_source.emissions_per_minute.pollution = -32
-data_assembling[puffer_refugium].energy_source.drain = 15 .. kW
-data_assembling[puffer_refugium].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[puffer_refugium_1].subgroup = is_puffer_refugium
+data_assembling[puffer_refugium_1].order = a
+data_assembling[puffer_refugium_1].crafting_speed = 1
+data_assembling[puffer_refugium_1].module_slots = 1
+data_assembling[puffer_refugium_1].energy_usage = 105 .. kW
+data_assembling[puffer_refugium_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[puffer_refugium_1].energy_source.drain = 15 .. kW
+data_assembling[puffer_refugium_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
-local biter_refugium = "angels-bio-refugium-biter"
-data_item[biter_refugium].stack_size = 32
-data_item[biter_refugium].weight = 31250
-data_recipe[biter_refugium].energy_required = 4
-data_recipe[biter_refugium].ingredients =
+data_item[biter_refugium_1].subgroup = is_biter_refugium
+data_item[biter_refugium_1].order = a
+data_item[biter_refugium_1].stack_size = 32
+data_item[biter_refugium_1].weight = 31250
+data_recipe[biter_refugium_1].subgroup = is_biter_refugium
+data_recipe[biter_refugium_1].order = a
+data_recipe[biter_refugium_1].energy_required = 4
+data_recipe[biter_refugium_1].ingredients =
 {
     {type = item, name = processing_unit, amount = 4},
     {type = item, name = titanium_pipe, amount = 32},
@@ -613,12 +687,14 @@ data_recipe[biter_refugium].ingredients =
     {type = item, name = titanium_plate_bob, amount = 32},
     {type = item, name = reinforced_concrete_brick, amount = 64}
 }
-data_assembling[biter_refugium].crafting_speed = 1
-data_assembling[biter_refugium].module_slots = 4
-data_assembling[biter_refugium].energy_usage = 105 .. kW
-data_assembling[biter_refugium].energy_source.emissions_per_minute.pollution = -32
-data_assembling[biter_refugium].energy_source.drain = 15 .. kW
-data_assembling[biter_refugium].heating_energy = data_assembling[assembling_machine_1].heating_energy
+data_assembling[biter_refugium_1].subgroup = is_biter_refugium
+data_assembling[biter_refugium_1].order = a
+data_assembling[biter_refugium_1].crafting_speed = 1
+data_assembling[biter_refugium_1].module_slots = 1
+data_assembling[biter_refugium_1].energy_usage = 105 .. kW
+data_assembling[biter_refugium_1].energy_source.emissions_per_minute.pollution = -16
+data_assembling[biter_refugium_1].energy_source.drain = 15 .. kW
+data_assembling[biter_refugium_1].heating_energy = data_assembling[assembling_machine_1].heating_energy
 
 bobmods.lib.recipe.update_recycling_recipe
 ({
@@ -646,22 +722,22 @@ bobmods.lib.recipe.update_recycling_recipe
     algae_farm_2,
     algae_farm_3,
     algae_farm_4,
-    bio_generator_t,
-    bio_generator_s,
-    bio_generator_d,
-    bio_arboretum,
-    basic_farm,
-    temperate_farm,
-    swamp_farm,
-    desert_farm,
-    seed_extractor,
-    composter,
-    bio_processor,
-    bio_press,
-    nutrient_extractor,
-    fish_refugium,
-    butchery,
-    hatchery,
-    puffer_refugium,
-    biter_refugium,
+    bio_generator_t_1,
+    bio_generator_s_1,
+    bio_generator_d_1,
+    bio_arboretum_1,
+    basic_farm_1,
+    temperate_farm_1,
+    swamp_farm_1,
+    desert_farm_1,
+    seed_extractor_1,
+    composter_1,
+    bio_processor_1,
+    bio_press_1,
+    nutrient_extractor_1,
+    fish_refugium_1,
+    butchery_1,
+    hatchery_1,
+    puffer_refugium_1,
+    biter_refugium_1
 })

@@ -280,7 +280,7 @@ data:extend
         localised_name = {"", "[entity=molybdenite-ore] ", {"entity-name.molybdenite"}},
         type = "autoplace-control",
         name = molybdenite_ore,
-        order = a_h,
+        order = molybdenite_ore,
         category = "resource",
         richness = true,
         can_be_disabled = true

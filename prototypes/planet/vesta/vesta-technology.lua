@@ -52,7 +52,6 @@ if mods[vesta_mods] then
                 {
                     {automation_science_pack, 1},
                     {logistic_science_pack, 1},
-                    {military_science_pack, 1},
                     {chemical_science_pack, 1},
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
@@ -88,7 +87,6 @@ if mods[vesta_mods] then
                 {
                     {automation_science_pack, 1},
                     {logistic_science_pack, 1},
-                    {military_science_pack, 1},
                     {chemical_science_pack, 1},
                     {production_science_pack, 1},
                     {utility_science_pack, 1},

@@ -8,6 +8,9 @@ end
 if not (reskins.angels and reskins.angels.triggers.petrochem.entities) then
 	return
 end
+if not (reskins.angels and reskins.angels.triggers.bioprocessing.entities) then
+    return
+end
 
 -- ORE CRUSHER
 do
@@ -1194,6 +1197,989 @@ do
                 }
             }
         }
+        ::continue::
+    end
+end
+
+-- TREE GENERATOR SEED
+local compatibility = "compatibility"
+local extendedangels = "extendedangels"
+local temperate = "temperate"
+local swamp = "swamp"
+local desert = "desert"
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false,
+    }
+    local tier_map =
+    {
+        [bio_generator_t_1] = {tier = 1, field = temperate},
+        [bio_generator_t_2] = {tier = 2, field = temperate},
+        [bio_generator_t_3] = {tier = 3, field = temperate},
+        [bio_generator_t_4] = {tier = 4, field = temperate},
+
+        [bio_generator_s_1] = {tier = 1, field = swamp},
+        [bio_generator_s_2] = {tier = 2, field = swamp},
+        [bio_generator_s_3] = {tier = 3, field = swamp},
+        [bio_generator_s_4] = {tier = 4, field = swamp},
+
+        [bio_generator_d_1] = {tier = 1, field = desert},
+        [bio_generator_d_2] = {tier = 2, field = desert},
+        [bio_generator_d_3] = {tier = 3, field = desert},
+        [bio_generator_d_4] = {tier = 4, field = desert}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.icon_name = "tree-generator-" .. map.field
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-generator-shadow.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0}
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-generator-base.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0}
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/tree-generator/tree-generator-mask.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = { 0, 0 },
+                    tint = inputs.tint,
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/tree-generator/tree-generator-highlights.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0},
+                    blend_mode = reskins.lib.settings.blend_mode
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-generator-pipes.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0}
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-generator-1.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0}
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-generator-top.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0}
+                }
+            }
+        }
+        entity.graphics_set.working_visualisations =
+        {
+            {
+                fadeout = true,
+                animation =
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-generator-top-on.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0},
+                    draw_as_glow = true
+                },
+                light = {intensity = 4, size = 4, color = {r = 0.5, g = 1.0, b = 0.5}}
+            }
+        }
+        ::continue::
+    end
+end
+
+-- BIO ARBORETRUM
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "arboretum",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [bio_arboretum_1] = {tier = 1},
+        [bio_arboretum_2] = {tier = 2},
+        [bio_arboretum_3] = {tier = 3},
+        [bio_arboretum_4] = {tier = 4}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-arboretum-shadow.png",
+                    width = 224,
+                    height = 256,
+                    shift = {0, -0.50}
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-arboretum-base.png",
+                    width = 224,
+                    height = 256,
+                    shift = {0, -0.50},
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/arboretum/arboretum-mask.png",
+                    priority = extra_high,
+                    width = 224,
+                    height = 256,
+                    shift = {0, -0.5},
+                    tint = inputs.tint
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/arboretum/arboretum-highlights.png",
+                    priority = extra_high,
+                    width = 224,
+                    height = 256,
+                    shift = {0, -0.5},
+                    blend_mode = reskins.lib.settings.blend_mode
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-arboretum-pipes.png",
+                    width = 224,
+                    height = 256,
+                    shift = {0, -0.50}
+                },
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/trees/bio-arboretum-off.png",
+                    width = 224,
+                    height = 256,
+                    shift = {0, -0.50}
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- FARM
+local basic = "basic"
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "field",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [basic_farm_1] = {tier = 1, prog_tier = 1, field = basic},
+        [basic_farm_2] = {tier = 2, prog_tier = 2, field = basic},
+        [basic_farm_3] = {tier = 3, prog_tier = 3, field = basic},
+        [basic_farm_4] = {tier = 4, prog_tier = 4, field = basic},
+
+        [temperate_farm_1] = {tier = 1, prog_tier = 3, field = temperate},
+        [temperate_farm_2] = {tier = 2, prog_tier = 4, field = temperate},
+        [temperate_farm_3] = {tier = 3, prog_tier = 5, field = temperate},
+        [temperate_farm_4] = {tier = 4, prog_tier = 6, field = temperate},
+
+        [swamp_farm_1] = {tier = 1, prog_tier = 3, field = swamp},
+        [swamp_farm_2] = {tier = 2, prog_tier = 4, field = swamp},
+        [swamp_farm_3] = {tier = 3, prog_tier = 5, field = swamp},
+        [swamp_farm_4] = {tier = 4, prog_tier = 6, field = swamp},
+
+        [desert_farm_1] = {tier = 1, prog_tier = 3, field = desert},
+        [desert_farm_2] = {tier = 2, prog_tier = 4, field = desert},
+        [desert_farm_3] = {tier = 3, prog_tier = 5, field = desert},
+        [desert_farm_4] = {tier = 4, prog_tier = 6, field = desert}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.icon_base = "field-" .. map.field
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        table.insert(entity.graphics_set.working_visualisations,
+        {
+            always_draw = true,
+            animation =
+            {
+                layers =
+                {
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/field/field-mask.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 224,
+                        shift = {0, 0},
+                        tint = inputs.tint
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/field/field-highlights.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 224,
+                        shift = {0, 0},
+                        blend_mode = reskins.lib.settings.blend_mode
+                    }
+                }
+            }
+        })
+        ::continue::
+    end
+end
+
+-- SEED EXTRACTOR
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "seed-extractor",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [seed_extractor_1] = {tier = 1},
+        [seed_extractor_2] = {tier = 2},
+        [seed_extractor_3] = {tier = 3},
+        [seed_extractor_4] = {tier = 4}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/seed-extractor/seed-extractor.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    frame_count = 25,
+                    line_length = 5,
+                    shift = {0, 0},
+                    animation_speed = 0.5
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/seed-extractor/seed-extractor-mask.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    frame_count = 25,
+                    line_length = 5,
+                    shift = {0, 0},
+                    animation_speed = 0.5,
+                    tint = inputs.tint
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/seed-extractor/seed-extractor-highlights.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    frame_count = 25,
+                    line_length = 5,
+                    shift = {0, 0},
+                    animation_speed = 0.5,
+                    blend_mode = reskins.lib.settings.blend_mode
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- COMPOSTER
+do
+    local inputs =
+    {
+        type = furnace,
+        icon_name = "composter",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [composter_1] = {tier = 1},
+        [composter_2] = {tier = 2},
+        [composter_3] = {tier = 3},
+        [composter_4] = {tier = 4}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.FurnacePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.working_visualisations =
+        {
+            {
+                always_draw = true,
+                animation =
+                {
+                    layers =
+                    {
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/composter/composter-mask.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            shift = {0, 0},
+                            tint = inputs.tint
+                        },
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/composter/composter-highlights.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            shift = {0, 0},
+                            blend_mode = reskins.lib.settings.blend_mode
+                        }
+                    }
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- BIO PROCESSOR
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "bioprocessor",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false,
+    }
+
+    local tier_map =
+    {
+        [bio_processor_1] = {tier = 1},
+        [bio_processor_2] = {tier = 2},
+        [bio_processor_3] = {tier = 3},
+        [bio_processor_4] = {tier = 4}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        table.insert(entity.graphics_set.working_visualisations,
+        {
+            always_draw = true,
+            animation =
+            {
+                layers =
+                {
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/bioprocessor/bioprocessor-mask.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 224,
+                        line_length = 5,
+                        frame_count = 25,
+                        shift = {0, 0},
+                        animation_speed = 0.5,
+                        tint = inputs.tint
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/bioprocessor/bioprocessor-highlights.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 224,
+                        line_length = 5,
+                        frame_count = 25,
+                        shift = {0, 0},
+                        animation_speed = 0.5,
+                        blend_mode = reskins.lib.settings.blend_mode
+                    }
+                }
+            }
+        })
+        ::continue::
+    end
+end
+
+-- BIO PRESS
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "press",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [bio_press_1] = {tier = 1, prog_tier = 2},
+        [bio_press_2] = {tier = 2, prog_tier = 3},
+        [bio_press_3] = {tier = 3, prog_tier = 4},
+        [bio_press_4] = {tier = 4, prog_tier = 5}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/bio-press/bio-press.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    frame_count = 25,
+                    line_length = 5,
+                    shift = {0, 0},
+                    animation_speed = 0.5
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/press/press-mask.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    repeat_count = 25,
+                    shift = {0, 0},
+                    animation_speed = 0.5,
+                    tint = inputs.tint
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/press/press-highlights.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    repeat_count = 25,
+                    shift = {0, 0},
+                    animation_speed = 0.5,
+                    blend_mode = reskins.lib.settings.blend_mode
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- NUTRIENT EXTRACTOR
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "nutrient-extractor",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [nutrient_extractor_1] = {tier = 1, prog_tier = 2},
+        [nutrient_extractor_2] = {tier = 2, prog_tier = 3},
+        [nutrient_extractor_3] = {tier = 3, prog_tier = 4},
+        [nutrient_extractor_4] = {tier = 4, prog_tier = 5}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/nutrient-extractor/nutrient-extractor.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    frame_count = 25,
+                    line_length = 5,
+                    shift = {0, 0},
+                    animation_speed = 0.5
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/nutrient-extractor/nutrient-extractor-mask.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    repeat_count = 25,
+                    shift = {0, 0},
+                    animation_speed = 0.5,
+                    tint = inputs.tint
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/nutrient-extractor/nutrient-extractor-highlights.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    repeat_count = 25,
+                    shift = { 0, 0 },
+                    animation_speed = 0.5,
+                    blend_mode = reskins.lib.settings.blend_mode
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- FISH REFUGIUM
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "refugium-fish",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [fish_refugium_1] = {tier = 1, prog_tier = 2},
+        [fish_refugium_2] = {tier = 2, prog_tier = 3},
+        [fish_refugium_3] = {tier = 3, prog_tier = 4},
+        [fish_refugium_4] = {tier = 4, prog_tier = 5}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        table.insert(entity.graphics_set.working_visualisations,
+        {
+            always_draw = true,
+            animation =
+            {
+                layers =
+                {
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-fish/refugium-fish-mask.png",
+                        priority = extra_high,
+                        width = 288,
+                        height = 288,
+                        shift = {0, 0},
+                        tint = inputs.tint
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-fish/refugium-fish-highlights.png",
+                        priority = extra_high,
+                        width = 288,
+                        height = 288,
+                        shift = {0, 0},
+                        blend_mode = reskins.lib.settings.blend_mode
+                    }
+                }
+            }
+        })
+        ::continue::
+    end
+end
+-- BUTCHERY
+do
+    local inputs =
+    {
+        type = furnace,
+        icon_name = "butchery",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+
+    local tier_map =
+    {
+        [butchery_1] = {tier = 1, prog_tier = 2},
+        [butchery_2] = {tier = 2, prog_tier = 3},
+        [butchery_3] = {tier = 3, prog_tier = 4},
+        [butchery_4] = {tier = 4, prog_tier = 5}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.FurnacePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.working_visualisations =
+        {
+            {
+                always_draw = true,
+                animation =
+                {
+                    layers =
+                    {
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/butchery/butchery-base-patch.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            shift = {0, 0}
+                        },
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/butchery/butchery-mask.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            shift = {0, 0},
+                            tint = inputs.tint
+                        },
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/butchery/butchery-highlights.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            shift = {0, 0},
+                            blend_mode = reskins.lib.settings.blend_mode
+                        }
+                    }
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- HUTCHERY
+do
+    local inputs =
+    {
+        type = furnace,
+        icon_name = "hatchery",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [hatchery_1] = {tier = 1, prog_tier = 3},
+        [hatchery_2] = {tier = 2, prog_tier = 4},
+        [hatchery_3] = {tier = 3, prog_tier = 5},
+        [hatchery_4] = {tier = 4, prog_tier = 6}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.FurnacePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        entity.graphics_set.idle_animation = nil
+        entity.graphics_set.animation =
+        {
+            layers =
+            {
+                {
+                    filename = "__angelsbioprocessinggraphics__/graphics/entity/bio-hatchery/bio-hatchery-off.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0}
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/hatchery/hatchery-idle-mask.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0},
+                    tint = inputs.tint
+                },
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/hatchery/hatchery-idle-highlights.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0},
+                    blend_mode = reskins.lib.settings.blend_mode
+                }
+            }
+        }
+        entity.graphics_set.working_visualisations =
+        {
+            {
+                animation =
+                {
+                    layers =
+                    {
+                        {
+                            filename = "__angelsbioprocessinggraphics__/graphics/entity/bio-hatchery/bio-hatchery-animation.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            frame_count = 25,
+                            line_length = 5,
+                            shift = {0, 0},
+                            animation_speed = 0.35
+                        },
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/hatchery/hatchery-working-mask.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            frame_count = 25,
+                            line_length = 5,
+                            shift = {0, 0},
+                            animation_speed = 0.35,
+                            tint = inputs.tint
+                        },
+                        {
+                            filename = "__reskins-compatibility__/graphics/entity/extendedangels/hatchery/hatchery-working-highlights.png",
+                            priority = extra_high,
+                            width = 160,
+                            height = 160,
+                            frame_count = 25,
+                            line_length = 5,
+                            shift = {0, 0},
+                            animation_speed = 0.35,
+                            blend_mode = reskins.lib.settings.blend_mode
+                        }
+                    }
+                }
+            },
+            {
+                always_draw = true,
+                animation =
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/hatchery/hatchery-shadow.png",
+                    width = 160,
+                    height = 160,
+                    shift = {0, 0},
+                    draw_as_shadow = true
+                }
+            },
+            {
+                fadeout = true,
+                animation =
+                {
+                    filename = "__reskins-compatibility__/graphics/entity/extendedangels/hatchery/hatchery-working-light.png",
+                    priority = extra_high,
+                    width = 160,
+                    height = 160,
+                    frame_count = 25,
+                    line_length = 5,
+                    shift = {0, 0},
+                    animation_speed = 0.35,
+                    draw_as_light = true
+                }
+            }
+        }
+        ::continue::
+    end
+end
+
+-- PUFFER REFUGIUM
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "refugium-puffer",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [puffer_refugium_1] = {tier = 1, prog_tier = 3},
+        [puffer_refugium_2] = {tier = 2, prog_tier = 4},
+        [puffer_refugium_3] = {tier = 3, prog_tier = 5},
+        [puffer_refugium_4] = {tier = 4, prog_tier = 6}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        table.insert(entity.graphics_set.working_visualisations,
+        {
+            always_draw = true,
+            animation =
+            {
+                layers =
+                {
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-puffer/refugium-puffer-base-patch.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 256,
+                        shift = {0, -0.5}
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-puffer/refugium-puffer-mask.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 256,
+                        shift = {0, -0.5},
+                        tint = inputs.tint
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-puffer/refugium-puffer-highlights.png",
+                        priority = extra_high,
+                        width = 224,
+                        height = 256,
+                        shift = {0, -0.5},
+                        blend_mode = reskins.lib.settings.blend_mode
+                    }
+                }
+            }
+        })
+        ::continue::
+    end
+end
+
+-- BITER REFUGIUM
+do
+    local inputs =
+    {
+        type = assembling_machine,
+        icon_name = "refugium-biter",
+        base_entity_name = assembling_machine_1,
+        mod = compatibility,
+        particles = {[big] = 1, [medium] = 2},
+        group = extendedangels,
+        make_remnants = false
+    }
+    local tier_map =
+    {
+        [biter_refugium_1] = {tier = 1, prog_tier = 4},
+        [biter_refugium_2] = {tier = 2, prog_tier = 5},
+        [biter_refugium_3] = {tier = 3, prog_tier = 6},
+        [biter_refugium_4] = {tier = 4, prog_tier = 6}
+    }
+    for name, map in pairs(tier_map) do
+        ---@type data.AssemblingMachinePrototype
+        local entity = data.raw[inputs.type][name]
+        if not entity then
+            goto continue
+        end
+        local tier = reskins.lib.tiers.get_tier(map)
+        inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+        reskins.lib.setup_standard_entity(name, tier, inputs)
+        table.insert(entity.graphics_set.working_visualisations,
+        {
+            always_draw = true,
+            animation =
+            {
+                layers =
+                {
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-biter/refugium-biter-mask.png",
+                        priority = extra_high,
+                        width = 288,
+                        height = 288,
+                        shift = {0, 0},
+                        tint = inputs.tint
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/refugium-biter/refugium-biter-highlights.png",
+                        priority = extra_high,
+                        width = 288,
+                        height = 288,
+                        shift = {0, 0},
+                        blend_mode = reskins.lib.settings.blend_mode
+                    }
+                }
+            }
+        })
         ::continue::
     end
 end

@@ -117,19 +117,19 @@ require("prototypes.space-age.aquilo.aquilo-technology")
 
 require("prototypes.TIMSABA.new-modules")
 
-require("prototypes.planet.muluna.muluna-groups")
-require("prototypes.planet.muluna.muluna-item-fluid")
-require("prototypes.planet.muluna.muluna-recipe")
-require("prototypes.planet.muluna.muluna-building")
+-- FIRST CIRCLE PLANETS
+require("prototypes.planet.castra.castra-groups")
+require("prototypes.planet.castra.castra-item-fluid")
+require("prototypes.planet.castra.castra-millerite")
+require("prototypes.planet.castra.castra-recipe")
+require("prototypes.planet.castra.castra-technology")
 
+-- SECOND CIRCLE PLANETS
 require("prototypes.planet.moshine.moshine-groups")
 require("prototypes.planet.moshine.moshine-item-fluid")
 require("prototypes.planet.moshine.moshine-monazite")
 require("prototypes.planet.moshine.moshine-recipe")
 require("prototypes.planet.moshine.moshine-technology")
-
-require("prototypes.planet.panglia.panglia-groups")
-require("prototypes.planet.panglia.panglia-recipe")
 
 require("prototypes.planet.arig.arig-groups")
 require("prototypes.planet.arig.arig-item-fluid")
@@ -146,17 +146,45 @@ require("prototypes.planet.tellus.tellus-item-fluid")
 require("prototypes.planet.tellus.tellus-recipe")
 require("prototypes.planet.tellus.tellus-colored-prototypes")
 
+require("prototypes.planet.corrundum.corrundum-groups")
+require("prototypes.planet.corrundum.corrundum-item-fluid")
+require("prototypes.planet.corrundum.corrundum-chalcopyrite")
+require("prototypes.planet.corrundum.corrundum-recipe")
+require("prototypes.planet.corrundum.corrundum-technology")
+
+require("prototypes.planet.shchierbin.shchierbin-groups")
+require("prototypes.planet.shchierbin.shchierbin-item-fluid")
+require("prototypes.planet.shchierbin.shchierbin-recipe")
+require("prototypes.planet.shchierbin.shchierbin-technology")
+
+require("prototypes.planet.muria.muria-groups")
+require("prototypes.planet.muria.muria-item-fluid")
+require("prototypes.planet.muria.muria-recipe")
+
+-- THIRD CIRCLE PLANETS
 require("prototypes.planet.paracelsin.paracelsin-groups")
 require("prototypes.planet.paracelsin.paracelsin-sphalerite")
 require("prototypes.planet.paracelsin.paracelsin-tetrahedrite")
 require("prototypes.planet.paracelsin.paracelsin-recipe")
 require("prototypes.planet.paracelsin.paracelsin-technology")
 
-require("prototypes.planet.corrundum.corrundum-groups")
-require("prototypes.planet.corrundum.corrundum-item-fluid")
-require("prototypes.planet.corrundum.corrundum-chalcopyrite")
-require("prototypes.planet.corrundum.corrundum-recipe")
-require("prototypes.planet.corrundum.corrundum-technology")
+require("prototypes.planet.maraxsis.maraxsis-groups")
+require("prototypes.planet.maraxsis.maraxsis-recipe")
+
+-- FOURTH CIRCLE PLANETS
+require("prototypes.planet.vesta.vesta-groups")
+require("prototypes.planet.vesta.vesta-item-fluid")
+require("prototypes.planet.vesta.vesta-recipe")
+require("prototypes.planet.vesta.vesta-technology")
+
+-- MOONS
+require("prototypes.planet.muluna.muluna-groups")
+require("prototypes.planet.muluna.muluna-item-fluid")
+require("prototypes.planet.muluna.muluna-recipe")
+require("prototypes.planet.muluna.muluna-building")
+
+require("prototypes.planet.panglia.panglia-groups")
+require("prototypes.planet.panglia.panglia-recipe")
 
 require("prototypes.planet.frozeta.frozeta-groups")
 require("prototypes.planet.frozeta.frozeta-recipe")
@@ -164,25 +192,7 @@ require("prototypes.planet.frozeta.frozeta-recipe")
 require("prototypes.planet.terrapalus.terrapalus-groups")
 require("prototypes.planet.terrapalus.terrapalus-recipe")
 
-require("prototypes.planet.castra.castra-groups")
-require("prototypes.planet.castra.castra-item-fluid")
-require("prototypes.planet.castra.castra-millerite")
-require("prototypes.planet.castra.castra-recipe")
-require("prototypes.planet.castra.castra-technology")
-
-require("prototypes.planet.shchierbin.shchierbin-groups")
-require("prototypes.planet.shchierbin.shchierbin-item-fluid")
-require("prototypes.planet.shchierbin.shchierbin-recipe")
-require("prototypes.planet.shchierbin.shchierbin-technology")
-
-require("prototypes.planet.maraxsis.maraxsis-groups")
-require("prototypes.planet.maraxsis.maraxsis-recipe")
-
-require("prototypes.planet.vesta.vesta-groups")
-require("prototypes.planet.vesta.vesta-item-fluid")
-require("prototypes.planet.vesta.vesta-recipe")
-require("prototypes.planet.vesta.vesta-technology")
-
+-- FINAL CIRCLE PLANET
 require("prototypes.planet.shattered.shattered-groups")
 require("prototypes.planet.shattered.shattered-recipe")
 require("prototypes.planet.shattered.shattered-technology")

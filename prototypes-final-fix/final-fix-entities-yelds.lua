@@ -769,6 +769,74 @@ if mods[vesta_mods] then
     }
 end
 
+-- SHATTERED
+if mods[shattered_mods] then
+    local uranium_ore_shattered = "shattered_uranium_ore"
+    data_resource[uranium_ore_shattered] = nil
+
+    local vanilla_resources = {uranium_ore_shattered}
+    local angels_resources = {ore_rubyte, ore_bobmonium}
+
+    local map_gen = data_planet[planet_shattered].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_shattered
+        end
+    end
+end
+
+if mods[muria_mods] then
+    data_plant["metallic-lichen-colony"].minable.results =
+    {
+        {type = item, name = acidophile_lichen, amount_min = 0, amount_max = 4},
+        {type = item, name = ore_saphirite, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_jivolite, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_stiratite, amount_min = 2, amount_max = 8},
+        {type = item, name = ore_crotinnium, amount_min = 2, amount_max = 8}
+    }
+
+    data_plant["cotunnite-lichen-colony"].minable.results =
+    {
+        {type = item, name = acidophile_lichen, amount_min = 0, amount_max = 1},
+        {type = item, name = lead_ore_bob, amount_min = 2, amount_max = 4}
+    }
+
+    data_plant["eschatotaxite"].minable.results =
+    {
+        {type = item, name = eschatotaxite_sprout, amount_min = 0, amount_max = 4},
+        {type = item, name = carbon_angels, amount_min = 0, amount_max = 4},
+        {type = item, name = spoilage, amount_min = 0, amount_max = 4},
+        {type = item, name = sulfur, amount_min = 0, amount_max = 1}
+    }
+
+    data_entity["big-chloric-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 4, amount_max = 16},
+        {type = item, name = chlorine_salts, amount_min = 2, amount_max = 4},
+    }
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then
@@ -805,6 +873,7 @@ if mods[panglia_mods] then
     }
 end
 
+-- TERRAPALUS
 if mods[terrapalus_mods] then
     local vanilla_resources = {iron_ore, copper_ore, stone}
     local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}
