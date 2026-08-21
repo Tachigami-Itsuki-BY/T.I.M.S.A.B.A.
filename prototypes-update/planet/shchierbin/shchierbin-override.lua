@@ -260,11 +260,14 @@ if mods[shchierbin_mods] then
     })
 
     -- TECHNOLOGY
+    table.insert(data_technology[planet_discovery_shchierbin].prerequisites, tech_advanced_asteroid_processing)
+    if mods[muluna_mods] then
+        table.insert(data_technology[planet_discovery_shchierbin].prerequisites, interstellar_science_pack)
+    end
     data_technology[planet_discovery_shchierbin].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
-        {military_science_pack, 1},
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},

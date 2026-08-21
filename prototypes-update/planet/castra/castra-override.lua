@@ -66,7 +66,6 @@ if mods[castra_mods] then
     -- MILLERITE
     data_item[millerite_ore].subgroup = is_millerite
     data_item[millerite_ore].order = a
-    data_resource[millerite_ore].factoriopedia_description = ""
     data_resource[millerite_ore].subgroup = is_millerite
     data_resource[millerite_ore].order = a
     data_resource[millerite_ore].minable.mining_time = 4

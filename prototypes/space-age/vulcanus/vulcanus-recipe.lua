@@ -141,7 +141,7 @@ TIMSABA.functions.create_recipes
 -- MOLTEN
 molten_steel = "molten-steel"
 molten_tin = "molten-tin"
-molten_lead = "molten-lead"
+molten_lead = "timsaba-molten-lead"
 molten_manganese = "molten-manganese"
 molten_magnesium = "molten-magnesium"
 molten_nickel = "molten-nickel"
@@ -268,7 +268,7 @@ molten_alloy({name = molten_cobalt_steel, order = w, ing_1 = cobalt_molten_angel
 molten_alloy({name = molten_nitinol,      order = x, ing_1 = nickel_molten_angels, ing_2 = titanium_molten_angels, res = nitinol_molten_angels})
 
 -- PLATE
-casting_lead = "casting-lead"
+casting_lead = "timsaba-casting-lead"
 casting_tin = "casting-tin"
 casting_nickel = "casting-nickel"
 casting_aluminium = "casting-aluminium"
@@ -778,30 +778,5 @@ TIMSABA.functions.create_recipes
         results = {{type = item, name = tungsten_powder, amount = 1}},
         main_product = tungsten_powder,
         surface_conditions = {{property = pressure, min = 4000, max = 4000}}
-    }
-})
-
--- ROCKET PART TUNGSTEN
-rocket_part_tungsten = "rocket-part-tungsten"
-TIMSABA.functions.create_recipes
-({
-    {
-        localised_name = {"item-name.rocket-part"},
-        name = rocket_part_tungsten,
-        category = data_recipe[rocket_part].category,
-        subgroup = data_recipe[rocket_part].subgroup,
-        icons = R_P_I(rocket_part, nil, nil, number_2),
-        order = b_a,
-        allow_productivity = true,
-        ingredients =
-        {
-            {type = item, name = low_density_structure, amount = 4},
-            {type = item, name = heat_shielding_tile, amount = 32},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = copper_tungsten_pipe, amount = 32},
-            {type = item, name = rocket_fuel, amount = 4}
-        },
-        results = data_recipe[rocket_part].results,
-        main_product = data_recipe[rocket_part].main_product
     }
 })

@@ -1,5 +1,3 @@
--- [font=default-tiny-bold][/font]
-
 if mods [shattered_mods] then
     local deep_mining_drill = "deep_mining_drill"
     data_item[deep_mining_drill].subgroup = is_shattered_deep_mining
@@ -60,7 +58,7 @@ if mods [shattered_mods] then
 
     local promethium_slurry_processing = "ske_slurry_promethium_processing"
     data_recipe[promethium_slurry_processing].subgroup = is_shattered_deep_mining
-    data_recipe[promethium_slurry_processing].icons = FOUR_R_I(slurry_promethium_shattered, promethium_shattered, sulfuric_acid_angels, holmium)
+    data_recipe[promethium_slurry_processing].icons = FOUR_R_I(slurry_promethium_shattered, promethium_ore, sulfuric_acid_angels, holmium_chloride_III_solution)
     data_recipe[promethium_slurry_processing].order = e_b
 
     local shattered_foundry = "ske_foundry"
@@ -118,7 +116,7 @@ if mods [shattered_mods] then
 
     local quantum_processor_shattered  = "ske_quantum_processor"
     data_recipe[quantum_processor_shattered].subgroup = is_shattered_alt_recipe
-    data_recipe[quantum_processor_shattered].icons = TWO_FIVE_I(processing_unit, lithium_plate_bob, tungsten_plate_bob, superconductor, carbon_fiber, fluoroketone_cold, quantum_processor, nil, fluoroketone_hot)
+    data_recipe[quantum_processor_shattered].icons = TWO_FIVE_I(processing_unit, lithium_bob, tungsten_plate_bob, superconductor, carbon_fiber, fluoroketone_cold, quantum_processor, nil, fluoroketone_hot)
     data_recipe[quantum_processor_shattered].order = a_j
 
     data_item[graphite_shattered].localised_description = show_formula and {chemical_formula, "C"} or nil
@@ -130,19 +128,12 @@ if mods [shattered_mods] then
     data_recipe[graphite_shattered].icons = THREE_I(coal, carbon_angels, graphite_shattered)
     data_recipe[graphite_shattered].order = a
 
-    local promethium_ore = "ske_promethium_ore"
-    data_item[promethium_ore].subgroup = is_shattered_recipe
-    data_item[promethium_ore].order = b
-    data_item[promethium_ore].stack_size = 200
-    data_item[promethium_ore].weight = 5000
-
     local promethium_plate = "ske_prometheum_plate"
     data_item[promethium_plate].subgroup = is_shattered_recipe
     data_item[promethium_plate].order = c
     data_item[promethium_plate].stack_size = 200
     data_item[promethium_plate].weight = 5000
     data_recipe[promethium_plate].subgroup = is_shattered_recipe
-    data_recipe[promethium_plate].icons = THREE_P_TWO_I(promethium_ore, graphite_shattered, promethium_plate, nil, lava)
     data_recipe[promethium_plate].order = c
     data_recipe[promethium_plate].main_product = promethium_plate
 
@@ -368,17 +359,17 @@ if mods [shattered_mods] then
 
     local turbo_transport_belt_shattered = "turbo-transport-belt-shattered"
     data_recipe[turbo_transport_belt_shattered].subgroup = is_shattered_recipe_transformation
-    data_recipe[turbo_transport_belt_shattered].icons = R_P_I(turbo_transport_belt, planet_shattered)
+    data_recipe[turbo_transport_belt_shattered].icons = R_P_IS(vulcanus_transport_belt, planet_shattered)
     data_recipe[turbo_transport_belt_shattered].order = a_a
 
     local turbo_underground_belt_shattered = "turbo-underground-belt-shattered"
     data_recipe[turbo_underground_belt_shattered].subgroup = is_shattered_recipe_transformation
-    data_recipe[turbo_underground_belt_shattered].icons = R_P_I(turbo_underground_belt, planet_shattered)
+    data_recipe[turbo_underground_belt_shattered].icons = R_P_IS(vulcanus_underground_belt, planet_shattered)
     data_recipe[turbo_underground_belt_shattered].order = a_b
 
     local turbo_splitter_shattered = "turbo-splitter-shattered"
     data_recipe[turbo_splitter_shattered].subgroup = is_shattered_recipe_transformation
-    data_recipe[turbo_splitter_shattered].icons = R_P_I(turbo_splitter, planet_shattered)
+    data_recipe[turbo_splitter_shattered].icons = R_P_IS(vulcanus_splitter, planet_shattered)
     data_recipe[turbo_splitter_shattered].order = a_c
 
     local tungsten_shattered = "ske_tungsten"
@@ -388,7 +379,7 @@ if mods [shattered_mods] then
 
     local tungsten_carbide_shattered = "ske_carbide"
     data_recipe[tungsten_carbide_shattered].subgroup = is_shattered_recipe_transformation
-    data_recipe[tungsten_carbide_shattered].icons = THREE_D_I(iron_ore, uranium_238, carbon_angels, tungsten_carbide_bob)
+    data_recipe[tungsten_carbide_shattered].icons = THREE_D_I(iron_ore, uranium_238, carbon_angels, tungsten_carbide_plate_bob)
     data_recipe[tungsten_carbide_shattered].order = a_e
 
     data_fluid[brine_shattered].subgroup = is_shattered_recipe_transformation
@@ -458,6 +449,96 @@ if mods [shattered_mods] then
     data_recipe[pearl_realizer].order = e
     data_lab[pearl_realizer].subgroup = is_shattered_building
     data_lab[pearl_realizer].order = e
+    --[[table.insert(data_lab[pearl_realizer].inputs, automation_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, logistic_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, chemical_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, production_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, utility_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, space_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, metallurgic_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, agricultural_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, electromagnetic_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, cryogenic_science_pack)
+    table.insert(data_lab[pearl_realizer].inputs, promethium_science_pack)
+
+    -- PLANETS
+    if mods[arig_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, compression_science_pack)
+    end
+    if mods[hyarion_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, polishing_science_pack)
+        table.insert(data_lab[pearl_realizer].inputs, refraction_science_pack)
+    end
+    if mods[tellus_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, bioengineering_science_pack)
+        table.insert(data_lab[pearl_realizer].inputs, pathological_science_pack)
+    end
+    if mods[paracelsin_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, galvanization_science_pack)
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, electrochemical_science_pack)
+    end
+    if mods[castra_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, battlefield_science_pack)
+    end
+    if mods[shchierbin_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, vanadium_science_pack)
+    end
+    if mods[maraxsis_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, hydraulic_science_pack)
+    end
+    if mods[vesta_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, gas_manipulation_science_pack)
+    end
+
+    -- MOONS
+    if mods[muluna_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, interstellar_science_pack)
+    end
+    if mods[secretas_frozeta_mods] then
+        table.insert(data_lab[pearl_realizer].inputs, golden_science_pack)
+    end]]
+
+    -- Вспомогательная функция для проверки, есть ли элемент в таблице
+    local function table_contains(tbl, element)
+        for _, value in ipairs(tbl) do
+            if value == element then
+                return true
+            end
+        end
+        return false
+    end
+
+    -- Карта соответствия: [имя_мода] = {список_пакетов}
+    local mod_science_mapping =
+    {
+        -- PLANETS
+        [arig_mods] = {compression_science_pack},
+        [hyarion_mods] = {polishing_science_pack, refraction_science_pack},
+        [tellus_mods] = {bioengineering_science_pack, pathological_science_pack},
+        [paracelsin_mods] = {galvanization_science_pack},
+        [castra_mods] = {battlefield_science_pack},
+        [shchierbin_mods] = {vanadium_science_pack},
+        [maraxsis_mods] = {hydraulic_science_pack},
+        [vesta_mods] = {gas_manipulation_science_pack},
+
+        -- MOONS
+        [muluna_mods] = {interstellar_science_pack},
+        [secretas_frozeta_mods]  = {golden_science_pack}
+    }
+    -- Запуск цикла проверок
+    for mod_name, science_packs in pairs(mod_science_mapping) do
+        if mods[mod_name] then
+            for _, pack in ipairs(science_packs) do
+                -- 1. Проверяем, что переменная пакета вообще существует (не nil)
+                -- 2. Проверяем, что такого пакета еще НЕТ в инпутах лаборатории
+                if pack and not table_contains(data_lab[pearl_realizer].inputs, pack) then
+                    table.insert(data_lab[pearl_realizer].inputs, pack)
+                end
+            end
+        end
+    end
 
     data_tool[heu_science_pack].subgroup = is_shattered_building
     data_tool[heu_science_pack].order = f
@@ -1805,7 +1886,6 @@ if mods [shattered_mods] then
     data_recipe[curium_247_from_245_246].order = c
 
     -- UNSORTED
-    data_fluid[liquid_nitrogen_shattered].subgroup = is_shattered_unsorted
     data_item["ske_nanometal_plate"].subgroup = is_shattered_unsorted
 
     -- ???

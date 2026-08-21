@@ -19,7 +19,6 @@ data_rocket_silo[rocket_silo].order = a
 data_rocket_silo[rocket_silo].energy_usage = (4800 - drain) .. kW
 data_rocket_silo[rocket_silo].energy_source.drain = drain .. kW
 
-data_recipe[rocket_part].icons = R_P_I(rocket_part, nil, nil, number_1)
 data_recipe[rocket_part].order = b
 data_recipe[rocket_part].energy_required = 4
 data_recipe[rocket_part].ingredients =
@@ -27,13 +26,29 @@ data_recipe[rocket_part].ingredients =
     {type = item, name = low_density_structure, amount = 2},
     {type = item, name = heat_shielding_tile, amount = 16},
     {type = item, name = advanced_processing_unit, amount = 2},
-    {type = item, name = molybdenum_rhenium_pipe, amount = 32},
+    {type = item, name = copper_tungsten_pipe, amount = 32},
     {type = item, name = rocket_fuel, amount = 2}
 }
+
+if mods[muluna_mods] then
+    rocket_part_muluna = "rocket-part-muluna"
+    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
+    data_recipe[rocket_part_muluna].order = c .. "-" .. data_planet[planet_maraxsis].order
+    data_recipe[rocket_part_muluna].energy_required = 4
+    data_recipe[rocket_part_muluna].ingredients =
+    {
+        {type = item, name = low_density_structure, amount = 1},
+        {type = item, name = heat_shielding_tile, amount = 8},
+        {type = item, name = advanced_processing_unit, amount = 1},
+        {type = item, name = copper_tungsten_pipe, amount = 16},
+        {type = item, name = rocket_fuel, amount = 1}
+    }
+end
+
 if mods[arig_mods] then
     rocket_part_arig = "planetaris-arig-rocket-part"
     data_recipe[rocket_part_arig].icons = R_P_I(rocket_part, planet_arig)
-    data_recipe[rocket_part_arig].order = b_g
+    data_recipe[rocket_part_arig].order = b .. "-" .. data_planet[planet_maraxsis].order
     data_recipe[rocket_part_arig].energy_required = 4
     data_recipe[rocket_part_arig].ingredients =
     {
@@ -47,7 +62,7 @@ end
 if mods[tellus_mods] then
     rocket_part_tellus = "planetaris-tellus-rocket-part"
     data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
-    data_recipe[rocket_part_tellus].order = b_i
+    data_recipe[rocket_part_tellus].order = b .. "-" .. data_planet[planet_maraxsis].order
     data_recipe[rocket_part_tellus].energy_required = 4
     data_recipe[rocket_part_tellus].ingredients =
     {
@@ -62,7 +77,7 @@ end
 if mods[maraxsis_mods] then
     rocket_part_maraxsis = "maraxsis-rocket-part"
     data_recipe[rocket_part_maraxsis].icons = R_P_I(rocket_part, planet_maraxsis)
-    data_recipe[rocket_part_maraxsis].order = b_o
+    data_recipe[rocket_part_maraxsis].order = b .. "-" .. data_planet[planet_maraxsis].order
     data_recipe[rocket_part_maraxsis].energy_required = 4
     data_recipe[rocket_part_maraxsis].ingredients =
     {
@@ -73,18 +88,16 @@ if mods[maraxsis_mods] then
     }
 end
 
-if mods[muluna_mods] then
-    rocket_part_muluna = "rocket-part-muluna"
-    data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
-    data_recipe[rocket_part_muluna].order = c_a
-    data_recipe[rocket_part_muluna].energy_required = 4
-    data_recipe[rocket_part_muluna].ingredients =
+if mods[muria_mods] then
+    rocket_part_muria = "muria-rocket-part"
+    data_recipe[rocket_part_muria].icons = R_P_I(rocket_part, planet_muria)
+    data_recipe[rocket_part_muria].order = b .. "-" .. data_planet[planet_muria].order
+    data_recipe[rocket_part_muria].energy_required = 4
+    data_recipe[rocket_part_muria].ingredients =
     {
-        {type = item, name = low_density_structure, amount = 1},
-        {type = item, name = heat_shielding_tile, amount = 8},
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = copper_tungsten_pipe, amount = 16},
-        {type = item, name = rocket_fuel, amount = 1}
+        {type = item, name = advanced_processing_unit, amount = 2},
+        {type = item, name = leaded_fuel, amount = 2},
+        {type = item, name = anti_corrosion_cladding, amount = 2}
     }
 end
 
@@ -618,6 +631,7 @@ if mods[secretas_frozeta_mods] then
         end
     end
 
+    data_item[auric_asteroid_chunk].localised_description = show_formula and {chemical_formula, "Au"} or nil
     data_item[auric_asteroid_chunk].stack_size = 50
     data_item[auric_asteroid_chunk].weight = 20000
 

@@ -1,6 +1,100 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.13.0
+Date: ??.08.2026
+  Features:
+    - [Mods] Добавлена поддержка Planet Muria: реализовано бесшовное внедрение новой планеты в игровой процесс.
+    - [All] Добавлены новые сущности:
+        Биопереработка Наувиса:
+          1. Генераторы Семян Деревьев Т2-Т4.
+          2. Арборетумы Т2-Т4.
+        Биопереработка овощей:
+          1. Фермы Т2-Т4.
+          2. Экстракторы Т2-Т4.
+          3. Компостеры Т2-Т4.
+          4. Биопроцессоры Т2-Т4.
+          5. Биопрессы Т2-Т4.
+        Биопереработка пришельцев:
+          1. Аквариумы Т2-Т4.
+          2. Бойни Т2-Т4.
+          3. Инкубаторы Т2-Т4.
+          4. Загоны для иглобрюхов Т2-Т4.
+          5. Загоны для кусак Т2-Т4.
+    - [All] Добавлены новые технологии.
+
+    - [Mods] Added support for Planet Muria: seamlessly integrated the new planet into the gameplay flow.
+    - [All] Added new entity:
+        Bioprocessing Nauvis:
+          1. T2-T4 Tree Seed Generators.
+          2. T2-T4 Arboretums.
+        Bioprocessing vegetables:
+          1. T2-T4 Farms.
+          2. T2-T4 Extractors.
+          3. T2-T4 Composters.
+          4. T2-T4 Bio processors.
+          5. T2-T4 Bio presses.
+        Bioprocessing alien:
+          1. T2-T4 Fish Refugiums.
+          2. T2-T4 Butcheries.
+          3. T2-T4 Hatcheries.
+          4. T2-T4 Puffer Refugiums.
+          5. T2-T4 Biter Refugiums.
+    - [All] Added new tehnologies.
+
+  Changes:
+    - [All] Удалён рецепт Часть Ракеты 2 и в рецепте Часть Ракеты 1 произведена замена ингредиента: Молибден-Рений → Медно-Вольфрам.
+
+    - [All] Removed the Rocket Part 2 recipe and replaced an ingredient in the Rocket Part 1 recipe: Molybdenum-Rhenium → Copper-Tungsten.
+
+  Balancing:
+    - [All] Скорректированы параметры у Генераторов Семян Деревьев Т1.
+    - [All] Скорректированы параметры у Арборетум Т1.
+    - [All] Скорректированы параметры у Ферм Т1.
+    - [All] Скорректированы параметры у Экстракторов Т1.
+    - [All] Скорректированы параметры у Компостера Т1.
+    - [All] Скорректированы параметры у Биопроцессора Т1.
+    - [All] Скорректированы параметры у Биопресса Т1.
+    - [All] Скорректированы параметры у Аквариума Т1.
+    - [All] Скорректированы параметры у Бойни Т1.
+    - [All] Скорректированы параметры у Инкубатора Т1.
+    - [All] Скорректированы параметры у Загона для иглобрюхов Т1.
+    - [All] Скорректированы параметры у Загона для кусак Т1.
+    - [All] Скорректированы ингредиенты у некоторых рецептов.
+    - [All] Скорректированы предварительные условия у некоторых технологий.
+
+    - [All] Adjusted parameters for T1 Tree Seed Generators.
+    - [All] Adjusted parameters for T1 Arboretum.
+    - [All] Adjusted parameters for T1 Farms.
+    - [All] Adjusted parameters for T1 Extractors.
+    - [All] Adjusted parameters for T1 Composter.
+    - [All] Adjusted parameters for T1 Bio processor.
+    - [All] Adjusted parameters for T1 Bio press.
+    - [All] Adjusted parameters for T1 Fish Refugium.
+    - [All] Adjusted parameters for T1 Butchery.
+    - [All] Adjusted parameters for T1 Hatchery.
+    - [All] Adjusted parameters for T1 Puffer Refugium.
+    - [All] Adjusted parameters for T1 Biter Refugium.
+    - [All] Adjusted ingredients for some recipes.
+    - [All] Adjusted prerequisites for some technologies.
+
+  Locale:
+    - [All] Обновлена локализация.
+
+    - [All] Updated localization.
+
+  Modding:
+    - [Mods] Мод «Planet Muria» добавлен в опциональную зависимость.
+    - [Mods] Мод «Celestial Weather Additions» добавлен в опциональную зависимость.
+
+    - [Mods] Added "Planet Muria" mod to optional dependencies.
+    - [Mods] Added "Celestial Weather Additions" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.12.4
 Date: 19.08.2026
+  Features:
+    - [Mods] Добавлен новый погрузчик: Погрузчик Вулкан.
+
+    - [Mods] Added new loader: Vulcanus Loader.
+
   Bugfixes:
     - [All] Исправлены незначительные ошибки.
 
@@ -10,6 +104,11 @@ Date: 19.08.2026
     - [All] Скорректировано Минимальное и Максимальное потребление жидкости Ускорителей.
 
     - [All] Adjusted the Minimum and Maximum fluid consumption of Thrusters.
+
+  Graphics:
+    - [Mods] Обновлена графика для Погрузчиков Т0-Т5.
+
+    - [Mods] Updated graphics for T0-T5 Loaders.
 
   Modding:
     - [Mods] Мод «Asphalt Roads Patched» добавлен в опциональную зависимость.

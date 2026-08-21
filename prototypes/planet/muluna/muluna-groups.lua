@@ -10,6 +10,7 @@ if mods[muluna_mods] then
             icon_size = 128
         }
     })
+
     is_muluna_crushing = "is-muluna-crushing"
     is_muluna_recipe_anorthite = "is-muluna-recipe-anorthite"
     is_muluna_recipe_silicon = "is-muluna-recipe-silicon"

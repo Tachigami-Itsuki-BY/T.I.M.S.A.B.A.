@@ -330,7 +330,7 @@ data:extend
         name = tech_molybdenum_smelting_1,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/technology/smelting-molybdenum-technology.png",
         icon_size = 256,
-        prerequisites = {tech_molybdenite_processing_1, tech_metallurgy_5},
+        prerequisites = {tech_molybdenite_processing_1, tech_powder_metallurgy_5},
         effects =
         {
             {type = unlock_recipe, recipe = molybdenum_oxide_VI},
@@ -459,7 +459,7 @@ data:extend
         name = tech_rhenium_smelting_1,
         icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/technology/smelting-rhenium-technology.png",
         icon_size = 256,
-        prerequisites = {tech_molybdenite_processing_1, tech_metallurgy_5},
+        prerequisites = {tech_molybdenite_processing_1, tech_powder_metallurgy_5},
         effects =
         {
             {type = unlock_recipe, recipe = rhenium_oxide_VI},

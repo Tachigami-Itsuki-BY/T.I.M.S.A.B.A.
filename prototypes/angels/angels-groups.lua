@@ -223,10 +223,18 @@ is_bio_processing_paste = "angels-bio-processing-paste"
 is_bio_processing_alien_pre = "angels-bio-processing-alien-pre"
 is_bio_processing_alien_small_recipe = "bio-processing-alien-small-recipe"
 is_bio_processing_alien_large_recipe = "bio-processing-alien-large-recipe"
+is_bio_generator_temperate = "is-bio-generator-temperate"
+is_bio_generator_swamp = "is-bio-generator-swamp"
+is_bio_generator_desert = "is-bio-generator-desert"
+is_bio_arboretum = "is-bio-arboretum"
 TIMSABA.functions.create_subgroups(ig_bio_processing_nauvis,
 {
     {name = is_bio_processing_alien_small_recipe, order = n_a},
-    {name = is_bio_processing_alien_large_recipe, order = o_a}
+    {name = is_bio_processing_alien_large_recipe, order = o_a},
+    {name = is_bio_generator_temperate,           order = z_a},
+    {name = is_bio_generator_swamp,               order = z_b},
+    {name = is_bio_generator_desert,              order = z_c},
+    {name = is_bio_arboretum,                     order = z_d}
 })
 
 
@@ -236,12 +244,30 @@ is_swamp_vegetables_processing = "is-swamp-vegetables-processing"
 is_desert_vegetables_processing = "is-desert-vegetables-processing"
 is_vegetables_results = "is-vegetables-results"
 is_bio_plastic = "angels-bio-plastic"
+is_basic_farm = "is-basic-farm"
+is_temperate_farm = "is-temperate-farm"
+is_swamp_farm = "is-swamp-farm"
+is_desert_farm = "is-desert-farm"
+is_seed_extractor = "is-seed-extractor"
+is_composter = "is-composter"
+is_bio_processor = "is-bio-processor"
+is_bio_press = "is-bio-press"
+is_nutrient_extractor = "is-nutrient-extractor"
 TIMSABA.functions.create_subgroups("angels-bio-processing-vegetables",
 {
     {name = is_temperate_vegetables_processing, order = b_c},
     {name = is_swamp_vegetables_processing,     order = c_c},
     {name = is_desert_vegetables_processing,    order = d_c},
-    {name = is_vegetables_results,              order = e}
+    {name = is_vegetables_results,              order = e},
+    {name = is_basic_farm,                      order = z_a},
+    {name = is_temperate_farm,                  order = z_b},
+    {name = is_swamp_farm,                      order = z_c},
+    {name = is_desert_farm,                     order = z_d},
+    {name = is_seed_extractor,                  order = z_e},
+    {name = is_composter,                       order = z_f},
+    {name = is_bio_processor,                   order = z_g},
+    {name = is_bio_press,                       order = z_h},
+    {name = is_nutrient_extractor,              order = z_i}
 })
 
 -- ANGELS BIOPROCESSING ANIMALIS
@@ -265,6 +291,11 @@ is_crystals_full_2 = "is-crystals-full-2"
 is_crystals_full_3 = "is-crystals-full-3"
 is_crystals_full_powder = "is-crystals-full-powder"
 is_crystals_powders = "is-crystals-powders"
+is_fish_refugium = "is-fish-refugium"
+is_butchery = "is-butchery"
+is_hatchery = "is-hatchery"
+is_puffer_refugium = "is-puffer-refugium"
+is_biter_refugium = "is-biter-refugium"
 TIMSABA.functions.create_subgroups(bio_processing_alien,
 {
     {name = is_bio_fish_petting,            order = b_a},
@@ -285,5 +316,10 @@ TIMSABA.functions.create_subgroups(bio_processing_alien,
     {name = is_crystals_full_2,             order = i_a},
     {name = is_crystals_full_3,             order = i_b},
     {name = is_crystals_full_powder,        order = i_c},
-    {name = is_crystals_powders,            order = j}
+    {name = is_crystals_powders,            order = j},
+    {name = is_fish_refugium,               order = z_a},
+    {name = is_butchery,                    order = z_b},
+    {name = is_hatchery,                    order = z_c},
+    {name = is_puffer_refugium,             order = z_d},
+    {name = is_biter_refugium,              order = z_e}
 })

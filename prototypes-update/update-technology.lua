@@ -201,11 +201,16 @@ if data_technology[heavy_spidertron] then
 end
 
 -- PRODUCTION
-data_technology[boiler_3].prerequisites = {boiler_2, chemical_science_pack, tech_ceramics, tech_invar_smelting_1}
+data_technology[boiler_3].prerequisites = {boiler_2, tech_ceramics, tech_invar_smelting_1}
+data_technology[boiler_4].prerequisites = {boiler_3, tech_tungsten_processing}
 
 data_technology[steam_engine_3].prerequisites = {steam_engine_2, tech_brass_processing}
+data_technology[steam_engine_4].prerequisites = {steam_engine_3, tech_tungsten_processing}
+data_technology[steam_engine_5].prerequisites = {steam_engine_4, tech_tungsten_alloy_processing}
 
 data_technology[tech_steam_turbine_1].prerequisites = {steam_engine_3, tech_ceramics, tech_aluminium_smelting_1}
+data_technology[steam_turbine_2].prerequisites = {tech_steam_turbine_1, tech_tungsten_processing}
+data_technology[steam_turbine_3].prerequisites = {steam_turbine_2, tech_tungsten_alloy_processing}
 
 if settings.startup["bobmods-power-fluidgenerator"].value then
     data_technology[fluid_generator_2].prerequisites = {tech_fluid_generator_1, tech_ceramics, tech_aluminium_smelting_1, tech_invar_smelting_1}
@@ -220,13 +225,15 @@ data_technology[tech_electric_energy_accumulators_2].effects = {{type = unlock_r
 data_technology[tech_electric_energy_accumulators_3].effects = {{type = unlock_recipe, recipe = accumulator_3}}
 
 data_technology[tech_drills_3].prerequisites = {tech_drills_2, chemical_science_pack, tech_brass_processing}
+data_technology[tech_drills_4].prerequisites = {tech_drills_3, tech_tungsten_processing}
 
-data_technology[heat_exchanger_2].prerequisites =
-{
-    tech_heat_exchanger_1,
-    heat_pipe_2,
-    tech_brass_processing
-}
+data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_brass_processing}
+data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3, tech_tungsten_processing}
+
+data_technology[centrifuge_2].prerequisites = {tech_uranium_processing, tech_tungsten_processing}
+data_technology[centrifuge_3].prerequisites = {advanced_processing_unit, centrifuge_2, tech_stone_smelting_4, tech_tungsten_alloy_processing}
+
+data_technology[tech_automation_5].prerequisites = {advanced_processing_unit, utility_science_pack, tech_automation_4, tech_nitinol_processing}
 
 local function replace_prerequisites(tech_name, old_prereq, new_prereq)
     local tech = data_technology[tech_name]
@@ -253,14 +260,15 @@ local function replace_prerequisites(tech_name, old_prereq, new_prereq)
         end
     end
 end
-replace_prerequisites(tech_automation_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
+replace_prerequisites(tech_drills_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
+if data_technology[tech_area_drills_4] then
+    replace_prerequisites(tech_area_drills_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
+end
 replace_prerequisites(tech_advanced_ore_refining_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
 replace_prerequisites(tech_ore_processing_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
 replace_prerequisites(tech_powder_metallurgy_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
 replace_prerequisites(tech_strand_casting_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
 replace_prerequisites(tech_advanced_chemistry_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
-
-table.insert(data_technology[centrifuge_3].prerequisites, tech_stone_smelting_4)
 
 -- INTERMEDIATE PRODUCTS
 if settings.startup[setting_flow_control_new].value then
@@ -628,7 +636,7 @@ if mods[bobwarfare] then
         {chemical_science_pack, 1}
     }
 
-    data_technology[tech_tank_3].prerequisites = {tech_tank_2, tech_tungsten_alloy_processing, tech_nitinol_processing, advanced_processing_unit, tech_military_4}
+    data_technology[tech_tank_3].prerequisites = {tech_tank_2, tech_tungsten_alloy_processing, advanced_processing_unit, tech_military_4}
     data_technology[tech_tank_3].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -652,10 +660,12 @@ local technologies = {vehicle_fission_cell_eq_6, vehicle_fission_reactor_eq_6, f
 -- Проходимся по списку наших целевых технологий
 for _, tech_name in ipairs(technologies) do
     local tech = data_technology[tech_name]
-    -- Проходимся с конца массива к началу, чтобы безопасно удалять элементы
-    for i = #tech.prerequisites, 1, -1 do
-        if tech.prerequisites[i] == cryogenic_science_pack then
-            table.remove(tech.prerequisites, i)
+    if tech then
+        -- Проходимся с конца массива к началу, чтобы безопасно удалять элементы
+        for i = #tech.prerequisites, 1, -1 do
+            if tech.prerequisites[i] == cryogenic_science_pack then
+                table.remove(tech.prerequisites, i)
+            end
         end
     end
 end
@@ -1623,10 +1633,10 @@ data_technology[explosives_1].effects =
     {type = unlock_recipe, recipe = carbonic_acid_reversed}
 }
 
--- ANGELS BIOPROCESSING
+-- ANGELS BIOPROCESSING NAUVIS
 data_technology[tech_bio_processing_brown].effects =
 {
-    {type = unlock_recipe, recipe = "angels-algae-farm"},
+    {type = unlock_recipe, recipe = algae_farm_1},
     {type = unlock_recipe, recipe = algae_green},
     {type = unlock_recipe, recipe = cellulose_fiber_angels}
 }
@@ -1637,7 +1647,7 @@ methanol_from_wood = "angels-gas-methanol-from-wood"
 algae_brown_sodium_carbonate = "angels-algae-brown-burning-wash"
 data_technology[tech_bio_processing_green].effects =
 {
-    {type = unlock_recipe, recipe = "angels-algae-farm-2"},
+    {type = unlock_recipe, recipe = algae_farm_2},
     {type = unlock_recipe, recipe = algae_brown},
     {type = unlock_recipe, recipe = algae_green_simple},
     {type = unlock_recipe, recipe = methanol_from_wood},
@@ -1645,6 +1655,38 @@ data_technology[tech_bio_processing_green].effects =
     {type = unlock_recipe, recipe = water_mineralized_angels}
 }
 
+table.insert(data_technology[tech_bio_arboretum_2].effects, {type = unlock_recipe, recipe = bio_arboretum_2})
+table.insert(data_technology[tech_bio_arboretum_3].effects, {type = unlock_recipe, recipe = bio_arboretum_3})
+
+table.insert(data_technology[tech_bio_arboretum_temperate_2].effects, {type = unlock_recipe, recipe = bio_generator_t_2})
+
+table.insert(data_technology[tech_bio_arboretum_temperate_3].prerequisites, tech_brass_processing)
+table.insert(data_technology[tech_bio_arboretum_temperate_3].prerequisites, tech_stone_smelting_2)
+table.insert(data_technology[tech_bio_arboretum_temperate_3].effects, {type = unlock_recipe, recipe = bio_generator_t_3})
+
+table.insert(data_technology[tech_bio_arboretum_swamp_2].effects, {type = unlock_recipe, recipe = bio_generator_s_2})
+
+table.insert(data_technology[tech_bio_arboretum_swamp_3].prerequisites, tech_brass_processing)
+table.insert(data_technology[tech_bio_arboretum_swamp_3].prerequisites, tech_stone_smelting_2)
+table.insert(data_technology[tech_bio_arboretum_swamp_3].effects, {type = unlock_recipe, recipe = bio_generator_s_3})
+
+table.insert(data_technology[tech_bio_arboretum_desert_2].effects, {type = unlock_recipe, recipe = bio_generator_d_2})
+
+table.insert(data_technology[tech_bio_arboretum_desert_3].prerequisites, tech_brass_processing)
+table.insert(data_technology[tech_bio_arboretum_desert_3].prerequisites, tech_stone_smelting_2)
+table.insert(data_technology[tech_bio_arboretum_desert_3].effects, {type = unlock_recipe, recipe = bio_generator_d_3})
+
+table.insert(data_technology[tech_bio_wood_processing_3].prerequisites, tech_bio_farm_1)
+resin_from_wood = "angels-bio-resin-wood-reprocessing"
+data_technology[tech_bio_wood_processing_3].effects = {{type = unlock_recipe, recipe = resin_from_wood}}
+
+-- ANGELS BIOPROCESSING VEGETABLES
+table.insert(data_technology[tech_gardens_3].prerequisites, tech_brass_processing)
+table.insert(data_technology[tech_gardens_3].effects, {type = unlock_recipe, recipe = seed_extractor_2})
+
+table.insert(data_technology[tech_bio_pressing_2].effects, {type = unlock_recipe, recipe = bio_press_2})
+
+-- ANGELS BIOPROCESSING ANIMALIS
 data_technology[tech_bio_refugium_fish_2].effects =
 {
     {type = unlock_recipe, recipe = factorian_fish},
@@ -1659,7 +1701,7 @@ raw_meat_from_dorflurp_jelly_fish = "angels-fish-butchery-2"
 raw_meat_from_santa_ray_fish = "angels-fish-butchery-3"
 data_technology[tech_bio_refugium_butchery_1].effects =
 {
-    {type = unlock_recipe, recipe = "angels-bio-butchery"},
+    {type = unlock_recipe, recipe = butchery_1},
     {type = unlock_recipe, recipe = raw_meat_from_factorian_fish},
     {type = unlock_recipe, recipe = raw_meat_from_levac_fish},
     {type = unlock_recipe, recipe = raw_meat_from_dorflurp_jelly_fish},
@@ -1667,6 +1709,8 @@ data_technology[tech_bio_refugium_butchery_1].effects =
     {type = unlock_recipe, recipe = polluted_water_for_fish}
 }
 
+table.insert(data_technology[tech_bio_refugium_butchery_2].prerequisites, tech_brass_processing)
+table.insert(data_technology[tech_bio_refugium_butchery_2].effects, {type = unlock_recipe, recipe = butchery_2})
 
 crystal_splinter_1 = "angels-crystal-splinter-crystalization-1"
 data_technology[tech_bio_processing_crystal_splinter_1].effects =

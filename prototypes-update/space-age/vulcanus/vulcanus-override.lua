@@ -219,7 +219,6 @@ data_item[wolframite_ore].stack_size = 200
 data_resource[wolframite_ore].localised_name = {"entity-name.wolframite-ore"}
 data_resource[wolframite_ore].localised_description = {"entity-description.wolframite-ore"}
 data_resource[wolframite_ore].factoriopedia_simulation = simulations.factoriopedia_tungsten_ore
-data_resource[wolframite_ore].factoriopedia_description = ""
 data_resource[wolframite_ore].subgroup = is_vulcanus_wolframite
 data_resource[wolframite_ore].order = a
 data_resource[wolframite_ore].minable.mining_time = 4
@@ -260,7 +259,6 @@ data_recipe[metallurgic_science_pack].ingredients =
     {type = fluid, name = lava, amount = 240}
 }
 
-local foundation = "foundation"
 data_item[foundation].subgroup = is_vulcanus_tungsten
 data_item[foundation].order = e
 data_item[foundation].stack_size = 200

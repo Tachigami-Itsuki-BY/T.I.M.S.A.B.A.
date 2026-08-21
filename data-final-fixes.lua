@@ -7,24 +7,38 @@ require("prototypes-final-fix.duplicate-items-and-fluids.base")
 require("prototypes-final-fix.duplicate-items-and-fluids.bobs")
 require("prototypes-final-fix.duplicate-items-and-fluids.angels")
 require("prototypes-final-fix.duplicate-items-and-fluids.space-age")
-require("prototypes-final-fix.duplicate-items-and-fluids.muluna")
-require("prototypes-final-fix.duplicate-items-and-fluids.moshine")
+
+-- FIRST CIRCLE PLANETS
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.castra")
+
+-- SECOND CIRCLE PLANETS
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.moshine")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.arig")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.hyarion")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.tellus")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.corrundum")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.shchierbin")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.muria")
+
+-- THIRD CIRCLE PLANETS
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.paracelsin")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.maraxsis")
+
+-- FOURTH CIRCLE PLANETS
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.vesta")
+
+-- MOONS
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.muluna")
 -- panglia
-require("prototypes-final-fix.duplicate-items-and-fluids.arig")
-require("prototypes-final-fix.duplicate-items-and-fluids.hyarion")
-require("prototypes-final-fix.duplicate-items-and-fluids.tellus")
-require("prototypes-final-fix.duplicate-items-and-fluids.paracelsin")
-require("prototypes-final-fix.duplicate-items-and-fluids.corrundum")
-require("prototypes-final-fix.duplicate-items-and-fluids.frozeta")
-require("prototypes-final-fix.duplicate-items-and-fluids.terrapalus")
-require("prototypes-final-fix.duplicate-items-and-fluids.castra")
-require("prototypes-final-fix.duplicate-items-and-fluids.shchierbin")
-require("prototypes-final-fix.duplicate-items-and-fluids.maraxsis")
-require("prototypes-final-fix.duplicate-items-and-fluids.vesta")
-require("prototypes-final-fix.duplicate-items-and-fluids.shattered")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.frozeta")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.terrapalus")
+
+-- FINAL CIRCLE PLANETS
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.shattered")
+
 -- rubia
 -- cubium
---require("prototypes-final-fix.duplicate-items-and-fluids.nexus")
+--require("prototypes-final-fix.duplicate-items-and-fluids.planet.nexus")
 
 require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")

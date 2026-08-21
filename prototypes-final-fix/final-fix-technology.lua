@@ -300,17 +300,21 @@ local function auto_added_science_pack(science_pack_name, technology_name)
                 local has_science_pack = false
                 -- Проверяем текущие ингредиенты
                 for _, ingredient in ipairs(tech.unit.ingredients) do
-                    local name = ""
-
+                    local name -- Убрали = ""
                     if type(ingredient) == "table" then
-                        name = ingredient.name or ingredient[1] or ""
+                        name = ingredient.name or ingredient[1]
                     else
-                        name = ingredient or ""
+                        name = ingredient
                     end
+                    -- Добавляем проверку на случай, если name остался nil или пришел как объект
+                    if name then
+                        -- Принудительно приводим к строке, чтобы string.find не ругался
+                        name = tostring(name)
 
-                    if name == science_pack_name then has_pack = true end
-                    if string.find(name, "datacell%-") then has_datacell = true end
-                    if string.find(name, "%-science%-pack") then has_science_pack = true end
+                        if name == science_pack_name then has_pack = true end
+                        if string.find(name, "datacell%-") then has_datacell = true end
+                        if string.find(name, "%-science%-pack") then has_science_pack = true end
+                    end
                 end
                 -- Логика исключения (для Space Age / дата-ячеек)
                 local should_exclude = has_datacell and not has_science_pack
@@ -395,4 +399,9 @@ if mods[vesta_mods] then
     data_technology[tech_gas_manipulation_science_pack].research_trigger.count = 1
 
     auto_added_science_pack(gas_manipulation_science_pack, tech_gas_manipulation_science_pack)
+end
+
+-- MURIA
+if mods[muria_mods] then
+    auto_added_science_pack(muriatic_science_pack, muriatic_science_pack)
 end

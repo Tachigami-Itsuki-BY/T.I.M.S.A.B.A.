@@ -16,6 +16,8 @@ local recipes =
     {planet = planet_shchierbin, fluid = water_saline_angels},
     {planet = planet_maraxsis, fluid = water_saline_angels},
     {planet = planet_vesta, fluid = helium_vesta},
+    --{planet = , fluid = },
+    {planet = planet_muria, fluid = muriatic_solution},
     -- MOONS
     {planet = planet_panglia, fluid = water},
     {planet = planet_frozeta, fluid = ammonia_solution},

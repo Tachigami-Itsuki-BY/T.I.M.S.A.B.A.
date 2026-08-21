@@ -528,6 +528,10 @@ if mods[corrundum_mods] then
     })
 
     -- TECHNOLOGY
+    table.insert(data_technology[planet_discovery_corrundum].prerequisites, tech_advanced_asteroid_processing)
+    if mods[muluna_mods] then
+        table.insert(data_technology[planet_discovery_corrundum].prerequisites, interstellar_science_pack)
+    end
     table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation})
     table.insert(data_technology[planet_discovery_corrundum].effects, {type = unlock_recipe, recipe = corrundum_air_separation_2})
     data_technology[planet_discovery_corrundum].unit.ingredients =

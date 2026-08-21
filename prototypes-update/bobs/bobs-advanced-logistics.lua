@@ -315,7 +315,7 @@ local function tank_recipe(name, gear_wheel, bearing, circuit, vehicle, plate)
 end
 tank_recipe(tank_1, brass_gear_wheel,    brass_bearing,    advanced_circuit,         car,    invar_plate_bob)
 tank_recipe(tank_2, titanium_gear_wheel, titanium_bearing, processing_unit,          tank_1, titanium_plate_bob)
-tank_recipe(tank_3, nitinol_gear_wheel,  nitinol_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
+tank_recipe(tank_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, tank_2, tungsten_carbide_plate_bob)
 
 data_item_subgroup["bob-logistic-robots"].order = f_b
 local logistic_robots =

@@ -559,7 +559,7 @@ if mods[moshine_mods] then
         {
             {type = item, name = assembling_machine_6, amount = 1},
             {type = item, name = silicon_carbide_bob, amount = 4},
-            {type = item, name = productivity_module_5, amount = 4}
+            {type = item, name = productivity_module_6, amount = 4}
         }
     else
         data_recipe[data_processor].ingredients =
@@ -706,7 +706,7 @@ if mods[moshine_mods] then
     })
 
     -- TECHNOLOGY
-    data_technology[planet_discovery_moshine].prerequisites = {metallurgic_science_pack, electromagnetic_science_pack}
+    data_technology[planet_discovery_moshine].prerequisites = {tech_advanced_asteroid_processing}
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = moshine_air_separation})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = moshine_air_separation_2})
     table.insert(data_technology[planet_discovery_moshine].effects, {type = unlock_recipe, recipe = saphirite_from_lava_moshine})
@@ -815,7 +815,7 @@ if mods[moshine_mods] then
 
     local tech_data_processor_building = "moshine-tech-data-processor-building"
     if mods[bobmodules] then
-        table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_5)
+        table.insert(data_technology[tech_data_processor_building].prerequisites, productivity_module_6)
     end
     data_technology[tech_data_processor_building].unit.ingredients =
     {

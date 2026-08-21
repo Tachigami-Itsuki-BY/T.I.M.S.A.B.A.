@@ -1898,7 +1898,7 @@ data_item[explosives].subgroup = is_explosives
 data_item[explosives].order = a
 data_item[explosives].stack_size = 200
 data_recipe[explosives].subgroup = is_explosives
-data_recipe[explosives].icons = THREE_D_I(coal, sulfur, water_purified_angels, explosives, nil, nil, number_1)
+data_recipe[explosives].icons = R_P_I(explosives, nil, nil, number_1)
 data_recipe[explosives].order = a
 data_recipe[explosives].ingredients =
 {
@@ -1909,7 +1909,7 @@ data_recipe[explosives].ingredients =
 data_recipe[explosives].results[1].amount = 1
 
 data_recipe[explosives_nitroglycerin].subgroup = is_explosives
-data_recipe[explosives_nitroglycerin].icons = FOUR_D_I(coal, glycerol_angels, sulfuric_acid_angels, nitric_acid_angels, explosives, nil, nil, nil, number_2)
+data_recipe[explosives_nitroglycerin].icons = R_P_I(explosives, nil, nil, number_2)
 data_recipe[explosives_nitroglycerin].order = a_a
 data_recipe[explosives_nitroglycerin].ingredients =
 {
@@ -1922,7 +1922,7 @@ data_recipe[explosives_nitroglycerin].results[1].amount = 2
 
 local explosives_trinitrotoluene = "angels-solid-trinitrotoluene"
 data_recipe[explosives_trinitrotoluene].subgroup = is_explosives
-data_recipe[explosives_trinitrotoluene].icons = THREE_D_I(toluene_angels, sulfuric_acid_angels, nitric_acid_angels, explosives, nil, nil, number_3)
+data_recipe[explosives_trinitrotoluene].icons = R_P_I(explosives, nil, nil, number_3)
 data_recipe[explosives_trinitrotoluene].order = a_b
 data_recipe[explosives_trinitrotoluene].ingredients =
 {

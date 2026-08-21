@@ -120,7 +120,7 @@ if settings.startup[setting_flow_control_new].value then
             entity.selection_box = {{-0.35, -0.35}, {0.5, 0.5}}
             entity.fluid_box =
             {
-                volume = 100,
+                volume = 120,
                 pipe_covers = TIMSABA_pipecoverspictures,
                 hide_connection_info = true,
                 pipe_connections =
@@ -148,7 +148,7 @@ if settings.startup[setting_flow_control_new].value then
             entity.selection_box = {{-0.5, -0.35}, {0.5, 0.5}}
             entity.fluid_box =
             {
-                volume = 100,
+                volume = 120,
                 pipe_covers = TIMSABA_pipecoverspictures,
                 hide_connection_info = true,
                 pipe_connections =

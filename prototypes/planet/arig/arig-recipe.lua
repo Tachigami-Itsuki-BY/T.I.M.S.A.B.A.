@@ -34,21 +34,17 @@ if mods[arig_mods] then
     })
 
     local function create_recipe_water_harvesting(planet_name, subgroup, amount, surface_conditions)
-        data:extend
+        TIMSABA.functions.create_recipes
         ({
             {
                 localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name." .. planet_name}},
-                type = recipe,
                 name = planet_name .. _water_harvesting,
                 category = arig_water_production,
                 subgroup = subgroup,
                 icons = BUILDING_R_I(water, planet_name),
                 order = data_planet[planet_name].order,
-                enabled = false,
-                auto_recycle = false,
+                enabled = true,
                 allow_productivity = true,
-                allow_quality = false,
-                allow_decomposition = false,
                 energy_required = 16,
                 ingredients = {},
                 results = {{type = fluid, name = water, amount = amount}},
