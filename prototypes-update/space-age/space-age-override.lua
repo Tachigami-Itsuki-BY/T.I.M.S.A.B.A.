@@ -33,7 +33,7 @@ data_recipe[rocket_part].ingredients =
 if mods[muluna_mods] then
     rocket_part_muluna = "rocket-part-muluna"
     data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
-    data_recipe[rocket_part_muluna].order = c .. "-" .. data_planet[planet_maraxsis].order
+    data_recipe[rocket_part_muluna].order = c .. "-" .. data_planet[planet_muluna].order
     data_recipe[rocket_part_muluna].energy_required = 4
     data_recipe[rocket_part_muluna].ingredients =
     {
@@ -48,7 +48,7 @@ end
 if mods[arig_mods] then
     rocket_part_arig = "planetaris-arig-rocket-part"
     data_recipe[rocket_part_arig].icons = R_P_I(rocket_part, planet_arig)
-    data_recipe[rocket_part_arig].order = b .. "-" .. data_planet[planet_maraxsis].order
+    data_recipe[rocket_part_arig].order = b .. "-" .. data_planet[planet_arig].order
     data_recipe[rocket_part_arig].energy_required = 4
     data_recipe[rocket_part_arig].ingredients =
     {
@@ -62,7 +62,7 @@ end
 if mods[tellus_mods] then
     rocket_part_tellus = "planetaris-tellus-rocket-part"
     data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
-    data_recipe[rocket_part_tellus].order = b .. "-" .. data_planet[planet_maraxsis].order
+    data_recipe[rocket_part_tellus].order = b .. "-" .. data_planet[planet_tellus].order
     data_recipe[rocket_part_tellus].energy_required = 4
     data_recipe[rocket_part_tellus].ingredients =
     {
