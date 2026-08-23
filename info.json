@@ -1,8 +1,8 @@
 {
     "name": "TIMSABA",
-    "version": "1.13.1",
+    "version": "1.13.2",
     "factorio_version": "2.0",
-    "title": "○🌐Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
+    "title": "Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
     "description": "Tachigami Itsuki Modpack for Space Age, Bob's and Angel's. \nSeamless integration of Space Age with Angel's & Bob's mods. \nUnified balance, new entities, items, fluids, recipes, and technologies, plus updated icons.",
     "contact": "https://discord.gg/ntApw9H6D8",
@@ -38,6 +38,7 @@
         "reskins-library >= 2.3.0",
         "reskins-bobs >= 2.3.0",
         "reskins-angels >= 2.3.0",
+        "reskins-compatibility >= 2.3.0",
         "? Clowns-Nuclear",
         "! Clowns-AngelBob-Nuclear",
         "! Clowns-Extended-Minerals",

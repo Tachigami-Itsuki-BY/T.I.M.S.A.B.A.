@@ -21,7 +21,7 @@ if mods[shattered_mods] then
     --[[if mods[moshine_mods] then
         replacements[promethium_ore_shattered] = promethium_ore
     end]]
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     local mod_items =
 	{

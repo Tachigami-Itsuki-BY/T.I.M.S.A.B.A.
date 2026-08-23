@@ -12,7 +12,7 @@ if mods[muluna_mods] then
         [oxygen_mods] = oxygen_angels,
         [carbon_dioxide_mods] = carbon_dioxide_angels
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 	data_tile["muluna-gravel"] = nil
 

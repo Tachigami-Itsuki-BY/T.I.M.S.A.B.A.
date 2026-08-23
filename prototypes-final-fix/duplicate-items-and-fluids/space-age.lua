@@ -14,7 +14,7 @@ local replacements =
 	[sulfuric_acid] = sulfuric_acid_angels,
 	[holmium_solution] = holmium_chloride_III_solution
 }
-TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 local mod_items =
 {

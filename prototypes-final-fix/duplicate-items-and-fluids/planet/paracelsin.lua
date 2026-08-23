@@ -6,7 +6,7 @@ if mods[paracelsin_mods] then
         [nitrogen_mods] = nitrogen_angels,
         [nitric_acid_mods] = nitric_acid_angels
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 	local macerator = "macerator"
 	local mod_items =

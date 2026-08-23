@@ -12,7 +12,7 @@ if mods[secretas_frozeta_mods] then
         [productivity_module_4_S] = productivity_module_8,
         [quality_module_4_S] = quality_module_8
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     local mod_items =
 	{

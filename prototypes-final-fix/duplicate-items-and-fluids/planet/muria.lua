@@ -14,7 +14,7 @@ if mods[muria_mods] then
         --[] = ,
         --[] = ,
     }
-	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+	TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     data_fluid[chlorane] = nil
     data_recipe[chlorane] = nil

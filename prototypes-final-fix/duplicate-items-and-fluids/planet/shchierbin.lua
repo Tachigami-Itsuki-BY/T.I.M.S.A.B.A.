@@ -20,7 +20,7 @@ if mods[shchierbin_mods] then
         [oxygen_mods] = oxygen_angels,
         [carbon_dioxide_mods] = carbon_dioxide_angels
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     local vanadium_concetrate = "vanadium-concetrate"
     local vanadium_dust = "vanadium-dust"

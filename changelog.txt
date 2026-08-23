@@ -1,8 +1,27 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.13.2
+Date: 23.08.2026
+  Features:
+    - [All] Добавлена возможность вернуть бесконечные исследования через настройку модов.
+
+    - [All] Added the ability to return infinite research through mod settings.
+
+  Scripting:
+    - [All] В функцию replace_duplicate_prototypes добавлен новый параметр замены: spoil_result.
+    - [All] Добавлена новая функция delete_the_replaced_prototypes для удаление прототипов.
+
+    - [All] Added to the replace_duplicate_prototypes function a new replacement parameter: spoil_result.
+    - [All] Added new function delete_the_replaced_prototypes for deleting prototypes.
+
+  Modding:
+    - [Mods] Добавлена обязательная зависимость для мода «Artisanal Reskins: Compatibility».
+
+    - [Mods] Added required dependency for the "Artisanal Reskins: Compatibility" mod.
+---------------------------------------------------------------------------------------------------
 Version: 1.13.1
 Date: 22.08.2026
   Bugfixes:
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Maraxsis» был выключен.
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Maraxsis» был отключен.
 
     - [Mods] Fixed a bug where the game with the mod would not load if the "Maraxsis" mod was disabled.
 ---------------------------------------------------------------------------------------------------
@@ -212,7 +231,7 @@ Date: 17.08.2026
     - [Hyarion] Moved Selenium Powder recipe to Selenium Processing technology. It is now linked to the "Planetaris: Hyarion" mod.
 
   Bugfixes:
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Asteroid Belt» был включён без мода «Secretas&Frozeta».
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Asteroid Belt» был включён без мода «Secretas&Frozeta».
 
     - [Mods] Fixed a bug where the game with the mod would not load if the "Asteroid Belt" mod was enabled without the "Secretas&Frozeta" mod.
 
@@ -240,7 +259,7 @@ Date: 17.08.2026
     - [Moshine] Adjusted ingredients in the Nd-Fe-B molten recipe.
 
   Bugfixes:
-    - [Arig] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Planetaris: Arig» был включён без других модов на планеты.
+    - [Arig] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Planetaris: Arig» был включён без других модов на планеты.
 
     - [Arig] Fixed a bug where the game with the mod would not load if the "Planetaris: Arig" mod was enabled without other planet mods.
 
@@ -267,7 +286,7 @@ Date: 14.08.2026
     - [Arig] Added support for the new version.
 
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Bob's Modules» был отключен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Bob's Modules» был отключен.
 
     - [All] Fixed a bug where game with mod would not load if the "Bob's Modules" mod was disabled.
 
@@ -282,14 +301,14 @@ Date: 14.08.2026
 Version: 1.11.2
 Date: 13.08.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если аддон «Контроль Потоков (Новый)» был отключен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если аддон «Контроль Потоков (Новый)» был отключен.
 
     - [All] Fixed a bug where game with mod would not load if the "Flow Control (New)" addon was disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.1
 Date: 13.08.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если Паучок из мода «Spidertron Patrols» был отключен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если Паучок из мода «Spidertron Patrols» был отключен.
 
     - [All] Fixed a bug where game with mod would not load if Spiderling from the "Spidertron Patrols" mod was disabled.
 ---------------------------------------------------------------------------------------------------
@@ -776,7 +795,7 @@ Date: 15.06.2026
 Version: 1.4.3
 Date: 11.06.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Muluna, Moon of Nauvis» был отключен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Muluna, Moon of Nauvis» был отключен.
 
     - [All] Fixed a bug where the modpack would not load if the "Muluna, Moon of Nauvis" mod was disabled.
 ---------------------------------------------------------------------------------------------------
@@ -836,8 +855,8 @@ Date: 10.06.2026
     - [All] Added new item and recipe: Selenium powder.
 
   Bugfixes:
-    - [Addons] Исправлена ошибка, из-за которой игра с модом не загружался, если аддон «Ранняя Печь для Спекания» было отключено.
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Panglia Planet» был отключено, а мод «Solar Productivity» был включен.
+    - [Addons] Исправлена ошибка, из-за которой игра с модом не загружалась, если аддон «Ранняя Печь для Спекания» было отключено.
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Panglia Planet» был отключено, а мод «Solar Productivity» был включен.
 
     - [Addons] Fixed a bug where game with mod would not load if the "Early Sintering Oven" addon was disabled.
     - [Mods] Fixed a bug where game with mod would not load if the "Panglia Planet" mod was disabled and the "Solar Productivity" mod was enabled.
@@ -869,7 +888,7 @@ Date: 10.06.2026
 Version: 1.3.2
 Date: 08.06.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружался, если аддон «Ранняя Печь для Спекания» было отключено, а мод «Panglia Planet» был включен.
+    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если аддон «Ранняя Печь для Спекания» было отключено, а мод «Panglia Planet» был включен.
 
     - [All] Fixed a bug where game with mod would not load if the "Early Sintering Oven" addon was disabled and the "Panglia Planet" mod was enabled.
 
@@ -1312,9 +1331,9 @@ Date: 18.05.2026
 Version: 1.0.4
 Date: 17.05.2026
   Bugfixes:
-    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружался, если Конвейеры Т0 из мода «Bob's Logistics» были отключены.
-    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружался, если Компонеты для Дронов из мода «Bob's Logistics» были отключены.
-    - [Bob's Power] Исправлена ошибка, из-за которой игра с модом не загружался, если Электрические Столбы Т2-Т4 из мода «Bob's Power» были отключены.
+    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружалась, если Конвейеры Т0 из мода «Bob's Logistics» были отключены.
+    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружалась, если Компонеты для Дронов из мода «Bob's Logistics» были отключены.
+    - [Bob's Power] Исправлена ошибка, из-за которой игра с модом не загружалась, если Электрические Столбы Т2-Т4 из мода «Bob's Power» были отключены.
 
     - [Bob's Logistics] Fixed a bug where game with mod would not load if the T0 Belts from "Bob's Logistics" mod were disabled.
     - [Bob's Logistics] Fixed a bug where game with mod would not load if the Drone Components from "Bob's Logistics" mod were disabled.
@@ -1333,7 +1352,7 @@ Date: 17.05.2026
     - [Addons] All the functionality of the "Modular Buildings Redux" mod is now integrated directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. Addon «Multi Building» can be enabled/disabled in the mod settings.
 
   Bugfixes:
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Bob's Tech» был отключен.
+    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Bob's Tech» был отключен.
     - [All] Исправлена ошибка, из-за которой в Бойлер Т6 отсутствовала возможно загружать топливо.
 
     - [Mods] Fixed a bug where game with mod would not load if the "Bob's Tech" mod was disabled.
@@ -1348,7 +1367,7 @@ Date: 17.05.2026
 Version: 1.0.2
 Date: 16.05.2026
   Bugfixes:
-    - [Muluna] Исправлена ошибка, из-за которой игра с модом не загружался, если мод «Muluna, Moon of Nauvis» был отключен.
+    - [Muluna] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Muluna, Moon of Nauvis» был отключен.
 
     - [Muluna] Fixed a bug where game with mod would not load if the "Muluna, Moon of Nauvis" mod were disabled.
 ---------------------------------------------------------------------------------------------------
@@ -1550,7 +1569,7 @@ Date: 15.05.2026
 Version: 0.1.3
 Date: 13.05.2026
   Bugfixes:
-    - Исправлена ошибка, из-за которой игра с модом не загружался, если Жидкотопливные Генераторы из мода «Bob's Power» были отключены.
+    - Исправлена ошибка, из-за которой игра с модом не загружалась, если Жидкотопливные Генераторы из мода «Bob's Power» были отключены.
 
     - Fixed a bug where game with mod would not load if the Fluid Burning Generators from "Bob's Power" were disabled.
 ---------------------------------------------------------------------------------------------------

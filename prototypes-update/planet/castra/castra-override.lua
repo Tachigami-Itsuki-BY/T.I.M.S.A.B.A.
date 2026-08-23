@@ -315,6 +315,8 @@ if mods[castra_mods] then
     data_assembling[jammed_data_collector].order = c
     data_assembling[jammed_data_collector].energy_usage = 900 .. kW
 
+    data_assembling["player-" .. jammed_data_collector].energy_usage = 900 .. kW
+
     -- WAR
     local firearm_magazine_nickel = "firearm-magazine-nickel"
     data_recipe[firearm_magazine_nickel].subgroup = is_castra_war
