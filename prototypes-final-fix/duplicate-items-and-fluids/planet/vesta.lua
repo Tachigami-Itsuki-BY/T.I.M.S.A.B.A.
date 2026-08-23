@@ -11,7 +11,7 @@ if mods[vesta_mods] then
         [deuterium_mods] = deuterium_angels,
 		[tritium_mods] = tritium_gas
     }
-	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+	TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 	data_fluid[hydrogen_vesta] = nil
     data_fluid[oxygen_vesta] = nil

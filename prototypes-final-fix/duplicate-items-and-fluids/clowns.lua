@@ -5,7 +5,7 @@ if mods[clowns_nuclear] and mods[shattered_mods] then
         [plutonium_239_bob] = plutonium_239_shattered,
         [plutonium_239_mods] = plutonium_239_shattered
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     data_item[plutonium_239_bob] = nil
     data_recipe[plutonium_239_bob .. _recycling] = nil
@@ -19,7 +19,7 @@ elseif mods[clowns_nuclear] and not mods[shattered_mods] then
     {
         [plutonium_239_mods] = plutonium_239_bob
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     data_item[plutonium_239_mods] = nil
 elseif not mods[clowns_nuclear] and mods[shattered_mods] then
@@ -27,7 +27,7 @@ elseif not mods[clowns_nuclear] and mods[shattered_mods] then
     {
         [plutonium_239_bob] = plutonium_239_shattered
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
     data_item[plutonium_239_bob] = nil
     data_recipe[plutonium_239_bob .. _recycling] = nil

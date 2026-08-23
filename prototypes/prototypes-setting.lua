@@ -8,6 +8,7 @@ setting_dynamic_pipe_to_ground = "setting-dynamic-pipe-to-ground"
 setting_rebalance_belts_and_pipes = "setting-rebalance-belts-and-pipes"
 setting_flow_control_new = "setting-flow-control-new"
 setting_defrost_multiplier = "setting-defrost-multiplier"
+setting_infinite_research = "setting-infinite-research"
 
 setting_horogon_extra_science_packs = "setting-za-horogon-extra-science-packs"
 setting_horogon_high_tier_recipes = "setting-zb-horogon-high-tier-recipes"
@@ -22,8 +23,7 @@ setting_horogon_mech_armor_technology_cost = "setting-zi-horogon-mech-armor-tech
 setting_horogon_power_armor_chain_from_mech = "setting-zj-horogon-power-armor-chain-from-mech"
 
 if angelsmods and angelsmods.trigger then
-    local player_choice = settings.startup[setting_early_sintering_oven].value
-    angelsmods.trigger.early_sintering_oven = player_choice
+    angelsmods.trigger.early_sintering_oven = settings.startup[setting_early_sintering_oven].value
 end
 
 -- BOBS

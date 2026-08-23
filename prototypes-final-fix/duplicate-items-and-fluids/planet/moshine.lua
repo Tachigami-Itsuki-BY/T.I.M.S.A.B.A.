@@ -6,7 +6,7 @@ if mods[moshine_mods] then
         [glass_mods] = glass_bob,
         [silicon_carbide_mods] = silicon_carbide_bob
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 	data_item[neodymium_mods] = nil
 	data_recipe[neodymium_mods.. _recycling] = nil

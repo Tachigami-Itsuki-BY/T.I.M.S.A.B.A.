@@ -31,9 +31,11 @@ for _, tech in pairs(data_technology) do
             unit.count_formula = "l*128" -- В Factorio 2.0+ используется строго маленькая буква "l"
         end
 
-        -- Ограничиваем максимальный уровень бесконечных технологий
-        if tech.max_level == "infinite" or (type(tech.max_level) == "number" and tech.max_level > 30) then
-            tech.max_level = 30
+        if settings.startup[setting_infinite_research].value == false then
+            -- Ограничиваем максимальный уровень бесконечных технологий
+            if tech.max_level == "infinite" or (type(tech.max_level) == "number" and tech.max_level > 30) then
+                tech.max_level = 30
+            end
         end
     end
 end

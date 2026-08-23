@@ -31,7 +31,7 @@ local replacements =
 	[steam_assembling_machine] = assembling_machine_1,
     [burner_assembling_machine] = assembling_machine_1
 }
-TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 data_item[steam_inserter] = nil
 data_recipe[steam_inserter] = nil

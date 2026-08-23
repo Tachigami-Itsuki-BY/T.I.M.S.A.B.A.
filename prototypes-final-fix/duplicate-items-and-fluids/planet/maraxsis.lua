@@ -9,7 +9,7 @@ if mods[maraxsis_mods] then
         [oxygen_mods] = oxygen_angels,
         [hydrogen_mods] = hydrogen_angels,
     }
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
 
 	data_item[glass_panes_maraxsis] = nil
 	data_recipe[glass_panes_maraxsis] = nil

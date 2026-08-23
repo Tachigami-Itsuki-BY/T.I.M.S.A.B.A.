@@ -1,29 +1,30 @@
 if mods[arig_mods] then
-    local replacements =
+    local replace_prototypes =
     {
         [glass_arig] = glass_bob,
 		[raw_diamond_arig] = raw_diamond_bob
     }
-	TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	data_item[glass_arig] = nil
-	data_recipe[glass_arig .. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. glass_arig .. _panglia_crushing] = nil
+	local delete_proto =
+	{
+		glass_arig,
+		raw_diamond_arig
+	}
+	for _, name in ipairs(delete_proto) do
+		data_item[name] = nil
+		data_recipe[name .. _recycling] = nil
+		if mods[panglia_mods] then
+			data_recipe[item_ .. name .. _panglia_crushing] = nil
+		end
 	end
 
-    data_item[raw_diamond_arig] = nil
-	data_recipe[raw_diamond_arig .. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. raw_diamond_arig .. _panglia_crushing] = nil
-	end
-
-	data_recipe["planetaris-steam-venting"] = nil
-
-	data_recipe["planetaris-sulfur"] = nil
-	data_recipe["planetaris-lithium-brine-sifting"] = nil
-	data_recipe["planetaris-lithium-plate"] = nil
-
-	data_technology[rocket_part_arig].enabled = false
-	data_technology[rocket_part_arig].prerequisites = {compression_science_pack}
+	local delete_prototypes =
+	{
+		"planetaris-steam-venting",
+		"planetaris-sulfur",
+		"planetaris-lithium-brine-sifting",
+		"planetaris-lithium-plate"
+	}
+	TIMSABA.functions.delete_the_replaced_prototypes(delete_prototypes)
 end

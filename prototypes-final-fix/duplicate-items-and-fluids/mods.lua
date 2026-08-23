@@ -1,6 +1,6 @@
 if (mods[muluna_mods] or mods[shchierbin_mods]) and not mods[maraxsis_mods] then
     local replacements = {[maraxsis_air] = compressed_air}
-    TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replacements)
     data_fluid[maraxsis_air] = nil
     data_recipe[maraxsis_air] = nil
 end

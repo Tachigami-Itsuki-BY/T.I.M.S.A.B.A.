@@ -82,8 +82,8 @@ local table_of_chemical_elements =
     --Te = {{, , }, {, , }, {, , }}, -- Tellurium
     I  = {{148, 000, 148}, {133, 000, 133}, {120, 000, 120}}, -- Iodine
     Xe = {{066, 158, 176}, {057, 136, 151}, {048, 114, 127}}, -- Xenon
-    --Cs = {{, , }, {, , }, {, , }}, -- Cesium ?
-    --Ba = {{, , }, {, , }, {, , }}, -- Barium ?
+    --Cs = {{, , }, {, , }, {, , }}, -- Cesium
+    --Ba = {{, , }, {, , }, {, , }}, -- Barium
     --La = {{, , }, {, , }, {, , }}, -- Lanthanum
     Ce = {{195, 195, 150}, {175, 175, 135}, {155, 155, 120}}, -- Cerium
     --Pr = {{, , }, {, , }, {, , }}, -- Praseodymium
@@ -117,7 +117,7 @@ local table_of_chemical_elements =
     --Fr = {{, , }, {, , }, {, , }}, -- Francium
     --Ra = {{, , }, {, , }, {, , }}, -- Radium
     --Ac = {{, , }, {, , }, {, , }}, -- Actinium
-    --Th = {{, , }, {, , }, {, , }}, -- Thorium ?
+    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.1?
     --Pa = {{, , }, {, , }, {, , }}, -- Protactinium
     --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.1?
     --Np = {{, , }, {, , }, {, , }}, -- Neptunium 2.1?
@@ -411,11 +411,11 @@ function TIMSABA.functions.create_items(list)
         ({
             {
                 localised_name = items.localised_name,
-                localised_description = items.localised_description, -- localised_description = show_formula and {chemical_formula, ""} or nil,
+                localised_description = items.localised_description,
                 type = item,
                 name = items.name,
                 subgroup = items.subgroup,
-                icon = items.icon or error_png, -- if not sting "icon" then used "error_png"
+                icon = items.icon or error_png,
                 icon_size = items.icon_size or 64,
 
                 pictures = items.pictures,
@@ -446,12 +446,12 @@ function TIMSABA.functions.create_fluids(list)
         ({
             {
                 localised_name = fluids.localised_name,
-                localised_description = fluids.localised_description, -- localised_description = show_formula and {chemical_formula, ""} or nil,
+                localised_description = fluids.localised_description,
                 type = fluid,
                 name = fluids.name,
                 subgroup = fluids.subgroup,
                 order = fluids.order,
-                icon = fluids.icon or error_png, -- if not sting "icon" then used "error_png"
+                icon = fluids.icon or error_png,
                 icon_size = fluids.icon_size or 64,
 
                 default_temperature = fluids.default_temperature or 0,
@@ -559,8 +559,8 @@ function TIMSABA.functions.create_buildings(list)
     end
 end
 
--- DELETE PROTOTYPES
-function TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
+-- REPLACE PROTOTYPES
+function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Ingredients and Results(main_product)
     for _, recipe in pairs(data_recipe or {}) do
         for _, ingredient in pairs(recipe.ingredients or {}) do
@@ -600,13 +600,13 @@ function TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
         if technology.research_trigger then
             if technology.research_trigger.item then
                 local replace = replacements[technology.research_trigger.item]
-                if replace and (data.raw.item[replace] or data.raw.tool[replace]) then
+                if replace and (data_item[replace] or data_tool[replace]) then
                     technology.research_trigger.item = replace
                 end
             end
             if technology.research_trigger.fluid then
                 local replace = replacements[technology.research_trigger.fluid]
-                if replace and data.raw.fluid[replace] then
+                if replace and data_fluid[replace] then
                     technology.research_trigger.fluid = replace
                 end
             end
@@ -657,7 +657,7 @@ function TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
   		end
 	end
     -- Fluid Turrets
-    for _, turret in pairs(data.raw["fluid-turret"] or {}) do
+    for _, turret in pairs(data_fluid_turret or {}) do
         if turret.attack_parameters and turret.attack_parameters.fluids then
             for i = #turret.attack_parameters.fluids, 1, -1 do
                 local fluid_entry = turret.attack_parameters.fluids[i]
@@ -690,6 +690,36 @@ function TIMSABA.functions.delete_duplicate_item_and_fluid(replacements)
             if replace then
                 achievement.item_product = replace
             end
+        end
+    end
+    -- Spoil Results
+    local proto_types = {item, capsule, tool}
+    for _, proto_type in ipairs(proto_types) do
+        for _, type in pairs(data.raw[proto_type] or {}) do
+            if type.spoil_result then
+                local replace = replacements[type.spoil_result]
+                if replace then
+                    type.spoil_result = replace
+                end
+            end
+        end
+    end
+end
+
+-- DELETED PROTOTYPES
+function TIMSABA.functions.delete_the_replaced_prototypes(replacements)
+    local proto_types = {item, fluid, recipe, technology}
+    for _, name in ipairs(replacements or {}) do
+        for _, proto_type in ipairs(proto_types) do
+            if data.raw[proto_type][name] then
+                data.raw[proto_type][name] = nil
+            end
+        end
+        if data_recipe[name .. _recycling] then
+            data_recipe[name .. _recycling] = nil
+        end
+        if data_recipe[item_ .. name .. _panglia_crushing] then
+            data_recipe[item_ .. name .. _panglia_crushing] = nil
         end
     end
 end

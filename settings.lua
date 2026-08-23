@@ -58,6 +58,12 @@ data:extend
         default_value = 2,
         minimum_value = 1,
         maximum_value = 720 -- if 12 hour then 1 year
+    },
+    {
+        type = bool_setting,
+        name = "setting-infinite-research",
+        setting_type = startup,
+        default_value = false
     }
 })
 
