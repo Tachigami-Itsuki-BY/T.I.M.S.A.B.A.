@@ -301,6 +301,10 @@ data_fluid[hydrogen_angels].icons = nil
 data_fluid[hydrogen_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-hydrogen.png"
 data_fluid[hydrogen_angels].base_color = TIMSABA.functions.fluid_color("HHH")
 data_fluid[hydrogen_angels].flow_color = TIMSABA.functions.flow_color("HHH")
+if mods[crucible_mods] then
+    data_fluid[hydrogen_angels].default_temperature = 15
+    data_fluid[hydrogen_angels].max_temperature = 500
+end
 
 data_fluid[deuterium_angels].icons = nil
 data_fluid[deuterium_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-deuterium.png"
@@ -737,7 +741,7 @@ if mods[vesta_mods] then
     end
 end
 
--- 
+-- SHATTERED
 if mods[shattered_mods] then
     data_fluid[slurry_metallic_shattered].icon = "__TIMSABA__/graphics/icons/shattered/slurry_metallic.png"
 
@@ -816,4 +820,13 @@ if mods[muria_mods] then
     data_fluid[hydronium_solution].icon = "__TIMSABA__/graphics/icons/muria/hydronium.png"
     data_fluid[hydronium_solution].base_color = TIMSABA.functions.fluid_color("H3OOH")
     data_fluid[hydronium_solution].flow_color = TIMSABA.functions.flow_color("H3OOH")
+end
+
+-- PELAGOS
+if mods[pelagos_mods] then
+    data_fluid[coconut_oil].icon = "__TIMSABA__/graphics/icons/pelagos/coconut-oil.png"
+
+    data_fluid[titanium_sludge].icon = "__TIMSABA__/graphics/icons/pelagos/titanium-sludge.png"
+
+    data_fluid[biodiesel].icon = "__TIMSABA__/graphics/icons/pelagos/biodiesel.png"
 end

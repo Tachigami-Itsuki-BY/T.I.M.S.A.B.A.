@@ -628,6 +628,12 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
                     if results.name then results.name = replace elseif results[1] then results[1] = replace end
                 end
             end
+            if resource.minable.required_fluid then
+                local replace = replacements[resource.minable.required_fluid]
+                if replace then
+                    resource.minable.required_fluid = replace
+                end
+            end
         end
     end
     -- Entity / Tree / Plant
@@ -659,18 +665,29 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Fluid Turrets
     for _, turret in pairs(data_fluid_turret or {}) do
         if turret.attack_parameters and turret.attack_parameters.fluids then
+            local seen = {}
+
             for i = #turret.attack_parameters.fluids, 1, -1 do
                 local fluid_entry = turret.attack_parameters.fluids[i]
                 local current_fluid = fluid_entry.type
                 local replace = replacements[current_fluid]
+
+                local should_remove = false
+                local target_fluid = current_fluid
+
                 if replace then
-                    -- Если замена существует в игре, меняем имя на новое
                     if data.raw.fluid[replace] then
-                        fluid_entry.type = replace
+                        target_fluid = replace
                     else
-                        -- Если замена не существует, просто удаляем эту жидкость из списка разрешенных для турели
-                        table.remove(turret.attack_parameters.fluids, i)
+                        should_remove = true
                     end
+                end
+
+                if should_remove or seen[target_fluid] then
+                    table.remove(turret.attack_parameters.fluids, i)
+                else
+                    fluid_entry.type = target_fluid
+                    seen[target_fluid] = true
                 end
             end
         end
@@ -704,20 +721,136 @@ function TIMSABA.functions.replace_duplicate_prototypes(replacements)
             end
         end
     end
+    -- Loot
+    local entities_with_loot = {"spider-vehicle"}
+    for _, proto_type in ipairs(entities_with_loot) do
+        for _, entity in pairs(data.raw[proto_type] or {}) do
+            if entity.loot then
+                for _, entry in pairs(entity.loot) do
+                    local replace = replacements[entry.item]
+                    if replace then
+                        entry.item = replace
+                    end
+                end
+            end
+        end
+    end
+    -- Projectiles and Streams (Фикс для Renai Transportation и боеприпасов)
+    local projectile_types = {"stream", "projectile"}
+    for _, proto_type in ipairs(projectile_types) do
+        for _, proj in pairs(data.raw[proto_type] or {}) do
+            -- Проверяем триггеры и действия снаряда
+            if proj.action then
+                -- Функция для рекурсивного поиска и замены/удаления сломанных ссылок в action
+                local function check_action_effects(effects)
+                    if not effects then return end
+                    for i = #effects, 1, -1 do
+                        local effect = effects[i]
+
+                        -- Если снаряд создает сущность (например, мину при приземлении)
+                        if effect.action_delivery then
+                            -- Рекурсивно идем вглубь структуры доставки
+                            if effect.action_delivery.target_effects then
+                                check_action_effects(effect.action_delivery.target_effects)
+                            end
+                        end
+
+                        -- Проверка спавна сущности (то, на чем упал Renai Transportation)
+                        if effect.type == "create-entity" or effect.type == "spawn-entity" then
+                            local replace = replacements[effect.entity_name]
+                            if replace then
+                                if replace == "nil" or replace == nil then
+                                    -- Если мина полностью удалена TIMSABA, вырезаем этот эффект, 
+                                    -- чтобы снаряд не пытался спавнить воздух
+                                    table.remove(effects, i)
+                                else
+                                    effect.entity_name = replace
+                                end
+                            end
+                        end
+                    end
+                end
+
+                -- Запускаем проверку для эффектов внутри экшена снаряда
+                if proj.action.action_delivery then
+                    check_action_effects(proj.action.action_delivery.target_effects)
+                elseif type(proj.action) == "table" then
+                    -- Если это массив экшенов
+                    for _, act in ipairs(proj.action) do
+                        if act.action_delivery then
+                            check_action_effects(act.action_delivery.target_effects)
+                        end
+                    end
+                end
+            end
+
+            -- Проверка свойства "spawn_entity" (иногда используется напрямую в stream)
+            if proj.spawn_entity then
+                local replace = replacements[proj.spawn_entity]
+                if replace then
+                    if replace == "nil" or replace == nil then
+                        -- Если оригинальной сущности нет, этот стрим становится бесполезным.
+                        -- Чтобы не ломать assignID, подменяем на безопасную пустышку или удаляем
+                        proj.spawn_entity = nil
+                    else
+                        proj.spawn_entity = replace
+                    end
+                end
+            end
+        end
+    end
 end
 
 -- DELETED PROTOTYPES
-function TIMSABA.functions.delete_the_replaced_prototypes(replacements)
-    local proto_types = {item, fluid, recipe, technology}
+function TIMSABA.functions.delete_prototypes(replacements)
+    local proto_types =
+    {
+        item, fluid, recipe, technology,
+        ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, land_mine,
+        car, locomotive, wagon_cargo, wagon_fluid, unit,
+        item_module, beacon,
+        assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo,
+        inserter, heat_pipe, container, logistic_container,
+        repair_tool, tile, electric_pole, plant, accumulator, solar_panel,
+    }
     for _, name in ipairs(replacements or {}) do
         for _, proto_type in ipairs(proto_types) do
-            if data.raw[proto_type][name] then
-                data.raw[proto_type][name] = nil
+            if data.raw[proto_type] and data.raw[proto_type][name] then data.raw[proto_type][name] = nil end
+        end
+        if data_recipe[name .. _recycling] then data_recipe[name .. _recycling] = nil end
+        if data_recipe[name .. _barrel_recycling] then data_recipe[name .. _barrel_recycling] = nil end
+        if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[item_ .. name .. _barrel_panglia_crushing] then data_recipe[item_ .. name .. _barrel_panglia_crushing] = nil end
+        if data_recipe[ammo_ .. name .. _panglia_crushing] then data_recipe[ammo_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[repair_tool_ .. name .. _panglia_crushing] then data_recipe[repair_tool_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[module_ .. name .. _panglia_crushing] then data_recipe[module_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[name .. _smelting] then data_recipe[name .. _smelting] = nil end
+        if data_recipe[cargo_crate_ .. name] then data_recipe[cargo_crate_ .. name] = nil end
+        if data_recipe[unpack_cargo_crate_ .. name] then data_recipe[unpack_cargo_crate_ .. name] = nil end
+        if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
+        if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
+        for i = 25, 2400, 25 do
+            if data_recipe[name .. __rigor_module_mod__ .. i] then
+                data_recipe[name .. __rigor_module_mod__ .. i] = nil
             end
         end
-        if data_recipe[name .. _recycling] then
-            data_recipe[name .. _recycling] = nil
+        if data_inserter[name .. _panglia_fast_version] then data_inserter[name .. _panglia_fast_version] = nil end
+        for i = 1, 99 do
+            if data_accumulator["sp-" .. i .. "-" .. name] then
+                data_accumulator["sp-" .. i .. "-" .. name] = nil
+            elseif data_solar_panel["sp-" .. i .. "-" .. name] then
+                data_solar_panel["sp-" .. i .. "-" .. name] = nil
+            end
         end
+        if data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] then data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] = nil end
+        if data.raw["turret"]["RTPrimerThrowerShooter-" .. name] then data.raw["turret"]["RTPrimerThrowerShooter-" .. name] = nil end
+    end
+end
+
+function TIMSABA.functions.delete_duplicated_prototypes(replacements)
+    for _, name in ipairs(replacements or {}) do
+        data_item[name] = nil
+        data_recipe[name .. _recycling] = nil
         if data_recipe[item_ .. name .. _panglia_crushing] then
             data_recipe[item_ .. name .. _panglia_crushing] = nil
         end

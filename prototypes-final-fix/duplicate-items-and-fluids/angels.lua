@@ -1,174 +1,107 @@
 local tree_seed_angels = "angels-tree-seed"
-local replacements =
+local replace_prototypes =
 {
 	[tree_seed_angels] = tree_seed
 }
-TIMSABA.functions.replace_duplicate_prototypes(replacements)
+TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-local miscellaneous_items =
+local delete_proto =
 {
-    {name = tree_seed_angels,       has_base_recipe = false},
-    {name = "angels-plutonium-239", has_base_recipe = true},
-    {name = "angels-thorium-232",   has_base_recipe = true}
+    tree_seed_angels,
+
+    -- ANGELS RESOURCE REFINING
+    "angels-thorium-ore",
+
+    -- ANGELS METALLURGY CASTING
+    "angels-plate-steel",
+    "angels-plate-lead",
+    "angels-plate-tin",
+    "angels-silicon-wafer",
+    "angels-plate-nickel",
+    "angels-plate-aluminium",
+    "angels-plate-zinc",
+    "angels-plate-silver",
+    "angels-plate-titanium",
+    "angels-plate-gold",
+    "angels-plate-tungsten",
+    "angels-plate-glass",
+    "angels-solder",
+
+    -- VOIDS
+    "angels-chemical-void",
+    "angels-water-void"
 }
-for _, item in ipairs(miscellaneous_items) do
-    local name = item.name
+TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
-	data_item[name] = nil
-	data_recipe[name .. _recycling] = nil
-
-	if item.has_base_recipe then
-		data_recipe[name] = nil
-	end
-
-	if mods[panglia_mods] then
-		data_recipe[item_ .. name .. _panglia_crushing] = nil
-	end
-end
-
--- ANGELS RESOURCE REFINING
-data_recipe["angels-stone-from-crushed-stone"] = nil
-
-local angels_resources =
+local delete_prototypes =
 {
-    {name = "angels-thorium-ore",    has_base_recipe = false, has_smelting = false},
-    {name = "angels-iron-pebbles",   has_base_recipe = true,  has_smelting = true},
-    {name = "angels-iron-nugget",    has_base_recipe = true,  has_smelting = true},
-    {name = "angels-iron-slag",      has_base_recipe = true,  has_smelting = true},
-    {name = "angels-copper-pebbles", has_base_recipe = true,  has_smelting = true},
-    {name = "angels-copper-nugget",  has_base_recipe = true,  has_smelting = true},
-    {name = "angels-copper-slag",    has_base_recipe = true,  has_smelting = true}
+    "angels-plutonium-239",
+    "angels-thorium-232",
+
+    -- ANGELS RESOURCE REFINING
+    "angels-stone-from-crushed-stone",
+    "angels-iron-pebbles",
+    "angels-iron-nugget",
+    "angels-iron-slag",
+    "angels-copper-pebbles",
+    "angels-copper-nugget",
+    "angels-copper-slag",
+
+    -- ANGELS METALLURGY SMELTING
+    "angels-lead-ore",
+    "angels-tin-ore",
+    "angels-quartz",
+    "angels-nickel-ore",
+    "angels-bauxite-ore",
+    "angels-zinc-ore",
+    "angels-silver-ore",
+    "angels-rutile-ore",
+    "angels-gold-ore",
+    "angels-tungsten-ore",
+    "angels-solder-mixture",
+
+    -- ANGELS METALLURGY CASTING
+    "angels-rod-stack-iron",
+    "angels-rod-stack-iron-2",
+    "angels-rod-iron-2",
+    "angels-rod-stack-steel",
+    "angels-rod-stack-steel-2",
+    "angels-rod-steel-2",
+    "angels-mold-expendable",
+    "angels-mold-non-expendable",
+    "angels-mold-non-expendable-wash",
+    "angels-motor-casing-0",
+    "angels-spent-mold-non-expendable",
+    "angels-casting-powder-tungsten",
+    "angels-casting-powder-tungsten-2",
+    "angels-casing-resin-mold",
+    "angels-plate-glass-2",
+    "angels-plate-glass-3",
+    "angels-liquid-molten-solder-4",
+
+    -- ANGELS WATER TREATMENT
+    "angels-solid-salt-dissolving",
+
+    -- ANGELS BIOPROCESSING
+    "angels-liquid-polluted-fish-atmosphere-raw-meat",
+    "angels-alien-fish-0-raw",
+    "angels-angels-liquid-polluted-fish-atmosphere-raw-meat",
+    "angels-crystal-splinter-cutting",
+    "angels-crystal-shard-cutting",
+    "angels-crystal-full-cutting"
 }
-for _, item in ipairs(angels_resources) do
-    local name = item.name
-
-    data_item[name] = nil
-    data_recipe[name .. _recycling] = nil
-
-    if item.has_base_recipe then
-        data_recipe[name] = nil
-    end
-
-    if item.has_smelting then
-        data_recipe[name .. _smelting] = nil
-    end
-
-    if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-end
-
--- ANGELS METALLURGY SMELTING
-local angels_ores =
-{
-    {name = "angels-lead-ore",        is_ore = true},
-    {name = "angels-tin-ore",         is_ore = true},
-    {name = "angels-quartz",          is_ore = true},
-    {name = "angels-nickel-ore",      is_ore = true},
-    {name = "angels-bauxite-ore",     is_ore = true},
-    {name = "angels-zinc-ore",        is_ore = true},
-    {name = "angels-silver-ore",      is_ore = true},
-    {name = "angels-rutile-ore",      is_ore = true},
-    {name = "angels-gold-ore",        is_ore = true},
-    {name = "angels-cobalt-ore",      is_ore = true},
-    {name = "angels-tungsten-ore",    is_ore = true},
-
-    {name = "angels-powder-tungsten", is_ore = false, has_item = false},
-
-    {name = "angels-solder-mixture",  is_ore = false, has_item = true, has_base_recipe = true, has_smelting = true}
-}
-for _, item in ipairs(angels_ores) do
-    local name = item.name
-
-    data_recipe[name .. _recycling] = nil
-
-    if mods[panglia_mods] then 
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-
-    if item.is_ore then
-        data_item[name] = nil
-    else
-        if item.has_item then        data_item[name] = nil end
-        if item.has_base_recipe then data_recipe[name] = nil end
-        if item.has_smelting then    data_recipe[name .. _smelting] = nil end
-    end
-end
-
--- ANGELS METALLURGY CASTING
-local angels_plates_and_molds =
-{
-    {name = "angels-rod-stack-iron",            has_base = true, extra_recipe = "angels-rod-stack-iron-2"},
-    {name = "angels-rod-stack-steel",           has_base = true, extra_recipe = "angels-rod-stack-steel-2"},
-
-    {name = "angels-plate-steel",               has_base = false},
-    {name = "angels-plate-lead",                has_base = false},
-    {name = "angels-plate-tin",                 has_base = false},
-    {name = "angels-silicon-wafer",             has_base = false},
-    {name = "angels-plate-nickel",              has_base = false},
-    {name = "angels-plate-aluminium",           has_base = false},
-    {name = "angels-plate-zinc",                has_base = false},
-    {name = "angels-plate-silver",              has_base = false},
-    {name = "angels-plate-titanium",            has_base = false},
-    {name = "angels-plate-gold",                has_base = false},
-    {name = "angels-plate-tungsten",            has_base = false},
-    {name = "angels-plate-glass",               has_base = false},
-    {name = "angels-solder",                    has_base = false},
-    {name = "angels-motor-casing-0",            has_base = false},
-
-    {name = "angels-mold-expendable",           has_base = true},
-    {name = "angels-mold-non-expendable",       has_base = true, extra_recipe = "angels-mold-non-expendable-wash"},
-    {name = "angels-spent-mold-non-expendable", has_base = false},
-    {name = "angels-casting-powder-tungsten",   has_base = true, extra_recipe = "angels-casting-powder-tungsten-2"},
-}
-for _, item in ipairs(angels_plates_and_molds) do
-    local name = item.name
-
-    data_item[name] = nil
-    data_recipe[name .. _recycling] = nil
-
-    if item.has_base then
-        data_recipe[name] = nil
-    end
-
-    if item.extra_recipe then
-        data_recipe[item.extra_recipe] = nil
-    end
-
-    if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-end
-
-data_recipe["angels-rod-iron-2"] = nil
-
-data_recipe["angels-rod-steel-2"] = nil
-
-data_recipe["angels-casing-resin-mold"] = nil
-
-data_recipe["angels-plate-glass-2"] = nil
-data_recipe["angels-plate-glass-3"] = nil
-
-data_recipe["angels-liquid-molten-solder-4"] = nil
+TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 if settings.startup[setting_early_sintering_oven].value == false then
-    local sintering_ovens =
+    local delete_prototypes =
     {
         sintering_oven_1,
         sintering_oven_2,
-        sintering_oven_3
+        sintering_oven_3,
+        tech_powder_metallurgy_1
     }
-    for _, BUILD in pairs(sintering_ovens) do
-        data_item[BUILD] = nil
-        data_recipe[BUILD] = nil
-        data_recipe[BUILD .. _recycling] = nil
-        if mods[panglia_mods] then
-            data_recipe[item_ .. BUILD .. _panglia_crushing] = nil
-        end
-        data_assembling[BUILD] = nil
-    end
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 
-    data_technology[tech_powder_metallurgy_1] = nil
     data_technology[tech_powder_metallurgy_2].prerequisites = {tech_metallurgy_2}
     data_technology[tech_powder_metallurgy_2].effects =
     {
@@ -182,63 +115,13 @@ if settings.startup[setting_early_sintering_oven].value == false then
     }
 end
 
--- ANGELS WATER TREATMENT
-data_recipe["angels-solid-salt-dissolving"] = nil
-
--- ANGELS PETROCHEM REFINING
-local angels_solids =
-{
-    "angels-solid-resin",
-    "angels-solid-rubber"
-}
-for _, name in ipairs(angels_solids) do
-    data_item[name] = nil
-    data_recipe[name .. _recycling] = nil
-
-    if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-end
-
-
--- ANGELS BIOPROCESSING
-local angels_standalone_recipes =
-{
-    "angels-tree-seed-recycling",
-    "angels-liquid-polluted-fish-atmosphere-raw-meat",
-    "angels-alien-fish-0-raw",
-    "angels-angels-liquid-polluted-fish-atmosphere-raw-meat",
-    "angels-crystal-splinter-cutting",
-    "angels-crystal-shard-cutting",
-    "angels-crystal-full-cutting"
-}
-for _, recipe_name in ipairs(angels_standalone_recipes) do
-    data_recipe[recipe_name] = nil
-end
-
--- VOIDS
-local angels_voids =
-{
-    "angels-chemical-void",
-    "angels-water-void"
-}
-for _, name in ipairs(angels_voids) do
-    data_item[name] = nil
-    data_recipe[name .. _recycling] = nil
-
-    if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-end
-
-
 -- REPLACEMENT RECIPE (FLUID --> ITEM)
 local polyethylene_angels = "angels-liquid-polyethylene"
 local phenol_angels = "angels-liquid-phenol"
 local bisphenol_a_angels = "angels-liquid-bisphenol-a"
 local cellulose_acetate_mixture = "angels-liquid-cellulose-acetate-mixture"
 local cellulose_acetate = "angels-liquid-cellulose-acetate"
-local replacements_2 =
+local replacements_fluid_item =
 {
 	[polyethylene_angels] = polyethylene,
 	[phenol_angels] = phenol,
@@ -270,8 +153,8 @@ local function replace_fluid_in_table(item_table)
             end
 
             -- Если имя успешно определено как строка, проверяем замену
-            if current_name and replacements_2[current_name] then
-                local target_replacement = replacements_2[current_name]
+            if current_name and replacements_fluid_item[current_name] then
+                local target_replacement = replacements_fluid_item[current_name]
                 local new_amount = math.ceil(old_amount / 10)
 
                 if is_dictionary then
@@ -300,7 +183,7 @@ end
 for _, technology in pairs(data_technology or {}) do
     for _, effect in pairs(technology.effects or {}) do
         if effect.type == unlock_recipe then
-            local replace = replacements_2[effect.recipe]
+            local replace = replacements_fluid_item[effect.recipe]
             if replace then
                 effect.recipe = replace
             end
@@ -309,7 +192,7 @@ for _, technology in pairs(data_technology or {}) do
 end
 
 -- Шаг 3. Полное удаление старых жидкостей и рецептов
-for old_name, _ in pairs(replacements_2) do
+for old_name, _ in pairs(replacements_fluid_item) do
     data_fluid[old_name] = nil
     data_recipe[old_name] = nil
 end
@@ -323,7 +206,7 @@ local platinum_ore_smelting = "angels-platinum-ore-smelting"
 local processed_platinum_smelting = "angels-processed-platinum-smelting"
 local solid_ammonium_chloroplatinate_smelting = "angels-solid-ammonium-chloroplatinate-smelting"
 --local 
-local replacements_3 =
+local replacements_recipe_item =
 {
 	[platinum_ore_processing] = platinum_processed,
 	[platinum_processed_processing] = platinum_pellet,
@@ -338,7 +221,7 @@ for _, technology in pairs(data_technology or {}) do
 	if technology.effects then
 		for _, effect in pairs(technology.effects) do
 			if effect.type == unlock_recipe then
-				local replace = replacements_3[effect.recipe]
+				local replace = replacements_recipe_item[effect.recipe]
 				if replace then
 					effect.recipe = replace
 				end

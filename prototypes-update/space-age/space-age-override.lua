@@ -101,6 +101,20 @@ if mods[muria_mods] then
     }
 end
 
+if mods[pelagos_mods] then
+    rocket_part_pelagos = "pelagos-rocket-part"
+    data_recipe[rocket_part_pelagos].icons = R_P_I(rocket_part, planet_pelagos)
+    data_recipe[rocket_part_pelagos].order = b .. "-" .. data_planet[planet_pelagos].order
+    data_recipe[rocket_part_pelagos].energy_required = 4
+    data_recipe[rocket_part_pelagos].ingredients =
+    {
+        {type = item, name = advanced_processing_unit, amount = 2},
+        {type = item, name = titanium_plate_bob, amount = 2},
+        {type = item, name = coconut_sealant, amount = 2},
+        {type = fluid, name = ethanol_angels, amount = 240}
+    }
+end
+
 data_item[cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
 data_recipe[cargo_landing_pad].order = d .. "[" .. cargo_landing_pad .. "]"
 data_recipe[cargo_landing_pad].energy_required = 32

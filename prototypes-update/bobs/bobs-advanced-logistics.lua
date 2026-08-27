@@ -64,7 +64,6 @@ data_recipe[programmable_speaker].ingredients =
     {type = item, name = iron_rod,           amount = 4}
 }
 
-local rail = "rail"
 data_rail_planner[rail].stack_size = 200
 
 local rail_ramp = "rail-ramp"

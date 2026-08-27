@@ -1,7 +1,7 @@
 if mods[corrundum_mods] then
 	local iron_sulfate_solution = "iron-sulfate-solution"
 	local copper_sulfate_solution = "copper-sulfate-solution"
-    local replacements =
+    local replace_prototypes =
     {
 		[sulfur_ore_mods] = sulfur,
 		[petroleum_gas] = methane_angels,
@@ -14,7 +14,7 @@ if mods[corrundum_mods] then
 		[iron_sulfate_solution] = iron_sulfate_II_solution,
 		[copper_sulfate_solution] = copper_sulfate_II_solution
     }
-	TIMSABA.functions.replace_duplicate_prototypes(replacements)
+	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
 	local delete_proto =
 	{
@@ -23,13 +23,7 @@ if mods[corrundum_mods] then
 		platinum_ore_mods,
 		platinum_plate_mods
 	}
-	for _, name in ipairs(delete_proto) do
-		data_item[name] = nil
-		data_recipe[name .. _recycling] = nil
-		if mods[panglia_mods] then
-			data_recipe[item_ .. name .. _panglia_crushing] = nil
-		end
-	end
+	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
 	local delete_prototypes =
 	{
@@ -73,5 +67,5 @@ if mods[corrundum_mods] then
 	if mods[maraxsis_mods] then
 		table.insert(delete_prototypes, "petrol-dehydrogenation-and-combustion")
 	end
-	TIMSABA.functions.delete_the_replaced_prototypes(delete_prototypes)
+	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

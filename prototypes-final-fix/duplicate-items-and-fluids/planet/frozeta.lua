@@ -3,7 +3,7 @@ if mods[secretas_frozeta_mods] then
     local efficiency_module_4_S = "efficiency-module-4-S"
     local productivity_module_4_S = "productivity-module-4-S"
     local quality_module_4_S = "quality-module-4-S"
-    local replacements =
+    local replace_prototypes =
     {
         [gold_ore_mods] = gold_ore_bob,
         [gold_plate_mods] = gold_plate_bob,
@@ -12,62 +12,23 @@ if mods[secretas_frozeta_mods] then
         [productivity_module_4_S] = productivity_module_8,
         [quality_module_4_S] = quality_module_8
     }
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    local mod_items =
+    local delete_prototypes =
 	{
 		speed_module_4_S,
 		efficiency_module_4_S,
 		productivity_module_4_S,
-		quality_module_4_S
+		quality_module_4_S,
+        "module-finale",
+        "gold-path",
+        gold_plate_mods .. _productivity,
+        "hyper-inserter",
+        "gold-heat-pipe",
+        "pentapod-egg-unrestricted",
+        "gold-railgun-turret",
+        "gold-plate-alt",
+        "golden-egg"
 	}
-	for _, name in ipairs(mod_items) do
-		data_module[name] = nil
-        data_recipe[name] = nil
-		data_recipe[name .. _recycling] = nil
-		if mods[panglia_mods] then
-			data_recipe[item_ .. name .. _panglia_crushing] = nil
-		end
-	end
-    data_technology["module-finale"] = nil
-
-    data_tile["gold-path"] = nil
-
-    data_technology[gold_plate_mods.. _productivity] = nil
-
-    local hyper_inserter = "hyper-inserter"
-    data_item[hyper_inserter] = nil
-    data_recipe[hyper_inserter] = nil
-    data_recipe[hyper_inserter .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. hyper_inserter .. _panglia_crushing] = nil
-    end
-    data_inserter[hyper_inserter] = nil
-    if mods[panglia_mods] then
-        data_inserter[hyper_inserter .. _panglia_fast_version] = nil
-    end
-    data_technology[hyper_inserter] = nil
-
-    local gold_heat_pipe = "gold-heat-pipe"
-    data_item[gold_heat_pipe] = nil
-    data_recipe[gold_heat_pipe] = nil
-    data_recipe[gold_heat_pipe .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. gold_heat_pipe .. _panglia_crushing] = nil
-    end
-    data_heat_pipe[gold_heat_pipe] = nil
-    data_technology[gold_heat_pipe] = nil
-
-    local pentapod_egg_unrestricted = "pentapod-egg-unrestricted"
-    data_recipe[pentapod_egg_unrestricted] = nil
-    data_technology[pentapod_egg_unrestricted] = nil
-
-    local gold_railgun_turret = "gold-railgun-turret"
-    data_item[gold_railgun_turret] = nil
-    data_recipe[gold_railgun_turret] = nil
-    data_ammo_turret[gold_railgun_turret] = nil
-    data_technology[gold_railgun_turret] = nil
-
-    data_recipe["gold-plate-alt"] = nil
-	data_recipe["golden-egg"] = nil
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

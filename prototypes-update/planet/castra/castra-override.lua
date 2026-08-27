@@ -1,6 +1,4 @@
 if mods[castra_mods] then
-    data_resource[uranium_ore].minable.required_fluid = sulfuric_acid_angels
-
     -- GUNPOWDER
     data_item[gunpowder].localised_description = show_formula and {chemical_formula, "KNO[font=default-tiny-bold]3[/font]SC"} or nil
     data_item[gunpowder].subgroup = is_gunpowder

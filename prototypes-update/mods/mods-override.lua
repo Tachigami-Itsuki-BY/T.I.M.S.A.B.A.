@@ -29,7 +29,6 @@ if mods[vulcanus_sulfuric_bacteria_mods] then
     }
     data_recipe[sulfuric_bacteria_filtering].results[1].probability = 0.03125
 
-    local sulfuric_bacteria_cultivation = "sulfuric-bacteria-cultivation"
     data_recipe[sulfuric_bacteria_cultivation].subgroup = is_vulcanus_sulfuric
     data_recipe[sulfuric_bacteria_cultivation].icons = STONKS_I(stonks_png, sulfuric_bacteria)
     data_recipe[sulfuric_bacteria_cultivation].order = a_d

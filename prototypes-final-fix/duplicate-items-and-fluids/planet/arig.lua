@@ -11,13 +11,7 @@ if mods[arig_mods] then
 		glass_arig,
 		raw_diamond_arig
 	}
-	for _, name in ipairs(delete_proto) do
-		data_item[name] = nil
-		data_recipe[name .. _recycling] = nil
-		if mods[panglia_mods] then
-			data_recipe[item_ .. name .. _panglia_crushing] = nil
-		end
-	end
+	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
 	local delete_prototypes =
 	{
@@ -26,5 +20,5 @@ if mods[arig_mods] then
 		"planetaris-lithium-brine-sifting",
 		"planetaris-lithium-plate"
 	}
-	TIMSABA.functions.delete_the_replaced_prototypes(delete_prototypes)
+	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

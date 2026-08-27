@@ -1,8 +1,9 @@
 if (mods[muluna_mods] or mods[shchierbin_mods]) and not mods[maraxsis_mods] then
-    local replacements = {[maraxsis_air] = compressed_air}
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
-    data_fluid[maraxsis_air] = nil
-    data_recipe[maraxsis_air] = nil
+    local replace_prototypes = {[maraxsis_air] = compressed_air}
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
+
+    local delete_prototypes = {maraxsis_air}
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 end
 
 if mods[castra_mods] or mods[corrundum_mods] or mods[shchierbin_mods] then
@@ -14,25 +15,13 @@ if mods[corrundum_mods] or mods[shchierbin_mods] then
 end
 
 if mods[secretas_frozeta_mods] or mods[nexus_mods] then
-    data_item[gold_ore_mods] = nil
-    data_recipe[gold_ore_mods.. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. gold_ore_mods.. _panglia_crushing] = nil
-	end
-
-    data_item[gold_plate_mods] = nil
-    data_recipe[gold_plate_mods.. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. gold_plate_mods.. _panglia_crushing] = nil
-	end
+    local delete_proto = {gold_ore_mods, gold_plate_mods}
+    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 end
 
 if mods[maraxsis_mods] or mods[moshine_mods] then
-    data_item[sand_mods] = nil
-    data_recipe[sand_mods.. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. sand_mods.. _panglia_crushing] = nil
-    end
+    local delete_proto = {sand_mods}
+    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 end
 
 if mods[maraxsis_mods] or mods[shchierbin_mods] then
@@ -40,20 +29,13 @@ if mods[maraxsis_mods] or mods[shchierbin_mods] then
 end
 
 if mods[maraxsis_mods] or mods[shchierbin_mods] then
-    data_item[salt_mods] = nil
-    data_recipe[salt_mods] = nil
-    data_recipe[salt_mods.. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. salt_mods.. _panglia_crushing] = nil
-	end
+    local delete_prototypes = {salt_mods}
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 end
 
 if mods[moshine_mods] or mods[muluna_mods] then
-    data_item[silicon_carbide_mods] = nil
-    data_recipe[silicon_carbide_mods.. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. silicon_carbide_mods.. _panglia_crushing] = nil
-	end
+    local delete_proto = {silicon_carbide_mods}
+    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 end
 
 if mods[muluna_mods] or mods[corrundum_mods] or mods[shchierbin_mods] then
@@ -69,7 +51,6 @@ if mods[paracelsin_mods] or mods[shchierbin_mods] or mods[shattered_mods] then
 end
 
 if mods[muluna_mods] then
-    -- 1. Полностью вырезаем вольфрам из импорта (как и раньше)
     if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
         local spawn_imports = Muluna.constants.cargo_drop_spawn_imports
         for i = #spawn_imports, 1, -1 do
@@ -80,7 +61,6 @@ if mods[muluna_mods] then
         end
     end
 
-    -- 2. Перенаправляем золото и платину на аналоги Боба/Ангела
     if Muluna and Muluna.constants and Muluna.constants.names then
         if mods[corrundum_mods] then
             Muluna.constants.names[platinum_plate_mods] = platinum_plate

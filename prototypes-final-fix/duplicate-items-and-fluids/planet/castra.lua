@@ -6,14 +6,12 @@ if mods[castra_mods] then
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	local carbon_fiber_wall = "carbon-fiber-wall"
-	local energy_shield_mk3_equipment = "energy-shield-mk3-equipment"
 	local delete_prototypes =
 	{
 		nickel_plate_mods,
 		"lithium-battery",
-		carbon_fiber_wall,
-		energy_shield_mk3_equipment,
+		"carbon-fiber-wall",
+		"energy-shield-mk3-equipment",
 		"hydrogen-sulfide-carbon-extraction",
 		"nickel-extraction",
 		"battery-nickel",
@@ -24,9 +22,7 @@ if mods[castra_mods] then
 		"reverse-cracking",
 		"holmium-catalyzing",
 	}
-	TIMSABA.functions.delete_the_replaced_prototypes(delete_prototypes)
-	data_wall[carbon_fiber_wall] = nil
-	data_energy_shield_eq[energy_shield_mk3_equipment] = nil
+	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 	bobmods.lib.recipe.update_recycling_recipe
 	({

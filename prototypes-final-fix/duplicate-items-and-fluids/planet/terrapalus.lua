@@ -3,7 +3,7 @@ if mods[terrapalus_mods] then
     local palusium_refining = "palusium-refining"
     local palusium_processing = "palusium-processing"
     local palusium_liquefaction = "palusium-liquefaction"
-	local replacements_2 =
+	local replacements =
 	{
 		[palusium_crushing] = palusium_powder,
         [palusium_refining] = palusium_crystal,
@@ -14,7 +14,7 @@ if mods[terrapalus_mods] then
 		if technology.effects then
 			for _, effect in pairs(technology.effects) do
 				if effect.type == unlock_recipe then
-					local replace = replacements_2[effect.recipe]
+					local replace = replacements[effect.recipe]
 					if replace then
 						effect.recipe = replace
 					end

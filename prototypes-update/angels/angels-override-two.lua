@@ -262,6 +262,15 @@ data_recipe[gas_bottle].order = d
 data_recipe[gas_bottle].ingredients = {{type = item, name = steel_plate, amount = 2}}
 data_recipe[gas_bottle].results[1].amount = 1
 
+if mods[pelagos_mods] then
+    data_item[titanium_barrel].subgroup = is_barreling
+    data_item[titanium_barrel].order = d
+    data_item[titanium_barrel].stack_size = 200
+    data_recipe[titanium_barrel].subgroup = is_barreling
+    data_recipe[titanium_barrel].order = d
+    data_recipe[titanium_barrel].ingredients[1].amount = 4
+end
+
 -- ANGELS BIOPROCESSING NAUVIS
 local algae_farms =
 {

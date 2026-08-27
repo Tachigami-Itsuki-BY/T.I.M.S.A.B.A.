@@ -58,12 +58,16 @@ local function generate_self_recycling_recipe(info)
         }
     })
 end
+generate_self_recycling_recipe({name = barrel})
 if mods[muluna_mods] then
     generate_self_recycling_recipe({name = aluminium_pipe})
     generate_self_recycling_recipe({name = aluminium_pipe_to_ground})
 end
 if mods[arig_mods] then
     generate_self_recycling_recipe({name = hyper_loader_arig})
+end
+if mods[pelagos_mods] then
+    generate_self_recycling_recipe({name = titanium_barrel})
 end
 
 for name, recipe_name in pairs(data_recipe) do
@@ -78,6 +82,33 @@ for name, recipe_name in pairs(data_recipe) do
             recipe_name.icon = nil
         end
     end
+end
+
+data_recipe[barrel .. _recycling].results = {{type = item, name = steel_plate, amount_min = 0, amount_max = 1}}
+
+if mods[muluna_mods] then
+    data_recipe[aluminium_pipe .. _recycling].results = {{type = item, name = aluminium_plate_bob, amount_min = 0, amount_max = 1}}
+    data_recipe[aluminium_pipe_to_ground .. _recycling].results =
+    {
+        {type = item, name = aluminium_pipe, amount = 3},
+        {type = item, name = aluminium_plate_bob, amount_min = 0, amount_max = 1}
+    }
+end
+
+if mods[arig_mods] then
+    data_recipe[hyper_loader_arig .. _recycling].results =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 1},
+        {type = item, name = niobium_iron_bearing, amount = 1},
+        {type = item, name = advanced_processing_unit, amount = 1},
+        {type = item, name = niobium_titanium_plate, amount = 1},
+        {type = item, name = vulcanus_loader, amount_min = 0, amount_max = 1},
+        {type = item, name = hyper_underground_belt_arig, amount_min = 0, amount_max = 1}
+    }
+end
+
+if mods[pelagos_mods] then
+    data_recipe[titanium_barrel .. _recycling].results = {{type = item, name = titanium_plate_bob, amount = 1}}
 end
 
 local concrete_recipes =
@@ -140,28 +171,11 @@ if mods[tellus_mods] then
     table.insert(recycling_items, cyan_dye)
 end
 
+if mods[shchierbin_mods] then
+    table.insert(recycling_items, vanadium_oxide_V)
+end
+
 for _, name in ipairs(recycling_items) do
     data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, probability = 0.25}}
     data_recipe[name .. _recycling].main_product = ""
-end
-
-if mods[muluna_mods] then
-    data_recipe[aluminium_pipe .. _recycling].results = {{type = item, name = aluminium_plate_bob, amount_min = 0, amount_max = 1}}
-    data_recipe[aluminium_pipe_to_ground .. _recycling].results =
-    {
-        {type = item, name = aluminium_pipe, amount = 3},
-        {type = item, name = aluminium_plate_bob, amount_min = 0, amount_max = 1}
-    }
-end
-
-if mods[arig_mods] then
-    data_recipe[hyper_loader_arig .. _recycling].results =
-    {
-        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 1},
-        {type = item, name = niobium_iron_bearing, amount = 1},
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = niobium_titanium_plate, amount = 1},
-        {type = item, name = vulcanus_loader, amount_min = 0, amount_max = 1},
-        {type = item, name = hyper_underground_belt_arig, amount_min = 0, amount_max = 1}
-    }
 end

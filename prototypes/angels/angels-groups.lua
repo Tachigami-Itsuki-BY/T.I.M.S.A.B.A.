@@ -190,6 +190,7 @@ TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 
 
 -- BARRELING AND FLUID CONTROL
+local ig_fluid_control = "angels-fluid-control"
 is_pump = "is-pump"
 is_storage_tanks_2x = "is-storage-tanks-2x"
 is_storage_tanks_4x = "is-storage-tanks-4x"
@@ -200,20 +201,29 @@ is_canister = "is-canister"
 is_canister_empty = "is-canister-empty"
 is_bottle = "is-bottle"
 is_bottle_empty = "is-bottle-empty"
-TIMSABA.functions.create_subgroups("angels-fluid-control",
+TIMSABA.functions.create_subgroups(ig_fluid_control,
 {
     {name = is_pump,             order = c},
     {name = is_storage_tanks_2x, order = d},
     {name = is_storage_tanks_4x, order = e},
-    {name = is_barreling,        order = f},
-    {name = is_barrel,           order = x},
-    {name = is_barrel_empty,     order = x_a},
-    {name = is_canister,         order = y},
-    {name = is_canister_empty,   order = y_a},
-    {name = is_bottle,           order = z},
-    {name = is_bottle_empty,     order = z_a}
+    {name = is_barreling,        order = z},
+    {name = is_barrel,           order = z_a},
+    {name = is_barrel_empty,     order = z_a .. "-" .. a},
+    {name = is_canister,         order = z_b},
+    {name = is_canister_empty,   order = z_b .. "-" .. a},
+    {name = is_bottle,           order = z_c},
+    {name = is_bottle_empty,     order = z_c .. "-" .. a}
 })
 
+if mods[pelagos_mods] then
+    is_titanium_barrel = "is-titanium-barrel"
+    is_titanium_barrel_empty = "is-titanium-barrel-empty"
+    TIMSABA.functions.create_subgroups(ig_fluid_control,
+    {
+        {name = is_titanium_barrel, order = z_d},
+        {name = is_titanium_barrel_empty,  order = z_d .. "-" .. a}
+    })
+end
 
 -- ANGELS BIOPROCESSING NAUVIS
 ig_bio_processing_nauvis = "angels-bio-processing-nauvis"

@@ -32,7 +32,7 @@ if mods[muluna_mods] then
     data_recipe[stone_crushing].results = {{type = item, name = stone_crushed_angels, amount = 4}}
     data_recipe[stone_crushing].main_product = stone_crushed_angels
 
-    local landfill_stone_crushed = "landfill-stone-crushed"
+    landfill_stone_crushed = "landfill-stone-crushed"
     data_recipe[landfill_stone_crushed].subgroup = is_muluna_crushing
     data_recipe[landfill_stone_crushed].icons = TWO_I(stone_crushed_angels, landfill)
     data_recipe[landfill_stone_crushed].order = a_c
@@ -450,7 +450,7 @@ if mods[muluna_mods] then
     data_recipe[crude_oil_from_tar].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 
     -- RECIPE
-    local electric_engine_unit_from_carbon = "electric-engine-unit-from-carbon"
+    electric_engine_unit_from_carbon = "electric-engine-unit-from-carbon"
     data_recipe[electric_engine_unit_from_carbon].subgroup = is_muluna_recipe
     data_recipe[electric_engine_unit_from_carbon].icons = BUILDING_R_I(electric_engine_unit, carbon_angels)
     data_recipe[electric_engine_unit_from_carbon].order = a
@@ -871,7 +871,6 @@ if mods[muluna_mods] then
     data_assembling[crusher_2].energy_usage = 930 .. kW
     data_assembling[crusher_2].energy_source.drain = 30 .. kW
 
-    local cryolab = "cryolab"
     data_item[cryolab].subgroup = is_muluna_building
     data_item[cryolab].order = g
     data_item[cryolab].stack_size = 32
@@ -1176,6 +1175,15 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_muria].results[1].amount = 30
     end
 
+    if mods[pelagos_mods] then
+        local telescope_observation_pelagos = "muluna-telescope-observation-pelagos"
+        data_recipe[telescope_observation_pelagos].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_pelagos].icons = BUILDING_R_I(astronomical_data_muluna, planet_pelagos)
+        data_recipe[telescope_observation_pelagos].order = data_planet[planet_pelagos].order
+        data_recipe[telescope_observation_pelagos].energy_required = 4
+        data_recipe[telescope_observation_pelagos].results[1].amount = 30
+    end
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons
@@ -1222,18 +1230,18 @@ if mods[muluna_mods] then
 
     -- TECHNOLOGY
     data_technology[thruster_oxidizer].icons = nil
-    data_technology[thruster_oxidizer].icon = "__TIMSABA__/graphics/icons/muluna/thruster-oxidizer-technology.png"
+    data_technology[thruster_oxidizer].icon = "__TIMSABA__/graphics/icons/muluna/technology/thruster-oxidizer-technology.png"
     data_technology[thruster_oxidizer].icon_size = 256
 
     data_technology[thruster_fuel].icons = nil
-    data_technology[thruster_fuel].icon = "__TIMSABA__/graphics/icons/muluna/thruster-fuel-technology.png"
+    data_technology[thruster_fuel].icon = "__TIMSABA__/graphics/icons/muluna/technology/thruster-fuel-technology.png"
     data_technology[thruster_fuel].icon_size = 256
 
     local tech_oxygen = "muluna-oxygen"
     data_technology[tech_oxygen].icons =
     {
         {
-            icon = "__TIMSABA__/graphics/icons/muluna/molecule-oxygen.png",
+            icon = "__TIMSABA__/graphics/icons/muluna/technology/molecule-oxygen.png",
             icon_size = 256
         },
         {
@@ -1361,7 +1369,7 @@ if mods[muluna_mods] then
     }
 
     local tech_wood_gas_processing = "wood-gas-processing"
-    data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/wood-gas-processing.png"
+    data_technology[tech_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/technology/wood-gas-processing.png"
     data_technology[tech_wood_gas_processing].icon_size = 256
 
     local tech_alice_propellant = "muluna-alice-propellant"
@@ -1383,11 +1391,11 @@ if mods[muluna_mods] then
     data_technology[tech_alice_propellant].prerequisites = {tech_wood_gas_processing}
 
     local tech_advanced_wood_gas_processing = "advanced-wood-gas-processing"
-    data_technology[tech_advanced_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/advanced-wood-gas-processing.png"
+    data_technology[tech_advanced_wood_gas_processing].icon = "__TIMSABA__/graphics/icons/muluna/technology/advanced-wood-gas-processing.png"
     data_technology[tech_advanced_wood_gas_processing].icon_size = 256
 
     local tech_wood_gas_processing_to_crude_oil = "wood-gas-processing-to-crude-oil"
-    data_technology[tech_wood_gas_processing_to_crude_oil].icon = "__TIMSABA__/graphics/icons/muluna/wood-gas-processing-to-crude-oil.png"
+    data_technology[tech_wood_gas_processing_to_crude_oil].icon = "__TIMSABA__/graphics/icons/muluna/technology/wood-gas-processing-to-crude-oil.png"
     data_technology[tech_wood_gas_processing_to_crude_oil].icon_size = 256
 
     local function greenhouse_technology_icon(item_sprite,item_sprite_size)
@@ -1421,7 +1429,7 @@ if mods[muluna_mods] then
     table.insert(data_technology[crusher_2].prerequisites, tech_niobium_iron_processing)
 
     data_technology[vacuum_heating_tower].icons = nil
-    data_technology[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower-technology.png"
+    data_technology[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/technology/muluna-vacuum-heating-tower-technology.png"
     data_technology[vacuum_heating_tower].icon_size = 256
     table.insert(data_technology[vacuum_heating_tower].unit.ingredients, {utility_science_pack, 1})
 

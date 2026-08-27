@@ -806,6 +806,7 @@ if mods[shattered_mods] then
     end
 end
 
+-- MURIA
 if mods[muria_mods] then
     data_plant["metallic-lichen-colony"].minable.results =
     {
@@ -833,8 +834,74 @@ if mods[muria_mods] then
     data_entity["big-chloric-rock"].minable.results =
     {
         {type = item, name = stone, amount_min = 4, amount_max = 16},
-        {type = item, name = chlorine_salts, amount_min = 2, amount_max = 4},
+        {type = item, name = chlorine_salts, amount_min = 2, amount_max = 4}
     }
+end
+
+-- PELAGOS
+if mods[pelagos_mods] then
+    local offshore_oil = "offshore-oil"
+    data_resource[offshore_oil].minable.results[1].amount_min = 30
+    data_resource[offshore_oil].minable.results[1].amount_max = 30
+
+    data_resource[methane_mods].icon = util.table.deepcopy(data_fluid[methane_angels].icon)
+    data_resource[methane_mods].minable.results[1].amount_min = 30
+    data_resource[methane_mods].minable.results[1].amount_max = 30
+
+    data_resource[titanium_sludge].icon = util.table.deepcopy(data_fluid[titanium_sludge].icon)
+    data_resource[titanium_sludge].minable.results[1].amount_min = 30
+    data_resource[titanium_sludge].minable.results[1].amount_max = 30
+
+    local coconut_palm = "coconut-palm"
+    data_plant[coconut_palm].minable.results =
+    {
+        {type = item, name = coconut, amount = 8},
+        {type = item, name = wood, amount = 4},
+    }
+
+    data_entity["pelagos-big-rock"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 16, amount_max = 32},
+        {type = item, name = fermentation_bacteria, amount_min = 4, amount_max = 8},
+        {type = item, name = spoilage, amount_min = 2, amount_max = 4}
+    }
+
+    data_entity["pelagos-copper-stromatolite"].minable.results =
+    {
+        {type = item, name = stone, amount_min = 4, amount_max = 8},
+        {type = item, name = copper_ore, amount_min = 16, amount_max = 32}
+    }
+
+    local vanilla_resources = {iron_ore}
+    local angels_resources = {ore_saphirite, ore_jivolite}
+
+    local map_gen = data_planet[planet_pelagos].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_pelagos
+        end
+    end
 end
 
 -- MOONS

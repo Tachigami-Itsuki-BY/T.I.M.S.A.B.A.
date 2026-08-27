@@ -50,6 +50,7 @@ require("prototypes-update.planet.tellus.tellus-update-icon")
 require("prototypes-update.planet.corrundum.corrundum-override")
 require("prototypes-update.planet.shchierbin.shchierbin-override")
 require("prototypes-update.planet.muria.muria-override")
+require("prototypes-update.planet.pelagos.pelagos-override")
 
 -- THIRD CIRCLE PLANETS
 require("prototypes-update.space-age.aquilo.aquilo-override")

@@ -1,5 +1,5 @@
 if mods[hyarion_mods] then
-    local replacements =
+    local replace_prototypes =
     {
         [aluminium_hyarion] = aluminium_molten_angels,
         [raw_emerald_hyarion] = raw_emerald_bob,
@@ -11,12 +11,9 @@ if mods[hyarion_mods] then
         [polished_sapphire_hyarion] = polished_sapphire_bob,
 		[carbon_nanotube_hyarion] = carbon_nanotube
     }
-	TIMSABA.functions.replace_duplicate_prototypes(replacements)
+	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	data_fluid[aluminium_hyarion] = nil
-
-	local beryllium_wall = "planetaris-beryllium-coating"
-	local hyarion_items =
+	local delete_proto =
 	{
 		raw_emerald_hyarion,
 		raw_ruby_hyarion,
@@ -25,23 +22,18 @@ if mods[hyarion_mods] then
 		polished_emerald_hyarion,
 		polished_ruby_hyarion,
 		polished_sapphire_hyarion,
-		carbon_nanotube_hyarion,
-		beryllium_wall
+		carbon_nanotube_hyarion
 	}
-	for _, name in ipairs(hyarion_items) do
-		data_item[name] = nil
-		data_recipe[name .. _recycling] = nil
-		if mods[panglia_mods] then
-			data_recipe[item_ .. name .. _panglia_crushing] = nil
-		end
-		if name == beryllium_wall then
-			data_recipe[name] = nil
-			data_wall[name] = nil
-		end
-	end
+	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
-	data_recipe["planetaris-metallic-smelting"] = nil
-	data_recipe["planetaris-burner-drill-alternative"] = nil
-	data_recipe["planetaris-hyarion-rocket-silo"] = nil
-	data_recipe["planetaris-hyarion-cargo-landing-pad"] = nil
+	local delete_prototypes =
+	{
+		aluminium_hyarion,
+		"planetaris-beryllium-coating",
+		"planetaris-metallic-smelting",
+		"planetaris-burner-drill-alternative",
+		"planetaris-hyarion-rocket-silo",
+		"planetaris-hyarion-cargo-landing-pad"
+	}
+	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

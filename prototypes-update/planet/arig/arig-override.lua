@@ -146,7 +146,6 @@ if mods[arig_mods] then
     data_tile[sandstone_path].subgroup = is_arig_recipe
     data_tile[sandstone_path].order = d
 
-    local sandstone_foundation = "planetaris-sandstone-foundation"
     data_item[sandstone_foundation].subgroup = is_arig_recipe
     data_item[sandstone_foundation].order = e
     data_item[sandstone_foundation].stack_size = 200
@@ -187,7 +186,7 @@ if mods[arig_mods] then
     {
         {type = item, name = sulfur, amount = 2},
         {type = item, name = solid_fuel, amount = 8},
-        {type = item, name = fuel_oil_angels, amount = 15}
+        {type = fluid, name = fuel_oil_angels, amount = 15}
     }
     data_recipe[compression_rocket_fuel].results[1].amount = 2
     data_recipe[compression_rocket_fuel].surface_conditions = {{property = pressure, min = 600, max = 600}}
@@ -300,7 +299,7 @@ if mods[arig_mods] then
         {type = item, name = sandstone_brick, amount = 4}
     }
 
-    local compression_landfill = "planetaris-landfill-compression"
+    compression_landfill = "planetaris-landfill-compression"
     data_recipe[compression_landfill].subgroup = is_arig_recipe
     data_recipe[compression_landfill].icons = TWO_I(stone, landfill)
     data_recipe[compression_landfill].order = k_a
@@ -715,8 +714,8 @@ if mods[arig_mods] then
     data_recipe[arig_water_harvesting].energy_required = 16
     data_recipe[arig_water_harvesting].results[1].amount = 30
 
-    local hyarion_water_harvesting = "planetaris-hyarion-water-harvesting"
     if mods[hyarion_mods] then
+        local hyarion_water_harvesting = "planetaris-hyarion-water-harvesting"
         data_recipe[hyarion_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.hyarion"}}
         data_recipe[hyarion_water_harvesting].subgroup = is_arig_water_planets
         data_recipe[hyarion_water_harvesting].icons = BUILDING_R_I(water, planet_hyarion)
@@ -726,8 +725,8 @@ if mods[arig_mods] then
         data_recipe[hyarion_water_harvesting].results[1].amount = 15
     end
 
-    local tellus_water_harvesting = "planetaris-tellus-water-harvesting"
     if mods[tellus_mods] then
+        local tellus_water_harvesting = "planetaris-tellus-water-harvesting"
         data_recipe[tellus_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.tellus"}}
         data_recipe[tellus_water_harvesting].subgroup = is_arig_water_planets
         data_recipe[tellus_water_harvesting].icons = BUILDING_R_I(water_infected, planet_tellus)
@@ -737,8 +736,8 @@ if mods[arig_mods] then
         data_recipe[tellus_water_harvesting].results[1].amount = 480
     end
 
-    local muria_water_harvesting = "planetaris-muria-water-harvesting"
     if mods[muria_mods] then
+        local muria_water_harvesting = "planetaris-muria-water-harvesting"
         data_recipe[muria_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.muria"}}
         data_recipe[muria_water_harvesting].subgroup = is_arig_water_planets
         data_recipe[muria_water_harvesting].icons = BUILDING_R_I(water, planet_muria)
@@ -746,6 +745,17 @@ if mods[arig_mods] then
         data_recipe[muria_water_harvesting].enabled = true
         data_recipe[muria_water_harvesting].energy_required = 16
         data_recipe[muria_water_harvesting].results[1].amount = 60
+    end
+
+    if mods[pelagos_mods] then
+        local pelagos_water_harvesting = "planetaris-pelagos-water-harvesting"
+        data_recipe[pelagos_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.pelagos"}}
+        data_recipe[pelagos_water_harvesting].subgroup = is_arig_water_planets
+        data_recipe[pelagos_water_harvesting].icons = BUILDING_R_I(water, planet_pelagos)
+        data_recipe[pelagos_water_harvesting].order = data_planet[planet_pelagos].order
+        data_recipe[pelagos_water_harvesting].enabled = true
+        data_recipe[pelagos_water_harvesting].energy_required = 16
+        data_recipe[pelagos_water_harvesting].results[1].amount = 240
     end
 
     -- TECHNOLOGY

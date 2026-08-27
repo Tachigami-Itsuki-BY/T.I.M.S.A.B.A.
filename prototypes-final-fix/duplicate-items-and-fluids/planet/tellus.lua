@@ -1,68 +1,29 @@
 if mods[tellus_mods] then
-    local replacements =
+    local replace_prototypes =
     {
         [compost_tellus] = compost_angels
     }
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    data_item[compost_tellus] = nil
-    data_recipe[compost_tellus .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. compost_tellus .. _panglia_crushing] = nil
-    end
+    local delete_proto =
+	{
+		compost_tellus
+	}
+	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
-    data_recipe["planetaris-tellus-condensing-agricultural-tower"] = nil
-
-    local inserters =
+    local delete_prototypes =
     {
+        "planetaris-tellus-condensing-agricultural-tower",
         "planetaris-three-long-handed-inserter",
-        "planetaris-long-stack-inserter"
-    }
-    for _, name in pairs(inserters) do
-        data_item[name] = nil
-        data_recipe[name] = nil
-        data_recipe[name .. _recycling] = nil
-        if mods[panglia_mods] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
-        data_inserter[name] = nil
-        if mods[panglia_mods] then
-            data_inserter[name .. _panglia_fast_version] = nil
-        end
-
-        if data_technology[name] then
-            data_technology[name] = nil
-        end
-    end
-
-    local preservation_unit = "planetaris-preservation-unit"
-    data_item[preservation_unit] = nil
-    data_recipe[preservation_unit] = nil
-    data_recipe[preservation_unit .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. preservation_unit .. _panglia_crushing] = nil
-    end
-    data_furnace[preservation_unit] = nil
-
-    data_technology["planetaris-space-preservation"] = nil
-
-    local colored_pototypes =
-    {
+        "planetaris-long-stack-inserter",
+        "planetaris-preservation-unit",
+        "planetaris-space-preservation",
         "planetaris-acid-refined-concrete",
         "planetaris-pink-refined-concrete",
-        "planetaris-brown-refined-concrete"
+        "planetaris-brown-refined-concrete",
+        "tellus-transport-belt-capacity-3"
     }
-    for _, name in pairs(colored_pototypes) do
-        data_item[name] = nil
-        data_recipe[name] = nil
-        data_recipe[name .. _recycling] = nil
-        if mods[panglia_mods] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
-        data_tile[name] = nil
-    end
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 
     data_recipe["planetaris-tellus-rocket-silo"] = nil
-
-    data_technology["tellus-transport-belt-capacity-3"] = nil
 end

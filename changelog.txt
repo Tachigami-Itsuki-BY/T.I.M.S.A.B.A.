@@ -1,52 +1,43 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.14.0
+Date: 27.08.2026
+  Features:
+    - [Mods] Added support for Planet Pelagos: seamlessly integrated the new planet into the gameplay flow.
+
+  Bugfixes:
+    - [All] Fixed bugs that caused some recipes to disappear
+
+  Scripting:
+    - [All] Added new function delete_duplicated_prototypes for deleting prototypes. Removes only the item and the recycling recipe.
+
+  Modding:
+    - [Mods] Added "Planet Pelagos" mod to optional dependencies.
+    - [Mods] Added "Planet Foliax" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Planet Obsidiax" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Planet Crucible" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Planet Ribbonia" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [All] Improved compatibility with mods.
+---------------------------------------------------------------------------------------------------
 Version: 1.13.2
 Date: 23.08.2026
   Features:
-    - [All] Добавлена возможность вернуть бесконечные исследования через настройку модов.
-
     - [All] Added the ability to return infinite research through mod settings.
 
   Scripting:
-    - [All] В функцию replace_duplicate_prototypes добавлен новый параметр замены: spoil_result.
-    - [All] Добавлена новая функция delete_the_replaced_prototypes для удаление прототипов.
-
     - [All] Added to the replace_duplicate_prototypes function a new replacement parameter: spoil_result.
-    - [All] Added new function delete_the_replaced_prototypes for deleting prototypes.
+    - [All] Added new function delete_prototypes for deleting prototypes.
 
   Modding:
-    - [Mods] Добавлена обязательная зависимость для мода «Artisanal Reskins: Compatibility».
-
     - [Mods] Added required dependency for the "Artisanal Reskins: Compatibility" mod.
 ---------------------------------------------------------------------------------------------------
 Version: 1.13.1
 Date: 22.08.2026
   Bugfixes:
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Maraxsis» был отключен.
-
     - [Mods] Fixed a bug where the game with the mod would not load if the "Maraxsis" mod was disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.13.0
 Date: 21.08.2026
   Features:
-    - [Mods] Добавлена поддержка Planet Muria: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [All] Добавлены новые сущности:
-        Биопереработка Наувиса:
-          1. Генераторы Семян Деревьев Т2-Т4.
-          2. Арборетумы Т2-Т4.
-        Биопереработка овощей:
-          1. Фермы Т2-Т4.
-          2. Экстракторы Т2-Т4.
-          3. Компостеры Т2-Т4.
-          4. Биопроцессоры Т2-Т4.
-          5. Биопрессы Т2-Т4.
-        Биопереработка пришельцев:
-          1. Аквариумы Т2-Т4.
-          2. Бойни Т2-Т4.
-          3. Инкубаторы Т2-Т4.
-          4. Загоны для иглобрюхов Т2-Т4.
-          5. Загоны для кусак Т2-Т4.
-    - [All] Добавлены новые технологии.
-
     - [Mods] Added support for Planet Muria: seamlessly integrated the new planet into the gameplay flow.
     - [All] Added new entity:
         Bioprocessing Nauvis:
@@ -67,26 +58,9 @@ Date: 21.08.2026
     - [All] Added new tehnologies.
 
   Changes:
-    - [All] Удалён рецепт Часть Ракеты 2 и в рецепте Часть Ракеты 1 произведена замена ингредиента: Молибден-Рений → Медно-Вольфрам.
-
     - [All] Removed the Rocket Part 2 recipe and replaced an ingredient in the Rocket Part 1 recipe: Molybdenum-Rhenium → Copper-Tungsten.
 
   Balancing:
-    - [All] Скорректированы параметры у Генераторов Семян Деревьев Т1.
-    - [All] Скорректированы параметры у Арборетум Т1.
-    - [All] Скорректированы параметры у Ферм Т1.
-    - [All] Скорректированы параметры у Экстракторов Т1.
-    - [All] Скорректированы параметры у Компостера Т1.
-    - [All] Скорректированы параметры у Биопроцессора Т1.
-    - [All] Скорректированы параметры у Биопресса Т1.
-    - [All] Скорректированы параметры у Аквариума Т1.
-    - [All] Скорректированы параметры у Бойни Т1.
-    - [All] Скорректированы параметры у Инкубатора Т1.
-    - [All] Скорректированы параметры у Загона для иглобрюхов Т1.
-    - [All] Скорректированы параметры у Загона для кусак Т1.
-    - [All] Скорректированы ингредиенты у некоторых рецептов.
-    - [All] Скорректированы предварительные условия у некоторых технологий.
-
     - [All] Adjusted parameters for T1 Tree Seed Generators.
     - [All] Adjusted parameters for T1 Arboretum.
     - [All] Adjusted parameters for T1 Farms.
@@ -103,91 +77,47 @@ Date: 21.08.2026
     - [All] Adjusted prerequisites for some technologies.
 
   Locale:
-    - [All] Обновлена локализация.
-
     - [All] Updated localization.
 
   Modding:
-    - [Mods] Мод «Planet Muria» добавлен в опциональную зависимость.
-    - [Mods] Мод «Celestial Weather Additions» добавлен в опциональную зависимость.
-
     - [Mods] Added "Planet Muria" mod to optional dependencies.
     - [Mods] Added "Celestial Weather Additions" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.12.4
 Date: 19.08.2026
   Features:
-    - [Mods] Добавлен новый погрузчик: Погрузчик Вулкан.
-
     - [Mods] Added new loader: Vulcanus Loader.
 
   Bugfixes:
-    - [All] Исправлены незначительные ошибки.
-
     - [All] Fixed minor bugs.
 
   Balancing:
-    - [All] Скорректировано Минимальное и Максимальное потребление жидкости Ускорителей.
-
     - [All] Adjusted the Minimum and Maximum fluid consumption of Thrusters.
 
   Graphics:
-    - [Mods] Обновлена графика для Погрузчиков Т0-Т5.
-
     - [Mods] Updated graphics for T0-T5 Loaders.
 
   Modding:
-    - [Mods] Мод «Asphalt Roads Patched» добавлен в опциональную зависимость.
-
     - [Mods] Added "Asphalt Roads Patched" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.12.3
 Date: 18.08.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой рецепты Электродоменных Печей Т1-Т4 отсутствовали в соответствующих технологий.
-
     - [All] Fixed a bug where the recipes for Electric Blast Furnaces T1-T4 were missing from the corresponding technologies.
 
   Locale:
-    - [All] Исправлено некорректное отображение описаний зданий, добавленных TIMSABA.
-
     - [All] Fixed incorrect display of descriptions for buildings added by TIMSABA.
 ---------------------------------------------------------------------------------------------------
 Version: 1.12.2
 Date: 18.08.2026
   Features:
-    - [All] Добавлены новые сущности: Электродоменные Печи Т1-Т4.
-    - [All] Добавлены новые модули: Т6-Т8
-
     - [All] Added new entity: T1-T4 Electric Blast Furnace.
     - [All] Added new modules: T6-T8
 
   Changes:
-    - [Angel's Bioprocessing] Сельскохозяйственные Модули теперь настраиваются через Bob's Modules.
-
     - [Angel's Bioprocessing] Agricultural Modules are now configured via Bob's Modules.
 
   Balancing:
-    - [All] Скорректировано энергопотребление у следующих зданий:
-        Производство:
-          1. Центрифуги: увеличено в 2 раза.
-        Очистка ресурсов:
-          1. Рудо-очистительные Заводы: увеличено в 2 раза.
-          2. Электролитические Ячейки: увеличено в 2 раза.
-        Металлургия:
-          1. Прессы для Гранул: увеличено в 2 раза.
-          2. Смесители Порошков: уменьшено в 2 раза.
-          3. Химические печи: увеличено в 2 раза.
-          4. Индукционные Печи: увеличено в 4 раза.
-          5. Машины Непрерывного Литья: увеличено в 2 раза.
-          6. Печи для Спекания: увеличено в 4 раза.
-        Нефтехимическая очистка:
-          1. Продвинутые Химические Заводы: увеличено в 2 раза
-    - [All] У Доменных Печей увеличено загрязнение в 4 раза.
-    - [All] В рецептах Модулей Т5 уменьшено кол-во ингредиента: Схемы Модулей (8 ед.) → (4 ед.)
-    - [All] В рецептах Модулей время крафта стало общим: (32 сек.)
-    - [All] В рецептах Сельскохозяйственных Модулей скорректированы ингредиенты.
-
     - [All] Adjusted energy consumption for the following buildings:
         Production:
           1. Centrifuges: increased by 2x.
@@ -209,144 +139,84 @@ Date: 18.08.2026
     - [All] Adjusted ingredients in the Agricultural Module recipes.
 
   Graphics:
-    - [All] Обновлены иконки модулям и их технологиям.
-
     - [All] Updated icons for modules and their respective technologies.
 
   Modding:
-    - [Mods] Мод «Flow Configuration» добавлен в опциональную зависимость.
-
     - [Mods] Added "Flow Configuration" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.12.1
 Date: 17.08.2026
   Features:
-    - [Mods] Добавлена новая технология: Обработка Селена.
-
     - [Mods] Added new technology: Selenium Processing.
 
   Changes:
-    - [Hyarion] Рецепт Селениевого Порошка перенесён в технологию Обработка Селена. Теперь он связан с модом «Planetaris: Hyarion».
-
     - [Hyarion] Moved Selenium Powder recipe to Selenium Processing technology. It is now linked to the "Planetaris: Hyarion" mod.
 
   Bugfixes:
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Asteroid Belt» был включён без мода «Secretas&Frozeta».
-
     - [Mods] Fixed a bug where the game with the mod would not load if the "Asteroid Belt" mod was enabled without the "Secretas&Frozeta" mod.
 
   Balancing:
-    - [All] Небольшие правки в дереве технологий.
-
     - [All] Minor tweaks to the technology tree.
 ---------------------------------------------------------------------------------------------------
 Version: 1.12.0
 Date: 17.08.2026
   Features:
-    - [Mods] Добавлена поддержка Planet Vesta: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [All] Добавлены новые технологии продуктиваности для Электросхем, Продвинутых Электросхем и Продвинутых Процессоров.
-
     - [Mods] Added support for Planet Vesta: seamlessly integrated the new planet into the gameplay flow.
     - [All] Added new productivity technology for Electronic Circuit, Advanced Electronic Circuit, and Advanced Processing Unit.
 
   Balancing:
-    - [Aquilo] В рецептах Термоядерного Реактора и Генератора произведена замена ингердиента: Железобетон → Укреплённый графено-бетонный кирпич.
-    - [All] Скорректировано древо технологий.
-    - [Moshine] В рецепте Расплавленого Nd-Fe-B скорректированы ингредиенты.
-
     - [Aquilo] Replaced an ingredient in the Fusion Reactor and Generator recipes: Reinforced concrete → Reinforced graphene concrete brick.
     - [All] Adjusted technology tree.
     - [Moshine] Adjusted ingredients in the Nd-Fe-B molten recipe.
 
   Bugfixes:
-    - [Arig] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Planetaris: Arig» был включён без других модов на планеты.
-
     - [Arig] Fixed a bug where the game with the mod would not load if the "Planetaris: Arig" mod was enabled without other planet mods.
 
   Locale:
-    - [All] Обновлена локализация.
-
     - [All] Updated localization.
 
   Modding:
-    - [Mods] Мод «Planet Vesta» переведён в опциональную зависимость.
-
     - [Mods] Moved "Planet Vesta" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.3
 Date: 14.08.2026
   Features:
-    - [All] Добавлены рецепты заморозки и разморозки портящихся предметы. Множитель времени за которое они разморозятся можно настроить в настройках модов.
-
     - [All] Added freezing and defrosting recipes for perishable items. The defrost time multiplier can be adjusted in the mod settings.
 
   Changes:
-    - [Arig] Добавлена поддержка новой версии.
-
     - [Arig] Added support for the new version.
 
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Bob's Modules» был отключен.
-
     - [All] Fixed a bug where game with mod would not load if the "Bob's Modules" mod was disabled.
 
   Balancing:
-    - [Secretas&Frozeta] Скорректировано древо исследований модулей.
-
     - [Secretas&Frozeta] Adjusted the module research tree.
-
-  Locale:
-    - [Rus] Обновлена русская локализация.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.2
 Date: 13.08.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если аддон «Контроль Потоков (Новый)» был отключен.
-
     - [All] Fixed a bug where game with mod would not load if the "Flow Control (New)" addon was disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.1
 Date: 13.08.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если Паучок из мода «Spidertron Patrols» был отключен.
-
     - [All] Fixed a bug where game with mod would not load if Spiderling from the "Spidertron Patrols" mod was disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.11.0
 Date: 13.08.2026
   Features:
-    - [Mods] Добавлена поддержка Maraxsis: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Addons] Весь функционал мода «Flow Control» теперь встроен напрямую в модпак. Добавлена поддержка всех труб. Аддон «Контроль Потоков (Новый)» может быть включен/отключен в настройках мода.
-    - [Muluna] Добавлены Алюминиевые Трубы.
-
     - [Mods] Added support for Maraxsis: seamlessly integrated the new planet into the gameplay flow.
     - [Addons] All the functionality of the "Flow Control" mod is now integrated directly into the modpack. Added support for all pipes. Addon "Flow Control (New)" can be enabled/disabled in the mod settings.
     - [Muluna] Added Aluminium Pipes.
 
   Changes:
-    - [All] Некоторые настройки модов были скрыты т.к. они не работают.
-
     - [All] Some mod settings have been hidden because they don't work.
 
   Bugfixes:
-    - [All] Исправлена ошибка в рецептах Солнечной Панели Т4 и Большой Солнечной Панели Т4, из-за которой вместо Солнечной Панели Т3 и Большой Солнечной Панели Т3 требовалась Маленькая Солнечная Панель Т3.
-    - [All] Исправлены незначительные ошибки.
-
     - [All] Fixed a bug in the recipes for the T4 Solar Panel and T4 Large Solar Panel, due to which a T3 Small Solar Panel was required instead of T3 Solar Panel and T3 Large Solar Panel.
     - [All] Fixed minor bugs.
 
   Balancing:
-    - [Paracelsin] Объём Оцинкованной Цистерны увеличен: (64000 ед.) → (96000 ед.)
-    - [Moshine] В рецепте Оптоволокна произведена замена ингредиента: Стекло → Стекловолокно
-    - [Bob's Assembling machines] Удалены Автоматы для Сборки Электроники.
-    - [Bob's Assembling machines] Удалён Твёрдотопливный Сборочный Автомат.
-    - [Bob's Assembling machines] Удалены Жидкотопливные Печи.
-    - [Bob's Mining] Удалены Насосы для Добычи Воды.
-    - [Bob's Mining] Удалены Паровые Буровые Установки.
-    - [Bob's Modules] Удалены Божественные Модули.
-    - [All] Скорректирована cкорость Насосов, Помп и Клапанов на +/-20%.
-    - [All] Скорректированы объёмы всех Резервуаров на +/-20%
-
     - [Paracelsin] Increased capacity in the Galvanized Storage Tank: (64000 units) → (96000 units)
     - [Moshine] Replaced an ingredient in the Optical Cable recipe: Glass → Fiberglass
     - [Bob's Assembling machines] Removed Electronics Machine.
@@ -359,156 +229,92 @@ Date: 13.08.2026
     - [All] Adjusted volumes of all Storage Tanks by +/-20%.
 
   Graphics:
-    - [Paracelsin] Обновлена графика для Оцинкованной Логистики.
-    - [All] Добавлены и обновлены остатки для сущностей.
-
     - [Paracelsin] Updated graphics for Galvanized Logistics.
     - [All] Added and updated remnants for entities.
 
   Sounds:
-    - [All] Добавлены звуки для Шестерен, Шариков для Подшипников, Подшипников, Топливных Ячеек, Пластин и Проволок, а также для некоторых других предметов. (Инвентарь)
-
     - [All] Added sounds for Gear Wheels, Bearing Balls, Bearings, Fuel Cells, Plates and Wires, and also for some other items. (Inventory)
 
   Locale:
-    - [Rus] Обновлена русская локализация для мода «Helmod».
-    - [All] Обновлены название для двух жидкостей:
-        1. Раствор алюмогидрида лития в диэтиловом эфире → Раствор тетрагидридоалюминат(III) лития в диэтиловом эфире
-        2. Раствор алюмогидрида лития-галлия в диэтиловом эфире → Раствор тетрагидридогаллат(III) лития в диэтиловом эфире
-    - [Rus] Добавлена русская локализация в описание некоторых модов.
-
     - [All] Updated names for two fluids:
         1. Lithium aluminium hydride solution in diethyl ether → Lithium tetrahydridoaluminate(III) solution in diethyl ether
         2. Lithium gallium hydride solution in diethyl ether → Lithium tetrahydridogallate(III) solution in diethyl ether
 
   Modding:
-    - [Mods] Мод «Maraxsis» переведён в опциональную зависимость.
-    - [Mods] Мод «Flow Control» добавлен в список несовместимых.
-    - [Mods] Мод «Telogistics» добавлен в опциональную зависимость.
-
     - [Mods] Moved "Maraxsis" mod to optional dependencies.
     - [Mods] Added "Flow Control" mod to incompatible.
     - [Mods] Added "Telogistics" mod to optional dependencies.
 
   Other:
-    - [All] Спасибо игроку Vesper Wayfarer за предоставленные иконки для аддона Flow Control New.
-
     - [All] Thanks to Vesper Wayfarer for providing icons for the Flow Control New addon.
 ---------------------------------------------------------------------------------------------------
 Version: 1.10.1
 Date: 09.08.2026
   Changes:
-    - [All] Изменено соотношения предмета к жидкости с (1 к 15) на (1 к 16).
-
     - [All] Changed item to fluid ratio from (1 to 15) to (1 to 16).
 
   Bugfixes:
-    - [Secretas&Frozeta] Добавлена проверка на наличие мода Bob's Modules.
-
     - [Secretas&Frozeta] Added check for the presence of the Bob's Modules mod.
 
   Balancing:
-    - [Space Age] В рецепте Плавки Льда уменьшено кол-во результата: Вода (30 ед.) → (15 ед.)
-    - [Space Age] Рецепты Оксида Натрия из Оксидного астероида и Гидроксид Натрия (из Оксида Натрия) теперь доступны до посещения Вулкана, Глебы и Фульгоры.
-
     - [Space Age] Decreased results in the Ice Melting recipe: Water (30 units) → (15 units)
     - [Space Age] The recipes for Sodium Oxide from Oxide Asteroid and Sodium Hydroxide (from Sodium Oxide) are now available before visiting Vulcanus, Gleba, and Fulgora.
 ---------------------------------------------------------------------------------------------------
 Version: 1.10.0
 Date: 08.08.2026
   Features:
-    - [Mods] Добавлена поддержка Shchierbin: реализовано бесшовное внедрение новой планеты в игровой процесс.
-
     - [Mods] Added support for Shchierbin: seamlessly integrated the new planet into the gameplay flow.
 
   Changes:
-    - [Addons] Обновлена настройка «Ребаланс конвейеров и труб»: теперь она влияет только на фиксацию дальности подземных конвейеров и труб.
-    - [All] Теперь все конвейеры и трубы корректно настраиваются с помощью мода Bob's Logistics.
-    - [All] Базовые скорости логистики переведены со степеней двойки (8/16/32...) на ванильные значения (7.5/15/30...). Скорость крафта всех производственных зданий и теплотворность топлива также пропорционально скорректированы. Это полностью устраняет «дребезг» счетчиков и микро-зазоры на лентах, вызванные ограничениями игрового движка, сохраняя при этом все идеальные пропорции фабрик.
-
     - [Addons] Updated the "Rebalance Belts and Pipes" setting: it now only affects the maximum range lock for underground belts and pipes.
     - [All] All Belts and Pipes are now properly configurable through the Bob's Logistics mod.
     - [All] Logistic base speeds have been shifted from powers of two (8/16/32...) to tick-accurate values (7.5/15/30...). Processing speeds for all production buildings and fuel values have been proportionally adjusted. This completely eliminates fluctuating throughput counters and micro-gaps on belts caused by engine limitations, while fully preserving all perfect factory ratios.
 
   Graphics:
-    - [All] Обновлены иконки для Железных и Стальных Шестерен, Шариков для Подшипников и Подшипников.
-
     - [All] Updated icons for Iron and Steel Gear Wheels, Bearing Balls, and Bearings.
 
   Locale:
-    - [All] Небольшие правки в локализации.
-
     - [All] Minor adjustments to localization.
 
   Modding:
-    - [Mods] Мод «Shchierbin» переведён в опциональную зависимость.
-
     - [Mods] Moved "Shchierbin" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.9.0
 Date: 06.08.2026
   Features:
-    - [Mods] Добавлена поддержка Сastra Prime: реализовано бесшовное внедрение новой планеты в игровой процесс.
-
     - [Mods] Added support for Сastra Prime: seamlessly integrated the new planet into the gameplay flow.
 
   Changes:
-    - [All] Начиная с версии 1.9.0, модпак требует Bob's Mods 2.1.0+ и Angel's Mods 2.0.0+. Это необходимо для подготовки модпака к переходу на Factorio 2.1.
-
     - [All] Starting with version 1.9.0, the modpack requires Bob's Mods 2.1.0+ and Angel's Mods 2.0.0+. This is necessary to prepare the modpack for the transition to Factorio 2.1.
 
   Balancing:
-    - [Vulcanus] В рецептах Карбида Вольфрама и Вольфрамовой Пластины скорректированы ингредиенты и результат.
-    - [All] В рецептах Боевых Дронов скорректированы ингредиенты.
-
     - [Vulcanus] Adjusted ingredients and results in the Tungsten Carbide and Tungsten Plate recipes.
     - [All] Adjusted ingredients in the Battle Drones recipes.
 
   Locale:
-    - [All] Исправлены ошибки локализации.
-
     - [All] Fixed localization bugs.
 
   Modding:
-    - [Mods] Мод «Сastra Prime» переведён в опциональную зависимость.
-
     - [Mods] Moved "Сastra Prime" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.8.1
 Date: 04.08.2026
   Bugfixes:
-    - [Mods] Исправлена ​​критическая ошибка, возникающая при использовании следующих модов вместе: «Muluna, Moon of Nauvis», «Planet Paracelsin» и «Secretas&Frozeta».
-
     - [Mods] Fixed a critical bug that occurred when using the following mods together: "Muluna, Moon of Nauvis", "Planet Paracelsin" and "Secretas&Frozeta".
 ---------------------------------------------------------------------------------------------------
 Version: 1.8.0
 Date: 04.08.2026
   Features:
-    - [Mods] Добавлена поддержка Secretas&Frozeta: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Mods] Добавлена поддержка Terra Palus: реализовано бесшовное внедрение новой планеты в игровой процесс.
-
     - [Mods] Added support for Secretas&Frozeta: seamlessly integrated the new planet into the gameplay flow.
     - [Mods] Added support for Terra Palus: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлена ошибка в рецепте Платиновых Слитков, из-за которой вместо Фторводорода производился Хлороводород.
-
     - [All] Fixed a bug in the Platinum Ingots recipe that caused Hydrogen Chloride to be produced instead of Hydrogen Fluoride.
 
   Locale:
-    - [All] Исправлены ошибки локализации.
-
     - [All] Fixed localization bugs.
 
   Modding:
-    - [Mods] Мод «Secretas&Frozeta» переведён в опциональную зависимость.
-    - [Mods] Мод «Terra Palus» переведён в опциональную зависимость.
-    - [Mods] Мод «Planet Rubia» удалён из списка несовместимых.
-    - [Mods] Мод «Cubium» удалён из списка несовместимых.
-    - [Mods] Мод «Nexus Extended Promethium Endgame» удалён из списка несовместимых.
-    - [Mods] Мод «Castra» заменён на мод «Castra Prime».
-    - [Mods] Мод «Cargo bay inserters» удалён из списка опциональной зависимости.
-
     - [Mods] Moved "Secretas&Frozeta" mod to optional dependencies.
     - [Mods] Moved "Terra Palus" mod to optional dependencies.
     - [Mods] Removed "Planet Rubia" mod from the incompatible.
@@ -520,61 +326,36 @@ Date: 04.08.2026
 Version: 1.7.0
 Date: 31.07.2026
   Features:
-    - [Mods] Добавлена поддержка Corrundum: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Vulcanus] Добавлен новый рецепт Вольфрамового Порошка из Вольфрамовой Руды.
-    - [Paracelsin] Добавлен новый рецепт Цинкового Порошка из Цинковой Руды.
-
     - [Mods] Added support for Corrundum: seamlessly integrated the new planet into the gameplay flow.
     - [Vulcanus] Added new recipe for Tungsten Powder from Tungsten Ore.
     - [Paracelsin] Added new recipe for Zinc Powder from Zinc Ore.
 
   Bugfixes:
-    - [Mods] Исправлены незначительные ошибки.
-
     - [Mods] Fixed minor bugs.
 
   Balancing:
-    - [Vulcanus] В рецептах Карбида Вольфрама и Вольфрамовой Пластины произведена замена ингредиента: Вольфрамовая Руда (4 ед.) → Вольфрамовый Порошок (1 ед.)
-    - [Paracelsin] Восстановлен рецепт Цинковой Пластины.
-
     - [Vulcanus] Replaced an ingredient in the Tungsten Carbide and Tungsten Plate recipes: Tungsten Ore (4 units) → Tungsten Powder (1 unit)
     - [Paracelsin] Restored recipe for Zinc Plate.
 
   Graphics:
-    - [All] Обновлены иконки.
-
     - [All] Updated icons.
 
   Locale:
-    - [Rus] Обновлена русская локализация.
-
-    - [Eng] Updated english localization.
+    - [All] Updated localization.
 
   Scripting:
-    - [All] Улучшен скрипт, который удаляет рецепты из технологий, если в них используются несуществующие предметы или жидкости.
-
     - [All] Improved the script that removes recipes from technologis if they use non-existent items or fluids.
 
   Modding:
-    - [Mods] Мод «Corrundum» переведён в опциональную зависимость.
-
     - [Mods] Moved "Corrundum" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.1
 Date: 29.07.2026
   Bugfixes:
-    - [All] Исправлена критическая ошибка инициализации: теперь эффекты открытия рецептов «unlock-recipe» автоматически очищаются в технологиях, если сам рецепт был удален.
-    - [All] Исправлена ошибка, из-за которой нельзя было поставить скважину на планетах с высокой гравитацией.
-
     - [All] Fixed a critical initialization bug: now the effects of opening recipes "unlock-recipe" are automatically cleared in technologies if the recipe itself was removed.
     - [All] Fixed a bug that prevented the well from being placed on planets with high gravity.
 
   Balancing:
-    - [All] Для зданий из мода Angel's добавлен эффект замерзания на холодных планетах.
-    - [All] Логистика Т4 также получила эффект замерзания на холодных планетах.
-    - [Space] Добавлена возможность наполнять и опустошать Канистры Топливом и Окислителем для Ускорителя.
-    - [Aquilo] Скорректирован дальность полёта снарядов Рельсотрона.
-
     - [All] Added freezing effect on cold planets to buildings from Angel's mod.
     - [All] T4 logistics also received a freezing effect on cold planets.
     - [Space] Added the ability to fill and empty Сanisters with Fuel and Oxidizer for the Thruster.
@@ -583,48 +364,27 @@ Date: 29.07.2026
 Version: 1.6.0
 Date: 28.07.2026
   Features:
-    - [Mods] Добавлена поддержка Planet Paracelsin: реализовано бесшовное внедрение новой планеты в игровой процесс.
-
     - [Mods] Added support for Planet Paracelsin: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой рецепт Каменных Блоков (из Дроблёного Камня) был недоступен.
-    - [Hyarion] Исправлена ошибка, из-за которой маршруты на Хайарион были недоступны.
-
     - [All] Fixed a bug where the Stone Blocks (from Crushed Stone) recipe was not available.
     - [Hyarion] Fixed a bug where routes to Hyarion were unavailable.
 
   Balancing:
-    - [All] В технологии Логистические Системы удалён из стоимости Космический Научный Пакет. (Если модификация Bob's Tech не включена)
-    - [All] В рецептах Бетона, Железабетона и Жидкого Бетона скорректированы ингредиенты.
-    - [All] В рецептах Кусков и Кристаллов увеличено кол-во входящих и выходящих ключевых предметов в 2 раза.
-
     - [All] Removed Space Science Pack from Logistics Systems technology cost. (if Bob's Tech mod is not enabled)
     - [All] Adjusted an ingredients in the Concrete, Reinforced Concrete, and Liquid Concrete recipes.
     - [All] Doubled the number of input and output key items in the Chunks and Crystals recipes.
 
   Graphics:
-    - [All] Обновлены иконки.
-
     - [All] Updated icons.
 
   Locale:
-    - [Rus] Обновлена русская локализация.
-
-    - [Eng] Updated english localization.
+    - [All] Updated localization.
 
   Scripting:
-    - [All] Рефакторизация инициализации данных с использованием функций API TIMSABA.
-
     - [All] Refactor data initialization using TIMSABA API functions.
 
   Modding:
-    - [Mods] Мод «Planet Paracelsin» переведён в опциональную зависимость.
-    - [All] Добавлены глобальные API «TIMSABA.barreling» и «TIMSABA.void», позволяющие другим модификациям регистрировать пользовательские жидкости.
-    - [All] Добавлены функции «TIMSABA.barreling.add_simple_fluid(name)», «TIMSABA.barreling.add_dangerous_fluid(name)», «TIMSABA.barreling.add_gas(name)», «TIMSABA.void.void_fluids(name)», «TIMSABA.void.void_gases(name)» и «TIMSABA.void.void_organics(name)».
-    - [All] Убраны почти все ограничители влияющие на настройку Конвейеров и Труб. (Чтобы настроить Конвейеры и Трубы через мод Bob's Logistics уберите галочку в настройках: Ребаланс Конвейеров и Труб)
-    - [All] Для моддеров: В файле «TIMSABA-functions», который лежит в папке «lib», вы можете найти глобальные функции которые можете использовать у себя если пишите аддоны для «TIMSABA».
-
     - [Mods] Moved "Planet Paracelsin" mod to optional dependencies.
     - [All] Added global API "TIMSABA.barreling" and "TIMSABA.void" to allow other mods to register custom fluids.
     - [All] Added functions "TIMSABA.barreling.add_simple_fluid(name)", "TIMSABA.barreling.add_dangerous_fluid(name)", "TIMSABA.barreling.add_gas(name)", "TIMSABA.void.void_fluids(name)", "TIMSABA.void.void_gases(name)", and "TIMSABA.void.void_organics(name)".
@@ -644,14 +404,6 @@ Date: 19.06.2026
     - [All] Fixed compatibility bugs with Bob's mods.
 
   Balancing:
-    - [Mods] Для всех Погрузчиков скорректировано потребление энергии, если соответствующая настройка включена.
-    - [All] Для всех Манипуляторов скорректировано потребление энергии, если соответствующая настройка включена.
-    - [All] Для Подземных Конвейеров Т0 и Т1 намертво закреплена максимальная длина 4 и 8.
-    - [All] Для всех Подземных Труб намертво закреплена максимальная длина 8/16/24/32/40/48.
-    - [Vulcanus] Скрыт рецепт Расплавленного Хрома из-за своей ненадобности.
-    - [Vulcanus] В рецепте Кусков Вольфрамита произведена замена результата: Шлак → Силикат Кальция.
-    - [Muluna] В рецепте Детали Ракеты произведена замена ингредиента: Молибден-Рений → Медно-Вольфрам.
-
     - [Mods] Adjusted energy consumption for all Loaders, if the corresponding setting is enabled.
     - [All] Adjusted energy consumption for all Inserters, if the corresponding setting is enabled.
     - [All] Maximum lengths for T0 and T1 Underground Belts are hardcoded to 4 and 8.
@@ -661,121 +413,71 @@ Date: 19.06.2026
     - [Muluna] Replaced an ingredient in the Rocket Part recipe: Molybdenum-Rhenium → Copper-Tungsten.
 
   Graphics:
-    - [All] Исправлено некорректное отображение иконок.
-
     - [All] Fixed incorrect display of icons.
 
   Locale:
-    - [All] Исправлены ошибки локализации.
-    - [Rus] Обновлена русская локализация.
-
     - [All] Fixed localization bugs.
 
   Modding:
-    - [Mods] Модпак стал более дружелюбный к модам которые не указаны в списке опциональной зависимости.
-    - [Mods] Мод «Loaders Modernized» удалён из списка опциональной зависимости.
-
     - [Mods] The modpack is now more mod-friendly towards mods not listed in optional dependencies.
     - [Mods] Removed "Loaders Modernized" mod from the optional dependency.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.3
 Date: 18.06.2026
   Features:
-    - [All] Добавлен новый рецепт: Стекло.
-
     - [All] Added new recipe: Glass.
 
   Bugfixes:
-    - [All] Исправлены незначительные ошибки.
-
     - [All] Fixed minor bugs.
 
   Balancing:
-    - [Mods] В рецепте Погрузчика Скат скорректированы ингредиенты.
-    - [All] В технологию Фонарь добавлено новое предварительное условие: Механическая очистка.
-
     - [Mods] Adjusted ingredients in the Skat Loader recipe.
     - [All] Added a new prerequisite for the Lamp technology: Mechanical refining.
 
   Locale:
-    - [Mods] Обновлена локализация для мода Loaders Modernized.
-    - [Rus] Обновлена русская локализация.
-
     - [Mods] Updated localization for the Loaders Modernized mod
 
   Modding:
-    - [Mods] Мод «Bob's Warfare» переведён в опциональную зависимость.
-    - [Mods] Мод «Electric Boiler» добавлен в список несовместимых.
-
     - [Mods] Moved "Bob's Warfare" mod to optional dependencies.
     - [Mods] Added "Electric Boiler" mod to incompatible.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.2
 Date: 17.06.2026
   Bugfixes:
-    - [All] Исправлены незначительные ошибки.
-    - [All] Исправлена ​​ошибка, препятствовавшая исследованию следующих технологий: Логистика 3 и Батарея 2.
-    - [All] Исправлена ​​ошибка, из-за которой процент порчи результата наследовался от ингредиента.
-
     - [All] Fixed minor bugs.
     - [All] Fixed a bug preventing research of the following technologies: Logistics 3 and Battery 2.
     - [All] Fixed a bug where the result would inherit the spoilage percentage from the ingredient.
 
   Balancing:
-    - [All] В рецепте Керамического Фильтра произведена замена ингредиента: Глинозём → Нитрид Кремния.
-    - [Tellus] В рецепте Выращивание Магниевых Бактерий скорректированы ингредиенты.
-    - [Hyarion] В рецепт Углеродной Нанотрубки добавлен результат: Водород.
-    - [Tellus] Удалена технология Вместимость конвейера 3.
-
     - [All] Replaced an ingredient in the Ceramic Filter recipe: Alumina → Silicon Nitride.
     - [Tellus] Adjusted results in the Cultivation Magnesium Bacteria recipe.
     - [Hyarion] Added a result in the Carbon Nanotube recipe: Hydrogen Gas.
     - [Tellus] Removed Belt Capacity 3 technology.
 
   Locale:
-    - [All] Небольшие правки в локализации.
-    - [Rus] Обновлена русская локализация.
-
     - [All] Minor adjustments to localization.
 
   Modding:
-    - [Mods] Добавлена настройка «Реальное сжигание» для мода «Flare Stack» в настройках модов (по умолчанию включена)
-    - [Mods] Мод «Bob's Enemies» переведён в опциональную зависимость.
-
     - [Mods] Added setting "Real incineration" for "Flare Stack" mod in the mods settings (enabled by default)
     - [Mods] Moved "Bob's Enemies" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.1
 Date: 16.06.2026
   Bugfixes:
-    - [All] Исправлена ​​критическая ошибка, которая могла привести к удалению рецептов, которые не должны были быть удалены.
-
     - [All] Fixed a critical bug that could cause recipes to be removed that should not have been removed.
 
   Locale:
-    - [All] Для упрощения поиска все файлы локализации разделены на подгруппы.
-
     - [All] To simplify the search, all localization files are divided into subgroups.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.0
 Date: 15.06.2026
   Features:
-    - [Mods] Добавлена поддержка Planetaris: Tellus: реализовано бесшовное внедрение новой планеты в игровой процесс.
-
     - [Mods] Added support for Planetaris: Tellus: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлены различные технические ошибки, связанные с совместимостью и настройками модов.
-
     - [All] Fixed various compatibility and mod settings technical bugs.
 
   Balancing:
-    - [All] В рецепте Ракетной Шахты произведена замена ингредиентов:
-        1. Молибден-Рений → Медно-Вольфрам.
-        2. Молибден → Вольфрам.
-        3. Рений → Карбид Вольфрама.
-    - [All] Скорректирован лут у некоторых сущностей.
-
     - [All] Replaced ingredients in the Rocket Silo recipe:
         1. Molybdenum-Rhenium → Copper-Tungsten.
         2. Molybdenum → Tungsten.
@@ -783,52 +485,32 @@ Date: 15.06.2026
     - [All] Adjusted loot for some entities.
 
   Locale:
-    - [All] Небольшие правки в локализации.
-
     - [All] Minor adjustments to localization.
 
   Modding:
-    - [Mods] Мод «Planetaris: Tellus» переведён в опциональную зависимость.
-
     - [Mods] Moved "Planetaris: Tellus" mod to optional dependencies.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.3
 Date: 11.06.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Muluna, Moon of Nauvis» был отключен.
-
     - [All] Fixed a bug where the modpack would not load if the "Muluna, Moon of Nauvis" mod was disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.2
 Date: 11.06.2026
   Features:
-    - [All] Добавлен новый рецепт: Деталь Ракеты.
-
     - [All] Added new recipe: Rocket Part.
 
   Balancing:
-    - [All] Небольшие правки в рецептах.
-    - [All] Небольшие правки в технологиях.
-    - [All] Переработаны рецепты: Детали Ракеты.
-    - [All] Переработана Персональная и Транспортная Экипировка.
-
     - [All] Minor adjustments to recipes.
     - [All] Minor adjustments to technologies.
     - [All] Rebalanced recipes: Rocket Parts.
     - [All] Rebalanced Personal and Vehicle Equipment.
 
   Scripting:
-    - [All] Добавлен код для автоматического добавления новых Топливных Категорий в Здания и Транспорт.
-    - [All] Добавлен код для автоматического Удаления каких либо Рецептов, если они ссылаются на ранее Удалённые Прототипы.
-
     - [All] Added code to automatically add new Fuel Categories to Buildings and Vehicles.
     - [All] Added code to automatically Delete any Recipes if they refer to a previously Removed Prototype.
 
   Modding:
-    - [Mods] Мод «Bob's Personal Equipment mod» переведён в опциональную зависимость.
-    - [Mods] Мод «Bob's Modules» переведён в опциональную зависимость.
-    - [Mods] Мод «Bob's Vehicle Equipment» переведён в опциональную зависимость.
-
     - [Mods] Moved "Bob's Personal Equipment mod" mod to optional dependencies.
     - [Mods] Moved "Bob's Modules" mod to optional dependencies.
     - [Mods] Moved "Bob's Vehicle Equipment" mod to optional dependencies.
@@ -841,92 +523,58 @@ Date: 10.06.2026
     - [All] Fixed a bug where the T1 Zinc Ingots recipe ingredients included Manganese Ingots instead of Magnesium Ingots.
 
   Locale:
-    - [All] Небольшие правки в локализации.
-
     - [All] Minor adjustments to localization.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
 Date: 10.06.2026
   Features:
-    - [Mods] Добавлена поддержка Planetaris: Hyarion: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [All] Добавлен новый предмет и рецепт: Селениевый порошок.
-
     - [Mods] Added support for Planetaris: Hyarion: seamlessly integrated the new planet into the gameplay flow.
     - [All] Added new item and recipe: Selenium powder.
 
   Bugfixes:
-    - [Addons] Исправлена ошибка, из-за которой игра с модом не загружалась, если аддон «Ранняя Печь для Спекания» было отключено.
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Panglia Planet» был отключено, а мод «Solar Productivity» был включен.
-
     - [Addons] Fixed a bug where game with mod would not load if the "Early Sintering Oven" addon was disabled.
     - [Mods] Fixed a bug where game with mod would not load if the "Panglia Planet" mod was disabled and the "Solar Productivity" mod was enabled.
 
   Balancing:
-    - [Moshine] У Солнечный Панелей на Гипер Ячейках и Аккумуляторов на Гипер Ячейках скорректированы энергетические параметры.
-    - [All] В рецепте Суперконденсатора удалён ингредиент: Продвинутый Процессор.
-
     - [Moshine] Adjusted energy parameters for the Hyper Cell Solar Panels and Hyper Cell Accumulators.
     - [All] Removed an ingredient in the Supercapacitor recipe: Advanced Processing Unit.
 
   Graphics:
-    - [All] Добавлены тени для Каменных, Керамических и Нитиноловых, труб и подземных труб.
-
     - [All] Added shadows for Stone, Ceramic and Nitinol pipes and pipes-to-ground.
 
   Locale:
-    - [Moshine] Небольшие правки в локализации.
-
     - [Moshine] Minor adjustments to localization.
 
   Modding:
-    - [Mods] Мод «Planetaris: Hyarion» переведён в опциональную зависимость.
-    - [Mods] Мод «Planetaris: Tellus» временно добавлен в список несовместимых.
-
     - [Mods] Moved "Planetaris: Hyarion" mod to optional dependencies.
     - [Mods] Temporarily added "Planetaris: Tellus" mod to incompatible.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.2
 Date: 08.06.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой игра с модом не загружалась, если аддон «Ранняя Печь для Спекания» было отключено, а мод «Panglia Planet» был включен.
-
     - [All] Fixed a bug where game with mod would not load if the "Early Sintering Oven" addon was disabled and the "Panglia Planet" mod was enabled.
 
   Balancing:
-    - [Moshine] AI Модули теперь имеют линейную прогрессию скорости, а не геометрическую.
-    - [Arig] В технологию Чистого Песка добавлено новое предварительное условие и новый научный пакет: Криогенный Научный Пакет.
-    - [Arig] Небольшие правки в стоимости технологий.
-
     - [Moshine] AI Modules now have a linear speed progression rather than a geometric one.
     - [Arig] Added a new prerequisite and a new science pack to the Pure Sand technology: Cryogenic Science Pack.
     - [Arig] Minor adjustments to technology costs.
 
   Graphics:
-    - [Arig] В рецепте Углерода обновлена иконка.
-
     - [Arig] Updated the icon for the Carbon recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.1
 Date: 07.06.2026
   Changes:
-    - [All] Скрыты рецепт Наполнения и Опустошения ёмкости из меню крафта игрока.
-
     - [All] Hidden recipes for Filling and Emptying containers in the player's crafting menu.
 
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой в рецепте Манипулятора Т1 вместо Базовой Печатной Платы требовалась Электросхема.
-
     - [All] Fixed a bug where the T1 Inserter recipe required a Electronic Circuit instead of a Basic Circuit Board.
 
   Balancing:
-    - [Arig] Обновлена ​​добыча с Сущностей на планете Ариг.
-
     - [Arig] Updated loot from Entities on planet Arig.
 
   Locale:
-    - [Rus] Переименованы рецепты: Переработка минеральной суспензии в __1__ и __2__ → Переработка минерального шлама в __1__ и __2__.
-
-    - [Eng] Renamed item and recipe: Advanced Circuit → Advanced Electronic Circuit.
+    - [All] Renamed item and recipe: Advanced Circuit → Advanced Electronic Circuit.
 
   Optimizations:
     - [All] Добавлена функция для автоматического упорядочивания рецептов.
@@ -936,23 +584,12 @@ Date: 07.06.2026
 Version: 1.3.0
 Date: 07.06.2026
   Features:
-    - [Mods] Добавлена поддержка Planetaris: Arig: реализовано бесшовное внедрение новой планеты в игровой процесс.
-
     - [Mods] Added support for Planetaris: Arig: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Исправлены незначительные ошибки, не влияющие на игровой процесс.
-
     - [All] Fixed minor bugs that did not affect gameplay.
 
   Balancing:
-    - [All] В рецептах Каменных Труб и Каменных Подземных Труб возвращён старый ингредиент: Каменный Кирпич.
-    - [All] Небольшие правки в рецептах.
-    - [All] Небольшие правки в технологиях.
-    - [All] Небольшие правки в сущностях.
-    - [All] Дерево технологий основано на модах «Bob's» версии 2.1.0 и выше, поэтому возможны различия.
-    - [Fulgora] В рецептах Переработки Ломов удалены результаты: Молибден и Рений.
-
     - [All] Returned old an ingredient in the Stone Pipe and Stone Pipe-to-Ground recipes: Stone Brick.
     - [All] Minor adjustments in the recipes.
     - [All] Minor adjustments in the technologies.
@@ -961,31 +598,17 @@ Date: 07.06.2026
     - [Fulgora] Removed results in the Scrap Recycling recipes: Molybdenum and Rhenium.
 
   Graphics:
-    - [All] Обновлены иконки для Логистика Вулкана.
-    - [All] Обновлены иконки для Латунного Шарика для Подшипника и Латунного Подшипника.
-
     - [All] Updated icons for Vulcanus Logistics.
     - [All] Updated icons for Brass Bearing Ball and Brass Bearing.
 
   Locale:
-    - [All] Переименована технология: Конвейер Вулкан → Логистика Вулкана.
-    - [Rus] Переименованы Предмет и Рецепт: Каменный блок → Каменный Кирпич.
-
     - [All] Renamed technology: Vulcanus Transport Belt → Vulcanus Logistics.
 
   Modding:
-    - [Mods] Новые версии модов «Bob's» и «Angel's» теперь корректно работают с «TIMSABA».
-    - [Mods] Мод «Planetaris: Arig» переведён в опциональную зависимость.
-
     - [Mods] New versions of the "Bob's" and "Angel's" mods now work properly with "TIMSABA".
     - [Mods] Moved "Planetaris: Arig" mod to optional dependencies.
 
   Other:
-    - [All] Модпак работает как на новых, так и на старых версиях BA!
-    - [All] Если вы обновили моды «Bob's» до версии 2.1.0 или выше: РЕКОМЕНДУЕТСЯ начать новую игру. К сожалению, я не могу повлиять на миграцию прототипов от модов «Bob's».
-    - [All] Тем, кто остался на более старых версиях модов, ничего не изменится.
-    - [All] Если вы заметите какие-либо незначительные ошибки, пожалуйста, сообщите мне об этом в Discord (сервер/личные сообщения) или на портале модов Factorio.
-
     - [All] The modpack works on both new and old versions of BA!
     - [All] If you have updated "Bob's" mods to 2.1.0 or higher: It is RECOMMENDED to start a new game. Unfortunately, I can't influence the migration of prototypes from "Bob's" mods.
     - [All] For those who stayed on older mods versions, nothing will change for you.
@@ -995,33 +618,14 @@ Date: 07.06.2026
 Version: 1.2.0
 Date: 03.06.2026
   Features:
-    - [Mods] Добавлена поддержка Panglia Planet: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Addons] Добавлены новые настройки баланса от Horogon.
-    - [All] Добавлено 3 рецепта Сортировки Дроблёного Камня.
-
     - [Mods] Added support for Panglia Planet: seamlessly integrated the new planet into the gameplay flow.
     - [Addons] Added new balance settings by Horogon.
     - [All] Added 3 Crushed Stone Sorting recipes.
 
   Changes:
-    - [All] Теперь предмет Калий создаётся без мода «Moshine».
-
     - [All] Now the item Potassium is created without the "Moshine" mod.
 
   Balancing:
-    - [All] Скорректирована стоимость исследования практически для всех технологий.
-    - [All] В рецепт Мелкокалиберной Турели Т1 добавлен новый ингредиент: Железный Подшипник.
-    - [All] У Мелкокалиберных и Артиллерийских Турелей скорректирован бонус урона:
-        1. Т1 0% → 25%.
-        2. Т2 25% → 50%.
-        3. Т3 50% → 75%.
-        4. Т4 75% → 100%.
-        5. Т5 100% → 125%.
-    - [All] В рецепт Мелкокалиберной Турели Т2 добавлен новый ингредиент: Стальной Подшипник.
-    - [All] В рецепт Снайперской Турели Т1 добавлен новый ингредиент: Железный Подшипник.
-    - [All] У Снайперской Турели Т3 уменьшен бонус урона: 3100% → 2400%.
-    - [Moshine] Удалена технология Переработка Калия 2.
-
     - [All] Adjusted research costs for almost all technologies.
     - [All] Added new an ingredient in the T1 Gun Turret recipe: Iron Bearing.
     - [All] Adjusted damage bonus for the Gun and Artillery Turrets:
@@ -1036,28 +640,15 @@ Date: 03.06.2026
     - [Moshine] Removed Potassium Processing 2 technology.
 
   Locale:
-    - [All] Изменено название предмета и рецепта: Фосфатная руда → Фторапатит.
-    - [All] Обновлена Русская локализация.
-    - [All] Обновлена Английская локализация.
-    - [All] Добавлена химическая формула для Камня и Дробленого Камня.
-
     - [All] Changed the name of the item and recipe: Phosphate Ore → Fluorapatite.
     - [All] Updated Russian localization.
     - [All] Updated English localization.
     - [All] Added chemical formula for Stone and Crushed Stone.
 
   Optimizations:
-    - [All] Была проведена незначительная оптимизация кода для повышения скорости загрузки игры.
-
     - [All] Performed minor code optimization to improve game loading speed.
 
   Modding:
-    - [Mods] Мод «Panglia Planet» переведён в опциональную зависимость.
-    - [Mods] Мод «Rocket-Silo Construction» добавлен в опциональную зависимость.
-    - [Mods] Мод «AAI Containers & Warehouses» удалён из списка несовместимых.
-    - [Mods] Мод «AAI Loaders» удалён из списка несовместимых.
-    - [Mods] Мод «Prismatic Belts» добавлен в опциональную зависимость.
-
     - [Mods] Moved "Panglia Planet" mod to optional dependencies.
     - [Mods] Added "Rocket-Silo Construction" mod to optional dependencies.
     - [Mods] Removed "AAI Containers & Warehouses" mod from incompatible.
@@ -1067,97 +658,50 @@ Date: 03.06.2026
 Version: 1.1.1
 Date: 31.05.2026
   Features:
-    - [Addons] Добавлены аддоны и настройки баланса от Horogon.
-
     - [Addons] Added addons and balance settings by Horogon.
 
   Balancing:
-    - [All] В рецепте Камень увеличено кол-во результата: Камень (2 ед.) → (8 ед.)
-    - [All] В рецепте Каменноугольной Смолы произведена замена результат: Жидкое Топливо → Фенол, Бензол и Водород.
-
     - [All] Increased a result in the Stone reciep: Stone (2 units) → (8 units)
     - [All] Replaced a result in the Coal Tar recipe: Liquid Fuel → Phenol, Benzene, and Hydrogne.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 30.05.2026
   Features:
-    - [Mods] Добавлена поддержка Moshine: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - [Nauvis] Добавлен рецепт Каменный Блок (из Дроблёного Камня).
-
     - [Mods] Added support for Moshine: seamlessly integrated the new planet into the gameplay flow.
     - [Nauvis] Added Stone Brick (from Crushed Stone) recipe.
 
   Bugfixes:
-    - [All] Исправлена ​​ошибка загрузки модов, вызывавшая сбой из-за несоответствия collision_mask на высокоуровневых буровых установках.
-
     - [All] Fixed mod loading crash caused by collision_mask mismatch on high-tier mining drills.
 
   Balancing:
-    - [All] Технологии Переработка Повеллита (3 и 4) перемещены на 1 научный пакет назад.
-    - [Moshine] В рецепте Прометиевого Научного Пакета произведена замена ингредиента: Кусок Прометиевого Астероида → Прометиевая Руда.
-    - [All] Меха-Броня получила усиление защитных характеристик для лучшего соответствия текущему балансу.
-    - [All] Пересмотрена стоимость всех технологии.
-
     - [All] Moved back by 1 science pack the Powellite Processing technologies (3 and 4).
     - [Moshine] Replaced an ingredient in the Promethium Science Pack recipe: Promethium Asteroid Chunk → Promethium Ore.
     - [All] Received Mecha Armor defensive stats buffs to better match current balance.
     - [All] Revised the cost of all technologies.
 
   Graphics:
-    - [Aquilo] Обновлены иконки для Антимонитовой Руды.
-    - [All] Обновлены иконки для некоторых технологий.
-
     - [Aquilo] Updated icons for Antimonite Ore.
     - [All] Updated icons for some technologies.
 
   Locale:
-    - [All] Исправлены отсутствующие названия рецептов.
-    - [All] Обновлена Русская локализация.
-
     - [All] Fixed missing recipe names.
     - [All] Updated Russian localization.
 
   Modding:
-    - [Mods] Мод «Moshine» переведён в опциональную зависимость.
-    - [Mods] Добавлены моды (Утилиты/Графические) которыми я пользуюсь в опциональные зависимости.
-
     - [Mods] Moved "Moshine" mod to optional dependencies.
     - [Mods] Added mods (Utilities/Graphics) that I use to optional dependencies.
 
   Other:
-    - [All] Добавлена ссылка на ДС сервер.
-
     - [All] Added link to DS server.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
 Date: 27.05.2026
   Features:
-    - [Vulcanus] Добавлен рецепт Литьё Титанового Стержня.
-    - [Vulcanus] Добавлен рецепт Литьё Железного Шарика для Подшипника.
-    - [Vulcanus] Добавлен рецепт Литьё Железного Подшипника.
-
     - [Vulcanus] Added recipe for Casting Titanium Rod.
     - [Vulcanus] Added recipe for Casting Iron Bearing Ball.
     - [Vulcanus] Added recipe for Casting Iron Bearing.
 
   Balancing:
-    - [Aquilo] Скрыты предметы и рецепты Порошка Сурьмы и Порошка Германия из-за своей ненадобности.
-    - [All] В рецептах Лазерной Турели Т4, Персональной Лазерной Защиты Т4 и Транспортной Лазерной Защиты Т4 произведена замена ингредиента: Литий-Ионный Аккумулятор → Серебряно-Цинковый Аккумулятор.
-    - [All] В рецептах Лазерной Турели Т5, Персональной Лазерной Защиты Т5-Т6 и Транспортной Лазерной Защиты Т5-Т6 произведена замена ингредиента: Серебряно-Цинковый Аккумулятор → Графеновый Аккумулятор.
-    - [All] В некоторых технологиях изменены предварительные условия.
-    - [Vulcanus] В рецептах Конвеера Вулканус, Подземного Конвеера Вулканус и Разделителя Вулканус скорректированы ингредиенты.
-    - [All] В рецепте Грузовой Посадочной Площадке произведена замена ингредиентов:
-        1. Стальная пластина → Молибден-Рениевая Пластина.
-        2. Бетон → Железобетон.
-    - [All] Для Станций Подзарядки Дронов скорректированы энергетические параметры.
-    - [All] В рецепте Тяжёлого Паукатрона произведена замена ингредиента: Ракетница → Ракетная Турель.
-    - [All] Для Ремкомплектов скорректирована прочность.
-    - [All] В Электрических Бурах и Насосных Установках уменьшено кол-во слотов для модулей. Перед обновлением, пожалуйста, соберите все модули.
-    - [All] Для Электропечей возращенно загрязнение.
-    - [All] В рецептах использованых топливных ячейках заменено производственное здание: Центрифуга → Продвинутый Химический Завод.
-    - [All] Скорректированы некоторые рецепты.
-    - [All] В рецептах Древесины возвращён результат: Пильное Полотно.
-
     - [Aquilo] Hidden the items and recipes for Antimony Powder and Germanium Powder as they are no longer needed.
     - [All] Replaced an ingredient in the T4 Laser Turret, Personal Laser Defense T4 and Vehicle Laser Defense T4 recipes: Lithium-ion Battery → Silver Zinc Battery.
     - [All] Replaced an ingredient in the T5 Laser Turret, Personal Laser Defense T5-T6 and Vehicle Laser Defense T5-T6 recipes: Silver Zinc Battery → Graphene Battery.
@@ -1176,46 +720,24 @@ Date: 27.05.2026
     - [All] Returned a result in the Woods recipes: Saw Blade.
 
   Locale:
-    - [All] Исправлены некоторые Английские названия.
-    - [All] Добавлена ​​полная Русская локализация модпака.
-    - [All] Скорректировано описание для некоторых Сущностей.
-    - [All] Исправлены некоторые Русские названия.
-
     - [All] Corrected some English names.
     - [All] Added full Russian localization of the modpack.
     - [All] Adjusted a description for some Entities.
     - [All] Corrected some Russians names.
 
   Scripting:
-    - [All] Модулиризовали обработку событий, чтобы избежать конфликтов при регистрации script.on_event.
-    - [All] Обновленны некототые симуляции в Факториопедии.
-
     - [All] Modularized script events handling to prevent script.on_event registration conflicts.
     - [All] Updated some simulations in Factoriopedia.
 
   Modding:
-    - [Mods] Мод «Productivity» удалён из списка несовместимых.
-
     - [Mods] Removed "Productivity" mod from incompatible.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 20.05.2026
   Features:
-    - [Muluna] Добавлено новое здание: Лесопилка.
-
     - [Muluna] Added new building: Lamber mill.
 
   Balancing:
-    - [Nauvis] Скрыты рецепты Расплавленного Марганца, Расплавленного Магния, Расплавленного Кобальта, Расплавленного Хрома и Порошка Никеля (Предмет и Рецепт) из-за своей ненадобности.
-    - [Aquilo] В рецепте Анилина произведена замена ингредиента: Порошок Никеля → Желтый Катализатор.
-    - [Muluna] В рецепте Обработка Дерева заменено производственное здание: Дробилка → Лесопилка.
-    - [Muluna] В рецепт Теплицы добавлен новый ингредиент: Базовая Печатная Плата.
-    - [Muluna] В технологии Раскопки Лунного Реголита произведена замена сущности: Электрический Бур (Копание) Т1 → Электрический Бур (Копание) Т5.
-    - [Muluna] В рецепте Ракетного Топлива ALICE скорректированы ингредиенты:
-        1. Лёд (4 ед.) → (8 ед.)
-        2. Вода (240 ед.) → (120 ед.)
-    - [All] Сбалансирован Твёрдотопливный Электрогенератор в соответствии с общим балансом модпака.
-
     - [Nauvis] Hidden the recipes for Molten Manganese, Molten Magnesium, Molten Cobalt, Molten Chromium and, Nickel Powder (Item and Recipe) as they are no longer needed.
     - [Aquilo] Replaced an ingredient in the Aniline recipe: Nickel Powder → Yellow Catalyst.
     - [Muluna] Changed production machine for Tree Processing recipe: Crusher → Lamber mill.
@@ -1227,32 +749,16 @@ Date: 20.05.2026
     - [All] Rebalanced the Burner Electric Generator to match the overall modpack balance.
 
   Bugfixes:
-    - [Muluna] Исправлена критическая ошибка при генерации планеты Мулуна, вызывавшая вылет игры из-за отсутствия предметов.
-    - [Muluna] Переработан состав и алгоритм распределения стартового груза на поверхности планеты для обеспечения стабильности сборки.
-    - [All] Исправлена ошибка, из-за которой нельзя было в Твёрдотопливный Электрогенератор положить твёрдое топливо.
-
     - [Muluna] Fixed a critical crash during Muluna planet generation caused by missing items.
     - [Muluna] Reworked the composition and distribution algorithm of the starting cargo on the planet surface to ensure modpack stability.
     - [All] Fixed a bug preventing Solid Fuel from being placed into the Burner Electric Generator.
 
   Graphics:
-    - [All] В рецепте Камня обновлена иконка.
-
     - [All] Updated the icon for the Stone recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 19.05.2026
   Balancing:
-    - [All] Изменены добываемые предметы и скорректированы шансы их выпадения для некоторых сущностей.
-    - [All] В рецептах Экстракции Семян скорректирован процент результатов.
-    - [Muluna] В рецепте Теплицы произведена замена ингредиента:
-        1. Молибден-Рений → Сталь.
-        2. Железобетон → Каменный Кирпич.
-    - [All] В рецепте Дроблёного Камня произведена замена ингредиента: Шлак → Камень.
-    - [All] В рецепте Камня заменено производственное здание: Дробилка Руды → Установка Сортировки Руды.
-    - [All] В рецепте Отсыпки Территории (Камень) добалвен новый ингредиент: Дроблёный Камень.
-    - [All] В рецепте Отсыпки Территории (Грязь) добалвен новый ингредиент: Дроблёный Камень.
-
     - [All] Changed mined items and adjusted their drop chances for some entities.
     - [All] Adjusted result chances in the Seed Extraction recipes.
     - [Muluna] Replaced an ingredient in the Greenhouse recipe:
@@ -1264,10 +770,6 @@ Date: 19.05.2026
     - [All] Added new an ingredient in the Landfill (Mud) recipe: Stone Crushed.
 
   Graphics:
-    - [All] В рецепте Камня обновлена иконка.
-    - [All] В рецепте Отсыпки Территории (Камень) обновлена иконка.
-    - [All] В рецепте Отсыпки Территории (Грязь) обновлена иконка.
-
     - [All] Updated the icon for the Stone recipe.
     - [All] Updated the icon for the Landfill (Stone) recipe.
     - [All] Updated the icon for the Landfill (Mud) recipe.
@@ -1275,25 +777,6 @@ Date: 19.05.2026
 Version: 1.0.5
 Date: 18.05.2026
   Balancing:
-    - [Sulfuric Bacteria] В рецептах Фильтрация Cернобактерий и Плавление Cернобактерий скорректирован процент результатов.
-    - [All] В рецептах Электрических Столбов Т1 произведена замена ингредиента: Меленький Электрический Столб → Железный Стержень.
-    - [Muluna] В рецептах Газификация Древесины уменьшен процент результата: Измельчённый Глинозем (75%) → (50%)
-    - [All] Рецепт Стального Стержня перенесён из технологии Обработки Стали в технологию Открытие Планеты Фульгора.
-    - [All] В некоторых технологиях изменены предварительные условия.
-    - [Muluna] В рецепте Дробилки 2 произведена замена ингредиента: Модуль Скорости 3 → Модуль Скорости 5.
-    - [Muluna] В рецепте Вакуумной Нагревательной Башни произведена замена ингредиента: Модуль Эффектиности 3 → Модуль Эффектиности 5.
-    - [Muluna] В рецепте Криолабы произведена замена ингредиента: Модуль Продуктивности 3 → Модуль Продуктивности 5.
-    - [Muluna] В рецепте Конденсаторной Турбины произведена замена ингредиента: Модуль Качества 3 → Модуль Качества 5.
-    - [All] Рецепт Каменноя Фильтрующей Печи теперь доступен по умолчанию.
-    - [Muluna] В рецепте Паровой Стальной Печи произведена замена ингредиента: Стальная Пластина → Стальная Труба.
-    - [Muluna] В рецепте Вакуумного Бойлера произведена замена ингредиентов:
-        1. Молибден-Рений → Сталь.
-        2. Бойлер Т5 → Бойлер Т1.
-    - [Muluna] У Вакуумного Бойлера уменьшена максимальное потребление: (10.8 МВт) → (1.8 МВт)
-    - [Muluna] В рецептах Улучшенное Кипячение Воды уменьшена температура Пара: (915 °C) → (165 °C)
-    - [Muluna] У Паровых Печей и Паровой Дробилки в 6 раз уменьшено максимальное потребление.
-    - [Muluna] В рецепте Дробление Камня уменьшено кол-во ингедиента: Камень (2 ед.) → (1 ед.)
-
     - [Sulfuric Bacteria] Adjusted result chances in the Sulfuric Bacteria Filtering and Sulfuric Bacteria Melting recipes
     - [All] Replaced an ingredient in T1 Electric Pole recipes: Small Electric Pole → Iron Rod.
     - [Muluna] Decreased a result chance in the Wood Gasification recipes: Crushed Alumina (75%) → (50%)
@@ -1314,153 +797,60 @@ Date: 18.05.2026
     - [Muluna] Decreased an ingredient in the Stone Crushing recipe: Stone (2 units) → (1 unit)
 
   Bugfixes:
-    - [All] Исправлена ​​ошибка, из-за которой Каменные Блоки нельзя было изготовить из Камня из-за конфликта рецептов с рецептом Каменной Трубы. (Спасибо Senpaiarham04 за то, что обратил на это внимание)
-
     - [All] Fixed a bug where Stone Bricks could not be crafted from Stone due to a recipe conflict with the Stone Pipe recipe. (Thanks to Senpaiarham04 for pointing this out)
 
   Graphics:
-    - [Muluna] В технологии Обработки Алюминия обновлена иконка.
-
     - [Muluna] Updated the icon for the Aluminum Processing technology.
 
   Locale:
-    - [Muluna] В технологии Обработки Анортита обновлено описание.
-
     - [Muluna] Updated the description for the Anorthite Processing technology.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 17.05.2026
   Bugfixes:
-    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружалась, если Конвейеры Т0 из мода «Bob's Logistics» были отключены.
-    - [Bob's Logistics] Исправлена ошибка, из-за которой игра с модом не загружалась, если Компонеты для Дронов из мода «Bob's Logistics» были отключены.
-    - [Bob's Power] Исправлена ошибка, из-за которой игра с модом не загружалась, если Электрические Столбы Т2-Т4 из мода «Bob's Power» были отключены.
-
     - [Bob's Logistics] Fixed a bug where game with mod would not load if the T0 Belts from "Bob's Logistics" mod were disabled.
     - [Bob's Logistics] Fixed a bug where game with mod would not load if the Drone Components from "Bob's Logistics" mod were disabled.
     - [Bob's Power] Fixed a bug where game with mod would not load if the T2-T4 Electric Poles from "Bob's Power" mod were disabled.
 
   Graphics:
-    - [Addons] Исправлено некорректное отображение остатков после уничтожения зданий х2 и х4. (Частично. Нужна помощь в решение проблем)
-
     - [Addons] Fixed incorrect item recovery display after x2 and x4 buildings were destroyed. (Partially. Need help solving the problems)
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 17.05.2026
   Features:
-    - [Addons] Весь функционал мода «Modular Buildings Redux» теперь встроен напрямую в модпак. Добавлена поддержка х2 и х4 для Солнечный Панелей и Аккумуляторов. Аддон «Мульти Здания» может быть включен/отключен в настройках мода.
-
     - [Addons] All the functionality of the "Modular Buildings Redux" mod is now integrated directly into the modpack. Added support for x2 and x4 for Solar Panels and Accumulators. Addon «Multi Building» can be enabled/disabled in the mod settings.
 
   Bugfixes:
-    - [Mods] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Bob's Tech» был отключен.
-    - [All] Исправлена ошибка, из-за которой в Бойлер Т6 отсутствовала возможно загружать топливо.
-
     - [Mods] Fixed a bug where game with mod would not load if the "Bob's Tech" mod was disabled.
     - [All] Fixed a bug where it was not possible to load fuel into the T6 Boiler.
 
   Modding:
-    - [Mods] Мод «Modular Buildings Redux» добавлен в список несовместимых.
-
     - [Mods] Added "Modular Buildings Redux" mod to incompatible.
 
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 16.05.2026
   Bugfixes:
-    - [Muluna] Исправлена ошибка, из-за которой игра с модом не загружалась, если мод «Muluna, Moon of Nauvis» был отключен.
-
     - [Muluna] Fixed a bug where game with mod would not load if the "Muluna, Moon of Nauvis" mod were disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 16.05.2026
   Features:
-    - [Muluna] Добавлен рецепт Кремней Руды из Анортитового Куска.
-
     - [Muluna] Added recipe for Silicon Ore from Anorthite Chunk.
 
   Balancing:
-    - [Muluna] Добавлен новый научный пакет в стоимость исследования некоторым технологиям.
-
     - [Muluna] Added a new science pack requirement to the research cost of certain technologies.
 
   Bugfixes:
-    - [All] Исправлена ​​ошибка, приводящая к сбою, вызванному недопустимым прогрессивным уровнем (7), переданным в «reskins-library» для технологии Насосная Установка 6.
-    - [Muluna] Исправлена ошибка, из-за которой отсутствовали рецепты в соответсвующих технологиях если у вас включен мод «Muluna, Moon of Nauvis».
-
     - [All] Fixed crash caused by invalid progressive tier (7) passed to "reskins-library" for Pumpjack 6 technology.
     - [Muluna] Fixed missing recipes in corresponding technologies when the "Muluna, Moon of Nauvis" mod is enabled.
 
   Locale:
-    - [All] Незначительные исправления локализации.
-
     - [All] Minor localization fixes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 15.05.2026
   Features:
-    - Добавлена поддержка Muluna, Moon of Nauvis: реализовано бесшовное внедрение новой планеты в игровой процесс.
-    - Добавлены новые сущности:
-        1. Бойлер и Паровой Двигатель Т6.
-        2. Солнечные Панели Т4.
-        3. Аккумулятор Высокой Ёмкости Т4.
-        4. Электрический Бур Т6.
-        5. Реактор Т4 и Топливная ячейка Т4.
-        6. Электропечи Т6(Т4).
-        7. Рудо-Сортировочный Завод Т6.
-        8. Электролитические Ячейки Т3 и Т4.
-        9. Печи для Спекания Т3 и Т4. Если «Ранние Печи для Спекания» включены, тогда: Печь для Спекания Т6.
-        10. Насосные Вышки Т3 и Т4.
-    - Добавлены новые предметы и жидкости:
-        Ветка Угля:
-          1. Пек.
-          2. Угольный Дёготь.
-          3. Сырой Графитовый Блок.
-          4. Графитовый Блок.
-          5. Графитовая Пластина.
-          6. Графитовый Электрод.
-          7. Графитовая Крошка.
-          8. Углеродная Нанотрубка.
-          9. Оксид Графена.
-          10. Графен.
-          11. Графеновый Аккумулятор.
-        Ветка Фосфора:
-          1. Фосфоритная Руда.
-          2. Белый Фосфор (предмет и жидкость).
-          3. Хлорид Фосфора(III).
-          4. Хлорид фосфора(V).
-          5. Фторид Фосфора(V).
-          6. Гексафторфосфорная Кислота.
-        Остальные:
-          1. Тритий.
-          2. Аргон.
-          3. Сжиженный Фторид Водорода.
-          4. Перманганат Калия.
-          5. Фторид Лития.
-          6. Гексафторфосфат Лития.
-          7. Раствор Гексафторфосфата Лития (карбонатный).
-          8. Силикат Кальция.
-          9. Метакремниевая Кислота.
-          10. Жидкая Эпоксидная Смола.
-          11. Адипонитрил.
-          12. Очищенный Жидкий Бетон.
-          13. Этиленгликоль.
-          14. Глиоксаль.
-          15. Имидазол (предмет и жидкость).
-          16. Хлорбутан.
-          17. Ионная Жидкость.
-          18. Титановый Стержень.
-          19. Гексаметилендиамин.
-          20. Соль Имидазолия.
-          21. Усиленный Титанобетонный Кирпич.
-          22. Углебетонный Кирпич.
-          23. Усиленный Графенобетонный Кирпич.
-          24. Железный Шарик для Подшипника.
-          25. Железный Подшиник.
-          26. Вольфрамовый Шарик для Подшипника.
-          27. Вольфрамовый Подшиник.
-    - Добавлены новые рецепты.
-    - Добавлены новые технологии.
-
     - Added support for Muluna, Moon of Nauvis: seamlessly integrated the new planet into the gameplay flow.
     - Added new entities:
         1. T6 Boiler and Steam Engine.
@@ -1525,19 +915,6 @@ Date: 15.05.2026
     - Added new technologies.
 
   Balancing:
-    - В рецепте Электромагнитного Исследовательского Пакета произведена замена ингредиента: Аккумулятор Высокой Ёмкости Т3 → Аккумулятор Высокой Ёмкости Т4.
-    - В рецепте Большого Бура произведена замена ингредиента: Электрический Бур Т5 → Электрический Бур Т6.
-    - В рецепте Суперконденсатора произведена замена ингредиента: Серебренно-Цинковый Аккумулятор → Графеновый Аккумулятор.
-    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Тритий (240 ед.)
-    - В некоторых рецептах произведена замена ингредиентов.
-    - В рецепте Хлорид Меди(I) произведена замена ингредиента: Медный Слиток → Медный Порошок.
-    - В рецепте Хлорид Меди(I) (альтернативный) скорректированы ингредиенты и результаты:
-        1. Добавлена Очищенная Вода (480 ед.)
-        2. Хлорид Водорода → Соляная Кислота.
-    - В рецепте Хлорид Меди(I) изменено производственное здание: Химическая Печь Т4 → Улучшенный Химический Завод.
-    - В некоторых технологиях изменены предварительные условия и стоимость исследования.
-    - Возвращена Вольфрамовая Шестерня.
-
     - Replaced an ingredient in the Electromagnetic Science Pack recipe: T3 High Capacity Accumulator → T4 High Capacity Accumulator.
     - Replaced an ingredient in the Big Mining Drill: T5 Electric Mining Drill → T6 Electric Mining Drill.
     - Replaced an ingredient in the Supercapacitor recip: Silver Zinc Battery → Graphene Battery.
@@ -1552,58 +929,34 @@ Date: 15.05.2026
     - Returned Tungsten Gear Wheel.
 
   Locale:
-    - Добавлено описание для некоторых технологий.
-
     - Added a description for some technologies.
 
   Modding:
-    - Мод «Muluna, Moon of Nauvis» переведён в опциональную зависимость.
-
     - Moved "Muluna, Moon of Nauvis" mod to optional dependencies.
 
   Other:
-    - Модпак перенесен из Бета-версии в Релизную версии.
-
     - Moved modpack from Beta version to Release version.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.3
 Date: 13.05.2026
   Bugfixes:
-    - Исправлена ошибка, из-за которой игра с модом не загружалась, если Жидкотопливные Генераторы из мода «Bob's Power» были отключены.
-
     - Fixed a bug where game with mod would not load if the Fluid Burning Generators from "Bob's Power" were disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 12.05.2026
   Locale:
-    - Исправлена опечатка в техническом названии технологии Парового Двигателя 4. (6 → 4)
-
     - Corrected a typo in the technical name of the Steam Engine 4 technology. (6 → 4)
 
   Scripting:
-    - Оптимизирован скрипт регенерации руд: теперь процесс запускается только при необходимости (при переходе с версий 0.0.X).
-
     - Optimized ore regeneration script: it now triggers only when upgrading from 0.0.X versions to prevent redundant runs.
 
   Modding:
-    - Мод «Bob's Tech» переведён в опциональную зависимость.
-    - Добавлена опциональная зависимость для мода «Space Age Science Packs».
-
     - Moved "Bob's Tech" mod to optional dependencies.
     - Added optional dependency for the "Space Age Science Packs" mod.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
 Date: 12.05.2026
   Balancing:
-    - В некоторых технологиях изменены предварительные условия и стоимость исследования.
-    - В рецепт Строительный Лом скорректированы результаты: 
-        1. Добалвен Нитрид Кремния (1 ед. 6.25%)
-        2. Удалён Железный Стержень.
-        3. Удалён Стальной Стержень.
-    - В рецепте Машинный Лом изменен процент результатов:
-        1. Латунь (12.5%) → (25%)
-        2. Керамика (25%) → (12.5%)
-
     - Changed prerequisites and research costs for some technologies.
     - Adjusted results in the Construction Scrap recipe:
         1. Added Silicon Nitride (1 unit, 6.25%)
@@ -1614,10 +967,6 @@ Date: 12.05.2026
         2. Ceramics (25%) → (12.5%)
 
   Modding:
-    - Добавлена опциональная зависимость для мода «Flare Stack».
-    - Добавлена опциональная зависимость для мода «Loaders Modernized».
-    - Заменен необязательный мод "Loaders Modernized: Bob's Logistics" на "Loaders Modernized: Integrations". Удалите старый мод, так как он устарел.
-
     - Added optional dependency for the "Flare Stack" mod.
     - Added optional dependency for the "Loaders Modernized" mod.
     - Replaced optional "Loaders Modernized: Bob's Logistics" with "Loaders Modernized: Integrations". Delete the old mod, as it is now obsolete.
@@ -1625,141 +974,6 @@ Date: 12.05.2026
 Version: 0.1.0
 Date: 10.05.2026
   Features:
-    - Добавлены новые добываемые руды на Наувисе:
-        1. Молибденитовая.
-        2. Повеллитовая.
-    - Добавлена новая руда на Фульгоре: Браннеритовая.
-    - Добавлены новые астероиды на орбите Аквило:
-        1. Антимонитовые.
-        2. Германитовые.
-    - Добавлены новые предметы и жидкости:
-        Ветка Молибденита:
-          1. Дроблённый Молибденит.
-          2. Куски Молибденита.
-          3. Кристалы Молибденита.
-          4. Очищенный Молибденит.
-        Ветка Повеллита:
-          1. Дроблённый Повеллит.
-          2. Куски Повеллита.
-          3. Кристалы Повеллита.
-          4. Очищенный Повеллит.
-        Ветка Антимонита:
-          1. Антимонитовый Кусок Астероида.
-          2. Дроблённый Антимонит.
-          3. Куски Антимонита.
-          4. Кристалы Антимонита.
-          5. Очищенный Антимонит.
-        Ветка Германита:
-          1. Германитовый Кусок Астероида.
-          2. Дроблённый Германит.
-          3. Куски Германита.
-          4. Кристалы Германита.
-          5. Очищенный Германит.
-        Ветка Молибдена:
-          1. Молибденовая Руда.
-          2. Обработанный Молибден.
-          3. Молибденовые Гранулы.
-          4. Молибденовый Порошок.
-          5. Молибденовая Пластина.
-          6. Оксид Молибдена(VI).
-          7. Молибдат Калия.
-          8. Раствор Хлорида Молибдена(III).
-          9. Молибденовая Кислота.
-          10. Фторид Молибдена(IV).
-          11. Молибденовая Шестерня.
-        Ветка Рения:
-          1. Рениевая Руда.
-          2. Обработанный Рений.
-          3. Рениевые Гранулы.
-          4. Рениевый Порошок.
-          5. Рениевая Пластина.
-          6. Оксид Рения(VI).
-          7. Хлорид Рения(V).
-          8. Оксид Рения(IV).
-          9. Раствор Перрената Калия.
-          10. Перренат Калия.
-          11. Рениевая Кислота.
-          12. Перренат Аммония.
-          13. Рениевый Шарик для Подшипника. 
-          14. Рениевый Подшипник.
-        Ветка Ниобия:
-          1. Ниобиевая Руда.
-          2. Обработанный Ниобий.
-          3. Ниобиевые Гранулы.
-          4. Ниобиевый Порошок.
-          5. Оксид Ниобия(V).
-          6. Ниобат Калия.
-          7. Гептафторниобиевая Кислота.
-          8. Гидроксид Ниобия(V).
-        Ветка Германия:
-          1. Германиевая Руда.
-          2. Обработанный Германий.
-          3. Германиевые Гранулы.
-          4. Германиевый Слиток.
-          5. Германиевый Порошок.
-          6. Раствор Метагерманата Калия.
-          7. Оксид Германия(IV).
-          8. Хлорид Германия(IV).
-          9. Раствор Метагерманата Натрия.
-          10. Гексахлоргерманат(IV) Натрия.
-          11. Расплавленный Германий.
-          12. Германиевая Пластина.
-        Ветка Галия: 
-          1. Галиевая Руда (Холодный). 
-          2. Обработанный Галий (Холодный). 
-          3. Галиевые Гранулы (Холодный). 
-          4. ГалиевыЙ Слиток (Холодный). 
-          5. Галиевый Порошок (Холодный). 
-          6. Гидроксид Галлия(III). 
-          7. Оксид Галия(III). 
-          8. Раствор Тетрагидроксогаллата(III) Натрия. 
-          9. Жидкий Галий. 
-          10. Хлорид Галлия(III). 
-          11. Раствор Хлорида Галлия(III) (Эфир). 
-          12. Раствор Гидрида Лития Галлия (Эфир). 
-          13. Арсенид Галлия. 
-          14. Нитрид Галлия.
-        Остальные:
-          1. Селен.
-          2. Хлорид Калия.
-          3. Хлорат Калия.
-          4. Раствор Хлората Калия.
-          5. Молибден-Рениевая Порошковая Смесь.
-          6. Молибден-Рениевая Пластина.
-          7. Молибден-Рениевая Труба.
-          8. Молибден-Рениевая Подземная Труба.
-          9. Строительный Лом.
-          10. Машинный Лом.
-          11. Стальной Стержень.
-          12. Расплавленный Ниобий-Титан.
-          13. Ниобий-Титановая Пластина.
-          14. Ниобий-Титановая Проволока.
-          15. Расплавленный Феррониобий.
-          16. Феррониобивая Пластина.
-          17. Феррониобивый Шарик для Подшипника.
-          18. Феррониобивый Подшипник.
-          19. Ниобий-Вольфрам-Молибденовая Порошковая Смесь.
-          20. Ниобий-Вольфрам-Молибденовая Пластина.
-          21. Ниобий-Вольфрам-Молибденовая Шестерня.
-          22. Сурьмяная Пластина.
-          23. Нитробензол.
-          24. Анилин.
-          25. Нитрит Натрия.
-          26. Раствор Бензолдиазония Хлорид.
-          27. Молочная Кислота.
-          28. Этил Лактат.
-          29. Фоторезист.
-          30. Полупроводник.
-          31. Мышьяк.
-    - Добавлены новые предметы и рецепты для Вольфрамита:
-        1. Дроблённый Вольфрамит и рецепт сортировки.
-        2. Куски Вольфрамита и рецепт сортировки.
-        3. Кристалы Вольфрамита и рецепт сортировки.
-        4. Очищенный Вольфрамит и рецепт сортировки.
-    - Добавлены новые рецепты.
-    - Добавлены новые технологии.
-    - Добавлена возможность включить «Раннюю Взрывчатку для Скал» в настройках модов.
-
     - Added new mineable ores to Nauvis:
         1. Molybdenite.
         2. Powellite.
@@ -1897,12 +1111,6 @@ Date: 10.05.2026
     - Added the ability to enable "Early Cliff Explosives" in the mod settings.
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой у некоторых рецептов отсутствовало название.
-    - Исправлена ​​ошибка, вызывавшая несовместимость с модом "Loaders Modernized: Bob's Logistics" версии 2.0.0.
-    - Исправлена ошибка, из-за которой в рецепте Дицианоаргентат Натрия(I) требовался Серебряные Гранулы вместо Золотых Гранул.
-    - Исправлена ошибка, из-за которой у Улучшеного Химического Завода 3 была скорость и кол-во слотов для модулей 4 вместо 3.
-    - Исправлена ошибка, из-за которой в рецепте Оксид Азота из Оксидного Астероида производил Монокосид Азота вместо Оксид Азота.
-
     - Fixed a bug where some recipes were missing names.
     - Fixed a bug causing incompatibility with "Loaders Modernized: Bob's Logistics" mod v2.0.0.
     - Fixed a bug where the Sodium Dicyanoargentate(I) recipe required Silver Pellet instead of Gold Pellet.
@@ -1910,186 +1118,6 @@ Date: 10.05.2026
     - Fixed a bug where the Nitrogen Oxide from Oxide Asteroid recipe producted Nitrogen Monoxide instead of Nitrogen Oxide.
 
   Balancing:
-    - Удалён рецепт Сортировка Вольфрамитовой Руды.
-    - Удалён рецепт Сортировка Шлака.
-    - В рецепте Оксида Хрома(VI) заменено производственное здание: Химическая Печь → Доменная Печь.
-    - В рецепте Оксида Вольфрама(VI) 2 скорректированы результаты и время крафта:
-        1. Оксида Вольфрама(VI) (12 ед.) → (16 ед.)
-        2. Аммиак (45 ед.) → (120 ед.)
-        3. Пар (45 ед.) → (60 ед.)
-        4. (6 сек.) → (8 сек.)
-    - В рецепте Паравольфрамата Аммония скорректированы ингредиенты и время крафта:
-        1. Обработанный Вольфрам (12 ед.) → (16 ед.)
-        2. Кислород (270 ед.) → (360 ед.)
-        3. Аммиак (150 ед.) → (240 ед.)
-        4. Очищенная Вода (90 ед.) → (120 ед.)
-        5. (6 сек.) → (8 сек.)
-    - В рецепте Паравольфрамата Аммония 2 скорректированы результаты и время крафта:
-        1. Аммиак (180 ед.) → (120 ед.)
-        2. Очищенная Вода (180 ед.) → (120 ед.)
-        3. (6 сек.) → (8 сек.)
-    - В рецептах Сортировки Порошков, Пыли и Кристаллов Железа/Меди добавлен результат: Ториевая Руда.
-    - В рецептах Смешивание Порошков скорректировано время крафта, ингредиенты и результат:
-        1. (4 сек.) → (8 сек.)
-        2. (16 ед.) → (8 ед.)
-        3. (16 ед.) → (8 ед.)
-    - Удалён рецепт Лавы (из Каменных Блоков).
-    - В рецепте Ракетного Двигателя скорректированы ингредиенты:
-        1. Электродвигатель (4 ед.) → Молибденовая Шестерня (16 ед.)
-        2. Нитиноловая Пластина → Рениевый Подшипник.
-        3. Добавлена Молибден-Рениевая Труба (8 ед.)
-    - Удалён предмет и рецепт Вольфрамовой Порошковой Смеси. Вольфрамовая Порошковая Смесь → Вольфрамовый Порошок.
-    - Добавлена возможность устанавливать модули качества в Печи для Спекания.
-    - В рецептах Паровой Турбине Т4, Центрифуги Т4, Переработчика, Конвеера Вулканус, Подземного Конвеера Вулканус и Разделителя Вулканус произведена замена ингредиентов:
-        1. Медно-Вольфрамовая Шестерня → Молибденовая Шестерня.
-        2. Медно-Вольфрамовый Подшипник → Рениевый Подшипник.
-        3. Медно-Вольфрамовая Труба → Молибден-Рениевая Труба. (для Паровой Турбине Т4)
-        4. Вольфрамовая Пластина → Молибденовая Пластина. (для Центрифуги Т4)
-        5. Медно-Вольфрамовая Пластина → Молибден-Рениевая Пластина.
-        6. Платиновая Пластина → Молибденовая Пластина. (для Переработчика)
-        7. Бетон → Железобетон. (для Переработчика)
-        8. Удалена Смазочная Жидкость и удвоено кол-во Шестерен (для Конвеера Вулканус, Подземного Конвеера Вулканус и Разделителя Вулканус)
-    - В технологиях Паровой Турбине Т4 и Центрифуга Т4 добавлены новые предварительные условия.
-    - Переработан рецепт Переработки Металлолома:
-        1. Теперь из лома получаются Строительный Металлолом и Машинный Металлолом, которые перерабатываются в ресурсы, ранее получаемые из обычного лома.
-        2. Скорректированы вероятности получения всех предметов.
-    - В рецепте Сверхпроводника произведена замена ингредиентов:
-        1. Платиновая Пластина → Платиновая Проволока.
-        2. Мазут → Электролит.
-    - В рецепт Сверхпроводника добалвен новый ингредиент: Золотая Проволока (4 ед.)
-    - В рецепте Электромагнитного Завода произведена замена ингредиента: Платиновая Пластина → Молибден-Рениевая Пластина.
-    - В рецепт Громоотвода добавлены новые ингредиенты:
-        1. Улучшенный Процессор (1 ед.)
-        2. Стальной Cтержень (8 ед.)
-    - В Переработчике увеличено кол-во слотов для результатов: (60 слотов) → (80 слотов)
-    - В рецепте Гольмиевой Руды (из Очищенных) произведена замена ингредиентов:
-        1. Очищенный Стиратит → Очищенный Браннерит.
-        2. Очищенный Кротинниум → Очищенный Повеллит.
-    - Перенесены некоторые рецепты в более поздние Технологии.
-    - Обновлены результаты у некоторых рецептов Переработки.
-    - В рецепте Металлургического Исследовательского Пакета произведена замена ингредиента: Расплавленный Хром → Лава.
-    - В рецепте Фундамента произведена замена ингредиента: Вольфрамовая Пластина → Молибден-Рениевая Пластина.
-        1. Литий → Ниобий-Вольфрам-Молибденовая Пластина.
-        2. Вольфрамовая Пластина → Молибден-Рениевая Пластина.
-    - В рецепте Литейного Завода скорректированы ингредиенты: 
-        1. Нитиноловая Пластина → Молибден-Рениевая Пластина.
-        2. Удалена Смазочная Жидкость
-    - В рецепте Большого Бура произведена замена ингредиента: Расплавленный Хром (240 ед.) → Молибден-Рениевая Пластина (16 ед.)
-    - У Большого Бура скорректированы характеристики:
-        1. Скорость добычи (5/сек.) → (8/сек.)
-        2. Кол-во слотов для модулей (5) → (8)
-        3. Максимальное потребление (240 кВт) → (2400 кВт)
-    - В рецептах Сельскохозяйственной Башни, Биокамеры, Ракеты с Дронами-Захватчиками, и Ракетной Турели произведена замена ингредиентов:
-        1. Кобальт-Стальная Пластина → Молибден-Рениевая Пластина.
-        2. Кобальт-Стальная Шестерня → Молибденовая Шестерня (для Ракетной Турели)
-    - В рецептах Улучшенных Химических Заводов, Установок Выщелачивания, Опреснительных Установок и Улучшенных Газоперерабатывающих Заводах произведена замена ингредиентов:
-        1. Вольфрам → Медно-Вольфрам (для Т3)
-        2. Медно-Вольфрам → Молибден-Рений (для Т4)
-        3. Карбид Вольфрам → Молибден-Рений (для Улучшенного Газоперерабатывающего Завода Т4)
-    - В рецептах Установок Очистки Руды произведена замена ингредиентов:
-        1. Вольфрамовая Пластина → Медно-Вольфрамовая Пластина (для Т2)
-        2. Медно-Вольфрамовая Пластина → Молибден-Рениевая Пластина (для Т3)
-        3. Гольмиевая Пластина → Ниобий-Вольфрам-Молибденовая Пластина (для Т4)
-    - В рецептах Флотационной Установки, Измельчителя, Фильтровальной Установки и Кристаллизаторе Т4 произведена замена ингредиентов: Нитинол → Медно-Вольфрам.
-    - В рецептах Газоперерабатывающего Завода, Сепаратора Нефти и Газа и Установки для Паравого Крекинга Т4 произведена замена ингредиентов: Вольфрам → Медно-Вольфрам.
-    - В рецепте Часть Ракеты произведена замена ингредиента: Вольфрам → Молибден-Рений.
-    - В рецепте Раектной Шахты произведена замена ингредиентов:
-        1. Нитинол → Молибден-Рений.
-        2. Бетон → Железобетон.
-    - В рецепт Раектной Шахты добалвены новые ингредиенты:
-        1. Молибденовая Пластина (256 ед.)
-        2. Рениевая Пластина (128 ед.)
-    - В рецепте Фундамента Космической Платформы произведена замена ингредиента: Платиновая Проволока (16 ед.) → Молибденовая Пластина (16 ед.) и Рениевая Пластина (8 ед.)
-    - В рецепте Электролизной Ванне Т2 произведена замена ингредиентов: Вольфрам → Медно-Вольфрам.
-    - В рецепте Сборочного Автомата Т6 произведена замена ингредиентов: 
-        1. Нитиноловая Шестерня → Молибденовая Шестерня.
-        2. Нитиноловые Подшиник → Рениевый Подшиник.
-        3. Нитинол → Молибден-Рений.
-    - В технологии Энергетические Системы на Основе Плутония скорректированы стоимость исследования и предварительные условия.
-    - В рецепт Тесла-Турели добавлен новый ингредиент: Молибден-Рениевая Пластина.
-    - В рецептах Расплавленных (Вулканус), Улучшенных Расплавленных (Вулканус) и Расплавленных (Сплавов, Вулканус) скорректировано время крафта, кол-во ингредиентов и результатов:
-        1. (32 сек.) → (8 сек.)
-        2. Ингредиенты (32 ед.) → (16 ед.) (для Расплавленных (Вулканус) и Улучшенных Расплавленных (Вулканус))
-        3. Результаты (480 ед.) → (240 ед.) (для Расплавленных (Вулканус))
-        4. Ингредиенты (240 ед.) → (120 ед.) (для Улучшенных Расплавленных (Вулканус))
-        5. Результаты (960 ед.) → (480 ед.) (для Улучшенных Расплавленных (Вулканус))
-        6. Ингредиенты (480 ед.) → (240 ед.) (для Расплавленных (Сплавов, Вулканус))
-        7. Результаты (960 ед.) → (240 ед.) (для Расплавленных (Сплавов, Вулканус))
-    - В рецептах Расплавленных (Сплавов 1) скорректировано кол-во ингредиентов и результатов:
-        1. Ингредиенты (8 ед.) → (16 ед.)
-        2. Результаты (480 ед.) → (240 ед.)
-    - В рецептах Расплавленных (Сплавов 2) увеличено кол-во ингредиентов: (8 ед.) → (16 ед.)
-    - В рецепте Расплавленного Припоя 3 уменьшено кол-во ингредиента и результата:
-        1. Оловянный Слиток (32 ед.) → (16 ед.)
-        2. Расплавленный Припой (960 ед.) → (480 ед.)
-    - В рецептах Расплавленной Бронзы 3 и Расплавленной Латуни 3 увеличено кол-во ингредиентов:
-        1. Оловянный Слиток (8 ед.) → (16 ед.) (для Расплавленной Бронзы 3)
-        2. Цинковый Слиток (4 ед.) → (8 ед.) (для Расплавленной Бронзы 3)
-        3. Цинковый Слиток (8 ед.) → (16 ед.) (для Расплавленной Латуни 3)
-        4. Оловянный Слиток (4 ед.) → (8 ед.) (для Расплавленной Латуни 3)
-        5. Свинцовый Слиток (4 ед.) → (8 ед.)
-    - Модули Скорости, Эффективности, Продуктивности и Качества Т2-Т5 теперь можно исследовать на Наувисе.
-    - В рецепте Квантового Процессора скорректированы ингредиенты:
-        1. Улучшеный Процессор (1 ед.) → Оксид Алюминия (4 ед.)
-        2. Литий (2 ед.) → Гольмиевая Пластина (4 ед.)
-        3. Платиновая Проволока (2 ед.) → Полупроводник (8 ед.)
-        4. Сверхпроводник (1 ед.) → (8 ед.)
-        5. Углеродное Волокно (1 ед.) → (4 ед.)
-        6. Удален Пластина из Карбида Вольфрама.
-        7. Фторкетон (Холодный) (30 ед.) → Жидкий Азот (60 ед.)
-        8. Фторкетон (Горячий) → Азот.
-    - В рецепте Криогенного Завода скорректированы ингредиенты:
-        1. Литий → Ниобий-Титановая Пластина.
-        2. Платиновая Пластина → Феррониобивая Пластина.
-        3. Добавлена Ниобий-Вольфрам-Молибденовая Пластина (16 ед.)
-        4. Добавлен Полупроводник (16 ед.)
-    - В рецептах Термоядерного Реактора и Термоядерного Генератора скорректированы ингредиенты:
-        1. Вольфрамовая Пластина → Ниобий-Титановая Пластина.
-        2. Платиновая Пластина → Феррониобивый Подшипник.
-        3. Кобальт-Стальная Пластина → Ниобий-Вольфрам-Молибденовая Шестерня.
-        4. Добавлена Ниобий-Титановая Проволока (256 ед. и 128 ед.)
-        5. Добавлен Полупроводник (256 ед. и 128 ед.)
-    - В рецепт Термоядерной Энергетической Ячейки добавлен ингредиент: Вольфрамовая Пластина (8 ед.)
-    - В рецепте Рельсовой Пушки скорректированы ингредиенты:
-        1. Вольфрамовая Пластина (8 ед.) → Ниобий-Вольфрам-Молибденовая Пластина (4 ед.)
-        2. Добавлена Ниобий-Титановая Проволока (4 ед.)
-        3. Квантовый Процессор (16 ед.) → (4 ед.)
-    - В рецепте Рельсовой Турели скорректированы ингредиенты:
-        1. Вольфрамовая Пластина → Ниобий-Вольфрам-Молибденовая Пластина.
-        2. Добавлен Феррониобивый Подшиник (16 ед.)
-        3. Добавлена Ниобий-Титановая Проволока (32 ед.)
-        4. Квантовый Процессор (128 ед.) → (16 ед.)
-        5. Углеродное Волокно (16 ед.) → (32 ед.)
-    - В рецепте Боеприпасов для Рельсовой Пушки скорректированы ингредиенты:
-        1. Взрывчатка (4 ед.) → Вольфрамовая Пластина (2 ед.)
-        2. Кобальт-Стальная Пластина (4 ед.) → (2 ед.)
-        3. Платиновая Проволока (8 ед.) → (4 ед.)
-    - В рецепте Портативного Термоядерного Реактора скорректированы ингредиенты:
-        1. Вольфрамовая Пластина (256 ед.) → Ниобий-Вольфрам-Молибденовая Пластина (64 ед.)
-        2. Добавлена Ниобий-Титановая Проволока (128 ед.)
-        3. Квантовый Процессор (256 ед.) → (64 ед.)
-        4. Добавлен Сверхпроводник (32 ед.)
-        5. Добавлен Полупроводник (32 ед.)
-        6. Термоядерная Энергетическая Ячейка (8 ед.) → (4 ед.)
-        7. Суперконденсатор (32 ед.) → (16 ед.)
-        8. Углеродное Волокно (128 ед.) → (64 ед.)
-    - В рецепте Криогенного Научного Пакета произведена замена ингредиента: Хлорид Сурьмы(V) (240 ед.) → Сурьмяная Пластина (8 ед.) и Германиевая Пластина (8 ед.)
-    - Удалены все рецепты кремния для космической эры.
-    - В некоторых технологиях изменены предварительные условия и стоимость исследования.
-    - В рецептах Энергетические Щиты МК2 произведена замена ингредиента: Гольмиевая Пластина → Алюминиевая Пластина.
-    - В рецептах Артиллерийских Турелей и Артиллерийских Вагонов произведена замена ингредиентов:
-        1. Сталь → Медно-Вольфрам. (для Артиллерийского Вагона МК1)
-        2. Удалён Инвар. (для Артиллерийского Вагона МК1)
-        3. Титан → Молибден, Рений и Молибден-Рений. (для МК2)
-        4. Удалён Алюминий. (для Артиллерийского Вагона МК2)
-        5. Нитинол → Ниобий-Титан, Феррониобий и Ниобий-Вольфрам-Молибден. (для Артелерийского Вагона МК3)
-        6. Удалён Карбид Вольфрама. (для МК3)
-        7. Улучшенная Схема → Улучшенный Процессор.
-        8. Удалена Труба.
-        9. Нитрид Кремния → Молибден-Рениевую Пластину. (для Артелерийской Турели МК2)
-        10. Карбид Вольфрама → Ниобий-Титан. (для Артелерийской Турели МК3)
-    - Удалена категория Артиллерийских боеприпасов для Танков.
-
     - Removed Wolframite Ore Sorting recipe.
     - Removed Slag Sorting recipe.
     - Changed production machine for Chromium(VI) Oxide recipe: Chemical Furnace → Blast Furnace.
@@ -2271,63 +1299,38 @@ Date: 10.05.2026
     - Removed Artillery ammo category for Tanks.
 
   Graphics:
-    - Обновлены иконки некоторым рецептам.
-
     - Updated icons for some recipes.
 
   Locale:
-    - Изменены названия большинства химических соединений металлов + неметаллов.
-    - Исправлены название некоторых предметов, жидкостей и технологий.
-
     - Adjusted names for most metal + nonmetal chemical compounds.
     - Corrected names of some items, fluids, and technologies.
 
   Optimizations:
-    - Проведена глобальная оптимизация кода (O(N) заменен на O(1)).
-    - Скорость обработки рецептов увеличена в десятки раз.
-    - Снижено потребление оперативной памяти при загрузке.
-
     - Global code optimization performed (O(N) search replaced with O(1) lookup).
     - Recipe processing speed increased tenfold.
     - Decreased RAM consumption during mod loading.
 
   Scripting:
-    - Добавлена однократная регенерация ресурсов для совместимости со старыми сохранениями. Новая руда появится в уже открытых чанках автоматически.
-
     - Added one-time resource regeneration for backward compatibility with existing saves. New ores will automatically appear in already explored chunks.
 
   Modding:
-    - Добавлена опциональная зависимость для мода «Asteroid Belt».
-
     - Added optional dependency for the "Asteroid Belt" mod.
 
   Other:
-    - Модпак переведён из Альфа-версии в Бета-версию.
-    - Информация об обновлении 1.0.0 временно удалена. Не волнуйтесь, всё готово!
-
     - Moved modpack from Alpha version to Beta version.
     - Temporarily removed information about update 1.0.0. Don't worry, everything is ready!
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.31
 Date: 25.04.2026
   Balancing:
-    - В рецепте Газобразного Гексафторида Вольфрама понижен уровень производственного здания: T4 → T3.
-
     - Decreased the required building tier for the Tungsten Hexafluoride Gas recipe: T2 → T1.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.30
 Date: 25.04.2026
   Bugfixes:
-    - Исправлена ошибка, из-за которой в технологии Улучшенная Выплавка Никеля 3 рецепт Сульфат Никеля заменял собой рецепт Тетракарбонила Никеля.
-
     - Fixed a bug where the Nickel Sulfate recipe replaced the Nickel Tetracarbonyl recipe in the improved Nickel Smelting 3 technology.\
 
   Balancing:
-    - В рецепте Катушки Припоя увеличено кол-во результата: Катушки Припоя (4 ед.) → (8 ед.)
-    - В рецепте Катушки Припоя 2 увеличено кол-во результата: Катушки Припоя (8 ед.) → (16 ед.)
-    - В рецепте Литья Припоя (Вулканус) увеличено кол-во результата: Припой (4 ед.) → (16 ед.)
-    - В рецептах Литья Кабелей (Вулканус) увеличено кол-во результата: Проволока (8 ед.) → (16 ед.)
-
     - Increased a result in the Solder Coil recipe: Solder Coil (4 units) → (8 units)
     - Increased a result in the Solder Coil 2 recipe: Solder Coil (8 units) → (16 units)
     - Increased a result in the Solder Coil (Vulcanus) recipe: Solder (4 units) → (16 units)
@@ -2336,87 +1339,38 @@ Date: 25.04.2026
 Version: 0.0.29
 Date: 23.04.2026
   Features:
-    - Добавлена ​​возможность отключения порчи.
-
     - Added the ability to disable spoilage.
 
   Changes:
-    - Настройки «Экспансия врагов», «Эволюция» и «Загрязнение» теперь включены по умолчанию при создании нового мира.
-
     - "Enemy Expansion", "Evolution", and "Pollution" settings are now enabled by default when creating a new world.
 
   Balancing:
-    - В рецепте Оксид Гольмия увеличено кол-во ингредиента: Растор Нитрата Гольмия (16 ед.) → (240 ед.)
-    - В рецепте Затравки Монокристаллического Кремния добавлен результат: Азот (15 ед.)
-    - Рецепт Литье Монокремния (Вулканус) был разделён на два рецепта, как на Наувисе.
-
     - Increased an ingredient in the Holmium Oxide recipe: Holmium Nitrate Solution (16 units) → (240 units)
     - Added a result in the Mono Silicon Seed recipe: Nitrogen Gas (15 units)
     - Split the Casting Mono Silicon recipe (Vulcanus) into two recipes to match Nauvis.
 
   Graphics:
-    - Обновлена иконка в рецепте Затравки Монокристаллического Кремния.
-
     - Updated icon for Mono Silicon Seed recipe.
 
   Locale:
-    - Рецепт Литье Кремния (Вулканус) переименован в Литье Монокремния (Вулканус).
-
     - Renamed the Casting Silicon (Vulcanus) to Casting Mono Silicon recipe.
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.28
 Date: 21.04.2026
   Features:
-    - Добавлен Медно-Вольфрамовый Порошок.
-
     - Added Copper-Tungsten Powder.
 
   Changes:
-    - Отопительная Башня теперь находится во вкладке Глеба вместо Аквило.
-
     - Heating Tower is now located in the Gleb tab instead of Aquilo.
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой в Обогатительной Установке Т4 отсутствовало загрязнение.
-    - Исправлена ошибка, из-за которой в Измельчителе Т4 отсутствовало загрязнение.
-    - Исправлена ошибка, из-за которой в Фильтровальная Установке Т4 отсутствовало загрязнение.
-    - Исправлена ошибка, из-за которой у Газового Баллона отсутствовало название.
-
     - Fixed a bug where the T4 Ore Refinery was missing pollution.
     - Fixed a bug where the T4 Powderizer was missing pollution.
     - Fixed a bug where the T4 Filtration Unit was missing pollution.
     - Fixed a bug where the Gas Bottle was missing name.
 
   Balancing:
-    - В Обогатительной Установке Т3 увеличено загрязнение: (2.4) → (3)
-    - В Промывочной Установке Т4 увеличено кол-во слотов для модулей и скорость крафта: (3) → (4)
-    - В рецепте Угля из Карбонового Астероида произведена замена ингредиента: Карбон → Уголь.
-    - В рецептах Солнечный Панелей произведена замена ингредиента: Монокремний → Кремниевая Пластина.
-    - Для мода «Серные Бактерии»: В предмете Серных Бактерий произведена замена реузультата порчи: Древесина → Гниль.
-    - Если «Ранние Печи для Спекания» включены, тогда:
-        1. В рецепте Карбид Кремния заменено производственное здание: Доменная Печь → Химическая Печь.
-        2. В рецепте Керамической Трубы заменено производственное здание: Сборочный Автомат → Печь для Спекания.
-        3. В рецепте Подземной Керамической Трубы заменено производственное здание: Сборочный Автомат → Печь для Спекания.
-        4. В рецепте Керамической Шестерни заменено производственное здание: Сборочный Автомат → Печь для Спекания.
-        5. В рецепте Керамического Шарика Подшипника заменено производственное здание: Сборочный Автомат → Печь для Спекания.
-        6. В рецепте Керамического Подшипника удалён ингредиент и заменено производственное здание: Смазочная Жидкость и Сборочный Автомат → Печь для Спекания.
-    - В рецепт Латунного Подшипника добавлен ингредиент: Смазочная Жидкость (15 ед.)
-    - В технологии Обработка Латуни добавлено новое предварительное условие.
-    - В рецепте Керамического Подшипника удалён ингредиент: Смазочная Жидкость.
-    - В рецептах Пластиковой Трубы и Подземной Пластиковой Трубы произведена замена ингредиента:
-        1. Пластик (1 ед.) → Жидкий Пластик (15 ед.)
-        2. Пластик (4 ед.) → Жидкий Пластик (60 ед.)
-    - В следующих рецептах произведена замена ингредиентов и заменено производственное здание: Медно-Вольфрамовая Пластина → Медно-Вольфрамовый Порошок; Сборочный Автомат → Печь для Спекания.
-        1. Медно-Вольфрамовая Шестерня.
-        2. Медно-Вольфрамовый Шарик Подшипника.
-        3. Медно-Вольфрамовый Подшипник. (Удалена Смазочная Жидкость)
-        4. Медно-Вольфрамовая Труба.
-        5. Подземная Медно-Вольфрамовая Труба.
-        6. Медно-Вольфрамовая Пластина: Медный Порошок и Вольфрамовая Порошковая Смесь → Медно-Вольфрамовый Порошок.
-    - В рецептах Вольфрамовой Трубы и Подземной Вольфрамовой Трубы произведена замена ингредиента и заменено производственное здание: Вольфрамовая Пластина → Вольфрамовая Порошковая Смесь; Сборочный Автомат → Печь для Спекания.
-    - В Биолабе уменьшено максимальное потребление: (300 кВт) → (240 кВт)
-
     - Increased pollution of the T3 Ore Refinery: (2.4) → (3)
     - Increased module slots and crafting speed of the T4 Washing Plant: (3) → (4)
     - Replaced an ingredient in the Coal from Carbonic Asteroid recipe: Carbon → Coal.
@@ -2446,62 +1400,23 @@ Date: 21.04.2026
     - Decreased maximum consumption of the Biolab: (300 kW) → (240 kW)
 
   Graphics:
-    - Обновлены иконки для рецептов Космический Научный Пакет и Прометиевый Научный Пакет.
-
     - Updated icons for the Space Science Pack and Promethium Science Pack recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.27
 Date: 18.04.2026
   Features:
-    - Добавлен рецепт Сортировка Вольфрамитовой Руды.
-    - Добавлена возможность включить «Раннюю Печь для Спекания» в настройках модов. (Новых рецептов нет)
-
     - Added Wolframite Ore Sorting recipe.
     - Added the ability to enable "Early Sintering Oven" in the mod settings. (No new recipes)
 
   Changes:
-    - Скорректированы конфигурационные файлы (конфиги) модулей Скорости Продуктивности и Качества для удобной настройки баланса.
-    - Добавлена возможность через «Планер Обновлений» обновлять все виды Электростолбов.
-
     - Adjusted configuration files (configs) for Speed, Productivity, and Quality modules for easier balance tuning.
     - Added the ability to upgrade all types of Electric Poles via the "Upgrade Planner".
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой отсутствовал рецепт Алюминиевой Пластины в технологии Улучшенная Выплавка и Литьё Алюминия.
-    - Исправлена ошибка, из-за которой отсутствовал рецепт Цинковой Пластины в технологии Улучшенная Выплавка и Литьё Цинка.
-
     - Fixed a bug where the Aluminum Plate recipe was missing from Advanced Aluminum Smelting and Casting technology.
     - Fixed a bug where the Zinc Plate recipe was missing from Advanced Zinc Smelting and Casting technology.
 
   Balancing:
-    - В предметах Маяков увеличен размер пачки: (20) → (32)
-    - В рецептах Маяков скорректировано время крафта:
-        1. Т1 (8 сек.) → (16 сек.)
-        2. Т3 (32 сек.) → (16 сек.)
-    - В рецептах Контролеров Модулей и Плат Модулей скорректировано время крафта:
-        1. Платы Модулей Т1 (4 сек.) → (8 сек.)
-        2. Контролер Модуля Т3 (16 сек.) → (8 сек.)
-    - В рецептах Модулей уменьшено время крафта:
-        1. Модули Т2 (16 сек.) → (8 сек.)
-        2. Модули Т3 (32 сек.) → (16 сек.)
-        3. Модули Т4 (64 сек.) → (32 сек.)
-    - В рецептах Плат Модулей Т3 произведена замена ингредиента: Контролер Модуля Т2 → Контролер Модуля Т3.
-    - В Модулях Скорости удалён отрицательный эффект: Качество.
-    - Уменьшено время добычи Вольфрамитовой Руды: (500%) → (400%)
-    - В рецепте Расплавленной Латуни 2 увеличено кол-во ингредиента: Медный Слиток (12 ед.) → (16 ед.)
-    - В рецепте Расплавленной Пушечной Бронзы скорректированы ингердиенты и результат:
-        1. Медный Слиток (16 ед.) → (8 ед.)
-        2. Оловянный Слиток (4 ед.) → (16 ед.)
-        3. Цинковый Слиток (4 ед.) → (8 ед.)
-        4. (240 ед.) → (480 ед.)
-    - В рецепте Отсыпки Территории (из Грязи) уменьшено время крафта: (4 сек.) → (1 сек.)
-    - В рецепте Угольной Фильтрации Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
-    - В рецепте Керамической Фильтрации Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
-    - В рецепте Фильтрации Кристаллической Суспензии в Минеральный Шлам с Использованием Угольных Фильтров уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
-    - В рецепте Фильтрации Кристаллической Суспензии в Минеральный Шлам с Использованием Керамических Фильтров уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
-    - В рецепте Угольной Фильтрации Кристаллической Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (60 ед.) → (30 ед.)
-    - В рецепте Керамической Фильтрации Кристаллической Суспензии уменьшено кол-во результата: Сернистая Сточная Вода (30 ед.) → (15 ед.)
-
     - Increased stack size for the Beacons: (20) → (32)
     - Adjusted crafting time for the Beacon recipes:
         1. T1 (8 sec.) → (16 sec.)
@@ -2531,15 +1446,9 @@ Date: 18.04.2026
     - Decreased a result in the Crystal Slurry Ceramic Filtering recipe: Sulfuric Waste Water (30 units) → (15 units)
 
   Graphics:
-    - Обновлены иконки для технологий Аккумулятор 2 и Аккумулятор 3.
-
     - Updated icon for Battery 2 and Battery 3 technologies.
 
   Locale:
-    - Вольфрамовая Руда (Вулканус) переименована в Вольфрамитовую Руду.
-    - Добавлена химическая формула для Пушечной Бронзы.
-    - Добавлено описание для технологий Аккумулятор 2 и Аккумулятор 3.
-
     - Renamed the Tungsten Ore (Vulcanus) to Wolframite Ore.
     - Added a chemical formula for Gunmetal.
     - Added a description for Battery 2 and Battery 3 technologies.
@@ -2547,46 +1456,25 @@ Date: 18.04.2026
 Version: 0.0.26
 Date: 15.04.2026
   Features:
-    - Добавлен Гидроксид Калия.
-    - Добавлен рецепт Раствор Гидроксида Калия.
-
     - Added Potassium Hydroxide.
     - Added Potassium Hydroxide Solution recipe.
 
   Balancing:
-    - В рецепте Гидроксида Калия скорректированы ингредиент и результаты:
-        1. Удалена Очищенная Вода.
-        2. Раствор Гидроксида Калия (240 ед.) → Гидроксид Калия (16 ед.)
-        3. Добавлен Водород (60 ед.)
-
     - Adjusted an ingredient and the results in the Potassium Hydroxide recipe:
         1. Removed Purified Water.
         2. Potassium Hydroxide Solution (240 units) → Potassium Hydroxide (16 units)
         3. Added Hydrogen Gas (60 units)
 
   Graphics:
-    - Обновлена иконка в рецепте Гидроксида Калия.
-
     - Updated icon for Potassium Hydroxide recipe.
 
   Locale:
-    - Рецепт Раствор Гидроксида Калия переименован в Гидроксид Калия.
-
     - Renamed the Potassium Hydroxide Solution to Potassium Hydroxide.
 
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.25
 Date: 14.04.2026
   Bugfixes:
-    - Исправлена ошибка, из-за которой нельзя было наполнить канистру или утилизировать следующие жидкости:
-        1. Раствор Нитрата Меди.
-        2. Трихлорсилан.
-        3. Раствор Гексахлорплатината Натрия.
-        4. Раствор Гексагидроксоплатината Натрия.
-        5. Охлаждающая Жидкость.
-        6. Использованная Охлаждающая Жидкость. (Только утилизация)
-        7. Тяжёлая Вода. (Только утилизация)
-
     - Fixed a bug that prevented filling canisters or disposing of the following fluids:
         1. Copper Nitrate Solution.
         2. Trichlorosilane.
@@ -2597,16 +1485,6 @@ Date: 14.04.2026
         7. Heavy Water. (Disposal only)
 
   Balancing:
-    - В Термоядерном Реакторе увеличен максимальный выход: (100 МВт) → (172.8 МВт)
-    - В Термоядерном Генераторе увеличен максимальный выход: (50 МВт) → (86.4 МВт)
-    - В предмете Термоядерной Энергетической Ячейки увеличена ценность топлива: (50 ГДж) → (86.4 ГДж)
-    - В Рельсовой турели увеличено максимальное потребление: (25 МВт) → (43.2 МВт)
-    - В рецепте Обогащение Воды 2 (с 7.5% до 12.5%) увеличен результат: Полутяжёлая Вода 12.5% (30 ед.) → (60 ед.)
-    - В рецепте Обогащение Воды 3 (с 12.5% до 15%) увеличен результат: Полутяжёлая Вода 15% (30 ед.) → (60 ед.)
-    - В Электрокотлах Т3 и Т4 увеличено кол-во ОЗ:
-        1. (500 ед.) → (600 ед.)
-        2. (200 ед.) → (800 ед.)
-
     - Increased maximum output of the Fusion Reactor: (100 MW) → (172.8 MW)
     - Increased maximum output of the Fusion Generator: (50 MW) → (86.4 MW)
     - Increased fuel value of the Fusion Power Cell item: (50 GJ) → (86.4 GJ)
@@ -2618,18 +1496,9 @@ Date: 14.04.2026
         2. (200 units) → (800 units)
 
   Graphics:
-    - Обновлены цвета для некоторых жидкостей.
-
     - Updated colors for certain fluids.
 
   Locale:
-    - Из названий рецептов Оксид Магния 2 и Хлорид Алюминия 2 убрана цифра 2.
-    - Рецепт Гидроксид Натрия и Нитратные Газы из Раствора Нитрата Натрия переименован в Нитратные Газы из Раствора Нитрата Натрия.
-    - Рецепт Хлорид Натрия (на самом деле это был Сульфат Натрия) переименован в Сульфат Натрия.
-    - Рецепт Факторианская Рыба переименован в Факторианское Рыбоводство.
-    - В название технологии Энергетические Системы на Основе Термоядерного Синтеза Дейтерия 1 убрана цифра 1.
-    - Обновлены химические формулы для некоторых жидкостей.
-
     - Removed 2 from Magnesium Oxide 2 and Aluminium Chloride 2 recipe names.
     - Renamed the Sodium Hydroxide and Nitric Gasses from Sodium Nitrate Solution to Nitric Gasses from Sodium Nitrate Solution recipe.
     - Renamed the Sodium Chloride (which was actually Sodium Sulfate) to Sodium Sulfate recipe.
@@ -2640,32 +1509,6 @@ Date: 14.04.2026
 Version: 0.0.24
 Date: 13.04.2026
   Balancing:
-    - Рецепт Буры перевнесён из технологии Улучшенная Переработка Руды 2 в технологию Переработка Буры.
-    - В предмете Яйцо Кусаки увеличена ценность топлива: (6000 кВт) → (7200 кВт)
-    - В предмете Яйцо Кусаки изменена топливная категория.
-    - В Танках и Паукатронах изменена топливная категория.
-    - В Твердотопливном Сборочном Автомате изменена топливная категория.
-    - В предмете Твердотопливного Сборочного Автомата уменьшен размер пачки: (64) → (32)
-    - В рецепте Твердотопливного Сборочного Автомата скорректированы ингредиенты, время крафта и максимальное потребление:
-        1. Железная Шестерня (5 ед.) → (4 ед.)
-        2. Железная Пластина (9 ед.) → (8 ед.)
-        3. (0.5 сек.) → (1 сек.)
-        4. (60 кВт) → (225 кВт)
-    - В рецепт Сборочного Автомата Т1 добавлен ингредиент: Твердотопливный Сборочный Автомат.
-        При условии что включен Твердотопливный Сборочный Автомат.
-    - В Танке Т3 увеличено максимальное потребление: (900 кВт) → (1350 кВт)
-    - В рецептах Пушки Паукатрона и Механической Рамы уменьшено время крафта:
-        1. (10 сек.) → (8 сек.)
-        2. (5 сек.) → (4 сек.)
-    - В Антроне увелчинео максимальное потребление: (150 кВт) → (225 кВт)
-    - В Танкотроне уменьшено максимальное потребление: (250 кВт) → (225 кВт)
-    - В Логитроне увелчинео максимальное потребление: (200 кВт) → (225 кВт)
-    - В рецептах Паукатронов скорректированы время крафта и ингредиенты: (5 сек.) → (4 сек.)
-        1. Танкотрон: Механичекская Бронепластина (5 ед.) → (4 ед.)
-        2. Логитрон: Механичекская Бронепластина (5 ед.) → (4 ед.)
-        3. Паукатрон: Механичекская Бронепластина (10 ед.) → (8 ед.)
-        4. Тяжёлый Паукатрон: РТГ (3 ед.) → (4 ед.) и Механичекская Бронепластина (20 ед.) → (16 ед.)
-
     - Moved Borax recipe from Advanced Ore Refining 2 to Bor Processing technologies.
     - Increased fuel value of the Biter Egg item: (6000 kW) → (7200 kW)
     - Changed fuel category of the Biter Egg item.
@@ -2695,34 +1538,9 @@ Date: 13.04.2026
 Version: 0.0.23
 Date: 12.04.2026
   Features:
-    - Добавлена технология: Переработка Калия.
-
     - Added technology: Potassium Processing.
 
   Balancing:
-    - Следующие рецепты перенесены из технологии Очистка Воды 5 в технологию Переработка Калия:
-        1. Карналлит.
-        2. Раствор Хлорида Калия.
-        3. Раствор Гидроксида Калия.
-        4. Раствор Гипохлорита Калия.
-    - В технологии Улучшенная Выплавка Хрома 3 произведена замена предварительного требования: Очистка Воды 5 → Переработка Калия.
-    - В рецепте Раствора Хлорида Лития из Гидроксида Лития заменено производственное здание: Химическая печь → Химический завод.
-    - В рецепте Оксида Лития-Кобальта заменено производственное здание: Химическая печь → Химический завод.
-    - В рецепте Гидрида Лития заменено производственное здание: Доменная печь → Химический завод.
-    - В рецепте Борной Кислоты заменено производственное здание: Химическая печь → Химический завод.
-    - В рецепте Борной Кислоты из Соляной Кислоты заменено производственное здание: Химическая печь → Улучшеный химический завод.
-        В результаты добавлена Очищенная Вода (120 ед.)
-    - В рецепте Борной Кислоты из Газообразного Диборана заменено производственное здание: Химическая печь → Химический завод.
-    - В следующие рецепты добавлены ингредиент (Электрод) и результат (Использованный Электрод):
-        1. Разделение Хлористого Водорода (по 1 ед.)
-        2. Магниевый Газ из Газообразного Хлорида Магния (по 1 ед.)
-        3. Раствор Гидроксида Калия (по 1 ед.)
-        4. Раствор Гидроксида Калия из Раствора Сульфата Калия (по 1 ед.)
-    - В рецепте Разделение Хлористого Водорода увеличено время крафта, ингредиент и результаты:
-        1. (2 сек.) → (8 сек.)
-        2. (120 ед.) → (240 ед.)
-        3. (60 ед.) → (120 ед.)
-
     - Moved the following recipes from Water Treatment 5 to Potassium Processing technologies: 
         1. Carnallite.
         2. Potassium Chloride Solution.
@@ -2747,36 +1565,14 @@ Date: 12.04.2026
         3. (60 units) → (120 units) 
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой технология Улучшенная Выплавка Хрома 3 открывала рецепт Обработанный Хром вместо рецепта Хромовых Гранул.
-
     - Fixed a bug where Advanced Chrome Smelting 3 unlocked the Processed Chrome recipe instead of Chrome Pellet recipe.
 
   Graphics:
-    - Изменена иконка рецепта Борной Кислоты из Соляной Кислоты.
-    - Обновлена иконка для Сжиженого Трифторида Азота.
-    - Изменена иконка для рецепта Разделение Хлористого Водорода.
-
     - Changed icon for Boric Acid from Hydrochloric Acid recipe.
     - Updated icon for Nitrogen Trifluoride Liquefied.
     - Changed icon for Separation of Hydrogen Chloride recipe.
 
   Locale:
-    - Добавлено описание для Дробилки Руды Т4.
-    - Добавлено описание для Флотационной Установки Т4.
-    - Добавлено описание для Установки Выщелачивания Т4.
-    - Добавлено описание для Установок Очистки Руды Т3 и Т4.
-    - Добавлено описание для Установки Сортировки Руды Т5.
-    - Добавлено описание для Измельчителя Т4.
-    - Добавлено описание для Фильтровальных Установок Т3 и Т4.
-    - Добавлено описание для Кристаллизаторов Т3 и Т4.
-    - Добавлено описание для Гидроустановки Т4.
-    - Добавлено описание для Промывочных Установок Т3 и Т4.
-    - Добавлено описание для Опреснительных Установок Т3 и Т4.
-    - Добавлено описание для Электрического Бойлера Т4.
-    - Добавлено описание для Воздушного Фильтра Т4.
-    - Добавлено описание для Улучшенных Химических Заводов Т3 и Т4.
-    - Рецепт Переработка Боракса переименован в Переработку Буры.
-
     - Added a description for the T4 Ore Crusher.
     - Added a description for the T4 Flotation Cell.
     - Added a description for the T4 Leaching Plant.
@@ -2796,50 +1592,28 @@ Date: 12.04.2026
 Version: 0.0.22
 Date: 12.04.2026
   Features:
-    - Добавлен рецепт: Сортировка Шлака.
-
     - Added recipe: Slag Sorting.
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой ингредиенты из рецептов Генераторов Древесных Семян ушли в рецепт Базовой Схемы.
-    - Исправлена ошибка, из-за которой исчезли предварительные условия у некоторых Технологий.
-
     - Fixed a bug where ingredients from the Tree Seed Generator recipes were transferred to the Basic Circuit Board recipe.
     - Fixed a bug that caused prerequisites to disappear for some technologies.
 
   Balancing:
-    - В рецепте Магниевого Газа произведена замена ингредиента и результата:
-        1. Кремниевый Порошок (8 ед.) → Кальций (16 ед.)
-        2. Диоксид Кремния (4 ед.) → Известь (8 ед.)
-    - Кол-во ингредиентов которые были у рецепта Базовой Схемы теперь находятся в рецептах Генераторов Древесных Семян.
-
     - Replaced an ingredient and a result in the Magnesium Gas recipe:
         1. Silicon Powder (8 units) → Calcium (16 units)
         2. Silicon Dioxide (4 units) → Lime (8 units)
     - Moved the ingredient quantities from the Basic Circuit Board recipe to the Tree Seed Generator recipes.
 
   Locale:
-    - Пустая Канистра переименована в Канистра.
-    - Пустой Газовый Баллон переименован в Газовый Баллон.
-
     - Renamed the Empty Canister to Canister.
     - Renamed the Empty Gas Bottle to Gas Bottle.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.21
 Date: 11.04.2026
   Changes:
-    - Жидкий Трифторид Азота заменён на Сжиженный Трифторид Азота.
-
     - Replaced Nitrogen Trifluoride Liquid with Nitrogen Trifluoride Liquefied.
 
   Balancing:
-    - Обновлены результаты у некоторых рецептов Переработки.
-    - В рецептах Топливных Ячеек и Переработки Топливных Ячеек теперь доступны Модули Продуктивности.
-    - В рецепте Смешанной Уран-Плутониевой Топливной Ячейки заменено производственное здание: Сборочный Автомат → Центрифуга.
-    - В рецепте Сурьмяного Слитка (из Гексахлорaнтимониевой кислоты) скорректированы ингредиенты:
-        1. Гексахлорaнтимониевая кислота (16 ед.) → (240 ед.)
-        2. Цинковый Слиток (600 ед.) → (40 ед.)
-
     - Updated results for some Recycling recipes.
     - Enabled Productivity Modules for Fuel Cell and Fuel Cell Reprocessing recipes.
     - Changed production machine for Uranium-Plutonium Mixed Fuel Cell recipe: Assembling Machine → Centrifuge.
@@ -2848,17 +1622,10 @@ Date: 11.04.2026
         2. Zinc Ingot (600 units) → (40 units)
 
   Graphics:
-    - Обновлены все иконки рецептов Переработки.
-    - В рецепте Оксида Сурьмы исправлено отображение иконки.
-
     - Updated all Recycling recipe icons.
     - Fixed icon display in the Antimony Oxide recipe.
 
   Locale:
-    - Рецепт Смешанный Оксид Урана и Плутония переименован в Смешанная Уран-Плутониевая Топливная Ячейка.
-    - Обновлены химические формулы для: Угля, Дроблёного Угля, Кокса, Обработанного Кокса и Коксовых Гранул.
-    - Добавлена химическая формула для Шлака.
-
     - Renamed the Uranium-Plutonium Mixed Oxide to Uranium-Plutonium Mixed Fuel Cell recipe.
     - Updated chemical formulas for: Coal, Crushed Coal, Coke, Processed Coke, and Coke Pellet.
     - Added chemical formula for Slag.
@@ -2866,49 +1633,18 @@ Date: 11.04.2026
 Version: 0.0.20
 Date: 10.04.2026
   Changes:
-    - Добавлена возможность через «Планер Обновлений» обновлять Радары.
-
     - Added the ability to upgrade Radars via the "Upgrade Planner".
 
   Bugfixes:
-    - Исправлена ошибка, из-за которой нельзя было крафтить вручную Погрузчики из мода «Loaders Modernized: Bob's Logistics».
-
     - Fixed a bug that prevented hand-crafting of Loaders from the "Loaders Modernized: Bob's Logistics" mod.
 
   Balancing:
-    - В Т1 рецептах «Unipipe» добавлен ингредиент: Медная Пластина (4 ед.)
-    - Добавлена возможность создавать Манипуляторы в Электромагнитном Заводе.
-
     - Added an ingredient to the T1 "Unipipe" recipes: Copper Plate (4 units)
     - Added the ability to craft Inserters in the Electromagnetic Plant.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.19
 Date: 09.04.2026
   Balancing:
-    - В рецептах Фильтрующих Электропечей увеличено кол-во ингредиента: Схема (4 ед.) → (8 ед.)
-    - У Берегового насоса уменьшена скорость откачки воды: (1200 ед.) → (600 ед.)
-    - В рецепт Берегового Насоса добавлен ингредиент: Железная Пластина (2 ед.)
-    - У Тяжёлого Берегового Насоса уменьшена скорость откачки воды: (3600 ед.) → (2400 ед.)
-    - В рецепте Тяжёлого Берегового Насоса уменьшено кол-во ингредиентов: Береговой Насос (2 ед.) → (1 ед.)
-    - В рецептах Переработки скорость крафта приведена к общему значению: (0.25 сек)
-    - У Малого Проточного Резервуара и Малого Резервуара изменен объём хранилища: (2400 ед.) → (4000 ед.)
-    - У Вагонов-Цистерн уменьшен объём хранилища:
-        1. Т1 (48000 ед.) → (24000 ед.)
-        2. Т2 (64000 ед.) → (48000 ед.)
-        3. Т3 (96000 ед.) → (72000 ед.)
-    - В рецептах Локомотивов добавлен ингредиент: Локомотив (1 ед.)
-    - В рецептах Грузовых Вагонов и Вагонов-Цистерн добавлен ингредиент: Подшипник (8 ед.)
-    - У Локомотивов уменьшена скорость движения и увеличена мощность:
-        1. Т1 (216 км/ч) → (108 км/ч)
-        2. Т2 (324 км/ч) → (216 км/ч)
-        3. Т3 (432 км/ч) → (324 км/ч) и (900 кВт) → (1350 кВт)
-    - У Грузовых Вагонов изменен размер хранилища:
-        1. Т1 (60 слотов) → (40 слотов)
-        2. Т3 (100 слотов) → (120 слотов)
-    - У Стакового Манипулятора уменьшено потребление электричества: (845 кВт) → (600 кВт)
-    - Обновлены результаты у некоторых рецептов Переработки.
-    - Обновлены все рецепты из модов «Unichest» и «Unipipe».
-
     - Increased an ingredient in the Filtering Electric Furnace recipes: Circuit (4 units) → (8 units)
     - Decreased pumping speed for Offshore Pump: (1200 units) → (600 units)
     - Added an ingredient to the Offshore Pump recipe: Iron Plate (2 units)
@@ -2934,29 +1670,18 @@ Date: 09.04.2026
     - Updated all recipes in the "Unichest" and "Unipipe" mods.
 
   Modding:
-    - Моды «Unichest» и «Unipipe» переведены в опциональную зависимость.
-
     - Moved "Unichest" and "Unipipe" mods to optional dependencies.
 
   Other:
-    - Перед установкой нового патча создайте резервную копию сохранений, чтобы было легко сравнить или восстановить отсутствующие элементы.
-
     - Create a backup of your saves before installing the new patch for easy comparison or recovery of missing items.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.18
 Date: 09.04.2026
   Bugfixes:
-    - Исправлена ошибка, из за которой не создавались рецепты наполнения и опустошения бочек, канистр и газовых балонов.
-    - Исправлена ошибка запуска при наличии мода «Diesel Engine».
-
     - Fixed a bug where barreling recipes (fill/empty) were not created for barrels, canisters, and gas bottles.
     - Fixed a startup crash when "Diesel Engine" mod is active.
 
   Balancing:
-    - В рецептах Водорослей увеличено время крафта: (16 сек.) → (32 сек.)
-    - У Элеткропечей Т3 увеличено потребление энергии: (120 кВт) → (180 кВт)
-    - У Электропечей Т5 уменьшено потребление энергии: (360 кВт) → (300 кВт)
-
     - Increased crafting time for the Algae recipes: (16 sec.) → (32 sec.)
     - Increased energy consumption for T3 Electric Furnaces: (120 kW) → (180 kW)
     - Decreased energy consumption for T5 Electric Furnaces: (360 kW) → (300 kW)
@@ -2964,33 +1689,19 @@ Date: 09.04.2026
 Version: 0.0.17
 Date: 08.04.2026
   Balancing:
-    - Возвращена прежняя скорость крафта и добычи для зданий T5 и T6.
-    - В ветке рецептов Фильтрующих Печей убран ингредиент: Труба.
-    - В рецепте Пустотного Сундука заменен ингредиент: Улучшенная Схема → Электронная Схема.
-
     - Reverted crafting and mining speeds for T5 and T6 buildings to their previous values.
     - Removed an ingredient from the Filtering Furnace recipes: Pipe.
     - Replaced an ingredient in the Void Chest recipe: Advanced Circuit → Electronic Circuit.
 
   Other:
-    - Убедитесь, что у вас не установлены старые версии модпака - это может вызвать ошибки.
-
     - Make sure you do not have any older versions of the modpack installed, as this may cause bugs.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.16
 Date: 07.04.2026
   Features:
-    - Добавлен Обработанный Кокс.
-
     - Added Processed Coke.
 
   Balancing:
-    - В рецепте Коксовые Гранулы произведена замена ингредиента: Кокс (4 ед.) → Обработанный Кокс (1 ед.)
-    - В технологии Переработка Руды 2 удалено требование: Переработка Угля 3.
-    - Время исследования и расход научных пакетов приведены к общей экономике модпака.
-    - Все бесконечные технологии теперь ограничены: максимальный уровень - 30.
-    - В рецепте Кобальтата Натрия изменено время крафта: (12 сек.) → (8 сек.)
-
     - Replaced an ingredient in the Coke Pellet recipe: Coke (4 units) → Processed Coke (1 unit)
     - Removed a prerequisite for the Ore Processing 2 technology: Coal Processing 3.
     - Adjusted research time and science pack costs to match the modpack economy.
@@ -2998,23 +1709,14 @@ Date: 07.04.2026
     - Adjusted crafting time for the Sodium Cobaltate recipe: (12 sec.) → (8 sec.)
 
   Locale:
-    - Добавлены названия для рецептов Сурьмяный Cлиток 2 и Сурьмяный Cлиток 3.
-
     - Added names for Antimony Ingot 2 and Antimony Ingot 3 recipes.
 
   Other:
-    - Обновлен список Часто Задаваемых Вопросов (FAQ).
-
     - Updated the FAQ list.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.15
 Date: 06.04.2026
   Balancing:
-    - В рецепте Переработки Дейтериевых Топливных Ячеек заменен ингредиент: Катализатор Мюонного Синтеза (4 ед. 5%) → Дейтерий (960 ед.)
-    - В рецепте Зеленые Водоросли понижен уровень производственного здания: T2 → T1.
-    - В рецепте Базовое Выращивание Водорослей повышен уровень производственного здания: T1 → T2.
-    - В технологии Улучшенная Переработка Водорослей добавлено новое предварительное условие.
-
     - Replaced an ingredient in the Deuterium Fuel Cell Reprocessing recipe: Muon Fusion Catalyst (4 units, 5%) → Deuterium Gas (960 units)
     - Decreased the required building tier for the Green Algae recipe: T2 → T1.
     - Increased the required building tier for the Basic Algae Farming recipe: T1 → T2.
@@ -3023,16 +1725,6 @@ Date: 06.04.2026
 Version: 0.0.14
 Date: 05.04.2026
   Balancing:
-    - В рецепте Бойлера Т5 произведена замена ингредиентов:
-        1. Нитиноловая Пластина → Медно-Вольфрамовая Пластина.
-        2. Нитиноловая Труба → Медно-Вольфрамовая Труба.
-    - В технологии Солнечная Энергия 3 изменены предварительные условия.
-    - В технологии Центрифуга 4 изменено время исследования и расход научных пакетов:
-        1. (15 сек.) → (30 сек.)
-        2. (150 ед.) → (200 ед.)
-    - В рецепте Термоядерной Энергетической Ячейки заменен ингредиент: Аммиак → Дейтерий.
-    - В рецепте Нейтрализации Кислоты увеличена температура пара: (765 °C) → (915 °C)
-
     - Replaced ingredients in the T5 Boiler recipe:
         1. Nitinol Plate → Copper-Tungsten Plate.
         2. Nitinol Pipe → Copper-Tungsten Pipe.
@@ -3044,71 +1736,25 @@ Date: 05.04.2026
     - Increased steam temperature in the Acid Neutralization recipe: (765 °C) → (915 °C)
 
   Graphics:
-    - В рецептах Топливных Ячеек изменены иконки.
-
     - Updated icons for Fuel Cell recipes.
 
   Locale:
-    - Добавлено описание для технологии Паровая Турбина 4.
-
     - Added a description for the Steam Turbine 4 technology.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.13
 Date: 05.04.2026
   Bugfixes:
-    - Исправлена ошибка, из-за которой изменения Реакторов из версии 0.0.9 не применялись.
-
     - Fixed a bug where Reactor changes from version 0.0.9 were not applied.
 
   Balancing:
-    - У Насосной Установки Т1 уменьшено кол-во ОЗ: (200 ед.) → (100 ед.)
-
     - Decreased HP for T1 Pumpjacks: (200 units) → (100 units)
 
   Modding:
-    - Добавлена обязательная зависимость для мода «Bob's Enemies».
-
     - Added required dependency for the "Bob's Enemies" mod.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.12
 Date: 04.04.2026
   Balancing:
-    - В рецепте Теплообменника Т2: возвращен старый баланс ингредиентов.
-    - В рецептах Маленьких Солнечных Панелей уменьшено время крафта: (2 сек.) → (1 сек.)
-    - Изменены размеры стаков для следующих предметов:
-    - Аквило:
-        1. Ледяная платформа: (100 ед.) → (256 ед.)
-        2. Квантовый процессор: (100 ед.) → (256 ед.)
-        3. Боеприпасы для рельсовой пушки: (10 ед.) → (16 ед.)
-        4. Портативный термоядерный реактор: (20 ед.) → (8 ед.)
-    - Фульгора:
-        1. Металлолом (64 ед.) → (256 ед.)
-        2. Гольмиевая Руда (64 ед.) → (256 ед.)
-        3. Гольмиевая Рластина (100 ед.) → (256 ед.)
-        4. Суперконденсатор (100 ед.) → (256 ед.)
-    - Глеба:
-        1. Яйцо Кусаки (100 ед.) → (256 ед.)
-    - В рецепте Лития (Космос) заменено производственное здание: Электролизер → Химическая Печь.
-    - В рецепте Силицида Магния заменено производственное здание: Электролизер → Доменная Печь.
-    - В рецепте Магниевого Газа заменено производственное здание: Электролизер → Доменная Печь.
-    - В рецепте Газообразного Хлорида Магния заменено производственное здание: Электролизер → Доменная Печь.
-    - В рецепте Диоксида Кремния из Тетрахлорида Кремния заменено производственное здание: Электролизер → Химическая Печь.
-    - В рецепте Диоксида Кремния из Тетрафторида Кремния заменено производственное здание: Электролизер → Химическая Печь. 
-        Удален Электрод из ингредиентов и Использованный Электрод из результатов.
-    - В рецепте Цинкового Газа заменено производственное здание: Электролизер → Доменная Печь.
-    - В рецепте Титанового Слитка (из Титановой Губки) заменено производственное здание: Электролизер → Доменная Печь.
-    - В рецепте Титанового Слитка (из Тетрайодида Титана) заменено производственное здание: Электролизер → Доменная Печь.
-    - В рецепте Титановой Губки заменено производственное здание: Электролизер → Химическая Печь.
-    - В рецепте Раствора Гипохлорита Калия заменено производственное здание: Электролизер → Улучшенный Химический Завод.
-        В результаты добавлена Очищенная Вода (60 ед.)
-    - В рецепте Пероксидисерной Кислоты скорректированы ингредиенты и результаты:
-        1. Очищенная Вода (120 ед.) → (240 ед.)
-        2. Добавлен Электрод (1 ед.)
-        3. Водород (60 ед.) → (120 ед.)
-        4. Добавлен Кислород (60 ед.)
-        5. Добавлен Использованный Электрод (1 ед.)
-    - В рецепте Перекиси Водорода заменено производственное здание: Электролизер → Химический Завод.
-
     - T2 Heat Exchanger recipe: reverted to original ingredients.
     - Decreased crafting time for the Small Solar Panel recipes: (2 sec.) → (1 sec.)
     - Changed stack sizes for the following items:
@@ -3146,36 +1792,23 @@ Date: 04.04.2026
     - Changed production machine for Hydrogen Peroxide recipe: Electrolyzer → Chemical plant.
 
   Graphics:
-    - Изменена иконка рецепта получения Магниевого Газа из Газообразного Хлорида Магния.
-    - Изменена иконка рецепта Пероксидисерной Кислоты.
-
     - Changed icon for Magnesium Gas from Magnesium Chloride Gas recipe.
     - Changed icon for Peroxydisulfuric Acid recipe.
 
   Locale:
-    - Исправлена опечатка в слове «Тетрафторид» в рецепте Диоксида Кремния.
-
     - Corrected "Tetrafluoride" spelling in the Silicon Dioxide recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.11
 Date: 04.04.2026
   Bugfixes:
-    - Исправлена ошибка инициализации: заменена ошибочная ссылка на 'assembling-machine' вместо 'furnace'.
-
     - Fixed a loading error: replaced an incorrect reference to 'assembling-machine' with 'furnace'.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.10
 Date: 04.04.2026
   Changes:
-    - Добавлена возможность через «Планер Обновлений» обновить Термальную Cкважину до Термального Экстрактора.
-
     - Added the ability to upgrade a Thermal Bore to a Thermal Extractor via the "Upgrade Planner".
 
   Balancing:
-    - Изменена скорость крафта и добычи у зданий Т5 и Т6:
-        1. (5 сек.) → (4 сек.)
-        2. (6 сек.) → (4 сек.)
-
     - Adjusted crafting and mining speeds for T5 and T6 buildings:
         1. (5 sec) → (4 sec)
         2. (6 sec) → (4 sec)
@@ -3183,44 +1816,6 @@ Date: 04.04.2026
 Version: 0.0.9
 Date: 03.04.2026
   Balancing:
-    - В рецептах Подшипников увеличено кол-во ингредиента: Пластина (1 ед.) → (2 ед.)
-    - В рецептах Паровых Турбин и Жидкотопливных Генераторов изменено кол-во ингредиентов:
-        1. Шестерня (16 ед.) → (8 ед.)
-        2. Труба (4 ед.) → (8 ед.)
-        3. Только для Паровых Турбин: Пластина (16 ед.) → (32 ед.)
-    - В рецепте Жидкотопливного Генератора Т1 заменен ингредиент: Стальная труба (8 ед.) → Бронзовая труба (8 ед.)
-    - В рецепте Электрического Бура Т1 уменьшено кол-во ингредиентов:
-        1. Железная Шестерня (8 ед.) → (4 ед.)
-        2. Железная Пластина (8 ед.) → (4 ед.)
-    - В рецептах Насосных Установок уменьшено кол-во ингредиента: Труба (8 ед.) → (4 ед.)
-    - В рецептах Сборочных Автоматов уменьшено кол-во ингредиента: Пластина (16 ед.) → (8 ед.)
-    - В рецепте Логистического Научного Пакета скорректированы ингредиенты:
-        1. Конвейер (2 ед.) → (1 ед.)
-        2. Удалён Разделитель.
-    - В рецептах Кабелей уменьшено кол-во ингредиентов и результатов: Проволока (4 ед.) → (2 ед.)
-    - В рецептах Центрифуг уменьшено кол-во ингредиента: Подшипник (64 ед.) → (32 ед.)
-    - В рецепте Центрифуги Т4 изменено кол-во ингредиентов:
-        1. Медно-Вольфрамовая Пластина (128 ед.) → (64 ед.)
-        2. Вольфрамовая Пластина (64 ед.) → (128 ед.)
-    - В рецептах Солнечных Панелей уменьшено кол-во ингредиента в 2 раза: Проволока.
-    - В рецептах Солнечных Панелей Т1 скорректировано кол-во ингредиентов:
-        1. Медная Пластина в 2 раза больше.
-        2. Стальная Пластина в 2 раза меньше.
-    - В рецептах Солнечных Панелей Т2 заменен ингредиент: Лужёная Проволока → Посеребрённая Проволока.
-    - В рецептах Солнечных Панелей увеличено время крафта:
-        1. Маленькие (1 сек.) → (2 сек.)
-        2. Средние (1 сек.) → (2 сек.)
-        3. Большие (1 сек.) → (4 сек.)
-    - В рецептах Реакторов скорректировано кол-во ингредиентов и время крафта:
-        1. (480 ед.) → (512 ед.)
-        2. (240 ед.) → (256 ед.)
-        3. (60 сек.) → (64 сек.)
-    - В рецептах Тепловых Труб уменьшено кол-во ингредиентов в 4 раза.
-    - В рецепте Теплообменника Т2 скорректированы ингредиенты:
-        1. Инваровая Пластина (8 ед.) → (4 ед.)
-        2. Добавлена Латунная Пластина (4 ед.)
-    - В рецепте Двигателя увеличено кол-во ингредиента: Шестерня (1 ед.) → (2 ед.)
-
     - Increased an ingredient in the Bearing recipes: Plate (1 unit) → (2 units)
     - Changed ingredients in the Steam Turbine and Fluid Burning Generator recipes:
         1. Gear Wheel (16 units) → (8 units)
@@ -3260,18 +1855,11 @@ Date: 03.04.2026
     - Increased an ingredient in the Engine Unit recipe: Gear Wheel (1 unit) → (2 units)
 
   Other:
-    - В раздел часто задаваемых вопросов добавлен список «Вопрос-Ответ».
-
     - Added a "Question & Answer" list to the FAQ section.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.8
 Date: 03.04.2026
   Balancing:
-    - В следующих рецептах увеличено кол-во Шестерен (кроме Т0):
-        1. Конвейер (2 ед.) → (4 ед.)
-        2. Подземный Конвейер (8 ед.) → (16 ед.)
-        3. Разделитель (4 ед.) → (8 ед.)
-
     - Increased an ingredient in the following recipes (except T0):
         1. Transport Belt (2 units) → (4 units)
         2. Underground Belt (8 units) → (16 units)
@@ -3280,20 +1868,11 @@ Date: 03.04.2026
 Version: 0.0.7
 Date: 03.04.2026
   Balancing:
-    - В рецептах Шестерен уменьшено кол-во ингредиента: Пластина (2 ед.) → (1 ед.)
-
     - Decreased an ingredient in the Gear Wheel recipes: Plate (2 units) → (1 unit)
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.6
 Date: 03.04.2026
   Balancing:
-    - Скорректировано время добычи руд:
-        1. Дживолит (200%) → (100%)
-        2. Стиратит (150%) → (100%)
-        3. Кротинниум (250%) → (100%)
-        4. Рубит (200%) → (100%)
-        5. Бобмониум (250%) → (100%)
-
     - Adjusted mining time for ores:
         1. Jivolite (200%) → (100%)
         2. Stiratite (150%) → (100%)
@@ -3304,33 +1883,14 @@ Date: 03.04.2026
 Version: 0.0.5
 Date: 02.04.2026
   Changes:
-    - Возвращено загрязнение Электрическим Бурам и Насосным Установкам.
-    - Изменена скорость анимации всех типов Электрических Буров.
-
     - Restored Pollution to Electric Mining Drills and Pumpjacks.
     - Adjusted animation speed for all types of Electric Mining Drills.
 
   Bugfixes:
-    - Исправлена ошибка запуска, возникавшая при включении Электрических Буров Большой Площади в моде «Bob's Mining».
-    - Исправлена ошибка совместимости, приводившая к сбою запуска при наличии мода «Graille Tools: Bob Hardened Bile Remover».
-
     - Fixed crash when using Electric Large Area Mining Drills with "Bob's Mining" mod.
     - Fixed compatibility crash with "Graille Tools: Bob Hardened Bile Remover" mod.
 
   Balancing:
-    - В рецепте Каменной Фильтрационной Печи убрана Каменная Труба.
-    - В рецепте Парового Двигателя Т1 убрана Каменная Печь.
-    - В рецепте Компостера заменен ингредиент: Глиняный Кирпич (8 ед.) → Каменный Кирпич (8 ед.)
-    - В рецептах Погрузчиков увеличено кол-во ингредиента: Манипулятор (6 ед.) → (8 ед.)
-    - В рецептах Электрических Буров Большой Площади изменены ингредиенты:
-        1. Cхема (5 ед.) → (4 ед.)
-        2. Пластина (10 ед.) → (16 ед.)
-        3. Шестерня (5 ед.) → (16 ед.)
-    - Изменены характеристики Электрических Буров Большой Площади (относительно обычных):
-        1. Энергопотребление увеличено в 2 раза.
-        2. Площадь добычи увеличена в 1.8 раза.
-        3. Загрязнение увеличено в 2 раза.
-
     - Removed Stone Pipe from the Stone Filtering Furnace recipe.
     - Removed Stone Furnace from the T1 Steam Engine recipe.
     - Replaced ingredient in the Composter recipe: Clay Brick (8 units) → Stone Brick (8 units).
@@ -3345,36 +1905,21 @@ Date: 02.04.2026
         3. Pollution doubled.
 
   Graphics:
-    - Исправлено отображение иконки Дробилки 4 уровня в стиле Reskin Angels.
-
     - Fixed Ore Crusher 4 icon to match the Reskin Angels style.
 
   Locale:
-    - Исправлено описание для 4 рецептов из ветки «Медный».
-
     - Fixed descriptions for 4 recipes in the "Cupric" branch.
 
   Modding:
-    - Добавлена опциональная зависимость для мода «Graille Tools: Bob Hardened Bile Remover».
-
     - Added optional dependency for the "Graille Tools: Bob Hardened Bile Remover" mod.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.4
 Date: 02.04.2026
   Changes:
-    - Из меню крафта была скрыта вкладка Voids.
-    - Возвращена возможность ручного крафта медных кабелей.
-
     - Hidden the Voids tab from the crafting menu.
     - Restored hand-crafting for Copper Wires.
 
   Balancing:
-    - В рецептах Пластин Т0 были изменены результаты:
-        1. Железная Пластина (1 ед.) → (2 ед.)
-        2. Медная Пластина (1 ед.) → (2 ед.)
-        3. Свинцовая Пластина (1 ед.) → (2 ед.)
-        4. Оловянная Пластина (1 ед.) → (2 ед.)
-
     - Changed results in the T0 Plate recipes:
         1. Iron Plate (1 unit) → (2 units)
         2. Copper Plate (1 unit) → (2 units)
@@ -3384,32 +1929,19 @@ Date: 02.04.2026
 Version: 0.0.3
 Date: 02.04.2026
   Balancing:
-    - В рецепте Паровой Турбины Т4 была произведена замена ингредиентов:
-        1. Вольфрамовая Пластина (16 ед.) → Медно-Вольфрамовая Пластина (16 ед.)
-        2. Медно-Вольфрамовая Пластина (4 ед.) → Медно-Вольфрамовая Труба (4 ед.)
-
     - Changed ingredients in the T4 Steam Turbine recipe:
         1. Tungsten Plate (16 units) → Copper-Tungsten Plate (16 units)
         2. Copper-Tungsten Plate (4 units) → Copper-Tungsten Pipe (4 units)
 
   Locale:
-    - Внесены правки в перевод рецептов, связанных с натрием.
-
     - Fixed translations for sodium-related recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.2
 Date: 01.04.2026
   Bugfixes:
-    - Исправлена ошибка запуска при отключении инопланетных артефактов в моде «Bob's Enemies».
-
     - Fixed a crash when disabling alien artifacts in the "Bob's Enemies" mod.
-
-  Other:
-    - Все будущие изменения будут описываться на двух языках.
-
-    - All future changes will be described in two languages.
 ---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 31.03.2026
   Other:
-    - Первоначальный выпуск: Альфа-версия.
+    - Initial release: Alpha version.

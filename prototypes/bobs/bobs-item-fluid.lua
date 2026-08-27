@@ -128,9 +128,9 @@ TIMSABA.functions.create_items
     -- FUEL CELL
     {
         name = tritium_fuel_cell,
-        subgroup = is_nuclear_cell,
+        subgroup = is_tritium_cell,
         icon = "__TIMSABA__/graphics/icons/bobs/tritium-fuel-cell.png",
-        order = j,
+        order = a,
         stack_size = 64,
         weight = 15625,
         drop_sound = data_item[uranium_235_fuel_cell].drop_sound,
@@ -143,9 +143,9 @@ TIMSABA.functions.create_items
     },
     {
         name = depleted_tritium_fuel_cell,
-        subgroup = is_nuclear_cell,
+        subgroup = is_tritium_cell,
         icon = "__TIMSABA__/graphics/icons/bobs/used-up-tritium-fuel-cell.png",
-        order = k,
+        order = b,
         stack_size = 64,
         weight = 15625,
         drop_sound = data_item[uranium_235_fuel_cell].drop_sound,

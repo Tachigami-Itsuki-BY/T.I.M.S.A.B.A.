@@ -117,6 +117,12 @@ if mods[muria_mods] then
     data_autoplace_control["chlorine_salts"].order = data_planet[planet_muria].order .. a
 end
 
+-- PELAGOS
+if mods[pelagos_mods] then
+    data_autoplace_control["offshore-oil"].order = data_planet[planet_nauvis].order .. a_i
+    data_autoplace_control["aquilo_offshore_oil"].order = data_planet[planet_aquilo].order .. a
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then

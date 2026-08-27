@@ -1,5 +1,7 @@
+local light_oil = "light-oil"
+local petroleum_gas = "petroleum-gas"
 local holmium_solution = "holmium-solution"
-local replacements =
+local replace_prototypes =
 {
 	[carbon] = carbon_angels,
 	[tungsten_carbide] = tungsten_carbide_plate_bob,
@@ -7,16 +9,18 @@ local replacements =
 	[lithium_plate] = lithium_bob,
 	[lithium] = lithium_chloride_angels,
 	[ammonia] = ammonia_angels,
-	[molten_iron] = iron_molten_angels,
-	[molten_copper] = copper_molten_angels,
 	[lithium_brine] = water_thermal_angels,
 	[heavy_oil] = multi_phase_oil_angels,
 	[sulfuric_acid] = sulfuric_acid_angels,
+	[molten_iron] = iron_molten_angels,
+	[molten_copper] = copper_molten_angels,
+	[light_oil] = fuel_oil_angels,
+	[petroleum_gas] = methane_angels,
 	[holmium_solution] = holmium_chloride_III_solution
 }
-TIMSABA.functions.replace_duplicate_prototypes(replacements)
+TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-local mod_items =
+local delete_proto =
 {
 	lithium,
 	lithium_plate,
@@ -24,31 +28,37 @@ local mod_items =
 	tungsten_plate,
 	tungsten_carbide
 }
-for _, name in ipairs(mod_items) do
-	data_item[name] = nil
-	data_recipe[name .. _recycling] = nil
-	if mods[panglia_mods] then
-		data_recipe[item_ .. name .. _panglia_crushing] = nil
-	end
-end
+TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
-data_fluid[ammonia] = nil
-data_fluid[lithium_brine] = nil
-data_fluid[heavy_oil] = nil
-data_fluid[sulfuric_acid] = nil
+local delete_fluid =
+{
+	ammonia,
+	lithium_brine,
+	heavy_oil,
+	sulfuric_acid,
+	light_oil,
+	petroleum_gas
+}
+for _, name in ipairs(delete_fluid) do
+	data_fluid[name] = nil
+	data_recipe[name .. _barrel_recycling] = nil
+	if data_recipe[item_ .. name .. _barrel_panglia_crushing] then data_recipe[item_ .. name .. _barrel_panglia_crushing] = nil end
+	if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
+end
 
 data_fluid[molten_iron] = nil
 data_fluid[molten_copper] = nil
 
-
-data_fluid[holmium_solution] = nil
-data_recipe[holmium_solution] = nil
-
-data_recipe["concrete-from-molten-iron"] = nil
+local delete_prototypes =
+{
+	holmium_solution,
+	"concrete-from-molten-iron"
+}
+TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 local fluoroketone = "fluoroketone"
 local fluoroketone_cooling = "fluoroketone-cooling"
-local replacements_2 =
+local replacements =
 {
 	[fluoroketone] = fluoroketone_hot,
 	[fluoroketone_cooling] = fluoroketone_cold
@@ -57,7 +67,7 @@ for _, technology in pairs(data_technology or {}) do
 	if technology.effects then
 		for _, effect in pairs(technology.effects) do
 			if effect.type == unlock_recipe then
-				local replace = replacements_2[effect.recipe]
+				local replace = replacements[effect.recipe]
 				if replace then
 					effect.recipe = replace
 				end

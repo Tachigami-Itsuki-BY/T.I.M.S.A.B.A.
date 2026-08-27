@@ -29,6 +29,8 @@ end
 -- BOBS
 setting_bobmods_power_steam = "bobmods-power-steam"
 
+setting_bobmods_mining_areadrills = "bobmods-mining-areadrills"
+
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
 setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"
 setting_bobmods_logistics_beltspeedperlevel = "bobmods-logistics-beltspeedperlevel"

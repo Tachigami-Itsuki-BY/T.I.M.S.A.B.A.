@@ -49,7 +49,6 @@ if mods[tellus_mods] then
     data_recipe[nutrients_from_chloroplast_mash].icons = TWO_I(chloroplast_mash, nutrients)
     data_recipe[nutrients_from_chloroplast_mash].order = c_c
 
-    local artificial_chlorophyll_soil = "planetaris-artificial-chlorophyll-soil"
     data_item[artificial_chlorophyll_soil].subgroup = is_chloroplast
     data_item[artificial_chlorophyll_soil].order = d
     data_item[artificial_chlorophyll_soil].stack_size = 200
@@ -63,7 +62,6 @@ if mods[tellus_mods] then
         {type = fluid, name = seed_compound, amount = 30}
     }
 
-    local overgrowth_chlorophyll_soil = "planetaris-overgrowth-chlorophyll-soil"
     data_item[overgrowth_chlorophyll_soil].subgroup = is_chloroplast
     data_item[overgrowth_chlorophyll_soil].order = e
     data_item[overgrowth_chlorophyll_soil].stack_size = 200
@@ -142,7 +140,7 @@ if mods[tellus_mods] then
     data_item[magnesium_bacteria].spoil_result = magnesium_ore
     TIMSABA.void.freezing_organics(magnesium_bacteria)
 
-    local magnesium_bacteria_cultivation = "planetaris-magnesium-bacteria-cultivation"
+    magnesium_bacteria_cultivation = "planetaris-magnesium-bacteria-cultivation"
     data_recipe[magnesium_bacteria_cultivation].subgroup = is_tellus_magnesium
     data_recipe[magnesium_bacteria_cultivation].icons = STONKS_I(stonks_png, magnesium_bacteria)
     data_recipe[magnesium_bacteria_cultivation].order = b_a
@@ -240,7 +238,6 @@ if mods[tellus_mods] then
     data_recipe[nutrients_from_mycelia].icons = TWO_I(mycelia, nutrients)
     data_recipe[nutrients_from_mycelia].order = d_a
 
-    local artificial_mycelia_soil = "planetaris-artificial-mycelia-soil"
     data_item[artificial_mycelia_soil].subgroup = is_mycelia
     data_item[artificial_mycelia_soil].order = e
     data_item[artificial_mycelia_soil].stack_size = 200
@@ -254,7 +251,6 @@ if mods[tellus_mods] then
         {type = fluid, name = seed_compound, amount = 30}
     }
 
-    local overgrowth_mycelia_soil = "planetaris-overgrowth-mycelia-soil"
     data_item[overgrowth_mycelia_soil].subgroup = is_mycelia
     data_item[overgrowth_mycelia_soil].order = f
     data_item[overgrowth_mycelia_soil].stack_size = 200
@@ -328,7 +324,6 @@ if mods[tellus_mods] then
         {type = item, name = carbolyte_pod, amount = 1, probability = 0.03125}
     }
 
-    local volcanic_soil = "planetaris-volcanic-soil"
     data_item[volcanic_soil].subgroup = is_carbolyte
     data_item[volcanic_soil].order = d
     data_item[volcanic_soil].stack_size = 200
@@ -390,7 +385,6 @@ if mods[tellus_mods] then
     data_recipe[holmium_bacteria_recipe].order = c_b
     data_recipe[holmium_bacteria_recipe].ingredients[1].amount = 8
 
-    local dust_soil = "planetaris-dust-soil"
     data_item[dust_soil].subgroup = is_holmiumnite
     data_item[dust_soil].order = d
     data_item[dust_soil].stack_size = 200
@@ -419,7 +413,7 @@ if mods[tellus_mods] then
         {type = item, name = biter_egg, amount = 2}
     }
 
-    local nauvis_parasite_reproduction = "planetaris-nauvian-parasite-reproduction"
+    nauvis_parasite_reproduction = "planetaris-nauvian-parasite-reproduction"
     data_recipe[nauvis_parasite_reproduction].subgroup = is_parasite
     data_recipe[nauvis_parasite_reproduction].icons = STONKS_I(stonks_png, nauvis_parasite)
     data_recipe[nauvis_parasite_reproduction].order = a_a
@@ -459,7 +453,7 @@ if mods[tellus_mods] then
         {type = item, name = pentapod_egg, amount = 4}
     }
 
-    local gleba_parasite_reproduction = "planetaris-glebian-parasite-reproduction"
+    gleba_parasite_reproduction = "planetaris-glebian-parasite-reproduction"
     data_recipe[gleba_parasite_reproduction].subgroup = is_parasite
     data_recipe[gleba_parasite_reproduction].icons = STONKS_I(stonks_png, gleba_parasite)
     data_recipe[gleba_parasite_reproduction].order = c_a
