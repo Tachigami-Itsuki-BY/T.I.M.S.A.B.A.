@@ -19,6 +19,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.tellus")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.corrundum")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.shchierbin")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.muria")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.pelagos")
 
 -- THIRD CIRCLE PLANETS
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.paracelsin")

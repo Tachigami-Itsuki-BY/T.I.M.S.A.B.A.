@@ -80,11 +80,11 @@ if mods[muria_mods] then
     }
     data_recipe[kerolox_rocket_fuel].surface_conditions = {{property = pressure, min = 2180, max = 2180}}
 
-    local solid_fuel_hydrogen = "solid-fuel-from-hydrogen"
-    data_recipe[solid_fuel_hydrogen].subgroup = is_muria_recipe
-    data_recipe[solid_fuel_hydrogen].icons = THREE_I(sulfur, hydrogen_angels, solid_fuel)
-    data_recipe[solid_fuel_hydrogen].order = b_e
-    data_recipe[solid_fuel_hydrogen].ingredients =
+    local solid_fuel_from_hydrogen = "solid-fuel-from-hydrogen"
+    data_recipe[solid_fuel_from_hydrogen].subgroup = is_muria_recipe
+    data_recipe[solid_fuel_from_hydrogen].icons = THREE_I(sulfur, hydrogen_angels, solid_fuel)
+    data_recipe[solid_fuel_from_hydrogen].order = b_e
+    data_recipe[solid_fuel_from_hydrogen].ingredients =
     {
         {type = item, name = sulfur, amount = 2},
         {type = fluid, name = hydrogen_angels, amount = 480}
@@ -101,27 +101,27 @@ if mods[muria_mods] then
     }
     data_recipe[polyvinyl_chloride].surface_conditions = {{property = pressure, min = 2180, max = 2180}}
 
-    local hydrogen_chloride_biter_egg = "chlorane-from-biter-egg"
-    data_recipe[hydrogen_chloride_biter_egg].subgroup = is_muria_recipe
-    data_recipe[hydrogen_chloride_biter_egg].icons = THREE_I(biter_egg, water_purified_angels, hydrogen_chloride_angels)
-    data_recipe[hydrogen_chloride_biter_egg].order = b_g
-    data_recipe[hydrogen_chloride_biter_egg].ingredients =
+    local hydrogen_chloride_from_biter_egg = "chlorane-from-biter-egg"
+    data_recipe[hydrogen_chloride_from_biter_egg].subgroup = is_muria_recipe
+    data_recipe[hydrogen_chloride_from_biter_egg].icons = THREE_I(biter_egg, water_purified_angels, hydrogen_chloride_angels)
+    data_recipe[hydrogen_chloride_from_biter_egg].order = b_g
+    data_recipe[hydrogen_chloride_from_biter_egg].ingredients =
     {
         {type = item, name = biter_egg, amount = 2},
         {type = fluid, name = water_purified_angels, amount = 30}
     }
-    data_recipe[hydrogen_chloride_biter_egg].results[1].amount = 120
+    data_recipe[hydrogen_chloride_from_biter_egg].results[1].amount = 120
 
-    local hydrogen_chloride_spoilage = "chlorane-from-spoilage"
-    data_recipe[hydrogen_chloride_spoilage].subgroup = is_muria_recipe
-    data_recipe[hydrogen_chloride_spoilage].icons = THREE_I(spoilage, water_purified_angels, hydrogen_chloride_angels)
-    data_recipe[hydrogen_chloride_spoilage].order = b_h
-    data_recipe[hydrogen_chloride_spoilage].ingredients =
+    local hydrogen_chloride_from_spoilage = "chlorane-from-spoilage"
+    data_recipe[hydrogen_chloride_from_spoilage].subgroup = is_muria_recipe
+    data_recipe[hydrogen_chloride_from_spoilage].icons = THREE_I(spoilage, water_purified_angels, hydrogen_chloride_angels)
+    data_recipe[hydrogen_chloride_from_spoilage].order = b_h
+    data_recipe[hydrogen_chloride_from_spoilage].ingredients =
     {
         {type = item, name = spoilage, amount = 8},
         {type = fluid, name = water_purified_angels, amount = 30}
     }
-    data_recipe[hydrogen_chloride_spoilage].results[1].amount = 60
+    data_recipe[hydrogen_chloride_from_spoilage].results[1].amount = 60
 
     local hydrogen_chloride_explosives = "chlorane-explosives"
     data_recipe[hydrogen_chloride_explosives].subgroup = is_muria_recipe
@@ -160,24 +160,24 @@ if mods[muria_mods] then
     }
     data_recipe[eschatotaxite_paste].results[1].amount = 8
 
-    local nutrients_eschatotaxite_sprout = "nutrients-from-eschatotaxite-sprout"
-    data_recipe[nutrients_eschatotaxite_sprout].subgroup = is_eschatotaxite
-    data_recipe[nutrients_eschatotaxite_sprout].icons = TWO_I(eschatotaxite_sprout, nutrients)
-    data_recipe[nutrients_eschatotaxite_sprout].order = b_a
-    data_recipe[nutrients_eschatotaxite_sprout].ingredients[1].amount = 4
-    data_recipe[nutrients_eschatotaxite_sprout].results[1].amount = 16
+    local nutrients_from_eschatotaxite_sprout = "nutrients-from-eschatotaxite-sprout"
+    data_recipe[nutrients_from_eschatotaxite_sprout].subgroup = is_eschatotaxite
+    data_recipe[nutrients_from_eschatotaxite_sprout].icons = TWO_I(eschatotaxite_sprout, nutrients)
+    data_recipe[nutrients_from_eschatotaxite_sprout].order = b_a
+    data_recipe[nutrients_from_eschatotaxite_sprout].ingredients[1].amount = 4
+    data_recipe[nutrients_from_eschatotaxite_sprout].results[1].amount = 16
 
-    local crude_oil_eschatotaxite_paste = "crude-oil-from-eschatotaxite-paste"
-    data_recipe[crude_oil_eschatotaxite_paste].subgroup = is_eschatotaxite
-    data_recipe[crude_oil_eschatotaxite_paste].icons = THREE_I(eschatotaxite_paste, chlorine_angels, crude_oil)
-    data_recipe[crude_oil_eschatotaxite_paste].order = b_b
-    data_recipe[crude_oil_eschatotaxite_paste].energy_required = 2
-    data_recipe[crude_oil_eschatotaxite_paste].ingredients =
+    local crude_oil_from_eschatotaxite_paste = "crude-oil-from-eschatotaxite-paste"
+    data_recipe[crude_oil_from_eschatotaxite_paste].subgroup = is_eschatotaxite
+    data_recipe[crude_oil_from_eschatotaxite_paste].icons = THREE_I(eschatotaxite_paste, chlorine_angels, crude_oil)
+    data_recipe[crude_oil_from_eschatotaxite_paste].order = b_b
+    data_recipe[crude_oil_from_eschatotaxite_paste].energy_required = 2
+    data_recipe[crude_oil_from_eschatotaxite_paste].ingredients =
     {
         {type = item, name = eschatotaxite_paste, amount = 4},
         {type = fluid, name = chlorine_angels, amount = 30}
     }
-    data_recipe[crude_oil_eschatotaxite_paste].results[1].amount = 60
+    data_recipe[crude_oil_from_eschatotaxite_paste].results[1].amount = 60
 
     local eschatotaxite_low_density_structure = "eschatotaxite-low-density-structure"
     data_recipe[eschatotaxite_low_density_structure].subgroup = is_eschatotaxite
@@ -220,7 +220,7 @@ if mods[muria_mods] then
     data_item[acidophile_lichen].stack_size = 200
     TIMSABA.void.freezing_organics(acidophile_lichen)
 
-    local acidophile_lichen_cultivation = "acidophile-lichen-cultivation"
+    acidophile_lichen_cultivation = "acidophile-lichen-cultivation"
     data_recipe[acidophile_lichen_cultivation].subgroup = is_acidophile
     data_recipe[acidophile_lichen_cultivation].icons = STONKS_I(stonks_png, acidophile_lichen)
     data_recipe[acidophile_lichen_cultivation].order = c_a

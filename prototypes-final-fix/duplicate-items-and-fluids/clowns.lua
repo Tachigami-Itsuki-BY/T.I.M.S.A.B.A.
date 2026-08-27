@@ -1,36 +1,22 @@
-local plutonium_240_angels = "angels-plutonium-240"
 if mods[clowns_nuclear] and mods[shattered_mods] then
-    local replacements =
+    local replace_prototypes =
     {
         [plutonium_239_bob] = plutonium_239_shattered,
         [plutonium_239_mods] = plutonium_239_shattered
     }
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    data_item[plutonium_239_bob] = nil
-    data_recipe[plutonium_239_bob .. _recycling] = nil
-
-    data_item[plutonium_239_mods] = nil
-    data_recipe[plutonium_239_mods.. _recycling] = nil
-
-    data_recipe[plutonium_240_angels .. _recycling] = nil
+    local delete_proto = {plutonium_239_bob, plutonium_239_mods}
+    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 elseif mods[clowns_nuclear] and not mods[shattered_mods] then
-    local replacements =
-    {
-        [plutonium_239_mods] = plutonium_239_bob
-    }
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
+    local replace_prototypes = {[plutonium_239_mods] = plutonium_239_bob}
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
     data_item[plutonium_239_mods] = nil
 elseif not mods[clowns_nuclear] and mods[shattered_mods] then
-    local replacements =
-    {
-        [plutonium_239_bob] = plutonium_239_shattered
-    }
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
+    local replace_prototypes = {[plutonium_239_bob] = plutonium_239_shattered}
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    data_item[plutonium_239_bob] = nil
-    data_recipe[plutonium_239_bob .. _recycling] = nil
-
-    data_recipe[plutonium_240_angels .. _recycling] = nil
+    local delete_proto = {plutonium_239_bob}
+    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 end

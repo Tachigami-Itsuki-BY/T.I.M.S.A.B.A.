@@ -1,94 +1,112 @@
--- LOGISTICS
-local tier_configs =
+local delete_prototypes =
 {
-    {suffix = "-2", normal_chest = "bob-brass-chest",    tech = "logistic-system-2"},
-    {suffix = "-3", normal_chest = "bob-titanium-chest", tech = "logistic-system-3"}
+    -- LOGISTICS
+    "bob-brass-chest",
+    "bob-passive-provider-chest-2",
+    "bob-active-provider-chest-2",
+    "bob-storage-chest-2",
+    "bob-buffer-chest-2",
+    "bob-requester-chest-2",
+    "logistic-system-2",
+
+    "bob-titanium-chest",
+    "bob-passive-provider-chest-3",
+    "bob-active-provider-chest-3",
+    "bob-storage-chest-3",
+    "bob-buffer-chest-3",
+    "bob-requester-chest-3",
+    "logistic-system-3",
+
+    -- ADVANCED LOGISTICS
+    "bob-armoured-locomotive",
+    "bob-armoured-cargo-wagon",
+    "bob-armoured-fluid-wagon",
+    "bob-armoured-railway",
+
+    "bob-armoured-locomotive-2",
+    "bob-armoured-cargo-wagon-2",
+    "bob-armoured-fluid-wagon-2",
+    "bob-armoured-railway-2",
+
+    "bob-logistic-zone-interface",
+
+    -- PRODUCTION
+    "bob-burner-reactor",
+    "bob-burner-reactor-1",
+    "bob-burner-reactor-2",
+    "bob-fluid-reactor",
+    "bob-fluid-reactor-2",
+    "bob-fluid-reactor-from-fluid-furnace",
+
+    "bob-oil-boiler",
+    "bob-oil-boiler-1",
+    "bob-oil-boiler-2",
+    "bob-oil-boiler-3",
+    "bob-oil-boiler-4",
+
+    "bob-fast-accumulator",
+    "bob-fast-accumulator-2",
+    "bob-fast-accumulator-3",
+
+    "bob-slow-accumulator",
+    "bob-slow-accumulator-2",
+    "bob-slow-accumulator-3",
+
+    "bob-valve",
+    "bob-overflow-valve",
+    "bob-topup-valve",
+    "bob-void-pump",
+
+    "bob-air-pump", "bob-air-compressor-1", "bob-nitrogen-processing", "bob-void-fluid",
+    "bob-air-pump-2", "bob-air-compressor-2",
+    "bob-air-pump-3", "bob-air-compressor-3",
+    "bob-air-pump-4", "bob-air-compressor-4",
+
+    "bob-water-pump", "bob-water-bore-1",
+    "bob-water-pump-2", "bob-water-bore-2",
+    "bob-water-pump-3", "bob-water-bore-3",
+    "bob-water-pump-4", "bob-water-bore-4",
+
+    -- COMBAT
+    "bob-distractor-artillery-shell",
+    "bob-explosive-artillery-shell",
+    "bob-fire-artillery-shell",
+    "bob-poison-artillery-shell",
+
+    "bob-robot-drone-frame",
+    "bob-robot-drone-frame-large",
+    "bob-robot-gun-drone",
+    "bob-robot-laser-drone",
+    "bob-robot-flamethrower-drone",
+    "bob-robot-plasma-drone",
+
+    "bob-uranium-bullet-projectile",
+    "bob-uranium-bullet",
+    "bob-scatter-cannon-shell",
+    "bob-scatter-cannon-shells",
+    "bob-reinforced-wall",
+    "bob-reinforced-gate",
+    "bob-distractor-mine",
+    "bob-artifact-radar"
 }
+TIMSABA.functions.delete_prototypes(delete_prototypes)
 
-local logistic_bases =
-{
-    "bob-passive-provider-chest",
-    "bob-active-provider-chest",
-    "bob-storage-chest",
-    "bob-buffer-chest",
-    "bob-requester-chest"
-}
-for _, tier in ipairs(tier_configs) do
-    local nc = tier.normal_chest
-    data_item[nc] = nil
-    data_recipe[nc] = nil
-    data_recipe[nc .. _recycling] = nil
-    data_container[nc] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. nc .. _panglia_crushing] = nil
-    end
+data_roboport["bob-logistic-zone-interface"] = nil
 
-    data_technology[tier.tech] = nil
+data_gate["bob-reinforced-gate"] = nil
 
-    for _, base_name in ipairs(logistic_bases) do
-        local name = base_name .. tier.suffix
+data_radar["bob-artifact-radar"] = nil
 
-        data_item[name] = nil
-        data_recipe[name] = nil
-        data_recipe[name .. _recycling] = nil
-        data_logistic_container[name] = nil
+bobmods.lib.recipe.replace_ingredient("bob-player-frame-2", "bob-titanium-chest", "steel-chest")
+bobmods.lib.recipe.update_recycling_recipe({"bob-player-frame-2"})
 
-        if mods[panglia_mods] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
-    end
-end
-
-if not data_item["bob-titanium-chest"] then
-  bobmods.lib.recipe.replace_ingredient("bob-player-frame-2", "bob-titanium-chest", "steel-chest")
-
-  bobmods.lib.recipe.update_recycling_recipe({"bob-player-frame-2"})
-end
-
--- ADVANCED LOGISTICS
-local rail_suffixes =
-{
-    {suffix = "",   tech = "bob-armoured-railway"},
-    {suffix = "-2", tech = "bob-armoured-railway-2"}
-}
-for _, tier in ipairs(rail_suffixes) do
-    data_technology[tier.tech] = nil
-
-    local components =
-    {
-        {name = "bob-armoured-locomotive" .. tier.suffix,  tbl = data_locomotive},
-        {name = "bob-armoured-cargo-wagon" .. tier.suffix, tbl = data_wagon_cargo},
-        {name = "bob-armoured-fluid-wagon" .. tier.suffix, tbl = data_wagon_fluid, is_fluid = true}
-    }
-
-    for _, comp in ipairs(components) do
-        local name = comp.name
-        data_item_entity[name] = nil
-        data_recipe[name] = nil
-        data_recipe[name .. _recycling] = nil
-        comp.tbl[name] = nil
-
-        if mods[panglia_mods] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
-
-        if comp.is_fluid then
-            data_technology[name] = nil
-        end
-    end
-end
-
--- Универсальная очистка битых ссылок в списках копирования настроек
-local train_types = {"locomotive", "cargo-wagon", "fluid-wagon"}
-
+local train_types = {locomotive, wagon_cargo, wagon_fluid}
 for _, t_type in ipairs(train_types) do
     if data.raw[t_type] then
         for _, entity in pairs(data.raw[t_type]) do
             if entity.additional_pastable_entities then
                 for i = #entity.additional_pastable_entities, 1, -1 do
                     local target_name = entity.additional_pastable_entities[i]
-
-                    -- Ищем, к какому типу относится цель. Если её вообще нет в игре — удаляем ссылку
                     local exists = false
                     for _, check_type in ipairs(train_types) do
                         if data.raw[check_type] and data.raw[check_type][target_name] then
@@ -96,222 +114,12 @@ for _, t_type in ipairs(train_types) do
                             break
                         end
                     end
-
                     if not exists then
                         table.remove(entity.additional_pastable_entities, i)
                     end
                 end
             end
         end
-    end
-end
-
-local shells =
-{
-    "bob-distractor-artillery-shell",
-    "bob-explosive-artillery-shell",
-    "bob-fire-artillery-shell",
-    "bob-poison-artillery-shell"
-}
-for _, shell in ipairs(shells) do
-    data_ammo[shell] = nil
-    data_recipe[shell] = nil
-    data_recipe[shell .. _recycling] = nil
-
-    if mods[panglia_mods] then
-        data_recipe[ammo_ .. shell .. _panglia_crushing] = nil
-    end
-
-    data_technology[shell .. s] = nil
-end
-
-local items_to_clean =
-{
-    {name = "bob-robot-drone-frame"},
-    {name = "bob-robot-drone-frame-large"},
-
-    {name = "bob-robot-gun-drone",          is_drone = true},
-    {name = "bob-robot-laser-drone",        is_drone = true},
-    {name = "bob-robot-flamethrower-drone", is_drone = true},
-    {name = "bob-robot-plasma-drone",       is_drone = true},
-
-    {name = "bob-logistic-zone-interface",  custom_table = data_roboport}
-}
-for _, item in ipairs(items_to_clean) do
-    local name = item.name
-
-    data_item[name] = nil
-    data_recipe[name] = nil
-    data_recipe[name .. _recycling] = nil
-
-    if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-
-    if item.is_drone then
-        data_unit[name] = nil
-        data_technology[name .. s] = nil
-    end
-
-    if item.custom_table then
-        item.custom_table[name] = nil
-    end
-end
-
--- PRODUCTION
-local tech_FR_from_FF = "bob-fluid-reactor-from-fluid-furnace"
-if data_recipe[tech_FR_from_FF] then
-    data_recipe[tech_FR_from_FF] = nil
-end
-
-local reactor_tiers =
-{
-    {tech = "bob-burner-reactor-1", suffix = ""},
-    {tech = "bob-burner-reactor-2", suffix = "-2"}
-}
-for _, tier in ipairs(reactor_tiers) do
-    if data_technology[tier.tech] then
-        data_technology[tier.tech] = nil
-
-        for _, prefix in ipairs({"bob-burner-reactor", "bob-fluid-reactor"}) do
-            local name = prefix .. tier.suffix
-
-            data_item[name] = nil
-            data_recipe[name] = nil
-            data_recipe[name .. _recycling] = nil
-
-            if mods[panglia_mods] then
-                data_recipe[item_ .. name .. _panglia_crushing] = nil
-            end
-
-            data_reactor[name] = nil
-        end
-    end
-end
-
-local boilers =
-{
-    {name = "bob-oil-boiler",   tech = "bob-oil-boiler-1" },
-    {name = "bob-oil-boiler-2", tech = "bob-oil-boiler-2" },
-    {name = "bob-oil-boiler-3", tech = "bob-oil-boiler-3" },
-    {name = "bob-oil-boiler-4", tech = "bob-oil-boiler-4" }
-}
-for _, boiler in ipairs(boilers) do
-    if data_technology[boiler.tech] then
-        local name = boiler.name
-
-        data_item[name] = nil
-        data_recipe[name] = nil
-        data_recipe[name .. _recycling] = nil
-
-        if mods[panglia_mods] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
-
-        data_boiler[name] = nil
-
-        data_technology[boiler.tech] = nil
-    end
-end
-
-local suffixes = {"", "-2", "-3"}
-for _, suffix in ipairs(suffixes) do
-    for _, prefix in ipairs({"bob-fast-accumulator", "bob-slow-accumulator"}) do
-        local name = prefix .. suffix
-
-        data_item[name] = nil
-        data_recipe[name] = nil
-        data_recipe[name .. _recycling] = nil
-        data_accumulator[name] = nil
-
-        if mods[panglia_mods] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
-
-        if mods[solar_productivity] then
-            for i = 1, 99 do
-                local sp_prefix = "sp-" .. i .. "-"
-                if sp_prefix then
-                    data_accumulator[sp_prefix .. name] = nil
-                end
-            end
-        end
-    end
-end
-
-local fluid_elements =
-{
-    {name = "bob-valve",          tbl = data_valve},
-    {name = "bob-overflow-valve", tbl = data_valve},
-    {name = "bob-topup-valve",    tbl = data_valve},
-
-    {name = "bob-void-pump",      tbl = data_furnace},
-
-    {name = "bob-air-pump",       tbl = data_assembling, techs = {"bob-air-compressor-1", "bob-nitrogen-processing", "bob-void-fluid"}},
-    {name = "bob-air-pump-2",     tbl = data_assembling, techs = {"bob-air-compressor-2"}},
-    {name = "bob-air-pump-3",     tbl = data_assembling, techs = {"bob-air-compressor-3"}},
-    {name = "bob-air-pump-4",     tbl = data_assembling, techs = {"bob-air-compressor-4"}},
-
-    {name = "bob-water-pump",     tbl = data_assembling, techs = {"bob-water-bore-1"}},
-    {name = "bob-water-pump-2",   tbl = data_assembling, techs = {"bob-water-bore-2"}},
-    {name = "bob-water-pump-3",   tbl = data_assembling, techs = {"bob-water-bore-3"}},
-    {name = "bob-water-pump-4",   tbl = data_assembling, techs = {"bob-water-bore-4"}}
-}
-for _, element in ipairs(fluid_elements) do
-    local name = element.name
-
-    data_item[name] = nil
-    data_recipe[name] = nil
-    data_recipe[name .. _recycling] = nil
-    element.tbl[name] = nil
-
-    if mods[panglia_mods] then
-        data_recipe[item_ .. name .. _panglia_crushing] = nil
-    end
-
-    if element.techs then
-        for _, tech in ipairs(element.techs) do
-            data_technology[tech] = nil
-        end
-    end
-end
-
--- COMBAT
-local items_to_clean =
-{
-    {name = "bob-uranium-bullet-projectile", type = item},
-    {name = "bob-uranium-bullet",            type = item},
-    {name = "bob-scatter-cannon-shell",      type = ammo,      tech = "bob-scatter-cannon-shell" .. s},
-    {name = "bob-reinforced-wall",           type = item,      tech = true, custom_table = data_wall},
-    {name = "bob-reinforced-gate",           type = item,      custom_table = data_gate},
-    {name = "bob-distractor-mine",           type = item,      tech = true, custom_table = data_land_mine},
-    {name = "bob-artifact-radar",            type = item,      tech = true, custom_table = data_radar}
-}
-
-local type_tables =
-{
-    item = {main = data_item, prefix = item_},
-    ammo = {main = data_ammo, prefix = ammo_}
-}
-for _, config in ipairs(items_to_clean) do
-    local name = config.name
-    local t = type_tables[config.type]
-
-    t.main[name] = nil
-    data_recipe[name] = nil
-    data_recipe[name .. _recycling] = nil
-
-    if mods[panglia_mods] then
-        data_recipe[t.prefix .. name .. _panglia_crushing] = nil
-    end
-
-    if config.custom_table then
-        config.custom_table[name] = nil
-    end
-
-    if config.tech then
-        local tech_name = (config.tech == true) and name or config.tech
-        data_technology[tech_name] = nil
     end
 end
 
@@ -340,29 +148,63 @@ data_recipe["angels-liquid-molten-titanium-5"] = nil
 data_recipe["angels-thermal-water-filtering-1"] = nil
 data_recipe["angels-thermal-water-filtering-2"] = nil
 
+-- ANGELS BIOPROCESSING
+-- Таблица, куда мы соберем точные имена всего, от чего нужно избавиться
+local delete_prototypes = {}
+
+-- 1. Собираем рецепты-пустоты (void рецепты Ангела)
+local prefixes =
+{
+    "angels%-water%-void",
+    "angels%-chemical%-void",
+    "angels%-bio%-void"
+}
+for recipe_name, _ in pairs(data.raw.recipe) do
+    for i = 1, #prefixes do
+        if string.find(recipe_name, "^" .. prefixes[i]) then
+            -- Добавляем в список на удаление
+            table.insert(delete_prototypes, recipe_name)
+            break
+        end
+    end
+end
+
+-- 2. Собираем все предметы, содержащие "dormant" в названии
+-- Используем data.raw.item вместо кастомных таблиц для надежности 2.0
+for item_name, _ in pairs(data_item) do
+    if string.find(item_name, "dormant") then
+        table.insert(delete_prototypes, item_name)
+    end
+end
+
+-- 3. Собираем специфичные рецепты переработки дормантов
+for recipe_name, _ in pairs(data_recipe) do
+    if string.find(recipe_name, "dormant%-recycling") then
+        table.insert(delete_prototypes, recipe_name)
+    -- Проверка на панглию (лучше проверять mods["имя_мода"], у вас это panglia_mods)
+    elseif mods[panglia_mods] and string.find(recipe_name, "dormant%-panglia_crushing") then
+        table.insert(delete_prototypes, recipe_name)
+    end
+end
+
+-- 4. ЗАПУСКАЕМ ВАШУ УНИВЕРСАЛЬНУЮ ФУНКЦИЮ
+-- Она физически сотрет сами предметы/рецепты И автоматически каскадом 
+-- отключит (через .hidden = true) все ящики (cargo-crate) и другие связанные скрытые рецепты
+TIMSABA.functions.delete_prototypes(delete_prototypes)
+
+-- MODS
 if mods[clowns_nuclear] then
-    local bombs =
+    local delete_prototypes =
     {
         "thermonuclear-bomb",
         "plutonium-atomic-bomb",
         "artillery-shell-nuclear",
         "artillery-shell-thermonuclear"
     }
-    for _, bomb in ipairs(bombs) do
-        data_ammo[bomb] = nil
-        data_recipe[bomb] = nil
-        data_recipe[bomb .. _recycling] = nil
-
-        if mods[panglia_mods] then
-            data_recipe[ammo_ .. bomb .. _panglia_crushing] = nil
-        end
-
-        if bomb == "thermonuclear-bomb" then
-            data_technology[bomb] = nil
-        end
-    end
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 end
 
+-- GLOBAL
 -- Кэшируем функции для максимального быстродействия в Factorio
 local sub = string.sub
 local find = string.find
@@ -467,11 +309,15 @@ for recipe_name, recipe in pairs(data_recipe) do
     end
 end
 
--- Безопасное удаление рецептов и очистка технологий
+-- Безопасноая очистка технологий
 if next(to_delete) then
-    -- 1. Удаляем сами рецепты
+    -- 1. Скрываем рецепты
     for recipe_name in pairs(to_delete) do
-        data_recipe[recipe_name] = nil
+        local recipe = data_recipe[recipe_name]
+        if recipe then
+            recipe.enabled = false
+            recipe.hidden = true
+        end
     end
 
     -- 2. Вырезаем эффекты из технологий

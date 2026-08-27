@@ -357,9 +357,9 @@ for _, BUILD in pairs(mining_machines) do
     data_mining_drill[BUILD.name].localised_name = BUILD.localised_name
     data_mining_drill[BUILD.name].subgroup = BUILD.subgroup
     data_mining_drill[BUILD.name].order = BUILD.order
-    data_mining_drill[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_mining_drill[BUILD.name].module_slots = BUILD.mining_speed
     data_mining_drill[BUILD.name].mining_speed = BUILD.mining_speed
+    data_mining_drill[BUILD.name].energy_usage = BUILD.energy_usage .. kW
     data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.mining_speed
     if BUILD.subgroup == is_extraction_machine_mining then
         data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
@@ -373,9 +373,10 @@ data_recipe[burner_mining_drill].ingredients =
     {type = item, name = stone_furnace,   amount = 1},
     {type = item, name = iron_plate,      amount = 4}
 }
+data_mining_drill[burner_mining_drill].mining_speed = 0.5
 data_mining_drill[burner_mining_drill].energy_usage = 225 .. kW
 data_mining_drill[burner_mining_drill].energy_source.emissions_per_minute.pollution = 8
-data_mining_drill[burner_mining_drill].mining_speed = 0.5
+
 data_mining_drill[pumpjack_1].max_health = 100
 local function mining_drill_recipe(name, gear_wheel, circuit, mining_drill, plate)
     data_recipe[name].ingredients =
@@ -408,7 +409,35 @@ pumpjack_recipe(pumpjack_2, brass_gear_wheel,    advanced_circuit,         brass
 pumpjack_recipe(pumpjack_3, titanium_gear_wheel, processing_unit,          titanium_pipe, pumpjack_2,          titanium_plate_bob)
 pumpjack_recipe(pumpjack_4, nitinol_gear_wheel,  advanced_processing_unit, nitinol_pipe,  pumpjack_3,          nitinol_plate_bob)
 
-if data_item[area_mining_drill_1] then
+if mods[pelagos_mods] then
+    local pumpplatform = "oil_rig"
+    data_item[pumpplatform].subgroup = is_extraction_machine_pumpjack
+    data_item[pumpplatform].order = z
+    data_item[pumpplatform].stack_size = 32
+    data_item[pumpplatform].weight = 31250
+    data_recipe[pumpplatform].subgroup = is_extraction_machine_pumpjack
+    data_recipe[pumpplatform].order = z
+    data_recipe[pumpplatform].energy_required = 32
+    data_recipe[pumpplatform].ingredients =
+    {
+        {type = item, name = steel_gear_wheel, amount = 64},
+        {type = item, name = steel_bearing, amount = 32},
+        {type = item, name = steel_pipe, amount = 64},
+        {type = item, name = steel_plate, amount = 64},
+        {type = item, name = concrete, amount = 64},
+        {type = item, name = pumpjack_1, amount = 1},
+        {type = item, name = storage_tank_1, amount = 1}
+    }
+    data_mining_drill[pumpplatform].subgroup = is_extraction_machine_pumpjack
+    data_mining_drill[pumpplatform].order = z
+    data_mining_drill[pumpplatform].mining_speed = 4
+    data_mining_drill[pumpplatform].module_slots = 4
+    data_mining_drill[pumpplatform].energy_usage = 480 .. kW
+    data_mining_drill[pumpplatform].energy_source.emissions_per_minute.pollution = 8
+    bobmods.lib.recipe.update_recycling_recipe({pumpplatform})
+end
+
+if settings.startup[setting_bobmods_mining_areadrills].value then
     local area_mining_drills =
     {
         {name = area_mining_drill_1, subgroup = is_extraction_machine_mining, order = g, mining_speed = 1, energy_usage = 240},
@@ -784,6 +813,13 @@ if mods[bobtech] then
         end
         if mods[muria_mods] then
             table.insert(data_lab[lab_alien].inputs, muriatic_science_pack)
+        end
+        if mods[pelagos_mods] then
+            table.insert(data_lab[lab_alien].inputs, spoilage_science_pack)
+        end
+        -- УБРАТЬ или ИЗМЕНИТЬ
+        if mods[obsidiax_mods] then
+            table.insert(data_lab[lab_alien].inputs, obsidian_cube_sp)
         end
     end
 end

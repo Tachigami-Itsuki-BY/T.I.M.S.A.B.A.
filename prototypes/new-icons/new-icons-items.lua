@@ -274,6 +274,11 @@ if mods[shchierbin_mods] then
     data_item[vanadium_plate].icon_size = 64
 end
 
+-- PELAGOS
+if mods[pelagos_mods] then
+    data_item[titanium_dust].icon = "__TIMSABA__/graphics/icons/pelagos/titanium-dust.png"
+end
+
 -- MODS
 if mods[clowns_nuclear] then
     data_item[uranium_235].icons = nil

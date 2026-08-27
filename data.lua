@@ -161,6 +161,8 @@ require("prototypes.planet.muria.muria-groups")
 require("prototypes.planet.muria.muria-item-fluid")
 require("prototypes.planet.muria.muria-recipe")
 
+require("prototypes.planet.pelagos.pelagos-groups")
+
 -- THIRD CIRCLE PLANETS
 require("prototypes.planet.paracelsin.paracelsin-groups")
 require("prototypes.planet.paracelsin.paracelsin-sphalerite")

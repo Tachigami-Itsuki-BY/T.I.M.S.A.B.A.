@@ -103,7 +103,7 @@ if mods[corrundum_mods] then
     }
     data_recipe[sulfurous_oxidation].results =
     {
-        {type = item, name = sulfuric_acid_angels, amount = 60},
+        {type = fluid, name = sulfuric_acid_angels, amount = 60},
         {type = fluid, name = hydrogen_angels, amount = 60}
     }
     data_recipe[sulfurous_oxidation].main_product = sulfuric_acid_angels

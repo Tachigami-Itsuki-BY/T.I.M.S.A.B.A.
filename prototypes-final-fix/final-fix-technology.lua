@@ -407,3 +407,22 @@ end
 if mods[muria_mods] then
     auto_added_science_pack(muriatic_science_pack, muriatic_science_pack)
 end
+
+-- PELAGOS
+if mods[pelagos_mods] then
+    auto_added_science_pack(spoilage_science_pack, spoilage_science_pack)
+end
+
+-- FOLIAX
+
+-- OBSIDIAX
+if mods[obsidiax_mods] then
+    -- УБРАТЬ или ИЗМЕНИТЬ после корректировки технологий
+    table.insert(data_lab[lab].inputs, obsidian_cube_sp)
+    if data_lab[lab_2] then
+       table.insert(data_lab[lab_2].inputs, obsidian_cube_sp)
+    end
+    if data_lab[cryolab] then
+        table.insert(data_lab[cryolab].inputs, obsidian_cube_sp)
+    end
+end

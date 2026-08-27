@@ -78,3 +78,37 @@ end
 if mods[moshine_mods] then
     data_locomotive[space_locomotive].energy_source.fuel_categories = {"electrical"}
 end
+
+if mods[pelagos_mods] then
+    data_assembling[captive_copper_biter_spawner].energy_source =
+    {
+        type = "burner",
+        fuel_categories = {"food"},
+        effectivity = 1,
+        fuel_inventory_size = 1,
+        emissions_per_minute = {pollution = -1},
+        burner_usage = "food",
+        light_flicker =
+        {
+            minimum_intensity = 0,
+            maximum_intensity = 0,
+            derivation_change_frequency = 0,
+            derivation_change_deviation = 0,
+            border_fix_speed = 0,
+            minimum_light_size = 0,
+            light_intensity_to_size_coefficient = 0,
+            color = {0, 0, 0, 1}
+        }
+    }
+end
+
+if mods[foliax_mods] then
+    data_agricultural_tower[burner_agricultural_tower_foliax].energy_source.fuel_categories = {"foliax-arcane"}
+end
+
+if mods[obsidiax_mods] then
+    data_assembling[foundry_obsidiax].energy_source.fuel_categories = {"obsidian-cube"}
+    data_assembling[foundry_obsidiax .. "-mk2"].energy_source.fuel_categories = {"obsidian-cube"}
+    data_assembling[foundry_ice_obsidiax].energy_source.fuel_categories = {"obsidian-cube"}
+    data_assembling[foundry_ice_obsidiax .. "-mk2"].energy_source.fuel_categories = {"obsidian-cube"}
+end

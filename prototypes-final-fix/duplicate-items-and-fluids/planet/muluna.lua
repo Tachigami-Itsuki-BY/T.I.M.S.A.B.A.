@@ -1,6 +1,6 @@
 if mods[muluna_mods] then
 	local sapling_muluna = "muluna-sapling"
-    local replacements =
+    local replace_prototypes =
     {
         [alumina_mods] = aluminium_oxide,
 		[aluminium_plate_mods] = aluminium_plate_bob,
@@ -12,11 +12,9 @@ if mods[muluna_mods] then
         [oxygen_mods] = oxygen_angels,
         [carbon_dioxide_mods] = carbon_dioxide_angels
     }
-    TIMSABA.functions.replace_duplicate_prototypes(replacements)
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	data_tile["muluna-gravel"] = nil
-
-	local mod_items =
+	local delete_proto =
 	{
 		alumina_mods,
 		aluminium_plate_mods,
@@ -24,72 +22,27 @@ if mods[muluna_mods] then
 		cellulose_mods,
 		sapling_muluna
 	}
-	for _, name in ipairs(mod_items) do
-		data_item[name] = nil
-		data_recipe[name .. _recycling] = nil
+	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
 
-		if mods[panglia_mods] then
-			data_recipe[item_ .. name .. _panglia_crushing] = nil
-		end
-	end
-
-	local mod_recipes =
+	local delete_prototypes =
 	{
+		"muluna-gravel",
 		"casting-aluminum",
 		"oxygen-venting",
 		"hydrogen-venting",
 		"carbon-dioxide-venting",
 		"thruster-fuel-from-rocket-fuel",
 		carbon_dioxide_mods,
-		"atmosphere-oxygen-separation"
+		"atmosphere-oxygen-separation",
+		"muluna-placed-tree",
+		molten_aluminium_mods,
+		"muluna-gas-venting",
+		--"thruster-fuel-productivity",
+		"muluna-rocket-buggy",
+		"space-chest-muluna",
+		"muluna-greenhouse"
 	}
-	for _, name in ipairs(mod_recipes) do
-		data_recipe[name] = nil
-	end
-
-	data_plant["muluna-placed-tree"] = nil
-
-    data_fluid[molten_aluminium_mods] = nil
-	data_recipe[molten_aluminium_mods] = nil
-
-	data_technology["muluna-gas-venting"] = nil
-	data_technology["thruster-fuel-productivity"] = nil
-
-	local muluna_objects =
-	{
-		{name = "muluna-rocket-buggy", item_table = data_item_entity, custom_table = data_car,       has_tech = true},
-		{name = "space-chest-muluna",  item_table = data_item,        custom_table = data_container, has_tech = true},
-		{name = "muluna-greenhouse",   item_table = data_item,        custom_table = nil,            has_tech = false}
-	}
-	for _, obj in ipairs(muluna_objects) do
-		local name = obj.name
-
-		obj.item_table[name] = nil
-
-		data_recipe[name] = nil
-		data_recipe[name .. _recycling] = nil
-
-		if mods[panglia_mods] then
-			data_recipe[item_ .. name .. _panglia_crushing] = nil
-		end
-
-		if obj.custom_table then
-			obj.custom_table[name] = nil
-		end
-
-		if obj.has_tech then
-			data_technology[name] = nil
-		end
-	end
-
-	data_technology[thruster_fuel].effects = {{type = unlock_recipe, recipe = thruster_fuel}}
-
-	local carbonic_asteroid_crushing = "carbonic-asteroid-crushing"
-	data_technology[carbonic_asteroid_crushing].effects =
-	{
-		{type = unlock_recipe, recipe = carbonic_asteroid_crushing},
-		{type = unlock_recipe, recipe = "electric-engine-unit-from-carbon"}
-	}
+	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 	local regolith_digging = "muluna-regolith-digging"
 	local alumina_crushing = "alumina-crushing"
@@ -115,7 +68,6 @@ if mods[muluna_mods] then
 		end
 	end
 	for _, machine in pairs(data_assembling or {}) do
-        -- Если у автомата жестко задан старый рецепт, меняем его на новый
         if machine.fixed_recipe == regolith_digging then
             machine.fixed_recipe = lunar_regolith
         end
@@ -127,6 +79,14 @@ if mods[muluna_mods] then
 
 	data_recipe[copper_cable .. _recycling].surface_conditions = nil
 	data_recipe[copper_cable .. _recycling .. "-muluna"] = nil
+
+	data_technology[thruster_fuel].effects = {{type = unlock_recipe, recipe = thruster_fuel}}
+
+	data_technology[carbonic_asteroid_crushing_1].effects =
+	{
+		{type = unlock_recipe, recipe = carbonic_asteroid_crushing_1},
+		{type = unlock_recipe, recipe = electric_engine_unit_from_carbon}
+	}
 
 	local tech_space_platform_thruster = "space-platform-thruster"
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}

@@ -33,7 +33,7 @@ data_recipe[stiratite_bacteria].results =
     {type = item, name = spoilage, amount = 4}
 }
 
-local saphirite_bacteria_cultivation = "iron-bacteria-cultivation"
+saphirite_bacteria_cultivation = "iron-bacteria-cultivation"
 data_recipe[saphirite_bacteria_cultivation].localised_name = {"recipe-name.saphirite-bacteria-cultivation"}
 data_recipe[saphirite_bacteria_cultivation].subgroup = is_bacteria_cultivation
 data_recipe[saphirite_bacteria_cultivation].icons = STONKS_I(stonks_png, saphirite_bacteria)
@@ -44,7 +44,7 @@ data_recipe[saphirite_bacteria_cultivation].ingredients =
     {type = item, name = bioflux, amount = 1}
 }
 
-local stiratite_bacteria_cultivation = "copper-bacteria-cultivation"
+stiratite_bacteria_cultivation = "copper-bacteria-cultivation"
 data_recipe[stiratite_bacteria_cultivation].localised_name = {"recipe-name.stiratite-bacteria-cultivation"}
 data_recipe[stiratite_bacteria_cultivation].subgroup = is_bacteria_cultivation
 data_recipe[stiratite_bacteria_cultivation].icons = STONKS_I(stonks_png, stiratite_bacteria)
@@ -149,7 +149,6 @@ data_recipe[jellynut_processing].results =
     {type = item, name = jellynut_seed, amount = 1, probability = 0.03125}
 }
 
-local artificial_jellynut_soil = "artificial-jellynut-soil"
 data_item[artificial_jellynut_soil].subgroup = is_jellynut
 data_item[artificial_jellynut_soil].order = d
 data_item[artificial_jellynut_soil].stack_size = 200
@@ -158,7 +157,6 @@ data_recipe[artificial_jellynut_soil].order = d
 data_recipe[artificial_jellynut_soil].ingredients[2].amount = 64
 data_recipe[artificial_jellynut_soil].ingredients[3].amount = 4
 
-local overgrowth_jellynut_soil = "overgrowth-jellynut-soil"
 data_item[overgrowth_jellynut_soil].subgroup = is_jellynut
 data_item[overgrowth_jellynut_soil].order = e
 data_item[overgrowth_jellynut_soil].stack_size = 200
@@ -205,7 +203,6 @@ data_recipe[yumako_processing].results =
     {type = item, name = yumako_seed, amount = 1, probability = 0.03125}
 }
 
-local artificial_yumako_soil = "artificial-yumako-soil"
 data_item[artificial_yumako_soil].subgroup = is_yumako
 data_item[artificial_yumako_soil].order = d
 data_item[artificial_yumako_soil].stack_size = 200
@@ -214,7 +211,6 @@ data_recipe[artificial_yumako_soil].order = d
 data_recipe[artificial_yumako_soil].ingredients[2].amount = 64
 data_recipe[artificial_yumako_soil].ingredients[3].amount = 4
 
-local overgrowth_yumako_soil = "overgrowth-yumako-soil"
 data_item[overgrowth_yumako_soil].subgroup = is_yumako
 data_item[overgrowth_yumako_soil].order = e
 data_item[overgrowth_yumako_soil].stack_size = 200
@@ -226,7 +222,7 @@ data_recipe[overgrowth_yumako_soil].ingredients[3].amount = 8
 data_recipe[overgrowth_yumako_soil].ingredients[4].amount = 64
 data_recipe[overgrowth_yumako_soil].ingredients[5].amount = 120
 
--- PENTAPOD EGG AND BIOFLUX
+-- PENTAPOD EGG and BIOFLUX
 data_item[pentapod_egg].subgroup = is_pentapod_egg_and_bioflux
 data_item[pentapod_egg].order = a
 data_item[pentapod_egg].stack_size = 200
@@ -307,7 +303,7 @@ data_recipe[biter_egg].energy_required = 8
 data_recipe[biter_egg].results[1].amount = 4
 
 if mods[panglia_mods] then
-    local cloning_biter_egg = "cloning-biter-egg"
+    cloning_biter_egg = "cloning-biter-egg"
     data_recipe[cloning_biter_egg].subgroup = is_gleba_recipe
     data_recipe[cloning_biter_egg].icons = STONKS_I(stonks_png, biter_egg)
     data_recipe[cloning_biter_egg].order = a_a
@@ -333,7 +329,7 @@ data_recipe[wood_processing].subgroup = is_gleba_recipe
 data_recipe[wood_processing].order = c_a
 data_recipe[wood_processing].surface_conditions = nil
 
-local factorian_fish_breeding = "fish-breeding"
+factorian_fish_breeding = "fish-breeding"
 data_recipe[factorian_fish_breeding].category = "angels-bio-refugium-fish"
 data_recipe[factorian_fish_breeding].localised_name = {"recipe-name.breeding-factorian-fish"}
 data_recipe[factorian_fish_breeding].subgroup = is_gleba_recipe
@@ -477,7 +473,11 @@ data_ammo[capture_robot_rocket].weight = 15625
 data_recipe[capture_robot_rocket].subgroup = is_gleba_war
 data_recipe[capture_robot_rocket].order = a
 data_recipe[capture_robot_rocket].energy_required = 8
-data_recipe[capture_robot_rocket].ingredients[1].name = flying_robot_frame_4
+if data_item[flying_robot_frame_4] then
+    data_recipe[capture_robot_rocket].ingredients[1].name = flying_robot_frame_4
+else
+    data_recipe[capture_robot_rocket].ingredients[1].name = flying_robot_frame_1
+end
 data_recipe[capture_robot_rocket].ingredients[2].name = molybdenum_rhenium_plate
 data_recipe[capture_robot_rocket].ingredients[3].amount = 16
 data_recipe[capture_robot_rocket].ingredients[4].name = advanced_processing_unit
@@ -714,7 +714,9 @@ if mods[bobtech] then
     table.insert(data_technology[tech_transport_belt_capacity_2].unit.ingredients, {transport_science_pack, 1})
 end
 
-data_technology["captivity"].unit.ingredients =
+local tech_captivity = "captivity"
+data_technology[tech_captivity].prerequisites = {agricultural_science_pack}
+data_technology[tech_captivity].unit.ingredients =
 {
     {automation_science_pack, 1},
     {logistic_science_pack, 1},
@@ -723,6 +725,20 @@ data_technology["captivity"].unit.ingredients =
     {utility_science_pack, 1},
     {space_science_pack, 1},
     {agricultural_science_pack, 1}
+}
+
+data_technology[captive_biter_spawner].unit.ingredients =
+{
+    {automation_science_pack, 1},
+    {logistic_science_pack, 1},
+    {chemical_science_pack, 1},
+    {production_science_pack, 1},
+    {utility_science_pack, 1},
+    {space_science_pack, 1},
+    {metallurgic_science_pack, 1},
+    {agricultural_science_pack, 1},
+    {electromagnetic_science_pack, 1},
+    {cryogenic_science_pack, 1}
 }
 
 data_technology[plastic .. _productivity].effects =

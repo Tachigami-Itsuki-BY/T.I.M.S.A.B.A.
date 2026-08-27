@@ -581,6 +581,26 @@ if mods[panglia_mods] then
         }
     end
 
+    if mods[pelagos_mods] then
+        local cosmic_incubator_recipe_pelagos = "cosmic_incubator_recipe_pelagos"
+        data_recipe[cosmic_incubator_recipe_pelagos].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.pelagos"}}
+        data_recipe[cosmic_incubator_recipe_pelagos].subgroup = is_panglia_universe_planets
+        data_recipe[cosmic_incubator_recipe_pelagos].icons = GALAXY_I(galaxy_png, planet_pelagos)
+        data_recipe[cosmic_incubator_recipe_pelagos].order = data_planet[planet_pelagos].order
+        data_recipe[cosmic_incubator_recipe_pelagos].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_pelagos].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
     -- MOONS
     if mods[muluna_mods] then
         local cosmic_incubator_recipe_muluna = "cosmic_incubator_recipe_muluna"
@@ -797,6 +817,9 @@ if mods[panglia_mods] then
     -- TECHNOLOGY
     local planet_discovery_panglia = "panglia_planet_discovery_panglia"
     data_technology[planet_discovery_panglia].prerequisites = {metallurgic_science_pack, agricultural_science_pack}
+    if mods[moshine_mods] then
+        data_technology[planet_discovery_panglia].prerequisites = {"moshine-tech-data-extractor"}
+    end
     data_technology[planet_discovery_panglia].unit.ingredients =
     {
         {automation_science_pack, 1},

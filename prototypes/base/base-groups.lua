@@ -52,18 +52,26 @@ data_item_subgroup["bob-electronic-boards"].order = d_c
 is_nuclear_item = "is-nuclear-item"
 is_nuclear_recipe = "is-nuclear-recipe"
 is_uranium_235_item = "is-uranium-235-item"
-is_uranium_235_recipe = "is-uranium-235_recipe"
-is_nuclear_cell = "is-nuclear-cell"
+is_uranium_235_recipe = "is-uranium-235-recipe"
+is_uranium_cell = "is-uranium-cell"
+is_mixed_oxide_cell = "is-mixed-oxide-cell"
+is_thorium_cell = "is-thorium-cell"
+is_deuterium_cell = "is-deuterium-cell"
+is_tritium_cell = "is-tritium-cell"
 TIMSABA.functions.create_subgroups("intermediate-products",
 {
-    {name = is_alien_science_pack, order = a_a},
-    {name = is_bearing, order = b_c},
-    {name = is_circuit_boards, order = d_b},
-    {name = is_nuclear_item, order = e},
-    {name = is_nuclear_recipe, order = e_a},
-    {name = is_uranium_235_item, order = e_b},
-    {name = is_uranium_235_recipe, order = e_c},
-    {name = is_nuclear_cell, order = e_d}
+    {name = is_alien_science_pack,    order = a_a},
+    {name = is_bearing,               order = b_c},
+    {name = is_circuit_boards,        order = d_b},
+    {name = is_nuclear_item,          order = e},
+    {name = is_nuclear_recipe,        order = e_a},
+    {name = is_uranium_235_item,      order = e_b},
+    {name = is_uranium_235_recipe,    order = e_c},
+    {name = is_uranium_cell,          order = e_d},
+    {name = is_mixed_oxide_cell,      order = e_e},
+    {name = is_thorium_cell,          order = e_f},
+    {name = is_deuterium_cell,        order = e_g},
+    {name = is_tritium_cell,          order = e_h}
 })
 
 -- COMBAT

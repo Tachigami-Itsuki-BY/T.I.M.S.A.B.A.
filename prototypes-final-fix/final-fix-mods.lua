@@ -1,3 +1,6 @@
+-- ADVANCED LOGISTICS
+data_lamp[small_lamp].next_upgrade = nil
+
 -- COMBAT
 if mods[bobwarfare] then
     data_recipe["bob-gun-cotton"].ingredients =
@@ -16,41 +19,6 @@ data_assembling[oil_refinery_1].order = a
 
 data_storage_tank["angels-storage-tank-2"].fluid_box.volume = 180000
 data_storage_tank["angels-storage-tank-1"].fluid_box.volume = 180000
-
-local prefixes =
-{
-    "angels%-water%-void",
-    "angels%-chemical%-void",
-    "angels%-bio%-void"
-}
-for recipe_name, _ in pairs(data.raw.recipe) do
-    for _, prefix in ipairs(prefixes) do
-        if string.find(recipe_name, "^" .. prefix) then
-            data.raw.recipe[recipe_name] = nil
-            break
-        end
-    end
-end
-
-for item_name, _ in pairs(data_item) do
-    if string.find(item_name, "dormant") then
-        data_item[item_name] = nil
-    end
-end
-
-for recipe_name, _ in pairs(data_recipe) do
-    if string.find(recipe_name, "dormant%-recycling") then
-        data_recipe[recipe_name] = nil
-    end
-end
-
-if mods[panglia_mods] then
-    for recipe_name, _ in pairs(data_recipe) do
-        if string.find(recipe_name, "dormant%-panglia_crushing") then
-            data_recipe[recipe_name] = nil
-        end
-    end
-end
 
 data_resource[ore_saphirite].icons = nil
 data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
@@ -123,12 +91,6 @@ if mods[bobwarfare] then
 end
 
 data_recipe[lithium_perchlorate_bob].category = angels_liquifying
-
--- NUCLEAR FIX
-if not mods[shattered_mods] then
-    data_recipe["angels-plutonium-239-recycling"] = nil
-    data_recipe["angels-thorium-232-recycling"] = nil
-end
 
 -- SPACE AGE
 data_armor[mech_armor].resistances =
@@ -317,6 +279,20 @@ if mods[muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
     end
 
+    if mods[pelagos_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+    end
+
     data_recipe[casting_low_density_structure_muluna].ingredients =
     {
         {type = item, name = plastic, amount = 4},
@@ -343,6 +319,10 @@ end
 
 if not mods[muluna_mods] and mods[muria_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muria, change = 0.1})
+end
+
+if not mods[muluna_mods] and mods[pelagos_mods] then
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
 end
 
 if mods[muluna_mods] then
@@ -659,6 +639,67 @@ if mods[maraxsis_mods] then
         electricity_description = maraxsis.shorten_localised_string(electricity_description)
 
         data_recipe[molten_salt_mods].localised_description = {"recipe-description.molten-salt", electricity_description}
+    end
+end
+
+-- PELAGOS
+if mods[pelagos_mods] then
+    for name in pairs(data_item) do
+        if (string.find(name, "^cargo%-crate%-") or string.find(name, "^unpack%-cargo%-crate%-") or string.find(name, "^cargo%-crate%-spoiled%-")) then
+            if data_item[name] then data_item[name] = nil end
+        end
+    end
+    for name in pairs(data_recipe) do
+        if (string.find(name, "^cargo%-crate%-") or string.find(name, "^unpack%-cargo%-crate%-") or string.find(name, "^cargo%-crate%-spoiled%-")) then
+            if data_recipe[name] then data_recipe[name] = nil end
+        end
+    end
+    data_technology["cargo-crates"] = nil
+
+    -- EXCAVATOR RESOURCE PLANETS
+    local canex_rsc_digable_ = "canex-rsc-digable-"
+    data_resource[canex_rsc_digable_ .. planet_nauvis].subgroup = is_excavator_rp
+    data_resource[canex_rsc_digable_ .. planet_nauvis].order = data_planet[planet_nauvis].order
+
+    data_resource[canex_rsc_digable_ .. planet_vulcanus].subgroup = is_excavator_rp
+    data_resource[canex_rsc_digable_ .. planet_vulcanus].order = data_planet[planet_vulcanus].order
+
+    data_resource[canex_rsc_digable_ .. planet_gleba].subgroup = is_excavator_rp
+    data_resource[canex_rsc_digable_ .. planet_gleba].order = data_planet[planet_gleba].order
+    data_resource[canex_rsc_digable_ .. planet_gleba].minable.results = {{type = item, name = stone, amount = 1}}
+
+    data_resource[canex_rsc_digable_ .. planet_fulgora].subgroup = is_excavator_rp
+    data_resource[canex_rsc_digable_ .. planet_fulgora].order = data_planet[planet_fulgora].order
+    data_resource[canex_rsc_digable_ .. planet_fulgora].minable.results = {{type = item, name = stone, amount = 1}}
+
+    data_resource[canex_rsc_digable_ .. planet_aquilo].subgroup = is_excavator_rp
+    data_resource[canex_rsc_digable_ .. planet_aquilo].order = data_planet[planet_aquilo].order
+    data_resource[canex_rsc_digable_ .. planet_aquilo].minable.results = {{type = item, name = stone, amount = 1}}
+
+    if mods[moshine_mods] then
+        data_resource[canex_rsc_digable_ .. planet_moshine].subgroup = is_excavator_rp
+        data_resource[canex_rsc_digable_ .. planet_moshine].order = data_planet[planet_moshine].order
+        data_resource[canex_rsc_digable_ .. planet_moshine].minable.results = {{type = item, name = stone, amount = 1}}
+    end
+
+    if mods[arig_mods] then
+        data_resource[canex_rsc_digable_ .. planet_arig].subgroup = is_excavator_rp
+        data_resource[canex_rsc_digable_ .. planet_arig].order = data_planet[planet_arig].order
+    end
+
+    if mods[vesta_mods] then
+        data_resource[canex_rsc_digable_ .. planet_vesta].subgroup = is_excavator_rp
+        data_resource[canex_rsc_digable_ .. planet_vesta].order = data_planet[planet_vesta].order
+    end
+
+    data_resource[canex_rsc_digable_ .. planet_pelagos].subgroup = is_excavator_rp
+    data_resource[canex_rsc_digable_ .. planet_pelagos].order = data_planet[planet_pelagos].order
+
+    -- EXCAVATOR RESOURCE MOONS
+    if mods[panglia_mods] then
+        data_resource[canex_rsc_digable_ .. planet_panglia].subgroup = is_excavator_rm
+        data_resource[canex_rsc_digable_ .. planet_panglia].order = data_planet[planet_panglia].order
+        data_resource[canex_rsc_digable_ .. planet_panglia].minable.results = {{type = item, name = stone, amount = 1}}
     end
 end
 

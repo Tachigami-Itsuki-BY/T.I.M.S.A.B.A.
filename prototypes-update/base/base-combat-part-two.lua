@@ -952,7 +952,6 @@ for _, name in pairs(mines) do
 end
 
 local is_defensive_structure_1 = "defensive-structure"
-local flamethrower_turret = "flamethrower-turret"
 data_item[flamethrower_turret].subgroup = is_defensive_structure_1
 data_item[flamethrower_turret].order = g
 data_recipe[flamethrower_turret].subgroup = is_defensive_structure_1

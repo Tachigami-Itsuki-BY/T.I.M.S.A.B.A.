@@ -8,7 +8,7 @@ if settings.startup[setting_no_spoilage].value == false then
     })
 
     for _, organic_name in pairs(TIMSABA.void.freezing) do
-        if data_item[organic_name] or data_capsule[organic_name] then
+        if data_item[organic_name] or data_capsule[organic_name] or data_tool[organic_name] then
             -- ITEM
             data:extend
             ({

@@ -20,7 +20,7 @@ data_recipe[landfill].ingredients =
     {type = item, name = stone_crushed_angels, amount = 32}
 }
 
-local solid_mud_landfill = "angels-solid-mud-landfill"
+solid_mud_landfill = "angels-solid-mud-landfill"
 data_recipe[solid_mud_landfill].subgroup = is_processing_crafting
 data_recipe[solid_mud_landfill].icons = THREE_I(mud_angels, stone_crushed_angels, landfill)
 data_recipe[solid_mud_landfill].order = e_a

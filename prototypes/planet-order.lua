@@ -37,6 +37,10 @@ if mods[muria_mods] then
     data_planet[planet_muria].order = x .. "-" .. planet_muria
 end
 
+if mods[pelagos_mods] then
+    data_planet[planet_pelagos].order = x .. "-" .. planet_pelagos
+end
+
 -- THIRD CIRCLE PLANETS
 data_planet[planet_aquilo].order = x .. "-" .. planet_aquilo
 

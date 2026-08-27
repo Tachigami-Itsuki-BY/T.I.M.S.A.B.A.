@@ -96,7 +96,6 @@ if mods[vesta_mods] then
     }
     data_recipe[carbon_super_cooling].main_product = carbon_angels
 
-    local vesta_foundation = "vesta-foundation"
     data_item[vesta_foundation].subgroup = is_vesta_recipe
     data_item[vesta_foundation].order = b
     data_item[vesta_foundation].stack_size = 200
