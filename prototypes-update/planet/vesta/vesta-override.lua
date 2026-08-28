@@ -464,6 +464,7 @@ if mods[vesta_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_vesta = "planet-discovery-vesta"
+    table.insert(data_technology[planet_discovery_vesta].prerequisites, tech_full_asteroid_processing)
     data_technology[planet_discovery_vesta].effects =
     {
         {type = unlock_space_location, space_location = planet_vesta, use_icon_overlay_constant = true},
@@ -493,7 +494,6 @@ if mods[vesta_mods] then
         {electromagnetic_science_pack, 1},
         {cryogenic_science_pack, 1}
     }
-
 
     data_technology[tech_deuterium].prerequisites = {planet_discovery_vesta}
     data_technology[tech_deuterium].effects =

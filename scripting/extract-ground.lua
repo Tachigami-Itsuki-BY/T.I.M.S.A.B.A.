@@ -20,6 +20,8 @@ if script.active_mods["skewer_planet_vesta"] then surface_to_recipe["vesta"] = "
 -- SHATTERED
 if script.active_mods["Muria"] then surface_to_recipe["muria"] = "extract-ground-muriatic-solution" end
 if script.active_mods["pelagos"] then surface_to_recipe["pelagos"] = "extract-ground-water" end
+if script.active_mods["apia"] then surface_to_recipe["apia"] = "extract-ground-royal-jelly" end
+if script.active_mods["apia"] then surface_to_recipe["carnova"] = "extract-ground-blood" end
 
 if script.active_mods["panglia_planet"] then surface_to_recipe["panglia"] = "extract-ground-water" end
 if script.active_mods["secretas"] then surface_to_recipe["panglia"] = "extract-ground-ammoniacal-solution" end

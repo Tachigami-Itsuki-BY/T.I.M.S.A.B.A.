@@ -4,10 +4,6 @@ data_planet[planet_vulcanus].order = x .. "-" .. planet_vulcanus
 data_planet[planet_gleba].order = x .. "-" .. planet_gleba
 data_planet[planet_fulgora].order = x .. "-" .. planet_fulgora
 
-if mods[castra_mods] then
-    data_planet[planet_castra].order = x .. "-" .. planet_castra
-end
-
 -- SECOND CIRCLE PLANETS
 if mods[moshine_mods] then
     data_planet[planet_moshine].order = x .. "-" .. planet_moshine
@@ -29,6 +25,10 @@ if mods[corrundum_mods] then
     data_planet[planet_corrundum].order = x .. "-" .. planet_corrundum
 end
 
+if mods[castra_mods] then
+    data_planet[planet_castra].order = x .. "-" .. planet_castra
+end
+
 if mods[shchierbin_mods] then
     data_planet[planet_shchierbin].order = x .. "-" .. planet_shchierbin
 end
@@ -39,6 +39,12 @@ end
 
 if mods[pelagos_mods] then
     data_planet[planet_pelagos].order = x .. "-" .. planet_pelagos
+end
+
+if mods[apia_carnova_mods] then
+    data_planet[planet_apia].order = x .. "-" .. planet_apia
+
+    data_planet[planet_carnova].order = x .. "-" .. planet_carnova
 end
 
 -- THIRD CIRCLE PLANETS
@@ -61,6 +67,12 @@ if mods[vesta_mods] then
     data_planet[planet_vesta].order = x .. "-" .. planet_vesta
 end
 
+-- FINAL CIRCLE PLANET
+local shattered_planet = "shattered-planet"
+if mods[shattered_mods] then
+    data_planet[planet_shattered].order = x .. "-" .. shattered_planet
+end
+
 -- MOONS
 if mods[muluna_mods] then
     data_planet[planet_muluna].order = y .. "-" .. planet_muluna
@@ -78,12 +90,6 @@ if mods[terrapalus_mods] then
     data_planet[planet_terrapalus].order = y .. "-" .. planet_terrapalus
 end
 
--- FINAL CIRCLE PLANET
-local shattered = "shattered"
-if mods[shattered_mods] then
-    data_planet[planet_shattered].order = x .. "-" .. shattered -- 
-end
-
 -- OTHERS
 ig_space = "space"
 is_others_space = "is-others-space"
@@ -93,7 +99,6 @@ local solar_system_edge = "solar-system-edge"
 data_space_location[solar_system_edge].subgroup = is_others_space
 data_space_location[solar_system_edge].order = z .. "-" .. solar_system_edge
 
-local shattered_planet = "shattered-planet"
 data_space_location[shattered_planet].subgroup = is_others_space
 data_space_location[shattered_planet].order = z .. "-" .. shattered_planet
 
@@ -108,4 +113,10 @@ if mods["AsteroidBelt"] then
     local asteroid_belt_outer_edge = "asteroid-belt-outer-edge"
     data_space_location[asteroid_belt_outer_edge].subgroup = is_others_space
     data_space_location[asteroid_belt_outer_edge].order = z .. "-" .. asteroid_belt_outer_edge
+end
+
+if mods[apia_carnova_mods] then
+    local apia_carnova_orbit = "apia-carnova-orbit"
+    data_space_location[apia_carnova_orbit].subgroup = is_others_space
+    data_space_location[apia_carnova_orbit].order = z .. "-" .. apia_carnova_orbit
 end

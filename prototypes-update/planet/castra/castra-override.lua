@@ -421,6 +421,10 @@ if mods[castra_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_castra = "planet-discovery-castra"
+    data_technology[planet_discovery_castra].prerequisites = {tech_advanced_asteroid_processing}
+    if mods[muluna_mods] then
+        table.insert(data_technology[planet_discovery_castra].prerequisites, interstellar_science_pack)
+    end
     data_technology[planet_discovery_castra].effects =
     {
         {type = unlock_space_location, space_location = planet_castra, use_icon_overlay_constant = true},
@@ -439,7 +443,9 @@ if mods[castra_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     table.insert(data_technology[gunpowder .. _processing].effects, {type = unlock_recipe, recipe = potassium_nitrate})
@@ -474,7 +480,9 @@ if mods[castra_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology["engine" .. _productivity].unit.ingredients =
@@ -485,7 +493,9 @@ if mods[castra_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     local tech_castra_enemy_research = "castra-enemy-research"
@@ -500,7 +510,9 @@ if mods[castra_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology[jammer_radar].unit.ingredients =
@@ -512,6 +524,7 @@ if mods[castra_mods] then
         {production_science_pack, 1},
         {utility_science_pack, 1},
         {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
         {electromagnetic_science_pack, 1}
     }
 
@@ -561,7 +574,9 @@ if mods[castra_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     local tech_special_ammo = "special-ammo"
@@ -607,10 +622,17 @@ if mods[castra_mods] then
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
-        {space_science_pack, 1}
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {electromagnetic_science_pack, 1}
     }
 
     data_technology[military_transport_belt_mods].prerequisites = {battlefield_science_pack}
+    if mods[bobtech] then
+        table.insert(data_technology[military_transport_belt_mods].unit.ingredients, {transport_science_pack, 1})
+    end
+    table.insert(data_technology[military_transport_belt_mods].unit.ingredients, {metallurgic_science_pack, 1})
+    table.insert(data_technology[military_transport_belt_mods].unit.ingredients, {electromagnetic_science_pack, 1})
 
     data_technology[jammed_data_collector].unit.ingredients =
     {
@@ -661,9 +683,6 @@ if mods[castra_mods] then
         add_recipe_for_physical_ammo_productivity(shotgun_shell_plasma)
     end
     add_recipe_for_physical_ammo_productivity(railgun_ammo)
-
-    table.insert(data_technology[tech_molybdenite_processing_3].prerequisites, interstellar_science_pack)
-    table.insert(data_technology[tech_molybdenite_processing_3].prerequisites, battlefield_science_pack)
 
     table.insert(data_technology[electronic_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = electronic_circuit_battlefield_data, change = 0.1})
     table.insert(data_technology[advanced_circuit .. _productivity].effects, {type = change_recipe_productivity, recipe = advanced_circuit_battlefield_data, change = 0.1})

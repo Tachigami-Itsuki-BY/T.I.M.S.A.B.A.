@@ -3,11 +3,11 @@ local is_molybdenum_rhenium = "is-molybdenum-rhenium"
 TIMSABA.functions.create_subgroups(ig_casting, {{name = is_molybdenum_rhenium, order = r}})
 
 -- ITEM
-molybdenum_plate = "molybdenum-plate"
+molybdenum_plate = "timsaba-molybdenum-plate"
 rhenium_plate = "rhenium-plate"
 molybdenum_rhenium_powder_mixture = "molybdenum-rhenium-powder-mixture"
 molybdenum_rhenium_plate = "molybdenum-rhenium-plate"
-molybdenum_gear_wheel = "molybdenum-gear-wheel"
+molybdenum_gear_wheel = "timsaba-molybdenum-gear-wheel"
 rhenium_bearing_ball = "rhenium-bearing-ball"
 rhenium_bearing = "rhenium-bearing"
 molybdenum_rhenium_pipe = "molybdenum-rhenium-pipe"

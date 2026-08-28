@@ -118,11 +118,10 @@ require("prototypes.space-age.aquilo.aquilo-technology")
 require("prototypes.TIMSABA.new-modules")
 
 -- FIRST CIRCLE PLANETS
-require("prototypes.planet.castra.castra-groups")
-require("prototypes.planet.castra.castra-item-fluid")
-require("prototypes.planet.castra.castra-millerite")
-require("prototypes.planet.castra.castra-recipe")
-require("prototypes.planet.castra.castra-technology")
+-- NAUVIS
+-- VULCANUS
+-- GLEBA
+-- FULGORA
 
 -- SECOND CIRCLE PLANETS
 require("prototypes.planet.moshine.moshine-groups")
@@ -152,6 +151,12 @@ require("prototypes.planet.corrundum.corrundum-chalcopyrite")
 require("prototypes.planet.corrundum.corrundum-recipe")
 require("prototypes.planet.corrundum.corrundum-technology")
 
+require("prototypes.planet.castra.castra-groups")
+require("prototypes.planet.castra.castra-item-fluid")
+require("prototypes.planet.castra.castra-millerite")
+require("prototypes.planet.castra.castra-recipe")
+require("prototypes.planet.castra.castra-technology")
+
 require("prototypes.planet.shchierbin.shchierbin-groups")
 require("prototypes.planet.shchierbin.shchierbin-item-fluid")
 require("prototypes.planet.shchierbin.shchierbin-recipe")
@@ -162,6 +167,9 @@ require("prototypes.planet.muria.muria-item-fluid")
 require("prototypes.planet.muria.muria-recipe")
 
 require("prototypes.planet.pelagos.pelagos-groups")
+
+require("prototypes.planet.apia-carnova.apia-carnova-groups")
+require("prototypes.planet.apia-carnova.apia-carnova-recipe")
 
 -- THIRD CIRCLE PLANETS
 require("prototypes.planet.paracelsin.paracelsin-groups")

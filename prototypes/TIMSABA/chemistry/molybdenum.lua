@@ -8,11 +8,11 @@ TIMSABA.functions.create_subgroups(ig_smelting,
 })
 
 -- ITEM
-molybdenum_ore = "molybdenum-ore"
-molybdenum_processed = "molybdenum-processed"
-molybdenum_pellet = "molybdenum-pellet"
-molybdenum_powder = "molybdenum-powder"
-molybdenum_oxide_VI = "molybdenum-oxide-VI"
+molybdenum_ore = "timsaba-molybdenum-ore"
+molybdenum_processed = "timsaba-molybdenum-processed"
+molybdenum_pellet = "timsaba-molybdenum-pellet"
+molybdenum_powder = "timsaba-molybdenum-powder"
+molybdenum_oxide_VI = "timsaba-molybdenum-oxide-VI"
 potassium_molybdate = "potassium-molybdate"
 molybdic_acid = "molybdic-acid"
 TIMSABA.functions.create_items
@@ -76,8 +76,8 @@ TIMSABA.functions.create_items
 })
 
 -- FLUID
-molybdenum_chloride_III_solution = "molybdenum-chloride-III-solution"
-molybdenum_fluoride_IV = "molybdenum-fluoride-IV-liquid"
+molybdenum_chloride_III_solution = "timsaba-molybdenum-chloride-III-solution"
+molybdenum_fluoride_IV = "timsaba-molybdenum-fluoride-IV-liquid"
 TIMSABA.functions.create_fluids
 ({
     {
@@ -103,8 +103,8 @@ TIMSABA.barreling.add_dangerous_fluid(molybdenum_chloride_III_solution)
 TIMSABA.barreling.add_dangerous_fluid(molybdenum_fluoride_IV)
 
 -- RECIPE
-molybdenum_powder_2 = "molybdenum-powder-2"
-molybdenum_oxide_VI_2 = "molybdenum-oxide-VI-2"
+molybdenum_powder_2 = "timsaba-molybdenum-powder-2"
+molybdenum_oxide_VI_2 = "timsaba-molybdenum-oxide-VI-2"
 TIMSABA.functions.create_recipes
 ({
     {

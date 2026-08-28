@@ -82,6 +82,10 @@ local delete_prototypes =
     -- ANGELS WATER TREATMENT
     "angels-solid-salt-dissolving",
 
+    -- ANGELS PETROCHEM REFINING
+    "angels-solid-resin",
+    "angels-solid-rubber",
+
     -- ANGELS BIOPROCESSING
     "angels-liquid-polluted-fish-atmosphere-raw-meat",
     "angels-alien-fish-0-raw",

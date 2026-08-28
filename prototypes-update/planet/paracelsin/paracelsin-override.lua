@@ -535,7 +535,6 @@ if mods[paracelsin_mods] then
         table.insert(data_technology[artillery_turret_2].prerequisites, galvanization_science_pack)
         table.insert(data_technology[artillery_wagon_2].prerequisites, galvanization_science_pack)
     end
-    table.insert(data_technology[tech_full_asteroid_processing].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_antimonite_processing_2].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_germanite_processing_2].prerequisites, galvanization_science_pack)
     table.insert(data_technology[tech_brannerite_processing_3].prerequisites, galvanization_science_pack)

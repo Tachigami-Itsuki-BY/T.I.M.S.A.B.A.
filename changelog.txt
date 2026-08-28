@@ -1,11 +1,28 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.15.0
+Date: 28.08.2026
+  Features:
+    - [Mods] Added support for Apia-Carnova planet system: seamlessly integrated the new planet into the gameplay flow.
+
+  Changes:
+    - [Mods] The planet Castra is transferred from the first circle of planets to the second.
+
+  Balancing:
+    - [All] Minor adjustments to the late-game research tree.
+
+  Modding:
+    - [Mods] Added "Apia-Carnova planet system" mod to optional dependencies.
+    - [Mods] Added "Eneas" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Carna" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Planet Linox" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+---------------------------------------------------------------------------------------------------
 Version: 1.14.0
 Date: 27.08.2026
   Features:
     - [Mods] Added support for Planet Pelagos: seamlessly integrated the new planet into the gameplay flow.
 
   Bugfixes:
-    - [All] Fixed bugs that caused some recipes to disappear
+    - [All] Fixed bugs that caused some recipes to disappear.
 
   Scripting:
     - [All] Added new function delete_duplicated_prototypes for deleting prototypes. Removes only the item and the recycling recipe.

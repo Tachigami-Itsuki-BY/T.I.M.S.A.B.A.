@@ -22,7 +22,6 @@ GALAXY_I = require("lib.generator-icons").galaxy_icon
 B_F_L = require("lib.generator-icons").bearing_fluid_icon
 STONKS_I = require("lib.generator-icons").stonks_icon
 Freezed_I = require("lib.generator-icons").freezed_icon
-Defrosting_I = require("lib.generator-icons").defrosting_icon
 
 BUILDING_R_IS = require("lib.generator-icons-update").building_recipe_icons
 TWO_IS = require("lib.generator-icons-update").double_icons
@@ -34,6 +33,8 @@ FOUR_D_IS = require("lib.generator-icons-update").quadruple_to_quadruple_icons
 AR_FOUR_ALT_IS = require("lib.generator-icons-update").alt_angels_refining_quadruple_icons
 RECYCLING_IS = require("lib.generator-icons-update").recycling_recipe_icons
 R_P_IS = require("lib.generator-icons-update").recipe_planet_icons
+Defrosting_IS = require("lib.generator-icons-update").defrosting_icons
+PLANET_D_IS = require("lib.generator-icons-update").planet_duble_icons
 
 TWO_ITEM_I = require("lib.generator-icons-shattered").item_item_icon
 ITEM_FLUID_I = require("lib.generator-icons-shattered").item_fluid_icon

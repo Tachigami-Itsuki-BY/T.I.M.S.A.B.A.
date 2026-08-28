@@ -402,12 +402,14 @@ end
 -- ARIG
 if mods[arig_mods] then
     if mods[loaders_modernized_integrations] then
-        data_item[stack_loader].subgroup = is_gleba_logistics
-        data_item[stack_loader].order = b
-        data_recipe[stack_loader].subgroup = is_gleba_logistics
-        data_recipe[stack_loader].order = b
-        data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
-        data_loader_1x1[stack_loader].order = b
+        if data_item[stack_loader] then
+            data_item[stack_loader].subgroup = is_gleba_logistics
+            data_item[stack_loader].order = b
+            data_recipe[stack_loader].subgroup = is_gleba_logistics
+            data_recipe[stack_loader].order = b
+            data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
+            data_loader_1x1[stack_loader].order = b
+        end
 
         data_item[hyper_loader_arig].stack_size = 32
         data_item[hyper_loader_arig].weight = 31250
@@ -425,7 +427,11 @@ if mods[arig_mods] then
             data_loader_1x1[hyper_loader_arig].energy_per_item = ((60 * 16) - (7.5 * 16)) .. kW
             data_loader_1x1[hyper_loader_arig].energy_source.drain = (15 * 16) .. kW
         end
-        data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
+        if data_item[stack_loader] then
+            data_loader_1x1[hyper_loader_arig].next_upgrade = stack_loader
+        else
+            data_loader_1x1[hyper_loader_arig].next_upgrade = nil
+        end
 
         bobmods.lib.recipe.update_recycling_recipe({hyper_loader_arig})
     end
@@ -640,6 +646,43 @@ if mods[maraxsis_mods] then
 
         data_recipe[molten_salt_mods].localised_description = {"recipe-description.molten-salt", electricity_description}
     end
+
+    -- RESEARCE VESSEL
+    for name in pairs(data_item) do
+        if string.find(name, "^maraxsis%-") and string.find(name, "%-research%-vessel$") and name ~= empty_research_vessel then
+            data_item[name].subgroup = is_research_vessel_fill
+            data_item[name].stack_size = 32
+            data_item[name].weight = 31250
+            data_item[name].hidden = false
+            data_item[name].hidden_in_factoriopedia = false
+            data_item[name].hide_from_player_crafting = true
+        end
+    end
+
+    for name in pairs(data_recipe) do
+        if string.find(name, "^maraxsis%-") and string.find(name, "%-research%-vessel$") and name ~= empty_research_vessel then
+            data_recipe[name].subgroup = is_research_vessel_fill
+            data_recipe[name].energy_required = 16
+            for _, ingredient in ipairs(data_recipe[name].ingredients) do
+                if ingredient.amount == 100 then
+                    ingredient.amount = 128
+                end
+            end
+            data_recipe[name].hidden = false
+            data_recipe[name].hidden_in_factoriopedia = false
+            data_recipe[name].hide_from_player_crafting = true
+        end
+
+        if string.find(name, "^maraxsis%-") and string.find(name, "%-empty%-research%-vessel$") and name ~= empty_research_vessel then
+            data_recipe[name].subgroup = is_research_vessel_empty
+            data_recipe[name].energy_required = 16
+            data_recipe[name].results[1].amount = 128
+            data_recipe[name].results[2].probability = 1
+            data_recipe[name].hidden = false
+            data_recipe[name].hidden_in_factoriopedia = false
+            data_recipe[name].hide_from_player_crafting = true
+        end
+    end
 end
 
 -- PELAGOS
@@ -671,6 +714,7 @@ if mods[pelagos_mods] then
     data_resource[canex_rsc_digable_ .. planet_fulgora].subgroup = is_excavator_rp
     data_resource[canex_rsc_digable_ .. planet_fulgora].order = data_planet[planet_fulgora].order
     data_resource[canex_rsc_digable_ .. planet_fulgora].minable.results = {{type = item, name = stone, amount = 1}}
+    data_resource[canex_rsc_digable_ .. planet_fulgora].minable.mining_time = 2
 
     data_resource[canex_rsc_digable_ .. planet_aquilo].subgroup = is_excavator_rp
     data_resource[canex_rsc_digable_ .. planet_aquilo].order = data_planet[planet_aquilo].order
@@ -687,6 +731,17 @@ if mods[pelagos_mods] then
         data_resource[canex_rsc_digable_ .. planet_arig].order = data_planet[planet_arig].order
     end
 
+    if mods[paracelsin_mods] then
+        data_resource[canex_rsc_digable_ .. planet_paracelsin].subgroup = is_excavator_rp
+        data_resource[canex_rsc_digable_ .. planet_paracelsin].order = data_planet[planet_paracelsin].order
+        data_resource[canex_rsc_digable_ .. planet_paracelsin].minable.mining_time = 4
+    end
+
+    if mods[shchierbin_mods] then
+        data_resource[canex_rsc_digable_ .. planet_shchierbin].subgroup = is_excavator_rp
+        data_resource[canex_rsc_digable_ .. planet_shchierbin].order = data_planet[planet_shchierbin].order
+    end
+
     if mods[vesta_mods] then
         data_resource[canex_rsc_digable_ .. planet_vesta].subgroup = is_excavator_rp
         data_resource[canex_rsc_digable_ .. planet_vesta].order = data_planet[planet_vesta].order
@@ -700,6 +755,15 @@ if mods[pelagos_mods] then
         data_resource[canex_rsc_digable_ .. planet_panglia].subgroup = is_excavator_rm
         data_resource[canex_rsc_digable_ .. planet_panglia].order = data_planet[planet_panglia].order
         data_resource[canex_rsc_digable_ .. planet_panglia].minable.results = {{type = item, name = stone, amount = 1}}
+    end
+end
+
+-- APIA and CARNOVA
+if mods[apia_carnova_mods] then
+    for name in pairs(data_recipe) do
+        if string.find(name, "%-refresh%-freshness$") then
+            if data_recipe[name] then data_recipe[name] = nil end
+        end
     end
 end
 

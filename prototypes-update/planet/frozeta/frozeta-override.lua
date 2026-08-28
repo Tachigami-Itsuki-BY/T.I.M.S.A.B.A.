@@ -238,7 +238,6 @@ if mods[secretas_frozeta_mods] then
         table.insert(data_technology[artillery_turret_2].prerequisites, golden_science_pack)
         table.insert(data_technology[artillery_wagon_2].prerequisites, golden_science_pack)
     end
-    table.insert(data_technology[tech_full_asteroid_processing].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_antimonite_processing_2].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_germanite_processing_2].prerequisites, golden_science_pack)
     table.insert(data_technology[tech_brannerite_processing_3].prerequisites, golden_science_pack)

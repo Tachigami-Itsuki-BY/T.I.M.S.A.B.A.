@@ -1,0 +1,39 @@
+{
+    "item":
+    [
+        ["molybdenum-ore", "timsaba-molybdenum-ore"],
+        ["molybdenum-processed", "timsaba-molybdenum-processed"],
+        ["molybdenum-pellet", "timsaba-molybdenum-pellet"],
+        ["molybdenum-powder", "timsaba-molybdenum-powder"],
+        ["molybdenum-plate", "timsaba-molybdenum-plate"],
+        ["molybdenum-oxide-VI", "timsaba-molybdenum-oxide-VI"],
+        ["molybdenum-gear-wheel", "timsaba-molybdenum-gear-wheel"]
+    ],
+    "fluid":
+    [
+        ["molybdenum-chloride-III-solution", "timsaba-molybdenum-chloride-III-solution"],
+        ["molybdenum-fluoride-IV-liquid", "timsaba-molybdenum-fluoride-IV-liquid"]
+    ],
+    "recipe":
+    [
+        ["molybdenum-ore", "timsaba-molybdenum-ore"],
+        ["molybdenum-processed", "timsaba-molybdenum-processed"],
+        ["molybdenum-pellet", "timsaba-molybdenum-pellet"],
+        ["molybdenum-powder", "timsaba-molybdenum-powder"],
+        ["molybdenum-powder-2", "timsaba-molybdenum-powder-2"],
+        ["molybdenum-plate", "timsaba-molybdenum-plate"],
+        ["molybdenum-oxide-VI", "timsaba-molybdenum-oxide-VI"],
+        ["molybdenum-oxide-VI-2", "timsaba-molybdenum-oxide-VI-2"],
+        ["molybdenum-gear-wheel", "timsaba-molybdenum-gear-wheel"],
+        ["molybdenum-chloride-III-solution", "timsaba-molybdenum-chloride-III-solution"],
+        ["molybdenum-fluoride-IV-liquid", "timsaba-molybdenum-fluoride-IV-liquid"]
+    ],
+    "technology":
+    [
+        ["molybdenum-processing", "timsaba-molybdenum-processing"],
+        ["molybdenum-synthesis", "timsaba-molybdenum-synthesis"],
+        ["molybdenum-smelting-1", "timsaba-molybdenum-smelting-1"],
+        ["molybdenum-smelting-2", "timsaba-molybdenum-smelting-2"],
+        ["molybdenum-smelting-3", "timsaba-molybdenum-smelting-3"]
+    ]
+}

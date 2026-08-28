@@ -33,6 +33,7 @@ end
 -- VESTA
 if mods["skewer_planet_vesta"] then
     data_bool_setting["ske_vesta_gases"].default_value = true
+    data_bool_setting["ske_vesta_legacy_recipes"].default_value = false
 end
 
 
@@ -48,10 +49,6 @@ if mods["SolarMatrix"] then
     data_color_setting["solar-matrix-color"].hidden = true
     data_double_setting["solar-matrix-power"].hidden = true
     data_bool_setting["link-multiplier-to-cost"].hidden = true
-end
-
-if mods["Flow Control"] then
-    data_bool_setting["flow-control-new-group"].hidden = true
 end
 
 if mods["AsphaltRoadsPatched"] and mods["corrundum"] then

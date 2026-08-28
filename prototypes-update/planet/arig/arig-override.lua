@@ -11,7 +11,6 @@ if mods[arig_mods] then
     data_item[cactus_seeds].stack_size = 200
 
     if mods[tellus_mods] then
-        local cactus_mash = "planetaris-cactus-mash"
         data_item[cactus_mash].subgroup = is_cactus
         data_item[cactus_mash].order = c
         data_item[cactus_mash].stack_size = 200

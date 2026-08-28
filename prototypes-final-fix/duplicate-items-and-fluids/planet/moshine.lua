@@ -1,7 +1,7 @@
 if mods[moshine_mods] then
     local replace_prototypes =
     {
-		[neodymium_mods] = neodymium_magnet,
+		[neodymium_mods] = neodymium_ore,
         [sand_mods] = sand_angels,
         [glass_mods] = glass_bob,
         [silicon_carbide_mods] = silicon_carbide_bob

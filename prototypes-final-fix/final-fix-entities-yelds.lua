@@ -336,9 +336,9 @@ if mods[bobenemies] then
 end
 
 -- ANGELS
-data_fish["angels-alien-fish-1"].minable = {mining_time = 0.4, result = levac_fish, count = 4}
-data_fish["angels-alien-fish-2"].minable = {mining_time = 0.4, result = dorflurp_jellyfish, count = 4}
-data_fish["angels-alien-fish-3"].minable = {mining_time = 0.4, result = santa_ray, count = 4}
+data_fish["angels-alien-fish-1"].minable = {mining_time = 0.5, result = levac_fish, count = 4}
+data_fish["angels-alien-fish-2"].minable = {mining_time = 0.5, result = dorflurp_jellyfish, count = 4}
+data_fish["angels-alien-fish-3"].minable = {mining_time = 0.5, result = santa_ray, count = 4}
 
 data_tree["angels-puffer-nest"].order = z
 
@@ -902,6 +902,39 @@ if mods[pelagos_mods] then
             data_resource[res_name].location = planet_pelagos
         end
     end
+end
+
+-- APIA and CARNOVA
+if mods[apia_carnova_mods] then
+    data_fish["larvae"].minable.count = 4
+    data_tree["honey-mushroom"].minable.results =
+    {
+        {type = item, name = wood, amount = 4},
+        {type = item, name = honey, amount = 16}
+    }
+    data_entity["wild-hive"].minable.results =
+    {
+        {type = item, name = spoilage, amount = 16},
+        {type = item, name = honeycombs, amount = 32}
+    }
+
+    data_unit_spawner["piranha-spawner"].loot = {{item = piranha_roe, probability = 1, count_min = 4, count_max = 8}}
+    data_entity["bone-nodes"].minable.results = {{type = item, name = bones, amount = 16}}
+    data_entity["flesh-tree"].minable.results =
+    {
+        {type = item, name = wood, amount = 2},
+        {type = item, name = spoilage, amount = 8},
+        {type = item, name = flesh, amount = 4}
+    }
+    data_entity["flesh-antenna"].minable.results =
+    {
+        {type = item, name = stone, amount = 16},
+        {type = item, name = spoilage, amount = 8},
+        {type = item, name = flesh, amount = 128}
+    }
+    local lymph_brine = "lymph-brine"
+    data_resource[lymph_brine].minable.results[1].amount_min = 30
+    data_resource[lymph_brine].minable.results[1].amount_max = 30
 end
 
 -- MOONS

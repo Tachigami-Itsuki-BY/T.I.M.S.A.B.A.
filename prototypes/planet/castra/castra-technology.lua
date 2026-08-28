@@ -31,7 +31,9 @@ if mods[castra_mods] then
                     {chemical_science_pack, 1},
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
-                    {space_science_pack, 1}
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }
@@ -60,7 +62,9 @@ if mods[castra_mods] then
                     {chemical_science_pack, 1},
                     {production_science_pack, 1},
                     {utility_science_pack, 1},
-                    {space_science_pack, 1}
+                    {space_science_pack, 1},
+                    {metallurgic_science_pack, 1},
+                    {electromagnetic_science_pack, 1}
                 },
                 time = 30
             }

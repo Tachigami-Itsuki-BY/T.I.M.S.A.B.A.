@@ -13,19 +13,25 @@ if mods[maraxsis_mods] then
 
     is_maraxsis_air = "is-maraxsis-air"
     is_maraxsis_recipe = "is-maraxsis-recipe"
-    is_maraxsis_science = "is-maraxsis-science"
     is_maraxsis_logistics = "is-maraxsis-logistics"
     is_maraxsis_building_energy = "maraxsis-building-energy"
     is_maraxsis_building = "maraxsis-building"
     is_maraxsis_war = "maraxsis-war"
+    is_maraxsis_science = "is-maraxsis-science"
+    is_research_vessel = "is-research-vessel"
+    is_research_vessel_fill = "is-research-vessel-fill"
+    is_research_vessel_empty = "is-research-vessel-empty"
     TIMSABA.functions.create_subgroups(ig_maraxsis,
     {
         {name = is_maraxsis_air,             order = a},
         {name = is_maraxsis_recipe,          order = b},
-        {name = is_maraxsis_science,         order = c},
-        {name = is_maraxsis_logistics,       order = d},
-        {name = is_maraxsis_building_energy, order = e},
-        {name = is_maraxsis_building,        order = f},
-        {name = is_maraxsis_war,             order = g}
+        {name = is_maraxsis_logistics,       order = c},
+        {name = is_maraxsis_building_energy, order = d},
+        {name = is_maraxsis_building,        order = e},
+        {name = is_maraxsis_war,             order = f},
+        {name = is_maraxsis_science,         order = g},
+        {name = is_research_vessel,          order = h},
+        {name = is_research_vessel_fill,     order = h_a},
+        {name = is_research_vessel_empty,    order = h_b}
     })
 end

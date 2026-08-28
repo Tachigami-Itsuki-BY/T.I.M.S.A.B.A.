@@ -355,14 +355,4 @@ function Public.freezed_icon(name_1, name_2, name_3)
     }
 end
 
-function Public.defrosting_icon(name_1, name_2, name_3, name_4)
-    return build_icons
-    {
-        {name_1, 0.375000, {-4,4}},
-        {name_2, 0.187500, {-4,4}},
-        {name_3, 0.375000, {-4,4}},
-        {name_4, 0.250000, {8,-8}}
-    }
-end
-
 return Public

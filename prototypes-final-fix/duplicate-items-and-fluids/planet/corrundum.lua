@@ -62,7 +62,8 @@ if mods[corrundum_mods] then
 		steam_turbine_1 .. _productivity .. _infinite,
 		sulfuric_acid .. _productivity .. _infinite,
 		"recrystalization",
-		"space-steam-production"
+		"space-steam-production",
+		"petrol-dehydrogenation-and-combustion-maraxsis"
 	}
 	if mods[maraxsis_mods] then
 		table.insert(delete_prototypes, "petrol-dehydrogenation-and-combustion")

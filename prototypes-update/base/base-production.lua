@@ -435,6 +435,18 @@ if mods[pelagos_mods] then
     data_mining_drill[pumpplatform].energy_usage = 480 .. kW
     data_mining_drill[pumpplatform].energy_source.emissions_per_minute.pollution = 8
     bobmods.lib.recipe.update_recycling_recipe({pumpplatform})
+
+    local or_pole = "or_pole"
+    data_item[or_pole].subgroup = is_extraction_machine_pumpjack
+    data_item[or_pole].order = z
+    data_electric_pole[or_pole].subgroup = is_extraction_machine_pumpjack
+    data_electric_pole[or_pole].order = z
+
+    local or_tank = "or_tank"
+    data_item[or_tank].subgroup = is_extraction_machine_pumpjack
+    data_item[or_tank].order = z
+    data_storage_tank[or_tank].subgroup = is_extraction_machine_pumpjack
+    data_storage_tank[or_tank].order = z
 end
 
 if settings.startup[setting_bobmods_mining_areadrills].value then
