@@ -159,18 +159,53 @@ local prefixes =
     "angels%-chemical%-void",
     "angels%-bio%-void"
 }
-for recipe_name, _ in pairs(data.raw.recipe) do
+for recipe_name, _ in pairs(data_recipe) do
     for i = 1, #prefixes do
         if string.find(recipe_name, "^" .. prefixes[i]) then
-            -- Добавляем в список на удаление
             table.insert(delete_prototypes, recipe_name)
             break
         end
     end
 end
 
--- 2. Собираем все предметы, содержащие "dormant" в названии
--- Используем data.raw.item вместо кастомных таблиц для надежности 2.0
+-- ============================================================================
+-- СЛУЖЕБНАЯ ФУНКЦИЯ: Замена dormant на обычную версию в таблицах ингредиентов/результатов
+-- ============================================================================
+local function replace_dormant_in_table(tbl)
+    if not tbl then return end
+    for i = 1, #tbl do
+        local entry = tbl[i]
+        if type(entry) == "string" then
+            -- Формат: "item-name"
+            if string.find(entry, "dormant") then
+                -- Убираем "-dormant" или "dormant-" из имени
+                local new_name = string.gsub(entry, "%-?dormant%-?", "")
+                tbl[i] = new_name
+            end
+        elseif type(entry) == "table" then
+            -- Формат: {name = "item-name", amount = X} или {"item-name", X}
+            if entry.name and string.find(entry.name, "dormant") then
+                entry.name = string.gsub(entry.name, "%-?dormant%-?", "")
+            elseif entry[1] and type(entry[1]) == "string" and string.find(entry[1], "dormant") then
+                entry[1] = string.gsub(entry[1], "%-?dormant%-?", "")
+            end
+        end
+    end
+end
+
+-- 2. Сначала проходим по ВСЕМ рецептам игры и заменяем dormant-ингредиенты на обычные
+for recipe_name, recipe in pairs(data_recipe) do
+    -- Проверяем стандартные ингредиенты и результаты
+    replace_dormant_in_table(recipe.ingredients)
+    replace_dormant_in_table(recipe.results)
+
+    if recipe.result and string.find(recipe.result, "dormant") then
+        recipe.result = string.gsub(recipe.result, "%-?dormant%-?", "")
+    end
+end
+
+-- 2.1 Теперь, когда рецепты спасены, собираем dormant-предметы на удаление
+-- Используем вашу таблицу data_item (или data.raw.item для надежности)
 for item_name, _ in pairs(data_item) do
     if string.find(item_name, "dormant") then
         table.insert(delete_prototypes, item_name)
@@ -181,15 +216,15 @@ end
 for recipe_name, _ in pairs(data_recipe) do
     if string.find(recipe_name, "dormant%-recycling") then
         table.insert(delete_prototypes, recipe_name)
-    -- Проверка на панглию (лучше проверять mods["имя_мода"], у вас это panglia_mods)
+    -- Проверка на панглию
     elseif mods[panglia_mods] and string.find(recipe_name, "dormant%-panglia_crushing") then
         table.insert(delete_prototypes, recipe_name)
     end
 end
 
 -- 4. ЗАПУСКАЕМ ВАШУ УНИВЕРСАЛЬНУЮ ФУНКЦИЮ
--- Она физически сотрет сами предметы/рецепты И автоматически каскадом 
--- отключит (через .hidden = true) все ящики (cargo-crate) и другие связанные скрытые рецепты
+-- Теперь она сотрет только сами dormant-предметы, а рецепты вроде carna-spire-energy-core 
+-- продолжат жить, так как их ингредиент автоматически переписался на 'carna-spire-energy-core'
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 -- MODS

@@ -830,3 +830,14 @@ if mods[pelagos_mods] then
 
     data_fluid[biodiesel].icon = "__TIMSABA__/graphics/icons/pelagos/biodiesel.png"
 end
+
+-- APIA and CARNOVA
+if mods[apia_carnova_mods] then
+    data_fluid[royal_jelly].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/royal-jelly.png"
+
+    data_fluid[lymph].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/lymph.png"
+
+    data_fluid[dirty_lymph].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/dirty-lymph.png"
+
+    data_fluid[blood].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/blood.png"
+end

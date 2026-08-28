@@ -67,7 +67,8 @@ if mods[shchierbin_mods] then
         "oxide-asteroid-crushing-2",
         "water-electrolysis",
         "sulfur-acid" .. _processing,
-        "vanadium-bones"
+        "vanadium-bones",
+        "salt-v"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 

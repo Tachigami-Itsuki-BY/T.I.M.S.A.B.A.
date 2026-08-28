@@ -1184,6 +1184,22 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_pelagos].results[1].amount = 30
     end
 
+    if mods[apia_carnova_mods] then
+        local telescope_observation_apia = "muluna-telescope-observation-apia"
+        data_recipe[telescope_observation_apia].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_apia].icons = BUILDING_R_I(astronomical_data_muluna, planet_apia)
+        data_recipe[telescope_observation_apia].order = data_planet[planet_apia].order
+        data_recipe[telescope_observation_apia].energy_required = 4
+        data_recipe[telescope_observation_apia].results[1].amount = 30
+
+        local telescope_observation_carnova = "muluna-telescope-observation-carnova"
+        data_recipe[telescope_observation_carnova].subgroup = is_muluna_recipe_astronomical_planets
+        data_recipe[telescope_observation_carnova].icons = BUILDING_R_I(astronomical_data_muluna, planet_carnova)
+        data_recipe[telescope_observation_carnova].order = data_planet[planet_carnova].order
+        data_recipe[telescope_observation_carnova].energy_required = 4
+        data_recipe[telescope_observation_carnova].results[1].amount = 30
+    end
+
     -- MOONS
     local telescope_observation_muluna = "muluna-telescope-observation-muluna"
     data_recipe[telescope_observation_muluna].subgroup = is_muluna_recipe_astronomical_moons

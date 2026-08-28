@@ -805,13 +805,14 @@ end
 function TIMSABA.functions.delete_prototypes(replacements)
     local proto_types =
     {
-        item, fluid, recipe, technology,
+        item, capsule, tool, fluid, recipe, technology,
         ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, land_mine,
         car, locomotive, wagon_cargo, wagon_fluid, unit,
         item_module, beacon,
-        assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo,
+        assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo, solar_panel, burner_generator,
         inserter, heat_pipe, container, logistic_container,
         repair_tool, tile, electric_pole, plant, accumulator, solar_panel,
+        projectile,
     }
     for _, name in ipairs(replacements or {}) do
         for _, proto_type in ipairs(proto_types) do
@@ -824,11 +825,13 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_recipe[ammo_ .. name .. _panglia_crushing] then data_recipe[ammo_ .. name .. _panglia_crushing] = nil end
         if data_recipe[repair_tool_ .. name .. _panglia_crushing] then data_recipe[repair_tool_ .. name .. _panglia_crushing] = nil end
         if data_recipe[module_ .. name .. _panglia_crushing] then data_recipe[module_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[capsule_ .. name .. _panglia_crushing] then data_recipe[capsule_ .. name .. _panglia_crushing] = nil end
         if data_recipe[name .. _smelting] then data_recipe[name .. _smelting] = nil end
         if data_recipe[cargo_crate_ .. name] then data_recipe[cargo_crate_ .. name] = nil end
         if data_recipe[unpack_cargo_crate_ .. name] then data_recipe[unpack_cargo_crate_ .. name] = nil end
         if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
         if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
+        if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
         for i = 25, 2400, 25 do
             if data_recipe[name .. __rigor_module_mod__ .. i] then
                 data_recipe[name .. __rigor_module_mod__ .. i] = nil
@@ -840,6 +843,15 @@ function TIMSABA.functions.delete_prototypes(replacements)
                 data_accumulator["sp-" .. i .. "-" .. name] = nil
             elseif data_solar_panel["sp-" .. i .. "-" .. name] then
                 data_solar_panel["sp-" .. i .. "-" .. name] = nil
+            end
+        end
+        for _, container_type in ipairs({container, logistic_container}) do
+            if data.raw[container_type] then
+                for _, chest in pairs(data.raw[container_type]) do
+                    if chest.next_upgrade == name then
+                        chest.next_upgrade = nil
+                    end
+                end
             end
         end
         if data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] then data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] = nil end

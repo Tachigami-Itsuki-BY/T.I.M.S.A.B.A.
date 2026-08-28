@@ -175,6 +175,10 @@ if mods[shchierbin_mods] then
     table.insert(recycling_items, vanadium_oxide_V)
 end
 
+if mods[apia_carnova_mods] then
+    table.insert(recycling_items, biosynthesizer)
+end
+
 for _, name in ipairs(recycling_items) do
     data_recipe[name .. _recycling].results = {{type = item, name = name, amount = 1, probability = 0.25}}
     data_recipe[name .. _recycling].main_product = ""

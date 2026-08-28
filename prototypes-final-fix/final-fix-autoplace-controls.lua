@@ -123,6 +123,12 @@ if mods[pelagos_mods] then
     data_autoplace_control["aquilo_offshore_oil"].order = data_planet[planet_aquilo].order .. a
 end
 
+-- APIA anc CARNOVA
+if mods[apia_carnova_mods] then
+    data_autoplace_control[bones].order = data_planet[planet_carnova].order .. a
+    data_autoplace_control[lymph].order = data_planet[planet_carnova].order .. a_a
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then

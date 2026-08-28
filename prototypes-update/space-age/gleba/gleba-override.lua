@@ -139,7 +139,6 @@ data_capsule[jelly].spoil_ticks = 5 * minute
 TIMSABA.void.void_organics(jelly)
 TIMSABA.void.freezing_organics(jelly)
 
-local jellynut_processing = "jellynut-processing"
 data_recipe[jellynut_processing].subgroup = is_jellynut
 data_recipe[jellynut_processing].icons = TWO_D_I(jellynut, nil, jelly, jellynut_seed)
 data_recipe[jellynut_processing].order = c_a
@@ -193,7 +192,6 @@ data_capsule[yumako_mash].spoil_ticks = 5 * minute
 TIMSABA.void.void_organics(yumako_mash)
 TIMSABA.void.freezing_organics(yumako_mash)
 
-local yumako_processing = "yumako-processing"
 data_recipe[yumako_processing].subgroup = is_yumako
 data_recipe[yumako_processing].icons = TWO_D_I(yumako, nil, yumako_mash, yumako_seed)
 data_recipe[yumako_processing].order = c_a
@@ -267,7 +265,6 @@ data_recipe[biosulfur].icons = THREE_I(spoilage, bioflux, sulfur)
 data_recipe[biosulfur].order = b_d
 data_recipe[biosulfur].ingredients[1].amount = 4
 
-local biolubricant = "biolubricant"
 data_recipe[biolubricant].subgroup = is_pentapod_egg_and_bioflux
 data_recipe[biolubricant].icons = TWO_I(jelly, lubricant)
 data_recipe[biolubricant].order = b_e

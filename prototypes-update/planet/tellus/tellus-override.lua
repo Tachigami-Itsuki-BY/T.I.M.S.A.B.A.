@@ -23,7 +23,6 @@ if mods[tellus_mods] then
     TIMSABA.void.void_organics(chloroplast_mash)
     TIMSABA.void.freezing_organics(chloroplast_mash)
 
-    local chloroplast_processing = "planetaris-chloroplast-processing"
     data_recipe[chloroplast_processing].subgroup = is_chloroplast
     data_recipe[chloroplast_processing].icons = TWO_D_I(chloroplast_fruit, nutrients, chloroplast_mash, chloroplast_seed)
     data_recipe[chloroplast_processing].order = c_a
@@ -33,7 +32,6 @@ if mods[tellus_mods] then
         {type = item, name = chloroplast_seed, amount = 1, probability = 0.03125}
     }
 
-    local chloroplast_lubricant = "planetaris-chloroplast-lubricant"
     data_recipe[chloroplast_lubricant].subgroup = is_chloroplast
     data_recipe[chloroplast_lubricant].icons = THREE_I(chloroplast_mash, nutrients, lubricant)
     data_recipe[chloroplast_lubricant].order = c_b
@@ -210,7 +208,6 @@ if mods[tellus_mods] then
     TIMSABA.void.void_organics(mycelia)
     TIMSABA.void.freezing_organics(mycelia)
 
-    local mycelia_processing = "planetaris-mycelia-processing"
     data_recipe[mycelia_processing].subgroup = is_mycelia
     data_recipe[mycelia_processing].icons = TWO_D_I(mushroom_cap, nutrients, mycelia, mycelia_seed)
     data_recipe[mycelia_processing].order = c_a

@@ -9,7 +9,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.angels")
 require("prototypes-final-fix.duplicate-items-and-fluids.space-age")
 
 -- FIRST CIRCLE PLANETS
-require("prototypes-final-fix.duplicate-items-and-fluids.planet.castra")
+
 
 -- SECOND CIRCLE PLANETS
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.moshine")
@@ -17,9 +17,11 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.arig")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.hyarion")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.tellus")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.corrundum")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.castra")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.shchierbin")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.muria")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.pelagos")
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.apia-carnova")
 
 -- THIRD CIRCLE PLANETS
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.paracelsin")

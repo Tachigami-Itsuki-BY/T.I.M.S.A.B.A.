@@ -39,8 +39,6 @@ require("prototypes-update.space-age.vulcanus.vulcanus-override")
 require("prototypes-update.space-age.gleba.gleba-override")
 require("prototypes-update.space-age.fulgora.fulgora-override")
 
-require("prototypes-update.planet.castra.castra-override")
-
 -- SECOND CIRCLE PLANETS
 require("prototypes-update.planet.moshine.moshine-override")
 require("prototypes-update.planet.arig.arig-override")
@@ -48,9 +46,11 @@ require("prototypes-update.planet.hyarion.hyarion-override")
 require("prototypes-update.planet.tellus.tellus-override")
 require("prototypes-update.planet.tellus.tellus-update-icon")
 require("prototypes-update.planet.corrundum.corrundum-override")
+require("prototypes-update.planet.castra.castra-override")
 require("prototypes-update.planet.shchierbin.shchierbin-override")
 require("prototypes-update.planet.muria.muria-override")
 require("prototypes-update.planet.pelagos.pelagos-override")
+require("prototypes-update.planet.apia-carnova.apia-carnova-override")
 
 -- THIRD CIRCLE PLANETS
 require("prototypes-update.space-age.aquilo.aquilo-override")
@@ -79,6 +79,7 @@ require("prototypes-update.planet.asteroid-belt")
 
 require("prototypes-update.mods.mods-override")
 require("prototypes-update.mods.freezing")
+require("prototypes-update.mods.refresh")
 
 require("prototypes-update.update-settings")
 

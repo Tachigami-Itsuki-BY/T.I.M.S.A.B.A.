@@ -102,6 +102,29 @@ if mods[pelagos_mods] then
     }
 end
 
+if mods[apia_carnova_mods] then
+    data_assembling[artificial_hive].energy_source =
+    {
+        type = "burner",
+        fuel_categories = {"food"},
+        effectivity = 1,
+        fuel_inventory_size = 1,
+        emissions_per_minute = {pollution = -1},
+        burner_usage = "food",
+        light_flicker =
+        {
+            minimum_intensity = 0,
+            maximum_intensity = 0,
+            derivation_change_frequency = 0,
+            derivation_change_deviation = 0,
+            border_fix_speed = 0,
+            minimum_light_size = 0,
+            light_intensity_to_size_coefficient = 0,
+            color = {0, 0, 0, 1}
+        }
+    }
+end
+
 if mods[foliax_mods] then
     data_agricultural_tower[burner_agricultural_tower_foliax].energy_source.fuel_categories = {"foliax-arcane"}
 end

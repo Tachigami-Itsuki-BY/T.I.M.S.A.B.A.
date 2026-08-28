@@ -1935,6 +1935,7 @@ data_recipe[explosives_trinitrotoluene].results = {{type = item, name = explosiv
 data_fluid[glycerol_angels].subgroup = is_explosives
 data_fluid[glycerol_angels].order = c
 TIMSABA.barreling.add_dangerous_fluid(glycerol_angels)
+data_recipe[glycerol_angels].category = angels_advanced_chemistry
 data_recipe[glycerol_angels].subgroup = is_explosives
 data_recipe[glycerol_angels].icons = THREE_D_I(glycerol_dichlorohydrin, water_purified_angels, sodium_hydroxide_solution_angels, glycerol_angels, nil, sodium_chloride_solution)
 data_recipe[glycerol_angels].order = c

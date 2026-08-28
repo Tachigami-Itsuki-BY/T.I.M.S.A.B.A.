@@ -59,7 +59,6 @@ if mods[panglia_mods] then
     data_recipe[branbalite_slurry].order = f
     data_recipe[branbalite_slurry].results[1].amount = 30
 
-    local branbalite_slurry_to_lubricant = "panglia_branbalite_slurry_to_lubricant"
     data_recipe[branbalite_slurry_to_lubricant].subgroup = is_panglia_recipe
     data_recipe[branbalite_slurry_to_lubricant].icons = TWO_I(branbalite_slurry, lubricant)
     data_recipe[branbalite_slurry_to_lubricant].order = f_a
@@ -598,6 +597,45 @@ if mods[panglia_mods] then
             {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
             {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
             {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
+    if mods[apia_carnova_mods] then
+        local cosmic_incubator_recipe_apia = "cosmic_incubator_recipe_apia"
+        data_recipe[cosmic_incubator_recipe_apia].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.apia"}}
+        data_recipe[cosmic_incubator_recipe_apia].subgroup = is_panglia_universe_planets
+        data_recipe[cosmic_incubator_recipe_apia].icons = GALAXY_I(galaxy_png, planet_apia)
+        data_recipe[cosmic_incubator_recipe_apia].order = data_planet[planet_apia].order
+        data_recipe[cosmic_incubator_recipe_apia].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_apia].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+
+        local cosmic_incubator_recipe_carnova = "cosmic_incubator_recipe_carnova"
+        data_recipe[cosmic_incubator_recipe_carnova].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.carnova"}}
+        data_recipe[cosmic_incubator_recipe_carnova].subgroup = is_panglia_universe_planets
+        data_recipe[cosmic_incubator_recipe_carnova].icons = GALAXY_I(galaxy_png, planet_carnova)
+        data_recipe[cosmic_incubator_recipe_carnova].order = data_planet[planet_carnova].order
+        data_recipe[cosmic_incubator_recipe_carnova].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_carnova].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = bones, amount_min = 0, amount_max = 64, probability = 0.5}
         }
     end
 

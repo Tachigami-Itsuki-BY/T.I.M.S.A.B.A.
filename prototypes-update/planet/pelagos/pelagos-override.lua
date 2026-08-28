@@ -34,7 +34,6 @@ if mods[pelagos_mods] then
     data_item[coconut_husk].fuel_category = base_fuel
     data_item[coconut_husk].fuel_value = 900 .. kJ
 
-    local coconut_processing = "coconut-processing"
     data_recipe[coconut_processing].subgroup = is_coconut
     data_recipe[coconut_processing].icons = FOUR_R_I(coconut, coconut_meat, coconut_seed, coconut_husk)
     data_recipe[coconut_processing].order = d_a
@@ -55,7 +54,6 @@ if mods[pelagos_mods] then
     data_recipe[coconut_oil].ingredients[1].amount = 8
     data_recipe[coconut_oil].results[1].amount = 15
 
-    local lubricant_from_coconut_oil = "pelagos-biolubricant"
     data_recipe[lubricant_from_coconut_oil].category = chemistry
     data_recipe[lubricant_from_coconut_oil].subgroup = is_coconut
     data_recipe[lubricant_from_coconut_oil].icons = TWO_I(coconut_oil, lubricant)
@@ -551,6 +549,7 @@ if mods[pelagos_mods] then
     }
     data_assembling[captive_copper_biter_spawner].subgroup = is_pelagos_building
     data_assembling[captive_copper_biter_spawner].order = e
+    data_assembling[captive_copper_biter_spawner].energy_usage = 225 .. kW
 
     -- WATER VEHICLES
     local pirateship = "pirateship"
@@ -883,7 +882,10 @@ if mods[pelagos_mods] then
 
     -- TECHNOLOGY
     local planet_discovery_pelagos = "planet-discovery-pelagos"
-    data_technology[planet_discovery_pelagos].prerequisites = {agricultural_science_pack, "deep_sea_oil_extraction"}
+    data_technology[planet_discovery_pelagos].prerequisites = {tech_advanced_asteroid_processing, "deep_sea_oil_extraction"}
+    if mods[muluna_mods] then
+        table.insert(data_technology[planet_discovery_pelagos].prerequisites, interstellar_science_pack)
+    end
     data_technology[planet_discovery_pelagos].effects =
     {
         {type = unlock_space_location, space_location = planet_pelagos, use_icon_overlay_constant = true},
@@ -1101,6 +1103,11 @@ if mods[pelagos_mods] then
     end
     add_recipe_for_cultivation(fermentation_bacteria_cultivation)
     add_recipe_for_cultivation(fermentation_bacteria_cultivation_fermented_fish)
+    if mods[apia_carnova_mods] then
+        add_recipe_for_cultivation(larvae_cultivation)
+        add_recipe_for_cultivation(flesh_reproduction)
+        add_recipe_for_cultivation(roe_reproduction)
+    end
     data_technology[tech_cultivation .. _productivity].unit.ingredients =
     {
         {automation_science_pack, 1},

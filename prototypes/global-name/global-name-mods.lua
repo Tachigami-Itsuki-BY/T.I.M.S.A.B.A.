@@ -283,6 +283,7 @@ tropical_fish_maraxsis = "maraxsis-tropical-fish"
 coral_maraxsis = "maraxsis-coral"
 salt_filter_maraxsis = "maraxsis-salt-filter"
 saturated_salt_filter_maraxsis = "maraxsis-saturated-salt-filter"
+empty_research_vessel = "maraxsis-empty-research-vessel"
 
 -- VESTA
 vesta_mods = "skewer_planet_vesta"
@@ -407,6 +408,30 @@ captive_copper_biter_spawner = "captive-copper-biter-spawner"
 capture_robot_rocket_pelagos = "pelagos-capture-robot-rocket"
 titanium_barrel = "titanium-barrel"
 
+-- APIA and CARNOVA
+apia_carnova_mods = "apia"
+planet_apia = "apia"
+planet_carnova = "carnova"
+phosphoric_acid = "phosphoric-acid"
+royal_jelly = "royal-jelly"
+honeycombs = "honeycombs"
+wax = "wax"
+honey = "honey"
+polysaccharides = "polysaccharides"
+bones = "bones"
+flesh = "flesh"
+lymph = "lymph"
+dirty_lymph = "dirty-lymph"
+blood = "blood"
+lipids = "lipids"
+proteins = "proteins"
+piranha_roe = "piranha-roe"
+glycerine = "glycerine"
+apicultural_science_pack = "apicultural-science-pack"
+wax_platform = "wax-platform"
+biosynthesizer = "biosynthesizer"
+artificial_hive = "artificial-hive"
+
 -- FOLIAX
 foliax_mods = "foliax"
 planet_foliax = "foliax"
@@ -426,6 +451,15 @@ planet_crucible = "crucible"
 -- RIBBONIA
 ribbonia_mods = "ribbonia"
 planet_ribbonia = "ribbonia"
+
+-- LINOX
+linox_mods = "linox"
+planet_linox = "linox"
+lava_data_card = "linox-item_lava-data-card"
+rare_data_card = "linox-item_rare-earth-data-card"
+samarium_data_card = "linox-item_samarium-data-card"
+dysprosium_data_card = "linox-item_dysprosium-data-card"
+neodymium_data_card = "linox-item_neodymium-data-card"
 
 -- CUBIUM
 cubium_mods = "cubium"

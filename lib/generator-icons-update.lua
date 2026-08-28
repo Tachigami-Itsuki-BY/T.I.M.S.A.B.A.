@@ -277,4 +277,23 @@ function Public.recipe_planet_icons(name_1, name_2, name_3, number, name_4)
     }
 end
 
+function Public.defrosting_icons(name_1, name_2, name_3, name_4)
+    return build_icons
+    {
+        {name_1, 0.375000, {-4,4}},
+        {name_2, 0.187500, {-4,4}},
+        {name_3, 0.375000, {-4,4}},
+        {name_4, 0.250000, {8,-8}},
+    }
+end
+
+function Public.planet_duble_icons(name_1, name_2, name_3)
+    return build_icons
+    {
+        {name_1, 0.375000, {-4,4}},
+        {name_2, 0.250000, {0,-8}},
+        {name_3, 0.250000, {8,0}},
+    }
+end
+
 return Public
