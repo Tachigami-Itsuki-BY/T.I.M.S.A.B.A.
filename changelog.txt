@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.15.1
+Date: 29.08.2026
+  Bugfixes:
+    - [All] Fixed some compatibility issues with mods: Apia-Carnova, Pelagos wtih Muluna, Foliax, Crucible, and Ribbonia.
+
+  Modding:
+    - [Mods] Added "Reigia" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+---------------------------------------------------------------------------------------------------
 Version: 1.15.0
 Date: 28.08.2026
   Features:

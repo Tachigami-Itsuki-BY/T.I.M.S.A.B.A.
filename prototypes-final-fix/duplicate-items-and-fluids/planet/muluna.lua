@@ -22,7 +22,7 @@ if mods[muluna_mods] then
 		cellulose_mods,
 		sapling_muluna
 	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 	local delete_prototypes =
 	{

@@ -6,12 +6,8 @@ if mods[arig_mods] then
     }
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	local delete_proto =
-	{
-		glass_arig,
-		raw_diamond_arig
-	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	local delete_proto = {glass_arig, raw_diamond_arig}
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 	local delete_prototypes =
 	{

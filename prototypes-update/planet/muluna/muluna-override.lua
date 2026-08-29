@@ -32,7 +32,6 @@ if mods[muluna_mods] then
     data_recipe[stone_crushing].results = {{type = item, name = stone_crushed_angels, amount = 4}}
     data_recipe[stone_crushing].main_product = stone_crushed_angels
 
-    landfill_stone_crushed = "landfill-stone-crushed"
     data_recipe[landfill_stone_crushed].subgroup = is_muluna_crushing
     data_recipe[landfill_stone_crushed].icons = TWO_I(stone_crushed_angels, landfill)
     data_recipe[landfill_stone_crushed].order = a_c

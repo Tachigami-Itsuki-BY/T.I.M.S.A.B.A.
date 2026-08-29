@@ -8,7 +8,7 @@ if mods[paracelsin_mods] then
             name = nitrogen_from_paracelsin_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_paracelsin_air,
-            icon = data_fluid[nitrogen_angels].icon,
+            icons = BUILDING_R_I(nitrogen_angels, planet_paracelsin),
             order = a,
             energy_required = 8,
             ingredients = {},

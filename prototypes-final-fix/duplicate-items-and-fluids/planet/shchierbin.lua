@@ -22,12 +22,8 @@ if mods[shchierbin_mods] then
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	local delete_proto =
-	{
-        slaked_lime_mods,
-        calcium_mods
-	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	local delete_proto = {slaked_lime_mods, calcium_mods}
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
     data_fluid[chloromethane_mods] = nil
     data_fluid[ethylene_mods] = nil

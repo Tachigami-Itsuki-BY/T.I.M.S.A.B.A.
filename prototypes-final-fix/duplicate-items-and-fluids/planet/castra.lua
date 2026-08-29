@@ -24,11 +24,7 @@ if mods[castra_mods] then
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
-	bobmods.lib.recipe.update_recycling_recipe
-	({
-		railgun,
-    	railgun_turret
-	})
+	bobmods.lib.recipe.update_recycling_recipe({railgun, railgun_turret})
 
 	local jammed_data_collector_process = "jammed-data-collector-process"
 	local replacements =

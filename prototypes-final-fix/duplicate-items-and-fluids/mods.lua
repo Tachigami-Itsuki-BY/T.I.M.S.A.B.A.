@@ -16,12 +16,12 @@ end
 
 if mods[secretas_frozeta_mods] or mods[nexus_mods] then
     local delete_proto = {gold_ore_mods, gold_plate_mods}
-    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    TIMSABA.functions.delete_duplicated_items(delete_proto)
 end
 
 if mods[maraxsis_mods] or mods[moshine_mods] then
     local delete_proto = {sand_mods}
-    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    TIMSABA.functions.delete_duplicated_items(delete_proto)
 end
 
 if mods[maraxsis_mods] or mods[shchierbin_mods] then
@@ -35,7 +35,7 @@ end
 
 if mods[moshine_mods] or mods[muluna_mods] then
     local delete_proto = {silicon_carbide_mods}
-    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    TIMSABA.functions.delete_duplicated_items(delete_proto)
 end
 
 if mods[muluna_mods] or mods[corrundum_mods] or mods[shchierbin_mods] then

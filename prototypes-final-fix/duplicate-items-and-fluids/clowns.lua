@@ -7,7 +7,7 @@ if mods[clowns_nuclear] and mods[shattered_mods] then
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
     local delete_proto = {plutonium_239_bob, plutonium_239_mods}
-    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    TIMSABA.functions.delete_duplicated_items(delete_proto)
 elseif mods[clowns_nuclear] and not mods[shattered_mods] then
     local replace_prototypes = {[plutonium_239_mods] = plutonium_239_bob}
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
@@ -18,5 +18,5 @@ elseif not mods[clowns_nuclear] and mods[shattered_mods] then
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
     local delete_proto = {plutonium_239_bob}
-    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    TIMSABA.functions.delete_duplicated_items(delete_proto)
 end

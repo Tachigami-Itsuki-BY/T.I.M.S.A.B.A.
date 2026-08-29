@@ -8,12 +8,8 @@ if mods[moshine_mods] then
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	local delete_proto =
-	{
-		neodymium_mods,
-		glass_mods
-	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	local delete_proto = {neodymium_mods, glass_mods}
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 	local delete_prototypes =
 	{

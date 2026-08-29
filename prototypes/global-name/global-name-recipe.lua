@@ -9,6 +9,9 @@ jellynut_processing = "jellynut-processing"
 yumako_processing = "yumako-processing"
 biolubricant = "biolubricant"
 
+-- MULUNA
+landfill_stone_crushed = "landfill-stone-crushed"
+
 -- PANGLIA
 branbalite_slurry_to_lubricant = "panglia_branbalite_slurry_to_lubricant"
 
