@@ -39,7 +39,7 @@ local delete_proto =
     "bob-depleted-deuterium-fuel-cell",
     fibreglass_board
 }
-TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 local delete_prototypes =
 {

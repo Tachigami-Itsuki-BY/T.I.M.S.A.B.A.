@@ -8,11 +8,8 @@ if mods[pelagos_mods] then
 
     data_fluid[ethanol_mods] = nil
 
-    local delete_proto =
-	{
-        titanium_plate_mods
-    }
-    TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    local delete_proto = {titanium_plate_mods}
+    TIMSABA.functions.delete_duplicated_items(delete_proto)
 
     local delete_prototypes =
 	{

@@ -24,7 +24,7 @@ if mods[hyarion_mods] then
 		polished_sapphire_hyarion,
 		carbon_nanotube_hyarion
 	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 	local delete_prototypes =
 	{

@@ -937,6 +937,40 @@ if mods[apia_carnova_mods] then
     data_resource[lymph_brine].minable.results[1].amount_max = 30
 end
 
+-- ? REGIA ?
+if mods[reigia_mods] then
+    local vanilla_resources = {iron_ore, copper_ore, stone}
+    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium}
+
+    local map_gen = data_planet[planet_reigia].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    -- 1. Вырезаем ванильные ресурсы
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    -- 2. Внедряем руды Ангела
+    for _, res_name in ipairs(angels_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet_reigia
+        end
+    end
+end
+
 -- MOONS
 -- MULUNA
 if mods[muluna_mods] then

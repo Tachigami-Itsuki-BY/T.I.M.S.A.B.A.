@@ -9,7 +9,7 @@ if mods[secretas_frozeta_mods] then
             name = ammonia_from_frozeta_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_frozeta_air,
-            icon = data_fluid[ammonia_angels].icon,
+            icons = BUILDING_R_I(ammonia_angels, planet_frozeta),
             order = a,
             energy_required = 8,
             ingredients = {},

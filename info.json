@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.15.0",
+    "version": "1.15.1",
     "factorio_version": "2.0",
     "title": "Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -69,6 +69,7 @@
         "? moon-eneas",
         "? carna",
         "? linox",
+        "? reigia",
         "? alternate-alert-icons",
         "? Better_Starmap_Background",
         "? CargoBayLimitResearch",

@@ -461,6 +461,10 @@ samarium_data_card = "linox-item_samarium-data-card"
 dysprosium_data_card = "linox-item_dysprosium-data-card"
 neodymium_data_card = "linox-item_neodymium-data-card"
 
+-- REGIA
+reigia_mods = "reigia"
+planet_reigia = "reigia"
+
 -- CUBIUM
 cubium_mods = "cubium"
 planet_cubium = "cubium"

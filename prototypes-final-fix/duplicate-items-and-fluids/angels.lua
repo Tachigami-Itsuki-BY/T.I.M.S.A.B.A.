@@ -31,7 +31,7 @@ local delete_proto =
     "angels-chemical-void",
     "angels-water-void"
 }
-TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 local delete_prototypes =
 {

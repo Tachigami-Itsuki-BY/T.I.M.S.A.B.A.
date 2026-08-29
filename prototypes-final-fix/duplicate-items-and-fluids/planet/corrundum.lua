@@ -23,7 +23,7 @@ if mods[corrundum_mods] then
 		platinum_ore_mods,
 		platinum_plate_mods
 	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 	local delete_prototypes =
 	{

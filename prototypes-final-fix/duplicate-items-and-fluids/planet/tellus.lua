@@ -1,15 +1,9 @@
 if mods[tellus_mods] then
-    local replace_prototypes =
-    {
-        [compost_tellus] = compost_angels
-    }
+    local replace_prototypes = {[compost_tellus] = compost_angels}
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    local delete_proto =
-	{
-		compost_tellus
-	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+    local delete_proto = {compost_tellus}
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
     local delete_prototypes =
     {

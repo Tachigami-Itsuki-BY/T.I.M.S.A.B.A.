@@ -671,6 +671,7 @@ if mods[maraxsis_mods] then
             data_recipe[name].hidden = false
             data_recipe[name].hidden_in_factoriopedia = false
             data_recipe[name].hide_from_player_crafting = true
+            data_recipe[name].factoriopedia_alternative = nil
         end
 
         if string.find(name, "^maraxsis%-") and string.find(name, "%-empty%-research%-vessel$") and name ~= empty_research_vessel then
@@ -681,6 +682,7 @@ if mods[maraxsis_mods] then
             data_recipe[name].hidden = false
             data_recipe[name].hidden_in_factoriopedia = false
             data_recipe[name].hide_from_player_crafting = true
+            data_recipe[name].factoriopedia_alternative = nil
         end
     end
 end

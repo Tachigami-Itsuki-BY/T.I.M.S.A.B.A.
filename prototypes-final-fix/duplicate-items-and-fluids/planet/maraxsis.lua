@@ -11,11 +11,8 @@ if mods[maraxsis_mods] then
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	local delete_proto =
-	{
-		limestone_mods
-	}
-	TIMSABA.functions.delete_duplicated_prototypes(delete_proto)
+	local delete_proto = {limestone_mods}
+	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 	local delete_prototypes =
 	{

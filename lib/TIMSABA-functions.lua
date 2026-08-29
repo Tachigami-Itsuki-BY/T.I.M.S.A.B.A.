@@ -816,7 +816,13 @@ function TIMSABA.functions.delete_prototypes(replacements)
     }
     for _, name in ipairs(replacements or {}) do
         for _, proto_type in ipairs(proto_types) do
-            if data.raw[proto_type] and data.raw[proto_type][name] then data.raw[proto_type][name] = nil end
+            if data.raw[proto_type] then
+                if data.raw[proto_type][name] then data.raw[proto_type][name] = nil end
+                if data.raw[proto_type]["tiny-" .. name] then data.raw[proto_type]["tiny-" .. name] = nil end
+                for i = 25, 2400, 25 do
+                    if data.raw[proto_type][name .. __rigor_module_mod__ .. i] then data.raw[proto_type][name .. __rigor_module_mod__ .. i] = nil end
+                end
+            end
         end
         if data_recipe[name .. _recycling] then data_recipe[name .. _recycling] = nil end
         if data_recipe[name .. _barrel_recycling] then data_recipe[name .. _barrel_recycling] = nil end
@@ -832,11 +838,6 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
         if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
         if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
-        for i = 25, 2400, 25 do
-            if data_recipe[name .. __rigor_module_mod__ .. i] then
-                data_recipe[name .. __rigor_module_mod__ .. i] = nil
-            end
-        end
         if data_inserter[name .. _panglia_fast_version] then data_inserter[name .. _panglia_fast_version] = nil end
         for i = 1, 99 do
             if data_accumulator["sp-" .. i .. "-" .. name] then
@@ -856,10 +857,11 @@ function TIMSABA.functions.delete_prototypes(replacements)
         end
         if data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] then data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] = nil end
         if data.raw["turret"]["RTPrimerThrowerShooter-" .. name] then data.raw["turret"]["RTPrimerThrowerShooter-" .. name] = nil end
+        if data_recipe["RTThrower-" .. name .. "-Recipe"] then data_recipe["RTThrower-" .. name .. "-Recipe"] = nil end
     end
 end
 
-function TIMSABA.functions.delete_duplicated_prototypes(replacements)
+function TIMSABA.functions.delete_duplicated_items(replacements)
     for _, name in ipairs(replacements or {}) do
         data_item[name] = nil
         data_recipe[name .. _recycling] = nil
