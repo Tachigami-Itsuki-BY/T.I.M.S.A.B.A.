@@ -9,11 +9,7 @@ for _, fluid_name in pairs(TIMSABA.void.fluids) do
                 name = fluid_name .. "-void",
                 category = "angels-water-void",
                 subgroup = "angels-water-void",
-                icons =
-                {
-                    {icon = deleted_png, icon_size = 64, scale = 0.5},
-                    {icon = data_fluid[fluid_name].icon, icon_size = 64, scale = 0.25}
-                },
+                icons = {{icon = deleted_png, icon_size = 64, scale = 0.5}, {icon = data_fluid[fluid_name].icon, icon_size = 64, scale = 0.25}},
                 order = fluid_name .. "-void",
                 enabled = true,
                 auto_recycle = false,
@@ -40,11 +36,7 @@ for _, gas_name in pairs(TIMSABA.void.gases) do
                 name = gas_name .. "-void",
                 category = "angels-chemical-void",
                 subgroup = "angels-chemical-void",
-                icons =
-                {
-                    {icon = deleted_png, icon_size = 64, scale = 0.5},
-                    {icon = data_fluid[gas_name].icon, icon_size = 64, scale = 0.25}
-                },
+                icons = {{icon = deleted_png, icon_size = 64, scale = 0.5}, {icon = data_fluid[gas_name].icon, icon_size = 64, scale = 0.25}},
                 order = gas_name .. "-void",
                 enabled = true,
                 auto_recycle = false,

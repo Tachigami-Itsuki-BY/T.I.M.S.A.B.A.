@@ -1,8 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.15.2
+Date: 31.08.2026
+  Bugfixes:
+    - [Mods] Fixed a bug where the game with the mod would not load if the "Corrundum" mod was enabled and the "Planetaris: Hyarion" mod was disabled.
+    - [Mods] Fixed a bug where the game with the mod would not load if the "Planetaris: Arig" mod was enabled and the "Loaders Modernized: Integrations" mod was disabled.
+    - [Mods] Fixed a bug where the game with the mod would not load if the "New Mining Drills" mod setting was disabled.
+    - [Bobs] Removed empty technologies.
+    - [All] Fixed a bug where module debuffs would not display correctly.
+
+  Modding:
+    - [All] Improved compatibility with mods.
+---------------------------------------------------------------------------------------------------
 Version: 1.15.1
 Date: 29.08.2026
   Bugfixes:
-    - [All] Fixed some compatibility issues with mods: Apia-Carnova, Pelagos wtih Muluna, Foliax, Crucible, and Ribbonia.
+    - [All] Fixed some compatibility bugs with mods: Apia-Carnova, Pelagos with Muluna, Foliax, Crucible, and Ribbonia.
 
   Modding:
     - [Mods] Added "Reigia" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.

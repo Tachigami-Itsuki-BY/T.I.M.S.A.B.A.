@@ -119,10 +119,15 @@ if mods[hyarion_mods] then
     data_fluid[refraction_light].subgroup = is_hyarion_recipe_polished
     data_fluid[refraction_light].order = h
 
+    local _release = "-release"
+    data_recipe[refraction_light .. _release].subgroup = is_hyarion_recipe_polished
+    data_recipe[refraction_light .. _release].icons = {{icon = deleted_png, icon_size = 64, scale = 0.5}, {icon = data_fluid[refraction_light].icon, icon_size = 64, scale = 0.25}}
+    data_recipe[refraction_light .. _release].order = h_a
+    data_recipe[refraction_light .. _release].ingredients[1].amount = 15
+
     data_item[charged_alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
     data_item[charged_alexandrite_hyarion].order = i
     data_item[charged_alexandrite_hyarion].stack_size = 200
-    TIMSABA.void.freezing_organics(charged_alexandrite_hyarion)
     data_recipe[charged_alexandrite_hyarion].subgroup = is_hyarion_recipe_polished
     data_recipe[charged_alexandrite_hyarion].icons = THREE_I(alexandrite_hyarion, refraction_light, charged_alexandrite_hyarion)
     data_recipe[charged_alexandrite_hyarion].order = i
@@ -137,7 +142,6 @@ if mods[hyarion_mods] then
     data_item[unstable_shard].subgroup = is_hyarion_recipe_polished
     data_item[unstable_shard].order = j
     data_item[unstable_shard].stack_size = 200
-    TIMSABA.void.freezing_organics(unstable_shard)
 
     local pure_light = "planetaris-pure-light"
     data_fluid[pure_light].subgroup = is_hyarion_recipe_polished
@@ -157,10 +161,15 @@ if mods[hyarion_mods] then
     }
     data_recipe[pure_light].main_product = pure_light
 
+    data_recipe[pure_light .. _release].subgroup = is_hyarion_recipe_polished
+    data_recipe[pure_light .. _release].icons = {{icon = deleted_png, icon_size = 64, scale = 0.5}, {icon = data_fluid[pure_light].icon, icon_size = 64, scale = 0.25}}
+    data_recipe[pure_light .. _release].order = k_a
+    data_recipe[pure_light .. _release].ingredients[1].amount = 15
+
     local fluorite_discharge = "planetaris-fluorite-discharge"
     data_recipe[fluorite_discharge].subgroup = is_hyarion_recipe_polished
     data_recipe[fluorite_discharge].icons = THREE_R_I(charged_alexandrite_hyarion, unstable_shard, pure_light)
-    data_recipe[fluorite_discharge].order = k_a
+    data_recipe[fluorite_discharge].order = k_b
     data_recipe[fluorite_discharge].results =
     {
         {type = fluid, name = pure_light, amount = 60, temperature = 500},
@@ -171,7 +180,6 @@ if mods[hyarion_mods] then
     data_capsule[unstable_gem].subgroup = is_hyarion_recipe_polished
     data_capsule[unstable_gem].order = l
     data_capsule[unstable_gem].stack_size = 200
-    TIMSABA.void.freezing_organics(unstable_gem)
     data_recipe[unstable_gem].subgroup = is_hyarion_recipe_polished
     data_recipe[unstable_gem].icons = FOUR_D_I(unstable_shard, polished_quartz_hyarion, pure_light, polished_ruby_bob, unstable_gem)
     data_recipe[unstable_gem].order = l
@@ -188,7 +196,6 @@ if mods[hyarion_mods] then
         data_item[unstable_crystal].subgroup = is_hyarion_recipe_polished
         data_item[unstable_crystal].order = m
         data_item[unstable_crystal].stack_size = 200
-        TIMSABA.void.freezing_organics(unstable_crystal)
 
         local unstable_crystallizer = "planetaris-unstable-crystallizer"
         data_item[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
@@ -196,7 +203,6 @@ if mods[hyarion_mods] then
         data_item[unstable_crystallizer].stack_size = 200
         data_item[unstable_crystallizer].fuel_category = base_fuel
         data_item[unstable_crystallizer].fuel_value = 900 .. kJ
-        TIMSABA.void.freezing_organics(unstable_crystallizer)
         data_recipe[unstable_crystallizer].subgroup = is_hyarion_recipe_polished
         data_recipe[unstable_crystallizer].icons = THREE_I(unstable_shard, lava, unstable_crystallizer)
         data_recipe[unstable_crystallizer].order = n
@@ -900,7 +906,7 @@ if mods[hyarion_mods] then
     }
 
     local planetaris_bismuth_processing = "planetaris-bismuth-processing"
-    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, selenium_processing)
+    table.insert(data_technology[planetaris_bismuth_processing].prerequisites, tech_selenium_processing)
     data_technology[planetaris_bismuth_processing].effects =
     {
         {type = unlock_recipe, recipe = bismuth_asteroid_crushing},
