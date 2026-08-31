@@ -30,7 +30,7 @@ end
 setting_bobmods_power_steam = "bobmods-power-steam"
 
 setting_bobmods_mining_areadrills = "bobmods-mining-areadrills"
-bobmods_mining_miningdrills = "bobmods-mining-miningdrills"
+setting_bobmods_mining_miningdrills = "bobmods-mining-miningdrills"
 
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
 setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"

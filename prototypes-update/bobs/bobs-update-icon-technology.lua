@@ -129,7 +129,7 @@ do
 		[tech_pumpjacks_5] = get_pumpjack_overrides(5, 6),
 		[tech_pumpjacks_6] = get_pumpjack_overrides(6, 6)
 	}
-	if settings.startup[bobmods_mining_miningdrills].value then
+	if settings.startup[setting_bobmods_mining_miningdrills].value then
 		technologies[tech_drills_6] = get_mining_drill_overrides(6)
 	end
 	reskins.internal.create_icons_from_list(technologies, inputs)

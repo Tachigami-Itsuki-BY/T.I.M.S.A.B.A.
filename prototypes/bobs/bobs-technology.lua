@@ -141,7 +141,7 @@ data:extend
 })
 
 -- ELECTRIC MINING DRILL
-if settings.startup[bobmods_mining_miningdrills].value then
+if settings.startup[setting_bobmods_mining_miningdrills].value then
     data:extend
     ({
         {

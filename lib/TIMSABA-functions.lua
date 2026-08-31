@@ -834,6 +834,7 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_recipe[capsule_ .. name .. _panglia_crushing] then data_recipe[capsule_ .. name .. _panglia_crushing] = nil end
         if data_recipe[name .. _smelting] then data_recipe[name .. _smelting] = nil end
         if data_recipe[cargo_crate_ .. name] then data_recipe[cargo_crate_ .. name] = nil end
+        if data_recipe[item_ .. cargo_crate_ .. name .. _panglia_crushing] then data_recipe[item_ .. cargo_crate_ .. name .. _panglia_crushing] = nil end
         if data_recipe[unpack_cargo_crate_ .. name] then data_recipe[unpack_cargo_crate_ .. name] = nil end
         if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
         if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end

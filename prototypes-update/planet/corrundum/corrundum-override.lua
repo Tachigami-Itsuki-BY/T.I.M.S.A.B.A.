@@ -673,7 +673,9 @@ if mods[corrundum_mods] then
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = sulfonated_plastic, change = 0.1})
     table.insert(data_technology[plastic .. _productivity].effects, {type = change_recipe_productivity, recipe = sulfonated_plastic_production_alt, change = 0.1})
 
-    table.insert(data_technology[concrete .. _productivity].effects, {type = change_recipe_productivity, recipe = concrete_production_from_asphalt, change = 0.1})
+    if data_technology[concrete .. _productivity] then
+        table.insert(data_technology[concrete .. _productivity].effects, {type = change_recipe_productivity, recipe = concrete_production_from_asphalt, change = 0.1})
+    end
 
     -- MODS
     if mods["AsphaltRoadsPatched"] then
