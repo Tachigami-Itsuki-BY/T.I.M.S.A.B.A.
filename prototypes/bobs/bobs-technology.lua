@@ -141,32 +141,34 @@ data:extend
 })
 
 -- ELECTRIC MINING DRILL
-data:extend
-({
-    {
-        localised_name = {"technology-name.drills-6"},
-        type = technology,
-        name = tech_drills_6,
-        icon = "__base__/graphics/technology/mining-productivity.png",
-        icon_size = 256,
-        prerequisites = {tech_drills_5, space_science_pack},
-        effects = {{type = unlock_recipe, recipe = electric_mining_drill_6}},
-        unit =
+if settings.startup[bobmods_mining_miningdrills].value then
+    data:extend
+    ({
         {
-            count = 200,
-            ingredients =
+            localised_name = {"technology-name.drills-6"},
+            type = technology,
+            name = tech_drills_6,
+            icon = "__base__/graphics/technology/mining-productivity.png",
+            icon_size = 256,
+            prerequisites = {tech_drills_5, space_science_pack},
+            effects = {{type = unlock_recipe, recipe = electric_mining_drill_6}},
+            unit =
             {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
-            },
-            time = 30
+                count = 200,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
+            }
         }
-    }
-})
+    })
+end
 
 -- PUMPJACK
 data:extend

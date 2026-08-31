@@ -62,19 +62,21 @@ if mods[maraxsis_mods] then
     data_recipe[water_brackish_maraxsis].main_product = water_brackish_maraxsis
 
     local maraxsis_salt = "maraxsis-salt"
-    data_recipe[maraxsis_salt].category = angels_petrochem_electrolyser
-    data_recipe[maraxsis_salt].subgroup = is_maraxsis_recipe
-    data_recipe[maraxsis_salt].icons = FOUR_R_I(water_brackish_maraxsis, oxygen_angels, salt_angels, hydrogen_angels)
-    data_recipe[maraxsis_salt].order = c_a
-    data_recipe[maraxsis_salt].energy_required = 4 -- 2H₂O(NaCl) --> NaCl + 2H₂ + O₂
-    data_recipe[maraxsis_salt].ingredients = {{type = fluid, name = water_brackish_maraxsis, amount = 480}}
-    data_recipe[maraxsis_salt].results =
-    {
-        {type = item, name = salt_angels, amount = 2},
-        {type = fluid, name = hydrogen_angels, amount = 480},
-        {type = fluid, name = oxygen_angels, amount = 240}
-    }
-    data_recipe[maraxsis_salt].main_product = salt_angels
+    if data_recipe[maraxsis_salt] then
+        data_recipe[maraxsis_salt].category = angels_petrochem_electrolyser
+        data_recipe[maraxsis_salt].subgroup = is_maraxsis_recipe
+        data_recipe[maraxsis_salt].icons = FOUR_R_I(water_brackish_maraxsis, oxygen_angels, salt_angels, hydrogen_angels)
+        data_recipe[maraxsis_salt].order = c_a
+        data_recipe[maraxsis_salt].energy_required = 4 -- 2H₂O(NaCl) --> NaCl + 2H₂ + O₂
+        data_recipe[maraxsis_salt].ingredients = {{type = fluid, name = water_brackish_maraxsis, amount = 480}}
+        data_recipe[maraxsis_salt].results =
+        {
+            {type = item, name = salt_angels, amount = 2},
+            {type = fluid, name = hydrogen_angels, amount = 480},
+            {type = fluid, name = oxygen_angels, amount = 240}
+        }
+        data_recipe[maraxsis_salt].main_product = salt_angels
+    end
 
     local maraxsis_water = "maraxsis-water"
     data_recipe[maraxsis_water].subgroup = is_maraxsis_recipe

@@ -98,7 +98,11 @@ local delete_prototypes =
     "bob-electronics-machine-3",
     "bob-god-module",
     "bob-god-module" .. _productivity,
-    "bob-god-module-quality"
+    "bob-god-module-quality",
+    "bob-robot-gun-drones",
+    "bob-robot-laser-drones",
+    "bob-robot-flamethrower-drones",
+    "bob-robot-plasma-drones"
 }
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 

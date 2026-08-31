@@ -818,7 +818,7 @@ function TIMSABA.functions.delete_prototypes(replacements)
         for _, proto_type in ipairs(proto_types) do
             if data.raw[proto_type] then
                 if data.raw[proto_type][name] then data.raw[proto_type][name] = nil end
-                if data.raw[proto_type]["tiny-" .. name] then data.raw[proto_type]["tiny-" .. name] = nil end
+                if data.raw[proto_type][tiny_ .. name] then data.raw[proto_type][tiny_ .. name] = nil end
                 for i = 25, 2400, 25 do
                     if data.raw[proto_type][name .. __rigor_module_mod__ .. i] then data.raw[proto_type][name .. __rigor_module_mod__ .. i] = nil end
                 end
@@ -838,13 +838,14 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
         if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
         if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
+        if data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] then data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] = nil end
         if data_inserter[name .. _panglia_fast_version] then data_inserter[name .. _panglia_fast_version] = nil end
         for i = 1, 99 do
-            if data_accumulator["sp-" .. i .. "-" .. name] then
-                data_accumulator["sp-" .. i .. "-" .. name] = nil
-            elseif data_solar_panel["sp-" .. i .. "-" .. name] then
-                data_solar_panel["sp-" .. i .. "-" .. name] = nil
-            end
+            if data_accumulator[sp_ .. i .. "-" .. name] then data_accumulator[sp_ .. i .. "-" .. name] = nil end
+            if data_solar_panel[sp_ .. i .. "-" .. name] then data_solar_panel[sp_ .. i .. "-" .. name] = nil end
+        end
+        for i = 1, 99 do
+            if data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] then data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] = nil end
         end
         for _, container_type in ipairs({container, logistic_container}) do
             if data.raw[container_type] then
@@ -855,9 +856,9 @@ function TIMSABA.functions.delete_prototypes(replacements)
                 end
             end
         end
-        if data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] then data.raw["stream"][name .. "-projectileFromRenaiTransportationPrimed"] = nil end
-        if data.raw["turret"]["RTPrimerThrowerShooter-" .. name] then data.raw["turret"]["RTPrimerThrowerShooter-" .. name] = nil end
-        if data_recipe["RTThrower-" .. name .. "-Recipe"] then data_recipe["RTThrower-" .. name .. "-Recipe"] = nil end
+        if data_stream[name .. _projectileFromRenaiTransportationPrimed] then data_stream[name .. _projectileFromRenaiTransportationPrimed] = nil end
+        if data_turret[RTPrimerThrowerShooter_ .. name] then data_turret[RTPrimerThrowerShooter_ .. name] = nil end
+        if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
     end
 end
 

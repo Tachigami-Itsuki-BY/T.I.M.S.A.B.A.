@@ -224,8 +224,10 @@ data_technology[tech_electric_energy_accumulators_1].effects = {{type = unlock_r
 data_technology[tech_electric_energy_accumulators_2].effects = {{type = unlock_recipe, recipe = accumulator_2}}
 data_technology[tech_electric_energy_accumulators_3].effects = {{type = unlock_recipe, recipe = accumulator_3}}
 
-data_technology[tech_drills_3].prerequisites = {tech_drills_2, chemical_science_pack, tech_brass_processing}
-data_technology[tech_drills_4].prerequisites = {tech_drills_3, tech_tungsten_processing}
+if settings.startup[bobmods_mining_miningdrills].value then
+    data_technology[tech_drills_3].prerequisites = {tech_drills_2, chemical_science_pack, tech_brass_processing}
+    data_technology[tech_drills_4].prerequisites = {tech_drills_3, tech_tungsten_processing}
+end
 
 data_technology[heat_exchanger_2].prerequisites = {tech_heat_exchanger_1, heat_pipe_2, tech_brass_processing}
 data_technology[heat_exchanger_3].prerequisites = {heat_exchanger_2, heat_pipe_3, tech_tungsten_processing}
@@ -260,7 +262,9 @@ local function replace_prerequisites(tech_name, old_prereq, new_prereq)
         end
     end
 end
-replace_prerequisites(tech_drills_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
+if settings.startup[bobmods_mining_miningdrills].value then
+    replace_prerequisites(tech_drills_5, tech_tungsten_processing, tech_tungsten_alloy_processing)
+end
 if data_technology[tech_area_drills_4] then
     replace_prerequisites(tech_area_drills_4, tech_tungsten_processing, tech_tungsten_alloy_processing)
 end

@@ -403,68 +403,70 @@ data_accumulator[accumulator_3].next_upgrade = accumulator_4
 data_accumulator[accumulator_4].next_upgrade = nil
 
 -- ELECTRIC MINING DRILLS
-data:extend
-({
-    {
-        type = item,
-        name = electric_mining_drill_6,
-        subgroup = is_extraction_machine_mining,
-        icon = "__base__/graphics/icons/electric-mining-drill.png",
-        order = f,
-        place_result = electric_mining_drill_6,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = electric_mining_drill_6,
-        category = crafting,
-        subgroup = is_extraction_machine_mining,
-        icon = "__base__/graphics/icons/electric-mining-drill.png",
-        order = f,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 1,
-        ingredients =
-        {
-            {type = item, name = molybdenum_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = molybdenum_plate, amount = 8},
-            {type = item, name = electric_mining_drill_5, amount = 1}
-        },
-        results = {{type = item, name = electric_mining_drill_6, amount = 1}},
-        main_product = electric_mining_drill_6
-    },
-    util.merge
+if settings.startup[bobmods_mining_miningdrills].value then
+    data:extend
     ({
-        data_mining_drill[electric_mining_drill_1],
         {
+            type = item,
             name = electric_mining_drill_6,
             subgroup = is_extraction_machine_mining,
             icon = "__base__/graphics/icons/electric-mining-drill.png",
-            icon_size = 64,
             order = f,
-            minable = {mining_time = 0.5, result = electric_mining_drill_6},
-            max_health = 1050,
-            energy_usage = 720 .. kW,
-            module_slots = 6,
-            mining_speed = 6,
-            energy_source =
+            place_result = electric_mining_drill_6,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            type = recipe,
+            name = electric_mining_drill_6,
+            category = crafting,
+            subgroup = is_extraction_machine_mining,
+            icon = "__base__/graphics/icons/electric-mining-drill.png",
+            order = f,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 1,
+            ingredients =
             {
-                type = electric,
-                usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 6}
+                {type = item, name = molybdenum_gear_wheel, amount = 8},
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = molybdenum_plate, amount = 8},
+                {type = item, name = electric_mining_drill_5, amount = 1}
+            },
+            results = {{type = item, name = electric_mining_drill_6, amount = 1}},
+            main_product = electric_mining_drill_6
+        },
+        util.merge
+        ({
+            data_mining_drill[electric_mining_drill_1],
+            {
+                name = electric_mining_drill_6,
+                subgroup = is_extraction_machine_mining,
+                icon = "__base__/graphics/icons/electric-mining-drill.png",
+                icon_size = 64,
+                order = f,
+                minable = {mining_time = 0.5, result = electric_mining_drill_6},
+                max_health = 1050,
+                energy_usage = 720 .. kW,
+                module_slots = 6,
+                mining_speed = 6,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = 6}
+                }
             }
-        }
+        })
     })
-})
-data_mining_drill[electric_mining_drill_5].next_upgrade = electric_mining_drill_6
-data_mining_drill[electric_mining_drill_6].next_upgrade = nil
-data_mining_drill[electric_mining_drill_6].graphics_set.animation.animation_speed = 6
-data_mining_drill[electric_mining_drill_6].collision_mask = data_mining_drill[electric_mining_drill_5].collision_mask
+    data_mining_drill[electric_mining_drill_5].next_upgrade = electric_mining_drill_6
+    data_mining_drill[electric_mining_drill_6].next_upgrade = nil
+    data_mining_drill[electric_mining_drill_6].graphics_set.animation.animation_speed = 6
+    data_mining_drill[electric_mining_drill_6].collision_mask = data_mining_drill[electric_mining_drill_5].collision_mask
+end
 
 -- PUMPJACKS
 data:extend

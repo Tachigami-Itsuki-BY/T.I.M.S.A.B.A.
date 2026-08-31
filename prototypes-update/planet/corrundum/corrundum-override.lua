@@ -664,8 +664,9 @@ if mods[corrundum_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1}
     }
-
-    table.insert(data_technology[selenium_processing].prerequisites, tech_chalcopyrite_processing_4)
+    if mods[hyarion_mods] then
+        table.insert(data_technology[tech_selenium_processing].prerequisites, tech_chalcopyrite_processing_4)
+    end
 
     table.insert(data_technology[planet_discovery_aquilo].prerequisites, electrochemical_science_pack)
 

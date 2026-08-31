@@ -37,26 +37,28 @@ end
 local function generate_self_recycling_recipe(info)
     local default_machine_tints = {primary = {0.125,0.125,0.125,0.125}, secondary = {0.125,0.125,0.125,0.125}, tertiary = {0.125,0.125,0.125,0.125}, quaternary = {0.125,0.125,0.125,0.125}}
     local crafting_machine_tint = data_recipe[info.name] and data_recipe[info.name].crafting_machine_tint or default_machine_tints
-    data:extend
-    ({
-        {
-            localised_name = {"recipe-name.recycling", get_item_localised_name(info.name)},
-            type = recipe,
-            name = info.name .. _recycling,
-            category = recycling,
-            subgroup = data_item[info.name].subgroup,
-            icon = data_item[info.name].icon,
-            order = data_item[info.name].order,
-            enabled = true,
-            energy_required = 0.25,
-            ingredients = {{type = item, name = info.name, amount = 1}},
-            results = {{type = item, name = info.name, amount_min = 0, amount_max = 1}},
+    if data_recipe[info.name] then
+        data:extend
+        ({
+            {
+                localised_name = {"recipe-name.recycling", get_item_localised_name(info.name)},
+                type = recipe,
+                name = info.name .. _recycling,
+                category = recycling,
+                subgroup = data_item[info.name].subgroup,
+                icon = data_item[info.name].icon,
+                order = data_item[info.name].order,
+                enabled = true,
+                energy_required = 0.25,
+                ingredients = {{type = item, name = info.name, amount = 1}},
+                results = {{type = item, name = info.name, amount_min = 0, amount_max = 1}},
 
-            hidden = true,
-            unlock_results = false,
-            crafting_machine_tint = crafting_machine_tint
-        }
-    })
+                hidden = true,
+                unlock_results = false,
+                crafting_machine_tint = crafting_machine_tint
+            }
+        })
+    end
 end
 generate_self_recycling_recipe({name = barrel})
 if mods[muluna_mods] then
@@ -96,15 +98,17 @@ if mods[muluna_mods] then
 end
 
 if mods[arig_mods] then
-    data_recipe[hyper_loader_arig .. _recycling].results =
-    {
-        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 1},
-        {type = item, name = niobium_iron_bearing, amount = 1},
-        {type = item, name = advanced_processing_unit, amount = 1},
-        {type = item, name = niobium_titanium_plate, amount = 1},
-        {type = item, name = vulcanus_loader, amount_min = 0, amount_max = 1},
-        {type = item, name = hyper_underground_belt_arig, amount_min = 0, amount_max = 1}
-    }
+    if data_recipe[hyper_loader_arig .. _recycling] then
+        data_recipe[hyper_loader_arig .. _recycling].results =
+        {
+            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 1},
+            {type = item, name = niobium_iron_bearing, amount = 1},
+            {type = item, name = advanced_processing_unit, amount = 1},
+            {type = item, name = niobium_titanium_plate, amount = 1},
+            {type = item, name = vulcanus_loader, amount_min = 0, amount_max = 1},
+            {type = item, name = hyper_underground_belt_arig, amount_min = 0, amount_max = 1}
+        }
+    end
 end
 
 if mods[pelagos_mods] then

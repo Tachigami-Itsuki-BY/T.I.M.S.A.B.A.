@@ -102,6 +102,8 @@ data_spidertron_remote = data.raw["spidertron-remote"]
 data_corpse = data.raw["corpse"]
 data_proxy_container = data.raw["proxy-container"]
 data_loader_1x1 = data.raw["loader-1x1"]
+data_stream = data.raw["stream"]
+data_turret = data.raw["turret"]
 
 -- GLOBAL NAME
 item = "item"
@@ -380,9 +382,16 @@ capsule_ = "capsule-"
 _panglia_crushing = "-panglia_crushing"
 _barrel_panglia_crushing = "-barrel-panglia_crushing"
 _panglia_fast_version = "_panglia_fast_version"
+sp_ = "sp-"
 cargo_crate_ = "cargo-crate-"
 unpack_cargo_crate_ = "unpack-cargo-crate-"
 maraxsis_fluid_void_ = "maraxsis-fluid-void-"
 _barrel_incineration = "-barrel-incineration"
 _outlet = "-outlet"
 __rigor_module_mod__ = "__rigor_module_mod__"
+tiny_ = "tiny-"
+
+_projectileFromRenaiTransportationPrimed = "-projectileFromRenaiTransportationPrimed"
+RTPrimerThrowerShooter_ = "RTPrimerThrowerShooter-"
+RTThrower_ = "RTThrower-"
+_Recipe = "-Recipe"

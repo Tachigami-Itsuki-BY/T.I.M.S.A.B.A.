@@ -65,24 +65,24 @@ if mods[bobmodules] then
     create_module_item(speed_module_7, is_speed_module, speed, 7, g, {speed = 6 * SpeedPerLevel + SpeedBonus, consumption = 6 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["blue"])
     create_module_item(speed_module_8, is_speed_module, speed, 8, h, {speed = 7 * SpeedPerLevel + SpeedBonus, consumption = 7 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["blue"])
     -- EFFICIENCY
-    create_module_item(efficiency_module_6, is_efficiency_module, efficiency, 6, f, {consumption = -5 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["green"])
-    create_module_item(efficiency_module_7, is_efficiency_module, efficiency, 7, g, {consumption = -6 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["green"])
-    create_module_item(efficiency_module_8, is_efficiency_module, efficiency, 8, h, {consumption = -7 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["green"])
+    create_module_item(efficiency_module_6, is_efficiency_module, efficiency, 6, f, {consumption = -7 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["green"])
+    create_module_item(efficiency_module_7, is_efficiency_module, efficiency, 7, g, {consumption = -8 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["green"])
+    create_module_item(efficiency_module_8, is_efficiency_module, efficiency, 8, h, {consumption = -9 * ConsumptionPenaltyPerLevel + ConsumptionPenalty}, module_color_map["green"])
     -- PRODUCTIVITY
-    create_module_item(productivity_module_6, is_productivity_module, productivity, 6, f, {speed = -5 * SpeedPerLevel + SpeedBonus, consumption = 5 * ConsumptionPenaltyPerLevel + ConsumptionPenalty, productivity = 5 * ProductivityPerLevel + ProductivityBonus, pollution = 5 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["red-yellow"])
-    create_module_item(productivity_module_7, is_productivity_module, productivity, 7, g, {speed = -6 * SpeedPerLevel + SpeedBonus, consumption = 6 * ConsumptionPenaltyPerLevel + ConsumptionPenalty, productivity = 6 * ProductivityPerLevel + ProductivityBonus, pollution = 6 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["red-yellow"])
-    create_module_item(productivity_module_8, is_productivity_module, productivity, 8, h, {speed = -7 * SpeedPerLevel + SpeedBonus, consumption = 7 * ConsumptionPenaltyPerLevel + ConsumptionPenalty, productivity = 7 * ProductivityPerLevel + ProductivityBonus, pollution = 7 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["red-yellow"])
+    create_module_item(productivity_module_6, is_productivity_module, productivity, 6, f, {speed = -7 * SpeedPerLevel + SpeedBonus, consumption = 5 * ConsumptionPenaltyPerLevel + ConsumptionPenalty, productivity = 5 * ProductivityPerLevel + ProductivityBonus, pollution = 5 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["red-yellow"])
+    create_module_item(productivity_module_7, is_productivity_module, productivity, 7, g, {speed = -8 * SpeedPerLevel + SpeedBonus, consumption = 6 * ConsumptionPenaltyPerLevel + ConsumptionPenalty, productivity = 6 * ProductivityPerLevel + ProductivityBonus, pollution = 6 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["red-yellow"])
+    create_module_item(productivity_module_8, is_productivity_module, productivity, 8, h, {speed = -9 * SpeedPerLevel + SpeedBonus, consumption = 7 * ConsumptionPenaltyPerLevel + ConsumptionPenalty, productivity = 7 * ProductivityPerLevel + ProductivityBonus, pollution = 7 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["red-yellow"])
     -- POLLUTION CLEANING and PRODUCING
-    create_module_item(pollution_clean_module_6, is_pollution_clean_module, pollution_clean, 6, f, {pollution = -5 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["pine"])
-    create_module_item(pollution_clean_module_7, is_pollution_clean_module, pollution_clean, 7, g, {pollution = -6 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["pine"])
-    create_module_item(pollution_clean_module_8, is_pollution_clean_module, pollution_clean, 8, h, {pollution = -7 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["pine"])
+    create_module_item(pollution_clean_module_6, is_pollution_clean_module, pollution_clean, 6, f, {pollution = -7 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["pine"])
+    create_module_item(pollution_clean_module_7, is_pollution_clean_module, pollution_clean, 7, g, {pollution = -8 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["pine"])
+    create_module_item(pollution_clean_module_8, is_pollution_clean_module, pollution_clean, 8, h, {pollution = -9 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["pine"])
     create_module_item(pollution_create_module_6, is_pollution_create_module, pollution_create, 6, f, {pollution = 5 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["brown"])
     create_module_item(pollution_create_module_7, is_pollution_create_module, pollution_create, 7, g, {pollution = 6 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["brown"])
     create_module_item(pollution_create_module_8, is_pollution_create_module, pollution_create, 8, h, {pollution = 7 * PollutionPenaltyPerLevel + PollutionPenalty}, module_color_map["brown"])
     -- QUALITY
-    create_module_item(quality_module_6, is_quality_module, quality, 6, f, {speed = -5 * SpeedPerLevel + SpeedBonus, quality = 5 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
-    create_module_item(quality_module_7, is_quality_module, quality, 7, g, {speed = -6 * SpeedPerLevel + SpeedBonus, quality = 6 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
-    create_module_item(quality_module_8, is_quality_module, quality, 8, h, {speed = -7 * SpeedPerLevel + SpeedBonus, quality = 7 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+    create_module_item(quality_module_6, is_quality_module, quality, 6, f, {speed = -7 * SpeedPerLevel + SpeedBonus, quality = 5 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+    create_module_item(quality_module_7, is_quality_module, quality, 7, g, {speed = -8 * SpeedPerLevel + SpeedBonus, quality = 6 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
+    create_module_item(quality_module_8, is_quality_module, quality, 8, h, {speed = -9 * SpeedPerLevel + SpeedBonus, quality = 7 * QualityPerLevel + QualityBonus}, module_color_map["gray-red"])
     -- AGRICULTURAL
     local function create_agricultural_module_item(name, type, number, order, effect)
         data:extend

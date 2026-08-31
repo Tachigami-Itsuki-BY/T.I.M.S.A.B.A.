@@ -587,9 +587,7 @@ if mods[paracelsin_mods] then
         {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {galvanization_science_pack, 1},
-        {interstellar_science_pack, 1}
+        {electromagnetic_science_pack, 1}
     }
     data_technology[tech_concrete_productivity].PlanetsLib_recipe_productivity_effects.effects =
     {
@@ -781,46 +779,47 @@ if mods["RPGsystem"] then
     data_capsule["rpg_speed_potion"].subgroup = nil
 end
 
-if mods[bobtech] and mods[space_age_science_packs] then
+if mods[space_age_science_packs] then
     local list_base_or_space = {}
     if settings.startup[setting_science_pack_nostalgia].value then
         list_base_or_space =
         {
-            "metallurgic-science-pack",
-            "electromagnetic-science-pack",
-            "cryogenic-science-pack",
-            "promethium-science-pack",
-            "agricultural-science-pack"
+            metallurgic_science_pack,
+            agricultural_science_pack,
+            electromagnetic_science_pack,
+            cryogenic_science_pack,
+            promethium_science_pack
         }
     else
         list_base_or_space =
         {
-            "military-science-pack",
-            "automation-science-pack",
-            "chemical-science-pack",
-            "space-science-pack",
-            "logistic-science-pack",
-            "utility-science-pack",
-            "production-science-pack"
+            automation_science_pack,
+            logistic_science_pack,
+            military_science_pack,
+            chemical_science_pack,
+            production_science_pack,
+            utility_science_pack,
+            space_science_pack
         }
     end
-
     for _, pack in pairs(list_base_or_space) do
         data_technology[pack].icon = "__sa-science-packs__/graphics/techs/sasp-" .. pack .. ".png"
         data_technology[pack].icon_size = 256
         data_technology[pack].icons = nil
     end
 
-    local tech_transport_science_pack = "bob-advanced-logistic-science-pack"
-    data_technology[tech_transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
-    data_technology[tech_transport_science_pack].icon_size = 256
-    data_technology[tech_transport_science_pack].icons = nil
+    if mods[bobtech] then
+        if settings.startup[setting_science_pack_nostalgia].value then
+            local tech_transport_science_pack = "bob-advanced-logistic-science-pack"
+            data_technology[tech_transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
+            data_technology[tech_transport_science_pack].icon_size = 256
+            data_technology[tech_transport_science_pack].icons = nil
 
-    local tech_alien_research = "bob-alien-research"
-    if data_technology[tech_alien_research] then
-        data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
-        data_technology[tech_alien_research].icon_size = 256
-        data_technology[tech_alien_research].icons = nil
+            local tech_alien_research = "bob-alien-research"
+            data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
+            data_technology[tech_alien_research].icon_size = 256
+            data_technology[tech_alien_research].icons = nil
+        end
     end
 end
 

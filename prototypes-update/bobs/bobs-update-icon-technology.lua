@@ -123,12 +123,15 @@ do
 	end
 	local technologies =
 	{
-		-- ELECTRIC MINING DRILL
-		[tech_drills_6] = get_mining_drill_overrides(6),
+		-- ELECTRIC MINING DRILLS
+		[electric_mining_drill_1] = get_mining_drill_overrides(1),
 		-- PUMPJACK
 		[tech_pumpjacks_5] = get_pumpjack_overrides(5, 6),
 		[tech_pumpjacks_6] = get_pumpjack_overrides(6, 6)
 	}
+	if settings.startup[bobmods_mining_miningdrills].value then
+		technologies[tech_drills_6] = get_mining_drill_overrides(6)
+	end
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end
 
@@ -203,13 +206,7 @@ do
 		make_icon_pictures = false,
 	}
 	reskins.lib.set_inputs_defaults(inputs)
-	local batteries =
-	{
-		[battery_lead_acid] = {tier = 1, prog_tier = 2, technology = battery_lead_acid, tint = "ff781f"},
-		[battery_lithium_ion] = {tier = 2, prog_tier = 3, technology = tech_battery_2, tint = "41ffdd"},
-		[battery_silver_zinc] = {tier = 3, prog_tier = 4, technology = tech_battery_3, tint = "3dff40"},
-		[battery_graphene] = {tier = 4, prog_tier = 5, technology = tech_battery_4, tint = "333333"}
-	}
+	local batteries = {[battery_graphene] = {tier = 4, prog_tier = 5, technology = tech_battery_4, tint = "333333"}}
 	for name, map in pairs(batteries) do
 		local item = data.raw.item[name]
 		if not item then
@@ -222,7 +219,7 @@ do
 			inputs.tint = util.color(map.tint)
 		end
 
-		local recipe = data.raw["recipe"][name]
+		local recipe = data_recipe[name]
 		if recipe then
 			if not recipe.crafting_machine_tint then
 				recipe.crafting_machine_tint = {}

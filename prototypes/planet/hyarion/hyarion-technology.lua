@@ -1,10 +1,10 @@
 if mods[hyarion_mods] then
-    selenium_processing = "selenium-processing"
+    tech_selenium_processing = "selenium-processing"
     data:extend
     ({
         {
             type = technology,
-            name = selenium_processing,
+            name = tech_selenium_processing,
             icon = "__TIMSABA__/graphics/icons/hyarion/technology/selenium-processing.png",
             icon_size = 256,
             prerequisites = {tech_molybdenite_processing_4},
