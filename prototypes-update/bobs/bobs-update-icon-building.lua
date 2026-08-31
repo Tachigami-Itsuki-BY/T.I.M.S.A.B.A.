@@ -1015,7 +1015,7 @@ end
 
 -- ELECTRIC MINING DRILL
 do
-	if settings.startup[bobmods_mining_miningdrills].value then
+	if settings.startup[setting_bobmods_mining_miningdrills].value then
 		local inputs =
 		{
 			type = mining_drill,

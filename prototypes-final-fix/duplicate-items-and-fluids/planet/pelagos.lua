@@ -18,9 +18,9 @@ if mods[pelagos_mods] then
         "diesel-inserter",
         "crane-bulk-diesel-inserter",
         "crane-stack-diesel-inserter",
-        --[["diesel-barreling-machine",
+        "diesel-barreling-machine",
         "burner-barreling-machine",
-        "electric-barreling-machine",]]
+        "electric-barreling-machine",
         "pelagos-biochamber",
         "corrosive-" .. firearm_magazine,
         "calciner-advanced-steel-smelting",
@@ -58,28 +58,4 @@ if mods[pelagos_mods] then
         "pelagos-explosives"
     }
     TIMSABA.functions.delete_prototypes(delete_prototypes)
-
-    local diesel_barreling_machine = "diesel-barreling-machine"
-    data_item[diesel_barreling_machine].hidden = true
-    data_item[diesel_barreling_machine].hidden_in_factoriopedia = true
-    data_recipe[diesel_barreling_machine].hidden = true
-    data_recipe[diesel_barreling_machine].hidden_in_factoriopedia = true
-    data_assembling[diesel_barreling_machine].hidden = true
-    data_assembling[diesel_barreling_machine].hidden_in_factoriopedia = true
-
-    local burner_barreling_machine = "burner-barreling-machine"
-    data_item[burner_barreling_machine].hidden = true
-    data_item[burner_barreling_machine].hidden_in_factoriopedia = true
-    data_recipe[burner_barreling_machine].hidden = true
-    data_recipe[burner_barreling_machine].hidden_in_factoriopedia = true
-    data_assembling[burner_barreling_machine].hidden = true
-    data_assembling[burner_barreling_machine].hidden_in_factoriopedia = true
-
-    local electric_barreling_machine = "electric-barreling-machine"
-    data_item[electric_barreling_machine].hidden = true
-    data_item[electric_barreling_machine].hidden_in_factoriopedia = true
-    data_recipe[electric_barreling_machine].hidden = true
-    data_recipe[electric_barreling_machine].hidden_in_factoriopedia = true
-    data_assembling[electric_barreling_machine].hidden = true
-    data_assembling[electric_barreling_machine].hidden_in_factoriopedia = true
 end

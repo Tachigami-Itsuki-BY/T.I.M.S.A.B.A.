@@ -403,7 +403,7 @@ data_accumulator[accumulator_3].next_upgrade = accumulator_4
 data_accumulator[accumulator_4].next_upgrade = nil
 
 -- ELECTRIC MINING DRILLS
-if settings.startup[bobmods_mining_miningdrills].value then
+if settings.startup[setting_bobmods_mining_miningdrills].value then
     data:extend
     ({
         {

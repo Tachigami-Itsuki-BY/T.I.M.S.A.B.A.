@@ -1,5 +1,5 @@
 if settings.startup[setting_no_spoilage].value then
-    local types_to_clean = {"item", "ammo", "gun", "capsule", "tool", "repair-tool", "item-with-entity-data", "selection-tool"}
+    local types_to_clean = {item, ammo, "gun", capsule, tool, repair_tool, "item-with-entity-data", "selection-tool"}
     for _, type_name in pairs(types_to_clean) do
         if data.raw[type_name] then
             for _, proto in pairs(data.raw[type_name]) do
