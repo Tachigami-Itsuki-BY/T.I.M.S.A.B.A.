@@ -552,7 +552,7 @@ data_technology[foundry].research_trigger =
     count = 256
 }
 
-if settings.startup[bobmods_mining_miningdrills].value then
+if settings.startup[setting_bobmods_mining_miningdrills].value then
     data_technology[big_mining_drill].prerequisites = {foundry, tech_drills_6}
 end
 
