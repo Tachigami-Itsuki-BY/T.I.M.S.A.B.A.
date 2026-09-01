@@ -338,18 +338,14 @@ local entities =
     {type_1 = data_inserter, type_2 = data_item, name = T5_bulk_inserter, stack = 32, weight = 31250, extension_speed = 0.20, rotation_speed = 1800/21600, EPMR = 300, tier = 20},
 }
 for _, BUILD in pairs(entities) do
-    if BUILD.name then
+    if data_item[BUILD.name] then
         if BUILD.type_1 == data_transport_belt and data_transport_belt[BUILD.name] then
-            if data_item[BUILD.name] then
-                data_item[BUILD.name].stack_size = 200
-            end
+            data_item[BUILD.name].stack_size = 200
         end
         if BUILD.type_1 == data_underground_belt and data_underground_belt[BUILD.name] then
-            if data_item[BUILD.name] then
-                data_item[BUILD.name].stack_size = 32
-                data_item[BUILD.name].weight = 31250
-            end
-            if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
+            data_item[BUILD.name].stack_size = 32
+            data_item[BUILD.name].weight = 31250
+            data_recipe[BUILD.name].energy_required = 1
             data_underground_belt[BUILD.name].localised_description = {"entity-description.underground-belt"}
             if settings.startup[setting_rebalance_belts_and_pipes].value then
                 data_underground_belt[BUILD.name].max_distance = BUILD.max_distance
@@ -357,11 +353,9 @@ for _, BUILD in pairs(entities) do
             data_underground_belt[BUILD.name].factoriopedia_simulation = BUILD.simulation
         end
         if BUILD.type_1 == data_splitter and data_splitter[BUILD.name] then
-            if data_item[BUILD.name] then
-                data_item[BUILD.name].stack_size = 16
-                data_item[BUILD.name].weight = 62500
-            end
-            if data_recipe[BUILD.name] then data_recipe[BUILD.name].energy_required = 1 end
+            data_item[BUILD.name].stack_size = 16
+            data_item[BUILD.name].weight = 62500
+            data_recipe[BUILD.name].energy_required = 1
             data_splitter[BUILD.name].localised_description = {"entity-description.splitter"}
         end
         if BUILD.type_1 == data_inserter and data_inserter[BUILD.name] then
@@ -381,10 +375,8 @@ for _, BUILD in pairs(entities) do
         if BUILD.type_2 == data_item and data_item[BUILD.name] then
             data_item[BUILD.name].stack_size = BUILD.stack
             data_item[BUILD.name].weight = BUILD.weight
-            if data_recipe[BUILD.name] then
-                data_recipe[BUILD.name].category = crafting
-                data_recipe[BUILD.name].additional_categories = {electromagnetics}
-            end
+            data_recipe[BUILD.name].category = crafting
+            data_recipe[BUILD.name].additional_categories = {electromagnetics}
         end
     end
 end
@@ -481,36 +473,38 @@ if data_recipe[T0_splitter] then
     data_recipe[T0_splitter].ingredients[2].amount = 4
 end
 
-local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
-    data_recipe[name].ingredients =
-    {
-        {type = item, name = gear_wheel, amount = 1},
-        {type = item, name = bearing, amount = 1},
-        {type = item, name = inserter, amount = 1},
-        {type = item, name = circuit, amount = 1},
-        {type = item, name = plate, amount = 1}
-    }
-end
-inserter_recipe(T1_inserter, iron_gear_wheel, T0_inserter, basic_circuit_board, iron_plate, iron_bearing)
-inserter_recipe(L2_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
-inserter_recipe(T3_inserter, cobalt_steel_gear_wheel, L2_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
-inserter_recipe(T4_inserter, titanium_gear_wheel, T3_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
-inserter_recipe(T5_inserter, nitinol_gear_wheel, T4_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
+if settings.startup[setting_bobmods_logistics_inserteroverhaul].value then
+    local function inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = gear_wheel, amount = 1},
+            {type = item, name = bearing, amount = 1},
+            {type = item, name = inserter, amount = 1},
+            {type = item, name = circuit, amount = 1},
+            {type = item, name = plate, amount = 1}
+        }
+    end
+    inserter_recipe(T1_inserter, iron_gear_wheel, T0_inserter, basic_circuit_board, iron_plate, iron_bearing)
+    inserter_recipe(L2_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
+    inserter_recipe(T3_inserter, cobalt_steel_gear_wheel, L2_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
+    inserter_recipe(T4_inserter, titanium_gear_wheel, T3_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
+    inserter_recipe(T5_inserter, nitinol_gear_wheel, T4_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 
-local function bulk_inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
-    data_recipe[name].ingredients =
-    {
-        {type = item, name = gear_wheel, amount = 4},
-        {type = item, name = bearing, amount = 4},
-        {type = item, name = inserter, amount = 1},
-        {type = item, name = circuit, amount = 1},
-        {type = item, name = plate, amount = 4}
-    }
+    local function bulk_inserter_recipe(name, gear_wheel, inserter, circuit, plate, bearing)
+        data_recipe[name].ingredients =
+        {
+            {type = item, name = gear_wheel, amount = 4},
+            {type = item, name = bearing, amount = 4},
+            {type = item, name = inserter, amount = 1},
+            {type = item, name = circuit, amount = 1},
+            {type = item, name = plate, amount = 4}
+        }
+    end
+    bulk_inserter_recipe(T2_bulk_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
+    bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
+    bulk_inserter_recipe(T4_bulk_inserter, titanium_gear_wheel, T3_bulk_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
+    bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 end
-bulk_inserter_recipe(T2_bulk_inserter, steel_gear_wheel, T1_inserter, electronic_circuit, bronze_plate_bob, steel_bearing)
-bulk_inserter_recipe(T3_bulk_inserter, cobalt_steel_gear_wheel, T2_bulk_inserter, advanced_circuit, aluminium_plate_bob, cobalt_steel_bearing)
-bulk_inserter_recipe(T4_bulk_inserter, titanium_gear_wheel, T3_bulk_inserter, processing_unit, titanium_plate_bob, titanium_bearing)
-bulk_inserter_recipe(T5_bulk_inserter, nitinol_gear_wheel, T4_bulk_inserter, advanced_processing_unit, nitinol_plate_bob, nitinol_bearing)
 
 if mods[loaders_modernized_integrations] then
     local loaders =
@@ -954,7 +948,7 @@ bobmods.lib.recipe.update_recycling_recipe
 data_transport_belt[T5_transport_belt].next_upgrade = vulcanus_transport_belt
 data_underground_belt[T5_underground_belt].next_upgrade = vulcanus_underground_belt
 data_splitter[T5_splitter].next_upgrade = vulcanus_splitter
-data_inserter[T5_bulk_inserter].next_upgrade = stack_inserter
+if settings.startup[setting_bobmods_logistics_inserteroverhaul].value then data_inserter[T5_bulk_inserter].next_upgrade = stack_inserter end
 
 data_electric_pole[small_electric_pole].next_upgrade = medium_electric_pole_1
 data_electric_pole[medium_electric_pole_1].next_upgrade = medium_electric_pole_2

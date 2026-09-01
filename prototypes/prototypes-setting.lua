@@ -43,6 +43,7 @@ setting_bobmods_logistics_pipeperlevel = "bobmods-logistics-pipeperlevel"
 setting_bobmods_logistics_pipestarting = "bobmods-logistics-pipestarting"
 setting_bobmods_logistics_ugdistanceoverhaul = "bobmods-logistics-ugdistanceoverhaul"
 setting_bobmods_logistics_trains = "bobmods-logistics-trains"
+setting_bobmods_logistics_inserteroverhaul = "bobmods-logistics-inserteroverhaul"
 
 -- TELLUS
 setting_dye_secondary_color = "dye-secondary-color"

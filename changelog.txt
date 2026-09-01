@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.15.4
+Date: 01.09.2026
+  Bugfixes:
+    - [Mods] Compatibility bugs fixed.
+
+  Modding:
+    - [Mods] Added "Pyroclast" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Velora" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+---------------------------------------------------------------------------------------------------
 Version: 1.15.3
 Date: 31.08.2026
   Bugfixes:

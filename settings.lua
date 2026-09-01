@@ -67,7 +67,7 @@ data:extend
     }
 })
 
-if mods["bobtech"] and mods["sa-science-packs"] then
+if mods["sa-science-packs"] then
     data:extend
     ({
         {
