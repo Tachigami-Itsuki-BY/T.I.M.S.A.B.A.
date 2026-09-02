@@ -5,7 +5,7 @@ if mods[loaders_modernized_integrations] then
     local loaders = {}
     loaders["vulcanus-"] =
     {
-        subgroup = is_vulcanus_logistics,
+        subgroup = is_vulcanus_logistic,
         order = z,
         underground_name = vulcanus_underground_belt,
         upgrade_from_tier = "ultimate-",

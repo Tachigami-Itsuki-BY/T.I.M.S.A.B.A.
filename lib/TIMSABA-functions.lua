@@ -806,11 +806,11 @@ function TIMSABA.functions.delete_prototypes(replacements)
     local proto_types =
     {
         item, capsule, tool, fluid, recipe, technology,
-        ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, land_mine,
+        ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, roboport_eq, land_mine,
         car, locomotive, wagon_cargo, wagon_fluid, unit,
         item_module, beacon,
         assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo, solar_panel, burner_generator,
-        inserter, heat_pipe, container, logistic_container,
+        inserter, heat_pipe, container, logistic_container, construction_robot,
         repair_tool, tile, electric_pole, plant, accumulator, solar_panel,
         projectile,
     }
@@ -869,6 +869,115 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
         data_recipe[name .. _recycling] = nil
         if data_recipe[item_ .. name .. _panglia_crushing] then
             data_recipe[item_ .. name .. _panglia_crushing] = nil
+        end
+    end
+end
+
+-- REPLACE RESOURCES
+function TIMSABA.functions.replace_vanila_resources(vanilla_resource, angel_resource, planet)
+    local vanilla_resources = vanilla_resource
+    local angel_resources = angel_resource
+
+    local map_gen = data_planet[planet].map_gen_settings
+
+    if not map_gen.autoplace_settings then
+        map_gen.autoplace_settings = {entity = {settings = {}}}
+    end
+
+    for _, res_name in ipairs(vanilla_resources) do
+        map_gen.autoplace_controls[res_name] = nil
+        if map_gen.autoplace_settings.entity.settings then
+            map_gen.autoplace_settings.entity.settings[res_name] = nil
+        end
+        if data_resource[res_name] then
+            data_resource[res_name].location = nil
+        end
+    end
+
+    for _, res_name in ipairs(angel_resources) do
+        map_gen.autoplace_controls[res_name] = {}
+
+        map_gen.autoplace_settings.entity.settings[res_name] = {}
+
+        if data_resource[res_name] then
+            data_resource[res_name].location = planet
+        end
+    end
+end
+
+function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology_name)
+    local memo = {} -- Хранит глобальный результат: true (ведет к цели) или false (не ведет)
+
+    local function leads_to_root(tech_name, current_path)
+        -- Если мы пришли в целевую технологию — путь найден
+        if tech_name == technology_name then
+            return true
+        end
+
+        -- Возвращаем уже посчитанный ранее результат
+        if memo[tech_name] ~= nil then
+            return memo[tech_name]
+        end
+
+        -- Проверка на циклы: если tech_name уже есть в текущей ветке поиска
+        if current_path[tech_name] then
+            return false
+        end
+
+        local tech = data.raw.technology[tech_name] -- В Factorio данные лежат в data.raw.technology
+        if not tech or not tech.prerequisites then
+            memo[tech_name] = false
+            return false
+        end
+        -- Шаг вперед: добавляем технологию в текущий путь исследования
+        current_path[tech_name] = true
+        -- Проверяем все требования технологии
+        for _, prereq in ipairs(tech.prerequisites) do
+            if leads_to_root(prereq, current_path) then
+                memo[tech_name] = true
+                current_path[tech_name] = nil -- Убираем из пути перед выходом
+                return true
+            end
+        end
+        -- Шаг назад: убираем технологию из пути, так как ветка не привела к цели
+        current_path[tech_name] = nil
+        memo[tech_name] = false
+        return false
+    end
+
+    -- Перебираем все технологии в игре
+    for tech_name, tech in pairs(data_technology) do
+        -- Не проверяем целевую технологию саму на себя
+        if tech_name ~= technology_name and leads_to_root(tech_name, {}) then
+            if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
+                local has_pack = false
+                local has_datacell = false
+                local has_science_pack = false
+                -- Проверяем текущие ингредиенты
+                for _, ingredient in ipairs(tech.unit.ingredients) do
+                    local name -- Убрали = ""
+                    if type(ingredient) == "table" then
+                        name = ingredient.name or ingredient[1]
+                    else
+                        name = ingredient
+                    end
+                    -- Добавляем проверку на случай, если name остался nil или пришел как объект
+                    if name then
+                        -- Принудительно приводим к строке, чтобы string.find не ругался
+                        name = tostring(name)
+
+                        if name == science_pack_name then has_pack = true end
+                        if string.find(name, "datacell%-") then has_datacell = true end
+                        if string.find(name, "%-science%-pack") then has_science_pack = true end
+                    end
+                end
+                -- Логика исключения (для Space Age / дата-ячеек)
+                local should_exclude = has_datacell and not has_science_pack
+                -- Добавляем пак, если его нет и технология не подпадает под исключение
+                if not has_pack and not should_exclude then
+                    table.insert(tech.unit.ingredients, {science_pack_name, 1})
+                end
+            end
         end
     end
 end

@@ -554,11 +554,11 @@ if mods[loaders_modernized_integrations] then
     end
     if data_loader_1x1[stack_loader] then
         data_loader_1x1[T5_loader].next_upgrade = vulcanus_loader
-        data_item[stack_loader].subgroup = is_gleba_logistics
+        data_item[stack_loader].subgroup = is_gleba_logistic
         data_item[stack_loader].order = b
         data_item[stack_loader].stack_size = 32
         data_item[stack_loader].weight = 31250
-        data_recipe[stack_loader].subgroup = is_gleba_logistics
+        data_recipe[stack_loader].subgroup = is_gleba_logistic
         data_recipe[stack_loader].order = b
         data_recipe[stack_loader].ingredients[1].name = carbon_fiber
         local recipe_variants = {stack_loader, "stack-" .. stack_loader}
@@ -584,7 +584,7 @@ if mods[loaders_modernized_integrations] then
         else
             data_recipe[stack_loader].ingredients[3].name = vulcanus_loader
         end
-        data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
+        data_loader_1x1[stack_loader].subgroup = is_gleba_logistic
         data_loader_1x1[stack_loader].order = b
         data_loader_1x1[stack_loader].minable.mining_time = 0.5
         if mods[arig_mods] then

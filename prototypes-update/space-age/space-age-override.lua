@@ -31,7 +31,6 @@ data_recipe[rocket_part].ingredients =
 }
 
 if mods[muluna_mods] then
-    rocket_part_muluna = "rocket-part-muluna"
     data_recipe[rocket_part_muluna].icons = R_P_I(rocket_part, planet_muluna)
     data_recipe[rocket_part_muluna].order = c .. "-" .. data_planet[planet_muluna].order
     data_recipe[rocket_part_muluna].energy_required = 4
@@ -46,7 +45,6 @@ if mods[muluna_mods] then
 end
 
 if mods[arig_mods] then
-    rocket_part_arig = "planetaris-arig-rocket-part"
     data_recipe[rocket_part_arig].icons = R_P_I(rocket_part, planet_arig)
     data_recipe[rocket_part_arig].order = b .. "-" .. data_planet[planet_arig].order
     data_recipe[rocket_part_arig].energy_required = 4
@@ -60,7 +58,6 @@ if mods[arig_mods] then
 end
 
 if mods[tellus_mods] then
-    rocket_part_tellus = "planetaris-tellus-rocket-part"
     data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
     data_recipe[rocket_part_tellus].order = b .. "-" .. data_planet[planet_tellus].order
     data_recipe[rocket_part_tellus].energy_required = 4
@@ -75,7 +72,6 @@ if mods[tellus_mods] then
 end
 
 if mods[maraxsis_mods] then
-    rocket_part_maraxsis = "maraxsis-rocket-part"
     data_recipe[rocket_part_maraxsis].icons = R_P_I(rocket_part, planet_maraxsis)
     data_recipe[rocket_part_maraxsis].order = b .. "-" .. data_planet[planet_maraxsis].order
     data_recipe[rocket_part_maraxsis].energy_required = 4
@@ -89,7 +85,6 @@ if mods[maraxsis_mods] then
 end
 
 if mods[muria_mods] then
-    rocket_part_muria = "muria-rocket-part"
     data_recipe[rocket_part_muria].icons = R_P_I(rocket_part, planet_muria)
     data_recipe[rocket_part_muria].order = b .. "-" .. data_planet[planet_muria].order
     data_recipe[rocket_part_muria].energy_required = 4
@@ -102,7 +97,6 @@ if mods[muria_mods] then
 end
 
 if mods[pelagos_mods] then
-    rocket_part_pelagos = "pelagos-rocket-part"
     data_recipe[rocket_part_pelagos].icons = R_P_I(rocket_part, planet_pelagos)
     data_recipe[rocket_part_pelagos].order = b .. "-" .. data_planet[planet_pelagos].order
     data_recipe[rocket_part_pelagos].energy_required = 4
@@ -112,6 +106,20 @@ if mods[pelagos_mods] then
         {type = item, name = titanium_plate_bob, amount = 2},
         {type = item, name = coconut_sealant, amount = 2},
         {type = fluid, name = ethanol_angels, amount = 240}
+    }
+end
+
+if mods[lignumis_mods] then
+    data_recipe[rocket_part_lignumis].icons = R_P_I(rocket_part, planet_lignumis)
+    data_recipe[rocket_part_lignumis].order = b .. "-" .. data_planet[planet_lignumis].order
+    data_recipe[rocket_part_lignumis].energy_required = 4
+    data_recipe[rocket_part_lignumis].ingredients =
+    {
+        {type = item, name = wooden_gear_wheel, amount = 8},
+        {type = item, name = basic_circuit_board, amount = 8},
+        {type = item, name = lumber, amount = 4},
+        {type = item, name = gold_plate_bob, amount = 8},
+        {type = item, name = rocket_fuel, amount = 1}
     }
 end
 

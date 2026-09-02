@@ -9,7 +9,6 @@ if mods[castra_mods] then
             name = castra_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_castra_air,
-            icon = data_fluid[castra_air].icon,
             order = a,
             energy_required = 8,
             ingredients = {},

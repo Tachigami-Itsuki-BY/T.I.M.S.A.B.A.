@@ -843,6 +843,7 @@ if mods[pelagos_mods] then
     data_recipe[stone_erosion].energy_required = 1
     data_recipe[stone_erosion].ingredients = {{type = item, name = stone_crushed_angels, amount = 1}}
     data_recipe[stone_erosion].results = {{type = item, name = sand_angels, amount = 2}}
+    data_recipe[stone_erosion].main_product = sand_angels
 
     local sandfill = "pelagos-sandfill"
     data_item[sandfill].subgroup = is_excavator
@@ -1107,6 +1108,9 @@ if mods[pelagos_mods] then
         add_recipe_for_cultivation(larvae_cultivation)
         add_recipe_for_cultivation(flesh_reproduction)
         add_recipe_for_cultivation(roe_reproduction)
+    end
+    if mods[lignumis_mods] then
+        add_recipe_for_cultivation(cupriavidus_necator)
     end
     data_technology[tech_cultivation .. _productivity].unit.ingredients =
     {

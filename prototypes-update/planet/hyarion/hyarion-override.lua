@@ -463,12 +463,12 @@ if mods[hyarion_mods] then
     data_recipe[sulfur_to_sapphire_particle_manipulation].results[1].amount = 2
 
     -- LOGISTICS
-    data_item[fiber_optics_cable].subgroup = is_hyarion_logistics
+    data_item[fiber_optics_cable].subgroup = is_hyarion_logistic
     data_item[fiber_optics_cable].order = a
     data_item[fiber_optics_cable].stack_size = 200
-    data_recipe[fiber_optics_cable].subgroup = is_hyarion_logistics
+    data_recipe[fiber_optics_cable].subgroup = is_hyarion_logistic
     data_recipe[fiber_optics_cable].order = a
-    data_pipe[fiber_optics_cable].subgroup = is_hyarion_logistics
+    data_pipe[fiber_optics_cable].subgroup = is_hyarion_logistic
     data_pipe[fiber_optics_cable].order = a
 
     -- MINING

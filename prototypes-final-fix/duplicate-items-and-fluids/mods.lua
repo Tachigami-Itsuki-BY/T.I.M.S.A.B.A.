@@ -19,7 +19,7 @@ if mods[secretas_frozeta_mods] or mods[nexus_mods] then
     TIMSABA.functions.delete_duplicated_items(delete_proto)
 end
 
-if mods[maraxsis_mods] or mods[moshine_mods] then
+if mods[maraxsis_mods] or mods[moshine_mods] or mods[pelagos_mods] then
     local delete_proto = {sand_mods}
     TIMSABA.functions.delete_duplicated_items(delete_proto)
 end

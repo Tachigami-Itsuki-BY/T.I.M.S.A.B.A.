@@ -123,6 +123,20 @@ data_recipe[casting_low_density_structure].ingredients =
 
 -- MULUNA
 if mods[muluna_mods] then
+    data_item[aluminium_pipe].hidden = false
+    data_item[aluminium_pipe].hidden_in_factoriopedia = false
+    data_recipe[aluminium_pipe].hidden = false
+    data_recipe[aluminium_pipe].hidden_in_factoriopedia = false
+    data_pipe[aluminium_pipe].hidden = false
+    data_pipe[aluminium_pipe].hidden_in_factoriopedia = false
+
+    data_item[aluminium_pipe_to_ground].hidden = false
+    data_item[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+    data_recipe[aluminium_pipe_to_ground].hidden = false
+    data_recipe[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+    data_pipe_to_ground[aluminium_pipe_to_ground].hidden = false
+    data_pipe_to_ground[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+
     -- ROCKET PART
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
 
@@ -293,6 +307,20 @@ if mods[muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
     end
 
+    if mods[lignumis_mods] then
+        table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_3].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_4].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_vulcanus_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_gleba_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+        table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
+    end
+
     data_recipe[casting_low_density_structure_muluna].ingredients =
     {
         {type = item, name = plastic, amount = 4},
@@ -323,6 +351,10 @@ end
 
 if not mods[muluna_mods] and mods[pelagos_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_pelagos, change = 0.1})
+end
+
+if not mods[muluna_mods] and mods[lignumis_mods] then
+    table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
 end
 
 if mods[muluna_mods] then
@@ -403,11 +435,11 @@ end
 if mods[arig_mods] then
     if mods[loaders_modernized_integrations] then
         if data_item[stack_loader] then
-            data_item[stack_loader].subgroup = is_gleba_logistics
+            data_item[stack_loader].subgroup = is_gleba_logistic
             data_item[stack_loader].order = b
-            data_recipe[stack_loader].subgroup = is_gleba_logistics
+            data_recipe[stack_loader].subgroup = is_gleba_logistic
             data_recipe[stack_loader].order = b
-            data_loader_1x1[stack_loader].subgroup = is_gleba_logistics
+            data_loader_1x1[stack_loader].subgroup = is_gleba_logistic
             data_loader_1x1[stack_loader].order = b
         end
 
@@ -438,21 +470,21 @@ if mods[arig_mods] then
 
     if mods[hyarion_mods] then
         if mods[loaders_modernized_integrations] then
-            data_item[hyper_loader_arig].subgroup = is_hyarion_logistics
+            data_item[hyper_loader_arig].subgroup = is_hyarion_logistic
             data_item[hyper_loader_arig].order = e
-            data_recipe[hyper_loader_arig].subgroup = is_hyarion_logistics
+            data_recipe[hyper_loader_arig].subgroup = is_hyarion_logistic
             data_recipe[hyper_loader_arig].order = e
             data_recipe[hyper_loader_arig].ingredients[3].name = simulating_unit
-            data_loader_1x1[hyper_loader_arig].subgroup = is_hyarion_logistics
+            data_loader_1x1[hyper_loader_arig].subgroup = is_hyarion_logistic
             data_loader_1x1[hyper_loader_arig].order = e
         end
     else
         if mods[loaders_modernized_integrations] then
-            data_item[hyper_loader_arig].subgroup = is_arig_logistics
+            data_item[hyper_loader_arig].subgroup = is_arig_logistic
             data_item[hyper_loader_arig].order = k
-            data_recipe[hyper_loader_arig].subgroup = is_arig_logistics
+            data_recipe[hyper_loader_arig].subgroup = is_arig_logistic
             data_recipe[hyper_loader_arig].order = k
-            data_loader_1x1[hyper_loader_arig].subgroup = is_arig_logistics
+            data_loader_1x1[hyper_loader_arig].subgroup = is_arig_logistic
             data_loader_1x1[hyper_loader_arig].order = k
         end
     end
@@ -756,6 +788,12 @@ if mods[pelagos_mods] then
         data_resource[canex_rsc_digable_ .. planet_panglia].order = data_planet[planet_panglia].order
         data_resource[canex_rsc_digable_ .. planet_panglia].minable.results = {{type = item, name = stone, amount = 1}}
     end
+
+    if mods[lignumis_mods] then
+        data_resource[canex_rsc_digable_ .. planet_lignumis].subgroup = is_excavator_rm
+        data_resource[canex_rsc_digable_ .. planet_lignumis].order = data_planet[planet_lignumis].order
+        data_resource[canex_rsc_digable_ .. planet_lignumis].minable.results = {{type = item, name = stone, amount = 1}}
+    end
 end
 
 -- APIA and CARNOVA
@@ -765,6 +803,85 @@ if mods[apia_carnova_mods] then
             if data_recipe[name] then data_recipe[name] = nil end
         end
     end
+end
+
+-- 
+
+-- LIGNUMIS
+if mods[lignumis_mods] then
+    if data_recipe[T0_transport_belt] then
+        data_recipe[T0_transport_belt].enabled = false
+    end
+
+    data_item[sulfur].fuel_category = base_fuel
+    data_item[sulfur].fuel_value = 14400 .. kJ
+
+    data_item[rocket_fuel].fuel_category = transport_fuel
+
+    if data_technology[tech_logistics_0] then
+        data_technology[tech_logistics_0].prerequisites = {"iron-processing", "wood-logistics"}
+        data_technology[tech_logistics_0].effects =
+        {
+            {type = unlock_recipe, recipe = T0_transport_belt},
+            {type = unlock_recipe, recipe = T0_underground_belt},
+            {type = unlock_recipe, recipe = T0_splitter},
+            {type = unlock_recipe, recipe = copper_cable}
+        }
+        if mods[loaders_modernized_integrations] and settings.startup[setting_mdrn_unlock_technology].value == "belt" then
+            table.insert(data_technology[tech_logistics_0].effects, {type = unlock_recipe, recipe = T0_loader})
+        end
+    else
+        table.insert(data_technology[tech_logistics_1].prerequisites, "wood-logistics")
+    end
+
+    data_technology[tech_tree_seeding].unit.ingredients = {{wood_science_pack, 1}}
+
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = steam_science_pack .. "-" .. steam})
+    table.insert(data_technology[automation_science_pack].effects, {type = unlock_recipe, recipe = wood_liquefaction .. "-" .. steam})
+
+    data_technology[tech_automation_2].effects = {{type = unlock_recipe, recipe = assembling_machine_2}}
+
+    for i, prerequisite in ipairs(data_technology[production_science_pack].prerequisites) do
+        if prerequisite == tech_space_platform_thruster then
+            table.remove(data_technology[production_science_pack].prerequisites, i)
+            break
+        end
+    end
+    data_technology[production_science_pack].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
+
+    for i, prerequisite in ipairs(data_technology[utility_science_pack].prerequisites) do
+        if prerequisite == tech_space_platform_thruster then
+            table.remove(data_technology[utility_science_pack].prerequisites, i)
+            break
+        end
+    end
+    data_technology[utility_science_pack].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1}
+    }
+
+    data_technology[rocket_fuel].effects =
+    {
+        {type = unlock_recipe, recipe = oxidizer_capsule_angels},
+        {type = unlock_recipe, recipe = fuel_capsule_angels},
+        {type = unlock_recipe, recipe = rocket_fuel}
+    }
+
+    data_technology[rocket_silo].prerequisites =
+    {
+        rocket_fuel, low_density_structure,
+        "bob-heat-shield", tech_robots_4, tech_advanced_material_processing_4,
+        tech_molybdenum_processing, tech_rhenium_processing, tech_molybdenum_rhenium_processing
+    }
+
+    data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}
 end
 
 -- MODS
@@ -803,22 +920,32 @@ if mods[space_age_science_packs] then
         }
     end
     for _, pack in pairs(list_base_or_space) do
+        data_technology[pack].icons = nil
         data_technology[pack].icon = "__sa-science-packs__/graphics/techs/sasp-" .. pack .. ".png"
         data_technology[pack].icon_size = 256
-        data_technology[pack].icons = nil
     end
 
     if mods[bobtech] then
-        if settings.startup[setting_science_pack_nostalgia].value then
-            local tech_transport_science_pack = "bob-advanced-logistic-science-pack"
-            data_technology[tech_transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
-            data_technology[tech_transport_science_pack].icon_size = 256
-            data_technology[tech_transport_science_pack].icons = nil
+        if settings.startup[setting_science_pack_nostalgia].value == false then
+            data_technology[transport_science_pack].icons = nil
+            data_technology[transport_science_pack].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-transport-science-pack-technology.png"
+            data_technology[transport_science_pack].icon_size = 256
 
-            local tech_alien_research = "bob-alien-research"
+            data_technology[tech_alien_research].icons = nil
             data_technology[tech_alien_research].icon = "__TIMSABA__/graphics/icons/bobs/technology/sasp-gold-science-pack-technology.png"
             data_technology[tech_alien_research].icon_size = 256
-            data_technology[tech_alien_research].icons = nil
+        end
+    end
+
+    if mods[lignumis_mods] then
+        if settings.startup[setting_science_pack_nostalgia].value == false then
+            data_technology[wood_science_pack].icons = nil
+            data_technology[wood_science_pack].icon = "__TIMSABA__/graphics/icons/lignumis/technology/sasp-" .. wood_science_pack .. "-technology.png"
+            data_technology[wood_science_pack].icon_size = 256
+
+            data_technology[steam_science_pack].icons = nil
+            data_technology[steam_science_pack].icon = "__TIMSABA__/graphics/icons/lignumis/technology/sasp-" .. steam_science_pack .. "-technology.png"
+            data_technology[steam_science_pack].icon_size = 256
         end
     end
 end

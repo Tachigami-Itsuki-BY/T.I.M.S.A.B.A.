@@ -294,13 +294,13 @@ if mods[vesta_mods] then
     data_recipe[iridium_plate_mods].results[1].amount = 16
 
     -- LOGISTICS
-    data_item[magnetic_pipe_vesta].subgroup = is_vesta_logistics
+    data_item[magnetic_pipe_vesta].subgroup = is_vesta_logistic
     data_item[magnetic_pipe_vesta].order = a
     data_item[magnetic_pipe_vesta].stack_size = 200
     if mods[moshine_mods] then
         data_recipe[magnetic_pipe_vesta].ingredients[3].name = neodymium_magnet
     end
-    data_pipe[magnetic_pipe_vesta].subgroup = is_vesta_logistics
+    data_pipe[magnetic_pipe_vesta].subgroup = is_vesta_logistic
     data_pipe[magnetic_pipe_vesta].order = a
 
     -- BUILDING

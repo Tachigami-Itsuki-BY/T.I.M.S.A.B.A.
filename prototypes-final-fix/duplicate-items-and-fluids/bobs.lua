@@ -8,10 +8,10 @@ local tungsten_powdered_bob = "bob-powdered-tungsten"
 local tungsten_oxide_bob = "bob-tungsten-oxide"
 local tin_cable_bob = "bob-tinned-copper-cable"
 local gold_cable_bob = "bob-gilded-copper-cable"
-local steam_inserter = "bob-steam-inserter"
+local steam_inserter_bob = "bob-steam-inserter"
+local burner_assembling_machine_bob = "bob-burner-assembling-machine"
+local steam_assembling_machine_bob = "bob-steam-assembling-machine"
 local steam_mining_drill = "bob-steam-mining-drill"
-local burner_assembling_machine = "bob-burner-assembling-machine"
-local steam_assembling_machine = "bob-steam-assembling-machine"
 local replace_prototypes =
 {
 	[fibreglass_board] = glass_fiber_board,
@@ -26,11 +26,16 @@ local replace_prototypes =
 	[tin_cable_bob] = tin_cable,
 	[gold_cable_bob] = gold_cable,
 	-- FOR mods
-	[steam_inserter] = T0_inserter,
-	[steam_mining_drill] = burner_mining_drill,
-	[steam_assembling_machine] = assembling_machine_1,
-    [burner_assembling_machine] = assembling_machine_1
+    [steam_inserter_bob] = T0_inserter,
+	[steam_mining_drill] = burner_mining_drill
 }
+if mods[lignumis_mods] then
+    replace_prototypes[burner_assembling_machine_bob] = "burner-assembling-machine"
+    replace_prototypes[steam_assembling_machine_bob] = "steam-assembling-machine"
+else
+    replace_prototypes[burner_assembling_machine_bob] = assembling_machine_1
+    replace_prototypes[steam_assembling_machine_bob] = assembling_machine_1
+end
 TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
 local delete_proto =
@@ -43,10 +48,10 @@ TIMSABA.functions.delete_duplicated_items(delete_proto)
 
 local delete_prototypes =
 {
-    steam_inserter,
+    steam_inserter_bob,
+    burner_assembling_machine_bob,
+    steam_assembling_machine_bob,
     steam_mining_drill,
-    burner_assembling_machine,
-    steam_assembling_machine,
     "bob-stone-chemical-furnace",
     "bob-steel-chemical-furnace",
     "bob-electric-chemical-furnace",

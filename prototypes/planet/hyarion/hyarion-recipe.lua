@@ -6,7 +6,6 @@ if mods[hyarion_mods] then
             name = hyarion_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_hyarion_air,
-            icon = data_fluid[hyarion_air].icon,
             order = a,
             energy_required = 8,
             ingredients = {},

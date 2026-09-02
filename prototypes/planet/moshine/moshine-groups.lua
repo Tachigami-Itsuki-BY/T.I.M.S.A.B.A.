@@ -28,32 +28,32 @@ if mods[moshine_mods] then
     is_moshine_datacell = "is-moshine-datacell"
     is_moshine_core = "is-moshine-core"
     is_moshine_ai_core = "is-moshine-ai-core"
-    is_moshine_logistics = "is-moshine-logistics"
-    is_moshine_logistics_battery = "is-moshine-logistics-battery"
+    is_moshine_logistic = "is-moshine-logistic"
+    is_moshine_logistic_battery = "is-moshine-logistic-battery"
     is_moshine_building_energy = "is-moshine-building-energy"
     is_moshine_building = "is-moshine-building"
     TIMSABA.functions.create_subgroups(ig_moshine,
     {
-        {name = is_moshine_air,               order = a},
-        {name = is_moshine_recipe,            order = b},
-        {name = is_monazite,                  order = c},
-        {name = is_neodymium,                 order = d},
-        {name = is_neodymium_chemistry,       order = d_a},
-        {name = is_neodymium_casting,         order = d_b},
-        {name = is_cerium,                    order = e},
-        {name = is_cerium_chemistry,          order = e_a},
-        {name = is_cerium_casting,            order = e_b},
-        {name = is_promethium,                order = f},
-        {name = is_promethium_chemistry,      order = f_a},
-        {name = is_promethium_casting,        order = f_b},
-        {name = is_barium,                    order = g},
-        {name = is_biotite_mica,              order = h},
-        {name = is_moshine_datacell,          order = i},
-        {name = is_moshine_core,              order = i_a},
-        {name = is_moshine_ai_core,           order = i_b},
-        {name = is_moshine_logistics,         order = j},
-        {name = is_moshine_logistics_battery, order = j_a},
-        {name = is_moshine_building_energy,   order = k},
-        {name = is_moshine_building,          order = l}
+        {name = is_moshine_air,              order = a},
+        {name = is_moshine_recipe,           order = b},
+        {name = is_monazite,                 order = c},
+        {name = is_neodymium,                order = d},
+        {name = is_neodymium_chemistry,      order = d_a},
+        {name = is_neodymium_casting,        order = d_b},
+        {name = is_cerium,                   order = e},
+        {name = is_cerium_chemistry,         order = e_a},
+        {name = is_cerium_casting,           order = e_b},
+        {name = is_promethium,               order = f},
+        {name = is_promethium_chemistry,     order = f_a},
+        {name = is_promethium_casting,       order = f_b},
+        {name = is_barium,                   order = g},
+        {name = is_biotite_mica,             order = h},
+        {name = is_moshine_datacell,         order = i},
+        {name = is_moshine_core,             order = i_a},
+        {name = is_moshine_ai_core,          order = i_b},
+        {name = is_moshine_logistic,         order = j},
+        {name = is_moshine_logistic_battery, order = j_a},
+        {name = is_moshine_building_energy,  order = k},
+        {name = is_moshine_building,         order = l}
     })
 end

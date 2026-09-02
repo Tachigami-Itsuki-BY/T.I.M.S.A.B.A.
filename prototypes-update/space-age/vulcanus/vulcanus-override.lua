@@ -278,10 +278,10 @@ data_tile[foundation].order = e
 
 -- LOGISTICS
 data_item[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
-data_item[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
+data_item[vulcanus_transport_belt].subgroup = is_vulcanus_logistic
 data_item[vulcanus_transport_belt].stack_size = 200
 data_recipe[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
-data_recipe[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
+data_recipe[vulcanus_transport_belt].subgroup = is_vulcanus_logistic
 data_recipe[vulcanus_transport_belt].ingredients =
 {
     {type = item, name = molybdenum_gear_wheel, amount = 4},
@@ -291,15 +291,15 @@ data_recipe[vulcanus_transport_belt].ingredients =
 }
 data_recipe[vulcanus_transport_belt].results[1].amount = 2
 data_transport_belt[vulcanus_transport_belt].localised_name = {"entity-name.vulcanus-transport-belt"}
-data_transport_belt[vulcanus_transport_belt].subgroup = is_vulcanus_logistics
+data_transport_belt[vulcanus_transport_belt].subgroup = is_vulcanus_logistic
 data_transport_belt[vulcanus_transport_belt].speed = 11.25/60
 
 local simulations = require("prototypes.factoriopedia-simulations")
 data_item[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
-data_item[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
+data_item[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_item[vulcanus_underground_belt].stack_size = 32
 data_recipe[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
-data_recipe[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
+data_recipe[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_recipe[vulcanus_underground_belt].energy_required = 1
 data_recipe[vulcanus_underground_belt].ingredients =
 {
@@ -309,7 +309,7 @@ data_recipe[vulcanus_underground_belt].ingredients =
     {type = item, name = molybdenum_rhenium_plate, amount = 8}
 }
 data_underground_belt[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
-data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistics
+data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_underground_belt[vulcanus_underground_belt].speed = 11.25/60
 if settings.startup[setting_rebalance_belts_and_pipes].value then
     data_underground_belt[vulcanus_underground_belt].max_distance = 48
@@ -319,10 +319,10 @@ end
 data_underground_belt[vulcanus_underground_belt].factoriopedia_simulation = simulations.factoriopedia_vulcanus_underground_belt
 
 data_item[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
-data_item[vulcanus_splitter].subgroup = is_vulcanus_logistics
+data_item[vulcanus_splitter].subgroup = is_vulcanus_logistic
 data_item[vulcanus_splitter].stack_size = 16
 data_recipe[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
-data_recipe[vulcanus_splitter].subgroup = is_vulcanus_logistics
+data_recipe[vulcanus_splitter].subgroup = is_vulcanus_logistic
 data_recipe[vulcanus_splitter].energy_required = 1
 data_recipe[vulcanus_splitter].ingredients =
 {
@@ -333,15 +333,15 @@ data_recipe[vulcanus_splitter].ingredients =
     {type = item, name = molybdenum_rhenium_plate, amount = 4}
 }
 data_splitter[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
-data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistics
+data_splitter[vulcanus_splitter].subgroup = is_vulcanus_logistic
 data_splitter[vulcanus_splitter].speed = 11.25/60
 
 if mods[loaders_modernized_integrations] then
-    data_item[vulcanus_loader].subgroup = is_vulcanus_logistics
+    data_item[vulcanus_loader].subgroup = is_vulcanus_logistic
     data_item[vulcanus_loader].order = d
-    data_recipe[vulcanus_loader].subgroup = is_vulcanus_logistics
+    data_recipe[vulcanus_loader].subgroup = is_vulcanus_logistic
     data_recipe[vulcanus_loader].order = d
-    data_loader_1x1[vulcanus_loader].subgroup = is_vulcanus_logistics
+    data_loader_1x1[vulcanus_loader].subgroup = is_vulcanus_logistic
     data_loader_1x1[vulcanus_loader].order = d
     data_loader_1x1[vulcanus_loader].minable.mining_time = 0.5
     data_loader_1x1[vulcanus_loader].speed = 11.25/60

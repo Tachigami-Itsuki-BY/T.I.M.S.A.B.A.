@@ -16,8 +16,9 @@ else
     data_technology[rocket_silo].research_trigger.item = "bob-logistic-robot-5"
 end
 
+tech_space_platform_thruster = "space-platform-thruster"
 if not mods[muluna_mods] then
-    data_technology["space-platform-thruster"].unit.ingredients =
+    data_technology[tech_space_platform_thruster].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},

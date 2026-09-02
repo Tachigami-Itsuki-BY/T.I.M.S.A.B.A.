@@ -6,7 +6,6 @@ TIMSABA.functions.create_recipes
         name = fulgora_air,
         category = angels_petrochem_air_filtering,
         subgroup = is_fulgora_air,
-        icon = data_fluid[fulgora_air].icon,
         order = a,
         energy_required = 8,
         ingredients = {},

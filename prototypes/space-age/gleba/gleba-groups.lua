@@ -18,7 +18,7 @@ is_jellynut = "is-jellynut"
 is_yumako = "is-yumako"
 is_pentapod_egg_and_bioflux = "is-pentapod-egg-and-bioflux"
 is_gleba_recipe = "is-gleba-recipe"
-is_gleba_logistics = "is-gleba-logistics"
+is_gleba_logistic = "is-gleba-logistic"
 is_gleba_building = "is-gleba-building"
 is_gleba_war = "is-gleba-war"
 TIMSABA.functions.create_subgroups(ig_gleba,
@@ -31,7 +31,7 @@ TIMSABA.functions.create_subgroups(ig_gleba,
     {name = is_yumako,                   order = f},
     {name = is_pentapod_egg_and_bioflux, order = g},
     {name = is_gleba_recipe,             order = h},
-    {name = is_gleba_logistics,          order = i},
+    {name = is_gleba_logistic,           order = i},
     {name = is_gleba_building,           order = j},
     {name = is_gleba_war,                order = k}
 })

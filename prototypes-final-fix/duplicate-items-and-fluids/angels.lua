@@ -27,6 +27,10 @@ local delete_proto =
     "angels-plate-glass",
     "angels-solder",
 
+    -- ANGELS PETROCHEM REFINING
+    "angels-solid-resin",
+    "angels-solid-rubber",
+
     -- VOIDS
     "angels-chemical-void",
     "angels-water-void"
@@ -81,10 +85,6 @@ local delete_prototypes =
 
     -- ANGELS WATER TREATMENT
     "angels-solid-salt-dissolving",
-
-    -- ANGELS PETROCHEM REFINING
-    "angels-solid-resin",
-    "angels-solid-rubber",
 
     -- ANGELS BIOPROCESSING
     "angels-liquid-polluted-fish-atmosphere-raw-meat",

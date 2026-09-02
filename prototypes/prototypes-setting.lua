@@ -60,3 +60,4 @@ setting_dye_concrete_brick = "setting-tellus-dye-concrete-brick"
 setting_real_incineration = "setting-real-incineration"
 
 setting_mdrn_use_electricity = "mdrn-use-electricity"
+setting_mdrn_unlock_technology = "mdrn-unlock-technology"

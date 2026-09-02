@@ -90,6 +90,10 @@ if mods[terrapalus_mods] then
     data_planet[planet_terrapalus].order = y .. "-" .. planet_terrapalus
 end
 
+if mods[lignumis_mods] then
+    data_planet[planet_lignumis].order = y .. "-" .. planet_lignumis
+end
+
 -- OTHERS
 ig_space = "space"
 is_others_space = "is-others-space"

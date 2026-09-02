@@ -97,24 +97,17 @@ if mods[muluna_mods] then
 
     data_item[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
     data_item[aluminium_pipe].order = e
-    data_item[aluminium_pipe].hidden = false
-    data_item[aluminium_pipe].hidden_in_factoriopedia = false
     data_recipe[aluminium_pipe].localised_name = {"entity-name." .. aluminium_pipe}
     data_recipe[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
     data_recipe[aluminium_pipe].order = e
     data_recipe[aluminium_pipe].auto_recycle = true
     data_recipe[aluminium_pipe].results[1].name = aluminium_pipe
-    data_recipe[aluminium_pipe].hidden = false
-    data_recipe[aluminium_pipe].hidden_in_factoriopedia = false
     data_pipe[aluminium_pipe].subgroup = is_muluna_recipe_anorthite
     data_pipe[aluminium_pipe].order = e
-    data_pipe[aluminium_pipe].hidden = false
-    data_pipe[aluminium_pipe].hidden_in_factoriopedia = false
 
+    local simulations = require("prototypes.factoriopedia-simulations")
     data_item[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
     data_item[aluminium_pipe_to_ground].order = f
-    data_item[aluminium_pipe_to_ground].hidden = false
-    data_item[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
     data_recipe[aluminium_pipe_to_ground].localised_name = {"entity-name." .. aluminium_pipe_to_ground}
     data_recipe[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
     data_recipe[aluminium_pipe_to_ground].order = f
@@ -126,12 +119,9 @@ if mods[muluna_mods] then
     }
     data_recipe[aluminium_pipe_to_ground].results[1].name = aluminium_pipe_to_ground
     data_recipe[aluminium_pipe_to_ground].main_product = aluminium_pipe_to_ground
-    data_recipe[aluminium_pipe_to_ground].hidden = false
-    data_recipe[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
     data_pipe_to_ground[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
     data_pipe_to_ground[aluminium_pipe_to_ground].order = f
-    data_pipe_to_ground[aluminium_pipe_to_ground].hidden = false
-    data_pipe_to_ground[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+    data_pipe_to_ground[aluminium_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_aluminium_pipe_to_ground
     if settings.startup[setting_rebalance_belts_and_pipes].value then
         data_pipe_to_ground[aluminium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 24
     end
@@ -315,7 +305,11 @@ if mods[muluna_mods] then
     }
 
     local tree_crushing = "muluna-tree-crushing"
-    data_recipe[tree_crushing].category = lumber_mill_recipe_category
+    if mods[lignumis_mods] then
+        data_recipe[tree_crushing].category = "wood-processing"
+    else
+        data_recipe[tree_crushing].category = lumber_mill_recipe_category
+    end
     data_recipe[tree_crushing].subgroup = is_muluna_recipe_tree
     data_recipe[tree_crushing].icons = TWO_I(tree_angels, wood)
     data_recipe[tree_crushing].order = b
@@ -1234,6 +1228,15 @@ if mods[muluna_mods] then
         data_recipe[telescope_observation_terrapalus].results[1].amount = 30
     end
 
+    if mods[lignumis_mods] then
+        local telescope_observation_lignumis = "muluna-telescope-observation-lignumis"
+        data_recipe[telescope_observation_lignumis].subgroup = is_muluna_recipe_astronomical_moons
+        data_recipe[telescope_observation_lignumis].icons = BUILDING_R_I(astronomical_data_muluna, planet_lignumis)
+        data_recipe[telescope_observation_lignumis].order = data_planet[planet_lignumis].order
+        data_recipe[telescope_observation_lignumis].energy_required = 4
+        data_recipe[telescope_observation_lignumis].results[1].amount = 15
+    end
+
     -- OTHERS SPACE
     local telescope_observation_space_platform = "muluna-telescope-observation-space-platform"
     data_recipe[telescope_observation_space_platform].subgroup = is_muluna_recipe_astronomical_others_space
@@ -1284,7 +1287,11 @@ if mods[muluna_mods] then
         }
     }
 
-    data_technology["muluna-greenhouses"].effects = {{type = unlock_recipe, recipe = greenhouse_wood}}
+    local tech_greenhouses = "muluna-greenhouses"
+    data_technology[tech_greenhouses].effects = {{type = unlock_recipe, recipe = greenhouse_wood}}
+    if not mods[lignumis_mods] then
+        table.insert(data_technology[tech_greenhouses].effects, {type = unlock_recipe, recipe = lumber_mill})
+    end
 
     local tehc_wood_cultivation = "muluna-wood-cultivation"
     data_technology[tehc_wood_cultivation].icons =
@@ -1336,9 +1343,6 @@ if mods[muluna_mods] then
             {type = unlock_recipe, recipe = low_density_structure_muluna}
         }
     end
-
-    local tech_greenhouses = "muluna-greenhouses"
-    table.insert(data_technology[tech_greenhouses].effects, {type = unlock_recipe, recipe = lumber_mill})
 
     local tech_silicon_processing = "muluna-silicon-processing"
     data_technology[tech_silicon_processing].prerequisites = {"muluna-aluminum-processing", tech_anorthite_processing}

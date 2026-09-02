@@ -6,7 +6,6 @@ TIMSABA.functions.create_recipes
         name = vulcanus_air,
         category = angels_petrochem_air_filtering,
         subgroup = is_vulcanus_air,
-        icon = data_fluid[vulcanus_air].icon,
         order = a,
         energy_required = 8,
         ingredients = {},

@@ -339,11 +339,11 @@ if mods[moshine_mods] then
 
     -- LOGISTICS
     space_locomotive = "space-locomotive"
-    data_item_entity[space_locomotive].subgroup = is_moshine_logistics
+    data_item_entity[space_locomotive].subgroup = is_moshine_logistic
     data_item_entity[space_locomotive].order = a
     data_item_entity[space_locomotive].stack_size = 4
     data_item_entity[space_locomotive].weight = 250000
-    data_recipe[space_locomotive].subgroup = is_moshine_logistics
+    data_recipe[space_locomotive].subgroup = is_moshine_logistic
     data_recipe[space_locomotive].order = a
     data_recipe[space_locomotive].energy_required = 64
     data_recipe[space_locomotive].ingredients =
@@ -355,7 +355,7 @@ if mods[moshine_mods] then
         {type = item, name = supercapacitor, amount = 4},
         {type = item, name = neodymium_magnet, amount = 4}
     }
-    data_locomotive[space_locomotive].subgroup = is_moshine_logistics
+    data_locomotive[space_locomotive].subgroup = is_moshine_logistic
     data_locomotive[space_locomotive].order = a
     data_locomotive[space_locomotive].max_speed = 2
     data_locomotive[space_locomotive].max_power = 6250 .. kW
@@ -363,11 +363,11 @@ if mods[moshine_mods] then
     data_locomotive[space_locomotive].equipment_grid = power_armor_equipment_grid_3
 
     local space_cargo_wagon = "space-cargo-wagon"
-    data_item_entity[space_cargo_wagon].subgroup = is_moshine_logistics
+    data_item_entity[space_cargo_wagon].subgroup = is_moshine_logistic
     data_item_entity[space_cargo_wagon].order = b
     data_item_entity[space_cargo_wagon].stack_size = 4
     data_item_entity[space_cargo_wagon].weight = 250000
-    data_recipe[space_cargo_wagon].subgroup = is_moshine_logistics
+    data_recipe[space_cargo_wagon].subgroup = is_moshine_logistic
     data_recipe[space_cargo_wagon].order = b
     data_recipe[space_cargo_wagon].energy_required = 64
     data_recipe[space_cargo_wagon].ingredients =
@@ -378,17 +378,17 @@ if mods[moshine_mods] then
         {type = item, name = superconductor, amount = 8},
         {type = item, name = neodymium_magnet, amount = 4}
     }
-    data_wagon_cargo[space_cargo_wagon].subgroup = is_moshine_logistics
+    data_wagon_cargo[space_cargo_wagon].subgroup = is_moshine_logistic
     data_wagon_cargo[space_cargo_wagon].order = b
     data_wagon_cargo[space_cargo_wagon].inventory_size = 160
     data_wagon_cargo[space_cargo_wagon].equipment_grid = power_armor_equipment_grid_3
 
     local space_fluid_wagon = "space-fluid-wagon"
-    data_item_entity[space_fluid_wagon].subgroup = is_moshine_logistics
+    data_item_entity[space_fluid_wagon].subgroup = is_moshine_logistic
     data_item_entity[space_fluid_wagon].order = c
     data_item_entity[space_fluid_wagon].stack_size = 4
     data_item_entity[space_fluid_wagon].weight = 250000
-    data_recipe[space_fluid_wagon].subgroup = is_moshine_logistics
+    data_recipe[space_fluid_wagon].subgroup = is_moshine_logistic
     data_recipe[space_fluid_wagon].order = c
     data_recipe[space_fluid_wagon].energy_required = 64
     data_recipe[space_fluid_wagon].ingredients =
@@ -399,17 +399,17 @@ if mods[moshine_mods] then
         {type = item, name = superconductor, amount = 8},
         {type = item, name = neodymium_magnet, amount = 4}
     }
-    data_wagon_fluid[space_fluid_wagon].subgroup = is_moshine_logistics
+    data_wagon_fluid[space_fluid_wagon].subgroup = is_moshine_logistic
     data_wagon_fluid[space_fluid_wagon].order = c
     data_wagon_fluid[space_fluid_wagon].capacity = 96000
     data_wagon_fluid[space_fluid_wagon].equipment_grid = power_armor_equipment_grid_3
 
     local space_train_battery_battery_station = "space-train-battery-charging-station"
-    data_item[space_train_battery_battery_station].subgroup = is_moshine_logistics
+    data_item[space_train_battery_battery_station].subgroup = is_moshine_logistic
     data_item[space_train_battery_battery_station].order = d
     data_item[space_train_battery_battery_station].stack_size = 32
     data_item[space_train_battery_battery_station].weight = 31250
-    data_recipe[space_train_battery_battery_station].subgroup = is_moshine_logistics
+    data_recipe[space_train_battery_battery_station].subgroup = is_moshine_logistic
     data_recipe[space_train_battery_battery_station].order = d
     data_recipe[space_train_battery_battery_station].energy_required = 8
     data_recipe[space_train_battery_battery_station].ingredients =
@@ -420,32 +420,32 @@ if mods[moshine_mods] then
         {type = item, name = superconductor, amount = 4},
         {type = item, name = holmium_plate, amount = 2}
     }
-    data_assembling[space_train_battery_battery_station].subgroup = is_moshine_logistics
+    data_assembling[space_train_battery_battery_station].subgroup = is_moshine_logistic
     data_assembling[space_train_battery_battery_station].order = d
     data_assembling[space_train_battery_battery_station].energy_usage = (2400 - 240) .. kW
     data_assembling[space_train_battery_battery_station].energy_source.drain = 240 .. kW
 
     local straight_rail_minimal = "straight-rail-minimal"
-    data_rail_straight[straight_rail_minimal].subgroup = is_moshine_logistics
+    data_rail_straight[straight_rail_minimal].subgroup = is_moshine_logistic
     data_rail_straight[straight_rail_minimal].order = e
 
     local hidden_rail_pole = "hidden-rail-pole"
-    data_electric_pole[hidden_rail_pole].subgroup = is_moshine_logistics
+    data_electric_pole[hidden_rail_pole].subgroup = is_moshine_logistic
     data_electric_pole[hidden_rail_pole].order = e
 
     local rail_minimal = "rail-minimal"
-    data_rail_planner[rail_minimal].subgroup = is_moshine_logistics
+    data_rail_planner[rail_minimal].subgroup = is_moshine_logistic
     data_rail_planner[rail_minimal].order = e
     data_rail_planner[rail_minimal].stack_size = 200
-    data_recipe[rail_minimal].subgroup = is_moshine_logistics
+    data_recipe[rail_minimal].subgroup = is_moshine_logistic
     data_recipe[rail_minimal].order = e
 
     local rail_ramp_minimal = "rail-ramp-minimal"
-    data_rail_planner[rail_ramp_minimal].subgroup = is_moshine_logistics
+    data_rail_planner[rail_ramp_minimal].subgroup = is_moshine_logistic
     data_rail_planner[rail_ramp_minimal].order = f
     data_rail_planner[rail_ramp_minimal].stack_size = 32
     data_rail_planner[rail_ramp_minimal].weight = 31250
-    data_recipe[rail_ramp_minimal].subgroup = is_moshine_logistics
+    data_recipe[rail_ramp_minimal].subgroup = is_moshine_logistic
     data_recipe[rail_ramp_minimal].order = f
     data_recipe[rail_ramp_minimal].energy_required = 8
     data_recipe[rail_ramp_minimal].ingredients =
@@ -454,28 +454,28 @@ if mods[moshine_mods] then
         {type = item, name = steel_plate, amount = 16},
         {type = item, name = reinforced_concrete, amount = 128}
     }
-    data_rail_ramp[rail_ramp_minimal].subgroup = is_moshine_logistics
+    data_rail_ramp[rail_ramp_minimal].subgroup = is_moshine_logistic
     data_rail_ramp[rail_ramp_minimal].order = f
 
     -- LOGISTICS BATTERY
     local space_train_destroyed_battery_pack = "space-train-destroyed-battery-pack"
-    data_item[space_train_destroyed_battery_pack].subgroup = is_moshine_logistics_battery
+    data_item[space_train_destroyed_battery_pack].subgroup = is_moshine_logistic_battery
     data_item[space_train_destroyed_battery_pack].order = a
     data_item[space_train_destroyed_battery_pack].stack_size = 200
 
     local space_train_discharged_battery_pack = "space-train-discharged-battery-pack"
-    data_item[space_train_discharged_battery_pack].subgroup = is_moshine_logistics_battery
+    data_item[space_train_discharged_battery_pack].subgroup = is_moshine_logistic_battery
     data_item[space_train_discharged_battery_pack].order = b
     data_item[space_train_discharged_battery_pack].stack_size = 200
 
-    data_recipe[space_train_battery_pack].subgroup = is_moshine_logistics_battery
+    data_recipe[space_train_battery_pack].subgroup = is_moshine_logistic_battery
     data_recipe[space_train_battery_pack].icon = data_item[space_train_discharged_battery_pack].icon
     data_recipe[space_train_battery_pack].order = b_a
     data_recipe[space_train_battery_pack].energy_required = 8
 
     local space_train_battery_pack_refurbish = "space-train-battery-pack-refurbish"
     data_recipe[space_train_battery_pack_refurbish].category = electromagnetics
-    data_recipe[space_train_battery_pack_refurbish].subgroup = is_moshine_logistics_battery
+    data_recipe[space_train_battery_pack_refurbish].subgroup = is_moshine_logistic_battery
     data_recipe[space_train_battery_pack_refurbish].icon = data_item[space_train_discharged_battery_pack].icon
     data_recipe[space_train_battery_pack_refurbish].order = b_b
     data_recipe[space_train_battery_pack_refurbish].energy_required = 8
@@ -486,12 +486,12 @@ if mods[moshine_mods] then
         {type = fluid, name = sulfuric_acid_angels, amount = 30}
     }
 
-    data_item[space_train_battery_pack].subgroup = is_moshine_logistics_battery
+    data_item[space_train_battery_pack].subgroup = is_moshine_logistic_battery
     data_item[space_train_battery_pack].order = c
     data_item[space_train_battery_pack].stack_size = 200
 
     local space_train_battery_pack_recharge = "space-train-battery-pack-recharge"
-    data_recipe[space_train_battery_pack_recharge].subgroup = is_moshine_logistics_battery
+    data_recipe[space_train_battery_pack_recharge].subgroup = is_moshine_logistic_battery
     data_recipe[space_train_battery_pack_recharge].icons = THREE_R_I(space_train_discharged_battery_pack, space_train_destroyed_battery_pack, space_train_battery_pack)
     data_recipe[space_train_battery_pack_recharge].order = c_a
 

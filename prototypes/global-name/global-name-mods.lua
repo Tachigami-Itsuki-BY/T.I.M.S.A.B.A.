@@ -432,6 +432,27 @@ wax_platform = "wax-platform"
 biosynthesizer = "biosynthesizer"
 artificial_hive = "artificial-hive"
 
+-- 
+
+-- LIGNUMIS
+lignumis_mods = "lignumis"
+planet_lignumis = "lignumis"
+gold_stromatolite_seed = "gold-stromatolite-seed"
+gold_bacteria = "gold-bacteria"
+lumber = "lumber"
+wooden_gear_wheel = "wooden-gear-wheel"
+basic_circuit_board_mods = "basic-circuit-board"
+moist_stromatolite_remnant = "moist-stromatolite-remnant"
+peat = "peat"
+wood_pulp = "wood-pulp"
+cupriavidus_necator = "cupriavidus-necator"
+wood_science_pack = "wood-science-pack"
+steam_science_pack = "steam-science-pack"
+gold_pipe = "gold-pipe"
+gold_pipe_to_ground = "gold-pipe-to-ground"
+gold_storage_tank = "gold-storage-tank"
+quality_assembler = "quality-assembler"
+
 -- FOLIAX
 foliax_mods = "foliax"
 planet_foliax = "foliax"

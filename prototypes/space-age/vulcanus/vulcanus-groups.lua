@@ -24,7 +24,7 @@ is_vulcanus_cable = "is-vulcanus-cable"
 is_vulcanus_pipe = "is-vulcanus-pipe"
 is_vulcanus_pipe_to_ground = "is-vulcanus-pipe-to-ground"
 is_vulcanus_tungsten = "is-vulcanus-tungsten"
-is_vulcanus_logistics = "is-vulcanus-logistics"
+is_vulcanus_logistic = "is-vulcanus-logistics"
 is_vulcanus_building = "is-vulcanus-building"
 TIMSABA.functions.create_subgroups(ig_vulcanus,
 {
@@ -42,6 +42,6 @@ TIMSABA.functions.create_subgroups(ig_vulcanus,
     {name = is_vulcanus_pipe,           order = d_h},
     {name = is_vulcanus_pipe_to_ground, order = d_i},
     {name = is_vulcanus_tungsten,       order = e},
-    {name = is_vulcanus_logistics,      order = f},
+    {name = is_vulcanus_logistic,      order = f},
     {name = is_vulcanus_building,       order = g}
 })
