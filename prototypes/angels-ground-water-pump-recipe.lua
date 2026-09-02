@@ -24,6 +24,7 @@ local recipes =
     {planet = planet_panglia, fluid = water},
     {planet = planet_frozeta, fluid = ammonia_solution},
     {planet = planet_terrapalus, fluid = water},
+    {planet = planet_lignumis, fluid = water},
     -- {planet = planet_, fluid = },
 }
 for _, RECIPE in ipairs(recipes) do

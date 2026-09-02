@@ -233,63 +233,63 @@ if mods[maraxsis_mods] then
 
     -- LOGISTCIS
     local duct_small = "duct-small"
-    data_item[duct_small].subgroup = is_maraxsis_logistics
+    data_item[duct_small].subgroup = is_maraxsis_logistic
     data_item[duct_small].order = a
     data_item[duct_small].stack_size = 32
     data_item[duct_small].weight = 31250
-    data_recipe[duct_small].subgroup = is_maraxsis_logistics
+    data_recipe[duct_small].subgroup = is_maraxsis_logistic
     data_recipe[duct_small].order = a
     data_recipe[duct_small].ingredients =
     {
         {type = item, name = molybdenum_rhenium_plate, amount = 4},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4}
     }
-    data_storage_tank[duct_small].subgroup = is_maraxsis_logistics
+    data_storage_tank[duct_small].subgroup = is_maraxsis_logistic
     data_storage_tank[duct_small].order = a
     data_storage_tank[duct_small].fluid_box.volume = 480
 
     local duct_t_junction = "duct-t-junction"
-    data_item[duct_t_junction].subgroup = is_maraxsis_logistics
+    data_item[duct_t_junction].subgroup = is_maraxsis_logistic
     data_item[duct_t_junction].order = b
     data_item[duct_t_junction].stack_size = 32
     data_item[duct_t_junction].weight = 31250
-    data_recipe[duct_t_junction].subgroup = is_maraxsis_logistics
+    data_recipe[duct_t_junction].subgroup = is_maraxsis_logistic
     data_recipe[duct_t_junction].order = b
     data_recipe[duct_t_junction].ingredients = {{type = item, name = duct_small, amount = 2}}
-    data_storage_tank[duct_t_junction].subgroup = is_maraxsis_logistics
+    data_storage_tank[duct_t_junction].subgroup = is_maraxsis_logistic
     data_storage_tank[duct_t_junction].order = b
     data_storage_tank[duct_t_junction].fluid_box.volume = 960
 
     local duct_curve = "duct-curve"
-    data_item[duct_curve].subgroup = is_maraxsis_logistics
+    data_item[duct_curve].subgroup = is_maraxsis_logistic
     data_item[duct_curve].order = c
     data_item[duct_curve].stack_size = 32
     data_item[duct_curve].weight = 31250
-    data_recipe[duct_curve].subgroup = is_maraxsis_logistics
+    data_recipe[duct_curve].subgroup = is_maraxsis_logistic
     data_recipe[duct_curve].order = c
     data_recipe[duct_curve].ingredients = {{type = item, name = duct_small, amount = 2}}
-    data_storage_tank[duct_curve].subgroup = is_maraxsis_logistics
+    data_storage_tank[duct_curve].subgroup = is_maraxsis_logistic
     data_storage_tank[duct_curve].order = c
     data_storage_tank[duct_curve].fluid_box.volume = 960
 
     local duct_cross = "duct-cross"
-    data_item[duct_cross].subgroup = is_maraxsis_logistics
+    data_item[duct_cross].subgroup = is_maraxsis_logistic
     data_item[duct_cross].order = d
     data_item[duct_cross].stack_size = 32
     data_item[duct_cross].weight = 31250
-    data_recipe[duct_cross].subgroup = is_maraxsis_logistics
+    data_recipe[duct_cross].subgroup = is_maraxsis_logistic
     data_recipe[duct_cross].order = d
     data_recipe[duct_cross].ingredients = {{type = item, name = duct_small, amount = 2}}
-    data_storage_tank[duct_cross].subgroup = is_maraxsis_logistics
+    data_storage_tank[duct_cross].subgroup = is_maraxsis_logistic
     data_storage_tank[duct_cross].order = d
     data_storage_tank[duct_cross].fluid_box.volume = 960
 
     local duct_underground = "duct-underground"
-    data_item[duct_underground].subgroup = is_maraxsis_logistics
+    data_item[duct_underground].subgroup = is_maraxsis_logistic
     data_item[duct_underground].order = e
     data_item[duct_underground].stack_size = 32
     data_item[duct_underground].weight = 31250
-    data_recipe[duct_underground].subgroup = is_maraxsis_logistics
+    data_recipe[duct_underground].subgroup = is_maraxsis_logistic
     data_recipe[duct_underground].order = e
     data_recipe[duct_underground].energy_required = 8
     data_recipe[duct_underground].ingredients =
@@ -298,16 +298,16 @@ if mods[maraxsis_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
         {type = item, name = duct_small, amount = 64}
     }
-    data_pipe_to_ground[duct_underground].subgroup = is_maraxsis_logistics
+    data_pipe_to_ground[duct_underground].subgroup = is_maraxsis_logistic
     data_pipe_to_ground[duct_underground].order = e
     data_pipe_to_ground[duct_underground].fluid_box.pipe_connections[2].max_underground_distance = 64
 
     local non_return_duct = "non-return-duct"
-    data_item[non_return_duct].subgroup = is_maraxsis_logistics
+    data_item[non_return_duct].subgroup = is_maraxsis_logistic
     data_item[non_return_duct].order = f
     data_item[non_return_duct].stack_size = 32
     data_item[non_return_duct].weight = 31250
-    data_recipe[non_return_duct].subgroup = is_maraxsis_logistics
+    data_recipe[non_return_duct].subgroup = is_maraxsis_logistic
     data_recipe[non_return_duct].order = f
     data_recipe[non_return_duct].ingredients =
     {
@@ -315,17 +315,17 @@ if mods[maraxsis_mods] then
         {type = item, name = molybdenum_rhenium_plate, amount = 16},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 16}
     }
-    data_pump[non_return_duct].subgroup = is_maraxsis_logistics
+    data_pump[non_return_duct].subgroup = is_maraxsis_logistic
     data_pump[non_return_duct].order = f
     data_pump[non_return_duct].pumping_speed = 128
     data_pump[non_return_duct].fluid_box.volume = 960
 
     local duct_intake = "duct-intake"
-    data_item[duct_intake].subgroup = is_maraxsis_logistics
+    data_item[duct_intake].subgroup = is_maraxsis_logistic
     data_item[duct_intake].order = g
     data_item[duct_intake].stack_size = 32
     data_item[duct_intake].weight = 31250
-    data_recipe[duct_intake].subgroup = is_maraxsis_logistics
+    data_recipe[duct_intake].subgroup = is_maraxsis_logistic
     data_recipe[duct_intake].order = g
     data_recipe[duct_intake].ingredients =
     {
@@ -333,17 +333,17 @@ if mods[maraxsis_mods] then
         {type = item, name = pump_4, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8}
     }
-    data_pump[duct_intake].subgroup = is_maraxsis_logistics
+    data_pump[duct_intake].subgroup = is_maraxsis_logistic
     data_pump[duct_intake].order = g
     data_pump[duct_intake].pumping_speed = 128
     data_pump[duct_intake].fluid_box.volume = 960
 
     local duct_exhaust = "duct-exhaust"
-    data_item[duct_exhaust].subgroup = is_maraxsis_logistics
+    data_item[duct_exhaust].subgroup = is_maraxsis_logistic
     data_item[duct_exhaust].order = h
     data_item[duct_exhaust].stack_size = 32
     data_item[duct_exhaust].weight = 31250
-    data_recipe[duct_exhaust].subgroup = is_maraxsis_logistics
+    data_recipe[duct_exhaust].subgroup = is_maraxsis_logistic
     data_recipe[duct_exhaust].order = h
     data_recipe[duct_exhaust].ingredients =
     {
@@ -351,17 +351,17 @@ if mods[maraxsis_mods] then
         {type = item, name = pump_4, amount = 1},
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8}
     }
-    data_pump[duct_exhaust].subgroup = is_maraxsis_logistics
+    data_pump[duct_exhaust].subgroup = is_maraxsis_logistic
     data_pump[duct_exhaust].order = h
     data_pump[duct_exhaust].pumping_speed = 128
     data_pump[duct_exhaust].fluid_box.volume = 960
 
     local trench_duct = "maraxsis-trench-duct"
-    data_item[trench_duct].subgroup = is_maraxsis_logistics
+    data_item[trench_duct].subgroup = is_maraxsis_logistic
     data_item[trench_duct].order = i
     data_item[trench_duct].stack_size = 1
     data_item[trench_duct].weight = 1000000
-    data_recipe[trench_duct].subgroup = is_maraxsis_logistics
+    data_recipe[trench_duct].subgroup = is_maraxsis_logistic
     data_recipe[trench_duct].order = i
     data_recipe[trench_duct].energy_required = 8
     data_recipe[trench_duct].ingredients =
@@ -370,23 +370,23 @@ if mods[maraxsis_mods] then
         {type = item, name = niobium_tungsten_molybdenum_plate, amount = 128},
         {type = item, name = duct_small, amount = 128}
     }
-    data_storage_tank[trench_duct].subgroup = is_maraxsis_logistics
+    data_storage_tank[trench_duct].subgroup = is_maraxsis_logistic
     data_storage_tank[trench_duct].order = i
     data_storage_tank[trench_duct].fluid_box.volume = 960
 
     local spidertron_dock = "sp-spidertron-dock"
-    data_item[spidertron_dock].subgroup = is_maraxsis_logistics
+    data_item[spidertron_dock].subgroup = is_maraxsis_logistic
     data_item[spidertron_dock].order = j
     data_item[spidertron_dock].stack_size = 32
     data_item[spidertron_dock].weight = 31250
-    data_recipe[spidertron_dock].subgroup = is_maraxsis_logistics
+    data_recipe[spidertron_dock].subgroup = is_maraxsis_logistic
     data_recipe[spidertron_dock].order = j
     data_recipe[spidertron_dock].ingredients =
     {
         {type = item, name = steel_chest, amount = 4},
         {type = item, name = T5_bulk_inserter, amount = 4}
     }
-    data_proxy_container[spidertron_dock].subgroup = is_maraxsis_logistics
+    data_proxy_container[spidertron_dock].subgroup = is_maraxsis_logistic
     data_proxy_container[spidertron_dock].order = j
 
     data_storage_tank["duct"].fluid_box.volume = 960

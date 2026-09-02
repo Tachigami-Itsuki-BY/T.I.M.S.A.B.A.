@@ -32,7 +32,7 @@ if mods[space_age_science_packs] then
         if settings.startup[setting_science_pack_nostalgia].value == false then
             local list_bob_tech =
             {
-                "bob-advanced-logistic-science-pack",
+                transport_science_pack,
                 "bob-alien-science-pack-orange",
                 "bob-alien-science-pack-blue",
                 "bob-alien-science-pack-yellow",
@@ -44,6 +44,20 @@ if mods[space_age_science_packs] then
             }
             for _, pack in pairs(list_bob_tech) do
                 data_tool[pack].icon = "__TIMSABA__/graphics/icons/bobs/sasp-" .. pack .. ".png"
+                data_tool[pack].icons = nil
+            end
+        end
+    end
+
+    if mods[lignumis_mods] then
+        if settings.startup[setting_science_pack_nostalgia].value == false then
+            local list_bob_tech =
+            {
+                wood_science_pack,
+                steam_science_pack
+            }
+            for _, pack in pairs(list_bob_tech) do
+                data_tool[pack].icon = "__TIMSABA__/graphics/icons/lignumis/sasp-" .. pack .. ".png"
                 data_tool[pack].icons = nil
             end
         end

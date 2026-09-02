@@ -841,3 +841,8 @@ if mods[apia_carnova_mods] then
 
     data_fluid[blood].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/blood.png"
 end
+
+-- LIGNUMIS
+if mods[lignumis_mods] then
+    data_fluid[wood_pulp].icon = "__TIMSABA__/graphics/icons/lignumis/wood-pulp.png"
+end

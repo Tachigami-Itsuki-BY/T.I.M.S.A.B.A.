@@ -368,20 +368,20 @@ if mods[arig_mods] then
         {name = storage_big_chest, order = f}
     }
     for _, BUILD in pairs(big_chests) do
-        data_item[BUILD.name].subgroup = is_arig_logistics
+        data_item[BUILD.name].subgroup = is_arig_logistic
         data_item[BUILD.name].order = BUILD.order
         data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 31250
-        data_recipe[BUILD.name].subgroup = is_arig_logistics
+        data_recipe[BUILD.name].subgroup = is_arig_logistic
         data_recipe[BUILD.name].order = BUILD.order
         data_recipe[BUILD.name].energy_required = 16
         if BUILD.name == big_chest then
-            data_container[BUILD.name].subgroup = is_arig_logistics
+            data_container[BUILD.name].subgroup = is_arig_logistic
             data_container[BUILD.name].order = BUILD.order
             data_container[BUILD.name].inventory_size = 200
         end
         if BUILD.name ~= big_chest then
-            data_logistic_container[BUILD.name].subgroup = is_arig_logistics
+            data_logistic_container[BUILD.name].subgroup = is_arig_logistic
             data_logistic_container[BUILD.name].order = BUILD.order
             data_logistic_container[BUILD.name].inventory_size = 200
         end
@@ -401,11 +401,11 @@ if mods[arig_mods] then
     big_chests_recipe(storage_big_chest, electronic_circuit)
 
     local arig_roboport = "planetaris-arig-roboport"
-    data_item[arig_roboport].subgroup = is_arig_logistics
+    data_item[arig_roboport].subgroup = is_arig_logistic
     data_item[arig_roboport].order = g
     data_item[arig_roboport].stack_size = 8
     data_item[arig_roboport].weight = 125000
-    data_recipe[arig_roboport].subgroup = is_arig_logistics
+    data_recipe[arig_roboport].subgroup = is_arig_logistic
     data_recipe[arig_roboport].order = g
     data_recipe[arig_roboport].energy_required = 4
     data_recipe[arig_roboport].ingredients =
@@ -416,7 +416,7 @@ if mods[arig_mods] then
         {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
         {type = item, name = sandstone_brick, amount = 16}
     }
-    data_roboport[arig_roboport].subgroup = is_arig_logistics
+    data_roboport[arig_roboport].subgroup = is_arig_logistic
     data_roboport[arig_roboport].order = g
     data_roboport[arig_roboport].energy_source.buffer_capacity = (18000 * 100) .. kJ
     data_roboport[arig_roboport].energy_source.input_flow_limit = 18000 .. kW
@@ -458,7 +458,7 @@ if mods[arig_mods] then
     else
         data_underground_belt[hyper_underground_belt_arig].max_distance = 31
     end
-    data_underground_belt[hyper_underground_belt_arig].factoriopedia_simulation = simulations.hyper_underground_belt_arig
+    data_underground_belt[hyper_underground_belt_arig].factoriopedia_simulation = simulations.factoriopedia_hyper_underground_belt_arig
 
     data_item[hyper_splitter_arig].stack_size = 16
     data_item[hyper_splitter_arig].weight = 62500
@@ -474,47 +474,47 @@ if mods[arig_mods] then
     data_splitter[hyper_splitter_arig].speed = 15/60
 
     if mods[hyarion_mods] then
-        data_item[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
+        data_item[hyper_transport_belt_arig].subgroup = is_hyarion_logistic
         data_item[hyper_transport_belt_arig].order = b
-        data_recipe[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
+        data_recipe[hyper_transport_belt_arig].subgroup = is_hyarion_logistic
         data_recipe[hyper_transport_belt_arig].order = b
-        data_transport_belt[hyper_transport_belt_arig].subgroup = is_hyarion_logistics
+        data_transport_belt[hyper_transport_belt_arig].subgroup = is_hyarion_logistic
         data_transport_belt[hyper_transport_belt_arig].order = b
 
-        data_item[hyper_underground_belt_arig].subgroup = is_hyarion_logistics
+        data_item[hyper_underground_belt_arig].subgroup = is_hyarion_logistic
         data_item[hyper_underground_belt_arig].order = c
-        data_recipe[hyper_underground_belt_arig].subgroup = is_hyarion_logistics
+        data_recipe[hyper_underground_belt_arig].subgroup = is_hyarion_logistic
         data_recipe[hyper_underground_belt_arig].order = c
-        data_underground_belt[hyper_underground_belt_arig].subgroup = is_hyarion_logistics
+        data_underground_belt[hyper_underground_belt_arig].subgroup = is_hyarion_logistic
         data_underground_belt[hyper_underground_belt_arig].order = c
 
-        data_item[hyper_splitter_arig].subgroup = is_hyarion_logistics
+        data_item[hyper_splitter_arig].subgroup = is_hyarion_logistic
         data_item[hyper_splitter_arig].order = d
-        data_recipe[hyper_splitter_arig].subgroup = is_hyarion_logistics
+        data_recipe[hyper_splitter_arig].subgroup = is_hyarion_logistic
         data_recipe[hyper_splitter_arig].order = d
         data_recipe[hyper_splitter_arig].ingredients[3].name = simulating_unit
-        data_splitter[hyper_splitter_arig].subgroup = is_hyarion_logistics
+        data_splitter[hyper_splitter_arig].subgroup = is_hyarion_logistic
         data_splitter[hyper_splitter_arig].order = d
     else
-        data_item[hyper_transport_belt_arig].subgroup = is_arig_logistics
+        data_item[hyper_transport_belt_arig].subgroup = is_arig_logistic
         data_item[hyper_transport_belt_arig].order = h
-        data_recipe[hyper_transport_belt_arig].subgroup = is_arig_logistics
+        data_recipe[hyper_transport_belt_arig].subgroup = is_arig_logistic
         data_recipe[hyper_transport_belt_arig].order = h
-        data_transport_belt[hyper_transport_belt_arig].subgroup = is_arig_logistics
+        data_transport_belt[hyper_transport_belt_arig].subgroup = is_arig_logistic
         data_transport_belt[hyper_transport_belt_arig].order = h
 
-        data_item[hyper_underground_belt_arig].subgroup = is_arig_logistics
+        data_item[hyper_underground_belt_arig].subgroup = is_arig_logistic
         data_item[hyper_underground_belt_arig].order = i
-        data_recipe[hyper_underground_belt_arig].subgroup = is_arig_logistics
+        data_recipe[hyper_underground_belt_arig].subgroup = is_arig_logistic
         data_recipe[hyper_underground_belt_arig].order = i
-        data_underground_belt[hyper_underground_belt_arig].subgroup = is_arig_logistics
+        data_underground_belt[hyper_underground_belt_arig].subgroup = is_arig_logistic
         data_underground_belt[hyper_underground_belt_arig].order = i
 
-        data_item[hyper_splitter_arig].subgroup = is_arig_logistics
+        data_item[hyper_splitter_arig].subgroup = is_arig_logistic
         data_item[hyper_splitter_arig].order = j
-        data_recipe[hyper_splitter_arig].subgroup = is_arig_logistics
+        data_recipe[hyper_splitter_arig].subgroup = is_arig_logistic
         data_recipe[hyper_splitter_arig].order = j
-        data_splitter[hyper_splitter_arig].subgroup = is_arig_logistics
+        data_splitter[hyper_splitter_arig].subgroup = is_arig_logistic
         data_splitter[hyper_splitter_arig].order = j
     end
 
@@ -755,6 +755,18 @@ if mods[arig_mods] then
         data_recipe[pelagos_water_harvesting].enabled = true
         data_recipe[pelagos_water_harvesting].energy_required = 16
         data_recipe[pelagos_water_harvesting].results[1].amount = 240
+    end
+
+    -- MOONS
+    if mods[lignumis_mods] then
+        local lignumis_water_harvesting = "planetaris-lignumis-water-harvesting"
+        data_recipe[lignumis_water_harvesting].localised_name = {"recipe-name.planetaris-water-harvesting", {"space-location-name.lignumis"}}
+        data_recipe[lignumis_water_harvesting].subgroup = is_arig_water_moons
+        data_recipe[lignumis_water_harvesting].icons = BUILDING_R_I(water, planet_lignumis)
+        data_recipe[lignumis_water_harvesting].order = data_planet[planet_lignumis].order
+        data_recipe[lignumis_water_harvesting].enabled = true
+        data_recipe[lignumis_water_harvesting].energy_required = 16
+        data_recipe[lignumis_water_harvesting].results[1].amount = 240
     end
 
     -- TECHNOLOGY

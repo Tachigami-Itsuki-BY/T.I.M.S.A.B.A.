@@ -1,8 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.16.0
+Date: 02.09.2026
+  Features:
+    - [Mods] Added support for Lignumis: seamlessly integrated the new planet into the gameplay flow.
+
+  Bugfixes:
+    - [Mods] Fixed compatibility bugs.
+
+  Modding:
+    - [Mods] Added "Lignumis" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.15.4
 Date: 01.09.2026
   Bugfixes:
-    - [Mods] Compatibility bugs fixed.
+    - [Mods] Fixed compatibility bugs.
 
   Modding:
     - [Mods] Added "Pyroclast" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.

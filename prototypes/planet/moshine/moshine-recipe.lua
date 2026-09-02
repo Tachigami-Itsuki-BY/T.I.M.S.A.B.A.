@@ -8,7 +8,6 @@ if mods[moshine_mods] then
             name = moshine_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_moshine_air,
-            icon = data_fluid[moshine_air].icon,
             order = a,
             energy_required = 8,
             ingredients = {},

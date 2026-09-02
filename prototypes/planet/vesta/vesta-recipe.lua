@@ -402,7 +402,7 @@ if mods[vesta_mods] then
         {
             name = magnetic_pipe_vesta,
             category = vesta_magnetizing,
-            subgroup = is_vesta_logistics,
+            subgroup = is_vesta_logistic,
             order = a,
             energy_required = 1,
             ingredients =

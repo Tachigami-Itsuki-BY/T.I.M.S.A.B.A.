@@ -179,10 +179,10 @@ if mods[paracelsin_mods] then
     }
 
     -- LOGISTICS
-    data_item[galvanized_pipe].subgroup = is_paracelsin_logistics
+    data_item[galvanized_pipe].subgroup = is_paracelsin_logistic
     data_item[galvanized_pipe].order = a
     data_item[galvanized_pipe].stack_size = 200
-    data_recipe[galvanized_pipe].subgroup = is_paracelsin_logistics
+    data_recipe[galvanized_pipe].subgroup = is_paracelsin_logistic
     data_recipe[galvanized_pipe].order = a
     data_recipe[galvanized_pipe].energy_required = 0.5
     data_recipe[galvanized_pipe].ingredients =
@@ -191,15 +191,15 @@ if mods[paracelsin_mods] then
         {type = item, name = zinc_rivets, amount = 4},
         {type = item, name = galvanized_steel_plate, amount = 1}
     }
-    data_pipe[galvanized_pipe].subgroup = is_paracelsin_logistics
+    data_pipe[galvanized_pipe].subgroup = is_paracelsin_logistic
     data_pipe[galvanized_pipe].order = a
 
     local simulations = require("prototypes.factoriopedia-simulations")
-    data_item[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistics
+    data_item[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistic
     data_item[galvanized_pipe_to_ground].order = b
     data_item[galvanized_pipe_to_ground].stack_size = 32
     data_item[galvanized_pipe_to_ground].weight = 31250
-    data_recipe[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistics
+    data_recipe[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistic
     data_recipe[galvanized_pipe_to_ground].order = b
     data_recipe[galvanized_pipe_to_ground].energy_required = 4
     data_recipe[galvanized_pipe_to_ground].ingredients =
@@ -209,7 +209,7 @@ if mods[paracelsin_mods] then
         {type = item, name = zinc_rivets, amount = 16},
         {type = item, name = galvanized_steel_plate, amount = 4}
     }
-    data_pipe_to_ground[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistics
+    data_pipe_to_ground[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistic
     data_pipe_to_ground[galvanized_pipe_to_ground].order = b
     data_pipe_to_ground[galvanized_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48
     data_pipe_to_ground[galvanized_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_galvanized_pipe_to_ground
@@ -220,11 +220,11 @@ if mods[paracelsin_mods] then
         data_storage_tank[galvanized_pipe .. _junction].localised_description = {"entity-description." .. galvanized_storage_tank}
     end
 
-    data_item[galvanized_storage_tank].subgroup = is_paracelsin_logistics
+    data_item[galvanized_storage_tank].subgroup = is_paracelsin_logistic
     data_item[galvanized_storage_tank].order = x
     data_item[galvanized_storage_tank].stack_size = 32
     data_item[galvanized_storage_tank].weight = 31250
-    data_recipe[galvanized_storage_tank].subgroup = is_paracelsin_logistics
+    data_recipe[galvanized_storage_tank].subgroup = is_paracelsin_logistic
     data_recipe[galvanized_storage_tank].order = x
     data_recipe[galvanized_storage_tank].energy_required = 8
     data_recipe[galvanized_storage_tank].ingredients =
@@ -234,15 +234,15 @@ if mods[paracelsin_mods] then
         {type = item, name = zinc_rivets, amount = 16},
         {type = item, name = galvanized_steel_plate, amount = 16}
     }
-    data_storage_tank[galvanized_storage_tank].subgroup = is_paracelsin_logistics
+    data_storage_tank[galvanized_storage_tank].subgroup = is_paracelsin_logistic
     data_storage_tank[galvanized_storage_tank].order = x
     data_storage_tank[galvanized_storage_tank].fluid_box.volume = 172800
 
-    data_item[galvanized_pump].subgroup = is_paracelsin_logistics
+    data_item[galvanized_pump].subgroup = is_paracelsin_logistic
     data_item[galvanized_pump].order = y
     data_item[galvanized_pump].stack_size = 32
     data_item[galvanized_pump].weight = 31250
-    data_recipe[galvanized_pump].subgroup = is_paracelsin_logistics
+    data_recipe[galvanized_pump].subgroup = is_paracelsin_logistic
     data_recipe[galvanized_pump].order = y
     data_recipe[galvanized_pump].energy_required = 16
     data_recipe[galvanized_pump].ingredients =
@@ -253,18 +253,18 @@ if mods[paracelsin_mods] then
         {type = item, name = electric_coil, amount = 16},
         {type = item, name = galvanized_steel_plate, amount = 8}
     }
-    data_pump[galvanized_pump].subgroup = is_paracelsin_logistics
+    data_pump[galvanized_pump].subgroup = is_paracelsin_logistic
     data_pump[galvanized_pump].order = y
     data_pump[galvanized_pump].pumping_speed = 48
     data_pump[galvanized_pump].energy_usage = 180 .. kW
     data_pump[galvanized_pump].energy_source.drain = nil
 
     local elevated_pipe = "elevated-pipe"
-    data_item[elevated_pipe].subgroup = is_paracelsin_logistics
+    data_item[elevated_pipe].subgroup = is_paracelsin_logistic
     data_item[elevated_pipe].order = z
     data_item[elevated_pipe].stack_size = 32
     data_item[elevated_pipe].weight = 31250
-    data_recipe[elevated_pipe].subgroup = is_paracelsin_logistics
+    data_recipe[elevated_pipe].subgroup = is_paracelsin_logistic
     data_recipe[elevated_pipe].order = z
     data_recipe[elevated_pipe].ingredients =
     {
@@ -273,7 +273,7 @@ if mods[paracelsin_mods] then
         {type = item, name = zinc_rivets, amount = 16},
         {type = item, name = galvanized_steel_plate, amount = 4}
     }
-    data_furnace[elevated_pipe].subgroup = is_paracelsin_logistics
+    data_furnace[elevated_pipe].subgroup = is_paracelsin_logistic
     data_furnace[elevated_pipe].order = z
 
     -- ENERGY

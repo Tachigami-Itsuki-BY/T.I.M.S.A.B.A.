@@ -31,7 +31,7 @@ if mods[hyarion_mods] then
     building_exceptions[quartz_furnace] = true
 end
 
-local building_types = {boiler, burner_generator, furnace, assembling_machine}
+local building_types = {boiler, burner_generator, furnace, assembling_machine, agricultural_tower, lab, rocket_silo, radar}
 
 for _, t_type in pairs(building_types) do
     if data.raw[t_type] then
@@ -123,6 +123,10 @@ if mods[apia_carnova_mods] then
             color = {0, 0, 0, 1}
         }
     }
+end
+
+if mods[lignumis_mods] then
+    data_assembling[quality_assembler].energy_source.fuel_categories = {"quality-catalyst"}
 end
 
 if mods[foliax_mods] then

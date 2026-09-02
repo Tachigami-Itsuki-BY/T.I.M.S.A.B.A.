@@ -33,7 +33,8 @@ if mods[hyarion_mods] then
 		"planetaris-metallic-smelting",
 		"planetaris-burner-drill-alternative",
 		"planetaris-hyarion-rocket-silo",
-		"planetaris-hyarion-cargo-landing-pad"
+		"planetaris-hyarion-cargo-landing-pad",
+		"planetaris-lig-carbon-wood"
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 end

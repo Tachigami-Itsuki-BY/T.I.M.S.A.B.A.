@@ -202,6 +202,9 @@ require("prototypes.planet.frozeta.frozeta-recipe")
 require("prototypes.planet.terrapalus.terrapalus-groups")
 require("prototypes.planet.terrapalus.terrapalus-recipe")
 
+require("prototypes.planet.lignumis.lignumis-groups")
+require("prototypes.planet.lignumis.lignumis-recipe")
+
 -- FINAL CIRCLE PLANET
 require("prototypes.planet.shattered.shattered-groups")
 require("prototypes.planet.shattered.shattered-recipe")

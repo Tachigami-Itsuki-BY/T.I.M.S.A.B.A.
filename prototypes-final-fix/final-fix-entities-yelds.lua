@@ -1,7 +1,7 @@
 -- BASE
 data_fish["fish"].minable.count = 4 -- = {mining_time = 0.4, result = factorian_fish, count = 4}
 
-for tree_name, tree_data in pairs(data.raw.tree) do
+for tree_name, tree_data in pairs(data_tree) do
     if string.find(tree_name, "tree") and not string.find(tree_name, "angels") and not string.find(tree_name, "ashland%-lichen") and tree_data.minable then
         local minable = tree_data.minable
         local already_has_seed = false
@@ -459,7 +459,9 @@ if mods[arig_mods] then
         {type = item, name = T5_inserter, amount_min = 8, amount_max = 16}
     }
 
-    data_plant["tree-plant"].minable.results[2].amount = 960
+    local tree_plant = "tree-plant"
+    if data_plant[tree_plant].minable.results[1] then data_plant[tree_plant].minable.results[1].amount = 4 end
+    data_plant[tree_plant].minable.results[2].amount = 960
 
     data_plant[yumako_tree].minable.results[2] = {type = fluid, name = steam, amount = 960, temperature = 915}
 
@@ -650,36 +652,7 @@ if mods[castra_mods] then
     data_resource[hydrogen_sulfide_vent].minable.results[1].amount_min = 30
     data_resource[hydrogen_sulfide_vent].minable.results[1].amount_max = 30
 
-    local vanilla_resources = {copper_ore, stone, uranium_ore}
-    local angels_resources = {ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}
-
-    local map_gen = data_planet[planet_castra].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_castra
-        end
-    end
+    TIMSABA.functions.replace_vanila_resources({copper_ore, stone, uranium_ore}, {ore_saphirite, ore_stiratite, ore_crotinnium, ore_rubyte, ore_bobmonium}, planet_castra)
 
     local data_collector = "data-collector"
     data_unit_spawner[data_collector].loot =
@@ -700,36 +673,7 @@ if mods[shchierbin_mods] then
     data_resource[natural_gas_geyser].minable.results[1].amount_min = 30
     data_resource[natural_gas_geyser].minable.results[1].amount_max = 30
 
-    local vanilla_resources = {iron_ore, stone}
-    local angels_resources = {ore_saphirite, ore_jivolite}
-
-    local map_gen = data_planet[planet_shchierbin].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_shchierbin
-        end
-    end
+    TIMSABA.functions.replace_vanila_resources({iron_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite}, planet_shchierbin)
 end
 
 -- MARAXSIS
@@ -774,36 +718,7 @@ if mods[shattered_mods] then
     local uranium_ore_shattered = "shattered_uranium_ore"
     data_resource[uranium_ore_shattered] = nil
 
-    local vanilla_resources = {uranium_ore_shattered}
-    local angels_resources = {ore_rubyte, ore_bobmonium}
-
-    local map_gen = data_planet[planet_shattered].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_shattered
-        end
-    end
+    TIMSABA.functions.replace_vanila_resources({uranium_ore_shattered}, {ore_rubyte, ore_bobmonium}, planet_shattered)
 end
 
 -- MURIA
@@ -872,36 +787,7 @@ if mods[pelagos_mods] then
         {type = item, name = copper_ore, amount_min = 16, amount_max = 32}
     }
 
-    local vanilla_resources = {iron_ore}
-    local angels_resources = {ore_saphirite, ore_jivolite}
-
-    local map_gen = data_planet[planet_pelagos].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_pelagos
-        end
-    end
+    TIMSABA.functions.replace_vanila_resources({iron_ore}, {ore_saphirite, ore_jivolite}, planet_pelagos)
 end
 
 -- APIA and CARNOVA
@@ -939,36 +825,7 @@ end
 
 -- ? REGIA ?
 if mods[reigia_mods] then
-    local vanilla_resources = {iron_ore, copper_ore, stone}
-    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium}
-
-    local map_gen = data_planet[planet_reigia].map_gen_settings
-
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
-    end
-
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
-
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
-
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
-
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_reigia
-        end
-    end
+    TIMSABA.functions.replace_vanila_resources({iron_ore, copper_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium}, planet_reigia)
 end
 
 -- MOONS
@@ -1009,36 +866,37 @@ end
 
 -- TERRAPALUS
 if mods[terrapalus_mods] then
-    local vanilla_resources = {iron_ore, copper_ore, stone}
-    local angels_resources = {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}
+    TIMSABA.functions.replace_vanila_resources({iron_ore, copper_ore, stone}, {ore_saphirite, ore_jivolite, ore_stiratite, ore_crotinnium, natural_gas}, planet_terrapalus)
+end
 
-    local map_gen = data_planet[planet_terrapalus].map_gen_settings
+-- LIGNUMIS
+if mods[lignumis_mods] then
+    TIMSABA.functions.replace_vanila_resources({stone}, {ore_saphirite, ore_stiratite}, planet_lignumis)
 
-    if not map_gen.autoplace_settings then
-        map_gen.autoplace_settings = {entity = {settings = {}}}
+    for i = 1, 9 do
+        data_tree["tree-0" .. i].minable.results[1].amount_max = 4
     end
 
-    -- 1. Вырезаем ванильные ресурсы
-    for _, res_name in ipairs(vanilla_resources) do
-        map_gen.autoplace_controls[res_name] = nil
-        if map_gen.autoplace_settings.entity.settings then
-            map_gen.autoplace_settings.entity.settings[res_name] = nil
-        end
-        if data_resource[res_name] then
-            data_resource[res_name].location = nil
-        end
-    end
+    data_tree["tree-02-red"].minable.results[1].amount_max = 4
 
-    -- 2. Внедряем руды Ангела
-    for _, res_name in ipairs(angels_resources) do
-        map_gen.autoplace_controls[res_name] = {}
+    data_tree["tree-06-brown"].minable.results[1].amount_max = 4
 
-        map_gen.autoplace_settings.entity.settings[res_name] = {}
+    data_tree["tree-08-red"].minable.results[1].amount_max = 4
+    data_tree["tree-08-brown"].minable.results[1].amount_max = 4
 
-        if data_resource[res_name] then
-            data_resource[res_name].location = planet_terrapalus
-        end
-    end
+    data_tree["tree-09-red"].minable.results[1].amount_max = 4
+    data_tree["tree-09-brown"].minable.results[1].amount_max = 4
+
+    data_resource[peat].minable.results = {{type = item, name = peat, amount = 2}}
+
+    data_plant["gold-stromatolite-plant"].minable.results =
+    {
+        {type = item, name = moist_stromatolite_remnant, amount = 32},
+        {type = item, name = gold_bacteria, amount = 16},
+        {type = item, name = gold_stromatolite_seed, amount_min = 0, amount_max = 4}
+    }
+
+    data_resource["gold-patch"].subgroup = "mineable-fluids"
 end
 
 -- MODS

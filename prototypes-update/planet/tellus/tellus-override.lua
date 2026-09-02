@@ -622,47 +622,47 @@ if mods[tellus_mods] then
 
     -- LOGISTICS
     local root = "planetaris-root"
-    data_item[root].subgroup = is_tellus_logistics
+    data_item[root].subgroup = is_tellus_logistic
     data_item[root].order = a
     data_item[root].stack_size = 200
     data_item[root].fuel_category = base_fuel
     data_item[root].fuel_value = 1800 .. kJ
-    data_recipe[root].subgroup = is_tellus_logistics
+    data_recipe[root].subgroup = is_tellus_logistic
     data_recipe[root].order = a
-    data_pipe[root].subgroup = is_tellus_logistics
+    data_pipe[root].subgroup = is_tellus_logistic
     data_pipe[root].order = a
 
     local root_to_ground = "planetaris-root-to-ground"
-    data_item[root_to_ground].subgroup = is_tellus_logistics
+    data_item[root_to_ground].subgroup = is_tellus_logistic
     data_item[root_to_ground].order = b
     data_item[root_to_ground].stack_size = 32
     data_item[root_to_ground].weight = 31250
-    data_recipe[root_to_ground].subgroup = is_tellus_logistics
+    data_recipe[root_to_ground].subgroup = is_tellus_logistic
     data_recipe[root_to_ground].order = b
     data_recipe[root_to_ground].ingredients[1].amount = 8
-    data_pipe_to_ground[root_to_ground].subgroup = is_tellus_logistics
+    data_pipe_to_ground[root_to_ground].subgroup = is_tellus_logistic
     data_pipe_to_ground[root_to_ground].order = b
     data_pipe_to_ground[root_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 8
 
     local root_pump = "planetaris-root-pump"
-    data_item[root_pump].subgroup = is_tellus_logistics
+    data_item[root_pump].subgroup = is_tellus_logistic
     data_item[root_pump].order = c
     data_item[root_pump].stack_size = 32
     data_item[root_pump].weight = 31250
-    data_recipe[root_pump].subgroup = is_tellus_logistics
+    data_recipe[root_pump].subgroup = is_tellus_logistic
     data_recipe[root_pump].order = c
-    data_pump[root_pump].subgroup = is_tellus_logistics
+    data_pump[root_pump].subgroup = is_tellus_logistic
     data_pump[root_pump].order = c
     data_pump[root_pump].pumping_speed = 8
     data_pump[root_pump].energy_usage = 30 .. kW
     data_pump[root_pump].energy_source.drain = nil
 
     local root_storage_tank = "planetaris-root-storage-tank"
-    data_item[root_storage_tank].subgroup = is_tellus_logistics
+    data_item[root_storage_tank].subgroup = is_tellus_logistic
     data_item[root_storage_tank].order = d
     data_item[root_storage_tank].stack_size = 32
     data_item[root_storage_tank].weight = 31250
-    data_recipe[root_storage_tank].subgroup = is_tellus_logistics
+    data_recipe[root_storage_tank].subgroup = is_tellus_logistic
     data_recipe[root_storage_tank].order = d
     data_recipe[root_storage_tank].ingredients =
     {
@@ -670,16 +670,16 @@ if mods[tellus_mods] then
         {type = item, name = nutrients, amount = 16},
         {type = item, name = magnesium_dust, amount = 16}
     }
-    data_storage_tank[root_storage_tank].subgroup = is_tellus_logistics
+    data_storage_tank[root_storage_tank].subgroup = is_tellus_logistic
     data_storage_tank[root_storage_tank].order = d
     data_storage_tank[root_storage_tank].fluid_box.volume = 28800
 
     local root_filler = "planetaris-root-filler"
-    data_item[root_filler].subgroup = is_tellus_logistics
+    data_item[root_filler].subgroup = is_tellus_logistic
     data_item[root_filler].order = e
     data_item[root_filler].stack_size = 32
     data_item[root_filler].weight = 31250
-    data_recipe[root_filler].subgroup = is_tellus_logistics
+    data_recipe[root_filler].subgroup = is_tellus_logistic
     data_recipe[root_filler].order = e
     data_recipe[root_filler].ingredients =
     {
@@ -687,15 +687,15 @@ if mods[tellus_mods] then
         {type = item, name = root, amount = 2},
         {type = item, name = magnesium_sheet, amount = 4}
     }
-    data_storage_tank[root_filler].subgroup = is_tellus_logistics
+    data_storage_tank[root_filler].subgroup = is_tellus_logistic
     data_storage_tank[root_filler].order = e
     data_storage_tank[root_filler].fluid_box.volume = 3600
 
     local logistic_robowasp = "planetaris-logistic-robowasp"
-    data_item[logistic_robowasp].subgroup = is_tellus_logistics
+    data_item[logistic_robowasp].subgroup = is_tellus_logistic
     data_item[logistic_robowasp].order = f
     data_item[logistic_robowasp].stack_size = 50
-    data_recipe[logistic_robowasp].subgroup = is_tellus_logistics
+    data_recipe[logistic_robowasp].subgroup = is_tellus_logistic
     data_recipe[logistic_robowasp].order = f
     data_recipe[logistic_robowasp].ingredients =
     {
@@ -703,18 +703,18 @@ if mods[tellus_mods] then
         {type = item, name = magnesium_sheet, amount = 4},
         {type = item, name = artificial_heart, amount = 1}
     }
-    data_logistic_robot[logistic_robowasp].subgroup = is_tellus_logistics
+    data_logistic_robot[logistic_robowasp].subgroup = is_tellus_logistic
     data_logistic_robot[logistic_robowasp].order = f
     data_logistic_robot[logistic_robowasp].speed = 10 / 60
     data_logistic_robot[logistic_robowasp].max_energy = 4500 .. kJ
     data_logistic_robot[logistic_robowasp].energy_per_tick = 0 .. J
 
     local wasp_roboport = "planetaris-robowasp-port"
-    data_item[wasp_roboport].subgroup = is_tellus_logistics
+    data_item[wasp_roboport].subgroup = is_tellus_logistic
     data_item[wasp_roboport].order = g
     data_item[wasp_roboport].stack_size = 8
     data_item[wasp_roboport].weight = 125000
-    data_recipe[wasp_roboport].subgroup = is_tellus_logistics
+    data_recipe[wasp_roboport].subgroup = is_tellus_logistic
     data_recipe[wasp_roboport].order = g
     data_recipe[wasp_roboport].energy_required = 4
     data_recipe[wasp_roboport].ingredients =
@@ -724,7 +724,7 @@ if mods[tellus_mods] then
         {type = item, name = polimer_skin, amount = 16},
         {type = item, name = artificial_heart, amount = 1}
     }
-    data_roboport[wasp_roboport].subgroup = is_tellus_logistics
+    data_roboport[wasp_roboport].subgroup = is_tellus_logistic
     data_roboport[wasp_roboport].order = g
     data_roboport[wasp_roboport].energy_source.buffer_capacity = (18000 * 100) .. kJ
     data_roboport[wasp_roboport].energy_source.input_flow_limit = 18000 .. kW

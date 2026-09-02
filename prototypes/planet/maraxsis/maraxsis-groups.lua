@@ -13,7 +13,7 @@ if mods[maraxsis_mods] then
 
     is_maraxsis_air = "is-maraxsis-air"
     is_maraxsis_recipe = "is-maraxsis-recipe"
-    is_maraxsis_logistics = "is-maraxsis-logistics"
+    is_maraxsis_logistic = "is-maraxsis-logistic"
     is_maraxsis_building_energy = "maraxsis-building-energy"
     is_maraxsis_building = "maraxsis-building"
     is_maraxsis_war = "maraxsis-war"
@@ -25,7 +25,7 @@ if mods[maraxsis_mods] then
     {
         {name = is_maraxsis_air,             order = a},
         {name = is_maraxsis_recipe,          order = b},
-        {name = is_maraxsis_logistics,       order = c},
+        {name = is_maraxsis_logistic,        order = c},
         {name = is_maraxsis_building_energy, order = d},
         {name = is_maraxsis_building,        order = e},
         {name = is_maraxsis_war,             order = f},

@@ -7,7 +7,6 @@ TIMSABA.functions.create_recipes
         name = aquilo_air,
         category = angels_petrochem_air_filtering,
         subgroup = is_aquilo_air,
-        icon = data_fluid[aquilo_air].icon,
         order = a,
         energy_required = 8,
         ingredients = {},

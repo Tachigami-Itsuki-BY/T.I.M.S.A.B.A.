@@ -349,11 +349,11 @@ data_recipe[factorian_fish_breeding].allow_productivity = true
 data_recipe[factorian_fish_breeding].surface_conditions = nil
 
 -- LOGISTICS
-data_item[stack_inserter].subgroup = is_gleba_logistics
+data_item[stack_inserter].subgroup = is_gleba_logistic
 data_item[stack_inserter].order = a
 data_item[stack_inserter].stack_size = 32
 data_item[stack_inserter].weight = 31250
-data_recipe[stack_inserter].subgroup = is_gleba_logistics
+data_recipe[stack_inserter].subgroup = is_gleba_logistic
 data_recipe[stack_inserter].order = a
 data_recipe[stack_inserter].ingredients =
 {
@@ -362,7 +362,7 @@ data_recipe[stack_inserter].ingredients =
     {type = item, name = jelly, amount = 8},
     {type = item, name = carbon_fiber, amount = 2}
 }
-data_inserter[stack_inserter].subgroup = is_gleba_logistics
+data_inserter[stack_inserter].subgroup = is_gleba_logistic
 data_inserter[stack_inserter].order = a
 data_inserter[stack_inserter].rotation_speed = 1800/21600
 data_inserter[stack_inserter].extension_speed = 0.20
@@ -640,7 +640,8 @@ data_technology[rocket_fuel .. _productivity].unit.ingredients =
     {agricultural_science_pack, 1}
 }
 
-data_technology["tree-seeding"].unit.ingredients =
+tech_tree_seeding = "tree-seeding"
+data_technology[tech_tree_seeding].unit.ingredients =
 {
     {automation_science_pack, 1},
     {logistic_science_pack, 1},

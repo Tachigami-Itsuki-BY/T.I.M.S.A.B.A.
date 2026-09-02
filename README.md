@@ -308,23 +308,23 @@ This is more than just a modpack; it’s a complete "from scratch" overhaul desi
 * **Scaling Production Chains:** The unique resources of the new planets do not replace, but rather organically complement, the Angel's and Bob's mods.
 * **Expanded Content:** Each planet has received new items, fluids, recipes, entities and technologies to varying degrees.
 * **Currently fully supported and expanded:**
-> * **[Muluna, Moon of Nauvis](https://mods.factorio.com/mod/planet-muluna)**
-> * **[Moshine](https://mods.factorio.com/mod/Moshine)**
-> * **[Panglia Planet BETA5](https://mods.factorio.com/mod/panglia_planet)**
-> * **[🌐 Planetaris: Arig](https://mods.factorio.com/mod/planetaris-arig)**
+> * **[🌐Muluna, Moon of Nauvis](https://mods.factorio.com/mod/planet-muluna)**
+> * **[🌐Moshine](https://mods.factorio.com/mod/Moshine)**
+> * **[🌐Panglia](https://mods.factorio.com/mod/panglia_planet)**
+> * **[🌐Planetaris: Arig](https://mods.factorio.com/mod/planetaris-arig)**
 > * **[🌐Planetaris: Hyarion](https://mods.factorio.com/mod/planetaris-hyarion)**
 > * **[🌐Planetaris: Tellus](https://mods.factorio.com/mod/planetaris-tellus)**
-> * **[🌐 Planet Paracelsin](https://mods.factorio.com/mod/Paracelsin)**
+> * **[🌐Paracelsin](https://mods.factorio.com/mod/Paracelsin)**
 > * **[🌐Corrundum](https://mods.factorio.com/mod/corrundum)**
 > * **[🌐Secretas&Frozeta](https://mods.factorio.com/mod/secretas)**
-> * **[Terra Palus](https://mods.factorio.com/mod/terrapalus)**
-> * **[Castra Prime](https://mods.factorio.com/mod/castra-prime)**
-> * **[Shchierbin](https://mods.factorio.com/mod/shchierbin)**
-> * **[🌐 Maraxsis](https://mods.factorio.com/mod/maraxsis)**
-> * **[Planet Vesta](https://mods.factorio.com/mod/skewer_planet_vesta)**
-> * **[🌐 Planet Muria](https://mods.factorio.com/mod/Muria)**
-> * **[Planet Pelagos](https://mods.factorio.com/mod/pelagos)**
-> * **[Apia-Carnova planet system](https://mods.factorio.com/mod/apia)**
+> * **[🌐Terra Palus](https://mods.factorio.com/mod/terrapalus)**
+> * **[🌐Castra Prime](https://mods.factorio.com/mod/castra-prime)**
+> * **[🌐Shchierbin](https://mods.factorio.com/mod/shchierbin)**
+> * **[🌐Maraxsis](https://mods.factorio.com/mod/maraxsis)**
+> * **[🌐Vesta](https://mods.factorio.com/mod/skewer_planet_vesta)**
+> * **[🌐Muria](https://mods.factorio.com/mod/Muria)**
+> * **[🌐Pelagos](https://mods.factorio.com/mod/pelagos)**
+> * **[🌐Apia-Carnova planet system](https://mods.factorio.com/mod/apia)**
 * *(More planets coming soon! Feel free to suggest a planet in our Telegram or Discord Server)*.
 # ⚙️**Optimization & Polish:**
 * **UPS Focused:** Maximum optimization for stable performance on large factories.

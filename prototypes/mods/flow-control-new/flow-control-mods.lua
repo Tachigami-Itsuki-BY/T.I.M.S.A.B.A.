@@ -182,7 +182,7 @@ if settings.startup[setting_flow_control_new].value then
         table.insert(all_my_materials, {name = aluminium_pipe, folder_name = "aluminium", subgroup = is_muluna_recipe_anorthite})
     end
     if mods[paracelsin_mods] then
-        table.insert(all_my_materials, {name = galvanized_pipe, folder_name = "galvanized", subgroup = is_paracelsin_logistics})
+        table.insert(all_my_materials, {name = galvanized_pipe, folder_name = "galvanized", subgroup = is_paracelsin_logistic})
     end
 
     local configs =

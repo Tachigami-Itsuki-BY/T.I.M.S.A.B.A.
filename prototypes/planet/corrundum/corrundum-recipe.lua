@@ -8,7 +8,6 @@ if mods[corrundum_mods] then
             name = corrundum_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_corrundum_air,
-            icon = data_fluid[corrundum_air].icon,
             order = a,
             energy_required = 8,
             ingredients = {},

@@ -7,7 +7,6 @@ if mods[muria_mods] then
             name = muria_air,
             category = angels_petrochem_air_filtering,
             subgroup = is_muria_air,
-            icon = data_fluid[muria_air].icon,
             order = a,
             energy_required = 8,
             ingredients = {},

@@ -722,6 +722,27 @@ if mods[panglia_mods] then
         }
     end
 
+    if mods[lignumis_mods] then
+        local cosmic_incubator_recipe_lignumis = "cosmic_incubator_recipe_lignumis"
+        data_recipe[cosmic_incubator_recipe_lignumis].localised_name = {"recipe-name.cosmic-incubator-recipe", {"space-location-name.lignumis"}}
+        data_recipe[cosmic_incubator_recipe_lignumis].subgroup = is_panglia_universe_moons
+        data_recipe[cosmic_incubator_recipe_lignumis].icons = GALAXY_I(galaxy_png, planet_lignumis)
+        data_recipe[cosmic_incubator_recipe_lignumis].order = data_planet[planet_lignumis].order
+        data_recipe[cosmic_incubator_recipe_lignumis].energy_required = 32
+        data_recipe[cosmic_incubator_recipe_lignumis].results =
+        {
+            {type = item, name = coal, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = stone, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_saphirite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_jivolite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_stiratite, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_crotinnium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_rubyte, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = ore_bobmonium, amount_min = 0, amount_max = 64, probability = 0.5},
+            {type = item, name = gold_ore_bob, amount_min = 0, amount_max = 64, probability = 0.5}
+        }
+    end
+
     -- BUILDING
     local matter_printer = "matter_printer"
     data_item[matter_printer].subgroup = is_panglia_building

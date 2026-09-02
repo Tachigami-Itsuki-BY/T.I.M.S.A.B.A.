@@ -367,12 +367,21 @@ for _, BUILD in pairs(mining_machines) do
 end
 data_item[burner_mining_drill].stack_size = 32
 data_item[burner_mining_drill].weight = 31250
-data_recipe[burner_mining_drill].ingredients =
-{
-    {type = item, name = iron_gear_wheel, amount = 4},
-    {type = item, name = stone_furnace,   amount = 1},
-    {type = item, name = iron_plate,      amount = 4}
-}
+if mods[lignumis_mods] then
+    --[[data_recipe[burner_mining_drill].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = stone_furnace,   amount = 1},
+        {type = item, name = iron_plate,      amount = 4}
+    }]]
+else
+    data_recipe[burner_mining_drill].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = stone_furnace,   amount = 1},
+        {type = item, name = iron_plate,      amount = 4}
+    }
+end
 data_mining_drill[burner_mining_drill].mining_speed = 0.5
 data_mining_drill[burner_mining_drill].energy_usage = 225 .. kW
 data_mining_drill[burner_mining_drill].energy_source.emissions_per_minute.pollution = 8
@@ -742,17 +751,17 @@ assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_u
 assembling_recipe(assembling_machine_5, nitinol_gear_wheel,         advanced_processing_unit, nitinol_pipe,            assembling_machine_4, nitinol_plate_bob,         nitinol_bearing)
 assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
 
-data_item[lab].subgroup = is_lab
-data_item[lab].order = a
-data_item[lab].stack_size = 32
-data_item[lab].weight = 31250
-data_recipe[lab].subgroup = is_lab
-data_recipe[lab].order = a
-data_recipe[lab].energy_required = 1
-data_recipe[lab].ingredients[1].amount = 8
-data_recipe[lab].ingredients[2].amount = 8
-data_lab[lab].subgroup = is_lab
-data_lab[lab].order = a
+data_item[lab_1].subgroup = is_lab
+data_item[lab_1].order = a
+data_item[lab_1].stack_size = 32
+data_item[lab_1].weight = 31250
+data_recipe[lab_1].subgroup = is_lab
+data_recipe[lab_1].order = a
+data_recipe[lab_1].energy_required = 1
+data_recipe[lab_1].ingredients[1].amount = 8
+data_recipe[lab_1].ingredients[2].amount = 8
+data_lab[lab_1].subgroup = is_lab
+data_lab[lab_1].order = a
 
 if mods[bobtech] then
     data_item[lab_2].subgroup = is_lab
@@ -829,6 +838,13 @@ if mods[bobtech] then
         if mods[pelagos_mods] then
             table.insert(data_lab[lab_alien].inputs, spoilage_science_pack)
         end
+        if mods[apia_carnova_mods] then
+            table.insert(data_lab[lab_alien].inputs, apicultural_science_pack)
+        end
+        if mods[lignumis_mods] then
+            --table.insert(data_lab[lab_alien].inputs, wood_science_pack)
+            --table.insert(data_lab[lab_alien].inputs, steam_science_pack)
+        end
         -- УБРАТЬ или ИЗМЕНИТЬ
         if mods[obsidiax_mods] then
             table.insert(data_lab[lab_alien].inputs, obsidian_cube_sp)
@@ -902,5 +918,5 @@ bobmods.lib.recipe.update_recycling_recipe
     assembling_machine_4,
     assembling_machine_5,
     assembling_machine_6,
-    lab
+    lab_1
 })

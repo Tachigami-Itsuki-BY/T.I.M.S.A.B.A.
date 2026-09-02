@@ -150,3 +150,9 @@ end
 if mods[terrapalus_mods] then
     data_autoplace_control[palusium_ore].order = data_planet[planet_terrapalus].order .. a
 end
+
+-- LIGNUMIS
+if mods[lignumis_mods] then
+    data_autoplace_control["lignumis_gold"].order = data_planet[planet_lignumis].order .. a
+    data_autoplace_control["lignumis_peat"].order = data_planet[planet_lignumis].order .. a_a
+end

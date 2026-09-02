@@ -178,10 +178,10 @@ if mods[castra_mods] then
     data_item[jammer_interference].stack_size = 200
 
     -- LOGISTICS
-    data_item[military_transport_belt_mods].subgroup = is_castra_logistics
+    data_item[military_transport_belt_mods].subgroup = is_castra_logistic
     data_item[military_transport_belt_mods].order = a
     data_item[military_transport_belt_mods].stack_size = 200
-    data_recipe[military_transport_belt_mods].subgroup = is_castra_logistics
+    data_recipe[military_transport_belt_mods].subgroup = is_castra_logistic
     data_recipe[military_transport_belt_mods].order = a
     data_recipe[military_transport_belt_mods].energy_required = 0.5
     data_recipe[military_transport_belt_mods].ingredients =
@@ -190,7 +190,7 @@ if mods[castra_mods] then
         {type = item, name = nickel_plate_bob, amount = 8},
         {type = fluid, name = fuel_oil_angels, amount = 60}
     }
-    data_transport_belt[military_transport_belt_mods].subgroup = is_castra_logistics
+    data_transport_belt[military_transport_belt_mods].subgroup = is_castra_logistic
     data_transport_belt[military_transport_belt_mods].order = a
     if settings.startup[setting_rebalance_belts_and_pipes].value then
         data_transport_belt[military_transport_belt_mods].speed = 6/60
@@ -198,11 +198,11 @@ if mods[castra_mods] then
     end
 
     local simulations = require("prototypes.factoriopedia-simulations")
-    data_item[military_underground_belt_mods].subgroup = is_castra_logistics
+    data_item[military_underground_belt_mods].subgroup = is_castra_logistic
     data_item[military_underground_belt_mods].order = b
     data_item[military_underground_belt_mods].stack_size = 32
     data_item[military_underground_belt_mods].weight = 31250
-    data_recipe[military_underground_belt_mods].subgroup = is_castra_logistics
+    data_recipe[military_underground_belt_mods].subgroup = is_castra_logistic
     data_recipe[military_underground_belt_mods].order = b
     data_recipe[military_underground_belt_mods].energy_required = 1
     data_recipe[military_underground_belt_mods].ingredients =
@@ -211,20 +211,20 @@ if mods[castra_mods] then
         {type = item, name = nickel_plate_bob, amount = 32},
         {type = fluid, name = fuel_oil_angels, amount = 240}
     }
-    data_underground_belt[military_underground_belt_mods].subgroup = is_castra_logistics
+    data_underground_belt[military_underground_belt_mods].subgroup = is_castra_logistic
     data_underground_belt[military_underground_belt_mods].order = b
     data_underground_belt[military_underground_belt_mods].max_distance = 24
     if settings.startup[setting_rebalance_belts_and_pipes].value then
         data_underground_belt[military_underground_belt_mods].speed = 6/60
         data_underground_belt[military_underground_belt_mods].animation_speed_coefficient = 31.25
     end
-    data_underground_belt[military_underground_belt_mods].factoriopedia_simulation = simulations.military_underground_belt_arig
+    data_underground_belt[military_underground_belt_mods].factoriopedia_simulation = simulations.factoriopedia_military_underground_belt_arig
 
-    data_item[military_splitter_mods].subgroup = is_castra_logistics
+    data_item[military_splitter_mods].subgroup = is_castra_logistic
     data_item[military_splitter_mods].order = c
     data_item[military_splitter_mods].stack_size = 16
     data_item[military_splitter_mods].weight = 62500
-    data_recipe[military_splitter_mods].subgroup = is_castra_logistics
+    data_recipe[military_splitter_mods].subgroup = is_castra_logistic
     data_recipe[military_splitter_mods].order = c
     data_recipe[military_splitter_mods].energy_required = 1
     data_recipe[military_splitter_mods].ingredients =
@@ -234,7 +234,7 @@ if mods[castra_mods] then
         {type = item, name = nickel_plate_bob, amount = 16},
         {type = fluid, name = fuel_oil_angels, amount = 120}
     }
-    data_splitter[military_splitter_mods].subgroup = is_castra_logistics
+    data_splitter[military_splitter_mods].subgroup = is_castra_logistic
     data_splitter[military_splitter_mods].order = c
     if settings.startup[setting_rebalance_belts_and_pipes].value then
         data_splitter[military_splitter_mods].speed = 6/60

@@ -279,6 +279,18 @@ if mods[pelagos_mods] then
     data_item[titanium_dust].icon = "__TIMSABA__/graphics/icons/pelagos/titanium-dust.png"
 end
 
+-- LIGNUMIS
+if mods[lignumis_mods] then
+    data_item[gold_pipe].icons = {{icon = "__lignumis-assets__/graphics/icons/" .. gold_pipe .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(4, gold_pipe, item)
+
+    data_item[gold_pipe_to_ground].icons = {{icon = "__lignumis-assets__/graphics/icons/" .. gold_pipe_to_ground .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(4, gold_pipe_to_ground, item)
+
+    data_item[gold_storage_tank].icons = {{icon = "__lignumis-assets__/graphics/icons/" .. gold_storage_tank .. ".png", icon_size = 64}}
+    reskins.lib.tiers.add_tier_labels_to_prototype_by_name(4, gold_storage_tank, item)
+end
+
 -- MODS
 if mods[clowns_nuclear] then
     data_item[uranium_235].icons = nil

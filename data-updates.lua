@@ -67,6 +67,7 @@ require("prototypes-update.planet.muluna.muluna-override")
 require("prototypes-update.planet.panglia.panglia-override")
 require("prototypes-update.planet.frozeta.frozeta-override")
 require("prototypes-update.planet.terrapalus.terrapalus-override")
+require("prototypes-update.planet.lignumis.lignumis-override")
 
 -- FINAL CIRCLE PLANETS
 require("prototypes-update.planet.shattered.shattered-override")
