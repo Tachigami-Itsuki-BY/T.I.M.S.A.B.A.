@@ -860,6 +860,7 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_stream[name .. _projectileFromRenaiTransportationPrimed] then data_stream[name .. _projectileFromRenaiTransportationPrimed] = nil end
         if data_turret[RTPrimerThrowerShooter_ .. name] then data_turret[RTPrimerThrowerShooter_ .. name] = nil end
         if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
+        if data_inserter[RTThrower_ .. name]then data_inserter[RTThrower_ .. name] = nil end
     end
 end
 

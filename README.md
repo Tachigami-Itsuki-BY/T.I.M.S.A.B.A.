@@ -325,6 +325,7 @@ This is more than just a modpack; it’s a complete "from scratch" overhaul desi
 > * **[🌐Muria](https://mods.factorio.com/mod/Muria)**
 > * **[🌐Pelagos](https://mods.factorio.com/mod/pelagos)**
 > * **[🌐Apia-Carnova planet system](https://mods.factorio.com/mod/apia)**
+> * **[🌐Lignumis](https://mods.factorio.com/mod/lignumis)**
 * *(More planets coming soon! Feel free to suggest a planet in our Telegram or Discord Server)*.
 # ⚙️**Optimization & Polish:**
 * **UPS Focused:** Maximum optimization for stable performance on large factories.

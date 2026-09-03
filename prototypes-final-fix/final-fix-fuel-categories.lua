@@ -150,18 +150,24 @@ if mods[obsidiax_mods] then
     data_assembling[foundry_ice_obsidiax].energy_source.fuel_categories = {"obsidian-cube"}
     data_assembling[foundry_ice_obsidiax .. "-mk2"].energy_source.fuel_categories = {"obsidian-cube"}
 
+    data_agricultural_tower["obsidiax-" .. agricultural_tower].energy_source.fuel_categories = {"obsidian-cube"}
+
     local obsidiax_building =
     {
         foundry_obsidiax,
         foundry_obsidiax .. "-mk2",
         foundry_ice_obsidiax,
-        foundry_ice_obsidiax .. "-mk2"
+        foundry_ice_obsidiax .. "-mk2",
+        "obsidiax-" .. agricultural_tower
     }
     if mods[crucible_mods] then
         for _, name in ipairs(obsidiax_building) do
             for i = 25, 2400, 25 do
                 if data_assembling[name .. __rigor_module_mod__ .. i] then
                     data_assembling[name .. __rigor_module_mod__ .. i].energy_source.fuel_categories = {"obsidian-cube"}
+                end
+                if data_agricultural_tower[name .. __rigor_module_mod__ .. i] then
+                    data_agricultural_tower[name .. __rigor_module_mod__ .. i].energy_source.fuel_categories = {"obsidian-cube"}
                 end
             end
         end
