@@ -1,7 +1,7 @@
 if mods[moshine_mods] then
     planet_discovery_moshine = "planet-discovery-moshine"
     tech_magnet_moshine = "moshine-tech-magnet"
-    local tech_monazite_processing_1 = "monazite-processing-1"
+    tech_monazite_processing_1 = "monazite-processing-1"
     tech_monazite_processing_2 = "monazite-processing-2"
     tech_monazite_processing_3 = "monazite-processing-3"
     tech_monazite_processing_4 = "monazite-processing-4"

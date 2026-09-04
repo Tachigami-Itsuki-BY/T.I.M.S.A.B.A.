@@ -133,7 +133,6 @@ local replacements_fluid_item =
 	[cellulose_acetate_mixture] = cellulose_triacetate,
 	[cellulose_acetate] = cellulose_diacetate
 }
--- Безопасная функция замены по индексу родительской таблицы
 local function replace_fluid_in_table(item_table)
     if not item_table then return end
 
@@ -145,7 +144,6 @@ local function replace_fluid_in_table(item_table)
             local old_amount = 1
             local is_dictionary = false
 
-            -- Четкое разделение форматов Factorio, чтобы имя никогда не стало таблицей
             if item.name then
                 current_name = item.name
                 old_amount = item.amount or 1
@@ -156,20 +154,16 @@ local function replace_fluid_in_table(item_table)
                 is_dictionary = false
             end
 
-            -- Если имя успешно определено как строка, проверяем замену
             if current_name and replacements_fluid_item[current_name] then
                 local target_replacement = replacements_fluid_item[current_name]
                 local new_amount = math.ceil(old_amount / 10)
 
                 if is_dictionary then
-                    -- Формат словаря: {name = "...", amount = ...}
                     item.name = target_replacement
                     item.type = "item"
                     item.amount = new_amount
                     item.temperature = nil
                 else
-                    -- Формат простого массива: {"...", ...}
-                    -- Полностью заменяем элемент на чистый массив строк/чисел без ссылок
                     item_table[i] = {target_replacement, new_amount}
                 end
             end
@@ -177,13 +171,11 @@ local function replace_fluid_in_table(item_table)
     end
 end
 
--- Шаг 1. Проходим по всем рецептам
 for _, recipe in pairs(data_recipe or {}) do
     replace_fluid_in_table(recipe.ingredients)
     replace_fluid_in_table(recipe.results)
 end
 
--- Шаг 2. Замена рецептов в эффектах технологий
 for _, technology in pairs(data_technology or {}) do
     for _, effect in pairs(technology.effects or {}) do
         if effect.type == unlock_recipe then
@@ -195,11 +187,19 @@ for _, technology in pairs(data_technology or {}) do
     end
 end
 
--- Шаг 3. Полное удаление старых жидкостей и рецептов
 for old_name, _ in pairs(replacements_fluid_item) do
-    data_fluid[old_name] = nil
     data_recipe[old_name] = nil
 end
+
+local delete_proto =
+{
+    polyethylene_angels,
+	phenol_angels,
+	bisphenol_a_angels,
+	cellulose_acetate_mixture,
+	cellulose_acetate
+}
+TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 
 -- REPLACEMENT RECIPE (RECIPE = ITEM)
 local platinum_ore_processing = "angels-platinum-ore-processing"

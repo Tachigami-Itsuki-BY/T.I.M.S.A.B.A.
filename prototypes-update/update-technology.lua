@@ -677,6 +677,12 @@ end
 -- ANGELS RESOURCE REFINING
 table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = stone})
 table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = crushed_stone_sorting_1})
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = ore_jivolite .. _sortiong_stone})
+    table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = ore_crotinnium .. _sortiong_stone})
+    table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = ore_rubyte .. _sortiong_stone})
+    table.insert(data_technology[tech_ore_crushing].effects, {type = unlock_recipe, recipe = ore_bobmonium .. _sortiong_stone})
+end
 
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = manganese_ore_recipe})
 table.insert(data_technology[tech_advanced_ore_refining_1].effects, {type = unlock_recipe, recipe = magnesium_ore_recipe})

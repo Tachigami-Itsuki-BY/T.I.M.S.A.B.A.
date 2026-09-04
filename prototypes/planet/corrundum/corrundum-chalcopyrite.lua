@@ -186,12 +186,13 @@ if mods[corrundum_mods] then
             },
             main_product = iron_ore
         },
+        -- SYNTHESIS
         {
             name = selenium_recipe,
             category = ore_sorting_6,
-            subgroup = is_chalcopyrite,
+            subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, molybdenite_purified, chalcopyrite_purified, selenium),
-            order = j,
+            order = b,
             allow_productivity = true,
             energy_required = 2,
             ingredients =

@@ -186,12 +186,13 @@ if mods[paracelsin_mods] then
             },
             main_product = copper_ore
         },
+        -- SYNTHESIS
         {
             name = antimony_ore_recipe,
             category = ore_sorting_6,
-            subgroup = is_tetrahedrite,
+            subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, tetrahedrite_purified, antimony_ore),
-            order = j,
+            order = a_p,
             allow_productivity = true,
             energy_required = 2,
             ingredients =

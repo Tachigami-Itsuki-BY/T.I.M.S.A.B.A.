@@ -1,4 +1,36 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.16.3
+Date: 04.09.2026
+  Features:
+    - [Lignumis] Added new recipes:
+        1. Saphirite Ore Sorting.
+        2. Jivolite Ore Sorting.
+        3. Stiratite Ore Sorting.
+        4. Crotinnium Ore Sorting.
+        5. Rubyte Ore Sorting.
+        6. Bobmonium Ore Sorting.
+        7. Wolframite Ore Sorting.
+        8. Branerite Ore Sorting.
+        9. Antimonite Ore Sorting.
+        10. Germanite Ore Sorting.
+        11. Monazite Ore Sorting.
+        12. Chalcopyrite Ore Sorting.
+        13. Millerite Ore Sorting.
+        14. Sphalerite Ore Sorting.
+        15. Tetrahedrite Ore Sorting.
+
+  Bugfixes:
+    - [Mods] Fixed compatibility bugs.
+
+  Balancing:
+    - [Lignumis] Some balance changes have been made to the Lignumis mod to make starting on this planet possible.
+
+  Modding:
+    - [Mods] Added "Cubium" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Planet Rubia" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Igrys" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+    - [Mods] Added "Rabbasca, the forgotten Moon" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+---------------------------------------------------------------------------------------------------
 Version: 1.16.2
 Date: 04.09.2026
   Bugfixes:
@@ -6,7 +38,6 @@ Date: 04.09.2026
 
   Modding:
     - [Mods] Removed "Bob's Greenhouse mod" mod from the incompatible.
-    - [Mods] Added "Bio Industries" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
 ---------------------------------------------------------------------------------------------------
 Version: 1.16.1
 Date: 03.09.2026
@@ -468,15 +499,11 @@ Date: 28.07.2026
     - [All] For modders: In the "TIMSABA-functions" file, which is located in the "lib" folder, you can find global functions that you can use if you write add-ons for "TIMSABA".
 
   Other:
-    - [All] Модпак переименован в Project T.I.M.S.A.B.A.
-
     - [All] Modpack renamed to Project T.I.M.S.A.B.A.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.4
 Date: 19.06.2026
   Bugfixes:
-    - [All] Исправлены ошибки совместимости с модами Bob's.
-
     - [All] Fixed compatibility bugs with Bob's mods.
 
   Balancing:
@@ -594,8 +621,6 @@ Date: 11.06.2026
 Version: 1.4.1
 Date: 10.06.2026
   Bugfixes:
-    - [All] Исправлена ошибка, из-за которой в ингредиентах рецепта Цинковых Слитков Т1 вместо Магниевых Слитков использовались Марганцевые Слитки.
-
     - [All] Fixed a bug where the T1 Zinc Ingots recipe ingredients included Manganese Ingots instead of Magnesium Ingots.
 
   Locale:
@@ -653,8 +678,6 @@ Date: 07.06.2026
     - [All] Renamed item and recipe: Advanced Circuit → Advanced Electronic Circuit.
 
   Optimizations:
-    - [All] Добавлена функция для автоматического упорядочивания рецептов.
-
     - [All] Added a function for automatic organizing recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.0
@@ -1331,8 +1354,8 @@ Date: 10.05.2026
         1. Tungsten Plate → Niobium-Titanium Plate.
         2. Platinum Plate → Ferroniobium Bearing.
         3. Cobalt-Steel Plate → Niobium-Tungsten-Molybdenum Gear Wheel.
-        4. Added Niobium-Titanium Wire (256 units и 128 units)
-        5. Added Semiconductor (256 units и 128 units)
+        4. Added Niobium-Titanium Wire (256 units and 128 units)
+        5. Added Semiconductor (256 units and 128 units)
     - Added an ingredient in the Fusion Power Cell recipe: Tungsten Plate (8 units)
     - Adjusted ingredients in the Railgun recipe:
         1. Tungsten Plate (8 units) → Niobium-Tungsten-Molybdenum Plate (4 units)

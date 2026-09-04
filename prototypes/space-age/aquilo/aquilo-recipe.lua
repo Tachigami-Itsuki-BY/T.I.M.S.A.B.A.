@@ -422,9 +422,9 @@ TIMSABA.functions.create_recipes
     {
         name = arsenic_recipe,
         category = ore_sorting_6,
-        subgroup = is_antimonite,
+        subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, germanite_purified, arsenic),
-        order = j,
+        order = b_a,
         allow_productivity = true,
         energy_required = 2,
         ingredients =

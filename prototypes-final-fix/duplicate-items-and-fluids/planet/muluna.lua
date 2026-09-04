@@ -48,7 +48,7 @@ if mods[muluna_mods] then
 	local alumina_crushing = "alumina-crushing"
 	local aluminum_crushing = "aluminum-crushing"
 	local vacuum_heating = "muluna-vacuum-heating"
-	local replacements_2 =
+	local replacements =
 	{
 		[regolith_digging] = lunar_regolith,
 		[alumina_crushing] = alumina_crushed,
@@ -59,7 +59,7 @@ if mods[muluna_mods] then
 		if technology.effects then
 			for _, effect in pairs(technology.effects) do
 				if effect.type == unlock_recipe or (effect.type == change_recipe_productivity and effect.recipe == regolith_digging) then
-					local replace = replacements_2[effect.recipe]
+					local replace = replacements[effect.recipe]
 					if replace then
 						effect.recipe = replace
 					end

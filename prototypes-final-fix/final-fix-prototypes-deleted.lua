@@ -1,3 +1,10 @@
+local bob_air_pump_1 = "bob-air-pump"
+local replace_prototypes =
+{
+    [bob_air_pump_1] = air_filter_1,
+}
+TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
+
 local delete_prototypes =
 {
     -- LOGISTICS
@@ -57,7 +64,7 @@ local delete_prototypes =
     "bob-topup-valve",
     "bob-void-pump",
 
-    "bob-air-pump", "bob-air-compressor-1", "bob-nitrogen-processing", "bob-void-fluid",
+    bob_air_pump_1, "bob-air-compressor-1", "bob-nitrogen-processing", "bob-void-fluid",
     "bob-air-pump-2", "bob-air-compressor-2",
     "bob-air-pump-3", "bob-air-compressor-3",
     "bob-air-pump-4", "bob-air-compressor-4",
@@ -66,6 +73,19 @@ local delete_prototypes =
     "bob-water-pump-2", "bob-water-bore-2",
     "bob-water-pump-3", "bob-water-bore-3",
     "bob-water-pump-4", "bob-water-bore-4",
+
+    "bob-fluid-furnace",
+    "bob-fluid-chemical-furnace",
+    "bob-fluid-mixing-furnace",
+
+    "bob-water-miner-1",
+    "bob-water-miner-2",
+    "bob-water-miner-3",
+    "bob-water-miner-4",
+
+    "bob-electronics-machine-1",
+    "bob-electronics-machine-2",
+    "bob-electronics-machine-3",
 
     -- COMBAT
     "bob-distractor-artillery-shell",
@@ -94,8 +114,6 @@ TIMSABA.functions.delete_prototypes(delete_prototypes)
 data_roboport["bob-logistic-zone-interface"] = nil
 
 data_gate["bob-reinforced-gate"] = nil
-
-data_radar["bob-artifact-radar"] = nil
 
 bobmods.lib.recipe.replace_ingredient("bob-player-frame-2", "bob-titanium-chest", "steel-chest")
 bobmods.lib.recipe.update_recycling_recipe({"bob-player-frame-2"})
@@ -149,10 +167,8 @@ data_recipe["angels-thermal-water-filtering-1"] = nil
 data_recipe["angels-thermal-water-filtering-2"] = nil
 
 -- ANGELS BIOPROCESSING
--- Таблица, куда мы соберем точные имена всего, от чего нужно избавиться
 local delete_prototypes = {}
 
--- 1. Собираем рецепты-пустоты (void рецепты Ангела)
 local prefixes =
 {
     "angels%-water%-void",
@@ -168,34 +184,35 @@ for recipe_name, _ in pairs(data_recipe) do
     end
 end
 
--- ============================================================================
--- СЛУЖЕБНАЯ ФУНКЦИЯ: Замена dormant на обычную версию в таблицах ингредиентов/результатов
--- ============================================================================
 local function replace_dormant_in_table(tbl)
     if not tbl then return end
     for i = 1, #tbl do
         local entry = tbl[i]
         if type(entry) == "string" then
-            -- Формат: "item-name"
-            if string.find(entry, "dormant") then
-                -- Убираем "-dormant" или "dormant-" из имени
+            if string.find(entry, "dormant")
+            and entry ~= "dormant-microcube"
+            and entry ~= "inverted-dormant-microcube"
+            then
                 local new_name = string.gsub(entry, "%-?dormant%-?", "")
                 tbl[i] = new_name
             end
         elseif type(entry) == "table" then
-            -- Формат: {name = "item-name", amount = X} или {"item-name", X}
-            if entry.name and string.find(entry.name, "dormant") then
+            if entry.name and string.find(entry.name, "dormant")
+            and entry.name ~= "dormant-microcube"
+            and entry.name ~= "inverted-dormant-microcube"
+            then
                 entry.name = string.gsub(entry.name, "%-?dormant%-?", "")
-            elseif entry[1] and type(entry[1]) == "string" and string.find(entry[1], "dormant") then
+            elseif entry[1] and type(entry[1]) == "string" and string.find(entry[1], "dormant")
+            and entry.name ~= "dormant-microcube"
+            and entry.name ~= "inverted-dormant-microcube"
+            then
                 entry[1] = string.gsub(entry[1], "%-?dormant%-?", "")
             end
         end
     end
 end
 
--- 2. Сначала проходим по ВСЕМ рецептам игры и заменяем dormant-ингредиенты на обычные
 for recipe_name, recipe in pairs(data_recipe) do
-    -- Проверяем стандартные ингредиенты и результаты
     replace_dormant_in_table(recipe.ingredients)
     replace_dormant_in_table(recipe.results)
 
@@ -204,27 +221,23 @@ for recipe_name, recipe in pairs(data_recipe) do
     end
 end
 
--- 2.1 Теперь, когда рецепты спасены, собираем dormant-предметы на удаление
--- Используем вашу таблицу data_item (или data.raw.item для надежности)
 for item_name, _ in pairs(data_item) do
-    if string.find(item_name, "dormant") then
+    if string.find(item_name, "dormant")
+    and item_name ~= "dormant-microcube"
+    and item_name ~= "inverted-dormant-microcube"
+    then
         table.insert(delete_prototypes, item_name)
     end
 end
 
--- 3. Собираем специфичные рецепты переработки дормантов
 for recipe_name, _ in pairs(data_recipe) do
     if string.find(recipe_name, "dormant%-recycling") then
         table.insert(delete_prototypes, recipe_name)
-    -- Проверка на панглию
     elseif mods[panglia_mods] and string.find(recipe_name, "dormant%-panglia_crushing") then
         table.insert(delete_prototypes, recipe_name)
     end
 end
 
--- 4. ЗАПУСКАЕМ ВАШУ УНИВЕРСАЛЬНУЮ ФУНКЦИЮ
--- Теперь она сотрет только сами dormant-предметы, а рецепты вроде carna-spire-energy-core 
--- продолжат жить, так как их ингредиент автоматически переписался на 'carna-spire-energy-core'
 TIMSABA.functions.delete_prototypes(delete_prototypes)
 
 -- MODS
@@ -240,33 +253,26 @@ if mods[clowns_nuclear] then
 end
 
 -- GLOBAL
--- Кэшируем функции для максимального быстродействия в Factorio
 local sub = string.sub
 local find = string.find
 local remove = table.remove
 
--- Универсальная и безопасная функция проверки прототипа
 local function prototype_exists(product)
     if not product then return false end
 
-    -- Строгий формат TIMSABA: читаем поля напрямую
     local p_name = product.name
     local p_type = product.type
 
-    -- Защита от кривых таблиц сторонних модов
     if not p_name or type(p_name) ~= "string" then return false end
 
-    -- Если в имени предмета есть "par-", он гарантированно существует
     if find(p_name, "par%-") then
         return true
     end
 
-    -- Проверка жидкости
     if p_type == "fluid" then
         return data_fluid[p_name] ~= nil
     end
 
-    -- Проверка всех типов предметов в Factorio 2.0
     return data_item[p_name] ~= nil
     or data_capsule[p_name] ~= nil
     or data_tool[p_name] ~= nil
@@ -281,18 +287,14 @@ local function prototype_exists(product)
     or data_SP_starter_pack[p_name] ~= nil
 end
 
--- Он найдет все "сломанные" ссылки в технологиях, которые остались от удаленных рецептов
 for tech_name, technology in pairs(data_technology) do
     if technology.effects then
         for i = #technology.effects, 1, -1 do
             local effect = technology.effects[i]
-            -- Проверяем эффекты открытия рецептов
             if effect.type == unlock_recipe then
-                -- Если рецепта с таким именем больше НЕТ в игре, удаляем этот эффект из технологии
                 if not data_recipe[effect.recipe] then
                     table.remove(technology.effects, i)
                 end
-            -- Проверяем эффекты продуктивности рецептов
             elseif effect.type == change_recipe_productivity then
                 if not data_recipe[effect.recipe] then
                     table.remove(technology.effects, i)
@@ -302,13 +304,10 @@ for tech_name, technology in pairs(data_technology) do
     end
 end
 
--- Очередь на удаление (хеш-таблица для мгновенного поиска O(1))
 local to_delete = {}
 
--- Один цикл для обработки всех рецептов игры
 for recipe_name, recipe in pairs(data_recipe) do
 
-    -- Условие пропуска рецепта (безопасные префиксы и суффиксы)
     local is_protected = sub(recipe_name, 1, 4) == "par-"
     or sub(recipe_name, -10) == "-preserved"
     or sub(recipe_name, -15) == "-depreservation"
@@ -317,7 +316,6 @@ for recipe_name, recipe in pairs(data_recipe) do
     if not is_protected then
         local should_delete = false
 
-        -- 1. Проверяем ингредиенты
         if recipe.ingredients then
             for i = 1, #recipe.ingredients do
                 if not prototype_exists(recipe.ingredients[i]) then
@@ -327,7 +325,6 @@ for recipe_name, recipe in pairs(data_recipe) do
             end
         end
 
-        -- 2. Проверяем выходы рецепта (результаты)
         if not should_delete and recipe.results then
             for i = 1, #recipe.results do
                 if not prototype_exists(recipe.results[i]) then
@@ -337,16 +334,13 @@ for recipe_name, recipe in pairs(data_recipe) do
             end
         end
 
-        -- Если нашли "призрака" — маркируем в таблице
         if should_delete then
             to_delete[recipe_name] = true
         end
     end
 end
 
--- Безопасноая очистка технологий
 if next(to_delete) then
-    -- 1. Скрываем рецепты
     for recipe_name in pairs(to_delete) do
         local recipe = data_recipe[recipe_name]
         if recipe then
@@ -355,7 +349,6 @@ if next(to_delete) then
         end
     end
 
-    -- 2. Вырезаем эффекты из технологий
     for tech_name, technology in pairs(data_technology) do
         if technology.effects then
             for i = #technology.effects, 1, -1 do
@@ -371,14 +364,11 @@ if next(to_delete) then
     end
 end
 
--- Он найдет все "сломанные" ссылки на технологии в prerequisites (предварительные требования), которые остались от удаленных технологий
 for tech_name, technology in pairs(data_technology) do
     if technology.prerequisites then
-        -- Перебираем массив с конца, чтобы корректно удалять элементы через table.remove
         for i = #technology.prerequisites, 1, -1 do
             local prereq_name = technology.prerequisites[i]
 
-            -- Если технологии с таким именем больше НЕТ в игре, удаляем её из списка требований этой технологии
             if not data_technology[prereq_name] then
                 table.remove(technology.prerequisites, i)
             end

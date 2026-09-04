@@ -1,4 +1,8 @@
 local fibreglass_board = "bob-fibreglass-board"
+local sour_gas_bob = "bob-sour-gas"
+local water_lithia_bob = "bob-lithia-water"
+local water_pure_bob = "bob-pure-water"
+local hydrogen_peroxide_bob = "bob-hydrogen-peroxide"
 local lead_oxide_bob = "bob-lead-oxide"
 local silicon_powder_bob = "bob-silicon-powder"
 local alumina_bob = "bob-alumina"
@@ -12,10 +16,14 @@ local steam_inserter_bob = "bob-steam-inserter"
 local burner_assembling_machine_bob = "bob-burner-assembling-machine"
 local steam_assembling_machine_bob = "bob-steam-assembling-machine"
 local steam_mining_drill = "bob-steam-mining-drill"
+local electric_chemical_furnace_1 = "bob-electric-chemical-furnace"
 local replace_prototypes =
 {
 	[fibreglass_board] = glass_fiber_board,
     [sour_gas_bob] = hydrogen_sulfide_angels,
+    [water_lithia_bob] = water_thermal_angels,
+    [water_pure_bob] = water_purified_angels,
+    [hydrogen_peroxide_bob] = hydrogen_peroxide,
 	[lead_oxide_bob] = lead_oxide_II,
 	[silicon_powder_bob] = silicon_powder,
 	[alumina_bob] = aluminium_oxide,
@@ -27,7 +35,8 @@ local replace_prototypes =
 	[gold_cable_bob] = gold_cable,
 	-- FOR mods
     [steam_inserter_bob] = T0_inserter,
-	[steam_mining_drill] = burner_mining_drill
+	[steam_mining_drill] = burner_mining_drill,
+    [electric_chemical_furnace_1] = electric_mixing_furnace_1
 }
 if mods[lignumis_mods] then
     replace_prototypes[burner_assembling_machine_bob] = "burner-assembling-machine"
@@ -46,6 +55,48 @@ local delete_proto =
 }
 TIMSABA.functions.delete_duplicated_items(delete_proto)
 
+local ammoniated_brine = "bob-ammoniated-brine"
+local sulfuric_nitric_acid = "bob-sulfuric-nitric-acid"
+local delete_proto =
+{
+    sour_gas_bob,
+    water_lithia_bob,
+    water_pure_bob,
+    "bob-hydrogen",
+    "bob-oxygen",
+    "bob-nitrogen",
+    "bob-chlorine",
+    "bob-deuterium",
+    "bob-liquid-air",
+    "bob-hydrogen-chloride",
+    "bob-sulfur-dioxide",
+    "bob-hydrogen-sulfide",
+    "bob-nitrogen-dioxide",
+    "bob-nitric-acid",
+    "bob-tungstic-acid",
+    "bob-ferric-chloride-solution",
+    "bob-heavy-water",
+    "bob-dinitrogen-tetroxide",
+    "bob-hydrazine",
+    hydrogen_peroxide_bob,
+    "bob-nitric-oxide",
+    "bob-carbon-dioxide",
+    "bob-brine",
+    ammoniated_brine,
+    sulfuric_nitric_acid,
+    "bob-glycerol"
+}
+TIMSABA.functions.delete_duplicated_fluids(delete_proto)
+data_recipe[ammoniated_brine] = nil
+data_recipe[sulfuric_nitric_acid] = nil
+
+if data_recipe[yeet_item_ .. nitroglycerin_bob .. _barrel] then data_recipe[yeet_item_ .. nitroglycerin_bob .. _barrel] = nil end
+
+if data_recipe[yeet_item_ .. yellow_fluid .. _barrel] then data_recipe[yeet_item_ .. yellow_fluid .. _barrel] = nil end
+if data_recipe[yeet_item_ .. purple_fluid .. _barrel] then data_recipe[yeet_item_ .. purple_fluid .. _barrel] = nil end
+if data_recipe[yeet_item_ .. green_fluid .. _barrel] then data_recipe[yeet_item_ .. green_fluid .. _barrel] = nil end
+if data_recipe[yeet_item_ .. red_fluid .. _barrel] then data_recipe[yeet_item_ .. red_fluid .. _barrel] = nil end
+
 local delete_prototypes =
 {
     steam_inserter_bob,
@@ -54,7 +105,7 @@ local delete_prototypes =
     steam_mining_drill,
     "bob-stone-chemical-furnace",
     "bob-steel-chemical-furnace",
-    "bob-electric-chemical-furnace",
+    electric_chemical_furnace_1,
     "bob-electrolyser",
     "bob-distillery",
     "bob-empty-nuclear-fuel-cell",
@@ -91,16 +142,6 @@ local delete_prototypes =
     tin_cable_bob,
     gold_cable_bob,
     "bob-solder-alloy-lead",
-    "bob-fluid-furnace",
-    "bob-fluid-chemical-furnace",
-    "bob-fluid-mixing-furnace",
-    "bob-water-miner-1",
-    "bob-water-miner-2",
-    "bob-water-miner-3",
-    "bob-water-miner-4",
-    "bob-electronics-machine-1",
-    "bob-electronics-machine-2",
-    "bob-electronics-machine-3",
     "bob-god-module",
     "bob-god-module" .. _productivity,
     "bob-god-module-quality",

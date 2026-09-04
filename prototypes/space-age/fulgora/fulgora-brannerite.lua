@@ -197,12 +197,13 @@ TIMSABA.functions.create_recipes
         },
         main_product = holmium_ore
     },
+    -- SYNTHESIS
     {
         name = holmium_ore_recipe,
         category = ore_sorting_6,
-        subgroup = is_brannerite,
+        subgroup = is_ore_sorting_advanced_3,
         icons = AR_FOUR_I(hybride_catalyst, brannerite_purified, powellite_purified, holmium_ore),
-        order = j,
+        order = a_m,
         allow_productivity = true,
         energy_required = 2,
         ingredients =

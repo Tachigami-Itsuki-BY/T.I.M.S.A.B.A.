@@ -968,4 +968,9 @@ if mods["Bio_Industries_2"] then
     if mods[lignumis_mods] then
         data_construction_robot["basic-construction-robot-gold"].next_upgrade = nil
     end
+
+    if mods[linox_mods] then
+        data_logistic_robot["linox_samarium-" .. logistic_robot_1].next_upgrade = nil
+        data_construction_robot["linox_samarium-" .. construction_robot_1].next_upgrade = nil
+    end
 end

@@ -13,15 +13,22 @@ if mods[vesta_mods] then
     }
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-	data_fluid[hydrogen_vesta] = nil
-    data_fluid[oxygen_vesta] = nil
-    data_fluid[nitrogen_vesta] = nil
-    data_fluid[carbon_dioxide_vesta] = nil
-    data_fluid[carbon_monoxide_vesta] = nil
-    data_fluid[hydrogen_sulfide_vesta] = nil
-    data_fluid[methane_vesta] = nil
-	data_fluid[deuterium_mods] = nil
-	data_fluid[tritium_mods] = nil
+	local delete_proto =
+	{
+		hydrogen_vesta,
+		oxygen_vesta,
+		nitrogen_vesta,
+		nitrogen_vesta,
+		carbon_dioxide_vesta,
+		carbon_monoxide_vesta,
+		hydrogen_sulfide_vesta,
+		methane_vesta,
+		deuterium_mods,
+		tritium_mods
+	}
+    TIMSABA.functions.delete_duplicated_fluids(delete_proto)
+
+	if data_recipe[yeet_item_ .. supermagnetic_vesta .. _barrel] then data_recipe[yeet_item_ .. supermagnetic_vesta .. _barrel] = nil end
 
 	local fusion_construction_robot = "fusion-construction-robot"
 	local fusion_logistic_robot = "fusion-logistic-robot"

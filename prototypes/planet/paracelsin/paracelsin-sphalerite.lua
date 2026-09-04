@@ -186,12 +186,13 @@ if mods[paracelsin_mods] then
             },
             main_product = zinc_ore_bob
         },
+        -- SYNTHESIS
         {
             name = germanium_ore_recipe,
             category = ore_sorting_6,
-            subgroup = is_sphalerite,
+            subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, germanite_purified, sphalerite_purified, germanium_ore),
-            order = j,
+            order = a_o,
             allow_productivity = true,
             energy_required = 2,
             ingredients =

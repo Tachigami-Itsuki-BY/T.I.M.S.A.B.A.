@@ -1,15 +1,21 @@
 for name in pairs(data_item) do
-    if (string.find(name, "%-barrel$") or string.find(name, "^barrel%-")) and name ~= "barrel" and name ~= "titanium-barrel" then
+    if string.find(name, "^yeet%-") and string.find(name, "%-barrel$") then
+        --
+    elseif (string.find(name, "%-barrel$") or string.find(name, "^barrel%-")) and name ~= "barrel" and name ~= "titanium-barrel" then
         data_item[name] = nil
     end
 end
 
 for name in pairs(data_recipe) do
-    if (string.find(name, "%-barrel$")
+    if string.find(name, "^yeet%-") and string.find(name, "%-barrel$") then
+        --
+    elseif (string.find(name, "%-barrel$")
     or string.find(name, "^barrel%-")
     or string.find(name, "%-barrel%-recycling$")
     or string.find(name, "%-barrel%-panglia_crushing$")
-    or string.find(name, "%-barrel%-incineration$")) and name ~= "barrel" and name ~= "titanium-barrel" then
+    or string.find(name, "%-barrel%-incineration$"))
+    and name ~= "barrel" and name ~= "titanium-barrel"
+    then
         data_recipe[name] = nil
     end
 end
@@ -489,4 +495,16 @@ if mods[pelagos_mods] then
     end
 
     process_fluids(data_fluid, get_technology(tech_titanium_barrels), get_item(titanium_barrel))
+end
+
+for recipe_name, recipe in pairs(data_recipe) do
+    if recipe_name:find("^yeet%-item%-") then
+        local original_item_name = recipe_name:sub(11)
+
+        if original_item_name:find("%-barrel$") then
+            if not data_item[original_item_name] then
+                data_recipe[recipe_name] = nil
+            end
+        end
+    end
 end

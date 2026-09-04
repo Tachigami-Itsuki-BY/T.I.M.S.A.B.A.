@@ -12,6 +12,7 @@ if mods[lignumis_mods] then
     })
 
     is_lignumis_recipe = "is-lignumis-recipe"
+    is_sortiong_ore = "is-sortiong-ore"
     is_lignumis_logistic = "is-lignumis-logistic"
     is_lignumis_mining = "is-lignumis-mining"
     is_lignumis_building = "is-lignumis-building"
@@ -19,6 +20,7 @@ if mods[lignumis_mods] then
     TIMSABA.functions.create_subgroups(ig_lignumis,
     {
         {name = is_lignumis_recipe,   order = a},
+        {name = is_sortiong_ore,      order = a_a},
         {name = is_lignumis_logistic, order = b},
         {name = is_lignumis_mining,   order = c},
         {name = is_lignumis_building, order = d},

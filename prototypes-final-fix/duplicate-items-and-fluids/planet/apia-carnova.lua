@@ -11,8 +11,8 @@ if mods[apia_carnova_mods] then
     local delete_proto = {phosphorus}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
-    data_fluid[phosphoric_acid] = nil
-    data_fluid[glycerine] = nil
+    local delete_proto = {phosphoric_acid, glycerine}
+    TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 
     local delete_prototypes =
 	{

@@ -118,10 +118,10 @@ require("prototypes.space-age.aquilo.aquilo-technology")
 require("prototypes.TIMSABA.new-modules")
 
 -- FIRST CIRCLE PLANETS
--- NAUVIS
--- VULCANUS
--- GLEBA
--- FULGORA
+-- nauvis
+-- vulcanus
+-- gleba
+-- fulgora
 
 -- SECOND CIRCLE PLANETS
 require("prototypes.planet.moshine.moshine-groups")
@@ -172,6 +172,7 @@ require("prototypes.planet.apia-carnova.apia-carnova-groups")
 require("prototypes.planet.apia-carnova.apia-carnova-recipe")
 
 -- THIRD CIRCLE PLANETS
+-- aquilo
 require("prototypes.planet.paracelsin.paracelsin-groups")
 require("prototypes.planet.paracelsin.paracelsin-sphalerite")
 require("prototypes.planet.paracelsin.paracelsin-tetrahedrite")
@@ -210,6 +211,7 @@ require("prototypes.planet.shattered.shattered-groups")
 require("prototypes.planet.shattered.shattered-recipe")
 require("prototypes.planet.shattered.shattered-technology")
 
+-- ???
 --require("prototypes.planet.rubia.rubia-groups")
 --require("prototypes.planet.rubia.rubia-recipe")
 --require("prototypes.planet.rubia.rubia-technology")

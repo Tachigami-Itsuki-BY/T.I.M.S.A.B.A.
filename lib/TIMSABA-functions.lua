@@ -806,7 +806,7 @@ function TIMSABA.functions.delete_prototypes(replacements)
     local proto_types =
     {
         item, capsule, tool, fluid, recipe, technology,
-        ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, roboport_eq, land_mine,
+        ammo, wall, item_entity, ammo_turret, fluid_turret, energy_shield_eq, generator_eq, roboport_eq, land_mine, radar,
         car, locomotive, wagon_cargo, wagon_fluid, unit,
         item_module, beacon,
         assembling_machine, furnace, mining_drill, reactor, boiler, valve, thruster, asteroid_collector, rocket_silo, solar_panel, burner_generator,
@@ -822,8 +822,10 @@ function TIMSABA.functions.delete_prototypes(replacements)
                 for i = 25, 2400, 25 do
                     if data.raw[proto_type][name .. __rigor_module_mod__ .. i] then data.raw[proto_type][name .. __rigor_module_mod__ .. i] = nil end
                 end
+                if data.raw[proto_type][harene_infused_ .. name] then data.raw[proto_type][harene_infused_ .. name] = nil end
             end
         end
+        if data_item[RTThrower_ .. name .. _Item] then data_item[RTThrower_ .. name .. _Item] = nil end
         if data_recipe[name .. _recycling] then data_recipe[name .. _recycling] = nil end
         if data_recipe[name .. _barrel_recycling] then data_recipe[name .. _barrel_recycling] = nil end
         if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
@@ -840,13 +842,26 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
         if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
         if data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] then data_recipe[item_ .. tiny_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[yeet_ammo_ .. name] then data_recipe[yeet_ammo_ .. name] = nil end
+        if data_recipe[yeet_capsule_ .. name] then data_recipe[yeet_capsule_ .. name] = nil end
+        if data_recipe[yeet_item_ .. name] then data_recipe[yeet_item_ .. name] = nil end
+        if data_recipe[yeet_item_entity_ .. name] then data_recipe[yeet_item_entity_ .. name] = nil end
+        if data_recipe[yeet_module_ .. name] then data_recipe[yeet_module_ .. name] = nil end
+        if data_recipe[yeet_repair_tool_ .. name] then data_recipe[yeet_repair_tool_ .. name] = nil end
+        if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
+        if data_recipe[harene_infused_ .. name .. _recycling] then data_recipe[harene_infused_ .. name .. _recycling] = nil end
+        if data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] then data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
+        if data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] then data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil end
+        if data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] then data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil end
         if data_inserter[name .. _panglia_fast_version] then data_inserter[name .. _panglia_fast_version] = nil end
+        if data_inserter[harene_infused_ .. name .. _panglia_fast_version] then data_inserter[harene_infused_ .. name .. _panglia_fast_version] = nil end
+        if data_inserter[RTThrower_ .. name] then data_inserter[RTThrower_ .. name] = nil end
+        if data_inserter[RTThrower_ .. name .. _panglia_fast_version] then data_inserter[RTThrower_ .. name .. _panglia_fast_version] = nil end
         for i = 1, 99 do
-            if data_accumulator[sp_ .. i .. "-" .. name] then data_accumulator[sp_ .. i .. "-" .. name] = nil end
             if data_solar_panel[sp_ .. i .. "-" .. name] then data_solar_panel[sp_ .. i .. "-" .. name] = nil end
-        end
-        for i = 1, 99 do
             if data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] then data_solar_panel[sp_ .. i .. "-" .. tiny_ .. name] = nil end
+            if data_accumulator[sp_ .. i .. "-" .. name] then data_accumulator[sp_ .. i .. "-" .. name] = nil end
         end
         for _, container_type in ipairs({container, logistic_container}) do
             if data.raw[container_type] then
@@ -857,14 +872,9 @@ function TIMSABA.functions.delete_prototypes(replacements)
                 end
             end
         end
+        if data_car[rubia_auto_variant_ .. name] then data_car[rubia_auto_variant_ .. name] = nil end
         if data_stream[name .. _projectileFromRenaiTransportationPrimed] then data_stream[name .. _projectileFromRenaiTransportationPrimed] = nil end
         if data_turret[RTPrimerThrowerShooter_ .. name] then data_turret[RTPrimerThrowerShooter_ .. name] = nil end
-        if data_item[RTThrower_ .. name .. _Item] then data_item[RTThrower_ .. name .. _Item] = nil end
-        if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
-        if data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] then data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil end
-        if data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] then data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil end
-        if data_inserter[RTThrower_ .. name] then data_inserter[RTThrower_ .. name] = nil end
-        if data_inserter[RTThrower_ .. name .. _panglia_fast_version] then data_inserter[RTThrower_ .. name .. _panglia_fast_version] = nil end
     end
 end
 
@@ -873,6 +883,15 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
         data_item[name] = nil
         data_recipe[name .. _recycling] = nil
         if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
+        if data_recipe[yeet_item_ .. name] then data_recipe[yeet_item_ .. name] = nil end
+    end
+end
+
+function TIMSABA.functions.delete_duplicated_fluids(replacements)
+    for _, name in ipairs(replacements or {}) do
+        data_fluid[name] = nil
+        if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
+        if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
     end
 end
 
