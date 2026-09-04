@@ -7,6 +7,7 @@ data_recipe[burner_ore_crusher].subgroup = is_ore_crusher
 data_recipe[burner_ore_crusher].order = a
 data_recipe[burner_ore_crusher].energy_required = 4
 if mods[lignumis_mods] then
+    data_recipe[burner_ore_crusher].ingredients[1].amount = 4
     data_recipe[burner_ore_crusher].ingredients[3].name = wooden_gear_wheel
     data_recipe[burner_ore_crusher].ingredients[3].amount = 4
 else
@@ -206,7 +207,11 @@ local function ore_sorting_facility_recipe(name, gear_wheel, circuit, brick, pla
     end
     data_recipe[name].ingredients = ingredients
 end
-ore_sorting_facility_recipe(ore_sorting_facility_1, iron_gear_wheel, basic_circuit_board, stone_brick, iron_plate)
+if mods[lignumis_mods] then
+    ore_sorting_facility_recipe(ore_sorting_facility_1, iron_gear_wheel, basic_circuit_board, stone_brick, iron_plate, burner_ore_sorting_facility)
+else
+    ore_sorting_facility_recipe(ore_sorting_facility_1, iron_gear_wheel, basic_circuit_board, stone_brick, iron_plate)
+end
 ore_sorting_facility_recipe(ore_sorting_facility_2, steel_gear_wheel, electronic_circuit, clay_brick, steel_plate, ore_sorting_facility_1)
 ore_sorting_facility_recipe(ore_sorting_facility_3, brass_gear_wheel, advanced_circuit, concrete_brick, aluminium_plate_bob, ore_sorting_facility_2)
 ore_sorting_facility_recipe(ore_sorting_facility_4, titanium_gear_wheel, processing_unit, reinforced_concrete_brick, titanium_plate_bob, ore_sorting_facility_3)

@@ -1,5 +1,6 @@
 if mods[lignumis_mods] then
     local gold_plate_lignumis = "gold-plate-lignumis"
+    seed_extractor_1_lignumis = seed_extractor_1 .. "-lignumis"
     TIMSABA.functions.create_recipes
     ({
         {
@@ -14,6 +15,24 @@ if mods[lignumis_mods] then
             ingredients = {{type = item, name = gold_ore_bob, amount = 1}},
             results = {{type = item, name = gold_plate_bob, amount = 1}},
             main_product = gold_plate_bob,
+            surface_conditions = {{property = pressure, min = 900, max = 900}}
+        },
+        {
+            localised_name = {"entity-name." .. seed_extractor_1},
+            name = seed_extractor_1_lignumis,
+            category = crafting,
+            subgroup = is_lignumis_building,
+            icons = BUILDING_R_IS(seed_extractor_1, planet_lignumis),
+            order = j,
+            ingredients =
+            {
+                {type = item, name = basic_circuit_board, amount = 4},
+                {type = item, name = wooden_gear_wheel, amount = 8},
+                {type = item, name = lumber, amount = 4},
+                {type = item, name = stone_brick, amount = 4}
+            },
+            results = {{type = item, name = seed_extractor_1, amount = 1}},
+            main_product = seed_extractor_1,
             surface_conditions = {{property = pressure, min = 900, max = 900}}
         }
     })

@@ -88,10 +88,10 @@ local delete_prototypes =
     "bob-electronics-machine-3",
 
     -- COMBAT
-    "bob-distractor-artillery-shell",
-    "bob-explosive-artillery-shell",
-    "bob-fire-artillery-shell",
-    "bob-poison-artillery-shell",
+    "bob-distractor-artillery-shell", "bob-distractor-artillery-shells",
+    "bob-explosive-artillery-shell", "bob-explosive-artillery-shells",
+    "bob-fire-artillery-shell", "bob-fire-artillery-shells",
+    "bob-poison-artillery-shell", "bob-poison-artillery-shells",
 
     "bob-robot-drone-frame",
     "bob-robot-drone-frame-large",

@@ -400,10 +400,18 @@ local function transport_belt_recipe(name, gear_wheel, plate, transport_belt, be
     data_recipe[name].results = {{type = item, name = name, amount = 2}}
 end
 if data_recipe[T0_transport_belt] then
-    transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate)
+    if mods[lignumis_mods] then
+        transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate, wood_transport_belt)
+    else
+        transport_belt_recipe(T0_transport_belt, iron_gear_wheel, iron_plate)
+    end
     transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, T0_transport_belt, iron_bearing)
 else
-    transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, nil, iron_bearing)
+    if mods[lignumis_mods] then
+        transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, wood_transport_belt, iron_bearing)
+    else
+        transport_belt_recipe(T1_transport_belt, iron_gear_wheel, tin_plate_bob, nil, iron_bearing)
+    end
 end
 transport_belt_recipe(T2_transport_belt, steel_gear_wheel, bronze_plate_bob, T1_transport_belt, steel_bearing)
 transport_belt_recipe(T3_transport_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_transport_belt, cobalt_steel_bearing)
@@ -429,10 +437,18 @@ local function underground_belt_recipe(name, gear_wheel, plate, underground_belt
     data_recipe[name].ingredients = ingredients
 end
 if data_recipe[T0_underground_belt] then
-    underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate)
+    if mods[lignumis_mods] then
+        underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate, wood_underground_belt)
+    else
+        underground_belt_recipe(T0_underground_belt, iron_gear_wheel, iron_plate)
+    end
     underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, T0_underground_belt, iron_bearing)
 else
-    underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, nil, iron_bearing)
+    if mods[lignumis_mods] then
+        underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, wood_underground_belt, iron_bearing)
+    else
+        underground_belt_recipe(T1_underground_belt, iron_gear_wheel, tin_plate_bob, nil, iron_bearing)
+    end
 end
 underground_belt_recipe(T2_underground_belt, steel_gear_wheel, bronze_plate_bob, T1_underground_belt, steel_bearing)
 underground_belt_recipe(T3_underground_belt, cobalt_steel_gear_wheel, aluminium_plate_bob, T2_underground_belt, cobalt_steel_bearing)
@@ -459,10 +475,18 @@ local function splitter_recipe(name, gear_wheel, circuit, plate, splitter, beari
     data_recipe[name].ingredients = ingredients
 end
 if data_recipe[T0_splitter] then
-    splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate)
+    if mods[lignumis_mods] then
+        splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate, wood_splitter)
+    else
+        splitter_recipe(T0_splitter, iron_gear_wheel, copper_cable, iron_plate)
+    end
     splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, T0_splitter, iron_bearing)
 else
-    splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, nil, iron_bearing)
+    if mods[lignumis_mods] then
+        splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, wood_splitter, iron_bearing)
+    else
+        splitter_recipe(T1_splitter, iron_gear_wheel, basic_circuit_board, tin_plate_bob, nil, iron_bearing)
+    end
 end
 splitter_recipe(T2_splitter, steel_gear_wheel, electronic_circuit, bronze_plate_bob, T1_splitter, steel_bearing)
 splitter_recipe(T3_splitter, cobalt_steel_gear_wheel, advanced_circuit, aluminium_plate_bob, T2_splitter, cobalt_steel_bearing)

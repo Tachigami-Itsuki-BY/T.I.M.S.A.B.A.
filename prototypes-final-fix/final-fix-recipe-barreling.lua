@@ -498,7 +498,7 @@ if mods[pelagos_mods] then
 end
 
 for recipe_name, recipe in pairs(data_recipe) do
-    if recipe_name:find("^yeet%-item%-") then
+    if recipe_name:find("^yeet%-item%-") or recipe_name:find("^yeet%-") then
         local original_item_name = recipe_name:sub(11)
 
         if original_item_name:find("%-barrel$") then

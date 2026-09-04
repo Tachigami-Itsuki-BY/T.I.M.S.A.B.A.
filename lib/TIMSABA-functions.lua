@@ -559,6 +559,70 @@ function TIMSABA.functions.create_buildings(list)
     end
 end
 
+function TIMSABA.functions.create_burner_buildings(list)
+    for _, buildings in ipairs(list) do
+        data:extend
+        ({
+            {
+                localised_name = buildings.localised_name,
+                type = item,
+                name = buildings.name,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                place_result = buildings.name,
+                stack_size = buildings.stack_size or 32,
+                weight = buildings.weight or 31250
+            },
+            {
+                localised_name = buildings.localised_name,
+                type = recipe,
+                name = buildings.name,
+                category = crafting,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                enabled = false,
+                auto_recycle = true,
+                allow_productivity = false,
+                allow_quality = true,
+                allow_decomposition = true,
+                energy_required = buildings.energy_required or 4,
+                ingredients = buildings.ingredients,
+                results = {{type = item, name = buildings.name, amount = 1}},
+                main_product = buildings.name,
+                surface_conditions = buildings.surface_conditions
+            },
+            util.merge
+            ({
+                buildings.base_prototype,
+                {
+                    localised_name = buildings.localised_name,
+                    localised_description = buildings.localised_description,
+                    name = buildings.name,
+                    subgroup = buildings.subgroup,
+                    icons = buildings.icons,
+                    order = buildings.order or d,
+                    minable = {result = buildings.name},
+                    module_slots = buildings.module_slots or 0,
+                    crafting_speed = buildings.crafting_speed or 4,
+                    crafting_categories = buildings.crafting_categories,
+                    energy_source =
+                    {
+                        type = burner,
+                        effectivity = 1,
+                        fuel_categories = {base_fuel, advanced_fuel},
+                        fuel_inventory_size = 1,
+                        emissions_per_minute = {pollution = buildings.pollution or 4}
+                    },
+                    energy_usage = buildings.energy_usage or (900 .. kW),
+                    max_health = buildings.max_health
+                }
+            })
+        })
+    end
+end
+
 -- REPLACE PROTOTYPES
 function TIMSABA.functions.replace_duplicate_prototypes(replacements)
     -- Ingredients and Results(main_product)
@@ -849,11 +913,13 @@ function TIMSABA.functions.delete_prototypes(replacements)
         if data_recipe[yeet_module_ .. name] then data_recipe[yeet_module_ .. name] = nil end
         if data_recipe[yeet_repair_tool_ .. name] then data_recipe[yeet_repair_tool_ .. name] = nil end
         if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
+        if data_recipe[yeet_item_ .. tiny_ .. name] then data_recipe[yeet_item_ .. tiny_ .. name] = nil end
         if data_recipe[harene_infused_ .. name .. _recycling] then data_recipe[harene_infused_ .. name .. _recycling] = nil end
         if data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] then data_recipe[item_ .. harene_infused_ .. name .. _panglia_crushing] = nil end
         if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
         if data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] then data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil end
         if data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] then data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil end
+        if data_recipe[yeet_item_ .. RTThrower_ .. name .. _Item] then data_recipe[yeet_item_ .. RTThrower_ .. name .. _Item] = nil end
         if data_inserter[name .. _panglia_fast_version] then data_inserter[name .. _panglia_fast_version] = nil end
         if data_inserter[harene_infused_ .. name .. _panglia_fast_version] then data_inserter[harene_infused_ .. name .. _panglia_fast_version] = nil end
         if data_inserter[RTThrower_ .. name] then data_inserter[RTThrower_ .. name] = nil end
@@ -892,6 +958,7 @@ function TIMSABA.functions.delete_duplicated_fluids(replacements)
         data_fluid[name] = nil
         if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
         if data_recipe[maraxsis_fluid_void_ .. name] then data_recipe[maraxsis_fluid_void_ .. name] = nil end
+        if data_recipe[name .. _outlet] then data_recipe[name .. _outlet] = nil end
     end
 end
 

@@ -322,7 +322,9 @@ data_recipe[coal_synthesis].ingredients[3].amount = 15
 local wood_processing = "wood-processing"
 data_recipe[wood_processing].icons = TWO_I(wood, tree_seed)
 data_recipe[wood_processing].category = "angels-seed-extractor"
-data_recipe[wood_processing].additional_categories = {hand_crafting}
+if mods[lignumis_mods] then
+    data_recipe[wood_processing].additional_categories = {hand_crafting}
+end
 data_recipe[wood_processing].subgroup = is_gleba_recipe
 data_recipe[wood_processing].order = c_a
 data_recipe[wood_processing].surface_conditions = nil
@@ -642,6 +644,9 @@ data_technology[rocket_fuel .. _productivity].unit.ingredients =
 }
 
 tech_tree_seeding = "tree-seeding"
+if mods[lignumis_mods] then
+    table.insert(data_technology[tech_tree_seeding].effects, {type = unlock_recipe, recipe = seed_extractor_1_lignumis})
+end
 data_technology[tech_tree_seeding].unit.ingredients =
 {
     {automation_science_pack, 1},
