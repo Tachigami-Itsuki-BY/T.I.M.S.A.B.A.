@@ -950,7 +950,22 @@ if mods[space_age_science_packs] then
     end
 end
 
-local tech_stack_loader = "mdrn-stack-loader"
-if mods[loaders_modernized_integrations] and data_technology[tech_stack_loader] then
-    data_technology[tech_stack_loader].prerequisites = {stack_inserter, T5_loader}
+if mods[loaders_modernized_integrations] and data_technology[stack_loader] then
+    data_technology[stack_loader].prerequisites = {stack_inserter, T5_loader}
+end
+
+if mods["Bio_Industries_2"] then
+    data_logistic_robot[logistic_robot_1].next_upgrade = nil
+    data_logistic_robot[logistic_robot_2].next_upgrade = nil
+    data_logistic_robot[logistic_robot_3].next_upgrade = nil
+    data_logistic_robot[logistic_robot_4].next_upgrade = nil
+
+    data_construction_robot[construction_robot_1].next_upgrade = nil
+    data_construction_robot[construction_robot_2].next_upgrade = nil
+    data_construction_robot[construction_robot_3].next_upgrade = nil
+    data_construction_robot[construction_robot_4].next_upgrade = nil
+
+    if mods[lignumis_mods] then
+        data_construction_robot["basic-construction-robot-gold"].next_upgrade = nil
+    end
 end

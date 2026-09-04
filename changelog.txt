@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.16.2
+Date: 04.09.2026
+  Bugfixes:
+    - [Mods] Fixed compatibility bugs.
+
+  Modding:
+    - [Mods] Removed "Bob's Greenhouse mod" mod from the incompatible.
+    - [Mods] Added "Bio Industries" mod to optional dependencies. The mod is compatible but has not been modified in any way for the TIMSABA.
+---------------------------------------------------------------------------------------------------
 Version: 1.16.1
 Date: 03.09.2026
   Bugfixes:

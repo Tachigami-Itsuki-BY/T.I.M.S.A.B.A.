@@ -1,17 +1,10 @@
+-- PLANET
 if (mods[muluna_mods] or mods[shchierbin_mods]) and not mods[maraxsis_mods] then
     local replace_prototypes = {[maraxsis_air] = compressed_air}
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
     local delete_prototypes = {maraxsis_air}
     TIMSABA.functions.delete_prototypes(delete_prototypes)
-end
-
-if mods[castra_mods] or mods[corrundum_mods] or mods[shchierbin_mods] then
-    data_fluid[hydrogen_sulfide_mods] = nil
-end
-
-if mods[corrundum_mods] or mods[shchierbin_mods] then
-    data_fluid[sulfur_dioxide_mods] = nil
 end
 
 if mods[secretas_frozeta_mods] or mods[nexus_mods] then
@@ -25,10 +18,6 @@ if mods[maraxsis_mods] or mods[moshine_mods] or mods[pelagos_mods] then
 end
 
 if mods[maraxsis_mods] or mods[shchierbin_mods] then
-    data_fluid[hydrogen_mods] = nil
-end
-
-if mods[maraxsis_mods] or mods[shchierbin_mods] then
     local delete_prototypes = {salt_mods}
     TIMSABA.functions.delete_prototypes(delete_prototypes)
 end
@@ -38,17 +27,12 @@ if mods[moshine_mods] or mods[muluna_mods] then
     TIMSABA.functions.delete_duplicated_items(delete_proto)
 end
 
-if mods[muluna_mods] or mods[corrundum_mods] or mods[shchierbin_mods] then
-    data_fluid[carbon_dioxide_mods] = nil
-end
-
-if mods[muluna_mods] or mods[maraxsis_mods] or mods[shchierbin_mods] then
-    data_fluid[oxygen_mods] = nil
-end
-
-if mods[paracelsin_mods] or mods[shchierbin_mods] or mods[shattered_mods] then
-    data_fluid[nitrogen_mods] = nil
-end
+if data_fluid[hydrogen_sulfide_mods] then data_fluid[hydrogen_sulfide_mods] = nil end
+if data_fluid[sulfur_dioxide_mods] then data_fluid[sulfur_dioxide_mods] = nil end
+if data_fluid[hydrogen_mods] then data_fluid[hydrogen_mods] = nil end
+if data_fluid[carbon_dioxide_mods] then data_fluid[carbon_dioxide_mods] = nil end
+if data_fluid[oxygen_mods] then data_fluid[oxygen_mods] = nil end
+if data_fluid[nitrogen_mods] then data_fluid[nitrogen_mods] = nil end
 
 if mods[muluna_mods] then
     if Muluna and Muluna.constants and Muluna.constants.cargo_drop_spawn_imports then
@@ -72,4 +56,10 @@ if mods[muluna_mods] then
             Muluna.constants.names[nickel_plate_mods] = nickel_plate_bob
         end
     end
+end
+
+-- MODS
+if mods["Bio_Industries_2"] then
+    local replace_prototypes = {["solid-sand"] = sand_angels}
+    TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 end
