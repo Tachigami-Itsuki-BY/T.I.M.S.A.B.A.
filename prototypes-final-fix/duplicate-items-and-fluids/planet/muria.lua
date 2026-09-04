@@ -14,11 +14,12 @@ if mods[muria_mods] then
     }
 	TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    data_fluid[chlorane] = nil
-    data_recipe[chlorane] = nil
-
     local delete_proto = {lead, lead_plate}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)
+
+    local delete_proto = {chlorane}
+    TIMSABA.functions.delete_duplicated_fluids(delete_proto)
+    data_recipe[chlorane] = nil
 
     local delete_prototypes =
 	{

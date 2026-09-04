@@ -6,10 +6,11 @@ if mods[pelagos_mods] then
     }
     TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
 
-    data_fluid[ethanol_mods] = nil
-
     local delete_proto = {titanium_plate_mods}
     TIMSABA.functions.delete_duplicated_items(delete_proto)
+
+    local delete_proto = {ethanol_mods}
+    TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 
     local delete_prototypes =
 	{

@@ -322,6 +322,7 @@ data_recipe[coal_synthesis].ingredients[3].amount = 15
 local wood_processing = "wood-processing"
 data_recipe[wood_processing].icons = TWO_I(wood, tree_seed)
 data_recipe[wood_processing].category = "angels-seed-extractor"
+data_recipe[wood_processing].additional_categories = {hand_crafting}
 data_recipe[wood_processing].subgroup = is_gleba_recipe
 data_recipe[wood_processing].order = c_a
 data_recipe[wood_processing].surface_conditions = nil

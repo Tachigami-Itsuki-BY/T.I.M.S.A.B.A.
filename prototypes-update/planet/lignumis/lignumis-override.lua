@@ -389,6 +389,7 @@ if mods[lignumis_mods] then
     data_furnace[desiccation_furnace].subgroup = is_lignumis_building
     data_furnace[desiccation_furnace].order = b
     data_furnace[desiccation_furnace].energy_usage = 225 .. kW
+    data_furnace[desiccation_furnace].fluid_boxes[1].volume = 480
 
     local burner_assembling_machine = "burner-" .. assembling_machine
     data_item[burner_assembling_machine].subgroup = is_lignumis_building
@@ -702,4 +703,23 @@ if mods[lignumis_mods] then
     end
 
     data_technology[tech_worker_robots_speed .. "-5"].prerequisites = {tech_worker_robots_speed .. "-4", utility_science_pack}
+
+    table.insert(data_technology[tech_wolframite_processing_1].effects, {type = unlock_recipe, recipe = wolframite_ore .. _sortiong_stone})
+    table.insert(data_technology[tech_brannerite_processing_1].effects, {type = unlock_recipe, recipe = brannerite_ore .. _sortiong_stone})
+    table.insert(data_technology[tech_antimonite_processing_1].effects, {type = unlock_recipe, recipe = antimonite_ore .. _sortiong_stone})
+    table.insert(data_technology[tech_germanite_processing_1].effects, {type = unlock_recipe, recipe = germanite_ore .. _sortiong_stone})
+
+    if mods[moshine_mods] then
+        table.insert(data_technology[tech_monazite_processing_1].effects, {type = unlock_recipe, recipe = monazite_ore .. _sortiong_stone})
+    end
+    if mods[corrundum_mods] then
+        table.insert(data_technology[tech_chalcopyrite_processing_1].effects, {type = unlock_recipe, recipe = chalcopyrite_ore .. _sortiong_stone})
+    end
+    if mods[castra_mods] then
+        table.insert(data_technology[tech_millerite_processing_1].effects, {type = unlock_recipe, recipe = millerite_ore .. _sortiong_stone})
+    end
+    if mods[paracelsin_mods] then
+        table.insert(data_technology[tech_sphalerite_processing_1].effects, {type = unlock_recipe, recipe = sphalerite_ore .. _sortiong_stone})
+        table.insert(data_technology[tech_tetrahedrite_processing_1].effects, {type = unlock_recipe, recipe = tetrahedrite_ore .. _sortiong_stone})
+    end
 end

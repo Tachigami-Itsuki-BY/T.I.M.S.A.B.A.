@@ -9,7 +9,10 @@ require("prototypes-final-fix.duplicate-items-and-fluids.angels")
 require("prototypes-final-fix.duplicate-items-and-fluids.space-age")
 
 -- FIRST CIRCLE PLANETS
-
+-- nauvis
+-- vulcanus
+-- gleba
+-- fulgora
 
 -- SECOND CIRCLE PLANETS
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.moshine")
@@ -24,6 +27,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.pelagos")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.apia-carnova")
 
 -- THIRD CIRCLE PLANETS
+-- aquilo
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.paracelsin")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.maraxsis")
 
@@ -47,8 +51,7 @@ require("prototypes-final-fix.duplicate-items-and-fluids.planet.foliax")
 require("prototypes-final-fix.duplicate-items-and-fluids.planet.ribbonia")
 -- rubia
 -- cubium
---require("prototypes-final-fix.duplicate-items-and-fluids.planet.nexus")
--- ???
+require("prototypes-final-fix.duplicate-items-and-fluids.planet.nexus")
 
 require("prototypes-final-fix.duplicate-items-and-fluids.clowns")
 require("prototypes-final-fix.duplicate-items-and-fluids.mods")

@@ -44,6 +44,7 @@ for _, name in ipairs(delete_fluid) do
 	data_recipe[name .. _barrel_recycling] = nil
 	if data_recipe[item_ .. name .. _barrel_panglia_crushing] then data_recipe[item_ .. name .. _barrel_panglia_crushing] = nil end
 	if data_recipe[item_ .. name .. _barrel_incineration] then data_recipe[item_ .. name .. _barrel_incineration] = nil end
+	if data_recipe[yeet_item_ .. name .. _barrel] then data_recipe[yeet_item_ .. name .. _barrel] = nil end
 end
 
 data_fluid[molten_iron] = nil
@@ -77,3 +78,6 @@ for _, technology in pairs(data_technology or {}) do
 end
 data_recipe[fluoroketone] = nil
 data_recipe[fluoroketone_cooling] = nil
+
+if data_recipe[yeet_item_ .. fluoroketone_hot .. _barrel] then data_recipe[yeet_item_ .. fluoroketone_hot .. _barrel] = nil end
+if data_recipe[yeet_item_ .. fluoroketone_cold .. _barrel] then data_recipe[yeet_item_ .. fluoroketone_cold .. _barrel] = nil end

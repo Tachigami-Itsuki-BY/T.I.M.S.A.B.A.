@@ -25,14 +25,8 @@ if mods[shchierbin_mods] then
 	local delete_proto = {slaked_lime_mods, calcium_mods}
 	TIMSABA.functions.delete_duplicated_items(delete_proto)
 
-    data_fluid[chloromethane_mods] = nil
-    data_fluid[ethylene_mods] = nil
-    data_fluid[chlorine_mods] = nil
-
-    data_recipe["natural-gas-processing"] = nil
-
-    data_technology[vanadium_oxide_V] = nil
-    data_technology[vanadium_plate] = nil
+    local delete_proto = {chloromethane_mods, ethylene_mods, chlorine_mods}
+    TIMSABA.functions.delete_duplicated_fluids(delete_proto)
 
     local delete_prototypes =
 	{
@@ -68,13 +62,15 @@ if mods[shchierbin_mods] then
 	}
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 
-    -- Проходим по всем типам прототипов в data.raw
+    data_recipe["natural-gas-processing"] = nil
+
+    data_technology[vanadium_oxide_V] = nil
+    data_technology[vanadium_plate] = nil
+
     for proto_type, prototypes in pairs(data.raw) do
         if type(prototypes) == "table" then
             for name, _ in pairs(prototypes) do
-                -- Проверяем, содержит ли имя строки "gas-ballon"
                 if string.find(name, "gas-ballon", 1, true) then
-                    -- Удаляем предмет, рецепт или другой прототип
                     data.raw[proto_type][name] = nil
                 end
             end

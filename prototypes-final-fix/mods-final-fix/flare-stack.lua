@@ -44,12 +44,7 @@ if mods["Flare Stack"] then
                         local item = data_item[item_name]
 
                         if allowed_incineration[item_name] then
-                            -- Рецепт остается, ничего не делаем
                         else
-                            -- Условие удаление рецепта:
-                                -- 1. Предмета нет в базе [not item]
-                                -- 2. ИЛИ у него нет fuel_value (и это не дерево)
-                                -- 3. ИЛИ его имя находится в нашем списке deleted_fuels
                             if not item or (not item.fuel_value and item.name ~= "wood") or deleted_fuels[item_name] then
                                 data_recipe[recipe_name] = nil
                             end
@@ -63,15 +58,8 @@ if mods["Flare Stack"] then
     end
 
     local flare_stack = "flare-stack"
-    data_item[flare_stack] = nil
-    data_recipe[flare_stack] = nil
-    data_recipe[flare_stack .. _recycling] = nil
-    if mods[panglia_mods] then
-        data_recipe[item_ .. flare_stack .. _panglia_crushing] = nil
-    end
-    data_furnace[flare_stack] = nil
-
-    data_technology[flare_stack .. "-fluid-venting-tech"] = nil
+    local delete_prototypes = {flare_stack, flare_stack .. "-fluid-venting-tech"}
+    TIMSABA.functions.delete_prototypes(delete_prototypes)
 
     if settings.startup["flare-stack-disable-incinerators"].value == false then
         local is_flare_stack = "is-flare-stack"

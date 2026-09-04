@@ -6,8 +6,13 @@ data_item[burner_ore_crusher].weight = 31250
 data_recipe[burner_ore_crusher].subgroup = is_ore_crusher
 data_recipe[burner_ore_crusher].order = a
 data_recipe[burner_ore_crusher].energy_required = 4
-data_recipe[burner_ore_crusher].ingredients[1].amount = 4
-data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+if mods[lignumis_mods] then
+    data_recipe[burner_ore_crusher].ingredients[3].name = wooden_gear_wheel
+    data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+else
+    data_recipe[burner_ore_crusher].ingredients[1].amount = 4
+    data_recipe[burner_ore_crusher].ingredients[3].amount = 4
+end
 data_assembling[burner_ore_crusher].subgroup = is_ore_crusher
 data_assembling[burner_ore_crusher].order = a
 data_assembling[burner_ore_crusher].crafting_speed = 0.5

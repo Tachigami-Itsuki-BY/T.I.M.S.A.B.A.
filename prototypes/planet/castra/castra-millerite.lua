@@ -186,12 +186,13 @@ if mods[castra_mods] then
             },
             main_product = nickel_ore_bob
         },
+        -- SYNTHESIS
         {
             name = vanadium_ore_recipe,
             category = ore_sorting_6,
-            subgroup = is_millerite,
+            subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, germanite_purified, millerite_purified, vanadium_ore),
-            order = j,
+            order = a_q,
             allow_productivity = true,
             energy_required = 2,
             ingredients =
