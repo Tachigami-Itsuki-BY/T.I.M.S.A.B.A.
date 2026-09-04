@@ -859,8 +859,12 @@ function TIMSABA.functions.delete_prototypes(replacements)
         end
         if data_stream[name .. _projectileFromRenaiTransportationPrimed] then data_stream[name .. _projectileFromRenaiTransportationPrimed] = nil end
         if data_turret[RTPrimerThrowerShooter_ .. name] then data_turret[RTPrimerThrowerShooter_ .. name] = nil end
+        if data_item[RTThrower_ .. name .. _Item] then data_item[RTThrower_ .. name .. _Item] = nil end
         if data_recipe[RTThrower_ .. name .. _Recipe] then data_recipe[RTThrower_ .. name .. _Recipe] = nil end
-        if data_inserter[RTThrower_ .. name]then data_inserter[RTThrower_ .. name] = nil end
+        if data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] then data_recipe[RTThrower_ .. name .. _Recipe .. _recycling] = nil end
+        if data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] then data_recipe[item_ .. RTThrower_ .. name .. _Item .. _panglia_crushing] = nil end
+        if data_inserter[RTThrower_ .. name] then data_inserter[RTThrower_ .. name] = nil end
+        if data_inserter[RTThrower_ .. name .. _panglia_fast_version] then data_inserter[RTThrower_ .. name .. _panglia_fast_version] = nil end
     end
 end
 
@@ -868,9 +872,7 @@ function TIMSABA.functions.delete_duplicated_items(replacements)
     for _, name in ipairs(replacements or {}) do
         data_item[name] = nil
         data_recipe[name .. _recycling] = nil
-        if data_recipe[item_ .. name .. _panglia_crushing] then
-            data_recipe[item_ .. name .. _panglia_crushing] = nil
-        end
+        if data_recipe[item_ .. name .. _panglia_crushing] then data_recipe[item_ .. name .. _panglia_crushing] = nil end
     end
 end
 

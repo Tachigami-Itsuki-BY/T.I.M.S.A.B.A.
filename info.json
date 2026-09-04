@@ -1,6 +1,6 @@
 {
     "name": "TIMSABA",
-    "version": "1.16.1",
+    "version": "1.16.2",
     "factorio_version": "2.0",
     "title": "Project T.I.M.S.A.B.A. (Angel's, Bob's and Space Age)",
     "author": "Tachugami_Istuki",
@@ -12,11 +12,12 @@
         "base >= 2.0.0",
         "space-age",
         "quality",
+
         "bobassembly >= 2.1.0",
         "bobelectronics >= 2.1.0",
         "? bobenemies >= 2.1.0",
         "? bobequipment >= 2.1.0",
-        "! bobgreenhouse",
+
         "bobinserters >= 2.0.0",
         "boblibrary >= 2.1.0",
         "boblogistics >= 2.1.0",
@@ -29,20 +30,23 @@
         "? bobtech >= 2.1.0",
         "? bobvehicleequipment >= 2.1.0",
         "? bobwarfare >= 2.1.0",
+
         "angelsaddons-storage >= 2.0.0",
         "angelsbioprocessing >= 2.0.0",
         "angelspetrochem >= 2.0.0",
         "angelsrefining >= 2.0.0",
         "angelssmelting >= 2.0.0",
-        "! extendedangels",
+
         "reskins-library >= 2.3.0",
         "reskins-bobs >= 2.3.0",
         "reskins-angels >= 2.3.0",
         "reskins-compatibility >= 2.3.0",
+
         "? Clowns-Nuclear",
         "! Clowns-AngelBob-Nuclear",
         "! Clowns-Extended-Minerals",
         "! Clowns-Processing",
+
         "? AsteroidBelt",
         "? planet-muluna",
         "? Moshine",
@@ -63,6 +67,7 @@
         "? pelagos",
         "? apia",
         "? lignumis",
+
         "? foliax",
         "? obsidiax",
         "? planet-crucible",
@@ -73,6 +78,7 @@
         "? reigia",
         "? Pyroclast",
         "? Velora",
+
         "? alternate-alert-icons",
         "? Better_Starmap_Background",
         "? CargoBayLimitResearch",
@@ -124,6 +130,10 @@
         "? flow-config",
         "? AsphaltRoadsPatched",
         "? celestial-weather-additions",
+
+        "? Bio_Industries_2",
+
+        "! extendedangels",
         "! NoTimedSpoilage",
         "! modular-buildings-redux",
         "! electricboiler",

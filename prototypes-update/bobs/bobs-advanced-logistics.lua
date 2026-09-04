@@ -336,11 +336,6 @@ for _, DRONE in pairs(logistic_robots) do
 end
 
 data_item_subgroup["bob-construction-robots"].order = f_c
-local construction_robot_1 = "construction-robot"
-local construction_robot_2 = "bob-construction-robot-2"
-local construction_robot_3 = "bob-construction-robot-3"
-local construction_robot_4 = "bob-construction-robot-4"
-local construction_robot_5 = "bob-construction-robot-5"
 local construction_robots =
 {
     {name = construction_robot_1, MPS = 1, max_energy = 900,  EPT = 25},
