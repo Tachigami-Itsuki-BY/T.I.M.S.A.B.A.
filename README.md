@@ -86,7 +86,7 @@ TIMSABA.functions.create_recipes
     }
 })
 
-TIMSABA.functions.create_buildings -- ONLY ELECTRIC TYPE
+TIMSABA.functions.create_buildings
 ({
     {
         name = buildings.name,
@@ -140,6 +140,70 @@ TIMSABA.functions.create_buildings -- ONLY ELECTRIC TYPE
         }
     })
 })
+
+function TIMSABA.functions.create_burner_buildings(list)
+    for _, buildings in ipairs(list) do
+        data:extend
+        ({
+            {
+                localised_name = buildings.localised_name,
+                type = item,
+                name = buildings.name,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                place_result = buildings.name,
+                stack_size = buildings.stack_size or 32,
+                weight = buildings.weight or 31250
+            },
+            {
+                localised_name = buildings.localised_name,
+                type = recipe,
+                name = buildings.name,
+                category = crafting,
+                subgroup = buildings.subgroup,
+                icons = buildings.icons,
+                order = buildings.order or d,
+                enabled = false,
+                auto_recycle = true,
+                allow_productivity = false,
+                allow_quality = true,
+                allow_decomposition = true,
+                energy_required = buildings.energy_required or 4,
+                ingredients = buildings.ingredients,
+                results = {{type = item, name = buildings.name, amount = 1}},
+                main_product = buildings.name,
+                surface_conditions = buildings.surface_conditions
+            },
+            util.merge
+            ({
+                buildings.base_prototype,
+                {
+                    localised_name = buildings.localised_name,
+                    localised_description = buildings.localised_description,
+                    name = buildings.name,
+                    subgroup = buildings.subgroup,
+                    icons = buildings.icons,
+                    order = buildings.order or d,
+                    minable = {result = buildings.name},
+                    module_slots = buildings.module_slots or 0,
+                    crafting_speed = buildings.crafting_speed or 4,
+                    crafting_categories = buildings.crafting_categories,
+                    energy_source =
+                    {
+                        type = burner,
+                        effectivity = 1,
+                        fuel_categories = {base_fuel, advanced_fuel},
+                        fuel_inventory_size = 1,
+                        emissions_per_minute = {pollution = buildings.pollution or 4}
+                    },
+                    energy_usage = buildings.energy_usage or (900 .. kW),
+                    max_health = buildings.max_health
+                }
+            })
+        })
+    end
+end
 
 TIMSABA.barreling.add_simple_fluid("name-fluid")
 TIMSABA.barreling.add_dangerous_fluid("name-fluid")

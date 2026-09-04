@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.16.4
+Date: 05.09.2026
+  Features:
+    - [Lignumis] Added new building: Burner Ore Sroting Facility
+    - [Lignumis] Added new recipes: T1 Seed Extractor (from Wood)
+
+  Bugfixes:
+    - [Lignumis] Fixed a bug where the crafting category "hand-crafting" was required unless the Lignumis mod was enabled.
+
+  Balancing:
+    - [Lignumis] Increased maximum consumption of the Steam Assembly Machine: (25 kW) → (28.125 kW)
+---------------------------------------------------------------------------------------------------
 Version: 1.16.3
 Date: 04.09.2026
   Features:

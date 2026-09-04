@@ -68,6 +68,7 @@ require("prototypes-update.planet.panglia.panglia-override")
 require("prototypes-update.planet.frozeta.frozeta-override")
 require("prototypes-update.planet.terrapalus.terrapalus-override")
 require("prototypes-update.planet.lignumis.lignumis-override")
+require("prototypes-update.planet.lignumis.lignumis-update-icon-building")
 
 -- FINAL CIRCLE PLANETS
 require("prototypes-update.planet.shattered.shattered-override")

@@ -211,7 +211,6 @@ if mods[lignumis_mods] then
     }
 
     -- LOGISTICS
-    local wood_transport_belt = "wood-" .. T1_transport_belt
     data_item[wood_transport_belt].subgroup = is_lignumis_logistic
     data_item[wood_transport_belt].order = a
     data_recipe[wood_transport_belt].subgroup = is_lignumis_logistic
@@ -232,7 +231,6 @@ if mods[lignumis_mods] then
     end
 
     local simulations = require("prototypes.factoriopedia-simulations")
-    local wood_underground_belt = "wood-" .. T1_underground_belt
     data_item[wood_underground_belt].subgroup = is_lignumis_logistic
     data_item[wood_underground_belt].order = b
     data_item[wood_underground_belt].stack_size = 32
@@ -255,7 +253,6 @@ if mods[lignumis_mods] then
         data_underground_belt[wood_underground_belt].next_upgrade = T1_underground_belt
     end
 
-    local wood_splitter = "wood-" .. T1_splitter
     data_item[wood_splitter].subgroup = is_lignumis_logistic
     data_item[wood_splitter].order = c
     data_item[wood_splitter].stack_size = 16
@@ -424,6 +421,7 @@ if mods[lignumis_mods] then
     }
     data_assembling[steam_assembling_machine].subgroup = is_lignumis_building
     data_assembling[steam_assembling_machine].order = d
+    data_assembling[steam_assembling_machine].energy_usage = (225/8) .. kW
 
     local lumber_mill = "lumber-mill"
     data_item[lumber_mill].subgroup = is_lignumis_building

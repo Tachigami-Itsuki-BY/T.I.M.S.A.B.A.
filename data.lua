@@ -205,6 +205,7 @@ require("prototypes.planet.terrapalus.terrapalus-recipe")
 
 require("prototypes.planet.lignumis.lignumis-groups")
 require("prototypes.planet.lignumis.lignumis-recipe")
+require("prototypes.planet.lignumis.lignumis-building")
 
 -- FINAL CIRCLE PLANET
 require("prototypes.planet.shattered.shattered-groups")

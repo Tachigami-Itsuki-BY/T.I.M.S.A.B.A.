@@ -23,3 +23,7 @@ if mods[muluna_mods] then
     data_recipe[silicon_solar_panel_4].icons = BUILDING_R_IS(solar_panel_4, silicon_cell_mods)
     data_recipe[silicon_solar_panel_large_4].icons = BUILDING_R_IS(solar_panel_large_4, silicon_cell_mods)
 end
+
+if mods[lignumis_mods] then
+    data_recipe[seed_extractor_1_lignumis].icons = BUILDING_R_IS(seed_extractor_1, planet_lignumis)
+end
