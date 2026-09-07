@@ -502,6 +502,21 @@ simulations.factoriopedia_gold_pipe_to_ground =
     ]]
 }
 
+-- BELLICOS AEGIS
+simulations.factoriopedia_space_underground_belt =
+{
+    init =
+    [[
+        game.simulation.camera_position = {0, 0.5}
+        game.simulation.camera_zoom = 1.8
+        game.surfaces[1].create_entities_from_blueprint_string
+        {
+            string = "0eNqlkMsKwjAQRf9l1lGwtNX2V0Skj6EMpJOQh1hK/91JunDhQsFNhtwk58xkhV5HtI44QLsCDYY9tNcVPE3c6ZRxNyO04G034KFHt2hNcT5EHtFNzkiVVAfYFJBkT2hP200BcqBAuNPyZrlznAUgF9TPVAXWeAEZTr0k+LFSsOQqxpEcDvtpqSAsNkGJbUz9fHiLP7z1d6+JIYtlego4S/L+XAUPdD4/qOqiKZumupT1WZZtewFL7YP3",
+            position = {0, 0}
+        }
+    ]]
+}
+
 local make_asteroid_simulation = function(name, wait)
     return
     [[

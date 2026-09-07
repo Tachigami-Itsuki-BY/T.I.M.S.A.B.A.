@@ -1,8 +1,5 @@
 if mods[lignumis_mods] then
     local angels_mod = "angels"
-    if not (reskins.angels and reskins.angels.triggers.refining.entities) then
-        return
-    end
 
     -- ORE SORTING FACILITY
     do
@@ -79,6 +76,22 @@ if mods[lignumis_mods] then
                 }
             }
             ::continue::
+        end
+    end
+
+    -- CHEMICAL PLANT
+    do
+        local chemical_plants = {[burner_chemical_plant] = {tier = 0, tint = util.color("#262626"), is_burner = true}}
+
+        local use_vanilla_chemical_plant_sprites = reskins.lib.settings.get_value("reskins-angels-use-vanilla-chemical-plant-sprites")
+
+        for name, map in pairs(chemical_plants) do
+            local tier = reskins.lib.tiers.get_tier(map)
+            if use_vanilla_chemical_plant_sprites then
+                reskins.lib.apply_skin.chemical_plant(name, tier)
+            else
+                reskins.lib.apply_skin.angels_chemical_plant(name, tier)
+            end
         end
     end
 end

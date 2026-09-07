@@ -77,6 +77,16 @@ data_technology[tech_steam_power].research_trigger.count = 32
 
 data_technology[tech_electronics_0].research_trigger.count = 16
 
+data_technology[tech_logistics_1].effects =
+{
+    {type = unlock_recipe, recipe = T1_transport_belt},
+    {type = unlock_recipe, recipe = T1_underground_belt},
+    {type = unlock_recipe, recipe = T1_splitter}
+}
+if mods[loaders_modernized_integrations] and settings.startup[setting_mdrn_unlock_technology].value == "belt" then
+    table.insert(data_technology[tech_logistics_1].effects, {type = unlock_recipe, recipe = T1_loader})
+end
+
 data_technology[tech_automation_1].effects = {{type = unlock_recipe, recipe = assembling_machine_1}}
 
 data_technology[logistic_science_pack].unit.time = 16
@@ -189,6 +199,12 @@ end
 if mods[lignumis_mods] then
     TIMSABA.functions.auto_added_science_pack(wood_science_pack, wood_science_pack)
     TIMSABA.functions.auto_added_science_pack(steam_science_pack, steam_science_pack)
+end
+
+-- BELLICOS AEGIS
+if mods[bellicos_aegis_mods] then
+    TIMSABA.functions.auto_added_science_pack(lightweight_science_pack, lightweight_science_pack)
+    TIMSABA.functions.auto_added_science_pack(pulsar_science_pack, pulsar_science_pack)
 end
 
 -- OBSIDIAX

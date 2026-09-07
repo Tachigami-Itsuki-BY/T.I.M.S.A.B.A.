@@ -1267,7 +1267,11 @@ local function chemical_plant_recipe(name, circuit, pipe, plate, gear, chemical_
     end
     data_recipe[name].ingredients = ingredients
 end
-chemical_plant_recipe(chemical_plant_1, basic_circuit_board, iron_pipe, iron_plate, iron_gear_wheel)
+if mods[lignumis_mods] then
+    chemical_plant_recipe(chemical_plant_1, basic_circuit_board, iron_pipe, iron_plate, iron_gear_wheel, burner_chemical_plant)
+else
+    chemical_plant_recipe(chemical_plant_1, basic_circuit_board, iron_pipe, iron_plate, iron_gear_wheel)
+end
 chemical_plant_recipe(chemical_plant_2, electronic_circuit, bronze_pipe, bronze_plate_bob, steel_gear_wheel, chemical_plant_1)
 chemical_plant_recipe(chemical_plant_3, advanced_circuit, brass_pipe, aluminium_plate_bob, brass_gear_wheel, chemical_plant_2)
 chemical_plant_recipe(chemical_plant_4, processing_unit, titanium_pipe, titanium_plate_bob, titanium_gear_wheel, chemical_plant_3)

@@ -207,6 +207,12 @@ require("prototypes.planet.lignumis.lignumis-groups")
 require("prototypes.planet.lignumis.lignumis-recipe")
 require("prototypes.planet.lignumis.lignumis-building")
 
+-- OTHER STAR SYSTEMS
+require("prototypes.planet.bellicos-aegis.bellicos-aegis-groups")
+require("prototypes.planet.bellicos-aegis.bellicos-aegis-item-fluid")
+require("prototypes.planet.bellicos-aegis.bellicos-aegis-recipe")
+require("prototypes.planet.bellicos-aegis.bellicos-aegis-technology")
+
 -- FINAL CIRCLE PLANET
 require("prototypes.planet.shattered.shattered-groups")
 require("prototypes.planet.shattered.shattered-recipe")

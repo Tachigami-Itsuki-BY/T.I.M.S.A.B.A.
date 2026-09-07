@@ -196,7 +196,7 @@ TIMSABA.functions.create_recipes
     {
         name = coal_tar_liquid,
         category = chemistry,
-        subgroup = is_carbon_fluids_1,
+        subgroup = is_carbon_fluid_1,
         icons = THREE_R_I(coal, coal_tar_liquid, coke_angels),
         order = d,
         -- Coal crushed --> Coal tar liquid + Coke
@@ -217,7 +217,7 @@ TIMSABA.functions.create_recipes
     {
         name = carbonic_acid_reversed,
         category = chemistry,
-        subgroup = is_carbon_fluids_1,
+        subgroup = is_carbon_fluid_1,
         icons = THREE_R_I(carbonic_acid, water_purified_angels, carbon_dioxide_angels),
         order = c_a,
         -- H₂CO₃(aq) --> ((H₂O + CO₂) + H₂O)
@@ -247,7 +247,7 @@ TIMSABA.functions.create_recipes
         subgroup = is_nitrogen,
         icons = THREE_I(ammonia_angels, sulfuric_acid_angels, ammonium_sulfate),
         order = d,
-        -- 2NH₃ + H₂SO₄ --> (NH₄)₂SO₄
+        energy_required = 2, -- 2NH₃ + H₂SO₄ --> (NH₄)₂SO₄
         ingredients =
         {
             {type = fluid, name = ammonia_angels, amount = 120},
@@ -524,7 +524,7 @@ TIMSABA.functions.create_recipes
     {
         name = hydrogen_fluoride_liquefied,
         category = angels_cooling,
-        subgroup = is_fluorine_fluids,
+        subgroup = is_fluorine_fluid,
         icons = TWO_I(hydrogen_fluoride_angels, hydrogen_fluoride_liquefied),
         order = c,
         -- HF(g) -Coolant-> HF(liquefied)
@@ -640,7 +640,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_chloride_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(salt_angels, water_purified_angels, sodium_chloride_solution),
         order = b,
         -- NaCl + H₂O --> NaCl(aq)
@@ -655,7 +655,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_sulfate_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_sulfate_angels, water_purified_angels, sodium_sulfate_solution),
         order = c,
         -- Na₂SO₄ + H₂O --> Na₂SO₄(aq)
@@ -670,7 +670,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_carbonate_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_carbonate_angels, water_purified_angels, sodium_carbonate_solution),
         order = d,
         -- Na₂CO₃ + H₂O --> Na₂CO₃(aq)
@@ -685,7 +685,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_nitrate_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_nitrate_angels, water_purified_angels, sodium_nitrate_solution),
         order = e,
         -- NaNO₃ + H₂O --> NaNO₃(aq)
@@ -700,7 +700,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_hypochlorite_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_hypochlorite_angels, water_purified_angels, sodium_hypochlorite_solution),
         order = f,
         -- NaClO + H₂O --> NaClO(aq)
@@ -715,7 +715,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_hypochlorite_solution_from_sodium_hydroxide_solution,
         category = angels_advanced_chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_D_I(sodium_hydroxide_solution_angels, nil, chlorine_angels, sodium_hypochlorite_solution, sodium_chloride_solution, water_purified_angels),
         order = f_a,
         -- 2NaOH(aq) + Cl₂ --> NaClO(aq) + NaCl(aq) + H₂O
@@ -735,7 +735,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_chlorate_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_chlorate_angels, water_purified_angels, sodium_chlorate_solution),
         order = g,
         -- NaClO₃ + H₂O --> NaClO₃(aq)
@@ -750,7 +750,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_chlorate_solution_from_sodium_hypochlorite_solution,
         category = chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_R_I(sodium_hypochlorite_solution, sodium_chlorate_solution, sodium_chloride_solution),
         order = g_a,
         -- 3NaClO(aq) --> NaClO₃(aq) + 2NaCl(aq)
@@ -765,7 +765,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_perchlorate_solution,
         category = angels_liquifying,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_perchlorate_angels, water_purified_angels, sodium_perchlorate_solution),
         order = h,
         -- NaClO₄ + H₂O --> NaClO₄(aq)
@@ -780,7 +780,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_perchlorate_solution_from_sodium_chlorate_solution,
         category = chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = TWO_D_I(sodium_chlorate_solution, water_purified_angels, sodium_perchlorate_solution, hydrogen_angels),
         order = h_a,
         -- NaClO₃(aq) + H₂O -cat-> NaClO₄(aq) + H₂
@@ -801,7 +801,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_chloride_solution_from_sodium_bicarbonate_solution,
         category = chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = TWO_D_I(sodium_bicarbonate_solution, hydrochloric_acid_angels, sodium_chloride_solution, carbonic_acid),
         order = i_a,
         -- NaHCO₃(aq) + HCl(aq) --> NaCl(aq) + H₂CO₃(aq)
@@ -820,7 +820,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_sulfate_from_sodium_bicarbonate_solution,
         category = chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = TWO_D_I(sodium_bicarbonate_solution, sulfuric_acid_angels, sodium_sulfate_angels, carbonic_acid),
         order = i_b,
         energy_required = 8, -- 4NaHCO₃(aq) + 2H₂SO₄ --> 2Na₂SO₄ + 4H₂CO₃(aq)
@@ -839,7 +839,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_cyanide_solution,
         category = chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_cyanide_angels, water_purified_angels, sodium_cyanide_solution),
         order = j,
         energy_required = 2, -- NaCN + H₂O --> NaCN(aq)
@@ -854,7 +854,7 @@ TIMSABA.functions.create_recipes
     {
         name = sodium_cyanide_solution_alt,
         category = chemistry,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icons = THREE_I(sodium_hydroxide_angels, hydrocyanic_acid, sodium_cyanide_solution),
         order = j,
         energy_required = 2, -- NaOH + HCN--> NaCN(aq)
@@ -1194,7 +1194,7 @@ TIMSABA.functions.create_recipes
     {
         name = calcium_chloride_solution,
         category = chemistry,
-        subgroup = is_calcium_fluids,
+        subgroup = is_calcium_fluid,
         icons = TWO_D_I(calcium_hydroxide, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
         order = b,-- Ca(OH)₂ + 2HCl(aq) --> CaCl₂(aq) + 2H₂O
         ingredients =
@@ -1212,7 +1212,7 @@ TIMSABA.functions.create_recipes
     {
         name = calcium_hydroxide_solution,
         category = chemistry,
-        subgroup = is_calcium_fluids,
+        subgroup = is_calcium_fluid,
         icons = THREE_I(calcium_hydroxide, water_purified_angels, calcium_hydroxide_solution),
         order = c,-- Ca(OH)₂ + H₂O --> Ca(OH)₂(aq)
         ingredients =
@@ -1252,7 +1252,7 @@ TIMSABA.functions.create_recipes
     {
         name = hydrogen_peroxide,
         category = chemistry,
-        subgroup = is_others_fluids,
+        subgroup = is_others_fluid,
         icons = TWO_D_I(peroxydisulfuric_acid, water_purified_angels, hydrogen_peroxide, sulfuric_acid_angels),
         order = a,
         -- H₂S₂O₈ + H₂O --> H₂O₂ + 2H₂SO₄
@@ -1271,7 +1271,7 @@ TIMSABA.functions.create_recipes
     {
         name = ionic_liquid,
         category = chemistry,
-        subgroup = is_others_fluids,
+        subgroup = is_others_fluid,
         icons = TWO_D_I(imidazolium_salt, hexafluorophosphoric_acid, ionic_liquid, hydrochloric_acid_angels),
         order = c,
         -- [C₇H₁₃N₂]Cl(s) + HPF₆(aq) --> [C₇H₁₃N₂]PF₆(l) + HCl(aq)

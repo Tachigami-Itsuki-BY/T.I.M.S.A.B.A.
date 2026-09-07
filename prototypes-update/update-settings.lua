@@ -56,10 +56,16 @@ if settings.startup[setting_bobmods_logistics_beltoverhaulspeed].value then
         bobmods.logistics.set_belt_speed(transport_belt,   vulcanus_transport_belt,   7)
         bobmods.logistics.set_belt_speed(underground_belt, vulcanus_underground_belt, 7)
 
+        if mods[bellicos_aegis_mods] then
+            bobmods.logistics.set_belt_speed(splitter,         space_splitter,         8)
+            bobmods.logistics.set_belt_speed(transport_belt,   space_transport_belt,   8)
+            bobmods.logistics.set_belt_speed(underground_belt, space_underground_belt, 8)
+        end
+
         if mods[arig_mods] then
-            bobmods.logistics.set_belt_speed(splitter,         hyper_splitter_arig,         8)
-            bobmods.logistics.set_belt_speed(transport_belt,   hyper_transport_belt_arig,   8)
-            bobmods.logistics.set_belt_speed(underground_belt, hyper_underground_belt_arig, 8)
+            bobmods.logistics.set_belt_speed(splitter,         hyper_splitter_arig,         9)
+            bobmods.logistics.set_belt_speed(transport_belt,   hyper_transport_belt_arig,   9)
+            bobmods.logistics.set_belt_speed(underground_belt, hyper_underground_belt_arig, 9)
         end
     else
         bobmods.logistics.set_belt_speed(splitter,         T1_splitter,         1)
@@ -92,10 +98,16 @@ if settings.startup[setting_bobmods_logistics_beltoverhaulspeed].value then
         bobmods.logistics.set_belt_speed(transport_belt,   vulcanus_transport_belt,   6)
         bobmods.logistics.set_belt_speed(underground_belt, vulcanus_underground_belt, 6)
 
+        if mods[bellicos_aegis_mods] then
+            bobmods.logistics.set_belt_speed(splitter,         space_splitter,         7)
+            bobmods.logistics.set_belt_speed(transport_belt,   space_transport_belt,   7)
+            bobmods.logistics.set_belt_speed(underground_belt, space_underground_belt, 7)
+        end
+
         if mods[arig_mods] then
-            bobmods.logistics.set_belt_speed(splitter,         hyper_splitter_arig,         7)
-            bobmods.logistics.set_belt_speed(transport_belt,   hyper_transport_belt_arig,   7)
-            bobmods.logistics.set_belt_speed(underground_belt, hyper_underground_belt_arig, 7)
+            bobmods.logistics.set_belt_speed(splitter,         hyper_splitter_arig,         8)
+            bobmods.logistics.set_belt_speed(transport_belt,   hyper_transport_belt_arig,   8)
+            bobmods.logistics.set_belt_speed(underground_belt, hyper_underground_belt_arig, 8)
         end
     end
 end
@@ -112,8 +124,11 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
             end
             bobmods.logistics.set_belt_distance(T4_underground_belt, 5)
             bobmods.logistics.set_belt_distance(T5_underground_belt, 6)
+            if mods[bellicos_aegis_mods] then
+                bobmods.logistics.set_belt_distance(space_underground_belt, 7)
+            end
             if mods[arig_mods] then
-                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 7)
+                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 8)
             end
         else
             bobmods.logistics.set_belt_distance(T1_underground_belt, 1)
@@ -124,12 +139,18 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
             end
             bobmods.logistics.set_belt_distance(T4_underground_belt, 4)
             bobmods.logistics.set_belt_distance(T5_underground_belt, 5)
+            if mods[bellicos_aegis_mods] then
+                bobmods.logistics.set_belt_distance(space_underground_belt, 6)
+            end
             if mods[arig_mods] then
-                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 6)
+                bobmods.logistics.set_belt_distance(hyper_underground_belt_arig, 7)
             end
         end
     else
         if settings.startup[setting_rebalance_belts_and_pipes].value == false then
+            if mods[lignumis_mods] then
+                data_underground_belt[wood_underground_belt].max_distance = 5
+            end
             data_underground_belt[T1_underground_belt].max_distance = 5
             data_underground_belt[T2_underground_belt].max_distance = 10
             data_underground_belt[T3_underground_belt].max_distance = 15
@@ -139,8 +160,11 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
             data_underground_belt[T4_underground_belt].max_distance = 20
             data_underground_belt[T5_underground_belt].max_distance = 25
             data_underground_belt[vulcanus_underground_belt].max_distance = 30
+            if mods[bellicos_aegis_mods] then
+                data_underground_belt[space_underground_belt].max_distance = 35
+            end
             if mods[arig_mods] then
-                data_underground_belt[hyper_underground_belt_arig].max_distance = 35
+                data_underground_belt[hyper_underground_belt_arig].max_distance = 40
             end
         end
     end
@@ -161,6 +185,41 @@ function bobmods.logistics.set_pipe_distance(pipe, level)
                 data_pipe_to_ground[pipe].fluid_box.pipe_connections[index].max_underground_distance = bobmods.logistics.pipe_distance(level)
             end
         end
+    end
+end
+
+if settings.startup[setting_rebalance_belts_and_pipes].value == false then
+    data_pipe_to_ground[iron_pipe_to_ground].max_distance = 10
+    data_pipe_to_ground[copper_pipe_to_ground].max_distance = 10
+    data_pipe_to_ground[stone_pipe_to_ground].max_distance = 10
+    if mods[tellus_mods] then
+        data_pipe_to_ground[orange_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[blue_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[yellow_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[magenta_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[green_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[red_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[cyan_pipe_to_ground].max_distance = 10
+        data_pipe_to_ground[black_pipe_to_ground].max_distance = 10
+    end
+    data_pipe_to_ground[bronze_pipe_to_ground].max_distance = 15
+    data_pipe_to_ground[steel_pipe_to_ground].max_distance = 15
+    data_pipe_to_ground[plastic_pipe_to_ground].max_distance = 20
+    data_pipe_to_ground[brass_pipe_to_ground].max_distance = 20
+    if mods[muluna_mods] then
+        data_pipe_to_ground[aluminium_pipe_to_ground].max_distance = 20
+    end
+    data_pipe_to_ground[titanium_pipe_to_ground].max_distance = 25
+    data_pipe_to_ground[ceramic_pipe_to_ground].max_distance = 25
+    data_pipe_to_ground[tungsten_pipe_to_ground].max_distance = 25
+    if mods[lignumis_mods] then
+        data_pipe_to_ground[gold_pipe_to_ground].max_distance = 25
+    end
+    data_pipe_to_ground[nitinol_pipe_to_ground].max_distance = 35
+    data_pipe_to_ground[copper_tungsten_pipe_to_ground].max_distance = 35
+    data_pipe_to_ground[molybdenum_rhenium_pipe_to_ground].max_distance = 40
+    if mods[paracelsin_mods] then
+        data_pipe_to_ground[galvanized_pipe_to_ground].max_distance = 40
     end
 end
 
@@ -189,6 +248,9 @@ if settings.startup[setting_rebalance_belts_and_pipes].value == false then
         bobmods.logistics.set_pipe_distance(titanium_pipe_to_ground,           4)
         bobmods.logistics.set_pipe_distance(ceramic_pipe_to_ground,            4)
         bobmods.logistics.set_pipe_distance(tungsten_pipe_to_ground,           4)
+        if mods[lignumis_mods] then
+            bobmods.logistics.set_pipe_distance(gold_pipe_to_ground, 4)
+        end
         bobmods.logistics.set_pipe_distance(nitinol_pipe_to_ground,            5)
         bobmods.logistics.set_pipe_distance(copper_tungsten_pipe_to_ground,    5)
         bobmods.logistics.set_pipe_distance(molybdenum_rhenium_pipe_to_ground, 6)

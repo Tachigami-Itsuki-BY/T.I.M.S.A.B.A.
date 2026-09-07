@@ -298,6 +298,7 @@ local simulations = require("prototypes.factoriopedia-simulations")
 data_item[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_item[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_item[vulcanus_underground_belt].stack_size = 32
+data_item[vulcanus_underground_belt].weight = 31250
 data_recipe[vulcanus_underground_belt].localised_name = {"entity-name.vulcanus-underground-belt"}
 data_recipe[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_recipe[vulcanus_underground_belt].energy_required = 1
@@ -313,14 +314,13 @@ data_underground_belt[vulcanus_underground_belt].subgroup = is_vulcanus_logistic
 data_underground_belt[vulcanus_underground_belt].speed = 11.25/60
 if settings.startup[setting_rebalance_belts_and_pipes].value then
     data_underground_belt[vulcanus_underground_belt].max_distance = 48
-else
-    data_underground_belt[vulcanus_underground_belt].max_distance = 27
 end
 data_underground_belt[vulcanus_underground_belt].factoriopedia_simulation = simulations.factoriopedia_vulcanus_underground_belt
 
 data_item[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_item[vulcanus_splitter].subgroup = is_vulcanus_logistic
 data_item[vulcanus_splitter].stack_size = 16
+data_item[vulcanus_splitter].weight = 62500
 data_recipe[vulcanus_splitter].localised_name = {"entity-name.vulcanus-splitter"}
 data_recipe[vulcanus_splitter].subgroup = is_vulcanus_logistic
 data_recipe[vulcanus_splitter].energy_required = 1
@@ -352,11 +352,26 @@ if mods[loaders_modernized_integrations] then
 end
 
 if mods[arig_mods] then
-    data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
-    data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
-    data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
+    if mods[bellicos_aegis_mods] then
+        data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
+        data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
+        data_splitter[vulcanus_splitter].next_upgrade = space_splitter
+    else
+        data_transport_belt[vulcanus_transport_belt].next_upgrade = hyper_transport_belt_arig
+        data_underground_belt[vulcanus_underground_belt].next_upgrade = hyper_underground_belt_arig
+        data_splitter[vulcanus_splitter].next_upgrade = hyper_splitter_arig
+    end
     if mods[loaders_modernized_integrations] then
         data_loader_1x1[vulcanus_loader].next_upgrade = hyper_loader_arig
+    end
+else
+    if mods[bellicos_aegis_mods] then
+        data_transport_belt[vulcanus_transport_belt].next_upgrade = space_transport_belt
+        data_underground_belt[vulcanus_underground_belt].next_upgrade = space_underground_belt
+        data_splitter[vulcanus_splitter].next_upgrade = space_splitter
+    end
+    if mods[loaders_modernized_integrations] then
+        data_loader_1x1[vulcanus_loader].next_upgrade = stack_loader
     end
 end
 

@@ -213,10 +213,8 @@ if mods[castra_mods] then
     }
     data_underground_belt[military_underground_belt_mods].subgroup = is_castra_logistic
     data_underground_belt[military_underground_belt_mods].order = b
-    data_underground_belt[military_underground_belt_mods].max_distance = 24
     if settings.startup[setting_rebalance_belts_and_pipes].value then
-        data_underground_belt[military_underground_belt_mods].speed = 6/60
-        data_underground_belt[military_underground_belt_mods].animation_speed_coefficient = 31.25
+        data_underground_belt[military_underground_belt_mods].max_distance = 24
     end
     data_underground_belt[military_underground_belt_mods].factoriopedia_simulation = simulations.factoriopedia_military_underground_belt_arig
 

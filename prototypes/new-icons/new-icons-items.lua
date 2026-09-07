@@ -291,6 +291,11 @@ if mods[lignumis_mods] then
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(4, gold_storage_tank, item)
 end
 
+-- BELLICOS AEGIS
+if mods[bellicos_aegis_mods] then
+    data_item[beryllium_plate].icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/beryllium/beryllium-plate.png"
+end
+
 -- MODS
 if mods[clowns_nuclear] then
     data_item[uranium_235].icons = nil

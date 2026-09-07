@@ -225,6 +225,15 @@ data_thruster[thruster].order = g
 data_thruster[thruster].min_performance = {fluid_volume = 0.1, fluid_usage = 0.125, effectivity = 1}
 data_thruster[thruster].max_performance = {fluid_volume = 0.8, fluid_usage = 2, effectivity = 0.51}
 
+bobmods.lib.recipe.update_recycling_recipe
+({
+    rocket_silo,
+    cargo_landing_pad,
+    space_platform_foundation,
+    cargo_bay,
+    asteroid_collector,
+    thruster,
+})
 
 if mods[panglia_mods] then
     data_item[asteroid_collector].localised_name = {"entity-name.asteroid-collector-1"}
@@ -639,12 +648,12 @@ if mods[secretas_frozeta_mods] then
     auric_asteroid_crushing = "auric-asteroid-crushing"
     local auric_asteroids =
     {
-        {type = data_asteroid, name = "small-auric-asteroid",     order = a},
-        {type = data_asteroid, name = "medium-auric-asteroid",    order = b},
-        {type = data_asteroid, name = "big-auric-asteroid",       order = c},
-        {type = data_asteroid, name = "huge-auric-asteroid",      order = d},
-        {type = data_item,     name = auric_asteroid_chunk,       order = e},
-        {type = data_recipe,   name = auric_asteroid_crushing,    order = e_a}
+        {type = data_asteroid, name = "small-auric-asteroid",  order = a},
+        {type = data_asteroid, name = "medium-auric-asteroid", order = b},
+        {type = data_asteroid, name = "big-auric-asteroid",    order = c},
+        {type = data_asteroid, name = "huge-auric-asteroid",   order = d},
+        {type = data_item,     name = auric_asteroid_chunk,    order = e},
+        {type = data_recipe,   name = auric_asteroid_crushing, order = e_a}
     }
     for _, AA in pairs(auric_asteroids) do
         if AA.type[AA.name] then
@@ -662,15 +671,59 @@ if mods[secretas_frozeta_mods] then
     data_recipe[auric_asteroid_crushing].results = {{type = item, name = gold_ore_bob, amount = 16}}
 end
 
-bobmods.lib.recipe.update_recycling_recipe
-({
-    rocket_silo,
-    cargo_landing_pad,
-    space_platform_foundation,
-    cargo_bay,
-    asteroid_collector,
-    thruster,
-})
+if mods[bellicos_aegis_mods] then
+    local beryllium_asteroid_chunk = "metallic_dense-asteroid-chunk"
+    beryllium_asteroid_crushing = "metallic_dense-asteroid-crushing"
+    local beryllium_asteroids =
+    {
+        {type = data_asteroid, name = "small-metallic_dense-asteroid",  order = a},
+        {type = data_asteroid, name = "medium-metallic_dense-asteroid", order = b},
+        {type = data_asteroid, name = "big-metallic_dense-asteroid",    order = c},
+        {type = data_asteroid, name = "huge-metallic_dense-asteroid",   order = d},
+        {type = data_item,     name = beryllium_asteroid_chunk,         order = e},
+        {type = data_recipe,   name = beryllium_asteroid_crushing,      order = e_a}
+    }
+    for _, AA in pairs(beryllium_asteroids) do
+        if AA.type[AA.name] then
+            AA.type[AA.name].subgroup = is_space_environment_10
+            AA.type[AA.name].order = AA.order
+        end
+    end
+
+    data_item[beryllium_asteroid_chunk].localised_description = show_formula and {chemical_formula, "Be"} or nil
+
+    data_recipe[beryllium_asteroid_crushing].icons = TWO_I(beryllium_asteroid_chunk, beryllium_ore)
+    data_recipe[beryllium_asteroid_crushing].energy_required = 4
+    data_recipe[beryllium_asteroid_crushing].results = {{type = item, name = beryllium_ore, amount = 16}}
+
+    local ionized_asteroid_chunk = "oxyde_rad-asteroid-chunk"
+    ionized_asteroid_crushing = "oxyde_rad-asteroid-crushing"
+    advanced_ionized_asteroid_crushing = "advanced-oxyde_rad-asteroid-crushing"
+    local ionized_asteroids =
+    {
+        {type = data_asteroid, name = "small-oxyde_rad-asteroid",         order = a},
+        {type = data_asteroid, name = "medium-oxyde_rad-asteroid",        order = b},
+        {type = data_asteroid, name = "big-oxyde_rad-asteroid",           order = c},
+        {type = data_asteroid, name = "huge-oxyde_rad-asteroid",          order = d},
+        {type = data_item,     name = ionized_asteroid_chunk,             order = e},
+        {type = data_recipe,   name = ionized_asteroid_crushing,          order = e_a},
+        {type = data_recipe,   name = advanced_ionized_asteroid_crushing, order = f_a}
+    }
+    for _, AA in pairs(ionized_asteroids) do
+        if AA.type[AA.name] then
+            AA.type[AA.name].subgroup = is_space_environment_11
+            AA.type[AA.name].order = AA.order
+        end
+    end
+
+    data_recipe[ionized_asteroid_crushing].icons = TWO_IS(ionized_asteroid_chunk, radioactive_ice)
+    data_recipe[ionized_asteroid_crushing].energy_required = 4
+    data_recipe[ionized_asteroid_crushing].results = {{type = item, name = radioactive_ice, amount = 8}}
+
+    data_recipe[advanced_ionized_asteroid_crushing].icons = TWO_I(ionized_asteroid_chunk, uranium_235)
+    data_recipe[advanced_ionized_asteroid_crushing].energy_required = 4
+    data_recipe[advanced_ionized_asteroid_crushing].results = {{type = item, name = uranium_235, amount = 8}}
+end
 
 if mods[hyarion_mods] then
     local is_space_facilities = "space-facilities"

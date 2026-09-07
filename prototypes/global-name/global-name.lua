@@ -354,6 +354,8 @@ NHH = "__TIMSABA__/graphics/icons/fluid/NHH.png"
 _C2H4_O2H2_ = "__TIMSABA__/graphics/icons/fluid/C2H4(OH)2.png"
 _C6F12O_ = "__TIMSABA__/graphics/icons/fluid/C6F12O.png"
 
+He_icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png"
+
 tech_error_png = "__TIMSABA__/graphics/icons/tech-error.png"
 
 -- SPACE

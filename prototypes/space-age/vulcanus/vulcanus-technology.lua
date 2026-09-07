@@ -225,7 +225,8 @@ data:extend
             {type = unlock_recipe, recipe = niobium_pellet},
             {type = unlock_recipe, recipe = heptafluoroniobic_acid},
             {type = unlock_recipe, recipe = niobium_hydroxide_V},
-            {type = unlock_recipe, recipe = niobium_oxide_V_3}
+            {type = unlock_recipe, recipe = niobium_oxide_V_3},
+            {type = unlock_recipe, recipe = fluorite_angels}
         },
         unit =
         {

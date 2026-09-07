@@ -1,3 +1,6 @@
+-- LOGISTICS
+data_recipe[T1_transport_belt].enabled = false
+
 -- ADVANCED LOGISTICS
 data_lamp[small_lamp].next_upgrade = nil
 
@@ -809,6 +812,16 @@ end
 
 -- LIGNUMIS
 if mods[lignumis_mods] then
+    data_recipe[iron_bearing_ball].enabled = false
+    data_recipe[iron_bearing].enabled = false
+
+    data_recipe[burner_ore_sorting_facility].enabled = true
+    data_recipe[burner_chemical_plant].enabled = true
+
+    data_assembling[assembling_machine_1].fluid_boxes = util.table.deepcopy(data_assembling[assembling_machine_2].fluid_boxes)
+    data_assembling[assembling_machine_1].off_when_no_fluid_recipe = true
+    data_assembling[assembling_machine_1].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
+
     if data_recipe[T0_transport_belt] then
         data_recipe[T0_transport_belt].enabled = false
     end
@@ -819,17 +832,7 @@ if mods[lignumis_mods] then
     data_item[rocket_fuel].fuel_category = transport_fuel
 
     if data_technology[tech_logistics_0] then
-        data_technology[tech_logistics_0].prerequisites = {"iron-processing", "wood-logistics"}
-        data_technology[tech_logistics_0].effects =
-        {
-            {type = unlock_recipe, recipe = T0_transport_belt},
-            {type = unlock_recipe, recipe = T0_underground_belt},
-            {type = unlock_recipe, recipe = T0_splitter},
-            {type = unlock_recipe, recipe = copper_cable}
-        }
-        if mods[loaders_modernized_integrations] and settings.startup[setting_mdrn_unlock_technology].value == "belt" then
-            table.insert(data_technology[tech_logistics_0].effects, {type = unlock_recipe, recipe = T0_loader})
-        end
+        data_technology[tech_logistics_0].prerequisites = {tech_iron_processing, tech_copper_processing, "wood-logistics"}
     else
         table.insert(data_technology[tech_logistics_1].prerequisites, "wood-logistics")
     end
@@ -882,6 +885,77 @@ if mods[lignumis_mods] then
     }
 
     data_technology[tech_space_platform_thruster].prerequisites = {rocket_silo}
+end
+
+if mods[bellicos_aegis_mods] then
+    data_technology[tritium_RTG].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1}
+    }
+end
+
+if mods[bellicos_aegis_mods] and mods[muluna_mods] then
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = anorthite_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = ionized_asteroid_crushing, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_anorthite_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
+    }
+elseif mods[bellicos_aegis_mods] and not mods[muluna_mods] then
+    data_technology[tech_asteroid_productivity].effects =
+    {
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
+        {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
+        {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = ionized_asteroid_crushing, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_3, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_metallic_asteroid_crushing_4, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_carbonic_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_1, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_oxide_asteroid_crushing_2, change = 0.1},
+        {type = change_recipe_productivity, recipe = advanced_ionized_asteroid_crushing, change = 0.1}
+    }
 end
 
 -- MODS

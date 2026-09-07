@@ -211,7 +211,6 @@ if mods[paracelsin_mods] then
     }
     data_pipe_to_ground[galvanized_pipe_to_ground].subgroup = is_paracelsin_logistic
     data_pipe_to_ground[galvanized_pipe_to_ground].order = b
-    data_pipe_to_ground[galvanized_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 48
     data_pipe_to_ground[galvanized_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_galvanized_pipe_to_ground
 
     if settings.startup[setting_flow_control_new].value then

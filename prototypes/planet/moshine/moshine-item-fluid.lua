@@ -14,7 +14,7 @@ if mods[moshine_mods] then
     })
     TIMSABA.barreling.add_gas(moshine_air)
 
-    -- NEODYMIUM
+    -- NEODYMIUM ITEM
     neodymium_ore = "neodymium-ore"
     neodymium_processed = "neodymium-processed"
     neodymium_pellet = "neodymium-pellet"
@@ -28,12 +28,12 @@ if mods[moshine_mods] then
             localised_description = show_formula and {chemical_formula, "Nd"} or nil,
             name = neodymium_ore,
             subgroup = is_neodymium,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-ore.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ore.png",
             pictures =
             {
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ore-1.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ore-2.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ore-3.png", width = 64, height = 64, scale = 0.5}
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ore-1.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ore-2.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ore-3.png", width = 64, height = 64, scale = 0.5}
             },
             order = a
         },
@@ -41,31 +41,31 @@ if mods[moshine_mods] then
             localised_description = show_formula and {chemical_formula, "Nd"} or nil,
             name = neodymium_processed,
             subgroup = is_neodymium,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-processed.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-processed.png",
             order = b
         },
         {
             localised_description = show_formula and {chemical_formula, "Nd"} or nil,
             name = neodymium_pellet,
             subgroup = is_neodymium,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-pellet.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-pellet.png",
             order = c
         },
         {
             localised_description = show_formula and {chemical_formula, "Nd"} or nil,
             name = neodymium_ingot,
             subgroup = is_neodymium,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot.png",
             pictures =
             {
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-1.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-2.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-3.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-3.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-5.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-6.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-7.png", width = 64, height = 64, scale = 0.5},
-                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium-ingot-8.png", width = 64, height = 64, scale = 0.5}
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-1.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-2.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-3.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-3.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-5.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-6.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-7.png", width = 64, height = 64, scale = 0.5},
+                {filename = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-ingot-8.png", width = 64, height = 64, scale = 0.5}
             },
             order = d
         },
@@ -74,26 +74,26 @@ if mods[moshine_mods] then
             localised_description = show_formula and {chemical_formula, "NdCl[font=default-tiny-bold]3[/font]"} or nil,
             name = neodymium_chloride_III,
             subgroup = is_neodymium_chemistry,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-chloride-III.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-chloride-III.png",
             order = a
         },
         {
             localised_description = show_formula and {chemical_formula, "Nd(OH)[font=default-tiny-bold]3[/font]"} or nil,
             name = neodymium_hydroxide_III,
             subgroup = is_neodymium_chemistry,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-hydroxide-III.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-hydroxide-III.png",
             order = b
         },
         {
             localised_description = show_formula and {chemical_formula, "Nd[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
             name = neodymium_oxide_III,
             subgroup = is_neodymium_chemistry,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-oxide-III.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-oxide-III.png",
             order = c
         }
     })
 
-    -- FLUID
+    -- NEODYMIUM FLUID
     neodymium_iron_boron_molten = "neodymium-iron-boron-molten"
     TIMSABA.functions.create_fluids
     ({
@@ -102,7 +102,7 @@ if mods[moshine_mods] then
             localised_description = show_formula and {chemical_formula, "NdFeB"} or nil,
             name = neodymium_iron_boron_molten,
             subgroup = is_neodymium_casting,
-            icon = "__TIMSABA__/graphics/icons/moshine/neodymium-iron-boron-molten.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/neodymium-iron-boron-molten.png",
             order = a,
             base_color = TIMSABA.functions.fluid_color("NdFeB"),
             flow_color = TIMSABA.functions.flow_color("NdFeB")

@@ -36,6 +36,18 @@ else
     }
 end
 
+if data_technology[tech_logistics_0] then
+    data_technology[tech_logistics_0].effects =
+    {
+        {type = unlock_recipe, recipe = T0_transport_belt},
+        {type = unlock_recipe, recipe = T0_underground_belt},
+        {type = unlock_recipe, recipe = T0_splitter}
+    }
+    if mods[loaders_modernized_integrations] and settings.startup[setting_mdrn_unlock_technology].value == "belt" then
+        table.insert(data_technology[tech_logistics_0].effects, {type = unlock_recipe, recipe = T0_loader})
+    end
+end
+
 data_technology[tech_logistics_5].prerequisites = {tech_logistics_4, tech_nitinol_processing, advanced_processing_unit, utility_science_pack}
 
 local tech_logistic_system = "logistic-system"

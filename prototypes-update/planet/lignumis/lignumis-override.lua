@@ -102,6 +102,7 @@ if mods[lignumis_mods] then
     data_recipe[nutrients_from_wood_pulp].results[1].amount = 4
 
     local rocket_fuel_from_wood_pulp_and_peat = rocket_fuel .. "-from-" .. wood_pulp .. "-and-" .. peat
+    data_recipe[rocket_fuel_from_wood_pulp_and_peat].category = chemistry
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].subgroup = is_lignumis_recipe
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].icons = BUILDING_R_I(rocket_fuel, planet_lignumis)
     data_recipe[rocket_fuel_from_wood_pulp_and_peat].order = k_d
@@ -244,14 +245,14 @@ if mods[lignumis_mods] then
     }
     data_underground_belt[wood_underground_belt].subgroup = is_lignumis_logistic
     data_underground_belt[wood_underground_belt].order = b
-    data_underground_belt[wood_underground_belt].factoriopedia_simulation = simulations.factoriopedia_wood_underground_belt
-    if data_underground_belt[T0_underground_belt] then
+    if data_transport_belt[T0_underground_belt] then
         data_underground_belt[wood_underground_belt].speed = 0.46875/60
         data_underground_belt[wood_underground_belt].next_upgrade = T0_underground_belt
     else
         data_underground_belt[wood_underground_belt].speed = 0.9375/60
         data_underground_belt[wood_underground_belt].next_upgrade = T1_underground_belt
     end
+    data_underground_belt[wood_underground_belt].factoriopedia_simulation = simulations.factoriopedia_wood_underground_belt
 
     data_item[wood_splitter].subgroup = is_lignumis_logistic
     data_item[wood_splitter].order = c
@@ -267,7 +268,7 @@ if mods[lignumis_mods] then
         {type = item, name = lumber, amount = 4},
         {type = item, name = gold_cable, amount = 4}
     }
-    if data_splitter[T0_splitter] then
+    if data_transport_belt[T0_splitter] then
         data_splitter[wood_splitter].speed = 0.46875/60
         data_splitter[wood_splitter].next_upgrade = T0_splitter
     else
@@ -296,7 +297,6 @@ if mods[lignumis_mods] then
     }
     data_pipe_to_ground[gold_pipe_to_ground].subgroup = is_lignumis_logistic
     data_pipe_to_ground[gold_pipe_to_ground].order = e
-    data_pipe_to_ground[gold_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 32
     data_pipe_to_ground[gold_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_gold_pipe_to_ground
 
     data_item[gold_storage_tank].subgroup = is_lignumis_logistic
@@ -305,9 +305,9 @@ if mods[lignumis_mods] then
     data_item[gold_storage_tank].weight = 31250
     data_recipe[gold_storage_tank].subgroup = is_lignumis_logistic
     data_recipe[gold_storage_tank].order = f
-    data_recipe[gold_pipe_to_ground].energy_required = 4
-    data_recipe[gold_pipe_to_ground].ingredients[1].amount = 16
-    data_recipe[gold_pipe_to_ground].ingredients[2].amount = 16
+    data_recipe[gold_storage_tank].energy_required = 4
+    data_recipe[gold_storage_tank].ingredients[1].amount = 16
+    data_recipe[gold_storage_tank].ingredients[2].amount = 16
     data_storage_tank[gold_storage_tank].subgroup = is_lignumis_logistic
     data_storage_tank[gold_storage_tank].order = f
     data_storage_tank[gold_storage_tank].fluid_box.volume = 7200
@@ -446,11 +446,11 @@ if mods[lignumis_mods] then
 
     local wood_lab = "wood-lab"
     data_item[wood_lab].subgroup = is_lignumis_building
-    data_item[wood_lab].order = f
+    data_item[wood_lab].order = g
     data_item[wood_lab].stack_size = 32
     data_item[wood_lab].weight = 31250
     data_recipe[wood_lab].subgroup = is_lignumis_building
-    data_recipe[wood_lab].order = f
+    data_recipe[wood_lab].order = g
     data_recipe[wood_lab].ingredients =
     {
         {type = item, name = wooden_gear_wheel, amount = 4},
@@ -460,15 +460,15 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 8}
     }
     data_lab[wood_lab].subgroup = is_lignumis_building
-    data_lab[wood_lab].order = f
+    data_lab[wood_lab].order = g
     data_lab[wood_lab].energy_usage = 225 .. kW
 
     data_item[quality_assembler].subgroup = is_lignumis_building
-    data_item[quality_assembler].order = g
+    data_item[quality_assembler].order = h
     data_item[quality_assembler].stack_size = 32
     data_item[quality_assembler].weight = 31250
     data_recipe[quality_assembler].subgroup = is_lignumis_building
-    data_recipe[quality_assembler].order = g
+    data_recipe[quality_assembler].order = h
     data_recipe[quality_assembler].energy_required = 64
     data_recipe[quality_assembler].ingredients =
     {
@@ -482,18 +482,18 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 64}
     }
     data_assembling[quality_assembler].subgroup = is_lignumis_building
-    data_assembling[quality_assembler].order = g
+    data_assembling[quality_assembler].order = h
     data_assembling[quality_assembler].module_slots = 4
     data_assembling[quality_assembler].energy_usage = 3600 .. kW
     data_assembling[quality_assembler].effect_receiver.base_effect.quality = 5
 
     local provisional_rocket_silo = "provisional-" .. rocket_silo
     data_item[provisional_rocket_silo].subgroup = is_lignumis_building
-    data_item[provisional_rocket_silo].order = h
+    data_item[provisional_rocket_silo].order = i
     data_item[provisional_rocket_silo].stack_size = 1
     data_item[provisional_rocket_silo].weight = 1000000000
     data_recipe[provisional_rocket_silo].subgroup = is_lignumis_building
-    data_recipe[provisional_rocket_silo].order = h
+    data_recipe[provisional_rocket_silo].order = i
     data_recipe[provisional_rocket_silo].energy_required = 32
     data_recipe[provisional_rocket_silo].ingredients =
     {
@@ -504,14 +504,14 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 512}
     }
     data_rocket_silo[provisional_rocket_silo].subgroup = is_lignumis_building
-    data_rocket_silo[provisional_rocket_silo].order = h
+    data_rocket_silo[provisional_rocket_silo].order = i
     data_rocket_silo[provisional_rocket_silo].energy_usage = 3600 .. kW
 
     local active_noise_cancelling_tower = "active-noise-cancelling-tower"
     data_item[active_noise_cancelling_tower].subgroup = is_lignumis_building
-    data_item[active_noise_cancelling_tower].order = i
+    data_item[active_noise_cancelling_tower].order = j
     data_recipe[active_noise_cancelling_tower].subgroup = is_lignumis_building
-    data_recipe[active_noise_cancelling_tower].order = i
+    data_recipe[active_noise_cancelling_tower].order = j
     data_recipe[active_noise_cancelling_tower].energy_required = 16
     data_recipe[active_noise_cancelling_tower].ingredients =
     {
@@ -521,7 +521,7 @@ if mods[lignumis_mods] then
         {type = item, name = gold_cable, amount = 4}
     }
     data_assembling[active_noise_cancelling_tower].subgroup = is_lignumis_building
-    data_assembling[active_noise_cancelling_tower].order = i
+    data_assembling[active_noise_cancelling_tower].order = j
     data_assembling[active_noise_cancelling_tower].energy_usage = 480 .. kW
 
     -- WAR
@@ -634,6 +634,31 @@ if mods[lignumis_mods] then
     }
 
     table.insert(data_technology["provisional-rocketry"].effects, {type = unlock_recipe, recipe = rocket_fuel_from_wood_pulp_and_peat})
+
+    tech_iron_processing = "iron-processing"
+    data_technology[tech_iron_processing].effects =
+    {
+        {type = unlock_recipe, recipe = iron_plate},
+        {type = unlock_recipe, recipe = iron_gear_wheel},
+        {type = unlock_recipe, recipe = iron_bearing_ball},
+        {type = unlock_recipe, recipe = iron_bearing},
+        {type = unlock_recipe, recipe = iron_chest}
+    }
+    data_technology[tech_iron_processing].research_trigger =
+    {
+        type = craft_item,
+        item = crushed_saphirite,
+        count = 200
+    }
+
+    tech_copper_processing = "copper-processing"
+    data_technology[tech_copper_processing].effects = {{type = unlock_recipe, recipe = copper_plate}}
+    data_technology[tech_copper_processing].research_trigger =
+    {
+        type = craft_item,
+        item = crushed_stiratite,
+        count = 200
+    }
 
     local tech_active_noise_cancelling = "active-noise-cancelling"
     data_technology[tech_active_noise_cancelling].prerequisites = {space_science_pack}

@@ -122,9 +122,6 @@ if mods[muluna_mods] then
     data_pipe_to_ground[aluminium_pipe_to_ground].subgroup = is_muluna_recipe_anorthite
     data_pipe_to_ground[aluminium_pipe_to_ground].order = f
     data_pipe_to_ground[aluminium_pipe_to_ground].factoriopedia_simulation = simulations.factoriopedia_aluminium_pipe_to_ground
-    if settings.startup[setting_rebalance_belts_and_pipes].value then
-        data_pipe_to_ground[aluminium_pipe_to_ground].fluid_box.pipe_connections[2].max_underground_distance = 24
-    end
 
     if settings.startup[setting_flow_control_new].value then
         data_recipe[aluminium_pipe .. _straight].ingredients[1].name = aluminium_pipe
@@ -508,7 +505,6 @@ if mods[muluna_mods] then
         {type = fluid, name = steam, amount = 30}
     }
 
-    local LDSPF = "low-density-space-platform-foundation"
     data_item[LDSPF].subgroup = is_muluna_recipe
     data_item[LDSPF].order = f
     data_recipe[LDSPF].subgroup = is_muluna_recipe
@@ -1509,9 +1505,6 @@ if mods[muluna_mods] then
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_5, change = 0.1},
         {type = change_recipe_productivity, recipe = metallic_asteroid_crushing_6, change = 0.1},
         {type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_1, change = 0.1},
-        --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_2, change = 0.1},
-        --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_3, change = 0.1},
-        --{type = change_recipe_productivity, recipe = carbonic_asteroid_crushing_4, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_1, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_2, change = 0.1},
         {type = change_recipe_productivity, recipe = oxide_asteroid_crushing_3, change = 0.1},

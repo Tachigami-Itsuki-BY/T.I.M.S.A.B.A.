@@ -9,6 +9,8 @@ is_space_environment_6 = "is-space-environment-6"
 is_space_environment_7 = "is-space-environment-7"
 is_space_environment_8 = "is-space-environment-8"
 is_space_environment_9 = "is-space-environment-9"
+is_space_environment_10 = "is-space-environment-10"
+is_space_environment_11 = "is-space-environment-11"
 is_space_processing_2 = "is-space-processing-2"
 TIMSABA.functions.create_subgroups(ig_space,
 {
@@ -21,5 +23,7 @@ TIMSABA.functions.create_subgroups(ig_space,
     {name = is_space_environment_7, order = f_f},
     {name = is_space_environment_8, order = f_g},
     {name = is_space_environment_9, order = f_h},
+    {name = is_space_environment_10, order = f_i},
+    {name = is_space_environment_11, order = f_j},
     {name = is_space_processing_2,  order = i_a}
 })

@@ -481,7 +481,7 @@ TIMSABA.functions.create_recipes
     {
         name = hydrocyanic_acid,
         category = angels_advanced_chemistry,
-        subgroup = is_others_fluids,
+        subgroup = is_others_fluid,
         icons = THREE_D_I(methane_angels, ammonia_angels, oxygen_angels, hydrocyanic_acid, nil, steam),
         order = b,
         -- 2CH₄(g) + 2NH₃(g) + 3O₂(g) --> 2HCN + 6H₂O
