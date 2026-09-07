@@ -846,3 +846,10 @@ end
 if mods[lignumis_mods] then
     data_fluid[wood_pulp].icon = "__TIMSABA__/graphics/icons/lignumis/wood-pulp.png"
 end
+
+-- BELLICOS AEGIS
+if mods[bellicos_aegis_mods] and not mods[vesta_mods] then
+    data_fluid[helium_mods].icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png"
+    data_fluid[helium_mods].base_color = TIMSABA.functions.fluid_color("HeHeHe")
+    data_fluid[helium_mods].flow_color = TIMSABA.functions.flow_color("HeHeHe")
+end

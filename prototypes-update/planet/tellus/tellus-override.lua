@@ -956,11 +956,6 @@ if mods[tellus_mods] then
             data_recipe[prototypes.name].results[1].amount = 8
             data_pipe_to_ground[prototypes.name].subgroup = is_tellus_pipe_to_ground
             data_pipe_to_ground[prototypes.name].order = prototypes.order
-            if settings.startup[setting_rebalance_belts_and_pipes].value then
-                data_pipe_to_ground[prototypes.name].fluid_box.pipe_connections[2].max_underground_distance = 8
-            else
-                data_pipe_to_ground[prototypes.name].fluid_box.pipe_connections[2].max_underground_distance = 11
-            end
             data_pipe_to_ground[prototypes.name].factoriopedia_simulation = prototypes.simulation
 
             bobmods.lib.recipe.update_recycling_recipe({prototypes.name})

@@ -126,19 +126,19 @@ TIMSABA.functions.create_subgroups("angels-water-treatment",
 ig_petrochem_refining = "angels-petrochem-refining"
 is_basic_fluids = "angels-petrochem-basic-fluids"
 is_coal = "angels-petrochem-coal"
-is_carbon_fluids_1 = "is-carbon-fluids-1"
+is_carbon_fluid_1 = "is-carbon-fluid-1"
 is_nitrogen = "angels-petrochem-nitrogen"
 is_nitrogen_fluids = "angels-petrochem-nitrogen-fluids"
-is_fluorine_fluids = "is-fluorine-fluids"
+is_fluorine_fluid = "is-fluorine-fluid"
 is_sodium = "angels-petrochem-sodium"
-is_sodium_fluids = "is-sodium-fluids"
+is_sodium_fluid = "is-sodium-fluid"
 is_sulfur = "angels-petrochem-sulfur"
 is_sulfur_fluids = "angels-petrochem-sulfur-fluids"
 is_chlorine_fluids = "angels-petrochem-chlorine-fluids"
 is_calcium = "is-calcium"
-is_calcium_fluids = "is-calcium-fluids"
+is_calcium_fluid = "is-calcium-fluid"
 is_others = "is-others"
-is_others_fluids = "is-others-fluids"
+is_others_fluid = "is-others-fluid"
 is_natural_gas = "is-natural-gas"
 is_multi_phase_oil = "is-multi-phase-oil"
 is_synthesis_gas = "is-synthesis-gas"
@@ -163,13 +163,13 @@ is_buildings_steam = "angels-petrochem-buildings-steam" -- z_i
 is_buildings_petrochem_others = "is-buildings-petrochem-others" -- z_j
 TIMSABA.functions.create_subgroups(ig_petrochem_refining,
 {
-    {name = is_carbon_fluids_1,                   order = b_a},
-    {name = is_fluorine_fluids,                   order = d},
-    {name = is_sodium_fluids,                     order = e_a},
+    {name = is_carbon_fluid_1,                    order = b_a},
+    {name = is_fluorine_fluid,                    order = d},
+    {name = is_sodium_fluid,                      order = e_a},
     {name = is_calcium,                           order = h},
-    {name = is_calcium_fluids,                    order = h_a},
+    {name = is_calcium_fluid,                     order = h_a},
     {name = is_others,                            order = i},
-    {name = is_others_fluids,                     order = i_a},
+    {name = is_others_fluid,                      order = i_a},
     {name = is_natural_gas,                       order = j},
     {name = is_multi_phase_oil,                   order = k},
     {name = is_synthesis_gas,                     order = l},

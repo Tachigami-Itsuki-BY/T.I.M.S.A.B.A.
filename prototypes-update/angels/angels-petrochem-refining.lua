@@ -258,11 +258,11 @@ data_recipe[coal_cracking_3].results =
 }
 
 -- CARBON FLUIDS ONE
-data_fluid[carbon_monoxide_angels].subgroup = is_carbon_fluids_1
+data_fluid[carbon_monoxide_angels].subgroup = is_carbon_fluid_1
 data_fluid[carbon_monoxide_angels].order = a
 TIMSABA.barreling.add_gas(carbon_monoxide_angels)
 data_recipe[carbon_monoxide_angels].category = chemistry
-data_recipe[carbon_monoxide_angels].subgroup = is_carbon_fluids_1
+data_recipe[carbon_monoxide_angels].subgroup = is_carbon_fluid_1
 data_recipe[carbon_monoxide_angels].icons = TWO_D_I(carbon_angels, water_purified_angels, carbon_monoxide_angels, hydrogen_angels)
 data_recipe[carbon_monoxide_angels].order = a
 -- C + H₂O --> CO + H₂
@@ -279,7 +279,7 @@ data_recipe[carbon_monoxide_angels].results =
 data_recipe[carbon_monoxide_angels].main_product = carbon_monoxide_angels
 
 local water_gas_shift_1 = "angels-water-gas-shift-1"
-data_recipe[water_gas_shift_1].subgroup = is_carbon_fluids_1
+data_recipe[water_gas_shift_1].subgroup = is_carbon_fluid_1
 data_recipe[water_gas_shift_1].icons = TWO_D_I(carbon_monoxide_angels, steam, carbon_dioxide_angels, hydrogen_angels)
 data_recipe[water_gas_shift_1].order = a_a
 -- CO + H₂O --> CO₂ + H₂
@@ -288,10 +288,10 @@ data_recipe[water_gas_shift_1].ingredients[2].amount = 60
 data_recipe[water_gas_shift_1].results[1].amount = 60
 data_recipe[water_gas_shift_1].results[2].amount = 60
 
-data_fluid[carbon_dioxide_angels].subgroup = is_carbon_fluids_1
+data_fluid[carbon_dioxide_angels].subgroup = is_carbon_fluid_1
 data_fluid[carbon_dioxide_angels].order = b
 TIMSABA.barreling.add_gas(carbon_dioxide_angels)
-data_recipe[carbon_dioxide_angels].subgroup = is_carbon_fluids_1
+data_recipe[carbon_dioxide_angels].subgroup = is_carbon_fluid_1
 data_recipe[carbon_dioxide_angels].icons = THREE_I(coal, oxygen_angels, carbon_dioxide_angels)
 data_recipe[carbon_dioxide_angels].order = b
 -- C + O₂ --> CO₂
@@ -303,7 +303,7 @@ data_recipe[carbon_dioxide_angels].ingredients =
 data_recipe[carbon_dioxide_angels].results[1].amount = 60
 
 local water_gas_shift_2 = "angels-water-gas-shift-2"
-data_recipe[water_gas_shift_2].subgroup = is_carbon_fluids_1
+data_recipe[water_gas_shift_2].subgroup = is_carbon_fluid_1
 data_recipe[water_gas_shift_2].icons = TWO_D_I(carbon_dioxide_angels, hydrogen_angels, carbon_monoxide_angels, water_purified_angels)
 data_recipe[water_gas_shift_2].order = b_a
 data_recipe[water_gas_shift_2].energy_required = 8 -- CO₂ + H₂ --> CO + H₂O
@@ -547,11 +547,11 @@ data_recipe[ammonium_chloride_solution_angels].ingredients[2].amount = 30
 data_recipe[ammonium_chloride_solution_angels].results[1].amount = 30
 
 -- FLUORINE FLUIDS
-data_fluid[hydrogen_fluoride_angels].subgroup = is_fluorine_fluids
+data_fluid[hydrogen_fluoride_angels].subgroup = is_fluorine_fluid
 data_fluid[hydrogen_fluoride_angels].order = a
 TIMSABA.barreling.add_gas(hydrogen_fluoride_angels)
 data_recipe[hydrogen_fluoride_angels].category = angels_liquifying
-data_recipe[hydrogen_fluoride_angels].subgroup = is_fluorine_fluids
+data_recipe[hydrogen_fluoride_angels].subgroup = is_fluorine_fluid
 data_recipe[hydrogen_fluoride_angels].icons = TWO_D_I(fluorite_angels, sulfuric_acid_angels, hydrogen_fluoride_angels, calcium_sulfate_angels)
 data_recipe[hydrogen_fluoride_angels].order = a
 -- CaF₂ + H₂SO₄ --> CaSO₄ + 2HF 
@@ -567,11 +567,11 @@ data_recipe[hydrogen_fluoride_angels].results =
 }
 
 data_fluid[hydrofluoric_acid_angels].localised_description = show_formula and {chemical_formula, "HF[font=default-tiny-bold](aq)[/font]"} or nil
-data_fluid[hydrofluoric_acid_angels].subgroup = is_fluorine_fluids
+data_fluid[hydrofluoric_acid_angels].subgroup = is_fluorine_fluid
 data_fluid[hydrofluoric_acid_angels].order = b
 TIMSABA.barreling.add_dangerous_fluid(hydrofluoric_acid_angels)
 data_recipe[hydrofluoric_acid_angels].category = chemistry
-data_recipe[hydrofluoric_acid_angels].subgroup = is_fluorine_fluids
+data_recipe[hydrofluoric_acid_angels].subgroup = is_fluorine_fluid
 data_recipe[hydrofluoric_acid_angels].icons = THREE_I(hydrogen_fluoride_angels, water_purified_angels, hydrofluoric_acid_angels)
 data_recipe[hydrofluoric_acid_angels].order = b
 -- HF + H₂O --> HF(aq)
@@ -584,7 +584,7 @@ data_recipe[hydrofluoric_acid_angels].results = {{type = fluid, name = hydrofluo
 data_recipe[hydrofluoric_acid_angels].main_product = hydrofluoric_acid_angels
 
 local hydrogen_fluoride_dissolving = "angels-hydrogen-fluoride-dissolving"
-data_recipe[hydrogen_fluoride_dissolving].subgroup = is_fluorine_fluids
+data_recipe[hydrogen_fluoride_dissolving].subgroup = is_fluorine_fluid
 data_recipe[hydrogen_fluoride_dissolving].icons = THREE_R_I(hydrofluoric_acid_angels, hydrogen_fluoride_angels, steam)
 data_recipe[hydrogen_fluoride_dissolving].order = b_a
 -- HF(aq) --> HF + H₂O
@@ -816,13 +816,13 @@ data_recipe[sodium_cobaltate_bob].results =
 }
 
 -- SODIUM FLUIDS
-data_item_subgroup[is_sodium_fluids].order = e_a
+data_item_subgroup[is_sodium_fluid].order = e_a
 
 data_fluid[sodium_hydroxide_solution_angels].localised_description = show_formula and {chemical_formula, "NaOH[font=default-tiny-bold](aq)[/font]"} or nil
-data_fluid[sodium_hydroxide_solution_angels].subgroup = is_sodium_fluids
+data_fluid[sodium_hydroxide_solution_angels].subgroup = is_sodium_fluid
 data_fluid[sodium_hydroxide_solution_angels].order = a
 TIMSABA.barreling.add_dangerous_fluid(sodium_hydroxide_solution_angels)
-data_recipe[sodium_hydroxide_solution_angels].subgroup = is_sodium_fluids
+data_recipe[sodium_hydroxide_solution_angels].subgroup = is_sodium_fluid
 data_recipe[sodium_hydroxide_solution_angels].icons = THREE_I(sodium_hydroxide_angels, water_purified_angels, sodium_hydroxide_solution_angels)
 data_recipe[sodium_hydroxide_solution_angels].order = a
 -- NaOH + H₂O --> NaOH(aq)
@@ -831,7 +831,7 @@ data_recipe[sodium_hydroxide_solution_angels].ingredients[2].amount = 60
 data_recipe[sodium_hydroxide_solution_angels].results[1].amount = 60
 
 data_recipe[sodium_hypochlorite_decomposition].category = chemistry
-data_recipe[sodium_hypochlorite_decomposition].subgroup = is_sodium_fluids
+data_recipe[sodium_hypochlorite_decomposition].subgroup = is_sodium_fluid
 data_recipe[sodium_hypochlorite_decomposition].icons = THREE_R_I(sodium_hypochlorite_solution, sodium_chloride_solution, oxygen_angels)
 data_recipe[sodium_hypochlorite_decomposition].order = f_b
 -- 2NaClO(aq) --> 2NaCl(aq) + O₂

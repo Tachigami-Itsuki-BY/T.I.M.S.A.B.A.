@@ -1,5 +1,6 @@
 local bool_setting = "bool-setting"
 local double_setting = "double-setting"
+local string_setting = "string-setting"
 local startup = "startup"
 data:extend
 ({
@@ -64,6 +65,13 @@ data:extend
         name = "setting-infinite-research",
         setting_type = startup,
         default_value = false
+    },
+    {
+        type = string_setting,
+        name = "setting-game-difficulty",
+        setting_type = startup,
+        default_value = "normal",
+        allowed_values = {"easy", "normal", "hard"}
     }
 })
 

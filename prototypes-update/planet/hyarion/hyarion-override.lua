@@ -284,7 +284,7 @@ if mods[hyarion_mods] then
     data_item[beryl].order = e
     data_item[beryl].stack_size = 200
     data_recipe[beryl].subgroup = is_hyarion_recipe_other
-    data_recipe[beryl].icons = TWO_I(polished_emerald_bob, beryl)
+    data_recipe[beryl].icons = THREE_I(polished_emerald_bob, unstable_gem, beryl)
     data_recipe[beryl].order = e
     data_recipe[beryl].energy_required = 4
     data_recipe[beryl].ingredients =
@@ -295,23 +295,27 @@ if mods[hyarion_mods] then
     data_recipe[beryl].results = {{type = item, name = beryl, amount = 1}}
     data_recipe[beryl].main_product = beryl
 
-    data_item[beryllium_plate].localised_description = show_formula and {chemical_formula, "Be"} or nil
-    data_item[beryllium_plate].subgroup = is_hyarion_recipe_other
-    data_item[beryllium_plate].order = f
-    data_item[beryllium_plate].stack_size = 200
-    data_recipe[beryllium_plate].subgroup = is_hyarion_recipe_other
-    data_recipe[beryllium_plate].icons = TWO_I(beryl, beryllium_plate)
-    data_recipe[beryllium_plate].order = f
-    data_recipe[beryllium_plate].energy_required = 4 -- 2Be₃Al₂Si₆O₁₈ --> 6Be + 2Al₂O₃ + 12SiO₂ + 3O₂
-    data_recipe[beryllium_plate].ingredients = {{type = item, name = beryl, amount = 2}}
-    data_recipe[beryllium_plate].results =
+    data_item[beryllium_plate_hyarion].localised_description = show_formula and {chemical_formula, "Be"} or nil
+    data_item[beryllium_plate_hyarion].subgroup = is_hyarion_recipe_other
+    data_item[beryllium_plate_hyarion].order = f
+    data_item[beryllium_plate_hyarion].stack_size = 200
+    data_recipe[beryllium_plate_hyarion].subgroup = is_hyarion_recipe_other
+    if mods[bellicos_aegis_mods] then
+        data_recipe[beryllium_plate_hyarion].icons = FOUR_D_I(beryl, nil, nil, nil, beryllium_plate, aluminium_oxide, raw_quartz_arig, oxygen_angels)
+    else
+        data_recipe[beryllium_plate_hyarion].icons = FOUR_D_I(beryl, nil, nil, nil, beryllium_plate_hyarion, aluminium_oxide, raw_quartz_arig, oxygen_angels)
+    end
+    data_recipe[beryllium_plate_hyarion].order = f
+    data_recipe[beryllium_plate_hyarion].energy_required = 4 -- 2Be₃Al₂Si₆O₁₈ --> 6Be + 2Al₂O₃ + 12SiO₂ + 3O₂
+    data_recipe[beryllium_plate_hyarion].ingredients = {{type = item, name = beryl, amount = 2}}
+    data_recipe[beryllium_plate_hyarion].results =
     {
-        {type = item, name = beryllium_plate, amount = 6},
+        {type = item, name = beryllium_plate_hyarion, amount = 6},
         {type = item, name = aluminium_oxide, amount = 2},
         {type = item, name = raw_quartz_arig, amount = 12},
         {type = fluid, name = oxygen_angels, amount = 45}
     }
-    data_recipe[beryllium_plate].main_product = beryllium_plate
+    data_recipe[beryllium_plate_hyarion].main_product = beryllium_plate_hyarion
 
     local beryllium_nitride = "planetaris-beryllium-nitride"
     data_item[beryllium_nitride].localised_description = show_formula and {chemical_formula, "Be[font=default-tiny-bold]3[/font]N[font=default-tiny-bold]2[/font]"} or nil
@@ -319,7 +323,7 @@ if mods[hyarion_mods] then
     data_item[beryllium_nitride].order = g
     data_item[beryllium_nitride].stack_size = 200
     data_recipe[beryllium_nitride].subgroup = is_hyarion_recipe_other
-    data_recipe[beryllium_nitride].icons = TWO_I(beryl, beryllium_nitride)
+    data_recipe[beryllium_nitride].icons = FOUR_THREE_R_I(beryl, nil, nitrogen_angels, beryllium_nitride, aluminium_oxide, raw_quartz_arig, oxygen_angels)
     data_recipe[beryllium_nitride].order = g
     data_recipe[beryllium_nitride].energy_required = 4 -- 2Be₃Al₂Si₆O₁₈ + 2N₂ --> 2Be₃N₂ + 2Al₂O₃ + 12SiO₂ + 3O₂
     data_recipe[beryllium_nitride].ingredients =

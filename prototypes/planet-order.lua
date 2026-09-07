@@ -124,3 +124,10 @@ if mods[apia_carnova_mods] then
     data_space_location[apia_carnova_orbit].subgroup = is_others_space
     data_space_location[apia_carnova_orbit].order = z .. "-" .. apia_carnova_orbit
 end
+
+-- OTHER STAR SYSTEMS
+if mods[bellicos_aegis_mods] then
+    data_item_subgroup["B-A-space-locations"].order = j_c
+
+    data_space_location[bellicos_orbit].order = z .. "-" .. bellicos_orbit
+end

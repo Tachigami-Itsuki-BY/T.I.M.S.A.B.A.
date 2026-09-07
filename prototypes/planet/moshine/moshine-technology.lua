@@ -140,7 +140,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.neodymium-smelting-1"},
             type = technology,
             name = tech_neodymium_smelting_1,
-            icon = "__TIMSABA__/graphics/icons/moshine/technology/smelting-neodymium-tech.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/technology/smelting-neodymium-tech.png",
             icon_size = 256,
             prerequisites = {tech_monazite_processing_1},
             effects =
@@ -170,7 +170,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.neodymium-smelting-2"},
             type = technology,
             name = tech_neodymium_smelting_2,
-            icon = "__TIMSABA__/graphics/icons/moshine/technology/smelting-neodymium-tech.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/technology/smelting-neodymium-tech.png",
             icon_size = 256,
             prerequisites = {tech_monazite_processing_2, tech_neodymium_smelting_1},
             effects =
@@ -203,7 +203,7 @@ if mods[moshine_mods] then
             localised_description = {"technology-description.neodymium-smelting-3"},
             type = technology,
             name = tech_neodymium_smelting_3,
-            icon = "__TIMSABA__/graphics/icons/moshine/technology/smelting-neodymium-tech.png",
+            icon = "__TIMSABA__/graphics/icons/moshine/neodymium/technology/smelting-neodymium-tech.png",
             icon_size = 256,
             prerequisites = {tech_monazite_processing_3, tech_neodymium_smelting_2},
             effects =

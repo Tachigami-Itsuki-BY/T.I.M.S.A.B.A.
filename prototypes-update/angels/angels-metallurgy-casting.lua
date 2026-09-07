@@ -49,8 +49,17 @@ data_item[iron_plate].order = c
 data_recipe[iron_plate].icons = TWO_I(crushed_saphirite, iron_plate)
 data_recipe[iron_plate].order = c
 data_recipe[iron_plate].energy_required = 8
-data_recipe[iron_plate].ingredients[1].amount = 4
-data_recipe[iron_plate].results[1].amount = 2
+if settings.startup[setting_game_difficulty].value == easy then
+    data_recipe[iron_plate].ingredients[1].amount = 4
+    data_recipe[iron_plate].results[1].amount = 2
+elseif settings.startup[setting_game_difficulty].value == normal then
+    data_recipe[iron_plate].ingredients[1].amount = 4
+    data_recipe[iron_plate].results[1].amount = 1
+elseif settings.startup[setting_game_difficulty].value == hard then
+    data_recipe[iron_plate].ingredients[1].amount = 8
+    data_recipe[iron_plate].results[1].amount = 1
+end
+data_recipe[iron_plate].allow_productivity = false
 
 local iron_plate_angels = "angels-plate-iron"
 data_recipe[iron_plate_angels].icons = TWO_I(iron_molten_angels, iron_plate)
@@ -173,8 +182,17 @@ data_item[copper_plate].order = c
 data_recipe[copper_plate].icons = TWO_I(crushed_stiratite, copper_plate)
 data_recipe[copper_plate].order = c
 data_recipe[copper_plate].energy_required = 8
-data_recipe[copper_plate].ingredients[1].amount = 4
-data_recipe[copper_plate].results[1].amount = 2
+if settings.startup[setting_game_difficulty].value == easy then
+    data_recipe[copper_plate].ingredients[1].amount = 4
+    data_recipe[copper_plate].results[1].amount = 2
+elseif settings.startup[setting_game_difficulty].value == normal then
+    data_recipe[copper_plate].ingredients[1].amount = 4
+    data_recipe[copper_plate].results[1].amount = 1
+elseif settings.startup[setting_game_difficulty].value == hard then
+    data_recipe[copper_plate].ingredients[1].amount = 8
+    data_recipe[copper_plate].results[1].amount = 1
+end
+data_recipe[copper_plate].allow_productivity = false
 
 local copper_plate_angels = "angels-plate-copper"
 data_recipe[copper_plate_angels].icons = TWO_I(copper_molten_angels, copper_plate)
@@ -266,10 +284,23 @@ data_recipe[lead_plate_bob].subgroup = "angels-lead-casting"
 data_recipe[lead_plate_bob].icons = TWO_I(crushed_rubyte, lead_plate_bob)
 data_recipe[lead_plate_bob].order = c
 data_recipe[lead_plate_bob].energy_required = 8
-data_recipe[lead_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
-data_recipe[lead_plate_bob].results = {{type = item, name = lead_plate_bob, amount = 2}}
+if settings.startup[setting_game_difficulty].value == easy then
+    data_recipe[lead_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
+    data_recipe[lead_plate_bob].results = {{type = item, name = lead_plate_bob, amount = 2}}
+elseif settings.startup[setting_game_difficulty].value == normal then
+    data_recipe[lead_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
+    data_recipe[lead_plate_bob].results = {{type = item, name = lead_plate_bob, amount = 1}}
+elseif settings.startup[setting_game_difficulty].value == hard then
+    data_recipe[lead_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 8}}
+    data_recipe[lead_plate_bob].results = {{type = item, name = lead_plate_bob, amount = 1}}
+end
 data_recipe[lead_plate_bob].main_product = lead_plate_bob
-data_recipe[lead_plate_bob].enabled = true
+if mods[lignumis_mods] then
+    data_recipe[lead_plate_bob].enabled = false
+else
+    data_recipe[lead_plate_bob].enabled = true
+end
+data_recipe[lead_plate_bob].allow_productivity = false
 data_recipe[lead_plate_bob].allow_quality = true
 
 local lead_plate_angels = "angels-plate-lead"
@@ -325,10 +356,23 @@ data_recipe[tin_plate_bob].subgroup = "angels-tin-casting"
 data_recipe[tin_plate_bob].icons = TWO_I(crushed_bobmonium, tin_plate_bob)
 data_recipe[tin_plate_bob].order = c
 data_recipe[tin_plate_bob].energy_required = 8
-data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 4}}
-data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 2}}
+if settings.startup[setting_game_difficulty].value == easy then
+    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
+    data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 2}}
+elseif settings.startup[setting_game_difficulty].value == normal then
+    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
+    data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 1}}
+elseif settings.startup[setting_game_difficulty].value == hard then
+    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 8}}
+    data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 1}}
+end
 data_recipe[tin_plate_bob].main_product = tin_plate_bob
-data_recipe[tin_plate_bob].enabled = true
+if mods[lignumis_mods] then
+    data_recipe[tin_plate_bob].enabled = false
+else
+    data_recipe[tin_plate_bob].enabled = true
+end
+data_recipe[tin_plate_bob].allow_productivity = false
 data_recipe[tin_plate_bob].allow_quality = true
 
 local tin_plate_angels = "angels-plate-tin"
@@ -570,7 +614,7 @@ data_item_subgroup["angels-zinc-casting"].order = j
 
 data_fluid[zinc_molten_angels].localised_description = show_formula and {chemical_formula, "Zn"} or nil
 data_fluid[zinc_molten_angels].order = a
-data_recipe[zinc_molten_angels].icons = TWO_I(nickel_ingot, zinc_molten_angels)
+data_recipe[zinc_molten_angels].icons = TWO_I(zinc_ingot, zinc_molten_angels)
 data_recipe[zinc_molten_angels].order = a
 data_recipe[zinc_molten_angels].energy_required = 8
 data_recipe[zinc_molten_angels].ingredients[1].amount = 16

@@ -9,6 +9,11 @@ setting_rebalance_belts_and_pipes = "setting-rebalance-belts-and-pipes"
 setting_flow_control_new = "setting-flow-control-new"
 setting_defrost_multiplier = "setting-defrost-multiplier"
 setting_infinite_research = "setting-infinite-research"
+setting_game_difficulty = "setting-game-difficulty"
+
+easy = "easy"
+normal = "normal"
+hard = "hard"
 
 setting_horogon_extra_science_packs = "setting-za-horogon-extra-science-packs"
 setting_horogon_high_tier_recipes = "setting-zb-horogon-high-tier-recipes"

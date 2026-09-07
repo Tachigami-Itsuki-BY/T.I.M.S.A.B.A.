@@ -127,7 +127,6 @@ data_technology[tech_asteroid_productivity].unit.ingredients =
     {agricultural_science_pack, 1},
     {metallurgic_science_pack, 1}
 }
-data_technology[tech_asteroid_productivity].max_level = 30
 
 data_technology[tech_advanced_full_asteroid_processing].prerequisites = {tech_molybdenum_synthesis, tech_rhenium_synthesis, tech_holmium_synthesis}
 if mods[paracelsin_mods] then

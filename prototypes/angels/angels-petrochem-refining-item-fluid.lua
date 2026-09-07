@@ -120,7 +120,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]10[/font]H[font=default-tiny-bold]8[/font]"} or nil,
         name = coal_tar_liquid,
-        subgroup = is_carbon_fluids_1,
+        subgroup = is_carbon_fluid_1,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/coal-tar-liquid.png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("CCC"),
@@ -136,7 +136,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]CO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = carbonic_acid,
-        subgroup = is_carbon_fluids_1,
+        subgroup = is_carbon_fluid_1,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/carbonic-acid-solution.png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("H2CO3Wp"),
@@ -293,7 +293,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "HF"} or nil,
         name = hydrogen_fluoride_liquefied,
-        subgroup = is_fluorine_fluids,
+        subgroup = is_fluorine_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/hydrogen-fluoride-liquefied.png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("HF"),
@@ -302,7 +302,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "OF[font=default-tiny-bold]2[/font]"} or nil,
         name = oxygen_fluoride_gas,
-        subgroup = is_fluorine_fluids,
+        subgroup = is_fluorine_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/oxygen-fluoride-gas.png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("OF2"),
@@ -348,7 +348,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaCl[font=default-tiny-bold](aq)[/font]"} or nil,
         name = sodium_chloride_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-chloride-solution.png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("NaClWp"),
@@ -357,7 +357,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]SO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = sodium_sulfate_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-sulfate-solution.png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("Na2SO4Wp"),
@@ -366,7 +366,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]CO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = sodium_carbonate_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-carbonate-solution.png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("Na2CO3Wp"),
@@ -375,7 +375,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaNO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = sodium_nitrate_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-nitrate-solution.png",
         order = e,
         base_color = TIMSABA.functions.fluid_color("NaNO3Wp"),
@@ -384,7 +384,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaClO[font=default-tiny-bold](aq)[/font]"} or nil,
         name = sodium_hypochlorite_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-hypochlorite-solution.png",
         order = f,
         base_color = TIMSABA.functions.fluid_color("NaClOWp"),
@@ -393,7 +393,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaClO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = sodium_chlorate_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-chlorate-solution.png",
         order = g,
         base_color = TIMSABA.functions.fluid_color("NaClO3Wp"),
@@ -402,7 +402,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaClO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = sodium_perchlorate_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-perchlorate-solution.png",
         order = h,
         base_color = TIMSABA.functions.fluid_color("NaClO4Wp"),
@@ -411,7 +411,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaHCO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = sodium_bicarbonate_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-bicarbonate-solution.png",
         order = i,
         base_color = TIMSABA.functions.fluid_color("NaHCO3Wp"),
@@ -420,7 +420,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "NaCN[font=default-tiny-bold](aq)[/font]"} or nil,
         name = sodium_cyanide_solution,
-        subgroup = is_sodium_fluids,
+        subgroup = is_sodium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/sodium/sodium-cyanide-solution.png",
         order = j,
         base_color = TIMSABA.functions.fluid_color("NaCNWp"),
@@ -572,7 +572,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "CaCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
         name = calcium_chloride_solution,
-        subgroup = is_calcium_fluids,
+        subgroup = is_calcium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/calcium-chloride-solution.png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("CaCl2Wp"),
@@ -581,7 +581,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "Ca(OH)[font=default-tiny-bold]2(aq)[/font]"} or nil,
         name = calcium_hydroxide_solution,
-        subgroup = is_calcium_fluids,
+        subgroup = is_calcium_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/calcium/calcium-hydroxide-solution.png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("CaOH2Wp"),
@@ -613,7 +613,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]2[/font]"} or nil,
         name = hydrogen_peroxide,
-        subgroup = is_others_fluids,
+        subgroup = is_others_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/hydrogen-peroxide-liquid.png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("H2O2"),
@@ -622,7 +622,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "HCN"} or nil,
         name = hydrocyanic_acid,
-        subgroup = is_others_fluids,
+        subgroup = is_others_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/hydrocyanic-acid-liquid.png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("HCN"),
@@ -631,7 +631,7 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]PF[font=default-tiny-bold]6[/font]"} or nil,
         name = ionic_liquid,
-        subgroup = is_others_fluids,
+        subgroup = is_others_fluid,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/ionic-liquid.png",
         order = c,
         base_color = {r = 0.537, g = 0.675, b = 0.706},

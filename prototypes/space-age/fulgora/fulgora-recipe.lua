@@ -234,7 +234,7 @@ TIMSABA.functions.create_recipes
     {
         name = calcium_chloride_solution_from_lime,
         category = chemistry,
-        subgroup = is_calcium_fluids,
+        subgroup = is_calcium_fluid,
         icons = TWO_D_I(lime_angels, hydrochloric_acid_angels, calcium_chloride_solution, water_purified_angels),
         order = b_a,
         -- CaO + 2HCl(aq) --> CaCl₂(aq) + 2H₂O

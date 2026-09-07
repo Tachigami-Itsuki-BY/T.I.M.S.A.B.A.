@@ -1,9 +1,32 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.0
+Date: 07.09.2026
+  Features:
+    - [Mods] Added support for Aegis & Bellicos: seamlessly integrated the new planet into the gameplay flow.
+    - [Lignumis] Added new building: Burner Chemical Plant.
+    - [All] Added new mod-setting: Game Difficult (ALPHA). Only affects 4 starting recipes.
+
+  Changes:
+    - [Lignumis] If the Lignumis mod is enabled, the T1 assembly machine gains the ability to accept fluids for recipes.
+
+  Bugfixes:
+    - [Lignumis] Fixed various bugs related to the Lignumis mod.
+    - [All] Minor bugs fixed.
+
+  Balancing:
+    - [Lignumis] Changed production machine for Bio-Rocket-Fuel recipes: Assembling Machine → Chemical Plant.
+
+  Graphics:
+    - [All] Updated some icons for the Magnesium branch.
+
+  Modding:
+    - [Mods] Added "Aegis & Bellicos" mod to optional dependencies.
+---------------------------------------------------------------------------------------------------
 Version: 1.16.4
 Date: 05.09.2026
   Features:
-    - [Lignumis] Added new building: Burner Ore Sroting Facility
-    - [Lignumis] Added new recipes: T1 Seed Extractor (from Wood)
+    - [Lignumis] Added new building: Burner Ore Sroting Facility.
+    - [Lignumis] Added new recipe: T1 Seed Extractor (from Wood).
 
   Bugfixes:
     - [Lignumis] Fixed a bug where the crafting category "hand-crafting" was required unless the Lignumis mod was enabled.

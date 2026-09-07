@@ -18,6 +18,7 @@ TIMSABA.functions.create_items
         name = items.name,
         subgroup = items.subgroup,
         icon = items.icon or error_png, -- if not sting "icon" then used "error_png" == "__TIMSABA__/graphics/icons/error.png"
+        icons = fluids.icons,
         icon_size = items.icon_size or 64,
 
         pictures = items.pictures,
@@ -49,6 +50,7 @@ TIMSABA.functions.create_fluids
         subgroup = fluids.subgroup,
         order = fluids.order,
         icon = fluids.icon or error_png, -- if not sting "icon" then used "error_png" == "__TIMSABA__/graphics/icons/error.png"
+        icons = fluids.icons,
         icon_size = items.icon_size or 64,
 
         default_temperature = fluids.default_temperature or 0,
@@ -230,7 +232,7 @@ local table_of_chemical_elements =
     T  = {{234, 255, 192}, {195, 206, 173}, {183, 196, 156}}, -- Tritium
     He = {{217, 255, 255}, {197, 232, 232}, {173, 203, 203}}, -- Helium
     Li = {{121, 239, 232}, {109, 215, 209}, {098, 194, 188}}, -- Lithium
-    --Be = {{, , }, {, , }, {, , }}, -- Beryllium ?
+    Be = {{031, 173, 112}, {099, 161, 139}, {044, 151, 104}}, -- Beryllium
     B  = {{254, 181, 181}, {233, 164, 164}, {209, 143, 143}}, -- Boron
     C  = {{044, 044, 044}, {064, 064, 064}, {090, 090, 090}}, -- Carbon
     N  = {{048, 080, 248}, {045, 076, 175}, {038, 063, 150}}, -- Nitrogen
@@ -259,8 +261,8 @@ local table_of_chemical_elements =
     Zn = {{098, 180, 174}, {088, 162, 157}, {079, 146, 141}}, -- Zinc
     Ga = {{160, 120, 120}, {140, 100, 100}, {120, 080, 080}}, -- Galium
     Ge = {{100, 140, 140}, {085, 120, 120}, {070, 100, 100}}, -- Germanium
-    --As = {{, , }, {, , }, {, , }}, -- Arsenic ?
-    --Se = {{, , }, {, , }, {, , }}, -- Selenium ?
+    As = {{143, 161, 073}, {117, 133, 055}, {101, 116, 047}}, -- Arsenic
+    Se = {{126, 040, 068}, {090, 030, 050}, {060, 020, 040}}, -- Selenium
     --Br = {{, , }, {, , }, {, , }}, -- Bromine
     Kr = {{092, 184, 209}, {082, 164, 186}, {072, 144, 163}}, -- Krypton
     --Rb = {{, , }, {, , }, {, , }}, -- Rubidium
@@ -303,13 +305,13 @@ local table_of_chemical_elements =
     W  = {{138, 096, 063}, {124, 086, 057}, {112, 077, 051}}, -- Tungsten
     Re = {{126, 090, 102}, {110, 079, 089}, {094, 067, 076}}, -- Rhenium
     --Os = {{, , }, {, , }, {, , }}, -- Osmium
-    --Ir = {{, , }, {, , }, {, , }}, -- Iridium ?
+    Ir = {{186, 232, 224}, {133, 187, 177}, {104, 154, 143}}, -- Iridium
     Pt = {{241, 212, 193}, {217, 191, 174}, {195, 172, 157}}, -- Platinum
     Au = {{231, 186, 028}, {208, 167, 025}, {187, 150, 023}}, -- Gold
     --Hg = {{, , }, {, , }, {, , }}, -- Mercury
     --Tl = {{, , }, {, , }, {, , }}, -- Thallium
     Pb = {{076, 077, 088}, {068, 069, 079}, {061, 062, 071}}, -- Lead
-    --Bi = {{, , }, {, , }, {, , }}, -- Bismuth
+    Bi = {{246, 187, 217}, {222, 159, 191}, {202, 134, 168}}, -- Bismuth
     --Po = {{, , }, {, , }, {, , }}, -- Polonium
     --At = {{, , }, {, , }, {, , }}, -- Astatine
     --Rn = {{, , }, {, , }, {, , }}, -- Radon
@@ -380,7 +382,7 @@ This is more than just a modpack; it’s a complete "from scratch" overhaul desi
 > * **[🌐Planetaris: Tellus](https://mods.factorio.com/mod/planetaris-tellus)**
 > * **[🌐Paracelsin](https://mods.factorio.com/mod/Paracelsin)**
 > * **[🌐Corrundum](https://mods.factorio.com/mod/corrundum)**
-> * **[🌐Secretas&Frozeta](https://mods.factorio.com/mod/secretas)**
+> * **[🌐Secretas & Frozeta](https://mods.factorio.com/mod/secretas)**
 > * **[🌐Terra Palus](https://mods.factorio.com/mod/terrapalus)**
 > * **[🌐Castra Prime](https://mods.factorio.com/mod/castra-prime)**
 > * **[🌐Shchierbin](https://mods.factorio.com/mod/shchierbin)**
@@ -390,6 +392,7 @@ This is more than just a modpack; it’s a complete "from scratch" overhaul desi
 > * **[🌐Pelagos](https://mods.factorio.com/mod/pelagos)**
 > * **[🌐Apia-Carnova planet system](https://mods.factorio.com/mod/apia)**
 > * **[🌐Lignumis](https://mods.factorio.com/mod/lignumis)**
+> * **[🌐Aegis & Bellicos](https://mods.factorio.com/mod/bellicos-and-aegis)**
 * *(More planets coming soon! Feel free to suggest a planet in our Telegram or Discord Server)*.
 # ⚙️**Optimization & Polish:**
 * **UPS Focused:** Maximum optimization for stable performance on large factories.

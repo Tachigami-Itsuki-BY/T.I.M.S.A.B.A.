@@ -1,12 +1,12 @@
 -- GROUPS
 is_magnesium = "is-magnesium"
-local is_magnesium_chemistry = "is-magnesium-chemistry"
-local is_magnesium_casting = "is-magnesium-casting"
+is_magnesium_chemistry = "is-magnesium-chemistry"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
     {name = is_magnesium,           order = f},
     {name = is_magnesium_chemistry, order = f_a}
 })
+local is_magnesium_casting = "is-magnesium-casting"
 TIMSABA.functions.create_subgroups(ig_casting,
 {
     {name = is_magnesium_casting, order = f}

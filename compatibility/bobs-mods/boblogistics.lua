@@ -528,7 +528,7 @@ data:extend
                     position = {0, 0},
                     direction = defines.direction.south,
                     connection_type = "underground",
-                    max_underground_distance = 8
+                    max_underground_distance = 10
                 }
             },
             hide_connection_info = true
@@ -611,7 +611,7 @@ data:extend
                     position = {0, 0},
                     direction = defines.direction.south,
                     connection_type = "underground",
-                    max_underground_distance = 40
+                    max_underground_distance = 30
                 }
             },
             hide_connection_info = true
@@ -649,7 +649,7 @@ if feature_flags["freezing"] then
     end
 end
 
-if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value == true then
+if settings.startup[setting_bobmods_logistics_ugdistanceoverhaul].value then
     bobmods.logistics.set_pipe_distance(stone_pipe_to_ground, 1)
     bobmods.logistics.set_pipe_distance(nitinol_pipe_to_ground, 5)
 end

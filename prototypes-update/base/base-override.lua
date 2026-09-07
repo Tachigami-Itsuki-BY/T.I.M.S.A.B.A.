@@ -175,3 +175,5 @@ bobmods.lib.recipe.update_recycling_recipe
     agricultural_module_2,
     agricultural_module_3
 })
+
+data_item_group["other"].order = z_z

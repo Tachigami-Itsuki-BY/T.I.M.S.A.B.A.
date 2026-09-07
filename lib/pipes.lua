@@ -1,6 +1,5 @@
 function bobmods.logistics.pipe_distance(level)
-    local range = ((level - 1) * settings.startup["bobmods-logistics-pipeperlevel"].value)
-        + settings.startup["bobmods-logistics-pipestarting"].value
+    local range = ((level - 1) * settings.startup["bobmods-logistics-pipeperlevel"].value) + settings.startup["bobmods-logistics-pipestarting"].value
     return range
 end
 
