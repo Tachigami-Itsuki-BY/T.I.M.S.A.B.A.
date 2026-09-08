@@ -1,17 +1,3 @@
-local angels_mod = "angels"
-if not (reskins.angels and reskins.angels.triggers.refining.entities) then
-	return
-end
-if not (reskins.angels and reskins.angels.triggers.smelting.entities) then
-	return
-end
-if not (reskins.angels and reskins.angels.triggers.petrochem.entities) then
-	return
-end
-if not (reskins.angels and reskins.angels.triggers.bioprocessing.entities) then
-    return
-end
-
 -- ORE CRUSHER
 do
     local inputs =
@@ -1202,8 +1188,6 @@ do
 end
 
 -- TREE GENERATOR SEED
-local compatibility = "compatibility"
-local extendedangels = "extendedangels"
 local temperate = "temperate"
 local swamp = "swamp"
 local desert = "desert"

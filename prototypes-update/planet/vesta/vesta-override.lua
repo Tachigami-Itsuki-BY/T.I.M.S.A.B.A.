@@ -597,18 +597,23 @@ if mods[vesta_mods] then
         {cryogenic_science_pack, 1}
     }
 
-    data_technology["transport-belt-capacity-vesta"].unit.ingredients =
+    local tech_transport_belt_capacity_vesta = "transport-belt-capacity-vesta"
+    data_technology[tech_transport_belt_capacity_vesta].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},
         {chemical_science_pack, 1},
         {production_science_pack, 1},
         {utility_science_pack, 1},
+        {space_science_pack, 1},
         {metallurgic_science_pack, 1},
         {agricultural_science_pack, 1},
         {electromagnetic_science_pack, 1},
         {cryogenic_science_pack, 1}
     }
+    if mods[bobtech] then
+        table.insert(data_technology[tech_transport_belt_capacity_vesta].unit.ingredients, {transport_science_pack, 1})
+    end
 
     data_technology["worker-robots-storage-vesta"].localised_description = {"technplogy-description.worker-robots-storage"}
     data_technology["worker-robots-storage-vesta"].unit.ingredients =

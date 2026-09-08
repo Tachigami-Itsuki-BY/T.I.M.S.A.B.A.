@@ -165,7 +165,24 @@ if mods[secretas_frozeta_mods] then
 
     data_technology[spaceship_scrap_recycling .. _productivity].prerequisites = {golden_science_pack}
 
-    data_technology["transport-belt-capacity-3-Secretas"].prerequisites = {golden_science_pack, tech_transport_belt_capacity_2}
+    local tech_transport_belt_capacity_3_Secretas = "transport-belt-capacity-3-Secretas"
+    data_technology[tech_transport_belt_capacity_3_Secretas].prerequisites = {golden_science_pack, tech_transport_belt_capacity_2}
+    data_technology[tech_transport_belt_capacity_3_Secretas].unit.ingredients =
+    {
+        {automation_science_pack, 1},
+        {logistic_science_pack, 1},
+        {chemical_science_pack, 1},
+        {production_science_pack, 1},
+        {utility_science_pack, 1},
+        {space_science_pack, 1},
+        {metallurgic_science_pack, 1},
+        {agricultural_science_pack, 1},
+        {electromagnetic_science_pack, 1},
+        {cryogenic_science_pack, 1}
+    }
+    if mods[bobtech] then
+        table.insert(data_technology[tech_transport_belt_capacity_3_Secretas].unit.ingredients, {transport_science_pack, 1})
+    end
 
     local tech_science_pack = "science-pack"
     data_technology[tech_science_pack .. _productivity].prerequisites = {promethium_science_pack}

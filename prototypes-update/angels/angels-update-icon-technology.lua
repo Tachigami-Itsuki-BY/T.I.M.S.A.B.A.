@@ -1,12 +1,6 @@
-local angels_mod = "angels"
 local powder_metallurgy = "powder-metallurgy"
 local powder_metallurgy_special_vanilla = "powder-metallurgy-special-vanilla"
-if not (reskins.angels and reskins.angels.triggers.refining.technologies) then
-	return
-end
-if not (reskins.angels and reskins.angels.triggers.smelting.technologies) then
-	return
-end
+
 do
 	---@type CreateIconsFromListInputs
 	local inputs =

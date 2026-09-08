@@ -21,13 +21,12 @@ if mods[lignumis_mods] then
     -- c
     -- d
 
-    local gold_cable = "gold-cable"
-    data_item[gold_cable].localised_description = show_formula and {chemical_formula, "Au"} or nil
-    data_item[gold_cable].subgroup = is_lignumis_recipe
-    data_item[gold_cable].order = e
-    data_recipe[gold_cable].subgroup = is_lignumis_recipe
-    data_recipe[gold_cable].icons = TWO_I(gold_plate_bob, gold_cable)
-    data_recipe[gold_cable].order = e
+    data_item[gold_cable_mods].localised_description = show_formula and {chemical_formula, "Au"} or nil
+    data_item[gold_cable_mods].subgroup = is_lignumis_recipe
+    data_item[gold_cable_mods].order = e
+    data_recipe[gold_cable_mods].subgroup = is_lignumis_recipe
+    data_recipe[gold_cable_mods].icons = TWO_I(gold_plate_bob, gold_cable_mods)
+    data_recipe[gold_cable_mods].order = e
 
     data_item[lumber].subgroup = is_lignumis_recipe
     data_item[lumber].order = f
@@ -245,7 +244,7 @@ if mods[lignumis_mods] then
     }
     data_underground_belt[wood_underground_belt].subgroup = is_lignumis_logistic
     data_underground_belt[wood_underground_belt].order = b
-    if data_transport_belt[T0_underground_belt] then
+    if data_underground_belt[T0_underground_belt] then
         data_underground_belt[wood_underground_belt].speed = 0.46875/60
         data_underground_belt[wood_underground_belt].next_upgrade = T0_underground_belt
     else
@@ -266,9 +265,9 @@ if mods[lignumis_mods] then
     {
         {type = item, name = wooden_gear_wheel, amount = 4},
         {type = item, name = lumber, amount = 4},
-        {type = item, name = gold_cable, amount = 4}
+        {type = item, name = gold_cable_mods, amount = 4}
     }
-    if data_transport_belt[T0_splitter] then
+    if data_splitter[T0_splitter] then
         data_splitter[wood_splitter].speed = 0.46875/60
         data_splitter[wood_splitter].next_upgrade = T0_splitter
     else
@@ -446,11 +445,11 @@ if mods[lignumis_mods] then
 
     local wood_lab = "wood-lab"
     data_item[wood_lab].subgroup = is_lignumis_building
-    data_item[wood_lab].order = g
+    data_item[wood_lab].order = h
     data_item[wood_lab].stack_size = 32
     data_item[wood_lab].weight = 31250
     data_recipe[wood_lab].subgroup = is_lignumis_building
-    data_recipe[wood_lab].order = g
+    data_recipe[wood_lab].order = h
     data_recipe[wood_lab].ingredients =
     {
         {type = item, name = wooden_gear_wheel, amount = 4},
@@ -460,15 +459,15 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 8}
     }
     data_lab[wood_lab].subgroup = is_lignumis_building
-    data_lab[wood_lab].order = g
+    data_lab[wood_lab].order = h
     data_lab[wood_lab].energy_usage = 225 .. kW
 
     data_item[quality_assembler].subgroup = is_lignumis_building
-    data_item[quality_assembler].order = h
+    data_item[quality_assembler].order = i
     data_item[quality_assembler].stack_size = 32
     data_item[quality_assembler].weight = 31250
     data_recipe[quality_assembler].subgroup = is_lignumis_building
-    data_recipe[quality_assembler].order = h
+    data_recipe[quality_assembler].order = i
     data_recipe[quality_assembler].energy_required = 64
     data_recipe[quality_assembler].ingredients =
     {
@@ -482,18 +481,18 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 64}
     }
     data_assembling[quality_assembler].subgroup = is_lignumis_building
-    data_assembling[quality_assembler].order = h
+    data_assembling[quality_assembler].order = i
     data_assembling[quality_assembler].module_slots = 4
     data_assembling[quality_assembler].energy_usage = 3600 .. kW
     data_assembling[quality_assembler].effect_receiver.base_effect.quality = 5
 
     local provisional_rocket_silo = "provisional-" .. rocket_silo
     data_item[provisional_rocket_silo].subgroup = is_lignumis_building
-    data_item[provisional_rocket_silo].order = i
+    data_item[provisional_rocket_silo].order = j
     data_item[provisional_rocket_silo].stack_size = 1
     data_item[provisional_rocket_silo].weight = 1000000000
     data_recipe[provisional_rocket_silo].subgroup = is_lignumis_building
-    data_recipe[provisional_rocket_silo].order = i
+    data_recipe[provisional_rocket_silo].order = j
     data_recipe[provisional_rocket_silo].energy_required = 32
     data_recipe[provisional_rocket_silo].ingredients =
     {
@@ -504,24 +503,26 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 512}
     }
     data_rocket_silo[provisional_rocket_silo].subgroup = is_lignumis_building
-    data_rocket_silo[provisional_rocket_silo].order = i
+    data_rocket_silo[provisional_rocket_silo].order = j
     data_rocket_silo[provisional_rocket_silo].energy_usage = 3600 .. kW
 
     local active_noise_cancelling_tower = "active-noise-cancelling-tower"
     data_item[active_noise_cancelling_tower].subgroup = is_lignumis_building
-    data_item[active_noise_cancelling_tower].order = j
+    data_item[active_noise_cancelling_tower].order = k
+    data_item[active_noise_cancelling_tower].stack_size = 64
+    data_item[active_noise_cancelling_tower].weight = 15625
     data_recipe[active_noise_cancelling_tower].subgroup = is_lignumis_building
-    data_recipe[active_noise_cancelling_tower].order = j
+    data_recipe[active_noise_cancelling_tower].order = k
     data_recipe[active_noise_cancelling_tower].energy_required = 16
     data_recipe[active_noise_cancelling_tower].ingredients =
     {
         {type = item, name = low_density_structure, amount = 4},
         {type = item, name = advanced_processing_unit, amount = 8},
         {type = item, name = gold_plate_bob, amount = 4},
-        {type = item, name = gold_cable, amount = 4}
+        {type = item, name = gold_cable_mods, amount = 4}
     }
     data_assembling[active_noise_cancelling_tower].subgroup = is_lignumis_building
-    data_assembling[active_noise_cancelling_tower].order = j
+    data_assembling[active_noise_cancelling_tower].order = k
     data_assembling[active_noise_cancelling_tower].energy_usage = 480 .. kW
 
     -- WAR
@@ -542,6 +543,7 @@ if mods[lignumis_mods] then
     data_recipe[basic_portable_generator_eq_gold].energy_required = 8
     data_recipe[basic_portable_generator_eq_gold].ingredients[1].amount = 8
     data_recipe[basic_portable_generator_eq_gold].ingredients[2].amount = 8
+    data_generator_eq[basic_portable_generator_eq_gold].burner.fuel_categories = {base_fuel, advanced_fuel}
 
     local basic_personal_roboport_eq_gold = "basic-personal-roboport-equipment-gold"
     data_item[basic_personal_roboport_eq_gold].subgroup = is_lignumis_war
@@ -582,9 +584,9 @@ if mods[lignumis_mods] then
 
     local basic_gun_turret = "basic-" .. gun_turret_1
     data_item[basic_gun_turret].subgroup = is_lignumis_war
-    data_item[basic_gun_turret].order = e
+    data_item[basic_gun_turret].order = f
     data_recipe[basic_gun_turret].subgroup = is_lignumis_war
-    data_recipe[basic_gun_turret].order = e
+    data_recipe[basic_gun_turret].order = f
     data_recipe[basic_gun_turret].ingredients =
     {
         {type = item, name = wooden_gear_wheel, amount = 4},
@@ -592,7 +594,7 @@ if mods[lignumis_mods] then
         {type = item, name = gold_plate_bob, amount = 8}
     }
     data_ammo_turret[basic_gun_turret].subgroup = is_lignumis_war
-    data_ammo_turret[basic_gun_turret].order = e
+    data_ammo_turret[basic_gun_turret].order = f
     data_ammo_turret[basic_gun_turret].attack_parameters.range = 16
     data_ammo_turret[basic_gun_turret].attack_parameters.cooldown = 7.5
 

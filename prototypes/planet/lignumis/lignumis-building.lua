@@ -1,6 +1,7 @@
 if mods[lignumis_mods] then
     burner_ore_sorting_facility = "burner-ore-sorting-facility"
     burner_chemical_plant = "burner-" .. chemical_plant_1
+    burner_seed_extractor = "burner-seed-extractor"
     TIMSABA.functions.create_burner_buildings
     ({
         -- ORE SORTING FACILITY
@@ -13,7 +14,7 @@ if mods[lignumis_mods] then
             enabled = true,
             ingredients =
             {
-                {type = item, name = gold_cable, amount = 8},
+                {type = item, name = gold_cable_mods, amount = 8},
                 {type = item, name = wooden_gear_wheel, amount = 32},
                 {type = item, name = lumber, amount = 32},
                 {type = item, name = stone, amount = 64}
@@ -23,7 +24,6 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.angels-ore-sorting-facility"},
             crafting_speed = 0.5,
-            crafting_categories = {angels_ore_sorting_1},
             energy_usage = 450 .. kW
         },
         -- CHEMICAL PLANT
@@ -36,7 +36,7 @@ if mods[lignumis_mods] then
             enabled = true,
             ingredients =
             {
-                {type = item, name = gold_cable, amount = 1},
+                {type = item, name = gold_cable_mods, amount = 1},
                 {type = item, name = wooden_gear_wheel, amount = 4},
                 {type = item, name = lumber, amount = 8},
                 {type = item, name = stone, amount = 8}
@@ -46,7 +46,27 @@ if mods[lignumis_mods] then
 
             localised_description = {"entity-description.chemical-plant"},
             crafting_speed = 0.5,
-            crafting_categories = {chemistry},
+            energy_usage = 225 .. kW
+        },
+        -- SEED EXTRACTOR
+        {
+            name = burner_seed_extractor,
+            subgroup = is_lignumis_building,
+            icons = angelsmods.functions.add_number_icon_layer({{icon = "__angelsbioprocessinggraphics__/graphics/icons/seed-extractor.png", icon_size = 32}}, 0, angelsmods.petrochem.number_tint),
+            order = g,
+
+            ingredients =
+            {
+                {type = item, name = basic_circuit_board, amount = 4},
+                {type = item, name = wooden_gear_wheel, amount = 8},
+                {type = item, name = lumber, amount = 4},
+                {type = item, name = stone_brick, amount = 4}
+            },
+
+            base_prototype = data_assembling[seed_extractor_1],
+
+            localised_description = {"entity-description.angels-seed-extractor"},
+            crafting_speed = 0.5,
             energy_usage = 225 .. kW
         }
     })

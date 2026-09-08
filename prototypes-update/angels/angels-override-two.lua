@@ -481,6 +481,9 @@ data_recipe[seed_extractor_1].ingredients =
     {type = item, name = steel_plate, amount = 4},
     {type = item, name = clay_brick, amount = 4}
 }
+if mods[lignumis_mods] then
+    table.insert(data_recipe[seed_extractor_1].ingredients, {type = item, name = burner_seed_extractor, amount = 1})
+end
 data_assembling[seed_extractor_1].subgroup = is_seed_extractor
 data_assembling[seed_extractor_1].order = a
 data_assembling[seed_extractor_1].crafting_speed = 1

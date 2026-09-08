@@ -57,6 +57,8 @@ if mods[arig_mods] then
     }
 end
 
+-- data_recipe[rocket_part_hyarion] in the final-fix-mods.lua
+
 if mods[tellus_mods] then
     data_recipe[rocket_part_tellus].icons = R_P_I(rocket_part, planet_tellus)
     data_recipe[rocket_part_tellus].order = b .. "-" .. data_planet[planet_tellus].order
@@ -351,7 +353,7 @@ if mods[hyarion_mods] then
         {type = item, name = tungsten_plate_bob, amount = 64},
         {type = item, name = fiber_optics_cable, amount = 32},
         {type = item, name = simulating_unit, amount = 16},
-        {type = item, name = beryllium_plate, amount = 64}
+        {type = item, name = beryllium_plate_hyarion, amount = 64}
     }
     data_assembling[space_manufactorer].subgroup = is_space_platform_mods
     data_assembling[space_manufactorer].order = c
@@ -370,7 +372,7 @@ if mods[hyarion_mods] then
     {
         {type = item, name = battery_graphene, amount = 32},
         {type = item, name = bismuth_transistor, amount = 16},
-        {type = item, name = beryllium_plate, amount = 8},
+        {type = item, name = beryllium_plate_hyarion, amount = 8},
         {type = item, name = refractory_ceramics, amount = 16}
     }
     data_accumulator[zero_grav_accumulator].subgroup = is_space_platform_mods

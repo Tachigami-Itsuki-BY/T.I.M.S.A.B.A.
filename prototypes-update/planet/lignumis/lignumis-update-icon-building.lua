@@ -1,6 +1,4 @@
 if mods[lignumis_mods] then
-    local angels_mod = "angels"
-
     -- ORE SORTING FACILITY
     do
         local inputs =
@@ -92,6 +90,70 @@ if mods[lignumis_mods] then
             else
                 reskins.lib.apply_skin.angels_chemical_plant(name, tier)
             end
+        end
+    end
+
+    -- SEED EXTRACTOR
+    do
+        local inputs =
+        {
+            type = assembling_machine,
+            icon_name = "seed-extractor",
+            base_entity_name = assembling_machine_1,
+            mod = compatibility,
+            particles = {[big] = 1, [medium] = 2},
+            group = extendedangels,
+            make_remnants = false
+        }
+        local tier_map = {[burner_seed_extractor] = {tier = 0, tint = util.color("#262626"), is_burner = true}}
+        for name, map in pairs(tier_map) do
+            ---@type data.AssemblingMachinePrototype
+            local entity = data.raw[inputs.type][name]
+            if not entity then
+                goto continue
+            end
+            local tier = reskins.lib.tiers.get_tier(map)
+            inputs.tint = map.tint or reskins.lib.tiers.get_tint(tier)
+            reskins.lib.setup_standard_entity(name, tier, inputs)
+            entity.graphics_set.animation =
+            {
+                layers =
+                {
+                    {
+                        filename = "__angelsbioprocessinggraphics__/graphics/entity/seed-extractor/seed-extractor.png",
+                        priority = extra_high,
+                        width = 160,
+                        height = 160,
+                        frame_count = 25,
+                        line_length = 5,
+                        shift = {0, 0},
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/seed-extractor/seed-extractor-mask.png",
+                        priority = extra_high,
+                        width = 160,
+                        height = 160,
+                        frame_count = 25,
+                        line_length = 5,
+                        shift = {0, 0},
+                        animation_speed = 0.5,
+                        tint = inputs.tint
+                    },
+                    {
+                        filename = "__reskins-compatibility__/graphics/entity/extendedangels/seed-extractor/seed-extractor-highlights.png",
+                        priority = extra_high,
+                        width = 160,
+                        height = 160,
+                        frame_count = 25,
+                        line_length = 5,
+                        shift = {0, 0},
+                        animation_speed = 0.5,
+                        blend_mode = reskins.lib.settings.blend_mode
+                    }
+                }
+            }
+            ::continue::
         end
     end
 end

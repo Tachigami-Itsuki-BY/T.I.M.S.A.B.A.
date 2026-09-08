@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.1
+Date: 08.09.2026
+  Features:
+    - [Lignumis] Added new building: Burner Seed Extractor.
+
+  Changes:
+    - [Lignumis] Removed recipe: T1 Seed Extractor (from Wood).
+
+  Bugfixes:
+    - [Lignumis] Fixed various bugs related to the Lignumis mod.
+    - [Mods] Fixed compatibility bugs.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.0
 Date: 07.09.2026
   Features:

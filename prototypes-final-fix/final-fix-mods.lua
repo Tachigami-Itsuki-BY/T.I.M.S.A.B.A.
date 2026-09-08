@@ -552,17 +552,32 @@ if mods[hyarion_mods] then
     bobmods.lib.recipe.update_recycling_recipe({lamp_post})
 
     -- SPACE
-    data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, planet_hyarion)
+    if mods[bellicos_aegis_mods] then
+        data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, planet_hyarion)
+    else
+        data_recipe[rocket_part_hyarion].icons = R_P_I(rocket_part, beryllium_plate_hyarion)
+    end
     data_recipe[rocket_part_hyarion].order = b_h
     data_recipe[rocket_part_hyarion].energy_required = 4
-    data_recipe[rocket_part_hyarion].ingredients =
-    {
-        {type = item, name = low_density_structure, amount = 4},
-        {type = item, name = beryllium_plate, amount = 16},
-        {type = item, name = simulating_unit, amount = 4},
-        {type = item, name = carbon_nanotube, amount = 16},
-        {type = item, name = rocket_fuel, amount = 8}
-    }
+    if mods[bellicos_aegis_mods] then
+        data_recipe[rocket_part_hyarion].ingredients =
+        {
+            {type = item, name = low_density_structure, amount = 4},
+            {type = item, name = beryllium_plate, amount = 16},
+            {type = item, name = simulating_unit, amount = 4},
+            {type = item, name = carbon_nanotube, amount = 16},
+            {type = item, name = rocket_fuel, amount = 8}
+        }
+    else
+        data_recipe[rocket_part_hyarion].ingredients =
+        {
+            {type = item, name = low_density_structure, amount = 4},
+            {type = item, name = beryllium_plate_hyarion, amount = 16},
+            {type = item, name = simulating_unit, amount = 4},
+            {type = item, name = carbon_nanotube, amount = 16},
+            {type = item, name = rocket_fuel, amount = 8}
+        }
+    end
 
     -- TECHNOLOGY
     table.insert(data_technology[hyper_transport_belt_arig].prerequisites, simulating_unit)
@@ -817,9 +832,10 @@ if mods[lignumis_mods] then
 
     data_recipe[burner_ore_sorting_facility].enabled = true
     data_recipe[burner_chemical_plant].enabled = true
+    data_recipe[burner_seed_extractor].enabled = true
 
     data_assembling[assembling_machine_1].fluid_boxes = util.table.deepcopy(data_assembling[assembling_machine_2].fluid_boxes)
-    data_assembling[assembling_machine_1].off_when_no_fluid_recipe = true
+    data_assembling[assembling_machine_1].fluid_boxes_off_when_no_fluid_recipe = true
     data_assembling[assembling_machine_1].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
     if data_recipe[T0_transport_belt] then
@@ -888,6 +904,16 @@ if mods[lignumis_mods] then
 end
 
 if mods[bellicos_aegis_mods] then
+    data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, vulcanus_transport_belt}
+
+    if mods[arig_mods] then
+        if mods[hyarion_mods] then
+            data_technology[hyper_transport_belt_arig].prerequisites = {simulating_unit, tech_space_logistic}
+        else
+            data_technology[hyper_transport_belt_arig].prerequisites = {silica_arig .. _processing, tech_space_logistic}
+        end
+    end
+
     data_technology[tritium_RTG].unit.ingredients =
     {
         {automation_science_pack, 1},

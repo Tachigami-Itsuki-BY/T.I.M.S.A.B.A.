@@ -1,17 +1,3 @@
-local bobs_mod = "bobs"
-if not (reskins.bobs and reskins.bobs.triggers.power.technologies) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.mining.technologies) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.plates.technologies) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.technologies) then
-	return
-end
-
 do
 	---@type CreateIconsFromListInputs
 	local inputs =

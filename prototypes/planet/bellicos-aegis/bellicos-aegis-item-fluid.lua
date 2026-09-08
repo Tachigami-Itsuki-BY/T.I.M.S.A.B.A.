@@ -183,7 +183,7 @@ if mods[bellicos_aegis_mods] then
             name = ammonium_hydrofluoride,
             subgroup = is_nitrogen,
             icon = "__TIMSABA__/graphics/icons/bellicos-and-aegis/ammonium-hydrofluoride.png",
-            order = i
+            order = j
         },
         -- SODIUM
         {
