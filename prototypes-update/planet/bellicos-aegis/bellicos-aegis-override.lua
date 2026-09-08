@@ -278,7 +278,6 @@ if mods[bellicos_aegis_mods] then
         count = 256
     }
 
-    data_technology[tech_space_logistic].prerequisites = {lightweight_science_pack, vulcanus_transport_belt}
     data_technology[tech_space_logistic].unit.ingredients =
     {
         {automation_science_pack, 1},

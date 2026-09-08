@@ -644,9 +644,6 @@ data_technology[rocket_fuel .. _productivity].unit.ingredients =
 }
 
 tech_tree_seeding = "tree-seeding"
-if mods[lignumis_mods] then
-    table.insert(data_technology[tech_tree_seeding].effects, {type = unlock_recipe, recipe = seed_extractor_1_lignumis})
-end
 data_technology[tech_tree_seeding].unit.ingredients =
 {
     {automation_science_pack, 1},

@@ -321,6 +321,26 @@ TIMSABA.functions.create_recipes
         },
         main_product = imidazole
     },
+    {
+        name = imidazolium_salt,
+        category = chemistry,
+        subgroup = is_nitrogen,
+        icons = THREE_I(imidazole, chlorobutane_liquid, imidazolium_salt),
+        order = i,
+        -- C₃H₄N₂(s) + C₄H₉Cl(l) -Ar-> [C₇H₁₃N₂]Cl(s)
+        ingredients =
+        {
+            {type = item, name = imidazole, amount = 4},
+            {type = fluid, name = chlorobutane_liquid, amount = 60},
+            {type = fluid, name = argon_gas, amount = 60}
+        },
+        results =
+        {
+            {type = item, name = imidazolium_salt, amount = 4},
+            {type = fluid, name = argon_gas, amount = 30} -- 60
+        },
+        main_product = imidazolium_salt
+    },
     -- FLUID
     {
         name = ammonia_gas_alt,
@@ -1228,26 +1248,7 @@ TIMSABA.functions.create_recipes
 -- OTHERS
 TIMSABA.functions.create_recipes
 ({
-    {
-        name = imidazolium_salt,
-        category = chemistry,
-        subgroup = is_others,
-        icons = THREE_I(imidazole, chlorobutane_liquid, imidazolium_salt),
-        order = a,
-        -- C₃H₄N₂(s) + C₄H₉Cl(l) -Ar-> [C₇H₁₃N₂]Cl(s)
-        ingredients =
-        {
-            {type = item, name = imidazole, amount = 4},
-            {type = fluid, name = chlorobutane_liquid, amount = 60},
-            {type = fluid, name = argon_gas, amount = 60}
-        },
-        results =
-        {
-            {type = item, name = imidazolium_salt, amount = 4},
-            {type = fluid, name = argon_gas, amount = 30} -- 60
-        },
-        main_product = imidazolium_salt
-    },
+    -- ITEM
     -- FLUID
     {
         name = hydrogen_peroxide,

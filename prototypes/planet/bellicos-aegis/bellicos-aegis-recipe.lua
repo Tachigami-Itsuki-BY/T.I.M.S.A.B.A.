@@ -88,6 +88,7 @@ if mods[bellicos_aegis_mods] then
             surface_conditions = {{property = gravity, max = 0.1, min = 0}}
         },
         {
+            localised_name = {"item-name." .. beryllium_oxide},
             name = beryllium_oxide_2,
             category = angels_blast_smelting_4,
             subgroup = is_beryllium_chemistry,
@@ -423,7 +424,7 @@ if mods[bellicos_aegis_mods] then
             category = chemistry,
             subgroup = is_nitrogen,
             icons = THREE_I(ammonia_angels, hydrogen_fluoride_angels, ammonium_hydrofluoride),
-            order = i,
+            order = j,
             energy_required = 2, -- NH₃(g) + 2HF(g) --> NH₄HF₂(s)
             ingredients =
             {

@@ -152,6 +152,7 @@ ammonium_chloride = "ammonium-chloride"
 ammonium_hydrosulfate = "ammonium-hydrosulfate"
 hexamethylenediamine = "hexamethylenediamine"
 imidazole = "imidazole"
+imidazolium_salt = "imidazolium-salt"
 TIMSABA.functions.create_items
 ({
     {
@@ -189,6 +190,13 @@ TIMSABA.functions.create_items
         subgroup = is_nitrogen,
         icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/imidazole.png",
         order = h
+    },
+    {
+        localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]Cl"} or nil,
+        name = imidazolium_salt,
+        subgroup = is_nitrogen,
+        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/imidazolium-salt.png",
+        order = i
     }
 })
 
@@ -591,18 +599,7 @@ TIMSABA.functions.create_fluids
 TIMSABA.barreling.add_dangerous_fluid(calcium_chloride_solution)
 TIMSABA.barreling.add_dangerous_fluid(calcium_hydroxide_solution)
 
--- OTHERS ITEM
-imidazolium_salt = "imidazolium-salt"
-TIMSABA.functions.create_items
-({
-    {
-        localised_description = show_formula and {chemical_formula, "[C[font=default-tiny-bold]7[/font]H[font=default-tiny-bold]13[/font]N[font=default-tiny-bold]2[/font]]Cl"} or nil,
-        name = imidazolium_salt,
-        subgroup = is_others,
-        icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/imidazolium-salt.png",
-        order = a
-    }
-})
+-- OTHERS
 
 -- OTHERS FLUID
 hydrogen_peroxide = "hydrogen-peroxide-liquid"

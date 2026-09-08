@@ -1,29 +1,3 @@
-local bobs_mod = "bobs"
-if not (reskins.bobs and reskins.bobs.triggers.power.entities) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.power.steam) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.power.solar) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.power.accumulators) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.mining.entities) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.power.nuclear) then
-	return
-end
-if not (reskins.bobs and (reskins.bobs.triggers.assembly.entities or reskins.bobs.triggers.plates.entities)) then
-	return
-end
-if not (reskins.bobs and reskins.bobs.triggers.assembly.entities) then
-	return
-end
-
 -- BOILER
 do
 	local inputs =
