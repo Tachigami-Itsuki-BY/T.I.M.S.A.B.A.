@@ -456,6 +456,7 @@ wood_splitter = "wood-" .. T1_splitter
 gold_pipe = "gold-pipe"
 gold_pipe_to_ground = "gold-pipe-to-ground"
 gold_storage_tank = "gold-storage-tank"
+burner_assembling_machine = "burner-" .. assembling_machine
 quality_assembler = "quality-assembler"
 
 -- BELLICOS AEGIS

@@ -264,8 +264,7 @@ if mods[lignumis_mods] then
     data_recipe[wood_splitter].ingredients =
     {
         {type = item, name = wooden_gear_wheel, amount = 4},
-        {type = item, name = lumber, amount = 4},
-        {type = item, name = gold_cable_mods, amount = 4}
+        {type = item, name = lumber, amount = 4}
     }
     if data_splitter[T0_splitter] then
         data_splitter[wood_splitter].speed = 0.46875/60
@@ -387,7 +386,6 @@ if mods[lignumis_mods] then
     data_furnace[desiccation_furnace].energy_usage = 225 .. kW
     data_furnace[desiccation_furnace].fluid_boxes[1].volume = 480
 
-    local burner_assembling_machine = "burner-" .. assembling_machine
     data_item[burner_assembling_machine].subgroup = is_lignumis_building
     data_item[burner_assembling_machine].order = c
     data_item[burner_assembling_machine].stack_size = 32
@@ -403,7 +401,9 @@ if mods[lignumis_mods] then
     }
     data_assembling[burner_assembling_machine].subgroup = is_lignumis_building
     data_assembling[burner_assembling_machine].order = c
+    data_assembling[burner_assembling_machine].crafting_speed = 0.5
     data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
+    data_assembling[burner_assembling_machine].next_upgrade = assembling_machine_1
     data_assembling[burner_assembling_machine].fluid_boxes =
     {
         {
@@ -442,6 +442,7 @@ if mods[lignumis_mods] then
     data_assembling[steam_assembling_machine].subgroup = is_lignumis_building
     data_assembling[steam_assembling_machine].order = d
     data_assembling[steam_assembling_machine].energy_usage = (225/8) .. kW
+    data_assembling[steam_assembling_machine].next_upgrade = nil
     data_assembling[steam_assembling_machine].fluid_boxes =
     {
         {

@@ -744,7 +744,11 @@ local function assembling_recipe(name, gear_wheel, circuit, pipe, assembling, pl
     end
     data_recipe[name].ingredients = ingredients
 end
-assembling_recipe(assembling_machine_1, iron_gear_wheel,            basic_circuit_board,      iron_pipe,                                nil, iron_plate,                iron_bearing)
+if mods[lignumis_mods] then
+    assembling_recipe(assembling_machine_1, iron_gear_wheel, basic_circuit_board, iron_pipe, burner_assembling_machine, iron_plate, iron_bearing)
+else
+    assembling_recipe(assembling_machine_1, iron_gear_wheel, basic_circuit_board, iron_pipe,                       nil, iron_plate, iron_bearing)
+end
 assembling_recipe(assembling_machine_2, steel_gear_wheel,           electronic_circuit,       steel_pipe,              assembling_machine_1, steel_plate,               steel_bearing)
 assembling_recipe(assembling_machine_3, brass_gear_wheel,           advanced_circuit,         brass_pipe,              assembling_machine_2, brass_plate_bob,           brass_bearing)
 assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_unit,          titanium_pipe,           assembling_machine_3, titanium_plate_bob,        titanium_bearing)
