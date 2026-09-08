@@ -386,7 +386,7 @@ This is more than just a modpack; it’s a complete "from scratch" overhaul desi
 > * **[🌐Terra Palus](https://mods.factorio.com/mod/terrapalus)**
 > * **[🌐Castra Prime](https://mods.factorio.com/mod/castra-prime)**
 > * **[🌐Shchierbin](https://mods.factorio.com/mod/shchierbin)**
-> * **[🌐Maraxsis](https://mods.factorio.com/mod/maraxsis)**
+> * **[🌐Maraxsis Classic](https://mods.factorio.com/mod/maraxsis-classic)**
 > * **[🌐Vesta](https://mods.factorio.com/mod/skewer_planet_vesta)**
 > * **[🌐Muria](https://mods.factorio.com/mod/Muria)**
 > * **[🌐Pelagos](https://mods.factorio.com/mod/pelagos)**

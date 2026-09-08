@@ -751,6 +751,30 @@ assembling_recipe(assembling_machine_4, titanium_gear_wheel,        processing_u
 assembling_recipe(assembling_machine_5, nitinol_gear_wheel,         advanced_processing_unit, nitinol_pipe,            assembling_machine_4, nitinol_plate_bob,         nitinol_bearing)
 assembling_recipe(assembling_machine_6, molybdenum_gear_wheel,      advanced_processing_unit, molybdenum_rhenium_pipe, assembling_machine_5, molybdenum_rhenium_plate,  rhenium_bearing)
 
+if mods[lignumis_mods] then
+    data_assembling[assembling_machine_1].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
+            volume = 1000,
+            secondary_draw_orders = {north = -1},
+        },
+        {
+            production_type = output,
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
+            volume = 1000,
+            secondary_draw_orders = {north = -1},
+        }
+    }
+    data_assembling[assembling_machine_1].fluid_boxes_off_when_no_fluid_recipe = true
+    data_assembling[assembling_machine_1].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
+end
+
 data_item[lab_1].subgroup = is_lab
 data_item[lab_1].order = a
 data_item[lab_1].stack_size = 32

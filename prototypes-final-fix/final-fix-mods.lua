@@ -834,10 +834,6 @@ if mods[lignumis_mods] then
     data_recipe[burner_chemical_plant].enabled = true
     data_recipe[burner_seed_extractor].enabled = true
 
-    data_assembling[assembling_machine_1].fluid_boxes = util.table.deepcopy(data_assembling[assembling_machine_2].fluid_boxes)
-    data_assembling[assembling_machine_1].fluid_boxes_off_when_no_fluid_recipe = true
-    data_assembling[assembling_machine_1].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
-
     if data_recipe[T0_transport_belt] then
         data_recipe[T0_transport_belt].enabled = false
     end
