@@ -404,6 +404,27 @@ if mods[lignumis_mods] then
     data_assembling[burner_assembling_machine].subgroup = is_lignumis_building
     data_assembling[burner_assembling_machine].order = c
     data_assembling[burner_assembling_machine].energy_usage = 225 .. kW
+    data_assembling[burner_assembling_machine].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
+            volume = 1000,
+            secondary_draw_orders = {north = -1},
+        },
+        {
+            production_type = output,
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
+            volume = 1000,
+            secondary_draw_orders = {north = -1},
+        }
+    }
+    data_assembling[burner_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
+    data_assembling[burner_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
     local steam_assembling_machine = "steam-" .. assembling_machine
     data_item[steam_assembling_machine].subgroup = is_lignumis_building
@@ -421,6 +442,27 @@ if mods[lignumis_mods] then
     data_assembling[steam_assembling_machine].subgroup = is_lignumis_building
     data_assembling[steam_assembling_machine].order = d
     data_assembling[steam_assembling_machine].energy_usage = (225/8) .. kW
+    data_assembling[steam_assembling_machine].fluid_boxes =
+    {
+        {
+            production_type = input,
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            pipe_connections = {{flow_direction = input, direction = defines.direction.north, position = {0, -1}}},
+            volume = 1000,
+            secondary_draw_orders = {north = -1},
+        },
+        {
+            production_type = output,
+            pipe_picture = assembler2pipepictures(),
+            pipe_covers = pipecoverspictures(),
+            pipe_connections = {{flow_direction = output, direction = defines.direction.south, position = {0, 1}}},
+            volume = 1000,
+            secondary_draw_orders = {north = -1},
+        }
+    }
+    data_assembling[steam_assembling_machine].fluid_boxes_off_when_no_fluid_recipe = true
+    data_assembling[steam_assembling_machine].crafting_categories = util.table.deepcopy(data_assembling[assembling_machine_2].crafting_categories)
 
     local lumber_mill = "lumber-mill"
     data_item[lumber_mill].subgroup = is_lignumis_building

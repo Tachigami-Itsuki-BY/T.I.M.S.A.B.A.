@@ -265,7 +265,7 @@ vanadium_electro_engine_unit = "vanadium-electro-engine-unit"
 vanadium_crusher = "crusher-vanad"
 
 -- MARAXSIS
-maraxsis_mods = "maraxsis"
+maraxsis_mods = "maraxsis-classic"
 planet_maraxsis = "maraxsis"
 planet_trench_maraxsis = "maraxsis-trench"
 salt_mods = "salt"

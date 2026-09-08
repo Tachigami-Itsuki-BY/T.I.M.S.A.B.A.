@@ -223,12 +223,14 @@ if mods[maraxsis_mods] then
         {type = fluid, name = hydrogen_angels, amount = 960}
     }
 
-    if mods[pelagos_mods] then
+    if mods[pelagos_mods] then -- ???
         local super_sealant_substance_pelagos = "pelagos-" .. super_sealant_substance_maraxsis
-        data_recipe[super_sealant_substance_pelagos].subgroup = is_maraxsis_recipe
-        data_recipe[super_sealant_substance_pelagos].icons = TWO_I(coconut_sealant, super_sealant_substance_maraxsis)
-        data_recipe[super_sealant_substance_pelagos].order = k_a
-        data_recipe[super_sealant_substance_pelagos].energy_required = 4
+        if data_recipe[super_sealant_substance_pelagos] then
+            data_recipe[super_sealant_substance_pelagos].subgroup = is_maraxsis_recipe
+            data_recipe[super_sealant_substance_pelagos].icons = TWO_I(coconut_sealant, super_sealant_substance_maraxsis)
+            data_recipe[super_sealant_substance_pelagos].order = k_a
+            data_recipe[super_sealant_substance_pelagos].energy_required = 4
+        end
     end
 
     -- LOGISTCIS
