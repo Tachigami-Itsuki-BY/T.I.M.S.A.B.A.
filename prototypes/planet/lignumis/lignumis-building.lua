@@ -14,7 +14,7 @@ if mods[lignumis_mods] then
             enabled = true,
             ingredients =
             {
-                {type = item, name = gold_cable_mods, amount = 8},
+                {type = item, name = basic_circuit_board, amount = 8},
                 {type = item, name = wooden_gear_wheel, amount = 32},
                 {type = item, name = lumber, amount = 32},
                 {type = item, name = stone, amount = 64}
@@ -36,7 +36,7 @@ if mods[lignumis_mods] then
             enabled = true,
             ingredients =
             {
-                {type = item, name = gold_cable_mods, amount = 1},
+                {type = item, name = basic_circuit_board, amount = 1},
                 {type = item, name = wooden_gear_wheel, amount = 4},
                 {type = item, name = lumber, amount = 8},
                 {type = item, name = stone, amount = 8}
