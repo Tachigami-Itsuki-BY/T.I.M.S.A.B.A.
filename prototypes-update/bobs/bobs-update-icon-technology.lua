@@ -18,7 +18,7 @@ do
 	}
 	---@type CreateIconsFromListTable
 	local technologies = {}
-	if reskins.bobs.triggers.power.steam then
+	if settings.startup[setting_bobmods_power_steam].value then
 		-- BOILER
 		technologies[boiler_6] = {tier = 6, icon_name = boiler_1, technology_icon_size = 128, technology_icon_extras = boiler_icon_extra}
 		-- STEAM ENGINE
@@ -26,11 +26,11 @@ do
 		-- STEAM TURBINE
 		technologies[steam_turbine_4] = {tier = 4, prog_tier = 6, icon_name = steam_turbine_1, technology_icon_size = 128}
 	end
-	if reskins.bobs.triggers.power.solar then
+	if settings.startup[setting_bobmods_power_solar].value then
 		-- SOLAR PANELS
 		technologies[tech_solar_energy_4] = {tier = 4, prog_tier = 5, icon_name = tech_solar_energy_1}
 	end
-	if reskins.bobs.triggers.power.accumulators then
+	if settings.startup[setting_bobmods_power_accumulators].value then
 		-- ACCUMULATOR
 		technologies[tech_electric_energy_accumulators_4] = {tier = 4, prog_tier = 5, icon_name = accumulator_1}
 	end
@@ -107,16 +107,13 @@ do
 		}
 		return override
 	end
-	local technologies =
-	{
-		-- ELECTRIC MINING DRILLS
-		[electric_mining_drill_1] = get_mining_drill_overrides(1),
-		-- PUMPJACK
-		[tech_pumpjacks_5] = get_pumpjack_overrides(5, 6),
-		[tech_pumpjacks_6] = get_pumpjack_overrides(6, 6)
-	}
+	local technologies ={[electric_mining_drill_1] = get_mining_drill_overrides(1)}
 	if settings.startup[setting_bobmods_mining_miningdrills].value then
 		technologies[tech_drills_6] = get_mining_drill_overrides(6)
+	end
+	if settings.startup[setting_bobmods_mining_pumpjacks].value then
+		technologies[tech_pumpjacks_5] = get_pumpjack_overrides(5, 6)
+		technologies[tech_pumpjacks_6] = get_pumpjack_overrides(6, 6)
 	end
 	reskins.internal.create_icons_from_list(technologies, inputs)
 end

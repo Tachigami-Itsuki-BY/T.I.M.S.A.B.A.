@@ -357,13 +357,13 @@ data_recipe[tin_plate_bob].icons = TWO_I(crushed_bobmonium, tin_plate_bob)
 data_recipe[tin_plate_bob].order = c
 data_recipe[tin_plate_bob].energy_required = 8
 if settings.startup[setting_game_difficulty].value == easy then
-    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
+    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 4}}
     data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 2}}
 elseif settings.startup[setting_game_difficulty].value == normal then
-    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 4}}
+    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 4}}
     data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 1}}
 elseif settings.startup[setting_game_difficulty].value == hard then
-    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_rubyte, amount = 8}}
+    data_recipe[tin_plate_bob].ingredients = {{type = item, name = crushed_bobmonium, amount = 8}}
     data_recipe[tin_plate_bob].results = {{type = item, name = tin_plate_bob, amount = 1}}
 end
 data_recipe[tin_plate_bob].main_product = tin_plate_bob

@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.5
+Date: 09.09.2026
+  Bugfixes:
+    - [All] Fixed a bug where the game with the mod would not load if the "New Steam Power Related Entities" mod setting was disabled.
+    - [All] Fixed a bug where the game with the mod would not load if the "New Solar Panels" mod setting was disabled.
+    - [All] Fixed a bug where the game with the mod would not load if the "New Accumulators" mod setting was disabled.
+    - [All] Fixed a bug where the game with the mod would not load if the "New Mining Drills" mod setting was disabled.
+    - [All] Fixed a bug where the game with the mod would not load if the "New Pumpjacks" mod setting was disabled.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.4
 Date: 09.09.2026
   Bugfixes:

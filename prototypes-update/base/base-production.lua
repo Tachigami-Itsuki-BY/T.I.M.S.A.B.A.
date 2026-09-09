@@ -21,16 +21,20 @@ local boilers =
     {name = boiler_5, pollution = 20, order = e, localised_name = {"entity-name.boiler-5"}}
 }
 for _, BUILD in pairs(boilers) do
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 1
-    data_boiler[BUILD.name].localised_name = BUILD.localised_name
-    data_boiler[BUILD.name].order = BUILD.order
-    data_boiler[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_boiler[BUILD.name].localised_name = BUILD.localised_name
+        data_boiler[BUILD.name].order = BUILD.order
+        data_boiler[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
+    end
 end
 local function boiler_recipe(name, pipe, boiler, plate)
+    if not data_recipe[name] then return end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = pipe,   amount = 4},
@@ -54,15 +58,19 @@ local steam_engines =
     {name = steam_engine_5, order = e, localised_name = {"entity-name.steam-engine-5"}}
 }
 for _, BUILD in pairs(steam_engines) do
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 1
-    data_generator[BUILD.name].localised_name = BUILD.localised_name
-    data_generator[BUILD.name].order = BUILD.order
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_generator[BUILD.name].localised_name = BUILD.localised_name
+        data_generator[BUILD.name].order = BUILD.order
+    end
 end
 local function steam_engine_recipe(name, gear_wheel, bearing, pipe, steam_engine, plate)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},
@@ -88,18 +96,22 @@ local steam_turbines =
     {name = steam_turbine_3, order = c, localised_name = {"entity-name.steam-turbine-3"}}
 }
 for _, BUILD in pairs(steam_turbines) do
-    data_item[BUILD.name].subgroup = is_energy_steam_turbine
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].subgroup = is_energy_steam_turbine
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 1
-    data_generator[BUILD.name].localised_name = BUILD.localised_name
-    data_generator[BUILD.name].subgroup = is_energy_steam_turbine
-    data_generator[BUILD.name].order = BUILD.order
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_energy_steam_turbine
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_energy_steam_turbine
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_generator[BUILD.name].localised_name = BUILD.localised_name
+        data_generator[BUILD.name].subgroup = is_energy_steam_turbine
+        data_generator[BUILD.name].order = BUILD.order
+    end
 end
 local function steam_turbine_recipe(name, gear_wheel, bearing, circuit, pipe, turbine, plate)
+    if not data_recipe[name] then return end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},
@@ -114,8 +126,9 @@ steam_turbine_recipe(steam_turbine_1, ceramic_gear_wheel,  ceramic_bearing,  adv
 steam_turbine_recipe(steam_turbine_2, tungsten_gear_wheel, tungsten_bearing, processing_unit,          tungsten_pipe, steam_turbine_1, tungsten_plate_bob)
 steam_turbine_recipe(steam_turbine_3, copper_tungsten_gear_wheel,  copper_tungsten_bearing,  advanced_processing_unit, copper_tungsten_pipe,  steam_turbine_2, copper_tungsten_plate_bob)
 
-if settings.startup["bobmods-power-fluidgenerator"].value then
+if settings.startup[setting_bobmods_power_fluidgenerator].value then
     data_item_subgroup["bob-energy-fluid-generator"].order = b_c
+
     local fluid_generators =
     {
         {name = fluid_generator_1,   max_power_output = 1800, pollution = 8,   fluid_usage_per_tick = 1, localised_name = {"entity-name.fluid-generator-1"}},
@@ -127,9 +140,7 @@ if settings.startup["bobmods-power-fluidgenerator"].value then
         data_item[BUILD.name].stack_size = 32
         data_item[BUILD.name].weight = 31250
         data_recipe[BUILD.name].energy_required = 1
-        if BUILD.localised_name then
-            data_generator[BUILD.name].localised_name = BUILD.localised_name
-        end
+        if BUILD.localised_name then data_generator[BUILD.name].localised_name = BUILD.localised_name end
         data_generator[BUILD.name].effectivity = nil
         data_generator[BUILD.name].max_power_output = BUILD.max_power_output .. kW
         data_generator[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.pollution
@@ -187,19 +198,23 @@ local solar_panels_small =
     {name = solar_panel_small_3, production = 90, order = c, localised_name = {"entity-name.solar-panel-small-3"}}
 }
 for _, BUILD in pairs(solar_panels_small) do
-    data_item[BUILD.name].subgroup = is_solar_panel_small
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].subgroup = is_solar_panel_small
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 1
-    data_solar_panel[BUILD.name].localised_name = BUILD.localised_name
-    data_solar_panel[BUILD.name].subgroup = is_solar_panel_small
-    data_solar_panel[BUILD.name].order = BUILD.order
-    data_solar_panel[BUILD.name].production = BUILD.production .. kW
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_solar_panel_small
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_solar_panel_small
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_solar_panel[BUILD.name].localised_name = BUILD.localised_name
+        data_solar_panel[BUILD.name].subgroup = is_solar_panel_small
+        data_solar_panel[BUILD.name].order = BUILD.order
+        data_solar_panel[BUILD.name].production = BUILD.production .. kW
+    end
 end
 local function solar_panel_s_recipe(name, circuit, plate_1, cable, glass, panel, silicon, plate_2)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = circuit, amount = 8},
@@ -228,16 +243,20 @@ local solar_panels =
     {name = solar_panel_3, production = 180, order = c, localised_name = {"entity-name.solar-panel-3"}}
 }
 for _, BUILD in pairs(solar_panels) do
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 2
-    data_solar_panel[BUILD.name].localised_name = BUILD.localised_name
-    data_solar_panel[BUILD.name].order = BUILD.order
-    data_solar_panel[BUILD.name].production = BUILD.production .. kW
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 2
+        data_solar_panel[BUILD.name].localised_name = BUILD.localised_name
+        data_solar_panel[BUILD.name].order = BUILD.order
+        data_solar_panel[BUILD.name].production = BUILD.production .. kW
+    end
 end
 local function solar_panel_m_recipe(name, circuit, plate_1, cable, glass, panel, silicon, plate_2)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = circuit, amount = 16},
@@ -265,19 +284,23 @@ local solar_panels_large =
     {name = solar_panel_large_3, production = 360, order = c, localised_name = {"entity-name.solar-panel-large-3"}}
 }
 for _, BUILD in pairs(solar_panels_large) do
-    data_item[BUILD.name].subgroup = is_solar_panel_large
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].subgroup = is_solar_panel_large
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 4
-    data_solar_panel[BUILD.name].localised_name = BUILD.localised_name
-    data_solar_panel[BUILD.name].subgroup = is_solar_panel_large
-    data_solar_panel[BUILD.name].order = BUILD.order
-    data_solar_panel[BUILD.name].production = BUILD.production .. kW
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = is_solar_panel_large
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = is_solar_panel_large
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 4
+        data_solar_panel[BUILD.name].localised_name = BUILD.localised_name
+        data_solar_panel[BUILD.name].subgroup = is_solar_panel_large
+        data_solar_panel[BUILD.name].order = BUILD.order
+        data_solar_panel[BUILD.name].production = BUILD.production .. kW
+    end
 end
 local function solar_panel_l_recipe(name, circuit, plate_1, cable, glass, panel, silicon, plate_2)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = circuit, amount = 32},
@@ -306,18 +329,22 @@ local accumulators =
     {name = accumulator_3, buffer_capacity = 28800, flow_limit = 1800, order = c, localised_name = {"entity-name.accumulator-3"}}
 }
 for _, BUILD in pairs(accumulators) do
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 1
-    data_accumulator[BUILD.name].localised_name = BUILD.localised_name
-    data_accumulator[BUILD.name].order = BUILD.order
-    data_accumulator[BUILD.name].energy_source.buffer_capacity = BUILD.buffer_capacity .. kJ
-    data_accumulator[BUILD.name].energy_source.input_flow_limit = BUILD.flow_limit .. kW
-    data_accumulator[BUILD.name].energy_source.output_flow_limit = BUILD.flow_limit .. kW
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_accumulator[BUILD.name].localised_name = BUILD.localised_name
+        data_accumulator[BUILD.name].order = BUILD.order
+        data_accumulator[BUILD.name].energy_source.buffer_capacity = BUILD.buffer_capacity .. kJ
+        data_accumulator[BUILD.name].energy_source.input_flow_limit = BUILD.flow_limit .. kW
+        data_accumulator[BUILD.name].energy_source.output_flow_limit = BUILD.flow_limit .. kW
+    end
 end
 local function accumulator_recipe(name, battery, circuit, accumulator, plate)
+    if not data_recipe[name] then return end
+
     local ingredients =
     {
         {type = item, name = battery, amount = 8},
@@ -333,6 +360,20 @@ accumulator_recipe(accumulator_1, battery_lead_acid,   electronic_circuit, nil, 
 accumulator_recipe(accumulator_2, battery_lithium_ion, advanced_circuit,   accumulator_1, steel_plate)
 accumulator_recipe(accumulator_3, battery_silver_zinc, processing_unit,    accumulator_2, titanium_plate_bob)
 
+data_item[burner_mining_drill].stack_size = 32
+data_item[burner_mining_drill].weight = 31250
+if not mods[lignumis_mods] then
+    data_recipe[burner_mining_drill].ingredients =
+    {
+        {type = item, name = iron_gear_wheel, amount = 4},
+        {type = item, name = stone_furnace,   amount = 1},
+        {type = item, name = iron_plate,      amount = 4}
+    }
+end
+data_mining_drill[burner_mining_drill].mining_speed = 0.5
+data_mining_drill[burner_mining_drill].energy_usage = 225 .. kW
+data_mining_drill[burner_mining_drill].energy_source.emissions_per_minute.pollution = 8
+
 local mining_machines =
 {
     {name = electric_mining_drill_1, subgroup = is_extraction_machine_mining, order = a, mining_speed = 1, energy_usage = 120, localised_name = {"entity-name.electric-mining-drill-1"}},
@@ -347,47 +388,30 @@ local mining_machines =
     {name = pumpjack_4, subgroup = is_extraction_machine_pumpjack, order = d, mining_speed = 4, energy_usage = 480, localised_name = {"entity-name.pumpjack-4"}}
 }
 for _, BUILD in pairs(mining_machines) do
-    data_item[BUILD.name].subgroup = BUILD.subgroup
-    data_item[BUILD.name].order = BUILD.order
-    data_item[BUILD.name].stack_size = 32
-    data_item[BUILD.name].weight = 31250
-    data_recipe[BUILD.name].subgroup = BUILD.subgroup
-    data_recipe[BUILD.name].order = BUILD.order
-    data_recipe[BUILD.name].energy_required = 1
-    data_mining_drill[BUILD.name].localised_name = BUILD.localised_name
-    data_mining_drill[BUILD.name].subgroup = BUILD.subgroup
-    data_mining_drill[BUILD.name].order = BUILD.order
-    data_mining_drill[BUILD.name].module_slots = BUILD.mining_speed
-    data_mining_drill[BUILD.name].mining_speed = BUILD.mining_speed
-    data_mining_drill[BUILD.name].energy_usage = BUILD.energy_usage .. kW
-    data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.mining_speed
-    if BUILD.subgroup == is_extraction_machine_mining then
-        data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
+    if data_item[BUILD.name] then
+        data_item[BUILD.name].subgroup = BUILD.subgroup
+        data_item[BUILD.name].order = BUILD.order
+        data_item[BUILD.name].stack_size = 32
+        data_item[BUILD.name].weight = 31250
+        data_recipe[BUILD.name].subgroup = BUILD.subgroup
+        data_recipe[BUILD.name].order = BUILD.order
+        data_recipe[BUILD.name].energy_required = 1
+        data_mining_drill[BUILD.name].localised_name = BUILD.localised_name
+        data_mining_drill[BUILD.name].subgroup = BUILD.subgroup
+        data_mining_drill[BUILD.name].order = BUILD.order
+        data_mining_drill[BUILD.name].module_slots = BUILD.mining_speed
+        data_mining_drill[BUILD.name].mining_speed = BUILD.mining_speed
+        data_mining_drill[BUILD.name].energy_usage = BUILD.energy_usage .. kW
+        data_mining_drill[BUILD.name].energy_source.emissions_per_minute.pollution = BUILD.mining_speed
+        if BUILD.subgroup == is_extraction_machine_mining then
+            data_mining_drill[BUILD.name].graphics_set.animation.animation_speed = BUILD.mining_speed
+        end
     end
 end
-data_item[burner_mining_drill].stack_size = 32
-data_item[burner_mining_drill].weight = 31250
-if mods[lignumis_mods] then
-    --[[data_recipe[burner_mining_drill].ingredients =
-    {
-        {type = item, name = iron_gear_wheel, amount = 4},
-        {type = item, name = stone_furnace,   amount = 1},
-        {type = item, name = iron_plate,      amount = 4}
-    }]]
-else
-    data_recipe[burner_mining_drill].ingredients =
-    {
-        {type = item, name = iron_gear_wheel, amount = 4},
-        {type = item, name = stone_furnace,   amount = 1},
-        {type = item, name = iron_plate,      amount = 4}
-    }
-end
-data_mining_drill[burner_mining_drill].mining_speed = 0.5
-data_mining_drill[burner_mining_drill].energy_usage = 225 .. kW
-data_mining_drill[burner_mining_drill].energy_source.emissions_per_minute.pollution = 8
-
 data_mining_drill[pumpjack_1].max_health = 100
 local function mining_drill_recipe(name, gear_wheel, circuit, mining_drill, plate)
+    if not data_recipe[name] then return end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},
@@ -397,13 +421,15 @@ local function mining_drill_recipe(name, gear_wheel, circuit, mining_drill, plat
     }
 end
 mining_drill_recipe(electric_mining_drill_1, iron_gear_wheel,     basic_circuit_board,      burner_mining_drill,     iron_plate)
+data_recipe[electric_mining_drill_1].ingredients[1].amount = 4
+data_recipe[electric_mining_drill_1].ingredients[4].amount = 4
 mining_drill_recipe(electric_mining_drill_2, steel_gear_wheel,    electronic_circuit,       electric_mining_drill_1, steel_plate)
 mining_drill_recipe(electric_mining_drill_3, brass_gear_wheel,    advanced_circuit,         electric_mining_drill_2, brass_plate_bob)
 mining_drill_recipe(electric_mining_drill_4, tungsten_gear_wheel, processing_unit,          electric_mining_drill_3, tungsten_plate_bob)
 mining_drill_recipe(electric_mining_drill_5, copper_tungsten_gear_wheel,  advanced_processing_unit, electric_mining_drill_4, copper_tungsten_plate_bob)
-data_recipe[electric_mining_drill_1].ingredients[1].amount = 4
-data_recipe[electric_mining_drill_1].ingredients[4].amount = 4
 local function pumpjack_recipe(name, gear_wheel, circuit, pipe, pumpjack, plate)
+    if not data_recipe[name] then return end
+
     data_recipe[name].ingredients =
     {
         {type = item, name = gear_wheel, amount = 8},

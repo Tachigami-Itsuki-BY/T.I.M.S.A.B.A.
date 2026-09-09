@@ -80,65 +80,69 @@ if settings.startup[setting_bobmods_power_steam].value then
 end
 
 -- SOLAR PANELS
-data:extend
-({
-    {
-        localised_name = {"technology-name.solar-energy-4"},
-        localised_description = {"technology-description.solar-energy"},
-        type = technology,
-        name = tech_solar_energy_4,
-        icon = "__base__/graphics/technology/solar-energy.png",
-        icon_size = 256,
-        prerequisites = {tech_solar_energy_3, utility_science_pack, advanced_processing_unit},
-        effects =
+if settings.startup[setting_bobmods_power_solar].value then
+    data:extend
+    ({
         {
-            {type = unlock_recipe, recipe = solar_panel_small_4},
-            {type = unlock_recipe, recipe = solar_panel_4},
-            {type = unlock_recipe, recipe = solar_panel_large_4}
-        },
-        unit =
-        {
-            count = 250,
-            ingredients =
+            localised_name = {"technology-name.solar-energy-4"},
+            localised_description = {"technology-description.solar-energy"},
+            type = technology,
+            name = tech_solar_energy_4,
+            icon = "__base__/graphics/technology/solar-energy.png",
+            icon_size = 256,
+            prerequisites = {tech_solar_energy_3, utility_science_pack, advanced_processing_unit},
+            effects =
             {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1}
+                {type = unlock_recipe, recipe = solar_panel_small_4},
+                {type = unlock_recipe, recipe = solar_panel_4},
+                {type = unlock_recipe, recipe = solar_panel_large_4}
             },
-            time = 30
+            unit =
+            {
+                count = 250,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1}
+                },
+                time = 30
+            }
         }
-    }
-})
+    })
+end
 
 -- ACCUMULATOR
-data:extend
-({
-    {
-        localised_name = {"technology-name.electric-energy-accumulators-4"},
-        localised_description = {"technology-description.electric-energy-accumulators"},
-        type = technology,
-        name = tech_electric_energy_accumulators_4,
-        icon = "__base__/graphics/technology/electric-energy-acumulators.png",
-        icon_size = 256,
-        prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack},
-        effects = {{type = unlock_recipe, recipe = accumulator_4}},
-        unit =
+if settings.startup[setting_bobmods_power_accumulators].value then
+    data:extend
+    ({
         {
-            count = 250,
-            ingredients =
+            localised_name = {"technology-name.electric-energy-accumulators-4"},
+            localised_description = {"technology-description.electric-energy-accumulators"},
+            type = technology,
+            name = tech_electric_energy_accumulators_4,
+            icon = "__base__/graphics/technology/electric-energy-acumulators.png",
+            icon_size = 256,
+            prerequisites = {tech_electric_energy_accumulators_3, utility_science_pack},
+            effects = {{type = unlock_recipe, recipe = accumulator_4}},
+            unit =
             {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1}
-            },
-            time = 30
+                count = 250,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1}
+                },
+                time = 30
+            }
         }
-    }
-})
+    })
+end
 
 -- ELECTRIC MINING DRILL
 if settings.startup[setting_bobmods_mining_miningdrills].value then
@@ -171,58 +175,60 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
 end
 
 -- PUMPJACK
-data:extend
-({
-    {
-        localised_name = {"technology-name.pumpjacks-5"},
-        type = technology,
-        name = tech_pumpjacks_5,
-        icon = "__base__/graphics/technology/oil-gathering.png",
-        icon_size = 256,
-        prerequisites = {tech_pumpjacks_4, space_science_pack},
-        effects = {{type = unlock_recipe, recipe = pumpjack_5}},
-        unit =
+if settings.startup[setting_bobmods_mining_pumpjacks].value then
+    data:extend
+    ({
         {
-            count = 300,
-            ingredients =
+            localised_name = {"technology-name.pumpjacks-5"},
+            type = technology,
+            name = tech_pumpjacks_5,
+            icon = "__base__/graphics/technology/oil-gathering.png",
+            icon_size = 256,
+            prerequisites = {tech_pumpjacks_4, space_science_pack},
+            effects = {{type = unlock_recipe, recipe = pumpjack_5}},
+            unit =
             {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1}
+                count = 300,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1}
+                },
+                time = 30
             },
-            time = 30
         },
-    },
-    {
-        localised_name = {"technology-name.pumpjacks-6"},
-        type = technology,
-        name = tech_pumpjacks_6,
-        icon = "__base__/graphics/technology/oil-gathering.png",
-        icon_size = 256,
-        prerequisites = {tech_pumpjacks_5, electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
-        effects = {{type = unlock_recipe, recipe = pumpjack_6}},
-        unit =
         {
-            count = 350,
-            ingredients =
+            localised_name = {"technology-name.pumpjacks-6"},
+            type = technology,
+            name = tech_pumpjacks_6,
+            icon = "__base__/graphics/technology/oil-gathering.png",
+            icon_size = 256,
+            prerequisites = {tech_pumpjacks_5, electromagnetic_science_pack, agricultural_science_pack, metallurgic_science_pack},
+            effects = {{type = unlock_recipe, recipe = pumpjack_6}},
+            unit =
             {
-                {automation_science_pack, 1},
-                {logistic_science_pack, 1},
-                {chemical_science_pack, 1},
-                {production_science_pack, 1},
-                {utility_science_pack, 1},
-                {space_science_pack, 1},
-                {electromagnetic_science_pack, 1},
-                {agricultural_science_pack, 1},
-                {metallurgic_science_pack, 1}
-            },
-            time = 30
+                count = 350,
+                ingredients =
+                {
+                    {automation_science_pack, 1},
+                    {logistic_science_pack, 1},
+                    {chemical_science_pack, 1},
+                    {production_science_pack, 1},
+                    {utility_science_pack, 1},
+                    {space_science_pack, 1},
+                    {electromagnetic_science_pack, 1},
+                    {agricultural_science_pack, 1},
+                    {metallurgic_science_pack, 1}
+                },
+                time = 30
+            }
         }
-    }
-})
+    })
+end
 
 -- REACTOR
 data:extend

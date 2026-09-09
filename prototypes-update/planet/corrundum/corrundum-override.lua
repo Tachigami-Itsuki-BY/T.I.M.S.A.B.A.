@@ -458,14 +458,25 @@ if mods[corrundum_mods] then
     data_recipe[pressure_lab].subgroup = is_corrundum_building
     data_recipe[pressure_lab].order = e
     data_recipe[pressure_lab].energy_required = 32
-    data_recipe[pressure_lab].ingredients =
-    {
-        {type = item, name = steam_turbine_4, amount = 1},
-        {type = item, name = lab, amount = 1},
-        {type = item, name = platinum_cable, amount = 8},
-        {type = item, name = chemical_plant_4, amount = 1},
-        {type = item, name = platinum_plate, amount = 4}
-    }
+    if settings.startup[setting_bobmods_power_steam].value then
+        data_recipe[pressure_lab].ingredients =
+        {
+            {type = item, name = steam_turbine_4, amount = 1},
+            {type = item, name = lab, amount = 1},
+            {type = item, name = platinum_cable, amount = 8},
+            {type = item, name = chemical_plant_4, amount = 1},
+            {type = item, name = platinum_plate, amount = 4}
+        }
+    else
+        data_recipe[pressure_lab].ingredients =
+        {
+            {type = item, name = steam_turbine_1, amount = 1},
+            {type = item, name = lab, amount = 1},
+            {type = item, name = platinum_cable, amount = 8},
+            {type = item, name = chemical_plant_4, amount = 1},
+            {type = item, name = platinum_plate, amount = 4}
+        }
+    end
     data_lab[pressure_lab].subgroup = is_corrundum_building
     data_lab[pressure_lab].order = e
     data_lab[pressure_lab].researching_speed = 4

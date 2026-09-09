@@ -96,13 +96,23 @@ data_tool[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].subgroup = is_fulgora_recipe
 data_recipe[electromagnetic_science_pack].order = d
 data_recipe[electromagnetic_science_pack].energy_required = 8
-data_recipe[electromagnetic_science_pack].ingredients =
-{
-    {type = item, name = accumulator_4, amount = 1},
-    {type = item, name = supercapacitor, amount = 1},
-    {type = item, name = holmium_plate, amount = 2},
-    {type = fluid, name = electrolyte, amount = 30}
-}
+if settings.startup[setting_bobmods_power_accumulators].value then
+    data_recipe[electromagnetic_science_pack].ingredients =
+    {
+        {type = item, name = accumulator_4, amount = 1},
+        {type = item, name = supercapacitor, amount = 1},
+        {type = item, name = holmium_plate, amount = 2},
+        {type = fluid, name = electrolyte, amount = 30}
+    }
+else
+    data_recipe[electromagnetic_science_pack].ingredients =
+    {
+        {type = item, name = accumulator_1, amount = 1},
+        {type = item, name = supercapacitor, amount = 1},
+        {type = item, name = holmium_plate, amount = 2},
+        {type = fluid, name = electrolyte, amount = 30}
+    }
+end
 
 -- BUILDING
 local recycler = "recycler"
@@ -178,13 +188,23 @@ data_item[lightning_collector].weight = 31250
 data_recipe[lightning_collector].subgroup = is_fulgora_building
 data_recipe[lightning_collector].order = d
 data_recipe[lightning_collector].energy_required = 4
-data_recipe[lightning_collector].ingredients =
-{
-    {type = item, name = accumulator_4, amount = 1},
-    {type = item, name = lightning_rod, amount = 1},
-    {type = item, name = supercapacitor, amount = 8},
-    {type = fluid, name = electrolyte, amount = 60}
-}
+if settings.startup[setting_bobmods_power_accumulators].value then
+    data_recipe[lightning_collector].ingredients =
+    {
+        {type = item, name = accumulator_4, amount = 1},
+        {type = item, name = lightning_rod, amount = 1},
+        {type = item, name = supercapacitor, amount = 8},
+        {type = fluid, name = electrolyte, amount = 60}
+    }
+else
+    data_recipe[lightning_collector].ingredients =
+    {
+        {type = item, name = accumulator_1, amount = 1},
+        {type = item, name = lightning_rod, amount = 1},
+        {type = item, name = supercapacitor, amount = 8},
+        {type = fluid, name = electrolyte, amount = 60}
+    }
+end
 data_lightning_attractor[lightning_collector].subgroup = is_fulgora_building
 data_lightning_attractor[lightning_collector].order = d
 data_lightning_attractor[lightning_collector].efficiency = 0.5
@@ -287,7 +307,9 @@ bobmods.lib.recipe.update_recycling_recipe
 })
 
 -- TECHNOLOGY
-table.insert(data_technology[planet_discovery_fulgora].prerequisites, tech_electric_energy_accumulators_4)
+if settings.startup[setting_bobmods_power_accumulators].value then
+    table.insert(data_technology[planet_discovery_fulgora].prerequisites, tech_electric_energy_accumulators_4)
+end
 table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = steel_rod})
 table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = fulgora_air})
 table.insert(data_technology[planet_discovery_fulgora].effects, {type = unlock_recipe, recipe = fulgora_air_separation})

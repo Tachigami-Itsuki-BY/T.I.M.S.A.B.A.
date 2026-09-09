@@ -175,232 +175,236 @@ end
 
 -- SOLAR PANELS
 local is_solar_panel = "bob-energy-solar-panel"
-data:extend
-({
-    -- SMALL
-    {
-        type = item,
-        name = solar_panel_small_4,
-        subgroup = is_solar_panel_small,
-        icon = "__base__/graphics/icons/solar-panel.png",
-        order = d,
-        place_result = solar_panel_small_4,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = solar_panel_small_4,
-        category = crafting,
-        subgroup = is_solar_panel_small,
-        icon = "__base__/graphics/icons/solar-panel.png",
-        order = d,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 1,
-        ingredients =
-        {
-            {type = item, name = advanced_processing_unit, amount = 8},
-            {type = item, name = nitinol_plate_bob, amount = 4},
-            {type = item, name = platinum_cable, amount = 4},
-            {type = item, name = solar_panel_small_3, amount = 1},
-            {type = item, name = silicon_wafer, amount = 4},
-            {type = item, name = platinum_plate, amount = 8}
-        },
-        results = {{type = item, name = solar_panel_small_4, amount = 1}},
-        main_product = solar_panel_small_4
-    },
-    util.merge
+if settings.startup[setting_bobmods_power_solar].value then
+    data:extend
     ({
-        data_solar_panel[solar_panel_small_1],
+        -- SMALL
         {
-            localised_description = {"entity-description.solar-panel"},
+            type = item,
             name = solar_panel_small_4,
             subgroup = is_solar_panel_small,
             icon = "__base__/graphics/icons/solar-panel.png",
-            icon_size = 64,
             order = d,
-            minable = {mining_time = 0.5, result = solar_panel_small_4},
-            max_health = 250,
-            production = 120 .. kW
-        }
-    }),
-    -- MEDIUM
-    {
-        type = item,
-        name = solar_panel_4,
-        subgroup = is_solar_panel,
-        icon = "__base__/graphics/icons/solar-panel.png",
-        order = d,
-        place_result = solar_panel_4,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = solar_panel_4,
-        category = crafting,
-        subgroup = is_solar_panel,
-        icon = "__base__/graphics/icons/solar-panel.png",
-        order = d,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 2,
-        ingredients =
-        {
-            {type = item, name = advanced_processing_unit, amount = 16},
-            {type = item, name = nitinol_plate_bob, amount = 8},
-            {type = item, name = platinum_cable, amount = 8},
-            {type = item, name = solar_panel_3, amount = 1},
-            {type = item, name = silicon_wafer, amount = 8},
-            {type = item, name = platinum_plate, amount = 16}
+            place_result = solar_panel_small_4,
+            stack_size = 32,
+            weight = 31250
         },
-        results = {{type = item, name = solar_panel_4, amount = 1}},
-        main_product = solar_panel_4
-    },
-    util.merge
-    ({
-        data_solar_panel[solar_panel_1],
         {
-            localised_description = {"entity-description.solar-panel"},
+            type = recipe,
+            name = solar_panel_small_4,
+            category = crafting,
+            subgroup = is_solar_panel_small,
+            icon = "__base__/graphics/icons/solar-panel.png",
+            order = d,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 1,
+            ingredients =
+            {
+                {type = item, name = advanced_processing_unit, amount = 8},
+                {type = item, name = nitinol_plate_bob, amount = 4},
+                {type = item, name = platinum_cable, amount = 4},
+                {type = item, name = solar_panel_small_3, amount = 1},
+                {type = item, name = silicon_wafer, amount = 4},
+                {type = item, name = platinum_plate, amount = 8}
+            },
+            results = {{type = item, name = solar_panel_small_4, amount = 1}},
+            main_product = solar_panel_small_4
+        },
+        util.merge
+        ({
+            data_solar_panel[solar_panel_small_1],
+            {
+                localised_description = {"entity-description.solar-panel"},
+                name = solar_panel_small_4,
+                subgroup = is_solar_panel_small,
+                icon = "__base__/graphics/icons/solar-panel.png",
+                icon_size = 64,
+                order = d,
+                minable = {mining_time = 0.5, result = solar_panel_small_4},
+                max_health = 250,
+                production = 120 .. kW
+            }
+        }),
+        -- MEDIUM
+        {
+            type = item,
             name = solar_panel_4,
             subgroup = is_solar_panel,
             icon = "__base__/graphics/icons/solar-panel.png",
-            icon_size = 64,
             order = d,
-            minable = {mining_time = 0.5, result = solar_panel_4},
-            max_health = 500,
-            production = 240 .. kW
-        }
-    }),
-    -- LARGE
-    {
-        type = item,
-        name = solar_panel_large_4,
-        subgroup = is_solar_panel_large,
-        icon = "__base__/graphics/icons/solar-panel.png",
-        order = d,
-        place_result = solar_panel_large_4,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = solar_panel_large_4,
-        category = crafting,
-        subgroup = is_solar_panel_large,
-        icon = "__base__/graphics/icons/solar-panel.png",
-        order = d,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 4,
-        ingredients =
-        {
-            {type = item, name = advanced_processing_unit, amount = 32},
-            {type = item, name = nitinol_plate_bob, amount = 16},
-            {type = item, name = platinum_cable, amount = 16},
-            {type = item, name = solar_panel_large_3, amount = 1},
-            {type = item, name = silicon_wafer, amount = 16},
-            {type = item, name = platinum_plate, amount = 32}
+            place_result = solar_panel_4,
+            stack_size = 32,
+            weight = 31250
         },
-        results = {{type = item, name = solar_panel_large_4, amount = 1}},
-        main_product = solar_panel_large_4
-    },
-    util.merge
-    ({
-        data_solar_panel[solar_panel_large_1],
         {
-            localised_description = {"entity-description.solar-panel"},
+            type = recipe,
+            name = solar_panel_4,
+            category = crafting,
+            subgroup = is_solar_panel,
+            icon = "__base__/graphics/icons/solar-panel.png",
+            order = d,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 2,
+            ingredients =
+            {
+                {type = item, name = advanced_processing_unit, amount = 16},
+                {type = item, name = nitinol_plate_bob, amount = 8},
+                {type = item, name = platinum_cable, amount = 8},
+                {type = item, name = solar_panel_3, amount = 1},
+                {type = item, name = silicon_wafer, amount = 8},
+                {type = item, name = platinum_plate, amount = 16}
+            },
+            results = {{type = item, name = solar_panel_4, amount = 1}},
+            main_product = solar_panel_4
+        },
+        util.merge
+        ({
+            data_solar_panel[solar_panel_1],
+            {
+                localised_description = {"entity-description.solar-panel"},
+                name = solar_panel_4,
+                subgroup = is_solar_panel,
+                icon = "__base__/graphics/icons/solar-panel.png",
+                icon_size = 64,
+                order = d,
+                minable = {mining_time = 0.5, result = solar_panel_4},
+                max_health = 500,
+                production = 240 .. kW
+            }
+        }),
+        -- LARGE
+        {
+            type = item,
             name = solar_panel_large_4,
             subgroup = is_solar_panel_large,
             icon = "__base__/graphics/icons/solar-panel.png",
-            icon_size = 64,
             order = d,
-            minable = {mining_time = 0.5, result = solar_panel_large_4},
-            max_health = 750,
-            production = 480 .. kW
-        }
+            place_result = solar_panel_large_4,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            type = recipe,
+            name = solar_panel_large_4,
+            category = crafting,
+            subgroup = is_solar_panel_large,
+            icon = "__base__/graphics/icons/solar-panel.png",
+            order = d,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 4,
+            ingredients =
+            {
+                {type = item, name = advanced_processing_unit, amount = 32},
+                {type = item, name = nitinol_plate_bob, amount = 16},
+                {type = item, name = platinum_cable, amount = 16},
+                {type = item, name = solar_panel_large_3, amount = 1},
+                {type = item, name = silicon_wafer, amount = 16},
+                {type = item, name = platinum_plate, amount = 32}
+            },
+            results = {{type = item, name = solar_panel_large_4, amount = 1}},
+            main_product = solar_panel_large_4
+        },
+        util.merge
+        ({
+            data_solar_panel[solar_panel_large_1],
+            {
+                localised_description = {"entity-description.solar-panel"},
+                name = solar_panel_large_4,
+                subgroup = is_solar_panel_large,
+                icon = "__base__/graphics/icons/solar-panel.png",
+                icon_size = 64,
+                order = d,
+                minable = {mining_time = 0.5, result = solar_panel_large_4},
+                max_health = 750,
+                production = 480 .. kW
+            }
+        })
     })
-})
-data_solar_panel[solar_panel_small_3].next_upgrade = solar_panel_small_4
-data_solar_panel[solar_panel_small_4].next_upgrade = nil
-data_solar_panel[solar_panel_3].next_upgrade = solar_panel_4
-data_solar_panel[solar_panel_4].next_upgrade = nil
-data_solar_panel[solar_panel_large_3].next_upgrade = solar_panel_large_4
-data_solar_panel[solar_panel_large_4].next_upgrade = nil
+    data_solar_panel[solar_panel_small_3].next_upgrade = solar_panel_small_4
+    data_solar_panel[solar_panel_small_4].next_upgrade = nil
+    data_solar_panel[solar_panel_3].next_upgrade = solar_panel_4
+    data_solar_panel[solar_panel_4].next_upgrade = nil
+    data_solar_panel[solar_panel_large_3].next_upgrade = solar_panel_large_4
+    data_solar_panel[solar_panel_large_4].next_upgrade = nil
+end
 
 -- ACCUMULATOR
 local is_accumulator = "bob-energy-accumulator"
-data:extend
-({
-    {
-        type = item,
-        name = accumulator_4,
-        subgroup = is_accumulator,
-        icon = "__base__/graphics/icons/accumulator.png",
-        order = d,
-        place_result = accumulator_4,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = accumulator_4,
-        category = crafting,
-        additional_categories = {electromagnetics},
-        subgroup = is_accumulator,
-        icon = "__base__/graphics/icons/accumulator.png",
-        order = d,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 1,
-        ingredients =
-        {
-            {type = item, name = battery_graphene, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 2},
-            {type = item, name = nitinol_plate_bob, amount = 2},
-            {type = item, name = accumulator_3, amount = 1}
-        },
-        results = {{type = item, name = accumulator_4, amount = 1}},
-        main_product = accumulator_4
-    },
-    util.merge
+if settings.startup[setting_bobmods_power_accumulators].value then
+    data:extend
     ({
-        data_accumulator[accumulator_1],
         {
-            localised_name = {"entity-name.accumulator-4"},
+            type = item,
             name = accumulator_4,
             subgroup = is_accumulator,
             icon = "__base__/graphics/icons/accumulator.png",
-            icon_size = 64,
             order = d,
-            minable = {mining_time = 0.5, result = accumulator_4},
-            max_health = 450,
-            energy_source =
+            place_result = accumulator_4,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            type = recipe,
+            name = accumulator_4,
+            category = crafting,
+            additional_categories = {electromagnetics},
+            subgroup = is_accumulator,
+            icon = "__base__/graphics/icons/accumulator.png",
+            order = d,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 1,
+            ingredients =
             {
-                type = electric,
-                buffer_capacity = 38400 .. kJ,
-                usage_priority = tertiary,
-                input_flow_limit = 2400 .. kW,
-                output_flow_limit = 2400 .. kW
+                {type = item, name = battery_graphene, amount = 8},
+                {type = item, name = advanced_processing_unit, amount = 2},
+                {type = item, name = nitinol_plate_bob, amount = 2},
+                {type = item, name = accumulator_3, amount = 1}
+            },
+            results = {{type = item, name = accumulator_4, amount = 1}},
+            main_product = accumulator_4
+        },
+        util.merge
+        ({
+            data_accumulator[accumulator_1],
+            {
+                localised_name = {"entity-name.accumulator-4"},
+                name = accumulator_4,
+                subgroup = is_accumulator,
+                icon = "__base__/graphics/icons/accumulator.png",
+                icon_size = 64,
+                order = d,
+                minable = {mining_time = 0.5, result = accumulator_4},
+                max_health = 450,
+                energy_source =
+                {
+                    type = electric,
+                    buffer_capacity = 38400 .. kJ,
+                    usage_priority = tertiary,
+                    input_flow_limit = 2400 .. kW,
+                    output_flow_limit = 2400 .. kW
+                }
             }
-        }
+        })
     })
-})
-data_accumulator[accumulator_3].next_upgrade = accumulator_4
-data_accumulator[accumulator_4].next_upgrade = nil
+    data_accumulator[accumulator_3].next_upgrade = accumulator_4
+    data_accumulator[accumulator_4].next_upgrade = nil
+end
 
 -- ELECTRIC MINING DRILLS
 if settings.startup[setting_bobmods_mining_miningdrills].value then
@@ -469,124 +473,126 @@ if settings.startup[setting_bobmods_mining_miningdrills].value then
 end
 
 -- PUMPJACKS
-data:extend
-({
-    {
-        type = item,
-        name = pumpjack_5,
-        subgroup = is_extraction_machine_pumpjack,
-        icon = "__base__/graphics/icons/pumpjack.png",
-        order = f,
-        place_result = pumpjack_5,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = pumpjack_5,
-        category = crafting,
-        subgroup = is_extraction_machine_pumpjack,
-        icon = "__base__/graphics/icons/pumpjack.png",
-        order = f,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 1,
-        ingredients =
-        {
-            {type = item, name = molybdenum_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = molybdenum_rhenium_pipe, amount = 4},
-            {type = item, name = molybdenum_rhenium_plate, amount = 4},
-            {type = item, name = pumpjack_4, amount = 1}
-        },
-        results = {{type = item, name = pumpjack_5, amount = 1}},
-        main_product = pumpjack_5
-    },
-    util.merge
+if settings.startup[setting_bobmods_mining_pumpjacks].value then
+    data:extend
     ({
-        data_mining_drill[pumpjack_1],
         {
+            type = item,
             name = pumpjack_5,
             subgroup = is_extraction_machine_pumpjack,
             icon = "__base__/graphics/icons/pumpjack.png",
-            icon_size = 64,
             order = f,
-            minable = {mining_time = 1, result = pumpjack_5},
-            max_health = 300,
-            energy_usage = 600 .. kW,
-            module_slots = 5,
-            mining_speed = 5,
-            energy_source =
-            {
-                type = electric,
-                usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 5}
-            }
-        }
-    }),
-    {
-        type = item,
-        name = pumpjack_6,
-        subgroup = is_extraction_machine_pumpjack,
-        icon = "__base__/graphics/icons/pumpjack.png",
-        order = g,
-        place_result = pumpjack_6,
-        stack_size = 32,
-        weight = 31250
-    },
-    {
-        type = recipe,
-        name = pumpjack_6,
-        category = crafting,
-        subgroup = is_extraction_machine_pumpjack,
-        icon = "__base__/graphics/icons/pumpjack.png",
-        order = g,
-        enabled = false,
-        auto_recycle = true,
-        allow_productivity = false,
-        allow_quality = true,
-        allow_decomposition = true,
-        energy_required = 1,
-        ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
-            {type = item, name = advanced_processing_unit, amount = 4},
-            {type = item, name = niobium_iron_plate, amount = 4},
-            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
-            {type = item, name = pumpjack_5, amount = 1}
+            place_result = pumpjack_5,
+            stack_size = 32,
+            weight = 31250
         },
-        results = {{type = item, name = pumpjack_6, amount = 1}},
-        main_product = pumpjack_6
-    },
-    util.merge
-    ({
-        data_mining_drill[pumpjack_1],
         {
+            type = recipe,
+            name = pumpjack_5,
+            category = crafting,
+            subgroup = is_extraction_machine_pumpjack,
+            icon = "__base__/graphics/icons/pumpjack.png",
+            order = f,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 1,
+            ingredients =
+            {
+                {type = item, name = molybdenum_gear_wheel, amount = 8},
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = molybdenum_rhenium_pipe, amount = 4},
+                {type = item, name = molybdenum_rhenium_plate, amount = 4},
+                {type = item, name = pumpjack_4, amount = 1}
+            },
+            results = {{type = item, name = pumpjack_5, amount = 1}},
+            main_product = pumpjack_5
+        },
+        util.merge
+        ({
+            data_mining_drill[pumpjack_1],
+            {
+                name = pumpjack_5,
+                subgroup = is_extraction_machine_pumpjack,
+                icon = "__base__/graphics/icons/pumpjack.png",
+                icon_size = 64,
+                order = f,
+                minable = {mining_time = 1, result = pumpjack_5},
+                max_health = 300,
+                energy_usage = 600 .. kW,
+                module_slots = 5,
+                mining_speed = 5,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = 5}
+                }
+            }
+        }),
+        {
+            type = item,
             name = pumpjack_6,
             subgroup = is_extraction_machine_pumpjack,
             icon = "__base__/graphics/icons/pumpjack.png",
-            icon_size = 64,
-            order = f,
-            minable = {mining_time = 1, result = pumpjack_6},
-            max_health = 350,
-            energy_usage = 720 .. kW,
-            module_slots = 6,
-            mining_speed = 6,
-            energy_source =
+            order = g,
+            place_result = pumpjack_6,
+            stack_size = 32,
+            weight = 31250
+        },
+        {
+            type = recipe,
+            name = pumpjack_6,
+            category = crafting,
+            subgroup = is_extraction_machine_pumpjack,
+            icon = "__base__/graphics/icons/pumpjack.png",
+            order = g,
+            enabled = false,
+            auto_recycle = true,
+            allow_productivity = false,
+            allow_quality = true,
+            allow_decomposition = true,
+            energy_required = 1,
+            ingredients =
             {
-                type = electric,
-                usage_priority = secondary_input,
-                emissions_per_minute = {pollution = 6}
+                {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 8},
+                {type = item, name = advanced_processing_unit, amount = 4},
+                {type = item, name = niobium_iron_plate, amount = 4},
+                {type = item, name = niobium_tungsten_molybdenum_plate, amount = 4},
+                {type = item, name = pumpjack_5, amount = 1}
+            },
+            results = {{type = item, name = pumpjack_6, amount = 1}},
+            main_product = pumpjack_6
+        },
+        util.merge
+        ({
+            data_mining_drill[pumpjack_1],
+            {
+                name = pumpjack_6,
+                subgroup = is_extraction_machine_pumpjack,
+                icon = "__base__/graphics/icons/pumpjack.png",
+                icon_size = 64,
+                order = f,
+                minable = {mining_time = 1, result = pumpjack_6},
+                max_health = 350,
+                energy_usage = 720 .. kW,
+                module_slots = 6,
+                mining_speed = 6,
+                energy_source =
+                {
+                    type = electric,
+                    usage_priority = secondary_input,
+                    emissions_per_minute = {pollution = 6}
+                }
             }
-        }
+        })
     })
-})
-data_mining_drill[pumpjack_4].next_upgrade = pumpjack_5
-data_mining_drill[pumpjack_5].next_upgrade = pumpjack_6
-data_mining_drill[pumpjack_6].next_upgrade = nil
+    data_mining_drill[pumpjack_4].next_upgrade = pumpjack_5
+    data_mining_drill[pumpjack_5].next_upgrade = pumpjack_6
+    data_mining_drill[pumpjack_6].next_upgrade = nil
+end
 
 -- REACTOR
 local is_reactor = "angels-power-nuclear-reactor-b"

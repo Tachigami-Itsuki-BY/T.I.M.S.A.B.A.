@@ -33,9 +33,13 @@ end
 
 -- BOBS
 setting_bobmods_power_steam = "bobmods-power-steam"
+setting_bobmods_power_fluidgenerator = "bobmods-power-fluidgenerator"
+setting_bobmods_power_solar = "bobmods-power-solar"
+setting_bobmods_power_accumulators = "bobmods-power-accumulators"
 
-setting_bobmods_mining_areadrills = "bobmods-mining-areadrills"
 setting_bobmods_mining_miningdrills = "bobmods-mining-miningdrills"
+setting_bobmods_mining_areadrills = "bobmods-mining-areadrills"
+setting_bobmods_mining_pumpjacks = "bobmods-mining-pumpjacks"
 
 setting_bobmods_logistics_robotparts = "bobmods-logistics-robotparts"
 setting_bobmods_logistics_drainlessinserters = "bobmods-logistics-drainlessinserters"

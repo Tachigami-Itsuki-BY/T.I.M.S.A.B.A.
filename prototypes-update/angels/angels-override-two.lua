@@ -70,7 +70,7 @@ data_recipe[storage_tank_A1].ingredients =
     {type = item, name = clay_brick, amount = 32}
 }
 data_storage_tank[storage_tank_A1].order = c
-data_storage_tank[storage_tank_A1].fluid_box.volume = 115200
+-- data_storage_tank[storage_tank_A1].fluid_box.volume in the final-fix-mods.lua
 
 local storage_tank_A2 = "angels-storage-tank-2"
 data_item[storage_tank_A2].order = d
@@ -84,7 +84,7 @@ data_recipe[storage_tank_A2].ingredients =
     {type = item, name = clay_brick, amount = 32}
 }
 data_storage_tank[storage_tank_A2].order = d
-data_storage_tank[storage_tank_A2].fluid_box.volume = 115200
+-- data_storage_tank[storage_tank_A2].fluid_box.volume in the final-fix-mods.lua
 
 local storage_tank_A3 = "angels-storage-tank-3"
 data_item[storage_tank_A3].order = e
@@ -112,7 +112,7 @@ data_recipe[pressure_tank_A1].ingredients =
     {type = item, name = stone_brick, amount = 16}
 }
 data_storage_tank[pressure_tank_A1].order = f
-data_storage_tank[pressure_tank_A1].fluid_box.volume = 230400
+-- data_storage_tank[pressure_tank_A1].fluid_box.volume in the final-fix-mods.lua
 
 local pumps =
 {
