@@ -181,6 +181,7 @@ if mods[lignumis_mods] then
 
     data_tool[steam_science_pack].subgroup = is_lignumis_recipe
     data_tool[steam_science_pack].order = o
+    data_recipe[steam_science_pack].category = advanced_crafting
     data_recipe[steam_science_pack].subgroup = is_lignumis_recipe
     data_recipe[steam_science_pack].icons = R_P_I(steam_science_pack, planet_lignumis, nil, number_1)
     data_recipe[steam_science_pack].order = o

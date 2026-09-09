@@ -37,5 +37,4 @@ data_technology[tech_electric_energy_accumulators_4].prerequisites = {tech_elect
 
 table.insert(data_technology[centrifuge_4].prerequisites, tech_stone_smelting_5)
 
-table.insert(data_technology[tech_tritium_power].prerequisites, tech_stone_smelting_5)
 table.insert(data_technology[tech_tritium_power].prerequisites, centrifuge_4)

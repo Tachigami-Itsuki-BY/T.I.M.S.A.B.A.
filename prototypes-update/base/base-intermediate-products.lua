@@ -515,45 +515,47 @@ data_item[uranium_234].subgroup = is_nuclear_item
 data_item[uranium_234].order = b
 
 data_item[uranium_235].localised_description = show_formula and {chemical_formula, "U-235"} or nil
+data_item[uranium_235].subgroup = is_nuclear_item
+data_item[uranium_235].order = c
 
 data_item[uranium_238].localised_description = show_formula and {chemical_formula, "U-238"} or nil
+data_item[uranium_238].subgroup = is_nuclear_item
+data_item[uranium_238].order = d
 
 data_item[neptunium_240].localised_description = show_formula and {chemical_formula, "Np-240"} or nil
 data_item[neptunium_240].subgroup = is_nuclear_item
-data_item[neptunium_240].order = c
+data_item[neptunium_240].order = e
 
 if not mods[shattered_mods] then
     data_item[americium_241_angels].localised_description = show_formula and {chemical_formula, "Am-241"} or nil
     data_item[americium_241_angels].subgroup = is_nuclear_item
-    data_item[americium_241_angels].order = d
+    data_item[americium_241_angels].order = f
     data_item[americium_241_angels].stack_size = 200
 
     data_item[curium_245_angels].localised_description = show_formula and {chemical_formula, "Cm-245"} or nil
     data_item[curium_245_angels].subgroup = is_nuclear_item
-    data_item[curium_245_angels].order = e
+    data_item[curium_245_angels].order = g
     data_item[curium_245_angels].stack_size = 200
 end
 
 data_item[thorium_ore_bob].localised_description = show_formula and {chemical_formula, "Th"} or nil
 data_item[thorium_ore_bob].subgroup = is_nuclear_item
-data_item[thorium_ore_bob].order = f
+data_item[thorium_ore_bob].order = h
 
 if not mods[shattered_mods] then
     data_item[thorium_232_bob].localised_description = show_formula and {chemical_formula, "Th-232"} or nil
     data_item[thorium_232_bob].subgroup = is_nuclear_item
-    data_item[thorium_232_bob].order = g
+    data_item[thorium_232_bob].order = i
     data_item[thorium_232_bob].stack_size = 200
-end
 
-if not mods[shattered_mods] then
     data_item[plutonium_239_bob].localised_description = show_formula and {chemical_formula, "Pu-239"} or nil
     data_item[plutonium_239_bob].subgroup = is_nuclear_item
-    data_item[plutonium_239_bob].order = h
+    data_item[plutonium_239_bob].order = j
     data_item[plutonium_239_bob].stack_size = 200
 end
 
 data_item[muon_fusion_catalyst].subgroup = is_nuclear_item
-data_item[muon_fusion_catalyst].order = i
+data_item[muon_fusion_catalyst].order = k
 
 local uranium_processing = "uranium-processing"
 data_recipe[uranium_processing].subgroup = is_nuclear_recipe
@@ -677,6 +679,7 @@ data_recipe[plutonium_breeding].results =
 }
 
 if mods[clowns_nuclear] then
+    -- URANIUM ITEM
     data_item[uranium_238].localised_name = {"item-name.uranium-238"}
     data_item[uranium_238].subgroup = is_uranium_235_item
     data_item[uranium_238].order = a
@@ -748,6 +751,7 @@ if mods[clowns_nuclear] then
     data_item[uranium_235].subgroup = is_uranium_235_item
     data_item[uranium_235].order = i
 
+    -- URANIUM RECIPE
     local depleted_uranium_reprocessing = "depleted-uranium-reprocessing"
     data_recipe[depleted_uranium_reprocessing].subgroup = is_uranium_235_recipe
     data_recipe[depleted_uranium_reprocessing].icons = TWO_I(uranium_238, uranium_ore)
@@ -858,12 +862,6 @@ if mods[clowns_nuclear] then
         {type = item, name = uranium_235, amount_min = 0, amount_max = 2},
         {type = item, name = uranium_238, amount = 2}
     }
-else
-    data_item[uranium_235].subgroup = is_nuclear_item
-    data_item[uranium_235].order = c
-
-    data_item[uranium_238].subgroup = is_nuclear_item
-    data_item[uranium_238].order = d
 end
 
 data_item[uranium_234_fuel_cell].subgroup = is_uranium_cell
@@ -1083,7 +1081,7 @@ data_item[deuterium_fuel_cell].fuel_value = (1152000 * 4 * 2) .. kJ
 data_item[deuterium_fuel_cell].fuel_category = nuclear_fuel_T3
 data_recipe[deuterium_fuel_cell].subgroup = is_deuterium_cell
 data_recipe[deuterium_fuel_cell].order = a
-data_recipe[deuterium_fuel_cell].energy_required = 64
+data_recipe[deuterium_fuel_cell].energy_required = 4
 data_recipe[deuterium_fuel_cell].ingredients =
 {
     {type = item, name = muon_fusion_catalyst, amount = 1},

@@ -42,6 +42,7 @@ if mods[muluna_mods] then
         {type = item, name = copper_tungsten_pipe, amount = 16},
         {type = item, name = rocket_fuel, amount = 1}
     }
+    data_recipe[rocket_part_muluna].surface_conditions = {{property = gravity, max = 0.1, min = 0.1}, {property = oxygen, max = 0, min = 0}}
 end
 
 if mods[arig_mods] then

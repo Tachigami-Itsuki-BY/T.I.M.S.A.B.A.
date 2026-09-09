@@ -113,19 +113,15 @@ if data_technology[tech_robotics_3] then
 end
 
 if data_technology[tech_robots_2] then
-    -- Флаг, который покажет, нашли ли мы уже этот пакет
     local already_has_pack = false
 
-    -- Проверяем все существующие ингредиенты
     for _, ingredient in ipairs(data_technology[tech_robots_2].unit.ingredients) do
-        -- Проверка работает для обоих форматов записи: {"name", count} и {name="name", amount=count}
         if ingredient[1] == production_science_pack or ingredient.name == production_science_pack then
             already_has_pack = true
             break
         end
     end
 
-    -- Если пакета нет, добавляем его
     if not already_has_pack then
         table.insert(data_technology[tech_robots_2].unit.ingredients, {production_science_pack, 1})
     end
@@ -134,20 +130,16 @@ end
 if data_technology[tech_robotics_4] then
     table.insert(data_technology[tech_robotics_4].prerequisites, tech_battery_4)
     if mods[bobtech] then
-        -- Создаем список технологий, в которые нужно добавить пакет
         local target_technologies = {tech_robotics_4, tech_robots_3}
         for _, tech_name in ipairs(target_technologies) do
-            -- Проверяем, существует ли вообще такая технология в базе данных
             if data_technology[tech_name] and data_technology[tech_name].unit and data_technology[tech_name].unit.ingredients then
                 local already_has_pack = false
-                -- Ищем, нет ли уже utility_science_pack в ингредиентах
                 for _, ingredient in ipairs(data_technology[tech_name].unit.ingredients) do
                     if ingredient == utility_science_pack or ingredient.name == utility_science_pack then
                         already_has_pack = true
                         break
                     end
                 end
-                -- Если пакета нет, добавляем его
                 if not already_has_pack then
                     table.insert(data_technology[tech_name].unit.ingredients, {utility_science_pack, 1})
                 end
@@ -439,8 +431,8 @@ data_technology[tech_battery_2].effects =
 data_technology[tech_battery_3].localised_description = {"technology-description.battery"}
 data_technology[tech_battery_3].prerequisites = {tech_metallurgy_4, tech_silver_smelting_2}
 
-data_technology[tech_uranium_power].prerequisites = {heat_pipe_2, tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
-data_technology[tech_uranium_power].effects =
+data_technology[tech_uranium_power_1].prerequisites = {tech_uranium_processing, tech_heat_exchanger_1, tech_steam_turbine_1}
+data_technology[tech_uranium_power_1].effects =
 {
     {type = unlock_recipe, recipe = uranium_reactor},
     {type = unlock_recipe, recipe = uranium_235_fuel_cell},
@@ -461,7 +453,8 @@ thorium_processing = "angels-thorium-processing"
 advanced_mixed_oxide_reprocessing = "angels-advanced-mixed-oxide-reprocessing"
 thorium_fuel_cell_reprocessing = "angels-thorium-fuel-cell-reprocessing"
 plutonium_breeding = "angels-plutonium-breeding"
-data_technology["angels-thorium-power"].effects =
+data_technology[tech_thorium_power].prerequisites = {centrifuge_3, heat_exchanger_2, steam_turbine_2, tech_plutonium_based_power_systems}
+data_technology[tech_thorium_power].effects =
 {
     {type = unlock_recipe, recipe = thorium_reactor},
     {type = unlock_recipe, recipe = thorium_processing},
@@ -475,6 +468,7 @@ advanced_thorium_fuel_cell_reprocessing = "angels-advanced-thorium-fuel-cell-rep
 deuterium_fuel_cell_reprocessing = "angels-deuterium-fuel-cell-reprocessing"
 data_technology[tech_deuterium_power].localised_name = {"technology-name.deuterium-power"}
 data_technology[tech_deuterium_power].localised_description = {"technology-description.deuterium-power"}
+data_technology[tech_deuterium_power].prerequisites = {tech_thorium_power, heat_exchanger_3, steam_turbine_3, "angels-water-chemistry-2"}
 data_technology[tech_deuterium_power].effects =
 {
     {type = unlock_recipe, recipe = deuterium_reactor},

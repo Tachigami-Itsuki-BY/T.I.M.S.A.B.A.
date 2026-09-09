@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.4
+Date: 09.09.2026
+  Bugfixes:
+    - [Lignumis] Fixed a bug that prevented the Steam Science Pack from being crafted.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.3
 Date: 08.09.2026
   Bugfixes:
@@ -1023,53 +1028,53 @@ Date: 15.05.2026
         9. T3 and T4 Sintering Ovens. If "Early Sintering Oven" is enabled, then: T6 Sintering Ovens.
         10. T3 and T4 Pumpjacks.
     - Added new items and fluids:
-      Coal Branch:
-        1. Pitch.
-        2. Coal Tar Liquid.
-        3. Raw Graphite Block.
-        4. Graphite Block.
-        5. Graphite Plate.
-        6. Graphite Electrode.
-        7. Graphite Chips.
-        8. Carbon Nanotube.
-        9. Graphene Oxide.
-        10. Graphene.
-        11. Graphene Battery.
-      Phosphorus Branch:
-        1. Phosphorite Ore.
-        2. White Phosphorus (item and fluid).
-        3. Phosphorus(III) Chloride.
-        4. Phosphorus(V) Chloride.
-        5. Phosphorus(V) Fluoride.
-        6. Hexafluorophosphoric Acid.
-      Others:
-        1. Tritium Gas.
-        2. Argon Gas.
-        3. Liquefied Hydrogen Fluoride.
-        4. Potassium Permanganate.
-        5. Lithium Fluoride.
-        6. Lithium Hexafluorophosphate.
-        7. Lithium Hexafluorophosphate Solution (carbonate).
-        8. Calcium Silicate.
-        9. Metasilicic Acid.
-        10. Liquid Epoxy Resin.
-        11. Adiponitrile.
-        12. Purified Liquid Concrete.
-        13. Ethylene Glycol.
-        14. Glyoxal.
-        15. Imidazole (item and fluid).
-        16. Chlorobutane.
-        17. Ionic Liquid.
-        18. Titanium Rod.
-        19. Hexamethylenediamine.
-        20. Imidazolium Salt.
-        21. Reinforced Titanium Concrete Brick.
-        22. Carbon Concrete Brick.
-        23. Reinforced Graphene Concrete Brick.
-        24. Iron Bearing Ball.
-        25. Iron Bearing.
-        26. Tungsten Bearing Ball.
-        27. Tungsten Bearing.
+        Coal Branch:
+          1. Pitch.
+          2. Coal Tar Liquid.
+          3. Raw Graphite Block.
+          4. Graphite Block.
+          5. Graphite Plate.
+          6. Graphite Electrode.
+          7. Graphite Chips.
+          8. Carbon Nanotube.
+          9. Graphene Oxide.
+          10. Graphene.
+          11. Graphene Battery.
+        Phosphorus Branch:
+          1. Phosphorite Ore.
+          2. White Phosphorus (item and fluid).
+          3. Phosphorus(III) Chloride.
+          4. Phosphorus(V) Chloride.
+          5. Phosphorus(V) Fluoride.
+          6. Hexafluorophosphoric Acid.
+        Others:
+          1. Tritium Gas.
+          2. Argon Gas.
+          3. Liquefied Hydrogen Fluoride.
+          4. Potassium Permanganate.
+          5. Lithium Fluoride.
+          6. Lithium Hexafluorophosphate.
+          7. Lithium Hexafluorophosphate Solution (carbonate).
+          8. Calcium Silicate.
+          9. Metasilicic Acid.
+          10. Liquid Epoxy Resin.
+          11. Adiponitrile.
+          12. Purified Liquid Concrete.
+          13. Ethylene Glycol.
+          14. Glyoxal.
+          15. Imidazole (item and fluid).
+          16. Chlorobutane.
+          17. Ionic Liquid.
+          18. Titanium Rod.
+          19. Hexamethylenediamine.
+          20. Imidazolium Salt.
+          21. Reinforced Titanium Concrete Brick.
+          22. Carbon Concrete Brick.
+          23. Reinforced Graphene Concrete Brick.
+          24. Iron Bearing Ball.
+          25. Iron Bearing.
+          26. Tungsten Bearing Ball.
+          27. Tungsten Bearing.
     - Added new recipes.
     - Added new technologies.
 

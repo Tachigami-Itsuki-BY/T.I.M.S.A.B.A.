@@ -228,12 +228,11 @@ data:extend
 data:extend
 ({
     {
-        localised_name = {"technology-name.tritium-power"},
         type = technology,
         name = tech_tritium_power,
         icon = "__base__/graphics/technology/nuclear-power.png",
         icon_size = 256,
-        prerequisites = {tech_deuterium_power, space_science_pack},
+        prerequisites = {tech_deuterium_power, steam_turbine_4, heat_exchanger_4},
         effects =
         {
             {type = unlock_recipe, recipe = tritium_reactor},
@@ -243,7 +242,7 @@ data:extend
         },
         unit =
         {
-            count = 3000,
+            count = 8000,
             ingredients =
             {
                 {automation_science_pack, 1},
