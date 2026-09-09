@@ -17,13 +17,7 @@ if mods[secretas_frozeta_mods] then
         {type = item, name = electric_engine_unit, amount = 1, probability = 0.0625, show_details_in_recipe_tooltip = false},
         {type = item, name = supercapacitor, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = carbon_fiber, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = solar_panel_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = space_platform_foundation, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = boiler_6, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = flying_robot_frame_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = steam_turbine_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = laser_turret_5, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
-        {type = item, name = gun_turret_5, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = molybdenum_rhenium_pipe, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = storage_tank_4_alt, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = rocket, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
@@ -37,6 +31,33 @@ if mods[secretas_frozeta_mods] then
         {type = item, name = heat_pipe_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false},
         {type = item, name = scrap, amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false}
     }
+    if settings.startup[setting_bobmods_power_steam].value then
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_6, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = steam_turbine_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    else
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = boiler_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = steam_turbine_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    end
+    if settings.startup[setting_bobmods_power_solar].value then
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = solar_panel_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    else
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = solar_panel_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    end
+    if data_item[flying_robot_frame_4] then
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = flying_robot_frame_4, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    else
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = flying_robot_frame_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    end
+    if data_item[gun_turret_5] then
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = gun_turret_5, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    else
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = gun_turret_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    end
+    if data_item[laser_turret_5] then
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = laser_turret_5, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    else
+        table.insert(data_recipe[spaceship_scrap_recycling].results, {type = item, name = laser_turret_1, amount = 1, probability = 0.03125, show_details_in_recipe_tooltip = false})
+    end
 
     data_recipe[gold_plate_mods].localised_name = data_item[gold_plate_bob].localised_name
     data_recipe[gold_plate_mods].category = sintering_6
@@ -78,14 +99,25 @@ if mods[secretas_frozeta_mods] then
     data_recipe[golden_science_pack].subgroup = is_frozeta_recipe
     data_recipe[golden_science_pack].order = f
     data_recipe[golden_science_pack].energy_required = 16
-    data_recipe[golden_science_pack].ingredients =
-    {
-        {type = item, name = combinator_arithmetic, amount = 16},
-        {type = item, name = steam_turbine_4, amount = 2},
-        {type = item, name = gold_plate_bob, amount = 16},
-        {type = item, name = solid_fuel, amount = 8},
-        {type = fluid, name = steam, amount = 240}
-    }
+    if settings.startup[setting_bobmods_power_steam].value then
+        data_recipe[golden_science_pack].ingredients =
+        {
+            {type = item, name = combinator_arithmetic, amount = 16},
+            {type = item, name = steam_turbine_4, amount = 2},
+            {type = item, name = gold_plate_bob, amount = 16},
+            {type = item, name = solid_fuel, amount = 8},
+            {type = fluid, name = steam, amount = 240}
+        }
+    else
+        data_recipe[golden_science_pack].ingredients =
+        {
+            {type = item, name = combinator_arithmetic, amount = 16},
+            {type = item, name = steam_turbine_1, amount = 2},
+            {type = item, name = gold_plate_bob, amount = 16},
+            {type = item, name = solid_fuel, amount = 8},
+            {type = fluid, name = steam, amount = 240}
+        }
+    end
     data_recipe[golden_science_pack].results = {{type = item, name = golden_science_pack, amount = 8}}
 
     if mods[bobmodules] then

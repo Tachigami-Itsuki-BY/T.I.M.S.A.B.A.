@@ -569,13 +569,23 @@ if mods[arig_mods] then
     data_item[advanced_solar_panel].weight = 31250
     data_recipe[advanced_solar_panel].subgroup = is_arig_power
     data_recipe[advanced_solar_panel].energy_required = 16
-    data_recipe[advanced_solar_panel].ingredients =
-    {
-        {type = item, name = solar_panel_4, amount = 1},
-        {type = item, name = niobium_titanium_cable, amount = 8},
-        {type = item, name = niobium_iron_plate, amount = 16},
-        {type = item, name = silica_arig, amount = 8}
-    }
+    if settings.startup[setting_bobmods_power_solar].value then
+        data_recipe[advanced_solar_panel].ingredients =
+        {
+            {type = item, name = solar_panel_4, amount = 1},
+            {type = item, name = niobium_titanium_cable, amount = 8},
+            {type = item, name = niobium_iron_plate, amount = 16},
+            {type = item, name = silica_arig, amount = 8}
+        }
+    else
+        data_recipe[advanced_solar_panel].ingredients =
+        {
+            {type = item, name = solar_panel_1, amount = 1},
+            {type = item, name = niobium_titanium_cable, amount = 8},
+            {type = item, name = niobium_iron_plate, amount = 16},
+            {type = item, name = silica_arig, amount = 8}
+        }
+    end
     data_solar_panel[advanced_solar_panel].subgroup = is_arig_power
     data_solar_panel[advanced_solar_panel].production = 480 .. kW
 

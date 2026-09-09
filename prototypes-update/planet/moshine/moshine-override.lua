@@ -412,14 +412,25 @@ if mods[moshine_mods] then
     data_recipe[space_train_battery_battery_station].subgroup = is_moshine_logistic
     data_recipe[space_train_battery_battery_station].order = d
     data_recipe[space_train_battery_battery_station].energy_required = 8
-    data_recipe[space_train_battery_battery_station].ingredients =
-    {
-        {type = item, name = advanced_processing_unit, amount = 8},
-        {type = item, name = accumulator_4, amount = 1},
-        {type = item, name = niobium_titanium_plate, amount = 8},
-        {type = item, name = superconductor, amount = 4},
-        {type = item, name = holmium_plate, amount = 2}
-    }
+    if settings.startup[setting_bobmods_power_accumulators].value then
+        data_recipe[space_train_battery_battery_station].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = accumulator_4, amount = 1},
+            {type = item, name = niobium_titanium_plate, amount = 8},
+            {type = item, name = superconductor, amount = 4},
+            {type = item, name = holmium_plate, amount = 2}
+        }
+    else
+        data_recipe[space_train_battery_battery_station].ingredients =
+        {
+            {type = item, name = advanced_processing_unit, amount = 8},
+            {type = item, name = accumulator_1, amount = 1},
+            {type = item, name = niobium_titanium_plate, amount = 8},
+            {type = item, name = superconductor, amount = 4},
+            {type = item, name = holmium_plate, amount = 2}
+        }
+    end
     data_assembling[space_train_battery_battery_station].subgroup = is_moshine_logistic
     data_assembling[space_train_battery_battery_station].order = d
     data_assembling[space_train_battery_battery_station].energy_usage = (2400 - 240) .. kW
@@ -505,13 +516,23 @@ if mods[moshine_mods] then
     data_recipe[big_solar_panel].subgroup = is_moshine_building_energy
     data_recipe[big_solar_panel].order = a
     data_recipe[big_solar_panel].energy_required = 8
-    data_recipe[big_solar_panel].ingredients =
+    if settings.startup[setting_bobmods_power_solar].value then
+        data_recipe[big_solar_panel].ingredients =
+        {
+            {type = item, name = solar_panel_large_4, amount = 4},
+            {type = item, name = reinforced_concrete, amount = 64},
+            {type = item, name = supercapacitor, amount = 8},
+            {type = item, name = silicon_cell_mods, amount = 8}
+        }
+    else
+        data_recipe[big_solar_panel].ingredients =
     {
-        {type = item, name = solar_panel_large_4, amount = 4},
+        {type = item, name = solar_panel_1, amount = 4},
         {type = item, name = reinforced_concrete, amount = 64},
         {type = item, name = supercapacitor, amount = 8},
         {type = item, name = silicon_cell_mods, amount = 8}
     }
+    end
     data_solar_panel[big_solar_panel].subgroup = is_moshine_building_energy
     data_solar_panel[big_solar_panel].order = a
     data_solar_panel[big_solar_panel].production = (240 * 16) .. kW
@@ -525,15 +546,27 @@ if mods[moshine_mods] then
     data_recipe[big_accumulator].subgroup = is_moshine_building_energy
     data_recipe[big_accumulator].order = b
     data_recipe[big_accumulator].energy_required = 8
-    data_recipe[big_accumulator].ingredients =
-    {
-        {type = item, name = substation_4, amount = 1},
-        {type = item, name = accumulator_4, amount = 4},
-        {type = item, name = niobium_titanium_cable, amount = 32},
-        {type = item, name = reinforced_concrete, amount = 32},
-        {type = item, name = supercapacitor, amount = 8},
-        {type = item, name = neodymium_magnet, amount = 8}
-    }
+    if settings.startup[setting_bobmods_power_accumulators].value then
+        data_recipe[big_accumulator].ingredients =
+        {
+            {type = item, name = substation_4, amount = 1},
+            {type = item, name = accumulator_4, amount = 4},
+            {type = item, name = niobium_titanium_cable, amount = 32},
+            {type = item, name = reinforced_concrete, amount = 32},
+            {type = item, name = supercapacitor, amount = 8},
+            {type = item, name = neodymium_magnet, amount = 8}
+        }
+    else
+        data_recipe[big_accumulator].ingredients =
+        {
+            {type = item, name = substation_4, amount = 1},
+            {type = item, name = accumulator_1, amount = 4},
+            {type = item, name = niobium_titanium_cable, amount = 32},
+            {type = item, name = reinforced_concrete, amount = 32},
+            {type = item, name = supercapacitor, amount = 8},
+            {type = item, name = neodymium_magnet, amount = 8}
+        }
+    end
     data_accumulator[big_accumulator].subgroup = is_moshine_building_energy
     data_accumulator[big_accumulator].order = b
     data_accumulator[big_accumulator].energy_source =
@@ -829,7 +862,9 @@ if mods[moshine_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    data_technology["big-solar-energy"].prerequisites = {"moshine-tech-ai-tier-2", tech_solar_energy_4}
+    if settings.startup[setting_bobmods_power_solar].value then
+        data_technology["big-solar-energy"].prerequisites = {"moshine-tech-ai-tier-2", tech_solar_energy_4}
+    end
 
     data_technology["electric-energy-big-accumulators"].prerequisites = {"moshine-tech-ai-tier-6", tech_electric_substation_4, tech_electric_energy_accumulators_4}
 

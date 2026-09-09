@@ -708,28 +708,23 @@ if mods[muluna_mods] then
     data_recipe[cycling_steam_turbine].subgroup = is_muluna_turbine
     data_recipe[cycling_steam_turbine].order = z
     data_recipe[cycling_steam_turbine].energy_required = 8
-    if mods[bobmodules] then
-        data_recipe[cycling_steam_turbine].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-            {type = item, name = niobium_iron_bearing, amount = 16},
-            {type = item, name = steam_turbine_4, amount = 1},
-            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-            {type = item, name = niobium_titanium_plate, amount = 8},
-            {type = item, name = superconductor, amount = 8},
-            {type = item, name = quality_module_6, amount = 1}
-        }
+    data_recipe[cycling_steam_turbine].ingredients =
+    {
+        {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
+        {type = item, name = niobium_iron_bearing, amount = 16},
+        {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
+        {type = item, name = niobium_titanium_plate, amount = 8},
+        {type = item, name = superconductor, amount = 8}
+    }
+    if settings.startup[setting_bobmods_power_steam].value then
+        table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = steam_turbine_4, amount = 1})
     else
-        data_recipe[cycling_steam_turbine].ingredients =
-        {
-            {type = item, name = niobium_tungsten_molybdenum_gear_wheel, amount = 16},
-            {type = item, name = niobium_iron_bearing, amount = 16},
-            {type = item, name = steam_turbine_4, amount = 1},
-            {type = item, name = niobium_tungsten_molybdenum_plate, amount = 8},
-            {type = item, name = niobium_titanium_plate, amount = 8},
-            {type = item, name = superconductor, amount = 8},
-            {type = item, name = quality_module_3, amount = 1}
-        }
+        table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = steam_turbine_1, amount = 1})
+    end
+    if mods[bobmodules] then
+        table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = quality_module_6, amount = 1})
+    else
+        table.insert(data_recipe[cycling_steam_turbine].ingredients, {type = item, name = quality_module_3, amount = 1})
     end
     data_generator_fusion[cycling_steam_turbine].subgroup = is_muluna_turbine
     data_generator_fusion[cycling_steam_turbine].order = z

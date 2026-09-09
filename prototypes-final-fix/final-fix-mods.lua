@@ -20,8 +20,9 @@ data_item[oil_refinery_1].order = a
 data_recipe[oil_refinery_1].order = a
 data_assembling[oil_refinery_1].order = a
 
-data_storage_tank["angels-storage-tank-2"].fluid_box.volume = 180000
-data_storage_tank["angels-storage-tank-1"].fluid_box.volume = 180000
+data_storage_tank["angels-storage-tank-1"].fluid_box.volume = 115200
+data_storage_tank["angels-storage-tank-2"].fluid_box.volume = 115200
+data_storage_tank["angels-pressure-tank-1"].fluid_box.volume = 230400
 
 data_resource[ore_saphirite].icons = nil
 data_resource[ore_saphirite].icon = data_item[ore_saphirite].icon
@@ -139,6 +140,80 @@ if mods[muluna_mods] then
     data_recipe[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
     data_pipe_to_ground[aluminium_pipe_to_ground].hidden = false
     data_pipe_to_ground[aluminium_pipe_to_ground].hidden_in_factoriopedia = false
+
+    data_recipe[casting_low_density_structure_muluna].ingredients =
+    {
+        {type = item, name = plastic, amount = 4},
+        {type = fluid, name = aluminium_molten_angels, amount = 240},
+        {type = fluid, name = titanium_molten_angels, amount = 30}
+    }
+
+    local muluna_mining_machine =
+    {
+        {name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120},
+        {name = electric_mining_drill_2, order = b, tier = 2, energy_usage = 240},
+        {name = electric_mining_drill_3, order = c, tier = 3, energy_usage = 360},
+        {name = electric_mining_drill_4, order = d, tier = 4, energy_usage = 480},
+        {name = electric_mining_drill_5, order = e, tier = 5, energy_usage = 600},
+        {name = electric_mining_drill_6, order = f, tier = 6, energy_usage = 720}
+    }
+    for _, BUILD in pairs(muluna_mining_machine) do
+        data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
+        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+        data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+        data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
+        data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * drain) .. kW
+    end
+
+    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith)
+    data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
+    data_assembling[big_mining_drill .. _ground_digger].energy_source.drain = 480 .. kW
+
+    if data_item[area_mining_drill_1] then
+        local muluna_large_area_mining_machine =
+        {
+            {name = area_mining_drill_1, order = g, tier = 1, energy_usage = 240},
+            {name = area_mining_drill_2, order = h, tier = 2, energy_usage = 480},
+            {name = area_mining_drill_3, order = i, tier = 3, energy_usage = 720},
+            {name = area_mining_drill_4, order = j, tier = 4, energy_usage = 960}
+        }
+        for _, BUILD in pairs(muluna_large_area_mining_machine) do
+            data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
+            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
+            data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
+            data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
+            data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
+            data_assembling[BUILD.name .. _ground_digger].fixed_recipe = lunar_regolith
+        end
+    end
+
+    if mods[hyarion_mods] then
+        data_assembling[geode_mining_drill .. _ground_digger].icons = R_P_I(geode_mining_drill, lunar_regolith)
+        data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
+        data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
+        data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
+    end
+
+    data_assembling[vacuum_heating_tower].subgroup = is_muluna_heating
+    data_assembling[vacuum_heating_tower].icons = nil
+    data_assembling[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower.png"
+    data_assembling[vacuum_heating_tower].order = z
+    data_assembling[vacuum_heating_tower].crafting_speed = 64
+    data_assembling[vacuum_heating_tower].energy_usage = 14400 .. kW
+    data_assembling[vacuum_heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
+    data_assembling[vacuum_heating_tower].energy_source.effectivity = 4
+    data_assembling[vacuum_heating_tower].fixed_recipe = heat
+
+    local vacuum_heating_tower_reactor = "heat-assembling-machine-muluna-vacuum-heating-tower-reactor"
+    data_reactor[vacuum_heating_tower_reactor].subgroup = is_muluna_heating
+    data_reactor[vacuum_heating_tower_reactor].icons = nil
+    data_reactor[vacuum_heating_tower_reactor].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower.png"
+    data_reactor[vacuum_heating_tower_reactor].order = z
+    data_reactor[vacuum_heating_tower_reactor].consumption = 86400 .. kW
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_temperature = 2000
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.specific_heat = 10800 .. kJ
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_transfer = 10800000 .. kW
+    data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
 
     -- ROCKET PART
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_muluna, change = 0.1})
@@ -323,13 +398,6 @@ if mods[muluna_mods] then
         table.insert(data_technology[tech_rocket_part_productivity_fulgora_2].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
         table.insert(data_technology[tech_rocket_part_productivity_aquilo].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
     end
-
-    data_recipe[casting_low_density_structure_muluna].ingredients =
-    {
-        {type = item, name = plastic, amount = 4},
-        {type = fluid, name = aluminium_molten_angels, amount = 240},
-        {type = fluid, name = titanium_molten_angels, amount = 30}
-    }
 end
 
 if not mods[muluna_mods] and mods[arig_mods] then
@@ -358,75 +426,6 @@ end
 
 if not mods[muluna_mods] and mods[lignumis_mods] then
     table.insert(data_technology[tech_rocket_part_productivity].effects, {type = change_recipe_productivity, recipe = rocket_part_lignumis, change = 0.1})
-end
-
-if mods[muluna_mods] then
-    local muluna_mining_machine =
-    {
-        {name = electric_mining_drill_1, order = a, tier = 1, energy_usage = 120},
-        {name = electric_mining_drill_2, order = b, tier = 2, energy_usage = 240},
-        {name = electric_mining_drill_3, order = c, tier = 3, energy_usage = 360},
-        {name = electric_mining_drill_4, order = d, tier = 4, energy_usage = 480},
-        {name = electric_mining_drill_5, order = e, tier = 5, energy_usage = 600},
-        {name = electric_mining_drill_6, order = f, tier = 6, energy_usage = 720}
-    }
-    for _, BUILD in pairs(muluna_mining_machine) do
-        data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
-        data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
-        data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
-        data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * drain)) .. kW
-        data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * drain) .. kW
-    end
-
-    data_assembling[big_mining_drill .. _ground_digger].icons = R_P_I(big_mining_drill, lunar_regolith)
-    data_assembling[big_mining_drill .. _ground_digger].energy_usage = (2400 - 480) .. kW
-    data_assembling[big_mining_drill .. _ground_digger].energy_source.drain = 480 .. kW
-
-    if data_item[area_mining_drill_1] then
-        local muluna_large_area_mining_machine =
-        {
-            {name = area_mining_drill_1, order = g, tier = 1, energy_usage = 240},
-            {name = area_mining_drill_2, order = h, tier = 2, energy_usage = 480},
-            {name = area_mining_drill_3, order = i, tier = 3, energy_usage = 720},
-            {name = area_mining_drill_4, order = j, tier = 4, energy_usage = 960}
-        }
-        for _, BUILD in pairs(muluna_large_area_mining_machine) do
-            data_assembling[BUILD.name .. _ground_digger].subgroup = is_extraction_machine_muluna
-            data_assembling[BUILD.name .. _ground_digger].icons = R_P_IS(BUILD.name, lunar_regolith)
-            data_assembling[BUILD.name .. _ground_digger].order = BUILD.order
-            data_assembling[BUILD.name .. _ground_digger].energy_usage = (BUILD.energy_usage - (BUILD.tier * (drain * 2))) .. kW
-            data_assembling[BUILD.name .. _ground_digger].energy_source.drain = (BUILD.tier * (drain * 2)) .. kW
-            data_assembling[BUILD.name .. _ground_digger].fixed_recipe = lunar_regolith
-        end
-    end
-
-    if mods[hyarion_mods] then
-        data_assembling[geode_mining_drill .. _ground_digger].icons = R_P_I(geode_mining_drill, lunar_regolith)
-        data_assembling[geode_mining_drill .. _ground_digger].energy_usage = (240 - drain) .. kW
-        data_assembling[geode_mining_drill .. _ground_digger].energy_source.drain = drain .. kW
-        data_assembling[geode_mining_drill .. _ground_digger].fixed_recipe = lunar_regolith
-    end
-
-    data_assembling[vacuum_heating_tower].subgroup = is_muluna_heating
-    data_assembling[vacuum_heating_tower].icons = nil
-    data_assembling[vacuum_heating_tower].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower.png"
-    data_assembling[vacuum_heating_tower].order = z
-    data_assembling[vacuum_heating_tower].crafting_speed = 64
-    data_assembling[vacuum_heating_tower].energy_usage = 14400 .. kW
-    data_assembling[vacuum_heating_tower].energy_source.fuel_categories = {base_fuel, advanced_fuel}
-    data_assembling[vacuum_heating_tower].energy_source.effectivity = 4
-    data_assembling[vacuum_heating_tower].fixed_recipe = heat
-
-    local vacuum_heating_tower_reactor = "heat-assembling-machine-muluna-vacuum-heating-tower-reactor"
-    data_reactor[vacuum_heating_tower_reactor].subgroup = is_muluna_heating
-    data_reactor[vacuum_heating_tower_reactor].icons = nil
-    data_reactor[vacuum_heating_tower_reactor].icon = "__TIMSABA__/graphics/icons/muluna/muluna-vacuum-heating-tower.png"
-    data_reactor[vacuum_heating_tower_reactor].order = z
-    data_reactor[vacuum_heating_tower_reactor].consumption = 86400 .. kW
-    data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_temperature = 2000
-    data_reactor[vacuum_heating_tower_reactor].heat_buffer.specific_heat = 10800 .. kJ
-    data_reactor[vacuum_heating_tower_reactor].heat_buffer.max_transfer = 10800000 .. kW
-    data_reactor[vacuum_heating_tower_reactor].heat_buffer.minimum_glow_temperature = 250
 end
 
 -- MOSHINE
@@ -500,7 +499,7 @@ if mods[hyarion_mods] then
     data_recipe[raw_quartz_arig].icons = TWO_I(sandstone_brick, raw_quartz_arig, number_1)
 
     -- RECIPE
-    remelting_of_metal_ore_1 = "planetaris-iron-metallic-sifting"
+    local remelting_of_metal_ore_1 = "planetaris-iron-metallic-sifting"
     data_recipe[remelting_of_metal_ore_1].localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. iron_ore}}
     data_recipe[remelting_of_metal_ore_1].category = metallurgy
     data_recipe[remelting_of_metal_ore_1].subgroup = is_hyarion_recipe_ore
@@ -514,7 +513,7 @@ if mods[hyarion_mods] then
     }
     data_recipe[remelting_of_metal_ore_1].results[1].amount = 8
 
-    remelting_of_metal_ore_2 = "planetaris-copper-metallic-sifting"
+    local remelting_of_metal_ore_2 = "planetaris-copper-metallic-sifting"
     data_recipe[remelting_of_metal_ore_2].localised_name = {"recipe-name.remelting-of-metal-ore", {"item-name." .. copper_ore}}
     data_recipe[remelting_of_metal_ore_2].category = metallurgy
     data_recipe[remelting_of_metal_ore_2].subgroup = is_hyarion_recipe_ore
@@ -528,7 +527,7 @@ if mods[hyarion_mods] then
     }
     data_recipe[remelting_of_metal_ore_2].results[1].amount = 8
 
-    data_recipe[carbon_nanotube_hyarion].localised_name = {"item-name.carbon-nanotube"}
+    data_recipe[carbon_nanotube_hyarion].localised_name = {"item-name." .. carbon_nanotube}
 
     -- BUILDING
     local lamp_post = "lamp-post"
@@ -673,7 +672,7 @@ if mods[maraxsis_mods] then
     data_assembling[big_mining_drill .. _sand_extractor].energy_usage = (2400 - 480) .. kW
     data_assembling[big_mining_drill .. _sand_extractor].energy_source.drain = 480 .. kW
 
-    -- ПРОВЕРИТЬ РЕЦЕПТЫ
+    -- !?
     if not mods.pystellarexpedition then
         local electricity_description = {""}
 

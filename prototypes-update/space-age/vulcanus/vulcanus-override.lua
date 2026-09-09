@@ -403,14 +403,25 @@ data_item[big_mining_drill].weight = 31250
 data_recipe[big_mining_drill].subgroup = is_vulcanus_building
 data_recipe[big_mining_drill].order = b
 data_recipe[big_mining_drill].energy_required = 32
-data_recipe[big_mining_drill].ingredients =
-{
-    {type = item, name = electric_engine_unit, amount = 8},
-    {type = item, name = advanced_processing_unit, amount = 8},
-    {type = item, name = electric_mining_drill_6, amount = 1},
-    {type = item, name = tungsten_carbide_plate_bob, amount = 16},
-    {type = item, name = molybdenum_rhenium_plate, amount = 16}
-}
+if settings.startup[setting_bobmods_mining_miningdrills].value then
+    data_recipe[big_mining_drill].ingredients =
+    {
+        {type = item, name = electric_engine_unit, amount = 8},
+        {type = item, name = advanced_processing_unit, amount = 8},
+        {type = item, name = electric_mining_drill_6, amount = 1},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 16},
+        {type = item, name = molybdenum_rhenium_plate, amount = 16}
+    }
+else
+    data_recipe[big_mining_drill].ingredients =
+    {
+        {type = item, name = electric_engine_unit, amount = 8},
+        {type = item, name = advanced_processing_unit, amount = 8},
+        {type = item, name = electric_mining_drill_1, amount = 1},
+        {type = item, name = tungsten_carbide_plate_bob, amount = 16},
+        {type = item, name = molybdenum_rhenium_plate, amount = 16}
+    }
+end
 data_mining_drill[big_mining_drill].subgroup = is_vulcanus_building
 data_mining_drill[big_mining_drill].order = b
 data_mining_drill[big_mining_drill].mining_speed = 8
