@@ -213,7 +213,7 @@ TIMSABA.functions.create_recipes
         order = a,
         allow_productivity = true,
         allow_quality = true,
-        energy_required = 64,
+        energy_required = 4,
         ingredients =
         {
             {type = item, name = muon_fusion_catalyst, amount = 1},

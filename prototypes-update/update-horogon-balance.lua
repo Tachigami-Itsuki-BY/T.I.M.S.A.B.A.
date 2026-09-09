@@ -726,20 +726,20 @@ function horogon_apply_tier_technology_counts()
         set_technology_count_for_names({power_armor_5, "bob-power-armor-5", "power-armor-5"}, 2048)
     end
 
-    set_technology_count(tech_uranium_power, 1000)
-    multiply_technology_count("angels-thorium-power", tier_multiplier(setting_horogon_power_multiplier, 2))
+    set_technology_count(tech_uranium_power_1, 1000)
+    multiply_technology_count(tech_thorium_power, tier_multiplier(setting_horogon_power_multiplier, 2))
     multiply_technology_count(tech_deuterium_power, tier_multiplier(setting_horogon_power_multiplier, 3))
     multiply_technology_count(tech_tritium_power, tier_multiplier(setting_horogon_power_multiplier, 4))
 
     -- Heat transfer techs should follow reactor-tier costs, but stay 60% cheaper.
-    set_technology_count_from_fraction("bob-heat-pipe-1", tech_uranium_power, 0.4)
-    set_technology_count_from_fraction("bob-heat-exchanger-1", tech_uranium_power, 0.4)
-    set_technology_count_from_fraction("bob-heat-pipe-2", "angels-thorium-power", 0.4)
-    set_technology_count_from_fraction("bob-heat-exchanger-2", "angels-thorium-power", 0.4)
-    set_technology_count_from_fraction("bob-heat-pipe-3", tech_deuterium_power, 0.4)
-    set_technology_count_from_fraction("bob-heat-exchanger-3", tech_deuterium_power, 0.4)
-    set_technology_count_from_fraction("bob-heat-pipe-4", tech_tritium_power, 0.4)
-    set_technology_count_from_fraction("bob-heat-exchanger-4", tech_tritium_power, 0.4)
+    set_technology_count_from_fraction(heat_pipe_1, tech_uranium_power_1, 0.4)
+    set_technology_count_from_fraction(heat_exchanger_1, tech_uranium_power_1, 0.4)
+    set_technology_count_from_fraction(heat_pipe_2, tech_thorium_power, 0.4)
+    set_technology_count_from_fraction(heat_exchanger_2, tech_thorium_power, 0.4)
+    set_technology_count_from_fraction(heat_pipe_3, tech_deuterium_power, 0.4)
+    set_technology_count_from_fraction(heat_exchanger_3, tech_deuterium_power, 0.4)
+    set_technology_count_from_fraction(heat_pipe_4, tech_tritium_power, 0.4)
+    set_technology_count_from_fraction(heat_exchanger_4, tech_tritium_power, 0.4)
 end
 
 -- Applied from data-final-fixes.lua after other mods/final-fix code have finished

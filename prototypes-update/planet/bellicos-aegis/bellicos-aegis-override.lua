@@ -86,7 +86,7 @@ if mods[bellicos_aegis_mods] then
     data_recipe[helium_mods].subgroup = is_bellicos_recipe
     data_recipe[helium_mods].icons = THREE_IS(helium_3_gas, helium_4_gas, He_icon)
     data_recipe[helium_mods].order = g
-    data_recipe[helium_mods].energy_required = 32 -- 20% ³He(g) + 80% ⁴He(g) --> 100% He(g)
+    data_recipe[helium_mods].energy_required = 32 -- 20% He-3(g) + 80% He-4(g) --> 100% He(g)
     data_recipe[helium_mods].ingredients =
     {
         {type = fluid, name = helium_3_gas, amount = 30},

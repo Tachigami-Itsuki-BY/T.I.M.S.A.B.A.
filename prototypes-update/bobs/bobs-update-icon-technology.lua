@@ -43,8 +43,8 @@ do
 	}
 	if reskins.bobs.triggers.power.nuclear then
 		-- REACTOR
-		technologies[tech_uranium_power] = {tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[uranium_reactor].tint}
-		technologies[tech_uranium_power].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
+		technologies[tech_uranium_power_1] = {tier = 1, prog_tier = 3, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[uranium_reactor].tint}
+		technologies[tech_uranium_power_1].icon_base = "nuclear-power-uranium-" .. material_tiers[1]
 		technologies[tech_uranium_power_2] = {tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[thorium_reactor].tint}
 		technologies[tech_uranium_power_2].icon_base = "nuclear-power-uranium-" .. material_tiers[2]
 		technologies[tech_thorium_power] = {tier = 2, prog_tier = 4, icon_name = "nuclear-power", tint = reskins.bobs.nuclear_reactor_index[thorium_reactor].tint}
