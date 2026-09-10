@@ -55,7 +55,8 @@ data:extend
         localised_name = {"technology-name.full-asteroid-productivity"},
         type = technology,
         name = tech_full_asteroid_productivity,
-        icons = util.technology_icon_constant_productivity("__space-age__/graphics/technology/asteroid-productivity.png"),
+        icon = "__space-age__/graphics/technology/asteroid-productivity.png",
+        icon_size = 256,
         prerequisites = {tech_full_asteroid_processing},
         effects =
         {
@@ -132,7 +133,8 @@ data:extend
         localised_name = {"technology-name.advanced-full-asteroid-productivity"},
         type = technology,
         name = tech_advanced_full_asteroid_productivity,
-        icons = util.technology_icon_constant_productivity("__space-age__/graphics/technology/asteroid-productivity.png"),
+        icon = "__space-age__/graphics/technology/asteroid-productivity.png",
+        icon_size = 256,
         prerequisites = {tech_advanced_full_asteroid_processing},
         effects =
         {

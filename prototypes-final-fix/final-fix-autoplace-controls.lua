@@ -10,9 +10,13 @@ data_autoplace_control[ore_rubyte].order = data_planet[planet_nauvis].order .. a
 data_autoplace_control[ore_bobmonium].order = data_planet[planet_nauvis].order .. a_f
 data_autoplace_control[molybdenite_ore].order =  data_planet[planet_nauvis].order .. a_g
 data_autoplace_control[powellite_ore].order =  data_planet[planet_nauvis].order .. a_h
-data_autoplace_control[crude_oil].order = data_planet[planet_nauvis].order .. a_i
-data_autoplace_control["angels-natural-gas"].order = data_planet[planet_nauvis].order .. a_j
-data_autoplace_control["angels-fissure"].order = data_planet[planet_nauvis].order .. a_k
+
+
+
+
+data_autoplace_control[crude_oil].order = data_planet[planet_nauvis].order .. a_m
+data_autoplace_control["angels-natural-gas"].order = data_planet[planet_nauvis].order .. a_n
+data_autoplace_control["angels-fissure"].order = data_planet[planet_nauvis].order .. a_o
 
 -- VULCANUS
 data_autoplace_control["vulcanus_coal"].order = data_planet[planet_vulcanus].order .. a

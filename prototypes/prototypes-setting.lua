@@ -65,6 +65,10 @@ setting_dye_reinforced_hazard_concrete = "dye-enable-refined-hazard-concrete"
 setting_dye_stone_wall = "dye-enable-wall"
 setting_dye_concrete_brick = "setting-tellus-dye-concrete-brick"
 
+-- VESTA
+setting_vesta_gases = "ske_vesta_gases"
+setting_vesta_legacy_recipes = "ske_vesta_legacy_recipes"
+
 -- MODS
 setting_real_incineration = "setting-real-incineration"
 

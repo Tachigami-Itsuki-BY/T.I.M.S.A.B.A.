@@ -1,3 +1,5 @@
+local graphics_galium = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/"
+
 -- GROUPS
 local is_gallium = "is-gallium"
 local is_gallium_chemistry = "is-gallium-chemistry"
@@ -24,12 +26,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
         name = galium_ore,
         subgroup = is_gallium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ore.png",
+        icon = graphics_galium .. galium_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_galium .. galium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -37,31 +39,31 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
         name = galium_processed,
         subgroup = is_gallium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-processed.png",
+        icon = graphics_galium .. galium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
         name = galium_pellet,
         subgroup = is_gallium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-pellet.png",
+        icon = graphics_galium .. galium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
         name = galium_ingot,
         subgroup = is_gallium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot.png",
+        icon = graphics_galium .. galium_ingot .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-3.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-4.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-5.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-6.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-7.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-ingot-8.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_galium .. galium_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_galium .. galium_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
         },
         order = d
     },
@@ -69,7 +71,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
         name = galium_powder,
         subgroup = is_gallium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-powder.png",
+        icon = graphics_galium .. galium_powder .. ".png",
         order = e
     },
     -- CHEMISTRY
@@ -77,35 +79,35 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ga(OH)[font=default-tiny-bold]3[/font]"} or nil,
         name = galium_hydroxide_III,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-hydroxide-III.png",
+        icon = graphics_galium .. galium_hydroxide_III .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "Ga[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         name = galium_oxide_III,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-oxide-III.png",
+        icon = graphics_galium .. galium_oxide_III .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "GaCl[font=default-tiny-bold]3[/font]"} or nil,
         name = galium_chloride_III,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-chloride-III.png",
+        icon = graphics_galium .. galium_chloride_III .. ".png",
         order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "GaAs"} or nil,
         name = galium_arsenide,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-arsenide.png",
+        icon = graphics_galium .. galium_arsenide .. ".png",
         order = h
     },
     {
         localised_description = show_formula and {chemical_formula, "GaN"} or nil,
         name = galium_nitride,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-nitride.png",
+        icon = graphics_galium .. galium_nitride .. ".png",
         order = i
     }
 })
@@ -121,7 +123,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "NaGa(OH)[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = sodium_tetrahydroxogallate_III_solution,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/sodium-tetrahydroxogallate-III-solution.png",
+        icon = graphics_galium .. sodium_tetrahydroxogallate_III_solution .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("NaGaO4H4Wp"),
         flow_color = TIMSABA.functions.flow_color("NaGaO4H4Wp")
@@ -130,7 +132,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Ga"} or nil,
         name = galium_liquid,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-liquid.png",
+        icon = graphics_galium .. galium_liquid .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("GaGaGa"),
         flow_color = TIMSABA.functions.flow_color("GaGaGa")
@@ -139,7 +141,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "GaCl[font=default-tiny-bold]3(ether)[/font]"} or nil,
         name = galium_chloride_III_solution_ether,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/galium-chloride-III-solution-ether.png",
+        icon = graphics_galium .. galium_chloride_III_solution_ether .. ".png",
         order = f,
         base_color = TIMSABA.functions.fluid_color("GaCl3De"),
         flow_color = TIMSABA.functions.flow_color("GaCl3De")
@@ -148,7 +150,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "LiGaH[font=default-tiny-bold]4(ether)[/font]"} or nil,
         name = lithium_gallium_hydride_solution_ether,
         subgroup = is_gallium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/galium/lithium-gallium-hydride-solution-ether.png",
+        icon = graphics_galium .. lithium_gallium_hydride_solution_ether .. ".png",
         order = g,
         base_color = TIMSABA.functions.fluid_color("LiGaH4De"),
         flow_color = TIMSABA.functions.flow_color("LiGaH4De")

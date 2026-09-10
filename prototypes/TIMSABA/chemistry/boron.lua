@@ -1,8 +1,12 @@
+local graphics_boron = "__TIMSABA__/graphics/icons/angels/petrochem/boron/"
+
 -- GROUPS
 is_boron = "is-boron"
-TIMSABA.functions.create_subgroups(ig_smelting,
+is_boron_fluid = "is-boron-fluid"
+TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
 {
-    {name = is_boron, order = u}
+    {name = is_boron, order = u}, -- j
+    {name = is_boron_fluid, order = u_a} -- j_a
 })
 
 -- ITEM
@@ -13,7 +17,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]B[font=default-tiny-bold]4[/font]O[font=default-tiny-bold]7[/font] * 10H[font=default-tiny-bold]2[/font]O"} or nil,
         name = borax,
         subgroup = is_boron,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/borax.png",
+        icon = graphics_boron .. borax .. ".png",
         order = a
     }
 })
@@ -26,18 +30,18 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]BO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = boric_acid_solution,
-        subgroup = is_boron,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/boric-acid-solution.png",
-        order = b,
+        subgroup = is_boron_fluid,
+        icon = graphics_boron .. boric_acid_solution .. ".png",
+        order = a,
         base_color = TIMSABA.functions.fluid_color("H3BO3Wp"),
         flow_color = TIMSABA.functions.flow_color("H3BO3Wp")
     },
     {
         localised_description = show_formula and {chemical_formula, "B[font=default-tiny-bold]2[/font]H[font=default-tiny-bold]6[/font]"} or nil,
         name = diborane_gas,
-        subgroup = is_boron,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/boron/diborane-gas.png",
-        order = c,
+        subgroup = is_boron_fluid,
+        icon = graphics_boron .. diborane_gas .. ".png",
+        order = b,
         base_color = TIMSABA.functions.fluid_color("B2H6"),
         flow_color = TIMSABA.functions.flow_color("B2H6")
     }
@@ -72,10 +76,10 @@ TIMSABA.functions.create_recipes
     {
         name = boric_acid_solution,
         category = chemistry,
-        subgroup = is_boron,
+        subgroup = is_boron_fluid,
         icons = TWO_D_I(borax, sulfuric_acid_angels, boric_acid_solution, sodium_sulfate_solution),
-        order = b,
-        energy_required = 8, -- Na₂B₄O₇ * 10H₂O + H₂SO₄ --> 4H₃BO₃(aq) + Na₂SO₄(aq)
+        order = a,
+        energy_required = 8, -- (Na₂B₄O₇ * 10H₂O)(s) + H₂SO₄(l) --> 4H₃BO₃(aq) + Na₂SO₄(aq)
         ingredients =
         {
             {type = item, name = borax, amount = 16},
@@ -91,10 +95,10 @@ TIMSABA.functions.create_recipes
     {
         name = boric_acid_from_hydrochloric_acid,
         category = angels_advanced_chemistry,
-        subgroup = is_boron,
+        subgroup = is_boron_fluid,
         icons = THREE_D_I(borax, nil, hydrochloric_acid_angels, boric_acid_solution, sodium_chloride_solution, water_purified_angels),
-        order = b_a,
-        energy_required = 8, -- Na₂B₄O₇ * 10H₂O + 2HCl(aq) --> 4H₃BO₃(aq) + 2NaCl(aq) + H₂O
+        order = a_a,
+        energy_required = 8, -- (Na₂B₄O₇ * 10H₂O)(s) + 2HCl(aq) --> 4H₃BO₃(aq) + 2NaCl(aq) + H₂O(l)
         ingredients =
         {
             {type = item, name = borax, amount = 16},
@@ -110,10 +114,10 @@ TIMSABA.functions.create_recipes
     {
         name = boric_acid_from_diborane_gas,
         category = chemistry,
-        subgroup = is_boron,
+        subgroup = is_boron_fluid,
         icons = TWO_D_I(diborane_gas, water_purified_angels, boric_acid_solution, hydrogen_angels),
-        order = b_b,
-        -- B₂H₆ + 8H₂O --> 2H₃BO₃(aq) + 6H₂
+        order = a_b,
+        -- B₂H₆(g) + 8H₂O(l) --> 2H₃BO₃(aq) + 6H₂(g)
         ingredients =
         {
             {type = fluid, name = diborane_gas, amount = 120},

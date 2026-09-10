@@ -1,3 +1,5 @@
+local graphics_vulcanus = "__TIMSABA__/graphics/icons/space-age/vulcanus/"
+
 -- Wolframite ore / W + Fe + Mn + Mg + Nb + Re
 wolframite_crushed = "wolframite-crushed"
 wolframite_chunks = "wolframite-chunks"
@@ -8,28 +10,28 @@ TIMSABA.functions.create_items
     {
         name = wolframite_crushed,
         subgroup = is_vulcanus_wolframite,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-crushed.png",
+        icon = graphics_vulcanus .. wolframite_crushed .. ".png",
         icon_size = 32,
         order = b
     },
     {
         name = wolframite_chunks,
         subgroup = is_vulcanus_wolframite,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-chunks.png",
+        icon = graphics_vulcanus .. wolframite_chunks .. ".png",
         icon_size = 32,
         order = c
     },
     {
         name = wolframite_crystals,
         subgroup = is_vulcanus_wolframite,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-crystals.png",
+        icon = graphics_vulcanus .. wolframite_crystals .. ".png",
         icon_size = 32,
         order = d
     },
     {
         name = wolframite_purified,
         subgroup = is_vulcanus_wolframite,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/wolframite-purified.png",
+        icon = graphics_vulcanus .. wolframite_purified .. ".png",
         icon_size = 32,
         order = e
     }

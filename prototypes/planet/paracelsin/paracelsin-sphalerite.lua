@@ -192,7 +192,7 @@ if mods[paracelsin_mods] then
             category = ore_sorting_6,
             subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, germanite_purified, sphalerite_purified, germanium_ore),
-            order = a_o,
+            order = a_p,
             allow_productivity = true,
             energy_required = 2,
             ingredients =

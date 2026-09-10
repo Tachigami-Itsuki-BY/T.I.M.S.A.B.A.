@@ -1,4 +1,3 @@
--- ANGELS PETROCHEM REFINING
 -- BASIC PETROCHEN FLUIDS
 TIMSABA.functions.create_recipes
 ({

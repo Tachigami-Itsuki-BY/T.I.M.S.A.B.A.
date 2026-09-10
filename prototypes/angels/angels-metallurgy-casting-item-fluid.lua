@@ -11,6 +11,7 @@ TIMSABA.functions.create_items
     }
 })
 
+local graphics_stone = "__TIMSABA__/graphics/icons/angels/metallurgy/stone/"
 -- STONE FLUID
 refined_concrete_liquid = "refined-liquid-concrete"
 TIMSABA.functions.create_fluids
@@ -18,7 +19,7 @@ TIMSABA.functions.create_fluids
     {
         name = refined_concrete_liquid,
         subgroup = is_stone_casting,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/stone/refined-liquid-concrete.png",
+        icon = graphics_stone .. refined_concrete_liquid .. ".png",
         order = f,
         base_color = data_fluid[concrete_liquid].base_color,
         flow_color = data_fluid[concrete_liquid].flow_color
@@ -34,21 +35,21 @@ TIMSABA.functions.create_items
     {
         name = reinforced_titanium_concrete_brick,
         subgroup = is_bricks_casting,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/stone/reinforced-titanium-concrete-brick.png",
+        icon = graphics_stone .. reinforced_titanium_concrete_brick .. ".png",
         icon_size = 32,
         order = f
     },
     {
         name = carbon_concrete_brick,
         subgroup = is_bricks_casting,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/stone/carbon-concrete-brick.png",
+        icon = graphics_stone .. carbon_concrete_brick .. ".png",
         icon_size = 32,
         order = g
     },
     {
         name = reinforced_graphene_concrete_brick,
         subgroup = is_bricks_casting,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/stone/reinforced-graphene-concrete-brick.png",
+        icon = graphics_stone .. reinforced_graphene_concrete_brick .. ".png",
         icon_size = 32,
         order = h
     }

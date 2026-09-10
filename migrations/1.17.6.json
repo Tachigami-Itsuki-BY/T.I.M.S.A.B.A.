@@ -1,0 +1,11 @@
+{
+    "fluid":
+    [
+        ["tetracarbonyl-nickel", "tetracarbonyl-nickel-liquid"],
+        ["carbonic-acid", "carbonic-acid-solution"]
+    ],
+    "recipe":
+    [
+        ["tetracarbonyl-nickel", "tetracarbonyl-nickel-liquid"]
+    ]
+}

@@ -1,3 +1,5 @@
+local graphics_antimony = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/"
+
 -- GROUPS
 local is_antimony = "is-antimony"
 local is_antimony_chemistry = "is-antimony-chemistry"
@@ -24,12 +26,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_ore,
         subgroup = is_antimony,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ore.png",
+        icon = graphics_antimony .. antimony_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_antimony .. antimony_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -37,31 +39,31 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_processed,
         subgroup = is_antimony,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-processed.png",
+        icon = graphics_antimony .. antimony_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_pellet,
         subgroup = is_antimony,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-pellet.png",
+        icon = graphics_antimony .. antimony_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_ingot,
         subgroup = is_antimony,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot.png",
+        icon = graphics_antimony .. antimony_ingot .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-3.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-4.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-5.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-6.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-7.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-ingot-8.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_antimony .. antimony_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimony .. antimony_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
         },
         order = d
     },
@@ -69,7 +71,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_powder,
         subgroup = is_antimony,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-powder.png",
+        icon = graphics_antimony .. antimony_powder .. ".png",
         order = e
     },
     -- CHEMISTRY
@@ -77,14 +79,14 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "SbCl[font=default-tiny-bold]3[/font]"} or nil,
         name = antimony_chloride_III,
         subgroup = is_antimony_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-chloride-III.png",
+        icon = graphics_antimony .. antimony_chloride_III .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "Sb[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]5[/font]"} or nil,
         name = antimony_oxide_III,
         subgroup = is_antimony_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-oxide-III.png",
+        icon = graphics_antimony .. antimony_oxide_III .. ".png",
         order = d
     },
     -- CASTING
@@ -92,7 +94,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_plate,
         subgroup = is_antimony_casting,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-plate.png",
+        icon = graphics_antimony .. antimony_plate .. ".png",
         order = b,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -111,7 +113,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "SbCl[font=default-tiny-bold]5[/font]"} or nil,
         name = antimony_chloride_V_liquid,
         subgroup = is_antimony_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-chloride-V-liquid.png",
+        icon = graphics_antimony .. antimony_chloride_V_liquid .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("SbCl5"),
         flow_color = TIMSABA.functions.flow_color("SbCl5")
@@ -120,7 +122,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]3[/font]SbO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = antimony_acid,
         subgroup = is_antimony_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-acid-solution.png",
+        icon = graphics_antimony .. antimony_acid .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("H3SbO4Wp"),
         flow_color = TIMSABA.functions.flow_color("H3SbO4Wp")
@@ -129,7 +131,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "HSbCl[font=default-tiny-bold]6(aq)[/font]"} or nil,
         name = hexachloroantimonic_acid,
         subgroup = is_antimony_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/hexachloroantimonic-acid-solution.png",
+        icon = graphics_antimony .. hexachloroantimonic_acid .. ".png",
         order = e,
         base_color = TIMSABA.functions.fluid_color("HSbCl6Wp"),
         flow_color = TIMSABA.functions.flow_color("HSbCl6Wp")
@@ -139,7 +141,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Sb"} or nil,
         name = antimony_molten,
         subgroup = is_antimony_casting,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimony/antimony-molten.png",
+        icon = graphics_antimony .. antimony_molten .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("SbSbSb"),
         flow_color = TIMSABA.functions.flow_color("SbSbSb")

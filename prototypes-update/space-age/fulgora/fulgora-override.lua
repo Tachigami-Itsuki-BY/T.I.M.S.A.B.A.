@@ -323,8 +323,8 @@ data_technology[planet_discovery_fulgora].unit.ingredients =
     {space_science_pack, 1}
 }
 
-table.insert(data_technology[recycling].effects, {type = unlock_recipe, recipe = construction_scrap_recycling})
-table.insert(data_technology[recycling].effects, {type = unlock_recipe, recipe = machinery_scrap_recycling})
+table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, recipe = construction_scrap_recycling})
+table.insert(data_technology[tech_recycling].effects, {type = unlock_recipe, recipe = machinery_scrap_recycling})
 
 data_technology[tech_holmium_processing].prerequisites = {tech_brannerite_processing_1}
 data_technology[tech_holmium_processing].effects =

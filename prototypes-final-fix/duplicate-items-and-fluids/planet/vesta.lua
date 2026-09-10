@@ -39,7 +39,6 @@ if mods[vesta_mods] then
 		"ske_co2_filter_oxygen",
 		"nutrients-from-co2",
 		"steel-from-iron-algea",
-		"ske_crude_solution",
 		"ske-processors-from-lithium",
 		"calcized-iron-plate",
 		"calcized-copper-plate",
@@ -65,6 +64,27 @@ if mods[vesta_mods] then
 	TIMSABA.functions.delete_prototypes(delete_prototypes)
 	data_construction_robot[fusion_construction_robot] = nil
 	data_logistic_robot[fusion_logistic_robot] = nil
+
+	if settings.startup[setting_vesta_legacy_recipes].value then
+		local nitrogen_liquid_vesta = "ske_liquid_nitrogen"
+		local replace_prototypes =
+		{
+			[nitrogen_liquid_vesta] = nitrogen_liquid
+		}
+		TIMSABA.functions.replace_duplicate_prototypes(replace_prototypes)
+
+		local delete_prototypes =
+		{
+			nitrogen_liquid_vesta,
+			"ske_empty_dt_canister",
+			"ske_dt_fuel_cell",
+			"dt-fuel"
+		}
+		TIMSABA.functions.delete_prototypes(delete_prototypes)
+	else
+		local delete_prototypes = {"ske_crude_solution"}
+		TIMSABA.functions.delete_prototypes(delete_prototypes)
+	end
 
 	local magnetic_pipe = "magnetic-pipe"
 	local replacements = {[magnetic_pipe] = magnetic_pipe_vesta}

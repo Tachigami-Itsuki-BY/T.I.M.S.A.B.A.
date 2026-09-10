@@ -117,15 +117,15 @@ local table_of_chemical_elements =
     --Fr = {{, , }, {, , }, {, , }}, -- Francium
     --Ra = {{, , }, {, , }, {, , }}, -- Radium
     --Ac = {{, , }, {, , }, {, , }}, -- Actinium
-    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.1?
+    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.0.0
     --Pa = {{, , }, {, , }, {, , }}, -- Protactinium
-    --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.1?
-    --Np = {{, , }, {, , }, {, , }}, -- Neptunium 2.1?
-    --Pu = {{, , }, {, , }, {, , }}, -- Plutonium 2.1?
-    --Am = {{, , }, {, , }, {, , }}, -- Americium 2.1?
-    --Cm = {{, , }, {, , }, {, , }}, -- Curium 2.1?
-    --Bk = {{, , }, {, , }, {, , }}, -- Berkelium 2.1?
-    --Cf = {{, , }, {, , }, {, , }}, -- Californium 2.1?
+    --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.0.0
+    --Np = {{, , }, {, , }, {, , }}, -- Neptunium
+    --Pu = {{, , }, {, , }, {, , }}, -- Plutonium
+    --Am = {{, , }, {, , }, {, , }}, -- Americium
+    --Cm = {{, , }, {, , }, {, , }}, -- Curium
+    --Bk = {{, , }, {, , }, {, , }}, -- Berkelium
+    --Cf = {{, , }, {, , }, {, , }}, -- Californium
     --Es = {{, , }, {, , }, {, , }}, -- Einsteinium
     --Fm = {{, , }, {, , }, {, , }}, -- Fermium
     --Md = {{, , }, {, , }, {, , }}, -- Mendelevium
@@ -997,64 +997,53 @@ function TIMSABA.functions.replace_vanila_resources(vanilla_resource, angel_reso
 end
 
 function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology_name)
-    local memo = {} -- Хранит глобальный результат: true (ведет к цели) или false (не ведет)
+    local memo = {}
 
     local function leads_to_root(tech_name, current_path)
-        -- Если мы пришли в целевую технологию — путь найден
         if tech_name == technology_name then
             return true
         end
 
-        -- Возвращаем уже посчитанный ранее результат
         if memo[tech_name] ~= nil then
             return memo[tech_name]
         end
 
-        -- Проверка на циклы: если tech_name уже есть в текущей ветке поиска
         if current_path[tech_name] then
             return false
         end
 
-        local tech = data.raw.technology[tech_name] -- В Factorio данные лежат в data.raw.technology
+        local tech = data.raw.technology[tech_name]
         if not tech or not tech.prerequisites then
             memo[tech_name] = false
             return false
         end
-        -- Шаг вперед: добавляем технологию в текущий путь исследования
         current_path[tech_name] = true
-        -- Проверяем все требования технологии
         for _, prereq in ipairs(tech.prerequisites) do
             if leads_to_root(prereq, current_path) then
                 memo[tech_name] = true
-                current_path[tech_name] = nil -- Убираем из пути перед выходом
+                current_path[tech_name] = nil
                 return true
             end
         end
-        -- Шаг назад: убираем технологию из пути, так как ветка не привела к цели
         current_path[tech_name] = nil
         memo[tech_name] = false
         return false
     end
 
-    -- Перебираем все технологии в игре
     for tech_name, tech in pairs(data_technology) do
-        -- Не проверяем целевую технологию саму на себя
         if tech_name ~= technology_name and leads_to_root(tech_name, {}) then
             if tech.unit and tech.unit.ingredients and #tech.unit.ingredients > 0 then
                 local has_pack = false
                 local has_datacell = false
                 local has_science_pack = false
-                -- Проверяем текущие ингредиенты
                 for _, ingredient in ipairs(tech.unit.ingredients) do
-                    local name -- Убрали = ""
+                    local name
                     if type(ingredient) == "table" then
                         name = ingredient.name or ingredient[1]
                     else
                         name = ingredient
                     end
-                    -- Добавляем проверку на случай, если name остался nil или пришел как объект
                     if name then
-                        -- Принудительно приводим к строке, чтобы string.find не ругался
                         name = tostring(name)
 
                         if name == science_pack_name then has_pack = true end
@@ -1062,13 +1051,90 @@ function TIMSABA.functions.auto_added_science_pack(science_pack_name, technology
                         if string.find(name, "%-science%-pack") then has_science_pack = true end
                     end
                 end
-                -- Логика исключения (для Space Age / дата-ячеек)
                 local should_exclude = has_datacell and not has_science_pack
-                -- Добавляем пак, если его нет и технология не подпадает под исключение
                 if not has_pack and not should_exclude then
                     table.insert(tech.unit.ingredients, {science_pack_name, 1})
                 end
             end
         end
     end
+end
+
+local resource_autoplace = require("resource-autoplace")
+local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
+function TIMSABA.functions.create_resource(resource_parameters, autoplace_parameters)
+    return
+    {
+        localised_description = {"entity-description." .. resource_parameters.name},
+        factoriopedia_description = resource_parameters.factoriopedia_description,
+        type = resource,
+        name = resource_parameters.name,
+        subgroup = resource_parameters.subgroup,
+        icon = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+        order = resource_parameters.order,
+        category = resource_parameters.category,
+        minable = resource_parameters.minable or
+        {
+            mining_particle = resource_parameters.name .. _particle,
+            mining_time = 1,
+            result = resource_parameters.name
+        },
+        flags = {"placeable-neutral"},
+        tree_removal_probability = 0.8,
+        tree_removal_max_distance = 32 * 32,
+        walking_sound = base_tile_sounds.walking.ore,
+        collision_mask = resource_parameters.collision_mask,
+        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
+        autoplace = autoplace_parameters.probability_expression ~= nil and
+        {
+            order = resource_parameters.order,
+            probability_expression = autoplace_parameters.probability_expression,
+            richness_expression = autoplace_parameters.richness_expression
+        }
+            or resource_autoplace.resource_autoplace_settings
+        {
+            name = resource_parameters.name,
+            order = resource_parameters.order,
+            autoplace_control_name = resource_parameters.name,
+            base_density = autoplace_parameters.base_density,
+            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
+            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
+            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
+            candidate_spot_count = autoplace_parameters.candidate_spot_count,
+            tile_restriction = autoplace_parameters.tile_restriction
+        },
+        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
+        stages =
+        {
+            sheet =
+            {
+                filename = "__TIMSABA__/graphics/icons/angels/resource/" .. resource_parameters.name .. "/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
+                priority = extra_high,
+                size = 128,
+                frame_count = 8,
+                variation_count = 8,
+                scale = 0.5
+            }
+        },
+        map_color = resource_parameters.map_color,
+        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
+        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
+    }
+end
+
+function TIMSABA.functions.create_autoplace_control(name)
+    data:extend
+    ({
+        {
+            localised_name = {"", "[entity=" .. name .. "] ", {"entity-name." .. name}},
+            type = autoplace_control,
+            name = name,
+            order = name,
+            category = resource,
+            richness = true,
+            can_be_disabled = true
+        }
+    })
 end

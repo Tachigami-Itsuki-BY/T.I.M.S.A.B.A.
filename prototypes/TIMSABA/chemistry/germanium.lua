@@ -1,3 +1,5 @@
+local graphics_germanium = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/"
+
 -- GROUPS
 local is_germanium = "is-germanium"
 local is_germanium_chemistry = "is-germanium-chemistry"
@@ -24,12 +26,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_ore,
         subgroup = is_germanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ore.png",
+        icon = graphics_germanium .. germanium_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_germanium .. germanium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -37,31 +39,31 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_processed,
         subgroup = is_germanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-processed.png",
+        icon = graphics_germanium .. germanium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_pellet,
         subgroup = is_germanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-pellet.png",
+        icon = graphics_germanium .. germanium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_ingot,
         subgroup = is_germanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot.png",
+        icon = graphics_germanium .. germanium_ingot .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-3.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-4.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-5.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-6.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-7.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-ingot-8.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_germanium .. germanium_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanium .. germanium_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
         },
         order = d
     },
@@ -69,7 +71,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_powder,
         subgroup = is_germanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-powder.png",
+        icon = graphics_germanium .. germanium_powder .. ".png",
         order = e
     },
     -- CHEMISTRY
@@ -77,14 +79,14 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "GeO[font=default-tiny-bold]2[/font]"} or nil,
         name = germanium_oxide_IV,
         subgroup = is_germanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-oxide-IV.png",
+        icon = graphics_germanium .. germanium_oxide_IV .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]GeCl[font=default-tiny-bold]6[/font]"} or nil,
         name = sodium_hexachlorogermanate_IV,
         subgroup = is_germanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/sodium-hexachlorogermanate-IV.png",
+        icon = graphics_germanium .. sodium_hexachlorogermanate_IV .. ".png",
         order = e
     },
     -- CASTING
@@ -92,7 +94,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_plate,
         subgroup = is_germanium_casting,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-plate.png",
+        icon = graphics_germanium .. germanium_plate .. ".png",
         order = b,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -111,7 +113,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]GeO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = potassium_metagermanate_solution,
         subgroup = is_germanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/potassium-metagermanate-solution.png",
+        icon = graphics_germanium .. potassium_metagermanate_solution .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("K2GeO3Wp"),
         flow_color = TIMSABA.functions.flow_color("K2GeO3Wp")
@@ -120,7 +122,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "GeCl[font=default-tiny-bold]4[/font]"} or nil,
         name = germanium_chloride_IV,
         subgroup = is_germanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-chloride-IV-liquid.png",
+        icon = graphics_germanium .. germanium_chloride_IV .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("GeCl4"),
         flow_color = TIMSABA.functions.flow_color("GeCl4")
@@ -129,7 +131,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Na[font=default-tiny-bold]2[/font]GeO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = sodium_metagermanate_solution,
         subgroup = is_germanium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/sodium-metagermanate-solution.png",
+        icon = graphics_germanium .. sodium_metagermanate_solution .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("Na2GeO3Wp"),
         flow_color = TIMSABA.functions.flow_color("Na2GeO3Wp")
@@ -139,7 +141,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Ge"} or nil,
         name = germanium_molten,
         subgroup = is_germanium_casting,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanium/germanium-molten.png",
+        icon = graphics_germanium .. germanium_molten .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("GeGeGe"),
         flow_color = TIMSABA.functions.flow_color("GeGeGe")

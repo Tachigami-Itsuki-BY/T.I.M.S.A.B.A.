@@ -78,22 +78,22 @@ if mods[bellicos_aegis_mods] then
     }
     data_recipe[pulsar_science_pack].results = {{type = item, name = pulsar_science_pack, amount = 8}}
 
-    if not mods[vesta_mods] then
-        data_fluid[helium_mods].subgroup = is_bellicos_recipe
-        data_fluid[helium_mods].order = g
-        TIMSABA.barreling.add_gas(helium_mods)
+    if not data_fluid[helium_vesta] then
+        data_fluid[helium].subgroup = is_bellicos_recipe
+        data_fluid[helium].order = g
+        TIMSABA.barreling.add_gas(helium)
     end
-    data_recipe[helium_mods].subgroup = is_bellicos_recipe
-    data_recipe[helium_mods].icons = THREE_IS(helium_3_gas, helium_4_gas, He_icon)
-    data_recipe[helium_mods].order = g
-    data_recipe[helium_mods].energy_required = 32 -- 20% He-3(g) + 80% He-4(g) --> 100% He(g)
-    data_recipe[helium_mods].ingredients =
+    data_recipe[helium].subgroup = is_bellicos_recipe
+    data_recipe[helium].icons = THREE_IS(helium_3_gas, helium_4_gas, He_icon)
+    data_recipe[helium].order = g
+    data_recipe[helium].energy_required = 32 -- 20% He-3(g) + 80% He-4(g) --> 100% He(g)
+    data_recipe[helium].ingredients =
     {
         {type = fluid, name = helium_3_gas, amount = 30},
         {type = fluid, name = helium_4_gas, amount = 120}
     }
-    data_recipe[helium_mods].results = {{type = fluid, name = helium_mods, amount = 120}}
-    data_recipe[helium_mods].main_product = helium_mods
+    data_recipe[helium].results = {{type = fluid, name = helium, amount = 120}}
+    data_recipe[helium].main_product = helium
 
     local helium_electronic_circuit = "helium-circuits"
     data_recipe[helium_electronic_circuit].localised_name = {"item-name." .. electronic_circuit}
@@ -106,7 +106,7 @@ if mods[bellicos_aegis_mods] then
     data_recipe[helium_electronic_circuit].results =
     {
         {type = item, name = electronic_circuit, amount = 4},
-        {type = fluid, name = helium_mods, amount = (15/2), ignored_by_productivity = (15/2)} -- 15
+        {type = fluid, name = helium, amount = (15/2), ignored_by_productivity = (15/2)} -- 15
     }
 
     local helium_advanced_circuit = "helium-advanced-circuits"
@@ -120,7 +120,7 @@ if mods[bellicos_aegis_mods] then
     data_recipe[helium_advanced_circuit].results =
     {
         {type = item, name = advanced_circuit, amount = 4},
-        {type = fluid, name = helium_mods, amount = 15, ignored_by_productivity = 15} -- 30
+        {type = fluid, name = helium, amount = 15, ignored_by_productivity = 15} -- 30
     }
 
     local helium_processing_unit = "helium-processing-unit"
@@ -134,7 +134,7 @@ if mods[bellicos_aegis_mods] then
     data_recipe[helium_processing_unit].results =
     {
         {type = item, name = processing_unit, amount = 4},
-        {type = fluid, name = helium_mods, amount = 30, ignored_by_productivity = 30} -- 60
+        {type = fluid, name = helium, amount = 30, ignored_by_productivity = 30} -- 60
     }
 
     local helium_quantum_processor = "quantum-processor-helium"
@@ -156,7 +156,7 @@ if mods[bellicos_aegis_mods] then
     data_recipe[helium_quantum_processor].results =
     {
         {type = item, name = quantum_processor, amount = 4},
-        {type = fluid, name = helium_mods, amount = 120, ignored_by_productivity = 120} -- 240
+        {type = fluid, name = helium, amount = 120, ignored_by_productivity = 120} -- 240
     }
 
     -- LOGISTICS
@@ -358,7 +358,7 @@ if mods[bellicos_aegis_mods] then
     {
         {type = unlock_recipe, recipe = helium_3_gas},
         {type = unlock_recipe, recipe = helium_4_gas},
-        {type = unlock_recipe, recipe = helium_mods},
+        {type = unlock_recipe, recipe = helium},
         {type = unlock_recipe, recipe = helium_liquid}
     }
     data_technology[tech_helium_production].unit.ingredients =
@@ -374,7 +374,7 @@ if mods[bellicos_aegis_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    local tech_circuit_productivity_helium = "circuit" .. _productivity .. "-" .. helium_mods
+    local tech_circuit_productivity_helium = "circuit" .. _productivity .. "-" .. helium
     data_technology[tech_circuit_productivity_helium].effects =
     {
         {type = unlock_recipe, recipe = helium_electronic_circuit},
@@ -395,7 +395,7 @@ if mods[bellicos_aegis_mods] then
         {electromagnetic_science_pack, 1}
     }
 
-    data_technology[quantum_processor .. "-" .. helium_mods].unit.ingredients =
+    data_technology[quantum_processor .. "-" .. helium].unit.ingredients =
     {
         {automation_science_pack, 1},
         {logistic_science_pack, 1},

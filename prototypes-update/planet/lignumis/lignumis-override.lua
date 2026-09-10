@@ -79,6 +79,7 @@ if mods[lignumis_mods] then
     data_fluid[wood_pulp].order = k
     TIMSABA.barreling.add_simple_fluid(wood_pulp)
 
+    data_recipe[wood_liquefaction].category = chemistry
     data_recipe[wood_liquefaction].subgroup = is_lignumis_recipe
     data_recipe[wood_liquefaction].icons = TWO_I(wood, wood_pulp)
     data_recipe[wood_liquefaction].order = k_a
@@ -86,6 +87,7 @@ if mods[lignumis_mods] then
     data_recipe[wood_liquefaction].results[1].amount = (15/2)
 
     local wood_liquefaction_steam = wood_liquefaction .. "-" .. steam
+    data_recipe[wood_liquefaction_steam].category = chemistry
     data_recipe[wood_liquefaction_steam].subgroup = is_lignumis_recipe
     data_recipe[wood_liquefaction_steam].icons = TWO_D_I(wood, steam, wood_pulp)
     data_recipe[wood_liquefaction_steam].order = k_b
@@ -619,6 +621,7 @@ if mods[lignumis_mods] then
     data_item[basic_radar].order = e
     data_item[basic_radar].stack_size = 32
     data_item[basic_radar].weight = 31250
+    data_recipe[basic_radar].category = crafting
     data_recipe[basic_radar].subgroup = is_lignumis_war
     data_recipe[basic_radar].order = e
     data_recipe[basic_radar].energy_required = 8

@@ -1,8 +1,13 @@
+local graphics_phosphorus = "__TIMSABA__/graphics/icons/angels/petrochem/phosphorus/"
+local graphics_silicon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/"
+
 -- GROUPS
 is_phosphorus = "is-phosphorus"
-TIMSABA.functions.create_subgroups(ig_smelting,
+is_phosphorus_fluid = "is-phosphorus-fluid"
+TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
 {
-    {name = is_phosphorus, order = w}
+    {name = is_phosphorus, order = w}, -- l
+    {name = is_phosphorus_fluid, order = w_a} -- l_a
 })
 
 -- ITEM
@@ -17,12 +22,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ca[font=default-tiny-bold]5[/font](PO[font=default-tiny-bold]4[/font])[font=default-tiny-bold]3[/font]F"} or nil,
         name = fluorapatite,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite.png",
+        icon = graphics_phosphorus .. fluorapatite .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/fluorapatite-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_phosphorus .. fluorapatite .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_phosphorus .. fluorapatite .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_phosphorus .. fluorapatite .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -30,29 +35,29 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "P[font=default-tiny-bold]4[/font]"} or nil,
         name = white_phosphorus,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/white-phosphorus.png",
-        order = c
+        icon = graphics_phosphorus .. white_phosphorus .. ".png",
+        order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "PCl[font=default-tiny-bold]5[/font]"} or nil,
         name = phosphorus_chloride_V,
         subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-chloride-V.png",
-        order = e
+        icon = graphics_phosphorus .. phosphorus_chloride_V .. ".png",
+        order = c
     },
     -- SILICON
     {
         localised_description = show_formula and {chemical_formula, "CaSiO[font=default-tiny-bold]3[/font]"} or nil,
         name = calcium_silicate,
         subgroup = is_silicon_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/calcium-silicate.png",
+        icon = graphics_silicon .. calcium_silicate .. ".png",
         order = i
     },
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]SiO[font=default-tiny-bold]3[/font]"} or nil,
         name = metasilicic_acid,
         subgroup = is_silicon_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/silicon/metasilicic-acid.png",
+        icon = graphics_silicon .. metasilicic_acid .. ".png",
         order = j
     }
 })
@@ -67,36 +72,36 @@ TIMSABA.functions.create_fluids
     {
         localised_description = show_formula and {chemical_formula, "P[font=default-tiny-bold]4[/font]"} or nil,
         name = white_phosphorus_gas,
-        subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/white-phosphorus-gas.png",
-        order = b,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. white_phosphorus_gas .. ".png",
+        order = a,
         base_color = TIMSABA.functions.fluid_color("PPP"),
         flow_color = TIMSABA.functions.flow_color("PPP")
     },
     {
         localised_description = show_formula and {chemical_formula, "PCl[font=default-tiny-bold]3[/font]"} or nil,
         name = phosphorus_chloride_III_liquid,
-        subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-chloride-III-liquid.png",
-        order = d,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. phosphorus_chloride_III_liquid .. ".png",
+        order = b,
         base_color = TIMSABA.functions.fluid_color("PCl3"),
         flow_color = TIMSABA.functions.flow_color("PCl3")
     },
     {
         localised_description = show_formula and {chemical_formula, "PF[font=default-tiny-bold]5[/font]"} or nil,
         name = phosphorus_fluoride_V_gas,
-        subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/phosphorus-fluoride-V-gas.png",
-        order = f,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. phosphorus_fluoride_V_gas .. ".png",
+        order = c,
         base_color = TIMSABA.functions.fluid_color("PF5"),
         flow_color = TIMSABA.functions.flow_color("PF5")
     },
     {
         localised_description = show_formula and {chemical_formula, "HPF[font=default-tiny-bold]6(aq)[/font]"} or nil,
         name = hexafluorophosphoric_acid,
-        subgroup = is_phosphorus,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/phosphorus/hexafluorophosphoric-acid-solution.png",
-        order = g,
+        subgroup = is_phosphorus_fluid,
+        icon = graphics_phosphorus .. hexafluorophosphoric_acid .. ".png",
+        order = d,
         base_color = angelsmods.functions.fluid_color("HPF6Wp"),
         flow_color = angelsmods.functions.flow_color("HPF6Wp")
     }
@@ -131,9 +136,9 @@ TIMSABA.functions.create_recipes
     {
         name = white_phosphorus_gas,
         category = chemistry,
-        subgroup = is_phosphorus,
+        subgroup = is_phosphorus_fluid,
         icons = FOUR_THREE_R_I(fluorapatite, sand_angels, coke_angels, white_phosphorus_gas, slag_angels, calcium_silicate, carbon_dioxide_angels),
-        order = b,
+        order = a,
         energy_required = 16, -- 4Ca₅(PO₄)₃F(ore) + 18SiO₂(sand) + 30C(coke) --> 3P₄(g) + 18CaSiO₃(s) + 2CaF₂(s) + 30CO(g)
         ingredients =
         {
@@ -155,7 +160,7 @@ TIMSABA.functions.create_recipes
         category = chemistry,
         subgroup = is_phosphorus,
         icons = TWO_I(white_phosphorus_gas, white_phosphorus),
-        order = c,
+        order = b,
         -- P₄(g) -H₂O-> P₄(s)
         ingredients =
         {
@@ -172,10 +177,10 @@ TIMSABA.functions.create_recipes
     {
         name = phosphorus_chloride_III_liquid,
         category = chemistry,
-        subgroup = is_phosphorus,
+        subgroup = is_phosphorus_fluid,
         icons = THREE_I(white_phosphorus, chlorine_angels, phosphorus_chloride_III_liquid),
-        order = d,
-        -- P₄ + 6Cl₂ --> 4PCl₃
+        order = b,
+        -- P₄(s) + 6Cl₂(g) --> 4PCl₃(l)
         ingredients =
         {
             {type = item, name = white_phosphorus, amount = 1},
@@ -189,8 +194,8 @@ TIMSABA.functions.create_recipes
         category = chemistry,
         subgroup = is_phosphorus,
         icons = THREE_I(phosphorus_chloride_III_liquid, chlorine_angels, phosphorus_chloride_V),
-        order = e,
-        -- PCl₃ + Cl₂ --> PCl₅
+        order = c,
+        -- PCl₃(l) + Cl₂(g) --> PCl₅(s)
         ingredients =
         {
             {type = fluid, name = phosphorus_chloride_III_liquid, amount = 60},
@@ -202,10 +207,10 @@ TIMSABA.functions.create_recipes
     {
         name = phosphorus_fluoride_V_gas,
         category = chemistry,
-        subgroup = is_phosphorus,
+        subgroup = is_phosphorus_fluid,
         icons = TWO_D_I(phosphorus_chloride_V, hydrogen_fluoride_angels, phosphorus_fluoride_V_gas, hydrogen_chloride_angels),
-        order = f,
-        -- PCl₅ + 5HF --> PF₅ + 5HCl
+        order = c,
+        -- PCl₅(s) + 5HF(g) --> PF(g)₅ + 5HCl(g)
         ingredients =
         {
             {type = item, name = phosphorus_chloride_V, amount = 4},
@@ -223,7 +228,7 @@ TIMSABA.functions.create_recipes
         category = chemistry,
         subgroup = is_phosphorus,
         icons = THREE_I(phosphorus_fluoride_V_gas, hydrofluoric_acid_angels, hexafluorophosphoric_acid),
-        order = g,
+        order = d,
         -- PF₅(g) + HF(aq) --> HPF₆(aq)
         ingredients =
         {

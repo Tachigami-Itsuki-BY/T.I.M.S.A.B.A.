@@ -1,3 +1,5 @@
+local graphics_molybdenite = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/"
+
 -- Molybdenite ore / Mo + Re + Ag + Au + W + Se
 molybdenite_ore = "molybdenite-ore"
 molybdenite_crushed = "molybdenite-crushed"
@@ -9,40 +11,40 @@ TIMSABA.functions.create_items
     {
         name = molybdenite_ore,
         subgroup = is_ores,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore.png",
+        icon = graphics_molybdenite .. molybdenite_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_molybdenite .. molybdenite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_molybdenite .. molybdenite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_molybdenite .. molybdenite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = g
     },
     {
         name = molybdenite_crushed,
         subgroup = is_ore_processing_a,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-crushed.png",
+        icon = graphics_molybdenite .. molybdenite_crushed .. ".png",
         icon_size = 32,
         order = g
     },
     {
         name = molybdenite_chunks,
         subgroup = is_ore_processing_b,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-chunks.png",
+        icon = graphics_molybdenite .. molybdenite_chunks .. ".png",
         icon_size = 32,
         order = g
     },
     {
         name = molybdenite_crystals,
         subgroup = is_ore_processing_c,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-crystals.png",
+        icon = graphics_molybdenite .. molybdenite_crystals .. ".png",
         icon_size = 32,
         order = g
     },
     {
         name = molybdenite_purified,
         subgroup = is_ore_processing_d,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/molybdenite-purified.png",
+        icon = graphics_molybdenite .. molybdenite_purified .. ".png",
         icon_size = 32,
         order = g
     }
@@ -51,6 +53,7 @@ TIMSABA.functions.create_items
 -- FLUID
 
 
+-- RECIPE
 molybdenite_crushed_sorting = "molybdenite-crushed-sorting"
 molybdenite_chunks_sorting = "molybdenite-chunks-sorting"
 molybdenite_crystals_sorting = "molybdenite-crystals-sorting"
@@ -202,121 +205,27 @@ TIMSABA.functions.create_recipes
 })
 
 -- ORE
-local molybdenite_particle = table.deepcopy(data.raw["optimized-particle"]["iron-ore-particle"])
-molybdenite_particle.name = "molybdenite-ore-particle"
-for _, picture in pairs(molybdenite_particle.pictures) do
+local molybdenite_ore_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
+molybdenite_ore_particle.name = molybdenite_ore .. _particle
+for _, picture in pairs(molybdenite_ore_particle.pictures) do
     picture.tint = {r = 110/256, g = 200/256, b = 175/256, a = 1.000}
 end
-data:extend({molybdenite_particle})
-
-local resource_autoplace = require("resource-autoplace")
-local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
-local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
-local function resource(resource_parameters, autoplace_parameters)
-    return
-    {
-        localised_description = resource_parameters.localised_description,
-        factoriopedia_description = resource_parameters.factoriopedia_description,
-        type = "resource",
-        name = resource_parameters.name,
-        subgroup = resource_parameters.subgroup,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/" .. resource_parameters.name .. ".png",
-        order = resource_parameters.order,
-        category = resource_parameters.category,
-        minable = resource_parameters.minable or
-        {
-            mining_particle = resource_parameters.name .. "-particle",
-            mining_time = resource_parameters.mining_time,
-            result = resource_parameters.name
-        },
-        flags = {"placeable-neutral"},
-        tree_removal_probability = 0.8,
-        tree_removal_max_distance = 32 * 32,
-        walking_sound = resource_parameters.walking_sound,
-        collision_mask = resource_parameters.collision_mask,
-        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
-        autoplace = autoplace_parameters.probability_expression ~= nil and
-        {
-            order = resource_parameters.order,
-            probability_expression = autoplace_parameters.probability_expression,
-            richness_expression = autoplace_parameters.richness_expression
-        }
-            or resource_autoplace.resource_autoplace_settings
-        {
-            name = resource_parameters.name,
-            order = resource_parameters.order,
-            autoplace_control_name = resource_parameters.autoplace_control_name,
-            base_density = autoplace_parameters.base_density,
-            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
-            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
-            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
-            candidate_spot_count = autoplace_parameters.candidate_spot_count,
-            tile_restriction = autoplace_parameters.tile_restriction
-        },
-        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
-        stages =
-        {
-            sheet =
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/molybdenite/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-                priority = extra_high,
-                size = 128,
-                frame_count = 8,
-                variation_count = 8,
-                scale = 0.5
-            }
-        },
-        map_color = resource_parameters.map_color,
-        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
-        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
-    }
-end
+data:extend({molybdenite_ore_particle})
 
 data:extend
 ({
-    {
-        localised_name = {"", "[entity=molybdenite-ore] ", {"entity-name.molybdenite"}},
-        type = "autoplace-control",
-        name = molybdenite_ore,
-        order = molybdenite_ore,
-        category = "resource",
-        richness = true,
-        can_be_disabled = true
-    }
-})
-
-data:extend
-({
-    resource(
-        {
-            localised_description = {"entity-description.molybdenite-ore"},
-            factoriopedia_description = "",
-            name = molybdenite_ore,
-            subgroup = is_ores,
-            order = g,
-            mining_time = 4,
-            walking_sound = base_tile_sounds.walking.ore,
-            map_color = {r = 45/255, g = 110/255, b = 95/255, a = 1.000},
-            mining_visualisation_tint = {r = 100/255, g = 210/255, b = 180/255, a = 1.000},
-            autoplace_control_name = molybdenite_ore,
-        },
-        {
-            base_density = 8,
-            base_spots_per_km2 = 1.25,
-            candidate_spot_count = 22,
-            random_probability_multiplier = 0.8
-        }
+    TIMSABA.functions.create_resource(
+        {name = molybdenite_ore, subgroup = is_ores, order = g, map_color = {r = 45/255, g = 110/255, b = 95/255, a = 1.000}, mining_visualisation_tint = {r = 100/255, g = 210/255, b = 180/255, a = 1.000}},
+        {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })
 
-if data_planet[planet_nauvis] then
-    data_planet[planet_nauvis].map_gen_settings.autoplace_controls[molybdenite_ore] = {}
-    if not data_planet[planet_nauvis].map_gen_settings then
-        data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
-    end
-    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[molybdenite_ore] = {}
+TIMSABA.functions.create_autoplace_control(molybdenite_ore)
+
+data_planet[planet_nauvis].map_gen_settings.autoplace_controls[molybdenite_ore] = {}
+if not data_planet[planet_nauvis].map_gen_settings then
+    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
 end
+data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[molybdenite_ore] = {}
 
 data_resource[molybdenite_ore].location = planet_nauvis

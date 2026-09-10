@@ -631,7 +631,7 @@ if feature_flags["freezing"] then
     data_pipe[nitinol_pipe].heating_energy = 1 .. kW
     data_pipe_to_ground[stone_pipe_to_ground].heating_energy = 100 .. kW
     data_pipe_to_ground[nitinol_pipe_to_ground].heating_energy = 300 .. kW
-    if mods[space_age] then
+    if mods["space-age"] then
         local function frozenpatch()
             local result = util.table.deepcopy(data_pipe_to_ground[iron_pipe_to_ground].frozen_patch)
             return result

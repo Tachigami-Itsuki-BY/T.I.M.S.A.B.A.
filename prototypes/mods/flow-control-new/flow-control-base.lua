@@ -14,81 +14,6 @@ if settings.startup[setting_flow_control_new].value then
     _elbow = "-elbow"
     _junction = "-junction"
 
-    -- (НЕ РАБОТАЕТ ТАК КАК ЗАДУМЫВАЛОСЬ)
-    --[[local function create_pipe_icons(parameters)
-        local icons = {}
-
-        if string.match(parameters.name, "-straight$") then
-            icons =
-            {
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-straight-vertical.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {0, 0}
-                },
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-cover-south.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {0, 24}
-                }
-            }
-        elseif string.match(parameters.name, "-elbow$") then
-            icons =
-            {
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-corner-down-right.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {0, 0}
-                },
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-cover-south.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {0, 24}
-                },
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-cover-east.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {24, 0}
-                }
-            }
-        elseif string.match(parameters.name, "-junction$") then
-            icons =
-            {
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-t-down.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {0, 0}
-                },
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-cover-south.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {0, 24}
-                },
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-cover-east.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {24, 0}
-                },
-                {
-                    icon = "__TIMSABA__/graphics/entity/pipes/" .. parameters.type .. "/pipe/pipe-cover-west.png",
-                    icon_size = 128,
-                    scale = 0.375,
-                    shift = {-24, 0}
-                }
-            }
-        end
-
-        return icons
-    end]]
-
     -- ITEMS
     local item_sounds = require("__base__.prototypes.item_sounds")
 
@@ -98,7 +23,6 @@ if settings.startup[setting_flow_control_new].value then
 
         item.name = full_name
         item.subgroup = settings.subgroup
-        --item.icons = create_pipe_icons({name = parameters.name, type = parameters.type})
         item.icon = "__TIMSABA__/graphics/icons/flow-control/" .. full_name .. ".png"
         item.icon_size = 64
         item.order = settings.order

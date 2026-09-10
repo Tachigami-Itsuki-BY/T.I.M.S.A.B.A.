@@ -104,6 +104,7 @@ data_proxy_container = data.raw["proxy-container"]
 data_loader_1x1 = data.raw["loader-1x1"]
 data_stream = data.raw["stream"]
 data_turret = data.raw["turret"]
+data_optimized_particle = data.raw["optimized-particle"]
 
 -- GLOBAL NAME
 item = "item"
@@ -156,6 +157,8 @@ unit = "unit"
 repair_tool = "repair-tool"
 valve = "valve"
 thruster = "thruster"
+resource = "resource"
+autoplace_control = "autoplace-control"
 
 projectile = "projectile"
 corpse = "corpse"
@@ -380,6 +383,7 @@ _processing = "-processing"
 _productivity = "-productivity"
 _infinite = "-infinite"
 _remnants = "-remnants"
+_particle = "-particle"
 
 -- MODS
 _ground_digger = "-ground-digger"

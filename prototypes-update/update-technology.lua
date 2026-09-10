@@ -873,7 +873,7 @@ data_technology[tech_manganese_smelting_3].effects =
 }
 
 -- SILICON
-data_technology[tech_silicon_smelting_1].prerequisites = {tech_powder_metallurgy_2, tech_nitrogen_processing_1, tech_ore_floatation}
+data_technology[tech_silicon_smelting_1].prerequisites = {tech_powder_metallurgy_2, tech_ore_floatation, tech_nitrogen_processing_1}
 data_technology[tech_silicon_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = silicon_oxide_IV},
@@ -908,9 +908,9 @@ data_technology[tech_silicon_smelting_3].effects =
 }
 
 -- NICKEL
-data_technology[tech_nickel_smelting_1].prerequisites = {tech_metallurgy_2}
+data_technology[tech_nickel_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation}
 
-data_technology[tech_nickel_smelting_2].prerequisites = {tech_powder_metallurgy_3, tech_ore_processing_2, tech_nickel_smelting_1, tech_boron_processing, tech_sulfur_processing_1}
+data_technology[tech_nickel_smelting_2].prerequisites = {tech_ore_processing_2, tech_nickel_smelting_1, tech_powder_metallurgy_3, tech_boron_processing, tech_sulfur_processing_1}
 nickel_ingot_2 = "angels-ingot-nickel-2"
 data_technology[tech_nickel_smelting_2].effects =
 {
@@ -932,8 +932,7 @@ data_technology[tech_nickel_smelting_3].effects =
 }
 
 -- ALUMINIUM
-data_technology[tech_aluminium_smelting_1].prerequisites = {tech_ore_floatation, tech_chlorine_processing_1}
-
+data_technology[tech_aluminium_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_chlorine_processing_1}
 aluminium_plate_angels = "angels-plate-aluminium"
 data_technology[tech_aluminium_smelting_1].effects =
 {
@@ -959,7 +958,7 @@ data_technology[tech_aluminium_smelting_2].effects =
 }
 
 -- ZINC
-data_technology[tech_zinc_smelting_1].prerequisites = {tech_ore_floatation, tech_metallurgy_2, tech_chlorine_processing_1}
+data_technology[tech_zinc_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation, tech_chlorine_processing_1}
 zinc_plate_angels = "angels-plate-zinc"
 data_technology[tech_zinc_smelting_1].effects =
 {
@@ -995,7 +994,7 @@ data_technology[tech_zinc_smelting_3].effects =
 }
 
 -- SILVER
-data_technology[tech_silver_smelting_1].prerequisites = {tech_ore_floatation, tech_metallurgy_2}
+data_technology[tech_silver_smelting_1].prerequisites = {tech_metallurgy_2, tech_ore_floatation}
 
 data_technology[tech_silver_smelting_2].prerequisites = {tech_ore_processing_2, tech_silver_smelting_1, tech_powder_metallurgy_3, tech_nitrogen_processing_2}
 
@@ -1037,6 +1036,7 @@ data_technology[tech_gold_smelting_3].effects =
 }
 
 -- COBALT
+data_technology[tech_cobalt_smelting_1].prerequisites = {tech_metallurgy_3, tech_ore_leaching}
 data_technology[tech_cobalt_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = cobalt_ingot},
@@ -1056,6 +1056,7 @@ data_technology[tech_cobalt_smelting_3].effects =
 
 -- CHROMIUM
 data_technology[tech_chromium_smelting_1].localised_name = {"technology-name.chromium-smelting-1"}
+data_technology[tech_chromium_smelting_1].prerequisites = {tech_metallurgy_4, tech_ore_electro_whinning_cell}
 data_technology[tech_chromium_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = chromium_oxide_VI},
@@ -1076,7 +1077,7 @@ data_technology[tech_chromium_smelting_2].effects =
 }
 
 data_technology[tech_chromium_smelting_3].localised_name = {"technology-name.chromium-smelting-3"}
-data_technology[tech_chromium_smelting_3].prerequisites = {tech_ore_processing_5, tech_chromium_smelting_2, tech_aluminium_smelting_3, tech_potassium_processing}
+data_technology[tech_chromium_smelting_3].prerequisites = {tech_ore_processing_5, tech_chromium_smelting_2}
 chromium_ingot_3 = "angels-ingot-chrome-3"
 data_technology[tech_chromium_smelting_3].effects =
 {
@@ -1096,7 +1097,7 @@ data_technology[tech_chromium_smelting_3].effects =
 
 -- TUNGSTEN
 tungsten_plate_angels = "angels-plate-tungsten"
-table.insert(data_technology[tech_tungsten_smelting_1].prerequisites, tech_powellite_processing_2)
+data_technology[tech_tungsten_smelting_1].prerequisites = {tech_powder_metallurgy_4, tech_powellite_processing_2, tech_ore_refining}
 data_technology[tech_tungsten_smelting_1].effects =
 {
     {type = unlock_recipe, recipe = tungsten_oxide_VI},
@@ -1109,7 +1110,7 @@ data_technology[tech_tungsten_smelting_1].effects =
 }
 
 tungsten_oxide_VI_2 = "angels-solid-tungsten-oxide-2"
-data_technology[tech_tungsten_smelting_2].prerequisites = {tech_ore_processing_4, tech_powder_metallurgy_5}
+data_technology[tech_tungsten_smelting_2].prerequisites = {tech_metallurgy_5, tech_ore_processing_4}
 data_technology[tech_tungsten_smelting_2].effects =
 {
     {type = unlock_recipe, recipe = tungsten_processed},

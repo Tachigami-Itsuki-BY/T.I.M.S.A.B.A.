@@ -1,10 +1,12 @@
+local graphics_molybdenum = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/"
+
 -- GROUPS
 is_molybdenum = "is-molybdenum"
 local is_molybdenum_chemistry = "is-molybdenum-chemistry"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
-    {name = is_molybdenum,           order = r},
-    {name = is_molybdenum_chemistry, order = r_a}
+    {name = is_molybdenum,           order = r}, -- 
+    {name = is_molybdenum_chemistry, order = r_a} -- 
 })
 
 -- ITEM
@@ -21,12 +23,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
         name = molybdenum_ore,
         subgroup = is_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore.png",
+        icon = graphics_molybdenum .. molybdenum_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_molybdenum .. molybdenum_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_molybdenum .. molybdenum_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_molybdenum .. molybdenum_ore .. ".png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -34,21 +36,21 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
         name = molybdenum_processed,
         subgroup = is_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-processed.png",
+        icon = graphics_molybdenum .. molybdenum_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
         name = molybdenum_pellet,
         subgroup = is_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-pellet.png",
+        icon = graphics_molybdenum .. molybdenum_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
         name = molybdenum_powder,
         subgroup = is_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-powder.png",
+        icon = graphics_molybdenum .. molybdenum_powder .. ".png",
         order = d
     },
     -- CHEMISTRY
@@ -56,21 +58,21 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "MoO[font=default-tiny-bold]3[/font]"} or nil,
         name = molybdenum_oxide_VI,
         subgroup = is_molybdenum_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-oxide-VI.png",
+        icon = graphics_molybdenum .. molybdenum_oxide_VI .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]MoO[font=default-tiny-bold]4[/font]"} or nil,
         name = potassium_molybdate,
         subgroup = is_molybdenum_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/potassium-molybdate.png",
+        icon = graphics_molybdenum .. potassium_molybdate .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "H[font=default-tiny-bold]2[/font]MoO[font=default-tiny-bold]4[/font]"} or nil,
         name = molybdic_acid,
         subgroup = is_molybdenum_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdic-acid.png",
+        icon = graphics_molybdenum .. molybdic_acid .. ".png",
         order = d
     }
 })
@@ -84,7 +86,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "MoCl[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = molybdenum_chloride_III_solution,
         subgroup = is_molybdenum_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-chloride-III-solution.png",
+        icon = graphics_molybdenum .. molybdenum_chloride_III_solution .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("MoF6"),
         flow_color = TIMSABA.functions.flow_color("MoF6")
@@ -93,7 +95,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "MoF[font=default-tiny-bold]6[/font]"} or nil,
         name = molybdenum_fluoride_IV,
         subgroup = is_molybdenum_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-fluoride-IV-liquid.png",
+        icon = graphics_molybdenum .. molybdenum_fluoride_IV .. ".png",
         order = e,
         base_color = TIMSABA.functions.fluid_color("MoF6"),
         flow_color = TIMSABA.functions.flow_color("MoF6")

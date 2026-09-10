@@ -137,6 +137,8 @@ is_sulfur_fluids = "angels-petrochem-sulfur-fluids"
 is_chlorine_fluids = "angels-petrochem-chlorine-fluids"
 is_calcium = "is-calcium"
 is_calcium_fluid = "is-calcium-fluid"
+is_lithium = "is-lithium"
+is_lithium_fluid = "is-lithium-fluid"
 is_others = "is-others"
 is_others_fluid = "is-others-fluid"
 is_natural_gas = "is-natural-gas"
@@ -168,18 +170,20 @@ TIMSABA.functions.create_subgroups(ig_petrochem_refining,
     {name = is_sodium_fluid,                      order = e_a},
     {name = is_calcium,                           order = h},
     {name = is_calcium_fluid,                     order = h_a},
-    {name = is_others,                            order = i},
-    {name = is_others_fluid,                      order = i_a},
-    {name = is_natural_gas,                       order = j},
-    {name = is_multi_phase_oil,                   order = k},
-    {name = is_synthesis_gas,                     order = l},
-    {name = is_methane,                           order = n},
-    {name = is_ethane,                            order = n_a},
-    {name = is_butane,                            order = n_b},
-    {name = is_plastic,                           order = o},
-    {name = is_resin,                             order = p},
-    {name = is_rubber,                            order = q},
-    {name = is_explosives,                        order = r},
+    {name = is_lithium,                           order = i},
+    {name = is_lithium_fluid,                     order = i_a},
+    {name = is_others,                            order = n},
+    {name = is_others_fluid,                      order = n_a},
+    {name = is_natural_gas,                       order = o},
+    {name = is_multi_phase_oil,                   order = p},
+    {name = is_synthesis_gas,                     order = q},
+    {name = is_methane,                           order = r_a},
+    {name = is_ethane,                            order = r_b},
+    {name = is_butane,                            order = r_c},
+    {name = is_plastic,                           order = s},
+    {name = is_resin,                             order = t},
+    {name = is_rubber,                            order = u},
+    {name = is_explosives,                        order = v},
     {name = is_buildings_air_filter,              order = z_a},
     {name = is_buildings_liquefier,               order = z_b},
     {name = is_buildings_advanced_chemical_plant, order = z_d},

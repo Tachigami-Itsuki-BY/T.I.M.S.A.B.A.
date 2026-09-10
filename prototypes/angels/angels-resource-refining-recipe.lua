@@ -1,4 +1,3 @@
--- ANGELS RESOURCE REFINING
 crushed_stone_sorting_1 = "crushed-stone-sorting-1"
 crushed_stone_sorting_2 = "crushed-stone-sorting-2"
 crushed_stone_sorting_3 = "crushed-stone-sorting-3"

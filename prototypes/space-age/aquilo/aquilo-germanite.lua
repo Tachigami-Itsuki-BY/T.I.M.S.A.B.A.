@@ -1,3 +1,5 @@
+local graphics_germanite = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/"
+
 -- Germanite Ore / Ge + Cu + Fe + Ga + V + As
 germanite_ore = "germanite-ore"
 germanite_crushed = "germanite-crushed"
@@ -10,12 +12,12 @@ TIMSABA.functions.create_items
         localised_description = {"item-description.germanite-ore"},
         name = germanite_ore,
         subgroup = is_germanite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-ore.png",
+        icon = graphics_germanite .. germanite_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_germanite .. germanite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanite .. germanite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_germanite .. germanite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -23,7 +25,7 @@ TIMSABA.functions.create_items
         localised_description = {"item-description.germanite-crushed"},
         name = germanite_crushed,
         subgroup = is_germanite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-crushed.png",
+        icon = graphics_germanite .. germanite_crushed .. ".png",
         icon_size = 32,
         order = b
     },
@@ -31,7 +33,7 @@ TIMSABA.functions.create_items
         localised_description = {"item-description.germanite-chunks"},
         name = germanite_chunks,
         subgroup = is_germanite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-chunks.png",
+        icon = graphics_germanite .. germanite_chunks .. ".png",
         icon_size = 32,
         order = c
     },
@@ -39,7 +41,7 @@ TIMSABA.functions.create_items
         localised_description = {"item-description.germanite-crystals"},
         name = germanite_crystals,
         subgroup = is_germanite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-crystals.png",
+        icon = graphics_germanite .. germanite_crystals .. ".png",
         icon_size = 32,
         order = d
     },
@@ -47,7 +49,7 @@ TIMSABA.functions.create_items
         localised_description = {"item-description.germanite-purified"},
         name = germanite_purified,
         subgroup = is_germanite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/germanite/germanite-purified.png",
+        icon = graphics_germanite .. germanite_purified .. ".png",
         icon_size = 32,
         order = e
     }

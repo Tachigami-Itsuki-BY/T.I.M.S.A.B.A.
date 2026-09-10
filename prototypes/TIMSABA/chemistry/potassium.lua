@@ -1,10 +1,12 @@
+local graphics_potassium = "__TIMSABA__/graphics/icons/angels/petrochem/potassium/"
+
 -- GROUPS
 is_potassium = "is-potassium"
 is_potassium_fluid = "is-potassium-fluid"
-TIMSABA.functions.create_subgroups(ig_smelting,
+TIMSABA.functions.create_subgroups(ig_smelting, -- ig_petrochem_refining
 {
-    {name = is_potassium,       order = v},
-    {name = is_potassium_fluid, order = v_a}
+    {name = is_potassium,       order = v}, -- k
+    {name = is_potassium_fluid, order = v_a} -- k_a
 })
 
 -- ITEM
@@ -19,12 +21,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "KCl*MgCl[font=default-tiny-bold]2[/font]*6H[font=default-tiny-bold]2[/font]O"} or nil,
         name = carnallite,
         subgroup = is_potassium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/carnallite.png",
+        icon = graphics_potassium .. carnallite .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/carnallite-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/carnallite-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/carnallite-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_potassium .. carnallite .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_potassium .. carnallite .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_potassium .. carnallite .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -32,14 +34,14 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "KCl"} or nil,
         name = potassium_chloride,
         subgroup = is_potassium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chloride.png",
+        icon = graphics_potassium .. potassium_chloride .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "KOH"} or nil,
         name = potassium_hydroxide,
         subgroup = is_potassium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-hydroxide.png",
+        icon = graphics_potassium .. potassium_hydroxide .. ".png",
         order = c
     },
     -- d potassium_hypochlorite
@@ -47,7 +49,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "KClO[font=default-tiny-bold]3[/font]"} or nil,
         name = potassium_chlorate,
         subgroup = is_potassium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chlorate.png",
+        icon = graphics_potassium .. potassium_chlorate .. ".png",
         order = e
     },
     -- f potassium_perchlorate
@@ -56,7 +58,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "K"} or nil,
         name = potassium,
         subgroup = is_potassium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium.png",
+        icon = graphics_potassium .. potassium .. ".png",
         order = z
     }
 })
@@ -73,7 +75,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "KCl[font=default-tiny-bold](aq)[/font]"} or nil,
         name = potassium_chloride_solution,
         subgroup = is_potassium_fluid,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chloride-solution.png",
+        icon = graphics_potassium .. potassium_chloride_solution .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("KClWp"),
         flow_color = TIMSABA.functions.flow_color("KClWp")
@@ -82,7 +84,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "KOH[font=default-tiny-bold](aq)[/font]"} or nil,
         name = potassium_hydroxide_solution,
         subgroup = is_potassium_fluid,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-hydroxide-solution.png",
+        icon = graphics_potassium .. potassium_hydroxide_solution .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("KOHWp"),
         flow_color = TIMSABA.functions.flow_color("KOHWp")
@@ -91,7 +93,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "KClO[font=default-tiny-bold](aq)[/font]"} or nil,
         name = potassium_hypochlorite_solution,
         subgroup = is_potassium_fluid,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-hypochlorite-solution.png",
+        icon = graphics_potassium .. potassium_hypochlorite_solution .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("KClOWp"),
         flow_color = TIMSABA.functions.flow_color("KClOWp")
@@ -100,7 +102,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "KClO[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = potassium_chlorate_solution,
         subgroup = is_potassium_fluid,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-chlorate-solution.png",
+        icon = graphics_potassium .. potassium_chlorate_solution .. ".png",
         order = e,
         base_color = angelsmods.functions.fluid_color("KClO3Wp"),
         flow_color = angelsmods.functions.flow_color("KClO3Wp")
@@ -110,7 +112,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "K[font=default-tiny-bold]2[/font]SO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = potassium_sulfate_solution,
         subgroup = is_potassium_fluid,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/potassium/potassium-sulfate-solution.png",
+        icon = graphics_potassium .. potassium_sulfate_solution .. ".png",
         order = g,
         base_color = TIMSABA.functions.fluid_color("K2SO4Wp"),
         flow_color = TIMSABA.functions.flow_color("K2SO4Wp")

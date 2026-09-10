@@ -1,11 +1,13 @@
+local graphics_rhenium = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/"
+
 -- GROUPS
 local smelting = "angels-smelting"
 local is_rhenium = "is-rhenium"
 local is_rhenium_chemistry = "is-rhenium-chemistry"
 TIMSABA.functions.create_subgroups(ig_smelting,
 {
-    {name = is_rhenium,           order = s},
-    {name = is_rhenium_chemistry, order = s_a}
+    {name = is_rhenium,           order = s}, -- 
+    {name = is_rhenium_chemistry, order = s_a} -- 
 })
 
 -- ITEM
@@ -24,12 +26,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_ore,
         subgroup = is_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-ore.png",
+        icon = graphics_rhenium .. rhenium_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_rhenium .. rhenium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_rhenium .. rhenium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_rhenium .. rhenium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -37,21 +39,21 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_processed,
         subgroup = is_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-processed.png",
+        icon = graphics_rhenium .. rhenium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_pellet,
         subgroup = is_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-pellet.png",
+        icon = graphics_rhenium .. rhenium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_powder,
         subgroup = is_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-powder.png",
+        icon = graphics_rhenium .. rhenium_powder .. ".png",
         order = e
     },
     -- CHEMISTRY
@@ -59,35 +61,35 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "ReO[font=default-tiny-bold]3[/font]"} or nil,
         name = rhenium_oxide_VI,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-oxide-VI.png",
+        icon = graphics_rhenium .. rhenium_oxide_VI .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "ReCl[font=default-tiny-bold]5[/font]"} or nil,
         name = rhenium_chloride_V,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-chloride-V.png",
+        icon = graphics_rhenium .. rhenium_chloride_V .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "ReO[font=default-tiny-bold]2[/font]"} or nil,
         name = rhenium_oxide_IV,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-oxide-IV.png",
+        icon = graphics_rhenium .. rhenium_oxide_IV .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "KReO[font=default-tiny-bold]4[/font]"} or nil,
         name = potassium_perrhenate,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/potassium-perrhenate.png",
+        icon = graphics_rhenium .. potassium_perrhenate .. ".png",
         order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]ReO[font=default-tiny-bold]4[/font]"} or nil,
         name = ammonium_perrhenate,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/ammonium-perrhenate.png",
+        icon = graphics_rhenium .. ammonium_perrhenate .. ".png",
         order = g
     }
     -- CASTING
@@ -102,7 +104,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "KReO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = potassium_perrhenate_solution,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/potassium-perrhenate-solution.png",
+        icon = graphics_rhenium .. potassium_perrhenate_solution .. ".png",
         order = d,
         base_color = angelsmods.functions.fluid_color("KReO4Wp"),
         flow_color = angelsmods.functions.flow_color("KReO4Wp")
@@ -111,7 +113,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "HReO[font=default-tiny-bold]4(aq)[/font]"} or nil,
         name = rhenium_acid,
         subgroup = is_rhenium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-acid-solution.png",
+        icon = graphics_rhenium .. rhenium_acid .. ".png",
         order = f,
         base_color = angelsmods.functions.fluid_color("HReO4Wp"),
         flow_color = angelsmods.functions.flow_color("HReO4Wp")

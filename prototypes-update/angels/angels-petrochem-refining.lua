@@ -1454,7 +1454,7 @@ data_recipe[naphtha_catalyst].results =
 }
 
 -- FUEL
-data_item_subgroup["angels-petrochem-fuel"].order = m
+data_item_subgroup["angels-petrochem-fuel"].order = r
 
 data_item[solid_fuel].order = a
 data_item[solid_fuel].stack_size = 200
@@ -1779,7 +1779,7 @@ data_recipe[cumene_process].results[2].amount = 60
 data_recipe[cumene_process].main_product = phenol
 
 -- CARBON FLUIDS 2
-data_item_subgroup[is_carbon_fluids_2].order = n
+data_item_subgroup[is_carbon_fluids_2].order = r_d
 
 -- PLASTIC
 data_fluid[liquid_plastic_angels].subgroup = is_plastic

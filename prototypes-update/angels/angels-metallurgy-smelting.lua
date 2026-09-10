@@ -1477,6 +1477,12 @@ data_recipe[cobalt_hydroxide_II].results =
 }
 data_recipe[cobalt_hydroxide_II].main_product = cobalt_hydroxide_II
 
+-- URANIUM
+
+
+-- THORIUM
+
+
 -- CHROMIUM
 data_item_subgroup["angels-chrome"].order = o
 

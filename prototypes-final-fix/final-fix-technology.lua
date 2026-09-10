@@ -10,12 +10,10 @@ for _, tech in pairs(data_technology) do
             unit.time = math.pow(2, exp_time)
         end
 
-        -- Округляем обычную стоимость (пакеты)
         if unit.count and type(unit.count) == "number" and unit.count > 0 then
             local exp_count = math.floor(math.log(unit.count) / math.log(2) + 0.5)
             unit.count = math.pow(2, exp_count)
 
-            -- ОДНОВРЕМЕННО ЗАПОМИНАЕМ БАЗУ ДЛЯ ТЕХНОЛОГИЙ 1-ГО УРОВНЯ
             local base_name, level_str = tech.name:match("^(.-)[-_%s]?(%d+)$")
             local level = level_str and tonumber(level_str) or 1
             if not level_str then base_name = tech.name end
@@ -25,14 +23,11 @@ for _, tech in pairs(data_technology) do
             end
         end
 
-        -- ИСПРАВЛЕНО ДЛЯ 2.0+: Безопасный формат математической формулы, 
-        -- который C++ ядро игры гарантированно сможет скомпилировать без зацикливания
         if unit.count_formula then
-            unit.count_formula = "l*128" -- В Factorio 2.0+ используется строго маленькая буква "l"
+            unit.count_formula = "l*128"
         end
 
         if settings.startup[setting_infinite_research].value == false then
-            -- Ограничиваем максимальный уровень бесконечных технологий
             if tech.max_level == "infinite" or (type(tech.max_level) == "number" and tech.max_level > 30) then
                 tech.max_level = 30
             end
@@ -40,7 +35,6 @@ for _, tech in pairs(data_technology) do
     end
 end
 
--- ШАГ 2: Корректируем уровни со 2 по 6 (умножаем на номер уровня)
 for _, tech in pairs(data_technology) do
     local unit = tech.unit
     if unit and unit.count and type(unit.count) == "number" and unit.count > 0 then
@@ -50,12 +44,10 @@ for _, tech in pairs(data_technology) do
             local level = tonumber(level_str)
             if level and level >= 2 and level <= 6 then
 
-                -- Если технология началась сразу со 2+ уровня, её база уже округлена на Шаге 1
                 if not base_costs[base_name] then
                     base_costs[base_name] = unit.count
                 end
 
-                -- Применяем умножение стоимости на уровень
                 unit.count = base_costs[base_name] * level
             end
         end
@@ -174,7 +166,10 @@ end
 
 -- VESTA
 if mods[vesta_mods] then
-    data_technology[tech_algea_extracting].research_trigger.count = 1
+    if data_technology[tech_algea_extracting] then
+       data_technology[tech_algea_extracting].research_trigger.count = 1
+    end
+
     data_technology[tech_gas_manipulation_science_pack].research_trigger.count = 1
 
     TIMSABA.functions.auto_added_science_pack(gas_manipulation_science_pack, tech_gas_manipulation_science_pack)

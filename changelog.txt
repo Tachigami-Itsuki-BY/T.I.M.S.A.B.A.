@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.17.6
+Date: 10.09.2026
+  Bugfixes:
+    - [Vesta] Fixed bugs related to the Vesta mod.
+    - [Lignumis] Fixed a bug that prevented the Wood Pulp from being crafted.
+    - [Lignumis] Fixed a bug that prevented the Basic Radar from being crafted.
+    - [All] Minor bugs fixed.
+    - [Mods] Fixed a bug where the game with the mod would not load if the "Planet Muria" mod was enabled and the "Bob's Warfare" mod was disabled.
+
+  Balancing:
+    - [All] Decreased mining time for Molybdenite Ore: (400%) → (100%)
+
+  Graphics:
+    - [Mods] Updated icon for Potassium Fluoride.
+
+  Modding:
+    - [Mods] Replaced "Maraxsis Classic" mod by the "Maraxsis" mod.
+---------------------------------------------------------------------------------------------------
 Version: 1.17.5
 Date: 09.09.2026
   Bugfixes:
