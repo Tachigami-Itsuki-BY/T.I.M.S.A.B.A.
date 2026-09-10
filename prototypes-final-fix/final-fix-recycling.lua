@@ -24,7 +24,6 @@ local function get_item_localised_name(name)
         prototype = get_prototype("equipment", item.place_as_equipment_result)
         type_name = "equipment"
     elseif item.place_as_tile then
-        -- Tiles with variations don't have a localised name
         local tile_prototype = data_tile[item.place_as_tile.result]
         if tile_prototype and tile_prototype.localised_name then
             prototype = tile_prototype
@@ -44,7 +43,7 @@ local function generate_self_recycling_recipe(info)
                 localised_name = {"recipe-name.recycling", get_item_localised_name(info.name)},
                 type = recipe,
                 name = info.name .. _recycling,
-                category = recycling,
+                category = "recycling",
                 subgroup = data_item[info.name].subgroup,
                 icon = data_item[info.name].icon,
                 order = data_item[info.name].order,
