@@ -211,6 +211,7 @@ if mods[bellicos_aegis_mods] then
         }
     })
 
+    local graphics_vesta = "__TIMSABA__/graphics/icons/vesta/"
     -- HELIUM
     helium_3_gas = "helium-3-gas"
     helium_4_gas = "helium-4-gas"
@@ -221,7 +222,7 @@ if mods[bellicos_aegis_mods] then
             localised_description = show_formula and {chemical_formula, "He-3"} or nil,
             name = helium_3_gas,
             subgroup = is_bellicos_recipe,
-            icons = {{icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png", scale = 0.5, shift = {0,0}}, {icon = number_3, scale = 0.5, shift = {0,0}}},
+            icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_3, scale = 0.5, shift = {0,0}}},
             order = e,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")
@@ -230,7 +231,7 @@ if mods[bellicos_aegis_mods] then
             localised_description = show_formula and {chemical_formula, "He-4"} or nil,
             name = helium_4_gas,
             subgroup = is_bellicos_recipe,
-            icons = {{icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png", scale = 0.5, shift = {0,0}}, {icon = number_4, scale = 0.5, shift = {0,0}}},
+            icons = {{icon = graphics_vesta .. helium_vesta .. ".png", scale = 0.5, shift = {0,0}}, {icon = number_4, scale = 0.5, shift = {0,0}}},
             order = f,
             base_color = TIMSABA.functions.fluid_color("HeHeHe"),
             flow_color = TIMSABA.functions.flow_color("HeHeHe")

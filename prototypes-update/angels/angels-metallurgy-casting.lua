@@ -916,6 +916,12 @@ data_recipe[cobalt_molten_angels].energy_required = 8
 data_recipe[cobalt_molten_angels].ingredients[1].amount = 16
 data_recipe[cobalt_molten_angels].results[1].amount = 240
 
+-- URANIUM
+
+
+-- THORIUM
+
+
 -- CHROMIUM
 data_item_subgroup["angels-chrome-casting"].order = o
 

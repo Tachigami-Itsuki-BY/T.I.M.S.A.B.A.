@@ -1,4 +1,3 @@
--- ANGELS METALLURGY SMELTING
 -- IRON and STEEL
 iron_hydroxide_II_from_iron_sulfate_II_solution = "iron-hydroxide-II-from-iron-sulfate-II-solution"
 iron_oxide_III_from_iron_sulfate_II = "iron-oxide-III-from-iron-sulfate-II"

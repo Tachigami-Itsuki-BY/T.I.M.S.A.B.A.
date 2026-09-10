@@ -36,7 +36,6 @@ if mods["skewer_planet_vesta"] then
     data_bool_setting["ske_vesta_legacy_recipes"].default_value = false
 end
 
-
 -- MODS
 local data_double_setting = data.raw["double-setting"]
 if mods["Accumulator-V2"] then

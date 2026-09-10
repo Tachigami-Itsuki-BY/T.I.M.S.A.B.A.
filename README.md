@@ -318,15 +318,15 @@ local table_of_chemical_elements =
     --Fr = {{, , }, {, , }, {, , }}, -- Francium
     --Ra = {{, , }, {, , }, {, , }}, -- Radium
     --Ac = {{, , }, {, , }, {, , }}, -- Actinium
-    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.1?
+    --Th = {{, , }, {, , }, {, , }}, -- Thorium 2.0.0
     --Pa = {{, , }, {, , }, {, , }}, -- Protactinium
-    --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.1?
-    --Np = {{, , }, {, , }, {, , }}, -- Neptunium 2.1?
-    --Pu = {{, , }, {, , }, {, , }}, -- Plutonium 2.1?
-    --Am = {{, , }, {, , }, {, , }}, -- Americium 2.1?
-    --Cm = {{, , }, {, , }, {, , }}, -- Curium 2.1?
-    --Bk = {{, , }, {, , }, {, , }}, -- Berkelium 2.1?
-    --Cf = {{, , }, {, , }, {, , }}, -- Californium 2.1?
+    --U  = {{, , }, {, , }, {, , }}, -- Uranium 2.0.0
+    --Np = {{, , }, {, , }, {, , }}, -- Neptunium
+    --Pu = {{, , }, {, , }, {, , }}, -- Plutonium
+    --Am = {{, , }, {, , }, {, , }}, -- Americium
+    --Cm = {{, , }, {, , }, {, , }}, -- Curium
+    --Bk = {{, , }, {, , }, {, , }}, -- Berkelium
+    --Cf = {{, , }, {, , }, {, , }}, -- Californium
     --Es = {{, , }, {, , }, {, , }}, -- Einsteinium
     --Fm = {{, , }, {, , }, {, , }}, -- Fermium
     --Md = {{, , }, {, , }, {, , }}, -- Mendelevium
@@ -407,7 +407,9 @@ This is more than just a modpack; it’s a complete "from scratch" overhaul desi
 # ⚠️**ATTENTION:** The modpack is under active development. Your feedback and bug reports are vital!
 * **Languages:**
 > * **English**
-> * **Russian** (Translation temporarily paused)
+> * **Русский** (Перевод временно приостановлен)
+> * **[Polski](https://mods.factorio.com/mod/TIMSABA-PL)**
+> * **[Deutsch](https://mods.factorio.com/mod/TIMSABA_Deutsch)**
 * **Compatibility:** With most mods.
 * **My Contacts:** TGC: https://t.me/+fbP66l3k50U0NDIy.
 # **Note: This description will be updated as the project evolves.**

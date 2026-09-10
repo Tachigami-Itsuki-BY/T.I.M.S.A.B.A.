@@ -1,3 +1,5 @@
+local graphics_magnesium = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/"
+
 -- GROUPS
 is_magnesium = "is-magnesium"
 is_magnesium_chemistry = "is-magnesium-chemistry"
@@ -7,10 +9,7 @@ TIMSABA.functions.create_subgroups(ig_smelting,
     {name = is_magnesium_chemistry, order = f_a}
 })
 local is_magnesium_casting = "is-magnesium-casting"
-TIMSABA.functions.create_subgroups(ig_casting,
-{
-    {name = is_magnesium_casting, order = f}
-})
+TIMSABA.functions.create_subgroups(ig_casting, {{name = is_magnesium_casting, order = f}})
 
 -- ITEM
 magnesium_ore = "magnesium-ore"
@@ -27,12 +26,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_ore,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore.png",
+        icon = graphics_magnesium .. magnesium_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_magnesium .. magnesium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -40,31 +39,31 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_processed,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-processed.png",
+        icon = graphics_magnesium .. magnesium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_pellet,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-pellet.png",
+        icon = graphics_magnesium .. magnesium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_ingot,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot.png",
+        icon = graphics_magnesium .. magnesium_ingot .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-3.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-4.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-5.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-6.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-7.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-ingot-8.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_magnesium .. magnesium_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_magnesium .. magnesium_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
         },
         order = d
     },
@@ -72,14 +71,14 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_powder,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-powder.png",
+        icon = graphics_magnesium .. magnesium_powder .. ".png",
         order = e
     },
     {
         localised_description = show_formula and {chemical_formula, "Mg[font=default-tiny-bold]2[/font]Si"} or nil,
         name = magnesium_silicide_ingot,
         subgroup = is_magnesium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-silicide-ingot.png",
+        icon = graphics_magnesium .. magnesium_silicide_ingot .. ".png",
         order = f
     },
     -- CHEMISTRY
@@ -87,14 +86,14 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "MgO"} or nil,
         name = magnesium_oxide,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-oxide.png",
+        icon = graphics_magnesium .. magnesium_oxide .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "MgCl[font=default-tiny-bold]2[/font]"} or nil,
         name = magnesium_chloride,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-chloride.png",
+        icon = graphics_magnesium .. magnesium_chloride .. ".png",
         order = c
     }
 })
@@ -110,7 +109,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_gas,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-gas.png",
+        icon = graphics_magnesium .. magnesium_gas .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("MgMgMg"),
         flow_color = TIMSABA.functions.flow_color("MgMgMg")
@@ -119,7 +118,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "MgCl[font=default-tiny-bold]2[/font]"} or nil,
         name = magnesium_chloride_gas,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-chloride-gas.png",
+        icon = graphics_magnesium .. magnesium_chloride_gas .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("MgCl2"),
         flow_color = TIMSABA.functions.flow_color("MgCl2")
@@ -128,7 +127,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "MgCl[font=default-tiny-bold]2(aq)[/font]"} or nil,
         name = magnesium_chloride_solution,
         subgroup = is_magnesium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-chloride-solution.png",
+        icon = graphics_magnesium .. magnesium_chloride_solution .. ".png",
         order = e,
         base_color = TIMSABA.functions.fluid_color("MgCl2Wd"),
         flow_color = TIMSABA.functions.flow_color("MgCl2Wd")
@@ -138,7 +137,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Mg"} or nil,
         name = magnesium_molten,
         subgroup = is_magnesium_casting,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/magnesium/magnesium-molten.png",
+        icon = graphics_magnesium .. magnesium_molten .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("MgMgMg"),
         flow_color = TIMSABA.functions.flow_color("MgMgMg")

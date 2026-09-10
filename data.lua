@@ -41,7 +41,7 @@ require("prototypes.bobs.bobs-item-fluid")
 require("prototypes.angels.angels-item-fluid")
 require("prototypes.angels.angels-metallurgy-smelting-item-fluid")
 require("prototypes.angels.angels-metallurgy-casting-item-fluid")
--- ngels-water-treatment-item-fluid
+-- angels-water-treatment-item-fluid
 require("prototypes.angels.angels-petrochem-refining-item-fluid")
 require("prototypes.angels.angels-bioprocessing-item-fluid")
 

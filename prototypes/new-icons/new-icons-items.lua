@@ -1,4 +1,3 @@
--- ANGELS
 data_item[slag_angels].icons = nil
 data_item[slag_angels].icon = "__reskins-angels__/graphics/icons/refining/intermediates/slag.png"
 data_item[slag_angels].icon_size = 64
@@ -121,6 +120,7 @@ data_item[limestone_angels].icon_size = 64
 data_item[lime_angels].icon = "__reskins-angels__/graphics/icons/smelting/intermediates/solid-lime.png"
 data_item[lime_angels].icon_size = 64
 
+-- ANGELS BIOPROCESSING
 data_item[crystal_splinter_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-blue-cut.png"
 data_item[crystal_splinter_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-green-cut.png"
 data_item[crystal_splinter_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-splinter-red-cut.png"
@@ -133,124 +133,147 @@ data_item[crystal_full_blue_cut].icon = "__TIMSABA__/graphics/icons/angels/biopr
 data_item[crystal_full_green_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-green-cut.png"
 data_item[crystal_full_red_cut].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/crystal-full-red-cut.png"
 
+-- MODULES
 if mods[bobmodules] then
     -- SPEED
-    data_module[speed_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-1.png"
-    data_module[speed_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-2.png"
-    data_module[speed_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-3.png"
-    data_module[speed_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-4.png"
-    data_module[speed_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed-5.png"
+    local graphics_speed_module = "__TIMSABA__/graphics/icons/bobs/modules/speed/speed"
+
+    data_module[speed_module_1].icon = graphics_speed_module .. "-1.png"
+    data_module[speed_module_2].icon = graphics_speed_module .. "-2.png"
+    data_module[speed_module_3].icon = graphics_speed_module .. "-3.png"
+    data_module[speed_module_4].icon = graphics_speed_module .. "-4.png"
+    data_module[speed_module_5].icon = graphics_speed_module .. "-5.png"
 
     -- EFFICIENCY
-    data_module[efficiency_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-1.png"
-    data_module[efficiency_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-2.png"
-    data_module[efficiency_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-3.png"
-    data_module[efficiency_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-4.png"
-    data_module[efficiency_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency-5.png"
+    local graphics_efficiency_module = "__TIMSABA__/graphics/icons/bobs/modules/efficiency/efficiency"
+
+    data_module[efficiency_module_1].icon = graphics_efficiency_module .. "-1.png"
+    data_module[efficiency_module_2].icon = graphics_efficiency_module .. "-2.png"
+    data_module[efficiency_module_3].icon = graphics_efficiency_module .. "-3.png"
+    data_module[efficiency_module_4].icon = graphics_efficiency_module .. "-4.png"
+    data_module[efficiency_module_5].icon = graphics_efficiency_module .. "-5.png"
 
     -- PRODUCTIVITY
-    data_module[productivity_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-1.png"
-    data_module[productivity_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-2.png"
-    data_module[productivity_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-3.png"
-    data_module[productivity_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-4.png"
-    data_module[productivity_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity-5.png"
+    local graphics_productivity_module = "__TIMSABA__/graphics/icons/bobs/modules/productivity/productivity"
+
+    data_module[productivity_module_1].icon = graphics_productivity_module .. "-1.png"
+    data_module[productivity_module_2].icon = graphics_productivity_module .. "-2.png"
+    data_module[productivity_module_3].icon = graphics_productivity_module .. "-3.png"
+    data_module[productivity_module_4].icon = graphics_productivity_module .. "-4.png"
+    data_module[productivity_module_5].icon = graphics_productivity_module .. "-5.png"
 
     -- POLLUTION CLEANING
-    data_module[pollution_clean_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-1.png"
-    data_module[pollution_clean_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-2.png"
-    data_module[pollution_clean_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-3.png"
-    data_module[pollution_clean_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-4.png"
-    data_module[pollution_clean_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean-5.png"
+    local graphics_pollution_clean_module = "__TIMSABA__/graphics/icons/bobs/modules/pollution-clean/pollution-clean"
+
+    data_module[pollution_clean_module_1].icon = graphics_pollution_clean_module .. "-1.png"
+    data_module[pollution_clean_module_2].icon = graphics_pollution_clean_module .. "-2.png"
+    data_module[pollution_clean_module_3].icon = graphics_pollution_clean_module .. "-3.png"
+    data_module[pollution_clean_module_4].icon = graphics_pollution_clean_module .. "-4.png"
+    data_module[pollution_clean_module_5].icon = graphics_pollution_clean_module .. "-5.png"
 
     -- POLLUTION PRODUCING
-    data_module[pollution_create_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-1.png"
-    data_module[pollution_create_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-2.png"
-    data_module[pollution_create_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-3.png"
-    data_module[pollution_create_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-4.png"
-    data_module[pollution_create_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create-5.png"
+    local graphics_pollution_create_module = "__TIMSABA__/graphics/icons/bobs/modules/pollution-create/pollution-create"
+
+    data_module[pollution_create_module_1].icon = graphics_pollution_create_module .. "-1.png"
+    data_module[pollution_create_module_2].icon = graphics_pollution_create_module .. "-2.png"
+    data_module[pollution_create_module_3].icon = graphics_pollution_create_module .. "-3.png"
+    data_module[pollution_create_module_4].icon = graphics_pollution_create_module .. "-4.png"
+    data_module[pollution_create_module_5].icon = graphics_pollution_create_module .. "-5.png"
 
     -- QUALITY
-    data_module[quality_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-1.png"
-    data_module[quality_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-2.png"
-    data_module[quality_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-3.png"
-    data_module[quality_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-4.png"
-    data_module[quality_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality-5.png"
+    local graphics_quality_module = "__TIMSABA__/graphics/icons/bobs/modules/quality/quality"
+
+    data_module[quality_module_1].icon = graphics_quality_module .. "-1.png"
+    data_module[quality_module_2].icon = graphics_quality_module .. "-2.png"
+    data_module[quality_module_3].icon = graphics_quality_module .. "-3.png"
+    data_module[quality_module_4].icon = graphics_quality_module .. "-4.png"
+    data_module[quality_module_5].icon = graphics_quality_module .. "-5.png"
 
     -- AGRICULTURAL
-    data_module[agricultural_module_1].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-1.png"
-    data_module[agricultural_module_2].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-2.png"
-    data_module[agricultural_module_3].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-3.png"
-    data_module[agricultural_module_4].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-4.png"
-    data_module[agricultural_module_5].icon = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural-5.png"
+    local graphics_agricultural_module = "__TIMSABA__/graphics/icons/bobs/modules/agricultural/agricultural"
+
+    data_module[agricultural_module_1].icon = graphics_agricultural_module .. "-1.png"
+    data_module[agricultural_module_2].icon = graphics_agricultural_module .. "-2.png"
+    data_module[agricultural_module_3].icon = graphics_agricultural_module .. "-3.png"
+    data_module[agricultural_module_4].icon = graphics_agricultural_module .. "-4.png"
+    data_module[agricultural_module_5].icon = graphics_agricultural_module .. "-5.png"
 end
 
 -- GLEBA
-data_item[saphirite_bacteria].icon = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria.png"
+local graphics_gleba = "__TIMSABA__/graphics/icons/space-age/gleba/"
+
+data_item[saphirite_bacteria].icon = graphics_gleba .. saphirite_bacteria .. ".png"
 data_item[saphirite_bacteria].pictures =
 {
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria.png",   scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria-1.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria-2.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/saphirite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
+    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. ".png",   scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-1.png", scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-2.png", scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = graphics_gleba .. saphirite_bacteria .. "-3.png", scale = 0.5, mipmap_count = 4}
 }
 
-data_item[stiratite_bacteria].icon = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria.png"
+data_item[stiratite_bacteria].icon = graphics_gleba .. stiratite_bacteria .. ".png"
 data_item[stiratite_bacteria].pictures =
 {
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria.png",   scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-1.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-2.png", scale = 0.5, mipmap_count = 4},
-    {size = 64, filename = "__TIMSABA__/graphics/icons/space-age/gleba/stiratite-bacteria-3.png", scale = 0.5, mipmap_count = 4}
+    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. ".png",   scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-1.png", scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-2.png", scale = 0.5, mipmap_count = 4},
+    {size = 64, filename = graphics_gleba .. stiratite_bacteria .. "-3.png", scale = 0.5, mipmap_count = 4}
 }
 
 -- MULUNA
 if mods[muluna_mods] then
-    data_item[aluminium_pipe].icons = {{icon = "__TIMSABA__/graphics/icons/muluna/".. aluminium_pipe .. ".png", icon_size = 64}}
+    local graphics_muluna = "__TIMSABA__/graphics/icons/muluna/"
+
+    data_item[aluminium_pipe].icons = {{icon = graphics_muluna .. aluminium_pipe .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe, item)
 
-    data_item[aluminium_pipe_to_ground].icons = {{icon = "__TIMSABA__/graphics/icons/muluna/" .. aluminium_pipe_to_ground .. ".png", icon_size = 64}}
+    data_item[aluminium_pipe_to_ground].icons = {{icon = graphics_muluna .. aluminium_pipe_to_ground .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, aluminium_pipe_to_ground, item)
 end
 
 -- TELLUS
 if mods[tellus_mods] then
-    data_item[magnesium_bacteria].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria.png"
+    local graphics_tellus = "__TIMSABA__/graphics/icons/tellus/"
+
+    data_item[magnesium_bacteria].icon = graphics_tellus .. magnesium_bacteria .. ".png"
     data_item[magnesium_bacteria].pictures =
     {
-        {filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-1.png", width = 64, height = 64, scale = 0.5},
-        {filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-2.png", width = 64, height = 64, scale = 0.5},
-        {filename = "__TIMSABA__/graphics/icons/tellus/magnesium-bacteria-3.png", width = 64, height = 64, scale = 0.5}
+        {filename = graphics_tellus .. magnesium_bacteria .. "-1.png", width = 64, height = 64, scale = 0.5},
+        {filename = graphics_tellus .. magnesium_bacteria .. "-2.png", width = 64, height = 64, scale = 0.5},
+        {filename = graphics_tellus .. magnesium_bacteria .. "-3.png", width = 64, height = 64, scale = 0.5}
     }
 
-    data_item[magnesium_dust].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-dust.png"
+    data_item[magnesium_dust].icon = graphics_tellus .. magnesium_dust .. ".png"
 
-    data_item[magnesium_sheet].icon = "__TIMSABA__/graphics/icons/tellus/magnesium-sheet.png"
+    data_item[magnesium_sheet].icon = graphics_tellus .. magnesium_sheet .. ".png"
 end
 
 -- PARACELSIN
 if mods[paracelsin_mods] then
-    data_item[zinc_rivets].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets.png"
+    local graphics_paracelsin = "__TIMSABA__/graphics/icons/paracelsin/"
+
+    data_item[zinc_rivets].icon = graphics_paracelsin .. zinc_rivets .. ".png"
     data_item[zinc_rivets].pictures =
     {
-        {filename = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets-1.png", width = 64, height = 64, scale = 0.5},
-        {filename = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets-2.png", width = 64, height = 64, scale = 0.5},
-        --[[{filename = "__TIMSABA__/graphics/icons/paracelsin/zinc-rivets-3.png", width = 64, height = 64, scale = 0.5}]]
+        {filename = graphics_paracelsin .. zinc_rivets .. "-1.png", width = 64, height = 64, scale = 0.5},
+        {filename = graphics_paracelsin .. zinc_rivets .. "-2.png", width = 64, height = 64, scale = 0.5},
+        --{filename = graphics_paracelsin .. zinc_rivets .. "-3.png", width = 64, height = 64, scale = 0.5}
     }
 
-    data_item[zinc_cable].icon = "__TIMSABA__/graphics/icons/paracelsin/zinc-cable.png"
+    data_item[zinc_cable].icon = graphics_paracelsin .. zinc_cable .. ".png"
 
-    data_item[galvanized_steel_plate].icon = "__TIMSABA__/graphics/icons/paracelsin/galvanized-steel-plate.png"
+    data_item[galvanized_steel_plate].icon = graphics_paracelsin .. galvanized_steel_plate .. ".png"
 
-    data_item[galvanized_pipe].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_pipe .. ".png", icon_size = 64}}
+    data_item[galvanized_pipe].icons = {{icon = graphics_paracelsin .. galvanized_pipe .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pipe, item)
 
-    data_item[galvanized_pipe_to_ground].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_pipe_to_ground .. ".png", icon_size = 64}}
+    data_item[galvanized_pipe_to_ground].icons = {{icon = graphics_paracelsin .. galvanized_pipe_to_ground .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pipe_to_ground, item)
 
-    data_item[galvanized_storage_tank].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_storage_tank .. ".png", icon_size = 64}}
+    data_item[galvanized_storage_tank].icons = {{icon = graphics_paracelsin .. galvanized_storage_tank .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_storage_tank, item)
 
-    data_item[galvanized_pump].icons = {{icon = "__TIMSABA__/graphics/icons/paracelsin/" .. galvanized_pump .. ".png", icon_size = 64}}
+    data_item[galvanized_pump].icons = {{icon = graphics_paracelsin .. galvanized_pump .. ".png", icon_size = 64}}
     reskins.lib.tiers.add_tier_labels_to_prototype_by_name(6, galvanized_pump, item)
 end
 
@@ -261,17 +284,24 @@ end
 
 -- SHCHIERBIN
 if mods[shchierbin_mods] then
-    data_item[vanadium_ore].icon = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore.png"
+    local graphics_vanadium = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/"
+
+    data_item[vanadium_ore].icon = graphics_vanadium .. vanadium_ore .. ".png"
     data_item[vanadium_ore].icon_size = 64
     data_item[vanadium_ore].pictures =
     {
-        {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore-1.png", width = 64, height = 64, scale = 0.5},
-        {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore-2.png", width = 64, height = 64, scale = 0.5},
-        {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/vanadium/vanadium-ore-3.png", width = 64, height = 64, scale = 0.5}
+        {filename = graphics_vanadium .. vanadium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+        {filename = graphics_vanadium .. vanadium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+        {filename = graphics_vanadium .. vanadium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
     }
 
-    data_item[vanadium_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/vanadium-plate.png"
+    data_item[vanadium_plate].icon = "__TIMSABA__/graphics/icons/shchierbin/vanadium/" .. vanadium_plate .. ".png"
     data_item[vanadium_plate].icon_size = 64
+end
+
+-- VESTA
+if settings.startup[setting_vesta_legacy_recipes].value then
+    --data_item[iridium_plate_mods].icon = ""
 end
 
 -- PELAGOS

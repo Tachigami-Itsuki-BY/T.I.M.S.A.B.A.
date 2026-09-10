@@ -65,20 +65,44 @@ if mods[vesta_mods] then
             results = {{type = fluid, name = methane_angels, amount = 240}},
             main_product = methane_angels,
             surface_conditions = {{property = pressure, min = 500, max = 500}}
-        },
-        {
-            name = helium_vesta,
-            category = angels_petrochem_air_filtering,
-            subgroup = is_vesta_air,
-            icons = BUILDING_R_I(helium_vesta, planet_vesta),
-            order = f,
-            energy_required = 8,
-            ingredients = {},
-            results = {{type = fluid, name = helium_vesta, amount = 240}},
-            main_product = helium_vesta,
-            surface_conditions = {{property = pressure, min = 500, max = 500}}
         }
     })
+
+    if data_fluid[helium_vesta] then
+        TIMSABA.functions.create_recipes
+        ({
+            {
+                name = helium_vesta,
+                category = angels_petrochem_air_filtering,
+                subgroup = is_vesta_air,
+                icons = BUILDING_R_I(helium_vesta, planet_vesta),
+                order = f,
+                energy_required = 8,
+                ingredients = {},
+                results = {{type = fluid, name = helium_vesta, amount = 240}},
+                main_product = helium_vesta,
+                surface_conditions = {{property = pressure, min = 500, max = 500}}
+            }
+        })
+    elseif data_fluid[helium] then
+        helium_vesta_alt = "helium-vesta-alt"
+        TIMSABA.functions.create_recipes
+        ({
+            {
+                localised_name = {"fluid-name." .. helium_vesta},
+                name = helium_vesta_alt,
+                category = angels_petrochem_air_filtering,
+                subgroup = is_vesta_air,
+                icons = BUILDING_R_I(helium, planet_vesta),
+                order = f,
+                energy_required = 8,
+                ingredients = {},
+                results = {{type = fluid, name = helium, amount = 240}},
+                main_product = helium,
+                surface_conditions = {{property = pressure, min = 500, max = 500}}
+            }
+        })
+    end
 
     -- ORE to PLATE
     _burning = "-burning"

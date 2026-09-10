@@ -192,7 +192,7 @@ if mods[paracelsin_mods] then
             category = ore_sorting_6,
             subgroup = is_ore_sorting_advanced_3,
             icons = AR_FOUR_I(hybride_catalyst, antimonite_purified, tetrahedrite_purified, antimony_ore),
-            order = a_p,
+            order = a_o,
             allow_productivity = true,
             energy_required = 2,
             ingredients =

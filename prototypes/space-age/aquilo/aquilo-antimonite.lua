@@ -1,3 +1,5 @@
+local graphics_antimonite = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/"
+
 -- Antimonite ore / Sb + Pb + Fe + Cu + Ag + As
 antimonite_ore = "antimonite-ore"
 antimonite_crushed = "antimonite-crushed"
@@ -9,40 +11,40 @@ TIMSABA.functions.create_items
     {
         name = antimonite_ore,
         subgroup = is_antimonite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-ore.png",
+        icon = graphics_antimonite .. antimonite_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_antimonite .. antimonite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimonite .. antimonite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_antimonite .. antimonite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
     {
         name = antimonite_crushed,
         subgroup = is_antimonite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-crushed.png",
+        icon = graphics_antimonite .. antimonite_crushed .. ".png",
         icon_size = 32,
         order = b
     },
     {
         name = antimonite_chunks,
         subgroup = is_antimonite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-chunks.png",
+        icon = graphics_antimonite .. antimonite_chunks .. ".png",
         icon_size = 32,
         order = c
     },
     {
         name = antimonite_crystals,
         subgroup = is_antimonite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-crystals.png",
+        icon = graphics_antimonite .. antimonite_crystals .. ".png",
         icon_size = 32,
         order = d
     },
     {
         name = antimonite_purified,
         subgroup = is_antimonite,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/antimonite/antimonite-purified.png",
+        icon = graphics_antimonite .. antimonite_purified .. ".png",
         icon_size = 32,
         order = e
     }

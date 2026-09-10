@@ -1,3 +1,7 @@
+local graphics_molybdenum = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/"
+local graphics_rhenium = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/"
+local graphics_molybdenum_rhenium = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/"
+
 -- GROUPS
 local is_molybdenum_rhenium = "is-molybdenum-rhenium"
 TIMSABA.functions.create_subgroups(ig_casting, {{name = is_molybdenum_rhenium, order = r}})
@@ -18,7 +22,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "MoRe"} or nil,
         name = molybdenum_rhenium_powder_mixture,
         subgroup = is_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-powder-mixture.png",
+        icon = graphics_molybdenum_rhenium .. molybdenum_rhenium_powder_mixture .. ".png",
         order = f
     },
     -- CASTING
@@ -26,7 +30,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
         name = molybdenum_plate,
         subgroup = is_molybdenum_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-plate.png",
+        icon = graphics_molybdenum .. molybdenum_plate .. ".png",
         order = a,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -36,7 +40,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_plate,
         subgroup = is_molybdenum_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-plate.png",
+        icon = graphics_rhenium .. rhenium_plate .. ".png",
         order = b,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -46,7 +50,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "MoRe"} or nil,
         name = molybdenum_rhenium_plate,
         subgroup = is_molybdenum_rhenium,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-plate.png",
+        icon = graphics_molybdenum_rhenium .. molybdenum_rhenium_plate .. ".png",
         order = c,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -57,7 +61,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Mo"} or nil,
         name = molybdenum_gear_wheel,
         subgroup = is_gears,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum/molybdenum-gear-wheel.png",
+        icon = graphics_molybdenum .. molybdenum_gear_wheel .. ".png",
         order = i,
         drop_sound = data_item[iron_gear_wheel].drop_sound,
         inventory_move_sound = data_item[iron_gear_wheel].inventory_move_sound,
@@ -67,7 +71,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_bearing_ball,
         subgroup = is_bearing_ball,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-bearing-ball.png",
+        icon = graphics_rhenium .. rhenium_bearing_ball .. ".png",
         order = i,
         drop_sound = data_item[steel_bearing_ball].drop_sound,
         inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
@@ -77,7 +81,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Re"} or nil,
         name = rhenium_bearing,
         subgroup = is_bearing,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/rhenium/rhenium-bearing.png",
+        icon = graphics_rhenium .. rhenium_bearing .. ".png",
         order = i,
         drop_sound = data_item[steel_bearing].drop_sound,
         inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
@@ -87,7 +91,7 @@ TIMSABA.functions.create_items
     {
         name = molybdenum_rhenium_pipe,
         subgroup = is_pipe,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe.png",
+        icon = graphics_molybdenum_rhenium .. molybdenum_rhenium_pipe .. ".png",
         order = m,
         place_result = molybdenum_rhenium_pipe,
         drop_sound = data_item[iron_pipe].drop_sound,
@@ -97,7 +101,7 @@ TIMSABA.functions.create_items
     {
         name = molybdenum_rhenium_pipe_to_ground,
         subgroup = is_pipe_to_ground,
-        icon = "__TIMSABA__/graphics/icons/angels/metallurgy/molybdenum-rhenium/molybdenum-rhenium-pipe-to-ground.png",
+        icon = graphics_molybdenum_rhenium .. molybdenum_rhenium_pipe_to_ground .. ".png",
         order = m,
         stack_size = 32,
         weight = 31250,

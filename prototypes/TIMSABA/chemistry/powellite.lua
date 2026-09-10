@@ -1,3 +1,5 @@
+local graphics_powellite = "__TIMSABA__/graphics/icons/angels/resource/powellite/"
+
 -- Powellite ore / Ca + Cu + Pb + W + Mo + Ho
 powellite_ore = "powellite-ore"
 powellite_crushed = "powellite-crushed"
@@ -9,40 +11,40 @@ TIMSABA.functions.create_items
     {
         name = powellite_ore,
         subgroup = is_ores,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-ore.png",
+        icon = graphics_powellite .. powellite_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_powellite .. powellite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_powellite .. powellite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_powellite .. powellite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = h
     },
     {
         name = powellite_crushed,
         subgroup = is_ore_processing_a,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-crushed.png",
+        icon = graphics_powellite .. powellite_crushed .. ".png",
         icon_size = 32,
         order = h
     },
     {
         name = powellite_chunks,
         subgroup = is_ore_processing_b,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-chunks.png",
+        icon = graphics_powellite .. powellite_chunks .. ".png",
         icon_size = 32,
         order = h
     },
     {
         name = powellite_crystals,
         subgroup = is_ore_processing_c,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-crystals.png",
+        icon = graphics_powellite .. powellite_crystals .. ".png",
         icon_size = 32,
         order = h
     },
     {
         name = powellite_purified,
         subgroup = is_ore_processing_d,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/powellite-purified.png",
+        icon = graphics_powellite .. powellite_purified .. ".png",
         icon_size = 32,
         order = h
     }
@@ -202,121 +204,27 @@ TIMSABA.functions.create_recipes
 })
 
 -- ORE
-local powellite_particle = table.deepcopy(data.raw["optimized-particle"]["iron-ore-particle"])
-powellite_particle.name = "powellite-ore-particle"
-for _, picture in pairs(powellite_particle.pictures) do
+local powellite_ore_particle = table.deepcopy(data_optimized_particle[iron_ore .. _particle])
+powellite_ore_particle.name = powellite_ore .. _particle
+for _, picture in pairs(powellite_ore_particle.pictures) do
     picture.tint = {r = 215/256, g = 145/256, b = 45/256, a = 1.000}
 end
-data:extend({powellite_particle})
-
-local resource_autoplace = require("resource-autoplace")
-local base_tile_sounds = require("__base__.prototypes.tile.tile-sounds")
-local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
-local function resource(resource_parameters, autoplace_parameters)
-    return
-    {
-        localised_description = resource_parameters.localised_description,
-        factoriopedia_description = resource_parameters.factoriopedia_description,
-        type = "resource",
-        name = resource_parameters.name,
-        subgroup = resource_parameters.subgroup,
-        icon = "__TIMSABA__/graphics/icons/angels/resource/powellite/" .. resource_parameters.name .. ".png",
-        order = resource_parameters.order,
-        category = resource_parameters.category,
-        minable = resource_parameters.minable or
-        {
-            mining_particle = resource_parameters.name .. "-particle",
-            mining_time = resource_parameters.mining_time,
-            result = resource_parameters.name
-        },
-        flags = {"placeable-neutral"},
-        tree_removal_probability = 0.8,
-        tree_removal_max_distance = 32 * 32,
-        walking_sound = resource_parameters.walking_sound,
-        collision_mask = resource_parameters.collision_mask,
-        collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-        selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-        resource_patch_search_radius = resource_parameters.resource_patch_search_radius,
-        autoplace = autoplace_parameters.probability_expression ~= nil and
-        {
-            order = resource_parameters.order,
-            probability_expression = autoplace_parameters.probability_expression,
-            richness_expression = autoplace_parameters.richness_expression
-        }
-            or resource_autoplace.resource_autoplace_settings
-        {
-            name = resource_parameters.name,
-            order = resource_parameters.order,
-            autoplace_control_name = resource_parameters.autoplace_control_name,
-            base_density = autoplace_parameters.base_density,
-            base_spots_per_km = autoplace_parameters.base_spots_per_km2,
-            regular_rq_factor_multiplier = autoplace_parameters.regular_rq_factor_multiplier,
-            starting_rq_factor_multiplier = autoplace_parameters.starting_rq_factor_multiplier,
-            candidate_spot_count = autoplace_parameters.candidate_spot_count,
-            tile_restriction = autoplace_parameters.tile_restriction
-        },
-        stage_counts = {15000, 9500, 5500, 2900, 1300, 400, 150, 80},
-        stages =
-        {
-            sheet =
-            {
-                filename = "__TIMSABA__/graphics/icons/angels/resource/powellite/" .. resource_parameters.name .. "/" .. resource_parameters.name .. ".png",
-                priority = extra_high,
-                size = 128,
-                frame_count = 8,
-                variation_count = 8,
-                scale = 0.5
-            }
-        },
-        map_color = resource_parameters.map_color,
-        mining_visualisation_tint = resource_parameters.mining_visualisation_tint,
-        factoriopedia_simulation = resource_parameters.factoriopedia_simulation
-    }
-end
+data:extend({powellite_ore_particle})
 
 data:extend
 ({
-    {
-        localised_name = {"", "[entity=powellite-ore] ", {"entity-name.powellite"}},
-        type = "autoplace-control",
-        name = powellite_ore,
-        order = powellite_ore,
-        category = "resource",
-        richness = true,
-        can_be_disabled = true
-    }
-})
-
-data:extend
-({
-    resource(
-        {
-            localised_description = {"entity-description.powellite-ore"},
-            factoriopedia_description = "",
-            name = powellite_ore,
-            subgroup = is_ores,
-            order = g,
-            mining_time = 1,
-            walking_sound = base_tile_sounds.walking.ore,
-            map_color = {r = 180/255, g = 110/255, b = 30/255, a = 1.000},
-            mining_visualisation_tint = {r = 240/255, g = 175/255, b = 60/255, a = 1.000},
-            autoplace_control_name = powellite_ore,
-        },
-        {
-            base_density = 8,
-            base_spots_per_km2 = 1.25,
-            candidate_spot_count = 22,
-            random_probability_multiplier = 0.8
-        }
+    TIMSABA.functions.create_resource(
+        {name = powellite_ore, subgroup = is_ores, order = h, map_color = {r = 180/255, g = 110/255, b = 30/255, a = 1.000}, mining_visualisation_tint = {r = 240/255, g = 175/255, b = 60/255, a = 1.000}},
+        {base_density = 8, base_spots_per_km2 = 1.25, candidate_spot_count = 22, random_probability_multiplier = 0.8}
     )
 })
 
-if data_planet[planet_nauvis] then
-    data_planet[planet_nauvis].map_gen_settings.autoplace_controls[powellite_ore] = {}
-    if not data_planet[planet_nauvis].map_gen_settings then
-        data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
-    end
-    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[powellite_ore] = {}
+TIMSABA.functions.create_autoplace_control(powellite_ore)
+
+data_planet[planet_nauvis].map_gen_settings.autoplace_controls[powellite_ore] = {}
+if not data_planet[planet_nauvis].map_gen_settings then
+    data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity = {settings = {}}
 end
+data_planet[planet_nauvis].map_gen_settings.autoplace_settings.entity.settings[powellite_ore] = {}
 
 data_resource[powellite_ore].location = planet_nauvis

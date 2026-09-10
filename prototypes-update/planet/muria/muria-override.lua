@@ -435,12 +435,21 @@ if mods[muria_mods] then
     data_ammo[heavy_shotgun_shell].magazine_size = 30
     data_recipe[heavy_shotgun_shell].subgroup = is_muria_war
     data_recipe[heavy_shotgun_shell].order = b
-    data_recipe[heavy_shotgun_shell].ingredients =
-    {
-        {type = item, name = shotgun_pellets, amount = 4},
-        {type = item, name = shotgun_shell, amount = 2},
-        {type = item, name = rhenium_plate, amount = 2}
-    }
+    if mods[bobwarfare] then
+        data_recipe[heavy_shotgun_shell].ingredients =
+        {
+            {type = item, name = shotgun_pellets, amount = 4},
+            {type = item, name = shotgun_shell, amount = 2},
+            {type = item, name = rhenium_plate, amount = 2}
+        }
+    else
+        data_recipe[heavy_shotgun_shell].ingredients =
+        {
+            {type = item, name = lead_plate_bob, amount = 4},
+            {type = item, name = shotgun_shell, amount = 2},
+            {type = item, name = rhenium_plate, amount = 2}
+        }
+    end
     data_recipe[heavy_shotgun_shell].results[1].amount = 2
 
     local acidthrower = "acidthrower"

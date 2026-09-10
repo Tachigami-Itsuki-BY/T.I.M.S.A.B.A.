@@ -1,6 +1,3 @@
--- BASE
-space_age = "space-age"
-
 -- MULUNA
 muluna_mods = "planet-muluna"
 planet_muluna = "muluna"
@@ -265,7 +262,7 @@ vanadium_electro_engine_unit = "vanadium-electro-engine-unit"
 vanadium_crusher = "crusher-vanad"
 
 -- MARAXSIS
-maraxsis_mods = "maraxsis-classic"
+maraxsis_mods = "maraxsis"
 planet_maraxsis = "maraxsis"
 planet_trench_maraxsis = "maraxsis-trench"
 salt_mods = "salt"
@@ -462,7 +459,7 @@ quality_assembler = "quality-assembler"
 -- BELLICOS AEGIS
 bellicos_aegis_mods = "bellicos-and-aegis"
 bellicos_orbit = "bellicos-orbit"
-helium_mods = "helium"
+helium = "helium"
 beryllium_ore = "beryllium_ore"
 beryllium_plate = "beryllium_plate"
 radioactive_ice = "radioactive_ice"

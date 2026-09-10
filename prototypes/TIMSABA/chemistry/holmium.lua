@@ -1,3 +1,5 @@
+local graphics_holmium = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium/"
+
 -- GROUPS
 local is_holmium = "is-holmium"
 local is_holmium_chemistry = "is-holmium-chemistry"
@@ -24,31 +26,31 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_processed,
         subgroup = is_holmium,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-processed.png",
+        icon = graphics_holmium .. holmium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_pellet,
         subgroup = is_holmium,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-pellet.png",
+        icon = graphics_holmium .. holmium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_ingot,
         subgroup = is_holmium,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot.png",
+        icon = graphics_holmium .. holmium_ingot .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-3.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-4.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-5.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-6.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-7.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-ingot-8.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_holmium .. holmium_ingot .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-3.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-4.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-5.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-6.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-7.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_holmium .. holmium_ingot .. "-8.png", width = 64, height = 64, scale = 0.5}
         },
         order = d
     },
@@ -56,7 +58,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_powder,
         subgroup = is_holmium,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-powder.png",
+        icon = graphics_holmium .. holmium_powder .. ".png",
         order = e
     },
     -- CHEMISTRY
@@ -64,14 +66,14 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "HoF[font=default-tiny-bold]3[/font]"} or nil,
         name = holmium_fluoride_III,
         subgroup = is_holmium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-fluoride-III.png",
+        icon = graphics_holmium .. holmium_fluoride_III .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_cathode,
         subgroup = is_holmium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-cathode.png",
+        icon = graphics_holmium .. holmium_cathode .. ".png",
         icon_size = 32,
         order = c
     },
@@ -79,7 +81,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ho[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         name = holmium_oxide_III,
         subgroup = is_holmium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-oxide-III.png",
+        icon = graphics_holmium .. holmium_oxide_III .. ".png",
         order = e
     },
     -- CASTING
@@ -87,7 +89,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_roll,
         subgroup = is_holmium_casting,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/roll-holmium.png",
+        icon = graphics_holmium .. holmium_roll .. ".png",
         order = b
     }
 })
@@ -102,7 +104,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "HoCl[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = holmium_chloride_III_solution,
         subgroup = is_holmium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-chloride-III-solution.png",
+        icon = graphics_holmium .. holmium_chloride_III_solution .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("HoCl3Wp"),
         flow_color = TIMSABA.functions.flow_color("HoCl3Wp")
@@ -111,7 +113,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Ho(NO[font=default-tiny-bold]3[/font])[font=default-tiny-bold]3(aq)[/font]"} or nil,
         name = holmium_nitrate_III_solution,
         subgroup = is_holmium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-nitrate-III-solution.png",
+        icon = graphics_holmium .. holmium_nitrate_III_solution .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("HoN2O6Wp"),
         flow_color = TIMSABA.functions.flow_color("HoN2O6Wp")
@@ -121,7 +123,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "Ho"} or nil,
         name = holmium_molten,
         subgroup = is_holmium_casting,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/holmium-molten.png",
+        icon = graphics_holmium .. holmium_molten .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("HoHoHo"),
         flow_color = TIMSABA.functions.flow_color("HoHoHo")

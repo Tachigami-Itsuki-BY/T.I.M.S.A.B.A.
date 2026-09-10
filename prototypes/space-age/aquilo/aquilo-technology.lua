@@ -1,33 +1,19 @@
 planet_discovery_aquilo = "planet-discovery-aquilo"
+
+-- ANTIMONITE
+local graphics_antimonite_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png"
 tech_antimonite_processing_1 = "antimonite-processing-1"
 tech_antimonite_processing_2 = "antimonite-processing-2"
 tech_antimonite_processing_3 = "antimonite-processing-3"
 tech_antimonite_processing_4 = "antimonite-processing-4"
-tech_antimony_smelting_1 = "antimony-smelting-1"
-tech_antimony_smelting_2 = "antimony-smelting-2"
-tech_antimony_smelting_3 = "antimony-smelting-3"
-tech_germanite_processing_1 = "germanite-processing-1"
-tech_germanite_processing_2 = "germanite-processing-2"
-tech_germanite_processing_3 = "germanite-processing-3"
-tech_germanite_processing_4 = "germanite-processing-4"
-tech_germanium_smelting_1 = "germanium-smelting-1"
-tech_germanium_smelting_2 = "germanium-smelting-2"
-tech_germanium_smelting_3 = "germanium-smelting-3"
-tech_galium_smelting_1 = "galium-smelting-1"
-tech_galium_smelting_2 = "galium-smelting-2"
-tech_galium_smelting_3 = "galium-smelting-3"
-local tech_arsenic_processing = "arsenic-processing"
-tech_arsenic_synthesis = "arsenic-synthesis"
-tech_aquilo_cryogenics = "aquilo-cryogenics"
 data:extend
 ({
-    -- ANTIMONITE
     {
-        localised_name = {"technology-name.antimonite-processing-1"},
+        localised_name = {"technology-name." .. tech_antimonite_processing_1},
         localised_description = {"technology-description.angels-ore-crushing"},
         type = technology,
         name = tech_antimonite_processing_1,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
+        icon = graphics_antimonite_tech,
         icon_size = 256,
         prerequisites = {planet_discovery_aquilo},
         effects =
@@ -43,11 +29,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.antimonite-processing-2"},
+        localised_name = {"technology-name." .. tech_antimonite_processing_2},
         localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
         name = tech_antimonite_processing_2,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
+        icon = graphics_antimonite_tech,
         icon_size = 256,
         prerequisites = {tech_antimonite_processing_1, cryogenic_science_pack},
         effects =
@@ -75,11 +61,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.antimonite-processing-3"},
+        localised_name = {"technology-name." .. tech_antimonite_processing_3},
         localised_description = {"technology-description.angels-ore-leaching"},
         type = technology,
         name = tech_antimonite_processing_3,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
+        icon = graphics_antimonite_tech,
         icon_size = 256,
         prerequisites = {tech_antimonite_processing_2, promethium_science_pack},
         effects =
@@ -107,11 +93,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.antimonite-processing-4"},
+        localised_name = {"technology-name." .. tech_antimonite_processing_4},
         localised_description = {"technology-description.angels-ore-refining"},
         type = technology,
-        name = tech_antimonite_processing_4, -- ???
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/antimonite-processing.png",
+        name = tech_antimonite_processing_4,
+        icon = graphics_antimonite_tech,
         icon_size = 256,
         prerequisites = {tech_antimonite_processing_3},
         effects =
@@ -137,14 +123,22 @@ data:extend
             },
             time = 30
         }
-    },
-    -- ANTIMONY
+    }
+})
+
+-- ANTIMONY
+local graphics_antimony_smelting_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png"
+tech_antimony_smelting_1 = "antimony-smelting-1"
+tech_antimony_smelting_2 = "antimony-smelting-2"
+tech_antimony_smelting_3 = "antimony-smelting-3"
+data:extend
+({
     {
-        localised_name = {"technology-name.antimony-smelting-1"},
-        localised_description = {"technology-description.antimony-smelting-1"},
+        localised_name = {"technology-name." .. tech_antimony_smelting_1},
+        localised_description = {"technology-description." .. tech_antimony_smelting_1},
         type = technology,
         name = tech_antimony_smelting_1,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
+        icon = graphics_antimony_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_antimonite_processing_1, tech_vulcanus_metallurgic},
         effects =
@@ -175,11 +169,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.antimony-smelting-2"},
-        localised_description = {"technology-description.antimony-smelting-2"},
+        localised_name = {"technology-name." .. tech_antimony_smelting_2},
+        localised_description = {"technology-description." .. tech_antimony_smelting_2},
         type = technology,
         name = tech_antimony_smelting_2,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
+        icon = graphics_antimony_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_antimony_smelting_1, tech_antimonite_processing_2},
         effects =
@@ -210,11 +204,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.antimony-smelting-3"},
-        localised_description = {"technology-description.antimony-smelting-3"},
+        localised_name = {"technology-name." .. tech_antimony_smelting_3},
+        localised_description = {"technology-description." .. tech_antimony_smelting_3},
         type = technology,
         name = tech_antimony_smelting_3,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-antimony-tech.png",
+        icon = graphics_antimony_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_antimony_smelting_2, tech_antimonite_processing_3},
         effects =
@@ -242,14 +236,23 @@ data:extend
             },
             time = 30
         }
-    },
-    -- GERMANITE
+    }
+})
+
+-- GERMANITE
+local graphics_germanite_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png"
+tech_germanite_processing_1 = "germanite-processing-1"
+tech_germanite_processing_2 = "germanite-processing-2"
+tech_germanite_processing_3 = "germanite-processing-3"
+tech_germanite_processing_4 = "germanite-processing-4"
+data:extend
+({
     {
-        localised_name = {"technology-name.germanite-processing-1"},
+        localised_name = {"technology-name." .. tech_germanite_processing_1},
         localised_description = {"technology-description.angels-ore-crushing"},
         type = technology,
         name = tech_germanite_processing_1,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
+        icon = graphics_germanite_tech,
         icon_size = 256,
         prerequisites = {planet_discovery_aquilo},
         effects =
@@ -265,11 +268,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.germanite-processing-2"},
+        localised_name = {"technology-name." .. tech_germanite_processing_2},
         localised_description = {"technology-description.angels-ore-floatation"},
         type = technology,
         name = tech_germanite_processing_2,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
+        icon = graphics_germanite_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_1, cryogenic_science_pack},
         effects =
@@ -297,11 +300,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.germanite-processing-3"},
+        localised_name = {"technology-name." .. tech_germanite_processing_3},
         localised_description = {"technology-description.angels-ore-leaching"},
         type = technology,
         name = tech_germanite_processing_3,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
+        icon = graphics_germanite_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_2, promethium_science_pack},
         effects =
@@ -329,11 +332,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.germanite-processing-4"},
+        localised_name = {"technology-name." .. tech_germanite_processing_4},
         localised_description = {"technology-description.angels-ore-refining"},
         type = technology,
-        name = tech_germanite_processing_4, -- ???
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/germanite-processing.png",
+        name = tech_germanite_processing_4,
+        icon = graphics_germanite_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_3},
         effects =
@@ -359,14 +362,22 @@ data:extend
             },
             time = 30
         }
-    },
-    -- GERMANIUM
+    }
+})
+
+-- GERMANIUM
+local graphics_germanium_smelting_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png"
+tech_germanium_smelting_1 = "germanium-smelting-1"
+tech_germanium_smelting_2 = "germanium-smelting-2"
+tech_germanium_smelting_3 = "germanium-smelting-3"
+data:extend
+({
     {
-        localised_name = {"technology-name.germanium-smelting-1"},
-        localised_description = {"technology-description.germanium-smelting-1"},
+        localised_name = {"technology-name." .. tech_germanium_smelting_1},
+        localised_description = {"technology-description." .. tech_germanium_smelting_1},
         type = technology,
         name = tech_germanium_smelting_1,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
+        icon = graphics_germanium_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_1, tech_vulcanus_metallurgic},
         effects =
@@ -397,11 +408,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.germanium-smelting-2"},
-        localised_description = {"technology-description.germanium-smelting-2"},
+        localised_name = {"technology-name." .. tech_germanium_smelting_2},
+        localised_description = {"technology-description." .. tech_germanium_smelting_2},
         type = technology,
         name = tech_germanium_smelting_2,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
+        icon = graphics_germanium_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_2, tech_germanium_smelting_1, cryogenic_science_pack},
         effects =
@@ -430,11 +441,11 @@ data:extend
         }
     },
     {
-        localised_name = {"technology-name.germanium-smelting-3"},
-        localised_description = {"technology-description.germanium-smelting-3"},
+        localised_name = {"technology-name." .. tech_germanium_smelting_3},
+        localised_description = {"technology-description." .. tech_germanium_smelting_3},
         type = technology,
         name = tech_germanium_smelting_3,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-germanium-tech.png",
+        icon = graphics_germanium_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_3, tech_germanium_smelting_2, promethium_science_pack},
         effects =
@@ -462,12 +473,22 @@ data:extend
             },
             time = 30
         }
-    },
-    -- GALIUM
+    }
+})
+
+-- GALIUM
+local graphics_galium_smelting_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png"
+tech_galium_smelting_1 = "galium-smelting-1"
+tech_galium_smelting_2 = "galium-smelting-2"
+tech_galium_smelting_3 = "galium-smelting-3"
+data:extend
+({
     {
+        localised_name = {"technology-name." .. tech_galium_smelting_1},
+        localised_description = {"technology-description." .. tech_galium_smelting_1},
         type = technology,
         name = tech_galium_smelting_1,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png",
+        icon = graphics_galium_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_germanite_processing_2},
         effects =
@@ -499,9 +520,11 @@ data:extend
         }
     },
     {
+        localised_name = {"technology-name." .. tech_galium_smelting_2},
+        localised_description = {"technology-description." .. tech_galium_smelting_2},
         type = technology,
         name = tech_galium_smelting_2,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png",
+        icon = graphics_galium_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_galium_smelting_1, tech_germanite_processing_3},
         effects =
@@ -532,9 +555,11 @@ data:extend
         }
     },
     {
+        localised_name = {"technology-name." .. tech_galium_smelting_3},
+        localised_description = {"technology-description." .. tech_galium_smelting_3},
         type = technology,
         name = tech_galium_smelting_3,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/smelting-galium-tech.png",
+        icon = graphics_galium_smelting_tech,
         icon_size = 256,
         prerequisites = {tech_galium_smelting_2, tech_germanite_processing_4},
         effects =
@@ -561,12 +586,20 @@ data:extend
             time = 30
         }
     },
-    -- VANADIUM
+})
+
+-- OTHERS
+local graphics_aquilo_tech = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/"
+local tech_arsenic_processing = "arsenic-processing"
+tech_arsenic_synthesis = "arsenic-synthesis"
+tech_aquilo_cryogenics = "aquilo-cryogenics"
+data:extend
+({
     -- ARSENIC
     {
         type = technology,
         name = tech_arsenic_processing,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/arsenic-processing.png",
+        icon = graphics_aquilo_tech .. tech_arsenic_processing .. ".png",
         icon_size = 256,
         prerequisites = {tech_antimonite_processing_4, tech_germanite_processing_4},
         effects = {{type = unlock_recipe, recipe = arsenic_powder}},
@@ -592,7 +625,7 @@ data:extend
     {
         type = technology,
         name = tech_arsenic_synthesis,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/arsenic-synthesis.png",
+        icon = graphics_aquilo_tech .. tech_arsenic_synthesis .. ".png",
         icon_size = 256,
         prerequisites = {tech_antimonite_processing_4, tech_germanite_processing_4},
         effects = {{type = unlock_recipe, recipe = arsenic_recipe}},
@@ -619,7 +652,7 @@ data:extend
     {
         type = technology,
         name = tech_aquilo_cryogenics,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/aquilo-cryogenics.png",
+        icon = graphics_aquilo_tech .. tech_aquilo_cryogenics .. ".png",
         icon_size = 256,
         prerequisites = {tech_arsenic_processing, tech_galium_smelting_1},
         effects =
@@ -652,9 +685,6 @@ data:extend
 
 table.insert(data_technology[tech_molybdenum_smelting_3].prerequisites, planet_discovery_aquilo)
 
--- AQUILO CRYOGENIC CASTING
-
-
 -- AQUILO
 if settings.startup[setting_no_spoilage].value == false then
     tech_aquilo_freezing = "aquilo-freezing"
@@ -663,7 +693,7 @@ if settings.startup[setting_no_spoilage].value == false then
         {
             type = technology,
             name = tech_aquilo_freezing,
-            icon = "__TIMSABA__/graphics/icons/space-age/aquilo/technology/aquilo-freezing.png",
+            icon = graphics_aquilo_tech .. tech_aquilo_freezing .. ".png",
             icon_size = 256,
             prerequisites = {cryogenic_science_pack},
             effects = {},

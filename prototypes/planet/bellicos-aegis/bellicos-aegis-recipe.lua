@@ -500,7 +500,7 @@ if mods[bellicos_aegis_mods] then
             order = h,
             ingredients =
             {
-                {type = fluid, name = helium_mods, amount = 60},
+                {type = fluid, name = helium, amount = 60},
                 {type = fluid, name = nitrogen_liquid, amount = 120}
             },
             results =
@@ -533,7 +533,7 @@ if mods[bellicos_aegis_mods] then
             results =
             {
                 {type = item, name = advanced_processing_unit, amount = 4},
-                {type = fluid, name = helium_mods, amount = 60, ignored_by_productivity = 60} -- 120
+                {type = fluid, name = helium, amount = 60, ignored_by_productivity = 60} -- 120
             },
             main_product = advanced_processing_unit
         }

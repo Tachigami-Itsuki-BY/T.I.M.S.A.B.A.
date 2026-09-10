@@ -1,3 +1,5 @@
+local graphics_niobium = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium/"
+
 -- GROUPS
 local is_niobium = "is-niobium"
 local is_niobium_chemistry = "is-niobium-chemistry"
@@ -35,12 +37,12 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Nb"} or nil,
         name = niobium_ore,
         subgroup = is_niobium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-ore.png",
+        icon = graphics_niobium .. niobium_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-ore-2.png", width = 64, height = 64, scale = 0.5},
-            --[[{filename = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-ore-3.png", width = 64, height = 64, scale = 0.5}]]
+            {filename = graphics_niobium .. niobium_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_niobium .. niobium_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            --{filename = graphics_niobium .. niobium_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
@@ -48,28 +50,28 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Nb"} or nil,
         name = niobium_processed,
         subgroup = is_niobium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-processed.png",
+        icon = graphics_niobium .. niobium_processed .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Nb"} or nil,
         name = niobium_pellet,
         subgroup = is_niobium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-pellet.png",
+        icon = graphics_niobium .. niobium_pellet .. ".png",
         order = c
     },
     {
         localised_description = show_formula and {chemical_formula, "Nb"} or nil,
         name = niobium_powder,
         subgroup = is_niobium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-powder.png",
+        icon = graphics_niobium .. niobium_powder .. ".png",
         order = d
     },
     {
         localised_description = show_formula and {chemical_formula, "NbWMo"} or nil,
         name = niobium_tungsten_molybdenum_powder_mixture,
         subgroup = is_niobium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-tungsten-molybdenum-powder-mixture.png",
+        icon = graphics_niobium .. niobium_tungsten_molybdenum_powder_mixture .. ".png",
         order = e
     },
     -- CHEMISTRY
@@ -77,21 +79,21 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "Nb[font=default-tiny-bold]2[/font]O[font=default-tiny-bold]5[/font]"} or nil,
         name = niobium_oxide_V,
         subgroup = is_niobium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-oxide-V.png",
+        icon = graphics_niobium .. niobium_oxide_V .. ".png",
         order = a
     },
     {
         localised_description = show_formula and {chemical_formula, "KNbO[font=default-tiny-bold]3[/font]"} or nil,
         name = potassium_niobate,
         subgroup = is_niobium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/potassium-niobate.png",
+        icon = graphics_niobium .. potassium_niobate .. ".png",
         order = b
     },
     {
         localised_description = show_formula and {chemical_formula, "Nb(OH)[font=default-tiny-bold]5[/font]"} or nil,
         name = niobium_hydroxide_V,
         subgroup = is_niobium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-hydroxide-V.png",
+        icon = graphics_niobium .. niobium_hydroxide_V .. ".png",
         order = d
     },
     -- CASTING
@@ -100,7 +102,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbTi"} or nil,
         name = niobium_titanium_plate,
         subgroup = is_niobium_titanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-titanium-plate.png",
+        icon = graphics_niobium .. niobium_titanium_plate .. ".png",
         order = b,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -110,7 +112,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbTi"} or nil,
         name = niobium_titanium_cable,
         subgroup = is_niobium_titanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-titanium-cable.png",
+        icon = graphics_niobium .. niobium_titanium_cable .. ".png",
         order = c,
         drop_sound = data_item[copper_cable].drop_sound,
         inventory_move_sound = data_item[copper_cable].inventory_move_sound,
@@ -121,7 +123,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbFe"} or nil,
         name = niobium_iron_plate,
         subgroup = is_niobium_iron,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-iron-plate.png",
+        icon = graphics_niobium .. niobium_iron_plate .. ".png",
         order = b,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -131,7 +133,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbFe"} or nil,
         name = niobium_iron_bearing_ball,
         subgroup = is_niobium_iron,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-iron-bearing-ball.png",
+        icon = graphics_niobium .. niobium_iron_bearing_ball .. ".png",
         order = c,
         drop_sound = data_item[steel_bearing_ball].drop_sound,
         inventory_move_sound = data_item[steel_bearing_ball].inventory_move_sound,
@@ -141,7 +143,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbFe"} or nil,
         name = niobium_iron_bearing,
         subgroup = is_niobium_iron,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-iron-bearing.png",
+        icon = graphics_niobium .. niobium_iron_bearing .. ".png",
         order = d,
         drop_sound = data_item[steel_bearing].drop_sound,
         inventory_move_sound = data_item[steel_bearing].inventory_move_sound,
@@ -152,7 +154,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbWMo"} or nil,
         name = niobium_tungsten_molybdenum_plate,
         subgroup = is_niobium_tungsten_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-tungsten-molybdenum-plate.png",
+        icon = graphics_niobium .. niobium_tungsten_molybdenum_plate .. ".png",
         order = a,
         drop_sound = data_item[iron_plate].drop_sound,
         inventory_move_sound = data_item[iron_plate].inventory_move_sound,
@@ -162,7 +164,7 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NbWMo"} or nil,
         name = niobium_tungsten_molybdenum_gear_wheel,
         subgroup = is_niobium_tungsten_molybdenum,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-tungsten-molybdenum-gear-wheel.png",
+        icon = graphics_niobium .. niobium_tungsten_molybdenum_gear_wheel .. ".png",
         order = b,
         drop_sound = data_item[iron_gear_wheel].drop_sound,
         inventory_move_sound = data_item[iron_gear_wheel].inventory_move_sound,
@@ -182,7 +184,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "HNbF[font=default-tiny-bold]7(aq)[/font]"} or nil,
         name = heptafluoroniobic_acid,
         subgroup = is_niobium_chemistry,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/heptafluoroniobic-acid-solution.png",
+        icon = graphics_niobium .. heptafluoroniobic_acid .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("HNbF7Wp"),
         flow_color = TIMSABA.functions.flow_color("HNbF7Wp")
@@ -192,7 +194,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "NbTi"} or nil,
         name = niobium_titanium_molten,
         subgroup = is_niobium_titanium,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-titanium-molten.png",
+        icon = graphics_niobium .. niobium_titanium_molten .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("NbTi"),
         flow_color = TIMSABA.functions.flow_color("NbTi")
@@ -202,12 +204,12 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "NbFe"} or nil,
         name = niobium_iron_molten,
         subgroup = is_niobium_iron,
-        icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/niobium-iron-molten.png",
+        icon = graphics_niobium .. niobium_iron_molten .. ".png",
         order = a,
         base_color = TIMSABA.functions.fluid_color("NbFe"),
         flow_color = TIMSABA.functions.flow_color("NbFe")
     },
-    -- NITROGEN LIQUIDS
+    -- NITROGEN FLUID
     {
         localised_description = show_formula and {chemical_formula, "NH[font=default-tiny-bold]4[/font]F[font=default-tiny-bold](aq)[/font]"} or nil,
         name = ammonium_fluoride_solution,

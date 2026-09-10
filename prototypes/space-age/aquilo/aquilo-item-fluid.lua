@@ -1,3 +1,5 @@
+local graphics_aquilo = "__TIMSABA__/graphics/icons/space-age/aquilo/"
+
 -- AQUILO AIR
 aquilo_air = "aquilo-air"
 tetrafluorohydrazine_gas = "tetrafluorohydrazine-gas"
@@ -8,7 +10,7 @@ TIMSABA.functions.create_fluids
     {
         name = aquilo_air,
         subgroup = is_aquilo_air,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/aquilo-air.png",
+        icon = graphics_aquilo .. aquilo_air .. ".png",
         order = a,
         base_color = {r = 94 / 255, g = 115 / 255, b = 126 / 255},
         flow_color = {r = 113 / 255, g = 132 / 255, b = 142 / 255}
@@ -17,7 +19,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "N[font=default-tiny-bold]2[/font]F[font=default-tiny-bold]4[/font]"} or nil,
         name = tetrafluorohydrazine_gas,
         subgroup = is_aquilo_air,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/tetrafluorohydrazine-gas.png",
+        icon = graphics_aquilo .. tetrafluorohydrazine_gas .. ".png",
         order = b,
         base_color = TIMSABA.functions.fluid_color("N2F4"),
         flow_color = TIMSABA.functions.flow_color("N2F4")
@@ -26,7 +28,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "NF[font=default-tiny-bold]3[/font]"} or nil,
         name = nitrogen_trifluoride_gas,
         subgroup = is_aquilo_air,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/nitrogen-trifluoride-gas.png",
+        icon = graphics_aquilo .. nitrogen_trifluoride_gas .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("NF3"),
         flow_color = TIMSABA.functions.flow_color("NF3"),
@@ -37,7 +39,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "NF[font=default-tiny-bold]3(liquefied)[/font]"} or nil,
         name = nitrogen_trifluoride_liquefied,
         subgroup = is_aquilo_air,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/nitrogen-trifluoride-liquefied.png",
+        icon = graphics_aquilo .. nitrogen_trifluoride_liquefied .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("NF3"),
         flow_color = TIMSABA.functions.flow_color("NF3"),
@@ -62,7 +64,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "CHCl[font=default-tiny-bold]3[/font]"} or nil,
         name = chloroform_liquid,
         subgroup = is_aquilo_fluorine,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/chloroform-luiqd.png",
+        icon = graphics_aquilo .. chloroform_liquid .. ".png",
         order = c,
         base_color = TIMSABA.functions.fluid_color("CHCl3"),
         flow_color = TIMSABA.functions.flow_color("CHCl3")
@@ -71,7 +73,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "CHClF[font=default-tiny-bold]2[/font]"} or nil,
         name = difluorochloromethane_gas,
         subgroup = is_aquilo_fluorine,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/difluorochloromethane-gas.png",
+        icon = graphics_aquilo .. difluorochloromethane_gas .. ".png",
         order = d,
         base_color = TIMSABA.functions.fluid_color("CHClF2"),
         flow_color = TIMSABA.functions.flow_color("CHClF2")
@@ -80,7 +82,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]2[/font]F[font=default-tiny-bold]4[/font]"} or nil,
         name = tetrafluoroethylene_gas,
         subgroup = is_aquilo_fluorine,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/tetrafluoroethylene-gas.png",
+        icon = graphics_aquilo .. tetrafluoroethylene_gas .. ".png",
         order = e,
         base_color = TIMSABA.functions.fluid_color("C2F4"),
         flow_color = TIMSABA.functions.flow_color("C2F4")
@@ -89,7 +91,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]F[font=default-tiny-bold]6[/font]"} or nil,
         name = hexafluoropropylene_gas,
         subgroup = is_aquilo_fluorine,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/hexafluoropropylene-gas.png",
+        icon = graphics_aquilo .. hexafluoropropylene_gas .. ".png",
         order = f,
         base_color = TIMSABA.functions.fluid_color("C3F6"),
         flow_color = TIMSABA.functions.flow_color("C3F6")
@@ -98,7 +100,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]F[font=default-tiny-bold]6[/font]O"} or nil,
         name = hexafluoropropylene_oxide_gas,
         subgroup = is_aquilo_fluorine,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/hexafluoropropylene-oxide-gas.png",
+        icon = graphics_aquilo .. hexafluoropropylene_oxide_gas .. ".png",
         order = g,
         base_color = TIMSABA.functions.fluid_color("C3F6O"),
         flow_color = TIMSABA.functions.flow_color("C3F6O")
@@ -119,13 +121,13 @@ TIMSABA.functions.create_items
         localised_description = show_formula and {chemical_formula, "NaNO[font=default-tiny-bold]2[/font]"} or nil,
         name = sodium_nitrite,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/sodium-nitrite.png",
+        icon = graphics_aquilo .. sodium_nitrite .. ".png",
         order = i
     },
     {
         name = semiconductor,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/semiconductor.png",
+        icon = graphics_aquilo .. semiconductor .. ".png",
         order = n
     }
 })
@@ -143,7 +145,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]5[/font]NO[font=default-tiny-bold]2[/font]"} or nil,
         name = nitrobenzene_liquid,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/nitrobenzene-liquid.png",
+        icon = graphics_aquilo .. nitrobenzene_liquid .. ".png",
         order = g,
         base_color = TIMSABA.functions.fluid_color("C6H5NO2"),
         flow_color = TIMSABA.functions.flow_color("C6H5NO2")
@@ -152,7 +154,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]7[/font]N"} or nil,
         name = aniline_liquid,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/aniline-liquid.png",
+        icon = graphics_aquilo .. aniline_liquid .. ".png",
         order = h,
         base_color = TIMSABA.functions.fluid_color("C6H7N"),
         flow_color = TIMSABA.functions.flow_color("C6H7N")
@@ -161,7 +163,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]6[/font]H[font=default-tiny-bold]5[/font]N[font=default-tiny-bold]2[/font]Cl[font=default-tiny-bold](aq)[/font]"} or nil,
         name = benzenediazonium_chloride_solution,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/benzenediazonium-chloride-solution.png",
+        icon = graphics_aquilo .. benzenediazonium_chloride_solution .. ".png",
         order = j,
         base_color = TIMSABA.functions.fluid_color("C6H5N2ClWp"),
         flow_color = TIMSABA.functions.flow_color("C6H5N2ClWp")
@@ -170,7 +172,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]3[/font]H[font=default-tiny-bold]6[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         name = lactic_acid,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/lactic-acid.png",
+        icon = graphics_aquilo .. lactic_acid .. ".png",
         order = k,
         base_color = TIMSABA.functions.fluid_color("C3H6O3"),
         flow_color = TIMSABA.functions.flow_color("C3H6O3")
@@ -179,7 +181,7 @@ TIMSABA.functions.create_fluids
         localised_description = show_formula and {chemical_formula, "C[font=default-tiny-bold]5[/font]H[font=default-tiny-bold]10[/font]O[font=default-tiny-bold]3[/font]"} or nil,
         name = ethyl_lactate_liquid,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/ethyl-lactate-liquid.png",
+        icon = graphics_aquilo .. ethyl_lactate_liquid .. ".png",
         order = l,
         base_color = TIMSABA.functions.fluid_color("C5H10O3"),
         flow_color = TIMSABA.functions.flow_color("C5H10O3")
@@ -187,7 +189,7 @@ TIMSABA.functions.create_fluids
     {
         name = photoresist_liquid,
         subgroup = is_aquilo_recipe,
-        icon = "__TIMSABA__/graphics/icons/space-age/aquilo/photoresist-liquid.png",
+        icon = graphics_aquilo .. photoresist_liquid .. ".png",
         order = m,
         base_color = {r = 0.95, g = 0.90, b = 0.50},
         flow_color = {r = 1.0, g = 0.95, b = 0.70}

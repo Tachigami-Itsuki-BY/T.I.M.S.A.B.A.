@@ -233,7 +233,6 @@ if mods[moshine_mods] then
 
     -- SMELTING
     lead_ingot_4 = "lead-ingot-4"
-    orthophosphoric_acid_from_phosphate_ore = "orthophosphoric-acid-from-phosphate-ore"
     TIMSABA.functions.create_recipes
     ({
         {
@@ -255,83 +254,6 @@ if mods[moshine_mods] then
                 {type = fluid, name = carbon_dioxide_angels, amount = 120} -- 240
             },
             main_product = lead_ingot
-        },
-        -- BORON
-        {
-            name = boron_oxide_III,
-            category = chemistry,
-            subgroup = is_boron,
-            icons = THREE_R_I(boric_acid_solution, boron_oxide_III, steam),
-            order = d,
-            -- 2H₃BO₃(aq) --> B₂O₃(s) + 5H₂O(g)
-            ingredients = {{type = fluid, name = boric_acid_solution, amount = 120}},
-            results =
-            {
-                {type = item, name = boron_oxide_III, amount = 4},
-                {type = fluid, name = steam, amount = 120} -- 300
-            },
-            main_product = boron_oxide_III
-        },
-        {
-            name = boron,
-            category = smelting_filtering,
-            subgroup = is_boron,
-            icons = TWO_D_I(boron_oxide_III, magnesium_powder, boron, magnesium_oxide),
-            order = e,
-            -- B₂O₃(s) + 3Mg(s) --> 2B(s) + 3MgO(s)
-            ingredients =
-            {
-                {type = item, name = boron_oxide_III, amount = 4},
-                {type = item, name = magnesium_powder, amount = 12}
-            },
-            results =
-            {
-                {type = item, name = boron, amount = 8},
-                {type = item, name = magnesium_oxide, amount = 4} -- 12
-            },
-            main_product = boron
-        },
-        -- PHOSPHORUS
-        {
-            name = orthophosphoric_acid,
-            category = chemistry,
-            subgroup = is_phosphorus,
-            icons = THREE_D_I(calcium_phosphate, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, nil, calcium_sulfate_angels),
-            order = h,
-            -- Ca₃(PO₄)₂(s) + 3H₂SO₄(l) + H₂O(l) --> H₃PO₄(aq) + 3CaSO₄(s)
-            ingredients =
-            {
-                {type = item, name = calcium_phosphate, amount = 4},
-                {type = fluid, name = sulfuric_acid_angels, amount = 180},
-                {type = fluid, name = water_purified_angels, amount = 180}
-            },
-            results =
-            {
-                {type = fluid, name = orthophosphoric_acid, amount = 60},
-                {type = item, name = calcium_sulfate_angels, amount = 4} -- 12
-            },
-            main_product = orthophosphoric_acid
-        },
-        {
-            name = orthophosphoric_acid_from_phosphate_ore,
-            category = chemistry,
-            subgroup = is_phosphorus,
-            icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
-            order = h_a,
-            -- Ca₅(PO₄)₃F + 5H₂SO₄(l) + 4H₂O(l) --> 3H₃PO₄(aq) + HF(aq) + 5CaSO₄(s)
-            ingredients =
-            {
-                {type = item, name = fluorapatite, amount = 4},
-                {type = fluid, name = sulfuric_acid_angels, amount = 300},
-                {type = fluid, name = water_purified_angels, amount = 240}
-            },
-            results =
-            {
-                {type = fluid, name = orthophosphoric_acid, amount = 180},
-                {type = fluid, name = hydrofluoric_acid_angels, amount = 30}, -- 60
-                {type = item, name = calcium_sulfate_angels, amount = 8} -- 20
-            },
-            main_product = orthophosphoric_acid
         }
     })
 
@@ -354,6 +276,89 @@ if mods[moshine_mods] then
                 {type = fluid, name = water_purified_angels, amount = 60}
             },
             main_product = calcium_phosphate
+        }
+    })
+
+    -- CHEMISTRY
+    orthophosphoric_acid_from_phosphate_ore = "orthophosphoric-acid-from-phosphate-ore"
+    TIMSABA.functions.create_recipes
+    ({
+        -- BORON
+        {
+            name = boron_oxide_III,
+            category = chemistry,
+            subgroup = is_boron,
+            icons = THREE_R_I(boric_acid_solution, boron_oxide_III, steam),
+            order = b,
+            -- 2H₃BO₃(aq) --> B₂O₃(s) + 5H₂O(g)
+            ingredients = {{type = fluid, name = boric_acid_solution, amount = 120}},
+            results =
+            {
+                {type = item, name = boron_oxide_III, amount = 4},
+                {type = fluid, name = steam, amount = 120} -- 300
+            },
+            main_product = boron_oxide_III
+        },
+        {
+            name = boron,
+            category = smelting_filtering,
+            subgroup = is_boron,
+            icons = TWO_D_I(boron_oxide_III, magnesium_powder, boron, magnesium_oxide),
+            order = c,
+            -- B₂O₃(s) + 3Mg(s) --> 2B(s) + 3MgO(s)
+            ingredients =
+            {
+                {type = item, name = boron_oxide_III, amount = 4},
+                {type = item, name = magnesium_powder, amount = 12}
+            },
+            results =
+            {
+                {type = item, name = boron, amount = 8},
+                {type = item, name = magnesium_oxide, amount = 4} -- 12
+            },
+            main_product = boron
+        },
+        -- PHOSPHORUS
+        {
+            name = orthophosphoric_acid,
+            category = chemistry,
+            subgroup = is_phosphorus_fluid,
+            icons = THREE_D_I(calcium_phosphate, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, nil, calcium_sulfate_angels),
+            order = e,
+            -- Ca₃(PO₄)₂(s) + 3H₂SO₄(l) + H₂O(l) --> H₃PO₄(aq) + 3CaSO₄(s)
+            ingredients =
+            {
+                {type = item, name = calcium_phosphate, amount = 4},
+                {type = fluid, name = sulfuric_acid_angels, amount = 180},
+                {type = fluid, name = water_purified_angels, amount = 180}
+            },
+            results =
+            {
+                {type = fluid, name = orthophosphoric_acid, amount = 60},
+                {type = item, name = calcium_sulfate_angels, amount = 4} -- 12
+            },
+            main_product = orthophosphoric_acid
+        },
+        {
+            name = orthophosphoric_acid_from_phosphate_ore,
+            category = chemistry,
+            subgroup = is_phosphorus_fluid,
+            icons = THREE_D_I(fluorapatite, sulfuric_acid_angels, water_purified_angels, orthophosphoric_acid, hydrofluoric_acid_angels, calcium_sulfate_angels),
+            order = e_a,
+            -- Ca₅(PO₄)₃F + 5H₂SO₄(l) + 4H₂O(l) --> 3H₃PO₄(aq) + HF(aq) + 5CaSO₄(s)
+            ingredients =
+            {
+                {type = item, name = fluorapatite, amount = 4},
+                {type = fluid, name = sulfuric_acid_angels, amount = 300},
+                {type = fluid, name = water_purified_angels, amount = 240}
+            },
+            results =
+            {
+                {type = fluid, name = orthophosphoric_acid, amount = 180},
+                {type = fluid, name = hydrofluoric_acid_angels, amount = 30}, -- 60
+                {type = item, name = calcium_sulfate_angels, amount = 8} -- 20
+            },
+            main_product = orthophosphoric_acid
         }
     })
 

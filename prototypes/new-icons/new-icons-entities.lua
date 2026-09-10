@@ -72,32 +72,23 @@ if mods[paracelsin_mods] then
     data_pump[galvanized_pump].animations.west.filename = "__TIMSABA__/graphics/entity/" .. pump .. "/galvanized/pump-west.png"
     data_pump[galvanized_pump].corpse = galvanized_pump .. _remnants
 
-    -- 1. Импортируем оригинальную графику коннектора
     local TIMSABA_connector_graphics = table.deepcopy(require("__base__.prototypes.entity.pump-connector"))
 
-    -- Функция для рекурсивного поиска и замены путей
     local function replace_paths(table)
         for key, value in pairs(table) do
             if type(value) == "table" then
-                -- Проверяем, является ли эта таблица описанием спрайта (не тенью)
-                -- и содержит ли она оригинальное имя файла коннектора
                 if value.filename and string.find(value.filename, "__base__/graphics/entity/pump/connector/") then
-                    -- Проверяем, что это НЕ тень (имя ключа или файла не содержит shadow)
                     if not string.find(key, "shadow") and not string.find(value.filename, "shadow") then
-                        -- Заменяем путь на ваш мод
                         value.filename = string.gsub(value.filename, "__base__/graphics/entity/pump/connector/", "__TIMSABA__/graphics/entity/pump/galvanized/connector/")
                     end
                 else
-                    -- Если это вложенная таблица (например, west, [1] и т.д.), идем глубже
                     replace_paths(value)
                 end
             end
         end
     end
 
-    -- 2. Запускаем замену путей
     replace_paths(TIMSABA_connector_graphics)
 
-    -- 3. Применяем измененную графику к вашему типу "pump"
     data_pump[galvanized_pump].fluid_wagon_connector_graphics = TIMSABA_connector_graphics
 end

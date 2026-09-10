@@ -1,4 +1,4 @@
--- BASE and SPACE AGE
+-- BASE
 data_fluid[water].icon = "__TIMSABA__/graphics/icons/base/water.png"
 data_fluid[water].base_color = {r = 076 / 255, g = 177 / 255, b = 205 / 255}
 data_fluid[water].flow_color = {r = 100 / 255, g = 192 / 255, b = 218 / 255}
@@ -23,6 +23,7 @@ data_fluid[lubricant].icon = "__TIMSABA__/graphics/icons/base/lubricant.png"
 data_fluid[lubricant].base_color = {r = 038 / 255, g = 127 / 255, b = 018 / 255}
 data_fluid[lubricant].flow_color = {r = 050 / 255, g = 130 / 255, b = 032 / 255}
 
+-- SPACE AGE
 data_fluid[thruster_fuel].icon = "__TIMSABA__/graphics/icons/space-age/thruster-fuel.png"
 data_fluid[thruster_fuel].base_color = {r = 255 / 255, g = 159 / 255, b = 038 / 255}
 data_fluid[thruster_fuel].flow_color = {r = 255 / 255, g = 164 / 255, b = 049 / 255}
@@ -52,80 +53,38 @@ data_fluid[electrolyte].icon = "__TIMSABA__/graphics/icons/space-age/fulgora/ele
 data_fluid[lava].icon = "__TIMSABA__/graphics/icons/space-age/vulcanus/lava.png"
 
 -- ANGELS RESOURCE REFINING
-data_fluid[sludge_ferrous].icons = nil
-data_fluid[sludge_ferrous].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore8-sludge.png"
-data_fluid[sludge_ferrous].base_color = {r = 092 / 255, g = 127 / 255, b = 072 / 255}
-data_fluid[sludge_ferrous].flow_color = {r = 100 / 255, g = 133 / 255, b = 081 / 255}
+local graphics_resource = "__TIMSABA__/graphics/icons/angels/resource/"
 
-data_fluid[slurry_ferrous].icons = nil
-data_fluid[slurry_ferrous].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore8-solution.png"
-data_fluid[slurry_ferrous].base_color = {r = 101 / 255, g = 125 / 255, b = 110 / 255}
-data_fluid[slurry_ferrous].flow_color = {r = 109 / 255, g = 132 / 255, b = 117 / 255}
+local resource_fluids =
+{
+    [sludge_ferrous] = {base = {092, 127, 072}, flow = {100, 133, 081}},
+    [slurry_ferrous] = {base = {101, 125, 110}, flow = {109, 132, 117}},
+    [concentrate_anodized_ferrous] = {base = {113, 107, 106}, flow = {120, 114, 113}},
+    [concentrate_ferrous] = {base = {110, 127, 141}, flow = {117, 133, 147}},
+    [sludge_cupric] = {base = {160, 081, 034}, flow = {165, 090, 045}},
+    [slurry_cupric] = {base = {139, 082, 055}, flow = {145, 091, 065}},
+    [concentrate_anodized_cupric] = {base = {134, 078, 059}, flow = {140, 087, 069}},
+    [concentrate_cupric] = {base = {128, 083, 070}, flow = {134, 092, 079}},
+    [water_thermal_angels] = {base = {196, 108, 000}, flow = {199, 115, 013}},
+    [slurry_slag] = {base = {085, 036, 004}, flow = {094, 047, 017}},
+    [sludge_mineral] = {base = {158, 067, 000}, flow = {163, 076, 013}},
+    [slurry_crystal] = {base = {057, 185, 000}, flow = {067, 189, 013}},
+    [seedling_crystal] = {base = {110, 149, 015}, flow = {117, 154, 027}},
+    [iron_chloride_III_solution_angels] = "FeCl3Wp",
+    [copper_chloride_II_solution_angels] = "CuCl2Wp"
+}
+for fluid_name, info in pairs(resource_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_resource .. fluid_name .. ".png"
 
-data_fluid[concentrate_anodized_ferrous].icons = nil
-data_fluid[concentrate_anodized_ferrous].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore8-anode-sludge.png"
-data_fluid[concentrate_anodized_ferrous].base_color = {r = 113 / 255, g = 107 / 255, b = 106 / 255}
-data_fluid[concentrate_anodized_ferrous].flow_color = {r = 120 / 255, g = 114 / 255, b = 113 / 255}
-
-data_fluid[concentrate_ferrous].icons = nil
-data_fluid[concentrate_ferrous].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore8-slime.png"
-data_fluid[concentrate_ferrous].base_color = {r = 110 / 255, g = 127 / 255, b = 141 / 255}
-data_fluid[concentrate_ferrous].flow_color = {r = 117 / 255, g = 133 / 255, b = 147 / 255}
-
-data_fluid[sludge_cupric].icons = nil
-data_fluid[sludge_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-sludge.png"
-data_fluid[sludge_cupric].base_color = {r = 160 / 255, g = 081 / 255, b = 034 / 255}
-data_fluid[sludge_cupric].flow_color = {r = 165 / 255, g = 090 / 255, b = 045 / 255}
-
-data_fluid[slurry_cupric].icons = nil
-data_fluid[slurry_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-solution.png"
-data_fluid[slurry_cupric].base_color = {r = 139 / 255, g = 82 / 255, b = 55 / 255}
-data_fluid[slurry_cupric].flow_color = {r = 145 / 255, g = 91 / 255, b = 65 / 255}
-
-data_fluid[concentrate_anodized_cupric].icons = nil
-data_fluid[concentrate_anodized_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-anode-sludge.png"
-data_fluid[concentrate_anodized_cupric].base_color = {r = 134 / 255, g = 078 / 255, b = 059 / 255}
-data_fluid[concentrate_anodized_cupric].flow_color = {r = 140 / 255, g = 087 / 255, b = 069 / 255}
-
-data_fluid[concentrate_cupric].icons = nil
-data_fluid[concentrate_cupric].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-ore9-slime.png"
-data_fluid[concentrate_cupric].base_color = {r = 128 / 255, g = 083 / 255, b = 070 / 255}
-data_fluid[concentrate_cupric].flow_color = {r = 134 / 255, g = 092 / 255, b = 079 / 255}
-
-data_fluid[water_thermal_angels].icons = nil
-data_fluid[water_thermal_angels].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-thermal-water.png"
-data_fluid[water_thermal_angels].base_color = {r = 196 / 255, g = 108 / 255, b = 000 / 255}
-data_fluid[water_thermal_angels].flow_color = {r = 199 / 255, g = 115 / 255, b = 013 / 255}
-
-data_fluid[slurry_slag].icons = nil
-data_fluid[slurry_slag].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-slag-slurry.png"
-data_fluid[slurry_slag].base_color = {r = 085 / 255, g = 036 / 255, b = 004 / 255}
-data_fluid[slurry_slag].flow_color = {r = 094 / 255, g = 047 / 255, b = 017 / 255}
-
-data_fluid[sludge_mineral].icons = nil
-data_fluid[sludge_mineral].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-mineral-sludge.png"
-data_fluid[sludge_mineral].base_color = {r = 158 / 255, g = 067 / 255, b = 000 / 255}
-data_fluid[sludge_mineral].flow_color = {r = 163 / 255, g = 076 / 255, b = 013 / 255}
-
-data_fluid[slurry_crystal].icons = nil
-data_fluid[slurry_crystal].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-crystal-slurry.png"
-data_fluid[slurry_crystal].base_color = {r = 057 / 255, g = 185 / 255, b = 000 / 255}
-data_fluid[slurry_crystal].flow_color = {r = 067 / 255, g = 189 / 255, b = 013 / 255}
-
-data_fluid[seedling_crystal].icons = nil
-data_fluid[seedling_crystal].icon = "__TIMSABA__/graphics/icons/angels/resource/angels-crystal-seedling.png"
-data_fluid[seedling_crystal].base_color = {r = 110 / 255, g = 149 / 255, b = 015 / 255}
-data_fluid[seedling_crystal].flow_color = {r = 117 / 255, g = 154 / 255, b = 027 / 255}
-
-data_fluid[iron_chloride_III_solution_angels].icons = nil
-data_fluid[iron_chloride_III_solution_angels].icon = "__TIMSABA__/graphics/icons/angels/resource/iron-chloride-III-solution.png"
-data_fluid[iron_chloride_III_solution_angels].base_color = TIMSABA.functions.fluid_color("FeCl3Wp")
-data_fluid[iron_chloride_III_solution_angels].flow_color = TIMSABA.functions.flow_color("FeCl3Wp")
-
-data_fluid[copper_chloride_II_solution_angels].icons = nil
-data_fluid[copper_chloride_II_solution_angels].icon = "__TIMSABA__/graphics/icons/angels/resource/copper-chloride-II-solution.png"
-data_fluid[copper_chloride_II_solution_angels].base_color = TIMSABA.functions.fluid_color("CuCl2Wp")
-data_fluid[copper_chloride_II_solution_angels].flow_color = TIMSABA.functions.flow_color("CuCl2Wp")
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
 -- ANGELS METALLURGY SMELTING
 data_fluid[hexafluorosilicic_acid].icons = nil
@@ -180,488 +139,290 @@ data_fluid[liquid_fuel_bob].base_color = {r = 255 / 255, g = 220 / 255, b = 078 
 data_fluid[liquid_fuel_bob].flow_color = {r = 255 / 255, g = 222 / 255, b = 087 / 255}
 
 -- ANGELS WATER TREATMENT
-data_fluid[water_semiheavy_1].icons = nil
-data_fluid[water_semiheavy_1].icon = "__TIMSABA__/graphics/icons/angels/water/angels-liquid-water-semiheavy-1.png"
-data_fluid[water_semiheavy_1].base_color = TIMSABA.functions.fluid_color("D2ODk3")
-data_fluid[water_semiheavy_1].flow_color = TIMSABA.functions.flow_color("D2ODk3")
+local graphics_water = "__TIMSABA__/graphics/icons/angels/water/"
 
-data_fluid[water_semiheavy_2].icons = nil
-data_fluid[water_semiheavy_2].icon = "__TIMSABA__/graphics/icons/angels/water/angels-liquid-water-semiheavy-2.png"
-data_fluid[water_semiheavy_2].base_color = TIMSABA.functions.fluid_color("D2ODk2")
-data_fluid[water_semiheavy_2].flow_color = TIMSABA.functions.flow_color("D2ODk2")
+local water_fluids =
+{
+    [water_semiheavy_1] = "D2ODk3",
+    [water_semiheavy_2] = "D2ODk2",
+    [water_semiheavy_3] = "D2ODk",
+    [water_heavy_angels] = "D2O",
+    [water_purified_angels] = "WpWpWp",
+    [water_mineralized_angels] = {base = {095, 089, 085}, flow = {103, 097, 094}},
+    [coolant] = "C2H6O2",
+    [coolant_used] = "C2H6O2",
+    [water_yellow_waste] = "WpSSWp",
+    [water_red_waste] = "WpNOWp",
+    [water_green_waste] = "WpClClWp",
+    [water_greenyellow_waste] = "WpFFWp",
+    [water_viscous_mud] = {base = {099, 075, 029}, flow = {107, 084, 040}},
+    [water_heavy_mud] = {base = {098, 103, 104}, flow = {106, 111, 112}},
+    [water_concentrated_mud] = {base = {108, 110, 109}, flow = {115, 117, 116}},
+    [water_light_mud] = {base = {119, 119, 113}, flow = {126, 126, 120}},
+    [water_thin_mud] = {base = {129, 128, 120}, flow = {135, 134, 127}},
+    [water_saline_angels] = {base = {098, 143, 204}, flow = {106, 149, 207}}
+}
+for fluid_name, info in pairs(water_fluids) do
+    if fluid_name == coolant or fluid_name == coolant_used then
+        data_fluid[fluid_name].icon_size = nil
+    else
+        data_fluid[fluid_name].icons = nil
+    end
 
-data_fluid[water_semiheavy_3].icons = nil
-data_fluid[water_semiheavy_3].icon = "__TIMSABA__/graphics/icons/angels/water/angels-liquid-water-semiheavy-3.png"
-data_fluid[water_semiheavy_3].base_color = TIMSABA.functions.fluid_color("D2ODk")
-data_fluid[water_semiheavy_3].flow_color = TIMSABA.functions.flow_color("D2ODk")
+    data_fluid[fluid_name].icon = graphics_water .. fluid_name .. ".png"
 
-data_fluid[water_heavy_angels].icons = nil
-data_fluid[water_heavy_angels].icon = "__TIMSABA__/graphics/icons/angels/water/angels-liquid-water-heavy.png"
-data_fluid[water_heavy_angels].base_color = TIMSABA.functions.fluid_color("D2O")
-data_fluid[water_heavy_angels].flow_color = TIMSABA.functions.flow_color("D2O")
-
-data_fluid[water_purified_angels].icons = nil
-data_fluid[water_purified_angels].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-purified.png"
-data_fluid[water_purified_angels].base_color = TIMSABA.functions.fluid_color("WpWpWp")
-data_fluid[water_purified_angels].flow_color = TIMSABA.functions.flow_color("WpWpWp")
-
-data_fluid[water_mineralized_angels].icons = nil
-data_fluid[water_mineralized_angels].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-mineralized.png"
-data_fluid[water_mineralized_angels].base_color = {r = 095 / 255, g = 089 / 255, b = 085 / 255}
-data_fluid[water_mineralized_angels].flow_color = {r = 103 / 255, g = 097 / 255, b = 094 / 255}
-
-data_fluid[coolant].icon = "__TIMSABA__/graphics/icons/angels/water/angels-liquid-coolant.png"
-data_fluid[coolant].icon_size = nil
-data_fluid[coolant].base_color = TIMSABA.functions.fluid_color("C2H6O2")
-data_fluid[coolant].flow_color = TIMSABA.functions.flow_color("C2H6O2")
-
-data_fluid[coolant_used].icon = "__TIMSABA__/graphics/icons/angels/water/angels-liquid-coolant-used.png"
-data_fluid[coolant_used].icon_size = nil
-data_fluid[coolant_used].base_color = TIMSABA.functions.fluid_color("C2H6O2")
-data_fluid[coolant_used].flow_color = TIMSABA.functions.flow_color("C2H6O2")
-
-data_fluid[water_yellow_waste].icons = nil
-data_fluid[water_yellow_waste].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-yellow-waste.png"
-data_fluid[water_yellow_waste].base_color = TIMSABA.functions.fluid_color("WpSSWp")
-data_fluid[water_yellow_waste].flow_color = TIMSABA.functions.flow_color("WpSSWp")
-
-data_fluid[water_red_waste].icons = nil
-data_fluid[water_red_waste].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-red-waste.png"
-data_fluid[water_red_waste].base_color = TIMSABA.functions.fluid_color("WpNOWp")
-data_fluid[water_red_waste].flow_color = TIMSABA.functions.flow_color("WpNOWp")
-
-data_fluid[water_green_waste].icons = nil
-data_fluid[water_green_waste].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-green-waste.png"
-data_fluid[water_green_waste].base_color = TIMSABA.functions.fluid_color("WpClClWp")
-data_fluid[water_green_waste].flow_color = TIMSABA.functions.flow_color("WpClClWp")
-
-data_fluid[water_greenyellow_waste].icons = nil
-data_fluid[water_greenyellow_waste].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-greenyellow-waste.png"
-data_fluid[water_greenyellow_waste].base_color = TIMSABA.functions.fluid_color("WpFFWp")
-data_fluid[water_greenyellow_waste].flow_color = TIMSABA.functions.flow_color("WpFFWp")
-
-data_fluid[water_viscous_mud].icons = nil
-data_fluid[water_viscous_mud].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-viscous-mud.png"
-data_fluid[water_viscous_mud].base_color = {r = 099 / 255, g = 075 / 255, b = 029 / 255}
-data_fluid[water_viscous_mud].flow_color = {r = 107 / 255, g = 084 / 255, b = 040 / 255}
-
-data_fluid[water_heavy_mud].icons = nil
-data_fluid[water_heavy_mud].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-heavy-mud.png"
-data_fluid[water_heavy_mud].base_color = {r = 098 / 255, g = 103 / 255, b = 104 / 255}
-data_fluid[water_heavy_mud].flow_color = {r = 106 / 255, g = 111 / 255, b = 112 / 255}
-
-data_fluid[water_concentrated_mud].icons = nil
-data_fluid[water_concentrated_mud].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-concentrated-mud.png"
-data_fluid[water_concentrated_mud].base_color = {r = 108 / 255, g = 110 / 255, b = 109 / 255}
-data_fluid[water_concentrated_mud].flow_color = {r = 115 / 255, g = 117 / 255, b = 116 / 255}
-
-data_fluid[water_light_mud].icons = nil
-data_fluid[water_light_mud].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-light-mud.png"
-data_fluid[water_light_mud].base_color = {r = 119 / 255, g = 119 / 255, b = 113 / 255}
-data_fluid[water_light_mud].flow_color = {r = 126 / 255, g = 126 / 255, b = 120 / 255}
-
-data_fluid[water_thin_mud].icons = nil
-data_fluid[water_thin_mud].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-thin-mud.png"
-data_fluid[water_thin_mud].base_color = {r = 129 / 255, g = 128 / 255, b = 120 / 255}
-data_fluid[water_thin_mud].flow_color = {r = 135 / 255, g = 134 / 255, b = 127 / 255}
-
-data_fluid[water_saline_angels].icons = nil
-data_fluid[water_saline_angels].icon = "__TIMSABA__/graphics/icons/angels/water/angels-water-saline.png"
-data_fluid[water_saline_angels].base_color = {r = 098 / 255, g = 143 / 255, b = 204 / 255}
-data_fluid[water_saline_angels].flow_color = {r = 106 / 255, g = 149 / 255, b = 207 / 255}
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
 -- ANGELS PETROCHEM REFINING
-data_fluid[compressed_air].icons = nil
-data_fluid[compressed_air].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-compressed-air.png"
-data_fluid[compressed_air].base_color = {r = 150 / 255, g = 150 / 255, b = 197 / 255}
-data_fluid[compressed_air].flow_color = {r = 155 / 255, g = 155 / 255, b = 200 / 255}
+-- BASICS
+local graphics_petrochem_basics = "__TIMSABA__/graphics/icons/angels/petrochem/basics/"
 
-data_fluid[oxygen_angels].icons = nil
-data_fluid[oxygen_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-oxygen.png"
-data_fluid[oxygen_angels].base_color = TIMSABA.functions.fluid_color("OOO")
-data_fluid[oxygen_angels].flow_color = TIMSABA.functions.flow_color("OOO")
+local basic_fluids =
+{
+    [compressed_air] = {base = {150, 150, 197}, flow = {155, 155, 200}},
+    [oxygen_angels] = "OOO",
+    [carbon_monoxide_angels] = "CO",
+    [carbon_dioxide_angels] = "CO2",
+    [hydrogen_angels] = "HHH",
+    [deuterium_angels] = "DDD",
+    [hydrogen_fluoride_angels] = "HF",
+    [hydrofluoric_acid_angels] = "HFWp"
+}
+for fluid_name, info in pairs(basic_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_basics .. fluid_name .. ".png"
+
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
+
 data_fluid[oxygen_angels].default_temperature = 15
 data_fluid[oxygen_angels].max_temperature = 100
 data_fluid[oxygen_angels].heat_capacity = "200J"
 
-data_fluid[carbon_monoxide_angels].icons = nil
-data_fluid[carbon_monoxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-carbon-monoxide.png"
-data_fluid[carbon_monoxide_angels].base_color = TIMSABA.functions.fluid_color("CO")
-data_fluid[carbon_monoxide_angels].flow_color = TIMSABA.functions.flow_color("CO")
-
-data_fluid[carbon_dioxide_angels].icons = nil
-data_fluid[carbon_dioxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-carbon-dioxide.png"
-data_fluid[carbon_dioxide_angels].base_color = TIMSABA.functions.fluid_color("CO2")
-data_fluid[carbon_dioxide_angels].flow_color = TIMSABA.functions.flow_color("CO2")
 data_fluid[carbon_dioxide_angels].default_temperature = 15
 data_fluid[carbon_dioxide_angels].max_temperature = 5000
 data_fluid[carbon_dioxide_angels].heat_capacity = "200J"
 
-data_fluid[hydrogen_angels].icons = nil
-data_fluid[hydrogen_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-hydrogen.png"
-data_fluid[hydrogen_angels].base_color = TIMSABA.functions.fluid_color("HHH")
-data_fluid[hydrogen_angels].flow_color = TIMSABA.functions.flow_color("HHH")
-if mods[crucible_mods] then
-    data_fluid[hydrogen_angels].default_temperature = 15
-    data_fluid[hydrogen_angels].max_temperature = 500
+-- CHLORINE
+local graphics_petrochem_chlorine = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/"
+
+local chlorine_fluids =
+{
+    [chlorine_angels] = "ClClCl",
+    [hydrogen_chloride_angels] = "HCl",
+    [hydrochloric_acid_angels] = "HClWp",
+    [allyl_chloride_angels] = "C3H5Cl",
+    [epichlorohydrin_angels] = "C3H5ClO",
+    [chloromethane_angels] = "CH3Cl",
+    [perchloric_acid_angels] = "HClO4"
+}
+for fluid_name, info in pairs(chlorine_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_chlorine .. fluid_name .. ".png"
+
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base / 255, g = info.base / 255, b = info.base / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow / 255, g = info.flow / 255, b = info.flow / 255}
+    end
 end
 
-data_fluid[deuterium_angels].icons = nil
-data_fluid[deuterium_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-deuterium.png"
-data_fluid[deuterium_angels].base_color = TIMSABA.functions.fluid_color("DDD")
-data_fluid[deuterium_angels].flow_color = TIMSABA.functions.flow_color("DDD")
+-- NITROGEN
+local graphics_petrochem_nitrogen = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/"
 
-data_fluid[hydrogen_fluoride_angels].icons = nil
-data_fluid[hydrogen_fluoride_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-gas-hydrogen-fluoride.png"
-data_fluid[hydrogen_fluoride_angels].base_color = TIMSABA.functions.fluid_color("HF")
-data_fluid[hydrogen_fluoride_angels].flow_color = TIMSABA.functions.flow_color("HF")
+local nitrogen_fluids =
+{
+    [nitrogen_angels] = "NNN",
+    [ammonia_angels] = "NH3",
+    [nitrogen_monoxide_angels] = "NO",
+    [nitrogen_dioxide_angels] = "NO2",
+    [dinitrogen_tetroxide_angels] = "N2O4",
+    [ammonium_chloride_solution_angels] = "NH4ClWp",
+    [urea_solution_angels] = "N2H4COWp",
+    [melamine_solution_angels] = "C3H6N6Wp",
+    [nitric_acid_angels] = "HNO3",
+    [monochloramine_angels] = "NH2Cl",
+    [hydrazine_angels] = "N2H4",
+    [methylamine_angels] = "CH5N",
+    [dimethylamine_angels] = "C2H7N",
+    [dimethylhydrazine_angels] = "C2H8N2"
+}
+for fluid_name, info in pairs(nitrogen_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_nitrogen .. fluid_name .. ".png"
 
-data_fluid[hydrofluoric_acid_angels].icons = nil
-data_fluid[hydrofluoric_acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/basics/angels-liquid-hydrofluoric-acid.png"
-data_fluid[hydrofluoric_acid_angels].base_color = TIMSABA.functions.fluid_color("HFWp")
-data_fluid[hydrofluoric_acid_angels].flow_color = TIMSABA.functions.flow_color("HFWp")
-
-data_fluid[chlorine_angels].icons = nil
-data_fluid[chlorine_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-gas-chlorine.png"
-data_fluid[chlorine_angels].base_color = TIMSABA.functions.fluid_color("ClClCl")
-data_fluid[chlorine_angels].flow_color = TIMSABA.functions.flow_color("ClClCl")
-
-data_fluid[hydrogen_chloride_angels].icons = nil
-data_fluid[hydrogen_chloride_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-gas-hydrogen-chloride.png"
-data_fluid[hydrogen_chloride_angels].base_color = TIMSABA.functions.fluid_color("HCl")
-data_fluid[hydrogen_chloride_angels].flow_color = TIMSABA.functions.flow_color("HCl")
-
-data_fluid[hydrochloric_acid_angels].icons = nil
-data_fluid[hydrochloric_acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-liquid-hydrochloric-acid.png"
-data_fluid[hydrochloric_acid_angels].base_color = TIMSABA.functions.fluid_color("HClWp")
-data_fluid[hydrochloric_acid_angels].flow_color = TIMSABA.functions.flow_color("HClWp")
-
-data_fluid[allyl_chloride_angels].icons = nil
-data_fluid[allyl_chloride_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-liquid-allyl-chlorid.png"
-data_fluid[allyl_chloride_angels].base_color = TIMSABA.functions.fluid_color("C3H5Cl")
-data_fluid[allyl_chloride_angels].flow_color = TIMSABA.functions.flow_color("C3H5Cl")
-
-data_fluid[epichlorohydrin_angels].icons = nil
-data_fluid[epichlorohydrin_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-liquid-epichlorohydrin.png"
-data_fluid[epichlorohydrin_angels].base_color = TIMSABA.functions.fluid_color("C3H5ClO")
-data_fluid[epichlorohydrin_angels].flow_color = TIMSABA.functions.flow_color("C3H5ClO")
-
-data_fluid[chloromethane_angels].icons = nil
-data_fluid[chloromethane_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-gas-chloromethane.png"
-data_fluid[chloromethane_angels].base_color = TIMSABA.functions.fluid_color("CH3Cl")
-data_fluid[chloromethane_angels].flow_color = TIMSABA.functions.flow_color("CH3Cl")
-
-data_fluid[perchloric_acid_angels].icons = nil
-data_fluid[perchloric_acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/chlorine/angels-liquid-perchloric-acid.png"
-data_fluid[perchloric_acid_angels].base_color = TIMSABA.functions.fluid_color("HClO4")
-data_fluid[perchloric_acid_angels].flow_color = TIMSABA.functions.flow_color("HClO4")
-
-data_fluid[nitrogen_angels].icons = nil
-data_fluid[nitrogen_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-nitrogen.png"
-data_fluid[nitrogen_angels].base_color = TIMSABA.functions.fluid_color("NNN")
-data_fluid[nitrogen_angels].flow_color = TIMSABA.functions.flow_color("NNN")
-
-data_fluid[ammonia_angels].icons = nil
-data_fluid[ammonia_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-ammonia.png"
-data_fluid[ammonia_angels].base_color = TIMSABA.functions.fluid_color("NH3")
-data_fluid[ammonia_angels].flow_color = TIMSABA.functions.flow_color("NH3")
-
-data_fluid[nitrogen_monoxide_angels].icons = nil
-data_fluid[nitrogen_monoxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-nitrogen-monoxide.png"
-data_fluid[nitrogen_monoxide_angels].base_color = TIMSABA.functions.fluid_color("NO")
-data_fluid[nitrogen_monoxide_angels].flow_color = TIMSABA.functions.flow_color("NO")
-
-data_fluid[nitrogen_dioxide_angels].icons = nil
-data_fluid[nitrogen_dioxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-nitrogen-dioxide.png"
-data_fluid[nitrogen_dioxide_angels].base_color = TIMSABA.functions.fluid_color("NO2")
-data_fluid[nitrogen_dioxide_angels].flow_color = TIMSABA.functions.flow_color("NO2")
-
-data_fluid[dinitrogen_tetroxide_angels].icons = nil
-data_fluid[dinitrogen_tetroxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-dinitrogen-tetroxide.png"
-data_fluid[dinitrogen_tetroxide_angels].base_color = TIMSABA.functions.fluid_color("N2O4")
-data_fluid[dinitrogen_tetroxide_angels].flow_color = TIMSABA.functions.flow_color("N2O4")
-
-data_fluid[ammonium_chloride_solution_angels].icons = nil
-data_fluid[ammonium_chloride_solution_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-solution-ammonium-chloride.png"
-data_fluid[ammonium_chloride_solution_angels].base_color = TIMSABA.functions.fluid_color("NH4ClWp")
-data_fluid[ammonium_chloride_solution_angels].flow_color = TIMSABA.functions.flow_color("NH4ClWp")
-
-data_fluid[urea_solution_angels].icons = nil
-data_fluid[urea_solution_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-solution-urea.png"
-data_fluid[urea_solution_angels].base_color = TIMSABA.functions.fluid_color("N2H4COWp")
-data_fluid[urea_solution_angels].flow_color = TIMSABA.functions.flow_color("N2H4COWp")
-
-data_fluid[melamine_solution_angels].icons = nil
-data_fluid[melamine_solution_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-solution-melamine.png"
-data_fluid[melamine_solution_angels].base_color = TIMSABA.functions.fluid_color("C3H6N6Wp")
-data_fluid[melamine_solution_angels].flow_color = TIMSABA.functions.flow_color("C3H6N6Wp")
-
-data_fluid[nitric_acid_angels].icons = nil
-data_fluid[nitric_acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-liquid-nitric-acid.png"
-data_fluid[nitric_acid_angels].base_color = TIMSABA.functions.fluid_color("HNO3")
-data_fluid[nitric_acid_angels].flow_color = TIMSABA.functions.flow_color("HNO3")
-
-data_fluid[monochloramine_angels].icons = nil
-data_fluid[monochloramine_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-monochloramine.png"
-data_fluid[monochloramine_angels].base_color = TIMSABA.functions.fluid_color("NH2Cl")
-data_fluid[monochloramine_angels].flow_color = TIMSABA.functions.flow_color("NH2Cl")
-
-data_fluid[hydrazine_angels].icons = nil
-data_fluid[hydrazine_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-liquid-hydrazine.png"
-data_fluid[hydrazine_angels].base_color = TIMSABA.functions.fluid_color("N2H4")
-data_fluid[hydrazine_angels].flow_color = TIMSABA.functions.flow_color("N2H4")
-
-data_fluid[methylamine_angels].icons = nil
-data_fluid[methylamine_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-methylamine.png"
-data_fluid[methylamine_angels].base_color = TIMSABA.functions.fluid_color("CH5N")
-data_fluid[methylamine_angels].flow_color = TIMSABA.functions.flow_color("CH5N")
-
-data_fluid[dimethylamine_angels].icons = nil
-data_fluid[dimethylamine_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-gas-dimethylamine.png"
-data_fluid[dimethylamine_angels].base_color = TIMSABA.functions.fluid_color("C2H7N")
-data_fluid[dimethylamine_angels].flow_color = TIMSABA.functions.flow_color("C2H7N")
-
-data_fluid[dimethylhydrazine_angels].icons = nil
-data_fluid[dimethylhydrazine_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/nitrogen/angels-liquid-dimethylhydrazine.png"
-data_fluid[dimethylhydrazine_angels].base_color = TIMSABA.functions.fluid_color("C2H8N2")
-data_fluid[dimethylhydrazine_angels].flow_color = TIMSABA.functions.flow_color("C2H8N2")
-
-data_fluid[hydrogen_sulfide_angels].icons = nil
-data_fluid[hydrogen_sulfide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/sulfur/angels-gas-hydrogen-sulfide.png"
-data_fluid[hydrogen_sulfide_angels].base_color = TIMSABA.functions.fluid_color("H2S")
-data_fluid[hydrogen_sulfide_angels].flow_color = TIMSABA.functions.flow_color("H2S")
-
-data_fluid[enriched_hydrogen_sulfide_angels].icons = nil
-data_fluid[enriched_hydrogen_sulfide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/sulfur/angels-gas-enriched-hydrogen-sulfide.png"
-data_fluid[enriched_hydrogen_sulfide_angels].base_color = TIMSABA.functions.fluid_color("Wp2S")
-data_fluid[enriched_hydrogen_sulfide_angels].flow_color = TIMSABA.functions.flow_color("Wp2S")
-
-data_fluid[sulfur_dioxide_angels].icons = nil
-data_fluid[sulfur_dioxide_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/sulfur/angels-gas-sulfuric-dioxide.png"
-data_fluid[sulfur_dioxide_angels].base_color = TIMSABA.functions.fluid_color("SO2")
-data_fluid[sulfur_dioxide_angels].flow_color = TIMSABA.functions.flow_color("SO2")
-
-data_fluid[acid_angels].icons = nil
-data_fluid[acid_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-acid.png"
-data_fluid[acid_angels].base_color = TIMSABA.functions.fluid_color("SSF")
-data_fluid[acid_angels].flow_color = TIMSABA.functions.flow_color("SSF")
-
-data_fluid[natural_gas_angels].icons = nil
-data_fluid[natural_gas_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-natural-1.png"
-data_fluid[natural_gas_angels].base_color = {r = 096 / 255, g = 123 / 255, b = 082 / 255}
-data_fluid[natural_gas_angels].flow_color = {r = 104 / 255, g = 130 / 255, b = 091 / 255}
-
-data_fluid[raw_gas_angels].icons = nil
-data_fluid[raw_gas_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-raw-1.png"
-data_fluid[raw_gas_angels].base_color = {r = 137 / 255, g = 148 / 255, b = 067 / 255}
-data_fluid[raw_gas_angels].flow_color = {r = 143 / 255, g = 153 / 255, b = 076 / 255}
-
-data_fluid[NGL_angels].icons = nil
-data_fluid[NGL_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-liquid-ngl.png"
-data_fluid[NGL_angels].base_color = {r = 089 / 255, g = 107 / 255, b = 079 / 255}
-data_fluid[NGL_angels].flow_color = {r = 097 / 255, g = 114 / 255, b = 088 / 255}
-
-data_fluid[multi_phase_oil_angels].icons = nil
-data_fluid[multi_phase_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-liquid-multi-phase-oil.png"
-data_fluid[multi_phase_oil_angels].base_color = {r = 133 / 255, g = 141 / 255, b = 088 / 255}
-data_fluid[multi_phase_oil_angels].flow_color = {r = 139 / 255, g = 147 / 255, b = 096 / 255}
-if mods[corrundum_mods] then
-    data_fluid[multi_phase_oil_angels].default_temperature = 15
-    data_fluid[multi_phase_oil_angels].max_temperature = 100
-    data_fluid[multi_phase_oil_angels].heat_capacity = "200J"
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
 end
 
-data_fluid[condensates_angels].icons = nil
-data_fluid[condensates_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-condensates.png"
-data_fluid[condensates_angels].base_color = {r = 090 / 255, g = 090 / 255, b = 090 / 255}
-data_fluid[condensates_angels].flow_color = {r = 098 / 255, g = 098 / 255, b = 098 / 255}
+-- SULFUR
+local graphics_petrochem_sulfur = "__TIMSABA__/graphics/icons/angels/petrochem/sulfur/"
 
-data_fluid[residual_angels].icons = nil
-data_fluid[residual_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/raws/angels-gas-residual.png"
-data_fluid[residual_angels].base_color = {r = 128 / 255, g = 000 / 255, b = 128 / 255}
-data_fluid[residual_angels].flow_color = {r = 134 / 255, g = 013 / 255, b = 134 / 255}
+local sulfur_fluids =
+{
+    [hydrogen_sulfide_angels] = "H2S",
+    [enriched_hydrogen_sulfide_angels] = "SWpWp",
+    [sulfur_dioxide_angels] = "SO2"
+}
+for fluid_name, info in pairs(sulfur_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_sulfur .. fluid_name .. ".png"
 
-data_fluid[methane_angels].icons = nil
-data_fluid[methane_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-methane.png"
-data_fluid[methane_angels].base_color = TIMSABA.functions.fluid_color("CH4")
-data_fluid[methane_angels].flow_color = TIMSABA.functions.flow_color("CH4")
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
-data_fluid[ethane_angels].icons = nil
-data_fluid[ethane_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-ethane.png"
-data_fluid[ethane_angels].base_color = TIMSABA.functions.fluid_color("C2H6")
-data_fluid[ethane_angels].flow_color = TIMSABA.functions.flow_color("C2H6")
+-- RAWS
+local graphics_petrochem_raws = "__TIMSABA__/graphics/icons/angels/petrochem/raws/"
 
-data_fluid[butane_angels].icons = nil
-data_fluid[butane_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-butane.png"
-data_fluid[butane_angels].base_color = TIMSABA.functions.fluid_color("C4H10")
-data_fluid[butane_angels].flow_color = TIMSABA.functions.flow_color("C4H10")
+local raw_fluids =
+{
+    [acid_angels] = "SSF",
+    [natural_gas_angels] = {base = {096, 123, 082}, flow = {104, 130, 091}},
+    [raw_gas_angels] = {base = {137, 148, 067}, flow = {143, 153, 076}},
+    [NGL_angels] = {base = {089, 107, 079}, flow = {097, 114, 088}},
+    [multi_phase_oil_angels] = {base = {133, 141, 088}, flow = {139, 147, 096}},
+    [condensates_angels] = {base = {090, 090, 090}, flow = {098, 098, 098}},
+    [residual_angels] = {base = {128, 000, 128}, flow = {134, 013, 134}}
+}
+for fluid_name, info in pairs(raw_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_raws .. fluid_name .. ".png"
 
-data_fluid[propene_angels].icons = nil
-data_fluid[propene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-propene.png"
-data_fluid[propene_angels].base_color = TIMSABA.functions.fluid_color("C3H6")
-data_fluid[propene_angels].flow_color = TIMSABA.functions.flow_color("C3H6")
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
-data_fluid[methanol_angels].icons = nil
-data_fluid[methanol_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-methanol.png"
-data_fluid[methanol_angels].base_color = TIMSABA.functions.fluid_color("CH4O")
-data_fluid[methanol_angels].flow_color = TIMSABA.functions.flow_color("CH4O")
+-- CARBONS
+local graphics_petrochem_carbons = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/"
 
-data_fluid[ethylene_angels].icons = nil
-data_fluid[ethylene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-ethylene.png"
-data_fluid[ethylene_angels].base_color = TIMSABA.functions.fluid_color("C2H4")
-data_fluid[ethylene_angels].flow_color = TIMSABA.functions.flow_color("C2H4")
+local carbon_fluids =
+{
+    [methane_angels] = "CH4",
+    [ethane_angels] = "C2H6",
+    [butane_angels] = "C4H10",
+    [propene_angels] = "C3H6",
+    [methanol_angels] = "CH4O",
+    [ethylene_angels] = "C2H4",
+    [benzene_angels] = "C6H6",
+    [fuel_oil_angels] = {base = {238, 210, 089}, flow = {239, 212, 097}},
+    [naphtha_angels] = {base = {172, 072, 081}, flow = {176, 081, 090}},
+    [mineral_oil_angels] = {base = {061, 173, 061}, flow = {071, 177, 071}},
+    [synthesis_angels] = {base = {175, 100, 175}, flow = {179, 108, 179}},
+    [toluene_angels] = "C7H8",
+    [butadiene_angels] = "C4H6",
+    [ethylbenzene_angels] = "C8H10",
+    [styrene_angels] = "C8H8",
+    [formaldehyde_angels] = "CH2O",
+    [glycerol_angels] = "C3H8O3",
+    [acetone_angels] = "C3H6O"
+}
+for fluid_name, info in pairs(carbon_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_carbons .. fluid_name .. ".png"
 
-data_fluid[benzene_angels].icons = nil
-data_fluid[benzene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-benzene.png"
-data_fluid[benzene_angels].base_color = TIMSABA.functions.fluid_color("C6H6")
-data_fluid[benzene_angels].flow_color = TIMSABA.functions.flow_color("C6H6")
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
-data_fluid[fuel_oil_angels].icons = nil
-data_fluid[fuel_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-fuel-oil.png"
-data_fluid[fuel_oil_angels].base_color = {r = 238 / 255, g = 210 / 255, b = 089 / 255}
-data_fluid[fuel_oil_angels].flow_color = {r = 239 / 255, g = 212 / 255, b = 097 / 255}
+-- SOLIDS
+local graphics_petrochem_solids = "__TIMSABA__/graphics/icons/angels/petrochem/solids/"
 
-data_fluid[naphtha_angels].icons = nil
-data_fluid[naphtha_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-naphtha.png"
-data_fluid[naphtha_angels].base_color = {r = 172 / 255, g = 072 / 255, b = 081 / 255}
-data_fluid[naphtha_angels].flow_color = {r = 176 / 255, g = 081 / 255, b = 090 / 255}
+local solid_fluids =
+{
+    [liquid_plastic_angels] = {base = {228, 228, 228}, flow = {229, 229, 229}},
+    [liquid_resin_angels] = {base = {228, 203, 138}, flow = {229, 206, 144}},
+    [liquid_rubber_angels] = {base = {163, 173, 228}, flow = {168, 177, 229}},
+    [sodium_hydroxide_solution_angels] = "NaOHWp"
+}
+for fluid_name, info in pairs(solid_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_petrochem_solids .. fluid_name .. ".png"
 
-data_fluid[mineral_oil_angels].icons = nil
-data_fluid[mineral_oil_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-mineral-oil.png"
-data_fluid[mineral_oil_angels].base_color = {r = 061 / 255, g = 173 / 255, b = 061 / 255}
-data_fluid[mineral_oil_angels].flow_color = {r = 071 / 255, g = 177 / 255, b = 071 / 255}
-
-data_fluid[synthesis_angels].icons = nil
-data_fluid[synthesis_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-synthesis.png"
-data_fluid[synthesis_angels].base_color = {r = 175 / 255, g = 100 / 255, b = 175 / 255}
-data_fluid[synthesis_angels].flow_color = {r = 179 / 255, g = 108 / 255, b = 179 / 255}
-
-data_fluid[toluene_angels].icons = nil
-data_fluid[toluene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-toluene.png"
-data_fluid[toluene_angels].base_color = TIMSABA.functions.fluid_color("C7H8")
-data_fluid[toluene_angels].flow_color = TIMSABA.functions.flow_color("C7H8")
-
-data_fluid[butadiene_angels].icons = nil
-data_fluid[butadiene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-butadiene.png"
-data_fluid[butadiene_angels].base_color = TIMSABA.functions.fluid_color("C4H6")
-data_fluid[butadiene_angels].flow_color = TIMSABA.functions.flow_color("C4H6")
-
-data_fluid[ethylbenzene_angels].icons = nil
-data_fluid[ethylbenzene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-ethylbenzene.png"
-data_fluid[ethylbenzene_angels].base_color = TIMSABA.functions.fluid_color("C8H10")
-data_fluid[ethylbenzene_angels].flow_color = TIMSABA.functions.flow_color("C8H10")
-
-data_fluid[styrene_angels].icons = nil
-data_fluid[styrene_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-styrene.png"
-data_fluid[styrene_angels].base_color = TIMSABA.functions.fluid_color("C8H8")
-data_fluid[styrene_angels].flow_color = TIMSABA.functions.flow_color("C8H8")
-
-data_fluid[formaldehyde_angels].icons = nil
-data_fluid[formaldehyde_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-gas-formaldehyde.png"
-data_fluid[formaldehyde_angels].base_color = TIMSABA.functions.fluid_color("CH2O")
-data_fluid[formaldehyde_angels].flow_color = TIMSABA.functions.flow_color("CH2O")
-
-data_fluid[glycerol_angels].icons = nil
-data_fluid[glycerol_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-glycerol.png"
-data_fluid[glycerol_angels].base_color = TIMSABA.functions.fluid_color("C3H8O3")
-data_fluid[glycerol_angels].flow_color = TIMSABA.functions.flow_color("C3H8O3")
-
-data_fluid[acetone_angels].icons = nil
-data_fluid[acetone_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/carbons/angels-liquid-acetone.png"
-data_fluid[acetone_angels].base_color = TIMSABA.functions.fluid_color("C3H6O")
-data_fluid[acetone_angels].flow_color = TIMSABA.functions.flow_color("C3H6O")
-
-data_fluid[liquid_plastic_angels].icons = nil
-data_fluid[liquid_plastic_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/solids/angels-liquid-plastic.png"
-data_fluid[liquid_plastic_angels].base_color = {r = 228 / 255, g = 228 / 255, b = 228 / 255}
-data_fluid[liquid_plastic_angels].flow_color = {r = 229 / 255, g = 229 / 255, b = 229 / 255}
-
-data_fluid[liquid_resin_angels].icons = nil
-data_fluid[liquid_resin_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/solids/angels-liquid-resin.png"
-data_fluid[liquid_resin_angels].base_color = {r = 228 / 255, g = 203 / 255, b = 138 / 255}
-data_fluid[liquid_resin_angels].flow_color = {r = 229 / 255, g = 206 / 255, b = 144 / 255}
-
-data_fluid[liquid_rubber_angels].icons = nil
-data_fluid[liquid_rubber_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/solids/angels-liquid-rubber.png"
-data_fluid[liquid_rubber_angels].base_color = {r = 163 / 255, g = 173 / 255, b = 228 / 255}
-data_fluid[liquid_rubber_angels].flow_color = {r = 168 / 255, g = 177 / 255, b = 229 / 255}
-
-data_fluid[sodium_hydroxide_solution_angels].icons = nil
-data_fluid[sodium_hydroxide_solution_angels].icon = "__TIMSABA__/graphics/icons/angels/petrochem/solids/angels-liquid-aqueous-sodium-hydroxide.png"
-data_fluid[sodium_hydroxide_solution_angels].base_color = TIMSABA.functions.fluid_color("NaOHWp")
-data_fluid[sodium_hydroxide_solution_angels].flow_color = TIMSABA.functions.flow_color("NaOHWp")
+    if type(info) == "string" then
+        data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+        data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+        data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+        data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
 -- ANGELS BIOPROCESSING
-data_fluid[nutrient_pulp].icons = nil
-data_fluid[nutrient_pulp].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-nutrient-pulp.png"
-data_fluid[nutrient_pulp].base_color = {r = 226 / 255, g = 151 / 255, b = 028 / 255}
-data_fluid[nutrient_pulp].flow_color = {r = 227 / 255, g = 156 / 255, b = 039 / 255}
+local graphics_bioprocessing = "__TIMSABA__/graphics/icons/angels/bioprocessing/"
 
-data_fluid[raw_vegetable_oil].icons = nil
-data_fluid[raw_vegetable_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-raw-vegetable-oil.png"
-data_fluid[raw_vegetable_oil].base_color = {r = 255 / 255, g = 203 / 255, b = 062 / 255}
-data_fluid[raw_vegetable_oil].flow_color = {r = 255 / 255, g = 206 / 255, b = 072 / 255}
+local bioprocessing_fluids =
+{
+    [nutrient_pulp] = {base = {226, 151, 28}, flow = {227, 156, 39}},
+    [raw_vegetable_oil] = {base = {255, 203, 62}, flow = {255, 206, 72}},
+    [vegetable_oil] = {base = {231, 231, 29}, flow = {232, 232, 40}},
+    [acetic_acid] = "C2H4O2",
+    [acetic_anhydride] = "C4H6O3",
+    [ethanol_angels] = "C2H6O",
+    [propionic_acid] = "C3H6O2",
+    [water_for_fish] = {base = {178, 224, 30}, flow = {182, 226, 41}},
+    [polluted_water_for_fish] = {base = {191, 103, 165}, flow = {194, 111, 170}},
+    [raw_fish_oil] = {base = {220, 136, 52}, flow = {222, 142, 62}},
+    [fish_oil] = {base = {216, 172, 27}, flow = {218, 176, 38}},
+    [puffer_atmosphere] = {base = {178, 224, 30}, flow = {182, 226, 41}},
+    [alien_goo] = {base = {207, 44, 214}, flow = {209, 55, 216}}
+}
+for fluid_name, info in pairs(bioprocessing_fluids) do
+    data_fluid[fluid_name].icons = nil
+    data_fluid[fluid_name].icon = graphics_bioprocessing .. fluid_name .. ".png"
 
-data_fluid[vegetable_oil].icons = nil
-data_fluid[vegetable_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-vegetable-oil.png"
-data_fluid[vegetable_oil].base_color = {r = 231 / 255, g = 231 / 255, b = 029 / 255}
-data_fluid[vegetable_oil].flow_color = {r = 232 / 255, g = 232 / 255, b = 040 / 255}
-
-data_fluid[acetic_acid].icons = nil
-data_fluid[acetic_acid].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-acetic-acid.png"
-data_fluid[acetic_acid].base_color = TIMSABA.functions.fluid_color("C2H4O2")
-data_fluid[acetic_acid].flow_color = TIMSABA.functions.flow_color("C2H4O2")
-
-data_fluid[acetic_anhydride].icons = nil
-data_fluid[acetic_anhydride].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-acetic-anhydride.png"
-data_fluid[acetic_anhydride].base_color = TIMSABA.functions.fluid_color("C4H6O3")
-data_fluid[acetic_anhydride].flow_color = TIMSABA.functions.flow_color("C4H6O3")
-
-data_fluid[ethanol_angels].icons = nil
-data_fluid[ethanol_angels].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-ethanol.png"
-data_fluid[ethanol_angels].base_color = TIMSABA.functions.fluid_color("C2H6O")
-data_fluid[ethanol_angels].flow_color = TIMSABA.functions.flow_color("C2H6O")
-
-data_fluid[propionic_acid].icons = nil
-data_fluid[propionic_acid].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-propionic-acid.png"
-data_fluid[propionic_acid].base_color = TIMSABA.functions.fluid_color("C3H6O2")
-data_fluid[propionic_acid].flow_color = TIMSABA.functions.flow_color("C3H6O2")
-
-data_fluid[water_for_fish].icons = nil
-data_fluid[water_for_fish].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-fish-atmosphere.png"
-data_fluid[water_for_fish].base_color = {r = 178 / 255, g = 224 / 255, b = 030 / 255}
-data_fluid[water_for_fish].flow_color = {r = 182 / 255, g = 226 / 255, b = 041 / 255}
-
-data_fluid[polluted_water_for_fish].icons = nil
-data_fluid[polluted_water_for_fish].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-polluted-fish-atmosphere.png"
-data_fluid[polluted_water_for_fish].base_color = {r = 191 / 255, g = 103 / 255, b = 165 / 255}
-data_fluid[polluted_water_for_fish].flow_color = {r = 194 / 255, g = 111 / 255, b = 170 / 255}
-
-data_fluid[raw_fish_oil].icons = nil
-data_fluid[raw_fish_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-raw-fish-oil.png"
-data_fluid[raw_fish_oil].base_color = {r = 220 / 255, g = 136 / 255, b = 052 / 255}
-data_fluid[raw_fish_oil].flow_color = {r = 222 / 255, g = 142 / 255, b = 062 / 255}
-
-data_fluid[fish_oil].icons = nil
-data_fluid[fish_oil].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-liquid-fish-oil.png"
-data_fluid[fish_oil].base_color = {r = 216 / 255, g = 172 / 255, b = 027 / 255}
-data_fluid[fish_oil].flow_color = {r = 218 / 255, g = 176 / 255, b = 038 / 255}
-
-data_fluid[puffer_atmosphere].icons = nil
-data_fluid[puffer_atmosphere].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-gas-puffer-atmosphere.png"
-data_fluid[puffer_atmosphere].base_color = {r = 178 / 255, g = 224 / 255, b = 030 / 255}
-data_fluid[puffer_atmosphere].flow_color = {r = 182 / 255, g = 226 / 255, b = 041 / 255}
-
-data_fluid[alien_goo].icons = nil
-data_fluid[alien_goo].icon = "__TIMSABA__/graphics/icons/angels/bioprocessing/angels-alien-goo.png"
-data_fluid[alien_goo].base_color = {r = 207 / 255, g = 044 / 255, b = 214 / 255}
-data_fluid[alien_goo].flow_color = {r = 209 / 255, g = 055 / 255, b = 216 / 255}
+    if type(info) == "string" then
+      data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+      data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+    else
+      data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+      data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+    end
+end
 
 -- MULUNA
 if mods[muluna_mods] then
-    data_fluid[tar_mods].icon = "__TIMSABA__/graphics/icons/muluna/tar.png"
+    local graphics_muluna = "__TIMSABA__/graphics/icons/muluna/"
+
+    data_fluid[tar_mods].icon = graphics_muluna .. tar_mods .. ".png"
+
     data_fluid[cooled_steam_mods].icons = nil
-    data_fluid[cooled_steam_mods].icon = "__TIMSABA__/graphics/icons/muluna/cooled-steam.png"
+    data_fluid[cooled_steam_mods].icon = graphics_muluna .. cooled_steam_mods .. ".png"
 end
 
 -- PANGLIA
@@ -671,8 +432,11 @@ end
 
 -- ARIG
 if mods[arig_mods] then
-    data_fluid[sand_arig].icon = "__TIMSABA__/graphics/icons/arig/sand.png"
-    data_fluid[pure_sand_arig].icon = "__TIMSABA__/graphics/icons/arig/pure-sand.png"
+    local graphics_arig = "__TIMSABA__/graphics/icons/arig/"
+
+    data_fluid[sand_arig].icon = graphics_arig .. sand_arig .. ".png"
+
+    data_fluid[pure_sand_arig].icon = graphics_arig .. pure_sand_arig .. ".png"
 end
 
 -- HYARION
@@ -682,10 +446,15 @@ end
 
 -- TELLUS
 if mods[tellus_mods] then
-    data_fluid[bacteriochlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/bacteriochlorophyll.png"
-    data_fluid[chlorophyll].icon = "__TIMSABA__/graphics/icons/tellus/chlorophyll.png"
-    data_fluid[water_infected].icon = "__TIMSABA__/graphics/icons/tellus/infected-water.png"
-    data_fluid[seed_compound].icon = "__TIMSABA__/graphics/icons/tellus/seed-compound.png"
+    local graphics_tellus = "__TIMSABA__/graphics/icons/tellus/"
+
+    data_fluid[bacteriochlorophyll].icon = graphics_tellus .. bacteriochlorophyll .. ".png"
+
+    data_fluid[chlorophyll].icon = graphics_tellus .. chlorophyll .. ".png"
+
+    data_fluid[water_infected].icon = graphics_tellus .. water_infected .. ".png"
+
+    data_fluid[seed_compound].icon = graphics_tellus .. seed_compound .. ".png"
 end
 
 -- FROZETA
@@ -698,6 +467,11 @@ end
 -- PARACELSIN
 
 -- CORRUNDUM
+if mods[corrundum_mods] then
+    data_fluid[multi_phase_oil_angels].default_temperature = 15
+    data_fluid[multi_phase_oil_angels].max_temperature = 100
+    data_fluid[multi_phase_oil_angels].heat_capacity = "200J"
+end
 
 -- SHCHIERBIN
 if mods[shchierbin_mods] then
@@ -708,36 +482,41 @@ end
 
 -- MARAXSIS
 if mods[maraxsis_mods] then
-    data_fluid[maraxsis_air].icon = "__TIMSABA__/graphics/icons/maraxsis/maraxsis-atmosphere.png"
-    data_fluid[supercritical_steam_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/supercritical-steam.png"
-    data_fluid[water_brackish_maraxsis].icon = "__TIMSABA__/graphics/icons/maraxsis/brackish-water.png"
-    data_fluid[molten_salt_mods].icon = "__TIMSABA__/graphics/icons/maraxsis/molten-salt.png"
+    local graphics_maraxsis = "__TIMSABA__/graphics/icons/maraxsis/"
+
+    data_fluid[maraxsis_air].icon = graphics_maraxsis .. maraxsis_air .. ".png"
+
+    data_fluid[supercritical_steam_maraxsis].icon = graphics_maraxsis .. supercritical_steam_maraxsis .. ".png"
+
+    data_fluid[water_brackish_maraxsis].icon = graphics_maraxsis .. water_brackish_maraxsis .. ".png"
+
+    data_fluid[molten_salt_mods].icon = graphics_maraxsis .. molten_salt_mods .. ".png"
 end
 
 -- VESTA
+local graphics_vesta = "__TIMSABA__/graphics/icons/vesta/"
 if mods[vesta_mods] then
-    data_fluid[helium_vesta].icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png"
-    data_fluid[helium_vesta].base_color = TIMSABA.functions.fluid_color("HeHeHe")
-    data_fluid[helium_vesta].flow_color = TIMSABA.functions.flow_color("HeHeHe")
+    local vesta_fluids =
+    {
+        [helium_vesta] = "HeHeHe",
+        [algea_water_vesta] = {base = {056, 075, 014}, flow = {065, 085, 025}},
+        [supermagnetic_vesta] = {base = {024, 077, 046}, flow = {035, 085, 055}},
+        [fusion_thruster_fuel] = {base = {022, 076, 069}, flow = {030, 085, 075}},
+        [fusion_thruster_oxidizer] = {base = {093, 148, 179}, flow = {100, 155, 185}}
+    }
+    for fluid_name, info in pairs(vesta_fluids) do
+        if data_fluid[fluid_name] then
+            data_fluid[fluid_name].icons = nil
+            data_fluid[fluid_name].icon = graphics_vesta .. fluid_name .. ".png"
 
-    data_fluid[algea_water_vesta].icon = "__TIMSABA__/graphics/icons/vesta/fluid_algea_water.png"
-    data_fluid[algea_water_vesta].base_color = {r = 056 / 255, g = 075 / 255, b = 014 / 255}
-    data_fluid[algea_water_vesta].flow_color = {r = 065 / 255, g = 085 / 255, b = 025 / 255}
-
-    data_fluid[supermagnetic_vesta].icon = "__TIMSABA__/graphics/icons/vesta/fluid_super_magnetic.png"
-    data_fluid[supermagnetic_vesta].base_color = {r = 024 / 255, g = 077 / 255, b = 046 / 255}
-    data_fluid[supermagnetic_vesta].flow_color = {r = 035 / 255, g = 085 / 255, b = 055 / 255}
-
-    data_fluid[fusion_thruster_fuel].icon = "__TIMSABA__/graphics/icons/vesta/fluoroketonefuel.png"
-    if data_fluid[fusion_thruster_fuel].base_color then
-        data_fluid[fusion_thruster_fuel].base_color = {r = 022 / 255, g = 076 / 255, b = 069 / 255}
-        data_fluid[fusion_thruster_fuel].flow_color = {r = 030 / 255, g = 085 / 255, b = 075 / 255}
-    end
-
-    data_fluid[fusion_thruster_oxidizer].icon = "__TIMSABA__/graphics/icons/vesta/plasmafuel.png"
-    if data_fluid[fusion_thruster_oxidizer].base_color then
-        data_fluid[fusion_thruster_oxidizer].base_color = {r = 093 / 255, g = 148 / 255, b = 179 / 255}
-        data_fluid[fusion_thruster_oxidizer].flow_color = {r = 100 / 255, g = 155 / 255, b = 185 / 255}
+            if type(info) == "string" then
+                data_fluid[fluid_name].base_color = TIMSABA.functions.fluid_color(info)
+                data_fluid[fluid_name].flow_color = TIMSABA.functions.flow_color(info)
+            else
+                data_fluid[fluid_name].base_color = {r = info.base[1] / 255, g = info.base[2] / 255, b = info.base[3] / 255}
+                data_fluid[fluid_name].flow_color = {r = info.flow[1] / 255, g = info.flow[2] / 255, b = info.flow[3] / 255}
+            end
+        end
     end
 end
 
@@ -813,33 +592,39 @@ end
 
 -- MURIA
 if mods[muria_mods] then
-    data_fluid[muriatic_solution].icon = "__TIMSABA__/graphics/icons/muria/muriatic-solution.png"
+    local graphics_muria = "__TIMSABA__/graphics/icons/muria/"
+
+    data_fluid[muriatic_solution].icon = graphics_muria .. muriatic_solution .. ".png"
     data_fluid[muriatic_solution].base_color = {r = 081 / 255, g = 179 / 255, b = 055 / 255}
     data_fluid[muriatic_solution].flow_color = {r = 090 / 255, g = 190 / 255, b = 065 / 255}
 
-    data_fluid[hydronium_solution].icon = "__TIMSABA__/graphics/icons/muria/hydronium.png"
+    data_fluid[hydronium_solution].icon = graphics_muria .. hydronium_solution .. ".png"
     data_fluid[hydronium_solution].base_color = TIMSABA.functions.fluid_color("H3OOH")
     data_fluid[hydronium_solution].flow_color = TIMSABA.functions.flow_color("H3OOH")
 end
 
 -- PELAGOS
 if mods[pelagos_mods] then
-    data_fluid[coconut_oil].icon = "__TIMSABA__/graphics/icons/pelagos/coconut-oil.png"
+    local graphics_pelagos = "__TIMSABA__/graphics/icons/pelagos/"
 
-    data_fluid[titanium_sludge].icon = "__TIMSABA__/graphics/icons/pelagos/titanium-sludge.png"
+    data_fluid[coconut_oil].icon = graphics_pelagos .. coconut_oil .. ".png"
 
-    data_fluid[biodiesel].icon = "__TIMSABA__/graphics/icons/pelagos/biodiesel.png"
+    data_fluid[titanium_sludge].icon = graphics_pelagos .. titanium_sludge .. ".png"
+
+    data_fluid[biodiesel].icon = graphics_pelagos .. biodiesel .. ".png"
 end
 
 -- APIA and CARNOVA
 if mods[apia_carnova_mods] then
-    data_fluid[royal_jelly].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/royal-jelly.png"
+    local graphics_apia_and_carnova = "__TIMSABA__/graphics/icons/apia-and-carnova/"
 
-    data_fluid[lymph].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/lymph.png"
+    data_fluid[royal_jelly].icon = graphics_apia_and_carnova .. royal_jelly .. ".png"
 
-    data_fluid[dirty_lymph].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/dirty-lymph.png"
+    data_fluid[lymph].icon = graphics_apia_and_carnova .. lymph .. ".png"
 
-    data_fluid[blood].icon = "__TIMSABA__/graphics/icons/apia-and-carnova/blood.png"
+    data_fluid[dirty_lymph].icon = graphics_apia_and_carnova .. dirty_lymph .. ".png"
+
+    data_fluid[blood].icon = graphics_apia_and_carnova .. blood .. ".png"
 end
 
 -- LIGNUMIS
@@ -848,8 +633,18 @@ if mods[lignumis_mods] then
 end
 
 -- BELLICOS AEGIS
-if mods[bellicos_aegis_mods] and not mods[vesta_mods] then
-    data_fluid[helium_mods].icon = "__TIMSABA__/graphics/icons/vesta/gas_helium.png"
-    data_fluid[helium_mods].base_color = TIMSABA.functions.fluid_color("HeHeHe")
-    data_fluid[helium_mods].flow_color = TIMSABA.functions.flow_color("HeHeHe")
+if mods[bellicos_aegis_mods] then
+    if not data_fluid[helium_vesta] then
+        data_fluid[helium].icon = graphics_vesta .. helium_vesta .. ".png"
+        data_fluid[helium].base_color = TIMSABA.functions.fluid_color("HeHeHe")
+        data_fluid[helium].flow_color = TIMSABA.functions.flow_color("HeHeHe")
+    end
+end
+
+
+
+-- CRUCIBLE
+if mods[crucible_mods] then
+    data_fluid[hydrogen_angels].default_temperature = 15
+    data_fluid[hydrogen_angels].max_temperature = 500
 end

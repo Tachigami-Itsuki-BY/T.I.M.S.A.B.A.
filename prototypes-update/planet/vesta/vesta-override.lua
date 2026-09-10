@@ -1,9 +1,11 @@
 if mods[vesta_mods] then
     -- AIR
-    data_fluid[helium_vesta].localised_description = show_formula and {chemical_formula, "He"} or nil
-    data_fluid[helium_vesta].subgroup = is_vesta_air
-    data_fluid[helium_vesta].order = f
-    TIMSABA.barreling.add_gas(helium_vesta)
+    if data_fluid[helium_vesta] then
+        data_fluid[helium_vesta].localised_description = show_formula and {chemical_formula, "He"} or nil
+        data_fluid[helium_vesta].subgroup = is_vesta_air
+        data_fluid[helium_vesta].order = f
+        TIMSABA.barreling.add_gas(helium_vesta)
+    end
 
     data_recipe[deuterium_mods].localised_name = {"fluid-name." .. deuterium_angels}
     data_recipe[deuterium_mods].category = angels_petrochem_air_filtering
@@ -44,47 +46,55 @@ if mods[vesta_mods] then
     data_recipe[algea_water_vesta].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local stone_mineraliztion = "ske-carbon-mineralization"
-    data_recipe[stone_mineraliztion].category = angels_bio_processing_4
-    data_recipe[stone_mineraliztion].subgroup = is_vesta_recipe
-    data_recipe[stone_mineraliztion].icons = STONKS_I(stonks_png, stone)
-    data_recipe[stone_mineraliztion].order = a_a
-    data_recipe[stone_mineraliztion].energy_required = 1
-    data_recipe[stone_mineraliztion].ingredients =
-    {
-        {type = item, name = stone, amount = 2},
-        {type = fluid, name = algea_water_vesta, amount = 30}
-    }
-    data_recipe[stone_mineraliztion].results[1].amount = 4
-    data_recipe[stone_mineraliztion].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    if data_recipe[stone_mineraliztion] then
+        data_recipe[stone_mineraliztion].category = angels_bio_processing_4
+        data_recipe[stone_mineraliztion].subgroup = is_vesta_recipe
+        data_recipe[stone_mineraliztion].icons = STONKS_I(stonks_png, stone)
+        data_recipe[stone_mineraliztion].order = a_a
+        data_recipe[stone_mineraliztion].energy_required = 1
+        data_recipe[stone_mineraliztion].ingredients =
+        {
+            {type = item, name = stone, amount = 2},
+            {type = fluid, name = algea_water_vesta, amount = 30}
+        }
+        data_recipe[stone_mineraliztion].results[1].amount = 4
+        data_recipe[stone_mineraliztion].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    end
 
-    local coal_mineraliztion = "ske-coal-mineralization"
-    data_recipe[coal_mineraliztion].category = angels_bio_processing_4
-    data_recipe[coal_mineraliztion].subgroup = is_vesta_recipe
-    data_recipe[coal_mineraliztion].icons = STONKS_I(stonks_png, coal)
-    data_recipe[coal_mineraliztion].order = a_b
-    data_recipe[coal_mineraliztion].energy_required = 1
-    data_recipe[coal_mineraliztion].ingredients =
-    {
-        {type = item, name = coal, amount = 2},
-        {type = fluid, name = algea_water_vesta, amount = 30}
-    }
-    data_recipe[coal_mineraliztion].results[1].amount = 4
-    data_recipe[coal_mineraliztion].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    if settings.startup["ske_vesta_legacy_recipes"].value then
+        coal_mineraliztion = "ske-coal-mineralization"
+    end
+    if data_recipe[coal_mineraliztion] then
+        data_recipe[coal_mineraliztion].category = angels_bio_processing_4
+        data_recipe[coal_mineraliztion].subgroup = is_vesta_recipe
+        data_recipe[coal_mineraliztion].icons = STONKS_I(stonks_png, coal)
+        data_recipe[coal_mineraliztion].order = a_b
+        data_recipe[coal_mineraliztion].energy_required = 1
+        data_recipe[coal_mineraliztion].ingredients =
+        {
+            {type = item, name = coal, amount = 2},
+            {type = fluid, name = algea_water_vesta, amount = 30}
+        }
+        data_recipe[coal_mineraliztion].results[1].amount = 4
+        data_recipe[coal_mineraliztion].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    end
 
     local carbon_seperation = "ske-carbon-seperation"
-    data_recipe[carbon_seperation].category = cryogenics
-    data_recipe[carbon_seperation].subgroup = is_vesta_recipe
-    data_recipe[carbon_seperation].icons = THREE_R_I(carbon_dioxide_angels, carbon_monoxide_angels, oxygen_angels)
-    data_recipe[carbon_seperation].order = a_c
-    data_recipe[carbon_seperation].energy_required = 1 -- 2CO₂ --> 2CO + O₂
-    data_recipe[carbon_seperation].ingredients = {{type = fluid, name = carbon_dioxide_angels, amount = 30}}
-    data_recipe[carbon_seperation].results =
-    {
-        {type = fluid, name = carbon_monoxide_angels, amount = 30},
-        {type = fluid, name = oxygen_angels, amount = 15}
-    }
-    data_recipe[carbon_seperation].main_product = carbon_monoxide_angels
-    data_recipe[carbon_seperation].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    if data_recipe[carbon_seperation] then
+        data_recipe[carbon_seperation].category = cryogenics
+        data_recipe[carbon_seperation].subgroup = is_vesta_recipe
+        data_recipe[carbon_seperation].icons = THREE_R_I(carbon_dioxide_angels, carbon_monoxide_angels, oxygen_angels)
+        data_recipe[carbon_seperation].order = a_c
+        data_recipe[carbon_seperation].energy_required = 1 -- 2CO₂ --> 2CO + O₂
+        data_recipe[carbon_seperation].ingredients = {{type = fluid, name = carbon_dioxide_angels, amount = 30}}
+        data_recipe[carbon_seperation].results =
+        {
+            {type = fluid, name = carbon_monoxide_angels, amount = 30},
+            {type = fluid, name = oxygen_angels, amount = 15}
+        }
+        data_recipe[carbon_seperation].main_product = carbon_monoxide_angels
+        data_recipe[carbon_seperation].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    end
 
     local co2_filter_carbon = "ske_co2_filter_carbon"
     data_recipe[co2_filter_carbon].category = cryogenics
@@ -102,21 +112,23 @@ if mods[vesta_mods] then
     data_recipe[co2_filter_carbon].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local carbon_super_cooling = "ske-carbon-super-cooling"
-    data_recipe[carbon_super_cooling].subgroup = is_vesta_recipe
-    data_recipe[carbon_super_cooling].icons = TWO_D_I(nitrogen_liquid, carbon_monoxide_angels, carbon_angels, nitrogen_oxide)
-    data_recipe[carbon_super_cooling].order = a_e
-    -- N₂(l) + CO(g) --> C(s) + N₂O(g)
-    data_recipe[carbon_super_cooling].ingredients =
-    {
-        {type = fluid, name = carbon_dioxide_angels, amount = 30},
-        {type = fluid, name = nitrogen_liquid, amount = 30}
-    }
-    data_recipe[carbon_super_cooling].results =
-    {
-        {type = item, name = carbon_angels, amount = 2},
-        {type = fluid, name = nitrogen_oxide, amount = 30}
-    }
-    data_recipe[carbon_super_cooling].main_product = carbon_angels
+    if data_recipe[carbon_super_cooling] then
+        data_recipe[carbon_super_cooling].subgroup = is_vesta_recipe
+        data_recipe[carbon_super_cooling].icons = TWO_D_I(nitrogen_liquid, carbon_monoxide_angels, carbon_angels, nitrogen_oxide)
+        data_recipe[carbon_super_cooling].order = a_e
+        -- N₂(l) + CO(g) --> C(s) + N₂O(g)
+        data_recipe[carbon_super_cooling].ingredients =
+        {
+            {type = fluid, name = carbon_dioxide_angels, amount = 30},
+            {type = fluid, name = nitrogen_liquid, amount = 30}
+        }
+        data_recipe[carbon_super_cooling].results =
+        {
+            {type = item, name = carbon_angels, amount = 2},
+            {type = fluid, name = nitrogen_oxide, amount = 30}
+        }
+        data_recipe[carbon_super_cooling].main_product = carbon_angels
+    end
 
     data_item[vesta_foundation].subgroup = is_vesta_recipe
     data_item[vesta_foundation].order = b
@@ -127,9 +139,13 @@ if mods[vesta_mods] then
     data_recipe[vesta_foundation].ingredients =
     {
         {type = item, name = nitinol_plate_bob, amount = 4},
-        {type = item, name = low_density_structure, amount = 4},
-        {type = fluid, name = helium_vesta, amount = 15}
+        {type = item, name = low_density_structure, amount = 4}
     }
+    if data_fluid[helium_vesta] then
+        table.insert(data_recipe[vesta_foundation].ingredients, {type = fluid, name = helium_vesta, amount = 15})
+    elseif data_fluid[helium] then
+        table.insert(data_recipe[vesta_foundation].ingredients, {type = fluid, name = helium, amount = 15})
+    end
     data_recipe[vesta_foundation].results[1].amount = 8
     data_tile[vesta_foundation].subgroup = is_vesta_recipe
     data_tile[vesta_foundation].order = b
@@ -144,20 +160,22 @@ if mods[vesta_mods] then
     data_recipe[algea_clump_iron].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local algea_iron_electrolysis = "ske-algea-iron-electrolysis"
-    data_recipe[algea_iron_electrolysis].subgroup = is_vesta_recipe
-    data_recipe[algea_iron_electrolysis].icons = FOUR_R_I(algea_clump_iron, ore_saphirite, nil, ore_jivolite)
-    data_recipe[algea_iron_electrolysis].order = c_a
-    data_recipe[algea_iron_electrolysis].ingredients =
-    {
-        {type = item, name = algea_clump_iron, amount = 1},
-        {type = fluid, name = helium_vesta, amount = 15}
-    }
-    data_recipe[algea_iron_electrolysis].results =
-    {
-        {type = item, name = ore_saphirite, amount = 2},
-        {type = item, name = ore_jivolite, amount = 2}
-    }
-    data_recipe[algea_iron_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    if data_recipe[algea_iron_electrolysis] then
+        data_recipe[algea_iron_electrolysis].subgroup = is_vesta_recipe
+        data_recipe[algea_iron_electrolysis].icons = FOUR_R_I(algea_clump_iron, ore_saphirite, nil, ore_jivolite)
+        data_recipe[algea_iron_electrolysis].order = c_a
+        data_recipe[algea_iron_electrolysis].ingredients =
+        {
+            {type = item, name = algea_clump_iron, amount = 1},
+            {type = fluid, name = helium_vesta, amount = 15}
+        }
+        data_recipe[algea_iron_electrolysis].results =
+        {
+            {type = item, name = ore_saphirite, amount = 2},
+            {type = item, name = ore_jivolite, amount = 2}
+        }
+        data_recipe[algea_iron_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    end
 
     data_item[algea_clump_copper].subgroup = is_vesta_recipe
     data_item[algea_clump_copper].order = d
@@ -169,20 +187,22 @@ if mods[vesta_mods] then
     data_recipe[algea_clump_copper].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
     local algea_copper_electrolysis = "ske-algea-copper-electrolysis"
-    data_recipe[algea_copper_electrolysis].subgroup = is_vesta_recipe
-    data_recipe[algea_copper_electrolysis].icons = FOUR_R_I(algea_clump_copper, ore_stiratite, nil, ore_crotinnium)
-    data_recipe[algea_copper_electrolysis].order = d_a
-    data_recipe[algea_copper_electrolysis].ingredients =
-    {
-        {type = item, name = algea_clump_copper, amount = 1},
-        {type = fluid, name = helium_vesta, amount = 15}
-    }
-    data_recipe[algea_copper_electrolysis].results =
-    {
-        {type = item, name = ore_stiratite, amount = 2},
-        {type = item, name = ore_crotinnium, amount = 2}
-    }
-    data_recipe[algea_copper_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    if data_recipe[algea_copper_electrolysis] then
+        data_recipe[algea_copper_electrolysis].subgroup = is_vesta_recipe
+        data_recipe[algea_copper_electrolysis].icons = FOUR_R_I(algea_clump_copper, ore_stiratite, nil, ore_crotinnium)
+        data_recipe[algea_copper_electrolysis].order = d_a
+        data_recipe[algea_copper_electrolysis].ingredients =
+        {
+            {type = item, name = algea_clump_copper, amount = 1},
+            {type = fluid, name = helium_vesta, amount = 15}
+        }
+        data_recipe[algea_copper_electrolysis].results =
+        {
+            {type = item, name = ore_stiratite, amount = 2},
+            {type = item, name = ore_crotinnium, amount = 2}
+        }
+        data_recipe[algea_copper_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
+    end
 
     local algea_clump_stonite = "ske_algea_clump_stonite"
     data_item[algea_clump_stonite].subgroup = is_vesta_recipe
@@ -200,21 +220,26 @@ if mods[vesta_mods] then
     data_recipe[algea_stone_electrolysis].subgroup = is_vesta_recipe
     data_recipe[algea_stone_electrolysis].icons = FOUR_R_I(algea_clump_stonite, stone, nil, stone)
     data_recipe[algea_stone_electrolysis].order = g_a
-    data_recipe[algea_stone_electrolysis].ingredients =
-    {
-        {type = item, name = algea_clump_stonite, amount = 1},
-        {type = fluid, name = helium_vesta, amount = 15}
-    }
+    data_recipe[algea_stone_electrolysis].ingredients = {{type = item, name = algea_clump_stonite, amount = 1}}
+    if data_fluid[helium_vesta] then
+        table.insert(data_recipe[algea_stone_electrolysis].ingredients, {type = fluid, name = helium_vesta, amount = 15})
+    elseif data_fluid[helium] then
+        table.insert(data_recipe[algea_stone_electrolysis].ingredients, {type = fluid, name = helium, amount = 15})
+    else
+        table.insert(data_recipe[algea_stone_electrolysis].ingredients, {type = fluid, name = nitrogen_angels, amount = 15})
+    end
     data_recipe[algea_stone_electrolysis].results = {{type = item, name = stone, amount = 4}}
     data_recipe[algea_stone_electrolysis].surface_conditions = {{property = pressure, min = 500, max = 500}}
 
-    data_recipe[lithium_brine].category = angels_petrochem_air_filtering
-    data_recipe[lithium_brine].subgroup = is_vesta_recipe
-    data_recipe[lithium_brine].icons = TWO_I(water, water_thermal_angels)
-    data_recipe[lithium_brine].order = f
-    data_recipe[lithium_brine].energy_required = 16
-    data_recipe[lithium_brine].ingredients[1].amount = 30
-    data_recipe[lithium_brine].results[1].amount = 15
+    if data_recipe[lithium_brine] then
+        data_recipe[lithium_brine].category = angels_petrochem_air_filtering
+        data_recipe[lithium_brine].subgroup = is_vesta_recipe
+        data_recipe[lithium_brine].icons = TWO_I(water, water_thermal_angels)
+        data_recipe[lithium_brine].order = f
+        data_recipe[lithium_brine].energy_required = 16
+        data_recipe[lithium_brine].ingredients[1].amount = 30
+        data_recipe[lithium_brine].results[1].amount = 15
+    end
 
     local rocket_fuel_from_vesta = "ske-rocket-fuel-from-vesta"
     data_recipe[rocket_fuel_from_vesta].subgroup = is_vesta_recipe
@@ -477,14 +502,19 @@ if mods[vesta_mods] then
         {type = unlock_recipe, recipe = hydrogen_sulfide_vesta},
         {type = unlock_recipe, recipe = methane_vesta},
         {type = unlock_recipe, recipe = helium_vesta},
-        {type = unlock_recipe, recipe = algea_water_vesta},
-        {type = unlock_recipe, recipe = stone_mineraliztion},
-        {type = unlock_recipe, recipe = coal_mineraliztion},
-        {type = unlock_recipe, recipe = carbon_seperation},
-        {type = unlock_recipe, recipe = co2_filter_carbon},
-        {type = unlock_recipe, recipe = carbon_super_cooling},
-        {type = unlock_recipe, recipe = vesta_foundation}
+        {type = unlock_recipe, recipe = algea_water_vesta}
     }
+    local function added_recipe_in_planet_discovery_vesta(recipe_name)
+        if not data_recipe[recipe_name] then return end
+
+        table.insert(data_technology[planet_discovery_vesta].effects, {type = unlock_recipe, recipe = recipe_name})
+    end
+    added_recipe_in_planet_discovery_vesta(stone_mineraliztion)
+    added_recipe_in_planet_discovery_vesta(coal_mineraliztion)
+    added_recipe_in_planet_discovery_vesta(carbon_seperation)
+    added_recipe_in_planet_discovery_vesta(co2_filter_carbon)
+    added_recipe_in_planet_discovery_vesta(carbon_super_cooling)
+    added_recipe_in_planet_discovery_vesta(vesta_foundation)
     data_technology[planet_discovery_vesta].unit.ingredients =
     {
         {automation_science_pack, 1},
@@ -498,38 +528,48 @@ if mods[vesta_mods] then
         {cryogenic_science_pack, 1}
     }
 
-    data_technology[tech_deuterium].prerequisites = {planet_discovery_vesta}
-    data_technology[tech_deuterium].effects =
-    {
-        {type = unlock_recipe, recipe = deuterium_mods},
-        {type = unlock_recipe, recipe = tritium_mods},
-        {type = unlock_recipe, recipe = iridium_ore}
-    }
+    if data_technology[tech_deuterium] then
+        data_technology[tech_deuterium].prerequisites = {planet_discovery_vesta}
+        data_technology[tech_deuterium].effects =
+        {
+            {type = unlock_recipe, recipe = deuterium_mods},
+            {type = unlock_recipe, recipe = tritium_mods},
+            {type = unlock_recipe, recipe = iridium_ore}
+        }
+    else
+        added_recipe_in_planet_discovery_vesta(deuterium_mods)
+        added_recipe_in_planet_discovery_vesta(tritium_mods)
+        added_recipe_in_planet_discovery_vesta(iridium_ore)
+        data_technology[tech_iridium_smelting_1].prerequisites = {planet_discovery_vesta}
+    end
 
     local tech_algea_culturing = "s1_algea_culturing"
     data_technology[tech_algea_culturing].prerequisites = {planet_discovery_vesta}
 
     tech_algea_extracting = "s1_algea_extracting"
-    data_technology[tech_algea_extracting].prerequisites = {tech_iridium_smelting_1, tech_algea_culturing}
-    if mods[moshine_mods] then
-        table.insert(data_technology[tech_algea_extracting].prerequisites, tech_magnet_moshine)
+    if data_technology[tech_algea_extracting] then
+        data_technology[tech_algea_extracting].prerequisites = {tech_iridium_smelting_1, tech_algea_culturing}
+        if mods[moshine_mods] then table.insert(data_technology[tech_algea_extracting].prerequisites, tech_magnet_moshine) end
+        data_technology[tech_algea_extracting].effects =
+        {
+            {type = unlock_recipe, recipe = supermagnet},
+            {type = unlock_recipe, recipe = algea_iron_electrolysis},
+            {type = unlock_recipe, recipe = algea_copper_electrolysis},
+            {type = unlock_recipe, recipe = algea_stone_electrolysis}
+        }
     end
-    data_technology[tech_algea_extracting].effects =
-    {
-        {type = unlock_recipe, recipe = supermagnet},
-        {type = unlock_recipe, recipe = algea_iron_electrolysis},
-        {type = unlock_recipe, recipe = algea_copper_electrolysis},
-        {type = unlock_recipe, recipe = algea_stone_electrolysis}
-    }
 
-    data_technology[tech_gas_manipulation_science_pack].effects =
-    {
-        {type = unlock_recipe, recipe = lithium_brine},
-        {type = unlock_recipe, recipe = rocket_fuel_from_vesta},
-        {type = unlock_recipe, recipe = lds_from_vesta},
-        {type = unlock_recipe, recipe = supermagnetic_vesta},
-        {type = unlock_recipe, recipe = gas_manipulation_science_pack}
-    }
+    data_technology[tech_gas_manipulation_science_pack].effects = {}
+    local function added_recipe_in_tech_gas_manipulation_science_pack(recipe_name)
+        if not data_recipe[recipe_name] then return end
+
+        table.insert(data_technology[tech_gas_manipulation_science_pack].effects, {type = unlock_recipe, recipe = recipe_name})
+    end
+    added_recipe_in_tech_gas_manipulation_science_pack(lithium_brine)
+    added_recipe_in_tech_gas_manipulation_science_pack(rocket_fuel_from_vesta)
+    added_recipe_in_tech_gas_manipulation_science_pack(lds_from_vesta)
+    added_recipe_in_tech_gas_manipulation_science_pack(supermagnetic_vesta)
+    added_recipe_in_tech_gas_manipulation_science_pack(gas_manipulation_science_pack)
 
     local tech_ore_to_plate = "s2_plateworkings"
     data_technology[tech_ore_to_plate].effects = {}
@@ -568,18 +608,21 @@ if mods[vesta_mods] then
         {cryogenic_science_pack, 1}
     }
 
-    data_technology["s2_fusion_enhancements"].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {cryogenic_science_pack, 1}
-    }
+    local tech_fusion_enhancements = "s2_fusion_enhancements"
+    if data_technology[tech_fusion_enhancements] then
+        data_technology[tech_fusion_enhancements].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+    end
 
     if mods[shchierbin_mods] then
         table.insert(data_technology[fusion_thruster].prerequisites, vanadium_crusher)
@@ -598,36 +641,41 @@ if mods[vesta_mods] then
     }
 
     local tech_transport_belt_capacity_vesta = "transport-belt-capacity-vesta"
-    data_technology[tech_transport_belt_capacity_vesta].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {space_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {cryogenic_science_pack, 1}
-    }
-    if mods[bobtech] then
-        table.insert(data_technology[tech_transport_belt_capacity_vesta].unit.ingredients, {transport_science_pack, 1})
+    if data_technology[tech_transport_belt_capacity_vesta] then
+        data_technology[tech_transport_belt_capacity_vesta].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {space_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+        if mods[bobtech] then
+            table.insert(data_technology[tech_transport_belt_capacity_vesta].unit.ingredients, {transport_science_pack, 1})
+        end
     end
 
-    data_technology["worker-robots-storage-vesta"].localised_description = {"technplogy-description.worker-robots-storage"}
-    data_technology["worker-robots-storage-vesta"].unit.ingredients =
-    {
-        {automation_science_pack, 1},
-        {logistic_science_pack, 1},
-        {chemical_science_pack, 1},
-        {production_science_pack, 1},
-        {utility_science_pack, 1},
-        {metallurgic_science_pack, 1},
-        {agricultural_science_pack, 1},
-        {electromagnetic_science_pack, 1},
-        {cryogenic_science_pack, 1}
-    }
+    local tech_worker_robots_storage_vesta = "worker-robots-storage-vesta"
+    if data_technology[tech_worker_robots_storage_vesta] then
+        data_technology[tech_worker_robots_storage_vesta].localised_description = {"technplogy-description.worker-robots-storage"}
+        data_technology[tech_worker_robots_storage_vesta].unit.ingredients =
+        {
+            {automation_science_pack, 1},
+            {logistic_science_pack, 1},
+            {chemical_science_pack, 1},
+            {production_science_pack, 1},
+            {utility_science_pack, 1},
+            {metallurgic_science_pack, 1},
+            {agricultural_science_pack, 1},
+            {electromagnetic_science_pack, 1},
+            {cryogenic_science_pack, 1}
+        }
+    end
 
     data_technology[tech_wolframite_processing_4].prerequisites = {tech_wolframite_processing_3, tech_gas_manipulation_science_pack}
     data_technology[tech_rhenium_synthesis].prerequisites = {tech_rhenium_smelting_3, tech_molybdenite_processing_4, tech_wolframite_processing_4}

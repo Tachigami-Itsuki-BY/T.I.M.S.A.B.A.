@@ -1,3 +1,5 @@
+local graphics_brannerite = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite/"
+
 -- Brannerite ore / Ho + U + Th + Fe + Ti + Ca
 brannerite_ore = "brannerite-ore"
 brannerite_crushed = "brannerite-crushed"
@@ -9,40 +11,40 @@ TIMSABA.functions.create_items
     {
         name = brannerite_ore,
         subgroup = is_brannerite,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-ore.png",
+        icon = graphics_brannerite .. brannerite_ore .. ".png",
         pictures =
         {
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-ore-1.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-ore-2.png", width = 64, height = 64, scale = 0.5},
-            {filename = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-ore-3.png", width = 64, height = 64, scale = 0.5}
+            {filename = graphics_brannerite .. brannerite_ore .. "-1.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_brannerite .. brannerite_ore .. "-2.png", width = 64, height = 64, scale = 0.5},
+            {filename = graphics_brannerite .. brannerite_ore .. "-3.png", width = 64, height = 64, scale = 0.5}
         },
         order = a
     },
     {
         name = brannerite_crushed,
         subgroup = is_brannerite,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-crushed.png",
+        icon = graphics_brannerite .. brannerite_crushed .. ".png",
         icon_size = 32,
         order = b
     },
     {
         name = brannerite_chunks,
         subgroup = is_brannerite,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-chunks.png",
+        icon = graphics_brannerite .. brannerite_chunks .. ".png",
         icon_size = 32,
         order = c
     },
     {
         name = brannerite_crystals,
         subgroup = is_brannerite,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-crystals.png",
+        icon = graphics_brannerite .. brannerite_crystals .. ".png",
         icon_size = 32,
         order = d
     },
     {
         name = brannerite_purified,
         subgroup = is_brannerite,
-        icon = "__TIMSABA__/graphics/icons/space-age/fulgora/brannerite-purified.png",
+        icon = graphics_brannerite .. brannerite_purified .. ".png",
         icon_size = 32,
         order = e
     }
